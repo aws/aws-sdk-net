@@ -38,6 +38,7 @@ namespace Amazon.NetworkFirewall.Model
     {
         private int? _maxResults;
         private string _nextToken;
+        private ResourceManagedStatus _scope;
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
@@ -81,6 +82,26 @@ namespace Amazon.NetworkFirewall.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Scope. 
+        /// <para>
+        /// The scope of the request. The default setting of <code>ACCOUNT</code> or a setting
+        /// of <code>NULL</code> returns all of the rule groups in your account. A setting of
+        /// <code>MANAGED</code> returns all available managed rule groups.
+        /// </para>
+        /// </summary>
+        public ResourceManagedStatus Scope
+        {
+            get { return this._scope; }
+            set { this._scope = value; }
+        }
+
+        // Check to see if Scope property is set
+        internal bool IsSetScope()
+        {
+            return this._scope != null;
         }
 
     }

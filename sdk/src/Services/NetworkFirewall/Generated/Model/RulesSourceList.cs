@@ -75,8 +75,8 @@ namespace Amazon.NetworkFirewall.Model
         /// <summary>
         /// Gets and sets the property Targets. 
         /// <para>
-        /// The domains that you want to inspect for in your traffic flows. To provide multiple
-        /// domains, separate them with commas. Valid domain specifications are the following:
+        /// The domains that you want to inspect for in your traffic flows. Valid domain specifications
+        /// are the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>

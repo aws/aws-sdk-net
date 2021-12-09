@@ -29,33 +29,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.NetworkFirewall.Model
 {
     /// <summary>
-    /// Additional options governing how Network Firewall handles the rule group. You can
-    /// only use these for stateful rule groups.
+    /// The setting that allows the policy owner to change the behavior of the rule group
+    /// within a policy.
     /// </summary>
-    public partial class StatefulRuleOptions
+    public partial class StatefulRuleGroupOverride
     {
-        private RuleOrder _ruleOrder;
+        private OverrideAction _action;
 
         /// <summary>
-        /// Gets and sets the property RuleOrder. 
+        /// Gets and sets the property Action. 
         /// <para>
-        /// Indicates how to manage the order of the rule evaluation for the rule group. <code>DEFAULT_ACTION_ORDER</code>
-        /// is the default behavior. Stateful rules are provided to the rule engine as Suricata
-        /// compatible strings, and Suricata evaluates them based on certain settings. For more
-        /// information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html">Evaluation
-        /// order for stateful rules</a> in the <i>AWS Network Firewall Developer Guide</i>. 
+        /// The action that changes the rule group from <code>DROP</code> to <code>ALERT</code>.
+        /// This only applies to managed rule groups.
         /// </para>
         /// </summary>
-        public RuleOrder RuleOrder
+        public OverrideAction Action
         {
-            get { return this._ruleOrder; }
-            set { this._ruleOrder = value; }
+            get { return this._action; }
+            set { this._action = value; }
         }
 
-        // Check to see if RuleOrder property is set
-        internal bool IsSetRuleOrder()
+        // Check to see if Action property is set
+        internal bool IsSetAction()
         {
-            return this._ruleOrder != null;
+            return this._action != null;
         }
 
     }

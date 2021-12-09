@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// StatefulRuleGroupReference Marshaller
+    /// StatefulRuleGroupOverride Marshaller
     /// </summary>       
-    public class StatefulRuleGroupReferenceMarshaller : IRequestMarshaller<StatefulRuleGroupReference, JsonMarshallerContext> 
+    public class StatefulRuleGroupOverrideMarshaller : IRequestMarshaller<StatefulRuleGroupOverride, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,29 +43,12 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(StatefulRuleGroupReference requestObject, JsonMarshallerContext context)
+        public void Marshall(StatefulRuleGroupOverride requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetOverride())
+            if(requestObject.IsSetAction())
             {
-                context.Writer.WritePropertyName("Override");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = StatefulRuleGroupOverrideMarshaller.Instance;
-                marshaller.Marshall(requestObject.Override, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetPriority())
-            {
-                context.Writer.WritePropertyName("Priority");
-                context.Writer.Write(requestObject.Priority);
-            }
-
-            if(requestObject.IsSetResourceArn())
-            {
-                context.Writer.WritePropertyName("ResourceArn");
-                context.Writer.Write(requestObject.ResourceArn);
+                context.Writer.WritePropertyName("Action");
+                context.Writer.Write(requestObject.Action);
             }
 
         }
@@ -73,7 +56,7 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static StatefulRuleGroupReferenceMarshaller Instance = new StatefulRuleGroupReferenceMarshaller();
+        public readonly static StatefulRuleGroupOverrideMarshaller Instance = new StatefulRuleGroupOverrideMarshaller();
 
     }
 }

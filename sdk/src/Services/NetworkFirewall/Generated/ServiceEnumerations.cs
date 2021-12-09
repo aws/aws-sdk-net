@@ -341,6 +341,52 @@ namespace Amazon.NetworkFirewall
 
 
     /// <summary>
+    /// Constants used for properties of type OverrideAction.
+    /// </summary>
+    public class OverrideAction : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DROP_TO_ALERT for OverrideAction
+        /// </summary>
+        public static readonly OverrideAction DROP_TO_ALERT = new OverrideAction("DROP_TO_ALERT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OverrideAction(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OverrideAction FindValue(string value)
+        {
+            return FindValue<OverrideAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OverrideAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type PerObjectSyncStatus.
     /// </summary>
     public class PerObjectSyncStatus : ConstantClass
@@ -384,6 +430,56 @@ namespace Amazon.NetworkFirewall
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator PerObjectSyncStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ResourceManagedStatus.
+    /// </summary>
+    public class ResourceManagedStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACCOUNT for ResourceManagedStatus
+        /// </summary>
+        public static readonly ResourceManagedStatus ACCOUNT = new ResourceManagedStatus("ACCOUNT");
+        /// <summary>
+        /// Constant MANAGED for ResourceManagedStatus
+        /// </summary>
+        public static readonly ResourceManagedStatus MANAGED = new ResourceManagedStatus("MANAGED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResourceManagedStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResourceManagedStatus FindValue(string value)
+        {
+            return FindValue<ResourceManagedStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResourceManagedStatus(string value)
         {
             return FindValue(value);
         }

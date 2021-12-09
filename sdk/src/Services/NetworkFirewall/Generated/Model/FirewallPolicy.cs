@@ -52,7 +52,34 @@ namespace Amazon.NetworkFirewall.Model
         /// <summary>
         /// Gets and sets the property StatefulDefaultActions. 
         /// <para>
-        /// The default actions to take on a packet that doesn't match any stateful rules.
+        /// The default actions to take on a packet that doesn't match any stateful rules. The
+        /// stateful default action is optional, and is only valid when using the strict rule
+        /// order.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values of the stateful default action:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// aws:drop_strict
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// aws:drop_established
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// aws:alert_strict
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// aws:alert_established
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-strict-rule-evaluation-order.html">Strict
+        /// evaluation order</a> in the <i>AWS Network Firewall Developer Guide</i>. 
         /// </para>
         /// </summary>
         public List<string> StatefulDefaultActions

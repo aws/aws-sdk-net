@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ListTagsForResource operation
+    /// Response Unmarshaller for DescribeRuleGroupMetadata operation
     /// </summary>  
-    public class ListTagsForResourceResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DescribeRuleGroupMetadataResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,22 +45,46 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            ListTagsForResourceResponse response = new ListTagsForResourceResponse();
+            DescribeRuleGroupMetadataResponse response = new DescribeRuleGroupMetadataResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("Capacity", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.NextToken = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    response.Capacity = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Tags", targetDepth))
+                if (context.TestExpression("Description", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
-                    response.Tags = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Description = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RuleGroupArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.RuleGroupArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RuleGroupName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.RuleGroupName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("StatefulRuleOptions", targetDepth))
+                {
+                    var unmarshaller = StatefulRuleOptionsUnmarshaller.Instance;
+                    response.StatefulRuleOptions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Type", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Type = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -106,9 +130,9 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
             return new AmazonNetworkFirewallException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static ListTagsForResourceResponseUnmarshaller _instance = new ListTagsForResourceResponseUnmarshaller();        
+        private static DescribeRuleGroupMetadataResponseUnmarshaller _instance = new DescribeRuleGroupMetadataResponseUnmarshaller();        
 
-        internal static ListTagsForResourceResponseUnmarshaller GetInstance()
+        internal static DescribeRuleGroupMetadataResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -116,7 +140,7 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ListTagsForResourceResponseUnmarshaller Instance
+        public static DescribeRuleGroupMetadataResponseUnmarshaller Instance
         {
             get
             {
