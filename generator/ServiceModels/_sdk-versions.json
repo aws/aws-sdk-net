@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.7.177.0",
+    "ProductVersion" : "3.7.178.0",
     "CoreVersion"    : "3.7.5.5",
     "OverrideCoreVersion" : "3.3",
     "DefaultToPreview"    : false,
@@ -152,7 +152,7 @@
             "InPreview"               : false
         },
         "EC2"               : {
-            "Version" : "3.7.49.1",
+            "Version" : "3.7.50.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.5.5"
@@ -306,7 +306,7 @@
             "InPreview"               : false
         },
         "Route53Domains"       : {
-            "Version" : "3.7.0.106",
+            "Version" : "3.7.1.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.5.5"
@@ -602,7 +602,7 @@
             "InPreview"               : false
         },
         "ServerMigrationService"          : {
-            "Version" : "3.7.0.106",
+            "Version" : "3.7.0.107",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.5.5"
@@ -1546,7 +1546,7 @@
             "InPreview"               : false
         },
         "SavingsPlans"                    : {
-            "Version" : "3.7.2.60",
+            "Version" : "3.7.2.61",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.5.5"
@@ -1890,7 +1890,7 @@
             "InPreview"               : false
         },
         "NetworkFirewall"                 : {
-            "Version" : "3.7.1.32",
+            "Version" : "3.7.2.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.5.5"
@@ -2066,7 +2066,7 @@
             "InPreview"               : false
         },
         "LexModelsV2"                     : {
-            "Version" : "3.7.9.1",
+            "Version" : "3.7.10.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.5.5"
@@ -2178,7 +2178,7 @@
             "InPreview"               : false
         },
         "Route53RecoveryControlConfig"    : {
-            "Version" : "3.7.0.61",
+            "Version" : "3.7.1.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.5.5"
