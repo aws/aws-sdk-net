@@ -29,47 +29,50 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53RecoveryControlConfig.Model
 {
     /// <summary>
-    /// This is the response object from the UpdateSafetyRule operation.
+    /// Container for the parameters to the UntagResource operation.
+    /// Removes a tag from a resource.
     /// </summary>
-    public partial class UpdateSafetyRuleResponse : AmazonWebServiceResponse
+    public partial class UntagResourceRequest : AmazonRoute53RecoveryControlConfigRequest
     {
-        private AssertionRule _assertionRule;
-        private GatingRule _gatingRule;
+        private string _resourceArn;
+        private List<string> _tagKeys = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property AssertionRule. 
+        /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The assertion rule updated.
+        /// The Amazon Resource Name (ARN) for the resource that's tagged.
         /// </para>
         /// </summary>
-        public AssertionRule AssertionRule
+        [AWSProperty(Required=true)]
+        public string ResourceArn
         {
-            get { return this._assertionRule; }
-            set { this._assertionRule = value; }
+            get { return this._resourceArn; }
+            set { this._resourceArn = value; }
         }
 
-        // Check to see if AssertionRule property is set
-        internal bool IsSetAssertionRule()
+        // Check to see if ResourceArn property is set
+        internal bool IsSetResourceArn()
         {
-            return this._assertionRule != null;
+            return this._resourceArn != null;
         }
 
         /// <summary>
-        /// Gets and sets the property GatingRule. 
+        /// Gets and sets the property TagKeys. 
         /// <para>
-        /// The gating rule updated.
+        /// Keys for the tags to be removed.
         /// </para>
         /// </summary>
-        public GatingRule GatingRule
+        [AWSProperty(Required=true)]
+        public List<string> TagKeys
         {
-            get { return this._gatingRule; }
-            set { this._gatingRule = value; }
+            get { return this._tagKeys; }
+            set { this._tagKeys = value; }
         }
 
-        // Check to see if GatingRule property is set
-        internal bool IsSetGatingRule()
+        // Check to see if TagKeys property is set
+        internal bool IsSetTagKeys()
         {
-            return this._gatingRule != null;
+            return this._tagKeys != null && this._tagKeys.Count > 0; 
         }
 
     }

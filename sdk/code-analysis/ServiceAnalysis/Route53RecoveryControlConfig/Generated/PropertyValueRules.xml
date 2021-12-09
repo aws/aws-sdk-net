@@ -2,7 +2,9 @@
 <property-value-rules>
   <property-value-rule>
     <property>Amazon.Route53RecoveryControlConfig.Model.CreateClusterRequest.ClientToken</property>
+    <min>1</min>
     <max>64</max>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53RecoveryControlConfig.Model.CreateClusterRequest.ClusterName</property>
@@ -12,7 +14,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53RecoveryControlConfig.Model.CreateControlPanelRequest.ClientToken</property>
+    <min>1</min>
     <max>64</max>
+    <pattern>^\S+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53RecoveryControlConfig.Model.CreateControlPanelRequest.ClusterArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[A-Za-z0-9:\/_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53RecoveryControlConfig.Model.CreateControlPanelRequest.ControlPanelName</property>
@@ -22,7 +32,21 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53RecoveryControlConfig.Model.CreateRoutingControlRequest.ClientToken</property>
+    <min>1</min>
     <max>64</max>
+    <pattern>^\S+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53RecoveryControlConfig.Model.CreateRoutingControlRequest.ClusterArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[A-Za-z0-9:\/_-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53RecoveryControlConfig.Model.CreateRoutingControlRequest.ControlPanelArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[A-Za-z0-9:\/_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53RecoveryControlConfig.Model.CreateRoutingControlRequest.RoutingControlName</property>
@@ -32,7 +56,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53RecoveryControlConfig.Model.CreateSafetyRuleRequest.ClientToken</property>
+    <min>1</min>
     <max>64</max>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53RecoveryControlConfig.Model.ListAssociatedRoute53HealthChecksRequest.MaxResults</property>
@@ -41,7 +67,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53RecoveryControlConfig.Model.ListAssociatedRoute53HealthChecksResponse.NextToken</property>
+    <min>1</min>
     <max>8096</max>
+    <pattern>[\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53RecoveryControlConfig.Model.ListClustersRequest.MaxResults</property>
@@ -50,7 +78,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53RecoveryControlConfig.Model.ListClustersResponse.NextToken</property>
+    <min>1</min>
     <max>8096</max>
+    <pattern>[\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53RecoveryControlConfig.Model.ListControlPanelsRequest.MaxResults</property>
@@ -59,7 +89,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53RecoveryControlConfig.Model.ListControlPanelsResponse.NextToken</property>
+    <min>1</min>
     <max>8096</max>
+    <pattern>[\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53RecoveryControlConfig.Model.ListRoutingControlsRequest.MaxResults</property>
@@ -68,7 +100,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53RecoveryControlConfig.Model.ListRoutingControlsResponse.NextToken</property>
+    <min>1</min>
     <max>8096</max>
+    <pattern>[\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53RecoveryControlConfig.Model.ListSafetyRulesRequest.MaxResults</property>
@@ -77,7 +111,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53RecoveryControlConfig.Model.ListSafetyRulesResponse.NextToken</property>
+    <min>1</min>
     <max>8096</max>
+    <pattern>[\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53RecoveryControlConfig.Model.UpdateControlPanelRequest.ControlPanelArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[A-Za-z0-9:\/_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53RecoveryControlConfig.Model.UpdateControlPanelRequest.ControlPanelName</property>
@@ -86,10 +128,22 @@
     <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Route53RecoveryControlConfig.Model.UpdateRoutingControlRequest.RoutingControlArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[A-Za-z0-9:\/_-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Route53RecoveryControlConfig.Model.UpdateRoutingControlRequest.RoutingControlName</property>
     <min>1</min>
     <max>64</max>
     <pattern>^\S+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53RecoveryControlConfig.Model.AssertionRule.ControlPanelArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[A-Za-z0-9:\/_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53RecoveryControlConfig.Model.AssertionRule.Name</property>
@@ -98,10 +152,28 @@
     <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Route53RecoveryControlConfig.Model.AssertionRule.SafetyRuleArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[A-Za-z0-9:\/_-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Route53RecoveryControlConfig.Model.AssertionRuleUpdate.Name</property>
     <min>1</min>
     <max>64</max>
     <pattern>^\S+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53RecoveryControlConfig.Model.AssertionRuleUpdate.SafetyRuleArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[A-Za-z0-9:\/_-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53RecoveryControlConfig.Model.Cluster.ClusterArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[A-Za-z0-9:\/_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53RecoveryControlConfig.Model.Cluster.Name</property>
@@ -113,11 +185,25 @@
     <property>Amazon.Route53RecoveryControlConfig.Model.ClusterEndpoint.Endpoint</property>
     <min>1</min>
     <max>128</max>
+    <pattern>^[A-Za-z0-9:.\/_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53RecoveryControlConfig.Model.ClusterEndpoint.Region</property>
     <min>1</min>
     <max>32</max>
+    <pattern>^\S+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53RecoveryControlConfig.Model.ControlPanel.ClusterArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[A-Za-z0-9:\/_-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53RecoveryControlConfig.Model.ControlPanel.ControlPanelArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[A-Za-z0-9:\/_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53RecoveryControlConfig.Model.ControlPanel.Name</property>
@@ -126,10 +212,22 @@
     <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Route53RecoveryControlConfig.Model.GatingRule.ControlPanelArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[A-Za-z0-9:\/_-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Route53RecoveryControlConfig.Model.GatingRule.Name</property>
     <min>1</min>
     <max>64</max>
     <pattern>^\S+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53RecoveryControlConfig.Model.GatingRule.SafetyRuleArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[A-Za-z0-9:\/_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53RecoveryControlConfig.Model.GatingRuleUpdate.Name</property>
@@ -138,10 +236,28 @@
     <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Route53RecoveryControlConfig.Model.GatingRuleUpdate.SafetyRuleArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[A-Za-z0-9:\/_-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53RecoveryControlConfig.Model.NewAssertionRule.ControlPanelArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[A-Za-z0-9:\/_-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Route53RecoveryControlConfig.Model.NewAssertionRule.Name</property>
     <min>1</min>
     <max>64</max>
     <pattern>^\S+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53RecoveryControlConfig.Model.NewGatingRule.ControlPanelArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[A-Za-z0-9:\/_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53RecoveryControlConfig.Model.NewGatingRule.Name</property>
@@ -150,9 +266,21 @@
     <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Route53RecoveryControlConfig.Model.RoutingControl.ControlPanelArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[A-Za-z0-9:\/_-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Route53RecoveryControlConfig.Model.RoutingControl.Name</property>
     <min>1</min>
     <max>64</max>
     <pattern>^\S+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53RecoveryControlConfig.Model.RoutingControl.RoutingControlArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[A-Za-z0-9:\/_-]*$</pattern>
   </property-value-rule>
 </property-value-rules>

@@ -29,47 +29,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53RecoveryControlConfig.Model
 {
     /// <summary>
-    /// This is the response object from the UpdateSafetyRule operation.
+    /// Container for the parameters to the ListTagsForResource operation.
+    /// Lists the tags for a resource.
     /// </summary>
-    public partial class UpdateSafetyRuleResponse : AmazonWebServiceResponse
+    public partial class ListTagsForResourceRequest : AmazonRoute53RecoveryControlConfigRequest
     {
-        private AssertionRule _assertionRule;
-        private GatingRule _gatingRule;
+        private string _resourceArn;
 
         /// <summary>
-        /// Gets and sets the property AssertionRule. 
+        /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The assertion rule updated.
+        /// The Amazon Resource Name (ARN) for the resource that's tagged.
         /// </para>
         /// </summary>
-        public AssertionRule AssertionRule
+        [AWSProperty(Required=true)]
+        public string ResourceArn
         {
-            get { return this._assertionRule; }
-            set { this._assertionRule = value; }
+            get { return this._resourceArn; }
+            set { this._resourceArn = value; }
         }
 
-        // Check to see if AssertionRule property is set
-        internal bool IsSetAssertionRule()
+        // Check to see if ResourceArn property is set
+        internal bool IsSetResourceArn()
         {
-            return this._assertionRule != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property GatingRule. 
-        /// <para>
-        /// The gating rule updated.
-        /// </para>
-        /// </summary>
-        public GatingRule GatingRule
-        {
-            get { return this._gatingRule; }
-            set { this._gatingRule = value; }
-        }
-
-        // Check to see if GatingRule property is set
-        internal bool IsSetGatingRule()
-        {
-            return this._gatingRule != null;
+            return this._resourceArn != null;
         }
 
     }

@@ -42,7 +42,7 @@ namespace Amazon.Route53RecoveryControlConfig.Model
         /// <summary>
         /// Gets and sets the property ControlPanelArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the control panel that you're getting details for.
+        /// The Amazon Resource Name (ARN) of the control panel.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

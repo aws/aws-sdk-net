@@ -52,8 +52,7 @@ namespace Amazon.Route53RecoveryControlConfig
         /// you can run API calls to update or get the state of one or more routing controls.
         /// Each cluster has a name, status, Amazon Resource Name (ARN), and an array of the five
         /// cluster endpoints (one for each supported Amazon Web Services Region) that you can
-        /// use with API calls to the Amazon Route 53 Application Recovery Controller cluster
-        /// data plane.
+        /// use with API calls to the cluster data plane.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCluster service method.</param>
         /// <param name="cancellationToken">
@@ -62,27 +61,29 @@ namespace Amazon.Route53RecoveryControlConfig
         /// 
         /// <returns>The response from the CreateCluster service method, as returned by Route53RecoveryControlConfig.</returns>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.AccessDeniedException">
-        /// 403 response - AccessDeniedException. You do not have sufficient access to perform
-        /// this action.
+        /// 403 response - You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ConflictException">
-        /// 409 response - ConflictException.
+        /// 409 response - ConflictException. You might be using a predefined variable.
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.InternalServerException">
         /// 500 response - InternalServiceError. Temporary service error. Retry the request.
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ResourceNotFoundException">
-        /// 404 response - The query string contains a syntax error or resource not found.
+        /// 404 response - MalformedQueryString. The query string contains a syntax error or resource
+        /// not found..
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ServiceQuotaExceededException">
-        /// 402 response
+        /// 402 response - You attempted to create more resources than the service allows based
+        /// on service quotas.
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ThrottlingException">
-        /// 429 response - ThrottlingException.
+        /// 429 response - LimitExceededException or TooManyRequestsException.
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ValidationException">
         /// 400 response - Multiple causes. For example, you might have a malformed query string
-        /// and input parameter might be out of range, or you used parameters together incorrectly.
+        /// and input parameter might be out of range, or you might have used parameters together
+        /// incorrectly.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/CreateCluster">REST API Reference for CreateCluster Operation</seealso>
         Task<CreateClusterResponse> CreateClusterAsync(CreateClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -98,7 +99,7 @@ namespace Amazon.Route53RecoveryControlConfig
         /// that can be changed together in a single transaction. You can use a control panel
         /// to centrally view the operational status of applications across your organization,
         /// and trigger multi-app failovers in a single transaction, for example, to fail over
-        /// an Availability Zone or AWS Region.
+        /// an Availability Zone or Amazon Web Services Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateControlPanel service method.</param>
         /// <param name="cancellationToken">
@@ -107,27 +108,29 @@ namespace Amazon.Route53RecoveryControlConfig
         /// 
         /// <returns>The response from the CreateControlPanel service method, as returned by Route53RecoveryControlConfig.</returns>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.AccessDeniedException">
-        /// 403 response - AccessDeniedException. You do not have sufficient access to perform
-        /// this action.
+        /// 403 response - You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ConflictException">
-        /// 409 response - ConflictException.
+        /// 409 response - ConflictException. You might be using a predefined variable.
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.InternalServerException">
         /// 500 response - InternalServiceError. Temporary service error. Retry the request.
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ResourceNotFoundException">
-        /// 404 response - The query string contains a syntax error or resource not found.
+        /// 404 response - MalformedQueryString. The query string contains a syntax error or resource
+        /// not found..
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ServiceQuotaExceededException">
-        /// 402 response
+        /// 402 response - You attempted to create more resources than the service allows based
+        /// on service quotas.
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ThrottlingException">
-        /// 429 response - ThrottlingException.
+        /// 429 response - LimitExceededException or TooManyRequestsException.
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ValidationException">
         /// 400 response - Multiple causes. For example, you might have a malformed query string
-        /// and input parameter might be out of range, or you used parameters together incorrectly.
+        /// and input parameter might be out of range, or you might have used parameters together
+        /// incorrectly.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/CreateControlPanel">REST API Reference for CreateControlPanel Operation</seealso>
         Task<CreateControlPanelResponse> CreateControlPanelAsync(CreateControlPanelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -160,27 +163,29 @@ namespace Amazon.Route53RecoveryControlConfig
         /// 
         /// <returns>The response from the CreateRoutingControl service method, as returned by Route53RecoveryControlConfig.</returns>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.AccessDeniedException">
-        /// 403 response - AccessDeniedException. You do not have sufficient access to perform
-        /// this action.
+        /// 403 response - You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ConflictException">
-        /// 409 response - ConflictException.
+        /// 409 response - ConflictException. You might be using a predefined variable.
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.InternalServerException">
         /// 500 response - InternalServiceError. Temporary service error. Retry the request.
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ResourceNotFoundException">
-        /// 404 response - The query string contains a syntax error or resource not found.
+        /// 404 response - MalformedQueryString. The query string contains a syntax error or resource
+        /// not found..
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ServiceQuotaExceededException">
-        /// 402 response
+        /// 402 response - You attempted to create more resources than the service allows based
+        /// on service quotas.
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ThrottlingException">
-        /// 429 response - ThrottlingException.
+        /// 429 response - LimitExceededException or TooManyRequestsException.
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ValidationException">
         /// 400 response - Multiple causes. For example, you might have a malformed query string
-        /// and input parameter might be out of range, or you used parameters together incorrectly.
+        /// and input parameter might be out of range, or you might have used parameters together
+        /// incorrectly.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/CreateRoutingControl">REST API Reference for CreateRoutingControl Operation</seealso>
         Task<CreateRoutingControlResponse> CreateRoutingControlAsync(CreateRoutingControlRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -193,7 +198,8 @@ namespace Amazon.Route53RecoveryControlConfig
 
         /// <summary>
         /// Creates a safety rule in a control panel. Safety rules let you add safeguards around
-        /// enabling and disabling routing controls, to help prevent unexpected outcomes.
+        /// changing routing control states, and for enabling and disabling routing controls,
+        /// to help prevent unexpected outcomes.
         /// 
         ///  
         /// <para>
@@ -201,16 +207,22 @@ namespace Amazon.Route53RecoveryControlConfig
         /// </para>
         ///  
         /// <para>
-        /// Assertion rule: An assertion rule enforces that, when a routing control state is changed,
-        /// the criteria set by the rule configuration is met. Otherwise, the change to the routing
-        /// control is not accepted.
+        /// Assertion rule: An assertion rule enforces that, when you change a routing control
+        /// state, that a certain criteria is met. For example, the criteria might be that at
+        /// least one routing control state is On after the transation so that traffic continues
+        /// to flow to at least one cell for the application. This ensures that you avoid a fail-open
+        /// scenario.
         /// </para>
         ///  
         /// <para>
-        /// Gating rule: A gating rule verifies that a set of gating controls evaluates as true,
-        /// based on a rule configuration that you specify. If the gating rule evaluates to true,
-        /// Amazon Route 53 Application Recovery Controller allows a set of routing control state
-        /// changes to run and complete against the set of target controls.
+        /// Gating rule: A gating rule lets you configure a gating routing control as an overall
+        /// "on/off" switch for a group of routing controls. Or, you can configure more complex
+        /// gating scenarios, for example by configuring multiple gating routing controls.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.safety-rules.html">Safety
+        /// rules</a> in the Amazon Route 53 Application Recovery Controller Developer Guide.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSafetyRule service method.</param>
@@ -224,7 +236,8 @@ namespace Amazon.Route53RecoveryControlConfig
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ValidationException">
         /// 400 response - Multiple causes. For example, you might have a malformed query string
-        /// and input parameter might be out of range, or you used parameters together incorrectly.
+        /// and input parameter might be out of range, or you might have used parameters together
+        /// incorrectly.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/CreateSafetyRule">REST API Reference for CreateSafetyRule Operation</seealso>
         Task<CreateSafetyRuleResponse> CreateSafetyRuleAsync(CreateSafetyRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -245,24 +258,25 @@ namespace Amazon.Route53RecoveryControlConfig
         /// 
         /// <returns>The response from the DeleteCluster service method, as returned by Route53RecoveryControlConfig.</returns>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.AccessDeniedException">
-        /// 403 response - AccessDeniedException. You do not have sufficient access to perform
-        /// this action.
+        /// 403 response - You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ConflictException">
-        /// 409 response - ConflictException.
+        /// 409 response - ConflictException. You might be using a predefined variable.
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.InternalServerException">
         /// 500 response - InternalServiceError. Temporary service error. Retry the request.
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ResourceNotFoundException">
-        /// 404 response - The query string contains a syntax error or resource not found.
+        /// 404 response - MalformedQueryString. The query string contains a syntax error or resource
+        /// not found..
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ThrottlingException">
-        /// 429 response - ThrottlingException.
+        /// 429 response - LimitExceededException or TooManyRequestsException.
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ValidationException">
         /// 400 response - Multiple causes. For example, you might have a malformed query string
-        /// and input parameter might be out of range, or you used parameters together incorrectly.
+        /// and input parameter might be out of range, or you might have used parameters together
+        /// incorrectly.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/DeleteCluster">REST API Reference for DeleteCluster Operation</seealso>
         Task<DeleteClusterResponse> DeleteClusterAsync(DeleteClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -283,24 +297,25 @@ namespace Amazon.Route53RecoveryControlConfig
         /// 
         /// <returns>The response from the DeleteControlPanel service method, as returned by Route53RecoveryControlConfig.</returns>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.AccessDeniedException">
-        /// 403 response - AccessDeniedException. You do not have sufficient access to perform
-        /// this action.
+        /// 403 response - You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ConflictException">
-        /// 409 response - ConflictException.
+        /// 409 response - ConflictException. You might be using a predefined variable.
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.InternalServerException">
         /// 500 response - InternalServiceError. Temporary service error. Retry the request.
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ResourceNotFoundException">
-        /// 404 response - The query string contains a syntax error or resource not found.
+        /// 404 response - MalformedQueryString. The query string contains a syntax error or resource
+        /// not found..
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ThrottlingException">
-        /// 429 response - ThrottlingException.
+        /// 429 response - LimitExceededException or TooManyRequestsException.
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ValidationException">
         /// 400 response - Multiple causes. For example, you might have a malformed query string
-        /// and input parameter might be out of range, or you used parameters together incorrectly.
+        /// and input parameter might be out of range, or you might have used parameters together
+        /// incorrectly.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/DeleteControlPanel">REST API Reference for DeleteControlPanel Operation</seealso>
         Task<DeleteControlPanelResponse> DeleteControlPanelAsync(DeleteControlPanelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -321,24 +336,25 @@ namespace Amazon.Route53RecoveryControlConfig
         /// 
         /// <returns>The response from the DeleteRoutingControl service method, as returned by Route53RecoveryControlConfig.</returns>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.AccessDeniedException">
-        /// 403 response - AccessDeniedException. You do not have sufficient access to perform
-        /// this action.
+        /// 403 response - You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ConflictException">
-        /// 409 response - ConflictException.
+        /// 409 response - ConflictException. You might be using a predefined variable.
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.InternalServerException">
         /// 500 response - InternalServiceError. Temporary service error. Retry the request.
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ResourceNotFoundException">
-        /// 404 response - The query string contains a syntax error or resource not found.
+        /// 404 response - MalformedQueryString. The query string contains a syntax error or resource
+        /// not found..
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ThrottlingException">
-        /// 429 response - ThrottlingException.
+        /// 429 response - LimitExceededException or TooManyRequestsException.
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ValidationException">
         /// 400 response - Multiple causes. For example, you might have a malformed query string
-        /// and input parameter might be out of range, or you used parameters together incorrectly.
+        /// and input parameter might be out of range, or you might have used parameters together
+        /// incorrectly.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/DeleteRoutingControl">REST API Reference for DeleteRoutingControl Operation</seealso>
         Task<DeleteRoutingControlResponse> DeleteRoutingControlAsync(DeleteRoutingControlRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -364,11 +380,13 @@ namespace Amazon.Route53RecoveryControlConfig
         /// 500 response - InternalServiceError. Temporary service error. Retry the request.
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ResourceNotFoundException">
-        /// 404 response - The query string contains a syntax error or resource not found.
+        /// 404 response - MalformedQueryString. The query string contains a syntax error or resource
+        /// not found..
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ValidationException">
         /// 400 response - Multiple causes. For example, you might have a malformed query string
-        /// and input parameter might be out of range, or you used parameters together incorrectly.
+        /// and input parameter might be out of range, or you might have used parameters together
+        /// incorrectly.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/DeleteSafetyRule">REST API Reference for DeleteSafetyRule Operation</seealso>
         Task<DeleteSafetyRuleResponse> DeleteSafetyRuleAsync(DeleteSafetyRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -390,24 +408,25 @@ namespace Amazon.Route53RecoveryControlConfig
         /// 
         /// <returns>The response from the DescribeCluster service method, as returned by Route53RecoveryControlConfig.</returns>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.AccessDeniedException">
-        /// 403 response - AccessDeniedException. You do not have sufficient access to perform
-        /// this action.
+        /// 403 response - You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ConflictException">
-        /// 409 response - ConflictException.
+        /// 409 response - ConflictException. You might be using a predefined variable.
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.InternalServerException">
         /// 500 response - InternalServiceError. Temporary service error. Retry the request.
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ResourceNotFoundException">
-        /// 404 response - The query string contains a syntax error or resource not found.
+        /// 404 response - MalformedQueryString. The query string contains a syntax error or resource
+        /// not found..
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ThrottlingException">
-        /// 429 response - ThrottlingException.
+        /// 429 response - LimitExceededException or TooManyRequestsException.
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ValidationException">
         /// 400 response - Multiple causes. For example, you might have a malformed query string
-        /// and input parameter might be out of range, or you used parameters together incorrectly.
+        /// and input parameter might be out of range, or you might have used parameters together
+        /// incorrectly.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/DescribeCluster">REST API Reference for DescribeCluster Operation</seealso>
         Task<DescribeClusterResponse> DescribeClusterAsync(DescribeClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -428,24 +447,25 @@ namespace Amazon.Route53RecoveryControlConfig
         /// 
         /// <returns>The response from the DescribeControlPanel service method, as returned by Route53RecoveryControlConfig.</returns>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.AccessDeniedException">
-        /// 403 response - AccessDeniedException. You do not have sufficient access to perform
-        /// this action.
+        /// 403 response - You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ConflictException">
-        /// 409 response - ConflictException.
+        /// 409 response - ConflictException. You might be using a predefined variable.
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.InternalServerException">
         /// 500 response - InternalServiceError. Temporary service error. Retry the request.
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ResourceNotFoundException">
-        /// 404 response - The query string contains a syntax error or resource not found.
+        /// 404 response - MalformedQueryString. The query string contains a syntax error or resource
+        /// not found..
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ThrottlingException">
-        /// 429 response - ThrottlingException.
+        /// 429 response - LimitExceededException or TooManyRequestsException.
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ValidationException">
         /// 400 response - Multiple causes. For example, you might have a malformed query string
-        /// and input parameter might be out of range, or you used parameters together incorrectly.
+        /// and input parameter might be out of range, or you might have used parameters together
+        /// incorrectly.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/DescribeControlPanel">REST API Reference for DescribeControlPanel Operation</seealso>
         Task<DescribeControlPanelResponse> DescribeControlPanelAsync(DescribeControlPanelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -474,24 +494,25 @@ namespace Amazon.Route53RecoveryControlConfig
         /// 
         /// <returns>The response from the DescribeRoutingControl service method, as returned by Route53RecoveryControlConfig.</returns>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.AccessDeniedException">
-        /// 403 response - AccessDeniedException. You do not have sufficient access to perform
-        /// this action.
+        /// 403 response - You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ConflictException">
-        /// 409 response - ConflictException.
+        /// 409 response - ConflictException. You might be using a predefined variable.
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.InternalServerException">
         /// 500 response - InternalServiceError. Temporary service error. Retry the request.
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ResourceNotFoundException">
-        /// 404 response - The query string contains a syntax error or resource not found.
+        /// 404 response - MalformedQueryString. The query string contains a syntax error or resource
+        /// not found..
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ThrottlingException">
-        /// 429 response - ThrottlingException.
+        /// 429 response - LimitExceededException or TooManyRequestsException.
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ValidationException">
         /// 400 response - Multiple causes. For example, you might have a malformed query string
-        /// and input parameter might be out of range, or you used parameters together incorrectly.
+        /// and input parameter might be out of range, or you might have used parameters together
+        /// incorrectly.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/DescribeRoutingControl">REST API Reference for DescribeRoutingControl Operation</seealso>
         Task<DescribeRoutingControlResponse> DescribeRoutingControlAsync(DescribeRoutingControlRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -503,8 +524,7 @@ namespace Amazon.Route53RecoveryControlConfig
 
 
         /// <summary>
-        /// Describes the safety rules (that is, the assertion rules and gating rules) for the
-        /// routing controls in a control panel.
+        /// Returns information about a safety rule.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSafetyRule service method.</param>
         /// <param name="cancellationToken">
@@ -513,11 +533,13 @@ namespace Amazon.Route53RecoveryControlConfig
         /// 
         /// <returns>The response from the DescribeSafetyRule service method, as returned by Route53RecoveryControlConfig.</returns>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ResourceNotFoundException">
-        /// 404 response - The query string contains a syntax error or resource not found.
+        /// 404 response - MalformedQueryString. The query string contains a syntax error or resource
+        /// not found..
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ValidationException">
         /// 400 response - Multiple causes. For example, you might have a malformed query string
-        /// and input parameter might be out of range, or you used parameters together incorrectly.
+        /// and input parameter might be out of range, or you might have used parameters together
+        /// incorrectly.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/DescribeSafetyRule">REST API Reference for DescribeSafetyRule Operation</seealso>
         Task<DescribeSafetyRuleResponse> DescribeSafetyRuleAsync(DescribeSafetyRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -542,11 +564,13 @@ namespace Amazon.Route53RecoveryControlConfig
         /// 500 response - InternalServiceError. Temporary service error. Retry the request.
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ResourceNotFoundException">
-        /// 404 response - The query string contains a syntax error or resource not found.
+        /// 404 response - MalformedQueryString. The query string contains a syntax error or resource
+        /// not found..
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ValidationException">
         /// 400 response - Multiple causes. For example, you might have a malformed query string
-        /// and input parameter might be out of range, or you used parameters together incorrectly.
+        /// and input parameter might be out of range, or you might have used parameters together
+        /// incorrectly.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/ListAssociatedRoute53HealthChecks">REST API Reference for ListAssociatedRoute53HealthChecks Operation</seealso>
         Task<ListAssociatedRoute53HealthChecksResponse> ListAssociatedRoute53HealthChecksAsync(ListAssociatedRoute53HealthChecksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -567,21 +591,22 @@ namespace Amazon.Route53RecoveryControlConfig
         /// 
         /// <returns>The response from the ListClusters service method, as returned by Route53RecoveryControlConfig.</returns>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.AccessDeniedException">
-        /// 403 response - AccessDeniedException. You do not have sufficient access to perform
-        /// this action.
+        /// 403 response - You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.InternalServerException">
         /// 500 response - InternalServiceError. Temporary service error. Retry the request.
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ResourceNotFoundException">
-        /// 404 response - The query string contains a syntax error or resource not found.
+        /// 404 response - MalformedQueryString. The query string contains a syntax error or resource
+        /// not found..
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ThrottlingException">
-        /// 429 response - ThrottlingException.
+        /// 429 response - LimitExceededException or TooManyRequestsException.
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ValidationException">
         /// 400 response - Multiple causes. For example, you might have a malformed query string
-        /// and input parameter might be out of range, or you used parameters together incorrectly.
+        /// and input parameter might be out of range, or you might have used parameters together
+        /// incorrectly.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/ListClusters">REST API Reference for ListClusters Operation</seealso>
         Task<ListClustersResponse> ListClustersAsync(ListClustersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -593,7 +618,7 @@ namespace Amazon.Route53RecoveryControlConfig
 
 
         /// <summary>
-        /// Returns an array of control panels for a cluster.
+        /// Returns an array of control panels in an account or in a cluster.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListControlPanels service method.</param>
         /// <param name="cancellationToken">
@@ -602,21 +627,22 @@ namespace Amazon.Route53RecoveryControlConfig
         /// 
         /// <returns>The response from the ListControlPanels service method, as returned by Route53RecoveryControlConfig.</returns>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.AccessDeniedException">
-        /// 403 response - AccessDeniedException. You do not have sufficient access to perform
-        /// this action.
+        /// 403 response - You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.InternalServerException">
         /// 500 response - InternalServiceError. Temporary service error. Retry the request.
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ResourceNotFoundException">
-        /// 404 response - The query string contains a syntax error or resource not found.
+        /// 404 response - MalformedQueryString. The query string contains a syntax error or resource
+        /// not found..
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ThrottlingException">
-        /// 429 response - ThrottlingException.
+        /// 429 response - LimitExceededException or TooManyRequestsException.
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ValidationException">
         /// 400 response - Multiple causes. For example, you might have a malformed query string
-        /// and input parameter might be out of range, or you used parameters together incorrectly.
+        /// and input parameter might be out of range, or you might have used parameters together
+        /// incorrectly.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/ListControlPanels">REST API Reference for ListControlPanels Operation</seealso>
         Task<ListControlPanelsResponse> ListControlPanelsAsync(ListControlPanelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -640,21 +666,22 @@ namespace Amazon.Route53RecoveryControlConfig
         /// 
         /// <returns>The response from the ListRoutingControls service method, as returned by Route53RecoveryControlConfig.</returns>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.AccessDeniedException">
-        /// 403 response - AccessDeniedException. You do not have sufficient access to perform
-        /// this action.
+        /// 403 response - You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.InternalServerException">
         /// 500 response - InternalServiceError. Temporary service error. Retry the request.
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ResourceNotFoundException">
-        /// 404 response - The query string contains a syntax error or resource not found.
+        /// 404 response - MalformedQueryString. The query string contains a syntax error or resource
+        /// not found..
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ThrottlingException">
-        /// 429 response - ThrottlingException.
+        /// 429 response - LimitExceededException or TooManyRequestsException.
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ValidationException">
         /// 400 response - Multiple causes. For example, you might have a malformed query string
-        /// and input parameter might be out of range, or you used parameters together incorrectly.
+        /// and input parameter might be out of range, or you might have used parameters together
+        /// incorrectly.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/ListRoutingControls">REST API Reference for ListRoutingControls Operation</seealso>
         Task<ListRoutingControlsResponse> ListRoutingControlsAsync(ListRoutingControlsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -676,24 +703,115 @@ namespace Amazon.Route53RecoveryControlConfig
         /// 
         /// <returns>The response from the ListSafetyRules service method, as returned by Route53RecoveryControlConfig.</returns>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.AccessDeniedException">
-        /// 403 response - AccessDeniedException. You do not have sufficient access to perform
-        /// this action.
+        /// 403 response - You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.InternalServerException">
         /// 500 response - InternalServiceError. Temporary service error. Retry the request.
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ResourceNotFoundException">
-        /// 404 response - The query string contains a syntax error or resource not found.
+        /// 404 response - MalformedQueryString. The query string contains a syntax error or resource
+        /// not found..
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ThrottlingException">
-        /// 429 response - ThrottlingException.
+        /// 429 response - LimitExceededException or TooManyRequestsException.
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ValidationException">
         /// 400 response - Multiple causes. For example, you might have a malformed query string
-        /// and input parameter might be out of range, or you used parameters together incorrectly.
+        /// and input parameter might be out of range, or you might have used parameters together
+        /// incorrectly.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/ListSafetyRules">REST API Reference for ListSafetyRules Operation</seealso>
         Task<ListSafetyRulesResponse> ListSafetyRulesAsync(ListSafetyRulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListTagsForResource
+
+
+
+        /// <summary>
+        /// Lists the tags for a resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by Route53RecoveryControlConfig.</returns>
+        /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.InternalServerException">
+        /// 500 response - InternalServiceError. Temporary service error. Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ResourceNotFoundException">
+        /// 404 response - MalformedQueryString. The query string contains a syntax error or resource
+        /// not found..
+        /// </exception>
+        /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ValidationException">
+        /// 400 response - Multiple causes. For example, you might have a malformed query string
+        /// and input parameter might be out of range, or you might have used parameters together
+        /// incorrectly.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  TagResource
+
+
+
+        /// <summary>
+        /// Adds a tag to a resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by Route53RecoveryControlConfig.</returns>
+        /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.InternalServerException">
+        /// 500 response - InternalServiceError. Temporary service error. Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ResourceNotFoundException">
+        /// 404 response - MalformedQueryString. The query string contains a syntax error or resource
+        /// not found..
+        /// </exception>
+        /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ValidationException">
+        /// 400 response - Multiple causes. For example, you might have a malformed query string
+        /// and input parameter might be out of range, or you might have used parameters together
+        /// incorrectly.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/TagResource">REST API Reference for TagResource Operation</seealso>
+        Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UntagResource
+
+
+
+        /// <summary>
+        /// Removes a tag from a resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by Route53RecoveryControlConfig.</returns>
+        /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.InternalServerException">
+        /// 500 response - InternalServiceError. Temporary service error. Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ResourceNotFoundException">
+        /// 404 response - MalformedQueryString. The query string contains a syntax error or resource
+        /// not found..
+        /// </exception>
+        /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ValidationException">
+        /// 400 response - Multiple causes. For example, you might have a malformed query string
+        /// and input parameter might be out of range, or you might have used parameters together
+        /// incorrectly.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -712,24 +830,25 @@ namespace Amazon.Route53RecoveryControlConfig
         /// 
         /// <returns>The response from the UpdateControlPanel service method, as returned by Route53RecoveryControlConfig.</returns>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.AccessDeniedException">
-        /// 403 response - AccessDeniedException. You do not have sufficient access to perform
-        /// this action.
+        /// 403 response - You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ConflictException">
-        /// 409 response - ConflictException.
+        /// 409 response - ConflictException. You might be using a predefined variable.
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.InternalServerException">
         /// 500 response - InternalServiceError. Temporary service error. Retry the request.
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ResourceNotFoundException">
-        /// 404 response - The query string contains a syntax error or resource not found.
+        /// 404 response - MalformedQueryString. The query string contains a syntax error or resource
+        /// not found..
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ThrottlingException">
-        /// 429 response - ThrottlingException.
+        /// 429 response - LimitExceededException or TooManyRequestsException.
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ValidationException">
         /// 400 response - Multiple causes. For example, you might have a malformed query string
-        /// and input parameter might be out of range, or you used parameters together incorrectly.
+        /// and input parameter might be out of range, or you might have used parameters together
+        /// incorrectly.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/UpdateControlPanel">REST API Reference for UpdateControlPanel Operation</seealso>
         Task<UpdateControlPanelResponse> UpdateControlPanelAsync(UpdateControlPanelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -752,24 +871,25 @@ namespace Amazon.Route53RecoveryControlConfig
         /// 
         /// <returns>The response from the UpdateRoutingControl service method, as returned by Route53RecoveryControlConfig.</returns>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.AccessDeniedException">
-        /// 403 response - AccessDeniedException. You do not have sufficient access to perform
-        /// this action.
+        /// 403 response - You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ConflictException">
-        /// 409 response - ConflictException.
+        /// 409 response - ConflictException. You might be using a predefined variable.
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.InternalServerException">
         /// 500 response - InternalServiceError. Temporary service error. Retry the request.
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ResourceNotFoundException">
-        /// 404 response - The query string contains a syntax error or resource not found.
+        /// 404 response - MalformedQueryString. The query string contains a syntax error or resource
+        /// not found..
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ThrottlingException">
-        /// 429 response - ThrottlingException.
+        /// 429 response - LimitExceededException or TooManyRequestsException.
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ValidationException">
         /// 400 response - Multiple causes. For example, you might have a malformed query string
-        /// and input parameter might be out of range, or you used parameters together incorrectly.
+        /// and input parameter might be out of range, or you might have used parameters together
+        /// incorrectly.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/UpdateRoutingControl">REST API Reference for UpdateRoutingControl Operation</seealso>
         Task<UpdateRoutingControlResponse> UpdateRoutingControlAsync(UpdateRoutingControlRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -781,9 +901,9 @@ namespace Amazon.Route53RecoveryControlConfig
 
 
         /// <summary>
-        /// Update a safety rule (an assertion rule or gating rule) for the routing controls in
-        /// a control panel. You can only update the name and the waiting period for a safety
-        /// rule. To make other updates, delete the safety rule and create a new safety rule.
+        /// Update a safety rule (an assertion rule or gating rule). You can only update the name
+        /// and the waiting period for a safety rule. To make other updates, delete the safety
+        /// rule and create a new one.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateSafetyRule service method.</param>
         /// <param name="cancellationToken">
@@ -795,11 +915,13 @@ namespace Amazon.Route53RecoveryControlConfig
         /// 500 response - InternalServiceError. Temporary service error. Retry the request.
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ResourceNotFoundException">
-        /// 404 response - The query string contains a syntax error or resource not found.
+        /// 404 response - MalformedQueryString. The query string contains a syntax error or resource
+        /// not found..
         /// </exception>
         /// <exception cref="Amazon.Route53RecoveryControlConfig.Model.ValidationException">
         /// 400 response - Multiple causes. For example, you might have a malformed query string
-        /// and input parameter might be out of range, or you used parameters together incorrectly.
+        /// and input parameter might be out of range, or you might have used parameters together
+        /// incorrectly.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/UpdateSafetyRule">REST API Reference for UpdateSafetyRule Operation</seealso>
         Task<UpdateSafetyRuleResponse> UpdateSafetyRuleAsync(UpdateSafetyRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));

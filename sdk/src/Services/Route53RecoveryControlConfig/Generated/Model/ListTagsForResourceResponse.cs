@@ -29,47 +29,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53RecoveryControlConfig.Model
 {
     /// <summary>
-    /// This is the response object from the UpdateSafetyRule operation.
+    /// This is the response object from the ListTagsForResource operation.
     /// </summary>
-    public partial class UpdateSafetyRuleResponse : AmazonWebServiceResponse
+    public partial class ListTagsForResourceResponse : AmazonWebServiceResponse
     {
-        private AssertionRule _assertionRule;
-        private GatingRule _gatingRule;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
-        /// Gets and sets the property AssertionRule. 
+        /// Gets and sets the property Tags. 
         /// <para>
-        /// The assertion rule updated.
+        /// The tags associated with the resource.
         /// </para>
         /// </summary>
-        public AssertionRule AssertionRule
+        public Dictionary<string, string> Tags
         {
-            get { return this._assertionRule; }
-            set { this._assertionRule = value; }
+            get { return this._tags; }
+            set { this._tags = value; }
         }
 
-        // Check to see if AssertionRule property is set
-        internal bool IsSetAssertionRule()
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
         {
-            return this._assertionRule != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property GatingRule. 
-        /// <para>
-        /// The gating rule updated.
-        /// </para>
-        /// </summary>
-        public GatingRule GatingRule
-        {
-            get { return this._gatingRule; }
-            set { this._gatingRule = value; }
-        }
-
-        // Check to see if GatingRule property is set
-        internal bool IsSetGatingRule()
-        {
-            return this._gatingRule != null;
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

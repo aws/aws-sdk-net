@@ -29,10 +29,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53RecoveryControlConfig.Model
 {
     /// <summary>
-    /// A gating rule verifies that a set of gating controls evaluates as true, based on a
-    /// rule configuration that you specify. If the gating rule evaluates to true, Amazon
-    /// Route 53 Application Recovery Controller allows a set of routing control state changes
-    /// to run and complete against the set of target controls.
+    /// A gating rule verifies that a gating routing control or set of gating rounting controls,
+    /// evaluates as true, based on a rule configuration that you specify, which allows a
+    /// set of routing control state changes to complete.
+    /// 
+    ///  
+    /// <para>
+    /// For example, if you specify one gating routing control and you set the Type in the
+    /// rule configuration to OR, that indicates that you must set the gating routing control
+    /// to On for the rule to evaluate as true; that is, for the gating control "switch" to
+    /// be "On". When you do that, then you can update the routing control states for the
+    /// target routing controls that you specify in the gating rule.
+    /// </para>
     /// </summary>
     public partial class GatingRule
     {
@@ -51,7 +59,7 @@ namespace Amazon.Route53RecoveryControlConfig.Model
         /// The Amazon Resource Name (ARN) of the control panel.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string ControlPanelArn
         {
             get { return this._controlPanelArn; }
@@ -67,8 +75,10 @@ namespace Amazon.Route53RecoveryControlConfig.Model
         /// <summary>
         /// Gets and sets the property GatingControls. 
         /// <para>
-        /// The gating controls for the gating rule. That is, routing controls that are evaluated
-        /// by the rule configuration that you specify.
+        /// An array of gating routing control Amazon Resource Names (ARNs). For a simple "on/off"
+        /// switch, specify the ARN for one routing control. The gating routing controls are evaluated
+        /// by the rule configuration that you specify to determine if the target routing control
+        /// states can be changed.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -87,7 +97,7 @@ namespace Amazon.Route53RecoveryControlConfig.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name for the gating rule.
+        /// The name for the gating rule. You can use any non-white space character in the name.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
@@ -106,9 +116,9 @@ namespace Amazon.Route53RecoveryControlConfig.Model
         /// <summary>
         /// Gets and sets the property RuleConfig. 
         /// <para>
-        /// The criteria that you set for specific gating controls (routing controls) that designates
-        /// how many controls must be enabled to allow you to change (set or unset) the target
-        /// controls.
+        /// The criteria that you set for gating routing controls that designates how many of
+        /// the routing control states must be ON to allow you to update target routing control
+        /// states.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -130,7 +140,7 @@ namespace Amazon.Route53RecoveryControlConfig.Model
         /// The Amazon Resource Name (ARN) of the gating rule.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string SafetyRuleArn
         {
             get { return this._safetyRuleArn; }
@@ -166,16 +176,11 @@ namespace Amazon.Route53RecoveryControlConfig.Model
         /// <summary>
         /// Gets and sets the property TargetControls. 
         /// <para>
-        /// Routing controls that can only be set or unset if the specified RuleConfig evaluates
-        /// to true for the specified GatingControls. For example, say you have three gating controls,
-        /// one for each of three Amazon Web Services Regions. Now you specify ATLEAST 2 as your
-        /// RuleConfig. With these settings, you can only change (set or unset) the routing controls
-        /// that you have specified as TargetControls if that rule evaluates to true.
-        /// </para>
-        ///  
-        /// <para>
-        /// In other words, your ability to change the routing controls that you have specified
-        /// as TargetControls is gated by the rule that you set for the routing controls in GatingControls.
+        /// An array of target routing control Amazon Resource Names (ARNs) for which the states
+        /// can only be updated if the rule configuration that you specify evaluates to true for
+        /// the gating routing control. As a simple example, if you have a single gating control,
+        /// it acts as an overall "on/off" switch for a set of target routing controls. You can
+        /// use this to manually override automated fail over, for example.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

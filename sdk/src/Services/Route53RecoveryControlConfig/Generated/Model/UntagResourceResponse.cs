@@ -29,31 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53RecoveryControlConfig.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeSafetyRule operation.
-    /// Returns information about a safety rule.
+    /// This is the response object from the UntagResource operation.
     /// </summary>
-    public partial class DescribeSafetyRuleRequest : AmazonRoute53RecoveryControlConfigRequest
+    public partial class UntagResourceResponse : AmazonWebServiceResponse
     {
-        private string _safetyRuleArn;
-
-        /// <summary>
-        /// Gets and sets the property SafetyRuleArn. 
-        /// <para>
-        /// The ARN of the safety rule.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public string SafetyRuleArn
-        {
-            get { return this._safetyRuleArn; }
-            set { this._safetyRuleArn = value; }
-        }
-
-        // Check to see if SafetyRuleArn property is set
-        internal bool IsSetSafetyRuleArn()
-        {
-            return this._safetyRuleArn != null;
-        }
 
     }
 }

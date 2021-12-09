@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53RecoveryControlConfig.Model
 {
     /// <summary>
-    /// A cluster is a set of five consensus-forming Regional endpoints that represent the
-    /// infrastructure that hosts your routing controls. Typically, you host together on one
-    /// cluster all of the routing controls for your applications.
+    /// A set of five redundant Regional endpoints against which you can execute API calls
+    /// to update or get the state of routing controls. You can host multiple control panels
+    /// and routing controls on one cluster.
     /// </summary>
     public partial class Cluster
     {
@@ -46,6 +46,7 @@ namespace Amazon.Route53RecoveryControlConfig.Model
         /// The Amazon Resource Name (ARN) of the cluster.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string ClusterArn
         {
             get { return this._clusterArn; }
@@ -67,7 +68,7 @@ namespace Amazon.Route53RecoveryControlConfig.Model
         ///  
         /// <para>
         /// To get or update the routing control state, see the Amazon Route 53 Application Recovery
-        /// Controller Cluster (Data Plane) Actions.
+        /// Controller Routing Control Actions.
         /// </para>
         /// </summary>
         public List<ClusterEndpoint> ClusterEndpoints

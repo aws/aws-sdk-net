@@ -54,10 +54,11 @@ namespace Amazon.Route53RecoveryControlConfig.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// Unique client idempotency token.
+        /// A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent
+        /// API request with an action, specify a client token in the request.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=64)]
+        [AWSProperty(Min=1, Max=64)]
         public string ClientToken
         {
             get { return this._clientToken; }
@@ -76,7 +77,7 @@ namespace Amazon.Route53RecoveryControlConfig.Model
         /// The Amazon Resource Name (ARN) of the cluster that includes the routing control.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string ClusterArn
         {
             get { return this._clusterArn; }
@@ -95,6 +96,7 @@ namespace Amazon.Route53RecoveryControlConfig.Model
         /// The Amazon Resource Name (ARN) of the control panel that includes the routing control.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string ControlPanelArn
         {
             get { return this._controlPanelArn; }

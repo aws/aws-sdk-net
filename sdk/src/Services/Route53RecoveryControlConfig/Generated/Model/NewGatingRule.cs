@@ -46,7 +46,7 @@ namespace Amazon.Route53RecoveryControlConfig.Model
         /// The Amazon Resource Name (ARN) of the control panel.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string ControlPanelArn
         {
             get { return this._controlPanelArn; }
@@ -102,8 +102,8 @@ namespace Amazon.Route53RecoveryControlConfig.Model
         /// Gets and sets the property RuleConfig. 
         /// <para>
         /// The criteria that you set for specific gating controls (routing controls) that designates
-        /// how many controls must be enabled to allow you to change (set or unset) the target
-        /// controls.
+        /// how many control states must be ON to allow you to change (set or unset) the target
+        /// control states.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

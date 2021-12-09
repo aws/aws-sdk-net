@@ -57,10 +57,10 @@ namespace Amazon.Route53RecoveryControlConfig.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token that identifies which batch of results you want to see.
+        /// Next token for listing health checks.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=8096)]
+        [AWSProperty(Min=1, Max=8096)]
         public string NextToken
         {
             get { return this._nextToken; }

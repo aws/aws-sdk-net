@@ -30,7 +30,8 @@ namespace Amazon.Route53RecoveryControlConfig.Model
 {
     /// <summary>
     /// 400 response - Multiple causes. For example, you might have a malformed query string
-    /// and input parameter might be out of range, or you used parameters together incorrectly.
+    /// and input parameter might be out of range, or you might have used parameters together
+    /// incorrectly.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

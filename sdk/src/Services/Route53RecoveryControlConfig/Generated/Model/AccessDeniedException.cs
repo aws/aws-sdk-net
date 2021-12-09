@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53RecoveryControlConfig.Model
 {
     /// <summary>
-    /// 403 response - AccessDeniedException. You do not have sufficient access to perform
-    /// this action.
+    /// 403 response - You do not have sufficient access to perform this action.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -60,7 +60,7 @@ namespace Amazon.Route53RecoveryControlConfig.Model
         /// The token that identifies which batch of results you want to see.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=8096)]
+        [AWSProperty(Min=1, Max=8096)]
         public string NextToken
         {
             get { return this._nextToken; }

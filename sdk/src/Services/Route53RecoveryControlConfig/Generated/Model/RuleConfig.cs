@@ -30,8 +30,8 @@ namespace Amazon.Route53RecoveryControlConfig.Model
 {
     /// <summary>
     /// The rule configuration for an assertion rule. That is, the criteria that you set for
-    /// specific assertion controls (routing controls) that specify how many controls must
-    /// be enabled after a transaction completes.
+    /// specific assertion controls (routing controls) that specify how many control states
+    /// must be ON after a transaction completes.
     /// </summary>
     public partial class RuleConfig
     {

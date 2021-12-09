@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53RecoveryControlConfig.Model
 {
     /// <summary>
-    /// 402 response
+    /// 402 response - You attempted to create more resources than the service allows based
+    /// on service quotas.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

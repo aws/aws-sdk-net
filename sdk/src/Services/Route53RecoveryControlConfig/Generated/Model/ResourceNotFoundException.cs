@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53RecoveryControlConfig.Model
 {
     /// <summary>
-    /// 404 response - The query string contains a syntax error or resource not found.
+    /// 404 response - MalformedQueryString. The query string contains a syntax error or resource
+    /// not found..
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

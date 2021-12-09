@@ -41,7 +41,7 @@ namespace Amazon.Route53RecoveryControlConfig.Model
         /// <summary>
         /// Gets and sets the property SafetyRuleArn. 
         /// <para>
-        /// The request body that you include when you update a safety rule.
+        /// The ARN of the safety rule.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -29,47 +29,50 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53RecoveryControlConfig.Model
 {
     /// <summary>
-    /// This is the response object from the UpdateSafetyRule operation.
+    /// Container for the parameters to the TagResource operation.
+    /// Adds a tag to a resource.
     /// </summary>
-    public partial class UpdateSafetyRuleResponse : AmazonWebServiceResponse
+    public partial class TagResourceRequest : AmazonRoute53RecoveryControlConfigRequest
     {
-        private AssertionRule _assertionRule;
-        private GatingRule _gatingRule;
+        private string _resourceArn;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
-        /// Gets and sets the property AssertionRule. 
+        /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The assertion rule updated.
+        /// The Amazon Resource Name (ARN) for the resource that's tagged.
         /// </para>
         /// </summary>
-        public AssertionRule AssertionRule
+        [AWSProperty(Required=true)]
+        public string ResourceArn
         {
-            get { return this._assertionRule; }
-            set { this._assertionRule = value; }
+            get { return this._resourceArn; }
+            set { this._resourceArn = value; }
         }
 
-        // Check to see if AssertionRule property is set
-        internal bool IsSetAssertionRule()
+        // Check to see if ResourceArn property is set
+        internal bool IsSetResourceArn()
         {
-            return this._assertionRule != null;
+            return this._resourceArn != null;
         }
 
         /// <summary>
-        /// Gets and sets the property GatingRule. 
+        /// Gets and sets the property Tags. 
         /// <para>
-        /// The gating rule updated.
+        /// The tags associated with the resource.
         /// </para>
         /// </summary>
-        public GatingRule GatingRule
+        [AWSProperty(Required=true)]
+        public Dictionary<string, string> Tags
         {
-            get { return this._gatingRule; }
-            set { this._gatingRule = value; }
+            get { return this._tags; }
+            set { this._tags = value; }
         }
 
-        // Check to see if GatingRule property is set
-        internal bool IsSetGatingRule()
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
         {
-            return this._gatingRule != null;
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

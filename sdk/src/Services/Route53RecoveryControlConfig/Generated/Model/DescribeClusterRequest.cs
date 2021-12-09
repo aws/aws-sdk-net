@@ -40,7 +40,7 @@ namespace Amazon.Route53RecoveryControlConfig.Model
         /// <summary>
         /// Gets and sets the property ClusterArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the cluster that you're getting details for.
+        /// The Amazon Resource Name (ARN) of the cluster.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

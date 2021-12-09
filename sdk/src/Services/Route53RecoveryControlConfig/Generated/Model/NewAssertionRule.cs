@@ -66,7 +66,7 @@ namespace Amazon.Route53RecoveryControlConfig.Model
         /// The Amazon Resource Name (ARN) for the control panel.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string ControlPanelArn
         {
             get { return this._controlPanelArn; }
@@ -102,10 +102,10 @@ namespace Amazon.Route53RecoveryControlConfig.Model
         /// Gets and sets the property RuleConfig. 
         /// <para>
         /// The criteria that you set for specific assertion controls (routing controls) that
-        /// designate how many controls must be enabled as the result of a transaction. For example,
-        /// if you have three assertion controls, you might specify atleast 2 for your rule configuration.
-        /// This means that at least two assertion controls must be enabled, so that at least
-        /// two Amazon Web Services Regions are enabled.
+        /// designate how many control states must be ON as the result of a transaction. For example,
+        /// if you have three assertion controls, you might specify ATLEAST 2for your rule configuration.
+        /// This means that at least two assertion controls must be ON, so that at least two Amazon
+        /// Web Services Regions have traffic flowing to them.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
