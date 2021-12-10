@@ -62,7 +62,10 @@ namespace ServiceClientGenerator
                     });
 
                     var files = new HashSet<string>(generatedFiles.Values);
-                    GeneratorDriver.RemoveOrphanedShapesAndServices(files, options.SdkRootFolder);
+
+                    if (!options.SkipRemoveOrphanCleanup)
+                        GeneratorDriver.RemoveOrphanedShapesAndServices(files, options.SdkRootFolder);
+
                     GeneratorDriver.UpdateUnitTestProjects(generationManifest, options);
                     GeneratorDriver.UpdateSolutionFiles(generationManifest, options);
                     GeneratorDriver.UpdateAssemblyVersionInfo(generationManifest, options);
@@ -95,7 +98,7 @@ namespace ServiceClientGenerator
                     driver.Execute();
 
                     // Skip orphan clean for DynamoDB because of the complex nature of DynamDB and DynamoDB Streams
-                    if(!serviceConfig.ClassName.StartsWith("DynamoDB"))
+                    if (!serviceConfig.ClassName.StartsWith("DynamoDB") && !options.SkipRemoveOrphanCleanup)
                     {
                         GeneratorDriver.RemoveOrphanedShapes(driver.FilesWrittenToGeneratorFolder, driver.GeneratedFilesRoot);
                     }

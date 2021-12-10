@@ -54,6 +54,14 @@ namespace ServiceClientGenerator
         public string ServiceModels { get; set; }
 
         /// <summary>
+        /// Allows disabling orphaned shape and service cleanup.
+        /// Useful to set if you a) specify <see cref="ServiceModels"/> and b)
+        /// don't want to remove previously generated services.  This is often the case
+        /// in a development environment.
+        /// </summary>
+        public bool SkipRemoveOrphanCleanup { get; set; }
+
+        /// <summary>
         /// If set causes all servicename.customizations*.json files to be 'compiled' into 
         /// one json file during generation.
         /// </summary>
