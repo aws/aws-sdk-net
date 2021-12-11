@@ -76,7 +76,11 @@ namespace Amazon.EBS.Model.Internal.MarshallTransformations
             {
                 request.Headers[Amazon.Util.HeaderKeys.TransferEncodingHeader] = "chunked";
             }
-            request.Headers[Amazon.Util.HeaderKeys.ContentTypeHeader] = "binary/octet-stream";
+            request.Headers[Amazon.Util.HeaderKeys.ContentTypeHeader] = "binary/octet-stream"; 
+            if (request.ContentStream != null && request.ContentStream.Length == 0)
+            {
+                request.Headers.Remove(Amazon.Util.HeaderKeys.ContentTypeHeader);
+            }
         
             if(publicRequest.IsSetChecksum())
                 request.Headers["x-amz-Checksum"] = publicRequest.Checksum;

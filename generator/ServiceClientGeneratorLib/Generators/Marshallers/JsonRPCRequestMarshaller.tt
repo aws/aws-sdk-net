@@ -158,7 +158,11 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
 <#
 		}		
 #>
-			request.Headers[Amazon.Util.HeaderKeys.ContentTypeHeader] = "binary/octet-stream";
+			request.Headers[Amazon.Util.HeaderKeys.ContentTypeHeader] = "binary/octet-stream"; 
+			if (request.ContentStream != null && request.ContentStream.Length == 0)
+			{
+				request.Headers.Remove(Amazon.Util.HeaderKeys.ContentTypeHeader);
+			}
 <#
     }
 	else if (this.Config.ServiceModel.Type == ServiceType.Json)

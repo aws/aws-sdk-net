@@ -45,6 +45,10 @@ namespace ServiceClientGenerator
                         new ProjectFileCreator.ProjectReference
                         {
                             IncludePath = $@"..\..\src\Services\*\*.{configuration.Name}.csproj"
+                        },
+                        new ProjectFileCreator.ProjectReference
+                        {
+                            IncludePath = $@"..\..\test\Services\*\*.{configuration.Name}.csproj"
                         }
                     };
                 }
@@ -201,10 +205,18 @@ namespace ServiceClientGenerator
             {
                 string projectName = string.Format("{0}.{1}", configuration.AssemblyTitle, projectType);
                 string includePath = Path.Combine("..", "..", "src", "Services", configuration.ServiceFolderName, projectName + ".csproj");
+
                 if (!_isLegacyProj)
                 {
                     includePath = Path.Combine("..", "..", includePath);
                 }
+
+                // for test service unit tests project the actual service is generated one level up the tree
+                if (configuration.IsTestService)
+                {
+                    includePath = Path.Combine("..", projectName + ".csproj");
+                }
+
                 string guid = Utils.GetProjectGuid(Path.Combine(unitTestRoot, includePath));
 
                 if (guidSet.Contains(guid))

@@ -488,9 +488,12 @@ namespace ServiceClientGenerator
 
             var serviceSolutionFolders = new List<ServiceSolutionFolder>();
             var serviceProjectsRoot = Path.Combine(sdkSourceFolder, GeneratorDriver.ServicesSubFoldername);
-            foreach (var servicePath in Directory.GetDirectories(serviceProjectsRoot))
+            var testServiceProjectsRoot = serviceProjectsRoot.Replace("src", "test");
+            var services = Directory.GetDirectories(serviceProjectsRoot).Select(c => new { Path = c, IsTestService = false });
+            var testServices = Directory.GetDirectories(testServiceProjectsRoot).Select(c => new { Path = c, IsTestService = true });
+            foreach (var servicePath in services.Concat(testServices))
             {
-                var di = new DirectoryInfo(servicePath);
+                var di = new DirectoryInfo(servicePath.Path);
                 var folder = ServiceSolutionFolderFromPath(di.Name);
 
                 // If we are generating a partial solution, and the service project has not changed, omit it from the partial solution.
@@ -503,7 +506,7 @@ namespace ServiceClientGenerator
                 foreach (var configuration in projectFileConfigurations)
                 {
                     string projectFilePattern = string.Format("*.{0}.csproj", configuration.Name);
-                    foreach (var projectFile in Directory.GetFiles(servicePath, projectFilePattern, SearchOption.TopDirectoryOnly))
+                    foreach (var projectFile in Directory.GetFiles(servicePath.Path, projectFilePattern, SearchOption.TopDirectoryOnly))
                     {
                         if (isTravisSolution && projectFile.Contains("AWSSDK.MobileAnalytics"))
                             continue;
@@ -512,7 +515,7 @@ namespace ServiceClientGenerator
                         folder.Projects.Add(new Project
                         {
                             Name = projectName,
-                            ProjectPath = string.Format(@"src\Services\{0}\{1}", di.Name, Path.GetFileName(projectFile)),
+                            ProjectPath = string.Format(servicePath.IsTestService ? @"test\Services\{0}\{1}" : @"src\Services\{0}\{1}", di.Name, Path.GetFileName(projectFile)),
                             ProjectGuid = projectGuidDictionary.ContainsKey(projectName) ? projectGuidDictionary[projectName] : Guid.NewGuid().ToString("B").ToUpper(),
                         });
                         SelectProjectAndConfigurationsForSolution(projectFile, solutionProjects, buildConfigurations);

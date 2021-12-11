@@ -121,6 +121,12 @@ namespace ServiceClientGenerator
 
             ServiceFilesRoot = Path.Combine(Options.SdkRootFolder, SourceSubFoldername, ServicesSubFoldername, Configuration.ServiceFolderName);
             ServiceUnitTestFilesRoot = Path.Combine(Options.SdkRootFolder, TestsSubFoldername, ServicesSubFoldername, Configuration.ServiceFolderName);
+
+            if (config.IsTestService)
+            {
+                ServiceFilesRoot = ServiceUnitTestFilesRoot;
+            }
+
             GeneratedFilesRoot = Path.Combine(ServiceFilesRoot, GeneratedCodeFoldername);
 
             CodeAnalysisRoot = Path.Combine(Options.SdkRootFolder, CodeAnalysisFoldername, ServicesAnalysisSubFolderName, Configuration.ServiceFolderName);
@@ -165,7 +171,7 @@ namespace ServiceClientGenerator
             {
                 // Do not generate AssemblyInfo.cs and nuspec file for child model.
                 // Use the one generated for the parent model.
-                if (!this.Configuration.IsChildConfig)
+                if (!this.Configuration.IsChildConfig && !Configuration.IsTestService)
                 {
                     GenerateNuspec();
 
@@ -801,7 +807,7 @@ namespace ServiceClientGenerator
             foreach (var service in manifest.ServiceConfigurations.OrderBy(x => x.ClassName))
             {
                 // Service like DynamoDB streams are included in a parent service.
-                if (service.ParentConfig != null)
+                if (service.ParentConfig != null || service.IsTestService)
                     continue;
 
                 if (string.IsNullOrEmpty(service.Synopsis))

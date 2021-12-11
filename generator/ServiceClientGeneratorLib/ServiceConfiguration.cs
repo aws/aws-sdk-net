@@ -307,7 +307,8 @@ namespace ServiceClientGenerator
                 return Path.GetFileName(ModelPath);
             }
         }
-
+        
+        public bool IsTestService { get; set; }
 
         public override string ToString()
         {

@@ -35,6 +35,7 @@ namespace ServiceClientGenerator
             public const string ParentBaseNameKey = "parent-base-name";
             public const string TagsKey = "tags";
             public const string LicenseUrlKey = "license-url";
+            public const string TestServiceKey = "test-service";
 
         }
 
@@ -143,7 +144,8 @@ namespace ServiceClientGenerator
             List<Tuple<JsonData, ServiceConfiguration>> modelConfigList = new List<Tuple<JsonData, ServiceConfiguration>>();
             var serviceConfigurations = new List<ServiceConfiguration>();
 
-            var serviceDirectories = Directory.GetDirectories(Path.Combine(serviceModelsFolder));
+            var serviceDirectories = Directory.GetDirectories(serviceModelsFolder)
+                .Concat(Directory.GetDirectories(serviceModelsFolder.Replace("ServiceModels", "TestServiceModels"))).ToList();
             foreach (string serviceDirectory in serviceDirectories)
             {
                 string metadataJsonFile = Path.Combine(serviceDirectory, "metadata.json");
@@ -265,6 +267,7 @@ namespace ServiceClientGenerator
                 ClassNameOverride = Utils.JsonDataToString(modelNode[ModelsSectionKeys.BaseNameKey]),
                 DefaultRegion = Utils.JsonDataToString(modelNode[ModelsSectionKeys.DefaultRegionKey]),
                 GenerateConstructors = modelNode[ModelsSectionKeys.GenerateClientConstructorsKey] == null || (bool)modelNode[ModelsSectionKeys.GenerateClientConstructorsKey], // A way to prevent generating basic constructors
+                IsTestService = modelNode[ModelsSectionKeys.TestServiceKey] != null && (bool)modelNode[ModelsSectionKeys.TestServiceKey]
             };
 
             if (modelNode[ModelsSectionKeys.NugetPackageTitleSuffix] != null)

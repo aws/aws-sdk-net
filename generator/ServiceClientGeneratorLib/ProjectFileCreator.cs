@@ -125,9 +125,15 @@ namespace ServiceClientGenerator
                         });
                     }
 
+                    var corePath = @"..\..\Core\AWSSDK.Core.{0}.csproj";
+                    if (serviceConfiguration.IsTestService)
+                    {
+                        corePath = @"..\..\..\src\Core\AWSSDK.Core.{0}.csproj";
+                    }
+
                     projectReferenceList.Add(new ProjectReference
                     {
-                        IncludePath = string.Format(@"..\..\Core\AWSSDK.Core.{0}.csproj", projectType)
+                        IncludePath = string.Format(corePath, projectType)
                     });
 
                     projectFileConfiguration.ProjectReferences = projectReferenceList;
@@ -258,7 +264,12 @@ namespace ServiceClientGenerator
             projectProperties.ProjectReferences     = projectFileConfiguration.ProjectReferences;
             projectProperties.TargetFrameworks      = projectFileConfiguration.TargetFrameworkVersions;
             projectProperties.DefineConstants       = projectFileConfiguration.CompilationConstants;
-            projectProperties.CompileRemoveList     = projectFileConfiguration.PlatformExcludeFolders;
+            projectProperties.CompileRemoveList     = projectFileConfiguration.PlatformExcludeFolders.ToList();
+            if (serviceConfiguration.IsTestService)
+            {
+                var toExclude = projectProperties.CompileRemoveList as List<string>;
+                toExclude.Add("UnitTests");
+            }
             projectProperties.FrameworkPathOverride = projectFileConfiguration.FrameworkPathOverride;
             projectProperties.ReferenceDependencies = projectFileConfiguration.DllReferences;
             projectProperties.SupressWarnings       = projectFileConfiguration.NoWarn;

@@ -70,7 +70,11 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
             request.ContentStream =  publicRequest.Body ?? new MemoryStream();
             request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] =  
                 request.ContentStream.Length.ToString(CultureInfo.InvariantCulture);
-            request.Headers[Amazon.Util.HeaderKeys.ContentTypeHeader] = "binary/octet-stream";
+            request.Headers[Amazon.Util.HeaderKeys.ContentTypeHeader] = "binary/octet-stream"; 
+            if (request.ContentStream != null && request.ContentStream.Length == 0)
+            {
+                request.Headers.Remove(Amazon.Util.HeaderKeys.ContentTypeHeader);
+            }
         
             if(publicRequest.IsSetChecksum())
                 request.Headers["x-amz-sha256-tree-hash"] = publicRequest.Checksum;
