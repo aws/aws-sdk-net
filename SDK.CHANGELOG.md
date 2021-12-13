@@ -1,3 +1,12 @@
+### 3.7.178.1 (2021-12-13 20:14 UTC)
+* SecretsManager (3.7.1.60)
+	* Documentation updates for Secrets Manager
+* Core 3.7.5.6
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.178.0 (2021-12-09 19:21 UTC)
 * EC2 (3.7.50.0)
 	* Adds waiters support for internet gateways.
