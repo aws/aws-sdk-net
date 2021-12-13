@@ -29,7 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecretsManager.Model
 {
     /// <summary>
-    /// Allows you to add filters when you use the search function in Secrets Manager.
+    /// Allows you to add filters when you use the search function in Secrets Manager. For
+    /// more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/manage_search-secret.html">Find
+    /// secrets in Secrets Manager</a>.
     /// </summary>
     public partial class Filter
     {
@@ -39,8 +41,34 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// Filters your list of secrets by a specific key.
+        /// The following are keys you can use:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>description</b>: Prefix match, not case-sensitive.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>name</b>: Prefix match, case-sensitive.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>tag-key</b>: Prefix match, case-sensitive.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>tag-value</b>: Prefix match, case-sensitive.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>primary-region</b>: Prefix match, case-sensitive.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>all</b>: Breaks the filter value string into words and then searches all attributes
+        /// for matches. Not case-sensitive.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public FilterNameStringType Key
         {
@@ -57,7 +85,7 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property Values. 
         /// <para>
-        /// Filters your list of secrets by a specific value.
+        /// The keyword to filter for.
         /// </para>
         ///  
         /// <para>

@@ -59,7 +59,7 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The friendly name of the secret.
+        /// The name of the secret.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -78,7 +78,7 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property VersionId. 
         /// <para>
-        /// The ID of the new version of the secret created by the rotation started by this request.
+        /// The ID of the new version of the secret.
         /// </para>
         /// </summary>
         [AWSProperty(Min=32, Max=64)]

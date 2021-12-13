@@ -39,7 +39,7 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property ARN. 
         /// <para>
-        /// The secret <code>ARN</code> removed from replication regions.
+        /// The ARN of the primary secret.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -58,8 +58,7 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property ReplicationStatus. 
         /// <para>
-        /// Describes the remaining replication status after you remove regions from the replication
-        /// list.
+        /// The status of replicas for this secret after you remove Regions.
         /// </para>
         /// </summary>
         public List<ReplicationStatusType> ReplicationStatus

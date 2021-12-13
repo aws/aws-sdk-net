@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecretsManager.Model
 {
     /// <summary>
-    /// We can't find the resource that you asked for.
+    /// Secrets Manager can't find the resource that you asked for.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

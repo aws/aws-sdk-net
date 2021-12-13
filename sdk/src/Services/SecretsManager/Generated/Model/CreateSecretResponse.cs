@@ -41,17 +41,11 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property ARN. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the secret that you just created.
+        /// The ARN of the new secret. The ARN includes the name of the secret followed by six
+        /// random characters. This ensures that if you create a new secret with the same name
+        /// as a deleted secret, then users with access to the old secret don't get access to
+        /// the new secret because the ARNs are different.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// Secrets Manager automatically adds several random characters to the name at the end
-        /// of the ARN when you initially create a secret. This affects only the ARN and not the
-        /// actual friendly name. This ensures that if you create a new secret with the same name
-        /// as an old secret that you previously deleted, then users with access to the old secret
-        /// <i>don't</i> automatically get access to the new secret because the ARNs are different.
-        /// </para>
-        ///  </note>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
         public string ARN
@@ -69,7 +63,7 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The friendly name of the secret that you just created.
+        /// The name of the new secret.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -88,9 +82,22 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property ReplicationStatus. 
         /// <para>
-        /// Describes a list of replication status objects as <code>InProgress</code>, <code>Failed</code>
-        /// or <code>InSync</code>.
+        /// A list of the replicas of this secret and their status:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>Failed</code>, which indicates that the replica was not created.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>InProgress</code>, which indicates that Secrets Manager is in the process of
+        /// creating the replica.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>InSync</code>, which indicates that the replica was created.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public List<ReplicationStatusType> ReplicationStatus
         {
@@ -107,7 +114,7 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property VersionId. 
         /// <para>
-        /// The unique identifier associated with the version of the secret you just created.
+        /// The unique identifier associated with the version of the new secret.
         /// </para>
         /// </summary>
         [AWSProperty(Min=32, Max=64)]

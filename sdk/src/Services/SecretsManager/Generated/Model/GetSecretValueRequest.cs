@@ -35,35 +35,16 @@ namespace Amazon.SecretsManager.Model
     /// 
     ///  
     /// <para>
-    ///  <b>Minimum permissions</b> 
+    /// For information about retrieving the secret value in the console, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieving-secrets.html">Retrieve
+    /// secrets</a>. 
     /// </para>
     ///  
     /// <para>
-    /// To run this command, you must have the following permissions:
+    /// To run this command, you must have <code>secretsmanager:GetSecretValue</code> permissions.
+    /// If the secret is encrypted using a customer-managed key instead of the Amazon Web
+    /// Services managed key <code>aws/secretsmanager</code>, then you also need <code>kms:Decrypt</code>
+    /// permissions for that key.
     /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    /// secretsmanager:GetSecretValue
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// kms:Decrypt - required only if you use a customer-managed Amazon Web Services KMS
-    /// key to encrypt the secret. You do not need this permission to use the account's default
-    /// Amazon Web Services managed CMK for Secrets Manager.
-    /// </para>
-    ///  </li> </ul> 
-    /// <para>
-    ///  <b>Related operations</b> 
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    /// To create a new version of the secret with different encrypted information, use <a>PutSecretValue</a>.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// To retrieve the non-encrypted details for the secret, use <a>DescribeSecret</a>.
-    /// </para>
-    ///  </li> </ul>
     /// </summary>
     public partial class GetSecretValueRequest : AmazonSecretsManagerRequest
     {
@@ -74,8 +55,7 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property SecretId. 
         /// <para>
-        /// Specifies the secret containing the version that you want to retrieve. You can specify
-        /// either the Amazon Resource Name (ARN) or the friendly name of the secret.
+        /// The ARN or name of the secret to retrieve.
         /// </para>
         ///  
         /// <para>
@@ -98,11 +78,10 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property VersionId. 
         /// <para>
-        /// Specifies the unique identifier of the version of the secret that you want to retrieve.
-        /// If you specify both this parameter and <code>VersionStage</code>, the two parameters
-        /// must refer to the same secret version. If you don't specify either a <code>VersionStage</code>
-        /// or <code>VersionId</code> then the default is to perform the operation on the version
-        /// with the <code>VersionStage</code> value of <code>AWSCURRENT</code>.
+        /// The unique identifier of the version of the secret to retrieve. If you include both
+        /// this parameter and <code>VersionStage</code>, the two parameters must refer to the
+        /// same secret version. If you don't specify either a <code>VersionStage</code> or <code>VersionId</code>,
+        /// then Secrets Manager returns the <code>AWSCURRENT</code> version.
         /// </para>
         ///  
         /// <para>
@@ -126,16 +105,15 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property VersionStage. 
         /// <para>
-        /// Specifies the secret version that you want to retrieve by the staging label attached
-        /// to the version.
+        /// The staging label of the version of the secret to retrieve. 
         /// </para>
         ///  
         /// <para>
-        /// Staging labels are used to keep track of different versions during the rotation process.
-        /// If you specify both this parameter and <code>VersionId</code>, the two parameters
-        /// must refer to the same secret version . If you don't specify either a <code>VersionStage</code>
-        /// or <code>VersionId</code>, then the default is to perform the operation on the version
-        /// with the <code>VersionStage</code> value of <code>AWSCURRENT</code>.
+        /// Secrets Manager uses staging labels to keep track of different versions during the
+        /// rotation process. If you include both this parameter and <code>VersionId</code>, the
+        /// two parameters must refer to the same secret version. If you don't specify either
+        /// a <code>VersionStage</code> or <code>VersionId</code>, Secrets Manager returns the
+        /// <code>AWSCURRENT</code> version.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

@@ -41,7 +41,7 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property ARN. 
         /// <para>
-        /// The Amazon Resource Name (ARN) for the secret for which you just created a version.
+        /// The ARN of the secret.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -60,7 +60,7 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The friendly name of the secret for which you just created or updated a version.
+        /// The name of the secret.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -79,7 +79,7 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property VersionId. 
         /// <para>
-        /// The unique identifier of the version of the secret you just created or updated.
+        /// The unique identifier of the version of the secret.
         /// </para>
         /// </summary>
         [AWSProperty(Min=32, Max=64)]
@@ -99,8 +99,8 @@ namespace Amazon.SecretsManager.Model
         /// Gets and sets the property VersionStages. 
         /// <para>
         /// The list of staging labels that are currently attached to this version of the secret.
-        /// Staging labels are used to track a version as it progresses through the secret rotation
-        /// process.
+        /// Secrets Manager uses staging labels to track a version as it progresses through the
+        /// secret rotation process.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=20)]

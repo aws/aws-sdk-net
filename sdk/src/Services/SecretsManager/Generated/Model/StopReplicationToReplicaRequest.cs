@@ -30,8 +30,14 @@ namespace Amazon.SecretsManager.Model
 {
     /// <summary>
     /// Container for the parameters to the StopReplicationToReplica operation.
-    /// Removes the secret from replication and promotes the secret to a regional secret in
-    /// the replica Region.
+    /// Removes the link between the replica secret and the primary secret and promotes the
+    /// replica to a primary secret in the replica Region.
+    /// 
+    ///  
+    /// <para>
+    /// You must call this operation from the Region in which you want to promote the replica
+    /// to a primary secret.
+    /// </para>
     /// </summary>
     public partial class StopReplicationToReplicaRequest : AmazonSecretsManagerRequest
     {
@@ -40,7 +46,7 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property SecretId. 
         /// <para>
-        /// Response to <code>StopReplicationToReplica</code> of a secret, based on the <code>SecretId</code>.
+        /// The ARN of the primary secret. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]

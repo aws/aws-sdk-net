@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecretsManager.Model
 {
     /// <summary>
-    /// You provided a parameter value that is not valid for the current state of the resource.
+    /// A parameter value is not valid for the current state of the resource.
     /// 
     ///  
     /// <para>
@@ -37,7 +37,7 @@ namespace Amazon.SecretsManager.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// You tried to perform the operation on a secret that's currently marked deleted.
+    /// The secret is scheduled for deletion.
     /// </para>
     ///  </li> <li> 
     /// <para>

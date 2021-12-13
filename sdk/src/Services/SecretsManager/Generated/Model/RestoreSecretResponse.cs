@@ -58,7 +58,7 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The friendly name of the secret that was restored.
+        /// The name of the secret that was restored.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

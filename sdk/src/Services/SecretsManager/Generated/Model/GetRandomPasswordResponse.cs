@@ -38,7 +38,7 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property RandomPassword. 
         /// <para>
-        /// A string with the generated password.
+        /// A string with the password.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=4096)]

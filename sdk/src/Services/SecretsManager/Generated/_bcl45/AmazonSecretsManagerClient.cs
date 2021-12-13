@@ -122,7 +122,7 @@ namespace Amazon.SecretsManager
     /// Amazon Web Services CloudTrail, you can determine the requests successfully made to
     /// Secrets Manager, who made the request, when it was made, and so on. For more about
     /// Amazon Web Services Secrets Manager and support for Amazon Web Services CloudTrail,
-    /// see <a href="http://docs.aws.amazon.com/secretsmanager/latest/userguide/monitoring.html#monitoring_cloudtrail">Logging
+    /// see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/monitoring.html#monitoring_cloudtrail">Logging
     /// Amazon Web Services Secrets Manager Events with Amazon Web Services CloudTrail</a>
     /// in the <i>Amazon Web Services Secrets Manager User Guide</i>. To learn more about
     /// CloudTrail, including enabling it and find your log files, see the <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/what_is_cloud_trail_top_level.html">Amazon
@@ -347,76 +347,23 @@ namespace Amazon.SecretsManager
 
 
         /// <summary>
-        /// Disables automatic scheduled rotation and cancels the rotation of a secret if currently
-        /// in progress.
+        /// Turns off automatic rotation, and if a rotation is currently in progress, cancels
+        /// the rotation.
         /// 
         ///  
         /// <para>
-        /// To re-enable scheduled rotation, call <a>RotateSecret</a> with <code>AutomaticallyRotateAfterDays</code>
-        /// set to a value greater than 0. This immediately rotates your secret and then enables
-        /// the automatic schedule.
+        /// To turn on automatic rotation again, call <a>RotateSecret</a>.
         /// </para>
         ///  <note> 
         /// <para>
-        /// If you cancel a rotation while in progress, it can leave the <code>VersionStage</code>
-        /// labels in an unexpected state. Depending on the step of the rotation in progress,
-        /// you might need to remove the staging label <code>AWSPENDING</code> from the partially
-        /// created version, specified by the <code>VersionId</code> response value. You should
-        /// also evaluate the partially rotated new version to see if it should be deleted, which
-        /// you can do by removing all staging labels from the new version <code>VersionStage</code>
-        /// field.
+        /// If you cancel a rotation in progress, it can leave the <code>VersionStage</code> labels
+        /// in an unexpected state. Depending on the step of the rotation in progress, you might
+        /// need to remove the staging label <code>AWSPENDING</code> from the partially created
+        /// version, specified by the <code>VersionId</code> response value. We recommend you
+        /// also evaluate the partially rotated new version to see if it should be deleted. You
+        /// can delete a version by removing all staging labels from it.
         /// </para>
-        ///  </note> 
-        /// <para>
-        /// To successfully start a rotation, the staging label <code>AWSPENDING</code> must be
-        /// in one of the following states:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Not attached to any version at all
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Attached to the same version as the staging label <code>AWSCURRENT</code> 
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// If the staging label <code>AWSPENDING</code> attached to a different version than
-        /// the version with <code>AWSCURRENT</code> then the attempt to rotate fails.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <b>Minimum permissions</b> 
-        /// </para>
-        ///  
-        /// <para>
-        /// To run this command, you must have the following permissions:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// secretsmanager:CancelRotateSecret
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        ///  <b>Related operations</b> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// To configure rotation for a secret or to manually trigger a rotation, use <a>RotateSecret</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// To get the rotation configuration details for a secret, use <a>DescribeSecret</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// To list all of the currently available secrets, use <a>ListSecrets</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// To list all of the versions currently associated with a secret, use <a>ListSecretVersionIds</a>.
-        /// </para>
-        ///  </li> </ul>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelRotateSecret service method.</param>
         /// 
@@ -425,10 +372,10 @@ namespace Amazon.SecretsManager
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
-        /// You provided an invalid value for a parameter.
+        /// The parameter name is invalid value.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
-        /// You provided a parameter value that is not valid for the current state of the resource.
+        /// A parameter value is not valid for the current state of the resource.
         /// 
         ///  
         /// <para>
@@ -436,7 +383,7 @@ namespace Amazon.SecretsManager
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You tried to perform the operation on a secret that's currently marked deleted.
+        /// The secret is scheduled for deletion.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -446,7 +393,7 @@ namespace Amazon.SecretsManager
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.ResourceNotFoundException">
-        /// We can't find the resource that you asked for.
+        /// Secrets Manager can't find the resource that you asked for.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/CancelRotateSecret">REST API Reference for CancelRotateSecret Operation</seealso>
         public virtual CancelRotateSecretResponse CancelRotateSecret(CancelRotateSecretRequest request)
@@ -460,76 +407,23 @@ namespace Amazon.SecretsManager
 
 
         /// <summary>
-        /// Disables automatic scheduled rotation and cancels the rotation of a secret if currently
-        /// in progress.
+        /// Turns off automatic rotation, and if a rotation is currently in progress, cancels
+        /// the rotation.
         /// 
         ///  
         /// <para>
-        /// To re-enable scheduled rotation, call <a>RotateSecret</a> with <code>AutomaticallyRotateAfterDays</code>
-        /// set to a value greater than 0. This immediately rotates your secret and then enables
-        /// the automatic schedule.
+        /// To turn on automatic rotation again, call <a>RotateSecret</a>.
         /// </para>
         ///  <note> 
         /// <para>
-        /// If you cancel a rotation while in progress, it can leave the <code>VersionStage</code>
-        /// labels in an unexpected state. Depending on the step of the rotation in progress,
-        /// you might need to remove the staging label <code>AWSPENDING</code> from the partially
-        /// created version, specified by the <code>VersionId</code> response value. You should
-        /// also evaluate the partially rotated new version to see if it should be deleted, which
-        /// you can do by removing all staging labels from the new version <code>VersionStage</code>
-        /// field.
+        /// If you cancel a rotation in progress, it can leave the <code>VersionStage</code> labels
+        /// in an unexpected state. Depending on the step of the rotation in progress, you might
+        /// need to remove the staging label <code>AWSPENDING</code> from the partially created
+        /// version, specified by the <code>VersionId</code> response value. We recommend you
+        /// also evaluate the partially rotated new version to see if it should be deleted. You
+        /// can delete a version by removing all staging labels from it.
         /// </para>
-        ///  </note> 
-        /// <para>
-        /// To successfully start a rotation, the staging label <code>AWSPENDING</code> must be
-        /// in one of the following states:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Not attached to any version at all
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Attached to the same version as the staging label <code>AWSCURRENT</code> 
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// If the staging label <code>AWSPENDING</code> attached to a different version than
-        /// the version with <code>AWSCURRENT</code> then the attempt to rotate fails.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <b>Minimum permissions</b> 
-        /// </para>
-        ///  
-        /// <para>
-        /// To run this command, you must have the following permissions:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// secretsmanager:CancelRotateSecret
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        ///  <b>Related operations</b> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// To configure rotation for a secret or to manually trigger a rotation, use <a>RotateSecret</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// To get the rotation configuration details for a secret, use <a>DescribeSecret</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// To list all of the currently available secrets, use <a>ListSecrets</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// To list all of the versions currently associated with a secret, use <a>ListSecretVersionIds</a>.
-        /// </para>
-        ///  </li> </ul>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelRotateSecret service method.</param>
         /// <param name="cancellationToken">
@@ -541,10 +435,10 @@ namespace Amazon.SecretsManager
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
-        /// You provided an invalid value for a parameter.
+        /// The parameter name is invalid value.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
-        /// You provided a parameter value that is not valid for the current state of the resource.
+        /// A parameter value is not valid for the current state of the resource.
         /// 
         ///  
         /// <para>
@@ -552,7 +446,7 @@ namespace Amazon.SecretsManager
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You tried to perform the operation on a secret that's currently marked deleted.
+        /// The secret is scheduled for deletion.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -562,7 +456,7 @@ namespace Amazon.SecretsManager
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.ResourceNotFoundException">
-        /// We can't find the resource that you asked for.
+        /// Secrets Manager can't find the resource that you asked for.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/CancelRotateSecret">REST API Reference for CancelRotateSecret Operation</seealso>
         public virtual Task<CancelRotateSecretResponse> CancelRotateSecretAsync(CancelRotateSecretRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -580,134 +474,58 @@ namespace Amazon.SecretsManager
 
 
         /// <summary>
-        /// Creates a new secret. A secret in Secrets Manager consists of both the protected secret
-        /// data and the important information needed to manage the secret.
+        /// Creates a new secret. A <i>secret</i> is a set of credentials, such as a user name
+        /// and password, that you store in an encrypted form in Secrets Manager. The secret also
+        /// includes the connection information to access a database or other service, which Secrets
+        /// Manager doesn't encrypt. A secret in Secrets Manager consists of both the protected
+        /// secret data and the important information needed to manage the secret.
         /// 
         ///  
         /// <para>
-        /// Secrets Manager stores the encrypted secret data in one of a collection of "versions"
-        /// associated with the secret. Each version contains a copy of the encrypted secret data.
-        /// Each version is associated with one or more "staging labels" that identify where the
-        /// version is in the rotation cycle. The <code>SecretVersionsToStages</code> field of
-        /// the secret contains the mapping of staging labels to the active versions of the secret.
-        /// Versions without a staging label are considered deprecated and not included in the
-        /// list.
+        /// For information about creating a secret in the console, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/manage_create-basic-secret.html">Create
+        /// a secret</a>.
         /// </para>
         ///  
         /// <para>
-        /// You provide the secret data to be encrypted by putting text in either the <code>SecretString</code>
-        /// parameter or binary data in the <code>SecretBinary</code> parameter, but not both.
-        /// If you include <code>SecretString</code> or <code>SecretBinary</code> then Secrets
-        /// Manager also creates an initial secret version and automatically attaches the staging
-        /// label <code>AWSCURRENT</code> to the new version.
-        /// </para>
-        ///  <note> <ul> <li> 
-        /// <para>
-        /// If you call an operation to encrypt or decrypt the <code>SecretString</code> or <code>SecretBinary</code>
-        /// for a secret in the same account as the calling user and that secret doesn't specify
-        /// a Amazon Web Services KMS encryption key, Secrets Manager uses the account's default
-        /// Amazon Web Services managed customer master key (CMK) with the alias <code>aws/secretsmanager</code>.
-        /// If this key doesn't already exist in your account then Secrets Manager creates it
-        /// for you automatically. All users and roles in the same Amazon Web Services account
-        /// automatically have access to use the default CMK. Note that if an Secrets Manager
-        /// API call results in Amazon Web Services creating the account's Amazon Web Services-managed
-        /// CMK, it can result in a one-time significant delay in returning the result.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// If the secret resides in a different Amazon Web Services account from the credentials
-        /// calling an API that requires encryption or decryption of the secret value then you
-        /// must create and use a custom Amazon Web Services KMS CMK because you can't access
-        /// the default CMK for the account using credentials from a different Amazon Web Services
-        /// account. Store the ARN of the CMK in the secret when you create the secret or when
-        /// you update it by including it in the <code>KMSKeyId</code>. If you call an API that
-        /// must encrypt or decrypt <code>SecretString</code> or <code>SecretBinary</code> using
-        /// credentials from a different account then the Amazon Web Services KMS key policy must
-        /// grant cross-account access to that other account's user or role for both the kms:GenerateDataKey
-        /// and kms:Decrypt operations.
-        /// </para>
-        ///  </li> </ul> </note> 
-        /// <para>
-        ///  
+        /// To create a secret, you can provide the secret value to be encrypted in either the
+        /// <code>SecretString</code> parameter or the <code>SecretBinary</code> parameter, but
+        /// not both. If you include <code>SecretString</code> or <code>SecretBinary</code> then
+        /// Secrets Manager creates an initial secret version and automatically attaches the staging
+        /// label <code>AWSCURRENT</code> to it.
         /// </para>
         ///  
         /// <para>
-        ///  <b>Minimum permissions</b> 
+        /// If you don't specify an KMS encryption key, Secrets Manager uses the Amazon Web Services
+        /// managed key <code>aws/secretsmanager</code>. If this key doesn't already exist in
+        /// your account, then Secrets Manager creates it for you automatically. All users and
+        /// roles in the Amazon Web Services account automatically have access to use <code>aws/secretsmanager</code>.
+        /// Creating <code>aws/secretsmanager</code> can result in a one-time significant delay
+        /// in returning the result.
         /// </para>
         ///  
         /// <para>
-        /// To run this command, you must have the following permissions:
+        /// If the secret is in a different Amazon Web Services account from the credentials calling
+        /// the API, then you can't use <code>aws/secretsmanager</code> to encrypt the secret,
+        /// and you must create and use a customer managed KMS key. 
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// secretsmanager:CreateSecret
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// kms:GenerateDataKey - needed only if you use a customer-managed Amazon Web Services
-        /// KMS key to encrypt the secret. You do not need this permission to use the account
-        /// default Amazon Web Services managed CMK for Secrets Manager.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// kms:Decrypt - needed only if you use a customer-managed Amazon Web Services KMS key
-        /// to encrypt the secret. You do not need this permission to use the account default
-        /// Amazon Web Services managed CMK for Secrets Manager.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// secretsmanager:TagResource - needed only if you include the <code>Tags</code> parameter.
-        /// 
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        ///  <b>Related operations</b> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// To delete a secret, use <a>DeleteSecret</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// To modify an existing secret, use <a>UpdateSecret</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// To create a new version of a secret, use <a>PutSecretValue</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// To retrieve the encrypted secure string and secure binary values, use <a>GetSecretValue</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// To retrieve all other details for a secret, use <a>DescribeSecret</a>. This does not
-        /// include the encrypted secure string and secure binary values.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// To retrieve the list of secret versions associated with the current secret, use <a>DescribeSecret</a>
-        /// and examine the <code>SecretVersionsToStages</code> response value.
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSecret service method.</param>
         /// 
         /// <returns>The response from the CreateSecret service method, as returned by SecretsManager.</returns>
         /// <exception cref="Amazon.SecretsManager.Model.EncryptionFailureException">
         /// Secrets Manager can't encrypt the protected secret text using the provided KMS key.
-        /// Check that the customer master key (CMK) is available, enabled, and not in an invalid
-        /// state. For more information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects Use of a Customer Master Key</a>.
+        /// Check that the KMS key is available, enabled, and not in an invalid state. For more
+        /// information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+        /// state: Effect on your KMS key</a>.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InternalServiceErrorException">
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
-        /// You provided an invalid value for a parameter.
+        /// The parameter name is invalid value.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
-        /// You provided a parameter value that is not valid for the current state of the resource.
+        /// A parameter value is not valid for the current state of the resource.
         /// 
         ///  
         /// <para>
@@ -715,7 +533,7 @@ namespace Amazon.SecretsManager
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You tried to perform the operation on a secret that's currently marked deleted.
+        /// The secret is scheduled for deletion.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -725,10 +543,10 @@ namespace Amazon.SecretsManager
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.LimitExceededException">
-        /// The request failed because it would exceed one of the Secrets Manager internal limits.
+        /// The request failed because it would exceed one of the Secrets Manager quotas.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.MalformedPolicyDocumentException">
-        /// You provided a resource-based policy with syntax errors.
+        /// The resource policy has syntax errors.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.PreconditionNotMetException">
         /// The request failed because you did not complete all the prerequisite steps.
@@ -737,7 +555,7 @@ namespace Amazon.SecretsManager
         /// A resource with the ID you requested already exists.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.ResourceNotFoundException">
-        /// We can't find the resource that you asked for.
+        /// Secrets Manager can't find the resource that you asked for.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/CreateSecret">REST API Reference for CreateSecret Operation</seealso>
         public virtual CreateSecretResponse CreateSecret(CreateSecretRequest request)
@@ -751,116 +569,40 @@ namespace Amazon.SecretsManager
 
 
         /// <summary>
-        /// Creates a new secret. A secret in Secrets Manager consists of both the protected secret
-        /// data and the important information needed to manage the secret.
+        /// Creates a new secret. A <i>secret</i> is a set of credentials, such as a user name
+        /// and password, that you store in an encrypted form in Secrets Manager. The secret also
+        /// includes the connection information to access a database or other service, which Secrets
+        /// Manager doesn't encrypt. A secret in Secrets Manager consists of both the protected
+        /// secret data and the important information needed to manage the secret.
         /// 
         ///  
         /// <para>
-        /// Secrets Manager stores the encrypted secret data in one of a collection of "versions"
-        /// associated with the secret. Each version contains a copy of the encrypted secret data.
-        /// Each version is associated with one or more "staging labels" that identify where the
-        /// version is in the rotation cycle. The <code>SecretVersionsToStages</code> field of
-        /// the secret contains the mapping of staging labels to the active versions of the secret.
-        /// Versions without a staging label are considered deprecated and not included in the
-        /// list.
+        /// For information about creating a secret in the console, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/manage_create-basic-secret.html">Create
+        /// a secret</a>.
         /// </para>
         ///  
         /// <para>
-        /// You provide the secret data to be encrypted by putting text in either the <code>SecretString</code>
-        /// parameter or binary data in the <code>SecretBinary</code> parameter, but not both.
-        /// If you include <code>SecretString</code> or <code>SecretBinary</code> then Secrets
-        /// Manager also creates an initial secret version and automatically attaches the staging
-        /// label <code>AWSCURRENT</code> to the new version.
-        /// </para>
-        ///  <note> <ul> <li> 
-        /// <para>
-        /// If you call an operation to encrypt or decrypt the <code>SecretString</code> or <code>SecretBinary</code>
-        /// for a secret in the same account as the calling user and that secret doesn't specify
-        /// a Amazon Web Services KMS encryption key, Secrets Manager uses the account's default
-        /// Amazon Web Services managed customer master key (CMK) with the alias <code>aws/secretsmanager</code>.
-        /// If this key doesn't already exist in your account then Secrets Manager creates it
-        /// for you automatically. All users and roles in the same Amazon Web Services account
-        /// automatically have access to use the default CMK. Note that if an Secrets Manager
-        /// API call results in Amazon Web Services creating the account's Amazon Web Services-managed
-        /// CMK, it can result in a one-time significant delay in returning the result.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// If the secret resides in a different Amazon Web Services account from the credentials
-        /// calling an API that requires encryption or decryption of the secret value then you
-        /// must create and use a custom Amazon Web Services KMS CMK because you can't access
-        /// the default CMK for the account using credentials from a different Amazon Web Services
-        /// account. Store the ARN of the CMK in the secret when you create the secret or when
-        /// you update it by including it in the <code>KMSKeyId</code>. If you call an API that
-        /// must encrypt or decrypt <code>SecretString</code> or <code>SecretBinary</code> using
-        /// credentials from a different account then the Amazon Web Services KMS key policy must
-        /// grant cross-account access to that other account's user or role for both the kms:GenerateDataKey
-        /// and kms:Decrypt operations.
-        /// </para>
-        ///  </li> </ul> </note> 
-        /// <para>
-        ///  
+        /// To create a secret, you can provide the secret value to be encrypted in either the
+        /// <code>SecretString</code> parameter or the <code>SecretBinary</code> parameter, but
+        /// not both. If you include <code>SecretString</code> or <code>SecretBinary</code> then
+        /// Secrets Manager creates an initial secret version and automatically attaches the staging
+        /// label <code>AWSCURRENT</code> to it.
         /// </para>
         ///  
         /// <para>
-        ///  <b>Minimum permissions</b> 
+        /// If you don't specify an KMS encryption key, Secrets Manager uses the Amazon Web Services
+        /// managed key <code>aws/secretsmanager</code>. If this key doesn't already exist in
+        /// your account, then Secrets Manager creates it for you automatically. All users and
+        /// roles in the Amazon Web Services account automatically have access to use <code>aws/secretsmanager</code>.
+        /// Creating <code>aws/secretsmanager</code> can result in a one-time significant delay
+        /// in returning the result.
         /// </para>
         ///  
         /// <para>
-        /// To run this command, you must have the following permissions:
+        /// If the secret is in a different Amazon Web Services account from the credentials calling
+        /// the API, then you can't use <code>aws/secretsmanager</code> to encrypt the secret,
+        /// and you must create and use a customer managed KMS key. 
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// secretsmanager:CreateSecret
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// kms:GenerateDataKey - needed only if you use a customer-managed Amazon Web Services
-        /// KMS key to encrypt the secret. You do not need this permission to use the account
-        /// default Amazon Web Services managed CMK for Secrets Manager.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// kms:Decrypt - needed only if you use a customer-managed Amazon Web Services KMS key
-        /// to encrypt the secret. You do not need this permission to use the account default
-        /// Amazon Web Services managed CMK for Secrets Manager.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// secretsmanager:TagResource - needed only if you include the <code>Tags</code> parameter.
-        /// 
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        ///  <b>Related operations</b> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// To delete a secret, use <a>DeleteSecret</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// To modify an existing secret, use <a>UpdateSecret</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// To create a new version of a secret, use <a>PutSecretValue</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// To retrieve the encrypted secure string and secure binary values, use <a>GetSecretValue</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// To retrieve all other details for a secret, use <a>DescribeSecret</a>. This does not
-        /// include the encrypted secure string and secure binary values.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// To retrieve the list of secret versions associated with the current secret, use <a>DescribeSecret</a>
-        /// and examine the <code>SecretVersionsToStages</code> response value.
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSecret service method.</param>
         /// <param name="cancellationToken">
@@ -870,18 +612,18 @@ namespace Amazon.SecretsManager
         /// <returns>The response from the CreateSecret service method, as returned by SecretsManager.</returns>
         /// <exception cref="Amazon.SecretsManager.Model.EncryptionFailureException">
         /// Secrets Manager can't encrypt the protected secret text using the provided KMS key.
-        /// Check that the customer master key (CMK) is available, enabled, and not in an invalid
-        /// state. For more information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects Use of a Customer Master Key</a>.
+        /// Check that the KMS key is available, enabled, and not in an invalid state. For more
+        /// information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+        /// state: Effect on your KMS key</a>.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InternalServiceErrorException">
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
-        /// You provided an invalid value for a parameter.
+        /// The parameter name is invalid value.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
-        /// You provided a parameter value that is not valid for the current state of the resource.
+        /// A parameter value is not valid for the current state of the resource.
         /// 
         ///  
         /// <para>
@@ -889,7 +631,7 @@ namespace Amazon.SecretsManager
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You tried to perform the operation on a secret that's currently marked deleted.
+        /// The secret is scheduled for deletion.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -899,10 +641,10 @@ namespace Amazon.SecretsManager
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.LimitExceededException">
-        /// The request failed because it would exceed one of the Secrets Manager internal limits.
+        /// The request failed because it would exceed one of the Secrets Manager quotas.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.MalformedPolicyDocumentException">
-        /// You provided a resource-based policy with syntax errors.
+        /// The resource policy has syntax errors.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.PreconditionNotMetException">
         /// The request failed because you did not complete all the prerequisite steps.
@@ -911,7 +653,7 @@ namespace Amazon.SecretsManager
         /// A resource with the ID you requested already exists.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.ResourceNotFoundException">
-        /// We can't find the resource that you asked for.
+        /// Secrets Manager can't find the resource that you asked for.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/CreateSecret">REST API Reference for CreateSecret Operation</seealso>
         public virtual Task<CreateSecretResponse> CreateSecretAsync(CreateSecretRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -929,37 +671,8 @@ namespace Amazon.SecretsManager
 
 
         /// <summary>
-        /// Deletes the resource-based permission policy attached to the secret.
-        /// 
-        ///  
-        /// <para>
-        ///  <b>Minimum permissions</b> 
-        /// </para>
-        ///  
-        /// <para>
-        /// To run this command, you must have the following permissions:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// secretsmanager:DeleteResourcePolicy
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        ///  <b>Related operations</b> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// To attach a resource policy to a secret, use <a>PutResourcePolicy</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// To retrieve the current resource-based policy attached to a secret, use <a>GetResourcePolicy</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// To list all of the currently available secrets, use <a>ListSecrets</a>.
-        /// </para>
-        ///  </li> </ul>
+        /// Deletes the resource-based permission policy attached to the secret. To attach a policy
+        /// to a secret, use <a>PutResourcePolicy</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteResourcePolicy service method.</param>
         /// 
@@ -968,10 +681,10 @@ namespace Amazon.SecretsManager
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
-        /// You provided an invalid value for a parameter.
+        /// The parameter name is invalid value.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
-        /// You provided a parameter value that is not valid for the current state of the resource.
+        /// A parameter value is not valid for the current state of the resource.
         /// 
         ///  
         /// <para>
@@ -979,7 +692,7 @@ namespace Amazon.SecretsManager
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You tried to perform the operation on a secret that's currently marked deleted.
+        /// The secret is scheduled for deletion.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -989,7 +702,7 @@ namespace Amazon.SecretsManager
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.ResourceNotFoundException">
-        /// We can't find the resource that you asked for.
+        /// Secrets Manager can't find the resource that you asked for.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
         public virtual DeleteResourcePolicyResponse DeleteResourcePolicy(DeleteResourcePolicyRequest request)
@@ -1003,37 +716,8 @@ namespace Amazon.SecretsManager
 
 
         /// <summary>
-        /// Deletes the resource-based permission policy attached to the secret.
-        /// 
-        ///  
-        /// <para>
-        ///  <b>Minimum permissions</b> 
-        /// </para>
-        ///  
-        /// <para>
-        /// To run this command, you must have the following permissions:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// secretsmanager:DeleteResourcePolicy
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        ///  <b>Related operations</b> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// To attach a resource policy to a secret, use <a>PutResourcePolicy</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// To retrieve the current resource-based policy attached to a secret, use <a>GetResourcePolicy</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// To list all of the currently available secrets, use <a>ListSecrets</a>.
-        /// </para>
-        ///  </li> </ul>
+        /// Deletes the resource-based permission policy attached to the secret. To attach a policy
+        /// to a secret, use <a>PutResourcePolicy</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteResourcePolicy service method.</param>
         /// <param name="cancellationToken">
@@ -1045,10 +729,10 @@ namespace Amazon.SecretsManager
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
-        /// You provided an invalid value for a parameter.
+        /// The parameter name is invalid value.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
-        /// You provided a parameter value that is not valid for the current state of the resource.
+        /// A parameter value is not valid for the current state of the resource.
         /// 
         ///  
         /// <para>
@@ -1056,7 +740,7 @@ namespace Amazon.SecretsManager
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You tried to perform the operation on a secret that's currently marked deleted.
+        /// The secret is scheduled for deletion.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1066,7 +750,7 @@ namespace Amazon.SecretsManager
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.ResourceNotFoundException">
-        /// We can't find the resource that you asked for.
+        /// Secrets Manager can't find the resource that you asked for.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
         public virtual Task<DeleteResourcePolicyResponse> DeleteResourcePolicyAsync(DeleteResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1084,12 +768,23 @@ namespace Amazon.SecretsManager
 
 
         /// <summary>
-        /// Deletes an entire secret and all of the versions. You can optionally include a recovery
-        /// window during which you can restore the secret. If you don't specify a recovery window
-        /// value, the operation defaults to 30 days. Secrets Manager attaches a <code>DeletionDate</code>
-        /// stamp to the secret that specifies the end of the recovery window. At the end of the
-        /// recovery window, Secrets Manager deletes the secret permanently.
+        /// Deletes a secret and all of its versions. You can specify a recovery window during
+        /// which you can restore the secret. The minimum recovery window is 7 days. The default
+        /// recovery window is 30 days. Secrets Manager attaches a <code>DeletionDate</code> stamp
+        /// to the secret that specifies the end of the recovery window. At the end of the recovery
+        /// window, Secrets Manager deletes the secret permanently.
         /// 
+        ///  
+        /// <para>
+        /// For information about deleting a secret in the console, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/manage_delete-secret.html">https://docs.aws.amazon.com/secretsmanager/latest/userguide/manage_delete-secret.html</a>.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// Secrets Manager performs the permanent secret deletion at the end of the waiting period
+        /// as a background task with low priority. There is no guarantee of a specific time after
+        /// the recovery window for the permanent delete to occur.
+        /// </para>
         ///  
         /// <para>
         /// At any time before recovery window ends, you can use <a>RestoreSecret</a> to remove
@@ -1097,50 +792,10 @@ namespace Amazon.SecretsManager
         /// </para>
         ///  
         /// <para>
-        /// You cannot access the encrypted secret information in any secret scheduled for deletion.
-        /// If you need to access that information, you must cancel the deletion with <a>RestoreSecret</a>
-        /// and then retrieve the information.
+        /// In a secret scheduled for deletion, you cannot access the encrypted secret value.
+        /// To access that information, first cancel the deletion with <a>RestoreSecret</a> and
+        /// then retrieve the information.
         /// </para>
-        ///  <note> <ul> <li> 
-        /// <para>
-        /// There is no explicit operation to delete a version of a secret. Instead, remove all
-        /// staging labels from the <code>VersionStage</code> field of a version. That marks the
-        /// version as deprecated and allows Secrets Manager to delete it as needed. Versions
-        /// without any staging labels do not show up in <a>ListSecretVersionIds</a> unless you
-        /// specify <code>IncludeDeprecated</code>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// The permanent secret deletion at the end of the waiting period is performed as a background
-        /// task with low priority. There is no guarantee of a specific time after the recovery
-        /// window for the actual delete operation to occur.
-        /// </para>
-        ///  </li> </ul> </note> 
-        /// <para>
-        ///  <b>Minimum permissions</b> 
-        /// </para>
-        ///  
-        /// <para>
-        /// To run this command, you must have the following permissions:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// secretsmanager:DeleteSecret
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        ///  <b>Related operations</b> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// To create a secret, use <a>CreateSecret</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// To cancel deletion of a version of a secret before the recovery window has expired,
-        /// use <a>RestoreSecret</a>.
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteSecret service method.</param>
         /// 
@@ -1149,10 +804,10 @@ namespace Amazon.SecretsManager
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
-        /// You provided an invalid value for a parameter.
+        /// The parameter name is invalid value.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
-        /// You provided a parameter value that is not valid for the current state of the resource.
+        /// A parameter value is not valid for the current state of the resource.
         /// 
         ///  
         /// <para>
@@ -1160,7 +815,7 @@ namespace Amazon.SecretsManager
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You tried to perform the operation on a secret that's currently marked deleted.
+        /// The secret is scheduled for deletion.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1170,7 +825,7 @@ namespace Amazon.SecretsManager
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.ResourceNotFoundException">
-        /// We can't find the resource that you asked for.
+        /// Secrets Manager can't find the resource that you asked for.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/DeleteSecret">REST API Reference for DeleteSecret Operation</seealso>
         public virtual DeleteSecretResponse DeleteSecret(DeleteSecretRequest request)
@@ -1184,12 +839,23 @@ namespace Amazon.SecretsManager
 
 
         /// <summary>
-        /// Deletes an entire secret and all of the versions. You can optionally include a recovery
-        /// window during which you can restore the secret. If you don't specify a recovery window
-        /// value, the operation defaults to 30 days. Secrets Manager attaches a <code>DeletionDate</code>
-        /// stamp to the secret that specifies the end of the recovery window. At the end of the
-        /// recovery window, Secrets Manager deletes the secret permanently.
+        /// Deletes a secret and all of its versions. You can specify a recovery window during
+        /// which you can restore the secret. The minimum recovery window is 7 days. The default
+        /// recovery window is 30 days. Secrets Manager attaches a <code>DeletionDate</code> stamp
+        /// to the secret that specifies the end of the recovery window. At the end of the recovery
+        /// window, Secrets Manager deletes the secret permanently.
         /// 
+        ///  
+        /// <para>
+        /// For information about deleting a secret in the console, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/manage_delete-secret.html">https://docs.aws.amazon.com/secretsmanager/latest/userguide/manage_delete-secret.html</a>.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// Secrets Manager performs the permanent secret deletion at the end of the waiting period
+        /// as a background task with low priority. There is no guarantee of a specific time after
+        /// the recovery window for the permanent delete to occur.
+        /// </para>
         ///  
         /// <para>
         /// At any time before recovery window ends, you can use <a>RestoreSecret</a> to remove
@@ -1197,50 +863,10 @@ namespace Amazon.SecretsManager
         /// </para>
         ///  
         /// <para>
-        /// You cannot access the encrypted secret information in any secret scheduled for deletion.
-        /// If you need to access that information, you must cancel the deletion with <a>RestoreSecret</a>
-        /// and then retrieve the information.
+        /// In a secret scheduled for deletion, you cannot access the encrypted secret value.
+        /// To access that information, first cancel the deletion with <a>RestoreSecret</a> and
+        /// then retrieve the information.
         /// </para>
-        ///  <note> <ul> <li> 
-        /// <para>
-        /// There is no explicit operation to delete a version of a secret. Instead, remove all
-        /// staging labels from the <code>VersionStage</code> field of a version. That marks the
-        /// version as deprecated and allows Secrets Manager to delete it as needed. Versions
-        /// without any staging labels do not show up in <a>ListSecretVersionIds</a> unless you
-        /// specify <code>IncludeDeprecated</code>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// The permanent secret deletion at the end of the waiting period is performed as a background
-        /// task with low priority. There is no guarantee of a specific time after the recovery
-        /// window for the actual delete operation to occur.
-        /// </para>
-        ///  </li> </ul> </note> 
-        /// <para>
-        ///  <b>Minimum permissions</b> 
-        /// </para>
-        ///  
-        /// <para>
-        /// To run this command, you must have the following permissions:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// secretsmanager:DeleteSecret
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        ///  <b>Related operations</b> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// To create a secret, use <a>CreateSecret</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// To cancel deletion of a version of a secret before the recovery window has expired,
-        /// use <a>RestoreSecret</a>.
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteSecret service method.</param>
         /// <param name="cancellationToken">
@@ -1252,10 +878,10 @@ namespace Amazon.SecretsManager
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
-        /// You provided an invalid value for a parameter.
+        /// The parameter name is invalid value.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
-        /// You provided a parameter value that is not valid for the current state of the resource.
+        /// A parameter value is not valid for the current state of the resource.
         /// 
         ///  
         /// <para>
@@ -1263,7 +889,7 @@ namespace Amazon.SecretsManager
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You tried to perform the operation on a secret that's currently marked deleted.
+        /// The secret is scheduled for deletion.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1273,7 +899,7 @@ namespace Amazon.SecretsManager
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.ResourceNotFoundException">
-        /// We can't find the resource that you asked for.
+        /// Secrets Manager can't find the resource that you asked for.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/DeleteSecret">REST API Reference for DeleteSecret Operation</seealso>
         public virtual Task<DeleteSecretResponse> DeleteSecretAsync(DeleteSecretRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1291,42 +917,8 @@ namespace Amazon.SecretsManager
 
 
         /// <summary>
-        /// Retrieves the details of a secret. It does not include the encrypted fields. Secrets
-        /// Manager only returns fields populated with a value in the response. 
-        /// 
-        ///  
-        /// <para>
-        ///  <b>Minimum permissions</b> 
-        /// </para>
-        ///  
-        /// <para>
-        /// To run this command, you must have the following permissions:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// secretsmanager:DescribeSecret
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        ///  <b>Related operations</b> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// To create a secret, use <a>CreateSecret</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// To modify a secret, use <a>UpdateSecret</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// To retrieve the encrypted secret information in a version of the secret, use <a>GetSecretValue</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// To list all of the secrets in the Amazon Web Services account, use <a>ListSecrets</a>.
-        /// </para>
-        ///  </li> </ul>
+        /// Retrieves the details of a secret. It does not include the encrypted secret value.
+        /// Secrets Manager only returns fields that have a value in the response.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSecret service method.</param>
         /// 
@@ -1335,10 +927,10 @@ namespace Amazon.SecretsManager
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
-        /// You provided an invalid value for a parameter.
+        /// The parameter name is invalid value.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.ResourceNotFoundException">
-        /// We can't find the resource that you asked for.
+        /// Secrets Manager can't find the resource that you asked for.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/DescribeSecret">REST API Reference for DescribeSecret Operation</seealso>
         public virtual DescribeSecretResponse DescribeSecret(DescribeSecretRequest request)
@@ -1352,42 +944,8 @@ namespace Amazon.SecretsManager
 
 
         /// <summary>
-        /// Retrieves the details of a secret. It does not include the encrypted fields. Secrets
-        /// Manager only returns fields populated with a value in the response. 
-        /// 
-        ///  
-        /// <para>
-        ///  <b>Minimum permissions</b> 
-        /// </para>
-        ///  
-        /// <para>
-        /// To run this command, you must have the following permissions:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// secretsmanager:DescribeSecret
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        ///  <b>Related operations</b> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// To create a secret, use <a>CreateSecret</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// To modify a secret, use <a>UpdateSecret</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// To retrieve the encrypted secret information in a version of the secret, use <a>GetSecretValue</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// To list all of the secrets in the Amazon Web Services account, use <a>ListSecrets</a>.
-        /// </para>
-        ///  </li> </ul>
+        /// Retrieves the details of a secret. It does not include the encrypted secret value.
+        /// Secrets Manager only returns fields that have a value in the response.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSecret service method.</param>
         /// <param name="cancellationToken">
@@ -1399,10 +957,10 @@ namespace Amazon.SecretsManager
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
-        /// You provided an invalid value for a parameter.
+        /// The parameter name is invalid value.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.ResourceNotFoundException">
-        /// We can't find the resource that you asked for.
+        /// Secrets Manager can't find the resource that you asked for.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/DescribeSecret">REST API Reference for DescribeSecret Operation</seealso>
         public virtual Task<DescribeSecretResponse> DescribeSecretAsync(DescribeSecretRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1420,24 +978,9 @@ namespace Amazon.SecretsManager
 
 
         /// <summary>
-        /// Generates a random password of the specified complexity. This operation is intended
-        /// for use in the Lambda rotation function. Per best practice, we recommend that you
-        /// specify the maximum length and include every character type that the system you are
-        /// generating a password for can support.
-        /// 
-        ///  
-        /// <para>
-        ///  <b>Minimum permissions</b> 
-        /// </para>
-        ///  
-        /// <para>
-        /// To run this command, you must have the following permissions:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// secretsmanager:GetRandomPassword
-        /// </para>
-        ///  </li> </ul>
+        /// Generates a random password. We recommend that you specify the maximum length and
+        /// include every character type that the system you are generating a password for can
+        /// support.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetRandomPassword service method.</param>
         /// 
@@ -1446,10 +989,10 @@ namespace Amazon.SecretsManager
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
-        /// You provided an invalid value for a parameter.
+        /// The parameter name is invalid value.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
-        /// You provided a parameter value that is not valid for the current state of the resource.
+        /// A parameter value is not valid for the current state of the resource.
         /// 
         ///  
         /// <para>
@@ -1457,7 +1000,7 @@ namespace Amazon.SecretsManager
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You tried to perform the operation on a secret that's currently marked deleted.
+        /// The secret is scheduled for deletion.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1478,24 +1021,9 @@ namespace Amazon.SecretsManager
 
 
         /// <summary>
-        /// Generates a random password of the specified complexity. This operation is intended
-        /// for use in the Lambda rotation function. Per best practice, we recommend that you
-        /// specify the maximum length and include every character type that the system you are
-        /// generating a password for can support.
-        /// 
-        ///  
-        /// <para>
-        ///  <b>Minimum permissions</b> 
-        /// </para>
-        ///  
-        /// <para>
-        /// To run this command, you must have the following permissions:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// secretsmanager:GetRandomPassword
-        /// </para>
-        ///  </li> </ul>
+        /// Generates a random password. We recommend that you specify the maximum length and
+        /// include every character type that the system you are generating a password for can
+        /// support.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetRandomPassword service method.</param>
         /// <param name="cancellationToken">
@@ -1507,10 +1035,10 @@ namespace Amazon.SecretsManager
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
-        /// You provided an invalid value for a parameter.
+        /// The parameter name is invalid value.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
-        /// You provided a parameter value that is not valid for the current state of the resource.
+        /// A parameter value is not valid for the current state of the resource.
         /// 
         ///  
         /// <para>
@@ -1518,7 +1046,7 @@ namespace Amazon.SecretsManager
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You tried to perform the operation on a secret that's currently marked deleted.
+        /// The secret is scheduled for deletion.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1543,40 +1071,9 @@ namespace Amazon.SecretsManager
 
 
         /// <summary>
-        /// Retrieves the JSON text of the resource-based policy document attached to the specified
-        /// secret. The JSON request string input and response output displays formatted code
-        /// with white space and line breaks for better readability. Submit your input as a single
-        /// line JSON string.
-        /// 
-        ///  
-        /// <para>
-        ///  <b>Minimum permissions</b> 
-        /// </para>
-        ///  
-        /// <para>
-        /// To run this command, you must have the following permissions:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// secretsmanager:GetResourcePolicy
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        ///  <b>Related operations</b> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// To attach a resource policy to a secret, use <a>PutResourcePolicy</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// To delete the resource-based policy attached to a secret, use <a>DeleteResourcePolicy</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// To list all of the currently available secrets, use <a>ListSecrets</a>.
-        /// </para>
-        ///  </li> </ul>
+        /// Retrieves the JSON text of the resource-based policy document attached to the secret.
+        /// For more information about permissions policies attached to a secret, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_resource-policies.html">Permissions
+        /// policies attached to a secret</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetResourcePolicy service method.</param>
         /// 
@@ -1585,10 +1082,10 @@ namespace Amazon.SecretsManager
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
-        /// You provided an invalid value for a parameter.
+        /// The parameter name is invalid value.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
-        /// You provided a parameter value that is not valid for the current state of the resource.
+        /// A parameter value is not valid for the current state of the resource.
         /// 
         ///  
         /// <para>
@@ -1596,7 +1093,7 @@ namespace Amazon.SecretsManager
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You tried to perform the operation on a secret that's currently marked deleted.
+        /// The secret is scheduled for deletion.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1606,7 +1103,7 @@ namespace Amazon.SecretsManager
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.ResourceNotFoundException">
-        /// We can't find the resource that you asked for.
+        /// Secrets Manager can't find the resource that you asked for.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
         public virtual GetResourcePolicyResponse GetResourcePolicy(GetResourcePolicyRequest request)
@@ -1620,40 +1117,9 @@ namespace Amazon.SecretsManager
 
 
         /// <summary>
-        /// Retrieves the JSON text of the resource-based policy document attached to the specified
-        /// secret. The JSON request string input and response output displays formatted code
-        /// with white space and line breaks for better readability. Submit your input as a single
-        /// line JSON string.
-        /// 
-        ///  
-        /// <para>
-        ///  <b>Minimum permissions</b> 
-        /// </para>
-        ///  
-        /// <para>
-        /// To run this command, you must have the following permissions:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// secretsmanager:GetResourcePolicy
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        ///  <b>Related operations</b> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// To attach a resource policy to a secret, use <a>PutResourcePolicy</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// To delete the resource-based policy attached to a secret, use <a>DeleteResourcePolicy</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// To list all of the currently available secrets, use <a>ListSecrets</a>.
-        /// </para>
-        ///  </li> </ul>
+        /// Retrieves the JSON text of the resource-based policy document attached to the secret.
+        /// For more information about permissions policies attached to a secret, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_resource-policies.html">Permissions
+        /// policies attached to a secret</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetResourcePolicy service method.</param>
         /// <param name="cancellationToken">
@@ -1665,10 +1131,10 @@ namespace Amazon.SecretsManager
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
-        /// You provided an invalid value for a parameter.
+        /// The parameter name is invalid value.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
-        /// You provided a parameter value that is not valid for the current state of the resource.
+        /// A parameter value is not valid for the current state of the resource.
         /// 
         ///  
         /// <para>
@@ -1676,7 +1142,7 @@ namespace Amazon.SecretsManager
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You tried to perform the operation on a secret that's currently marked deleted.
+        /// The secret is scheduled for deletion.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1686,7 +1152,7 @@ namespace Amazon.SecretsManager
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.ResourceNotFoundException">
-        /// We can't find the resource that you asked for.
+        /// Secrets Manager can't find the resource that you asked for.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
         public virtual Task<GetResourcePolicyResponse> GetResourcePolicyAsync(GetResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1709,35 +1175,16 @@ namespace Amazon.SecretsManager
         /// 
         ///  
         /// <para>
-        ///  <b>Minimum permissions</b> 
+        /// For information about retrieving the secret value in the console, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieving-secrets.html">Retrieve
+        /// secrets</a>. 
         /// </para>
         ///  
         /// <para>
-        /// To run this command, you must have the following permissions:
+        /// To run this command, you must have <code>secretsmanager:GetSecretValue</code> permissions.
+        /// If the secret is encrypted using a customer-managed key instead of the Amazon Web
+        /// Services managed key <code>aws/secretsmanager</code>, then you also need <code>kms:Decrypt</code>
+        /// permissions for that key.
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// secretsmanager:GetSecretValue
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// kms:Decrypt - required only if you use a customer-managed Amazon Web Services KMS
-        /// key to encrypt the secret. You do not need this permission to use the account's default
-        /// Amazon Web Services managed CMK for Secrets Manager.
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        ///  <b>Related operations</b> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// To create a new version of the secret with different encrypted information, use <a>PutSecretValue</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// To retrieve the non-encrypted details for the secret, use <a>DescribeSecret</a>.
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetSecretValue service method.</param>
         /// 
@@ -1749,10 +1196,10 @@ namespace Amazon.SecretsManager
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
-        /// You provided an invalid value for a parameter.
+        /// The parameter name is invalid value.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
-        /// You provided a parameter value that is not valid for the current state of the resource.
+        /// A parameter value is not valid for the current state of the resource.
         /// 
         ///  
         /// <para>
@@ -1760,7 +1207,7 @@ namespace Amazon.SecretsManager
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You tried to perform the operation on a secret that's currently marked deleted.
+        /// The secret is scheduled for deletion.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1770,7 +1217,7 @@ namespace Amazon.SecretsManager
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.ResourceNotFoundException">
-        /// We can't find the resource that you asked for.
+        /// Secrets Manager can't find the resource that you asked for.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/GetSecretValue">REST API Reference for GetSecretValue Operation</seealso>
         public virtual GetSecretValueResponse GetSecretValue(GetSecretValueRequest request)
@@ -1789,35 +1236,16 @@ namespace Amazon.SecretsManager
         /// 
         ///  
         /// <para>
-        ///  <b>Minimum permissions</b> 
+        /// For information about retrieving the secret value in the console, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieving-secrets.html">Retrieve
+        /// secrets</a>. 
         /// </para>
         ///  
         /// <para>
-        /// To run this command, you must have the following permissions:
+        /// To run this command, you must have <code>secretsmanager:GetSecretValue</code> permissions.
+        /// If the secret is encrypted using a customer-managed key instead of the Amazon Web
+        /// Services managed key <code>aws/secretsmanager</code>, then you also need <code>kms:Decrypt</code>
+        /// permissions for that key.
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// secretsmanager:GetSecretValue
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// kms:Decrypt - required only if you use a customer-managed Amazon Web Services KMS
-        /// key to encrypt the secret. You do not need this permission to use the account's default
-        /// Amazon Web Services managed CMK for Secrets Manager.
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        ///  <b>Related operations</b> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// To create a new version of the secret with different encrypted information, use <a>PutSecretValue</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// To retrieve the non-encrypted details for the secret, use <a>DescribeSecret</a>.
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetSecretValue service method.</param>
         /// <param name="cancellationToken">
@@ -1832,10 +1260,10 @@ namespace Amazon.SecretsManager
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
-        /// You provided an invalid value for a parameter.
+        /// The parameter name is invalid value.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
-        /// You provided a parameter value that is not valid for the current state of the resource.
+        /// A parameter value is not valid for the current state of the resource.
         /// 
         ///  
         /// <para>
@@ -1843,7 +1271,7 @@ namespace Amazon.SecretsManager
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You tried to perform the operation on a secret that's currently marked deleted.
+        /// The secret is scheduled for deletion.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1853,7 +1281,7 @@ namespace Amazon.SecretsManager
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.ResourceNotFoundException">
-        /// We can't find the resource that you asked for.
+        /// Secrets Manager can't find the resource that you asked for.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/GetSecretValue">REST API Reference for GetSecretValue Operation</seealso>
         public virtual Task<GetSecretValueResponse> GetSecretValueAsync(GetSecretValueRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1871,40 +1299,31 @@ namespace Amazon.SecretsManager
 
 
         /// <summary>
-        /// Lists all of the secrets that are stored by Secrets Manager in the Amazon Web Services
-        /// account. To list the versions currently stored for a specific secret, use <a>ListSecretVersionIds</a>.
-        /// The encrypted fields <code>SecretString</code> and <code>SecretBinary</code> are not
-        /// included in the output. To get that information, call the <a>GetSecretValue</a> operation.
+        /// Lists the secrets that are stored by Secrets Manager in the Amazon Web Services account.
         /// 
-        ///  <note> 
+        /// 
+        ///  
         /// <para>
-        /// Always check the <code>NextToken</code> response parameter when calling any of the
-        /// <code>List*</code> operations. These operations can occasionally return an empty or
-        /// shorter than expected list of results even when there more results become available.
-        /// When this happens, the <code>NextToken</code> response parameter contains a value
-        /// to pass to the next call to the same API to request the next part of the list.
+        /// To list the versions of a secret, use <a>ListSecretVersionIds</a>.
         /// </para>
-        ///  </note> 
+        ///  
+        /// <para>
+        /// To get the secret value from <code>SecretString</code> or <code>SecretBinary</code>,
+        /// call <a>GetSecretValue</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about finding secrets in the console, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/manage_search-secret.html">Enhanced
+        /// search capabilities for secrets in Secrets Manager</a>.
+        /// </para>
+        ///  
         /// <para>
         ///  <b>Minimum permissions</b> 
         /// </para>
         ///  
         /// <para>
-        /// To run this command, you must have the following permissions:
+        /// To run this command, you must have <code>secretsmanager:ListSecrets</code> permissions.
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// secretsmanager:ListSecrets
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        ///  <b>Related operations</b> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// To list the versions attached to a secret, use <a>ListSecretVersionIds</a>.
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListSecrets service method.</param>
         /// 
@@ -1913,10 +1332,10 @@ namespace Amazon.SecretsManager
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidNextTokenException">
-        /// You provided an invalid <code>NextToken</code> value.
+        /// The <code>NextToken</code> value is invalid.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
-        /// You provided an invalid value for a parameter.
+        /// The parameter name is invalid value.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/ListSecrets">REST API Reference for ListSecrets Operation</seealso>
         public virtual ListSecretsResponse ListSecrets(ListSecretsRequest request)
@@ -1930,40 +1349,31 @@ namespace Amazon.SecretsManager
 
 
         /// <summary>
-        /// Lists all of the secrets that are stored by Secrets Manager in the Amazon Web Services
-        /// account. To list the versions currently stored for a specific secret, use <a>ListSecretVersionIds</a>.
-        /// The encrypted fields <code>SecretString</code> and <code>SecretBinary</code> are not
-        /// included in the output. To get that information, call the <a>GetSecretValue</a> operation.
+        /// Lists the secrets that are stored by Secrets Manager in the Amazon Web Services account.
         /// 
-        ///  <note> 
+        /// 
+        ///  
         /// <para>
-        /// Always check the <code>NextToken</code> response parameter when calling any of the
-        /// <code>List*</code> operations. These operations can occasionally return an empty or
-        /// shorter than expected list of results even when there more results become available.
-        /// When this happens, the <code>NextToken</code> response parameter contains a value
-        /// to pass to the next call to the same API to request the next part of the list.
+        /// To list the versions of a secret, use <a>ListSecretVersionIds</a>.
         /// </para>
-        ///  </note> 
+        ///  
+        /// <para>
+        /// To get the secret value from <code>SecretString</code> or <code>SecretBinary</code>,
+        /// call <a>GetSecretValue</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about finding secrets in the console, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/manage_search-secret.html">Enhanced
+        /// search capabilities for secrets in Secrets Manager</a>.
+        /// </para>
+        ///  
         /// <para>
         ///  <b>Minimum permissions</b> 
         /// </para>
         ///  
         /// <para>
-        /// To run this command, you must have the following permissions:
+        /// To run this command, you must have <code>secretsmanager:ListSecrets</code> permissions.
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// secretsmanager:ListSecrets
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        ///  <b>Related operations</b> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// To list the versions attached to a secret, use <a>ListSecretVersionIds</a>.
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListSecrets service method.</param>
         /// <param name="cancellationToken">
@@ -1975,10 +1385,10 @@ namespace Amazon.SecretsManager
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidNextTokenException">
-        /// You provided an invalid <code>NextToken</code> value.
+        /// The <code>NextToken</code> value is invalid.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
-        /// You provided an invalid value for a parameter.
+        /// The parameter name is invalid value.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/ListSecrets">REST API Reference for ListSecrets Operation</seealso>
         public virtual Task<ListSecretsResponse> ListSecretsAsync(ListSecretsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1996,40 +1406,26 @@ namespace Amazon.SecretsManager
 
 
         /// <summary>
-        /// Lists all of the versions attached to the specified secret. The output does not include
-        /// the <code>SecretString</code> or <code>SecretBinary</code> fields. By default, the
-        /// list includes only versions that have at least one staging label in <code>VersionStage</code>
-        /// attached.
+        /// Lists the versions for a secret. 
         /// 
-        ///  <note> 
+        ///  
         /// <para>
-        /// Always check the <code>NextToken</code> response parameter when calling any of the
-        /// <code>List*</code> operations. These operations can occasionally return an empty or
-        /// shorter than expected list of results even when there more results become available.
-        /// When this happens, the <code>NextToken</code> response parameter contains a value
-        /// to pass to the next call to the same API to request the next part of the list.
+        /// To list the secrets in the account, use <a>ListSecrets</a>.
         /// </para>
-        ///  </note> 
+        ///  
+        /// <para>
+        /// To get the secret value from <code>SecretString</code> or <code>SecretBinary</code>,
+        /// call <a>GetSecretValue</a>.
+        /// </para>
+        ///  
         /// <para>
         ///  <b>Minimum permissions</b> 
         /// </para>
         ///  
         /// <para>
-        /// To run this command, you must have the following permissions:
+        /// To run this command, you must have <code>secretsmanager:ListSecretVersionIds</code>
+        /// permissions.
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// secretsmanager:ListSecretVersionIds
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        ///  <b>Related operations</b> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// To list the secrets in an account, use <a>ListSecrets</a>.
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListSecretVersionIds service method.</param>
         /// 
@@ -2038,13 +1434,13 @@ namespace Amazon.SecretsManager
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidNextTokenException">
-        /// You provided an invalid <code>NextToken</code> value.
+        /// The <code>NextToken</code> value is invalid.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
-        /// You provided an invalid value for a parameter.
+        /// The parameter name is invalid value.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.ResourceNotFoundException">
-        /// We can't find the resource that you asked for.
+        /// Secrets Manager can't find the resource that you asked for.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/ListSecretVersionIds">REST API Reference for ListSecretVersionIds Operation</seealso>
         public virtual ListSecretVersionIdsResponse ListSecretVersionIds(ListSecretVersionIdsRequest request)
@@ -2058,40 +1454,26 @@ namespace Amazon.SecretsManager
 
 
         /// <summary>
-        /// Lists all of the versions attached to the specified secret. The output does not include
-        /// the <code>SecretString</code> or <code>SecretBinary</code> fields. By default, the
-        /// list includes only versions that have at least one staging label in <code>VersionStage</code>
-        /// attached.
+        /// Lists the versions for a secret. 
         /// 
-        ///  <note> 
+        ///  
         /// <para>
-        /// Always check the <code>NextToken</code> response parameter when calling any of the
-        /// <code>List*</code> operations. These operations can occasionally return an empty or
-        /// shorter than expected list of results even when there more results become available.
-        /// When this happens, the <code>NextToken</code> response parameter contains a value
-        /// to pass to the next call to the same API to request the next part of the list.
+        /// To list the secrets in the account, use <a>ListSecrets</a>.
         /// </para>
-        ///  </note> 
+        ///  
+        /// <para>
+        /// To get the secret value from <code>SecretString</code> or <code>SecretBinary</code>,
+        /// call <a>GetSecretValue</a>.
+        /// </para>
+        ///  
         /// <para>
         ///  <b>Minimum permissions</b> 
         /// </para>
         ///  
         /// <para>
-        /// To run this command, you must have the following permissions:
+        /// To run this command, you must have <code>secretsmanager:ListSecretVersionIds</code>
+        /// permissions.
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// secretsmanager:ListSecretVersionIds
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        ///  <b>Related operations</b> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// To list the secrets in an account, use <a>ListSecrets</a>.
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListSecretVersionIds service method.</param>
         /// <param name="cancellationToken">
@@ -2103,13 +1485,13 @@ namespace Amazon.SecretsManager
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidNextTokenException">
-        /// You provided an invalid <code>NextToken</code> value.
+        /// The <code>NextToken</code> value is invalid.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
-        /// You provided an invalid value for a parameter.
+        /// The parameter name is invalid value.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.ResourceNotFoundException">
-        /// We can't find the resource that you asked for.
+        /// Secrets Manager can't find the resource that you asked for.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/ListSecretVersionIds">REST API Reference for ListSecretVersionIds Operation</seealso>
         public virtual Task<ListSecretVersionIdsResponse> ListSecretVersionIdsAsync(ListSecretVersionIdsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2127,45 +1509,15 @@ namespace Amazon.SecretsManager
 
 
         /// <summary>
-        /// Attaches the contents of the specified resource-based permission policy to a secret.
-        /// A resource-based policy is optional. Alternatively, you can use IAM identity-based
-        /// policies that specify the secret's Amazon Resource Name (ARN) in the policy statement's
-        /// <code>Resources</code> element. You can also use a combination of both identity-based
-        /// and resource-based policies. The affected users and roles receive the permissions
-        /// that are permitted by all of the relevant policies. For more information, see <a href="http://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_resource-based-policies.html">Using
-        /// Resource-Based Policies for Amazon Web Services Secrets Manager</a>. For the complete
-        /// description of the Amazon Web Services policy syntax and grammar, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM
-        /// JSON Policy Reference</a> in the <i>IAM User Guide</i>.
+        /// Attaches a resource-based permission policy to a secret. A resource-based policy is
+        /// optional. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+        /// and access control for Secrets Manager</a> 
         /// 
         ///  
         /// <para>
-        ///  <b>Minimum permissions</b> 
+        /// For information about attaching a policy in the console, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_resource-based-policies.html">Attach
+        /// a permissions policy to a secret</a>.
         /// </para>
-        ///  
-        /// <para>
-        /// To run this command, you must have the following permissions:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// secretsmanager:PutResourcePolicy
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        ///  <b>Related operations</b> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// To retrieve the resource policy attached to a secret, use <a>GetResourcePolicy</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// To delete the resource-based policy attached to a secret, use <a>DeleteResourcePolicy</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// To list all of the currently available secrets, use <a>ListSecrets</a>.
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutResourcePolicy service method.</param>
         /// 
@@ -2174,10 +1526,10 @@ namespace Amazon.SecretsManager
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
-        /// You provided an invalid value for a parameter.
+        /// The parameter name is invalid value.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
-        /// You provided a parameter value that is not valid for the current state of the resource.
+        /// A parameter value is not valid for the current state of the resource.
         /// 
         ///  
         /// <para>
@@ -2185,7 +1537,7 @@ namespace Amazon.SecretsManager
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You tried to perform the operation on a secret that's currently marked deleted.
+        /// The secret is scheduled for deletion.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2195,14 +1547,14 @@ namespace Amazon.SecretsManager
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.MalformedPolicyDocumentException">
-        /// You provided a resource-based policy with syntax errors.
+        /// The resource policy has syntax errors.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.PublicPolicyException">
-        /// The BlockPublicPolicy parameter is set to true and the resource policy did not prevent
-        /// broad access to the secret.
+        /// The <code>BlockPublicPolicy</code> parameter is set to true, and the resource policy
+        /// did not prevent broad access to the secret.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.ResourceNotFoundException">
-        /// We can't find the resource that you asked for.
+        /// Secrets Manager can't find the resource that you asked for.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
         public virtual PutResourcePolicyResponse PutResourcePolicy(PutResourcePolicyRequest request)
@@ -2216,45 +1568,15 @@ namespace Amazon.SecretsManager
 
 
         /// <summary>
-        /// Attaches the contents of the specified resource-based permission policy to a secret.
-        /// A resource-based policy is optional. Alternatively, you can use IAM identity-based
-        /// policies that specify the secret's Amazon Resource Name (ARN) in the policy statement's
-        /// <code>Resources</code> element. You can also use a combination of both identity-based
-        /// and resource-based policies. The affected users and roles receive the permissions
-        /// that are permitted by all of the relevant policies. For more information, see <a href="http://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_resource-based-policies.html">Using
-        /// Resource-Based Policies for Amazon Web Services Secrets Manager</a>. For the complete
-        /// description of the Amazon Web Services policy syntax and grammar, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM
-        /// JSON Policy Reference</a> in the <i>IAM User Guide</i>.
+        /// Attaches a resource-based permission policy to a secret. A resource-based policy is
+        /// optional. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+        /// and access control for Secrets Manager</a> 
         /// 
         ///  
         /// <para>
-        ///  <b>Minimum permissions</b> 
+        /// For information about attaching a policy in the console, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_resource-based-policies.html">Attach
+        /// a permissions policy to a secret</a>.
         /// </para>
-        ///  
-        /// <para>
-        /// To run this command, you must have the following permissions:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// secretsmanager:PutResourcePolicy
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        ///  <b>Related operations</b> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// To retrieve the resource policy attached to a secret, use <a>GetResourcePolicy</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// To delete the resource-based policy attached to a secret, use <a>DeleteResourcePolicy</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// To list all of the currently available secrets, use <a>ListSecrets</a>.
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutResourcePolicy service method.</param>
         /// <param name="cancellationToken">
@@ -2266,10 +1588,10 @@ namespace Amazon.SecretsManager
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
-        /// You provided an invalid value for a parameter.
+        /// The parameter name is invalid value.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
-        /// You provided a parameter value that is not valid for the current state of the resource.
+        /// A parameter value is not valid for the current state of the resource.
         /// 
         ///  
         /// <para>
@@ -2277,7 +1599,7 @@ namespace Amazon.SecretsManager
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You tried to perform the operation on a secret that's currently marked deleted.
+        /// The secret is scheduled for deletion.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2287,14 +1609,14 @@ namespace Amazon.SecretsManager
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.MalformedPolicyDocumentException">
-        /// You provided a resource-based policy with syntax errors.
+        /// The resource policy has syntax errors.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.PublicPolicyException">
-        /// The BlockPublicPolicy parameter is set to true and the resource policy did not prevent
-        /// broad access to the secret.
+        /// The <code>BlockPublicPolicy</code> parameter is set to true, and the resource policy
+        /// did not prevent broad access to the secret.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.ResourceNotFoundException">
-        /// We can't find the resource that you asked for.
+        /// Secrets Manager can't find the resource that you asked for.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
         public virtual Task<PutResourcePolicyResponse> PutResourcePolicyAsync(PutResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2312,10 +1634,9 @@ namespace Amazon.SecretsManager
 
 
         /// <summary>
-        /// Stores a new encrypted secret value in the specified secret. To do this, the operation
-        /// creates a new version and attaches it to the secret. The version can contain a new
-        /// <code>SecretString</code> value or a new <code>SecretBinary</code> value. You can
-        /// also specify the staging labels that are initially attached to the new version.
+        /// Creates a new version with a new encrypted secret value and attaches it to the secret.
+        /// The version can contain a new <code>SecretString</code> value or a new <code>SecretBinary</code>
+        /// value. 
         /// 
         ///  
         /// <para>
@@ -2327,112 +1648,46 @@ namespace Amazon.SecretsManager
         /// create more versions than Secrets Manager removes, and you will reach the quota for
         /// secret versions.
         /// </para>
-        ///  <ul> <li> 
+        ///  
         /// <para>
-        /// If this operation creates the first version for the secret then Secrets Manager automatically
-        /// attaches the staging label <code>AWSCURRENT</code> to the new version.
+        /// You can specify the staging labels to attach to the new version in <code>VersionStages</code>.
+        /// If you don't include <code>VersionStages</code>, then Secrets Manager automatically
+        /// moves the staging label <code>AWSCURRENT</code> to this version. If this operation
+        /// creates the first version for the secret, then Secrets Manager automatically attaches
+        /// the staging label <code>AWSCURRENT</code> to it .
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// If you do not specify a value for VersionStages then Secrets Manager automatically
-        /// moves the staging label <code>AWSCURRENT</code> to this new version.
-        /// </para>
-        ///  </li> <li> 
+        ///  
         /// <para>
         /// If this operation moves the staging label <code>AWSCURRENT</code> from another version
         /// to this version, then Secrets Manager also automatically moves the staging label <code>AWSPREVIOUS</code>
         /// to the version that <code>AWSCURRENT</code> was removed from.
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// This operation is idempotent. If a version with a <code>VersionId</code> with the
-        /// same value as the <code>ClientRequestToken</code> parameter already exists and you
-        /// specify the same secret data, the operation succeeds but does nothing. However, if
-        /// the secret data is different, then the operation fails because you cannot modify an
-        /// existing version; you can only create new ones.
-        /// </para>
-        ///  </li> </ul> <note> <ul> <li> 
-        /// <para>
-        /// If you call an operation to encrypt or decrypt the <code>SecretString</code> or <code>SecretBinary</code>
-        /// for a secret in the same account as the calling user and that secret doesn't specify
-        /// a Amazon Web Services KMS encryption key, Secrets Manager uses the account's default
-        /// Amazon Web Services managed customer master key (CMK) with the alias <code>aws/secretsmanager</code>.
-        /// If this key doesn't already exist in your account then Secrets Manager creates it
-        /// for you automatically. All users and roles in the same Amazon Web Services account
-        /// automatically have access to use the default CMK. Note that if an Secrets Manager
-        /// API call results in Amazon Web Services creating the account's Amazon Web Services-managed
-        /// CMK, it can result in a one-time significant delay in returning the result.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// If the secret resides in a different Amazon Web Services account from the credentials
-        /// calling an API that requires encryption or decryption of the secret value then you
-        /// must create and use a custom Amazon Web Services KMS CMK because you can't access
-        /// the default CMK for the account using credentials from a different Amazon Web Services
-        /// account. Store the ARN of the CMK in the secret when you create the secret or when
-        /// you update it by including it in the <code>KMSKeyId</code>. If you call an API that
-        /// must encrypt or decrypt <code>SecretString</code> or <code>SecretBinary</code> using
-        /// credentials from a different account then the Amazon Web Services KMS key policy must
-        /// grant cross-account access to that other account's user or role for both the kms:GenerateDataKey
-        /// and kms:Decrypt operations.
-        /// </para>
-        ///  </li> </ul> </note> 
-        /// <para>
-        ///  <b>Minimum permissions</b> 
-        /// </para>
         ///  
         /// <para>
-        /// To run this command, you must have the following permissions:
+        /// This operation is idempotent. If a version with a <code>VersionId</code> with the
+        /// same value as the <code>ClientRequestToken</code> parameter already exists, and you
+        /// specify the same secret data, the operation succeeds but does nothing. However, if
+        /// the secret data is different, then the operation fails because you can't modify an
+        /// existing version; you can only create new ones.
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// secretsmanager:PutSecretValue
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// kms:GenerateDataKey - needed only if you use a customer-managed Amazon Web Services
-        /// KMS key to encrypt the secret. You do not need this permission to use the account's
-        /// default Amazon Web Services managed CMK for Secrets Manager.
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        ///  <b>Related operations</b> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// To retrieve the encrypted value you store in the version of a secret, use <a>GetSecretValue</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// To create a secret, use <a>CreateSecret</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// To get the details for a secret, use <a>DescribeSecret</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// To list the versions attached to a secret, use <a>ListSecretVersionIds</a>.
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutSecretValue service method.</param>
         /// 
         /// <returns>The response from the PutSecretValue service method, as returned by SecretsManager.</returns>
         /// <exception cref="Amazon.SecretsManager.Model.EncryptionFailureException">
         /// Secrets Manager can't encrypt the protected secret text using the provided KMS key.
-        /// Check that the customer master key (CMK) is available, enabled, and not in an invalid
-        /// state. For more information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects Use of a Customer Master Key</a>.
+        /// Check that the KMS key is available, enabled, and not in an invalid state. For more
+        /// information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+        /// state: Effect on your KMS key</a>.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InternalServiceErrorException">
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
-        /// You provided an invalid value for a parameter.
+        /// The parameter name is invalid value.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
-        /// You provided a parameter value that is not valid for the current state of the resource.
+        /// A parameter value is not valid for the current state of the resource.
         /// 
         ///  
         /// <para>
@@ -2440,7 +1695,7 @@ namespace Amazon.SecretsManager
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You tried to perform the operation on a secret that's currently marked deleted.
+        /// The secret is scheduled for deletion.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2450,13 +1705,13 @@ namespace Amazon.SecretsManager
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.LimitExceededException">
-        /// The request failed because it would exceed one of the Secrets Manager internal limits.
+        /// The request failed because it would exceed one of the Secrets Manager quotas.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.ResourceExistsException">
         /// A resource with the ID you requested already exists.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.ResourceNotFoundException">
-        /// We can't find the resource that you asked for.
+        /// Secrets Manager can't find the resource that you asked for.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/PutSecretValue">REST API Reference for PutSecretValue Operation</seealso>
         public virtual PutSecretValueResponse PutSecretValue(PutSecretValueRequest request)
@@ -2470,10 +1725,9 @@ namespace Amazon.SecretsManager
 
 
         /// <summary>
-        /// Stores a new encrypted secret value in the specified secret. To do this, the operation
-        /// creates a new version and attaches it to the secret. The version can contain a new
-        /// <code>SecretString</code> value or a new <code>SecretBinary</code> value. You can
-        /// also specify the staging labels that are initially attached to the new version.
+        /// Creates a new version with a new encrypted secret value and attaches it to the secret.
+        /// The version can contain a new <code>SecretString</code> value or a new <code>SecretBinary</code>
+        /// value. 
         /// 
         ///  
         /// <para>
@@ -2485,94 +1739,28 @@ namespace Amazon.SecretsManager
         /// create more versions than Secrets Manager removes, and you will reach the quota for
         /// secret versions.
         /// </para>
-        ///  <ul> <li> 
+        ///  
         /// <para>
-        /// If this operation creates the first version for the secret then Secrets Manager automatically
-        /// attaches the staging label <code>AWSCURRENT</code> to the new version.
+        /// You can specify the staging labels to attach to the new version in <code>VersionStages</code>.
+        /// If you don't include <code>VersionStages</code>, then Secrets Manager automatically
+        /// moves the staging label <code>AWSCURRENT</code> to this version. If this operation
+        /// creates the first version for the secret, then Secrets Manager automatically attaches
+        /// the staging label <code>AWSCURRENT</code> to it .
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// If you do not specify a value for VersionStages then Secrets Manager automatically
-        /// moves the staging label <code>AWSCURRENT</code> to this new version.
-        /// </para>
-        ///  </li> <li> 
+        ///  
         /// <para>
         /// If this operation moves the staging label <code>AWSCURRENT</code> from another version
         /// to this version, then Secrets Manager also automatically moves the staging label <code>AWSPREVIOUS</code>
         /// to the version that <code>AWSCURRENT</code> was removed from.
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// This operation is idempotent. If a version with a <code>VersionId</code> with the
-        /// same value as the <code>ClientRequestToken</code> parameter already exists and you
-        /// specify the same secret data, the operation succeeds but does nothing. However, if
-        /// the secret data is different, then the operation fails because you cannot modify an
-        /// existing version; you can only create new ones.
-        /// </para>
-        ///  </li> </ul> <note> <ul> <li> 
-        /// <para>
-        /// If you call an operation to encrypt or decrypt the <code>SecretString</code> or <code>SecretBinary</code>
-        /// for a secret in the same account as the calling user and that secret doesn't specify
-        /// a Amazon Web Services KMS encryption key, Secrets Manager uses the account's default
-        /// Amazon Web Services managed customer master key (CMK) with the alias <code>aws/secretsmanager</code>.
-        /// If this key doesn't already exist in your account then Secrets Manager creates it
-        /// for you automatically. All users and roles in the same Amazon Web Services account
-        /// automatically have access to use the default CMK. Note that if an Secrets Manager
-        /// API call results in Amazon Web Services creating the account's Amazon Web Services-managed
-        /// CMK, it can result in a one-time significant delay in returning the result.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// If the secret resides in a different Amazon Web Services account from the credentials
-        /// calling an API that requires encryption or decryption of the secret value then you
-        /// must create and use a custom Amazon Web Services KMS CMK because you can't access
-        /// the default CMK for the account using credentials from a different Amazon Web Services
-        /// account. Store the ARN of the CMK in the secret when you create the secret or when
-        /// you update it by including it in the <code>KMSKeyId</code>. If you call an API that
-        /// must encrypt or decrypt <code>SecretString</code> or <code>SecretBinary</code> using
-        /// credentials from a different account then the Amazon Web Services KMS key policy must
-        /// grant cross-account access to that other account's user or role for both the kms:GenerateDataKey
-        /// and kms:Decrypt operations.
-        /// </para>
-        ///  </li> </ul> </note> 
-        /// <para>
-        ///  <b>Minimum permissions</b> 
-        /// </para>
         ///  
         /// <para>
-        /// To run this command, you must have the following permissions:
+        /// This operation is idempotent. If a version with a <code>VersionId</code> with the
+        /// same value as the <code>ClientRequestToken</code> parameter already exists, and you
+        /// specify the same secret data, the operation succeeds but does nothing. However, if
+        /// the secret data is different, then the operation fails because you can't modify an
+        /// existing version; you can only create new ones.
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// secretsmanager:PutSecretValue
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// kms:GenerateDataKey - needed only if you use a customer-managed Amazon Web Services
-        /// KMS key to encrypt the secret. You do not need this permission to use the account's
-        /// default Amazon Web Services managed CMK for Secrets Manager.
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        ///  <b>Related operations</b> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// To retrieve the encrypted value you store in the version of a secret, use <a>GetSecretValue</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// To create a secret, use <a>CreateSecret</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// To get the details for a secret, use <a>DescribeSecret</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// To list the versions attached to a secret, use <a>ListSecretVersionIds</a>.
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutSecretValue service method.</param>
         /// <param name="cancellationToken">
@@ -2582,18 +1770,18 @@ namespace Amazon.SecretsManager
         /// <returns>The response from the PutSecretValue service method, as returned by SecretsManager.</returns>
         /// <exception cref="Amazon.SecretsManager.Model.EncryptionFailureException">
         /// Secrets Manager can't encrypt the protected secret text using the provided KMS key.
-        /// Check that the customer master key (CMK) is available, enabled, and not in an invalid
-        /// state. For more information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects Use of a Customer Master Key</a>.
+        /// Check that the KMS key is available, enabled, and not in an invalid state. For more
+        /// information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+        /// state: Effect on your KMS key</a>.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InternalServiceErrorException">
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
-        /// You provided an invalid value for a parameter.
+        /// The parameter name is invalid value.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
-        /// You provided a parameter value that is not valid for the current state of the resource.
+        /// A parameter value is not valid for the current state of the resource.
         /// 
         ///  
         /// <para>
@@ -2601,7 +1789,7 @@ namespace Amazon.SecretsManager
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You tried to perform the operation on a secret that's currently marked deleted.
+        /// The secret is scheduled for deletion.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2611,13 +1799,13 @@ namespace Amazon.SecretsManager
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.LimitExceededException">
-        /// The request failed because it would exceed one of the Secrets Manager internal limits.
+        /// The request failed because it would exceed one of the Secrets Manager quotas.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.ResourceExistsException">
         /// A resource with the ID you requested already exists.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.ResourceNotFoundException">
-        /// We can't find the resource that you asked for.
+        /// Secrets Manager can't find the resource that you asked for.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/PutSecretValue">REST API Reference for PutSecretValue Operation</seealso>
         public virtual Task<PutSecretValueResponse> PutSecretValueAsync(PutSecretValueRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2635,7 +1823,8 @@ namespace Amazon.SecretsManager
 
 
         /// <summary>
-        /// Remove regions from replication.
+        /// For a secret that is replicated to other Regions, deletes the secret replicas from
+        /// the Regions you specify.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RemoveRegionsFromReplication service method.</param>
         /// 
@@ -2644,10 +1833,10 @@ namespace Amazon.SecretsManager
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
-        /// You provided an invalid value for a parameter.
+        /// The parameter name is invalid value.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
-        /// You provided a parameter value that is not valid for the current state of the resource.
+        /// A parameter value is not valid for the current state of the resource.
         /// 
         ///  
         /// <para>
@@ -2655,7 +1844,7 @@ namespace Amazon.SecretsManager
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You tried to perform the operation on a secret that's currently marked deleted.
+        /// The secret is scheduled for deletion.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2665,7 +1854,7 @@ namespace Amazon.SecretsManager
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.ResourceNotFoundException">
-        /// We can't find the resource that you asked for.
+        /// Secrets Manager can't find the resource that you asked for.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/RemoveRegionsFromReplication">REST API Reference for RemoveRegionsFromReplication Operation</seealso>
         public virtual RemoveRegionsFromReplicationResponse RemoveRegionsFromReplication(RemoveRegionsFromReplicationRequest request)
@@ -2679,7 +1868,8 @@ namespace Amazon.SecretsManager
 
 
         /// <summary>
-        /// Remove regions from replication.
+        /// For a secret that is replicated to other Regions, deletes the secret replicas from
+        /// the Regions you specify.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RemoveRegionsFromReplication service method.</param>
         /// <param name="cancellationToken">
@@ -2691,10 +1881,10 @@ namespace Amazon.SecretsManager
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
-        /// You provided an invalid value for a parameter.
+        /// The parameter name is invalid value.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
-        /// You provided a parameter value that is not valid for the current state of the resource.
+        /// A parameter value is not valid for the current state of the resource.
         /// 
         ///  
         /// <para>
@@ -2702,7 +1892,7 @@ namespace Amazon.SecretsManager
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You tried to perform the operation on a secret that's currently marked deleted.
+        /// The secret is scheduled for deletion.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2712,7 +1902,7 @@ namespace Amazon.SecretsManager
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.ResourceNotFoundException">
-        /// We can't find the resource that you asked for.
+        /// Secrets Manager can't find the resource that you asked for.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/RemoveRegionsFromReplication">REST API Reference for RemoveRegionsFromReplication Operation</seealso>
         public virtual Task<RemoveRegionsFromReplicationResponse> RemoveRegionsFromReplicationAsync(RemoveRegionsFromReplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2730,8 +1920,8 @@ namespace Amazon.SecretsManager
 
 
         /// <summary>
-        /// Converts an existing secret to a multi-Region secret and begins replication the secret
-        /// to a list of new regions.
+        /// Replicates the secret to a new Regions. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create-manage-multi-region-secrets.html">Multi-Region
+        /// secrets</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ReplicateSecretToRegions service method.</param>
         /// 
@@ -2740,10 +1930,10 @@ namespace Amazon.SecretsManager
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
-        /// You provided an invalid value for a parameter.
+        /// The parameter name is invalid value.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
-        /// You provided a parameter value that is not valid for the current state of the resource.
+        /// A parameter value is not valid for the current state of the resource.
         /// 
         ///  
         /// <para>
@@ -2751,7 +1941,7 @@ namespace Amazon.SecretsManager
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You tried to perform the operation on a secret that's currently marked deleted.
+        /// The secret is scheduled for deletion.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2761,7 +1951,7 @@ namespace Amazon.SecretsManager
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.ResourceNotFoundException">
-        /// We can't find the resource that you asked for.
+        /// Secrets Manager can't find the resource that you asked for.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/ReplicateSecretToRegions">REST API Reference for ReplicateSecretToRegions Operation</seealso>
         public virtual ReplicateSecretToRegionsResponse ReplicateSecretToRegions(ReplicateSecretToRegionsRequest request)
@@ -2775,8 +1965,8 @@ namespace Amazon.SecretsManager
 
 
         /// <summary>
-        /// Converts an existing secret to a multi-Region secret and begins replication the secret
-        /// to a list of new regions.
+        /// Replicates the secret to a new Regions. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create-manage-multi-region-secrets.html">Multi-Region
+        /// secrets</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ReplicateSecretToRegions service method.</param>
         /// <param name="cancellationToken">
@@ -2788,10 +1978,10 @@ namespace Amazon.SecretsManager
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
-        /// You provided an invalid value for a parameter.
+        /// The parameter name is invalid value.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
-        /// You provided a parameter value that is not valid for the current state of the resource.
+        /// A parameter value is not valid for the current state of the resource.
         /// 
         ///  
         /// <para>
@@ -2799,7 +1989,7 @@ namespace Amazon.SecretsManager
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You tried to perform the operation on a secret that's currently marked deleted.
+        /// The secret is scheduled for deletion.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2809,7 +1999,7 @@ namespace Amazon.SecretsManager
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.ResourceNotFoundException">
-        /// We can't find the resource that you asked for.
+        /// Secrets Manager can't find the resource that you asked for.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/ReplicateSecretToRegions">REST API Reference for ReplicateSecretToRegions Operation</seealso>
         public virtual Task<ReplicateSecretToRegionsResponse> ReplicateSecretToRegionsAsync(ReplicateSecretToRegionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2828,29 +2018,7 @@ namespace Amazon.SecretsManager
 
         /// <summary>
         /// Cancels the scheduled deletion of a secret by removing the <code>DeletedDate</code>
-        /// time stamp. This makes the secret accessible to query once again.
-        /// 
-        ///  
-        /// <para>
-        ///  <b>Minimum permissions</b> 
-        /// </para>
-        ///  
-        /// <para>
-        /// To run this command, you must have the following permissions:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// secretsmanager:RestoreSecret
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        ///  <b>Related operations</b> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// To delete a secret, use <a>DeleteSecret</a>.
-        /// </para>
-        ///  </li> </ul>
+        /// time stamp. You can access a secret again after it has been restored.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RestoreSecret service method.</param>
         /// 
@@ -2859,10 +2027,10 @@ namespace Amazon.SecretsManager
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
-        /// You provided an invalid value for a parameter.
+        /// The parameter name is invalid value.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
-        /// You provided a parameter value that is not valid for the current state of the resource.
+        /// A parameter value is not valid for the current state of the resource.
         /// 
         ///  
         /// <para>
@@ -2870,7 +2038,7 @@ namespace Amazon.SecretsManager
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You tried to perform the operation on a secret that's currently marked deleted.
+        /// The secret is scheduled for deletion.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2880,7 +2048,7 @@ namespace Amazon.SecretsManager
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.ResourceNotFoundException">
-        /// We can't find the resource that you asked for.
+        /// Secrets Manager can't find the resource that you asked for.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/RestoreSecret">REST API Reference for RestoreSecret Operation</seealso>
         public virtual RestoreSecretResponse RestoreSecret(RestoreSecretRequest request)
@@ -2895,29 +2063,7 @@ namespace Amazon.SecretsManager
 
         /// <summary>
         /// Cancels the scheduled deletion of a secret by removing the <code>DeletedDate</code>
-        /// time stamp. This makes the secret accessible to query once again.
-        /// 
-        ///  
-        /// <para>
-        ///  <b>Minimum permissions</b> 
-        /// </para>
-        ///  
-        /// <para>
-        /// To run this command, you must have the following permissions:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// secretsmanager:RestoreSecret
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        ///  <b>Related operations</b> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// To delete a secret, use <a>DeleteSecret</a>.
-        /// </para>
-        ///  </li> </ul>
+        /// time stamp. You can access a secret again after it has been restored.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RestoreSecret service method.</param>
         /// <param name="cancellationToken">
@@ -2929,10 +2075,10 @@ namespace Amazon.SecretsManager
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
-        /// You provided an invalid value for a parameter.
+        /// The parameter name is invalid value.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
-        /// You provided a parameter value that is not valid for the current state of the resource.
+        /// A parameter value is not valid for the current state of the resource.
         /// 
         ///  
         /// <para>
@@ -2940,7 +2086,7 @@ namespace Amazon.SecretsManager
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You tried to perform the operation on a secret that's currently marked deleted.
+        /// The secret is scheduled for deletion.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2950,7 +2096,7 @@ namespace Amazon.SecretsManager
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.ResourceNotFoundException">
-        /// We can't find the resource that you asked for.
+        /// Secrets Manager can't find the resource that you asked for.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/RestoreSecret">REST API Reference for RestoreSecret Operation</seealso>
         public virtual Task<RestoreSecretResponse> RestoreSecretAsync(RestoreSecretRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2968,91 +2114,44 @@ namespace Amazon.SecretsManager
 
 
         /// <summary>
-        /// Configures and starts the asynchronous process of rotating this secret. If you include
-        /// the configuration parameters, the operation sets those values for the secret and then
-        /// immediately starts a rotation. If you do not include the configuration parameters,
-        /// the operation starts a rotation with the values already stored in the secret. After
-        /// the rotation completes, the protected service and its clients all use the new version
-        /// of the secret. 
+        /// Configures and starts the asynchronous process of rotating the secret.
         /// 
         ///  
         /// <para>
-        /// This required configuration information includes the ARN of an Amazon Web Services
-        /// Lambda function and optionally, the time between scheduled rotations. The Lambda rotation
-        /// function creates a new version of the secret and creates or updates the credentials
-        /// on the protected service to match. After testing the new credentials, the function
-        /// marks the new secret with the staging label <code>AWSCURRENT</code> so that your clients
-        /// all immediately begin to use the new version. For more information about rotating
-        /// secrets and how to configure a Lambda function to rotate the secrets for your protected
-        /// service, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotating-secrets.html">Rotating
-        /// Secrets in Amazon Web Services Secrets Manager</a> in the <i>Amazon Web Services Secrets
-        /// Manager User Guide</i>.
+        /// If you include the configuration parameters, the operation sets the values for the
+        /// secret and then immediately starts a rotation. If you don't include the configuration
+        /// parameters, the operation starts a rotation with the values already stored in the
+        /// secret. For more information about rotation, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotating-secrets.html">Rotate
+        /// secrets</a>.
         /// </para>
         ///  
         /// <para>
-        /// Secrets Manager schedules the next rotation when the previous one completes. Secrets
-        /// Manager schedules the date by adding the rotation interval (number of days) to the
-        /// actual date of the last rotation. The service chooses the hour within that 24-hour
-        /// date window randomly. The minute is also chosen somewhat randomly, but weighted towards
-        /// the top of the hour and influenced by a variety of factors that help distribute load.
+        /// To configure rotation, you include the ARN of an Amazon Web Services Lambda function
+        /// and the schedule for the rotation. The Lambda rotation function creates a new version
+        /// of the secret and creates or updates the credentials on the database or service to
+        /// match. After testing the new credentials, the function marks the new secret version
+        /// with the staging label <code>AWSCURRENT</code>. Then anyone who retrieves the secret
+        /// gets the new version. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_how.html">How
+        /// rotation works</a>.
         /// </para>
         ///  
         /// <para>
-        /// The rotation function must end with the versions of the secret in one of two states:
+        /// When rotation is successful, the <code>AWSPENDING</code> staging label might be attached
+        /// to the same version as the <code>AWSCURRENT</code> version, or it might not be attached
+        /// to any version.
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// The <code>AWSPENDING</code> and <code>AWSCURRENT</code> staging labels are attached
-        /// to the same version of the secret, or
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// The <code>AWSPENDING</code> staging label is not attached to any version of the secret.
-        /// </para>
-        ///  </li> </ul> 
+        ///  
         /// <para>
         /// If the <code>AWSPENDING</code> staging label is present but not attached to the same
-        /// version as <code>AWSCURRENT</code> then any later invocation of <code>RotateSecret</code>
+        /// version as <code>AWSCURRENT</code>, then any later invocation of <code>RotateSecret</code>
         /// assumes that a previous rotation request is still in progress and returns an error.
         /// </para>
         ///  
         /// <para>
-        ///  <b>Minimum permissions</b> 
+        /// To run this command, you must have <code>secretsmanager:RotateSecret</code> permissions
+        /// and <code>lambda:InvokeFunction</code> permissions on the function specified in the
+        /// secret's metadata.
         /// </para>
-        ///  
-        /// <para>
-        /// To run this command, you must have the following permissions:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// secretsmanager:RotateSecret
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// lambda:InvokeFunction (on the function specified in the secret's metadata)
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        ///  <b>Related operations</b> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// To list the secrets in your account, use <a>ListSecrets</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// To get the details for a version of a secret, use <a>DescribeSecret</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// To create a new version of a secret, use <a>CreateSecret</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// To attach staging labels to or remove staging labels from a version of a secret, use
-        /// <a>UpdateSecretVersionStage</a>.
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RotateSecret service method.</param>
         /// 
@@ -3061,10 +2160,10 @@ namespace Amazon.SecretsManager
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
-        /// You provided an invalid value for a parameter.
+        /// The parameter name is invalid value.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
-        /// You provided a parameter value that is not valid for the current state of the resource.
+        /// A parameter value is not valid for the current state of the resource.
         /// 
         ///  
         /// <para>
@@ -3072,7 +2171,7 @@ namespace Amazon.SecretsManager
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You tried to perform the operation on a secret that's currently marked deleted.
+        /// The secret is scheduled for deletion.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3082,7 +2181,7 @@ namespace Amazon.SecretsManager
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.ResourceNotFoundException">
-        /// We can't find the resource that you asked for.
+        /// Secrets Manager can't find the resource that you asked for.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/RotateSecret">REST API Reference for RotateSecret Operation</seealso>
         public virtual RotateSecretResponse RotateSecret(RotateSecretRequest request)
@@ -3096,91 +2195,44 @@ namespace Amazon.SecretsManager
 
 
         /// <summary>
-        /// Configures and starts the asynchronous process of rotating this secret. If you include
-        /// the configuration parameters, the operation sets those values for the secret and then
-        /// immediately starts a rotation. If you do not include the configuration parameters,
-        /// the operation starts a rotation with the values already stored in the secret. After
-        /// the rotation completes, the protected service and its clients all use the new version
-        /// of the secret. 
+        /// Configures and starts the asynchronous process of rotating the secret.
         /// 
         ///  
         /// <para>
-        /// This required configuration information includes the ARN of an Amazon Web Services
-        /// Lambda function and optionally, the time between scheduled rotations. The Lambda rotation
-        /// function creates a new version of the secret and creates or updates the credentials
-        /// on the protected service to match. After testing the new credentials, the function
-        /// marks the new secret with the staging label <code>AWSCURRENT</code> so that your clients
-        /// all immediately begin to use the new version. For more information about rotating
-        /// secrets and how to configure a Lambda function to rotate the secrets for your protected
-        /// service, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotating-secrets.html">Rotating
-        /// Secrets in Amazon Web Services Secrets Manager</a> in the <i>Amazon Web Services Secrets
-        /// Manager User Guide</i>.
+        /// If you include the configuration parameters, the operation sets the values for the
+        /// secret and then immediately starts a rotation. If you don't include the configuration
+        /// parameters, the operation starts a rotation with the values already stored in the
+        /// secret. For more information about rotation, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotating-secrets.html">Rotate
+        /// secrets</a>.
         /// </para>
         ///  
         /// <para>
-        /// Secrets Manager schedules the next rotation when the previous one completes. Secrets
-        /// Manager schedules the date by adding the rotation interval (number of days) to the
-        /// actual date of the last rotation. The service chooses the hour within that 24-hour
-        /// date window randomly. The minute is also chosen somewhat randomly, but weighted towards
-        /// the top of the hour and influenced by a variety of factors that help distribute load.
+        /// To configure rotation, you include the ARN of an Amazon Web Services Lambda function
+        /// and the schedule for the rotation. The Lambda rotation function creates a new version
+        /// of the secret and creates or updates the credentials on the database or service to
+        /// match. After testing the new credentials, the function marks the new secret version
+        /// with the staging label <code>AWSCURRENT</code>. Then anyone who retrieves the secret
+        /// gets the new version. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_how.html">How
+        /// rotation works</a>.
         /// </para>
         ///  
         /// <para>
-        /// The rotation function must end with the versions of the secret in one of two states:
+        /// When rotation is successful, the <code>AWSPENDING</code> staging label might be attached
+        /// to the same version as the <code>AWSCURRENT</code> version, or it might not be attached
+        /// to any version.
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// The <code>AWSPENDING</code> and <code>AWSCURRENT</code> staging labels are attached
-        /// to the same version of the secret, or
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// The <code>AWSPENDING</code> staging label is not attached to any version of the secret.
-        /// </para>
-        ///  </li> </ul> 
+        ///  
         /// <para>
         /// If the <code>AWSPENDING</code> staging label is present but not attached to the same
-        /// version as <code>AWSCURRENT</code> then any later invocation of <code>RotateSecret</code>
+        /// version as <code>AWSCURRENT</code>, then any later invocation of <code>RotateSecret</code>
         /// assumes that a previous rotation request is still in progress and returns an error.
         /// </para>
         ///  
         /// <para>
-        ///  <b>Minimum permissions</b> 
+        /// To run this command, you must have <code>secretsmanager:RotateSecret</code> permissions
+        /// and <code>lambda:InvokeFunction</code> permissions on the function specified in the
+        /// secret's metadata.
         /// </para>
-        ///  
-        /// <para>
-        /// To run this command, you must have the following permissions:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// secretsmanager:RotateSecret
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// lambda:InvokeFunction (on the function specified in the secret's metadata)
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        ///  <b>Related operations</b> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// To list the secrets in your account, use <a>ListSecrets</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// To get the details for a version of a secret, use <a>DescribeSecret</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// To create a new version of a secret, use <a>CreateSecret</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// To attach staging labels to or remove staging labels from a version of a secret, use
-        /// <a>UpdateSecretVersionStage</a>.
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RotateSecret service method.</param>
         /// <param name="cancellationToken">
@@ -3192,10 +2244,10 @@ namespace Amazon.SecretsManager
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
-        /// You provided an invalid value for a parameter.
+        /// The parameter name is invalid value.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
-        /// You provided a parameter value that is not valid for the current state of the resource.
+        /// A parameter value is not valid for the current state of the resource.
         /// 
         ///  
         /// <para>
@@ -3203,7 +2255,7 @@ namespace Amazon.SecretsManager
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You tried to perform the operation on a secret that's currently marked deleted.
+        /// The secret is scheduled for deletion.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3213,7 +2265,7 @@ namespace Amazon.SecretsManager
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.ResourceNotFoundException">
-        /// We can't find the resource that you asked for.
+        /// Secrets Manager can't find the resource that you asked for.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/RotateSecret">REST API Reference for RotateSecret Operation</seealso>
         public virtual Task<RotateSecretResponse> RotateSecretAsync(RotateSecretRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3231,8 +2283,14 @@ namespace Amazon.SecretsManager
 
 
         /// <summary>
-        /// Removes the secret from replication and promotes the secret to a regional secret in
-        /// the replica Region.
+        /// Removes the link between the replica secret and the primary secret and promotes the
+        /// replica to a primary secret in the replica Region.
+        /// 
+        ///  
+        /// <para>
+        /// You must call this operation from the Region in which you want to promote the replica
+        /// to a primary secret.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopReplicationToReplica service method.</param>
         /// 
@@ -3241,10 +2299,10 @@ namespace Amazon.SecretsManager
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
-        /// You provided an invalid value for a parameter.
+        /// The parameter name is invalid value.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
-        /// You provided a parameter value that is not valid for the current state of the resource.
+        /// A parameter value is not valid for the current state of the resource.
         /// 
         ///  
         /// <para>
@@ -3252,7 +2310,7 @@ namespace Amazon.SecretsManager
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You tried to perform the operation on a secret that's currently marked deleted.
+        /// The secret is scheduled for deletion.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3262,7 +2320,7 @@ namespace Amazon.SecretsManager
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.ResourceNotFoundException">
-        /// We can't find the resource that you asked for.
+        /// Secrets Manager can't find the resource that you asked for.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/StopReplicationToReplica">REST API Reference for StopReplicationToReplica Operation</seealso>
         public virtual StopReplicationToReplicaResponse StopReplicationToReplica(StopReplicationToReplicaRequest request)
@@ -3276,8 +2334,14 @@ namespace Amazon.SecretsManager
 
 
         /// <summary>
-        /// Removes the secret from replication and promotes the secret to a regional secret in
-        /// the replica Region.
+        /// Removes the link between the replica secret and the primary secret and promotes the
+        /// replica to a primary secret in the replica Region.
+        /// 
+        ///  
+        /// <para>
+        /// You must call this operation from the Region in which you want to promote the replica
+        /// to a primary secret.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopReplicationToReplica service method.</param>
         /// <param name="cancellationToken">
@@ -3289,10 +2353,10 @@ namespace Amazon.SecretsManager
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
-        /// You provided an invalid value for a parameter.
+        /// The parameter name is invalid value.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
-        /// You provided a parameter value that is not valid for the current state of the resource.
+        /// A parameter value is not valid for the current state of the resource.
         /// 
         ///  
         /// <para>
@@ -3300,7 +2364,7 @@ namespace Amazon.SecretsManager
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You tried to perform the operation on a secret that's currently marked deleted.
+        /// The secret is scheduled for deletion.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3310,7 +2374,7 @@ namespace Amazon.SecretsManager
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.ResourceNotFoundException">
-        /// We can't find the resource that you asked for.
+        /// Secrets Manager can't find the resource that you asked for.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/StopReplicationToReplica">REST API Reference for StopReplicationToReplica Operation</seealso>
         public virtual Task<StopReplicationToReplicaResponse> StopReplicationToReplicaAsync(StopReplicationToReplicaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3328,26 +2392,25 @@ namespace Amazon.SecretsManager
 
 
         /// <summary>
-        /// Attaches one or more tags, each consisting of a key name and a value, to the specified
-        /// secret. Tags are part of the secret's overall metadata, and are not associated with
-        /// any specific version of the secret. This operation only appends tags to the existing
-        /// list of tags. To remove tags, you must use <a>UntagResource</a>.
+        /// Attaches tags to a secret. Tags consist of a key name and a value. Tags are part of
+        /// the secret's metadata. They are not associated with specific versions of the secret.
+        /// This operation appends tags to the existing list of tags.
         /// 
         ///  
         /// <para>
-        /// The following basic restrictions apply to tags:
+        /// The following restrictions apply to tags:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Maximum number of tags per secret—50
+        /// Maximum number of tags per secret: 50
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Maximum key length—127 Unicode characters in UTF-8
+        /// Maximum key length: 127 Unicode characters in UTF-8
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Maximum value length—255 Unicode characters in UTF-8
+        /// Maximum value length: 255 Unicode characters in UTF-8
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3362,9 +2425,9 @@ namespace Amazon.SecretsManager
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you use your tagging schema across multiple services and resources, remember other
-        /// services might have restrictions on allowed characters. Generally allowed characters:
-        /// letters, spaces, and numbers representable in UTF-8, plus the following special characters:
+        /// If you use your tagging schema across multiple services and resources, other services
+        /// might have restrictions on allowed characters. Generally allowed characters: letters,
+        /// spaces, and numbers representable in UTF-8, plus the following special characters:
         /// + - = . _ : / @.
         /// </para>
         ///  </li> </ul> <important> 
@@ -3374,31 +2437,7 @@ namespace Amazon.SecretsManager
         /// losing your permissions for this secret, then the operation is blocked and returns
         /// an Access Denied error.
         /// </para>
-        ///  </important> 
-        /// <para>
-        ///  <b>Minimum permissions</b> 
-        /// </para>
-        ///  
-        /// <para>
-        /// To run this command, you must have the following permissions:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// secretsmanager:TagResource
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        ///  <b>Related operations</b> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// To remove one or more tags from the collection attached to a secret, use <a>UntagResource</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// To view the list of tags attached to a secret, use <a>DescribeSecret</a>.
-        /// </para>
-        ///  </li> </ul>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
@@ -3407,10 +2446,10 @@ namespace Amazon.SecretsManager
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
-        /// You provided an invalid value for a parameter.
+        /// The parameter name is invalid value.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
-        /// You provided a parameter value that is not valid for the current state of the resource.
+        /// A parameter value is not valid for the current state of the resource.
         /// 
         ///  
         /// <para>
@@ -3418,7 +2457,7 @@ namespace Amazon.SecretsManager
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You tried to perform the operation on a secret that's currently marked deleted.
+        /// The secret is scheduled for deletion.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3428,7 +2467,7 @@ namespace Amazon.SecretsManager
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.ResourceNotFoundException">
-        /// We can't find the resource that you asked for.
+        /// Secrets Manager can't find the resource that you asked for.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
@@ -3442,26 +2481,25 @@ namespace Amazon.SecretsManager
 
 
         /// <summary>
-        /// Attaches one or more tags, each consisting of a key name and a value, to the specified
-        /// secret. Tags are part of the secret's overall metadata, and are not associated with
-        /// any specific version of the secret. This operation only appends tags to the existing
-        /// list of tags. To remove tags, you must use <a>UntagResource</a>.
+        /// Attaches tags to a secret. Tags consist of a key name and a value. Tags are part of
+        /// the secret's metadata. They are not associated with specific versions of the secret.
+        /// This operation appends tags to the existing list of tags.
         /// 
         ///  
         /// <para>
-        /// The following basic restrictions apply to tags:
+        /// The following restrictions apply to tags:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Maximum number of tags per secret—50
+        /// Maximum number of tags per secret: 50
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Maximum key length—127 Unicode characters in UTF-8
+        /// Maximum key length: 127 Unicode characters in UTF-8
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Maximum value length—255 Unicode characters in UTF-8
+        /// Maximum value length: 255 Unicode characters in UTF-8
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3476,9 +2514,9 @@ namespace Amazon.SecretsManager
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you use your tagging schema across multiple services and resources, remember other
-        /// services might have restrictions on allowed characters. Generally allowed characters:
-        /// letters, spaces, and numbers representable in UTF-8, plus the following special characters:
+        /// If you use your tagging schema across multiple services and resources, other services
+        /// might have restrictions on allowed characters. Generally allowed characters: letters,
+        /// spaces, and numbers representable in UTF-8, plus the following special characters:
         /// + - = . _ : / @.
         /// </para>
         ///  </li> </ul> <important> 
@@ -3488,31 +2526,7 @@ namespace Amazon.SecretsManager
         /// losing your permissions for this secret, then the operation is blocked and returns
         /// an Access Denied error.
         /// </para>
-        ///  </important> 
-        /// <para>
-        ///  <b>Minimum permissions</b> 
-        /// </para>
-        ///  
-        /// <para>
-        /// To run this command, you must have the following permissions:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// secretsmanager:TagResource
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        ///  <b>Related operations</b> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// To remove one or more tags from the collection attached to a secret, use <a>UntagResource</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// To view the list of tags attached to a secret, use <a>DescribeSecret</a>.
-        /// </para>
-        ///  </li> </ul>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// <param name="cancellationToken">
@@ -3524,10 +2538,10 @@ namespace Amazon.SecretsManager
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
-        /// You provided an invalid value for a parameter.
+        /// The parameter name is invalid value.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
-        /// You provided a parameter value that is not valid for the current state of the resource.
+        /// A parameter value is not valid for the current state of the resource.
         /// 
         ///  
         /// <para>
@@ -3535,7 +2549,7 @@ namespace Amazon.SecretsManager
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You tried to perform the operation on a secret that's currently marked deleted.
+        /// The secret is scheduled for deletion.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3545,7 +2559,7 @@ namespace Amazon.SecretsManager
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.ResourceNotFoundException">
-        /// We can't find the resource that you asked for.
+        /// Secrets Manager can't find the resource that you asked for.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3563,7 +2577,7 @@ namespace Amazon.SecretsManager
 
 
         /// <summary>
-        /// Removes one or more tags from the specified secret.
+        /// Removes specific tags from a secret.
         /// 
         ///  
         /// <para>
@@ -3577,31 +2591,7 @@ namespace Amazon.SecretsManager
         /// your permissions for this secret, then the operation is blocked and returns an Access
         /// Denied error.
         /// </para>
-        ///  </important> 
-        /// <para>
-        ///  <b>Minimum permissions</b> 
-        /// </para>
-        ///  
-        /// <para>
-        /// To run this command, you must have the following permissions:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// secretsmanager:UntagResource
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        ///  <b>Related operations</b> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// To add one or more tags to the collection attached to a secret, use <a>TagResource</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// To view the list of tags attached to a secret, use <a>DescribeSecret</a>.
-        /// </para>
-        ///  </li> </ul>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 
@@ -3610,10 +2600,10 @@ namespace Amazon.SecretsManager
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
-        /// You provided an invalid value for a parameter.
+        /// The parameter name is invalid value.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
-        /// You provided a parameter value that is not valid for the current state of the resource.
+        /// A parameter value is not valid for the current state of the resource.
         /// 
         ///  
         /// <para>
@@ -3621,7 +2611,7 @@ namespace Amazon.SecretsManager
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You tried to perform the operation on a secret that's currently marked deleted.
+        /// The secret is scheduled for deletion.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3631,7 +2621,7 @@ namespace Amazon.SecretsManager
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.ResourceNotFoundException">
-        /// We can't find the resource that you asked for.
+        /// Secrets Manager can't find the resource that you asked for.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
@@ -3645,7 +2635,7 @@ namespace Amazon.SecretsManager
 
 
         /// <summary>
-        /// Removes one or more tags from the specified secret.
+        /// Removes specific tags from a secret.
         /// 
         ///  
         /// <para>
@@ -3659,31 +2649,7 @@ namespace Amazon.SecretsManager
         /// your permissions for this secret, then the operation is blocked and returns an Access
         /// Denied error.
         /// </para>
-        ///  </important> 
-        /// <para>
-        ///  <b>Minimum permissions</b> 
-        /// </para>
-        ///  
-        /// <para>
-        /// To run this command, you must have the following permissions:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// secretsmanager:UntagResource
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        ///  <b>Related operations</b> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// To add one or more tags to the collection attached to a secret, use <a>TagResource</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// To view the list of tags attached to a secret, use <a>DescribeSecret</a>.
-        /// </para>
-        ///  </li> </ul>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// <param name="cancellationToken">
@@ -3695,10 +2661,10 @@ namespace Amazon.SecretsManager
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
-        /// You provided an invalid value for a parameter.
+        /// The parameter name is invalid value.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
-        /// You provided a parameter value that is not valid for the current state of the resource.
+        /// A parameter value is not valid for the current state of the resource.
         /// 
         ///  
         /// <para>
@@ -3706,7 +2672,7 @@ namespace Amazon.SecretsManager
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You tried to perform the operation on a secret that's currently marked deleted.
+        /// The secret is scheduled for deletion.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3716,7 +2682,7 @@ namespace Amazon.SecretsManager
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.ResourceNotFoundException">
-        /// We can't find the resource that you asked for.
+        /// Secrets Manager can't find the resource that you asked for.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3734,12 +2700,9 @@ namespace Amazon.SecretsManager
 
 
         /// <summary>
-        /// Modifies many of the details of the specified secret. 
+        /// Modifies the details of a secret, including metadata and the secret value. To change
+        /// the secret value, you can also use <a>PutSecretValue</a>.
         /// 
-        ///  
-        /// <para>
-        /// To change the secret value, you can also use <a>PutSecretValue</a>.
-        /// </para>
         ///  
         /// <para>
         /// To change the rotation configuration of a secret, use <a>RotateSecret</a> instead.
@@ -3754,113 +2717,58 @@ namespace Amazon.SecretsManager
         /// 10 minutes, you create more versions than Secrets Manager removes, and you will reach
         /// the quota for secret versions.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// The Secrets Manager console uses only the <code>SecretString</code> parameter and
-        /// therefore limits you to encrypting and storing only a text string. To encrypt and
-        /// store binary data as part of the version of a secret, you must use either the Amazon
-        /// Web Services CLI or one of the Amazon Web Services SDKs.
-        /// </para>
-        ///  </note> <ul> <li> 
-        /// <para>
-        /// If a version with a <code>VersionId</code> with the same value as the <code>ClientRequestToken</code>
-        /// parameter already exists, the operation results in an error. You cannot modify an
-        /// existing version, you can only create a new version.
-        /// </para>
-        ///  </li> <li> 
+        ///  
         /// <para>
         /// If you include <code>SecretString</code> or <code>SecretBinary</code> to create a
         /// new secret version, Secrets Manager automatically attaches the staging label <code>AWSCURRENT</code>
         /// to the new version. 
         /// </para>
-        ///  </li> </ul> <note> <ul> <li> 
+        ///  
         /// <para>
-        /// If you call an operation to encrypt or decrypt the <code>SecretString</code> or <code>SecretBinary</code>
-        /// for a secret in the same account as the calling user and that secret doesn't specify
-        /// a Amazon Web Services KMS encryption key, Secrets Manager uses the account's default
-        /// Amazon Web Services managed customer master key (CMK) with the alias <code>aws/secretsmanager</code>.
-        /// If this key doesn't already exist in your account then Secrets Manager creates it
-        /// for you automatically. All users and roles in the same Amazon Web Services account
-        /// automatically have access to use the default CMK. Note that if an Secrets Manager
-        /// API call results in Amazon Web Services creating the account's Amazon Web Services-managed
-        /// CMK, it can result in a one-time significant delay in returning the result.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// If the secret resides in a different Amazon Web Services account from the credentials
-        /// calling an API that requires encryption or decryption of the secret value then you
-        /// must create and use a custom Amazon Web Services KMS CMK because you can't access
-        /// the default CMK for the account using credentials from a different Amazon Web Services
-        /// account. Store the ARN of the CMK in the secret when you create the secret or when
-        /// you update it by including it in the <code>KMSKeyId</code>. If you call an API that
-        /// must encrypt or decrypt <code>SecretString</code> or <code>SecretBinary</code> using
-        /// credentials from a different account then the Amazon Web Services KMS key policy must
-        /// grant cross-account access to that other account's user or role for both the kms:GenerateDataKey
-        /// and kms:Decrypt operations.
-        /// </para>
-        ///  </li> </ul> </note> 
-        /// <para>
-        ///  <b>Minimum permissions</b> 
+        /// If you call this operation with a <code>VersionId</code> that matches an existing
+        /// version's <code>ClientRequestToken</code>, the operation results in an error. You
+        /// can't modify an existing version, you can only create a new version. To remove a version,
+        /// remove all staging labels from it. See <a>UpdateSecretVersionStage</a>.
         /// </para>
         ///  
         /// <para>
-        /// To run this command, you must have the following permissions:
+        /// If you don't specify an KMS encryption key, Secrets Manager uses the Amazon Web Services
+        /// managed key <code>aws/secretsmanager</code>. If this key doesn't already exist in
+        /// your account, then Secrets Manager creates it for you automatically. All users and
+        /// roles in the Amazon Web Services account automatically have access to use <code>aws/secretsmanager</code>.
+        /// Creating <code>aws/secretsmanager</code> can result in a one-time significant delay
+        /// in returning the result. 
         /// </para>
-        ///  <ul> <li> 
+        ///  
         /// <para>
-        /// secretsmanager:UpdateSecret
+        /// If the secret is in a different Amazon Web Services account from the credentials calling
+        /// the API, then you can't use <code>aws/secretsmanager</code> to encrypt the secret,
+        /// and you must create and use a customer managed key. 
         /// </para>
-        ///  </li> <li> 
+        ///  
         /// <para>
-        /// kms:GenerateDataKey - needed only if you use a custom Amazon Web Services KMS key
-        /// to encrypt the secret. You do not need this permission to use the account's Amazon
-        /// Web Services managed CMK for Secrets Manager.
+        /// To run this command, you must have <code>secretsmanager:UpdateSecret</code> permissions.
+        /// If you use a customer managed key, you must also have <code>kms:GenerateDataKey</code>
+        /// and <code>kms:Decrypt</code> permissions .
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// kms:Decrypt - needed only if you use a custom Amazon Web Services KMS key to encrypt
-        /// the secret. You do not need this permission to use the account's Amazon Web Services
-        /// managed CMK for Secrets Manager.
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        ///  <b>Related operations</b> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// To create a new secret, use <a>CreateSecret</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// To add only a new version to an existing secret, use <a>PutSecretValue</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// To get the details for a secret, use <a>DescribeSecret</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// To list the versions contained in a secret, use <a>ListSecretVersionIds</a>.
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateSecret service method.</param>
         /// 
         /// <returns>The response from the UpdateSecret service method, as returned by SecretsManager.</returns>
         /// <exception cref="Amazon.SecretsManager.Model.EncryptionFailureException">
         /// Secrets Manager can't encrypt the protected secret text using the provided KMS key.
-        /// Check that the customer master key (CMK) is available, enabled, and not in an invalid
-        /// state. For more information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects Use of a Customer Master Key</a>.
+        /// Check that the KMS key is available, enabled, and not in an invalid state. For more
+        /// information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+        /// state: Effect on your KMS key</a>.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InternalServiceErrorException">
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
-        /// You provided an invalid value for a parameter.
+        /// The parameter name is invalid value.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
-        /// You provided a parameter value that is not valid for the current state of the resource.
+        /// A parameter value is not valid for the current state of the resource.
         /// 
         ///  
         /// <para>
@@ -3868,7 +2776,7 @@ namespace Amazon.SecretsManager
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You tried to perform the operation on a secret that's currently marked deleted.
+        /// The secret is scheduled for deletion.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3878,10 +2786,10 @@ namespace Amazon.SecretsManager
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.LimitExceededException">
-        /// The request failed because it would exceed one of the Secrets Manager internal limits.
+        /// The request failed because it would exceed one of the Secrets Manager quotas.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.MalformedPolicyDocumentException">
-        /// You provided a resource-based policy with syntax errors.
+        /// The resource policy has syntax errors.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.PreconditionNotMetException">
         /// The request failed because you did not complete all the prerequisite steps.
@@ -3890,7 +2798,7 @@ namespace Amazon.SecretsManager
         /// A resource with the ID you requested already exists.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.ResourceNotFoundException">
-        /// We can't find the resource that you asked for.
+        /// Secrets Manager can't find the resource that you asked for.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/UpdateSecret">REST API Reference for UpdateSecret Operation</seealso>
         public virtual UpdateSecretResponse UpdateSecret(UpdateSecretRequest request)
@@ -3904,12 +2812,9 @@ namespace Amazon.SecretsManager
 
 
         /// <summary>
-        /// Modifies many of the details of the specified secret. 
+        /// Modifies the details of a secret, including metadata and the secret value. To change
+        /// the secret value, you can also use <a>PutSecretValue</a>.
         /// 
-        ///  
-        /// <para>
-        /// To change the secret value, you can also use <a>PutSecretValue</a>.
-        /// </para>
         ///  
         /// <para>
         /// To change the rotation configuration of a secret, use <a>RotateSecret</a> instead.
@@ -3924,95 +2829,40 @@ namespace Amazon.SecretsManager
         /// 10 minutes, you create more versions than Secrets Manager removes, and you will reach
         /// the quota for secret versions.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// The Secrets Manager console uses only the <code>SecretString</code> parameter and
-        /// therefore limits you to encrypting and storing only a text string. To encrypt and
-        /// store binary data as part of the version of a secret, you must use either the Amazon
-        /// Web Services CLI or one of the Amazon Web Services SDKs.
-        /// </para>
-        ///  </note> <ul> <li> 
-        /// <para>
-        /// If a version with a <code>VersionId</code> with the same value as the <code>ClientRequestToken</code>
-        /// parameter already exists, the operation results in an error. You cannot modify an
-        /// existing version, you can only create a new version.
-        /// </para>
-        ///  </li> <li> 
+        ///  
         /// <para>
         /// If you include <code>SecretString</code> or <code>SecretBinary</code> to create a
         /// new secret version, Secrets Manager automatically attaches the staging label <code>AWSCURRENT</code>
         /// to the new version. 
         /// </para>
-        ///  </li> </ul> <note> <ul> <li> 
+        ///  
         /// <para>
-        /// If you call an operation to encrypt or decrypt the <code>SecretString</code> or <code>SecretBinary</code>
-        /// for a secret in the same account as the calling user and that secret doesn't specify
-        /// a Amazon Web Services KMS encryption key, Secrets Manager uses the account's default
-        /// Amazon Web Services managed customer master key (CMK) with the alias <code>aws/secretsmanager</code>.
-        /// If this key doesn't already exist in your account then Secrets Manager creates it
-        /// for you automatically. All users and roles in the same Amazon Web Services account
-        /// automatically have access to use the default CMK. Note that if an Secrets Manager
-        /// API call results in Amazon Web Services creating the account's Amazon Web Services-managed
-        /// CMK, it can result in a one-time significant delay in returning the result.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// If the secret resides in a different Amazon Web Services account from the credentials
-        /// calling an API that requires encryption or decryption of the secret value then you
-        /// must create and use a custom Amazon Web Services KMS CMK because you can't access
-        /// the default CMK for the account using credentials from a different Amazon Web Services
-        /// account. Store the ARN of the CMK in the secret when you create the secret or when
-        /// you update it by including it in the <code>KMSKeyId</code>. If you call an API that
-        /// must encrypt or decrypt <code>SecretString</code> or <code>SecretBinary</code> using
-        /// credentials from a different account then the Amazon Web Services KMS key policy must
-        /// grant cross-account access to that other account's user or role for both the kms:GenerateDataKey
-        /// and kms:Decrypt operations.
-        /// </para>
-        ///  </li> </ul> </note> 
-        /// <para>
-        ///  <b>Minimum permissions</b> 
+        /// If you call this operation with a <code>VersionId</code> that matches an existing
+        /// version's <code>ClientRequestToken</code>, the operation results in an error. You
+        /// can't modify an existing version, you can only create a new version. To remove a version,
+        /// remove all staging labels from it. See <a>UpdateSecretVersionStage</a>.
         /// </para>
         ///  
         /// <para>
-        /// To run this command, you must have the following permissions:
+        /// If you don't specify an KMS encryption key, Secrets Manager uses the Amazon Web Services
+        /// managed key <code>aws/secretsmanager</code>. If this key doesn't already exist in
+        /// your account, then Secrets Manager creates it for you automatically. All users and
+        /// roles in the Amazon Web Services account automatically have access to use <code>aws/secretsmanager</code>.
+        /// Creating <code>aws/secretsmanager</code> can result in a one-time significant delay
+        /// in returning the result. 
         /// </para>
-        ///  <ul> <li> 
+        ///  
         /// <para>
-        /// secretsmanager:UpdateSecret
+        /// If the secret is in a different Amazon Web Services account from the credentials calling
+        /// the API, then you can't use <code>aws/secretsmanager</code> to encrypt the secret,
+        /// and you must create and use a customer managed key. 
         /// </para>
-        ///  </li> <li> 
+        ///  
         /// <para>
-        /// kms:GenerateDataKey - needed only if you use a custom Amazon Web Services KMS key
-        /// to encrypt the secret. You do not need this permission to use the account's Amazon
-        /// Web Services managed CMK for Secrets Manager.
+        /// To run this command, you must have <code>secretsmanager:UpdateSecret</code> permissions.
+        /// If you use a customer managed key, you must also have <code>kms:GenerateDataKey</code>
+        /// and <code>kms:Decrypt</code> permissions .
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// kms:Decrypt - needed only if you use a custom Amazon Web Services KMS key to encrypt
-        /// the secret. You do not need this permission to use the account's Amazon Web Services
-        /// managed CMK for Secrets Manager.
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        ///  <b>Related operations</b> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// To create a new secret, use <a>CreateSecret</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// To add only a new version to an existing secret, use <a>PutSecretValue</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// To get the details for a secret, use <a>DescribeSecret</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// To list the versions contained in a secret, use <a>ListSecretVersionIds</a>.
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateSecret service method.</param>
         /// <param name="cancellationToken">
@@ -4022,18 +2872,18 @@ namespace Amazon.SecretsManager
         /// <returns>The response from the UpdateSecret service method, as returned by SecretsManager.</returns>
         /// <exception cref="Amazon.SecretsManager.Model.EncryptionFailureException">
         /// Secrets Manager can't encrypt the protected secret text using the provided KMS key.
-        /// Check that the customer master key (CMK) is available, enabled, and not in an invalid
-        /// state. For more information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects Use of a Customer Master Key</a>.
+        /// Check that the KMS key is available, enabled, and not in an invalid state. For more
+        /// information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+        /// state: Effect on your KMS key</a>.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InternalServiceErrorException">
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
-        /// You provided an invalid value for a parameter.
+        /// The parameter name is invalid value.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
-        /// You provided a parameter value that is not valid for the current state of the resource.
+        /// A parameter value is not valid for the current state of the resource.
         /// 
         ///  
         /// <para>
@@ -4041,7 +2891,7 @@ namespace Amazon.SecretsManager
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You tried to perform the operation on a secret that's currently marked deleted.
+        /// The secret is scheduled for deletion.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4051,10 +2901,10 @@ namespace Amazon.SecretsManager
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.LimitExceededException">
-        /// The request failed because it would exceed one of the Secrets Manager internal limits.
+        /// The request failed because it would exceed one of the Secrets Manager quotas.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.MalformedPolicyDocumentException">
-        /// You provided a resource-based policy with syntax errors.
+        /// The resource policy has syntax errors.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.PreconditionNotMetException">
         /// The request failed because you did not complete all the prerequisite steps.
@@ -4063,7 +2913,7 @@ namespace Amazon.SecretsManager
         /// A resource with the ID you requested already exists.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.ResourceNotFoundException">
-        /// We can't find the resource that you asked for.
+        /// Secrets Manager can't find the resource that you asked for.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/UpdateSecret">REST API Reference for UpdateSecret Operation</seealso>
         public virtual Task<UpdateSecretResponse> UpdateSecretAsync(UpdateSecretRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -4081,18 +2931,18 @@ namespace Amazon.SecretsManager
 
 
         /// <summary>
-        /// Modifies the staging labels attached to a version of a secret. Staging labels are
-        /// used to track a version as it progresses through the secret rotation process. You
-        /// can attach a staging label to only one version of a secret at a time. If a staging
-        /// label to be added is already attached to another version, then it is moved--removed
-        /// from the other version first and then attached to this one. For more information about
-        /// staging labels, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/terms-concepts.html#term_staging-label">Staging
-        /// Labels</a> in the <i>Amazon Web Services Secrets Manager User Guide</i>. 
+        /// Modifies the staging labels attached to a version of a secret. Secrets Manager uses
+        /// staging labels to track a version as it progresses through the secret rotation process.
+        /// Each staging label can be attached to only one version at a time. To add a staging
+        /// label to a version when it is already attached to another version, Secrets Manager
+        /// first removes it from the other version first and then attaches it to this one. For
+        /// more information about versions and staging labels, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/getting-started.html#term_version">Concepts:
+        /// Version</a>. 
         /// 
         ///  
         /// <para>
         /// The staging labels that you specify in the <code>VersionStage</code> parameter are
-        /// added to the existing list of staging labels--they don't replace it.
+        /// added to the existing list of staging labels for the version. 
         /// </para>
         ///  
         /// <para>
@@ -4110,29 +2960,6 @@ namespace Amazon.SecretsManager
         /// If this action results in the last label being removed from a version, then the version
         /// is considered to be 'deprecated' and can be deleted by Secrets Manager.
         /// </para>
-        ///  
-        /// <para>
-        ///  <b>Minimum permissions</b> 
-        /// </para>
-        ///  
-        /// <para>
-        /// To run this command, you must have the following permissions:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// secretsmanager:UpdateSecretVersionStage
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        ///  <b>Related operations</b> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// To get the list of staging labels that are currently associated with a version of
-        /// a secret, use <code> <a>DescribeSecret</a> </code> and examine the <code>SecretVersionsToStages</code>
-        /// response value. 
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateSecretVersionStage service method.</param>
         /// 
@@ -4141,10 +2968,10 @@ namespace Amazon.SecretsManager
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
-        /// You provided an invalid value for a parameter.
+        /// The parameter name is invalid value.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
-        /// You provided a parameter value that is not valid for the current state of the resource.
+        /// A parameter value is not valid for the current state of the resource.
         /// 
         ///  
         /// <para>
@@ -4152,7 +2979,7 @@ namespace Amazon.SecretsManager
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You tried to perform the operation on a secret that's currently marked deleted.
+        /// The secret is scheduled for deletion.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4162,10 +2989,10 @@ namespace Amazon.SecretsManager
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.LimitExceededException">
-        /// The request failed because it would exceed one of the Secrets Manager internal limits.
+        /// The request failed because it would exceed one of the Secrets Manager quotas.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.ResourceNotFoundException">
-        /// We can't find the resource that you asked for.
+        /// Secrets Manager can't find the resource that you asked for.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/UpdateSecretVersionStage">REST API Reference for UpdateSecretVersionStage Operation</seealso>
         public virtual UpdateSecretVersionStageResponse UpdateSecretVersionStage(UpdateSecretVersionStageRequest request)
@@ -4179,18 +3006,18 @@ namespace Amazon.SecretsManager
 
 
         /// <summary>
-        /// Modifies the staging labels attached to a version of a secret. Staging labels are
-        /// used to track a version as it progresses through the secret rotation process. You
-        /// can attach a staging label to only one version of a secret at a time. If a staging
-        /// label to be added is already attached to another version, then it is moved--removed
-        /// from the other version first and then attached to this one. For more information about
-        /// staging labels, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/terms-concepts.html#term_staging-label">Staging
-        /// Labels</a> in the <i>Amazon Web Services Secrets Manager User Guide</i>. 
+        /// Modifies the staging labels attached to a version of a secret. Secrets Manager uses
+        /// staging labels to track a version as it progresses through the secret rotation process.
+        /// Each staging label can be attached to only one version at a time. To add a staging
+        /// label to a version when it is already attached to another version, Secrets Manager
+        /// first removes it from the other version first and then attaches it to this one. For
+        /// more information about versions and staging labels, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/getting-started.html#term_version">Concepts:
+        /// Version</a>. 
         /// 
         ///  
         /// <para>
         /// The staging labels that you specify in the <code>VersionStage</code> parameter are
-        /// added to the existing list of staging labels--they don't replace it.
+        /// added to the existing list of staging labels for the version. 
         /// </para>
         ///  
         /// <para>
@@ -4208,29 +3035,6 @@ namespace Amazon.SecretsManager
         /// If this action results in the last label being removed from a version, then the version
         /// is considered to be 'deprecated' and can be deleted by Secrets Manager.
         /// </para>
-        ///  
-        /// <para>
-        ///  <b>Minimum permissions</b> 
-        /// </para>
-        ///  
-        /// <para>
-        /// To run this command, you must have the following permissions:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// secretsmanager:UpdateSecretVersionStage
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        ///  <b>Related operations</b> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// To get the list of staging labels that are currently associated with a version of
-        /// a secret, use <code> <a>DescribeSecret</a> </code> and examine the <code>SecretVersionsToStages</code>
-        /// response value. 
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateSecretVersionStage service method.</param>
         /// <param name="cancellationToken">
@@ -4242,10 +3046,10 @@ namespace Amazon.SecretsManager
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
-        /// You provided an invalid value for a parameter.
+        /// The parameter name is invalid value.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
-        /// You provided a parameter value that is not valid for the current state of the resource.
+        /// A parameter value is not valid for the current state of the resource.
         /// 
         ///  
         /// <para>
@@ -4253,7 +3057,7 @@ namespace Amazon.SecretsManager
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You tried to perform the operation on a secret that's currently marked deleted.
+        /// The secret is scheduled for deletion.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4263,10 +3067,10 @@ namespace Amazon.SecretsManager
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.LimitExceededException">
-        /// The request failed because it would exceed one of the Secrets Manager internal limits.
+        /// The request failed because it would exceed one of the Secrets Manager quotas.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.ResourceNotFoundException">
-        /// We can't find the resource that you asked for.
+        /// Secrets Manager can't find the resource that you asked for.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/UpdateSecretVersionStage">REST API Reference for UpdateSecretVersionStage Operation</seealso>
         public virtual Task<UpdateSecretVersionStageResponse> UpdateSecretVersionStageAsync(UpdateSecretVersionStageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -4284,20 +3088,18 @@ namespace Amazon.SecretsManager
 
 
         /// <summary>
-        /// Validates that the resource policy does not grant a wide range of IAM principals access
-        /// to your secret. The JSON request string input and response output displays formatted
-        /// code with white space and line breaks for better readability. Submit your input as
-        /// a single line JSON string. A resource-based policy is optional for secrets.
+        /// Validates that a resource policy does not grant a wide range of principals access
+        /// to your secret. A resource-based policy is optional for secrets.
         /// 
         ///  
         /// <para>
-        /// The API performs three checks when validating the secret:
+        /// The API performs three checks when validating the policy:
         /// </para>
         ///  <ul> <li> 
         /// <para>
         /// Sends a call to <a href="https://aws.amazon.com/blogs/security/protect-sensitive-data-in-the-cloud-with-automated-reasoning-zelkova/">Zelkova</a>,
-        /// an automated reasoning engine, to ensure your Resource Policy does not allow broad
-        /// access to your secret.
+        /// an automated reasoning engine, to ensure your resource policy does not allow broad
+        /// access to your secret, for example policies that use a wildcard for the principal.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4306,22 +3108,6 @@ namespace Amazon.SecretsManager
         ///  </li> <li> 
         /// <para>
         /// Verifies the policy does not lock out a caller.
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        ///  <b>Minimum Permissions</b> 
-        /// </para>
-        ///  
-        /// <para>
-        /// You must have the permissions required to access the following APIs:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>secretsmanager:PutResourcePolicy</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>secretsmanager:ValidateResourcePolicy</code> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -4332,10 +3118,10 @@ namespace Amazon.SecretsManager
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
-        /// You provided an invalid value for a parameter.
+        /// The parameter name is invalid value.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
-        /// You provided a parameter value that is not valid for the current state of the resource.
+        /// A parameter value is not valid for the current state of the resource.
         /// 
         ///  
         /// <para>
@@ -4343,7 +3129,7 @@ namespace Amazon.SecretsManager
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You tried to perform the operation on a secret that's currently marked deleted.
+        /// The secret is scheduled for deletion.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4353,10 +3139,10 @@ namespace Amazon.SecretsManager
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.MalformedPolicyDocumentException">
-        /// You provided a resource-based policy with syntax errors.
+        /// The resource policy has syntax errors.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.ResourceNotFoundException">
-        /// We can't find the resource that you asked for.
+        /// Secrets Manager can't find the resource that you asked for.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/ValidateResourcePolicy">REST API Reference for ValidateResourcePolicy Operation</seealso>
         public virtual ValidateResourcePolicyResponse ValidateResourcePolicy(ValidateResourcePolicyRequest request)
@@ -4370,20 +3156,18 @@ namespace Amazon.SecretsManager
 
 
         /// <summary>
-        /// Validates that the resource policy does not grant a wide range of IAM principals access
-        /// to your secret. The JSON request string input and response output displays formatted
-        /// code with white space and line breaks for better readability. Submit your input as
-        /// a single line JSON string. A resource-based policy is optional for secrets.
+        /// Validates that a resource policy does not grant a wide range of principals access
+        /// to your secret. A resource-based policy is optional for secrets.
         /// 
         ///  
         /// <para>
-        /// The API performs three checks when validating the secret:
+        /// The API performs three checks when validating the policy:
         /// </para>
         ///  <ul> <li> 
         /// <para>
         /// Sends a call to <a href="https://aws.amazon.com/blogs/security/protect-sensitive-data-in-the-cloud-with-automated-reasoning-zelkova/">Zelkova</a>,
-        /// an automated reasoning engine, to ensure your Resource Policy does not allow broad
-        /// access to your secret.
+        /// an automated reasoning engine, to ensure your resource policy does not allow broad
+        /// access to your secret, for example policies that use a wildcard for the principal.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4392,22 +3176,6 @@ namespace Amazon.SecretsManager
         ///  </li> <li> 
         /// <para>
         /// Verifies the policy does not lock out a caller.
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        ///  <b>Minimum Permissions</b> 
-        /// </para>
-        ///  
-        /// <para>
-        /// You must have the permissions required to access the following APIs:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>secretsmanager:PutResourcePolicy</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>secretsmanager:ValidateResourcePolicy</code> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -4421,10 +3189,10 @@ namespace Amazon.SecretsManager
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
-        /// You provided an invalid value for a parameter.
+        /// The parameter name is invalid value.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
-        /// You provided a parameter value that is not valid for the current state of the resource.
+        /// A parameter value is not valid for the current state of the resource.
         /// 
         ///  
         /// <para>
@@ -4432,7 +3200,7 @@ namespace Amazon.SecretsManager
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You tried to perform the operation on a secret that's currently marked deleted.
+        /// The secret is scheduled for deletion.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4442,10 +3210,10 @@ namespace Amazon.SecretsManager
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.MalformedPolicyDocumentException">
-        /// You provided a resource-based policy with syntax errors.
+        /// The resource policy has syntax errors.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.ResourceNotFoundException">
-        /// We can't find the resource that you asked for.
+        /// Secrets Manager can't find the resource that you asked for.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/ValidateResourcePolicy">REST API Reference for ValidateResourcePolicy Operation</seealso>
         public virtual Task<ValidateResourcePolicyResponse> ValidateResourcePolicyAsync(ValidateResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))

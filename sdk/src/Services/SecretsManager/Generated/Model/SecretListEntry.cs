@@ -57,11 +57,6 @@ namespace Amazon.SecretsManager.Model
         /// <para>
         /// The Amazon Resource Name (ARN) of the secret.
         /// </para>
-        ///  
-        /// <para>
-        /// For more information about ARNs in Secrets Manager, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-resources">Policy
-        /// Resources</a> in the <i>Amazon Web Services Secrets Manager User Guide</i>.
-        /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
         public string ARN
@@ -137,11 +132,9 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The ARN or alias of the Amazon Web Services KMS customer master key (CMK) used to
-        /// encrypt the <code>SecretString</code> and <code>SecretBinary</code> fields in each
-        /// version of the secret. If you don't provide a key, then Secrets Manager defaults to
-        /// encrypting the secret fields with the default KMS CMK, the key named <code>awssecretsmanager</code>,
-        /// for this account.
+        /// The ARN of the KMS key that Secrets Manager uses to encrypt the secret value. If the
+        /// secret is encrypted with the Amazon Web Services managed key <code>aws/secretsmanager</code>,
+        /// this field is omitted.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]

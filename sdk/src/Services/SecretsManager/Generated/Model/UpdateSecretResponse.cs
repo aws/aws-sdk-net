@@ -42,15 +42,6 @@ namespace Amazon.SecretsManager.Model
         /// <para>
         /// The ARN of the secret that was updated.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// Secrets Manager automatically adds several random characters to the name at the end
-        /// of the ARN when you initially create a secret. This affects only the ARN and not the
-        /// actual friendly name. This ensures that if you create a new secret with the same name
-        /// as an old secret that you previously deleted, then users with access to the old secret
-        /// <i>don't</i> automatically get access to the new secret because the ARNs are different.
-        /// </para>
-        ///  </note>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
         public string ARN
@@ -68,7 +59,7 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The friendly name of the secret that was updated.
+        /// The name of the secret that was updated.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -87,8 +78,8 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property VersionId. 
         /// <para>
-        /// If a new version of the secret was created by this operation, then <code>VersionId</code>
-        /// contains the unique identifier of the new version.
+        /// If Secrets Manager created a new version of the secret during this operation, then
+        /// <code>VersionId</code> contains the unique identifier of the new version.
         /// </para>
         /// </summary>
         [AWSProperty(Min=32, Max=64)]

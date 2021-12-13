@@ -30,7 +30,7 @@ namespace Amazon.SecretsManager.Model
 {
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
-    /// Removes one or more tags from the specified secret.
+    /// Removes specific tags from a secret.
     /// 
     ///  
     /// <para>
@@ -44,31 +44,7 @@ namespace Amazon.SecretsManager.Model
     /// your permissions for this secret, then the operation is blocked and returns an Access
     /// Denied error.
     /// </para>
-    ///  </important> 
-    /// <para>
-    ///  <b>Minimum permissions</b> 
-    /// </para>
-    ///  
-    /// <para>
-    /// To run this command, you must have the following permissions:
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    /// secretsmanager:UntagResource
-    /// </para>
-    ///  </li> </ul> 
-    /// <para>
-    ///  <b>Related operations</b> 
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    /// To add one or more tags to the collection attached to a secret, use <a>TagResource</a>.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// To view the list of tags attached to a secret, use <a>DescribeSecret</a>.
-    /// </para>
-    ///  </li> </ul>
+    ///  </important>
     /// </summary>
     public partial class UntagResourceRequest : AmazonSecretsManagerRequest
     {
@@ -78,8 +54,7 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property SecretId. 
         /// <para>
-        /// The identifier for the secret that you want to remove tags from. You can specify either
-        /// the Amazon Resource Name (ARN) or the friendly name of the secret.
+        /// The ARN or name of the secret.
         /// </para>
         ///  
         /// <para>
@@ -107,7 +82,7 @@ namespace Amazon.SecretsManager.Model
         /// </para>
         ///  
         /// <para>
-        /// This parameter to the API requires a JSON text string argument.
+        /// This parameter requires a JSON text string argument.
         /// </para>
         ///  
         /// <para>

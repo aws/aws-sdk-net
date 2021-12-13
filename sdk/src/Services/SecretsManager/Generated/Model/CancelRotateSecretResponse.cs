@@ -40,7 +40,7 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property ARN. 
         /// <para>
-        /// The ARN of the secret for which rotation was canceled.
+        /// The ARN of the secret.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -59,7 +59,7 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The friendly name of the secret for which rotation was canceled.
+        /// The name of the secret.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -79,10 +79,10 @@ namespace Amazon.SecretsManager.Model
         /// Gets and sets the property VersionId. 
         /// <para>
         /// The unique identifier of the version of the secret created during the rotation. This
-        /// version might not be complete, and should be evaluated for possible deletion. At the
-        /// very least, you should remove the <code>VersionStage</code> value <code>AWSPENDING</code>
-        /// to enable this version to be deleted. Failing to clean up a cancelled rotation can
-        /// block you from successfully starting future rotations.
+        /// version might not be complete, and should be evaluated for possible deletion. We recommend
+        /// that you remove the <code>VersionStage</code> value <code>AWSPENDING</code> from this
+        /// version so that Secrets Manager can delete it. Failing to clean up a cancelled rotation
+        /// can block you from starting future rotations.
         /// </para>
         /// </summary>
         [AWSProperty(Min=32, Max=64)]

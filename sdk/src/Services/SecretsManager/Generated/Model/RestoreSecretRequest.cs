@@ -31,29 +31,7 @@ namespace Amazon.SecretsManager.Model
     /// <summary>
     /// Container for the parameters to the RestoreSecret operation.
     /// Cancels the scheduled deletion of a secret by removing the <code>DeletedDate</code>
-    /// time stamp. This makes the secret accessible to query once again.
-    /// 
-    ///  
-    /// <para>
-    ///  <b>Minimum permissions</b> 
-    /// </para>
-    ///  
-    /// <para>
-    /// To run this command, you must have the following permissions:
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    /// secretsmanager:RestoreSecret
-    /// </para>
-    ///  </li> </ul> 
-    /// <para>
-    ///  <b>Related operations</b> 
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    /// To delete a secret, use <a>DeleteSecret</a>.
-    /// </para>
-    ///  </li> </ul>
+    /// time stamp. You can access a secret again after it has been restored.
     /// </summary>
     public partial class RestoreSecretRequest : AmazonSecretsManagerRequest
     {
@@ -62,9 +40,7 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property SecretId. 
         /// <para>
-        /// Specifies the secret that you want to restore from a previously scheduled deletion.
-        /// You can specify either the Amazon Resource Name (ARN) or the friendly name of the
-        /// secret.
+        /// The ARN or name of the secret to restore.
         /// </para>
         ///  
         /// <para>
