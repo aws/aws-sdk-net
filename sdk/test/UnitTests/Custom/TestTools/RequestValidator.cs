@@ -50,7 +50,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
             this.ServiceModel = serviceModel;
             this.Request = request;
             this.MarshalledRequest = marshalledRequest;
-            this.Operation = serviceModel.FindOperation(operation);           
+            this.Operation = serviceModel.FindOperation(operation);
         }
 
         public virtual void Validate()
@@ -69,17 +69,17 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
         protected virtual void ValidateBody()
         {
             var payload = this.Operation.RequestPayloadMember;
-            var payloadMarshalled = payload != null && !payload.IsMemoryStream;
+            var payloadMarshalled = payload != null && !payload.IsMemoryStream && !payload.ModelShape.IsString;
             if (this.Operation.RequestHasBodyMembers || payloadMarshalled)
             {
                 Assert.IsTrue(this.MarshalledRequest.Content.Count() > 0);
                 T marshalledData = GetMarshalledData(this.MarshalledRequest.Content);
 
-                if (this.Operation.RequestPayloadMember != null)
+                if (payload != null)
                 {
-                    var parentObject = this.Request.GetType().GetProperties().Single(p => p.Name == this.Operation.RequestPayloadMember.PropertyName).GetValue(this.Request);
+                    var parentObject = this.Request.GetType().GetProperties().Single(p => p.Name == payload.PropertyName).GetValue(this.Request);
 
-                    Visit(parentObject, Operation.RequestPayloadMember, marshalledData, new TypeCircularReference<Type>());
+                    Visit(parentObject, payload, marshalledData, new TypeCircularReference<Type>());
                 }
                 else
                 {
@@ -101,10 +101,25 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
 
                         var childValue = property.GetValue(this.Request);
                         var childMarshalledData = GetMarshalledProperty(marshalledData, childMember.MarshallName);
+
                         Visit(childValue, childMember, childMarshalledData, new TypeCircularReference<Type>());
-                        
                     }
                 }
+            }
+            else if (payload?.ModelShape.IsString == true)
+            {
+                Assert.IsTrue(this.MarshalledRequest.Content.Any());
+
+                var marshalledData = Encoding.UTF8.GetString(this.MarshalledRequest.Content);
+
+                var requestData = 
+                    this.Request
+                        .GetType()
+                        .GetProperties()
+                        .Single(p => p.Name == payload.PropertyName)
+                        .GetValue(this.Request);
+
+                Assert.AreEqual(requestData, marshalledData);
             }
             else
             {

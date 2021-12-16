@@ -82,8 +82,8 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
 			request.ResourcePath = "<#=this.Operation.RequestUri #>";
 <#  
 
-    var payload= this.Operation.RequestPayloadMember;
-    var shouldMarshallPayload = (payload != null && !payload.IsMemoryStream);
+    var payload = this.Operation.RequestPayloadMember;
+    var shouldMarshallPayload = (payload != null && !payload.IsMemoryStream && !payload.Shape.IsString);
 	// Process any members which are marshalled as part of the request body
 	if(this.Operation.RequestHasBodyMembers || shouldMarshallPayload)
 	{
@@ -97,7 +97,7 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
 #>
 				var context = new JsonMarshallerContext(request, writer);
 <#		
-			ProcessStructure(0, "publicRequest." + this.Operation.RequestPayloadMember.PropertyName, this.Operation.RequestPayloadMember.Shape);
+			ProcessStructure(0, "publicRequest." + payload.PropertyName, payload.Shape);
 		}
 		else
 		{
@@ -121,7 +121,13 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
 
 <#
 	}
-    else if (payload != null)
+	else if (payload?.Shape.IsString == true)
+	{
+#>
+			request.Content = System.Text.Encoding.UTF8.GetBytes(publicRequest.<#= payload.PropertyName #>);
+<#
+	}
+    else if (payload?.IsMemoryStream == true)
     {
 #>
 			request.ContentStream =  publicRequest.<#=payload.PropertyName#> ?? new MemoryStream();
@@ -165,6 +171,14 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
 			}
 <#
     }
+	else if (payload?.Shape.IsPrimitiveType == true)
+	{
+		// At this point, all valid configurations have been handled.  Valid use of payload is defined:
+		// https://awslabs.github.io/smithy/1.0/spec/core/http-traits.html#httppayload-trait
+		throw new Exception(
+			$"{payload.PropertyName} can not be a Payload as Type {payload.Shape.Type} is not a valid target for the httpPayload trait.  " +
+			"The httpPayload trait can be applied to structure members that target a string, blob, structure, union, document, set, map, or list.");
+	}
 	else if (this.Config.ServiceModel.Type == ServiceType.Json)
 	{
 #>

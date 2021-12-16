@@ -43,7 +43,16 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
             response.<#=payload.PropertyName#> = context.Stream;
 <#
             }
-            else
+            else if (payload.ModelShape.IsString)
+            {
+#>
+            using (var sr = new StreamReader(context.Stream))
+            {
+                response.<#=payload.PropertyName#> = sr.ReadToEnd();
+            }
+<#
+            }
+            else if (payload.ModelShape.IsMemoryStream)
             {
 #>
             var ms = new MemoryStream();
@@ -51,6 +60,14 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
             ms.Seek(0, SeekOrigin.Begin);
             response.<#=payload.PropertyName#> = ms;
 <#
+            }
+            else
+            {
+                // At this point, all valid configurations have been handled.  Valid use of payload is defined:
+                // https://awslabs.github.io/smithy/1.0/spec/core/http-traits.html#httppayload-trait
+                throw new Exception(
+                    $"{payload.PropertyName} can not be a Payload as Type {payload.Shape.Type} is not a valid target for the httpPayload trait.  " +
+                    "The httpPayload trait can be applied to structure members that target a string, blob, structure, union, document, set, map, or list.");
             }
         }
         else if (unmarshallPayload)
