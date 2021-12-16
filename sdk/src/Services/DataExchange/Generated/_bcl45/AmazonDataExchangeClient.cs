@@ -1636,6 +1636,79 @@ namespace Amazon.DataExchange
 
         #endregion
         
+        #region  SendApiAsset
+
+
+        /// <summary>
+        /// This operation invokes an API Gateway API asset. The request is proxied to the provider’s
+        /// API Gateway API.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SendApiAsset service method.</param>
+        /// 
+        /// <returns>The response from the SendApiAsset service method, as returned by DataExchange.</returns>
+        /// <exception cref="Amazon.DataExchange.Model.AccessDeniedException">
+        /// Access to the resource is denied.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.InternalServerException">
+        /// An exception occurred with the service.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ResourceNotFoundException">
+        /// The resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ValidationException">
+        /// The request was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/SendApiAsset">REST API Reference for SendApiAsset Operation</seealso>
+        public virtual SendApiAssetResponse SendApiAsset(SendApiAssetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SendApiAssetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendApiAssetResponseUnmarshaller.Instance;
+
+            return Invoke<SendApiAssetResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// This operation invokes an API Gateway API asset. The request is proxied to the provider’s
+        /// API Gateway API.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SendApiAsset service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SendApiAsset service method, as returned by DataExchange.</returns>
+        /// <exception cref="Amazon.DataExchange.Model.AccessDeniedException">
+        /// Access to the resource is denied.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.InternalServerException">
+        /// An exception occurred with the service.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ResourceNotFoundException">
+        /// The resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ValidationException">
+        /// The request was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/SendApiAsset">REST API Reference for SendApiAsset Operation</seealso>
+        public virtual Task<SendApiAssetResponse> SendApiAssetAsync(SendApiAssetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SendApiAssetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendApiAssetResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<SendApiAssetResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  StartJob
 
 

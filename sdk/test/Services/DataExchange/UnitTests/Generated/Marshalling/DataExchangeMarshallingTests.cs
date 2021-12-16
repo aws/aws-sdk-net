@@ -3374,6 +3374,256 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("DataExchange")]
+        public void SendApiAssetMarshallTest()
+        {
+            var operation = service_model.FindOperation("SendApiAsset");
+
+            var request = InstantiateClassGenerator.Execute<SendApiAssetRequest>();
+            var marshaller = new SendApiAssetRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("SendApiAsset", request, internalRequest, service_model);            
+
+            // Validate request headers in RequestHeaders (prefix 'x-amzn-dataexchange-header-')
+            foreach (var kvpRequestHeaders in request.RequestHeaders)
+            {
+                Assert.AreEqual(kvpRequestHeaders.Value, internalRequest.Headers[$"x-amzn-dataexchange-header-{kvpRequestHeaders.Key}"]);
+            }
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+
+            // populate a dummy response object so we can copy the headers
+            var dummyResponse = InstantiateClassGenerator.Execute<SendApiAssetResponse>();
+
+            // Populate map of response headers for ResponseHeaders with prefix "".
+            foreach (var kvpResponseHeaders in dummyResponse.ResponseHeaders)
+            {
+                webResponse.Headers.Add($"{kvpResponseHeaders.Key}", kvpResponseHeaders.Value);
+            }
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = SendApiAssetResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as SendApiAssetResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            // Validate response headers for ResponseHeaders with prefix "".
+            foreach (var kvpResponseHeaders in dummyResponse.ResponseHeaders)
+            {
+                Assert.AreEqual(response.ResponseHeaders[kvpResponseHeaders.Key], kvpResponseHeaders.Value);
+            }
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("DataExchange")]
+        public void SendApiAsset_AccessDeniedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("SendApiAsset");
+
+            var request = InstantiateClassGenerator.Execute<SendApiAssetRequest>();
+            var marshaller = new SendApiAssetRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("SendApiAsset", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("AccessDeniedException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","AccessDeniedException"},
+                }
+            };
+
+            // populate a dummy response object so we can copy the headers
+            var dummyResponse = InstantiateClassGenerator.Execute<SendApiAssetResponse>();
+            // Populate map of response headers for ResponseHeaders with prefix "".
+            foreach (var kvpResponseHeaders in dummyResponse.ResponseHeaders)
+            {
+                webResponse.Headers.Add($"{kvpResponseHeaders.Key}", kvpResponseHeaders.Value);
+            }
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = SendApiAssetResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("DataExchange")]
+        public void SendApiAsset_InternalServerExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("SendApiAsset");
+
+            var request = InstantiateClassGenerator.Execute<SendApiAssetRequest>();
+            var marshaller = new SendApiAssetRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("SendApiAsset", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InternalServerException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InternalServerException"},
+                }
+            };
+
+            // populate a dummy response object so we can copy the headers
+            var dummyResponse = InstantiateClassGenerator.Execute<SendApiAssetResponse>();
+            // Populate map of response headers for ResponseHeaders with prefix "".
+            foreach (var kvpResponseHeaders in dummyResponse.ResponseHeaders)
+            {
+                webResponse.Headers.Add($"{kvpResponseHeaders.Key}", kvpResponseHeaders.Value);
+            }
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = SendApiAssetResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("DataExchange")]
+        public void SendApiAsset_ResourceNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("SendApiAsset");
+
+            var request = InstantiateClassGenerator.Execute<SendApiAssetRequest>();
+            var marshaller = new SendApiAssetRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("SendApiAsset", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceNotFoundException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                }
+            };
+
+            // populate a dummy response object so we can copy the headers
+            var dummyResponse = InstantiateClassGenerator.Execute<SendApiAssetResponse>();
+            // Populate map of response headers for ResponseHeaders with prefix "".
+            foreach (var kvpResponseHeaders in dummyResponse.ResponseHeaders)
+            {
+                webResponse.Headers.Add($"{kvpResponseHeaders.Key}", kvpResponseHeaders.Value);
+            }
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = SendApiAssetResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("DataExchange")]
+        public void SendApiAsset_ThrottlingExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("SendApiAsset");
+
+            var request = InstantiateClassGenerator.Execute<SendApiAssetRequest>();
+            var marshaller = new SendApiAssetRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("SendApiAsset", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottlingException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ThrottlingException"},
+                }
+            };
+
+            // populate a dummy response object so we can copy the headers
+            var dummyResponse = InstantiateClassGenerator.Execute<SendApiAssetResponse>();
+            // Populate map of response headers for ResponseHeaders with prefix "".
+            foreach (var kvpResponseHeaders in dummyResponse.ResponseHeaders)
+            {
+                webResponse.Headers.Add($"{kvpResponseHeaders.Key}", kvpResponseHeaders.Value);
+            }
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = SendApiAssetResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("DataExchange")]
+        public void SendApiAsset_ValidationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("SendApiAsset");
+
+            var request = InstantiateClassGenerator.Execute<SendApiAssetRequest>();
+            var marshaller = new SendApiAssetRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("SendApiAsset", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ValidationException"},
+                }
+            };
+
+            // populate a dummy response object so we can copy the headers
+            var dummyResponse = InstantiateClassGenerator.Execute<SendApiAssetResponse>();
+            // Populate map of response headers for ResponseHeaders with prefix "".
+            foreach (var kvpResponseHeaders in dummyResponse.ResponseHeaders)
+            {
+                webResponse.Headers.Add($"{kvpResponseHeaders.Key}", kvpResponseHeaders.Value);
+            }
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = SendApiAssetResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("DataExchange")]
         public void StartJobMarshallTest()
         {
             var operation = service_model.FindOperation("StartJob");

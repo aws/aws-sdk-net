@@ -33,8 +33,27 @@ namespace Amazon.DataExchange.Model
     /// </summary>
     public partial class AssetDetails
     {
+        private ApiGatewayApiAsset _apiGatewayApiAsset;
         private RedshiftDataShareAsset _redshiftDataShareAsset;
         private S3SnapshotAsset _s3SnapshotAsset;
+
+        /// <summary>
+        /// Gets and sets the property ApiGatewayApiAsset. 
+        /// <para>
+        /// Information about the API Gateway API asset.
+        /// </para>
+        /// </summary>
+        public ApiGatewayApiAsset ApiGatewayApiAsset
+        {
+            get { return this._apiGatewayApiAsset; }
+            set { this._apiGatewayApiAsset = value; }
+        }
+
+        // Check to see if ApiGatewayApiAsset property is set
+        internal bool IsSetApiGatewayApiAsset()
+        {
+            return this._apiGatewayApiAsset != null;
+        }
 
         /// <summary>
         /// Gets and sets the property RedshiftDataShareAsset. 

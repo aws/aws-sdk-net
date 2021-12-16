@@ -29,10 +29,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataExchange.Model
 {
     /// <summary>
-    /// An asset in AWS Data Exchange is a piece of data. The asset can be a structured data
-    /// file, an image file, or some other data file that can be stored as an S3 object, or
-    /// an Amazon Redshift datashare (Preview). When you create an import job for your files,
-    /// you create an asset in AWS Data Exchange for each of those files.
+    /// An asset in AWS Data Exchange is a piece of data (S3 object) or a means of fulfilling
+    /// data (Amazon Redshift datashare or Amazon API Gateway API). The asset can be a structured
+    /// data file, an image file, or some other data file that can be stored as an S3 object,
+    /// an Amazon API Gateway API, or an Amazon Redshift datashare (Preview). When you create
+    /// an import job for your files, API Gateway APIs, or Amazon Redshift datashares, you
+    /// create an asset in AWS Data Exchange.
     /// </summary>
     public partial class AssetEntry
     {
@@ -166,7 +168,9 @@ namespace Amazon.DataExchange.Model
         /// <para>
         /// The name of the asset. When importing from Amazon S3, the S3 object key is used as
         /// the asset name. When exporting to Amazon S3, the asset name is used as default target
-        /// S3 object key.
+        /// S3 object key. When importing from Amazon API Gateway API, the API name is used as
+        /// the asset name. When importing from Amazon Redshift, the datashare name is used as
+        /// the asset name.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

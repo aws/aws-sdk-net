@@ -82,6 +82,12 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
                     unmarshalledObject.ExportRevisionsToS3 = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ImportAssetFromApiGatewayApi", targetDepth))
+                {
+                    var unmarshaller = ImportAssetFromApiGatewayApiResponseDetailsUnmarshaller.Instance;
+                    unmarshalledObject.ImportAssetFromApiGatewayApi = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ImportAssetFromSignedUrl", targetDepth))
                 {
                     var unmarshaller = ImportAssetFromSignedUrlResponseDetailsUnmarshaller.Instance;

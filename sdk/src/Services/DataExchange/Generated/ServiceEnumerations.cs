@@ -31,6 +31,10 @@ namespace Amazon.DataExchange
     {
 
         /// <summary>
+        /// Constant API_GATEWAY_API for AssetType
+        /// </summary>
+        public static readonly AssetType API_GATEWAY_API = new AssetType("API_GATEWAY_API");
+        /// <summary>
         /// Constant REDSHIFT_DATA_SHARE for AssetType
         /// </summary>
         public static readonly AssetType REDSHIFT_DATA_SHARE = new AssetType("REDSHIFT_DATA_SHARE");
@@ -309,6 +313,10 @@ namespace Amazon.DataExchange
     {
 
         /// <summary>
+        /// Constant AmazonAPIGatewayAPIAssetsPerRevision for LimitName
+        /// </summary>
+        public static readonly LimitName AmazonAPIGatewayAPIAssetsPerRevision = new LimitName("Amazon API Gateway API assets per revision");
+        /// <summary>
         /// Constant AmazonRedshiftDatashareAssetsPerImportJobFromRedshift for LimitName
         /// </summary>
         public static readonly LimitName AmazonRedshiftDatashareAssetsPerImportJobFromRedshift = new LimitName("Amazon Redshift datashare assets per import job from Redshift");
@@ -357,6 +365,10 @@ namespace Amazon.DataExchange
         /// </summary>
         public static readonly LimitName ConcurrentInProgressJobsToImportAssetsFromAmazonS3 = new LimitName("Concurrent in progress jobs to import assets from Amazon S3");
         /// <summary>
+        /// Constant ConcurrentInProgressJobsToImportAssetsFromAnAPIGatewayAPI for LimitName
+        /// </summary>
+        public static readonly LimitName ConcurrentInProgressJobsToImportAssetsFromAnAPIGatewayAPI = new LimitName("Concurrent in progress jobs to import assets from an API Gateway API");
+        /// <summary>
         /// Constant ConcurrentInProgressJobsToImportAssetsFromASignedURL for LimitName
         /// </summary>
         public static readonly LimitName ConcurrentInProgressJobsToImportAssetsFromASignedURL = new LimitName("Concurrent in progress jobs to import assets from a signed URL");
@@ -376,6 +388,10 @@ namespace Amazon.DataExchange
         /// Constant ProductsPerAccount for LimitName
         /// </summary>
         public static readonly LimitName ProductsPerAccount = new LimitName("Products per account");
+        /// <summary>
+        /// Constant RevisionsPerAmazonAPIGatewayAPIDataSet for LimitName
+        /// </summary>
+        public static readonly LimitName RevisionsPerAmazonAPIGatewayAPIDataSet = new LimitName("Revisions per Amazon API Gateway API data set");
         /// <summary>
         /// Constant RevisionsPerAmazonRedshiftDatashareDataSet for LimitName
         /// </summary>
@@ -464,6 +480,52 @@ namespace Amazon.DataExchange
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Origin(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ProtocolType.
+    /// </summary>
+    public class ProtocolType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant REST for ProtocolType
+        /// </summary>
+        public static readonly ProtocolType REST = new ProtocolType("REST");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ProtocolType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ProtocolType FindValue(string value)
+        {
+            return FindValue<ProtocolType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ProtocolType(string value)
         {
             return FindValue(value);
         }
@@ -666,6 +728,10 @@ namespace Amazon.DataExchange
         /// Constant EXPORT_REVISIONS_TO_S3 for Type
         /// </summary>
         public static readonly Type EXPORT_REVISIONS_TO_S3 = new Type("EXPORT_REVISIONS_TO_S3");
+        /// <summary>
+        /// Constant IMPORT_ASSET_FROM_API_GATEWAY_API for Type
+        /// </summary>
+        public static readonly Type IMPORT_ASSET_FROM_API_GATEWAY_API = new Type("IMPORT_ASSET_FROM_API_GATEWAY_API");
         /// <summary>
         /// Constant IMPORT_ASSET_FROM_SIGNED_URL for Type
         /// </summary>

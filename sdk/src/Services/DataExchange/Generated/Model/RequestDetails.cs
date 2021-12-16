@@ -36,6 +36,7 @@ namespace Amazon.DataExchange.Model
         private ExportAssetsToS3RequestDetails _exportAssetsToS3;
         private ExportAssetToSignedUrlRequestDetails _exportAssetToSignedUrl;
         private ExportRevisionsToS3RequestDetails _exportRevisionsToS3;
+        private ImportAssetFromApiGatewayApiRequestDetails _importAssetFromApiGatewayApi;
         private ImportAssetFromSignedUrlRequestDetails _importAssetFromSignedUrl;
         private ImportAssetsFromRedshiftDataSharesRequestDetails _importAssetsFromRedshiftDataShares;
         private ImportAssetsFromS3RequestDetails _importAssetsFromS3;
@@ -92,6 +93,24 @@ namespace Amazon.DataExchange.Model
         internal bool IsSetExportRevisionsToS3()
         {
             return this._exportRevisionsToS3 != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImportAssetFromApiGatewayApi. 
+        /// <para>
+        /// Information about the import asset from API Gateway API request.
+        /// </para>
+        /// </summary>
+        public ImportAssetFromApiGatewayApiRequestDetails ImportAssetFromApiGatewayApi
+        {
+            get { return this._importAssetFromApiGatewayApi; }
+            set { this._importAssetFromApiGatewayApi = value; }
+        }
+
+        // Check to see if ImportAssetFromApiGatewayApi property is set
+        internal bool IsSetImportAssetFromApiGatewayApi()
+        {
+            return this._importAssetFromApiGatewayApi != null;
         }
 
         /// <summary>

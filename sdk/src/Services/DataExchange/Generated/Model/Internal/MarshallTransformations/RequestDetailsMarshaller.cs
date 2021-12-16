@@ -78,6 +78,17 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetImportAssetFromApiGatewayApi())
+            {
+                context.Writer.WritePropertyName("ImportAssetFromApiGatewayApi");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ImportAssetFromApiGatewayApiRequestDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.ImportAssetFromApiGatewayApi, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetImportAssetFromSignedUrl())
             {
                 context.Writer.WritePropertyName("ImportAssetFromSignedUrl");

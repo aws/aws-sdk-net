@@ -64,6 +64,12 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("ApiGatewayApiAsset", targetDepth))
+                {
+                    var unmarshaller = ApiGatewayApiAssetUnmarshaller.Instance;
+                    unmarshalledObject.ApiGatewayApiAsset = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("RedshiftDataShareAsset", targetDepth))
                 {
                     var unmarshaller = RedshiftDataShareAssetUnmarshaller.Instance;
