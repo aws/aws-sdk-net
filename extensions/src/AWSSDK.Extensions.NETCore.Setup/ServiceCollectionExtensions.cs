@@ -31,6 +31,21 @@ namespace Microsoft.Extensions.DependencyInjection
     /// </summary>
     public static class ServiceCollectionExtensions
     {
+        
+        /// <summary>
+        /// Adds the AWSOptions object to the dependency injection framework providing information
+        /// that will be used to construct Amazon service clients.
+        /// </summary>
+        /// <param name="collection"></param>
+        /// <param name="implementationFactory">The factory that creates the service AWSOptions</param>
+        /// <param name="lifetime">The lifetime of the AWSOptions. The default is Singleton.</param>
+        /// <returns>Returns back the IServiceCollection to continue the fluent system of IServiceCollection.</returns>
+        public static IServiceCollection AddDefaultAWSOptions(this IServiceCollection collection, Func<IServiceProvider, AWSOptions> implementationFactory, ServiceLifetime lifetime = ServiceLifetime.Singleton)
+        {
+            collection.Add(new ServiceDescriptor(typeof(AWSOptions), implementationFactory, lifetime));
+            return collection;
+        }
+        
         /// <summary>
         /// Adds the AWSOptions object to the dependency injection framework providing information
         /// that will be used to construct Amazon service clients.
