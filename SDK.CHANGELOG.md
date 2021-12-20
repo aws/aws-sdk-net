@@ -1,3 +1,32 @@
+### 3.7.179.0 (2021-12-20 19:23 UTC)
+* APIGateway (3.7.2.54)
+	* Documentation updates for Amazon API Gateway
+* CustomerProfiles (3.7.5.0)
+	* This release adds an optional parameter, ObjectTypeNames to the PutIntegration API to support multiple object types per integration option. Besides, this release introduces Standard Order Objects which contain data from third party systems and each order object belongs to a specific profile.
+* DataSync (3.7.4.0)
+	* AWS DataSync now supports FSx Lustre Locations.
+* DevOpsGuru (3.7.7.0)
+	* Adds Tags support to DescribeOrganizationResourceCollectionHealth
+* FinSpaceData (3.7.2.0)
+	* Make dataset description optional and allow s3 export for dataviews
+* ForecastService (3.7.7.0)
+	* Adds ForecastDimensions field to the DescribeAutoPredictorResponse
+* Imagebuilder (3.7.5.0)
+	* This release adds support for importing and exporting VM Images as part of the Image Creation workflow via EC2 VM Import/Export.
+* LocationService (3.7.7.0)
+	* Making PricingPlan optional as part of create resource API.
+* Redshift (3.7.11.0)
+	* This release adds API support for managed Redshift datashares. Customers can now interact with a Redshift datashare that is managed by a different service, such as AWS Data Exchange.
+* SageMaker (3.7.24.0)
+	* This release adds a new ContentType field in AutoMLChannel for SageMaker CreateAutoMLJob InputDataConfig.
+* SecurityHub (3.7.8.0)
+	* Added new resource details objects to ASFF, including resources for Firewall, and RuleGroup, FirewallPolicy Added additional details for AutoScalingGroup, LaunchConfiguration, and S3 buckets.
+* Core 3.7.5.7
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.178.1 (2021-12-13 20:14 UTC)
 * SecretsManager (3.7.1.60)
 	* Documentation updates for Secrets Manager
