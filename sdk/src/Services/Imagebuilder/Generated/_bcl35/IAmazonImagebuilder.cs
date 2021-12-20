@@ -1862,6 +1862,68 @@ namespace Amazon.Imagebuilder
 
         #endregion
         
+        #region  ImportVmImage
+
+
+        /// <summary>
+        /// When you export your virtual machine (VM) from its virtualization environment, that
+        /// process creates a set of one or more disk container files that act as snapshots of
+        /// your VM’s environment, settings, and data. The Amazon EC2 API <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportImage.html">ImportImage</a>
+        /// action uses those files to import your VM and create an AMI. To import using the CLI
+        /// command, see <a href="https://docs.aws.amazon.com/cli/latest/reference/ec2/import-image.html">import-image</a>
+        /// 
+        /// 
+        ///  
+        /// <para>
+        /// You can reference the task ID from the VM import to pull in the AMI that the import
+        /// created as the base image for your Image Builder recipe.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ImportVmImage service method.</param>
+        /// 
+        /// <returns>The response from the ImportVmImage service method, as returned by Imagebuilder.</returns>
+        /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
+        /// These errors are usually caused by a client action, such as using an action or resource
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
+        /// specifying an invalid resource identifier.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
+        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
+        /// The service is unable to process your request at this time.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ImportVmImage">REST API Reference for ImportVmImage Operation</seealso>
+        ImportVmImageResponse ImportVmImage(ImportVmImageRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ImportVmImage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ImportVmImage operation on AmazonImagebuilderClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndImportVmImage
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ImportVmImage">REST API Reference for ImportVmImage Operation</seealso>
+        IAsyncResult BeginImportVmImage(ImportVmImageRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ImportVmImage operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginImportVmImage.</param>
+        /// 
+        /// <returns>Returns a  ImportVmImageResult from Imagebuilder.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ImportVmImage">REST API Reference for ImportVmImage Operation</seealso>
+        ImportVmImageResponse EndImportVmImage(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListComponentBuildVersions
 
 

@@ -100,6 +100,17 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Region);
             }
 
+            if(requestObject.IsSetS3ExportConfiguration())
+            {
+                context.Writer.WritePropertyName("s3ExportConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = S3ExportConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.S3ExportConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

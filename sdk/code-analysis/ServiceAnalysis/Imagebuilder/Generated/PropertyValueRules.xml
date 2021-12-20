@@ -584,6 +584,44 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.ImportVmImageRequest.ClientToken</property>
+    <min>1</min>
+    <max>36</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.ImportVmImageRequest.Description</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.ImportVmImageRequest.Name</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.ImportVmImageRequest.OsVersion</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.ImportVmImageRequest.SemanticVersion</property>
+    <pattern>^[0-9]+\.[0-9]+\.[0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.ImportVmImageRequest.VmImportTaskId</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.ImportVmImageResponse.ClientToken</property>
+    <min>1</min>
+    <max>36</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.ImportVmImageResponse.RequestId</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ListComponentBuildVersionsRequest.ComponentVersionArn</property>
     <pattern>^arn:aws[^:]*:imagebuilder:[^:]+:(?:[0-9]{12}|aws):component/[a-z0-9-_]+/[0-9]+\.[0-9]+\.[0-9]+$</pattern>
   </property-value-rule>
@@ -1571,6 +1609,21 @@
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.LaunchTemplateConfiguration.LaunchTemplateId</property>
     <pattern>^lt-[a-z0-9-_]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.S3ExportConfiguration.RoleName</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.S3ExportConfiguration.S3Bucket</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.S3ExportConfiguration.S3Prefix</property>
+    <min>1</min>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.S3Logs.S3BucketName</property>

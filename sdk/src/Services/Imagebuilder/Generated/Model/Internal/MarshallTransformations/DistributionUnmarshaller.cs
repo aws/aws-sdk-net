@@ -94,6 +94,12 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                     unmarshalledObject.Region = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("s3ExportConfiguration", targetDepth))
+                {
+                    var unmarshaller = S3ExportConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.S3ExportConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

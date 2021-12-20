@@ -29,21 +29,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
-    /// Container for the parameters to the CancelImageCreation operation.
-    /// CancelImageCreation cancels the creation of Image. This operation can only be used
-    /// on images in a non-terminal state.
+    /// This is the response object from the ImportVmImage operation.
     /// </summary>
-    public partial class CancelImageCreationRequest : AmazonImagebuilderRequest
+    public partial class ImportVmImageResponse : AmazonWebServiceResponse
     {
         private string _clientToken;
-        private string _imageBuildVersionArn;
+        private string _imageArn;
+        private string _requestId;
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// Unique, case-sensitive identifier you provide to ensure idempotency of the request.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-        /// idempotency</a> in the <i>Amazon EC2 API Reference</i>.
+        /// The idempotency token that was used for this request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=36)]
@@ -60,22 +57,41 @@ namespace Amazon.Imagebuilder.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ImageBuildVersionArn. 
+        /// Gets and sets the property ImageArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the image whose creation you want to cancel.
+        /// The Amazon Resource Name (ARN) of the AMI that was created during the VM import process.
+        /// This AMI is used as the base image for the recipe that imported the VM.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public string ImageBuildVersionArn
+        public string ImageArn
         {
-            get { return this._imageBuildVersionArn; }
-            set { this._imageBuildVersionArn = value; }
+            get { return this._imageArn; }
+            set { this._imageArn = value; }
         }
 
-        // Check to see if ImageBuildVersionArn property is set
-        internal bool IsSetImageBuildVersionArn()
+        // Check to see if ImageArn property is set
+        internal bool IsSetImageArn()
         {
-            return this._imageBuildVersionArn != null;
+            return this._imageArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RequestId. 
+        /// <para>
+        /// The request ID that uniquely identifies this request.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
+        public string RequestId
+        {
+            get { return this._requestId; }
+            set { this._requestId = value; }
+        }
+
+        // Check to see if RequestId property is set
+        internal bool IsSetRequestId()
+        {
+            return this._requestId != null;
         }
 
     }

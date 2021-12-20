@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
-    /// Image tests configuration.
+    /// Configure image tests for your pipeline build. Tests run after building the image,
+    /// to verify that the AMI or container image is valid before distributing it.
     /// </summary>
     public partial class ImageTestsConfiguration
     {
@@ -39,7 +40,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ImageTestsEnabled. 
         /// <para>
-        /// Defines if tests should be executed when building this image.
+        /// Determines if tests should run after building the image. Image Builder defaults to
+        /// enable tests to run following the image build, before image distribution.
         /// </para>
         /// </summary>
         public bool ImageTestsEnabled

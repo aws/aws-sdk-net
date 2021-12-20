@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ImageVersion Object
+    /// Response Unmarshaller for S3ExportConfiguration Object
     /// </summary>  
-    public class ImageVersionUnmarshaller : IUnmarshaller<ImageVersion, XmlUnmarshallerContext>, IUnmarshaller<ImageVersion, JsonUnmarshallerContext>
+    public class S3ExportConfigurationUnmarshaller : IUnmarshaller<S3ExportConfiguration, XmlUnmarshallerContext>, IUnmarshaller<S3ExportConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ImageVersion IUnmarshaller<ImageVersion, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        S3ExportConfiguration IUnmarshaller<S3ExportConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,69 +53,39 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ImageVersion Unmarshall(JsonUnmarshallerContext context)
+        public S3ExportConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ImageVersion unmarshalledObject = new ImageVersion();
+            S3ExportConfiguration unmarshalledObject = new S3ExportConfiguration();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("arn", targetDepth))
+                if (context.TestExpression("diskImageFormat", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DiskImageFormat = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("buildType", targetDepth))
+                if (context.TestExpression("roleName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BuildType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RoleName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("dateCreated", targetDepth))
+                if (context.TestExpression("s3Bucket", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DateCreated = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.S3Bucket = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("name", targetDepth))
+                if (context.TestExpression("s3Prefix", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("osVersion", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OsVersion = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("owner", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Owner = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("platform", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Platform = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("type", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("version", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Version = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.S3Prefix = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -124,12 +94,12 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
         }
 
 
-        private static ImageVersionUnmarshaller _instance = new ImageVersionUnmarshaller();        
+        private static S3ExportConfigurationUnmarshaller _instance = new S3ExportConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ImageVersionUnmarshaller Instance
+        public static S3ExportConfigurationUnmarshaller Instance
         {
             get
             {

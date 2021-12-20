@@ -25,6 +25,60 @@ namespace Amazon.Imagebuilder
 {
 
     /// <summary>
+    /// Constants used for properties of type BuildType.
+    /// </summary>
+    public class BuildType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant IMPORT for BuildType
+        /// </summary>
+        public static readonly BuildType IMPORT = new BuildType("IMPORT");
+        /// <summary>
+        /// Constant SCHEDULED for BuildType
+        /// </summary>
+        public static readonly BuildType SCHEDULED = new BuildType("SCHEDULED");
+        /// <summary>
+        /// Constant USER_INITIATED for BuildType
+        /// </summary>
+        public static readonly BuildType USER_INITIATED = new BuildType("USER_INITIATED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BuildType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BuildType FindValue(string value)
+        {
+            return FindValue<BuildType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BuildType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ComponentFormat.
     /// </summary>
     public class ComponentFormat : ConstantClass
@@ -252,6 +306,60 @@ namespace Amazon.Imagebuilder
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ContainerType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DiskImageFormat.
+    /// </summary>
+    public class DiskImageFormat : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant RAW for DiskImageFormat
+        /// </summary>
+        public static readonly DiskImageFormat RAW = new DiskImageFormat("RAW");
+        /// <summary>
+        /// Constant VHD for DiskImageFormat
+        /// </summary>
+        public static readonly DiskImageFormat VHD = new DiskImageFormat("VHD");
+        /// <summary>
+        /// Constant VMDK for DiskImageFormat
+        /// </summary>
+        public static readonly DiskImageFormat VMDK = new DiskImageFormat("VMDK");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DiskImageFormat(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DiskImageFormat FindValue(string value)
+        {
+            return FindValue<DiskImageFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DiskImageFormat(string value)
         {
             return FindValue(value);
         }

@@ -34,6 +34,7 @@ namespace Amazon.Imagebuilder.Model
     public partial class ImageSummary
     {
         private string _arn;
+        private BuildType _buildType;
         private string _dateCreated;
         private string _name;
         private string _osVersion;
@@ -61,6 +62,39 @@ namespace Amazon.Imagebuilder.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BuildType. 
+        /// <para>
+        /// Indicates the type of build that created this image. The build can be initiated in
+        /// the following ways:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>USER_INITIATED</b> – A manual pipeline build request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>SCHEDULED</b> – A pipeline build initiated by a cron expression in the Image Builder
+        /// pipeline, or from EventBridge.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>IMPORT</b> – A VM import created the image to use as the base image for the recipe.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public BuildType BuildType
+        {
+            get { return this._buildType; }
+            set { this._buildType = value; }
+        }
+
+        // Check to see if BuildType property is set
+        internal bool IsSetBuildType()
+        {
+            return this._buildType != null;
         }
 
         /// <summary>
