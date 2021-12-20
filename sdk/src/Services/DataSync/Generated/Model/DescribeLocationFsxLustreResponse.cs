@@ -29,21 +29,37 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataSync.Model
 {
     /// <summary>
-    /// Represents a single entry in a list of locations. <code>LocationListEntry</code> returns
-    /// an array that contains a list of locations when the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_ListLocations.html">ListLocations</a>
-    /// operation is called.
+    /// This is the response object from the DescribeLocationFsxLustre operation.
     /// </summary>
-    public partial class LocationListEntry
+    public partial class DescribeLocationFsxLustreResponse : AmazonWebServiceResponse
     {
+        private DateTime? _creationTime;
         private string _locationArn;
         private string _locationUri;
+        private List<string> _securityGroupArns = new List<string>();
+
+        /// <summary>
+        /// Gets and sets the property CreationTime. 
+        /// <para>
+        /// The time that the FSx for Lustre location was created.
+        /// </para>
+        /// </summary>
+        public DateTime CreationTime
+        {
+            get { return this._creationTime.GetValueOrDefault(); }
+            set { this._creationTime = value; }
+        }
+
+        // Check to see if CreationTime property is set
+        internal bool IsSetCreationTime()
+        {
+            return this._creationTime.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property LocationArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the location. For Network File System (NFS) or Amazon
-        /// EFS, the location is the export path. For Amazon S3, the location is the prefix path
-        /// that you want to mount and use as the root of the location.
+        /// The Amazon Resource Name (ARN) of the FSx for Lustre location that was described.
         /// </para>
         /// </summary>
         [AWSProperty(Max=128)]
@@ -62,30 +78,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property LocationUri. 
         /// <para>
-        /// Represents a list of URIs of a location. <code>LocationUri</code> returns an array
-        /// that contains a list of locations when the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_ListLocations.html">ListLocations</a>
-        /// operation is called.
-        /// </para>
-        ///  
-        /// <para>
-        /// Format: <code>TYPE://GLOBAL_ID/SUBDIR</code>.
-        /// </para>
-        ///  
-        /// <para>
-        /// TYPE designates the type of location. Valid values: NFS | EFS | S3.
-        /// </para>
-        ///  
-        /// <para>
-        /// GLOBAL_ID is the globally unique identifier of the resource that backs the location.
-        /// An example for EFS is <code>us-east-2.fs-abcd1234</code>. An example for Amazon S3
-        /// is the bucket name, such as <code>myBucket</code>. An example for NFS is a valid IPv4
-        /// address or a host name compliant with Domain Name Service (DNS).
-        /// </para>
-        ///  
-        /// <para>
-        /// SUBDIR is a valid file system path, delimited by forward slashes as is the *nix convention.
-        /// For NFS and Amazon EFS, it's the export path to mount the location. For Amazon S3,
-        /// it's the prefix path that you mount to and treat as the root of the location.
+        /// The URI of the FSx for Lustre location that was described.
         /// </para>
         /// </summary>
         [AWSProperty(Max=4356)]
@@ -99,6 +92,26 @@ namespace Amazon.DataSync.Model
         internal bool IsSetLocationUri()
         {
             return this._locationUri != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SecurityGroupArns. 
+        /// <para>
+        /// The Amazon Resource Names (ARNs) of the security groups that are configured for the
+        /// FSx for Lustre file system.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=5)]
+        public List<string> SecurityGroupArns
+        {
+            get { return this._securityGroupArns; }
+            set { this._securityGroupArns = value; }
+        }
+
+        // Check to see if SecurityGroupArns property is set
+        internal bool IsSetSecurityGroupArns()
+        {
+            return this._securityGroupArns != null && this._securityGroupArns.Count > 0; 
         }
 
     }

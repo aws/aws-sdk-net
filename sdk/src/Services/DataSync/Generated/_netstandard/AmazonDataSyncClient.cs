@@ -422,6 +422,46 @@ namespace Amazon.DataSync
 
         #endregion
         
+        #region  CreateLocationFsxLustre
+
+        internal virtual CreateLocationFsxLustreResponse CreateLocationFsxLustre(CreateLocationFsxLustreRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLocationFsxLustreRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLocationFsxLustreResponseUnmarshaller.Instance;
+
+            return Invoke<CreateLocationFsxLustreResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates an endpoint for an Amazon FSx for Lustre file system.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLocationFsxLustre service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateLocationFsxLustre service method, as returned by DataSync.</returns>
+        /// <exception cref="Amazon.DataSync.Model.InternalException">
+        /// This exception is thrown when an error occurs in the DataSync service.
+        /// </exception>
+        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationFsxLustre">REST API Reference for CreateLocationFsxLustre Operation</seealso>
+        public virtual Task<CreateLocationFsxLustreResponse> CreateLocationFsxLustreAsync(CreateLocationFsxLustreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLocationFsxLustreRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLocationFsxLustreResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateLocationFsxLustreResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateLocationFsxWindows
 
         internal virtual CreateLocationFsxWindowsResponse CreateLocationFsxWindows(CreateLocationFsxWindowsRequest request)
@@ -942,6 +982,46 @@ namespace Amazon.DataSync
             options.ResponseUnmarshaller = DescribeLocationEfsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeLocationEfsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeLocationFsxLustre
+
+        internal virtual DescribeLocationFsxLustreResponse DescribeLocationFsxLustre(DescribeLocationFsxLustreRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeLocationFsxLustreRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeLocationFsxLustreResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeLocationFsxLustreResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns metadata, such as the path information about an Amazon FSx for Lustre location.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeLocationFsxLustre service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeLocationFsxLustre service method, as returned by DataSync.</returns>
+        /// <exception cref="Amazon.DataSync.Model.InternalException">
+        /// This exception is thrown when an error occurs in the DataSync service.
+        /// </exception>
+        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationFsxLustre">REST API Reference for DescribeLocationFsxLustre Operation</seealso>
+        public virtual Task<DescribeLocationFsxLustreResponse> DescribeLocationFsxLustreAsync(DescribeLocationFsxLustreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeLocationFsxLustreRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeLocationFsxLustreResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeLocationFsxLustreResponse>(request, options, cancellationToken);
         }
 
         #endregion

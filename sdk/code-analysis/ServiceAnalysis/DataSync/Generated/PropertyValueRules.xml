@@ -41,6 +41,21 @@
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DataSync.Model.CreateLocationFsxLustreRequest.FsxFilesystemArn</property>
+    <max>128</max>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):fsx:[a-z\-0-9]*:[0-9]{12}:file-system/fs-.*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataSync.Model.CreateLocationFsxLustreRequest.Subdirectory</property>
+    <max>4096</max>
+    <pattern>^[a-zA-Z0-9_\-\+\./\(\)\$\p{Zs}]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataSync.Model.CreateLocationFsxLustreResponse.LocationArn</property>
+    <max>128</max>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DataSync.Model.CreateLocationFsxWindowsRequest.Domain</property>
     <max>253</max>
     <pattern>^([A-Za-z0-9]+[A-Za-z0-9-.]*)*[A-Za-z0-9-]*[A-Za-z0-9]$</pattern>
@@ -284,7 +299,22 @@
   <property-value-rule>
     <property>Amazon.DataSync.Model.DescribeLocationEfsResponse.LocationUri</property>
     <max>4356</max>
-    <pattern>^(efs|nfs|s3|smb|fsxw)://[a-zA-Z0-9.\-]+$</pattern>
+    <pattern>^(efs|nfs|s3|smb|fsxw|fsxl)://[a-zA-Z0-9.\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataSync.Model.DescribeLocationFsxLustreRequest.LocationArn</property>
+    <max>128</max>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataSync.Model.DescribeLocationFsxLustreResponse.LocationArn</property>
+    <max>128</max>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataSync.Model.DescribeLocationFsxLustreResponse.LocationUri</property>
+    <max>4356</max>
+    <pattern>^(efs|nfs|s3|smb|fsxw|fsxl)://[a-zA-Z0-9.\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.DescribeLocationFsxWindowsRequest.LocationArn</property>
@@ -304,7 +334,7 @@
   <property-value-rule>
     <property>Amazon.DataSync.Model.DescribeLocationFsxWindowsResponse.LocationUri</property>
     <max>4356</max>
-    <pattern>^(efs|nfs|s3|smb|fsxw)://[a-zA-Z0-9.\-]+$</pattern>
+    <pattern>^(efs|nfs|s3|smb|fsxw|fsxl)://[a-zA-Z0-9.\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.DescribeLocationFsxWindowsResponse.User</property>
@@ -341,7 +371,7 @@
   <property-value-rule>
     <property>Amazon.DataSync.Model.DescribeLocationHdfsResponse.LocationUri</property>
     <max>4356</max>
-    <pattern>^(efs|nfs|s3|smb|fsxw)://[a-zA-Z0-9.\-]+$</pattern>
+    <pattern>^(efs|nfs|s3|smb|fsxw|fsxl)://[a-zA-Z0-9.\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.DescribeLocationHdfsResponse.ReplicationFactor</property>
@@ -367,7 +397,7 @@
   <property-value-rule>
     <property>Amazon.DataSync.Model.DescribeLocationNfsResponse.LocationUri</property>
     <max>4356</max>
-    <pattern>^(efs|nfs|s3|smb|fsxw)://[a-zA-Z0-9.\-]+$</pattern>
+    <pattern>^(efs|nfs|s3|smb|fsxw|fsxl)://[a-zA-Z0-9.\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.DescribeLocationObjectStorageRequest.LocationArn</property>
@@ -388,7 +418,7 @@
   <property-value-rule>
     <property>Amazon.DataSync.Model.DescribeLocationObjectStorageResponse.LocationUri</property>
     <max>4356</max>
-    <pattern>^(efs|nfs|s3|smb|fsxw)://[a-zA-Z0-9.\-]+$</pattern>
+    <pattern>^(efs|nfs|s3|smb|fsxw|fsxl)://[a-zA-Z0-9.\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.DescribeLocationObjectStorageResponse.ServerPort</property>
@@ -408,7 +438,7 @@
   <property-value-rule>
     <property>Amazon.DataSync.Model.DescribeLocationS3Response.LocationUri</property>
     <max>4356</max>
-    <pattern>^(efs|nfs|s3|smb|fsxw)://[a-zA-Z0-9.\-]+$</pattern>
+    <pattern>^(efs|nfs|s3|smb|fsxw|fsxl)://[a-zA-Z0-9.\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.DescribeLocationSmbRequest.LocationArn</property>
@@ -428,7 +458,7 @@
   <property-value-rule>
     <property>Amazon.DataSync.Model.DescribeLocationSmbResponse.LocationUri</property>
     <max>4356</max>
-    <pattern>^(efs|nfs|s3|smb|fsxw)://[a-zA-Z0-9.\-]+$</pattern>
+    <pattern>^(efs|nfs|s3|smb|fsxw|fsxl)://[a-zA-Z0-9.\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.DescribeLocationSmbResponse.User</property>
@@ -771,7 +801,7 @@
   <property-value-rule>
     <property>Amazon.DataSync.Model.LocationListEntry.LocationUri</property>
     <max>4356</max>
-    <pattern>^(efs|nfs|s3|smb|fsxw)://[a-zA-Z0-9.\-]+$</pattern>
+    <pattern>^(efs|nfs|s3|smb|fsxw|fsxl)://[a-zA-Z0-9.\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.Options.BytesPerSecond</property>

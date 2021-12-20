@@ -226,6 +226,52 @@ namespace Amazon.DataSync
 
         #endregion
         
+        #region  CreateLocationFsxLustre
+
+
+        /// <summary>
+        /// Creates an endpoint for an Amazon FSx for Lustre file system.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLocationFsxLustre service method.</param>
+        /// 
+        /// <returns>The response from the CreateLocationFsxLustre service method, as returned by DataSync.</returns>
+        /// <exception cref="Amazon.DataSync.Model.InternalException">
+        /// This exception is thrown when an error occurs in the DataSync service.
+        /// </exception>
+        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationFsxLustre">REST API Reference for CreateLocationFsxLustre Operation</seealso>
+        CreateLocationFsxLustreResponse CreateLocationFsxLustre(CreateLocationFsxLustreRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateLocationFsxLustre operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateLocationFsxLustre operation on AmazonDataSyncClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateLocationFsxLustre
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationFsxLustre">REST API Reference for CreateLocationFsxLustre Operation</seealso>
+        IAsyncResult BeginCreateLocationFsxLustre(CreateLocationFsxLustreRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateLocationFsxLustre operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateLocationFsxLustre.</param>
+        /// 
+        /// <returns>Returns a  CreateLocationFsxLustreResult from DataSync.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationFsxLustre">REST API Reference for CreateLocationFsxLustre Operation</seealso>
+        CreateLocationFsxLustreResponse EndCreateLocationFsxLustre(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateLocationFsxWindows
 
 
@@ -819,6 +865,52 @@ namespace Amazon.DataSync
         /// <returns>Returns a  DescribeLocationEfsResult from DataSync.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationEfs">REST API Reference for DescribeLocationEfs Operation</seealso>
         DescribeLocationEfsResponse EndDescribeLocationEfs(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeLocationFsxLustre
+
+
+        /// <summary>
+        /// Returns metadata, such as the path information about an Amazon FSx for Lustre location.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeLocationFsxLustre service method.</param>
+        /// 
+        /// <returns>The response from the DescribeLocationFsxLustre service method, as returned by DataSync.</returns>
+        /// <exception cref="Amazon.DataSync.Model.InternalException">
+        /// This exception is thrown when an error occurs in the DataSync service.
+        /// </exception>
+        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationFsxLustre">REST API Reference for DescribeLocationFsxLustre Operation</seealso>
+        DescribeLocationFsxLustreResponse DescribeLocationFsxLustre(DescribeLocationFsxLustreRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeLocationFsxLustre operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeLocationFsxLustre operation on AmazonDataSyncClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeLocationFsxLustre
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationFsxLustre">REST API Reference for DescribeLocationFsxLustre Operation</seealso>
+        IAsyncResult BeginDescribeLocationFsxLustre(DescribeLocationFsxLustreRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeLocationFsxLustre operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeLocationFsxLustre.</param>
+        /// 
+        /// <returns>Returns a  DescribeLocationFsxLustreResult from DataSync.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationFsxLustre">REST API Reference for DescribeLocationFsxLustre Operation</seealso>
+        DescribeLocationFsxLustreResponse EndDescribeLocationFsxLustre(IAsyncResult asyncResult);
 
         #endregion
         
