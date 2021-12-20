@@ -85,6 +85,20 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ObjectTypeName);
                 }
 
+                if(publicRequest.IsSetObjectTypeNames())
+                {
+                    context.Writer.WritePropertyName("ObjectTypeNames");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestObjectTypeNamesKvp in publicRequest.ObjectTypeNames)
+                    {
+                        context.Writer.WritePropertyName(publicRequestObjectTypeNamesKvp.Key);
+                        var publicRequestObjectTypeNamesValue = publicRequestObjectTypeNamesKvp.Value;
+
+                            context.Writer.Write(publicRequestObjectTypeNamesValue);
+                    }
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("Tags");

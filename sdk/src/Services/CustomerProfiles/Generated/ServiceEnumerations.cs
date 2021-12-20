@@ -1097,6 +1097,10 @@ namespace Amazon.CustomerProfiles
         /// </summary>
         public static readonly StandardIdentifier NEW_ONLY = new StandardIdentifier("NEW_ONLY");
         /// <summary>
+        /// Constant ORDER for StandardIdentifier
+        /// </summary>
+        public static readonly StandardIdentifier ORDER = new StandardIdentifier("ORDER");
+        /// <summary>
         /// Constant PROFILE for StandardIdentifier
         /// </summary>
         public static readonly StandardIdentifier PROFILE = new StandardIdentifier("PROFILE");

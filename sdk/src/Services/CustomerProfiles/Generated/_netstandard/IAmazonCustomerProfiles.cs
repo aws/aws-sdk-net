@@ -551,14 +551,10 @@ namespace Amazon.CustomerProfiles
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Before calling this API, use <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_CreateDomain.html">CreateDomain</a>
         /// or <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_UpdateDomain.html">UpdateDomain</a>
         /// to enable identity resolution: set <code>Matching</code> to true.
-        /// </para>
+        /// 
         ///  
         /// <para>
         /// GetMatches returns potentially matching profiles, based on the results of the latest
@@ -992,12 +988,8 @@ namespace Amazon.CustomerProfiles
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Runs an AWS Lambda job that does the following:
-        /// </para>
+        /// 
         ///  <ol> <li> 
         /// <para>
         /// All the profileKeys in the <code>ProfileToBeMerged</code> will be moved to the main
