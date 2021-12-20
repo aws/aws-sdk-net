@@ -298,6 +298,24 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.AwsLambdaLayerVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("AwsNetworkFirewallFirewall", targetDepth))
+                {
+                    var unmarshaller = AwsNetworkFirewallFirewallDetailsUnmarshaller.Instance;
+                    unmarshalledObject.AwsNetworkFirewallFirewall = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("AwsNetworkFirewallFirewallPolicy", targetDepth))
+                {
+                    var unmarshaller = AwsNetworkFirewallFirewallPolicyDetailsUnmarshaller.Instance;
+                    unmarshalledObject.AwsNetworkFirewallFirewallPolicy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("AwsNetworkFirewallRuleGroup", targetDepth))
+                {
+                    var unmarshaller = AwsNetworkFirewallRuleGroupDetailsUnmarshaller.Instance;
+                    unmarshalledObject.AwsNetworkFirewallRuleGroup = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("AwsOpenSearchServiceDomain", targetDepth))
                 {
                     var unmarshaller = AwsOpenSearchServiceDomainDetailsUnmarshaller.Instance;

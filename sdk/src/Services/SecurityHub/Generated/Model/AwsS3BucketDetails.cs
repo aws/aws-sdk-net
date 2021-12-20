@@ -37,6 +37,7 @@ namespace Amazon.SecurityHub.Model
         private AwsS3BucketBucketLifecycleConfigurationDetails _bucketLifecycleConfiguration;
         private AwsS3BucketLoggingConfiguration _bucketLoggingConfiguration;
         private AwsS3BucketNotificationConfiguration _bucketNotificationConfiguration;
+        private AwsS3BucketBucketVersioningConfiguration _bucketVersioningConfiguration;
         private AwsS3BucketWebsiteConfiguration _bucketWebsiteConfiguration;
         private string _createdAt;
         private string _ownerAccountId;
@@ -115,6 +116,24 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetBucketNotificationConfiguration()
         {
             return this._bucketNotificationConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BucketVersioningConfiguration. 
+        /// <para>
+        /// The versioning state of an S3 bucket.
+        /// </para>
+        /// </summary>
+        public AwsS3BucketBucketVersioningConfiguration BucketVersioningConfiguration
+        {
+            get { return this._bucketVersioningConfiguration; }
+            set { this._bucketVersioningConfiguration = value; }
+        }
+
+        // Check to see if BucketVersioningConfiguration property is set
+        internal bool IsSetBucketVersioningConfiguration()
+        {
+            return this._bucketVersioningConfiguration != null;
         }
 
         /// <summary>

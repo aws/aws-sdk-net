@@ -84,6 +84,17 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetBucketVersioningConfiguration())
+            {
+                context.Writer.WritePropertyName("BucketVersioningConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsS3BucketBucketVersioningConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.BucketVersioningConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetBucketWebsiteConfiguration())
             {
                 context.Writer.WritePropertyName("BucketWebsiteConfiguration");

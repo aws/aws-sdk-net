@@ -975,6 +975,56 @@ namespace Amazon.SecurityHub
 
 
     /// <summary>
+    /// Constants used for properties of type StatusReasonCode.
+    /// </summary>
+    public class StatusReasonCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INTERNAL_ERROR for StatusReasonCode
+        /// </summary>
+        public static readonly StatusReasonCode INTERNAL_ERROR = new StatusReasonCode("INTERNAL_ERROR");
+        /// <summary>
+        /// Constant NO_AVAILABLE_CONFIGURATION_RECORDER for StatusReasonCode
+        /// </summary>
+        public static readonly StatusReasonCode NO_AVAILABLE_CONFIGURATION_RECORDER = new StatusReasonCode("NO_AVAILABLE_CONFIGURATION_RECORDER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StatusReasonCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StatusReasonCode FindValue(string value)
+        {
+            return FindValue<StatusReasonCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StatusReasonCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type StringFilterComparison.
     /// </summary>
     public class StringFilterComparison : ConstantClass

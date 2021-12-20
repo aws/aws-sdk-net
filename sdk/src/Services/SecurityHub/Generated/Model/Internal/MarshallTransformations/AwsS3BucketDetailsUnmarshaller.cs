@@ -88,6 +88,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.BucketNotificationConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("BucketVersioningConfiguration", targetDepth))
+                {
+                    var unmarshaller = AwsS3BucketBucketVersioningConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.BucketVersioningConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("BucketWebsiteConfiguration", targetDepth))
                 {
                     var unmarshaller = AwsS3BucketWebsiteConfigurationUnmarshaller.Instance;

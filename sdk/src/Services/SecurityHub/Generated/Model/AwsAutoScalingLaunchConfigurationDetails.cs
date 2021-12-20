@@ -46,6 +46,7 @@ namespace Amazon.SecurityHub.Model
         private string _kernelId;
         private string _keyName;
         private string _launchConfigurationName;
+        private AwsAutoScalingLaunchConfigurationMetadataOptions _metadataOptions;
         private string _placementTenancy;
         private string _ramdiskId;
         private List<string> _securityGroups = new List<string>();
@@ -293,6 +294,24 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetLaunchConfigurationName()
         {
             return this._launchConfigurationName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MetadataOptions. 
+        /// <para>
+        /// The metadata options for the instances.
+        /// </para>
+        /// </summary>
+        public AwsAutoScalingLaunchConfigurationMetadataOptions MetadataOptions
+        {
+            get { return this._metadataOptions; }
+            set { this._metadataOptions = value; }
+        }
+
+        // Check to see if MetadataOptions property is set
+        internal bool IsSetMetadataOptions()
+        {
+            return this._metadataOptions != null;
         }
 
         /// <summary>

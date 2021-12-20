@@ -474,6 +474,39 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetAwsNetworkFirewallFirewall())
+            {
+                context.Writer.WritePropertyName("AwsNetworkFirewallFirewall");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsNetworkFirewallFirewallDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AwsNetworkFirewallFirewall, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetAwsNetworkFirewallFirewallPolicy())
+            {
+                context.Writer.WritePropertyName("AwsNetworkFirewallFirewallPolicy");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsNetworkFirewallFirewallPolicyDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AwsNetworkFirewallFirewallPolicy, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetAwsNetworkFirewallRuleGroup())
+            {
+                context.Writer.WritePropertyName("AwsNetworkFirewallRuleGroup");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsNetworkFirewallRuleGroupDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AwsNetworkFirewallRuleGroup, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetAwsOpenSearchServiceDomain())
             {
                 context.Writer.WritePropertyName("AwsOpenSearchServiceDomain");

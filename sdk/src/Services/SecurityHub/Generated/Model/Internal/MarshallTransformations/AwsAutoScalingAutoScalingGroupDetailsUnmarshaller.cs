@@ -64,6 +64,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AvailabilityZones", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails, AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetailsUnmarshaller>(AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetailsUnmarshaller.Instance);
+                    unmarshalledObject.AvailabilityZones = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CreatedTime", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -92,6 +98,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.LoadBalancerNames = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("MixedInstancesPolicy", targetDepth))
+                {
+                    var unmarshaller = AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetailsUnmarshaller.Instance;
+                    unmarshalledObject.MixedInstancesPolicy = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

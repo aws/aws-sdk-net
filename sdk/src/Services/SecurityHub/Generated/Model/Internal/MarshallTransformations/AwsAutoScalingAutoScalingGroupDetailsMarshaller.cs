@@ -45,6 +45,22 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AwsAutoScalingAutoScalingGroupDetails requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAvailabilityZones())
+            {
+                context.Writer.WritePropertyName("AvailabilityZones");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectAvailabilityZonesListValue in requestObject.AvailabilityZones)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetailsMarshaller.Instance;
+                    marshaller.Marshall(requestObjectAvailabilityZonesListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetCreatedTime())
             {
                 context.Writer.WritePropertyName("CreatedTime");
@@ -78,6 +94,17 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                         context.Writer.Write(requestObjectLoadBalancerNamesListValue);
                 }
                 context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetMixedInstancesPolicy())
+            {
+                context.Writer.WritePropertyName("MixedInstancesPolicy");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.MixedInstancesPolicy, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
         }

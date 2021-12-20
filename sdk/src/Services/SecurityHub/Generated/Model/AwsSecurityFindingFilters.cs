@@ -1896,11 +1896,11 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The record state changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.
+        ///  <code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The compliance status changes from <code>PASSED</code> to either <code>WARNING</code>,
+        ///  <code>Compliance.Status</code> changes from <code>PASSED</code> to either <code>WARNING</code>,
         /// <code>FAILED</code>, or <code>NOT_AVAILABLE</code>.
         /// </para>
         ///  </li> </ul> </li> <li> 
@@ -1909,15 +1909,56 @@ namespace Amazon.SecurityHub.Model
         /// the security issue. Used when the initial reviewer is not the resource owner, and
         /// needs intervention from the resource owner.
         /// </para>
+        ///  
+        /// <para>
+        /// If one of the following occurs, the workflow status is changed automatically from
+        /// <code>NOTIFIED</code> to <code>NEW</code>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.
+        /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SUPPRESSED</code> - The finding will not be reviewed again and will not be
-        /// acted upon.
+        ///  <code>Compliance.Status</code> changes from <code>PASSED</code> to <code>FAILED</code>,
+        /// <code>WARNING</code>, or <code>NOT_AVAILABLE</code>.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        ///  <code>SUPPRESSED</code> - Indicates that you reviewed the finding and do not believe
+        /// that any action is needed.
+        /// </para>
+        ///  
+        /// <para>
+        /// The workflow status of a <code>SUPPRESSED</code> finding does not change if <code>RecordState</code>
+        /// changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>RESOLVED</code> - The finding was reviewed and remediated and is now considered
         /// resolved. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The finding remains <code>RESOLVED</code> unless one of the following occurs:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Compliance.Status</code> changes from <code>PASSED</code> to <code>FAILED</code>,
+        /// <code>WARNING</code>, or <code>NOT_AVAILABLE</code>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// In those cases, the workflow status is automatically reset to <code>NEW</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For findings from controls, if <code>Compliance.Status</code> is <code>PASSED</code>,
+        /// then Security Hub automatically sets the workflow status to <code>RESOLVED</code>.
         /// </para>
         ///  </li> </ul>
         /// </summary>

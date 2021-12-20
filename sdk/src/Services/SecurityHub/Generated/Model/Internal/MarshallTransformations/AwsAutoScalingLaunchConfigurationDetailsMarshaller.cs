@@ -143,6 +143,17 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.LaunchConfigurationName);
             }
 
+            if(requestObject.IsSetMetadataOptions())
+            {
+                context.Writer.WritePropertyName("MetadataOptions");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsAutoScalingLaunchConfigurationMetadataOptionsMarshaller.Instance;
+                marshaller.Marshall(requestObject.MetadataOptions, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetPlacementTenancy())
             {
                 context.Writer.WritePropertyName("PlacementTenancy");
