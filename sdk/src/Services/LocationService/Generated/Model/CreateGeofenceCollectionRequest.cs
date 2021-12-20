@@ -120,7 +120,7 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property PricingPlan. 
         /// <para>
-        /// Specifies the pricing plan for the geofence collection.
+        /// Optionally specifies the pricing plan for the geofence collection. Defaults to <code>RequestBasedUsage</code>.
         /// </para>
         ///  
         /// <para>
@@ -128,7 +128,6 @@ namespace Amazon.LocationService.Model
         /// Location Service pricing page</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public PricingPlan PricingPlan
         {
             get { return this._pricingPlan; }
