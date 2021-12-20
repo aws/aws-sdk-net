@@ -36,7 +36,7 @@
   <property-value-rule>
     <property>Amazon.FinSpaceData.Model.CreateDatasetRequest.DatasetDescription</property>
     <min>1</min>
-    <max>256</max>
+    <max>1000</max>
     <pattern>[\s\S]*\S[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -132,7 +132,7 @@
   <property-value-rule>
     <property>Amazon.FinSpaceData.Model.GetDatasetResponse.DatasetDescription</property>
     <min>1</min>
-    <max>256</max>
+    <max>1000</max>
     <pattern>[\s\S]*\S[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -265,7 +265,7 @@
   <property-value-rule>
     <property>Amazon.FinSpaceData.Model.UpdateDatasetRequest.DatasetDescription</property>
     <min>1</min>
-    <max>256</max>
+    <max>1000</max>
     <pattern>[\s\S]*\S[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -340,7 +340,7 @@
   <property-value-rule>
     <property>Amazon.FinSpaceData.Model.Dataset.DatasetDescription</property>
     <min>1</min>
-    <max>256</max>
+    <max>1000</max>
     <pattern>[\s\S]*\S[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>

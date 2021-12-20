@@ -34,6 +34,8 @@ namespace Amazon.FinSpaceData.Model
     public partial class DataViewDestinationTypeParams
     {
         private string _destinationType;
+        private ExportFileFormat _s3DestinationExportFileFormat;
+        private Dictionary<string, string> _s3DestinationExportFileFormatOptions = new Dictionary<string, string>();
 
         /// <summary>
         /// Gets and sets the property DestinationType. 
@@ -57,6 +59,36 @@ namespace Amazon.FinSpaceData.Model
         internal bool IsSetDestinationType()
         {
             return this._destinationType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3DestinationExportFileFormat.
+        /// </summary>
+        public ExportFileFormat S3DestinationExportFileFormat
+        {
+            get { return this._s3DestinationExportFileFormat; }
+            set { this._s3DestinationExportFileFormat = value; }
+        }
+
+        // Check to see if S3DestinationExportFileFormat property is set
+        internal bool IsSetS3DestinationExportFileFormat()
+        {
+            return this._s3DestinationExportFileFormat != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3DestinationExportFileFormatOptions.
+        /// </summary>
+        public Dictionary<string, string> S3DestinationExportFileFormatOptions
+        {
+            get { return this._s3DestinationExportFileFormatOptions; }
+            set { this._s3DestinationExportFileFormatOptions = value; }
+        }
+
+        // Check to see if S3DestinationExportFileFormatOptions property is set
+        internal bool IsSetS3DestinationExportFileFormatOptions()
+        {
+            return this._s3DestinationExportFileFormatOptions != null && this._s3DestinationExportFileFormatOptions.Count > 0; 
         }
 
     }

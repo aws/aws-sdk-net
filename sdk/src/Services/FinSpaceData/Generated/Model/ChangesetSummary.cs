@@ -33,6 +33,7 @@ namespace Amazon.FinSpaceData.Model
     /// </summary>
     public partial class ChangesetSummary
     {
+        private long? _activeFromTimestamp;
         private long? _activeUntilTimestamp;
         private string _changesetArn;
         private string _changesetId;
@@ -45,6 +46,21 @@ namespace Amazon.FinSpaceData.Model
         private IngestionStatus _status;
         private string _updatedByChangesetId;
         private string _updatesChangesetId;
+
+        /// <summary>
+        /// Gets and sets the property ActiveFromTimestamp.
+        /// </summary>
+        public long ActiveFromTimestamp
+        {
+            get { return this._activeFromTimestamp.GetValueOrDefault(); }
+            set { this._activeFromTimestamp = value; }
+        }
+
+        // Check to see if ActiveFromTimestamp property is set
+        internal bool IsSetActiveFromTimestamp()
+        {
+            return this._activeFromTimestamp.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property ActiveUntilTimestamp. 

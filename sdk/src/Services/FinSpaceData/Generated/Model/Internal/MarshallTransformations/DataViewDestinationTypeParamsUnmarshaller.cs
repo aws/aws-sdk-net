@@ -70,6 +70,18 @@ namespace Amazon.FinSpaceData.Model.Internal.MarshallTransformations
                     unmarshalledObject.DestinationType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("s3DestinationExportFileFormat", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.S3DestinationExportFileFormat = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("s3DestinationExportFileFormatOptions", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.S3DestinationExportFileFormatOptions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

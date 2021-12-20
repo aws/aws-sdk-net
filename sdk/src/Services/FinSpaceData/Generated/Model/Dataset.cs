@@ -107,7 +107,7 @@ namespace Amazon.FinSpaceData.Model
         /// Description for a Dataset.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=256)]
+        [AWSProperty(Min=1, Max=1000)]
         public string DatasetDescription
         {
             get { return this._datasetDescription; }

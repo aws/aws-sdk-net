@@ -48,7 +48,7 @@ namespace Amazon.FinSpaceData.Model
         /// The unique resource identifier for a Dataset.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=255)]
+        [AWSProperty(Min=1, Max=255)]
         public string Alias
         {
             get { return this._alias; }
@@ -86,7 +86,7 @@ namespace Amazon.FinSpaceData.Model
         /// A description for the Dataset.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=256)]
+        [AWSProperty(Min=1, Max=1000)]
         public string DatasetDescription
         {
             get { return this._datasetDescription; }

@@ -51,6 +51,12 @@ namespace Amazon.FinSpaceData.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("activeFromTimestamp", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    response.ActiveFromTimestamp = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("activeUntilTimestamp", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;
