@@ -74,6 +74,66 @@ namespace DependencyInjectionTests
             Assert.True(s3.GetType() == mockS3.GetType());
         }
 
+        [Fact]
+        public void CreateAWSOptionsByDIObjects()
+        {
+            RegionEndpoint expectRegion = RegionEndpoint.APSouth1;
+            string expectProfile = "MockProfile";
+
+            ServiceCollection services = new ServiceCollection();
+            services.AddSingleton(new AWSSetting() {
+                Region = expectRegion,
+                Profile = expectProfile
+            });
+
+            services.AddDefaultAWSOptions(sp=> {
+                var setting = sp.GetRequiredService<AWSSetting>();
+                return new AWSOptions()
+                {
+                    Region = setting.Region,
+                    Profile = setting.Profile
+                };
+            });
+
+            var serviceProvider = services.BuildServiceProvider();
+            var awsOptions = serviceProvider.GetRequiredService<AWSOptions>();
+
+            Assert.NotNull(awsOptions);
+            Assert.Equal(expectRegion, awsOptions.Region);
+            Assert.Equal(expectProfile, awsOptions.Profile);
+        }
+
+        [Fact]
+        public void InjectS3ClientByDIConfigs()
+        {
+            RegionEndpoint expectRegion = RegionEndpoint.APSouth1;
+            string expectProfile = "MockProfile";
+
+            ServiceCollection services = new ServiceCollection();
+            services.AddSingleton(new AWSSetting()
+            {
+                Region = expectRegion,
+                Profile = expectProfile
+            });
+
+            services.AddDefaultAWSOptions(sp => {
+                var setting = sp.GetRequiredService<AWSSetting>();
+                return new AWSOptions()
+                {
+                    Region = setting.Region,
+                    Profile = setting.Profile
+                };
+            });
+
+            services.AddAWSService<IAmazonS3>();
+
+            var serviceProvider = services.BuildServiceProvider();
+
+            var controller = ActivatorUtilities.CreateInstance<TestController>(serviceProvider);
+            Assert.NotNull(controller.S3Client);
+            Assert.Equal(expectRegion, controller.S3Client.Config.RegionEndpoint);
+        }
+
         public class TestController
         {
             public IAmazonS3 S3Client { get; private set; }
@@ -81,6 +141,12 @@ namespace DependencyInjectionTests
             {
                 S3Client = s3Client;
             }
+        }
+
+        internal class AWSSetting {
+            public RegionEndpoint Region { get; set; }
+
+            public string Profile { get; set; }
         }
     }
 }
