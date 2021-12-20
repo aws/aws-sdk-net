@@ -36,6 +36,7 @@ namespace Amazon.Redshift.Model
         private bool? _allowPubliclyAccessibleConsumers;
         private string _dataShareArn;
         private List<DataShareAssociation> _dataShareAssociations = new List<DataShareAssociation>();
+        private string _managedBy;
         private string _producerArn;
 
         /// <summary>
@@ -95,6 +96,25 @@ namespace Amazon.Redshift.Model
         internal bool IsSetDataShareAssociations()
         {
             return this._dataShareAssociations != null && this._dataShareAssociations.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ManagedBy. 
+        /// <para>
+        /// The identifier of a datashare to show its managing entity.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=2147483647)]
+        public string ManagedBy
+        {
+            get { return this._managedBy; }
+            set { this._managedBy = value; }
+        }
+
+        // Check to see if ManagedBy property is set
+        internal bool IsSetManagedBy()
+        {
+            return this._managedBy != null;
         }
 
         /// <summary>

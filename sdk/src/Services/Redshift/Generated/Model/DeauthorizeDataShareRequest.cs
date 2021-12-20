@@ -41,7 +41,8 @@ namespace Amazon.Redshift.Model
         /// Gets and sets the property ConsumerIdentifier. 
         /// <para>
         /// The identifier of the data consumer that is to have authorization removed from the
-        /// datashare. This identifier is an Amazon Web Services account ID.
+        /// datashare. This identifier is an Amazon Web Services account ID or a keyword, such
+        /// as ADX.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=2147483647)]

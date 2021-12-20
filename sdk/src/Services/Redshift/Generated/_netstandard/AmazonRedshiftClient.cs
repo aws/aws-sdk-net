@@ -522,8 +522,8 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// From a data producer account, authorizes the sharing of a datashare with one or more
-        /// consumer accounts. To authorize a datashare for a data consumer, the producer account
-        /// must have the correct access privileges.
+        /// consumer accounts or managing entities. To authorize a datashare for a data consumer,
+        /// the producer account must have the correct access privileges.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AuthorizeDataShare service method.</param>
         /// <param name="cancellationToken">
