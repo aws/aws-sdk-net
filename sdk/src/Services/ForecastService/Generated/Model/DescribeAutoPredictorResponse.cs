@@ -39,6 +39,7 @@ namespace Amazon.ForecastService.Model
         private EncryptionConfig _encryptionConfig;
         private long? _estimatedTimeRemainingInMinutes;
         private ExplainabilityInfo _explainabilityInfo;
+        private List<string> _forecastDimensions = new List<string>();
         private string _forecastFrequency;
         private int? _forecastHorizon;
         private List<string> _forecastTypes = new List<string>();
@@ -139,7 +140,10 @@ namespace Amazon.ForecastService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ExplainabilityInfo.
+        /// Gets and sets the property ExplainabilityInfo. 
+        /// <para>
+        /// Provides the status and ARN of the Predictor Explainability.
+        /// </para>
         /// </summary>
         public ExplainabilityInfo ExplainabilityInfo
         {
@@ -151,6 +155,26 @@ namespace Amazon.ForecastService.Model
         internal bool IsSetExplainabilityInfo()
         {
             return this._explainabilityInfo != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ForecastDimensions. 
+        /// <para>
+        /// An array of dimension (field) names that specify the attributes used to group your
+        /// time series.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<string> ForecastDimensions
+        {
+            get { return this._forecastDimensions; }
+            set { this._forecastDimensions = value; }
+        }
+
+        // Check to see if ForecastDimensions property is set
+        internal bool IsSetForecastDimensions()
+        {
+            return this._forecastDimensions != null && this._forecastDimensions.Count > 0; 
         }
 
         /// <summary>

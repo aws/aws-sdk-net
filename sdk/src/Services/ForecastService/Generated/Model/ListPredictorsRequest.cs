@@ -30,11 +30,16 @@ namespace Amazon.ForecastService.Model
 {
     /// <summary>
     /// Container for the parameters to the ListPredictors operation.
-    /// Returns a list of predictors created using the <a>CreatePredictor</a> operation. For
-    /// each predictor, this operation returns a summary of its properties, including its
-    /// Amazon Resource Name (ARN). You can retrieve the complete set of properties by using
-    /// the ARN with the <a>DescribePredictor</a> operation. You can filter the list using
-    /// an array of <a>Filter</a> objects.
+    /// Returns a list of predictors created using the <a>CreateAutoPredictor</a> or <a>CreatePredictor</a>
+    /// operations. For each predictor, this operation returns a summary of its properties,
+    /// including its Amazon Resource Name (ARN). 
+    /// 
+    ///  
+    /// <para>
+    /// You can retrieve the complete set of properties by using the ARN with the <a>DescribeAutoPredictor</a>
+    /// and <a>DescribePredictor</a> operations. You can filter the list using an array of
+    /// <a>Filter</a> objects.
+    /// </para>
     /// </summary>
     public partial class ListPredictorsRequest : AmazonForecastServiceRequest
     {

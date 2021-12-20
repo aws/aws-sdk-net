@@ -44,8 +44,7 @@ namespace Amazon.ForecastService.Model
         /// Gets and sets the property ResourceArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) that identifies the resource for which to list the
-        /// tags. Currently, the supported resources are Forecast dataset groups, datasets, dataset
-        /// import jobs, predictors, forecasts, and forecast export jobs.
+        /// tags. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=256)]

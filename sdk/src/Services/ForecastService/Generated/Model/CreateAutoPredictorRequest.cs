@@ -36,7 +36,7 @@ namespace Amazon.ForecastService.Model
     /// <para>
     /// Amazon Forecast creates predictors with AutoPredictor, which involves applying the
     /// optimal combination of algorithms to each time series in your datasets. You can use
-    /// CreateAutoPredictor to create new predictors or upgrade/retrain existing predictors.
+    /// <a>CreateAutoPredictor</a> to create new predictors or upgrade/retrain existing predictors.
     /// </para>
     ///  
     /// <para>
@@ -137,7 +137,10 @@ namespace Amazon.ForecastService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ExplainPredictor.
+        /// Gets and sets the property ExplainPredictor. 
+        /// <para>
+        /// Create an Explainability resource for the predictor.
+        /// </para>
         /// </summary>
         public bool ExplainPredictor
         {

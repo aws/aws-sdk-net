@@ -46,7 +46,10 @@ namespace Amazon.ForecastService.Model
         private string _status;
 
         /// <summary>
-        /// Gets and sets the property CreatedUsingAutoPredictor.
+        /// Gets and sets the property CreatedUsingAutoPredictor. 
+        /// <para>
+        /// Whether the Forecast was created from an AutoPredictor.
+        /// </para>
         /// </summary>
         public bool CreatedUsingAutoPredictor
         {

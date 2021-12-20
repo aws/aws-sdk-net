@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ForecastService.Model
 {
     /// <summary>
-    /// The source of your training data, an AWS Identity and Access Management (IAM) role
-    /// that allows Amazon Forecast to access the data and, optionally, an AWS Key Management
-    /// Service (KMS) key. This object is submitted in the <a>CreateDatasetImportJob</a> request.
+    /// The source of your data, an AWS Identity and Access Management (IAM) role that allows
+    /// Amazon Forecast to access the data and, optionally, an AWS Key Management Service
+    /// (KMS) key.
     /// </summary>
     public partial class DataSource
     {
@@ -40,8 +40,8 @@ namespace Amazon.ForecastService.Model
         /// <summary>
         /// Gets and sets the property S3Config. 
         /// <para>
-        /// The path to the training data stored in an Amazon Simple Storage Service (Amazon S3)
-        /// bucket along with the credentials to access the data.
+        /// The path to the data stored in an Amazon Simple Storage Service (Amazon S3) bucket
+        /// along with the credentials to access the data.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

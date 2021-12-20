@@ -29,10 +29,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ForecastService.Model
 {
     /// <summary>
+    /// <note> 
+    /// <para>
+    /// This object belongs to the <a>CreatePredictor</a> operation. If you created your predictor
+    /// with <a>CreateAutoPredictor</a>, see <a>AttributeConfig</a>.
+    /// </para>
+    ///  </note> 
+    /// <para>
     /// In a <a>CreatePredictor</a> operation, the specified algorithm trains a model using
     /// the specified dataset group. You can optionally tell the operation to modify data
     /// fields prior to training a model. These modifications are referred to as <i>featurization</i>.
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// You define featurization using the <code>FeaturizationConfig</code> object. You specify

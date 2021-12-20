@@ -77,8 +77,8 @@ namespace Amazon.ForecastService.Model
         /// </para>
         ///  
         /// <para>
-        /// To enable Holidays, specify a country with one of the following two-letter country
-        /// codes:
+        /// To enable Holidays, set <code>CountryCode</code> to one of the following two-letter
+        /// country codes:
         /// </para>
         ///  <ul> <li> 
         /// <para>

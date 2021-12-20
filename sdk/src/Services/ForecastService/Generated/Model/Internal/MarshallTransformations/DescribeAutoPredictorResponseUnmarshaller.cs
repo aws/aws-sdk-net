@@ -87,6 +87,12 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
                     response.ExplainabilityInfo = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ForecastDimensions", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    response.ForecastDimensions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ForecastFrequency", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

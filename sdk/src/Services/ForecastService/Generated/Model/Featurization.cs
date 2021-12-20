@@ -29,9 +29,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ForecastService.Model
 {
     /// <summary>
+    /// <note> 
+    /// <para>
+    /// This object belongs to the <a>CreatePredictor</a> operation. If you created your predictor
+    /// with <a>CreateAutoPredictor</a>, see <a>AttributeConfig</a>.
+    /// </para>
+    ///  </note> 
+    /// <para>
     /// Provides featurization (transformation) information for a dataset field. This object
     /// is part of the <a>FeaturizationConfig</a> object.
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// For example:

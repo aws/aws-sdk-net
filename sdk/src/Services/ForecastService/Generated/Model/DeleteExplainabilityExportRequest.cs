@@ -30,7 +30,7 @@ namespace Amazon.ForecastService.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteExplainabilityExport operation.
-    /// Deletes an Explainability export job.
+    /// Deletes an Explainability export.
     /// </summary>
     public partial class DeleteExplainabilityExportRequest : AmazonForecastServiceRequest
     {
