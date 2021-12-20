@@ -44,5 +44,10 @@ namespace Amazon.DevOpsGuru.Model
         /// Enumerable containing all of the Service
         /// </summary>
         IPaginatedEnumerable<ServiceHealth> Service { get; }
+
+        /// <summary>
+        /// Enumerable containing all of the Tags
+        /// </summary>
+        IPaginatedEnumerable<TagHealth> Tags { get; }
     }
 }

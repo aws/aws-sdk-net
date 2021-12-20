@@ -59,6 +59,12 @@ namespace Amazon.DevOpsGuru.Model
         public IPaginatedEnumerable<ServiceHealth> Service => 
             new PaginatedResultKeyResponse<DescribeOrganizationResourceCollectionHealthResponse, ServiceHealth>(this, (i) => i.Service);
 
+        /// <summary>
+        /// Enumerable containing all of the Tags
+        /// </summary>
+        public IPaginatedEnumerable<TagHealth> Tags => 
+            new PaginatedResultKeyResponse<DescribeOrganizationResourceCollectionHealthResponse, TagHealth>(this, (i) => i.Tags);
+
         internal DescribeOrganizationResourceCollectionHealthPaginator(IAmazonDevOpsGuru client, DescribeOrganizationResourceCollectionHealthRequest request)
         {
             this._client = client;

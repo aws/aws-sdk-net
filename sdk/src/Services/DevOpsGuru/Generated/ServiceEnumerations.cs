@@ -888,6 +888,10 @@ namespace Amazon.DevOpsGuru
         /// Constant AWS_SERVICE for OrganizationResourceCollectionType
         /// </summary>
         public static readonly OrganizationResourceCollectionType AWS_SERVICE = new OrganizationResourceCollectionType("AWS_SERVICE");
+        /// <summary>
+        /// Constant AWS_TAGS for OrganizationResourceCollectionType
+        /// </summary>
+        public static readonly OrganizationResourceCollectionType AWS_TAGS = new OrganizationResourceCollectionType("AWS_TAGS");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
