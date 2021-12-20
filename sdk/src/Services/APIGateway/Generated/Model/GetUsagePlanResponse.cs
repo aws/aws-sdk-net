@@ -29,8 +29,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.APIGateway.Model
 {
     /// <summary>
-    /// Represents a usage plan than can specify who can assess associated API stages with
-    /// specified request limits and quotas.
+    /// Represents a usage plan used to specify who can assess associated API stages. Optionally,
+    /// target request rate and quota limits can be set. In some cases clients can exceed
+    /// the targets that you set. Don’t rely on usage plans to control costs. Consider using
+    /// <a href="https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-managing-costs.html">AWS
+    /// Budgets</a> to monitor costs and <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
+    /// WAF</a> to manage API requests.
     /// 
     ///  <div class="remarks"> 
     /// <para>
@@ -145,7 +149,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Quota. 
         /// <para>
-        /// The maximum number of permitted requests per a given unit time interval.
+        /// The target maximum number of permitted requests per a given unit time interval.
         /// </para>
         /// </summary>
         public QuotaSettings Quota
@@ -181,7 +185,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Throttle. 
         /// <para>
-        /// The request throttle limits of a usage plan.
+        /// Map containing method level throttling information for API stage in a usage plan.
         /// </para>
         /// </summary>
         public ThrottleSettings Throttle

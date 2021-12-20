@@ -40,7 +40,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Limit. 
         /// <para>
-        /// The maximum number of requests that can be made in a given time period.
+        /// The target maximum number of requests that can be made in a given time period.
         /// </para>
         /// </summary>
         public int Limit
