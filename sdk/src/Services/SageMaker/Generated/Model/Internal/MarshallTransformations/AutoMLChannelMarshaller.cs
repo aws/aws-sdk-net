@@ -51,6 +51,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.CompressionType);
             }
 
+            if(requestObject.IsSetContentType())
+            {
+                context.Writer.WritePropertyName("ContentType");
+                context.Writer.Write(requestObject.ContentType);
+            }
+
             if(requestObject.IsSetDataSource())
             {
                 context.Writer.WritePropertyName("DataSource");

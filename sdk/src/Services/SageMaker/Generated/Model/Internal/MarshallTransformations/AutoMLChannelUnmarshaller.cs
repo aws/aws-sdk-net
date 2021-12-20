@@ -70,6 +70,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.CompressionType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ContentType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ContentType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DataSource", targetDepth))
                 {
                     var unmarshaller = AutoMLDataSourceUnmarshaller.Instance;

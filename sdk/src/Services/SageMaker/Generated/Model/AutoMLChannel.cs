@@ -35,6 +35,7 @@ namespace Amazon.SageMaker.Model
     public partial class AutoMLChannel
     {
         private CompressionType _compressionType;
+        private string _contentType;
         private AutoMLDataSource _dataSource;
         private string _targetAttributeName;
 
@@ -54,6 +55,26 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetCompressionType()
         {
             return this._compressionType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ContentType. 
+        /// <para>
+        /// The content type of the data from the input source. You can use <code>text/csv;header=present</code>
+        /// or <code>x-application/vnd.amazon+parquet</code>. The default value is <code>text/csv;header=present</code>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=256)]
+        public string ContentType
+        {
+            get { return this._contentType; }
+            set { this._contentType = value; }
+        }
+
+        // Check to see if ContentType property is set
+        internal bool IsSetContentType()
+        {
+            return this._contentType != null;
         }
 
         /// <summary>
