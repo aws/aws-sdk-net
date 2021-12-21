@@ -40,8 +40,8 @@ namespace Amazon.QLDB.Model
         /// <summary>
         /// Gets and sets the property KmsKeyArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) in Key Management
-        /// Service (KMS). Amazon S3 does not support asymmetric CMKs.
+        /// The Amazon Resource Name (ARN) of a symmetric key in Key Management Service (KMS).
+        /// Amazon S3 does not support asymmetric KMS keys.
         /// </para>
         ///  
         /// <para>

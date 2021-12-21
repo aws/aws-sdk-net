@@ -80,6 +80,12 @@ namespace Amazon.QLDB.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.InclusiveStartTime);
                 }
 
+                if(publicRequest.IsSetOutputFormat())
+                {
+                    context.Writer.WritePropertyName("OutputFormat");
+                    context.Writer.Write(publicRequest.OutputFormat);
+                }
+
                 if(publicRequest.IsSetRoleArn())
                 {
                     context.Writer.WritePropertyName("RoleArn");

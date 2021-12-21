@@ -94,6 +94,12 @@ namespace Amazon.QLDB.Model.Internal.MarshallTransformations
                     unmarshalledObject.LedgerName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("OutputFormat", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.OutputFormat = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("RoleArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

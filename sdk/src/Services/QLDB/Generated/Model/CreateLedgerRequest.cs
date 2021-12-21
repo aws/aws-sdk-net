@@ -30,7 +30,7 @@ namespace Amazon.QLDB.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateLedger operation.
-    /// Creates a new ledger in your account in the current Region.
+    /// Creates a new ledger in your Amazon Web Services account in the current Region.
     /// </summary>
     public partial class CreateLedgerRequest : AmazonQLDBRequest
     {
@@ -99,7 +99,8 @@ namespace Amazon.QLDB.Model
         /// <para>
         /// To specify a customer managed KMS key, you can use its key ID, Amazon Resource Name
         /// (ARN), alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>.
-        /// To specify a key in a different account, you must use the key ARN or alias ARN.
+        /// To specify a key in a different Amazon Web Services account, you must use the key
+        /// ARN or alias ARN.
         /// </para>
         ///  
         /// <para>
@@ -145,7 +146,7 @@ namespace Amazon.QLDB.Model
         /// Gets and sets the property Name. 
         /// <para>
         /// The name of the ledger that you want to create. The name must be unique among all
-        /// of the ledgers in your account in the current Region.
+        /// of the ledgers in your Amazon Web Services account in the current Region.
         /// </para>
         ///  
         /// <para>

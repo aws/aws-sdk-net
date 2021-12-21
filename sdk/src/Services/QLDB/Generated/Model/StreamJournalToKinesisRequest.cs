@@ -143,6 +143,12 @@ namespace Amazon.QLDB.Model
         /// The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a
         /// journal stream to write data records to a Kinesis Data Streams resource.
         /// </para>
+        ///  
+        /// <para>
+        /// To pass a role to QLDB when requesting a journal stream, you must have permissions
+        /// to perform the <code>iam:PassRole</code> action on the IAM role resource. This is
+        /// required for all journal stream requests.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=1600)]
         public string RoleArn

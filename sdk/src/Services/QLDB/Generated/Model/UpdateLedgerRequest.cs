@@ -97,7 +97,8 @@ namespace Amazon.QLDB.Model
         /// <para>
         /// To specify a customer managed KMS key, you can use its key ID, Amazon Resource Name
         /// (ARN), alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>.
-        /// To specify a key in a different account, you must use the key ARN or alias ARN.
+        /// To specify a key in a different Amazon Web Services account, you must use the key
+        /// ARN or alias ARN.
         /// </para>
         ///  
         /// <para>

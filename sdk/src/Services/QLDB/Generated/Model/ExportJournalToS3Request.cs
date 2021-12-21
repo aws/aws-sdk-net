@@ -31,9 +31,18 @@ namespace Amazon.QLDB.Model
     /// <summary>
     /// Container for the parameters to the ExportJournalToS3 operation.
     /// Exports journal contents within a date and time range from a ledger into a specified
-    /// Amazon Simple Storage Service (Amazon S3) bucket. The data is written as files in
-    /// Amazon Ion format.
+    /// Amazon Simple Storage Service (Amazon S3) bucket. A journal export job can write the
+    /// data objects in either the text or binary representation of Amazon Ion format, or
+    /// in <i>JSON Lines</i> text format.
     /// 
+    ///  
+    /// <para>
+    /// In JSON Lines format, each journal block in the exported data object is a valid JSON
+    /// object that is delimited by a newline. You can use this format to easily integrate
+    /// JSON exports with analytics tools such as Glue and Amazon Athena because these services
+    /// can parse newline-delimited JSON automatically. For more information about the format,
+    /// see <a href="https://jsonlines.org/">JSON Lines</a>.
+    /// </para>
     ///  
     /// <para>
     /// If the ledger with the given <code>Name</code> doesn't exist, then throws <code>ResourceNotFoundException</code>.
@@ -54,6 +63,7 @@ namespace Amazon.QLDB.Model
         private DateTime? _exclusiveEndTime;
         private DateTime? _inclusiveStartTime;
         private string _name;
+        private OutputFormat _outputFormat;
         private string _roleArn;
         private S3ExportConfiguration _s3ExportConfiguration;
 
@@ -139,6 +149,25 @@ namespace Amazon.QLDB.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OutputFormat. 
+        /// <para>
+        /// The output format of your exported journal data. If this parameter is not specified,
+        /// the exported data defaults to <code>ION_TEXT</code> format.
+        /// </para>
+        /// </summary>
+        public OutputFormat OutputFormat
+        {
+            get { return this._outputFormat; }
+            set { this._outputFormat = value; }
+        }
+
+        // Check to see if OutputFormat property is set
+        internal bool IsSetOutputFormat()
+        {
+            return this._outputFormat != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a
@@ -150,10 +179,15 @@ namespace Amazon.QLDB.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// (Optional) Use your customer master key (CMK) in Key Management Service (KMS) for
-        /// server-side encryption of your exported data.
+        /// (Optional) Use your customer managed key in Key Management Service (KMS) for server-side
+        /// encryption of your exported data.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        /// To pass a role to QLDB when requesting a journal export, you must have permissions
+        /// to perform the <code>iam:PassRole</code> action on the IAM role resource. This is
+        /// required for all journal export requests.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=1600)]
         public string RoleArn

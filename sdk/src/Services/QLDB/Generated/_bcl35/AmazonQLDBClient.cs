@@ -329,7 +329,7 @@ namespace Amazon.QLDB
         #region  CreateLedger
 
         /// <summary>
-        /// Creates a new ledger in your account in the current Region.
+        /// Creates a new ledger in your Amazon Web Services account in the current Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLedger service method.</param>
         /// 
@@ -677,9 +677,18 @@ namespace Amazon.QLDB
 
         /// <summary>
         /// Exports journal contents within a date and time range from a ledger into a specified
-        /// Amazon Simple Storage Service (Amazon S3) bucket. The data is written as files in
-        /// Amazon Ion format.
+        /// Amazon Simple Storage Service (Amazon S3) bucket. A journal export job can write the
+        /// data objects in either the text or binary representation of Amazon Ion format, or
+        /// in <i>JSON Lines</i> text format.
         /// 
+        ///  
+        /// <para>
+        /// In JSON Lines format, each journal block in the exported data object is a valid JSON
+        /// object that is delimited by a newline. You can use this format to easily integrate
+        /// JSON exports with analytics tools such as Glue and Amazon Athena because these services
+        /// can parse newline-delimited JSON automatically. For more information about the format,
+        /// see <a href="https://jsonlines.org/">JSON Lines</a>.
+        /// </para>
         ///  
         /// <para>
         /// If the ledger with the given <code>Name</code> doesn't exist, then throws <code>ResourceNotFoundException</code>.
@@ -1044,7 +1053,7 @@ namespace Amazon.QLDB
 
         /// <summary>
         /// Returns an array of journal export job descriptions for all ledgers that are associated
-        /// with the current account and Region.
+        /// with the current Amazon Web Services account and Region.
         /// 
         ///  
         /// <para>
@@ -1178,8 +1187,8 @@ namespace Amazon.QLDB
         #region  ListLedgers
 
         /// <summary>
-        /// Returns an array of ledger summaries that are associated with the current account
-        /// and Region.
+        /// Returns an array of ledger summaries that are associated with the current Amazon Web
+        /// Services account and Region.
         /// 
         ///  
         /// <para>
