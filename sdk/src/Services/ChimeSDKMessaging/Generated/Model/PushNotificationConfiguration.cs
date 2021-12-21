@@ -43,7 +43,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// The body of the push notification.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=150)]
+        [AWSProperty(Min=0, Max=150)]
         public string Body
         {
             get { return this._body; }
@@ -62,7 +62,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// The title of the push notification.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=50)]
+        [AWSProperty(Min=0, Max=50)]
         public string Title
         {
             get { return this._title; }
@@ -82,7 +82,6 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// Normal mobile push notification. <code>VOIP</code>: VOIP mobile push notification.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public PushNotificationType Type
         {
             get { return this._type; }

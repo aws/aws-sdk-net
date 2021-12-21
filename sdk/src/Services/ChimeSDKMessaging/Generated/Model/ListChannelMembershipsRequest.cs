@@ -133,9 +133,9 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// Gets and sets the property Type. 
         /// <para>
         /// The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default
-        /// members are always returned as part of <code>ListChannelMemberships</code>. Hidden
-        /// members are only returned if the type filter in <code>ListChannelMemberships</code>
-        /// equals <code>HIDDEN</code>. Otherwise hidden members are not returned.
+        /// members are returned as part of <code>ListChannelMemberships</code> if no type is
+        /// specified. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code>
+        /// equals <code>HIDDEN</code>.
         /// </para>
         /// </summary>
         public ChannelMembershipType Type

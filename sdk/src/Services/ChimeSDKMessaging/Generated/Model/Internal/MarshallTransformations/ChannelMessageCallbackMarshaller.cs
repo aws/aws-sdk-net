@@ -51,6 +51,25 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Content);
             }
 
+            if(requestObject.IsSetMessageAttributes())
+            {
+                context.Writer.WritePropertyName("MessageAttributes");
+                context.Writer.WriteObjectStart();
+                foreach (var requestObjectMessageAttributesKvp in requestObject.MessageAttributes)
+                {
+                    context.Writer.WritePropertyName(requestObjectMessageAttributesKvp.Key);
+                    var requestObjectMessageAttributesValue = requestObjectMessageAttributesKvp.Value;
+
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = MessageAttributeValueMarshaller.Instance;
+                    marshaller.Marshall(requestObjectMessageAttributesValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetMessageId())
             {
                 context.Writer.WritePropertyName("MessageId");
@@ -61,6 +80,17 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("Metadata");
                 context.Writer.Write(requestObject.Metadata);
+            }
+
+            if(requestObject.IsSetPushNotification())
+            {
+                context.Writer.WritePropertyName("PushNotification");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = PushNotificationConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.PushNotification, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
         }
