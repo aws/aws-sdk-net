@@ -1118,6 +1118,66 @@ namespace Amazon.LookoutMetrics
 
         #endregion
         
+        #region  ListAnomalyGroupRelatedMetrics
+
+
+        /// <summary>
+        /// Returns a list of measures that are potential causes or effects of an anomaly group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAnomalyGroupRelatedMetrics service method.</param>
+        /// 
+        /// <returns>The response from the ListAnomalyGroupRelatedMetrics service method, as returned by LookoutMetrics.</returns>
+        /// <exception cref="Amazon.LookoutMetrics.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutMetrics.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutMetrics.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found. Check the ARN of the resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutMetrics.Model.TooManyRequestsException">
+        /// The request was denied due to too many requests being submitted at the same time.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutMetrics.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the AWS service. Check your
+        /// input values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/ListAnomalyGroupRelatedMetrics">REST API Reference for ListAnomalyGroupRelatedMetrics Operation</seealso>
+        ListAnomalyGroupRelatedMetricsResponse ListAnomalyGroupRelatedMetrics(ListAnomalyGroupRelatedMetricsRequest request);
+
+
+
+        /// <summary>
+        /// Returns a list of measures that are potential causes or effects of an anomaly group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAnomalyGroupRelatedMetrics service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAnomalyGroupRelatedMetrics service method, as returned by LookoutMetrics.</returns>
+        /// <exception cref="Amazon.LookoutMetrics.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutMetrics.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutMetrics.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found. Check the ARN of the resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutMetrics.Model.TooManyRequestsException">
+        /// The request was denied due to too many requests being submitted at the same time.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutMetrics.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the AWS service. Check your
+        /// input values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/ListAnomalyGroupRelatedMetrics">REST API Reference for ListAnomalyGroupRelatedMetrics Operation</seealso>
+        Task<ListAnomalyGroupRelatedMetricsResponse> ListAnomalyGroupRelatedMetricsAsync(ListAnomalyGroupRelatedMetricsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListAnomalyGroupSummaries
 
 

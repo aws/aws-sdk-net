@@ -46,6 +46,11 @@ namespace Amazon.LookoutMetrics.Model
         IListAnomalyDetectorsPaginator ListAnomalyDetectors(ListAnomalyDetectorsRequest request);
 
         /// <summary>
+        /// Paginator for ListAnomalyGroupRelatedMetrics operation
+        ///</summary>
+        IListAnomalyGroupRelatedMetricsPaginator ListAnomalyGroupRelatedMetrics(ListAnomalyGroupRelatedMetricsRequest request);
+
+        /// <summary>
         /// Paginator for ListAnomalyGroupSummaries operation
         ///</summary>
         IListAnomalyGroupSummariesPaginator ListAnomalyGroupSummaries(ListAnomalyGroupSummariesRequest request);

@@ -473,6 +473,56 @@ namespace Amazon.LookoutMetrics
 
 
     /// <summary>
+    /// Constants used for properties of type RelationshipType.
+    /// </summary>
+    public class RelationshipType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CAUSE_OF_INPUT_ANOMALY_GROUP for RelationshipType
+        /// </summary>
+        public static readonly RelationshipType CAUSE_OF_INPUT_ANOMALY_GROUP = new RelationshipType("CAUSE_OF_INPUT_ANOMALY_GROUP");
+        /// <summary>
+        /// Constant EFFECT_OF_INPUT_ANOMALY_GROUP for RelationshipType
+        /// </summary>
+        public static readonly RelationshipType EFFECT_OF_INPUT_ANOMALY_GROUP = new RelationshipType("EFFECT_OF_INPUT_ANOMALY_GROUP");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RelationshipType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RelationshipType FindValue(string value)
+        {
+            return FindValue<RelationshipType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RelationshipType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ValidationExceptionReason.
     /// </summary>
     public class ValidationExceptionReason : ConstantClass

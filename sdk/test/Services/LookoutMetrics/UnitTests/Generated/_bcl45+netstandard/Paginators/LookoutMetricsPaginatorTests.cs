@@ -198,6 +198,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("LookoutMetrics")]
+        public void ListAnomalyGroupRelatedMetricsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListAnomalyGroupRelatedMetricsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListAnomalyGroupRelatedMetricsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListAnomalyGroupRelatedMetricsResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListAnomalyGroupRelatedMetrics(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListAnomalyGroupRelatedMetrics(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("LookoutMetrics")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListAnomalyGroupRelatedMetricsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListAnomalyGroupRelatedMetricsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListAnomalyGroupRelatedMetricsResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListAnomalyGroupRelatedMetrics(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListAnomalyGroupRelatedMetrics(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("LookoutMetrics")]
         public void ListAnomalyGroupSummariesTest_TwoPages()
         {
             var request = InstantiateClassGenerator.Execute<ListAnomalyGroupSummariesRequest>();

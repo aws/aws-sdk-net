@@ -273,6 +273,33 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LookoutMetrics.Model.ListAnomalyGroupRelatedMetricsRequest.AnomalyDetectorArn</property>
+    <max>256</max>
+    <pattern>arn:([a-z\d-]+):.*:.*:.*:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutMetrics.Model.ListAnomalyGroupRelatedMetricsRequest.AnomalyGroupId</property>
+    <max>63</max>
+    <pattern>[a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutMetrics.Model.ListAnomalyGroupRelatedMetricsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutMetrics.Model.ListAnomalyGroupRelatedMetricsRequest.NextToken</property>
+    <min>1</min>
+    <max>3000</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutMetrics.Model.ListAnomalyGroupRelatedMetricsResponse.NextToken</property>
+    <min>1</min>
+    <max>3000</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LookoutMetrics.Model.ListAnomalyGroupSummariesRequest.AnomalyDetectorArn</property>
     <max>256</max>
     <pattern>arn:([a-z\d-]+):.*:.*:.*:.+</pattern>
@@ -616,6 +643,21 @@
   <property-value-rule>
     <property>Amazon.LookoutMetrics.Model.ExecutionStatus.Timestamp</property>
     <max>60</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutMetrics.Model.InterMetricImpactDetails.AnomalyGroupId</property>
+    <max>63</max>
+    <pattern>[a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutMetrics.Model.InterMetricImpactDetails.ContributionPercentage</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutMetrics.Model.InterMetricImpactDetails.MetricName</property>
+    <max>256</max>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9\-_]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutMetrics.Model.ItemizedMetricStats.MetricName</property>

@@ -68,6 +68,14 @@ namespace Amazon.LookoutMetrics.Model
         }
 
         /// <summary>
+        /// Paginator for ListAnomalyGroupRelatedMetrics operation
+        ///</summary>
+        public IListAnomalyGroupRelatedMetricsPaginator ListAnomalyGroupRelatedMetrics(ListAnomalyGroupRelatedMetricsRequest request) 
+        {
+            return new ListAnomalyGroupRelatedMetricsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListAnomalyGroupSummaries operation
         ///</summary>
         public IListAnomalyGroupSummariesPaginator ListAnomalyGroupSummaries(ListAnomalyGroupSummariesRequest request) 
