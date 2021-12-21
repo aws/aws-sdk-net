@@ -37,6 +37,7 @@ namespace Amazon.NimbleStudio.Model
         private List<string> _ec2InstanceTypes = new List<string>();
         private int? _maxSessionLengthInMinutes;
         private int? _maxStoppedSessionLengthInMinutes;
+        private StreamConfigurationSessionStorage _sessionStorage;
         private List<string> _streamingImageIds = new List<string>();
 
         /// <summary>
@@ -104,10 +105,22 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property MaxStoppedSessionLengthInMinutes. 
         /// <para>
-        /// The length of time, in minutes, that a streaming session can be active before it is
-        /// stopped or terminated. After this point, Nimble Studio automatically terminates or
-        /// stops the session. The default length of time is 690 minutes, and the maximum length
-        /// of time is 30 days.
+        /// Integer that determines if you can start and stop your sessions and how long a session
+        /// can stay in the STOPPED state. The default value is 0. The maximum value is 5760.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the value is missing or set to 0, your sessions can’t be stopped. If you then call
+        /// StopStreamingSession, the session fails. If the time that a session stays in the READY
+        /// state exceeds the maxSessionLengthInMinutes value, the session will automatically
+        /// be terminated by AWS (instead of stopped).
+        /// </para>
+        ///  
+        /// <para>
+        /// If the value is set to a positive number, the session can be stopped. You can call
+        /// StopStreamingSession to stop sessions in the READY state. If the time that a session
+        /// stays in the READY state exceeds the maxSessionLengthInMinutes value, the session
+        /// will automatically be stopped by AWS (instead of terminated).
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=5760)]
@@ -121,6 +134,25 @@ namespace Amazon.NimbleStudio.Model
         internal bool IsSetMaxStoppedSessionLengthInMinutes()
         {
             return this._maxStoppedSessionLengthInMinutes.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SessionStorage. 
+        /// <para>
+        /// (Optional) The upload storage for a streaming workstation that is created using this
+        /// launch profile.
+        /// </para>
+        /// </summary>
+        public StreamConfigurationSessionStorage SessionStorage
+        {
+            get { return this._sessionStorage; }
+            set { this._sessionStorage = value; }
+        }
+
+        // Check to see if SessionStorage property is set
+        internal bool IsSetSessionStorage()
+        {
+            return this._sessionStorage != null;
         }
 
         /// <summary>

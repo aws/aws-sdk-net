@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.NimbleStudio.Model
 {
     /// <summary>
-    /// 
+    /// The Launch Profile Initialization Script is used when start streaming session runs.
     /// </summary>
     public partial class LaunchProfileInitializationScript
     {

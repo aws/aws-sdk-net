@@ -29,48 +29,48 @@ using Amazon.Runtime.Internal;
 namespace Amazon.NimbleStudio.Model
 {
     /// <summary>
-    /// This is the response object from the ListStudioComponents operation.
+    /// The configuration for a streaming session’s upload storage.
     /// </summary>
-    public partial class ListStudioComponentsResponse : AmazonWebServiceResponse
+    public partial class StreamConfigurationSessionStorage
     {
-        private string _nextToken;
-        private List<StudioComponent> _studioComponents = new List<StudioComponent>();
+        private List<string> _mode = new List<string>();
+        private StreamingSessionStorageRoot _root;
 
         /// <summary>
-        /// Gets and sets the property NextToken. 
+        /// Gets and sets the property Mode. 
         /// <para>
-        /// The token for the next set of results, or null if there are no more results.
+        /// Allows artists to upload files to their workstations. The only valid option is <code>UPLOAD</code>.
         /// </para>
         /// </summary>
-        public string NextToken
+        [AWSProperty(Required=true, Min=1)]
+        public List<string> Mode
         {
-            get { return this._nextToken; }
-            set { this._nextToken = value; }
+            get { return this._mode; }
+            set { this._mode = value; }
         }
 
-        // Check to see if NextToken property is set
-        internal bool IsSetNextToken()
+        // Check to see if Mode property is set
+        internal bool IsSetMode()
         {
-            return this._nextToken != null;
+            return this._mode != null && this._mode.Count > 0; 
         }
 
         /// <summary>
-        /// Gets and sets the property StudioComponents. 
+        /// Gets and sets the property Root. 
         /// <para>
-        /// A collection of studio components.
+        /// The configuration for the upload storage root of the streaming session.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=50)]
-        public List<StudioComponent> StudioComponents
+        public StreamingSessionStorageRoot Root
         {
-            get { return this._studioComponents; }
-            set { this._studioComponents = value; }
+            get { return this._root; }
+            set { this._root = value; }
         }
 
-        // Check to see if StudioComponents property is set
-        internal bool IsSetStudioComponents()
+        // Check to see if Root property is set
+        internal bool IsSetRoot()
         {
-            return this._studioComponents != null && this._studioComponents.Count > 0; 
+            return this._root != null;
         }
 
     }

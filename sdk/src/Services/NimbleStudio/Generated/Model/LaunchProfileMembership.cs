@@ -29,7 +29,41 @@ using Amazon.Runtime.Internal;
 namespace Amazon.NimbleStudio.Model
 {
     /// <summary>
+    /// Launch profile membership enables your studio admins to delegate launch profile access
+    /// to other studio users in the Nimble Studio portal without needing to write or maintain
+    /// complex IAM policies. A launch profile member is a user association from your studio
+    /// identity source who is granted permissions to a launch profile.
     /// 
+    ///  
+    /// <para>
+    /// A launch profile member (type USER) provides the following permissions to that launch
+    /// profile:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// GetLaunchProfile
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// GetLaunchProfileInitialization
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// GetLaunchProfileMembers
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// GetLaunchProfileMember
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// CreateStreamingSession
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// GetLaunchProfileDetails
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class LaunchProfileMembership
     {

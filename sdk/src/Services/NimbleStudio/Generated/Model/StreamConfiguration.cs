@@ -37,6 +37,7 @@ namespace Amazon.NimbleStudio.Model
         private List<string> _ec2InstanceTypes = new List<string>();
         private int? _maxSessionLengthInMinutes;
         private int? _maxStoppedSessionLengthInMinutes;
+        private StreamConfigurationSessionStorage _sessionStorage;
         private List<string> _streamingImageIds = new List<string>();
 
         /// <summary>
@@ -133,6 +134,24 @@ namespace Amazon.NimbleStudio.Model
         internal bool IsSetMaxStoppedSessionLengthInMinutes()
         {
             return this._maxStoppedSessionLengthInMinutes.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SessionStorage. 
+        /// <para>
+        /// (Optional) The upload storage for a streaming session.
+        /// </para>
+        /// </summary>
+        public StreamConfigurationSessionStorage SessionStorage
+        {
+            get { return this._sessionStorage; }
+            set { this._sessionStorage = value; }
+        }
+
+        // Check to see if SessionStorage property is set
+        internal bool IsSetSessionStorage()
+        {
+            return this._sessionStorage != null;
         }
 
         /// <summary>

@@ -29,48 +29,52 @@ using Amazon.Runtime.Internal;
 namespace Amazon.NimbleStudio.Model
 {
     /// <summary>
-    /// This is the response object from the ListStudioComponents operation.
+    /// The upload storage root location (folder) on streaming workstations where files are
+    /// uploaded.
     /// </summary>
-    public partial class ListStudioComponentsResponse : AmazonWebServiceResponse
+    public partial class StreamingSessionStorageRoot
     {
-        private string _nextToken;
-        private List<StudioComponent> _studioComponents = new List<StudioComponent>();
+        private string _linux;
+        private string _windows;
 
         /// <summary>
-        /// Gets and sets the property NextToken. 
+        /// Gets and sets the property Linux. 
         /// <para>
-        /// The token for the next set of results, or null if there are no more results.
+        /// The folder path in Linux workstations where files are uploaded. The default path is
+        /// <code>$HOME/Downloads</code>.
         /// </para>
         /// </summary>
-        public string NextToken
+        [AWSProperty(Min=1, Max=128)]
+        public string Linux
         {
-            get { return this._nextToken; }
-            set { this._nextToken = value; }
+            get { return this._linux; }
+            set { this._linux = value; }
         }
 
-        // Check to see if NextToken property is set
-        internal bool IsSetNextToken()
+        // Check to see if Linux property is set
+        internal bool IsSetLinux()
         {
-            return this._nextToken != null;
+            return this._linux != null;
         }
 
         /// <summary>
-        /// Gets and sets the property StudioComponents. 
+        /// Gets and sets the property Windows. 
         /// <para>
-        /// A collection of studio components.
+        /// The folder path in Windows workstations where files are uploaded. The default path
+        /// is <code>%HOMEPATH%\Downloads</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=50)]
-        public List<StudioComponent> StudioComponents
+        [AWSProperty(Min=1, Max=128)]
+        public string Windows
         {
-            get { return this._studioComponents; }
-            set { this._studioComponents = value; }
+            get { return this._windows; }
+            set { this._windows = value; }
         }
 
-        // Check to see if StudioComponents property is set
-        internal bool IsSetStudioComponents()
+        // Check to see if Windows property is set
+        internal bool IsSetWindows()
         {
-            return this._studioComponents != null && this._studioComponents.Count > 0; 
+            return this._windows != null;
         }
 
     }

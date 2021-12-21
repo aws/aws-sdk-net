@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.NimbleStudio.Model
 {
     /// <summary>
-    /// 
+    /// A new member that is added to a launch profile.
     /// </summary>
     public partial class NewLaunchProfileMember
     {

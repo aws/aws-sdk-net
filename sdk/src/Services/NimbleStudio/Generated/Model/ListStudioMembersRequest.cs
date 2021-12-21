@@ -31,6 +31,12 @@ namespace Amazon.NimbleStudio.Model
     /// <summary>
     /// Container for the parameters to the ListStudioMembers operation.
     /// Get all users in a given studio membership.
+    /// 
+    ///  <note> 
+    /// <para>
+    ///  <code>ListStudioMembers</code> only returns admin members.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class ListStudioMembersRequest : AmazonNimbleStudioRequest
     {

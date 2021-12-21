@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.NimbleStudio.Model
 {
     /// <summary>
-    /// 
+    /// A new studio user's membership.
     /// </summary>
     public partial class NewStudioMember
     {

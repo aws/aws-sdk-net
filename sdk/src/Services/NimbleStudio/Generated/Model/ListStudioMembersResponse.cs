@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.NimbleStudio.Model
 {
     /// <summary>
-    /// <zonbook></zonbook><xhtml></xhtml>
+    /// This is the response object from the ListStudioMembers operation.
     /// </summary>
     public partial class ListStudioMembersResponse : AmazonWebServiceResponse
     {
@@ -39,7 +39,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property Members. 
         /// <para>
-        /// A list of members.
+        /// A list of admin members.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=20)]

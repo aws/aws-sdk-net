@@ -2920,6 +2920,12 @@ namespace Amazon.NimbleStudio
 
         /// <summary>
         /// Get all users in a given studio membership.
+        /// 
+        ///  <note> 
+        /// <para>
+        ///  <code>ListStudioMembers</code> only returns admin members.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListStudioMembers service method.</param>
         /// 
@@ -2959,6 +2965,12 @@ namespace Amazon.NimbleStudio
 
         /// <summary>
         /// Get all users in a given studio membership.
+        /// 
+        ///  <note> 
+        /// <para>
+        ///  <code>ListStudioMembers</code> only returns admin members.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListStudioMembers service method.</param>
         /// <param name="cancellationToken">

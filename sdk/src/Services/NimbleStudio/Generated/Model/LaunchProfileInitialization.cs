@@ -30,7 +30,7 @@ namespace Amazon.NimbleStudio.Model
 {
     /// <summary>
     /// A Launch Profile Initialization contains information required for a workstation or
-    /// server to connect to a launch profile
+    /// server to connect to a launch profile.
     /// 
     ///  
     /// <para>

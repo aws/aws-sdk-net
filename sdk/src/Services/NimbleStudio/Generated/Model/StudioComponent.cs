@@ -164,7 +164,7 @@ namespace Amazon.NimbleStudio.Model
         /// The EC2 security groups that control access to the studio component.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=30)]
+        [AWSProperty(Min=0, Max=30)]
         public List<string> Ec2SecurityGroupIds
         {
             get { return this._ec2SecurityGroupIds; }

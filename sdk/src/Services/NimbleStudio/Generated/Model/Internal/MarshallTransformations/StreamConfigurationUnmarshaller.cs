@@ -88,6 +88,12 @@ namespace Amazon.NimbleStudio.Model.Internal.MarshallTransformations
                     unmarshalledObject.MaxStoppedSessionLengthInMinutes = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("sessionStorage", targetDepth))
+                {
+                    var unmarshaller = StreamConfigurationSessionStorageUnmarshaller.Instance;
+                    unmarshalledObject.SessionStorage = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("streamingImageIds", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);

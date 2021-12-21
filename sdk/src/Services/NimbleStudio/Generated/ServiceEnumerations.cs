@@ -465,6 +465,10 @@ namespace Amazon.NimbleStudio
     {
 
         /// <summary>
+        /// Constant ACCESS_DENIED for StreamingImageStatusCode
+        /// </summary>
+        public static readonly StreamingImageStatusCode ACCESS_DENIED = new StreamingImageStatusCode("ACCESS_DENIED");
+        /// <summary>
         /// Constant INTERNAL_ERROR for StreamingImageStatusCode
         /// </summary>
         public static readonly StreamingImageStatusCode INTERNAL_ERROR = new StreamingImageStatusCode("INTERNAL_ERROR");
@@ -772,6 +776,52 @@ namespace Amazon.NimbleStudio
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator StreamingSessionStatusCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type StreamingSessionStorageMode.
+    /// </summary>
+    public class StreamingSessionStorageMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant UPLOAD for StreamingSessionStorageMode
+        /// </summary>
+        public static readonly StreamingSessionStorageMode UPLOAD = new StreamingSessionStorageMode("UPLOAD");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StreamingSessionStorageMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StreamingSessionStorageMode FindValue(string value)
+        {
+            return FindValue<StreamingSessionStorageMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StreamingSessionStorageMode(string value)
         {
             return FindValue(value);
         }

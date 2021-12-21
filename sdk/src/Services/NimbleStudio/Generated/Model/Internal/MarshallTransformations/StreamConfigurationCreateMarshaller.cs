@@ -74,6 +74,17 @@ namespace Amazon.NimbleStudio.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.MaxStoppedSessionLengthInMinutes);
             }
 
+            if(requestObject.IsSetSessionStorage())
+            {
+                context.Writer.WritePropertyName("sessionStorage");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = StreamConfigurationSessionStorageMarshaller.Instance;
+                marshaller.Marshall(requestObject.SessionStorage, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetStreamingImageIds())
             {
                 context.Writer.WritePropertyName("streamingImageIds");

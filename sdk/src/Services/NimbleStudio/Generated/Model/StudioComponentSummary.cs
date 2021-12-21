@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.NimbleStudio.Model
 {
     /// <summary>
-    /// 
+    /// The studio component's summary.
     /// </summary>
     public partial class StudioComponentSummary
     {
