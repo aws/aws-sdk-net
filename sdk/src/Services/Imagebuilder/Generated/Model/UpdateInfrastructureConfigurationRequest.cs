@@ -259,8 +259,16 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property SnsTopicArn. 
         /// <para>
-        /// The SNS topic on which to send image build events.
+        /// The Amazon Resource Name (ARN) for the SNS topic to which we send image build event
+        /// notifications.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// EC2 Image Builder is unable to send notifications to SNS topics that are encrypted
+        /// using keys from other accounts. The key that is used to encrypt the SNS topic must
+        /// reside in the account that the Image Builder service runs under.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string SnsTopicArn
         {
