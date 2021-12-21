@@ -45,6 +45,8 @@ namespace Amazon.MediaConnect.Model
         private List<MediaStreamSourceConfigurationRequest> _mediaStreamSourceConfigurations = new List<MediaStreamSourceConfigurationRequest>();
         private int? _minLatency;
         private Protocol _protocol;
+        private int? _senderControlPort;
+        private string _senderIpAddress;
         private string _sourceArn;
         private string _streamId;
         private string _vpcInterfaceName;
@@ -150,7 +152,7 @@ namespace Amazon.MediaConnect.Model
 
         /// <summary>
         /// Gets and sets the property MaxLatency. The maximum latency in milliseconds. This parameter
-        /// applies only to RIST-based and Zixi-based streams.
+        /// applies only to RIST-based, Zixi-based, and Fujitsu-based streams.
         /// </summary>
         public int MaxLatency
         {
@@ -228,6 +230,38 @@ namespace Amazon.MediaConnect.Model
         internal bool IsSetProtocol()
         {
             return this._protocol != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SenderControlPort. The port that the flow uses to send
+        /// outbound requests to initiate connection with the sender.
+        /// </summary>
+        public int SenderControlPort
+        {
+            get { return this._senderControlPort.GetValueOrDefault(); }
+            set { this._senderControlPort = value; }
+        }
+
+        // Check to see if SenderControlPort property is set
+        internal bool IsSetSenderControlPort()
+        {
+            return this._senderControlPort.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SenderIpAddress. The IP address that the flow communicates
+        /// with to initiate connection with the sender.
+        /// </summary>
+        public string SenderIpAddress
+        {
+            get { return this._senderIpAddress; }
+            set { this._senderIpAddress = value; }
+        }
+
+        // Check to see if SenderIpAddress property is set
+        internal bool IsSetSenderIpAddress()
+        {
+            return this._senderIpAddress != null;
         }
 
         /// <summary>

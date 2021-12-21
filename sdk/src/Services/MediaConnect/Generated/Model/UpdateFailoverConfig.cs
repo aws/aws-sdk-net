@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConnect.Model
 {
     /// <summary>
-    /// The settings for source failover
+    /// The settings for source failover.
     /// </summary>
     public partial class UpdateFailoverConfig
     {

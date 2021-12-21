@@ -41,6 +41,8 @@ namespace Amazon.MediaConnect.Model
         private int? _ingestPort;
         private List<MediaStreamSourceConfiguration> _mediaStreamSourceConfigurations = new List<MediaStreamSourceConfiguration>();
         private string _name;
+        private int? _senderControlPort;
+        private string _senderIpAddress;
         private string _sourceArn;
         private Transport _transport;
         private string _vpcInterfaceName;
@@ -174,6 +176,38 @@ namespace Amazon.MediaConnect.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SenderControlPort. The port that the flow uses to send
+        /// outbound requests to initiate connection with the sender.
+        /// </summary>
+        public int SenderControlPort
+        {
+            get { return this._senderControlPort.GetValueOrDefault(); }
+            set { this._senderControlPort = value; }
+        }
+
+        // Check to see if SenderControlPort property is set
+        internal bool IsSetSenderControlPort()
+        {
+            return this._senderControlPort.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SenderIpAddress. The IP address that the flow communicates
+        /// with to initiate connection with the sender.
+        /// </summary>
+        public string SenderIpAddress
+        {
+            get { return this._senderIpAddress; }
+            set { this._senderIpAddress = value; }
+        }
+
+        // Check to see if SenderIpAddress property is set
+        internal bool IsSetSenderIpAddress()
+        {
+            return this._senderIpAddress != null;
         }
 
         /// <summary>

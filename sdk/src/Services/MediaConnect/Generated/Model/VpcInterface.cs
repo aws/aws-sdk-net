@@ -42,7 +42,7 @@ namespace Amazon.MediaConnect.Model
 
         /// <summary>
         /// Gets and sets the property Name. Immutable and has to be a unique against other VpcInterfaces
-        /// in this Flow
+        /// in this Flow.
         /// </summary>
         [AWSProperty(Required=true)]
         public string Name

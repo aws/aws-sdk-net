@@ -151,6 +151,18 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.RemoteId);
                 }
 
+                if(publicRequest.IsSetSenderControlPort())
+                {
+                    context.Writer.WritePropertyName("senderControlPort");
+                    context.Writer.Write(publicRequest.SenderControlPort);
+                }
+
+                if(publicRequest.IsSetSenderIpAddress())
+                {
+                    context.Writer.WritePropertyName("senderIpAddress");
+                    context.Writer.Write(publicRequest.SenderIpAddress);
+                }
+
                 if(publicRequest.IsSetSmoothingLatency())
                 {
                     context.Writer.WritePropertyName("smoothingLatency");

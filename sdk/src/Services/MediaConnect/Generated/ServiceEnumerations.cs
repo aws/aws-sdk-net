@@ -617,6 +617,10 @@ namespace Amazon.MediaConnect
         /// </summary>
         public static readonly Protocol Cdi = new Protocol("cdi");
         /// <summary>
+        /// Constant FujitsuQos for Protocol
+        /// </summary>
+        public static readonly Protocol FujitsuQos = new Protocol("fujitsu-qos");
+        /// <summary>
         /// Constant Rist for Protocol
         /// </summary>
         public static readonly Protocol Rist = new Protocol("rist");
