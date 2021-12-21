@@ -1,3 +1,26 @@
+### 3.7.180.0 (2021-12-21 19:18 UTC)
+* ChimeSDKMessaging (3.7.3.0)
+	* The Amazon Chime SDK now supports updating message attributes via channel flows
+* Imagebuilder (3.7.5.1)
+	* Added a note to infrastructure configuration actions and data types concerning delivery of Image Builder event messages to encrypted SNS topics. The key that's used to encrypt the SNS topic must reside in the account that Image Builder runs under.
+* LookoutMetrics (3.7.5.0)
+	* This release adds support for Causal Relationships. Added new ListAnomalyGroupRelatedMetrics API operation and InterMetricImpactDetails API data type
+* MediaConnect (3.7.4.0)
+	* You can now use the Fujitsu-QoS protocol for your MediaConnect sources and outputs to transport content to and from Fujitsu devices.
+* NimbleStudio (3.7.3.0)
+	* Amazon Nimble Studio adds support for users to upload files during a streaming session using NICE DCV native client or browser.
+* QLDB (3.7.3.0)
+	* Amazon QLDB now supports journal exports in JSON and Ion Binary formats. This release adds an optional OutputFormat parameter to the ExportJournalToS3 API.
+* Transfer (3.7.5.0)
+	* Property for Transfer Family used with the FTPS protocol. TLS Session Resumption provides a mechanism to resume or share a negotiated secret key between the control and data connection for an FTPS session.
+* WorkMail (3.7.5.0)
+	* This release allows customers to change their email monitoring configuration in Amazon WorkMail.
+* Core 3.7.5.8
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.179.0 (2021-12-20 19:23 UTC)
 * APIGateway (3.7.2.54)
 	* Documentation updates for Amazon API Gateway
