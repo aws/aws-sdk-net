@@ -43,7 +43,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property DirectoryId. 
         /// <para>
-        /// The identifier of the Amazon Web ServicesDirectory Service directory that you want
+        /// The identifier of the Amazon Web Services Directory Service directory that you want
         /// to stop sharing.
         /// </para>
         /// </summary>

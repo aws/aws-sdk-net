@@ -274,6 +274,12 @@ namespace Amazon.Transfer.Model
         /// The public portion of the Secure Shell (SSH) key used to authenticate the user to
         /// the server.
         /// </para>
+        ///  <note> 
+        /// <para>
+        ///  Currently, Transfer Family does not accept elliptical curve keys (keys beginning
+        /// with <code>ecdsa</code>). 
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Max=2048)]
         public string SshPublicKeyBody

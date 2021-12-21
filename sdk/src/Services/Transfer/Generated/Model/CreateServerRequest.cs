@@ -45,6 +45,7 @@ namespace Amazon.Transfer.Model
         private IdentityProviderDetails _identityProviderDetails;
         private IdentityProviderType _identityProviderType;
         private string _loggingRole;
+        private ProtocolDetails _protocolDetails;
         private List<string> _protocols = new List<string>();
         private string _securityPolicyName;
         private List<Tag> _tags = new List<Tag>();
@@ -286,7 +287,7 @@ namespace Amazon.Transfer.Model
         /// </para>
         ///  
         /// <para>
-        /// Use the <code>LAMBDA</code> value to directly use a Lambda function as your identity
+        /// Use the <code>AWS_LAMBDA</code> value to directly use a Lambda function as your identity
         /// provider. If you choose this value, you must specify the ARN for the lambda function
         /// in the <code>Function</code> parameter for the <code>IdentityProviderDetails</code>
         /// data type.
@@ -324,6 +325,36 @@ namespace Amazon.Transfer.Model
         internal bool IsSetLoggingRole()
         {
             return this._loggingRole != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProtocolDetails. 
+        /// <para>
+        /// The protocol settings that are configured for your server.
+        /// </para>
+        ///  
+        /// <para>
+        ///  Use the <code>PassiveIp</code> parameter to indicate passive mode (for FTP and FTPS
+        /// protocols). Enter a single dotted-quad IPv4 address, such as the external IP address
+        /// of a firewall, router, or load balancer. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Use the <code>TlsSessionResumptionMode</code> parameter to determine whether or not
+        /// your Transfer server resumes recent, negotiated sessions through a unique session
+        /// ID.
+        /// </para>
+        /// </summary>
+        public ProtocolDetails ProtocolDetails
+        {
+            get { return this._protocolDetails; }
+            set { this._protocolDetails = value; }
+        }
+
+        // Check to see if ProtocolDetails property is set
+        internal bool IsSetProtocolDetails()
+        {
+            return this._protocolDetails != null;
         }
 
         /// <summary>

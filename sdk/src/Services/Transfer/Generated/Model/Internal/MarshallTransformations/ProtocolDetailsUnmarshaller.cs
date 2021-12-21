@@ -70,6 +70,12 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
                     unmarshalledObject.PassiveIp = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("TlsSessionResumptionMode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TlsSessionResumptionMode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;
