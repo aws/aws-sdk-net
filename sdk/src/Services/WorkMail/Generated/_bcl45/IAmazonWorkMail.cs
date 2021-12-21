@@ -914,6 +914,56 @@ namespace Amazon.WorkMail
 
         #endregion
         
+        #region  DeleteEmailMonitoringConfiguration
+
+
+        /// <summary>
+        /// Deletes the email monitoring configuration for a specified organization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEmailMonitoringConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DeleteEmailMonitoringConfiguration service method, as returned by WorkMail.</returns>
+        /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
+        /// One or more of the input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
+        /// An operation received a valid organization identifier that either doesn't belong or
+        /// exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteEmailMonitoringConfiguration">REST API Reference for DeleteEmailMonitoringConfiguration Operation</seealso>
+        DeleteEmailMonitoringConfigurationResponse DeleteEmailMonitoringConfiguration(DeleteEmailMonitoringConfigurationRequest request);
+
+
+
+        /// <summary>
+        /// Deletes the email monitoring configuration for a specified organization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEmailMonitoringConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteEmailMonitoringConfiguration service method, as returned by WorkMail.</returns>
+        /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
+        /// One or more of the input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
+        /// An operation received a valid organization identifier that either doesn't belong or
+        /// exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteEmailMonitoringConfiguration">REST API Reference for DeleteEmailMonitoringConfiguration Operation</seealso>
+        Task<DeleteEmailMonitoringConfigurationResponse> DeleteEmailMonitoringConfigurationAsync(DeleteEmailMonitoringConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteGroup
 
 
@@ -1585,6 +1635,62 @@ namespace Amazon.WorkMail
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeregisterMailDomain">REST API Reference for DeregisterMailDomain Operation</seealso>
         Task<DeregisterMailDomainResponse> DeregisterMailDomainAsync(DeregisterMailDomainRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeEmailMonitoringConfiguration
+
+
+        /// <summary>
+        /// Describes the current email monitoring configuration for a specified organization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEmailMonitoringConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DescribeEmailMonitoringConfiguration service method, as returned by WorkMail.</returns>
+        /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
+        /// One or more of the input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
+        /// An operation received a valid organization identifier that either doesn't belong or
+        /// exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DescribeEmailMonitoringConfiguration">REST API Reference for DescribeEmailMonitoringConfiguration Operation</seealso>
+        DescribeEmailMonitoringConfigurationResponse DescribeEmailMonitoringConfiguration(DescribeEmailMonitoringConfigurationRequest request);
+
+
+
+        /// <summary>
+        /// Describes the current email monitoring configuration for a specified organization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEmailMonitoringConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeEmailMonitoringConfiguration service method, as returned by WorkMail.</returns>
+        /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
+        /// One or more of the input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
+        /// An operation received a valid organization identifier that either doesn't belong or
+        /// exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DescribeEmailMonitoringConfiguration">REST API Reference for DescribeEmailMonitoringConfiguration Operation</seealso>
+        Task<DescribeEmailMonitoringConfigurationResponse> DescribeEmailMonitoringConfigurationAsync(DescribeEmailMonitoringConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -3179,6 +3285,62 @@ namespace Amazon.WorkMail
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/PutAccessControlRule">REST API Reference for PutAccessControlRule Operation</seealso>
         Task<PutAccessControlRuleResponse> PutAccessControlRuleAsync(PutAccessControlRuleRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  PutEmailMonitoringConfiguration
+
+
+        /// <summary>
+        /// Creates or updates the email monitoring configuration for a specified organization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutEmailMonitoringConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the PutEmailMonitoringConfiguration service method, as returned by WorkMail.</returns>
+        /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
+        /// One or more of the input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
+        /// An operation received a valid organization identifier that either doesn't belong or
+        /// exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/PutEmailMonitoringConfiguration">REST API Reference for PutEmailMonitoringConfiguration Operation</seealso>
+        PutEmailMonitoringConfigurationResponse PutEmailMonitoringConfiguration(PutEmailMonitoringConfigurationRequest request);
+
+
+
+        /// <summary>
+        /// Creates or updates the email monitoring configuration for a specified organization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutEmailMonitoringConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutEmailMonitoringConfiguration service method, as returned by WorkMail.</returns>
+        /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
+        /// One or more of the input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
+        /// An operation received a valid organization identifier that either doesn't belong or
+        /// exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/PutEmailMonitoringConfiguration">REST API Reference for PutEmailMonitoringConfiguration Operation</seealso>
+        Task<PutEmailMonitoringConfigurationResponse> PutEmailMonitoringConfigurationAsync(PutEmailMonitoringConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

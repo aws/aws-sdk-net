@@ -219,6 +219,12 @@
     <pattern>^m-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkMail.Model.DeleteEmailMonitoringConfigurationRequest.OrganizationId</property>
+    <min>34</min>
+    <max>34</max>
+    <pattern>^m-[0-9a-f]{32}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkMail.Model.DeleteGroupRequest.GroupId</property>
     <min>12</min>
     <max>256</max>
@@ -354,6 +360,23 @@
     <min>34</min>
     <max>34</max>
     <pattern>^m-[0-9a-f]{32}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.DescribeEmailMonitoringConfigurationRequest.OrganizationId</property>
+    <min>34</min>
+    <max>34</max>
+    <pattern>^m-[0-9a-f]{32}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.DescribeEmailMonitoringConfigurationResponse.LogGroupArn</property>
+    <min>47</min>
+    <max>562</max>
+    <pattern>arn:aws:logs:[a-z\-0-9]*:[0-9]{12}:log-group:([\.\-_/#A-Za-z0-9]+):\*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.DescribeEmailMonitoringConfigurationResponse.RoleArn</property>
+    <min>20</min>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.DescribeGroupRequest.GroupId</property>
@@ -1044,6 +1067,23 @@
     <min>34</min>
     <max>34</max>
     <pattern>^m-[0-9a-f]{32}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.PutEmailMonitoringConfigurationRequest.LogGroupArn</property>
+    <min>47</min>
+    <max>562</max>
+    <pattern>arn:aws:logs:[a-z\-0-9]*:[0-9]{12}:log-group:([\.\-_/#A-Za-z0-9]+):\*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.PutEmailMonitoringConfigurationRequest.OrganizationId</property>
+    <min>34</min>
+    <max>34</max>
+    <pattern>^m-[0-9a-f]{32}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.PutEmailMonitoringConfigurationRequest.RoleArn</property>
+    <min>20</min>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.PutInboundDmarcSettingsRequest.OrganizationId</property>

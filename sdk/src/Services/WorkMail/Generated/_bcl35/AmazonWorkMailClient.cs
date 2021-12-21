@@ -1150,6 +1150,71 @@ namespace Amazon.WorkMail
 
         #endregion
         
+        #region  DeleteEmailMonitoringConfiguration
+
+        /// <summary>
+        /// Deletes the email monitoring configuration for a specified organization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEmailMonitoringConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DeleteEmailMonitoringConfiguration service method, as returned by WorkMail.</returns>
+        /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
+        /// One or more of the input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
+        /// An operation received a valid organization identifier that either doesn't belong or
+        /// exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteEmailMonitoringConfiguration">REST API Reference for DeleteEmailMonitoringConfiguration Operation</seealso>
+        public virtual DeleteEmailMonitoringConfigurationResponse DeleteEmailMonitoringConfiguration(DeleteEmailMonitoringConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEmailMonitoringConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEmailMonitoringConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteEmailMonitoringConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteEmailMonitoringConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEmailMonitoringConfiguration operation on AmazonWorkMailClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteEmailMonitoringConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteEmailMonitoringConfiguration">REST API Reference for DeleteEmailMonitoringConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginDeleteEmailMonitoringConfiguration(DeleteEmailMonitoringConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEmailMonitoringConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEmailMonitoringConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteEmailMonitoringConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteEmailMonitoringConfiguration.</param>
+        /// 
+        /// <returns>Returns a  DeleteEmailMonitoringConfigurationResult from WorkMail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteEmailMonitoringConfiguration">REST API Reference for DeleteEmailMonitoringConfiguration Operation</seealso>
+        public virtual DeleteEmailMonitoringConfigurationResponse EndDeleteEmailMonitoringConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteEmailMonitoringConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteGroup
 
         /// <summary>
@@ -1883,6 +1948,74 @@ namespace Amazon.WorkMail
         public virtual DeregisterMailDomainResponse EndDeregisterMailDomain(IAsyncResult asyncResult)
         {
             return EndInvoke<DeregisterMailDomainResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeEmailMonitoringConfiguration
+
+        /// <summary>
+        /// Describes the current email monitoring configuration for a specified organization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEmailMonitoringConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DescribeEmailMonitoringConfiguration service method, as returned by WorkMail.</returns>
+        /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
+        /// One or more of the input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
+        /// An operation received a valid organization identifier that either doesn't belong or
+        /// exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DescribeEmailMonitoringConfiguration">REST API Reference for DescribeEmailMonitoringConfiguration Operation</seealso>
+        public virtual DescribeEmailMonitoringConfigurationResponse DescribeEmailMonitoringConfiguration(DescribeEmailMonitoringConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeEmailMonitoringConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeEmailMonitoringConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeEmailMonitoringConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeEmailMonitoringConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEmailMonitoringConfiguration operation on AmazonWorkMailClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeEmailMonitoringConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DescribeEmailMonitoringConfiguration">REST API Reference for DescribeEmailMonitoringConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginDescribeEmailMonitoringConfiguration(DescribeEmailMonitoringConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeEmailMonitoringConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeEmailMonitoringConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeEmailMonitoringConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeEmailMonitoringConfiguration.</param>
+        /// 
+        /// <returns>Returns a  DescribeEmailMonitoringConfigurationResult from WorkMail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DescribeEmailMonitoringConfiguration">REST API Reference for DescribeEmailMonitoringConfiguration Operation</seealso>
+        public virtual DescribeEmailMonitoringConfigurationResponse EndDescribeEmailMonitoringConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeEmailMonitoringConfigurationResponse>(asyncResult);
         }
 
         #endregion
@@ -3840,6 +3973,74 @@ namespace Amazon.WorkMail
         public virtual PutAccessControlRuleResponse EndPutAccessControlRule(IAsyncResult asyncResult)
         {
             return EndInvoke<PutAccessControlRuleResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  PutEmailMonitoringConfiguration
+
+        /// <summary>
+        /// Creates or updates the email monitoring configuration for a specified organization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutEmailMonitoringConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the PutEmailMonitoringConfiguration service method, as returned by WorkMail.</returns>
+        /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
+        /// One or more of the input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
+        /// An operation received a valid organization identifier that either doesn't belong or
+        /// exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/PutEmailMonitoringConfiguration">REST API Reference for PutEmailMonitoringConfiguration Operation</seealso>
+        public virtual PutEmailMonitoringConfigurationResponse PutEmailMonitoringConfiguration(PutEmailMonitoringConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutEmailMonitoringConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutEmailMonitoringConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<PutEmailMonitoringConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutEmailMonitoringConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutEmailMonitoringConfiguration operation on AmazonWorkMailClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutEmailMonitoringConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/PutEmailMonitoringConfiguration">REST API Reference for PutEmailMonitoringConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginPutEmailMonitoringConfiguration(PutEmailMonitoringConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutEmailMonitoringConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutEmailMonitoringConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutEmailMonitoringConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutEmailMonitoringConfiguration.</param>
+        /// 
+        /// <returns>Returns a  PutEmailMonitoringConfigurationResult from WorkMail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/PutEmailMonitoringConfiguration">REST API Reference for PutEmailMonitoringConfiguration Operation</seealso>
+        public virtual PutEmailMonitoringConfigurationResponse EndPutEmailMonitoringConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutEmailMonitoringConfigurationResponse>(asyncResult);
         }
 
         #endregion
