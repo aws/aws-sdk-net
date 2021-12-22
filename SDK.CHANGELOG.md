@@ -1,3 +1,37 @@
+### 3.7.181.0 (2021-12-21 23:34 UTC)
+* APIGateway (3.7.2.56)
+	* Adjusted rest-json content-type handling where operations are intended to take arbitrary input.
+* ApiGatewayManagementApi (3.7.0.110)
+	* Adjusted rest-json content-type handling where operations are intended to take arbitrary input.
+* AppConfig (3.7.1.9)
+	* Adjusted rest-json content-type handling where operations are intended to take arbitrary input.
+* CloudSearchDomain (3.7.0.111)
+	* Adjusted rest-json content-type handling where operations are intended to take arbitrary input.
+* CodeGuruProfiler (3.7.0.110)
+	* Adjusted rest-json content-type handling where operations are intended to take arbitrary input.
+* DataExchange (3.7.3.0)
+	* This release enables providers and subscribers to use Data Set, Job, and Asset operations to work with API assets from Amazon API Gateway. In addition, this release enables subscribers to use the SendApiAsset operation to invoke a provider's Amazon API Gateway API that they are entitled to.
+* EBS (3.7.0.111)
+	* Adjusted rest-json content-type handling where operations are intended to take arbitrary input.
+* Glacier (3.7.0.110)
+	* Adjusted rest-json content-type handling where operations are intended to take arbitrary input.
+* IotData (3.7.1.56)
+	* Adjusted rest-json content-type handling where operations are intended to take arbitrary input.
+* Lambda (3.7.8.7)
+	* Adjusted rest-json content-type handling where operations are intended to take arbitrary input.
+* Lex (3.7.1.104)
+	* Adjusted rest-json content-type handling where operations are intended to take arbitrary input.
+* LexRuntimeV2 (3.7.3.8)
+	* Adjusted rest-json content-type handling where operations are intended to take arbitrary input.
+* LookoutforVision (3.7.1.4)
+	* Adjusted rest-json content-type handling where operations are intended to take arbitrary input.
+* MediaStoreData (3.7.0.110)
+	* Adjusted rest-json content-type handling where operations are intended to take arbitrary input.
+* Mobile (3.7.0.110)
+	* Adjusted rest-json content-type handling where operations are intended to take arbitrary input.
+* SageMakerRuntime (3.7.2.5)
+	* Adjusted rest-json content-type handling where operations are intended to take arbitrary input.
+
 ### 3.7.180.0 (2021-12-21 19:18 UTC)
 * ChimeSDKMessaging (3.7.3.0)
 	* The Amazon Chime SDK now supports updating message attributes via channel flows
