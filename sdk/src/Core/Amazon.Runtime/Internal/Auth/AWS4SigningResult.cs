@@ -96,9 +96,9 @@ namespace Amazon.Runtime.Internal.Auth
             {
                 var authParams = new StringBuilder()
                     .AppendFormat("{0}={1}", HeaderKeys.XAmzAlgorithm, AWS4Signer.AWS4AlgorithmTag)
-                    .AppendFormat("&{0}={1}", HeaderKeys.XAmzCredential, string.Format(CultureInfo.InvariantCulture, "{0}/{1}", AccessKeyId, Scope))
+                    .AppendFormat("&{0}={1}", HeaderKeys.XAmzCredential, AWSSDKUtils.UrlEncode(string.Format(CultureInfo.InvariantCulture, "{0}/{1}", AccessKeyId, Scope), false))
                     .AppendFormat("&{0}={1}", HeaderKeys.XAmzDateHeader, ISO8601DateTime)
-                    .AppendFormat("&{0}={1}", HeaderKeys.XAmzSignedHeadersHeader, System.Uri.EscapeDataString(SignedHeaders))
+                    .AppendFormat("&{0}={1}", HeaderKeys.XAmzSignedHeadersHeader, AWSSDKUtils.UrlEncode(SignedHeaders, false))
                     .AppendFormat("&{0}={1}", HeaderKeys.XAmzSignature, Signature);
 
                 return authParams.ToString();
