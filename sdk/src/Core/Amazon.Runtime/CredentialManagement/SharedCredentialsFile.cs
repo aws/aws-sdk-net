@@ -42,6 +42,7 @@ namespace Amazon.Runtime.CredentialManagement
         private const string ConfigFileName = "config";
         private const string DefaultDirectoryName = ".aws";
         private const string DefaultFileName = "credentials";
+        private const string DefaultConfigurationModeField = "defaults_mode";
         private const string CredentialProcess = "credential_process";
         private const string StsRegionalEndpointsField = "sts_regional_endpoints";
         private const string S3UseArnRegionField = "s3_use_arn_region";
@@ -78,7 +79,8 @@ namespace Amazon.Runtime.CredentialManagement
             EC2MetadataServiceEndpointField,
             EC2MetadataServiceEndpointModeField,
             UseDualstackEndpointField,
-            UseFIPSEndpointField
+            UseFIPSEndpointField,
+            DefaultConfigurationModeField
         };
 
         /// <summary>
@@ -554,6 +556,9 @@ namespace Amazon.Runtime.CredentialManagement
                     maxAttempts = maxAttemptsTemp;
                 }
 
+                string defaultConfigurationModeName;
+                reservedProperties.TryGetValue(DefaultConfigurationModeField, out defaultConfigurationModeName);
+
                 string ec2MetadataServiceEndpoint;
                 if (reservedProperties.TryGetValue(EC2MetadataServiceEndpointField, out ec2MetadataServiceEndpoint))
                 {
@@ -622,6 +627,7 @@ namespace Amazon.Runtime.CredentialManagement
                     Properties = userProperties,
                     Region = region,
                     CredentialProfileStore = this,
+                    DefaultConfigurationModeName = defaultConfigurationModeName,
                     EndpointDiscoveryEnabled = endpointDiscoveryEnabled,
                     StsRegionalEndpoints = stsRegionalEndpoints,
                     S3UseArnRegion = s3UseArnRegion,

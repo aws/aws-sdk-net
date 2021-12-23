@@ -1,0 +1,115 @@
+﻿<#@ template language="C#" inherits="BaseGenerator" #>
+<#@ assembly name="System.Core" #>
+
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+
+<#@ import namespace="ServiceClientGenerator.DefaultConfiguration" #>
+
+<#
+    AddLicenseHeader();
+#>
+
+
+using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+
+using Amazon.Runtime;
+
+namespace <#= base.Config.Namespace#>
+{
+    /// <summary>
+    /// Configuration for accessing Amazon <#= base.Config.ClassName#> service
+    /// </summary>
+    public static class Amazon<#= base.Config.ClassName#>DefaultConfiguration
+    {
+        /// <summary>
+        /// Collection of all <see cref="DefaultConfiguration"/>s supported by
+        /// <#= base.Config.ClassName#>
+        /// </summary>
+        public static ReadOnlyCollection<IDefaultConfiguration> GetAllConfigurations()
+        {
+            return new ReadOnlyCollection<IDefaultConfiguration>(new List<IDefaultConfiguration>
+            {
+                <#= string.Join(",\r\n                ", base.DefaultConfigurationModel.Modes.Select(x => x.Name).ToArray()) #>
+            });
+        }
+
+<#
+    foreach (var mode in base.DefaultConfigurationModel.Modes)
+    {
+#>
+        /// <summary>
+        /// <#= mode.Documentation#>
+        /// </summary>
+        public static IDefaultConfiguration <#= mode.Name#> {get;} = new DefaultConfiguration
+        {
+            Name = DefaultConfigurationMode.<#= mode.Name#>,
+            RetryMode = <#= nameof(RequestRetryMode) #>.<#= mode.RetryMode#>,
+            StsRegionalEndpoints = <#= nameof(StsRegionalEndpointsValue) #>.<#= mode.StsRegionalEndpoints#>,
+            S3UsEast1RegionalEndpoint = <#= nameof(S3UsEast1RegionalEndpointValue) #>.<#= mode.S3UsEast1RegionalEndpoint#>,
+<#
+            if (mode.ConnectTimeout.HasValue)
+            {
+#>
+            // <#= mode.ConnectTimeout.Value.ToString("g") #>
+            ConnectTimeout = TimeSpan.FromMilliseconds(<#= mode.ConnectTimeout.Value.TotalMilliseconds #>L),
+<#
+            }
+            else
+            {
+#>
+            ConnectTimeout = null,
+<# 
+            }
+
+            if (mode.TlsNegotiationTimeout.HasValue)
+            {
+#>
+            // <#= mode.TlsNegotiationTimeout.Value.ToString("g") #>
+            TlsNegotiationTimeout = TimeSpan.FromMilliseconds(<#= mode.TlsNegotiationTimeout.Value.TotalMilliseconds #>L),
+<#
+            }
+            else
+            {
+#>
+            TlsNegotiationTimeout = null,
+<# 
+            }
+
+            if (mode.TimeToFirstByteTimeout.HasValue)
+            {
+#>
+            // <#= mode.TimeToFirstByteTimeout.Value.ToString("g") #>
+            TimeToFirstByteTimeout = TimeSpan.FromMilliseconds(<#= mode.TimeToFirstByteTimeout.Value.TotalMilliseconds #>L),
+<#
+            }
+            else
+            {
+#>
+            TimeToFirstByteTimeout = null,
+<#
+            }
+
+            if (mode.HttpRequestTimeout.HasValue)
+            {
+#>
+            // <#= mode.HttpRequestTimeout.Value.ToString("g") #>
+            HttpRequestTimeout = TimeSpan.FromMilliseconds(<#= mode.HttpRequestTimeout.Value.TotalMilliseconds #>L)
+<#
+            }
+            else
+            {
+#>
+            HttpRequestTimeout = null
+<#
+            }
+#>
+        };
+<#
+    }
+#>
+    }
+}

@@ -185,6 +185,7 @@ namespace ServiceClientGenerator
             }
 
             // Client config object
+            ExecuteGenerator(new Generators.SourceFiles.DefaultConfiguration(), "Amazon" + Configuration.ClassName + "DefaultConfiguration.cs");
             ExecuteGenerator(new ServiceConfig(), "Amazon" + Configuration.ClassName + "Config.cs");
             ExecuteGenerator(new ServiceMetadata(), "Amazon" + Configuration.ClassName + "Metadata.cs", "Internal");
 
@@ -685,6 +686,28 @@ namespace ServiceClientGenerator
         }
 
         /// <summary>
+        /// Invokes T4: <see cref="DefaultConfigurationModeGenerator"/>
+        /// </summary>
+        public static void GenerateDefaultConfigurationModeEnum(GenerationManifest generationManifest, GeneratorOptions options)
+        {
+            Console.WriteLine("Generating DefaultConfigurationMode Enum...");
+
+            var defaultConfigurationModeFilesRoot = Path.Combine(options.SdkRootFolder, "src", "core", "Amazon.Runtime");
+            const string fileName = "DefaultConfigurationMode.generated.cs";
+
+            var generator = new DefaultConfigurationModeGenerator
+            {
+                Session = new Dictionary<string, object>
+                {
+                    ["defaultConfigurationModel"] = generationManifest.DefaultConfiguration
+                }
+            };
+            generator.Initialize();
+            var text = generator.TransformText();
+            WriteFile(defaultConfigurationModeFilesRoot, null, fileName, text);
+        }
+
+        /// <summary>
         /// Generates the endpoint discovery marshaller for the specified operation.
         /// </summary>
         /// <param name="operation">The operation to generate endpoint discovery marshaller for</param>
@@ -1100,6 +1123,8 @@ namespace ServiceClientGenerator
         void ExecuteGenerator(BaseGenerator generator, string fileName, string subNamespace = null)
         {
             generator.Config = this.Configuration;
+            generator.DefaultConfigurationModel = this.GenerationManifest.DefaultConfiguration;
+
             var text = generator.TransformText();
 
             string outputFile;

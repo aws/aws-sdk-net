@@ -45,6 +45,8 @@ namespace Amazon.Runtime.CredentialManagement
         private const string AWSCredentialsProfileType = "AWS";
         private const string SAMLRoleProfileType = "SAML";
 
+        private const string DefaultConfigurationModeNameField = "DefaultsMode";
+
         private const string RegionField = "Region";
 
         private const string EndpointDiscoveryEnabledField = "EndpointDiscoveryEnabled";
@@ -68,6 +70,7 @@ namespace Amazon.Runtime.CredentialManagement
         {
             SettingsConstants.DisplayNameField,
             SettingsConstants.ProfileTypeField,
+            DefaultConfigurationModeNameField,
             RegionField,
             EndpointDiscoveryEnabledField,
             S3UseArnRegionField,
@@ -159,6 +162,9 @@ namespace Amazon.Runtime.CredentialManagement
                         out profileOptions,
                         out reservedProperties,
                         out userProperties);
+
+                    string defaultConfigurationModeName;
+                    reservedProperties.TryGetValue(DefaultConfigurationModeNameField, out defaultConfigurationModeName);
 
                     string regionString;
                     RegionEndpoint region = null;
@@ -304,6 +310,7 @@ namespace Amazon.Runtime.CredentialManagement
                         Properties = userProperties,
                         Region = region,
                         CredentialProfileStore = this,
+                        DefaultConfigurationModeName = defaultConfigurationModeName,
                         EndpointDiscoveryEnabled = endpointDiscoveryEnabled,
                         StsRegionalEndpoints = stsRegionalEndpoints,
                         S3UseArnRegion = s3UseArnRegion,

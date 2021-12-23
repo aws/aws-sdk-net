@@ -17,6 +17,7 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Net;
 using System.Text;
+using System.Threading;
 
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Util;
@@ -44,6 +45,9 @@ namespace Amazon.Runtime
         // Represents max timeout.
         public static readonly TimeSpan MaxTimeout = TimeSpan.FromMilliseconds(int.MaxValue);
 
+        private IDefaultConfigurationProvider _defaultConfigurationProvider;
+
+        private DefaultConfigurationMode? defaultConfigurationMode;
         private RegionEndpoint regionEndpoint = null;
         private bool probeForRegionEndpoint = true;
         private bool throttleRetries = true;
@@ -154,6 +158,7 @@ namespace Amazon.Runtime
             }
             set
             {
+                this.defaultConfigurationBackingField = null;
                 this.serviceURL = null;
                 this.regionEndpoint = value;
                 this.probeForRegionEndpoint = this.regionEndpoint == null;
@@ -435,6 +440,43 @@ namespace Amazon.Runtime
         }
 
         /// <summary>
+        /// Specify a <see cref="Amazon.Runtime.DefaultConfigurationMode"/> to use.
+        /// <para />
+        /// Returns the <see cref="Amazon.Runtime.DefaultConfigurationMode"/> that will be used. If none is specified,
+        /// than the correct one is computed by <see cref="IDefaultConfigurationProvider"/>.
+        /// </summary>
+        public DefaultConfigurationMode DefaultConfigurationMode
+        {
+            get
+            {
+                if (this.defaultConfigurationMode.HasValue)
+                    return this.defaultConfigurationMode.Value;
+
+                return DefaultConfiguration.Name;
+            }
+            set
+            {
+                this.defaultConfigurationMode = value;
+                defaultConfigurationBackingField = null;
+            }
+        }
+
+        private IDefaultConfiguration defaultConfigurationBackingField;
+        protected IDefaultConfiguration DefaultConfiguration
+        {
+            get
+            {
+                if (defaultConfigurationBackingField != null)
+                    return defaultConfigurationBackingField;
+
+                defaultConfigurationBackingField =
+                    _defaultConfigurationProvider.GetDefaultConfiguration(RegionEndpoint, defaultConfigurationMode);
+
+                return defaultConfigurationBackingField;
+            }
+        }
+
+        /// <summary>
         /// Credentials to use with a proxy.
         /// </summary>
         public ICredentials ProxyCredentials
@@ -463,9 +505,39 @@ namespace Amazon.Runtime
 #endif
 
         #region Constructor 
-        public ClientConfig()
+        protected ClientConfig(IDefaultConfigurationProvider defaultConfigurationProvider)
         {
+            _defaultConfigurationProvider = defaultConfigurationProvider;
+
             Initialize();
+        }
+
+        public ClientConfig() : this(new LegacyOnlyDefaultConfigurationProvider())
+        {
+            this.defaultConfigurationBackingField = _defaultConfigurationProvider.GetDefaultConfiguration(null, null);
+            this.defaultConfigurationMode = this.defaultConfigurationBackingField.Name;
+        }
+
+        /// <summary>
+        /// Specialized <see cref="IDefaultConfigurationProvider"/> that is only meant to provide backwards
+        /// compatibility for the obsolete <see cref="ClientConfig"/> constructor.
+        /// </summary>
+        private class LegacyOnlyDefaultConfigurationProvider : IDefaultConfigurationProvider
+        {
+            public IDefaultConfiguration GetDefaultConfiguration(RegionEndpoint clientRegion, DefaultConfigurationMode? requestedConfigurationMode = null)
+            {
+                if (requestedConfigurationMode.HasValue &&
+                    requestedConfigurationMode.Value != Runtime.DefaultConfigurationMode.Legacy)
+                    throw new AmazonClientException($"This ClientConfig only supports {Runtime.DefaultConfigurationMode.Legacy}");
+
+                return new DefaultConfiguration
+                {
+                    Name = Runtime.DefaultConfigurationMode.Legacy,
+                    RetryMode = RequestRetryMode.Legacy,
+                    S3UsEast1RegionalEndpoint = S3UsEast1RegionalEndpointValue.Legacy,
+                    StsRegionalEndpoints = StsRegionalEndpointsValue.Legacy
+                };
+            }
         }
         #endregion
 
@@ -500,13 +572,47 @@ namespace Amazon.Runtime
         /// <seealso cref="P:System.Net.Http.HttpClient.Timeout"/>
         public TimeSpan? Timeout
         {
-            get { return this.timeout; }
+            get
+            {
+                if (this.timeout.HasValue)
+                    return this.timeout;
+
+                // TimeToFirstByteTimeout is not a perfect match with HttpWebRequest/HttpClient.Timeout.  However, given
+                // that both are configured to only use Timeout until the Response Headers are downloaded, this value
+                // provides a reasonable default value.
+                return DefaultConfiguration.TimeToFirstByteTimeout;
+            }
             set
             {
                 ValidateTimeout(value);
                 this.timeout = value;
             }
         }
+
+#if AWS_ASYNC_API
+        /// <summary>
+        /// Generates a <see cref="CancellationToken"/> based on the value
+        /// for <see cref="DefaultConfiguration.TimeToFirstByteTimeout"/>.
+        /// <para />
+        /// NOTE: <see cref="Amazon.Runtime.HttpWebRequestMessage.GetResponseAsync"/> uses 
+        /// </summary>
+        internal CancellationToken BuildDefaultCancellationToken()
+        {
+            // legacy mode never had a working cancellation token, so keep it to default()
+            if (DefaultConfiguration.Name == Runtime.DefaultConfigurationMode.Legacy)
+                return default(CancellationToken);
+
+            // TimeToFirstByteTimeout is not a perfect match with HttpWebRequest/HttpClient.Timeout.  However, given
+            // that both are configured to only use Timeout until the Response Headers are downloaded, this value
+            // provides a reasonable default value.
+            var cancelTimeout = DefaultConfiguration.TimeToFirstByteTimeout;
+
+            return cancelTimeout.HasValue
+                ? new CancellationTokenSource(cancelTimeout.Value).Token
+                : default(CancellationToken);
+        }
+#endif
+
 
         /// <summary>
         /// Configures the endpoint calculation for a service to go to a dual stack (ipv6 enabled) endpoint
@@ -687,7 +793,7 @@ namespace Amazon.Runtime
             {
                 if (!this.retryMode.HasValue)
                 {
-                    return FallbackInternalConfigurationFactory.RetryMode ?? RequestRetryMode.Legacy;
+                    return FallbackInternalConfigurationFactory.RetryMode ?? DefaultConfiguration.RetryMode;
                 }
 
                 return this.retryMode.Value;

@@ -84,6 +84,14 @@ namespace AWSSDK.UnitTests
             .AppendLine("    }")
             .AppendLine("}").ToString();
 
+        private static readonly string DefaultConfigurationModeNameOnlyProfileText = new StringBuilder()
+            .AppendLine("{")
+            .AppendLine("    \"" + UniqueKey + "\" : {")
+            .AppendLine("        \"DisplayName\" : \"DefaultConfigurationModeNameOnlyProfile\",")
+            .AppendLine("        \"DefaultsMode\" : \"InRegion\",")
+            .AppendLine("    }")
+            .AppendLine("}").ToString();
+
         private static readonly string InvalidProfileText = new StringBuilder()
             .AppendLine("{")
             .AppendLine("    \"" + UniqueKey + "\" : {")
@@ -207,6 +215,17 @@ namespace AWSSDK.UnitTests
                 CredentialProfile readProfile;
                 Assert.IsTrue(tester.ProfileStore.TryGetProfile("test_profile", out readProfile));
                 Assert.IsTrue(object.ReferenceEquals(tester.ProfileStore, readProfile.CredentialProfileStore));
+            }
+        }
+
+        [TestMethod]
+        public void ReadDefaultConfigurationModeNameOnlyProfile()
+        {
+            using (var tester = new NetSDKCredentialsFileTestFixture(DefaultConfigurationModeNameOnlyProfileText))
+            {
+                var profile = tester.TestTryGetProfile("DefaultConfigurationModeNameOnlyProfile", expectProfile: true, expectValidProfile: false);
+
+                Assert.AreEqual(DefaultConfigurationMode.InRegion.ToString(), profile.DefaultConfigurationModeName);
             }
         }
 

@@ -22,6 +22,7 @@ using Amazon.Runtime.CredentialManagement;
 using Amazon;
 using System.Globalization;
 using Amazon.Internal;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.SecurityToken
 {
@@ -29,20 +30,21 @@ namespace Amazon.SecurityToken
     {
         private StsRegionalEndpointsValue? _stsRegionalEndpoints;
         /// <summary>
-        /// StsRegionalEndpoints should be set to StsRegionalEndpointsValue.Legacy to resolve to the global
+        /// StsRegionalEndpoints should be set to <see cref="StsRegionalEndpointsValue.Legacy"/> to resolve to the global
         /// sts endpoint (only for legacy global regions) or StsRegionalEndpointsValue.Regional to resolve to
         /// the regional sts endpoint. The default value for StsRegionalEndpoints is StsRegionalEndpointsValue.Legacy.
         /// 
-        /// Get the Sts Regional Flag value
-        /// by checking the environment variable
-        /// and shared credentials file field
+        /// Get the Sts Regional Flag value by checking the environment variable, the shared credentials file field,
+        /// or falling back to <see cref="IDefaultConfigurationProvider"/> and using <see cref="DefaultConfiguration.StsRegionalEndpoints"/>
         /// </summary>
         public StsRegionalEndpointsValue StsRegionalEndpoints {
             get {
                 if (!this._stsRegionalEndpoints.HasValue)
                 {
-                    var tempStsRegionalEndpoints = CheckSTSEnvironmentVariable() ?? CheckCredentialsFile();
-                    this._stsRegionalEndpoints = tempStsRegionalEndpoints ?? StsRegionalEndpointsValue.Legacy;
+                    _stsRegionalEndpoints =
+                        CheckSTSEnvironmentVariable() ?? 
+                        CheckCredentialsFile() ??
+                        DefaultConfiguration.StsRegionalEndpoints;
                 }
                 return this._stsRegionalEndpoints.GetValueOrDefault();
             }

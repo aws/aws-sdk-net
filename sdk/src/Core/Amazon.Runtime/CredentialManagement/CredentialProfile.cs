@@ -51,6 +51,14 @@ namespace Amazon.Runtime.CredentialManagement
         internal Guid? UniqueKey { get; set; }
 
         /// <summary>
+        /// The desired <see cref="DefaultConfiguration.Name"/> that
+        /// <see cref="IDefaultConfigurationProvider"/> should use.
+        /// <para />
+        /// If this is null/empty, then the <see cref="DefaultConfigurationMode.Legacy"/> Mode will be used.
+        /// </summary>
+        public string DefaultConfigurationModeName { get; set; }
+
+        /// <summary>
         /// The endpoint discovery enabled value for this CredentialProfile
         /// </summary>
         public bool? EndpointDiscoveryEnabled { get; set; }

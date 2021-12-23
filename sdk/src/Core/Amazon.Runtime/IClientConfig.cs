@@ -14,7 +14,7 @@
  */
 using System;
 using System.Net;
-
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Util;
 #if NETSTANDARD
@@ -29,6 +29,12 @@ namespace Amazon.Runtime
     /// </summary>
     public partial interface IClientConfig
     {
+        /// <summary>
+        /// Returns the <see cref="Amazon.Runtime.DefaultConfigurationMode"/> that will be used. If none is specified,
+        /// than the correct one is computed by <see cref="IDefaultConfigurationProvider"/>.
+        /// </summary>
+        DefaultConfigurationMode DefaultConfigurationMode { get; }
+
         /// <summary>
         /// Gets the RegionEndpoint property. The region constant to use that 
         /// determines the endpoint to use.  If this is not set

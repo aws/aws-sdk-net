@@ -177,7 +177,12 @@ namespace AWSSDK.UnitTests
             .AppendLine("region=us-east-1")
             .ToString();
 
-        private static readonly string EndpointDiscoveryEnabledOnlyProfileText = new StringBuilder()
+        private static readonly string DefaultConfigurationModeOnlyProfileText = new StringBuilder()
+            .AppendLine("[default_configuration_mode_only_profile]")
+            .Append("defaults_mode=in-region")
+            .ToString();
+
+       private static readonly string EndpointDiscoveryEnabledOnlyProfileText = new StringBuilder()
             .AppendLine("[endpoint_discovery_enabled_only_profile]")
             .Append("endpoint_discovery_enabled=true")
             .ToString();
@@ -464,6 +469,17 @@ namespace AWSSDK.UnitTests
             using (var tester = new SharedCredentialsFileTestFixture(RegionOnlyProfileText))
             {
                 tester.AssertWriteProfile("region_only_profile", RegionOnlyProfileOptions, RegionOnlyProfileText);
+            }
+        }
+
+        [TestMethod]
+        public void ReadDefaultConfigurationModeNameOnlyProfile()
+        {
+            using (var tester = new SharedCredentialsFileTestFixture(DefaultConfigurationModeOnlyProfileText))
+            {
+                var profile = tester.TestTryGetProfile("default_configuration_mode_only_profile", true, false);
+
+                Assert.AreEqual("in-region", profile.DefaultConfigurationModeName);
             }
         }
 

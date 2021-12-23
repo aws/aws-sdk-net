@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using Json.LitJson;
+using ServiceClientGenerator.DefaultConfiguration;
 
 namespace ServiceClientGenerator
 {
@@ -97,6 +98,12 @@ namespace ServiceClientGenerator
             private set;
         }
 
+        /// <summary>
+        /// Model representing the default configuration modes as built
+        /// from the sdk-default-configurations.json file.
+        /// </summary>
+        public DefaultConfiguration.DefaultConfigurationModel DefaultConfiguration { get; set; }
+
         //This should be the same version number as SdkVersioning.DefaultAssemblyVersion in BuildTasks
         private const string DefaultAssemblyVersion = "3.3";
  
@@ -110,7 +117,12 @@ namespace ServiceClientGenerator
         /// <param name="modelsFolder">Path to the service models to be parsed</param>
         public static GenerationManifest Load(string manifestPath, string versionsPath, string modelsFolder)
         {
-            var generationManifest = new GenerationManifest();
+            var generationManifest = 
+                new GenerationManifest(
+                    new DefaultConfigurationController(
+                        new FileReader(),
+                        new DefaultConfigurationParser()));
+
             var manifest = LoadJsonFromFile(manifestPath);
             var versionsManifest = LoadJsonFromFile(versionsPath);
 
@@ -125,11 +137,23 @@ namespace ServiceClientGenerator
             if (!string.IsNullOrEmpty(generationManifest.PreviewLabel))
                 generationManifest.PreviewLabel = "-" + generationManifest.PreviewLabel;
 
+            generationManifest.LoadDefaultConfiguration(modelsFolder);
             generationManifest.LoadServiceConfigurations(manifest, versionsManifest["ServiceVersions"], modelsFolder);
             generationManifest.LoadProjectConfigurations(manifest);
             generationManifest.LoadUnitTestProjectConfigurations(manifest);
 
             return generationManifest;
+        }
+
+        /// <summary>
+        /// Loads the sdk-default-configurations.json file.
+        /// </summary>
+        private void LoadDefaultConfiguration(string manifestPath)
+        {
+            // ../../../ServiceModels/ + ../../
+            var repositoryRootDirectoryPath = Path.Combine(manifestPath, "..","..");
+
+            DefaultConfiguration = _defaultConfigurationController.LoadDefaultConfiguration(repositoryRootDirectoryPath);
         }
 
         /// <summary>
@@ -514,9 +538,10 @@ namespace ServiceClientGenerator
             return data;
         }
 
-        private GenerationManifest()
+        private readonly IDefaultConfigurationController _defaultConfigurationController;
+        private GenerationManifest(IDefaultConfigurationController defaultConfigurationController)
         {
-
+            _defaultConfigurationController = defaultConfigurationController;
         }
     }
 }

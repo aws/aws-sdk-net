@@ -102,8 +102,13 @@ namespace UnitTests
             Assert.Equal(DefaultHttpCacheSize, actualCacheSize);
         }
 
-        private void RunTest(IClientConfig clientConfig, int numRequests,
-            bool expectHttpCache, bool expectGlobalHttpCache, int? expectedCacheSize, string expectedGlobalCacheKey)
+        private void RunTest(
+            IClientConfig clientConfig,
+            int numRequests,
+            bool expectHttpCache,
+            bool expectGlobalHttpCache,
+            int? expectedCacheSize,
+            string expectedGlobalCacheKey)
         {
             // Use globalHttpClientCache as read-only so tests don't affect one another.
             var globalHttpClientCache = (IDictionary<string, HttpClientCache>)ReflectionHelpers.Invoke(typeof(HttpRequestMessageFactory), "_httpClientCaches");
@@ -123,7 +128,7 @@ namespace UnitTests
 
             if (expectGlobalHttpCache && expectedGlobalCacheKey != null)
             {
-                Assert.True(globalHttpClientCache.ContainsKey(expectedGlobalCacheKey));
+                Assert.Contains(globalHttpClientCache.Keys, x => x == expectedGlobalCacheKey);
             }
 
             if (expectedCacheSize.HasValue)

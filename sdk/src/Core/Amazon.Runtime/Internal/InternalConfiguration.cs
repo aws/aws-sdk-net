@@ -58,6 +58,9 @@ namespace Amazon.Runtime.Internal
         /// </summary>
         public EC2MetadataServiceEndpointMode? EC2MetadataServiceEndpointMode { get; set; }
 
+        /// <inheritdoc cref="CredentialProfile.DefaultConfigurationModeName"/>
+        public string DefaultConfigurationModeName { get; set; }
+
         /// <summary>
         /// Configures the endpoint calculation for a service to go to a dual stack (ipv6 enabled) endpoint
         /// for the configured region.
@@ -207,6 +210,7 @@ namespace Amazon.Runtime.Internal
             CredentialProfile profile;
             if (source.TryGetProfile(profileName, out profile))
             {
+                DefaultConfigurationModeName = profile.DefaultConfigurationModeName;
                 EndpointDiscoveryEnabled = profile.EndpointDiscoveryEnabled;
                 RetryMode = profile.RetryMode;
                 MaxAttempts = profile.MaxAttempts;
@@ -223,6 +227,7 @@ namespace Amazon.Runtime.Internal
 
             var items = new KeyValuePair<string, object>[]
             {
+                new KeyValuePair<string, object>("defaults_mode", profile.DefaultConfigurationModeName),
                 new KeyValuePair<string, object>("endpoint_discovery_enabled", profile.EndpointDiscoveryEnabled),
                 new KeyValuePair<string, object>("retry_mode", profile.RetryMode),
                 new KeyValuePair<string, object>("max_attempts", profile.MaxAttempts),
@@ -285,6 +290,7 @@ namespace Amazon.Runtime.Internal
             };
 
             //Find the priority first ordered config value for each property
+            _cachedConfiguration.DefaultConfigurationModeName = SeekString(standardGenerators, c => c.DefaultConfigurationModeName, defaultValue: null);
             _cachedConfiguration.EndpointDiscoveryEnabled = SeekValue(standardGenerators, (c) => c.EndpointDiscoveryEnabled);
             _cachedConfiguration.RetryMode = SeekValue(standardGenerators, (c) => c.RetryMode);
             _cachedConfiguration.MaxAttempts = SeekValue(standardGenerators, (c) => c.MaxAttempts);
@@ -310,7 +316,7 @@ namespace Amazon.Runtime.Internal
             return null;
         }
 
-        private static string SeekString(List<ConfigGenerator> generators, Func<InternalConfiguration, string> getValue)
+        private static string SeekString(List<ConfigGenerator> generators, Func<InternalConfiguration, string> getValue, string defaultValue = "")
         {
             //Look for the configuration value stopping at the first generator that returns the expected value.
             foreach (var generator in generators)
@@ -323,7 +329,7 @@ namespace Amazon.Runtime.Internal
                 }
             }
 
-            return "";
+            return defaultValue;
         }
 
         /// <summary>
@@ -381,6 +387,15 @@ namespace Amazon.Runtime.Internal
             get
             {
                 return _cachedConfiguration.EC2MetadataServiceEndpointMode;
+            }
+        }
+
+        /// <inheritdoc cref="InternalConfiguration.DefaultConfigurationModeName"/>
+        public static string DefaultConfigurationModeName
+        {
+            get
+            {
+                return _cachedConfiguration.DefaultConfigurationModeName;
             }
         }
 

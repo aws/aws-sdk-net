@@ -71,6 +71,7 @@ namespace ServiceClientGenerator
                     GeneratorDriver.UpdateAssemblyVersionInfo(generationManifest, options);
                     GeneratorDriver.UpdateNuGetPackagesInReadme(generationManifest, options);
                     GeneratorDriver.UpdateCodeAnalysisSolution(generationManifest, options);
+                    GeneratorDriver.GenerateDefaultConfigurationModeEnum(generationManifest, options);
                     GeneratorDriver.GenerateEndpoints(options);
                     GeneratorDriver.GenerateS3Enumerations(options);
                 }

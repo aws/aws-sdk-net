@@ -25,7 +25,9 @@ using System.IO;
 using System.Reflection;
 using System.Text;
 using System.Linq;
+using System.Threading;
 using Amazon.Util.Internal;
+using ExecutionContext = Amazon.Runtime.Internal.ExecutionContext;
 
 namespace Amazon.Runtime
 {
@@ -36,7 +38,8 @@ namespace Amazon.Runtime
         protected EndpointDiscoveryResolverBase EndpointDiscoveryResolver { get; private set; }
         protected RuntimePipeline RuntimePipeline { get; set; }
         protected internal AWSCredentials Credentials { get; private set; }
-        public IClientConfig Config { get; private set; }
+        public IClientConfig Config => _config;
+        private readonly ClientConfig _config;
         protected virtual IServiceMetadata ServiceMetadata { get; } = new ServiceMetadata();
         protected virtual bool SupportResponseLogging
         {
@@ -151,8 +154,8 @@ namespace Amazon.Runtime
                 _logger = Logger.GetLogger(this.GetType());
 
             config.Validate();
-            this.Config = config;
             this.Credentials = credentials;
+            _config = config;
             Signer = CreateSigner();
             EndpointDiscoveryResolver = new EndpointDiscoveryResolver(config, _logger);
             Initialize();
@@ -242,6 +245,11 @@ namespace Amazon.Runtime
             where TResponse : AmazonWebServiceResponse, new()
         {
             ThrowIfDisposed();
+
+#if AWS_ASYNC_API
+            if (cancellationToken == default(CancellationToken))
+                cancellationToken = _config.BuildDefaultCancellationToken();
+#endif
 
             var executionContext = new ExecutionContext(
                 new RequestContext(this.Config.LogMetrics, Signer)

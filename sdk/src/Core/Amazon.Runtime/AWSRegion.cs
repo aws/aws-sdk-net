@@ -72,6 +72,7 @@ namespace Amazon.Runtime
     public class EnvironmentVariableAWSRegion : AWSRegion
     {
         public const string ENVIRONMENT_VARIABLE_REGION = "AWS_REGION";
+        public const string ENVIRONMENT_VARIABLE_DEFAULT_REGION = "AWS_DEFAULT_REGION";
 
         /// <summary>
         /// Attempts to construct an instance of EnvironmentVariableAWSRegion. If no region is found in the
@@ -230,7 +231,7 @@ namespace Amazon.Runtime
 
                 List<Exception> errors = new List<Exception>();
 
-                IEnumerable<RegionGenerator> generators 
+                IEnumerable<RegionGenerator> generators
                     = includeInstanceMetadata ? AllGenerators : NonMetadataGenerators;
                 foreach (var generator in generators)
                 {
