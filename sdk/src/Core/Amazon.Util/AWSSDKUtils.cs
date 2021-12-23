@@ -428,7 +428,7 @@ namespace Amazon.Util
         public static string JoinResourcePathSegments(IEnumerable<string> pathSegments, bool path)
         {
             // Encode for canonicalization
-            pathSegments = pathSegments.Select(segment => UrlEncode(segment, path));
+         
 
             if (path)
             {
