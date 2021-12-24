@@ -366,7 +366,7 @@ namespace Amazon.Util
                 }
             }
 
-            var canonicalizedResourcePath = AWSSDKUtils.JoinResourcePathSegments(encodedSegments, false);
+            var canonicalizedResourcePath = AWSSDKUtils.JoinResourcePathSegments(encodedSegments, true);
 
             // Get the logger each time (it's cached) because we shouldn't store it in a static variable.
             Logger.GetLogger(typeof(AWSSDKUtils)).DebugFormat("{0} encoded {1}{2} for canonicalization: {3}",
