@@ -397,8 +397,12 @@ namespace Amazon.Runtime.CredentialManagement
                 CredentialProfileOptions profileOptions;
                 Dictionary<string, string> reservedProperties;
                 Dictionary<string, string> userProperties;
-                PropertyMapping.ExtractProfileParts(profileDictionary, ReservedPropertyNames,
-                    out profileOptions, out reservedProperties, out userProperties);
+                PropertyMapping.ExtractProfileParts(
+                    profileDictionary,
+                    ReservedPropertyNames,
+                    out profileOptions,
+                    out reservedProperties,
+                    out userProperties);
 
                 string toolkitArtifactGuidStr;
                 Guid? toolkitArtifactGuid = null;
@@ -536,10 +540,10 @@ namespace Amazon.Runtime.CredentialManagement
                     requestRetryMode = retryModeTemp;
 #endif
                 }
-                                
+
                 int? maxAttempts = null;
                 if (reservedProperties.TryGetValue(MaxAttemptsField, out var maxAttemptsString))
-                {                    
+                {
                     if (!int.TryParse(maxAttemptsString, out var maxAttemptsTemp) || maxAttemptsTemp <= 0)
                     {
                         Logger.GetLogger(GetType()).InfoFormat("Invalid value {0} for {1} in profile {2}. A positive integer is expected.", maxAttemptsString, MaxAttemptsField, profileName);

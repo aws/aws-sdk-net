@@ -101,7 +101,7 @@ namespace AWSSDK.UnitTests
 
         private static HttpStatusCode ParseStatusCode(string statusLine)
         {
-            var statusCode = string.Empty;            
+            var statusCode = string.Empty;
             try
             {
                 statusCode = statusLine.Split(' ')[1];

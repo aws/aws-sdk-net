@@ -188,29 +188,29 @@ namespace AWSSDK.UnitTests
             .ToString();
 
         private static readonly string RetriesLegacyModeProfileText = new StringBuilder()
-            .AppendLine("[retries_legacymode_profile_text]")            
+            .AppendLine("[retries_legacymode_profile_text]")
             .Append("retry_mode=legacy")
             .ToString();
 
         private static readonly string RetriesStandardModeProfileText = new StringBuilder()
-            .AppendLine("[retries_standardmode_profile_text]")            
+            .AppendLine("[retries_standardmode_profile_text]")
             .Append("retry_mode=standard")
             .ToString();
 
         private static readonly string RetriesAdaptiveModeProfileText = new StringBuilder()
-            .AppendLine("[retries_adaptivemode_profile_text]")            
+            .AppendLine("[retries_adaptivemode_profile_text]")
             .Append("retry_mode=adaptive")
             .ToString();
 
         private static readonly string RetriesInvalidModeProfileText = new StringBuilder()
-            .AppendLine("[retries_invalidmode_profile_text]")            
+            .AppendLine("[retries_invalidmode_profile_text]")
             .Append("retry_mode=invalid_mode")
             .ToString();
 
         private static readonly string RetriesMaxAttemptsProfileText = new StringBuilder()
             .AppendLine("[retries_max_attempts_profile_text]")
-            .Append("max_attempts=100")            
-            .ToString();       
+            .Append("max_attempts=100")
+            .ToString();
 
 
         private static readonly CredentialProfileOptions SAMLRoleProfileOptions = new CredentialProfileOptions()

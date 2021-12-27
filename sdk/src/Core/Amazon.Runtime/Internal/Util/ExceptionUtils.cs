@@ -29,7 +29,7 @@ namespace AWSSDK.Runtime.Internal.Util
             }
 
 #if !BCL35
-            var requestException = e as System.Net.Http.HttpRequestException;            
+            var requestException = e as System.Net.Http.HttpRequestException;
             if (requestException?.Data?.Contains("StatusCode") == true)
             {
                 return (HttpStatusCode)requestException.Data["StatusCode"];
@@ -90,7 +90,7 @@ namespace AWSSDK.Runtime.Internal.Util
                     queue.Enqueue(currentException.InnerException);
                 }                                
             }
-            while (queue.Count > 0);                        
+            while (queue.Count > 0);            
 
             return false;
         }

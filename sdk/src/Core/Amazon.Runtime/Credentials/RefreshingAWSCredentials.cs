@@ -130,7 +130,7 @@ namespace Amazon.Runtime
                 {
                     tempState = GenerateNewCredentials();
                     UpdateToGeneratedCredentials(tempState, PreemptExpiryTime);
-                    currentState = tempState;                    
+                    currentState = tempState;        
                 }
                 return tempState.Credentials.Copy();
             }

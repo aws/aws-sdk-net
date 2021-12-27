@@ -558,7 +558,7 @@ namespace ServiceClientGenerator
         {
             get
             {
-                return (bool)(this.data[ServiceModel.EndpointOperationKey] ?? false);                
+                return (bool)(this.data[ServiceModel.EndpointOperationKey] ?? false);
             }
         }
 
@@ -569,7 +569,7 @@ namespace ServiceClientGenerator
         {
             get
             {
-                return this.data[ServiceModel.EndpointDiscoveryKey] != null ? true : false;                
+                return this.data[ServiceModel.EndpointDiscoveryKey] != null ? true : false;
             }
         }
 
@@ -614,7 +614,7 @@ namespace ServiceClientGenerator
         public bool RequestHasEndpointDiscoveryIdMembers
         {
             get
-            {                
+            {
                 return (this.RequestEndpointDiscoveryIdMembers.Count > 0);
             }
         }

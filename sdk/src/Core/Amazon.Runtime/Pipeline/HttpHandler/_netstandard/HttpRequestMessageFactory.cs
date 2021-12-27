@@ -505,7 +505,7 @@ namespace Amazon.Runtime
         /// </summary>
         public void Abort()
         {
-            // NOP since HttRequestMessage does not have an Abort operation.     
+            // NOP since HttRequestMessage does not have an Abort operation. 
         }
 
         /// <summary>
@@ -537,9 +537,9 @@ namespace Amazon.Runtime
                 }
 
                 return new HttpClientResponseData(responseMessage, _httpClient, disposeClient);
-            }            
+            }
             catch (HttpRequestException httpException)
-            {                
+            {
                 if (httpException.InnerException != null)
                 {
                     if (httpException.InnerException is IOException)
@@ -555,7 +555,7 @@ namespace Amazon.Runtime
                 throw;
             }
             catch (OperationCanceledException canceledException)
-            {             
+            {
                 if (!cancellationToken.IsCancellationRequested)
                 {
                     //OperationCanceledException thrown by HttpClient not the CancellationToken supplied by the user.
@@ -564,8 +564,8 @@ namespace Amazon.Runtime
                     if(canceledException.InnerException != null)
                     {
                         throw canceledException.InnerException;
-                    }                    
-                }                
+                    }
+                }
 
                 throw;
             }
@@ -587,8 +587,8 @@ namespace Amazon.Runtime
             var chunkedUploadWrapperStream = (contentStream as ChunkedUploadWrapperStream);
             if(chunkedUploadWrapperStream == null || chunkedUploadWrapperStream.HasLength)
             {
-                _request.Content.Headers.ContentLength = contentStream.Length;                
-            }            
+                _request.Content.Headers.ContentLength = contentStream.Length;
+            }
             
             WriteContentHeaders(contentHeaders);
         }
@@ -676,8 +676,8 @@ namespace Amazon.Runtime
         /// </summary>
         /// <param name="originalStream">The content stream</param>
         /// <param name="progressUpdateInterval">The interval at which progress needs to be published</param>
-        /// <param name="sender">The objects which is trigerring the progress changes</param>
-        /// <param name="callback">The callback which will be invoked when the progress changed event is trigerred</param>
+        /// <param name="sender">The objects which is triggering the progress changes</param>
+        /// <param name="callback">The callback which will be invoked when the progress changed event is triggered</param>
         /// <returns>an <see cref="EventStream"/> object, incase the progress is setup, else returns the original stream</returns>
         public Stream SetupProgressListeners(Stream originalStream, long progressUpdateInterval, object sender, EventHandler<StreamTransferProgressArgs> callback)
         {

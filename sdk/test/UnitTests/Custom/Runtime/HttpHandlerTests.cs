@@ -37,13 +37,13 @@ namespace AWSSDK.UnitTests
 
             httpHandler.InvokeSync(executionContext);
 
-            Assert.IsNotNull(executionContext.ResponseContext.HttpResponse);            
+            Assert.IsNotNull(executionContext.ResponseContext.HttpResponse);
             var httpRequest = factory.LastCreatedRequest;
             Assert.AreEqual("GET",httpRequest.Method);
             Assert.IsTrue(httpRequest.IsConfigureRequestCalled);
             Assert.IsTrue(httpRequest.IsSetRequestHeadersCalled);
             Assert.IsTrue(httpRequest.IsDisposed);
-            Assert.IsFalse(httpRequest.IsAborted);            
+            Assert.IsFalse(httpRequest.IsAborted);
         }
 
         [TestMethod][TestCategory("UnitTest")]
@@ -56,7 +56,7 @@ namespace AWSSDK.UnitTests
             };
             var httpHandler = new HttpHandler<Stream>(factory, callbackSender);
             var runtimePipeline = new RuntimePipeline(httpHandler);
-            var executionContext = CreateExecutionContextForListBuckets();            
+            var executionContext = CreateExecutionContextForListBuckets();
 
             Utils.AssertExceptionExpected(() =>
             {
@@ -67,7 +67,7 @@ namespace AWSSDK.UnitTests
             Assert.AreEqual("GET", httpRequest.Method);
             Assert.IsTrue(httpRequest.IsConfigureRequestCalled);
             Assert.IsTrue(httpRequest.IsSetRequestHeadersCalled);
-            Assert.IsTrue(httpRequest.IsDisposed);            
+            Assert.IsTrue(httpRequest.IsDisposed);
         }
 
 #if BCL45
@@ -214,7 +214,7 @@ namespace AWSSDK.UnitTests
         /// Not thread safe, initialize once for each test.
         /// </summary>
         public class MockHttpRequestFactory : IHttpRequestFactory<Stream>
-        {            
+        {    
             public Action GetResponseAction { get; set; }
             public Func<MockHttpRequest, HttpWebResponse> ResponseCreator { get; set; }
 
@@ -227,7 +227,7 @@ namespace AWSSDK.UnitTests
             }
 
             public void Dispose()
-            {                
+            {        
             }
         }
 
@@ -269,7 +269,7 @@ namespace AWSSDK.UnitTests
                 if (response.StatusCode >= HttpStatusCode.OK && response.StatusCode <= (HttpStatusCode)299)
                     return response;
                 else                
-                    throw new HttpErrorResponseException(new HttpWebRequestResponseData(response));                
+                    throw new HttpErrorResponseException(new HttpWebRequestResponseData(response));    
             }
             
             public void ConfigureRequest(IRequestContext requestContext)

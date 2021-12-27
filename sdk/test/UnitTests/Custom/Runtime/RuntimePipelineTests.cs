@@ -61,7 +61,7 @@ namespace AWSSDK.UnitTests
             var handlerC = new TestHandlerC();
             // A->B->C->D
             pipeline.AddHandlerBefore<TestHandlerD>(handlerC);
-            ValidatePipeline(pipeline, handlerA, handlerB, handlerC, handlerD);            
+            ValidatePipeline(pipeline, handlerA, handlerB, handlerC, handlerD);
         }
 
         [TestMethod][TestCategory("UnitTest")]
@@ -70,7 +70,7 @@ namespace AWSSDK.UnitTests
         {
             var handlerC = new TestHandlerC();
             var pipeline = new RuntimePipeline(handlerC);
-            var handlerB = new TestHandlerB();            
+            var handlerB = new TestHandlerB();
             pipeline.AddHandler(handlerB);
             var handlerA = new TestHandlerA();
             //A->B->C

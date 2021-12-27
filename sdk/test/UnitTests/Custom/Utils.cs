@@ -202,7 +202,7 @@ namespace AWSSDK_DotNet35.UnitTests
             return null;
         }
         public static IEnumerable<string> FindResourceName(Assembly assembly, Predicate<string> match)
-        {            
+        {    
             var allResources = assembly.GetManifestResourceNames();
             foreach (var resource in allResources)
             {

@@ -217,7 +217,7 @@ namespace AWSSDK.UnitTests
             {
                 tester.TestTryGetProfile("RegionOnlyProfile", true, false);
             }
-        }                
+        }
 
         [TestMethod]
         public void WriteRegionOnlyProfile()

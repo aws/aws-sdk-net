@@ -689,7 +689,7 @@ namespace ServiceClientGenerator
         /// </summary>
         /// <param name="operation">The operation to generate endpoint discovery marshaller for</param>
         void GenerateEndpointDiscoveryMarshaller(Operation operation)
-        {            
+        {
             if(operation.IsEndpointOperation || !operation.EndpointDiscoveryEnabled)
             {
                 return;
@@ -700,7 +700,7 @@ namespace ServiceClientGenerator
                 Operation = operation
             };
 
-            this.ExecuteGenerator(generator, operation.Name + "EndpointDiscoveryMarshaller.cs", "Model.Internal.MarshallTransformations");                        
+            this.ExecuteGenerator(generator, operation.Name + "EndpointDiscoveryMarshaller.cs", "Model.Internal.MarshallTransformations");            
         }
 
         private void GenerateExceptions(Operation operation)

@@ -37,7 +37,7 @@ namespace ServiceClientGenerator
 
         public void Execute()
         {
-            UpdateAssemblyVersion();            
+            UpdateAssemblyVersion();
             UpdateNuspec();
         }
 

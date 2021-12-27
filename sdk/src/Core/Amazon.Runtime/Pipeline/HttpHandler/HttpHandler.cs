@@ -267,7 +267,7 @@ namespace Amazon.Runtime.Internal
                 }
 
                 if (httpRequest != null)
-                {                    
+                {
                     httpRequest.Dispose();
                 }
 
@@ -302,7 +302,7 @@ namespace Amazon.Runtime.Internal
 
                 var requestContent = httpRequest.EndGetRequestContent(result);
                 WriteContentToRequestBody(requestContent, httpRequest, executionContext.RequestContext);
-                //var requestStream = httpRequest.EndSetRequestBody(result);                
+                //var requestStream = httpRequest.EndSetRequestBody(result);    
                 httpRequest.BeginGetResponse(new AsyncCallback(GetResponseCallback), executionContext);
             }
             catch (Exception exception)

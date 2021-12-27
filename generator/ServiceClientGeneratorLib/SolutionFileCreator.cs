@@ -26,7 +26,7 @@ namespace ServiceClientGenerator
         {
             public const string Net35 = "Net35";
             public const string Net45 = "Net45";
-            public const string NetStandard = "NetStandard";            
+            public const string NetStandard = "NetStandard";
             public const string Partial = "partial";
 
         }
@@ -189,13 +189,13 @@ namespace ServiceClientGenerator
 
             var netStandardProjectConfigs = new List<ProjectFileConfiguration> {
                     GetProjectConfig(ProjectTypes.NetStandard)
-                };            
+                };
 
             GenerateVS2017ServiceSolution(net35ProjectConfigs);
             GenerateVS2017Solution("AWSSDK.Net35.sln", true, false, net35ProjectConfigs);
             GenerateVS2017Solution("AWSSDK.Net45.sln", true, false, net45ProjectConfigs);
 
-            GenerateVS2017Solution("AWSSDK.NetStandard.sln", true, false, netStandardProjectConfigs);            
+            GenerateVS2017Solution("AWSSDK.NetStandard.sln", true, false, netStandardProjectConfigs);
 
             // Include solutions that Travis CI can build
             GenerateVS2017Solution("AWSSDK.Net35.Travis.sln", false, true, net35ProjectConfigs);

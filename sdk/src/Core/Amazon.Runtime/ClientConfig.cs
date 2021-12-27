@@ -53,7 +53,7 @@ namespace Amazon.Runtime
         private string authRegion = null;
         private string authServiceName = null;
         private string signatureVersion = "4";
-        private SigningAlgorithm signatureMethod = SigningAlgorithm.HmacSHA256;        
+        private SigningAlgorithm signatureMethod = SigningAlgorithm.HmacSHA256;
         private bool readEntireResponse = false;
         private bool logResponse = false;
         private int bufferSize = AWSSDKUtils.DefaultBufferSize;
@@ -280,7 +280,7 @@ namespace Amazon.Runtime
         /// make for a single SDK operation invocation before giving up. This flag will 
         /// return 4 when the RetryMode is set to "Legacy" which is the default. For
         /// RetryMode values of "Standard" or "Adaptive" this flag will return 2. In 
-        /// addition to the values returned that are dependant on the RetryMode, the
+        /// addition to the values returned that are dependent on the RetryMode, the
         /// value can be set to a specific value by using the AWS_MAX_ATTEMPTS environment
         /// variable, max_attempts in the shared configuration file, or by setting a
         /// value directly on this property. When using AWS_MAX_ATTEMPTS or max_attempts
@@ -297,7 +297,7 @@ namespace Amazon.Runtime
                 {
                     //For legacy mode there was no MaxAttempts shared config or 
                     //environment variables so use the legacy default value.
-                    if(RetryMode == RequestRetryMode.Legacy)
+                    if (RetryMode == RequestRetryMode.Legacy)
                     {
                         return MaxRetriesLegacyDefault;
                     }
@@ -447,7 +447,7 @@ namespace Amazon.Runtime
                 {
                     return new NetworkCredential(AWSConfigs.ProxyConfig.Username, AWSConfigs.ProxyConfig.Password ?? string.Empty);
                 }
-                return this.proxyCredentials; 
+                return this.proxyCredentials;
             }
             set { this.proxyCredentials = value; }
         }
@@ -458,8 +458,8 @@ namespace Amazon.Runtime
         /// </summary>
         public TcpKeepAlive TcpKeepAlive
         {
-            get { return this.tcpKeepAlive; }            
-        }                
+            get { return this.tcpKeepAlive; }
+        }
 #endif
 
         #region Constructor 
@@ -550,12 +550,12 @@ namespace Amazon.Runtime
         }
 
         /// <summary>
-        /// Enable or disable the Retry Throttling feature by setting the ThrottleRetries flag to True/False resepctively.
-        /// Retry Throttling is a feature that intelligently throttles retry attempts when a large precentage of requests 
+        /// Enable or disable the Retry Throttling feature by setting the ThrottleRetries flag to True/False respectively.
+        /// Retry Throttling is a feature that intelligently throttles retry attempts when a large percentage of requests 
         /// are failing and retries are unsuccessful as well. In such situations the allotted retry capacity for the service URL
         /// will be drained until requests start to succeed again. Once the requisite capacity is available, retries would 
         /// be permitted again. When retries are throttled, the service enters a fail-fast behaviour as the traditional retry attempt
-        /// for the request would be circumvented. Hence, errors will resurface quickly. This will result in a greated number of exceptions
+        /// for the request would be circumvented. Hence, errors will resurface quickly. This will result in a greater number of exceptions
         /// but prevents requests being tied up in unsuccessful retry attempts.
         /// Note: Retry Throttling is enabled by default. Set the ThrottleRetries flag to false to switch off this feature.
         /// </summary>
@@ -575,7 +575,7 @@ namespace Amazon.Runtime
         public void SetUseNagleIfAvailable(bool useNagle)
         {
 #if BCL
-            this.UseNagleAlgorithm = useNagle;                
+            this.UseNagleAlgorithm = useNagle;
 #endif
         }
 
@@ -592,7 +592,7 @@ namespace Amazon.Runtime
             {
                 ValidateTcpKeepAliveTimeSpan(TcpKeepAlive.Timeout, "TcpKeepAlive.Timeout");
                 ValidateTcpKeepAliveTimeSpan(TcpKeepAlive.Interval, "TcpKeepAlive.Interval");
-            }            
+            }
 #endif
         }
 
@@ -657,7 +657,7 @@ namespace Amazon.Runtime
             {
                 if (!this.endpointDiscoveryEnabled.HasValue)
                 {
-                    return FallbackInternalConfigurationFactory.EndpointDiscoveryEnabled ?? false;                    
+                    return FallbackInternalConfigurationFactory.EndpointDiscoveryEnabled ?? false;
                 }
 
                 return this.endpointDiscoveryEnabled.Value;
@@ -736,7 +736,7 @@ namespace Amazon.Runtime
         /// <summary>
         /// Returns the request timeout value if its value is set, 
         /// else returns client timeout value.
-        /// </summary>        
+        /// </summary>
         public static TimeSpan? GetTimeoutValue(TimeSpan? clientTimeout, TimeSpan? requestTimeout)
         {
             return requestTimeout.HasValue ? requestTimeout
@@ -759,8 +759,6 @@ namespace Amazon.Runtime
         /// </para>
         /// </summary>
         public bool CacheHttpClient {get; set;} = true;
-
-
 
         private int? _httpClientCacheSize;
         /// <summary>

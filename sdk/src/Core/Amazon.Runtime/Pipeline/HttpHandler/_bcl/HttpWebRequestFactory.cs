@@ -118,7 +118,7 @@ namespace Amazon.Runtime.Internal
 
     /// <summary>
     /// HTTP request wrapper for System.Net.HttpWebRequest.
-    /// </summary>    
+    /// </summary>
     public class HttpRequest : IHttpRequest<Stream>
     {
         private bool _isAborted = false;
@@ -513,10 +513,9 @@ namespace Amazon.Runtime.Internal
 
             // Override the Timeout and ReadWriteTimeout values if set at the request or config level.
             // Public Timeout and ReadWriteTimeout properties are present on client config objects.
-            var timeout = ClientConfig.GetTimeoutValue(clientConfig.Timeout,
-                originalRequest.TimeoutInternal);
-            var readWriteTimeout = ClientConfig.GetTimeoutValue(clientConfig.ReadWriteTimeout,
-                originalRequest.ReadWriteTimeoutInternal);
+            var timeout = ClientConfig.GetTimeoutValue(clientConfig.Timeout, originalRequest.TimeoutInternal);
+            var readWriteTimeout = ClientConfig.GetTimeoutValue(clientConfig.ReadWriteTimeout, originalRequest.ReadWriteTimeoutInternal);
+
             if (timeout != null)
             {
                 _request.Timeout = (int)timeout.Value.TotalMilliseconds;
@@ -542,8 +541,10 @@ namespace Amazon.Runtime.Internal
             _request.ServicePoint.Expect100Continue = originalRequest.GetExpect100Continue();
 
             var tcpKeepAlive = clientConfig.TcpKeepAlive;
-            _request.ServicePoint.SetTcpKeepAlive(tcpKeepAlive.Enabled, (int)tcpKeepAlive.Timeout.Value.TotalMilliseconds, 
-                    (int)tcpKeepAlive.Interval.Value.TotalMilliseconds);
+            _request.ServicePoint.SetTcpKeepAlive(
+                tcpKeepAlive.Enabled,
+                (int) tcpKeepAlive.Timeout.Value.TotalMilliseconds,
+                (int) tcpKeepAlive.Interval.Value.TotalMilliseconds);
         }
 
         /// <summary>

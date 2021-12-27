@@ -100,7 +100,7 @@ namespace AWSSDK.UnitTests
                 var maxAttempts = FallbackInternalConfigurationFactory.MaxAttempts;
                 Assert.IsFalse(maxAttempts.HasValue);
             }
-        }               
+        }
 
         [TestMethod]
         public void TestOtherProfile()
@@ -127,7 +127,7 @@ namespace AWSSDK.UnitTests
         public void TestOther2Profile()
         {
             using (new FallbackFactoryTestFixture(ProfileText, "other2"))
-            {                
+            {            
                 var enabled = FallbackEndpointDiscoveryEnabledFactory.GetEnabled();
                 Assert.IsTrue(enabled.HasValue);
                 Assert.IsTrue(enabled.Value);
@@ -177,7 +177,7 @@ namespace AWSSDK.UnitTests
 
                 var maxAttempts = FallbackInternalConfigurationFactory.MaxAttempts;
                 Assert.IsTrue(maxAttempts.HasValue);
-                Assert.AreEqual(100, maxAttempts.Value);                                
+                Assert.AreEqual(100, maxAttempts.Value);                    
             }
         }
 
@@ -205,7 +205,7 @@ namespace AWSSDK.UnitTests
         public void TestRetriesConfigurationEnvVariables()
         {
             var envVariables = new Dictionary<string, string>()
-            {                
+            {            
                 {  AWS_RETRY_MODE_ENVIRONMENT_VARIABLE, "adaptive" },
                 {  AWS_MAX_ATTEMPTS_ENVIRONMENT_VARIABLE, "6" }
             };
@@ -707,7 +707,7 @@ namespace AWSSDK.UnitTests
 
         public class FallbackFactoryTestFixture : IDisposable
         {
-            private const string AWS_PROFILE_ENVIRONMENT_VARIABLE = "AWS_PROFILE";            
+            private const string AWS_PROFILE_ENVIRONMENT_VARIABLE = "AWS_PROFILE";
 
             private readonly SharedCredentialsFileTestFixture sharedFixture;
             private readonly NetSDKCredentialsFileTestFixture netSdkFixture;

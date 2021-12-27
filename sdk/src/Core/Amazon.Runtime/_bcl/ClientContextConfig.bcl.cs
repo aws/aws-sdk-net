@@ -26,7 +26,7 @@ namespace Amazon.Runtime.Internal
     /// Client Context header needs information like App title, version code, version name, package name etc.
     /// </summary>
     public class ClientContextConfig
-    {         
+    {
         /// <summary>
         /// The title of your app. For example, "My App".
         /// If this property is not null, the value would be used in Client Context header.

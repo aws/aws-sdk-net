@@ -65,7 +65,7 @@ namespace AWSSDK.UnitTests
         public static CredentialProfile GetCredentialProfile(Guid? uniqueKey, string profileName, CredentialProfileOptions options)
         {
             return GetCredentialProfile(uniqueKey, profileName, options, null, null, null, null, null);
-        }                
+        }
 
         public static CredentialProfile GetCredentialProfile(Guid? uniqueKey, string profileName, CredentialProfileOptions options,
             Dictionary<string, string> properties, RegionEndpoint region, bool? endpointDiscoveryEnabled, RequestRetryMode? retryMode, int? maxAttempts)
@@ -77,7 +77,7 @@ namespace AWSSDK.UnitTests
                 RetryMode = retryMode,
                 MaxAttempts = maxAttempts
             };
-            CredentialProfileUtils.SetUniqueKey(profile, uniqueKey);            
+            CredentialProfileUtils.SetUniqueKey(profile, uniqueKey);
             ReflectionHelpers.Invoke(profile, "Properties", properties);
             return profile;
         }

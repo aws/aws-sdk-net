@@ -47,7 +47,7 @@ namespace Amazon.Runtime.Internal.Transform
     /// Unmarshaller for int fields
     /// </summary>
     public class IntUnmarshaller : IUnmarshaller<int, XmlUnmarshallerContext>, IUnmarshaller<int, JsonUnmarshallerContext>
-    {        
+    {
         private IntUnmarshaller() { }
 
         private static IntUnmarshaller _instance = new IntUnmarshaller();
@@ -117,7 +117,7 @@ namespace Amazon.Runtime.Internal.Transform
     /// Unmarshaller for long fields
     /// </summary>
     public class LongUnmarshaller : IUnmarshaller<long, XmlUnmarshallerContext>, IUnmarshaller<long, JsonUnmarshallerContext>
-    {        
+    {
         private LongUnmarshaller() { }
 
         private static LongUnmarshaller _instance = new LongUnmarshaller();
@@ -149,7 +149,7 @@ namespace Amazon.Runtime.Internal.Transform
     /// Unmarshaller for float fields
     /// </summary>
     public class FloatUnmarshaller : IUnmarshaller<float, XmlUnmarshallerContext>, IUnmarshaller<float, JsonUnmarshallerContext>
-    {        
+    {
         private FloatUnmarshaller() { }
 
         private static FloatUnmarshaller _instance = new FloatUnmarshaller();
@@ -181,7 +181,7 @@ namespace Amazon.Runtime.Internal.Transform
     /// Unmarshaller for double fields
     /// </summary>
     public class DoubleUnmarshaller : IUnmarshaller<double, XmlUnmarshallerContext>, IUnmarshaller<double, JsonUnmarshallerContext>
-    {        
+    {
         private DoubleUnmarshaller() { }
 
         private static DoubleUnmarshaller _instance = new DoubleUnmarshaller();
@@ -246,7 +246,7 @@ namespace Amazon.Runtime.Internal.Transform
     /// Unmarshaller for bool fields
     /// </summary>
     public class BoolUnmarshaller : IUnmarshaller<bool, XmlUnmarshallerContext>, IUnmarshaller<bool, JsonUnmarshallerContext>
-    {        
+    {
         private BoolUnmarshaller() { }
 
         private static BoolUnmarshaller _instance = new BoolUnmarshaller();
@@ -278,7 +278,7 @@ namespace Amazon.Runtime.Internal.Transform
     /// Unmarshaller for string fields
     /// </summary>
     public class StringUnmarshaller : IUnmarshaller<string, XmlUnmarshallerContext>, IUnmarshaller<string, JsonUnmarshallerContext>
-    {        
+    {
         private StringUnmarshaller() { }
 
         private static StringUnmarshaller _instance = new StringUnmarshaller();
@@ -310,7 +310,7 @@ namespace Amazon.Runtime.Internal.Transform
     /// Unmarshaller for byte fields
     /// </summary>
     public class ByteUnmarshaller : IUnmarshaller<byte, XmlUnmarshallerContext>, IUnmarshaller<byte, JsonUnmarshallerContext>
-    {        
+    {
         private ByteUnmarshaller() { }
 
         private static ByteUnmarshaller _instance = new ByteUnmarshaller();
@@ -342,7 +342,7 @@ namespace Amazon.Runtime.Internal.Transform
     /// Unmarshaller for DateTime fields
     /// </summary>
     public class DateTimeUnmarshaller : IUnmarshaller<DateTime, XmlUnmarshallerContext>, IUnmarshaller<DateTime, JsonUnmarshallerContext>
-    {        
+    {
         private DateTimeUnmarshaller() { }
 
         private static DateTimeUnmarshaller _instance = new DateTimeUnmarshaller();
@@ -469,7 +469,7 @@ namespace Amazon.Runtime.Internal.Transform
     /// Unmarshaller for MemoryStream fields
     /// </summary>
     public class MemoryStreamUnmarshaller : IUnmarshaller<MemoryStream, XmlUnmarshallerContext>, IUnmarshaller<MemoryStream, JsonUnmarshallerContext>
-    {        
+    {
         private MemoryStreamUnmarshaller() { }
 
         private static MemoryStreamUnmarshaller _instance = new MemoryStreamUnmarshaller();
@@ -510,7 +510,7 @@ namespace Amazon.Runtime.Internal.Transform
     /// Unmarshaller for ResponseMetadata
     /// </summary>
     public class ResponseMetadataUnmarshaller : IUnmarshaller<ResponseMetadata, XmlUnmarshallerContext>, IUnmarshaller<ResponseMetadata, JsonUnmarshallerContext>
-    {        
+    {
         private ResponseMetadataUnmarshaller() { }
 
         private static ResponseMetadataUnmarshaller _instance = new ResponseMetadataUnmarshaller();

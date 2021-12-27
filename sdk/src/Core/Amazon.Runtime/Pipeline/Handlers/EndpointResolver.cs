@@ -46,7 +46,7 @@ namespace Amazon.Runtime.Internal
         public override System.Threading.Tasks.Task<T> InvokeAsync<T>(IExecutionContext executionContext)
         {
             PreInvoke(executionContext);
-            return base.InvokeAsync<T>(executionContext);                        
+            return base.InvokeAsync<T>(executionContext);            
         }
 
 #elif AWS_APM_API
@@ -105,7 +105,7 @@ namespace Amazon.Runtime.Internal
             }
 
             var hostPrefixUri = new UriBuilder(endpoint);
-            hostPrefixUri.Host = request.HostPrefix + hostPrefixUri.Host;            
+            hostPrefixUri.Host = request.HostPrefix + hostPrefixUri.Host;
             return hostPrefixUri.Uri;
         }
     }

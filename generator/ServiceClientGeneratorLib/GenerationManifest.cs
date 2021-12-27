@@ -133,7 +133,7 @@ namespace ServiceClientGenerator
         }
 
         /// <summary>
-        /// Recursively walk thorugh the ServiceModels folder and load/parse the 
+        /// Recursively walk through the ServiceModels folder and load/parse the 
         /// model files to generate ServiceConfiguration objects.
         /// </summary>
         /// <param name="manifest">loaded _manifest.json file</param>
@@ -158,7 +158,7 @@ namespace ServiceClientGenerator
                         &&  activeNode.IsBoolean
                         && !(bool)activeNode )
                     {
-                        continue;                             
+                        continue;                 
                     }
 
                     var serviceModelFileName = GetLatestModel(serviceDirectory);

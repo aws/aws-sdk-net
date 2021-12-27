@@ -26,7 +26,7 @@ namespace AWSSDK_DotNet35.UnitTests
 {
     [TestClass]
     public class CapacityManagerClockSkewTests : RuntimePipelineTestBase<RetryHandler>
-    {        
+    {    
         private const int THROTTLED_RETRIES = 4;        
         private const int MAX_RETRIES = 2;
 
@@ -50,7 +50,7 @@ namespace AWSSDK_DotNet35.UnitTests
         [TestCategory("UnitTest")]
         [TestCategory("Runtime")]
         public void TestCapacityUsedForClockSkew()
-        {            
+        {        
             var info = typeof(DefaultRetryPolicy).GetField("_capacityManagerInstance", BindingFlags.NonPublic | BindingFlags.Static);
             var capacityManager = (CapacityManager)info.GetValue(null);
             var availableCapacity = capacityManager.GetRetryCapacity(config.ServiceURL).AvailableCapacity;
@@ -76,7 +76,7 @@ namespace AWSSDK_DotNet35.UnitTests
             }
 
             //Verify that the clock skew errors did not decrease any capacity
-            Assert.AreEqual(availableCapacity, capacityManager.GetRetryCapacity(config.ServiceURL).AvailableCapacity);            
+            Assert.AreEqual(availableCapacity, capacityManager.GetRetryCapacity(config.ServiceURL).AvailableCapacity);
         }
     }
 }

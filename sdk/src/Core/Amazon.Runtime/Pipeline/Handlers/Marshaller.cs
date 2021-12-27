@@ -49,7 +49,7 @@ namespace Amazon.Runtime.Internal
         public override System.Threading.Tasks.Task<T> InvokeAsync<T>(IExecutionContext executionContext)
         {
             PreInvoke(executionContext);
-            return base.InvokeAsync<T>(executionContext);                        
+            return base.InvokeAsync<T>(executionContext);            
         }
 
 #elif AWS_APM_API

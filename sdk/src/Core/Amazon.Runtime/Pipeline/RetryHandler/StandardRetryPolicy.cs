@@ -242,7 +242,7 @@ namespace Amazon.Runtime.Internal
         protected static int CalculateRetryDelay(int retries, int maxBackoffInMilliseconds)
         {
             double jitter;
-            lock (_randomJitter) {                
+            lock (_randomJitter) {        
                 jitter = _randomJitter.NextDouble();
             }
             return Convert.ToInt32(Math.Min(jitter * Math.Pow(2, retries - 1) * 1000.0, maxBackoffInMilliseconds));

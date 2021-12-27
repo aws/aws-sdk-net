@@ -173,7 +173,7 @@ namespace Amazon.Runtime.Internal
     /// </summary>
     public class ProfileInternalConfiguration : InternalConfiguration
     {
-        private Logger _logger = Logger.GetLogger(typeof(ProfileInternalConfiguration));        
+        private Logger _logger = Logger.GetLogger(typeof(ProfileInternalConfiguration));
 
         /// <summary>
         /// Attempts to construct an instance of <see cref="ProfileInternalConfiguration"/>.
@@ -239,15 +239,15 @@ namespace Amazon.Runtime.Internal
                 : $"{item.Key} found in profile '{profileName}' in store {source.GetType()}"
                 );
             }
-        }                
+        }
     }
 
 #endif
 
-        /// <summary>
-        /// Probing mechanism to determine the configuration values from various sources.
-        /// </summary>
-        public static class FallbackInternalConfigurationFactory
+    /// <summary>
+    /// Probing mechanism to determine the configuration values from various sources.
+    /// </summary>
+    public static class FallbackInternalConfigurationFactory
     {
 #if BCL || NETSTANDARD
         private static CredentialProfileStoreChain _credentialProfileChain = new CredentialProfileStoreChain();
@@ -265,9 +265,9 @@ namespace Amazon.Runtime.Internal
         /// Resets all the configuration values reloading as needed. This method will use
         /// the AWS_PROFILE environment variable if set to construct the instance. Otherwise 
         /// the default profile will be used.
-        /// </summary>        
+        /// </summary>
         public static void Reset()
-        {            
+        {
 #if BCL || NETSTANDARD
             //Preload configurations that are fast or pull all the values at the same time. Slower configurations
             //should be called for specific values dynamically.
@@ -277,7 +277,7 @@ namespace Amazon.Runtime.Internal
 
             _cachedConfiguration = new InternalConfiguration();
             var standardGenerators = new List<ConfigGenerator>
-            {  
+            {
 #if BCL || NETSTANDARD
                 () => environmentVariablesConfiguration,
                 () => profileConfiguration,
@@ -376,7 +376,7 @@ namespace Amazon.Runtime.Internal
         /// <summary>
         /// Internet protocol version to be used for communicating with the EC2 Instance Metadata Service
         /// </summary>
-        public static EC2MetadataServiceEndpointMode? EC2MetadataServiceEndpointMode 
+        public static EC2MetadataServiceEndpointMode? EC2MetadataServiceEndpointMode
         { 
             get
             {

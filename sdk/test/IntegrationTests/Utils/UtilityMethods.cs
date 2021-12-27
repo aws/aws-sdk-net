@@ -66,7 +66,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
         }
         
         public static Stream CreateStreamFromString(string s, Stream stream)
-        {            
+        {        
             StreamWriter writer = new StreamWriter(stream);
             writer.Write(s);
             writer.Flush();
@@ -153,14 +153,14 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
         {
             T result = default(T);            
             WaitUntil(() =>
-            {                
+            {            
                 try
                 {
                     result = loadFunction();
                     return result != null;
                 }
                 catch
-                {                    
+                {                
                     return false;
                 }
             }, sleepSeconds, maxWaitSeconds);
@@ -169,7 +169,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
         }
 
         public static void WaitUntilException(Action action, int sleepSeconds = 5, int maxWaitSeconds = 300)
-        {            
+        {        
             WaitUntil(() =>
             {
                 try

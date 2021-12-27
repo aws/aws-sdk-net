@@ -27,7 +27,6 @@ namespace Amazon.Runtime.CredentialManagement
     /// </summary>
     public class CredentialProfile
     {
-
         private Dictionary<string, string> _properties;
 
         /// <summary>
@@ -47,7 +46,7 @@ namespace Amazon.Runtime.CredentialManagement
 
         /// <summary>
         /// The unique key for this CredentialProfile.
-        /// This key is used by the Visual Studio Tooklit to associate external artifacts with this profile.
+        /// This key is used by the Visual Studio Toolkit to associate external artifacts with this profile.
         /// </summary>
         internal Guid? UniqueKey { get; set; }
 
@@ -163,8 +162,8 @@ namespace Amazon.Runtime.CredentialManagement
                 throw new ArgumentException("Name must not be null or empty.");
             }
 
-            Options = profileOptions ?? throw new ArgumentNullException("profileOptions");   
-            Name = name;       
+            Options = profileOptions ?? throw new ArgumentNullException("profileOptions");
+            Name = name;
         }
 
         /// <summary>

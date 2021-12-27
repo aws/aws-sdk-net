@@ -153,7 +153,12 @@ namespace Amazon.Runtime.CredentialManagement
                     CredentialProfileOptions profileOptions;
                     Dictionary<string, string> userProperties;
                     Dictionary<string, string> reservedProperties;
-                    PropertyMapping.ExtractProfileParts(properties, ReservedPropertyNames,out profileOptions, out reservedProperties, out userProperties);
+                    PropertyMapping.ExtractProfileParts(
+                        properties, 
+                        ReservedPropertyNames,
+                        out profileOptions,
+                        out reservedProperties,
+                        out userProperties);
 
                     string regionString;
                     RegionEndpoint region = null;
@@ -175,7 +180,7 @@ namespace Amazon.Runtime.CredentialManagement
                     {
                         bool endpointDiscoveryEnabledOut;
                         if (!bool.TryParse(endpointDiscoveryEnabledString, out endpointDiscoveryEnabledOut))
-                        {                            
+                        {
                             profile = null;
                             return false;
                         }

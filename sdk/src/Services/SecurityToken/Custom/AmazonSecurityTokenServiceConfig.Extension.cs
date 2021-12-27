@@ -59,7 +59,7 @@ namespace Amazon.SecurityToken
 
         private const string StsDefaultHostname = "https://sts.amazonaws.com";
         
-        private static CredentialProfileStoreChain credentialProfileChain = new CredentialProfileStoreChain();
+        private static readonly CredentialProfileStoreChain _credentialProfileChain = new CredentialProfileStoreChain();
         
 #if BCL35
         private static readonly HashSet<RegionEndpoint> legacyGlobalRegions = new HashSet<RegionEndpoint>
@@ -191,7 +191,7 @@ namespace Amazon.SecurityToken
         {
             CredentialProfile profile;
             var profileName = Environment.GetEnvironmentVariable(AwsProfileEnvironmentVariable) ?? DefaultProfileName;
-            credentialProfileChain.TryGetProfile(profileName, out profile);
+            _credentialProfileChain.TryGetProfile(profileName, out profile);
             return profile?.StsRegionalEndpoints;
         }
     }

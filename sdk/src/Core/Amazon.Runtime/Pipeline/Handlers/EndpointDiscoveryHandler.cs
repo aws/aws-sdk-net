@@ -35,7 +35,7 @@ namespace Amazon.Runtime.Internal
         /// requests and response context.</param>
         public override void InvokeSync(IExecutionContext executionContext)
         {
-            var requestContext = executionContext.RequestContext;            
+            var requestContext = executionContext.RequestContext;
             var regionalEndpoint = requestContext.Request.Endpoint;
             PreInvoke(executionContext);
             
@@ -45,7 +45,7 @@ namespace Amazon.Runtime.Internal
                 return;
             }
             catch (Exception exception)
-            {                
+            {        
                 if (IsInvalidEndpointException(exception))
                 {
                     EvictCacheKeyForRequest(requestContext, regionalEndpoint);
@@ -72,7 +72,7 @@ namespace Amazon.Runtime.Internal
                         
             try
             {
-                return await base.InvokeAsync<T>(executionContext).ConfigureAwait(false);                
+                return await base.InvokeAsync<T>(executionContext).ConfigureAwait(false);    
             }
             catch (Exception exception)
             {
@@ -123,7 +123,7 @@ namespace Amazon.Runtime.Internal
             finally
             {
                 // Call outer handler
-                base.InvokeAsyncCallback(executionContext);                
+                base.InvokeAsyncCallback(executionContext);    
             }
         }
 #endif
@@ -135,8 +135,8 @@ namespace Amazon.Runtime.Internal
         /// <param name="executionContext">The execution context, it contains the
         /// request and response context.</param>                
         protected static void PreInvoke(IExecutionContext executionContext)
-        {            
-            DiscoverEndpoints(executionContext.RequestContext, false);            
+        {    
+            DiscoverEndpoints(executionContext.RequestContext, false);
         }
 
         public static void EvictCacheKeyForRequest(IRequestContext requestContext, Uri regionalEndpoint)
@@ -169,7 +169,7 @@ namespace Amazon.Runtime.Internal
         }
 
         private static IEnumerable<DiscoveryEndpointBase> ProcessEndpointDiscovery(IRequestContext requestContext, bool evictCacheKey, Uri evictUri)
-        {            
+        {    
             var options = requestContext.Options;
             if (options.EndpointDiscoveryMarshaller != null && options.EndpointOperation != null && requestContext.ImmutableCredentials != null)
             {
@@ -187,7 +187,7 @@ namespace Amazon.Runtime.Internal
         }                
         
         private static string OperationNameFromRequestName(string requestName)
-        {            
+        {    
             if (requestName.EndsWith("Request", StringComparison.Ordinal))
             {
                 return requestName.Substring(0, requestName.Length - 7);

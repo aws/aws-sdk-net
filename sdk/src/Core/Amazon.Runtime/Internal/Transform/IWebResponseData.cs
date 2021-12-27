@@ -22,7 +22,7 @@ using System.Text;
 namespace Amazon.Runtime.Internal.Transform
 {
     public interface IWebResponseData
-    {        
+    {
         long ContentLength { get; }
         string ContentType { get; }
         HttpStatusCode StatusCode { get; }
