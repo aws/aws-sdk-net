@@ -15,6 +15,8 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Amazon Recycle Bin. This release adds support for Recycle Bin.")]
 #elif NETCOREAPP3_1
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET Core 3.1) - Amazon Recycle Bin. This release adds support for Recycle Bin.")]
+#elif NET6_0
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (6.0) - Amazon Recycle Bin. This release adds support for Recycle Bin.")]
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
 #endif

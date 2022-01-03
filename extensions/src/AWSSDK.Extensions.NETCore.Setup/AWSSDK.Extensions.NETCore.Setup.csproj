@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0;netcoreapp3.1;net6.0</TargetFrameworks>
     <AssemblyName>AWSSDK.Extensions.NETCore.Setup</AssemblyName>
     <PackageId>AWSSDK.Extensions.NETCore.Setup</PackageId>
     <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
@@ -27,10 +27,20 @@
     </Otherwise>
   </Choose>
 
-  <ItemGroup>
+  <ItemGroup Condition=" '$(TargetFramework)'=='netstandard2.0' ">
     <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="2.0.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="2.0.0" />
     <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="2.0.0" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)'=='netcoreapp3.1' ">
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)'=='net6.0' ">
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="6.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="6.0" />
   </ItemGroup>
 
   <ItemGroup>

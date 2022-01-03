@@ -15,6 +15,8 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - AWS Cloud Control API. Initial release of the SDK for AWS Cloud Control API")]
 #elif NETCOREAPP3_1
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET Core 3.1) - AWS Cloud Control API. Initial release of the SDK for AWS Cloud Control API")]
+#elif NET6_0
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (6.0) - AWS Cloud Control API. Initial release of the SDK for AWS Cloud Control API")]
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
 #endif

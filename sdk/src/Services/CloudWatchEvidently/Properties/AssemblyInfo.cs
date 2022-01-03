@@ -15,6 +15,8 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Amazon CloudWatch Evidently. Introducing Amazon CloudWatch Evidently. This is the first public release of Amazon CloudWatch Evidently.")]
 #elif NETCOREAPP3_1
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET Core 3.1) - Amazon CloudWatch Evidently. Introducing Amazon CloudWatch Evidently. This is the first public release of Amazon CloudWatch Evidently.")]
+#elif NET6_0
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (6.0) - Amazon CloudWatch Evidently. Introducing Amazon CloudWatch Evidently. This is the first public release of Amazon CloudWatch Evidently.")]
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
 #endif

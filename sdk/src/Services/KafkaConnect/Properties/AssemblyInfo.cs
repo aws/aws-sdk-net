@@ -15,6 +15,8 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Managed Streaming for Kafka Connect. This is the initial SDK release for Amazon Managed Streaming for Apache Kafka Connect (MSK Connect).")]
 #elif NETCOREAPP3_1
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET Core 3.1) - Managed Streaming for Kafka Connect. This is the initial SDK release for Amazon Managed Streaming for Apache Kafka Connect (MSK Connect).")]
+#elif NET6_0
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (6.0) - Managed Streaming for Kafka Connect. This is the initial SDK release for Amazon Managed Streaming for Apache Kafka Connect (MSK Connect).")]
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
 #endif

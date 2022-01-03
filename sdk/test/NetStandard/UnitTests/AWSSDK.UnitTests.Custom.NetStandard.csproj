@@ -6,11 +6,12 @@ This project file should not be used as part of a release pipeline.
 -->
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
-        <TargetFrameworks>netcoreapp3.1</TargetFrameworks>
+        <TargetFrameworks>netcoreapp3.1;net6.0</TargetFrameworks>
         <DefineConstants>$(DefineConstants);NETSTANDARD;AWS_ASYNC_API</DefineConstants>
         <DebugType>portable</DebugType>
         <PackageId>UnitTests</PackageId>
         <DefineConstants Condition="'$(TargetFramework)' == 'netcoreapp3.1'">$(DefineConstants)</DefineConstants>
+        <DefineConstants Condition="'$(TargetFramework)' == 'net6.0'">$(DefineConstants)</DefineConstants>
         <!--Namespace must match UnitTests.NetStandard.csproj to remain interoperable with embedded resources -->
         <RootNamespace>UnitTests.NetStandard</RootNamespace>
     </PropertyGroup>

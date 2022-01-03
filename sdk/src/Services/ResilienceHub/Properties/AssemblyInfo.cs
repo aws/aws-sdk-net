@@ -15,6 +15,8 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - AWS Resilience Hub. Initial release of AWS Resilience Hub, a managed service that enables you to define, validate, and track the resilience of your applications on AWS")]
 #elif NETCOREAPP3_1
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET Core 3.1) - AWS Resilience Hub. Initial release of AWS Resilience Hub, a managed service that enables you to define, validate, and track the resilience of your applications on AWS")]
+#elif NET6_0
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (6.0) - AWS Resilience Hub. Initial release of AWS Resilience Hub, a managed service that enables you to define, validate, and track the resilience of your applications on AWS")]
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
 #endif

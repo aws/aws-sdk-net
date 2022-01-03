@@ -52,7 +52,7 @@ namespace Amazon.Runtime.Internal.Auth
             {
                 if (_aws4aSignerCRTWrapper == null)
                 {
-                    lock (this)
+                    lock (_lock)
                     {
                         if (_aws4aSignerCRTWrapper == null)
                             _aws4aSignerCRTWrapper = new AWS4aSignerCRTWrapper();

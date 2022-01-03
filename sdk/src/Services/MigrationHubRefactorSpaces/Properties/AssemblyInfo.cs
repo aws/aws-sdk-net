@@ -15,6 +15,8 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - AWS Migration Hub Refactor Spaces. This is the initial SDK release for AWS Migration Hub Refactor Spaces")]
 #elif NETCOREAPP3_1
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET Core 3.1) - AWS Migration Hub Refactor Spaces. This is the initial SDK release for AWS Migration Hub Refactor Spaces")]
+#elif NET6_0
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (6.0) - AWS Migration Hub Refactor Spaces. This is the initial SDK release for AWS Migration Hub Refactor Spaces")]
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
 #endif

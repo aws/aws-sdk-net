@@ -15,6 +15,8 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - AWS Application Cost Profiler. APIs for AWS Application Cost Profiler.")]
 #elif NETCOREAPP3_1
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET Core 3.1) - AWS Application Cost Profiler. APIs for AWS Application Cost Profiler.")]
+#elif NET6_0
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (6.0) - AWS Application Cost Profiler. APIs for AWS Application Cost Profiler.")]
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
 #endif

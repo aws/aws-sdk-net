@@ -15,6 +15,8 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Amazon OpenSearch Service. Updated Configuration APIs for Amazon OpenSearch Service (successor to Amazon Elasticsearch Service)")]
 #elif NETCOREAPP3_1
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET Core 3.1) - Amazon OpenSearch Service. Updated Configuration APIs for Amazon OpenSearch Service (successor to Amazon Elasticsearch Service)")]
+#elif NET6_0
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (6.0) - Amazon OpenSearch Service. Updated Configuration APIs for Amazon OpenSearch Service (successor to Amazon Elasticsearch Service)")]
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
 #endif
