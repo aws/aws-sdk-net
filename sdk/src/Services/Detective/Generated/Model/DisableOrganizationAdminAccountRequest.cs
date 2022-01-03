@@ -29,38 +29,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Detective.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteGraph operation.
-    /// Disables the specified behavior graph and queues it to be deleted. This operation
-    /// removes the behavior graph from each member account's list of behavior graphs.
+    /// Container for the parameters to the DisableOrganizationAdminAccount operation.
+    /// Removes the Detective administrator account for the organization in the current Region.
+    /// Deletes the behavior graph for that account.
     /// 
     ///  
     /// <para>
-    ///  <code>DeleteGraph</code> can only be called by the administrator account for a behavior
-    /// graph.
+    /// Can only be called by the organization management account. Before you can select a
+    /// different Detective administrator account, you must remove the Detective administrator
+    /// account in all Regions.
     /// </para>
     /// </summary>
-    public partial class DeleteGraphRequest : AmazonDetectiveRequest
+    public partial class DisableOrganizationAdminAccountRequest : AmazonDetectiveRequest
     {
-        private string _graphArn;
-
-        /// <summary>
-        /// Gets and sets the property GraphArn. 
-        /// <para>
-        /// The ARN of the behavior graph to disable.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public string GraphArn
-        {
-            get { return this._graphArn; }
-            set { this._graphArn = value; }
-        }
-
-        // Check to see if GraphArn property is set
-        internal bool IsSetGraphArn()
-        {
-            return this._graphArn != null;
-        }
 
     }
 }

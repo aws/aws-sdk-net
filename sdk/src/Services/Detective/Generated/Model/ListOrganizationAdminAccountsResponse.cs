@@ -29,53 +29,36 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Detective.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListInvitations operation.
-    /// Retrieves the list of open and accepted behavior graph invitations for the member
-    /// account. This operation can only be called by an invited member account.
-    /// 
-    ///  
-    /// <para>
-    /// Open invitations are invitations that the member account has not responded to.
-    /// </para>
-    ///  
-    /// <para>
-    /// The results do not include behavior graphs for which the member account declined the
-    /// invitation. The results also do not include behavior graphs that the member account
-    /// resigned from or was removed from.
-    /// </para>
+    /// This is the response object from the ListOrganizationAdminAccounts operation.
     /// </summary>
-    public partial class ListInvitationsRequest : AmazonDetectiveRequest
+    public partial class ListOrganizationAdminAccountsResponse : AmazonWebServiceResponse
     {
-        private int? _maxResults;
+        private List<Administrator> _administrators = new List<Administrator>();
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property MaxResults. 
+        /// Gets and sets the property Administrators. 
         /// <para>
-        /// The maximum number of behavior graph invitations to return in the response. The total
-        /// must be less than the overall limit on the number of results to return, which is currently
-        /// 200.
+        /// The list of delegated administrator accounts.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=200)]
-        public int MaxResults
+        public List<Administrator> Administrators
         {
-            get { return this._maxResults.GetValueOrDefault(); }
-            set { this._maxResults = value; }
+            get { return this._administrators; }
+            set { this._administrators = value; }
         }
 
-        // Check to see if MaxResults property is set
-        internal bool IsSetMaxResults()
+        // Check to see if Administrators property is set
+        internal bool IsSetAdministrators()
         {
-            return this._maxResults.HasValue; 
+            return this._administrators != null && this._administrators.Count > 0; 
         }
 
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// For requests to retrieve the next page of results, the pagination token that was returned
-        /// with the previous page of results. The initial request does not include a pagination
-        /// token.
+        /// If there are more accounts remaining in the results, then this is the pagination token
+        /// to use to request the next page of accounts.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

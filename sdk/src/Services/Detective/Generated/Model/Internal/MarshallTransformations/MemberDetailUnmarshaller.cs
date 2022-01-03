@@ -94,6 +94,12 @@ namespace Amazon.Detective.Model.Internal.MarshallTransformations
                     unmarshalledObject.GraphArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("InvitationType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.InvitationType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("InvitedTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

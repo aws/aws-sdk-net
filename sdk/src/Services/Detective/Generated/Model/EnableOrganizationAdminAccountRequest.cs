@@ -29,21 +29,38 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Detective.Model
 {
     /// <summary>
-    /// A member account that was included in a request but for which the request could not
-    /// be processed.
+    /// Container for the parameters to the EnableOrganizationAdminAccount operation.
+    /// Designates the Detective administrator account for the organization in the current
+    /// Region.
+    /// 
+    ///  
+    /// <para>
+    /// If the account does not have Detective enabled, then enables Detective for that account
+    /// and creates a new behavior graph.
+    /// </para>
+    ///  
+    /// <para>
+    /// Can only be called by the organization management account.
+    /// </para>
+    ///  
+    /// <para>
+    /// The Detective administrator account for an organization must be the same in all Regions.
+    /// If you already designated a Detective administrator account in another Region, then
+    /// you must designate the same account.
+    /// </para>
     /// </summary>
-    public partial class UnprocessedAccount
+    public partial class EnableOrganizationAdminAccountRequest : AmazonDetectiveRequest
     {
         private string _accountId;
-        private string _reason;
 
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The Amazon Web Services account identifier of the member account that was not processed.
+        /// The Amazon Web Services account identifier of the account to designate as the Detective
+        /// administrator account for the organization.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=12, Max=12)]
+        [AWSProperty(Required=true, Min=12, Max=12)]
         public string AccountId
         {
             get { return this._accountId; }
@@ -54,24 +71,6 @@ namespace Amazon.Detective.Model
         internal bool IsSetAccountId()
         {
             return this._accountId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Reason. 
-        /// <para>
-        /// The reason that the member account request could not be processed.
-        /// </para>
-        /// </summary>
-        public string Reason
-        {
-            get { return this._reason; }
-            set { this._reason = value; }
-        }
-
-        // Check to see if Reason property is set
-        internal bool IsSetReason()
-        {
-            return this._reason != null;
         }
 
     }

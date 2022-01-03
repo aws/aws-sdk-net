@@ -29,22 +29,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Detective.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListInvitations operation.
-    /// Retrieves the list of open and accepted behavior graph invitations for the member
-    /// account. This operation can only be called by an invited member account.
-    /// 
-    ///  
-    /// <para>
-    /// Open invitations are invitations that the member account has not responded to.
-    /// </para>
-    ///  
-    /// <para>
-    /// The results do not include behavior graphs for which the member account declined the
-    /// invitation. The results also do not include behavior graphs that the member account
-    /// resigned from or was removed from.
-    /// </para>
+    /// Container for the parameters to the ListOrganizationAdminAccounts operation.
+    /// Returns information about the Detective administrator account for an organization.
+    /// Can only be called by the organization management account.
     /// </summary>
-    public partial class ListInvitationsRequest : AmazonDetectiveRequest
+    public partial class ListOrganizationAdminAccountsRequest : AmazonDetectiveRequest
     {
         private int? _maxResults;
         private string _nextToken;
@@ -52,9 +41,7 @@ namespace Amazon.Detective.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of behavior graph invitations to return in the response. The total
-        /// must be less than the overall limit on the number of results to return, which is currently
-        /// 200.
+        /// The maximum number of results to return.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
@@ -73,8 +60,8 @@ namespace Amazon.Detective.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// For requests to retrieve the next page of results, the pagination token that was returned
-        /// with the previous page of results. The initial request does not include a pagination
+        /// For requests to get the next page of results, the pagination token that was returned
+        /// with the previous set of results. The initial request does not include a pagination
         /// token.
         /// </para>
         /// </summary>

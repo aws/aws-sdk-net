@@ -29,48 +29,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Detective.Model
 {
     /// <summary>
-    /// A behavior graph in Detective.
+    /// This is the response object from the DescribeOrganizationConfiguration operation.
     /// </summary>
-    public partial class Graph
+    public partial class DescribeOrganizationConfigurationResponse : AmazonWebServiceResponse
     {
-        private string _arn;
-        private DateTime? _createdTime;
+        private bool? _autoEnable;
 
         /// <summary>
-        /// Gets and sets the property Arn. 
+        /// Gets and sets the property AutoEnable. 
         /// <para>
-        /// The ARN of the behavior graph.
+        /// Indicates whether to automatically enable new organization accounts as member accounts
+        /// in the organization behavior graph.
         /// </para>
         /// </summary>
-        public string Arn
+        public bool AutoEnable
         {
-            get { return this._arn; }
-            set { this._arn = value; }
+            get { return this._autoEnable.GetValueOrDefault(); }
+            set { this._autoEnable = value; }
         }
 
-        // Check to see if Arn property is set
-        internal bool IsSetArn()
+        // Check to see if AutoEnable property is set
+        internal bool IsSetAutoEnable()
         {
-            return this._arn != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property CreatedTime. 
-        /// <para>
-        /// The date and time that the behavior graph was created. The value is an ISO8601 formatted
-        /// string. For example, <code>2021-08-18T16:35:56.284Z</code>.
-        /// </para>
-        /// </summary>
-        public DateTime CreatedTime
-        {
-            get { return this._createdTime.GetValueOrDefault(); }
-            set { this._createdTime = value; }
-        }
-
-        // Check to see if CreatedTime property is set
-        internal bool IsSetCreatedTime()
-        {
-            return this._createdTime.HasValue; 
+            return this._autoEnable.HasValue; 
         }
 
     }
