@@ -163,7 +163,7 @@ namespace Amazon.RDS.Model
         /// <para>
         /// A value that indicates whether the modifications in this request and any pending modifications
         /// are asynchronously applied as soon as possible, regardless of the <code>PreferredMaintenanceWindow</code>
-        /// setting for the DB instance. By default, this parameter is disabled. 
+        /// setting for the DB instance. By default, this parameter is disabled.
         /// </para>
         ///  
         /// <para>
@@ -171,7 +171,7 @@ namespace Amazon.RDS.Model
         /// next maintenance window. Some parameter changes can cause an outage and are applied
         /// on the next call to <a>RebootDBInstance</a>, or the next failure reboot. Review the
         /// table of parameters in <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Modifying.html">Modifying
-        /// a DB Instance</a> in the <i>Amazon RDS User Guide.</i> to see the impact of enabling
+        /// a DB Instance</a> in the <i>Amazon RDS User Guide</i> to see the impact of enabling
         /// or disabling <code>ApplyImmediately</code> for each modified parameter and to determine
         /// when the changes are applied. 
         /// </para>
@@ -311,7 +311,7 @@ namespace Amazon.RDS.Model
         ///  <ul> <li> 
         /// <para>
         /// It must be a value from 0 to 35. It can't be set to 0 if the DB instance is a source
-        /// to read replicas. It can't be set to 0 or 35 for an RDS Custom DB instance.
+        /// to read replicas. It can't be set to 0 or 35 for an RDS Custom for Oracle DB instance.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -483,7 +483,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// This setting doesn't apply to RDS Custom.
+        /// This setting doesn't apply to RDS Custom for Oracle.
         /// </para>
         ///  
         /// <para>
@@ -942,8 +942,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// In RDS Custom, this parameter is supported for read replicas only if they are in the
-        /// <code>PATCH_DB_FAILURE</code> lifecycle. 
+        /// In RDS Custom for Oracle, this parameter is supported for read replicas only if they
+        /// are in the <code>PATCH_DB_FAILURE</code> lifecycle. 
         /// </para>
         /// </summary>
         public string EngineVersion
@@ -1574,10 +1574,6 @@ namespace Amazon.RDS.Model
         /// <para>
         /// Changes to the <code>PubliclyAccessible</code> parameter are applied immediately regardless
         /// of the value of the <code>ApplyImmediately</code> parameter.
-        /// </para>
-        ///  
-        /// <para>
-        /// This setting doesn't apply to RDS Custom.
         /// </para>
         /// </summary>
         public bool PubliclyAccessible

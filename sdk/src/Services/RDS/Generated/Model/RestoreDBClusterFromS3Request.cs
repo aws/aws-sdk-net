@@ -443,7 +443,8 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// Valid Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora), <code>aurora-mysql</code>
-        /// (for MySQL 5.7-compatible Aurora), and <code>aurora-postgresql</code> 
+        /// (for MySQL 5.7-compatible and MySQL 8.0-compatible Aurora), and <code>aurora-postgresql</code>
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -477,7 +478,7 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// To list all of the available engine versions for <code>aurora-mysql</code> (for MySQL
-        /// 5.7-compatible Aurora), use the following command:
+        /// 5.7-compatible and MySQL 8.0-compatible Aurora), use the following command:
         /// </para>
         ///  
         /// <para>
@@ -501,7 +502,7 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// Example: <code>5.6.10a</code>, <code>5.6.mysql_aurora.1.19.2</code>, <code>5.7.12</code>,
-        /// <code>5.7.mysql_aurora.2.04.5</code> 
+        /// <code>5.7.mysql_aurora.2.04.5</code>, <code>8.0.mysql_aurora.3.01.0</code> 
         /// </para>
         ///  
         /// <para>

@@ -1428,7 +1428,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property StorageType. 
         /// <para>
-        /// The storage type associated with DB instance.
+        /// The storage type associated with the DB cluster.
         /// </para>
         ///  
         /// <para>

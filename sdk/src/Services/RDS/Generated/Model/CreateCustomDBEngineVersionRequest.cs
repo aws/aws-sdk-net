@@ -38,8 +38,8 @@ namespace Amazon.RDS.Model
     /// <para>
     /// Amazon RDS, which is a fully managed service, supplies the Amazon Machine Image (AMI)
     /// and database software. The Amazon RDS database software is preinstalled, so you need
-    /// only select a DB engine and version, and create your database. With Amazon RDS Custom,
-    /// you upload your database installation files in Amazon S3.
+    /// only select a DB engine and version, and create your database. With Amazon RDS Custom
+    /// for Oracle, you upload your database installation files in Amazon S3.
     /// </para>
     ///  
     /// <para>
@@ -171,8 +171,8 @@ namespace Amazon.RDS.Model
         /// <para>
         /// The name of your CEV. The name format is <code>19.<i>customized_string</i> </code>.
         /// For example, a valid name is <code>19.my_cev1</code>. This setting is required for
-        /// RDS Custom, but optional for Amazon RDS. The combination of <code>Engine</code> and
-        /// <code>EngineVersion</code> is unique per customer per Region.
+        /// RDS Custom for Oracle, but optional for Amazon RDS. The combination of <code>Engine</code>
+        /// and <code>EngineVersion</code> is unique per customer per Region.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=60)]
