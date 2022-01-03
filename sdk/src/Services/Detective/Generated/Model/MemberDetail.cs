@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Detective.Model
 {
     /// <summary>
-    /// Details about a member account that was invited to contribute to a behavior graph.
+    /// Details about a member account in a behavior graph.
     /// </summary>
     public partial class MemberDetail
     {
@@ -38,6 +38,7 @@ namespace Amazon.Detective.Model
         private MemberDisabledReason _disabledReason;
         private string _emailAddress;
         private string _graphArn;
+        private InvitationType _invitationType;
         private DateTime? _invitedTime;
         private string _masterId;
         private double? _percentOfGraphUtilization;
@@ -50,7 +51,7 @@ namespace Amazon.Detective.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The AWS account identifier for the member account.
+        /// The Amazon Web Services account identifier for the member account.
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=12)]
@@ -69,7 +70,8 @@ namespace Amazon.Detective.Model
         /// <summary>
         /// Gets and sets the property AdministratorId. 
         /// <para>
-        /// The AWS account identifier of the administrator account for the behavior graph.
+        /// The Amazon Web Services account identifier of the administrator account for the behavior
+        /// graph.
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=12)]
@@ -123,7 +125,7 @@ namespace Amazon.Detective.Model
         /// <summary>
         /// Gets and sets the property EmailAddress. 
         /// <para>
-        /// The AWS account root user email address for the member account.
+        /// The Amazon Web Services account root user email address for the member account.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -142,7 +144,7 @@ namespace Amazon.Detective.Model
         /// <summary>
         /// Gets and sets the property GraphArn. 
         /// <para>
-        /// The ARN of the behavior graph that the member account was invited to.
+        /// The ARN of the behavior graph.
         /// </para>
         /// </summary>
         public string GraphArn
@@ -158,10 +160,37 @@ namespace Amazon.Detective.Model
         }
 
         /// <summary>
+        /// Gets and sets the property InvitationType. 
+        /// <para>
+        /// The type of behavior graph membership.
+        /// </para>
+        ///  
+        /// <para>
+        /// For an organization account in the organization behavior graph, the type is <code>ORGANIZATION</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For an account that was invited to a behavior graph, the type is <code>INVITATION</code>.
+        /// 
+        /// </para>
+        /// </summary>
+        public InvitationType InvitationType
+        {
+            get { return this._invitationType; }
+            set { this._invitationType = value; }
+        }
+
+        // Check to see if InvitationType property is set
+        internal bool IsSetInvitationType()
+        {
+            return this._invitationType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property InvitedTime. 
         /// <para>
-        /// The date and time that Detective sent the invitation to the member account. The value
-        /// is in milliseconds since the epoch.
+        /// For invited accounts, the date and time that Detective sent the invitation to the
+        /// account. The value is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.
         /// </para>
         /// </summary>
         public DateTime InvitedTime
@@ -179,7 +208,8 @@ namespace Amazon.Detective.Model
         /// <summary>
         /// Gets and sets the property MasterId. 
         /// <para>
-        /// The AWS account identifier of the administrator account for the behavior graph.
+        /// The Amazon Web Services account identifier of the administrator account for the behavior
+        /// graph.
         /// </para>
         /// </summary>
         [Obsolete("This property is deprecated. Use AdministratorId instead.")]
@@ -230,7 +260,8 @@ namespace Amazon.Detective.Model
         /// <summary>
         /// Gets and sets the property PercentOfGraphUtilizationUpdatedTime. 
         /// <para>
-        /// The date and time when the graph utilization percentage was last updated.
+        /// The date and time when the graph utilization percentage was last updated. The value
+        /// is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.
         /// </para>
         /// </summary>
         [Obsolete("This property is deprecated. Use VolumeUsageUpdatedTime instead.")]
@@ -254,37 +285,47 @@ namespace Amazon.Detective.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>INVITED</code> - Indicates that the member was sent an invitation but has not
-        /// yet responded.
+        ///  <code>INVITED</code> - For invited accounts only. Indicates that the member was sent
+        /// an invitation but has not yet responded.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>VERIFICATION_IN_PROGRESS</code> - Indicates that Detective is verifying that
-        /// the account identifier and email address provided for the member account match. If
-        /// they do match, then Detective sends the invitation. If the email address and account
-        /// identifier don't match, then the member cannot be added to the behavior graph.
+        ///  <code>VERIFICATION_IN_PROGRESS</code> - For invited accounts only, indicates that
+        /// Detective is verifying that the account identifier and email address provided for
+        /// the member account match. If they do match, then Detective sends the invitation. If
+        /// the email address and account identifier don't match, then the member cannot be added
+        /// to the behavior graph.
+        /// </para>
+        ///  
+        /// <para>
+        /// For organization accounts in the organization behavior graph, indicates that Detective
+        /// is verifying that the account belongs to the organization.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>VERIFICATION_FAILED</code> - Indicates that the account and email address provided
-        /// for the member account do not match, and Detective did not send an invitation to the
-        /// account.
+        ///  <code>VERIFICATION_FAILED</code> - For invited accounts only. Indicates that the
+        /// account and email address provided for the member account do not match, and Detective
+        /// did not send an invitation to the account.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ENABLED</code> - Indicates that the member account accepted the invitation
-        /// to contribute to the behavior graph.
+        ///  <code>ENABLED</code> - Indicates that the member account currently contributes data
+        /// to the behavior graph. For invited accounts, the member account accepted the invitation.
+        /// For organization accounts in the organization behavior graph, the Detective administrator
+        /// account enabled the organization account as a member account.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ACCEPTED_BUT_DISABLED</code> - Indicates that the member account accepted the
-        /// invitation but is prevented from contributing data to the behavior graph. <code>DisabledReason</code>
-        /// provides the reason why the member account is not enabled.
+        ///  <code>ACCEPTED_BUT_DISABLED</code> - The account accepted the invitation, or was
+        /// enabled by the Detective administrator account, but is prevented from contributing
+        /// data to the behavior graph. <code>DisabledReason</code> provides the reason why the
+        /// member account is not enabled.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Member accounts that declined an invitation or that were removed from the behavior
-        /// graph are not included.
+        /// Invited accounts that declined an invitation or that were removed from the behavior
+        /// graph are not included. In the organization behavior graph, organization accounts
+        /// that the Detective administrator account did not enable are not included.
         /// </para>
         /// </summary>
         public MemberStatus Status
@@ -302,8 +343,8 @@ namespace Amazon.Detective.Model
         /// <summary>
         /// Gets and sets the property UpdatedTime. 
         /// <para>
-        /// The date and time that the member account was last updated. The value is in milliseconds
-        /// since the epoch.
+        /// The date and time that the member account was last updated. The value is an ISO8601
+        /// formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.
         /// </para>
         /// </summary>
         public DateTime UpdatedTime
@@ -339,7 +380,8 @@ namespace Amazon.Detective.Model
         /// <summary>
         /// Gets and sets the property VolumeUsageUpdatedTime. 
         /// <para>
-        /// The data and time when the member account data volume was last updated.
+        /// The data and time when the member account data volume was last updated. The value
+        /// is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.
         /// </para>
         /// </summary>
         public DateTime VolumeUsageUpdatedTime

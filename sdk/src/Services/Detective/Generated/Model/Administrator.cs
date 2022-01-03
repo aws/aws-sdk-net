@@ -29,18 +29,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Detective.Model
 {
     /// <summary>
-    /// A member account that was included in a request but for which the request could not
-    /// be processed.
+    /// Information about the Detective administrator account for an organization.
     /// </summary>
-    public partial class UnprocessedAccount
+    public partial class Administrator
     {
         private string _accountId;
-        private string _reason;
+        private DateTime? _delegationTime;
+        private string _graphArn;
 
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The Amazon Web Services account identifier of the member account that was not processed.
+        /// The Amazon Web Services account identifier of the Detective administrator account
+        /// for the organization.
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=12)]
@@ -57,21 +58,40 @@ namespace Amazon.Detective.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Reason. 
+        /// Gets and sets the property DelegationTime. 
         /// <para>
-        /// The reason that the member account request could not be processed.
+        /// The date and time when the Detective administrator account was enabled. The value
+        /// is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.
         /// </para>
         /// </summary>
-        public string Reason
+        public DateTime DelegationTime
         {
-            get { return this._reason; }
-            set { this._reason = value; }
+            get { return this._delegationTime.GetValueOrDefault(); }
+            set { this._delegationTime = value; }
         }
 
-        // Check to see if Reason property is set
-        internal bool IsSetReason()
+        // Check to see if DelegationTime property is set
+        internal bool IsSetDelegationTime()
         {
-            return this._reason != null;
+            return this._delegationTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property GraphArn. 
+        /// <para>
+        /// The ARN of the organization behavior graph.
+        /// </para>
+        /// </summary>
+        public string GraphArn
+        {
+            get { return this._graphArn; }
+            set { this._graphArn = value; }
+        }
+
+        // Check to see if GraphArn property is set
+        internal bool IsSetGraphArn()
+        {
+            return this._graphArn != null;
         }
 
     }

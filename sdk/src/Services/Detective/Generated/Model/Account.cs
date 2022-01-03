@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Detective.Model
 {
     /// <summary>
-    /// An AWS account that is the administrator account of or a member of a behavior graph.
+    /// An Amazon Web Services account that is the administrator account of or a member of
+    /// a behavior graph.
     /// </summary>
     public partial class Account
     {
@@ -39,7 +40,7 @@ namespace Amazon.Detective.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The account identifier of the AWS account.
+        /// The account identifier of the Amazon Web Services account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]
@@ -58,7 +59,8 @@ namespace Amazon.Detective.Model
         /// <summary>
         /// Gets and sets the property EmailAddress. 
         /// <para>
-        /// The AWS account root user email address for the AWS account.
+        /// The Amazon Web Services account root user email address for the Amazon Web Services
+        /// account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]

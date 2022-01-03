@@ -29,30 +29,38 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Detective.Model
 {
     /// <summary>
-    /// Container for the parameters to the DisassociateMembership operation.
-    /// Removes the member account from the specified behavior graph. This operation can only
-    /// be called by an invited member account that has the <code>ENABLED</code> status.
-    /// 
-    ///  
-    /// <para>
-    ///  <code>DisassociateMembership</code> cannot be called by an organization account in
-    /// the organization behavior graph. For the organization behavior graph, the Detective
-    /// administrator account determines which organization accounts to enable or disable
-    /// as member accounts.
-    /// </para>
+    /// Container for the parameters to the UpdateOrganizationConfiguration operation.
+    /// Updates the configuration for the Organizations integration in the current Region.
+    /// Can only be called by the Detective administrator account for the organization.
     /// </summary>
-    public partial class DisassociateMembershipRequest : AmazonDetectiveRequest
+    public partial class UpdateOrganizationConfigurationRequest : AmazonDetectiveRequest
     {
+        private bool? _autoEnable;
         private string _graphArn;
+
+        /// <summary>
+        /// Gets and sets the property AutoEnable. 
+        /// <para>
+        /// Indicates whether to automatically enable new organization accounts as member accounts
+        /// in the organization behavior graph.
+        /// </para>
+        /// </summary>
+        public bool AutoEnable
+        {
+            get { return this._autoEnable.GetValueOrDefault(); }
+            set { this._autoEnable = value; }
+        }
+
+        // Check to see if AutoEnable property is set
+        internal bool IsSetAutoEnable()
+        {
+            return this._autoEnable.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property GraphArn. 
         /// <para>
-        /// The ARN of the behavior graph to remove the member account from.
-        /// </para>
-        ///  
-        /// <para>
-        /// The member account's member status in the behavior graph must be <code>ENABLED</code>.
+        /// The ARN of the organization behavior graph.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

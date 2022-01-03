@@ -39,5 +39,10 @@ namespace Amazon.Detective.Model
         /// Paginator for ListMembers operation
         ///</summary>
         IListMembersPaginator ListMembers(ListMembersRequest request);
+
+        /// <summary>
+        /// Paginator for ListOrganizationAdminAccounts operation
+        ///</summary>
+        IListOrganizationAdminAccountsPaginator ListOrganizationAdminAccounts(ListOrganizationAdminAccountsRequest request);
     }
 }

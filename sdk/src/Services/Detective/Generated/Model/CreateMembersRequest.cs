@@ -30,10 +30,16 @@ namespace Amazon.Detective.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateMembers operation.
-    /// Sends a request to invite the specified AWS accounts to be member accounts in the
-    /// behavior graph. This operation can only be called by the administrator account for
-    /// a behavior graph. 
+    /// <code>CreateMembers</code> is used to send invitations to accounts. For the organization
+    /// behavior graph, the Detective administrator account uses <code>CreateMembers</code>
+    /// to enable organization accounts as member accounts.
     /// 
+    ///  
+    /// <para>
+    /// For invited accounts, <code>CreateMembers</code> sends a request to invite the specified
+    /// Amazon Web Services accounts to be member accounts in the behavior graph. This operation
+    /// can only be called by the administrator account for a behavior graph. 
+    /// </para>
     ///  
     /// <para>
     ///  <code>CreateMembers</code> verifies the accounts and then invites the verified accounts.
@@ -43,7 +49,13 @@ namespace Amazon.Detective.Model
     /// </para>
     ///  
     /// <para>
-    /// The request provides the behavior graph ARN and the list of accounts to invite.
+    /// For organization accounts in the organization behavior graph, <code>CreateMembers</code>
+    /// attempts to enable the accounts. The organization accounts do not receive invitations.
+    /// </para>
+    ///  
+    /// <para>
+    /// The request provides the behavior graph ARN and the list of accounts to invite or
+    /// to enable.
     /// </para>
     ///  
     /// <para>
@@ -51,9 +63,11 @@ namespace Amazon.Detective.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// The accounts that <code>CreateMembers</code> was able to start the verification for.
-    /// This list includes member accounts that are being verified, that have passed verification
-    /// and are to be invited, and that have failed verification.
+    /// The accounts that <code>CreateMembers</code> was able to process. For invited accounts,
+    /// includes member accounts that are being verified, that have passed verification and
+    /// are to be invited, and that have failed verification. For organization accounts in
+    /// the organization behavior graph, includes accounts that can be enabled and that cannot
+    /// be enabled.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -72,9 +86,11 @@ namespace Amazon.Detective.Model
         /// <summary>
         /// Gets and sets the property Accounts. 
         /// <para>
-        /// The list of AWS accounts to invite to become member accounts in the behavior graph.
-        /// You can invite up to 50 accounts at a time. For each invited account, the account
-        /// list contains the account identifier and the AWS account root user email address.
+        /// The list of Amazon Web Services accounts to invite or to enable. You can invite or
+        /// enable up to 50 accounts at a time. For each invited account, the account list contains
+        /// the account identifier and the Amazon Web Services account root user email address.
+        /// For organization accounts in the organization behavior graph, the email address is
+        /// not required.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=50)]
@@ -93,9 +109,13 @@ namespace Amazon.Detective.Model
         /// <summary>
         /// Gets and sets the property DisableEmailNotification. 
         /// <para>
-        /// if set to <code>true</code>, then the member accounts do not receive email notifications.
-        /// By default, this is set to <code>false</code>, and the member accounts receive email
+        /// if set to <code>true</code>, then the invited accounts do not receive email notifications.
+        /// By default, this is set to <code>false</code>, and the invited accounts receive email
         /// notifications.
+        /// </para>
+        ///  
+        /// <para>
+        /// Organization accounts in the organization behavior graph do not receive email notifications.
         /// </para>
         /// </summary>
         public bool DisableEmailNotification
@@ -113,8 +133,7 @@ namespace Amazon.Detective.Model
         /// <summary>
         /// Gets and sets the property GraphArn. 
         /// <para>
-        /// The ARN of the behavior graph to invite the member accounts to contribute their data
-        /// to.
+        /// The ARN of the behavior graph.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

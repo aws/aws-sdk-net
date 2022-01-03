@@ -29,30 +29,23 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Detective.Model
 {
     /// <summary>
-    /// Container for the parameters to the DisassociateMembership operation.
-    /// Removes the member account from the specified behavior graph. This operation can only
-    /// be called by an invited member account that has the <code>ENABLED</code> status.
+    /// Container for the parameters to the DescribeOrganizationConfiguration operation.
+    /// Returns information about the configuration for the organization behavior graph. Currently
+    /// indicates whether to automatically enable new organization accounts as member accounts.
     /// 
     ///  
     /// <para>
-    ///  <code>DisassociateMembership</code> cannot be called by an organization account in
-    /// the organization behavior graph. For the organization behavior graph, the Detective
-    /// administrator account determines which organization accounts to enable or disable
-    /// as member accounts.
+    /// Can only be called by the Detective administrator account for the organization. 
     /// </para>
     /// </summary>
-    public partial class DisassociateMembershipRequest : AmazonDetectiveRequest
+    public partial class DescribeOrganizationConfigurationRequest : AmazonDetectiveRequest
     {
         private string _graphArn;
 
         /// <summary>
         /// Gets and sets the property GraphArn. 
         /// <para>
-        /// The ARN of the behavior graph to remove the member account from.
-        /// </para>
-        ///  
-        /// <para>
-        /// The member account's member status in the behavior graph must be <code>ENABLED</code>.
+        /// The ARN of the organization behavior graph.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
