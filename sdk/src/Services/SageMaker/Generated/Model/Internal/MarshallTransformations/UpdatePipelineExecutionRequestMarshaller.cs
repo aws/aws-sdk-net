@@ -67,6 +67,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetParallelismConfiguration())
+                {
+                    context.Writer.WritePropertyName("ParallelismConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ParallelismConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ParallelismConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetPipelineExecutionArn())
                 {
                     context.Writer.WritePropertyName("PipelineExecutionArn");

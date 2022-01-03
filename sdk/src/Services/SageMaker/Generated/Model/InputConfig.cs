@@ -354,14 +354,15 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property FrameworkVersion. 
         /// <para>
-        /// Specifies the framework version to use.
+        /// Specifies the framework version to use. This API field is only supported for the PyTorch
+        /// and TensorFlow frameworks.
         /// </para>
         ///  
         /// <para>
-        /// This API field is only supported for PyTorch framework versions <code>1.4</code>,
-        /// <code>1.5</code>, and <code>1.6</code> for cloud instance target devices: <code>ml_c4</code>,
-        /// <code>ml_c5</code>, <code>ml_m4</code>, <code>ml_m5</code>, <code>ml_p2</code>, <code>ml_p3</code>,
-        /// and <code>ml_g4dn</code>.
+        /// For information about framework versions supported for cloud targets and edge devices,
+        /// see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-supported-cloud.html">Cloud
+        /// Supported Instance Types and Frameworks</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-supported-devices-edge-frameworks.html">Edge
+        /// Supported Frameworks</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=10)]

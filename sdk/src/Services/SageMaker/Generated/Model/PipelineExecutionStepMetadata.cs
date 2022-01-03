@@ -36,6 +36,7 @@ namespace Amazon.SageMaker.Model
         private CallbackStepMetadata _callback;
         private ClarifyCheckStepMetadata _clarifyCheck;
         private ConditionStepMetadata _condition;
+        private EMRStepMetadata _emr;
         private LambdaStepMetadata _lambda;
         private ModelStepMetadata _model;
         private ProcessingJobStepMetadata _processingJob;
@@ -133,6 +134,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetCondition()
         {
             return this._condition != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EMR. 
+        /// <para>
+        /// The configurations and outcomes of an EMR step execution.
+        /// </para>
+        /// </summary>
+        public EMRStepMetadata EMR
+        {
+            get { return this._emr; }
+            set { this._emr = value; }
+        }
+
+        // Check to see if EMR property is set
+        internal bool IsSetEMR()
+        {
+            return this._emr != null;
         }
 
         /// <summary>

@@ -78,10 +78,32 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.WritePropertyName("ClientRequestToken");
                     context.Writer.Write(Guid.NewGuid().ToString());                                                
                 }
+                if(publicRequest.IsSetParallelismConfiguration())
+                {
+                    context.Writer.WritePropertyName("ParallelismConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ParallelismConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ParallelismConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetPipelineDefinition())
                 {
                     context.Writer.WritePropertyName("PipelineDefinition");
                     context.Writer.Write(publicRequest.PipelineDefinition);
+                }
+
+                if(publicRequest.IsSetPipelineDefinitionS3Location())
+                {
+                    context.Writer.WritePropertyName("PipelineDefinitionS3Location");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = PipelineDefinitionS3LocationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.PipelineDefinitionS3Location, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetPipelineDescription())

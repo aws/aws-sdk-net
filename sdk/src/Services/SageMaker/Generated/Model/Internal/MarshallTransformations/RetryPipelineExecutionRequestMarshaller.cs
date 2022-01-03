@@ -78,6 +78,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.WritePropertyName("ClientRequestToken");
                     context.Writer.Write(Guid.NewGuid().ToString());                                                
                 }
+                if(publicRequest.IsSetParallelismConfiguration())
+                {
+                    context.Writer.WritePropertyName("ParallelismConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ParallelismConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ParallelismConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetPipelineExecutionArn())
                 {
                     context.Writer.WritePropertyName("PipelineExecutionArn");

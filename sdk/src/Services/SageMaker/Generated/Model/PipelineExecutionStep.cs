@@ -39,11 +39,17 @@ namespace Amazon.SageMaker.Model
         private string _failureReason;
         private PipelineExecutionStepMetadata _metadata;
         private DateTime? _startTime;
+        private string _stepDescription;
+        private string _stepDisplayName;
         private string _stepName;
         private StepStatus _stepStatus;
 
         /// <summary>
-        /// Gets and sets the property AttemptCount.
+        /// Gets and sets the property AttemptCount. 
+        /// <para>
+        /// The current attempt of the execution step. For more information, see <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/sagemaker/latest/dg/pipelines-retry-policy.html">Retry
+        /// Policy for Amazon SageMaker Pipelines steps</a>.
+        /// </para>
         /// </summary>
         public int AttemptCount
         {
@@ -150,12 +156,50 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property StepDescription. 
+        /// <para>
+        /// The description of the step.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=3072)]
+        public string StepDescription
+        {
+            get { return this._stepDescription; }
+            set { this._stepDescription = value; }
+        }
+
+        // Check to see if StepDescription property is set
+        internal bool IsSetStepDescription()
+        {
+            return this._stepDescription != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StepDisplayName. 
+        /// <para>
+        /// The display name of the step.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=256)]
+        public string StepDisplayName
+        {
+            get { return this._stepDisplayName; }
+            set { this._stepDisplayName = value; }
+        }
+
+        // Check to see if StepDisplayName property is set
+        internal bool IsSetStepDisplayName()
+        {
+            return this._stepDisplayName != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property StepName. 
         /// <para>
         /// The name of the step that is executed.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Max=64)]
         public string StepName
         {
             get { return this._stepName; }

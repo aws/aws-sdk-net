@@ -38,6 +38,7 @@ namespace Amazon.SageMaker.Model
         private UserContext _lastModifiedBy;
         private DateTime? _lastModifiedTime;
         private DateTime? _lastRunTime;
+        private ParallelismConfiguration _parallelismConfiguration;
         private string _pipelineArn;
         private string _pipelineDescription;
         private string _pipelineDisplayName;
@@ -128,6 +129,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetLastRunTime()
         {
             return this._lastRunTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ParallelismConfiguration. 
+        /// <para>
+        /// The parallelism configuration applied to the pipeline.
+        /// </para>
+        /// </summary>
+        public ParallelismConfiguration ParallelismConfiguration
+        {
+            get { return this._parallelismConfiguration; }
+            set { this._parallelismConfiguration = value; }
+        }
+
+        // Check to see if ParallelismConfiguration property is set
+        internal bool IsSetParallelismConfiguration()
+        {
+            return this._parallelismConfiguration != null;
         }
 
         /// <summary>

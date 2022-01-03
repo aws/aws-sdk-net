@@ -82,6 +82,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.Condition = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("EMR", targetDepth))
+                {
+                    var unmarshaller = EMRStepMetadataUnmarshaller.Instance;
+                    unmarshalledObject.EMR = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Lambda", targetDepth))
                 {
                     var unmarshaller = LambdaStepMetadataUnmarshaller.Instance;
