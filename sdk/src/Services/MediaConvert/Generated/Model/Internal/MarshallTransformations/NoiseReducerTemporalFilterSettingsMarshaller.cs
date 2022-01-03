@@ -57,6 +57,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.PostTemporalSharpening);
             }
 
+            if(requestObject.IsSetPostTemporalSharpeningStrength())
+            {
+                context.Writer.WritePropertyName("postTemporalSharpeningStrength");
+                context.Writer.Write(requestObject.PostTemporalSharpeningStrength);
+            }
+
             if(requestObject.IsSetSpeed())
             {
                 context.Writer.WritePropertyName("speed");
