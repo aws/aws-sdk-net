@@ -1,3 +1,20 @@
+### 3.7.182.0 (2022-01-03 19:22 UTC)
+* Detective (3.7.3.0)
+	* Added and updated API operations to support the Detective integration with AWS Organizations. New actions are used to manage the delegated administrator account and the integration configuration.
+* GreengrassV2 (3.7.4.0)
+	* This release adds the API operations to manage the Greengrass role associated with your account and to manage the core device connectivity information. Greengrass V2 customers can now depend solely on Greengrass V2 SDK for all the API operations needed to manage their fleets.
+* MediaConvert (3.7.11.0)
+	* AWS Elemental MediaConvert SDK has added strength levels to the Sharpness Filter and now permits OGG files to be specified as sidecar audio inputs.
+* RDS (3.7.8.7)
+	* Multiple doc-only updates for Relational Database Service (RDS)
+* SageMaker (3.7.25.0)
+	* The release allows users to pass pipeline definitions as Amazon S3 locations and control the pipeline execution concurrency using ParallelismConfiguration. It also adds support of EMR jobs as pipeline steps.
+* Core 3.7.5.9
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.181.0 (2021-12-21 23:34 UTC)
 * APIGateway (3.7.2.56)
 	* Adjusted rest-json content-type handling where operations are intended to take arbitrary input.
