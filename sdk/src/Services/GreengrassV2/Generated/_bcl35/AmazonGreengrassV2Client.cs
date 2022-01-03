@@ -273,13 +273,80 @@ namespace Amazon.GreengrassV2
         #endregion
 
 
+        #region  AssociateServiceRoleToAccount
+
+        /// <summary>
+        /// Associates a Greengrass service role with IoT Greengrass for your Amazon Web Services
+        /// account in this Amazon Web Services Region. IoT Greengrass uses this role to verify
+        /// the identity of client devices and manage core device connectivity information. The
+        /// role must include the <a href="https://console.aws.amazon.com/iam/home#/policies/arn:awsiam::aws:policy/service-role/AWSGreengrassResourceAccessRolePolicy">AWSGreengrassResourceAccessRolePolicy</a>
+        /// managed policy or a custom policy that defines equivalent permissions for the IoT
+        /// Greengrass features that you use. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-service-role.html">Greengrass
+        /// service role</a> in the <i>IoT Greengrass Version 2 Developer Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateServiceRoleToAccount service method.</param>
+        /// 
+        /// <returns>The response from the AssociateServiceRoleToAccount service method, as returned by GreengrassV2.</returns>
+        /// <exception cref="Amazon.GreengrassV2.Model.InternalServerException">
+        /// IoT Greengrass can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.GreengrassV2.Model.ValidationException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/AssociateServiceRoleToAccount">REST API Reference for AssociateServiceRoleToAccount Operation</seealso>
+        public virtual AssociateServiceRoleToAccountResponse AssociateServiceRoleToAccount(AssociateServiceRoleToAccountRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateServiceRoleToAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateServiceRoleToAccountResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateServiceRoleToAccountResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateServiceRoleToAccount operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateServiceRoleToAccount operation on AmazonGreengrassV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateServiceRoleToAccount
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/AssociateServiceRoleToAccount">REST API Reference for AssociateServiceRoleToAccount Operation</seealso>
+        public virtual IAsyncResult BeginAssociateServiceRoleToAccount(AssociateServiceRoleToAccountRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateServiceRoleToAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateServiceRoleToAccountResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AssociateServiceRoleToAccount operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateServiceRoleToAccount.</param>
+        /// 
+        /// <returns>Returns a  AssociateServiceRoleToAccountResult from GreengrassV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/AssociateServiceRoleToAccount">REST API Reference for AssociateServiceRoleToAccount Operation</seealso>
+        public virtual AssociateServiceRoleToAccountResponse EndAssociateServiceRoleToAccount(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AssociateServiceRoleToAccountResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  BatchAssociateClientDeviceWithCoreDevice
 
         /// <summary>
-        /// Associate a list of client devices with a core device. Use this API operation to specify
-        /// which client devices can discover a core device through cloud discovery. With cloud
-        /// discovery, client devices connect to IoT Greengrass to retrieve associated core devices'
-        /// connectivity information and certificates. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-cloud-discovery.html">Configure
+        /// Associates a list of client devices with a core device. Use this API operation to
+        /// specify which client devices can discover a core device through cloud discovery. With
+        /// cloud discovery, client devices connect to IoT Greengrass to retrieve associated core
+        /// devices' connectivity information and certificates. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-cloud-discovery.html">Configure
         /// cloud discovery</a> in the <i>IoT Greengrass V2 Developer Guide</i>.
         /// 
         ///  <note> 
@@ -361,8 +428,8 @@ namespace Amazon.GreengrassV2
         #region  BatchDisassociateClientDeviceFromCoreDevice
 
         /// <summary>
-        /// Disassociate a list of client devices from a core device. After you disassociate a
-        /// client device from a core device, the client device won't be able to use cloud discovery
+        /// Disassociates a list of client devices from a core device. After you disassociate
+        /// a client device from a core device, the client device won't be able to use cloud discovery
         /// to retrieve the core device's connectivity information and certificates.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchDisassociateClientDeviceFromCoreDevice service method.</param>
@@ -992,6 +1059,67 @@ namespace Amazon.GreengrassV2
 
         #endregion
         
+        #region  DisassociateServiceRoleFromAccount
+
+        /// <summary>
+        /// Disassociates the Greengrass service role from IoT Greengrass for your Amazon Web
+        /// Services account in this Amazon Web Services Region. Without a service role, IoT Greengrass
+        /// can't verify the identity of client devices or manage core device connectivity information.
+        /// For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-service-role.html">Greengrass
+        /// service role</a> in the <i>IoT Greengrass Version 2 Developer Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateServiceRoleFromAccount service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateServiceRoleFromAccount service method, as returned by GreengrassV2.</returns>
+        /// <exception cref="Amazon.GreengrassV2.Model.InternalServerException">
+        /// IoT Greengrass can't process your request right now. Try again later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/DisassociateServiceRoleFromAccount">REST API Reference for DisassociateServiceRoleFromAccount Operation</seealso>
+        public virtual DisassociateServiceRoleFromAccountResponse DisassociateServiceRoleFromAccount(DisassociateServiceRoleFromAccountRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateServiceRoleFromAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateServiceRoleFromAccountResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateServiceRoleFromAccountResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateServiceRoleFromAccount operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateServiceRoleFromAccount operation on AmazonGreengrassV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateServiceRoleFromAccount
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/DisassociateServiceRoleFromAccount">REST API Reference for DisassociateServiceRoleFromAccount Operation</seealso>
+        public virtual IAsyncResult BeginDisassociateServiceRoleFromAccount(DisassociateServiceRoleFromAccountRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateServiceRoleFromAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateServiceRoleFromAccountResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisassociateServiceRoleFromAccount operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateServiceRoleFromAccount.</param>
+        /// 
+        /// <returns>Returns a  DisassociateServiceRoleFromAccountResult from GreengrassV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/DisassociateServiceRoleFromAccount">REST API Reference for DisassociateServiceRoleFromAccount Operation</seealso>
+        public virtual DisassociateServiceRoleFromAccountResponse EndDisassociateServiceRoleFromAccount(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DisassociateServiceRoleFromAccountResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetComponent
 
         /// <summary>
@@ -1136,6 +1264,76 @@ namespace Amazon.GreengrassV2
 
         #endregion
         
+        #region  GetConnectivityInfo
+
+        /// <summary>
+        /// Retrieves connectivity information for a Greengrass core device.
+        /// 
+        ///  
+        /// <para>
+        /// Connectivity information includes endpoints and ports where client devices can connect
+        /// to an MQTT broker on the core device. When a client device calls the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-discover-api.html">Greengrass
+        /// discovery API</a>, IoT Greengrass returns connectivity information for all of the
+        /// core devices where the client device can connect. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/connect-client-devices.html">Connect
+        /// client devices to core devices</a> in the <i>IoT Greengrass Version 2 Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetConnectivityInfo service method.</param>
+        /// 
+        /// <returns>The response from the GetConnectivityInfo service method, as returned by GreengrassV2.</returns>
+        /// <exception cref="Amazon.GreengrassV2.Model.InternalServerException">
+        /// IoT Greengrass can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.GreengrassV2.Model.ValidationException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/GetConnectivityInfo">REST API Reference for GetConnectivityInfo Operation</seealso>
+        public virtual GetConnectivityInfoResponse GetConnectivityInfo(GetConnectivityInfoRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetConnectivityInfoRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetConnectivityInfoResponseUnmarshaller.Instance;
+
+            return Invoke<GetConnectivityInfoResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetConnectivityInfo operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetConnectivityInfo operation on AmazonGreengrassV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetConnectivityInfo
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/GetConnectivityInfo">REST API Reference for GetConnectivityInfo Operation</seealso>
+        public virtual IAsyncResult BeginGetConnectivityInfo(GetConnectivityInfoRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetConnectivityInfoRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetConnectivityInfoResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetConnectivityInfo operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetConnectivityInfo.</param>
+        /// 
+        /// <returns>Returns a  GetConnectivityInfoResult from GreengrassV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/GetConnectivityInfo">REST API Reference for GetConnectivityInfo Operation</seealso>
+        public virtual GetConnectivityInfoResponse EndGetConnectivityInfo(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetConnectivityInfoResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetCoreDevice
 
         /// <summary>
@@ -1274,6 +1472,67 @@ namespace Amazon.GreengrassV2
         public virtual GetDeploymentResponse EndGetDeployment(IAsyncResult asyncResult)
         {
             return EndInvoke<GetDeploymentResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetServiceRoleForAccount
+
+        /// <summary>
+        /// Gets the service role associated with IoT Greengrass for your Amazon Web Services
+        /// account in this Amazon Web Services Region. IoT Greengrass uses this role to verify
+        /// the identity of client devices and manage core device connectivity information. For
+        /// more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-service-role.html">Greengrass
+        /// service role</a> in the <i>IoT Greengrass Version 2 Developer Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetServiceRoleForAccount service method.</param>
+        /// 
+        /// <returns>The response from the GetServiceRoleForAccount service method, as returned by GreengrassV2.</returns>
+        /// <exception cref="Amazon.GreengrassV2.Model.InternalServerException">
+        /// IoT Greengrass can't process your request right now. Try again later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/GetServiceRoleForAccount">REST API Reference for GetServiceRoleForAccount Operation</seealso>
+        public virtual GetServiceRoleForAccountResponse GetServiceRoleForAccount(GetServiceRoleForAccountRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetServiceRoleForAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetServiceRoleForAccountResponseUnmarshaller.Instance;
+
+            return Invoke<GetServiceRoleForAccountResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetServiceRoleForAccount operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetServiceRoleForAccount operation on AmazonGreengrassV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetServiceRoleForAccount
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/GetServiceRoleForAccount">REST API Reference for GetServiceRoleForAccount Operation</seealso>
+        public virtual IAsyncResult BeginGetServiceRoleForAccount(GetServiceRoleForAccountRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetServiceRoleForAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetServiceRoleForAccountResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetServiceRoleForAccount operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetServiceRoleForAccount.</param>
+        /// 
+        /// <returns>Returns a  GetServiceRoleForAccountResult from GreengrassV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/GetServiceRoleForAccount">REST API Reference for GetServiceRoleForAccount Operation</seealso>
+        public virtual GetServiceRoleForAccountResponse EndGetServiceRoleForAccount(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetServiceRoleForAccountResponse>(asyncResult);
         }
 
         #endregion
@@ -2058,6 +2317,76 @@ namespace Amazon.GreengrassV2
         public virtual UntagResourceResponse EndUntagResource(IAsyncResult asyncResult)
         {
             return EndInvoke<UntagResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateConnectivityInfo
+
+        /// <summary>
+        /// Updates connectivity information for a Greengrass core device.
+        /// 
+        ///  
+        /// <para>
+        /// Connectivity information includes endpoints and ports where client devices can connect
+        /// to an MQTT broker on the core device. When a client device calls the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-discover-api.html">Greengrass
+        /// discovery API</a>, IoT Greengrass returns connectivity information for all of the
+        /// core devices where the client device can connect. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/connect-client-devices.html">Connect
+        /// client devices to core devices</a> in the <i>IoT Greengrass Version 2 Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConnectivityInfo service method.</param>
+        /// 
+        /// <returns>The response from the UpdateConnectivityInfo service method, as returned by GreengrassV2.</returns>
+        /// <exception cref="Amazon.GreengrassV2.Model.InternalServerException">
+        /// IoT Greengrass can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.GreengrassV2.Model.ValidationException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/UpdateConnectivityInfo">REST API Reference for UpdateConnectivityInfo Operation</seealso>
+        public virtual UpdateConnectivityInfoResponse UpdateConnectivityInfo(UpdateConnectivityInfoRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateConnectivityInfoRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateConnectivityInfoResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateConnectivityInfoResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateConnectivityInfo operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConnectivityInfo operation on AmazonGreengrassV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateConnectivityInfo
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/UpdateConnectivityInfo">REST API Reference for UpdateConnectivityInfo Operation</seealso>
+        public virtual IAsyncResult BeginUpdateConnectivityInfo(UpdateConnectivityInfoRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateConnectivityInfoRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateConnectivityInfoResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateConnectivityInfo operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateConnectivityInfo.</param>
+        /// 
+        /// <returns>Returns a  UpdateConnectivityInfoResult from GreengrassV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/UpdateConnectivityInfo">REST API Reference for UpdateConnectivityInfo Operation</seealso>
+        public virtual UpdateConnectivityInfoResponse EndUpdateConnectivityInfo(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateConnectivityInfoResponse>(asyncResult);
         }
 
         #endregion

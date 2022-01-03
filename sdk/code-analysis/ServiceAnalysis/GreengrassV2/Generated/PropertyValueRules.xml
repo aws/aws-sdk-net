@@ -112,6 +112,11 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GreengrassV2.Model.GetConnectivityInfoRequest.ThingName</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GreengrassV2.Model.GetCoreDeviceRequest.CoreDeviceThingName</property>
     <min>1</min>
     <max>128</max>
@@ -231,6 +236,11 @@
     <pattern>arn:aws(-cn|-us-gov)?:greengrass:[^:]+:(aws|[0-9]+):(components|deployments|coreDevices):.+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GreengrassV2.Model.UpdateConnectivityInfoRequest.ThingName</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GreengrassV2.Model.AssociateClientDeviceWithCoreDeviceEntry.ThingName</property>
     <min>1</min>
     <max>128</max>
@@ -339,6 +349,11 @@
     <min>1</min>
     <max>64</max>
     <pattern>[0-9a-zA-Z-.+]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GreengrassV2.Model.ConnectivityInfo.PortNumber</property>
+    <min>0</min>
+    <max>65535</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GreengrassV2.Model.CoreDevice.CoreDeviceThingName</property>

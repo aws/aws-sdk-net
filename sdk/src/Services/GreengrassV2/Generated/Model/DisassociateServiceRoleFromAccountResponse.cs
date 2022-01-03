@@ -29,30 +29,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GreengrassV2.Model
 {
     /// <summary>
-    /// This is the response object from the BatchDisassociateClientDeviceFromCoreDevice operation.
+    /// This is the response object from the DisassociateServiceRoleFromAccount operation.
     /// </summary>
-    public partial class BatchDisassociateClientDeviceFromCoreDeviceResponse : AmazonWebServiceResponse
+    public partial class DisassociateServiceRoleFromAccountResponse : AmazonWebServiceResponse
     {
-        private List<DisassociateClientDeviceFromCoreDeviceErrorEntry> _errorEntries = new List<DisassociateClientDeviceFromCoreDeviceErrorEntry>();
+        private string _disassociatedAt;
 
         /// <summary>
-        /// Gets and sets the property ErrorEntries. 
+        /// Gets and sets the property DisassociatedAt. 
         /// <para>
-        /// The list of any errors for the entries in the request. Each error entry contains the
-        /// name of the IoT thing that failed to disassociate.
+        /// The time when the service role was disassociated from IoT Greengrass for your Amazon
+        /// Web Services account in this Amazon Web Services Region.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
-        public List<DisassociateClientDeviceFromCoreDeviceErrorEntry> ErrorEntries
+        public string DisassociatedAt
         {
-            get { return this._errorEntries; }
-            set { this._errorEntries = value; }
+            get { return this._disassociatedAt; }
+            set { this._disassociatedAt = value; }
         }
 
-        // Check to see if ErrorEntries property is set
-        internal bool IsSetErrorEntries()
+        // Check to see if DisassociatedAt property is set
+        internal bool IsSetDisassociatedAt()
         {
-            return this._errorEntries != null && this._errorEntries.Count > 0; 
+            return this._disassociatedAt != null;
         }
 
     }

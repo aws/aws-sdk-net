@@ -29,30 +29,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GreengrassV2.Model
 {
     /// <summary>
-    /// This is the response object from the BatchDisassociateClientDeviceFromCoreDevice operation.
+    /// This is the response object from the AssociateServiceRoleToAccount operation.
     /// </summary>
-    public partial class BatchDisassociateClientDeviceFromCoreDeviceResponse : AmazonWebServiceResponse
+    public partial class AssociateServiceRoleToAccountResponse : AmazonWebServiceResponse
     {
-        private List<DisassociateClientDeviceFromCoreDeviceErrorEntry> _errorEntries = new List<DisassociateClientDeviceFromCoreDeviceErrorEntry>();
+        private string _associatedAt;
 
         /// <summary>
-        /// Gets and sets the property ErrorEntries. 
+        /// Gets and sets the property AssociatedAt. 
         /// <para>
-        /// The list of any errors for the entries in the request. Each error entry contains the
-        /// name of the IoT thing that failed to disassociate.
+        /// The time when the service role was associated with IoT Greengrass for your Amazon
+        /// Web Services account in this Amazon Web Services Region.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
-        public List<DisassociateClientDeviceFromCoreDeviceErrorEntry> ErrorEntries
+        public string AssociatedAt
         {
-            get { return this._errorEntries; }
-            set { this._errorEntries = value; }
+            get { return this._associatedAt; }
+            set { this._associatedAt = value; }
         }
 
-        // Check to see if ErrorEntries property is set
-        internal bool IsSetErrorEntries()
+        // Check to see if AssociatedAt property is set
+        internal bool IsSetAssociatedAt()
         {
-            return this._errorEntries != null && this._errorEntries.Count > 0; 
+            return this._associatedAt != null;
         }
 
     }
