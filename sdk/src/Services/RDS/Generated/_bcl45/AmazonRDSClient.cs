@@ -1611,8 +1611,8 @@ namespace Amazon.RDS
         /// <para>
         /// Amazon RDS, which is a fully managed service, supplies the Amazon Machine Image (AMI)
         /// and database software. The Amazon RDS database software is preinstalled, so you need
-        /// only select a DB engine and version, and create your database. With Amazon RDS Custom,
-        /// you upload your database installation files in Amazon S3.
+        /// only select a DB engine and version, and create your database. With Amazon RDS Custom
+        /// for Oracle, you upload your database installation files in Amazon S3.
         /// </para>
         ///  
         /// <para>
@@ -1680,8 +1680,8 @@ namespace Amazon.RDS
         /// <para>
         /// Amazon RDS, which is a fully managed service, supplies the Amazon Machine Image (AMI)
         /// and database software. The Amazon RDS database software is preinstalled, so you need
-        /// only select a DB engine and version, and create your database. With Amazon RDS Custom,
-        /// you upload your database installation files in Amazon S3.
+        /// only select a DB engine and version, and create your database. With Amazon RDS Custom
+        /// for Oracle, you upload your database installation files in Amazon S3.
         /// </para>
         ///  
         /// <para>

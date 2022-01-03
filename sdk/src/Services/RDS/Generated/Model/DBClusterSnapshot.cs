@@ -400,8 +400,21 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Specifies the status of this DB cluster snapshot.
+        /// Specifies the status of this DB cluster snapshot. Valid statuses are the following:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>available</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>copying</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>creating</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string Status
         {

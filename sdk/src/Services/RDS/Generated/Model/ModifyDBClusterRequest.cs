@@ -663,8 +663,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// To list all of the available engine versions for MySQL 5.7-compatible Aurora, use
-        /// the following command:
+        /// To list all of the available engine versions for MySQL 5.7-compatible and MySQL 8.0-compatible
+        /// Aurora, use the following command:
         /// </para>
         ///  
         /// <para>
@@ -1119,17 +1119,15 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  Valid values: <code>standard | gp2 | io1</code> 
+        ///  Valid values: <code>io1</code> 
         /// </para>
         ///  
         /// <para>
-        ///  If you specify <code>io1</code>, you must also include a value for the <code>Iops</code>
-        /// parameter. 
+        ///  When specified, a value for the <code>Iops</code> parameter is required. 
         /// </para>
         ///  
         /// <para>
-        ///  Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise
-        /// <code>gp2</code> 
+        ///  Default: <code>io1</code> 
         /// </para>
         ///  
         /// <para>

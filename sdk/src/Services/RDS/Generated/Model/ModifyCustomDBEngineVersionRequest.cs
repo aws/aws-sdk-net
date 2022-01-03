@@ -97,8 +97,8 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property EngineVersion. 
         /// <para>
         /// The custom engine version (CEV) that you want to modify. This option is required for
-        /// RDS Custom, but optional for Amazon RDS. The combination of <code>Engine</code> and
-        /// <code>EngineVersion</code> is unique per customer per Amazon Web Services Region.
+        /// RDS Custom for Oracle, but optional for Amazon RDS. The combination of <code>Engine</code>
+        /// and <code>EngineVersion</code> is unique per customer per Amazon Web Services Region.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=60)]

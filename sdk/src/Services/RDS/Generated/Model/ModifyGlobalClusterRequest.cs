@@ -118,7 +118,7 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// To list all of the available engine versions for <code>aurora-mysql</code> (for MySQL
-        /// 5.7-compatible Aurora), use the following command:
+        /// 5.7-compatible and MySQL 8.0-compatible Aurora), use the following command:
         /// </para>
         ///  
         /// <para>
