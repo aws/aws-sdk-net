@@ -15,6 +15,8 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Amazon EMR. Amazon Elastic MapReduce (Amazon EMR) is a web service that makes it easy to quickly and cost-effectively process vast amounts of data.")]
 #elif NETCOREAPP3_1
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET Core 3.1) - Amazon EMR. Amazon Elastic MapReduce (Amazon EMR) is a web service that makes it easy to quickly and cost-effectively process vast amounts of data.")]
+#elif NET6_0
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (6.0) - Amazon EMR. Amazon Elastic MapReduce (Amazon EMR) is a web service that makes it easy to quickly and cost-effectively process vast amounts of data.")]
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
 #endif

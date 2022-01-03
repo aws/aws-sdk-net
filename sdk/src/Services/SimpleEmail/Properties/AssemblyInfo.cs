@@ -15,6 +15,8 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Amazon Simple Email Service. Amazon SES is an outbound-only email-sending service that provides an easy, cost-effective way for you to send email.")]
 #elif NETCOREAPP3_1
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET Core 3.1) - Amazon Simple Email Service. Amazon SES is an outbound-only email-sending service that provides an easy, cost-effective way for you to send email.")]
+#elif NET6_0
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (6.0) - Amazon Simple Email Service. Amazon SES is an outbound-only email-sending service that provides an easy, cost-effective way for you to send email.")]
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
 #endif

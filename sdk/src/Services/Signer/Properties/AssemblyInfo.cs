@@ -15,6 +15,8 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - AWS Signer. With code signing for IoT, you can sign code that you create for any IoT device that is supported by Amazon Web Services (AWS). Code signing is available through Amazon FreeRTOS and AWS IoT Device Management, and integrated with AWS Certificate Manager (ACM).")]
 #elif NETCOREAPP3_1
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET Core 3.1) - AWS Signer. With code signing for IoT, you can sign code that you create for any IoT device that is supported by Amazon Web Services (AWS). Code signing is available through Amazon FreeRTOS and AWS IoT Device Management, and integrated with AWS Certificate Manager (ACM).")]
+#elif NET6_0
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (6.0) - AWS Signer. With code signing for IoT, you can sign code that you create for any IoT device that is supported by Amazon Web Services (AWS). Code signing is available through Amazon FreeRTOS and AWS IoT Device Management, and integrated with AWS Certificate Manager (ACM).")]
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
 #endif

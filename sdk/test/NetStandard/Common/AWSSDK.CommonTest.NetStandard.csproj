@@ -1,9 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netcoreapp3.1</TargetFrameworks>
+    <TargetFrameworks>netcoreapp3.1;net6.0</TargetFrameworks>
     <DefineConstants>$(DefineConstants);NETSTANDARD</DefineConstants>
     <DefineConstants Condition="'$(TargetFramework)' == 'netcoreapp3.1'">$(DefineConstants)</DefineConstants>
+	<DefineConstants Condition="'$(TargetFramework)' == 'net6.0'">$(DefineConstants)</DefineConstants>
   </PropertyGroup>
 
   <ItemGroup>

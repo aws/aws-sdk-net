@@ -15,6 +15,8 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - AWS Resource Groups Tagging API. Resource Groups Tagging APIs can help you organize your resources and enable you to simplify resource management, access management, and cost allocation.")]
 #elif NETCOREAPP3_1
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET Core 3.1) - AWS Resource Groups Tagging API. Resource Groups Tagging APIs can help you organize your resources and enable you to simplify resource management, access management, and cost allocation.")]
+#elif NET6_0
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (6.0) - AWS Resource Groups Tagging API. Resource Groups Tagging APIs can help you organize your resources and enable you to simplify resource management, access management, and cost allocation.")]
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
 #endif

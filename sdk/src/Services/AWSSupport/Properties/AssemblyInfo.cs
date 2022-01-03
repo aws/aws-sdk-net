@@ -15,6 +15,8 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - AWS Support. The AWS Support API provides methods for creating and managing AWS Support cases and for retrieving the results of AWS Trusted Advisor checks.")]
 #elif NETCOREAPP3_1
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET Core 3.1) - AWS Support. The AWS Support API provides methods for creating and managing AWS Support cases and for retrieving the results of AWS Trusted Advisor checks.")]
+#elif NET6_0
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (6.0) - AWS Support. The AWS Support API provides methods for creating and managing AWS Support cases and for retrieving the results of AWS Trusted Advisor checks.")]
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
 #endif

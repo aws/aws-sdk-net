@@ -15,6 +15,8 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - AWSServerlessApplicationRepository. First release of the AWS Serverless Application Repository SDK.")]
 #elif NETCOREAPP3_1
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET Core 3.1) - AWSServerlessApplicationRepository. First release of the AWS Serverless Application Repository SDK.")]
+#elif NET6_0
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (6.0) - AWSServerlessApplicationRepository. First release of the AWS Serverless Application Repository SDK.")]
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
 #endif

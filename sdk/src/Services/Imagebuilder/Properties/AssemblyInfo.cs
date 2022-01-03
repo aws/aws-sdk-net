@@ -15,6 +15,8 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - EC2 Image Builder. This is the first release of EC2 Image Builder, a service that provides a managed experience for automating the creation of EC2 AMIs.")]
 #elif NETCOREAPP3_1
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET Core 3.1) - EC2 Image Builder. This is the first release of EC2 Image Builder, a service that provides a managed experience for automating the creation of EC2 AMIs.")]
+#elif NET6_0
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (6.0) - EC2 Image Builder. This is the first release of EC2 Image Builder, a service that provides a managed experience for automating the creation of EC2 AMIs.")]
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
 #endif

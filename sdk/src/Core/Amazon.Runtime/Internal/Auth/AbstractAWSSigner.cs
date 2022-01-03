@@ -26,6 +26,7 @@ namespace Amazon.Runtime.Internal.Auth
 
     public abstract class AbstractAWSSigner
     {
+        private object _lock = new object();
         private AWS4Signer _aws4Signer;
         private AWS4Signer AWS4SignerInstance
         {
@@ -33,7 +34,7 @@ namespace Amazon.Runtime.Internal.Auth
             {
                 if (_aws4Signer == null)
                 {
-                    lock (this)
+                    lock (_lock)
                     {
                         if (_aws4Signer == null)
                             _aws4Signer = new AWS4Signer();

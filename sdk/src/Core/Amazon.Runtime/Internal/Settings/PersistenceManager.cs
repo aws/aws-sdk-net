@@ -231,7 +231,7 @@ namespace Amazon.Runtime.Internal.Settings
             }
         }
 
-        SettingsCollection loadSettingsType(string type)
+        private static SettingsCollection loadSettingsType(string type)
         {
             var filePath = getFileFromType(type);
             if(!File.Exists(filePath))

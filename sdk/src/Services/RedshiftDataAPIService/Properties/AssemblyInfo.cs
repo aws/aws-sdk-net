@@ -15,6 +15,8 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Redshift Data API Service. The Amazon Redshift Data API is generally available. This release enables querying Amazon Redshift data and listing various database objects.")]
 #elif NETCOREAPP3_1
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET Core 3.1) - Redshift Data API Service. The Amazon Redshift Data API is generally available. This release enables querying Amazon Redshift data and listing various database objects.")]
+#elif NET6_0
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (6.0) - Redshift Data API Service. The Amazon Redshift Data API is generally available. This release enables querying Amazon Redshift data and listing various database objects.")]
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
 #endif

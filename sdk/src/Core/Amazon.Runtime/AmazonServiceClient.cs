@@ -31,6 +31,7 @@ namespace Amazon.Runtime
 {
     public abstract class AmazonServiceClient : IDisposable
     {
+        private object _lock = new object();
         private bool _disposed;
         private Logger _logger;
         protected EndpointDiscoveryResolverBase EndpointDiscoveryResolver { get; private set; }
@@ -55,14 +56,14 @@ namespace Amazon.Runtime
         {
             add
             {
-                lock (this)
+                lock (_lock)
                 {
                     mBeforeMarshallingEvent += value;
                 }
             }
             remove
             {
-                lock (this)
+                lock (_lock)
                 {
                     mBeforeMarshallingEvent -= value;
                 }
@@ -79,14 +80,14 @@ namespace Amazon.Runtime
         {
             add
             {
-                lock (this)
+                lock (_lock)
                 {
                     mBeforeRequestEvent += value;
                 }
             }
             remove
             {
-                lock (this)
+                lock (_lock)
                 {
                     mBeforeRequestEvent -= value;
                 }
@@ -102,14 +103,14 @@ namespace Amazon.Runtime
         {
             add
             {
-                lock (this)
+                lock (_lock)
                 {
                     mAfterResponseEvent += value;
                 }
             }
             remove
             {
-                lock (this)
+                lock (_lock)
                 {
                     mAfterResponseEvent -= value;
                 }
@@ -125,14 +126,14 @@ namespace Amazon.Runtime
         {
             add
             {
-                lock (this)
+                lock (_lock)
                 {
                     mExceptionEvent += value;
                 }
             }
             remove
             {
-                lock (this)
+                lock (_lock)
                 {
                     mExceptionEvent -= value;
                 }

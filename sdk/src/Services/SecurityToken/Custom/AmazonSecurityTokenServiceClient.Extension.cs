@@ -62,7 +62,7 @@ namespace Amazon.SecurityToken
             }
         }
 
-        private AssumeRoleWithWebIdentityRequest SetupAssumeRoleWithWebIdentityRequest(string webIdentityToken, string roleArn,
+        private static AssumeRoleWithWebIdentityRequest SetupAssumeRoleWithWebIdentityRequest(string webIdentityToken, string roleArn,
             string roleSessionName, AssumeRoleWithWebIdentityCredentialsOptions options)
         {
             var request = new AssumeRoleWithWebIdentityRequest

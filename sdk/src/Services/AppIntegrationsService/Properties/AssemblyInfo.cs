@@ -15,6 +15,8 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Amazon AppIntegrations Service. The Amazon AppIntegrations service (in preview release) enables you to configure and reuse connections to external applications.")]
 #elif NETCOREAPP3_1
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET Core 3.1) - Amazon AppIntegrations Service. The Amazon AppIntegrations service (in preview release) enables you to configure and reuse connections to external applications.")]
+#elif NET6_0
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (6.0) - Amazon AppIntegrations Service. The Amazon AppIntegrations service (in preview release) enables you to configure and reuse connections to external applications.")]
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
 #endif

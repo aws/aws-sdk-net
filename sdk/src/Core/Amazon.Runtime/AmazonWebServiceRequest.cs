@@ -23,6 +23,7 @@ namespace Amazon.Runtime
     /// </summary>
     public abstract partial class AmazonWebServiceRequest : Amazon.Runtime.Internal.IAmazonWebServiceRequest
     {
+        private object _lock = new object();
         internal RequestEventHandler mBeforeRequestEvent;
         internal string UserAgentAddition { get; set; } = null;
 
@@ -30,14 +31,14 @@ namespace Amazon.Runtime
         {
             add
             {
-                lock (this)
+                lock (_lock)
                 {
                     mBeforeRequestEvent += value;
                 }
             }
             remove
             {
-                lock (this)
+                lock (_lock)
                 {
                     mBeforeRequestEvent -= value;
                 }

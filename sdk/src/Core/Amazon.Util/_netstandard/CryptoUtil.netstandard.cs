@@ -118,7 +118,7 @@ namespace Amazon.Util
                 }
             }
 
-            KeyedHashAlgorithm CreateKeyedHashAlgorithm(SigningAlgorithm algorithmName)
+            private static KeyedHashAlgorithm CreateKeyedHashAlgorithm(SigningAlgorithm algorithmName)
             {
                 KeyedHashAlgorithm algorithm;
                 switch (algorithmName)

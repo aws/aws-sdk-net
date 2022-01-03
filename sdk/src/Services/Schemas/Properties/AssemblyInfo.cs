@@ -15,6 +15,8 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Schemas. This release introduces support for Amazon EventBridge schema registry, making it easy to discover and write code for events in EventBridge.")]
 #elif NETCOREAPP3_1
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET Core 3.1) - Schemas. This release introduces support for Amazon EventBridge schema registry, making it easy to discover and write code for events in EventBridge.")]
+#elif NET6_0
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (6.0) - Schemas. This release introduces support for Amazon EventBridge schema registry, making it easy to discover and write code for events in EventBridge.")]
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
 #endif

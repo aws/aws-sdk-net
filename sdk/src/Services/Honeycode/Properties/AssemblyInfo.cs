@@ -15,6 +15,8 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Amazon Honeycode. Introducing Amazon Honeycode - a fully managed service that allows you to quickly build mobile and web apps for teams without programming.")]
 #elif NETCOREAPP3_1
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET Core 3.1) - Amazon Honeycode. Introducing Amazon Honeycode - a fully managed service that allows you to quickly build mobile and web apps for teams without programming.")]
+#elif NET6_0
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (6.0) - Amazon Honeycode. Introducing Amazon Honeycode - a fully managed service that allows you to quickly build mobile and web apps for teams without programming.")]
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
 #endif

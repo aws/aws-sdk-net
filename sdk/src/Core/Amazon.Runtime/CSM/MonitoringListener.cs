@@ -63,6 +63,9 @@ namespace Amazon.Runtime
         /// <summary>
         /// Method to post UDP datagram for sync calls
         /// </summary>
+#if !BCL
+        [Obsolete("Use PostMessagesOverUDPAsync instead.")]
+#endif
         public void PostMessagesOverUDP(string response)
         {
 #if BCL

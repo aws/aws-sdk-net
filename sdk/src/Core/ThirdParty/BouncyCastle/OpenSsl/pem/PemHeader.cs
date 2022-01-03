@@ -63,7 +63,7 @@ namespace ThirdParty.BouncyCastle.Utilities.IO.Pem
                 && string.Equals(this.val, other.val);
 		}
 
-		private int GetHashCode(string s)
+		private static int GetHashCode(string s)
 		{
 			if (s == null)
 			{

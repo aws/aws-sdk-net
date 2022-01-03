@@ -15,6 +15,8 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - AWS Elemental MediaLive. AWS Elemental MediaLive is a video service that lets you easily create live outputs for broadcast and streaming delivery.")]
 #elif NETCOREAPP3_1
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET Core 3.1) - AWS Elemental MediaLive. AWS Elemental MediaLive is a video service that lets you easily create live outputs for broadcast and streaming delivery.")]
+#elif NET6_0
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (6.0) - AWS Elemental MediaLive. AWS Elemental MediaLive is a video service that lets you easily create live outputs for broadcast and streaming delivery.")]
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
 #endif

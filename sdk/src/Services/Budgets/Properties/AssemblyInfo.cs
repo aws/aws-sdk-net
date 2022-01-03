@@ -15,6 +15,8 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - AWS Budgets. AWS Budget service will provide create/get/list/update/delete budgets for cost management. ")]
 #elif NETCOREAPP3_1
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET Core 3.1) - AWS Budgets. AWS Budget service will provide create/get/list/update/delete budgets for cost management. ")]
+#elif NET6_0
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (6.0) - AWS Budgets. AWS Budget service will provide create/get/list/update/delete budgets for cost management. ")]
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
 #endif

@@ -15,6 +15,8 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Amazon Inspector. Amazon Inspector identifies security issues in your application deployments.")]
 #elif NETCOREAPP3_1
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET Core 3.1) - Amazon Inspector. Amazon Inspector identifies security issues in your application deployments.")]
+#elif NET6_0
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (6.0) - Amazon Inspector. Amazon Inspector identifies security issues in your application deployments.")]
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
 #endif
