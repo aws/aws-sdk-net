@@ -274,7 +274,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property HomeEfsFileSystemKmsKeyId. 
         /// <para>
-        /// This member is deprecated and replaced with <code>KmsKeyId</code>.
+        /// Use <code>KmsKeyId</code>.
         /// </para>
         /// </summary>
         [Obsolete("This property is deprecated, use KmsKeyId instead.")]

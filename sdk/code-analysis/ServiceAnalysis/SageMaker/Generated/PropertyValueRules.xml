@@ -5630,6 +5630,22 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.EMRStepMetadata.ClusterId</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.EMRStepMetadata.LogFilePath</property>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.EMRStepMetadata.StepId</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.EMRStepMetadata.StepName</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.Endpoint.EndpointArn</property>
     <min>20</min>
     <max>2048</max>
@@ -7040,6 +7056,10 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.ParallelismConfiguration.MaxParallelExecutionSteps</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.Parameter.Name</property>
     <min>1</min>
     <max>256</max>
@@ -7135,6 +7155,24 @@
     <pattern>^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.PipelineDefinitionS3Location.Bucket</property>
+    <min>3</min>
+    <max>63</max>
+    <pattern>[a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9]</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.PipelineDefinitionS3Location.ObjectKey</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.PipelineDefinitionS3Location.VersionId</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.PipelineExecution.FailureReason</property>
     <max>1300</max>
     <pattern>.*</pattern>
@@ -7166,9 +7204,21 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.SageMaker.Model.PipelineExecutionStep.StepName</property>
+    <property>Amazon.SageMaker.Model.PipelineExecutionStep.StepDescription</property>
+    <min>0</min>
+    <max>3072</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.PipelineExecutionStep.StepDisplayName</property>
+    <min>0</min>
     <max>256</max>
     <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.PipelineExecutionStep.StepName</property>
+    <max>64</max>
+    <pattern>^[A-Za-z0-9\-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.PipelineExecutionSummary.PipelineExecutionArn</property>
