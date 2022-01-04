@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.7.182.0",
+    "ProductVersion" : "3.7.183.0",
     "CoreVersion"    : "3.7.5.9",
     "OverrideCoreVersion" : "3.3",
     "DefaultToPreview"    : false,
@@ -314,7 +314,7 @@
             "InPreview"               : false
         },
         "S3"                   : {
-            "Version" : "3.7.7.6",
+            "Version" : "3.7.7.7",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.5.9"
@@ -610,7 +610,7 @@
             "InPreview"               : false
         },
         "Rekognition"                     : {
-            "Version" : "3.7.6.5",
+            "Version" : "3.7.7.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.5.9"
@@ -1194,7 +1194,7 @@
             "InPreview"               : false
         },
         "S3Control"                       : {
-            "Version" : "3.7.4.7",
+            "Version" : "3.7.4.8",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.5.9"
