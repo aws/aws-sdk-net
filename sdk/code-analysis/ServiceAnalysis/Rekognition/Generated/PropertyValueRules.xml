@@ -907,6 +907,10 @@
     <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Rekognition.Model.Face.IndexFacesModelVersion</property>
+    <pattern>[0-9\.]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Rekognition.Model.FaceDetail.Confidence</property>
     <min>0</min>
     <max>100</max>

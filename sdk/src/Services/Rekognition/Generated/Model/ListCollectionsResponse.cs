@@ -58,9 +58,10 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property FaceModelVersions. 
         /// <para>
-        /// Version numbers of the face detection models associated with the collections in the
-        /// array <code>CollectionIds</code>. For example, the value of <code>FaceModelVersions[2]</code>
-        /// is the version number for the face detection model used by the collection in <code>CollectionId[2]</code>.
+        /// Latest face models being used with the corresponding collections in the array. For
+        /// more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/face-detection-model.html">Model
+        /// versioning</a>. For example, the value of <code>FaceModelVersions[2]</code> is the
+        /// version number for the face detection model used by the collection in <code>CollectionId[2]</code>.
         /// </para>
         /// </summary>
         public List<string> FaceModelVersions
