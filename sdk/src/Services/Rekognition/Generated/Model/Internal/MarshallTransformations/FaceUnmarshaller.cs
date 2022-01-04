@@ -94,6 +94,12 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                     unmarshalledObject.ImageId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("IndexFacesModelVersion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.IndexFacesModelVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;
