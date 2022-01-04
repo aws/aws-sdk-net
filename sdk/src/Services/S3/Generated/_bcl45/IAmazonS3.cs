@@ -14691,11 +14691,10 @@ namespace Amazon.S3
         /// </para>
         ///  <important> 
         /// <para>
-        /// If your CreateBucket request includes the <code>BucketOwnerEnforced</code> value for
-        /// the <code>x-amz-object-ownership</code> header, your request can either not specify
-        /// an ACL or specify bucket owner full control ACLs, such as the <code>bucket-owner-full-control</code>
-        /// canned ACL or an equivalent ACL expressed in the XML format. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Controlling
+        /// If your CreateBucket request sets bucket owner enforced for S3 Object Ownership and
+        /// specifies a bucket ACL that provides access to an external Amazon Web Services account,
+        /// your request fails with a <code>400</code> error and returns the <code>InvalidBucketAclWithObjectOwnership</code>
+        /// error code. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Controlling
         /// object ownership</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </important> 
@@ -14891,11 +14890,10 @@ namespace Amazon.S3
         /// </para>
         ///  <important> 
         /// <para>
-        /// If your CreateBucket request includes the <code>BucketOwnerEnforced</code> value for
-        /// the <code>x-amz-object-ownership</code> header, your request can either not specify
-        /// an ACL or specify bucket owner full control ACLs, such as the <code>bucket-owner-full-control</code>
-        /// canned ACL or an equivalent ACL expressed in the XML format. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Controlling
+        /// If your CreateBucket request sets bucket owner enforced for S3 Object Ownership and
+        /// specifies a bucket ACL that provides access to an external Amazon Web Services account,
+        /// your request fails with a <code>400</code> error and returns the <code>InvalidBucketAclWithObjectOwnership</code>
+        /// error code. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Controlling
         /// object ownership</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </important> 
@@ -15092,11 +15090,10 @@ namespace Amazon.S3
         /// </para>
         ///  <important> 
         /// <para>
-        /// If your CreateBucket request includes the <code>BucketOwnerEnforced</code> value for
-        /// the <code>x-amz-object-ownership</code> header, your request can either not specify
-        /// an ACL or specify bucket owner full control ACLs, such as the <code>bucket-owner-full-control</code>
-        /// canned ACL or an equivalent ACL expressed in the XML format. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Controlling
+        /// If your CreateBucket request sets bucket owner enforced for S3 Object Ownership and
+        /// specifies a bucket ACL that provides access to an external Amazon Web Services account,
+        /// your request fails with a <code>400</code> error and returns the <code>InvalidBucketAclWithObjectOwnership</code>
+        /// error code. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Controlling
         /// object ownership</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </important> 
@@ -15296,11 +15293,10 @@ namespace Amazon.S3
         /// </para>
         ///  <important> 
         /// <para>
-        /// If your CreateBucket request includes the <code>BucketOwnerEnforced</code> value for
-        /// the <code>x-amz-object-ownership</code> header, your request can either not specify
-        /// an ACL or specify bucket owner full control ACLs, such as the <code>bucket-owner-full-control</code>
-        /// canned ACL or an equivalent ACL expressed in the XML format. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Controlling
+        /// If your CreateBucket request sets bucket owner enforced for S3 Object Ownership and
+        /// specifies a bucket ACL that provides access to an external Amazon Web Services account,
+        /// your request fails with a <code>400</code> error and returns the <code>InvalidBucketAclWithObjectOwnership</code>
+        /// error code. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Controlling
         /// object ownership</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </important> 
@@ -23466,7 +23462,8 @@ namespace Amazon.S3
         ///  
         /// <para>
         /// For more information about Amazon S3 Select, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/selecting-content-from-objects.html">Selecting
-        /// Content from Objects</a> in the <i>Amazon S3 User Guide</i>.
+        /// Content from Objects</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-glacier-select-sql-reference-select.html">SELECT
+        /// Command</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -23615,7 +23612,8 @@ namespace Amazon.S3
         ///  
         /// <para>
         /// For more information about Amazon S3 Select, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/selecting-content-from-objects.html">Selecting
-        /// Content from Objects</a> in the <i>Amazon S3 User Guide</i>.
+        /// Content from Objects</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-glacier-select-sql-reference-select.html">SELECT
+        /// Command</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  
         /// <para>
