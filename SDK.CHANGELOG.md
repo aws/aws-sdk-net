@@ -1,3 +1,11 @@
+### 3.7.183.0 (2022-01-04 19:14 UTC)
+* Rekognition (3.7.7.0)
+	* This release introduces a new field IndexFacesModelVersion, which is the version of the face detect and storage model that was used when indexing the face vector.
+* S3 (3.7.7.7)
+	* Minor doc-based updates based on feedback bugs received.
+* S3Control (3.7.4.8)
+	* Documentation updates for the renaming of Glacier to Glacier Flexible Retrieval.
+
 ### 3.7.182.0 (2022-01-03 19:22 UTC)
 * Detective (3.7.3.0)
 	* Added and updated API operations to support the Detective integration with AWS Organizations. New actions are used to manage the delegated administrator account and the integration configuration.
