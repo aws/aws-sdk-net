@@ -29,19 +29,44 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EKS.Model
 {
     /// <summary>
-    /// The Kubernetes network configuration for the cluster.
+    /// The Kubernetes network configuration for the cluster. The response contains a value
+    /// for <b>serviceIpv6Cidr</b> or <b>serviceIpv4Cidr</b>, but not both.
     /// </summary>
     public partial class KubernetesNetworkConfigResponse
     {
+        private IpFamily _ipFamily;
         private string _serviceIpv4Cidr;
+        private string _serviceIpv6Cidr;
+
+        /// <summary>
+        /// Gets and sets the property IpFamily. 
+        /// <para>
+        /// The IP family used to assign Kubernetes Pod and Service IP addresses. The IP family
+        /// is always <code>ipv4</code>, unless you have a <code>1.21</code> or later cluster
+        /// running version 1.10.0 or later of the Amazon VPC CNI add-on and specified <code>ipv6</code>
+        /// when you created the cluster. 
+        /// </para>
+        /// </summary>
+        public IpFamily IpFamily
+        {
+            get { return this._ipFamily; }
+            set { this._ipFamily = value; }
+        }
+
+        // Check to see if IpFamily property is set
+        internal bool IsSetIpFamily()
+        {
+            return this._ipFamily != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ServiceIpv4Cidr. 
         /// <para>
-        /// The CIDR block that Kubernetes service IP addresses are assigned from. If you didn't
-        /// specify a CIDR block when you created the cluster, then Kubernetes assigns addresses
-        /// from either the 10.100.0.0/16 or 172.20.0.0/16 CIDR blocks. If this was specified,
-        /// then it was specified when the cluster was created and it cannot be changed.
+        /// The CIDR block that Kubernetes Pod and Service IP addresses are assigned from. Kubernetes
+        /// assigns addresses from an IPv4 CIDR block assigned to a subnet that the node is in.
+        /// If you didn't specify a CIDR block when you created the cluster, then Kubernetes assigns
+        /// addresses from either the 10.100.0.0/16 or 172.20.0.0/16 CIDR blocks. If this was
+        /// specified, then it was specified when the cluster was created and it can't be changed.
         /// </para>
         /// </summary>
         public string ServiceIpv4Cidr
@@ -54,6 +79,27 @@ namespace Amazon.EKS.Model
         internal bool IsSetServiceIpv4Cidr()
         {
             return this._serviceIpv4Cidr != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServiceIpv6Cidr. 
+        /// <para>
+        /// The CIDR block that Kubernetes Pod and Service IP addresses are assigned from if you
+        /// created a 1.21 or later cluster with version 1.10.0 or later of the Amazon VPC CNI
+        /// add-on and specified <code>ipv6</code> for <b>ipFamily</b> when you created the cluster.
+        /// Kubernetes assigns addresses from the unique local address range (fc00::/7).
+        /// </para>
+        /// </summary>
+        public string ServiceIpv6Cidr
+        {
+            get { return this._serviceIpv6Cidr; }
+            set { this._serviceIpv6Cidr = value; }
+        }
+
+        // Check to see if ServiceIpv6Cidr property is set
+        internal bool IsSetServiceIpv6Cidr()
+        {
+            return this._serviceIpv6Cidr != null;
         }
 
     }

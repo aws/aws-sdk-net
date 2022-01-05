@@ -64,10 +64,22 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("ipFamily", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.IpFamily = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("serviceIpv4Cidr", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ServiceIpv4Cidr = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("serviceIpv6Cidr", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ServiceIpv6Cidr = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
