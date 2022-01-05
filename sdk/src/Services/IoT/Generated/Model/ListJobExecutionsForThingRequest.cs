@@ -40,11 +40,31 @@ namespace Amazon.IoT.Model
     /// </summary>
     public partial class ListJobExecutionsForThingRequest : AmazonIoTRequest
     {
+        private string _jobId;
         private int? _maxResults;
         private string _namespaceId;
         private string _nextToken;
         private JobExecutionStatus _status;
         private string _thingName;
+
+        /// <summary>
+        /// Gets and sets the property JobId. 
+        /// <para>
+        /// The unique identifier you assigned to this job when it was created.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string JobId
+        {
+            get { return this._jobId; }
+            set { this._jobId = value; }
+        }
+
+        // Check to see if JobId property is set
+        internal bool IsSetJobId()
+        {
+            return this._jobId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 

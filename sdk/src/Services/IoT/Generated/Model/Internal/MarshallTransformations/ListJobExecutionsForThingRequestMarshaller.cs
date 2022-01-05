@@ -62,6 +62,9 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 throw new AmazonIoTException("Request object does not have required field ThingName set");
             request.AddPathResource("{thingName}", StringUtils.FromString(publicRequest.ThingName));
             
+            if (publicRequest.IsSetJobId())
+                request.Parameters.Add("jobId", StringUtils.FromString(publicRequest.JobId));
+            
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
             

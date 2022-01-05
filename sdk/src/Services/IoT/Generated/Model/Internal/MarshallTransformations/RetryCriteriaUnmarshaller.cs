@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for JobExecutionSummary Object
+    /// Response Unmarshaller for RetryCriteria Object
     /// </summary>  
-    public class JobExecutionSummaryUnmarshaller : IUnmarshaller<JobExecutionSummary, XmlUnmarshallerContext>, IUnmarshaller<JobExecutionSummary, JsonUnmarshallerContext>
+    public class RetryCriteriaUnmarshaller : IUnmarshaller<RetryCriteria, XmlUnmarshallerContext>, IUnmarshaller<RetryCriteria, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        JobExecutionSummary IUnmarshaller<JobExecutionSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        RetryCriteria IUnmarshaller<RetryCriteria, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,51 +53,27 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public JobExecutionSummary Unmarshall(JsonUnmarshallerContext context)
+        public RetryCriteria Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            JobExecutionSummary unmarshalledObject = new JobExecutionSummary();
+            RetryCriteria unmarshalledObject = new RetryCriteria();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("executionNumber", targetDepth))
-                {
-                    var unmarshaller = LongUnmarshaller.Instance;
-                    unmarshalledObject.ExecutionNumber = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("lastUpdatedAt", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LastUpdatedAt = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("queuedAt", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.QueuedAt = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("retryAttempt", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.RetryAttempt = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("startedAt", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.StartedAt = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("status", targetDepth))
+                if (context.TestExpression("failureType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FailureType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("numberOfRetries", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.NumberOfRetries = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -106,12 +82,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         }
 
 
-        private static JobExecutionSummaryUnmarshaller _instance = new JobExecutionSummaryUnmarshaller();        
+        private static RetryCriteriaUnmarshaller _instance = new RetryCriteriaUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static JobExecutionSummaryUnmarshaller Instance
+        public static RetryCriteriaUnmarshaller Instance
         {
             get
             {

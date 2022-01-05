@@ -45,6 +45,7 @@ namespace Amazon.IoT.Model
         private string _document;
         private string _documentSource;
         private string _jobArn;
+        private JobExecutionsRetryConfig _jobExecutionsRetryConfig;
         private JobExecutionsRolloutConfig _jobExecutionsRolloutConfig;
         private string _jobTemplateId;
         private PresignedUrlConfig _presignedUrlConfig;
@@ -160,6 +161,24 @@ namespace Amazon.IoT.Model
         internal bool IsSetJobArn()
         {
             return this._jobArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property JobExecutionsRetryConfig. 
+        /// <para>
+        /// Allows you to create the criteria to retry a job.
+        /// </para>
+        /// </summary>
+        public JobExecutionsRetryConfig JobExecutionsRetryConfig
+        {
+            get { return this._jobExecutionsRetryConfig; }
+            set { this._jobExecutionsRetryConfig = value; }
+        }
+
+        // Check to see if JobExecutionsRetryConfig property is set
+        internal bool IsSetJobExecutionsRetryConfig()
+        {
+            return this._jobExecutionsRetryConfig != null;
         }
 
         /// <summary>

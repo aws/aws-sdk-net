@@ -112,6 +112,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     unmarshalledObject.JobArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("jobExecutionsRetryConfig", targetDepth))
+                {
+                    var unmarshaller = JobExecutionsRetryConfigUnmarshaller.Instance;
+                    unmarshalledObject.JobExecutionsRetryConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("jobExecutionsRolloutConfig", targetDepth))
                 {
                     var unmarshaller = JobExecutionsRolloutConfigUnmarshaller.Instance;

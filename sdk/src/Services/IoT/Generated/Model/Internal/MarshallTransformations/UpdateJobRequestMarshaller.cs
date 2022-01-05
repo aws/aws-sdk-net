@@ -88,6 +88,17 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Description);
                 }
 
+                if(publicRequest.IsSetJobExecutionsRetryConfig())
+                {
+                    context.Writer.WritePropertyName("jobExecutionsRetryConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = JobExecutionsRetryConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.JobExecutionsRetryConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetJobExecutionsRolloutConfig())
                 {
                     context.Writer.WritePropertyName("jobExecutionsRolloutConfig");

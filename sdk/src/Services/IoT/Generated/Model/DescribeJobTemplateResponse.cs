@@ -38,6 +38,7 @@ namespace Amazon.IoT.Model
         private string _description;
         private string _document;
         private string _documentSource;
+        private JobExecutionsRetryConfig _jobExecutionsRetryConfig;
         private JobExecutionsRolloutConfig _jobExecutionsRolloutConfig;
         private string _jobTemplateArn;
         private string _jobTemplateId;
@@ -132,6 +133,25 @@ namespace Amazon.IoT.Model
         internal bool IsSetDocumentSource()
         {
             return this._documentSource != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property JobExecutionsRetryConfig. 
+        /// <para>
+        /// The configuration that determines how many retries are allowed for each failure type
+        /// for a job.
+        /// </para>
+        /// </summary>
+        public JobExecutionsRetryConfig JobExecutionsRetryConfig
+        {
+            get { return this._jobExecutionsRetryConfig; }
+            set { this._jobExecutionsRetryConfig = value; }
+        }
+
+        // Check to see if JobExecutionsRetryConfig property is set
+        internal bool IsSetJobExecutionsRetryConfig()
+        {
+            return this._jobExecutionsRetryConfig != null;
         }
 
         /// <summary>
