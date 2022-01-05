@@ -194,6 +194,16 @@
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LakeFormation.Model.GetTemporaryGluePartitionCredentialsRequest.DurationSeconds</property>
+    <min>900</min>
+    <max>43200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.GetTemporaryGlueTableCredentialsRequest.DurationSeconds</property>
+    <min>900</min>
+    <max>43200</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LakeFormation.Model.GetWorkUnitResultsRequest.QueryId</property>
     <min>36</min>
     <max>36</max>
@@ -399,6 +409,11 @@
     <property>Amazon.LakeFormation.Model.AddObjectInput.Uri</property>
     <min>1</min>
     <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.AuditContext.AdditionalAuditContext</property>
+    <min>0</min>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LakeFormation.Model.BatchPermissionsRequestEntry.Id</property>
