@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AppStream.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DeleteStack operation
+    /// Response Unmarshaller for UpdateEntitlement operation
     /// </summary>  
-    public class DeleteStackResponseUnmarshaller : JsonResponseUnmarshaller
+    public class UpdateEntitlementResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,8 +45,19 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DeleteStackResponse response = new DeleteStackResponse();
+            UpdateEntitlementResponse response = new UpdateEntitlementResponse();
 
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
+            {
+                if (context.TestExpression("Entitlement", targetDepth))
+                {
+                    var unmarshaller = EntitlementUnmarshaller.Instance;
+                    response.Entitlement = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+            }
 
             return response;
         }
@@ -73,13 +84,13 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                 {
                     return ConcurrentModificationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("EntitlementNotFoundException"))
+                {
+                    return EntitlementNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("OperationNotPermittedException"))
                 {
                     return OperationNotPermittedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceInUseException"))
-                {
-                    return ResourceInUseExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                 {
@@ -89,9 +100,9 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
             return new AmazonAppStreamException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static DeleteStackResponseUnmarshaller _instance = new DeleteStackResponseUnmarshaller();        
+        private static UpdateEntitlementResponseUnmarshaller _instance = new UpdateEntitlementResponseUnmarshaller();        
 
-        internal static DeleteStackResponseUnmarshaller GetInstance()
+        internal static UpdateEntitlementResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -99,7 +110,7 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DeleteStackResponseUnmarshaller Instance
+        public static UpdateEntitlementResponseUnmarshaller Instance
         {
             get
             {

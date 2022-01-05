@@ -355,6 +355,72 @@ namespace Amazon.AppStream
 
         #endregion
         
+        #region  AssociateApplicationToEntitlement
+
+        /// <summary>
+        /// Associates an application to entitle.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateApplicationToEntitlement service method.</param>
+        /// 
+        /// <returns>The response from the AssociateApplicationToEntitlement service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.EntitlementNotFoundException">
+        /// The entitlement can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.LimitExceededException">
+        /// The requested limit exceeds the permitted limit for an account.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/AssociateApplicationToEntitlement">REST API Reference for AssociateApplicationToEntitlement Operation</seealso>
+        public virtual AssociateApplicationToEntitlementResponse AssociateApplicationToEntitlement(AssociateApplicationToEntitlementRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateApplicationToEntitlementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateApplicationToEntitlementResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateApplicationToEntitlementResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateApplicationToEntitlement operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateApplicationToEntitlement operation on AmazonAppStreamClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateApplicationToEntitlement
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/AssociateApplicationToEntitlement">REST API Reference for AssociateApplicationToEntitlement Operation</seealso>
+        public virtual IAsyncResult BeginAssociateApplicationToEntitlement(AssociateApplicationToEntitlementRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateApplicationToEntitlementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateApplicationToEntitlementResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AssociateApplicationToEntitlement operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateApplicationToEntitlement.</param>
+        /// 
+        /// <returns>Returns a  AssociateApplicationToEntitlementResult from AppStream.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/AssociateApplicationToEntitlement">REST API Reference for AssociateApplicationToEntitlement Operation</seealso>
+        public virtual AssociateApplicationToEntitlementResponse EndAssociateApplicationToEntitlement(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AssociateApplicationToEntitlementResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  AssociateFleet
 
         /// <summary>
@@ -855,6 +921,76 @@ namespace Amazon.AppStream
         public virtual CreateDirectoryConfigResponse EndCreateDirectoryConfig(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateDirectoryConfigResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateEntitlement
+
+        /// <summary>
+        /// Creates a new entitlement. Entitlements control access to specific applications within
+        /// a stack, based on user attributes. Entitlements apply to SAML 2.0 federated user identities.
+        /// Amazon AppStream 2.0 user pool and streaming URL users are entitled to all applications
+        /// in a stack. Entitlements don't apply to the desktop stream view application, or to
+        /// applications managed by a dynamic app provider using the Dynamic Application Framework.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateEntitlement service method.</param>
+        /// 
+        /// <returns>The response from the CreateEntitlement service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.EntitlementAlreadyExistsException">
+        /// The entitlement already exists.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.LimitExceededException">
+        /// The requested limit exceeds the permitted limit for an account.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateEntitlement">REST API Reference for CreateEntitlement Operation</seealso>
+        public virtual CreateEntitlementResponse CreateEntitlement(CreateEntitlementRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateEntitlementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateEntitlementResponseUnmarshaller.Instance;
+
+            return Invoke<CreateEntitlementResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateEntitlement operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateEntitlement operation on AmazonAppStreamClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateEntitlement
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateEntitlement">REST API Reference for CreateEntitlement Operation</seealso>
+        public virtual IAsyncResult BeginCreateEntitlement(CreateEntitlementRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateEntitlementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateEntitlementResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateEntitlement operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateEntitlement.</param>
+        /// 
+        /// <returns>Returns a  CreateEntitlementResult from AppStream.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateEntitlement">REST API Reference for CreateEntitlement Operation</seealso>
+        public virtual CreateEntitlementResponse EndCreateEntitlement(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateEntitlementResponse>(asyncResult);
         }
 
         #endregion
@@ -1657,6 +1793,72 @@ namespace Amazon.AppStream
 
         #endregion
         
+        #region  DeleteEntitlement
+
+        /// <summary>
+        /// Deletes the specified entitlement.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEntitlement service method.</param>
+        /// 
+        /// <returns>The response from the DeleteEntitlement service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.ConcurrentModificationException">
+        /// An API error occurred. Wait a few minutes and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.EntitlementNotFoundException">
+        /// The entitlement can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteEntitlement">REST API Reference for DeleteEntitlement Operation</seealso>
+        public virtual DeleteEntitlementResponse DeleteEntitlement(DeleteEntitlementRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEntitlementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEntitlementResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteEntitlementResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteEntitlement operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEntitlement operation on AmazonAppStreamClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteEntitlement
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteEntitlement">REST API Reference for DeleteEntitlement Operation</seealso>
+        public virtual IAsyncResult BeginDeleteEntitlement(DeleteEntitlementRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEntitlementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEntitlementResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteEntitlement operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteEntitlement.</param>
+        /// 
+        /// <returns>Returns a  DeleteEntitlementResult from AppStream.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteEntitlement">REST API Reference for DeleteEntitlement Operation</seealso>
+        public virtual DeleteEntitlementResponse EndDeleteEntitlement(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteEntitlementResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteFleet
 
         /// <summary>
@@ -1924,6 +2126,9 @@ namespace Amazon.AppStream
         /// <returns>The response from the DeleteStack service method, as returned by AppStream.</returns>
         /// <exception cref="Amazon.AppStream.Model.ConcurrentModificationException">
         /// An API error occurred. Wait a few minutes and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
         /// </exception>
         /// <exception cref="Amazon.AppStream.Model.ResourceInUseException">
         /// The specified resource is in use.
@@ -2339,6 +2544,69 @@ namespace Amazon.AppStream
         public virtual DescribeDirectoryConfigsResponse EndDescribeDirectoryConfigs(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeDirectoryConfigsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeEntitlements
+
+        /// <summary>
+        /// Retrieves a list that describes one of more entitlements.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEntitlements service method.</param>
+        /// 
+        /// <returns>The response from the DescribeEntitlements service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.EntitlementNotFoundException">
+        /// The entitlement can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeEntitlements">REST API Reference for DescribeEntitlements Operation</seealso>
+        public virtual DescribeEntitlementsResponse DescribeEntitlements(DescribeEntitlementsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeEntitlementsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeEntitlementsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeEntitlementsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeEntitlements operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEntitlements operation on AmazonAppStreamClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeEntitlements
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeEntitlements">REST API Reference for DescribeEntitlements Operation</seealso>
+        public virtual IAsyncResult BeginDescribeEntitlements(DescribeEntitlementsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeEntitlementsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeEntitlementsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeEntitlements operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeEntitlements.</param>
+        /// 
+        /// <returns>Returns a  DescribeEntitlementsResult from AppStream.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeEntitlements">REST API Reference for DescribeEntitlements Operation</seealso>
+        public virtual DescribeEntitlementsResponse EndDescribeEntitlements(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeEntitlementsResponse>(asyncResult);
         }
 
         #endregion
@@ -3013,6 +3281,69 @@ namespace Amazon.AppStream
 
         #endregion
         
+        #region  DisassociateApplicationFromEntitlement
+
+        /// <summary>
+        /// Deletes the specified application from the specified entitlement.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateApplicationFromEntitlement service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateApplicationFromEntitlement service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.EntitlementNotFoundException">
+        /// The entitlement can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DisassociateApplicationFromEntitlement">REST API Reference for DisassociateApplicationFromEntitlement Operation</seealso>
+        public virtual DisassociateApplicationFromEntitlementResponse DisassociateApplicationFromEntitlement(DisassociateApplicationFromEntitlementRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateApplicationFromEntitlementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateApplicationFromEntitlementResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateApplicationFromEntitlementResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateApplicationFromEntitlement operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateApplicationFromEntitlement operation on AmazonAppStreamClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateApplicationFromEntitlement
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DisassociateApplicationFromEntitlement">REST API Reference for DisassociateApplicationFromEntitlement Operation</seealso>
+        public virtual IAsyncResult BeginDisassociateApplicationFromEntitlement(DisassociateApplicationFromEntitlementRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateApplicationFromEntitlementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateApplicationFromEntitlementResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisassociateApplicationFromEntitlement operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateApplicationFromEntitlement.</param>
+        /// 
+        /// <returns>Returns a  DisassociateApplicationFromEntitlementResult from AppStream.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DisassociateApplicationFromEntitlement">REST API Reference for DisassociateApplicationFromEntitlement Operation</seealso>
+        public virtual DisassociateApplicationFromEntitlementResponse EndDisassociateApplicationFromEntitlement(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DisassociateApplicationFromEntitlementResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DisassociateFleet
 
         /// <summary>
@@ -3299,6 +3630,69 @@ namespace Amazon.AppStream
         public virtual ListAssociatedStacksResponse EndListAssociatedStacks(IAsyncResult asyncResult)
         {
             return EndInvoke<ListAssociatedStacksResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListEntitledApplications
+
+        /// <summary>
+        /// Retrieves a list of entitled applications.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListEntitledApplications service method.</param>
+        /// 
+        /// <returns>The response from the ListEntitledApplications service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.EntitlementNotFoundException">
+        /// The entitlement can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ListEntitledApplications">REST API Reference for ListEntitledApplications Operation</seealso>
+        public virtual ListEntitledApplicationsResponse ListEntitledApplications(ListEntitledApplicationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListEntitledApplicationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEntitledApplicationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListEntitledApplicationsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListEntitledApplications operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListEntitledApplications operation on AmazonAppStreamClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListEntitledApplications
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ListEntitledApplications">REST API Reference for ListEntitledApplications Operation</seealso>
+        public virtual IAsyncResult BeginListEntitledApplications(ListEntitledApplicationsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListEntitledApplicationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEntitledApplicationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListEntitledApplications operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListEntitledApplications.</param>
+        /// 
+        /// <returns>Returns a  ListEntitledApplicationsResult from AppStream.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ListEntitledApplications">REST API Reference for ListEntitledApplications Operation</seealso>
+        public virtual ListEntitledApplicationsResponse EndListEntitledApplications(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListEntitledApplicationsResponse>(asyncResult);
         }
 
         #endregion
@@ -3918,6 +4312,72 @@ namespace Amazon.AppStream
         public virtual UpdateDirectoryConfigResponse EndUpdateDirectoryConfig(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateDirectoryConfigResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateEntitlement
+
+        /// <summary>
+        /// Updates the specified entitlement.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateEntitlement service method.</param>
+        /// 
+        /// <returns>The response from the UpdateEntitlement service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.ConcurrentModificationException">
+        /// An API error occurred. Wait a few minutes and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.EntitlementNotFoundException">
+        /// The entitlement can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateEntitlement">REST API Reference for UpdateEntitlement Operation</seealso>
+        public virtual UpdateEntitlementResponse UpdateEntitlement(UpdateEntitlementRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateEntitlementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateEntitlementResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateEntitlementResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateEntitlement operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateEntitlement operation on AmazonAppStreamClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateEntitlement
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateEntitlement">REST API Reference for UpdateEntitlement Operation</seealso>
+        public virtual IAsyncResult BeginUpdateEntitlement(UpdateEntitlementRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateEntitlementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateEntitlementResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateEntitlement operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateEntitlement.</param>
+        /// 
+        /// <returns>Returns a  UpdateEntitlementResult from AppStream.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateEntitlement">REST API Reference for UpdateEntitlement Operation</seealso>
+        public virtual UpdateEntitlementResponse EndUpdateEntitlement(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateEntitlementResponse>(asyncResult);
         }
 
         #endregion

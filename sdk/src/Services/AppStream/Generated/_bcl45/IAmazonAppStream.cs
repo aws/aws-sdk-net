@@ -132,6 +132,58 @@ namespace Amazon.AppStream
 
         #endregion
         
+        #region  AssociateApplicationToEntitlement
+
+
+        /// <summary>
+        /// Associates an application to entitle.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateApplicationToEntitlement service method.</param>
+        /// 
+        /// <returns>The response from the AssociateApplicationToEntitlement service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.EntitlementNotFoundException">
+        /// The entitlement can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.LimitExceededException">
+        /// The requested limit exceeds the permitted limit for an account.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/AssociateApplicationToEntitlement">REST API Reference for AssociateApplicationToEntitlement Operation</seealso>
+        AssociateApplicationToEntitlementResponse AssociateApplicationToEntitlement(AssociateApplicationToEntitlementRequest request);
+
+
+
+        /// <summary>
+        /// Associates an application to entitle.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateApplicationToEntitlement service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateApplicationToEntitlement service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.EntitlementNotFoundException">
+        /// The entitlement can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.LimitExceededException">
+        /// The requested limit exceeds the permitted limit for an account.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/AssociateApplicationToEntitlement">REST API Reference for AssociateApplicationToEntitlement Operation</seealso>
+        Task<AssociateApplicationToEntitlementResponse> AssociateApplicationToEntitlementAsync(AssociateApplicationToEntitlementRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  AssociateFleet
 
 
@@ -577,6 +629,66 @@ namespace Amazon.AppStream
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateDirectoryConfig">REST API Reference for CreateDirectoryConfig Operation</seealso>
         Task<CreateDirectoryConfigResponse> CreateDirectoryConfigAsync(CreateDirectoryConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateEntitlement
+
+
+        /// <summary>
+        /// Creates a new entitlement. Entitlements control access to specific applications within
+        /// a stack, based on user attributes. Entitlements apply to SAML 2.0 federated user identities.
+        /// Amazon AppStream 2.0 user pool and streaming URL users are entitled to all applications
+        /// in a stack. Entitlements don't apply to the desktop stream view application, or to
+        /// applications managed by a dynamic app provider using the Dynamic Application Framework.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateEntitlement service method.</param>
+        /// 
+        /// <returns>The response from the CreateEntitlement service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.EntitlementAlreadyExistsException">
+        /// The entitlement already exists.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.LimitExceededException">
+        /// The requested limit exceeds the permitted limit for an account.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateEntitlement">REST API Reference for CreateEntitlement Operation</seealso>
+        CreateEntitlementResponse CreateEntitlement(CreateEntitlementRequest request);
+
+
+
+        /// <summary>
+        /// Creates a new entitlement. Entitlements control access to specific applications within
+        /// a stack, based on user attributes. Entitlements apply to SAML 2.0 federated user identities.
+        /// Amazon AppStream 2.0 user pool and streaming URL users are entitled to all applications
+        /// in a stack. Entitlements don't apply to the desktop stream view application, or to
+        /// applications managed by a dynamic app provider using the Dynamic Application Framework.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateEntitlement service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateEntitlement service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.EntitlementAlreadyExistsException">
+        /// The entitlement already exists.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.LimitExceededException">
+        /// The requested limit exceeds the permitted limit for an account.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateEntitlement">REST API Reference for CreateEntitlement Operation</seealso>
+        Task<CreateEntitlementResponse> CreateEntitlementAsync(CreateEntitlementRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1296,6 +1408,58 @@ namespace Amazon.AppStream
 
         #endregion
         
+        #region  DeleteEntitlement
+
+
+        /// <summary>
+        /// Deletes the specified entitlement.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEntitlement service method.</param>
+        /// 
+        /// <returns>The response from the DeleteEntitlement service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.ConcurrentModificationException">
+        /// An API error occurred. Wait a few minutes and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.EntitlementNotFoundException">
+        /// The entitlement can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteEntitlement">REST API Reference for DeleteEntitlement Operation</seealso>
+        DeleteEntitlementResponse DeleteEntitlement(DeleteEntitlementRequest request);
+
+
+
+        /// <summary>
+        /// Deletes the specified entitlement.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEntitlement service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteEntitlement service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.ConcurrentModificationException">
+        /// An API error occurred. Wait a few minutes and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.EntitlementNotFoundException">
+        /// The entitlement can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteEntitlement">REST API Reference for DeleteEntitlement Operation</seealso>
+        Task<DeleteEntitlementResponse> DeleteEntitlementAsync(DeleteEntitlementRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteFleet
 
 
@@ -1500,6 +1664,9 @@ namespace Amazon.AppStream
         /// <exception cref="Amazon.AppStream.Model.ConcurrentModificationException">
         /// An API error occurred. Wait a few minutes and try again.
         /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
         /// <exception cref="Amazon.AppStream.Model.ResourceInUseException">
         /// The specified resource is in use.
         /// </exception>
@@ -1524,6 +1691,9 @@ namespace Amazon.AppStream
         /// <returns>The response from the DeleteStack service method, as returned by AppStream.</returns>
         /// <exception cref="Amazon.AppStream.Model.ConcurrentModificationException">
         /// An API error occurred. Wait a few minutes and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
         /// </exception>
         /// <exception cref="Amazon.AppStream.Model.ResourceInUseException">
         /// The specified resource is in use.
@@ -1785,6 +1955,52 @@ namespace Amazon.AppStream
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeDirectoryConfigs">REST API Reference for DescribeDirectoryConfigs Operation</seealso>
         Task<DescribeDirectoryConfigsResponse> DescribeDirectoryConfigsAsync(DescribeDirectoryConfigsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeEntitlements
+
+
+        /// <summary>
+        /// Retrieves a list that describes one of more entitlements.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEntitlements service method.</param>
+        /// 
+        /// <returns>The response from the DescribeEntitlements service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.EntitlementNotFoundException">
+        /// The entitlement can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeEntitlements">REST API Reference for DescribeEntitlements Operation</seealso>
+        DescribeEntitlementsResponse DescribeEntitlements(DescribeEntitlementsRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves a list that describes one of more entitlements.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEntitlements service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeEntitlements service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.EntitlementNotFoundException">
+        /// The entitlement can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeEntitlements">REST API Reference for DescribeEntitlements Operation</seealso>
+        Task<DescribeEntitlementsResponse> DescribeEntitlementsAsync(DescribeEntitlementsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -2248,6 +2464,52 @@ namespace Amazon.AppStream
 
         #endregion
         
+        #region  DisassociateApplicationFromEntitlement
+
+
+        /// <summary>
+        /// Deletes the specified application from the specified entitlement.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateApplicationFromEntitlement service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateApplicationFromEntitlement service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.EntitlementNotFoundException">
+        /// The entitlement can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DisassociateApplicationFromEntitlement">REST API Reference for DisassociateApplicationFromEntitlement Operation</seealso>
+        DisassociateApplicationFromEntitlementResponse DisassociateApplicationFromEntitlement(DisassociateApplicationFromEntitlementRequest request);
+
+
+
+        /// <summary>
+        /// Deletes the specified application from the specified entitlement.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateApplicationFromEntitlement service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateApplicationFromEntitlement service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.EntitlementNotFoundException">
+        /// The entitlement can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DisassociateApplicationFromEntitlement">REST API Reference for DisassociateApplicationFromEntitlement Operation</seealso>
+        Task<DisassociateApplicationFromEntitlementResponse> DisassociateApplicationFromEntitlementAsync(DisassociateApplicationFromEntitlementRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DisassociateFleet
 
 
@@ -2425,6 +2687,52 @@ namespace Amazon.AppStream
         /// <returns>The response from the ListAssociatedStacks service method, as returned by AppStream.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ListAssociatedStacks">REST API Reference for ListAssociatedStacks Operation</seealso>
         Task<ListAssociatedStacksResponse> ListAssociatedStacksAsync(ListAssociatedStacksRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListEntitledApplications
+
+
+        /// <summary>
+        /// Retrieves a list of entitled applications.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListEntitledApplications service method.</param>
+        /// 
+        /// <returns>The response from the ListEntitledApplications service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.EntitlementNotFoundException">
+        /// The entitlement can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ListEntitledApplications">REST API Reference for ListEntitledApplications Operation</seealso>
+        ListEntitledApplicationsResponse ListEntitledApplications(ListEntitledApplicationsRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves a list of entitled applications.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListEntitledApplications service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListEntitledApplications service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.EntitlementNotFoundException">
+        /// The entitlement can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ListEntitledApplications">REST API Reference for ListEntitledApplications Operation</seealso>
+        Task<ListEntitledApplicationsResponse> ListEntitledApplicationsAsync(ListEntitledApplicationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -2943,6 +3251,58 @@ namespace Amazon.AppStream
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateDirectoryConfig">REST API Reference for UpdateDirectoryConfig Operation</seealso>
         Task<UpdateDirectoryConfigResponse> UpdateDirectoryConfigAsync(UpdateDirectoryConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateEntitlement
+
+
+        /// <summary>
+        /// Updates the specified entitlement.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateEntitlement service method.</param>
+        /// 
+        /// <returns>The response from the UpdateEntitlement service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.ConcurrentModificationException">
+        /// An API error occurred. Wait a few minutes and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.EntitlementNotFoundException">
+        /// The entitlement can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateEntitlement">REST API Reference for UpdateEntitlement Operation</seealso>
+        UpdateEntitlementResponse UpdateEntitlement(UpdateEntitlementRequest request);
+
+
+
+        /// <summary>
+        /// Updates the specified entitlement.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateEntitlement service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateEntitlement service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.ConcurrentModificationException">
+        /// An API error occurred. Wait a few minutes and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.EntitlementNotFoundException">
+        /// The entitlement can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateEntitlement">REST API Reference for UpdateEntitlement Operation</seealso>
+        Task<UpdateEntitlementResponse> UpdateEntitlementAsync(UpdateEntitlementRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
