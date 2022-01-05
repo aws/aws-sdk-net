@@ -34,66 +34,47 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CatalogTarget Object
+    /// Response Unmarshaller for PermissionTypeMismatchException Object
     /// </summary>  
-    public class CatalogTargetUnmarshaller : IUnmarshaller<CatalogTarget, XmlUnmarshallerContext>, IUnmarshaller<CatalogTarget, JsonUnmarshallerContext>
+    public class PermissionTypeMismatchExceptionUnmarshaller : IErrorResponseUnmarshaller<PermissionTypeMismatchException, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        CatalogTarget IUnmarshaller<CatalogTarget, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        public PermissionTypeMismatchException Unmarshall(JsonUnmarshallerContext context)
         {
-            throw new NotImplementedException();
+            return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse());
         }
 
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
+        /// <param name="errorResponse"></param>
         /// <returns></returns>
-        public CatalogTarget Unmarshall(JsonUnmarshallerContext context)
+        public PermissionTypeMismatchException Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
-                return null;
 
-            CatalogTarget unmarshalledObject = new CatalogTarget();
+            PermissionTypeMismatchException unmarshalledObject = new PermissionTypeMismatchException(errorResponse.Message, errorResponse.InnerException,
+                errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ConnectionName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ConnectionName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("DatabaseName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DatabaseName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Tables", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.Tables = unmarshaller.Unmarshall(context);
-                    continue;
-                }
             }
           
             return unmarshalledObject;
         }
 
-
-        private static CatalogTargetUnmarshaller _instance = new CatalogTargetUnmarshaller();        
+        private static PermissionTypeMismatchExceptionUnmarshaller _instance = new PermissionTypeMismatchExceptionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CatalogTargetUnmarshaller Instance
+        public static PermissionTypeMismatchExceptionUnmarshaller Instance
         {
             get
             {

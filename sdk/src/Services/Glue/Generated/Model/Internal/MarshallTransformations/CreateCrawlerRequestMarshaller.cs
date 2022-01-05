@@ -102,6 +102,17 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Description);
                 }
 
+                if(publicRequest.IsSetLakeFormationConfiguration())
+                {
+                    context.Writer.WritePropertyName("LakeFormationConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = LakeFormationConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.LakeFormationConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetLineageConfiguration())
                 {
                     context.Writer.WritePropertyName("LineageConfiguration");

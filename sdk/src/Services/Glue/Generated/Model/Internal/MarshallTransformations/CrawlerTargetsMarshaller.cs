@@ -61,6 +61,22 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetDeltaTargets())
+            {
+                context.Writer.WritePropertyName("DeltaTargets");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectDeltaTargetsListValue in requestObject.DeltaTargets)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DeltaTargetMarshaller.Instance;
+                    marshaller.Marshall(requestObjectDeltaTargetsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetDynamoDBTargets())
             {
                 context.Writer.WritePropertyName("DynamoDBTargets");

@@ -116,6 +116,11 @@ namespace Amazon.Glue.Model
         IGetTriggersPaginator GetTriggers(GetTriggersRequest request);
 
         /// <summary>
+        /// Paginator for GetUnfilteredPartitionsMetadata operation
+        ///</summary>
+        IGetUnfilteredPartitionsMetadataPaginator GetUnfilteredPartitionsMetadata(GetUnfilteredPartitionsMetadataRequest request);
+
+        /// <summary>
         /// Paginator for GetUserDefinedFunctions operation
         ///</summary>
         IGetUserDefinedFunctionsPaginator GetUserDefinedFunctions(GetUserDefinedFunctionsRequest request);

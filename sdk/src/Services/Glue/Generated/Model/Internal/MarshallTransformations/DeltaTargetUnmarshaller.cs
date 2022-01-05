@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CatalogTarget Object
+    /// Response Unmarshaller for DeltaTarget Object
     /// </summary>  
-    public class CatalogTargetUnmarshaller : IUnmarshaller<CatalogTarget, XmlUnmarshallerContext>, IUnmarshaller<CatalogTarget, JsonUnmarshallerContext>
+    public class DeltaTargetUnmarshaller : IUnmarshaller<DeltaTarget, XmlUnmarshallerContext>, IUnmarshaller<DeltaTarget, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        CatalogTarget IUnmarshaller<CatalogTarget, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        DeltaTarget IUnmarshaller<DeltaTarget, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,13 +53,13 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public CatalogTarget Unmarshall(JsonUnmarshallerContext context)
+        public DeltaTarget Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            CatalogTarget unmarshalledObject = new CatalogTarget();
+            DeltaTarget unmarshalledObject = new DeltaTarget();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
@@ -70,16 +70,16 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.ConnectionName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("DatabaseName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DatabaseName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Tables", targetDepth))
+                if (context.TestExpression("DeltaTables", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.Tables = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DeltaTables = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("WriteManifest", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.WriteManifest = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +88,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         }
 
 
-        private static CatalogTargetUnmarshaller _instance = new CatalogTargetUnmarshaller();        
+        private static DeltaTargetUnmarshaller _instance = new DeltaTargetUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CatalogTargetUnmarshaller Instance
+        public static DeltaTargetUnmarshaller Instance
         {
             get
             {

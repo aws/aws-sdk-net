@@ -34,6 +34,7 @@ namespace Amazon.Glue.Model
     public partial class CrawlerTargets
     {
         private List<CatalogTarget> _catalogTargets = new List<CatalogTarget>();
+        private List<DeltaTarget> _deltaTargets = new List<DeltaTarget>();
         private List<DynamoDBTarget> _dynamoDBTargets = new List<DynamoDBTarget>();
         private List<JdbcTarget> _jdbcTargets = new List<JdbcTarget>();
         private List<MongoDBTarget> _mongoDBTargets = new List<MongoDBTarget>();
@@ -55,6 +56,24 @@ namespace Amazon.Glue.Model
         internal bool IsSetCatalogTargets()
         {
             return this._catalogTargets != null && this._catalogTargets.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeltaTargets. 
+        /// <para>
+        /// Specifies Delta data store targets.
+        /// </para>
+        /// </summary>
+        public List<DeltaTarget> DeltaTargets
+        {
+            get { return this._deltaTargets; }
+            set { this._deltaTargets = value; }
+        }
+
+        // Check to see if DeltaTargets property is set
+        internal bool IsSetDeltaTargets()
+        {
+            return this._deltaTargets != null && this._deltaTargets.Count > 0; 
         }
 
         /// <summary>

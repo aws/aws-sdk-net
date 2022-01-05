@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CatalogTarget Marshaller
+    /// DeltaTarget Marshaller
     /// </summary>       
-    public class CatalogTargetMarshaller : IRequestMarshaller<CatalogTarget, JsonMarshallerContext> 
+    public class DeltaTargetMarshaller : IRequestMarshaller<DeltaTarget, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,7 +43,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(CatalogTarget requestObject, JsonMarshallerContext context)
+        public void Marshall(DeltaTarget requestObject, JsonMarshallerContext context)
         {
             if(requestObject.IsSetConnectionName())
             {
@@ -51,21 +51,21 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ConnectionName);
             }
 
-            if(requestObject.IsSetDatabaseName())
+            if(requestObject.IsSetDeltaTables())
             {
-                context.Writer.WritePropertyName("DatabaseName");
-                context.Writer.Write(requestObject.DatabaseName);
-            }
-
-            if(requestObject.IsSetTables())
-            {
-                context.Writer.WritePropertyName("Tables");
+                context.Writer.WritePropertyName("DeltaTables");
                 context.Writer.WriteArrayStart();
-                foreach(var requestObjectTablesListValue in requestObject.Tables)
+                foreach(var requestObjectDeltaTablesListValue in requestObject.DeltaTables)
                 {
-                        context.Writer.Write(requestObjectTablesListValue);
+                        context.Writer.Write(requestObjectDeltaTablesListValue);
                 }
                 context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetWriteManifest())
+            {
+                context.Writer.WritePropertyName("WriteManifest");
+                context.Writer.Write(requestObject.WriteManifest);
             }
 
         }
@@ -73,7 +73,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static CatalogTargetMarshaller Instance = new CatalogTargetMarshaller();
+        public readonly static DeltaTargetMarshaller Instance = new DeltaTargetMarshaller();
 
     }
 }

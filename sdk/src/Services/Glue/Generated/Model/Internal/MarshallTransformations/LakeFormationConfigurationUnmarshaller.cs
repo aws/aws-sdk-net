@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CatalogTarget Object
+    /// Response Unmarshaller for LakeFormationConfiguration Object
     /// </summary>  
-    public class CatalogTargetUnmarshaller : IUnmarshaller<CatalogTarget, XmlUnmarshallerContext>, IUnmarshaller<CatalogTarget, JsonUnmarshallerContext>
+    public class LakeFormationConfigurationUnmarshaller : IUnmarshaller<LakeFormationConfiguration, XmlUnmarshallerContext>, IUnmarshaller<LakeFormationConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        CatalogTarget IUnmarshaller<CatalogTarget, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        LakeFormationConfiguration IUnmarshaller<LakeFormationConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,27 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public CatalogTarget Unmarshall(JsonUnmarshallerContext context)
+        public LakeFormationConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            CatalogTarget unmarshalledObject = new CatalogTarget();
+            LakeFormationConfiguration unmarshalledObject = new LakeFormationConfiguration();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ConnectionName", targetDepth))
+                if (context.TestExpression("AccountId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ConnectionName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AccountId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("DatabaseName", targetDepth))
+                if (context.TestExpression("UseLakeFormationCredentials", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DatabaseName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Tables", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.Tables = unmarshaller.Unmarshall(context);
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.UseLakeFormationCredentials = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +82,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         }
 
 
-        private static CatalogTargetUnmarshaller _instance = new CatalogTargetUnmarshaller();        
+        private static LakeFormationConfigurationUnmarshaller _instance = new LakeFormationConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CatalogTargetUnmarshaller Instance
+        public static LakeFormationConfigurationUnmarshaller Instance
         {
             get
             {

@@ -744,6 +744,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Glue")]
+        public void GetUnfilteredPartitionsMetadataTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<GetUnfilteredPartitionsMetadataRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<GetUnfilteredPartitionsMetadataResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<GetUnfilteredPartitionsMetadataResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.GetUnfilteredPartitionsMetadata(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.GetUnfilteredPartitionsMetadata(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Glue")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void GetUnfilteredPartitionsMetadataTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<GetUnfilteredPartitionsMetadataRequest>();
+
+            var response = InstantiateClassGenerator.Execute<GetUnfilteredPartitionsMetadataResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.GetUnfilteredPartitionsMetadata(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.GetUnfilteredPartitionsMetadata(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Glue")]
         public void GetUserDefinedFunctionsTest_TwoPages()
         {
             var request = InstantiateClassGenerator.Execute<GetUserDefinedFunctionsRequest>();

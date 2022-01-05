@@ -29,20 +29,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// Specifies an Glue Data Catalog target.
+    /// Specifies a Delta data store to crawl one or more Delta tables.
     /// </summary>
-    public partial class CatalogTarget
+    public partial class DeltaTarget
     {
         private string _connectionName;
-        private string _databaseName;
-        private List<string> _tables = new List<string>();
+        private List<string> _deltaTables = new List<string>();
+        private bool? _writeManifest;
 
         /// <summary>
         /// Gets and sets the property ConnectionName. 
         /// <para>
-        /// The name of the connection for an Amazon S3-backed Data Catalog table to be a target
-        /// of the crawl when using a <code>Catalog</code> connection type paired with a <code>NETWORK</code>
-        /// Connection type.
+        /// The name of the connection to use to connect to the Delta table target.
         /// </para>
         /// </summary>
         public string ConnectionName
@@ -58,41 +56,39 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DatabaseName. 
+        /// Gets and sets the property DeltaTables. 
         /// <para>
-        /// The name of the database to be synchronized.
+        /// A list of the Amazon S3 paths to the Delta tables.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=255)]
-        public string DatabaseName
+        public List<string> DeltaTables
         {
-            get { return this._databaseName; }
-            set { this._databaseName = value; }
+            get { return this._deltaTables; }
+            set { this._deltaTables = value; }
         }
 
-        // Check to see if DatabaseName property is set
-        internal bool IsSetDatabaseName()
+        // Check to see if DeltaTables property is set
+        internal bool IsSetDeltaTables()
         {
-            return this._databaseName != null;
+            return this._deltaTables != null && this._deltaTables.Count > 0; 
         }
 
         /// <summary>
-        /// Gets and sets the property Tables. 
+        /// Gets and sets the property WriteManifest. 
         /// <para>
-        /// A list of the tables to be synchronized.
+        /// Specifies whether to write the manifest files to the Delta table path.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
-        public List<string> Tables
+        public bool WriteManifest
         {
-            get { return this._tables; }
-            set { this._tables = value; }
+            get { return this._writeManifest.GetValueOrDefault(); }
+            set { this._writeManifest = value; }
         }
 
-        // Check to see if Tables property is set
-        internal bool IsSetTables()
+        // Check to see if WriteManifest property is set
+        internal bool IsSetWriteManifest()
         {
-            return this._tables != null && this._tables.Count > 0; 
+            return this._writeManifest.HasValue; 
         }
 
     }

@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CatalogTarget Object
+    /// Response Unmarshaller for ColumnRowFilter Object
     /// </summary>  
-    public class CatalogTargetUnmarshaller : IUnmarshaller<CatalogTarget, XmlUnmarshallerContext>, IUnmarshaller<CatalogTarget, JsonUnmarshallerContext>
+    public class ColumnRowFilterUnmarshaller : IUnmarshaller<ColumnRowFilter, XmlUnmarshallerContext>, IUnmarshaller<ColumnRowFilter, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        CatalogTarget IUnmarshaller<CatalogTarget, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ColumnRowFilter IUnmarshaller<ColumnRowFilter, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,27 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public CatalogTarget Unmarshall(JsonUnmarshallerContext context)
+        public ColumnRowFilter Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            CatalogTarget unmarshalledObject = new CatalogTarget();
+            ColumnRowFilter unmarshalledObject = new ColumnRowFilter();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ConnectionName", targetDepth))
+                if (context.TestExpression("ColumnName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ConnectionName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ColumnName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("DatabaseName", targetDepth))
+                if (context.TestExpression("RowFilterExpression", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DatabaseName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Tables", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.Tables = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RowFilterExpression = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +82,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         }
 
 
-        private static CatalogTargetUnmarshaller _instance = new CatalogTargetUnmarshaller();        
+        private static ColumnRowFilterUnmarshaller _instance = new ColumnRowFilterUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CatalogTargetUnmarshaller Instance
+        public static ColumnRowFilterUnmarshaller Instance
         {
             get
             {

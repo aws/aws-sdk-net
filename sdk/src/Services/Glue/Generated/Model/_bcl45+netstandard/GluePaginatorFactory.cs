@@ -180,6 +180,14 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
+        /// Paginator for GetUnfilteredPartitionsMetadata operation
+        ///</summary>
+        public IGetUnfilteredPartitionsMetadataPaginator GetUnfilteredPartitionsMetadata(GetUnfilteredPartitionsMetadataRequest request) 
+        {
+            return new GetUnfilteredPartitionsMetadataPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for GetUserDefinedFunctions operation
         ///</summary>
         public IGetUserDefinedFunctionsPaginator GetUserDefinedFunctions(GetUserDefinedFunctionsRequest request) 

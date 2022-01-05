@@ -33,6 +33,7 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class StorageDescriptor
     {
+        private List<string> _additionalLocations = new List<string>();
         private List<string> _bucketColumns = new List<string>();
         private List<Column> _columns = new List<Column>();
         private bool? _compressed;
@@ -46,6 +47,21 @@ namespace Amazon.Glue.Model
         private SkewedInfo _skewedInfo;
         private List<Order> _sortColumns = new List<Order>();
         private bool? _storedAsSubDirectories;
+
+        /// <summary>
+        /// Gets and sets the property AdditionalLocations.
+        /// </summary>
+        public List<string> AdditionalLocations
+        {
+            get { return this._additionalLocations; }
+            set { this._additionalLocations = value; }
+        }
+
+        // Check to see if AdditionalLocations property is set
+        internal bool IsSetAdditionalLocations()
+        {
+            return this._additionalLocations != null && this._additionalLocations.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property BucketColumns. 

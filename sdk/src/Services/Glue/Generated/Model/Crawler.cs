@@ -42,6 +42,7 @@ namespace Amazon.Glue.Model
         private DateTime? _creationTime;
         private string _databaseName;
         private string _description;
+        private LakeFormationConfiguration _lakeFormationConfiguration;
         private LastCrawlInfo _lastCrawl;
         private DateTime? _lastUpdated;
         private LineageConfiguration _lineageConfiguration;
@@ -184,6 +185,21 @@ namespace Amazon.Glue.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LakeFormationConfiguration.
+        /// </summary>
+        public LakeFormationConfiguration LakeFormationConfiguration
+        {
+            get { return this._lakeFormationConfiguration; }
+            set { this._lakeFormationConfiguration = value; }
+        }
+
+        // Check to see if LakeFormationConfiguration property is set
+        internal bool IsSetLakeFormationConfiguration()
+        {
+            return this._lakeFormationConfiguration != null;
         }
 
         /// <summary>
