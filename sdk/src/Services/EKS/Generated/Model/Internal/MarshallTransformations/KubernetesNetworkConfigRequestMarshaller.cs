@@ -45,6 +45,12 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(KubernetesNetworkConfigRequest requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetIpFamily())
+            {
+                context.Writer.WritePropertyName("ipFamily");
+                context.Writer.Write(requestObject.IpFamily);
+            }
+
             if(requestObject.IsSetServiceIpv4Cidr())
             {
                 context.Writer.WritePropertyName("serviceIpv4Cidr");
