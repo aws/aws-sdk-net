@@ -16,6 +16,7 @@
     <property>Amazon.Snowball.Model.CreateAddressResponse.AddressId</property>
     <min>1</min>
     <max>1024</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.CreateClusterRequest.AddressId</property>
@@ -27,6 +28,7 @@
     <property>Amazon.Snowball.Model.CreateClusterRequest.Description</property>
     <min>1</min>
     <max>1024</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.CreateClusterRequest.ForwardingAddressId</property>
@@ -66,6 +68,7 @@
     <property>Amazon.Snowball.Model.CreateJobRequest.Description</property>
     <min>1</min>
     <max>1024</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.CreateJobRequest.ForwardingAddressId</property>
@@ -122,11 +125,13 @@
     <property>Amazon.Snowball.Model.DescribeAddressesRequest.NextToken</property>
     <min>1</min>
     <max>1024</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.DescribeAddressesResponse.NextToken</property>
     <min>1</min>
     <max>1024</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.DescribeClusterRequest.ClusterId</property>
@@ -150,6 +155,7 @@
     <property>Amazon.Snowball.Model.DescribeReturnShippingLabelResponse.ReturnShippingLabelURI</property>
     <min>1</min>
     <max>1024</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.GetJobManifestRequest.JobId</property>
@@ -161,6 +167,7 @@
     <property>Amazon.Snowball.Model.GetJobManifestResponse.ManifestURI</property>
     <min>1</min>
     <max>1024</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.GetJobUnlockCodeRequest.JobId</property>
@@ -172,6 +179,7 @@
     <property>Amazon.Snowball.Model.GetJobUnlockCodeResponse.UnlockCode</property>
     <min>1</min>
     <max>1024</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.GetSoftwareUpdatesRequest.JobId</property>
@@ -183,6 +191,7 @@
     <property>Amazon.Snowball.Model.GetSoftwareUpdatesResponse.UpdatesURI</property>
     <min>1</min>
     <max>1024</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.ListClusterJobsRequest.ClusterId</property>
@@ -199,11 +208,13 @@
     <property>Amazon.Snowball.Model.ListClusterJobsRequest.NextToken</property>
     <min>1</min>
     <max>1024</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.ListClusterJobsResponse.NextToken</property>
     <min>1</min>
     <max>1024</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.ListClustersRequest.MaxResults</property>
@@ -214,11 +225,13 @@
     <property>Amazon.Snowball.Model.ListClustersRequest.NextToken</property>
     <min>1</min>
     <max>1024</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.ListClustersResponse.NextToken</property>
     <min>1</min>
     <max>1024</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.ListCompatibleImagesRequest.MaxResults</property>
@@ -229,11 +242,13 @@
     <property>Amazon.Snowball.Model.ListCompatibleImagesRequest.NextToken</property>
     <min>1</min>
     <max>1024</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.ListCompatibleImagesResponse.NextToken</property>
     <min>1</min>
     <max>1024</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.ListJobsRequest.MaxResults</property>
@@ -244,11 +259,13 @@
     <property>Amazon.Snowball.Model.ListJobsRequest.NextToken</property>
     <min>1</min>
     <max>1024</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.ListJobsResponse.NextToken</property>
     <min>1</min>
     <max>1024</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.ListLongTermPricingRequest.MaxResults</property>
@@ -259,11 +276,13 @@
     <property>Amazon.Snowball.Model.ListLongTermPricingRequest.NextToken</property>
     <min>1</min>
     <max>1024</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.ListLongTermPricingResponse.NextToken</property>
     <min>1</min>
     <max>1024</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.UpdateClusterRequest.AddressId</property>
@@ -281,6 +300,7 @@
     <property>Amazon.Snowball.Model.UpdateClusterRequest.Description</property>
     <min>1</min>
     <max>1024</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.UpdateClusterRequest.ForwardingAddressId</property>
@@ -303,6 +323,7 @@
     <property>Amazon.Snowball.Model.UpdateJobRequest.Description</property>
     <min>1</min>
     <max>1024</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.UpdateJobRequest.ForwardingAddressId</property>
@@ -349,71 +370,85 @@
     <property>Amazon.Snowball.Model.Address.City</property>
     <min>1</min>
     <max>1024</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.Address.Company</property>
     <min>1</min>
     <max>1024</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.Address.Country</property>
     <min>1</min>
     <max>1024</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.Address.Landmark</property>
     <min>1</min>
     <max>1024</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.Address.Name</property>
     <min>1</min>
     <max>1024</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.Address.PhoneNumber</property>
     <min>1</min>
     <max>1024</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.Address.PostalCode</property>
     <min>1</min>
     <max>1024</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.Address.PrefectureOrDistrict</property>
     <min>1</min>
     <max>1024</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.Address.StateOrProvince</property>
     <min>1</min>
     <max>1024</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.Address.Street1</property>
     <min>1</min>
     <max>1024</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.Address.Street2</property>
     <min>1</min>
     <max>1024</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.Address.Street3</property>
     <min>1</min>
     <max>1024</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.ClusterListEntry.ClusterId</property>
     <min>1</min>
     <max>1024</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.ClusterListEntry.Description</property>
     <min>1</min>
     <max>1024</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.ClusterMetadata.AddressId</property>
@@ -425,11 +460,13 @@
     <property>Amazon.Snowball.Model.ClusterMetadata.ClusterId</property>
     <min>1</min>
     <max>1024</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.ClusterMetadata.Description</property>
     <min>1</min>
     <max>1024</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.ClusterMetadata.ForwardingAddressId</property>
@@ -451,16 +488,19 @@
     <property>Amazon.Snowball.Model.CompatibleImage.AmiId</property>
     <min>1</min>
     <max>1024</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.CompatibleImage.Name</property>
     <min>1</min>
     <max>1024</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.ConflictException.ConflictResource</property>
     <min>1</min>
     <max>1024</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.Ec2AmiResource.AmiId</property>
@@ -472,6 +512,7 @@
     <property>Amazon.Snowball.Model.Ec2AmiResource.SnowballAmiId</property>
     <min>1</min>
     <max>1024</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.EventTriggerDefinition.EventResourceARN</property>
@@ -480,37 +521,45 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.INDTaxDocuments.GSTIN</property>
+    <min>15</min>
+    <max>15</max>
     <pattern>\d{2}[A-Z]{5}\d{4}[A-Z]{1}[A-Z\d]{1}[Z]{1}[A-Z\d]{1}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.InvalidResourceException.ResourceType</property>
     <min>1</min>
     <max>1024</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.JobListEntry.Description</property>
     <min>1</min>
     <max>1024</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.JobListEntry.JobId</property>
     <min>1</min>
     <max>1024</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.JobLogs.JobCompletionReportURI</property>
     <min>1</min>
     <max>1024</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.JobLogs.JobFailureLogURI</property>
     <min>1</min>
     <max>1024</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.JobLogs.JobSuccessLogURI</property>
     <min>1</min>
     <max>1024</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.JobMetadata.AddressId</property>
@@ -522,11 +571,13 @@
     <property>Amazon.Snowball.Model.JobMetadata.ClusterId</property>
     <min>1</min>
     <max>1024</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.JobMetadata.Description</property>
     <min>1</min>
     <max>1024</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.JobMetadata.ForwardingAddressId</property>
@@ -538,6 +589,7 @@
     <property>Amazon.Snowball.Model.JobMetadata.JobId</property>
     <min>1</min>
     <max>1024</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.JobMetadata.KmsKeyARN</property>
@@ -559,11 +611,13 @@
     <property>Amazon.Snowball.Model.KeyRange.BeginMarker</property>
     <min>1</min>
     <max>1024</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.KeyRange.EndMarker</property>
     <min>1</min>
     <max>1024</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.LambdaResource.LambdaArn</property>
@@ -586,6 +640,7 @@
     <property>Amazon.Snowball.Model.LongTermPricingListEntry.LongTermPricingStatus</property>
     <min>1</min>
     <max>1024</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.LongTermPricingListEntry.ReplacementJob</property>
@@ -611,11 +666,13 @@
     <property>Amazon.Snowball.Model.Shipment.Status</property>
     <min>1</min>
     <max>1024</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.Shipment.TrackingNumber</property>
     <min>1</min>
     <max>1024</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.TGWOnDeviceServiceConfiguration.StorageLimit</property>

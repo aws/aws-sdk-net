@@ -42,6 +42,7 @@ namespace Amazon.Snowball.Model
         /// in India.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=15, Max=15)]
         public string GSTIN
         {
             get { return this._gstin; }
