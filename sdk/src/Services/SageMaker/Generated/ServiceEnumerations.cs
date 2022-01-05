@@ -10491,6 +10491,38 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly TrainingInstanceType MlG4dnXlarge = new TrainingInstanceType("ml.g4dn.xlarge");
         /// <summary>
+        /// Constant MlG512xlarge for TrainingInstanceType
+        /// </summary>
+        public static readonly TrainingInstanceType MlG512xlarge = new TrainingInstanceType("ml.g5.12xlarge");
+        /// <summary>
+        /// Constant MlG516xlarge for TrainingInstanceType
+        /// </summary>
+        public static readonly TrainingInstanceType MlG516xlarge = new TrainingInstanceType("ml.g5.16xlarge");
+        /// <summary>
+        /// Constant MlG524xlarge for TrainingInstanceType
+        /// </summary>
+        public static readonly TrainingInstanceType MlG524xlarge = new TrainingInstanceType("ml.g5.24xlarge");
+        /// <summary>
+        /// Constant MlG52xlarge for TrainingInstanceType
+        /// </summary>
+        public static readonly TrainingInstanceType MlG52xlarge = new TrainingInstanceType("ml.g5.2xlarge");
+        /// <summary>
+        /// Constant MlG548xlarge for TrainingInstanceType
+        /// </summary>
+        public static readonly TrainingInstanceType MlG548xlarge = new TrainingInstanceType("ml.g5.48xlarge");
+        /// <summary>
+        /// Constant MlG54xlarge for TrainingInstanceType
+        /// </summary>
+        public static readonly TrainingInstanceType MlG54xlarge = new TrainingInstanceType("ml.g5.4xlarge");
+        /// <summary>
+        /// Constant MlG58xlarge for TrainingInstanceType
+        /// </summary>
+        public static readonly TrainingInstanceType MlG58xlarge = new TrainingInstanceType("ml.g5.8xlarge");
+        /// <summary>
+        /// Constant MlG5Xlarge for TrainingInstanceType
+        /// </summary>
+        public static readonly TrainingInstanceType MlG5Xlarge = new TrainingInstanceType("ml.g5.xlarge");
+        /// <summary>
         /// Constant MlM410xlarge for TrainingInstanceType
         /// </summary>
         public static readonly TrainingInstanceType MlM410xlarge = new TrainingInstanceType("ml.m4.10xlarge");
