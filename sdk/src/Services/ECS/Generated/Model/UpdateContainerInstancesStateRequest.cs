@@ -126,7 +126,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property ContainerInstances. 
         /// <para>
-        /// A list of container instance IDs or full ARN entries.
+        /// A list of up to 10 container instance IDs or full ARN entries.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
