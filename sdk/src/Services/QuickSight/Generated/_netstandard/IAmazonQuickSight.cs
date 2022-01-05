@@ -257,7 +257,8 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Creates a dataset.
+        /// Creates a dataset. This operation doesn't support datasets that include uploaded files
+        /// as a source.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDataSet service method.</param>
         /// <param name="cancellationToken">
@@ -598,7 +599,10 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Creates and starts a new SPICE ingestion on a dataset
+        /// Creates and starts a new SPICE ingestion for a dataset. You can manually refresh datasets
+        /// in an Enterprise edition account 32 times in a 24-hour period. You can manually refresh
+        /// datasets in a Standard edition account 8 times in a 24-hour period. Each 24-hour period
+        /// is measured starting 24 hours before the current date and time.
         /// 
         ///  
         /// <para>
@@ -1944,7 +1948,8 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Describes a dataset.
+        /// Describes a dataset. This operation doesn't support datasets that include uploaded
+        /// files as a source.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDataSet service method.</param>
         /// <param name="cancellationToken">
@@ -4628,7 +4633,8 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Updates a dataset.
+        /// Updates a dataset. This operation doesn't support datasets that include uploaded files
+        /// as a source.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDataSet service method.</param>
         /// <param name="cancellationToken">
