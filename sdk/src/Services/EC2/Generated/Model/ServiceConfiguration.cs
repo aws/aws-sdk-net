@@ -39,6 +39,7 @@ namespace Amazon.EC2.Model
         private List<string> _gatewayLoadBalancerArns = new List<string>();
         private bool? _managesVpcEndpoints;
         private List<string> _networkLoadBalancerArns = new List<string>();
+        private PayerResponsibility _payerResponsibility;
         private string _privateDnsName;
         private PrivateDnsNameConfiguration _privateDnsNameConfiguration;
         private string _serviceId;
@@ -155,6 +156,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetNetworkLoadBalancerArns()
         {
             return this._networkLoadBalancerArns != null && this._networkLoadBalancerArns.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PayerResponsibility. 
+        /// <para>
+        /// The payer responsibility.
+        /// </para>
+        /// </summary>
+        public PayerResponsibility PayerResponsibility
+        {
+            get { return this._payerResponsibility; }
+            set { this._payerResponsibility = value; }
+        }
+
+        // Check to see if PayerResponsibility property is set
+        internal bool IsSetPayerResponsibility()
+        {
+            return this._payerResponsibility != null;
         }
 
         /// <summary>

@@ -10476,6 +10476,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void ModifyVpcEndpointServicePayerResponsibilityMarshallTest()
+        {
+            var operation = service_model.FindOperation("ModifyVpcEndpointServicePayerResponsibility");
+
+            var request = InstantiateClassGenerator.Execute<ModifyVpcEndpointServicePayerResponsibilityRequest>();
+            var marshaller = new ModifyVpcEndpointServicePayerResponsibilityRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = ModifyVpcEndpointServicePayerResponsibilityResponseUnmarshaller.Instance.Unmarshall(context)
+                as ModifyVpcEndpointServicePayerResponsibilityResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void ModifyVpcEndpointServicePermissionsMarshallTest()
         {
             var operation = service_model.FindOperation("ModifyVpcEndpointServicePermissions");
