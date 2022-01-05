@@ -64,6 +64,18 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AllowExternalDataFiltering", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.AllowExternalDataFiltering = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("AuthorizedSessionTagValueList", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.AuthorizedSessionTagValueList = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CreateDatabaseDefaultPermissions", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<PrincipalPermissions, PrincipalPermissionsUnmarshaller>(PrincipalPermissionsUnmarshaller.Instance);
@@ -80,6 +92,12 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<DataLakePrincipal, DataLakePrincipalUnmarshaller>(DataLakePrincipalUnmarshaller.Instance);
                     unmarshalledObject.DataLakeAdmins = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ExternalDataFilteringAllowList", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<DataLakePrincipal, DataLakePrincipalUnmarshaller>(DataLakePrincipalUnmarshaller.Instance);
+                    unmarshalledObject.ExternalDataFilteringAllowList = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TrustedResourceOwners", targetDepth))

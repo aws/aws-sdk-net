@@ -29,29 +29,31 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LakeFormation.Model
 {
     /// <summary>
-    /// The Lake Formation principal. Supported principals are IAM users or IAM roles.
+    /// A structure used to include auditing information on the privileged API.
     /// </summary>
-    public partial class DataLakePrincipal
+    public partial class AuditContext
     {
-        private string _dataLakePrincipalIdentifier;
+        private string _additionalAuditContext;
 
         /// <summary>
-        /// Gets and sets the property DataLakePrincipalIdentifier. 
+        /// Gets and sets the property AdditionalAuditContext. 
         /// <para>
-        /// An identifier for the Lake Formation principal.
+        /// The filter engine can populate the 'AdditionalAuditContext' information with the request
+        /// ID for you to track. This information will be displayed in CloudTrail log in your
+        /// account.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=255)]
-        public string DataLakePrincipalIdentifier
+        [AWSProperty(Min=0, Max=2048)]
+        public string AdditionalAuditContext
         {
-            get { return this._dataLakePrincipalIdentifier; }
-            set { this._dataLakePrincipalIdentifier = value; }
+            get { return this._additionalAuditContext; }
+            set { this._additionalAuditContext = value; }
         }
 
-        // Check to see if DataLakePrincipalIdentifier property is set
-        internal bool IsSetDataLakePrincipalIdentifier()
+        // Check to see if AdditionalAuditContext property is set
+        internal bool IsSetAdditionalAuditContext()
         {
-            return this._dataLakePrincipalIdentifier != null;
+            return this._additionalAuditContext != null;
         }
 
     }

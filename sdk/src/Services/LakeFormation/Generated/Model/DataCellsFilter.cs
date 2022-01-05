@@ -64,6 +64,11 @@ namespace Amazon.LakeFormation.Model
         /// <para>
         /// A wildcard with exclusions.
         /// </para>
+        ///  
+        /// <para>
+        /// You must specify either a <code>ColumnNames</code> list or the <code>ColumnWildCard</code>.
+        /// 
+        /// </para>
         /// </summary>
         public ColumnWildcard ColumnWildcard
         {

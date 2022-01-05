@@ -29,29 +29,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LakeFormation.Model
 {
     /// <summary>
-    /// The Lake Formation principal. Supported principals are IAM users or IAM roles.
+    /// Contains a list of values defining partitions.
     /// </summary>
-    public partial class DataLakePrincipal
+    public partial class PartitionValueList
     {
-        private string _dataLakePrincipalIdentifier;
+        private List<string> _values = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property DataLakePrincipalIdentifier. 
+        /// Gets and sets the property Values. 
         /// <para>
-        /// An identifier for the Lake Formation principal.
+        /// The list of partition values.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=255)]
-        public string DataLakePrincipalIdentifier
+        [AWSProperty(Required=true, Min=1)]
+        public List<string> Values
         {
-            get { return this._dataLakePrincipalIdentifier; }
-            set { this._dataLakePrincipalIdentifier = value; }
+            get { return this._values; }
+            set { this._values = value; }
         }
 
-        // Check to see if DataLakePrincipalIdentifier property is set
-        internal bool IsSetDataLakePrincipalIdentifier()
+        // Check to see if Values property is set
+        internal bool IsSetValues()
         {
-            return this._dataLakePrincipalIdentifier != null;
+            return this._values != null && this._values.Count > 0; 
         }
 
     }

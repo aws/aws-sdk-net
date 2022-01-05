@@ -1361,6 +1361,158 @@ namespace Amazon.LakeFormation
 
         #endregion
         
+        #region  GetTemporaryGluePartitionCredentials
+
+
+        /// <summary>
+        /// This API is identical to <code>GetTemporaryTableCredentials</code> except that this
+        /// is used when the target Data Catalog resource is of type Partition. Lake Formation
+        /// restricts the permission of the vended credentials with the same scope down policy
+        /// which restricts access to a single Amazon S3 prefix.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTemporaryGluePartitionCredentials service method.</param>
+        /// 
+        /// <returns>The response from the GetTemporaryGluePartitionCredentials service method, as returned by LakeFormation.</returns>
+        /// <exception cref="Amazon.LakeFormation.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.PermissionTypeMismatchException">
+        /// The engine does not support filtering data based on the enforced permissions. For
+        /// example, if you call the <code>GetTemporaryGlueTableCredentials</code> operation with
+        /// <code>SupportedPermissionType</code> equal to <code>ColumnPermission</code>, but cell-level
+        /// permissions exist on the table, this exception is thrown.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetTemporaryGluePartitionCredentials">REST API Reference for GetTemporaryGluePartitionCredentials Operation</seealso>
+        GetTemporaryGluePartitionCredentialsResponse GetTemporaryGluePartitionCredentials(GetTemporaryGluePartitionCredentialsRequest request);
+
+
+
+        /// <summary>
+        /// This API is identical to <code>GetTemporaryTableCredentials</code> except that this
+        /// is used when the target Data Catalog resource is of type Partition. Lake Formation
+        /// restricts the permission of the vended credentials with the same scope down policy
+        /// which restricts access to a single Amazon S3 prefix.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTemporaryGluePartitionCredentials service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetTemporaryGluePartitionCredentials service method, as returned by LakeFormation.</returns>
+        /// <exception cref="Amazon.LakeFormation.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.PermissionTypeMismatchException">
+        /// The engine does not support filtering data based on the enforced permissions. For
+        /// example, if you call the <code>GetTemporaryGlueTableCredentials</code> operation with
+        /// <code>SupportedPermissionType</code> equal to <code>ColumnPermission</code>, but cell-level
+        /// permissions exist on the table, this exception is thrown.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetTemporaryGluePartitionCredentials">REST API Reference for GetTemporaryGluePartitionCredentials Operation</seealso>
+        Task<GetTemporaryGluePartitionCredentialsResponse> GetTemporaryGluePartitionCredentialsAsync(GetTemporaryGluePartitionCredentialsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetTemporaryGlueTableCredentials
+
+
+        /// <summary>
+        /// Allows a caller in a secure environment to assume a role with permission to access
+        /// Amazon S3. In order to vend such credentials, Lake Formation assumes the role associated
+        /// with a registered location, for example an Amazon S3 bucket, with a scope down policy
+        /// which restricts the access to a single prefix.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTemporaryGlueTableCredentials service method.</param>
+        /// 
+        /// <returns>The response from the GetTemporaryGlueTableCredentials service method, as returned by LakeFormation.</returns>
+        /// <exception cref="Amazon.LakeFormation.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.PermissionTypeMismatchException">
+        /// The engine does not support filtering data based on the enforced permissions. For
+        /// example, if you call the <code>GetTemporaryGlueTableCredentials</code> operation with
+        /// <code>SupportedPermissionType</code> equal to <code>ColumnPermission</code>, but cell-level
+        /// permissions exist on the table, this exception is thrown.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetTemporaryGlueTableCredentials">REST API Reference for GetTemporaryGlueTableCredentials Operation</seealso>
+        GetTemporaryGlueTableCredentialsResponse GetTemporaryGlueTableCredentials(GetTemporaryGlueTableCredentialsRequest request);
+
+
+
+        /// <summary>
+        /// Allows a caller in a secure environment to assume a role with permission to access
+        /// Amazon S3. In order to vend such credentials, Lake Formation assumes the role associated
+        /// with a registered location, for example an Amazon S3 bucket, with a scope down policy
+        /// which restricts the access to a single prefix.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTemporaryGlueTableCredentials service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetTemporaryGlueTableCredentials service method, as returned by LakeFormation.</returns>
+        /// <exception cref="Amazon.LakeFormation.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.PermissionTypeMismatchException">
+        /// The engine does not support filtering data based on the enforced permissions. For
+        /// example, if you call the <code>GetTemporaryGlueTableCredentials</code> operation with
+        /// <code>SupportedPermissionType</code> equal to <code>ColumnPermission</code>, but cell-level
+        /// permissions exist on the table, this exception is thrown.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetTemporaryGlueTableCredentials">REST API Reference for GetTemporaryGlueTableCredentials Operation</seealso>
+        Task<GetTemporaryGlueTableCredentialsResponse> GetTemporaryGlueTableCredentialsAsync(GetTemporaryGlueTableCredentialsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetWorkUnitResults
 
 
