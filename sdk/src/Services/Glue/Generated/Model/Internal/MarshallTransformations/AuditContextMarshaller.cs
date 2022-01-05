@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CatalogTarget Marshaller
+    /// AuditContext Marshaller
     /// </summary>       
-    public class CatalogTargetMarshaller : IRequestMarshaller<CatalogTarget, JsonMarshallerContext> 
+    public class AuditContextMarshaller : IRequestMarshaller<AuditContext, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,29 +43,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(CatalogTarget requestObject, JsonMarshallerContext context)
+        public void Marshall(AuditContext requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetConnectionName())
+            if(requestObject.IsSetAdditionalAuditContext())
             {
-                context.Writer.WritePropertyName("ConnectionName");
-                context.Writer.Write(requestObject.ConnectionName);
-            }
-
-            if(requestObject.IsSetDatabaseName())
-            {
-                context.Writer.WritePropertyName("DatabaseName");
-                context.Writer.Write(requestObject.DatabaseName);
-            }
-
-            if(requestObject.IsSetTables())
-            {
-                context.Writer.WritePropertyName("Tables");
-                context.Writer.WriteArrayStart();
-                foreach(var requestObjectTablesListValue in requestObject.Tables)
-                {
-                        context.Writer.Write(requestObjectTablesListValue);
-                }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WritePropertyName("AdditionalAuditContext");
+                context.Writer.Write(requestObject.AdditionalAuditContext);
             }
 
         }
@@ -73,7 +56,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static CatalogTargetMarshaller Instance = new CatalogTargetMarshaller();
+        public readonly static AuditContextMarshaller Instance = new AuditContextMarshaller();
 
     }
 }

@@ -106,6 +106,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("LakeFormationConfiguration", targetDepth))
+                {
+                    var unmarshaller = LakeFormationConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.LakeFormationConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LastCrawl", targetDepth))
                 {
                     var unmarshaller = LastCrawlInfoUnmarshaller.Instance;

@@ -45,6 +45,17 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(StorageDescriptor requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAdditionalLocations())
+            {
+                context.Writer.WritePropertyName("AdditionalLocations");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectAdditionalLocationsListValue in requestObject.AdditionalLocations)
+                {
+                        context.Writer.Write(requestObjectAdditionalLocationsListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetBucketColumns())
             {
                 context.Writer.WritePropertyName("BucketColumns");

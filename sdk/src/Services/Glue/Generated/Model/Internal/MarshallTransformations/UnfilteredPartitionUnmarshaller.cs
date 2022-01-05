@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CatalogTarget Object
+    /// Response Unmarshaller for UnfilteredPartition Object
     /// </summary>  
-    public class CatalogTargetUnmarshaller : IUnmarshaller<CatalogTarget, XmlUnmarshallerContext>, IUnmarshaller<CatalogTarget, JsonUnmarshallerContext>
+    public class UnfilteredPartitionUnmarshaller : IUnmarshaller<UnfilteredPartition, XmlUnmarshallerContext>, IUnmarshaller<UnfilteredPartition, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        CatalogTarget IUnmarshaller<CatalogTarget, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        UnfilteredPartition IUnmarshaller<UnfilteredPartition, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,33 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public CatalogTarget Unmarshall(JsonUnmarshallerContext context)
+        public UnfilteredPartition Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            CatalogTarget unmarshalledObject = new CatalogTarget();
+            UnfilteredPartition unmarshalledObject = new UnfilteredPartition();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ConnectionName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ConnectionName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("DatabaseName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DatabaseName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Tables", targetDepth))
+                if (context.TestExpression("AuthorizedColumns", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.Tables = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AuthorizedColumns = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("IsRegisteredWithLakeFormation", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.IsRegisteredWithLakeFormation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Partition", targetDepth))
+                {
+                    var unmarshaller = PartitionUnmarshaller.Instance;
+                    unmarshalledObject.Partition = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +88,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         }
 
 
-        private static CatalogTargetUnmarshaller _instance = new CatalogTargetUnmarshaller();        
+        private static UnfilteredPartitionUnmarshaller _instance = new UnfilteredPartitionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CatalogTargetUnmarshaller Instance
+        public static UnfilteredPartitionUnmarshaller Instance
         {
             get
             {

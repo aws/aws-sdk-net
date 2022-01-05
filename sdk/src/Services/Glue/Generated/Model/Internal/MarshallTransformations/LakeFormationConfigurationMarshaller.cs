@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CatalogTarget Marshaller
+    /// LakeFormationConfiguration Marshaller
     /// </summary>       
-    public class CatalogTargetMarshaller : IRequestMarshaller<CatalogTarget, JsonMarshallerContext> 
+    public class LakeFormationConfigurationMarshaller : IRequestMarshaller<LakeFormationConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,29 +43,18 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(CatalogTarget requestObject, JsonMarshallerContext context)
+        public void Marshall(LakeFormationConfiguration requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetConnectionName())
+            if(requestObject.IsSetAccountId())
             {
-                context.Writer.WritePropertyName("ConnectionName");
-                context.Writer.Write(requestObject.ConnectionName);
+                context.Writer.WritePropertyName("AccountId");
+                context.Writer.Write(requestObject.AccountId);
             }
 
-            if(requestObject.IsSetDatabaseName())
+            if(requestObject.IsSetUseLakeFormationCredentials())
             {
-                context.Writer.WritePropertyName("DatabaseName");
-                context.Writer.Write(requestObject.DatabaseName);
-            }
-
-            if(requestObject.IsSetTables())
-            {
-                context.Writer.WritePropertyName("Tables");
-                context.Writer.WriteArrayStart();
-                foreach(var requestObjectTablesListValue in requestObject.Tables)
-                {
-                        context.Writer.Write(requestObjectTablesListValue);
-                }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WritePropertyName("UseLakeFormationCredentials");
+                context.Writer.Write(requestObject.UseLakeFormationCredentials);
             }
 
         }
@@ -73,7 +62,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static CatalogTargetMarshaller Instance = new CatalogTargetMarshaller();
+        public readonly static LakeFormationConfigurationMarshaller Instance = new LakeFormationConfigurationMarshaller();
 
     }
 }
