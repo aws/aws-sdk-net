@@ -38,6 +38,7 @@ namespace Amazon.EC2.Model
         private List<string> _baseEndpointDnsNames = new List<string>();
         private bool? _managesVpcEndpoints;
         private string _owner;
+        private PayerResponsibility _payerResponsibility;
         private string _privateDnsName;
         private List<PrivateDnsDetails> _privateDnsNames = new List<PrivateDnsDetails>();
         private DnsNameState _privateDnsNameVerificationState;
@@ -137,6 +138,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetOwner()
         {
             return this._owner != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PayerResponsibility. 
+        /// <para>
+        /// The payer responsibility.
+        /// </para>
+        /// </summary>
+        public PayerResponsibility PayerResponsibility
+        {
+            get { return this._payerResponsibility; }
+            set { this._payerResponsibility = value; }
+        }
+
+        // Check to see if PayerResponsibility property is set
+        internal bool IsSetPayerResponsibility()
+        {
+            return this._payerResponsibility != null;
         }
 
         /// <summary>

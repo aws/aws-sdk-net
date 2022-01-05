@@ -21387,6 +21387,34 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  ModifyVpcEndpointServicePayerResponsibility
+
+
+        /// <summary>
+        /// Modifies the payer responsibility for your VPC endpoint service.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyVpcEndpointServicePayerResponsibility service method.</param>
+        /// 
+        /// <returns>The response from the ModifyVpcEndpointServicePayerResponsibility service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcEndpointServicePayerResponsibility">REST API Reference for ModifyVpcEndpointServicePayerResponsibility Operation</seealso>
+        ModifyVpcEndpointServicePayerResponsibilityResponse ModifyVpcEndpointServicePayerResponsibility(ModifyVpcEndpointServicePayerResponsibilityRequest request);
+
+
+
+        /// <summary>
+        /// Modifies the payer responsibility for your VPC endpoint service.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyVpcEndpointServicePayerResponsibility service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyVpcEndpointServicePayerResponsibility service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcEndpointServicePayerResponsibility">REST API Reference for ModifyVpcEndpointServicePayerResponsibility Operation</seealso>
+        Task<ModifyVpcEndpointServicePayerResponsibilityResponse> ModifyVpcEndpointServicePayerResponsibilityAsync(ModifyVpcEndpointServicePayerResponsibilityRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ModifyVpcEndpointServicePermissions
 
 

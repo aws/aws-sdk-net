@@ -94,6 +94,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.NetworkLoadBalancerArns.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("payerResponsibility", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.PayerResponsibility = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("privateDnsName", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

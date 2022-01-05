@@ -22183,6 +22183,46 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  ModifyVpcEndpointServicePayerResponsibility
+
+
+        /// <summary>
+        /// Modifies the payer responsibility for your VPC endpoint service.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyVpcEndpointServicePayerResponsibility service method.</param>
+        /// 
+        /// <returns>The response from the ModifyVpcEndpointServicePayerResponsibility service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcEndpointServicePayerResponsibility">REST API Reference for ModifyVpcEndpointServicePayerResponsibility Operation</seealso>
+        ModifyVpcEndpointServicePayerResponsibilityResponse ModifyVpcEndpointServicePayerResponsibility(ModifyVpcEndpointServicePayerResponsibilityRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyVpcEndpointServicePayerResponsibility operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyVpcEndpointServicePayerResponsibility operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyVpcEndpointServicePayerResponsibility
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcEndpointServicePayerResponsibility">REST API Reference for ModifyVpcEndpointServicePayerResponsibility Operation</seealso>
+        IAsyncResult BeginModifyVpcEndpointServicePayerResponsibility(ModifyVpcEndpointServicePayerResponsibilityRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyVpcEndpointServicePayerResponsibility operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyVpcEndpointServicePayerResponsibility.</param>
+        /// 
+        /// <returns>Returns a  ModifyVpcEndpointServicePayerResponsibilityResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcEndpointServicePayerResponsibility">REST API Reference for ModifyVpcEndpointServicePayerResponsibility Operation</seealso>
+        ModifyVpcEndpointServicePayerResponsibilityResponse EndModifyVpcEndpointServicePayerResponsibility(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ModifyVpcEndpointServicePermissions
 
 

@@ -20173,6 +20173,40 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  ModifyVpcEndpointServicePayerResponsibility
+
+        internal virtual ModifyVpcEndpointServicePayerResponsibilityResponse ModifyVpcEndpointServicePayerResponsibility(ModifyVpcEndpointServicePayerResponsibilityRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyVpcEndpointServicePayerResponsibilityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyVpcEndpointServicePayerResponsibilityResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyVpcEndpointServicePayerResponsibilityResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Modifies the payer responsibility for your VPC endpoint service.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyVpcEndpointServicePayerResponsibility service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyVpcEndpointServicePayerResponsibility service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcEndpointServicePayerResponsibility">REST API Reference for ModifyVpcEndpointServicePayerResponsibility Operation</seealso>
+        public virtual Task<ModifyVpcEndpointServicePayerResponsibilityResponse> ModifyVpcEndpointServicePayerResponsibilityAsync(ModifyVpcEndpointServicePayerResponsibilityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyVpcEndpointServicePayerResponsibilityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyVpcEndpointServicePayerResponsibilityResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ModifyVpcEndpointServicePayerResponsibilityResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ModifyVpcEndpointServicePermissions
 
         internal virtual ModifyVpcEndpointServicePermissionsResponse ModifyVpcEndpointServicePermissions(ModifyVpcEndpointServicePermissionsRequest request)
