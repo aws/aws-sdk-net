@@ -30,7 +30,8 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateDataSet operation.
-    /// Updates a dataset.
+    /// Updates a dataset. This operation doesn't support datasets that include uploaded files
+    /// as a source.
     /// </summary>
     public partial class UpdateDataSetRequest : AmazonQuickSightRequest
     {
