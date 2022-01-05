@@ -79,6 +79,7 @@ namespace Amazon.ECS.Model
         /// <para>
         /// The managed termination protection setting to use for the Auto Scaling group capacity
         /// provider. This determines whether the Auto Scaling group has managed termination protection.
+        /// The default is disabled.
         /// </para>
         ///  <important> 
         /// <para>
