@@ -1814,6 +1814,12 @@
     <max>250</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.ListJobExecutionsForThingRequest.JobId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.ListJobExecutionsForThingRequest.MaxResults</property>
     <min>1</min>
     <max>250</max>
@@ -3486,6 +3492,11 @@
     <property>Amazon.IoT.Model.ResourceIdentifier.RoleAliasArn</property>
     <min>1</min>
     <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.RetryCriteria.NumberOfRetries</property>
+    <min>0</min>
+    <max>10</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.RoleAliasDescription.CredentialDurationSeconds</property>

@@ -41,6 +41,7 @@ namespace Amazon.IoT.Model
         private Dictionary<string, string> _documentParameters = new Dictionary<string, string>();
         private bool? _forceCanceled;
         private string _jobArn;
+        private JobExecutionsRetryConfig _jobExecutionsRetryConfig;
         private JobExecutionsRolloutConfig _jobExecutionsRolloutConfig;
         private string _jobId;
         private JobProcessDetails _jobProcessDetails;
@@ -201,6 +202,24 @@ namespace Amazon.IoT.Model
         internal bool IsSetJobArn()
         {
             return this._jobArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property JobExecutionsRetryConfig. 
+        /// <para>
+        /// The configuration for the criteria to retry the job.
+        /// </para>
+        /// </summary>
+        public JobExecutionsRetryConfig JobExecutionsRetryConfig
+        {
+            get { return this._jobExecutionsRetryConfig; }
+            set { this._jobExecutionsRetryConfig = value; }
+        }
+
+        // Check to see if JobExecutionsRetryConfig property is set
+        internal bool IsSetJobExecutionsRetryConfig()
+        {
+            return this._jobExecutionsRetryConfig != null;
         }
 
         /// <summary>
