@@ -71,6 +71,60 @@ namespace Amazon.CloudTrail
 
 
     /// <summary>
+    /// Constants used for properties of type EventDataStoreStatus.
+    /// </summary>
+    public class EventDataStoreStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CREATED for EventDataStoreStatus
+        /// </summary>
+        public static readonly EventDataStoreStatus CREATED = new EventDataStoreStatus("CREATED");
+        /// <summary>
+        /// Constant ENABLED for EventDataStoreStatus
+        /// </summary>
+        public static readonly EventDataStoreStatus ENABLED = new EventDataStoreStatus("ENABLED");
+        /// <summary>
+        /// Constant PENDING_DELETION for EventDataStoreStatus
+        /// </summary>
+        public static readonly EventDataStoreStatus PENDING_DELETION = new EventDataStoreStatus("PENDING_DELETION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EventDataStoreStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EventDataStoreStatus FindValue(string value)
+        {
+            return FindValue<EventDataStoreStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EventDataStoreStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type InsightType.
     /// </summary>
     public class InsightType : ConstantClass
@@ -188,6 +242,68 @@ namespace Amazon.CloudTrail
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator LookupAttributeKey(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type QueryStatus.
+    /// </summary>
+    public class QueryStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CANCELLED for QueryStatus
+        /// </summary>
+        public static readonly QueryStatus CANCELLED = new QueryStatus("CANCELLED");
+        /// <summary>
+        /// Constant FAILED for QueryStatus
+        /// </summary>
+        public static readonly QueryStatus FAILED = new QueryStatus("FAILED");
+        /// <summary>
+        /// Constant FINISHED for QueryStatus
+        /// </summary>
+        public static readonly QueryStatus FINISHED = new QueryStatus("FINISHED");
+        /// <summary>
+        /// Constant QUEUED for QueryStatus
+        /// </summary>
+        public static readonly QueryStatus QUEUED = new QueryStatus("QUEUED");
+        /// <summary>
+        /// Constant RUNNING for QueryStatus
+        /// </summary>
+        public static readonly QueryStatus RUNNING = new QueryStatus("RUNNING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public QueryStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static QueryStatus FindValue(string value)
+        {
+            return FindValue<QueryStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator QueryStatus(string value)
         {
             return FindValue(value);
         }

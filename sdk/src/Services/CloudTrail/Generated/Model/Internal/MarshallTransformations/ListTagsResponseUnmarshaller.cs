@@ -90,6 +90,14 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
                 {
                     return CloudTrailARNInvalidExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("EventDataStoreNotFoundException"))
+                {
+                    return EventDataStoreNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InactiveEventDataStoreException"))
+                {
+                    return InactiveEventDataStoreExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidTokenException"))
                 {
                     return InvalidTokenExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

@@ -328,6 +328,7 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property TagsList.
         /// </summary>
+        [AWSProperty(Max=200)]
         public List<Tag> TagsList
         {
             get { return this._tagsList; }

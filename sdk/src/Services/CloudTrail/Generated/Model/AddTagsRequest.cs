@@ -72,6 +72,7 @@ namespace Amazon.CloudTrail.Model
         /// Contains a list of tags, up to a limit of 50
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=200)]
         public List<Tag> TagsList
         {
             get { return this._tagsList; }

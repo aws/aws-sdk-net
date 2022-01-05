@@ -43,7 +43,7 @@ namespace Amazon.CloudTrail.Model
         /// The key must be unique for the resource to which it applies.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string Key
         {
             get { return this._key; }
@@ -63,6 +63,7 @@ namespace Amazon.CloudTrail.Model
         /// characters.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string Value
         {
             get { return this._value; }
