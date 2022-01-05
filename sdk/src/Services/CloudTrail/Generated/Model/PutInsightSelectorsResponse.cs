@@ -40,7 +40,8 @@ namespace Amazon.CloudTrail.Model
         /// Gets and sets the property InsightSelectors. 
         /// <para>
         /// A JSON string that contains the Insights event types that you want to log on a trail.
-        /// The valid Insights type in this release is <code>ApiCallRateInsight</code>.
+        /// The valid Insights types in this release are <code>ApiErrorRateInsight</code> and
+        /// <code>ApiCallRateInsight</code>.
         /// </para>
         /// </summary>
         public List<InsightSelector> InsightSelectors

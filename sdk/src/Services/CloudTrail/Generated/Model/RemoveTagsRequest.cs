@@ -67,6 +67,7 @@ namespace Amazon.CloudTrail.Model
         /// Specifies a list of tags to be removed.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Max=200)]
         public List<Tag> TagsList
         {
             get { return this._tagsList; }

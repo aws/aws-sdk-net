@@ -36,11 +36,35 @@ namespace Amazon.CloudTrail.Model
         }
 
         /// <summary>
+        /// Paginator for GetQueryResults operation
+        ///</summary>
+        public IGetQueryResultsPaginator GetQueryResults(GetQueryResultsRequest request) 
+        {
+            return new GetQueryResultsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListEventDataStores operation
+        ///</summary>
+        public IListEventDataStoresPaginator ListEventDataStores(ListEventDataStoresRequest request) 
+        {
+            return new ListEventDataStoresPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListPublicKeys operation
         ///</summary>
         public IListPublicKeysPaginator ListPublicKeys(ListPublicKeysRequest request) 
         {
             return new ListPublicKeysPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListQueries operation
+        ///</summary>
+        public IListQueriesPaginator ListQueries(ListQueriesRequest request) 
+        {
+            return new ListQueriesPaginator(this.client, request);
         }
 
         /// <summary>
