@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MWAA.Model
 {
     /// <summary>
-    /// The VPC networking components used to secure and enable network traffic between the
-    /// AWS resources for your environment. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About
+    /// Defines the VPC networking components used to secure and enable network traffic between
+    /// the Amazon Web Services resources for your environment. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About
     /// networking on Amazon MWAA</a>.
     /// </summary>
     public partial class UpdateNetworkConfigurationInput
@@ -40,8 +40,8 @@ namespace Amazon.MWAA.Model
         /// <summary>
         /// Gets and sets the property SecurityGroupIds. 
         /// <para>
-        /// A list of 1 or more security group IDs. Accepts up to 5 security group IDs. A security
-        /// group must be attached to the same VPC as the subnets. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/vpc-security.html">Security
+        /// A list of security group IDs. A security group must be attached to the same VPC as
+        /// the subnets. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/vpc-security.html">Security
         /// in your VPC on Amazon MWAA</a>.
         /// </para>
         /// </summary>

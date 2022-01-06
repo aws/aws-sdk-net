@@ -30,7 +30,7 @@ namespace Amazon.MWAA.Model
 {
     /// <summary>
     /// Container for the parameters to the PublishMetrics operation.
-    /// An operation for publishing metrics from the customers to the Ops plane.
+    /// <b>Internal only</b>. Publishes environment health metrics to Amazon CloudWatch.
     /// </summary>
     public partial class PublishMetricsRequest : AmazonMWAARequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.MWAA.Model
         /// <summary>
         /// Gets and sets the property EnvironmentName. 
         /// <para>
-        /// Publishes environment metric data to Amazon CloudWatch.
+        ///  <b>Internal only</b>. The name of the environment.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=80)]
@@ -59,8 +59,9 @@ namespace Amazon.MWAA.Model
         /// <summary>
         /// Gets and sets the property MetricData. 
         /// <para>
-        /// Publishes metric data points to Amazon CloudWatch. CloudWatch associates the data
-        /// points with the specified metrica.
+        ///  <b>Internal only</b>. Publishes metrics to Amazon CloudWatch. To learn more about
+        /// the metrics published to Amazon CloudWatch, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/cw-metrics.html">Amazon
+        /// MWAA performance metrics in Amazon CloudWatch</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

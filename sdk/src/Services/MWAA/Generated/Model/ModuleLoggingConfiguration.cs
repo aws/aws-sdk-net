@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MWAA.Model
 {
     /// <summary>
-    /// Defines the type of logs to send for the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>).
-    /// Valid values: <code>CloudWatchLogGroupArn</code>, <code>Enabled</code>, <code>LogLevel</code>.
+    /// Describes the Apache Airflow log details for the log type (e.g. <code>DagProcessingLogs</code>).
     /// </summary>
     public partial class ModuleLoggingConfiguration
     {
@@ -61,8 +60,8 @@ namespace Amazon.MWAA.Model
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        /// Indicates whether to enable the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>)
-        /// in CloudWatch Logs.
+        /// Indicates whether the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>)
+        /// is enabled.
         /// </para>
         /// </summary>
         public bool Enabled
@@ -80,9 +79,8 @@ namespace Amazon.MWAA.Model
         /// <summary>
         /// Gets and sets the property LogLevel. 
         /// <para>
-        /// Defines the Apache Airflow logs to send for the log type (e.g. <code>DagProcessingLogs</code>)
-        /// to CloudWatch Logs. Valid values: <code>CRITICAL</code>, <code>ERROR</code>, <code>WARNING</code>,
-        /// <code>INFO</code>.
+        /// The Apache Airflow log level for the log type (e.g. <code>DagProcessingLogs</code>).
+        /// 
         /// </para>
         /// </summary>
         public LoggingLevel LogLevel

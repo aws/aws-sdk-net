@@ -29,12 +29,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MWAA.Model
 {
     /// <summary>
-    /// The status of the last update on the environment, and any errors that were encountered.
+    /// Describes the status of the last update on the environment, and any errors that were
+    /// encountered.
     /// </summary>
     public partial class LastUpdate
     {
         private DateTime? _createdAt;
         private UpdateError _error;
+        private string _source;
         private UpdateStatus _status;
 
         /// <summary>
@@ -74,10 +76,29 @@ namespace Amazon.MWAA.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Source. 
+        /// <para>
+        /// The source of the last update to the environment. Includes internal processes by Amazon
+        /// MWAA, such as an environment maintenance update.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string Source
+        {
+            get { return this._source; }
+            set { this._source = value; }
+        }
+
+        // Check to see if Source property is set
+        internal bool IsSetSource()
+        {
+            return this._source != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the last update on the environment. Valid values: <code>SUCCESS</code>,
-        /// <code>PENDING</code>, <code>FAILED</code>.
+        /// The status of the last update on the environment.
         /// </para>
         /// </summary>
         public UpdateStatus Status

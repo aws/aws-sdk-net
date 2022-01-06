@@ -62,7 +62,7 @@ namespace Amazon.MWAA.Model
         /// <para>
         /// The key-value tag pairs you want to associate to your environment. For example, <code>"Environment":
         /// "Staging"</code>. To learn more, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-        /// AWS resources</a>.
+        /// Amazon Web Services resources</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=50)]

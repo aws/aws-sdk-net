@@ -76,6 +76,12 @@ namespace Amazon.MWAA.Model.Internal.MarshallTransformations
                     unmarshalledObject.Error = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Source", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Source = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

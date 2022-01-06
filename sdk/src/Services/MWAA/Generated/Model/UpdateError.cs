@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MWAA.Model
 {
     /// <summary>
-    /// An object containing the error encountered with the last update: <code>ErrorCode</code>,
-    /// <code>ErrorMessage</code>.
+    /// Describes the error(s) encountered with the last update of the environment.
     /// </summary>
     public partial class UpdateError
     {
