@@ -35,6 +35,7 @@ namespace Amazon.MediaTailor.Model
     public partial class UpdateChannelRequest : AmazonMediaTailorRequest
     {
         private string _channelName;
+        private SlateSource _fillerSlate;
         private List<RequestOutputItem> _outputs = new List<RequestOutputItem>();
 
         /// <summary>
@@ -54,6 +55,26 @@ namespace Amazon.MediaTailor.Model
         internal bool IsSetChannelName()
         {
             return this._channelName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FillerSlate. 
+        /// <para>
+        /// The slate used to fill gaps between programs in the schedule. You must configure filler
+        /// slate if your channel uses the LINEAR PlaybackMode. MediaTailor doesn't support filler
+        /// slate for channels using the LOOP PlaybackMode.
+        /// </para>
+        /// </summary>
+        public SlateSource FillerSlate
+        {
+            get { return this._fillerSlate; }
+            set { this._fillerSlate = value; }
+        }
+
+        // Check to see if FillerSlate property is set
+        internal bool IsSetFillerSlate()
+        {
+            return this._fillerSlate != null;
         }
 
         /// <summary>

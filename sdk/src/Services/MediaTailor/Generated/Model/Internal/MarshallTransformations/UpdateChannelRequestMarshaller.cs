@@ -68,6 +68,17 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetFillerSlate())
+                {
+                    context.Writer.WritePropertyName("FillerSlate");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = SlateSourceMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.FillerSlate, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetOutputs())
                 {
                     context.Writer.WritePropertyName("Outputs");
