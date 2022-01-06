@@ -1,3 +1,24 @@
+### 3.7.185.0 (2022-01-06 19:15 UTC)
+* AppSync (3.7.4.0)
+	* AppSync: AWS AppSync now supports configurable batching sizes for AWS Lambda resolvers, Direct AWS Lambda resolvers and pipeline functions
+* EC2 (3.7.52.0)
+	* This release introduces On-Demand Capacity Reservation support for Cluster Placement Groups, adds Tags on instance Metadata, and includes documentation updates for Amazon EC2.
+* Elasticsearch (3.7.4.0)
+	* Amazon OpenSearch Service adds support for Fine Grained Access Control for existing domains running Elasticsearch version 6.7 and above
+* IoTWireless (3.7.9.0)
+	* Downlink Queue Management feature provides APIs for customers to manage the queued messages destined to device inside AWS IoT Core for LoRaWAN. Customer can view, delete or purge the queued message(s). It allows customer to preempt the queued messages and let more urgent messages go through.
+* MediaTailor (3.7.7.0)
+	* This release adds support for filler slate when updating MediaTailor channels that use the linear playback mode.
+* MWAA (3.7.2.0)
+	* This release adds a "Source" field that provides the initiator of an update, such as due to an automated patch from AWS or due to modification via Console or API.
+* OpenSearchService (3.7.3.0)
+	* Amazon OpenSearch Service adds support for Fine Grained Access Control for existing domains running Elasticsearch version 6.7 and above
+* Core 3.7.5.11
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.184.0 (2022-01-05 19:26 UTC)
 * AppStream (3.7.4.0)
 	* Includes APIs for App Entitlement management regarding entitlement and entitled application association.
