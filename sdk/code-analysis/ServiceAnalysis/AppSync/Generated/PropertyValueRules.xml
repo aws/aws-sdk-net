@@ -37,6 +37,11 @@
     <pattern>[_A-Za-z][_0-9A-Za-z]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppSync.Model.CreateFunctionRequest.MaxBatchSize</property>
+    <min>0</min>
+    <max>2000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppSync.Model.CreateFunctionRequest.Name</property>
     <min>1</min>
     <max>65536</max>
@@ -46,11 +51,13 @@
     <property>Amazon.AppSync.Model.CreateFunctionRequest.RequestMappingTemplate</property>
     <min>1</min>
     <max>65536</max>
+    <pattern>^.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppSync.Model.CreateFunctionRequest.ResponseMappingTemplate</property>
     <min>1</min>
     <max>65536</max>
+    <pattern>^.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppSync.Model.CreateResolverRequest.DataSourceName</property>
@@ -65,14 +72,21 @@
     <pattern>[_A-Za-z][_0-9A-Za-z]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppSync.Model.CreateResolverRequest.MaxBatchSize</property>
+    <min>0</min>
+    <max>2000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppSync.Model.CreateResolverRequest.RequestMappingTemplate</property>
     <min>1</min>
     <max>65536</max>
+    <pattern>^.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppSync.Model.CreateResolverRequest.ResponseMappingTemplate</property>
     <min>1</min>
     <max>65536</max>
+    <pattern>^.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppSync.Model.CreateResolverRequest.TypeName</property>
@@ -349,6 +363,11 @@
     <pattern>[_A-Za-z][_0-9A-Za-z]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppSync.Model.UpdateFunctionRequest.MaxBatchSize</property>
+    <min>0</min>
+    <max>2000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppSync.Model.UpdateFunctionRequest.Name</property>
     <min>1</min>
     <max>65536</max>
@@ -358,11 +377,13 @@
     <property>Amazon.AppSync.Model.UpdateFunctionRequest.RequestMappingTemplate</property>
     <min>1</min>
     <max>65536</max>
+    <pattern>^.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppSync.Model.UpdateFunctionRequest.ResponseMappingTemplate</property>
     <min>1</min>
     <max>65536</max>
+    <pattern>^.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppSync.Model.UpdateResolverRequest.DataSourceName</property>
@@ -377,14 +398,21 @@
     <pattern>[_A-Za-z][_0-9A-Za-z]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppSync.Model.UpdateResolverRequest.MaxBatchSize</property>
+    <min>0</min>
+    <max>2000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppSync.Model.UpdateResolverRequest.RequestMappingTemplate</property>
     <min>1</min>
     <max>65536</max>
+    <pattern>^.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppSync.Model.UpdateResolverRequest.ResponseMappingTemplate</property>
     <min>1</min>
     <max>65536</max>
+    <pattern>^.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppSync.Model.UpdateResolverRequest.TypeName</property>
@@ -435,6 +463,11 @@
     <pattern>[_A-Za-z][_0-9A-Za-z]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppSync.Model.FunctionConfiguration.MaxBatchSize</property>
+    <min>0</min>
+    <max>2000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppSync.Model.FunctionConfiguration.Name</property>
     <min>1</min>
     <max>65536</max>
@@ -444,11 +477,13 @@
     <property>Amazon.AppSync.Model.FunctionConfiguration.RequestMappingTemplate</property>
     <min>1</min>
     <max>65536</max>
+    <pattern>^.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppSync.Model.FunctionConfiguration.ResponseMappingTemplate</property>
     <min>1</min>
     <max>65536</max>
+    <pattern>^.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppSync.Model.GraphqlApi.Name</property>
@@ -474,14 +509,21 @@
     <pattern>[_A-Za-z][_0-9A-Za-z]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppSync.Model.Resolver.MaxBatchSize</property>
+    <min>0</min>
+    <max>2000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppSync.Model.Resolver.RequestMappingTemplate</property>
     <min>1</min>
     <max>65536</max>
+    <pattern>^.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppSync.Model.Resolver.ResponseMappingTemplate</property>
     <min>1</min>
     <max>65536</max>
+    <pattern>^.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppSync.Model.Resolver.TypeName</property>

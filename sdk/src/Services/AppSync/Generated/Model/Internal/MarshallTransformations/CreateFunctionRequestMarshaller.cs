@@ -86,6 +86,12 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.FunctionVersion);
                 }
 
+                if(publicRequest.IsSetMaxBatchSize())
+                {
+                    context.Writer.WritePropertyName("maxBatchSize");
+                    context.Writer.Write(publicRequest.MaxBatchSize);
+                }
+
                 if(publicRequest.IsSetName())
                 {
                     context.Writer.WritePropertyName("name");

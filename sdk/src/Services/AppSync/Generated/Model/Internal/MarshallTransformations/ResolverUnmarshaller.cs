@@ -88,6 +88,12 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                     unmarshalledObject.Kind = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("maxBatchSize", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.MaxBatchSize = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("pipelineConfig", targetDepth))
                 {
                     var unmarshaller = PipelineConfigUnmarshaller.Instance;
