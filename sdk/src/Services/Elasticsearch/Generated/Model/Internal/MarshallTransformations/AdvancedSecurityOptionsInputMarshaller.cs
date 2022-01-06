@@ -45,6 +45,12 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AdvancedSecurityOptionsInput requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAnonymousAuthEnabled())
+            {
+                context.Writer.WritePropertyName("AnonymousAuthEnabled");
+                context.Writer.Write(requestObject.AnonymousAuthEnabled);
+            }
+
             if(requestObject.IsSetEnabled())
             {
                 context.Writer.WritePropertyName("Enabled");

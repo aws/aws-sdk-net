@@ -35,10 +35,30 @@ namespace Amazon.Elasticsearch.Model
     /// </summary>
     public partial class AdvancedSecurityOptionsInput
     {
+        private bool? _anonymousAuthEnabled;
         private bool? _enabled;
         private bool? _internalUserDatabaseEnabled;
         private MasterUserOptions _masterUserOptions;
         private SAMLOptionsInput _samlOptions;
+
+        /// <summary>
+        /// Gets and sets the property AnonymousAuthEnabled. 
+        /// <para>
+        /// True if Anonymous auth is enabled. Anonymous auth can be enabled only when AdvancedSecurity
+        /// is enabled on existing domains.
+        /// </para>
+        /// </summary>
+        public bool AnonymousAuthEnabled
+        {
+            get { return this._anonymousAuthEnabled.GetValueOrDefault(); }
+            set { this._anonymousAuthEnabled = value; }
+        }
+
+        // Check to see if AnonymousAuthEnabled property is set
+        internal bool IsSetAnonymousAuthEnabled()
+        {
+            return this._anonymousAuthEnabled.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Enabled. 
