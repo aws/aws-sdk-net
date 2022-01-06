@@ -33,6 +33,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class PlacementGroup
     {
+        private string _groupArn;
         private string _groupId;
         private string _groupName;
         private int? _partitionCount;
@@ -52,6 +53,24 @@ namespace Amazon.EC2.Model
         public PlacementGroup(string groupName)
         {
             _groupName = groupName;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GroupArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the placement group.
+        /// </para>
+        /// </summary>
+        public string GroupArn
+        {
+            get { return this._groupArn; }
+            set { this._groupArn = value; }
+        }
+
+        // Check to see if GroupArn property is set
+        internal bool IsSetGroupArn()
+        {
+            return this._groupArn != null;
         }
 
         /// <summary>

@@ -15,6 +15,10 @@
     <pattern>^arn:aws([a-z-]+)?:outposts:[a-z\d-]+:\d{12}:outpost/op-[a-f0-9]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.CreateCapacityReservationRequest.PlacementGroupArn</property>
+    <pattern>^arn:aws([a-z-]+)?:ec2:[a-z\d-]+:\d{12}:placement-group/([^\s].+[^\s]){1,255}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.CreateIpamPoolRequest.AllocationDefaultNetmaskLength</property>
     <min>0</min>
     <max>128</max>
@@ -646,6 +650,10 @@
   <property-value-rule>
     <property>Amazon.EC2.Model.CapacityReservation.OutpostArn</property>
     <pattern>^arn:aws([a-z-]+)?:outposts:[a-z\d-]+:\d{12}:outpost/op-[a-f0-9]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.CapacityReservation.PlacementGroupArn</property>
+    <pattern>^arn:aws([a-z-]+)?:ec2:[a-z\d-]+:\d{12}:placement-group/([^\s].+[^\s]){1,255}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.CoipPool.PoolArn</property>

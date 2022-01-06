@@ -341,6 +341,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         request.Parameters.Add("MetadataOptions" + "." + "HttpTokens", StringUtils.FromString(publicRequest.MetadataOptions.HttpTokens));
                     }
+                    if(publicRequest.MetadataOptions.IsSetInstanceMetadataTags())
+                    {
+                        request.Parameters.Add("MetadataOptions" + "." + "InstanceMetadataTags", StringUtils.FromString(publicRequest.MetadataOptions.InstanceMetadataTags));
+                    }
                 }
                 if(publicRequest.IsSetMinCount())
                 {

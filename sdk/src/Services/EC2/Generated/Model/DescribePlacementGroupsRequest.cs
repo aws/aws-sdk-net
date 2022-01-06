@@ -51,6 +51,10 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>group-arn</code> - The Amazon Resource Name (ARN) of the placement group.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>state</code> - The state of the placement group (<code>pending</code> | <code>available</code>
         /// | <code>deleting</code> | <code>deleted</code>).
         /// </para>

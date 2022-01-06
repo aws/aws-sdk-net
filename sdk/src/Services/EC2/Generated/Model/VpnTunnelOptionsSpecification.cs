@@ -86,7 +86,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraints: A value between 0 and 30.
+        /// Constraints: A value greater than or equal to 30.
         /// </para>
         ///  
         /// <para>

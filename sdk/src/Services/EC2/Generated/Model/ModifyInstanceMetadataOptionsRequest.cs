@@ -45,11 +45,12 @@ namespace Amazon.EC2.Model
         private int? _httpPutResponseHopLimit;
         private HttpTokensState _httpTokens;
         private string _instanceId;
+        private InstanceMetadataTagsState _instanceMetadataTags;
 
         /// <summary>
         /// Gets and sets the property HttpEndpoint. 
         /// <para>
-        /// Enables or disables the HTTP metadata endpoint on your instances. If the parameter
+        /// Enables or disables the HTTP metadata endpoint on your instances. If this parameter
         /// is not specified, the existing state is maintained.
         /// </para>
         ///  
@@ -162,6 +163,31 @@ namespace Amazon.EC2.Model
         internal bool IsSetInstanceId()
         {
             return this._instanceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceMetadataTags. 
+        /// <para>
+        /// Set to <code>enabled</code> to allow access to instance tags from the instance metadata.
+        /// Set to <code>disabled</code> to turn off access to instance tags from the instance
+        /// metadata. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#work-with-tags-in-IMDS">Work
+        /// with instance tags using the instance metadata</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <code>disabled</code> 
+        /// </para>
+        /// </summary>
+        public InstanceMetadataTagsState InstanceMetadataTags
+        {
+            get { return this._instanceMetadataTags; }
+            set { this._instanceMetadataTags = value; }
+        }
+
+        // Check to see if InstanceMetadataTags property is set
+        internal bool IsSetInstanceMetadataTags()
+        {
+            return this._instanceMetadataTags != null;
         }
 
     }

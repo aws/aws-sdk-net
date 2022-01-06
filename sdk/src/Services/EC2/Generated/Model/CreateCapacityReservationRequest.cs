@@ -74,6 +74,7 @@ namespace Amazon.EC2.Model
         private CapacityReservationInstancePlatform _instancePlatform;
         private string _instanceType;
         private string _outpostArn;
+        private string _placementGroupArn;
         private List<TagSpecification> _tagSpecifications = new List<TagSpecification>();
         private CapacityReservationTenancy _tenancy;
 
@@ -353,6 +354,26 @@ namespace Amazon.EC2.Model
         internal bool IsSetOutpostArn()
         {
             return this._outpostArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PlacementGroupArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the cluster placement group in which to create the
+        /// Capacity Reservation. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/cr-cpg.html">
+        /// Capacity Reservations for cluster placement groups</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        public string PlacementGroupArn
+        {
+            get { return this._placementGroupArn; }
+            set { this._placementGroupArn = value; }
+        }
+
+        // Check to see if PlacementGroupArn property is set
+        internal bool IsSetPlacementGroupArn()
+        {
+            return this._placementGroupArn != null;
         }
 
         /// <summary>

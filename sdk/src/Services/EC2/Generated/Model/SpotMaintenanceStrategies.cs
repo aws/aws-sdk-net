@@ -39,8 +39,10 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property CapacityRebalance. 
         /// <para>
-        /// The strategy to use when Amazon EC2 emits a signal that your Spot Instance is at an
-        /// elevated risk of being interrupted.
+        /// The Spot Instance replacement strategy to use when Amazon EC2 emits a signal that
+        /// your Spot Instance is at an elevated risk of being interrupted. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-capacity-rebalance.html">Capacity
+        /// rebalancing</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
         /// </para>
         /// </summary>
         public SpotCapacityRebalance CapacityRebalance

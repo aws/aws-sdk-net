@@ -285,7 +285,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-configuration-strategies.html#ec2-fleet-request-type">EC2
+        /// For more information, see <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/ec2-fleet-request-type.html">EC2
         /// Fleet request types</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>

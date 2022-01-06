@@ -38,13 +38,14 @@ namespace Amazon.EC2
     /// Amazon Elastic Compute Cloud 
     /// <para>
     /// Amazon Elastic Compute Cloud (Amazon EC2) provides secure and resizable computing
-    /// capacity in the AWS Cloud. Using Amazon EC2 eliminates the need to invest in hardware
-    /// up front, so you can develop and deploy applications faster. Amazon Virtual Private
-    /// Cloud (Amazon VPC) enables you to provision a logically isolated section of the AWS
-    /// Cloud where you can launch AWS resources in a virtual network that you've defined.
-    /// Amazon Elastic Block Store (Amazon EBS) provides block level storage volumes for use
-    /// with EC2 instances. EBS volumes are highly available and reliable storage volumes
-    /// that can be attached to any running instance and used like a hard drive.
+    /// capacity in the Amazon Web Services Cloud. Using Amazon EC2 eliminates the need to
+    /// invest in hardware up front, so you can develop and deploy applications faster. Amazon
+    /// Virtual Private Cloud (Amazon VPC) enables you to provision a logically isolated section
+    /// of the Amazon Web Services Cloud where you can launch Amazon Web Services resources
+    /// in a virtual network that you've defined. Amazon Elastic Block Store (Amazon EBS)
+    /// provides block level storage volumes for use with EC2 instances. EBS volumes are highly
+    /// available and reliable storage volumes that can be attached to any running instance
+    /// and used like a hard drive.
     /// </para>
     ///  
     /// <para>
@@ -67,7 +68,8 @@ namespace Amazon.EC2
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// AWS VPN: <a href="http://aws.amazon.com/vpn">AWS VPN product page</a>, <a href="http://aws.amazon.com/documentation/vpn">AWS
+    /// Amazon Web Services VPN: <a href="http://aws.amazon.com/vpn">Amazon Web Services VPN
+    /// product page</a>, <a href="http://aws.amazon.com/documentation/vpn">Amazon Web Services
     /// VPN documentation</a> 
     /// </para>
     ///  </li> </ul>
@@ -12243,8 +12245,8 @@ namespace Amazon.EC2
         #region  DescribeAccountAttributes
 
         /// <summary>
-        /// Describes attributes of your AWS account. The following are the supported account
-        /// attributes:
+        /// Describes attributes of your Amazon Web Services account. The following are the supported
+        /// account attributes:
         /// 
         ///  <ul> <li> 
         /// <para>
@@ -12288,8 +12290,8 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// Describes attributes of your AWS account. The following are the supported account
-        /// attributes:
+        /// Describes attributes of your Amazon Web Services account. The following are the supported
+        /// account attributes:
         /// 
         ///  <ul> <li> 
         /// <para>
@@ -18885,8 +18887,9 @@ namespace Amazon.EC2
 
         /// <summary>
         /// [VPC only] Describes the stale security group rules for security groups in a specified
-        /// VPC. Rules are stale when they reference a deleted security group in a peer VPC, or
-        /// a security group in a peer VPC for which the VPC peering connection has been deleted.
+        /// VPC. Rules are stale when they reference a deleted security group in the same VPC
+        /// or in a peer VPC, or if they reference a security group in a peer VPC for which the
+        /// VPC peering connection has been deleted.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeStaleSecurityGroups service method.</param>
         /// 
