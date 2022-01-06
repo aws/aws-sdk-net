@@ -61,6 +61,26 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>http-endpoint</code> - Indicates whether the HTTP metadata endpoint on your
+        /// instances is enabled (<code>enabled</code> | <code>disabled</code>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>http-protocol-ipv4</code> - Indicates whether the IPv4 endpoint for the instance
+        /// metadata service is enabled (<code>enabled</code> | <code>disabled</code>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>host-resource-group-arn</code> - The ARN of the host resource group in which
+        /// to launch the instances.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>http-tokens</code> - The state of token usage for your instance metadata requests
+        /// (<code>optional</code> | <code>required</code>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>iam-instance-profile</code> - The ARN of the IAM instance profile.
         /// </para>
         ///  </li> <li> 
@@ -79,6 +99,14 @@ namespace Amazon.EC2.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>kernel-id</code> - The kernel ID.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>license-configuration-arn</code> - The ARN of the license configuration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>network-card-index</code> - The index of the network card.
         /// </para>
         ///  </li> <li> 
         /// <para>

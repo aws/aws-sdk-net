@@ -30,8 +30,8 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeAccountAttributes operation.
-    /// Describes attributes of your AWS account. The following are the supported account
-    /// attributes:
+    /// Describes attributes of your Amazon Web Services account. The following are the supported
+    /// account attributes:
     /// 
     ///  <ul> <li> 
     /// <para>

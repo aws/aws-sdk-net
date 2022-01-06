@@ -6489,6 +6489,56 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type InstanceMetadataTagsState.
+    /// </summary>
+    public class InstanceMetadataTagsState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Disabled for InstanceMetadataTagsState
+        /// </summary>
+        public static readonly InstanceMetadataTagsState Disabled = new InstanceMetadataTagsState("disabled");
+        /// <summary>
+        /// Constant Enabled for InstanceMetadataTagsState
+        /// </summary>
+        public static readonly InstanceMetadataTagsState Enabled = new InstanceMetadataTagsState("enabled");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InstanceMetadataTagsState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InstanceMetadataTagsState FindValue(string value)
+        {
+            return FindValue<InstanceMetadataTagsState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InstanceMetadataTagsState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type InstanceStateName.
     /// </summary>
     public class InstanceStateName : ConstantClass
@@ -9818,6 +9868,56 @@ namespace Amazon.EC2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator LaunchTemplateInstanceMetadataProtocolIpv6(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LaunchTemplateInstanceMetadataTagsState.
+    /// </summary>
+    public class LaunchTemplateInstanceMetadataTagsState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Disabled for LaunchTemplateInstanceMetadataTagsState
+        /// </summary>
+        public static readonly LaunchTemplateInstanceMetadataTagsState Disabled = new LaunchTemplateInstanceMetadataTagsState("disabled");
+        /// <summary>
+        /// Constant Enabled for LaunchTemplateInstanceMetadataTagsState
+        /// </summary>
+        public static readonly LaunchTemplateInstanceMetadataTagsState Enabled = new LaunchTemplateInstanceMetadataTagsState("enabled");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LaunchTemplateInstanceMetadataTagsState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LaunchTemplateInstanceMetadataTagsState FindValue(string value)
+        {
+            return FindValue<LaunchTemplateInstanceMetadataTagsState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LaunchTemplateInstanceMetadataTagsState(string value)
         {
             return FindValue(value);
         }

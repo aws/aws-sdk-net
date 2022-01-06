@@ -38,13 +38,14 @@ namespace Amazon.EC2.Model
         private LaunchTemplateInstanceMetadataProtocolIpv6 _httpProtocolIpv6;
         private int? _httpPutResponseHopLimit;
         private LaunchTemplateHttpTokensState _httpTokens;
+        private LaunchTemplateInstanceMetadataTagsState _instanceMetadataTags;
         private LaunchTemplateInstanceMetadataOptionsState _state;
 
         /// <summary>
         /// Gets and sets the property HttpEndpoint. 
         /// <para>
-        /// This parameter enables or disables the HTTP metadata endpoint on your instances. If
-        /// the parameter is not specified, the default state is <code>enabled</code>.
+        /// Enables or disables the HTTP metadata endpoint on your instances. If the parameter
+        /// is not specified, the default state is <code>enabled</code>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -145,6 +146,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetHttpTokens()
         {
             return this._httpTokens != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceMetadataTags. 
+        /// <para>
+        ///  
+        /// </para>
+        /// </summary>
+        public LaunchTemplateInstanceMetadataTagsState InstanceMetadataTags
+        {
+            get { return this._instanceMetadataTags; }
+            set { this._instanceMetadataTags = value; }
+        }
+
+        // Check to see if InstanceMetadataTags property is set
+        internal bool IsSetInstanceMetadataTags()
+        {
+            return this._instanceMetadataTags != null;
         }
 
         /// <summary>

@@ -44,6 +44,7 @@ namespace Amazon.EC2.Model
         /// The BYOIP CIDR.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Cidr
         {
             get { return this._cidr; }
@@ -62,6 +63,7 @@ namespace Amazon.EC2.Model
         /// The IPAM pool ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string IpamPoolId
         {
             get { return this._ipamPoolId; }
@@ -80,6 +82,7 @@ namespace Amazon.EC2.Model
         /// The Amazon Web Services account ID of the owner of the IPAM pool.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string IpamPoolOwner
         {
             get { return this._ipamPoolOwner; }

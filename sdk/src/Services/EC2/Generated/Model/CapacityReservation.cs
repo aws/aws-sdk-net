@@ -49,6 +49,7 @@ namespace Amazon.EC2.Model
         private string _instanceType;
         private string _outpostArn;
         private string _ownerId;
+        private string _placementGroupArn;
         private DateTime? _startDate;
         private CapacityReservationState _state;
         private List<Tag> _tags = new List<Tag>();
@@ -379,6 +380,26 @@ namespace Amazon.EC2.Model
         internal bool IsSetOwnerId()
         {
             return this._ownerId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PlacementGroupArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the cluster placement group in which the Capacity
+        /// Reservation was created. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/cr-cpg.html">
+        /// Capacity Reservations for cluster placement groups</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        public string PlacementGroupArn
+        {
+            get { return this._placementGroupArn; }
+            set { this._placementGroupArn = value; }
+        }
+
+        // Check to see if PlacementGroupArn property is set
+        internal bool IsSetPlacementGroupArn()
+        {
+            return this._placementGroupArn != null;
         }
 
         /// <summary>

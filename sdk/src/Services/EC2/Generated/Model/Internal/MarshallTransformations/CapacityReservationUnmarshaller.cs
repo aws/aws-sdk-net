@@ -150,6 +150,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.OwnerId = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("placementGroupArn", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.PlacementGroupArn = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("startDate", targetDepth))
                     {
                         var unmarshaller = DateTimeUnmarshaller.Instance;

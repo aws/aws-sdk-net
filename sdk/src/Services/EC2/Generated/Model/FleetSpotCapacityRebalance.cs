@@ -78,7 +78,11 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid only when <code>replacementStrategy</code> is set to <code>launch-before-terminate</code>.
+        /// Required when <code>ReplacementStrategy</code> is set to <code>launch-before-terminate</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Not valid when <code>ReplacementStrategy</code> is set to <code>launch</code>.
         /// </para>
         ///  
         /// <para>

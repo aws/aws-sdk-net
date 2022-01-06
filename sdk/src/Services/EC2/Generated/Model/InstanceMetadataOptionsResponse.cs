@@ -37,12 +37,17 @@ namespace Amazon.EC2.Model
         private InstanceMetadataProtocolState _httpProtocolIpv6;
         private int? _httpPutResponseHopLimit;
         private HttpTokensState _httpTokens;
+        private InstanceMetadataTagsState _instanceMetadataTags;
         private InstanceMetadataOptionsState _state;
 
         /// <summary>
         /// Gets and sets the property HttpEndpoint. 
         /// <para>
         /// Indicates whether the HTTP metadata endpoint on your instances is enabled or disabled.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the value is <code>disabled</code>, you cannot access your instance metadata.
         /// </para>
         /// </summary>
         public InstanceMetadataEndpointState HttpEndpoint
@@ -106,8 +111,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property HttpTokens. 
         /// <para>
-        /// The state of token usage for your instance metadata requests. If the parameter is
-        /// not specified in the request, the default state is <code>optional</code>.
+        /// The state of token usage for your instance metadata requests.
         /// </para>
         ///  
         /// <para>
@@ -123,6 +127,10 @@ namespace Amazon.EC2.Model
         /// instance metadata retrieval requests. In this state, retrieving the IAM role credential
         /// always returns the version 2.0 credentials; the version 1.0 credentials are not available.
         /// </para>
+        ///  
+        /// <para>
+        /// Default: <code>optional</code> 
+        /// </para>
         /// </summary>
         public HttpTokensState HttpTokens
         {
@@ -134,6 +142,26 @@ namespace Amazon.EC2.Model
         internal bool IsSetHttpTokens()
         {
             return this._httpTokens != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceMetadataTags. 
+        /// <para>
+        /// Indicates whether access to instance tags from the instance metadata is enabled or
+        /// disabled. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#work-with-tags-in-IMDS">Work
+        /// with instance tags using the instance metadata</a>.
+        /// </para>
+        /// </summary>
+        public InstanceMetadataTagsState InstanceMetadataTags
+        {
+            get { return this._instanceMetadataTags; }
+            set { this._instanceMetadataTags = value; }
+        }
+
+        // Check to see if InstanceMetadataTags property is set
+        internal bool IsSetInstanceMetadataTags()
+        {
+            return this._instanceMetadataTags != null;
         }
 
         /// <summary>
