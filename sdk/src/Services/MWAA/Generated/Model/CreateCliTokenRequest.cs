@@ -30,7 +30,8 @@ namespace Amazon.MWAA.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateCliToken operation.
-    /// Create a CLI token to use Airflow CLI.
+    /// Creates a CLI token for the Airflow CLI. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/call-mwaa-apis-cli.html">Creating
+    /// an Apache Airflow CLI token</a>.
     /// </summary>
     public partial class CreateCliTokenRequest : AmazonMWAARequest
     {
@@ -39,7 +40,7 @@ namespace Amazon.MWAA.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Create a CLI token request for a MWAA environment.
+        /// The name of the Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=80)]

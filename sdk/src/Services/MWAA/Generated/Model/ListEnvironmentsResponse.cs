@@ -39,7 +39,7 @@ namespace Amazon.MWAA.Model
         /// <summary>
         /// Gets and sets the property Environments. 
         /// <para>
-        /// Returns the list of Amazon MWAA environments.
+        /// Returns a list of Amazon MWAA environments.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -29,7 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MWAA.Model
 {
     /// <summary>
-    /// Internal only API.
+    /// <b>Internal only</b>. Collects Apache Airflow metrics. To learn more about the metrics
+    /// published to Amazon CloudWatch, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/cw-metrics.html">Amazon
+    /// MWAA performance metrics in Amazon CloudWatch</a>.
     /// </summary>
     public partial class MetricDatum
     {
@@ -43,7 +45,7 @@ namespace Amazon.MWAA.Model
         /// <summary>
         /// Gets and sets the property Dimensions. 
         /// <para>
-        /// Internal only API.
+        ///  <b>Internal only</b>. The dimensions associated with the metric.
         /// </para>
         /// </summary>
         public List<Dimension> Dimensions
@@ -61,7 +63,7 @@ namespace Amazon.MWAA.Model
         /// <summary>
         /// Gets and sets the property MetricName. 
         /// <para>
-        /// Internal only API.
+        ///  <b>Internal only</b>. The name of the metric.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -80,7 +82,7 @@ namespace Amazon.MWAA.Model
         /// <summary>
         /// Gets and sets the property StatisticValues. 
         /// <para>
-        /// Internal only API.
+        ///  <b>Internal only</b>. The statistical values for the metric.
         /// </para>
         /// </summary>
         public StatisticSet StatisticValues
@@ -98,7 +100,7 @@ namespace Amazon.MWAA.Model
         /// <summary>
         /// Gets and sets the property Timestamp. 
         /// <para>
-        /// Internal only API.
+        ///  <b>Internal only</b>. The time the metric data was received.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -115,7 +117,10 @@ namespace Amazon.MWAA.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Unit.
+        /// Gets and sets the property Unit. 
+        /// <para>
+        ///  <b>Internal only</b>. The unit used to store the metric.
+        /// </para>
         /// </summary>
         public Unit Unit
         {
@@ -132,7 +137,7 @@ namespace Amazon.MWAA.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// Internal only API.
+        ///  <b>Internal only</b>. The value for the metric.
         /// </para>
         /// </summary>
         public double Value

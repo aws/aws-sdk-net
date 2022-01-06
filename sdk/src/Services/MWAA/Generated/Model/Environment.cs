@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MWAA.Model
 {
     /// <summary>
-    /// The Amazon Managed Workflows for Apache Airflow (MWAA) environment.
+    /// Describes an Amazon Managed Workflows for Apache Airflow (MWAA) environment.
     /// </summary>
     public partial class Environment
     {
@@ -83,7 +83,8 @@ namespace Amazon.MWAA.Model
         /// <summary>
         /// Gets and sets the property AirflowVersion. 
         /// <para>
-        /// The Apache Airflow version on your environment. For example, <code>v1.10.12</code>.
+        /// The Apache Airflow version on your environment. Valid values: <code>1.10.12</code>,
+        /// <code>2.0.2</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=32)]
@@ -182,7 +183,7 @@ namespace Amazon.MWAA.Model
         /// Gets and sets the property ExecutionRoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the execution role in IAM that allows MWAA to access
-        /// AWS resources in your environment. For example, <code>arn:aws:iam::123456789:role/my-execution-role</code>.
+        /// Amazon Web Services resources in your environment. For example, <code>arn:aws:iam::123456789:role/my-execution-role</code>.
         /// To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-create-role.html">Amazon
         /// MWAA Execution role</a>.
         /// </para>
@@ -203,7 +204,8 @@ namespace Amazon.MWAA.Model
         /// <summary>
         /// Gets and sets the property KmsKey. 
         /// <para>
-        /// The Key Management Service (KMS) encryption key used to encrypt the data in your environment.
+        /// The Amazon Web Services Key Management Service (KMS) encryption key used to encrypt
+        /// the data in your environment.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1224)]
@@ -220,7 +222,10 @@ namespace Amazon.MWAA.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LastUpdate.
+        /// Gets and sets the property LastUpdate. 
+        /// <para>
+        /// The status of the last update on the environment.
+        /// </para>
         /// </summary>
         public LastUpdate LastUpdate
         {
@@ -237,8 +242,7 @@ namespace Amazon.MWAA.Model
         /// <summary>
         /// Gets and sets the property LoggingConfiguration. 
         /// <para>
-        /// The Apache Airflow logs being sent to CloudWatch Logs: <code>DagProcessingLogs</code>,
-        /// <code>SchedulerLogs</code>, <code>TaskLogs</code>, <code>WebserverLogs</code>, <code>WorkerLogs</code>.
+        /// The Apache Airflow logs published to CloudWatch Logs.
         /// </para>
         /// </summary>
         public LoggingConfiguration LoggingConfiguration
@@ -311,7 +315,13 @@ namespace Amazon.MWAA.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NetworkConfiguration.
+        /// Gets and sets the property NetworkConfiguration. 
+        /// <para>
+        /// Describes the VPC networking components used to secure and enable network traffic
+        /// between the Amazon Web Services resources for your environment. To learn more, see
+        /// <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About
+        /// networking on Amazon MWAA</a>.
+        /// </para>
         /// </summary>
         public NetworkConfiguration NetworkConfiguration
         {
@@ -537,7 +547,7 @@ namespace Amazon.MWAA.Model
         /// <para>
         /// The key-value tag pairs associated to your environment. For example, <code>"Environment":
         /// "Staging"</code>. To learn more, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-        /// AWS resources</a>.
+        /// Amazon Web Services resources</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
@@ -596,8 +606,8 @@ namespace Amazon.MWAA.Model
         /// <summary>
         /// Gets and sets the property WeeklyMaintenanceWindowStart. 
         /// <para>
-        /// The day and time of the week that weekly maintenance updates are scheduled. For example:
-        /// <code>TUE:03:30</code>.
+        /// The day and time of the week in Coordinated Universal Time (UTC) 24-hour standard
+        /// time that weekly maintenance updates are scheduled. For example: <code>TUE:03:30</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=9)]

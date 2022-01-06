@@ -76,8 +76,8 @@ namespace Amazon.MWAA.Model
         /// <summary>
         /// Gets and sets the property AirflowVersion. 
         /// <para>
-        /// The Apache Airflow version for your environment. For example, <code>v1.10.12</code>.
-        /// If no value is specified, defaults to the latest version. Valid values: <code>v1.10.12</code>.
+        /// The Apache Airflow version for your environment. If no value is specified, defaults
+        /// to the latest version. Valid values: <code>1.10.12</code>, <code>2.0.2</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=32)]
@@ -139,7 +139,7 @@ namespace Amazon.MWAA.Model
         /// Gets and sets the property ExecutionRoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the execution role in IAM that allows MWAA to access
-        /// AWS resources in your environment. For example, <code>arn:aws:iam::123456789:role/my-execution-role</code>.
+        /// Amazon Web Services resources in your environment. For example, <code>arn:aws:iam::123456789:role/my-execution-role</code>.
         /// To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-create-role.html">Amazon
         /// MWAA Execution role</a>.
         /// </para>
@@ -160,8 +160,7 @@ namespace Amazon.MWAA.Model
         /// <summary>
         /// Gets and sets the property LoggingConfiguration. 
         /// <para>
-        /// Defines the Apache Airflow logs to send to CloudWatch Logs: <code>DagProcessingLogs</code>,
-        /// <code>SchedulerLogs</code>, <code>TaskLogs</code>, <code>WebserverLogs</code>, <code>WorkerLogs</code>.
+        /// The Apache Airflow log types to send to CloudWatch Logs.
         /// </para>
         /// </summary>
         public LoggingConfigurationInput LoggingConfiguration
@@ -245,7 +244,7 @@ namespace Amazon.MWAA.Model
         /// Gets and sets the property NetworkConfiguration. 
         /// <para>
         /// The VPC networking components used to secure and enable network traffic between the
-        /// AWS resources for your environment. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About
+        /// Amazon Web Services resources for your environment. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About
         /// networking on Amazon MWAA</a>.
         /// </para>
         /// </summary>
@@ -410,16 +409,11 @@ namespace Amazon.MWAA.Model
         /// <summary>
         /// Gets and sets the property WeeklyMaintenanceWindowStart. 
         /// <para>
-        /// The day and time of the week to start weekly maintenance updates of your environment
-        /// in the following format: <code>DAY:HH:MM</code>. For example: <code>TUE:03:30</code>.
-        /// You can specify a start time in 30 minute increments only. Supported input includes
-        /// the following:
+        /// The day and time of the week in Coordinated Universal Time (UTC) 24-hour standard
+        /// time to start weekly maintenance updates of your environment in the following format:
+        /// <code>DAY:HH:MM</code>. For example: <code>TUE:03:30</code>. You can specify a start
+        /// time in 30 minute increments only.
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// MON|TUE|WED|THU|FRI|SAT|SUN:([01]\\d|2[0-3]):(00|30)
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Min=1, Max=9)]
         public string WeeklyMaintenanceWindowStart

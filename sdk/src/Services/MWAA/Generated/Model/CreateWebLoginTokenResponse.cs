@@ -39,7 +39,7 @@ namespace Amazon.MWAA.Model
         /// <summary>
         /// Gets and sets the property WebServerHostname. 
         /// <para>
-        /// Create an Airflow Web UI login token response for the provided webserver hostname.
+        /// The Airflow web server hostname for the environment.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -58,7 +58,7 @@ namespace Amazon.MWAA.Model
         /// <summary>
         /// Gets and sets the property WebToken. 
         /// <para>
-        /// Create an Airflow Web UI login token response for the provided JWT token.
+        /// An Airflow web server login token.
         /// </para>
         /// </summary>
         public string WebToken
