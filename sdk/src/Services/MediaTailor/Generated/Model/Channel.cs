@@ -121,8 +121,9 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property FillerSlate. 
         /// <para>
-        /// Contains information about the slate used to fill gaps between programs in the schedule.
-        /// You must configure FillerSlate if your channel uses an LINEAR PlaybackMode.
+        /// The slate used to fill gaps between programs in the schedule. You must configure filler
+        /// slate if your channel uses the LINEAR PlaybackMode. MediaTailor doesn't support filler
+        /// slate for channels using the LOOP PlaybackMode.
         /// </para>
         /// </summary>
         public SlateSource FillerSlate
