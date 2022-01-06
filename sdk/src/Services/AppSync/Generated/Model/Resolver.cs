@@ -37,6 +37,7 @@ namespace Amazon.AppSync.Model
         private string _dataSourceName;
         private string _fieldName;
         private ResolverKind _kind;
+        private int? _maxBatchSize;
         private PipelineConfig _pipelineConfig;
         private string _requestMappingTemplate;
         private string _resolverArn;
@@ -128,6 +129,25 @@ namespace Amazon.AppSync.Model
         internal bool IsSetKind()
         {
             return this._kind != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxBatchSize. 
+        /// <para>
+        /// The maximum batching size for a resolver.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=2000)]
+        public int MaxBatchSize
+        {
+            get { return this._maxBatchSize.GetValueOrDefault(); }
+            set { this._maxBatchSize = value; }
+        }
+
+        // Check to see if MaxBatchSize property is set
+        internal bool IsSetMaxBatchSize()
+        {
+            return this._maxBatchSize.HasValue; 
         }
 
         /// <summary>

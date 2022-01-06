@@ -39,6 +39,7 @@ namespace Amazon.AppSync.Model
         private string _description;
         private string _functionId;
         private string _functionVersion;
+        private int? _maxBatchSize;
         private string _name;
         private string _requestMappingTemplate;
         private string _responseMappingTemplate;
@@ -137,6 +138,25 @@ namespace Amazon.AppSync.Model
         internal bool IsSetFunctionVersion()
         {
             return this._functionVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxBatchSize. 
+        /// <para>
+        /// The maximum batching size for a resolver.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=2000)]
+        public int MaxBatchSize
+        {
+            get { return this._maxBatchSize.GetValueOrDefault(); }
+            set { this._maxBatchSize = value; }
+        }
+
+        // Check to see if MaxBatchSize property is set
+        internal bool IsSetMaxBatchSize()
+        {
+            return this._maxBatchSize.HasValue; 
         }
 
         /// <summary>
