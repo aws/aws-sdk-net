@@ -1,3 +1,12 @@
+### 3.7.186.0 (2022-01-07 19:12 UTC)
+* MediaLive (3.7.8.0)
+	* This release adds support for selecting the Program Date Time (PDT) Clock source algorithm for HLS outputs.
+* Core 3.7.5.12
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.185.0 (2022-01-06 19:15 UTC)
 * AppSync (3.7.4.0)
 	* AppSync: AWS AppSync now supports configurable batching sizes for AWS Lambda resolvers, Direct AWS Lambda resolvers and pipeline functions
