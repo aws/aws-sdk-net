@@ -7037,6 +7037,56 @@ namespace Amazon.MediaLive
 
 
     /// <summary>
+    /// Constants used for properties of type HlsProgramDateTimeClock.
+    /// </summary>
+    public class HlsProgramDateTimeClock : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INITIALIZE_FROM_OUTPUT_TIMECODE for HlsProgramDateTimeClock
+        /// </summary>
+        public static readonly HlsProgramDateTimeClock INITIALIZE_FROM_OUTPUT_TIMECODE = new HlsProgramDateTimeClock("INITIALIZE_FROM_OUTPUT_TIMECODE");
+        /// <summary>
+        /// Constant SYSTEM_CLOCK for HlsProgramDateTimeClock
+        /// </summary>
+        public static readonly HlsProgramDateTimeClock SYSTEM_CLOCK = new HlsProgramDateTimeClock("SYSTEM_CLOCK");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HlsProgramDateTimeClock(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HlsProgramDateTimeClock FindValue(string value)
+        {
+            return FindValue<HlsProgramDateTimeClock>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HlsProgramDateTimeClock(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type HlsRedundantManifest.
     /// </summary>
     public class HlsRedundantManifest : ConstantClass

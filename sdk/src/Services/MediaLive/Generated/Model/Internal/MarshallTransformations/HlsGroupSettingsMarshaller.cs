@@ -267,6 +267,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ProgramDateTime);
             }
 
+            if(requestObject.IsSetProgramDateTimeClock())
+            {
+                context.Writer.WritePropertyName("programDateTimeClock");
+                context.Writer.Write(requestObject.ProgramDateTimeClock);
+            }
+
             if(requestObject.IsSetProgramDateTimePeriod())
             {
                 context.Writer.WritePropertyName("programDateTimePeriod");
