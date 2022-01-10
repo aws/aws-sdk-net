@@ -1,3 +1,15 @@
+### 3.7.187.0 (2022-01-10 19:15 UTC)
+* ComputeOptimizer (3.7.5.0)
+	* Adds support for new Compute Optimizer capability that makes it easier for customers to optimize their EC2 instances by leveraging multiple CPU architectures.
+* EC2 (3.7.53.0)
+	* New feature: Updated EC2 API to support faster launching for Windows images. Optimized images are pre-provisioned, using snapshots to launch instances up to 65% faster.
+* GlueDataBrew (3.7.6.0)
+	* This SDK release adds support for specifying a Bucket Owner for an S3 location.
+* LookoutMetrics (3.7.6.0)
+	* This release adds FailureType in the response of DescribeAnomalyDetector.
+* TranscribeService (3.7.9.26)
+	* Documentation updates for Amazon Transcribe.
+
 ### 3.7.186.0 (2022-01-07 19:12 UTC)
 * MediaLive (3.7.8.0)
 	* This release adds support for selecting the Program Date Time (PDT) Clock source algorithm for HLS outputs.
