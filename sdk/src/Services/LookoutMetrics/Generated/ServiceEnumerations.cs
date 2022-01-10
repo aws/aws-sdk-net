@@ -237,6 +237,60 @@ namespace Amazon.LookoutMetrics
 
 
     /// <summary>
+    /// Constants used for properties of type AnomalyDetectorFailureType.
+    /// </summary>
+    public class AnomalyDetectorFailureType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVATION_FAILURE for AnomalyDetectorFailureType
+        /// </summary>
+        public static readonly AnomalyDetectorFailureType ACTIVATION_FAILURE = new AnomalyDetectorFailureType("ACTIVATION_FAILURE");
+        /// <summary>
+        /// Constant BACK_TEST_ACTIVATION_FAILURE for AnomalyDetectorFailureType
+        /// </summary>
+        public static readonly AnomalyDetectorFailureType BACK_TEST_ACTIVATION_FAILURE = new AnomalyDetectorFailureType("BACK_TEST_ACTIVATION_FAILURE");
+        /// <summary>
+        /// Constant DELETION_FAILURE for AnomalyDetectorFailureType
+        /// </summary>
+        public static readonly AnomalyDetectorFailureType DELETION_FAILURE = new AnomalyDetectorFailureType("DELETION_FAILURE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AnomalyDetectorFailureType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AnomalyDetectorFailureType FindValue(string value)
+        {
+            return FindValue<AnomalyDetectorFailureType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AnomalyDetectorFailureType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AnomalyDetectorStatus.
     /// </summary>
     public class AnomalyDetectorStatus : ConstantClass

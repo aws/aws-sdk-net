@@ -2074,6 +2074,9 @@ namespace Amazon.LookoutMetrics
         /// <exception cref="Amazon.LookoutMetrics.Model.ResourceNotFoundException">
         /// The specified resource cannot be found. Check the ARN of the resource and try again.
         /// </exception>
+        /// <exception cref="Amazon.LookoutMetrics.Model.ServiceQuotaExceededException">
+        /// The request exceeded the service's quotas. Check the service quotas and try again.
+        /// </exception>
         /// <exception cref="Amazon.LookoutMetrics.Model.TooManyRequestsException">
         /// The request was denied due to too many requests being submitted at the same time.
         /// </exception>
