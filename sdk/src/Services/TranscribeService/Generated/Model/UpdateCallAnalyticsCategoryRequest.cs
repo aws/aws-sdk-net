@@ -64,7 +64,7 @@ namespace Amazon.TranscribeService.Model
         /// Gets and sets the property Rules. 
         /// <para>
         /// The rules used for the updated analytics category. The rules that you provide in this
-        /// field replace the ones that are currently being used. 
+        /// field replace the ones that are currently being used.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=20)]

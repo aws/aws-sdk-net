@@ -64,7 +64,6 @@ namespace Amazon.TranscribeService.Model
         /// Gets and sets the property Negate. 
         /// <para>
         /// Set to <code>TRUE</code> to look for sentiments that weren't specified in the request.
-        /// 
         /// </para>
         /// </summary>
         public bool Negate

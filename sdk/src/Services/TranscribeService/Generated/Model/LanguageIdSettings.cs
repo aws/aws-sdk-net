@@ -41,8 +41,8 @@ namespace Amazon.TranscribeService.Model
         /// Gets and sets the property LanguageModelName. 
         /// <para>
         /// The name of the language model you want to use when transcribing your audio. The model
-        /// you specify must have the same language code as the transcription job; if the languages
-        /// don't match, the language model won't be applied.
+        /// you specify must have the same language codes as the transcription job; if the languages
+        /// don't match, the language model isn't be applied.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
@@ -62,8 +62,8 @@ namespace Amazon.TranscribeService.Model
         /// Gets and sets the property VocabularyFilterName. 
         /// <para>
         /// The name of the vocabulary filter you want to use when transcribing your audio. The
-        /// filter you specify must have the same language code as the transcription job; if the
-        /// languages don't match, the vocabulary filter won't be applied.
+        /// filter you specify must have the same language codes as the transcription job; if
+        /// the languages don't match, the vocabulary filter isn't be applied.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
@@ -83,8 +83,8 @@ namespace Amazon.TranscribeService.Model
         /// Gets and sets the property VocabularyName. 
         /// <para>
         /// The name of the vocabulary you want to use when processing your transcription job.
-        /// The vocabulary you specify must have the same language code as the transcription job;
-        /// if the languages don't match, the vocabulary won't be applied.
+        /// The vocabulary you specify must have the same language codes as the transcription
+        /// job; if the languages don't match, the vocabulary isn't applied.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]

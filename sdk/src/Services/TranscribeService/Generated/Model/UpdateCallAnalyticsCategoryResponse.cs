@@ -40,7 +40,7 @@ namespace Amazon.TranscribeService.Model
         /// <para>
         /// The attributes describing the analytics category. You can see information such as
         /// the rules that you've used to update the category and when the category was originally
-        /// created. 
+        /// created.
         /// </para>
         /// </summary>
         public CategoryProperties CategoryProperties

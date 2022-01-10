@@ -43,7 +43,7 @@ namespace Amazon.TranscribeService.Model
         /// <para>
         /// The Amazon S3 location of a text file used as input to create the vocabulary filter.
         /// Only use characters from the character set defined for custom vocabularies. For a
-        /// list of character sets, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary.html#charsets">Character
+        /// list of character sets, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character
         /// Sets for Custom Vocabularies</a>.
         /// </para>
         ///  
@@ -94,7 +94,7 @@ namespace Amazon.TranscribeService.Model
         /// Gets and sets the property Words. 
         /// <para>
         /// The words to use in the vocabulary filter. Only use characters from the character
-        /// set defined for custom vocabularies. For a list of character sets, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary.html#charsets">Character
+        /// set defined for custom vocabularies. For a list of character sets, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character
         /// Sets for Custom Vocabularies</a>.
         /// </para>
         ///  

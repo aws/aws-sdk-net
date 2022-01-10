@@ -108,8 +108,8 @@ namespace Amazon.TranscribeService.Model
         /// the language, you can leave this field blank and Amazon Transcribe will use machine
         /// learning to identify the language for you. To improve the ability of Amazon Transcribe
         /// to correctly identify the language, you can provide an array of the languages that
-        /// can be present in the audio. Refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html">Supported
-        /// languages and language-specific features</a> for additional information.
+        /// can be present in the audio. Refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported
+        /// languages</a> for additional information.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

@@ -40,7 +40,7 @@ namespace Amazon.TranscribeService.Model
         /// Gets and sets the property Formats. 
         /// <para>
         /// Specify the output format for your subtitle file; if you select both SRT and VTT formats,
-        /// two output files are genereated.
+        /// two output files are generated.
         /// </para>
         /// </summary>
         public List<string> Formats

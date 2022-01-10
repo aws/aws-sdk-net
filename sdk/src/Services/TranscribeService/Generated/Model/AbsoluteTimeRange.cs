@@ -56,7 +56,7 @@ namespace Amazon.TranscribeService.Model
         ///  </li> </ul> 
         /// <para>
         /// The time range is set between 10,000 milliseconds and 50,000 milliseconds into the
-        /// call. 
+        /// call.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=14400000)]
@@ -76,8 +76,8 @@ namespace Amazon.TranscribeService.Model
         /// Gets and sets the property First. 
         /// <para>
         /// A time range from the beginning of the call to the value that you've specified. For
-        /// example, if you specify 100000, the time range is set to the first 100,000 milliseconds
-        /// of the call.
+        /// example, if you specify <code>100000</code>, the time range is set to the first 100,000
+        /// milliseconds of the call.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=14400000)]
@@ -97,8 +97,8 @@ namespace Amazon.TranscribeService.Model
         /// Gets and sets the property Last. 
         /// <para>
         /// A time range from the value that you've specified to the end of the call. For example,
-        /// if you specify 100000, the time range is set to the last 100,000 milliseconds of the
-        /// call.
+        /// if you specify <code>100000</code>, the time range is set to the last 100,000 milliseconds
+        /// of the call.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=14400000)]

@@ -45,7 +45,7 @@ namespace Amazon.TranscribeService.Model
         /// Gets and sets the property LanguageCode. 
         /// <para>
         /// The language code of the language used for the entries in the updated vocabulary.
-        /// US English (en-US) is the only valid language code in Amazon Transcribe Medical.
+        /// U.S. English (en-US) is the only valid language code in Amazon Transcribe Medical.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -89,7 +89,7 @@ namespace Amazon.TranscribeService.Model
         ///  
         /// <para>
         /// For more information about custom vocabularies in Amazon Transcribe Medical, see <a
-        /// href="https://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html#how-vocabulary">Medical
+        /// href="https://docs.aws.amazon.com/transcribe/latest/dg/vocabulary-med.html">Medical
         /// Custom Vocabularies</a>.
         /// </para>
         /// </summary>

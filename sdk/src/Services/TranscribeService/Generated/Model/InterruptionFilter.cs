@@ -47,7 +47,6 @@ namespace Amazon.TranscribeService.Model
         /// to find the interruption. For example, you could search for an interruption between
         /// the 30,000 millisecond mark and the 45,000 millisecond mark. You could also specify
         /// the time period as the first 15,000 milliseconds or the last 15,000 milliseconds.
-        /// 
         /// </para>
         /// </summary>
         public AbsoluteTimeRange AbsoluteTimeRange

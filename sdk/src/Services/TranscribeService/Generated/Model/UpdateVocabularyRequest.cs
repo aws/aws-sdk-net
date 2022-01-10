@@ -45,7 +45,8 @@ namespace Amazon.TranscribeService.Model
         /// Gets and sets the property LanguageCode. 
         /// <para>
         /// The language code of the vocabulary entries. For a list of languages and their corresponding
-        /// language codes, see <a>transcribe-whatis</a>.
+        /// language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported
+        /// languages</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -84,11 +85,20 @@ namespace Amazon.TranscribeService.Model
         /// <para>
         /// The S3 location of the text file that contains the definition of the custom vocabulary.
         /// The URI must be in the same region as the API endpoint that you are calling. The general
-        /// form is 
+        /// form is:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>https://s3.&lt;aws-region&gt;.amazonaws.com/&lt;AWSDOC-EXAMPLE-BUCKET&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt;</code>
+        /// 
         /// </para>
         ///  
         /// <para>
         /// For example:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>https://s3.us-east-1.amazonaws.com/AWSDOC-EXAMPLE-BUCKET/vocab.txt</code> 
         /// </para>
         ///  
         /// <para>
@@ -97,7 +107,7 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information about custom vocabularies, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html#how-vocabulary">Custom
+        /// For more information about custom vocabularies, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html">Custom
         /// Vocabularies</a>.
         /// </para>
         /// </summary>

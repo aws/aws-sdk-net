@@ -92,8 +92,8 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code> https://s3.&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt;
-        /// </code> 
+        ///  <code>https://s3.&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt;</code>
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -110,7 +110,7 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information about custom vocabularies, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html#how-vocabulary-med">Medical
+        /// For more information about custom vocabularies, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/vocabulary-med.html">Medical
         /// Custom Vocabularies</a>.
         /// </para>
         /// </summary>
