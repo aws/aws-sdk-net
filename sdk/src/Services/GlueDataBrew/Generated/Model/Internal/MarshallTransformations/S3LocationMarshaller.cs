@@ -51,6 +51,12 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Bucket);
             }
 
+            if(requestObject.IsSetBucketOwner())
+            {
+                context.Writer.WritePropertyName("BucketOwner");
+                context.Writer.Write(requestObject.BucketOwner);
+            }
+
             if(requestObject.IsSetKey())
             {
                 context.Writer.WritePropertyName("Key");
