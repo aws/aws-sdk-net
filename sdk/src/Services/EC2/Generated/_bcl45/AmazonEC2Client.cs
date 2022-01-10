@@ -13303,6 +13303,47 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeFastLaunchImages
+
+
+        /// <summary>
+        /// Describe details for Windows AMIs that are configured for faster launching.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFastLaunchImages service method.</param>
+        /// 
+        /// <returns>The response from the DescribeFastLaunchImages service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFastLaunchImages">REST API Reference for DescribeFastLaunchImages Operation</seealso>
+        public virtual DescribeFastLaunchImagesResponse DescribeFastLaunchImages(DescribeFastLaunchImagesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeFastLaunchImagesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeFastLaunchImagesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeFastLaunchImagesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Describe details for Windows AMIs that are configured for faster launching.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFastLaunchImages service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeFastLaunchImages service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFastLaunchImages">REST API Reference for DescribeFastLaunchImages Operation</seealso>
+        public virtual Task<DescribeFastLaunchImagesResponse> DescribeFastLaunchImagesAsync(DescribeFastLaunchImagesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeFastLaunchImagesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeFastLaunchImagesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeFastLaunchImagesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeFastSnapshotRestores
 
 
@@ -20883,6 +20924,53 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DisableFastLaunch
+
+
+        /// <summary>
+        /// Discontinue faster launching for a Windows AMI, and clean up existing pre-provisioned
+        /// snapshots. When you disable faster launching, the AMI uses the standard launch process
+        /// for each instance. All pre-provisioned snapshots must be removed before you can enable
+        /// faster launching again.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableFastLaunch service method.</param>
+        /// 
+        /// <returns>The response from the DisableFastLaunch service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableFastLaunch">REST API Reference for DisableFastLaunch Operation</seealso>
+        public virtual DisableFastLaunchResponse DisableFastLaunch(DisableFastLaunchRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisableFastLaunchRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisableFastLaunchResponseUnmarshaller.Instance;
+
+            return Invoke<DisableFastLaunchResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Discontinue faster launching for a Windows AMI, and clean up existing pre-provisioned
+        /// snapshots. When you disable faster launching, the AMI uses the standard launch process
+        /// for each instance. All pre-provisioned snapshots must be removed before you can enable
+        /// faster launching again.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableFastLaunch service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisableFastLaunch service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableFastLaunch">REST API Reference for DisableFastLaunch Operation</seealso>
+        public virtual Task<DisableFastLaunchResponse> DisableFastLaunchAsync(DisableFastLaunchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisableFastLaunchRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisableFastLaunchResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DisableFastLaunchResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DisableFastSnapshotRestores
 
 
@@ -21939,6 +22027,57 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = EnableEbsEncryptionByDefaultResponseUnmarshaller.Instance;
             
             return InvokeAsync<EnableEbsEncryptionByDefaultResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  EnableFastLaunch
+
+
+        /// <summary>
+        /// When you enable faster launching for a Windows AMI, images are pre-provisioned, using
+        /// snapshots to launch instances up to 65% faster. To create the optimized Windows image,
+        /// Amazon EC2 launches an instance and runs through Sysprep steps, rebooting as required.
+        /// Then it creates a set of reserved snapshots that are used for subsequent launches.
+        /// The reserved snapshots are automatically replenished as they are used, depending on
+        /// your settings for launch frequency.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableFastLaunch service method.</param>
+        /// 
+        /// <returns>The response from the EnableFastLaunch service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableFastLaunch">REST API Reference for EnableFastLaunch Operation</seealso>
+        public virtual EnableFastLaunchResponse EnableFastLaunch(EnableFastLaunchRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EnableFastLaunchRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableFastLaunchResponseUnmarshaller.Instance;
+
+            return Invoke<EnableFastLaunchResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// When you enable faster launching for a Windows AMI, images are pre-provisioned, using
+        /// snapshots to launch instances up to 65% faster. To create the optimized Windows image,
+        /// Amazon EC2 launches an instance and runs through Sysprep steps, rebooting as required.
+        /// Then it creates a set of reserved snapshots that are used for subsequent launches.
+        /// The reserved snapshots are automatically replenished as they are used, depending on
+        /// your settings for launch frequency.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableFastLaunch service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the EnableFastLaunch service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableFastLaunch">REST API Reference for EnableFastLaunch Operation</seealso>
+        public virtual Task<EnableFastLaunchResponse> EnableFastLaunchAsync(EnableFastLaunchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EnableFastLaunchRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableFastLaunchResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<EnableFastLaunchResponse>(request, options, cancellationToken);
         }
 
         #endregion

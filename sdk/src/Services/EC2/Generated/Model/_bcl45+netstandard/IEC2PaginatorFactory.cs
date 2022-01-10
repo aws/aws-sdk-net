@@ -101,6 +101,11 @@ namespace Amazon.EC2.Model
         IDescribeExportImageTasksPaginator DescribeExportImageTasks(DescribeExportImageTasksRequest request);
 
         /// <summary>
+        /// Paginator for DescribeFastLaunchImages operation
+        ///</summary>
+        IDescribeFastLaunchImagesPaginator DescribeFastLaunchImages(DescribeFastLaunchImagesRequest request);
+
+        /// <summary>
         /// Paginator for DescribeFastSnapshotRestores operation
         ///</summary>
         IDescribeFastSnapshotRestoresPaginator DescribeFastSnapshotRestores(DescribeFastSnapshotRestoresRequest request);

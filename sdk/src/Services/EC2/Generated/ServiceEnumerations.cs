@@ -4405,6 +4405,118 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type FastLaunchResourceType.
+    /// </summary>
+    public class FastLaunchResourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Snapshot for FastLaunchResourceType
+        /// </summary>
+        public static readonly FastLaunchResourceType Snapshot = new FastLaunchResourceType("snapshot");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FastLaunchResourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FastLaunchResourceType FindValue(string value)
+        {
+            return FindValue<FastLaunchResourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FastLaunchResourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FastLaunchStateCode.
+    /// </summary>
+    public class FastLaunchStateCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Disabling for FastLaunchStateCode
+        /// </summary>
+        public static readonly FastLaunchStateCode Disabling = new FastLaunchStateCode("disabling");
+        /// <summary>
+        /// Constant DisablingFailed for FastLaunchStateCode
+        /// </summary>
+        public static readonly FastLaunchStateCode DisablingFailed = new FastLaunchStateCode("disabling-failed");
+        /// <summary>
+        /// Constant Enabled for FastLaunchStateCode
+        /// </summary>
+        public static readonly FastLaunchStateCode Enabled = new FastLaunchStateCode("enabled");
+        /// <summary>
+        /// Constant EnabledFailed for FastLaunchStateCode
+        /// </summary>
+        public static readonly FastLaunchStateCode EnabledFailed = new FastLaunchStateCode("enabled-failed");
+        /// <summary>
+        /// Constant Enabling for FastLaunchStateCode
+        /// </summary>
+        public static readonly FastLaunchStateCode Enabling = new FastLaunchStateCode("enabling");
+        /// <summary>
+        /// Constant EnablingFailed for FastLaunchStateCode
+        /// </summary>
+        public static readonly FastLaunchStateCode EnablingFailed = new FastLaunchStateCode("enabling-failed");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FastLaunchStateCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FastLaunchStateCode FindValue(string value)
+        {
+            return FindValue<FastLaunchStateCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FastLaunchStateCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type FastSnapshotRestoreStateCode.
     /// </summary>
     public class FastSnapshotRestoreStateCode : ConstantClass
