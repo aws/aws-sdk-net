@@ -86,8 +86,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// Gets and sets the property CurrentPerformanceRisk. 
         /// <para>
         /// The risk of the current Lambda function not meeting the performance needs of its workloads.
-        /// The higher the risk, the more likely the current Lambda function configuration is
-        /// underperforming in its workload.
+        /// The higher the risk, the more likely the current Lambda function requires more memory.
         /// </para>
         /// </summary>
         public CurrentPerformanceRisk CurrentPerformanceRisk

@@ -73,6 +73,12 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.EnhancedInfrastructureMetrics);
                 }
 
+                if(publicRequest.IsSetInferredWorkloadTypes())
+                {
+                    context.Writer.WritePropertyName("inferredWorkloadTypes");
+                    context.Writer.Write(publicRequest.InferredWorkloadTypes);
+                }
+
                 if(publicRequest.IsSetResourceType())
                 {
                     context.Writer.WritePropertyName("resourceType");

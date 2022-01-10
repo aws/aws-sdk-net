@@ -70,6 +70,12 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
                     unmarshalledObject.EnhancedInfrastructureMetrics = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("inferredWorkloadTypes", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.InferredWorkloadTypes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("resourceType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
