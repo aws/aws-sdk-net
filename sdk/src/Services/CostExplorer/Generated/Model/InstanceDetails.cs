@@ -78,7 +78,8 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property ESInstanceDetails. 
         /// <para>
-        /// The Amazon ES instances that Amazon Web Services recommends that you purchase.
+        /// The Amazon OpenSearch Service instances that Amazon Web Services recommends that you
+        /// purchase.
         /// </para>
         /// </summary>
         public ESInstanceDetails ESInstanceDetails

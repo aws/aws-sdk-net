@@ -227,7 +227,8 @@ namespace Amazon.CostExplorer.Model
         /// Gets and sets the property Dimension. 
         /// <para>
         /// The name of the dimension. Each <code>Dimension</code> is available for a different
-        /// <code>Context</code>. For more information, see <code>Context</code>. 
+        /// <code>Context</code>. For more information, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html#awscostmanagement-GetDimensionValues-request-Context">Context</a>.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
