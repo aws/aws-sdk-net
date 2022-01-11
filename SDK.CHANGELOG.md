@@ -1,3 +1,24 @@
+### 3.7.188.0 (2022-01-11 19:45 UTC)
+* CostExplorer (3.7.3.62)
+	* Doc only update for Cost Explorer API that fixes missing clarifications for MatchOptions definitions
+* EC2 (3.7.54.0)
+	* EC2 Capacity Reservations now supports RHEL instance platforms (RHEL with SQL Server Standard, RHEL with SQL Server Enterprise, RHEL with SQL Server Web, RHEL with HA, RHEL with HA and SQL Server Standard, RHEL with HA and SQL Server Enterprise)
+* FinSpaceData (3.7.2.6)
+	* Documentation updates for FinSpace.
+* IoTEventsData (3.7.1.86)
+	* This release provides documentation updates for Timer.timestamp in the IoT Events API Reference Guide.
+* Kendra (3.7.12.0)
+	* Amazon Kendra now supports advanced query language and query-less search.
+* RDS (3.7.9.0)
+	* This release adds the db-proxy event type to support subscribing to RDS Proxy events.
+* WorkSpaces (3.7.3.0)
+	* Introducing new APIs for Workspaces audio optimization with Amazon Connect: CreateConnectClientAddIn, DescribeConnectClientAddIns, UpdateConnectClientAddIn and DeleteConnectClientAddIn.
+* Core 3.7.5.13
+	* Updating sdk-default-configuration.json file.
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.187.0 (2022-01-10 19:15 UTC)
 * ComputeOptimizer (3.7.5.0)
 	* Adds support for new Compute Optimizer capability that makes it easier for customers to optimize their EC2 instances by leveraging multiple CPU architectures.
