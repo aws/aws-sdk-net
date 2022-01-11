@@ -76,6 +76,10 @@ namespace Amazon.RDS.Model
         /// If the source type is a DB cluster snapshot, a <code>DBClusterSnapshotIdentifier</code>
         /// value must be supplied.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the source type is an RDS Proxy, a <code>DBProxyName</code> value must be supplied.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]

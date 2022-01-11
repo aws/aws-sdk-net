@@ -757,6 +757,10 @@ namespace Amazon.RDS
         /// </summary>
         public static readonly SourceType DbParameterGroup = new SourceType("db-parameter-group");
         /// <summary>
+        /// Constant DbProxy for SourceType
+        /// </summary>
+        public static readonly SourceType DbProxy = new SourceType("db-proxy");
+        /// <summary>
         /// Constant DbSecurityGroup for SourceType
         /// </summary>
         public static readonly SourceType DbSecurityGroup = new SourceType("db-security-group");

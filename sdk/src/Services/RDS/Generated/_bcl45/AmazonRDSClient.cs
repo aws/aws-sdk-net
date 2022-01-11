@@ -3203,13 +3203,12 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// If you specify both the <code>SourceType</code> and <code>SourceIds</code>, such as
-        /// <code>SourceType</code> = <code>db-instance</code> and <code>SourceIdentifier</code>
-        /// = <code>myDBInstance1</code>, you are notified of all the <code>db-instance</code>
-        /// events for the specified source. If you specify a <code>SourceType</code> but do not
-        /// specify a <code>SourceIdentifier</code>, you receive notice of the events for that
-        /// source type for all your RDS sources. If you don't specify either the SourceType or
-        /// the <code>SourceIdentifier</code>, you are notified of events generated from all RDS
-        /// sources belonging to your customer account.
+        /// <code>SourceType</code> = <code>db-instance</code> and <code>SourceIds</code> = <code>myDBInstance1</code>,
+        /// you are notified of all the <code>db-instance</code> events for the specified source.
+        /// If you specify a <code>SourceType</code> but do not specify <code>SourceIds</code>,
+        /// you receive notice of the events for that source type for all your RDS sources. If
+        /// you don't specify either the SourceType or the <code>SourceIds</code>, you are notified
+        /// of events generated from all RDS sources belonging to your customer account.
         /// </para>
         ///  <note> 
         /// <para>
@@ -3271,13 +3270,12 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// If you specify both the <code>SourceType</code> and <code>SourceIds</code>, such as
-        /// <code>SourceType</code> = <code>db-instance</code> and <code>SourceIdentifier</code>
-        /// = <code>myDBInstance1</code>, you are notified of all the <code>db-instance</code>
-        /// events for the specified source. If you specify a <code>SourceType</code> but do not
-        /// specify a <code>SourceIdentifier</code>, you receive notice of the events for that
-        /// source type for all your RDS sources. If you don't specify either the SourceType or
-        /// the <code>SourceIdentifier</code>, you are notified of events generated from all RDS
-        /// sources belonging to your customer account.
+        /// <code>SourceType</code> = <code>db-instance</code> and <code>SourceIds</code> = <code>myDBInstance1</code>,
+        /// you are notified of all the <code>db-instance</code> events for the specified source.
+        /// If you specify a <code>SourceType</code> but do not specify <code>SourceIds</code>,
+        /// you receive notice of the events for that source type for all your RDS sources. If
+        /// you don't specify either the SourceType or the <code>SourceIds</code>, you are notified
+        /// of events generated from all RDS sources belonging to your customer account.
         /// </para>
         ///  <note> 
         /// <para>
@@ -6835,9 +6833,10 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Displays a list of categories for all event source types, or, if specified, for a
-        /// specified source type. You can see a list of the event categories and source types
-        /// in <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">
-        /// Events</a> in the <i>Amazon RDS User Guide.</i>
+        /// specified source type. You can also see this list in the "Amazon RDS event categories
+        /// and event messages" section of the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.Messages.html">
+        /// <i>Amazon RDS User Guide</i> </a> or the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Events.Messages.html">
+        /// <i>Amazon Aurora User Guide</i> </a>.
         /// </summary>
         /// 
         /// <returns>The response from the DescribeEventCategories service method, as returned by RDS.</returns>
@@ -6850,9 +6849,10 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Displays a list of categories for all event source types, or, if specified, for a
-        /// specified source type. You can see a list of the event categories and source types
-        /// in <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">
-        /// Events</a> in the <i>Amazon RDS User Guide.</i>
+        /// specified source type. You can also see this list in the "Amazon RDS event categories
+        /// and event messages" section of the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.Messages.html">
+        /// <i>Amazon RDS User Guide</i> </a> or the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Events.Messages.html">
+        /// <i>Amazon Aurora User Guide</i> </a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEventCategories service method.</param>
         /// 
@@ -6870,9 +6870,10 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Displays a list of categories for all event source types, or, if specified, for a
-        /// specified source type. You can see a list of the event categories and source types
-        /// in <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">
-        /// Events</a> in the <i>Amazon RDS User Guide.</i>
+        /// specified source type. You can also see this list in the "Amazon RDS event categories
+        /// and event messages" section of the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.Messages.html">
+        /// <i>Amazon RDS User Guide</i> </a> or the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Events.Messages.html">
+        /// <i>Amazon Aurora User Guide</i> </a>.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -6887,9 +6888,10 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Displays a list of categories for all event source types, or, if specified, for a
-        /// specified source type. You can see a list of the event categories and source types
-        /// in <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">
-        /// Events</a> in the <i>Amazon RDS User Guide.</i>
+        /// specified source type. You can also see this list in the "Amazon RDS event categories
+        /// and event messages" section of the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.Messages.html">
+        /// <i>Amazon RDS User Guide</i> </a> or the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Events.Messages.html">
+        /// <i>Amazon Aurora User Guide</i> </a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEventCategories service method.</param>
         /// <param name="cancellationToken">
@@ -6914,14 +6916,14 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Returns events related to DB instances, DB clusters, DB parameter groups, DB security
-        /// groups, DB snapshots, and DB cluster snapshots for the past 14 days. Events specific
-        /// to a particular DB instances, DB clusters, DB parameter groups, DB security groups,
-        /// DB snapshots, and DB cluster snapshots group can be obtained by providing the name
-        /// as a parameter.
+        /// groups, DB snapshots, DB cluster snapshots, and RDS Proxies for the past 14 days.
+        /// Events specific to a particular DB instance, DB cluster, DB parameter group, DB security
+        /// group, DB snapshot, DB cluster snapshot group, or RDS Proxy can be obtained by providing
+        /// the name as a parameter.
         /// 
         ///  <note> 
         /// <para>
-        /// By default, the past hour of events are returned.
+        /// By default, RDS returns events that were generated in the past hour.
         /// </para>
         ///  </note>
         /// </summary>
@@ -6936,14 +6938,14 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Returns events related to DB instances, DB clusters, DB parameter groups, DB security
-        /// groups, DB snapshots, and DB cluster snapshots for the past 14 days. Events specific
-        /// to a particular DB instances, DB clusters, DB parameter groups, DB security groups,
-        /// DB snapshots, and DB cluster snapshots group can be obtained by providing the name
-        /// as a parameter.
+        /// groups, DB snapshots, DB cluster snapshots, and RDS Proxies for the past 14 days.
+        /// Events specific to a particular DB instance, DB cluster, DB parameter group, DB security
+        /// group, DB snapshot, DB cluster snapshot group, or RDS Proxy can be obtained by providing
+        /// the name as a parameter.
         /// 
         ///  <note> 
         /// <para>
-        /// By default, the past hour of events are returned.
+        /// By default, RDS returns events that were generated in the past hour.
         /// </para>
         ///  </note>
         /// </summary>
@@ -6963,14 +6965,14 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Returns events related to DB instances, DB clusters, DB parameter groups, DB security
-        /// groups, DB snapshots, and DB cluster snapshots for the past 14 days. Events specific
-        /// to a particular DB instances, DB clusters, DB parameter groups, DB security groups,
-        /// DB snapshots, and DB cluster snapshots group can be obtained by providing the name
-        /// as a parameter.
+        /// groups, DB snapshots, DB cluster snapshots, and RDS Proxies for the past 14 days.
+        /// Events specific to a particular DB instance, DB cluster, DB parameter group, DB security
+        /// group, DB snapshot, DB cluster snapshot group, or RDS Proxy can be obtained by providing
+        /// the name as a parameter.
         /// 
         ///  <note> 
         /// <para>
-        /// By default, the past hour of events are returned.
+        /// By default, RDS returns events that were generated in the past hour.
         /// </para>
         ///  </note>
         /// </summary>
@@ -6987,14 +6989,14 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Returns events related to DB instances, DB clusters, DB parameter groups, DB security
-        /// groups, DB snapshots, and DB cluster snapshots for the past 14 days. Events specific
-        /// to a particular DB instances, DB clusters, DB parameter groups, DB security groups,
-        /// DB snapshots, and DB cluster snapshots group can be obtained by providing the name
-        /// as a parameter.
+        /// groups, DB snapshots, DB cluster snapshots, and RDS Proxies for the past 14 days.
+        /// Events specific to a particular DB instance, DB cluster, DB parameter group, DB security
+        /// group, DB snapshot, DB cluster snapshot group, or RDS Proxy can be obtained by providing
+        /// the name as a parameter.
         /// 
         ///  <note> 
         /// <para>
-        /// By default, the past hour of events are returned.
+        /// By default, RDS returns events that were generated in the past hour.
         /// </para>
         ///  </note>
         /// </summary>
