@@ -31,6 +31,11 @@ namespace Amazon.Kendra.Model
     /// <summary>
     /// Container for the parameters to the CreateFaq operation.
     /// Creates an new set of frequently asked question (FAQ) questions and answers.
+    /// 
+    ///  
+    /// <para>
+    /// Adding FAQs to an index is an asynchronous operation.
+    /// </para>
     /// </summary>
     public partial class CreateFaqRequest : AmazonKendraRequest
     {

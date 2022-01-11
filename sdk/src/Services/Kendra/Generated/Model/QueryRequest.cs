@@ -246,7 +246,7 @@ namespace Amazon.Kendra.Model
         /// The text to search for.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1000)]
+        [AWSProperty(Min=1, Max=1000)]
         public string QueryText
         {
             get { return this._queryText; }

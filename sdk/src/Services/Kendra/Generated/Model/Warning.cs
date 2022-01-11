@@ -29,55 +29,48 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kendra.Model
 {
     /// <summary>
-    /// A custom attribute value assigned to a document.
-    /// 
-    ///  
-    /// <para>
-    /// For more information on how to create custom document attributes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-attributes.html">Custom
-    /// Attributes</a>.
-    /// </para>
+    /// The warning code and message that explains a problem with a query.
     /// </summary>
-    public partial class DocumentAttribute
+    public partial class Warning
     {
-        private string _key;
-        private DocumentAttributeValue _value;
+        private WarningCode _code;
+        private string _message;
 
         /// <summary>
-        /// Gets and sets the property Key. 
+        /// Gets and sets the property Code. 
         /// <para>
-        /// The identifier for the attribute.
+        /// The code used to show the type of warning for the query.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=200)]
-        public string Key
+        public WarningCode Code
         {
-            get { return this._key; }
-            set { this._key = value; }
+            get { return this._code; }
+            set { this._code = value; }
         }
 
-        // Check to see if Key property is set
-        internal bool IsSetKey()
+        // Check to see if Code property is set
+        internal bool IsSetCode()
         {
-            return this._key != null;
+            return this._code != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Value. 
+        /// Gets and sets the property Message. 
         /// <para>
-        /// The value of the attribute.
+        /// The message that explains the problem with the query.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public DocumentAttributeValue Value
+        [AWSProperty(Min=1, Max=2048)]
+        public string Message
         {
-            get { return this._value; }
-            set { this._value = value; }
+            get { return this._message; }
+            set { this._message = value; }
         }
 
-        // Check to see if Value property is set
-        internal bool IsSetValue()
+        // Check to see if Message property is set
+        internal bool IsSetMessage()
         {
-            return this._value != null;
+            return this._message != null;
         }
 
     }

@@ -603,6 +603,11 @@ namespace Amazon.Kendra
 
         /// <summary>
         /// Creates an new set of frequently asked question (FAQ) questions and answers.
+        /// 
+        ///  
+        /// <para>
+        /// Adding FAQs to an index is an asynchronous operation.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateFaq service method.</param>
         /// 

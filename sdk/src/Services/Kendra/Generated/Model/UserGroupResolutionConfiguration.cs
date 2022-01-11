@@ -45,6 +45,13 @@ namespace Amazon.Kendra.Model
     /// see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html#iam-roles-aws-sso">IAM
     /// roles for Amazon Web Services SSO</a>.
     /// </para>
+    ///  
+    /// <para>
+    /// Amazon Kendra currently does not support using <code>UserGroupResolutionConfiguration</code>
+    /// with an Amazon Web Services organization member account for your Amazon Web Services
+    /// SSO identify source. You must create your index in the parent account for the organization
+    /// in order to use <code>UserGroupResolutionConfiguration</code>.
+    /// </para>
     /// </summary>
     public partial class UserGroupResolutionConfiguration
     {

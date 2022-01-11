@@ -1026,7 +1026,6 @@
     <property>Amazon.Kendra.Model.QueryRequest.QueryText</property>
     <min>1</min>
     <max>1000</max>
-    <pattern>^\P{C}*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Kendra.Model.QueryRequest.VisitorId</property>
@@ -2148,6 +2147,12 @@
     <min>1</min>
     <max>1000</max>
     <pattern>[a-zA-Z0-9][a-zA-Z0-9_-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.Warning.Message</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^\P{C}*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Kendra.Model.WebCrawlerConfiguration.CrawlDepth</property>
