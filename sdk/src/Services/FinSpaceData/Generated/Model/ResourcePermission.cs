@@ -29,7 +29,43 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FinSpaceData.Model
 {
     /// <summary>
-    /// Resource permission for a Dataset.
+    /// Resource permission for a dataset. When you create a dataset, all the other members
+    /// of the same user group inherit access to the dataset. You can only create a dataset
+    /// if your user group has application permission for Create Datasets.
+    /// 
+    ///  
+    /// <para>
+    /// The following is a list of valid dataset permissions that you can apply: 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <code>ViewDatasetDetails</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>ReadDatasetDetails</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>AddDatasetData</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>CreateSnapshot</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>EditDatasetMetadata</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>DeleteDataset</code> 
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// For more information on the ataset permissions, see <a href="https://docs.aws.amazon.com/finspace/latest/userguide/managing-user-permissions.html#supported-dataset-permissions">Supported
+    /// Dataset Permissions</a> in the FinSpace User Guide.
+    /// </para>
     /// </summary>
     public partial class ResourcePermission
     {

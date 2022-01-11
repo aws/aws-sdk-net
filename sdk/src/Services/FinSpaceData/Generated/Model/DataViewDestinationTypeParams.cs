@@ -46,6 +46,10 @@ namespace Amazon.FinSpaceData.Model
         /// <para>
         ///  <code>GLUE_TABLE</code> - Glue table destination type.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>S3</code> - S3 destination type.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -62,7 +66,19 @@ namespace Amazon.FinSpaceData.Model
         }
 
         /// <summary>
-        /// Gets and sets the property S3DestinationExportFileFormat.
+        /// Gets and sets the property S3DestinationExportFileFormat. 
+        /// <para>
+        /// Data view export file format.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>PARQUET</code> - Parquet export file format.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DELIMITED_TEXT</code> - Delimited text export file format.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public ExportFileFormat S3DestinationExportFileFormat
         {
@@ -77,7 +93,19 @@ namespace Amazon.FinSpaceData.Model
         }
 
         /// <summary>
-        /// Gets and sets the property S3DestinationExportFileFormatOptions.
+        /// Gets and sets the property S3DestinationExportFileFormatOptions. 
+        /// <para>
+        /// Format Options for S3 Destination type.
+        /// </para>
+        ///  
+        /// <para>
+        /// Here is an example of how you could specify the <code>s3DestinationExportFileFormatOptions</code>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code> { "header": "true", "delimiter": ",", "compression": "gzip" }</code> 
+        /// </para>
         /// </summary>
         public Dictionary<string, string> S3DestinationExportFileFormatOptions
         {

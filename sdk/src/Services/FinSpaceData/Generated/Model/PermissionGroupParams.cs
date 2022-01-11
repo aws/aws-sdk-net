@@ -30,6 +30,17 @@ namespace Amazon.FinSpaceData.Model
 {
     /// <summary>
     /// Permission group parameters for Dataset permissions.
+    /// 
+    ///  
+    /// <para>
+    /// Here is an example of how you could specify the <code>PermissionGroupParams</code>:
+    /// </para>
+    ///  
+    /// <para>
+    ///  <code> { "permissionGroupId": "0r6fCRtSTUk4XPfXQe3M0g", "datasetPermissions": [ {"permission":
+    /// "ViewDatasetDetails"}, {"permission": "AddDatasetData"}, {"permission": "EditDatasetMetadata"},
+    /// {"permission": "DeleteDataset"} ] } </code> 
+    /// </para>
     /// </summary>
     public partial class PermissionGroupParams
     {
