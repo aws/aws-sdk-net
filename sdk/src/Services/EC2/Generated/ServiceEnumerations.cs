@@ -1979,6 +1979,30 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly CapacityReservationInstancePlatform RedHatEnterpriseLinux = new CapacityReservationInstancePlatform("Red Hat Enterprise Linux");
         /// <summary>
+        /// Constant RHELWithHA for CapacityReservationInstancePlatform
+        /// </summary>
+        public static readonly CapacityReservationInstancePlatform RHELWithHA = new CapacityReservationInstancePlatform("RHEL with HA");
+        /// <summary>
+        /// Constant RHELWithHAAndSQLServerEnterprise for CapacityReservationInstancePlatform
+        /// </summary>
+        public static readonly CapacityReservationInstancePlatform RHELWithHAAndSQLServerEnterprise = new CapacityReservationInstancePlatform("RHEL with HA and SQL Server Enterprise");
+        /// <summary>
+        /// Constant RHELWithHAAndSQLServerStandard for CapacityReservationInstancePlatform
+        /// </summary>
+        public static readonly CapacityReservationInstancePlatform RHELWithHAAndSQLServerStandard = new CapacityReservationInstancePlatform("RHEL with HA and SQL Server Standard");
+        /// <summary>
+        /// Constant RHELWithSQLServerEnterprise for CapacityReservationInstancePlatform
+        /// </summary>
+        public static readonly CapacityReservationInstancePlatform RHELWithSQLServerEnterprise = new CapacityReservationInstancePlatform("RHEL with SQL Server Enterprise");
+        /// <summary>
+        /// Constant RHELWithSQLServerStandard for CapacityReservationInstancePlatform
+        /// </summary>
+        public static readonly CapacityReservationInstancePlatform RHELWithSQLServerStandard = new CapacityReservationInstancePlatform("RHEL with SQL Server Standard");
+        /// <summary>
+        /// Constant RHELWithSQLServerWeb for CapacityReservationInstancePlatform
+        /// </summary>
+        public static readonly CapacityReservationInstancePlatform RHELWithSQLServerWeb = new CapacityReservationInstancePlatform("RHEL with SQL Server Web");
+        /// <summary>
         /// Constant SUSELinux for CapacityReservationInstancePlatform
         /// </summary>
         public static readonly CapacityReservationInstancePlatform SUSELinux = new CapacityReservationInstancePlatform("SUSE Linux");
