@@ -49,10 +49,20 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property DeleteUnusedFMManagedResources. 
         /// <para>
-        /// Indicates whether Firewall Manager should delete Firewall Manager managed resources,
-        /// such as web ACLs and security groups, when they are not in use by the Firewall Manager
-        /// policy. By default, Firewall Manager doesn't delete unused Firewall Manager managed
-        /// resources. This option is not available for Shield Advanced or WAF Classic policies.
+        /// Indicates whether Firewall Manager should automatically remove protections from resources
+        /// that leave the policy scope and clean up resources that Firewall Manager is managing
+        /// for accounts when those accounts leave policy scope. For example, Firewall Manager
+        /// will disassociate a Firewall Manager managed web ACL from a protected customer resource
+        /// when the customer resource leaves policy scope. 
+        /// </para>
+        ///  
+        /// <para>
+        /// By default, Firewall Manager doesn't remove protections or delete Firewall Manager
+        /// managed resources. 
+        /// </para>
+        ///  
+        /// <para>
+        /// This option is not available for Shield Advanced or WAF Classic policies.
         /// </para>
         /// </summary>
         public bool DeleteUnusedFMManagedResources
@@ -297,7 +307,8 @@ namespace Amazon.FMS.Model
         /// </para>
         ///  
         /// <para>
-        /// For WAF and Shield Advanced, example resource types include <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>
+        /// For WAF and Shield Advanced, resource types include <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>,
+        /// <code>AWS::ElasticLoadBalancing::LoadBalancer</code>, <code>AWS::EC2::EIP</code>,
         /// and <code>AWS::CloudFront::Distribution</code>. For a security group common policy,
         /// valid values are <code>AWS::EC2::NetworkInterface</code> and <code>AWS::EC2::Instance</code>.
         /// For a security group content audit policy, valid values are <code>AWS::EC2::SecurityGroup</code>,
