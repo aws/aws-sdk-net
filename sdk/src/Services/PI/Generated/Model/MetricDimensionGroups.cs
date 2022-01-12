@@ -29,48 +29,48 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PI.Model
 {
     /// <summary>
-    /// A time-ordered series of data points, corresponding to a dimension of a Performance
-    /// Insights metric.
+    /// The available dimension information for a metric type.
     /// </summary>
-    public partial class MetricKeyDataPoints
+    public partial class MetricDimensionGroups
     {
-        private List<DataPoint> _dataPoints = new List<DataPoint>();
-        private ResponseResourceMetricKey _key;
+        private List<DimensionGroupDetail> _groups = new List<DimensionGroupDetail>();
+        private string _metric;
 
         /// <summary>
-        /// Gets and sets the property DataPoints. 
+        /// Gets and sets the property Groups. 
         /// <para>
-        /// An array of timestamp-value pairs, representing measurements over a period of time.
+        /// The available dimension groups for a metric type.
         /// </para>
         /// </summary>
-        public List<DataPoint> DataPoints
+        public List<DimensionGroupDetail> Groups
         {
-            get { return this._dataPoints; }
-            set { this._dataPoints = value; }
+            get { return this._groups; }
+            set { this._groups = value; }
         }
 
-        // Check to see if DataPoints property is set
-        internal bool IsSetDataPoints()
+        // Check to see if Groups property is set
+        internal bool IsSetGroups()
         {
-            return this._dataPoints != null && this._dataPoints.Count > 0; 
+            return this._groups != null && this._groups.Count > 0; 
         }
 
         /// <summary>
-        /// Gets and sets the property Key. 
+        /// Gets and sets the property Metric. 
         /// <para>
-        /// The dimensions to which the data points apply.
+        /// The metric type to which the dimension information belongs.
         /// </para>
         /// </summary>
-        public ResponseResourceMetricKey Key
+        [AWSProperty(Min=0, Max=256)]
+        public string Metric
         {
-            get { return this._key; }
-            set { this._key = value; }
+            get { return this._metric; }
+            set { this._metric = value; }
         }
 
-        // Check to see if Key property is set
-        internal bool IsSetKey()
+        // Check to see if Metric property is set
+        internal bool IsSetMetric()
         {
-            return this._key != null;
+            return this._metric != null;
         }
 
     }

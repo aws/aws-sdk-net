@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.PI.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// DescribeDimensionKeys Request Marshaller
+    /// ListAvailableResourceDimensions Request Marshaller
     /// </summary>       
-    public class DescribeDimensionKeysRequestMarshaller : IMarshaller<IRequest, DescribeDimensionKeysRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class ListAvailableResourceDimensionsRequestMarshaller : IMarshaller<IRequest, ListAvailableResourceDimensionsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.PI.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((DescribeDimensionKeysRequest)input);
+            return this.Marshall((ListAvailableResourceDimensionsRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.PI.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(DescribeDimensionKeysRequest publicRequest)
+        public IRequest Marshall(ListAvailableResourceDimensionsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.PI");
-            string target = "PerformanceInsightsv20180227.DescribeDimensionKeys";
+            string target = "PerformanceInsightsv20180227.ListAvailableResourceDimensions";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-02-27";            
@@ -67,48 +67,6 @@ namespace Amazon.PI.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAdditionalMetrics())
-                {
-                    context.Writer.WritePropertyName("AdditionalMetrics");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAdditionalMetricsListValue in publicRequest.AdditionalMetrics)
-                    {
-                            context.Writer.Write(publicRequestAdditionalMetricsListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetEndTime())
-                {
-                    context.Writer.WritePropertyName("EndTime");
-                    context.Writer.Write(publicRequest.EndTime);
-                }
-
-                if(publicRequest.IsSetFilter())
-                {
-                    context.Writer.WritePropertyName("Filter");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestFilterKvp in publicRequest.Filter)
-                    {
-                        context.Writer.WritePropertyName(publicRequestFilterKvp.Key);
-                        var publicRequestFilterValue = publicRequestFilterKvp.Value;
-
-                            context.Writer.Write(publicRequestFilterValue);
-                    }
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetGroupBy())
-                {
-                    context.Writer.WritePropertyName("GroupBy");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = DimensionGroupMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.GroupBy, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
                 if(publicRequest.IsSetIdentifier())
                 {
                     context.Writer.WritePropertyName("Identifier");
@@ -121,10 +79,15 @@ namespace Amazon.PI.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.MaxResults);
                 }
 
-                if(publicRequest.IsSetMetric())
+                if(publicRequest.IsSetMetrics())
                 {
-                    context.Writer.WritePropertyName("Metric");
-                    context.Writer.Write(publicRequest.Metric);
+                    context.Writer.WritePropertyName("Metrics");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestMetricsListValue in publicRequest.Metrics)
+                    {
+                            context.Writer.Write(publicRequestMetricsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
                 }
 
                 if(publicRequest.IsSetNextToken())
@@ -133,33 +96,10 @@ namespace Amazon.PI.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.NextToken);
                 }
 
-                if(publicRequest.IsSetPartitionBy())
-                {
-                    context.Writer.WritePropertyName("PartitionBy");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = DimensionGroupMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.PartitionBy, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetPeriodInSeconds())
-                {
-                    context.Writer.WritePropertyName("PeriodInSeconds");
-                    context.Writer.Write(publicRequest.PeriodInSeconds);
-                }
-
                 if(publicRequest.IsSetServiceType())
                 {
                     context.Writer.WritePropertyName("ServiceType");
                     context.Writer.Write(publicRequest.ServiceType);
-                }
-
-                if(publicRequest.IsSetStartTime())
-                {
-                    context.Writer.WritePropertyName("StartTime");
-                    context.Writer.Write(publicRequest.StartTime);
                 }
 
         
@@ -171,9 +111,9 @@ namespace Amazon.PI.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static DescribeDimensionKeysRequestMarshaller _instance = new DescribeDimensionKeysRequestMarshaller();        
+        private static ListAvailableResourceDimensionsRequestMarshaller _instance = new ListAvailableResourceDimensionsRequestMarshaller();        
 
-        internal static DescribeDimensionKeysRequestMarshaller GetInstance()
+        internal static ListAvailableResourceDimensionsRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -181,7 +121,7 @@ namespace Amazon.PI.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DescribeDimensionKeysRequestMarshaller Instance
+        public static ListAvailableResourceDimensionsRequestMarshaller Instance
         {
             get
             {

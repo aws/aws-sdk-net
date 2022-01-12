@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.PI.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DimensionKeyDescription Object
+    /// Response Unmarshaller for ResponseResourceMetric Object
     /// </summary>  
-    public class DimensionKeyDescriptionUnmarshaller : IUnmarshaller<DimensionKeyDescription, XmlUnmarshallerContext>, IUnmarshaller<DimensionKeyDescription, JsonUnmarshallerContext>
+    public class ResponseResourceMetricUnmarshaller : IUnmarshaller<ResponseResourceMetric, XmlUnmarshallerContext>, IUnmarshaller<ResponseResourceMetric, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        DimensionKeyDescription IUnmarshaller<DimensionKeyDescription, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ResponseResourceMetric IUnmarshaller<ResponseResourceMetric, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,33 @@ namespace Amazon.PI.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public DimensionKeyDescription Unmarshall(JsonUnmarshallerContext context)
+        public ResponseResourceMetric Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            DimensionKeyDescription unmarshalledObject = new DimensionKeyDescription();
+            ResponseResourceMetric unmarshalledObject = new ResponseResourceMetric();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("AdditionalMetrics", targetDepth))
+                if (context.TestExpression("Description", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, double, StringUnmarshaller, DoubleUnmarshaller>(StringUnmarshaller.Instance, DoubleUnmarshaller.Instance);
-                    unmarshalledObject.AdditionalMetrics = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Dimensions", targetDepth))
+                if (context.TestExpression("Metric", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    unmarshalledObject.Dimensions = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Metric = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Partitions", targetDepth))
+                if (context.TestExpression("Unit", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<double, DoubleUnmarshaller>(DoubleUnmarshaller.Instance);
-                    unmarshalledObject.Partitions = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Total", targetDepth))
-                {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
-                    unmarshalledObject.Total = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Unit = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +88,12 @@ namespace Amazon.PI.Model.Internal.MarshallTransformations
         }
 
 
-        private static DimensionKeyDescriptionUnmarshaller _instance = new DimensionKeyDescriptionUnmarshaller();        
+        private static ResponseResourceMetricUnmarshaller _instance = new ResponseResourceMetricUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DimensionKeyDescriptionUnmarshaller Instance
+        public static ResponseResourceMetricUnmarshaller Instance
         {
             get
             {

@@ -29,31 +29,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PI.Model
 {
     /// <summary>
-    /// If <code>PartitionBy</code> was specified in a <code>DescribeDimensionKeys</code>
-    /// request, the dimensions are returned in an array. Each element in the array specifies
-    /// one dimension.
+    /// The information about a dimension.
     /// </summary>
-    public partial class ResponsePartitionKey
+    public partial class DimensionDetail
     {
-        private Dictionary<string, string> _dimensions = new Dictionary<string, string>();
+        private string _identifier;
 
         /// <summary>
-        /// Gets and sets the property Dimensions. 
+        /// Gets and sets the property Identifier. 
         /// <para>
-        /// A dimension map that contains the dimensions for this partition.
+        /// The identifier of a dimension.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public Dictionary<string, string> Dimensions
+        [AWSProperty(Min=0, Max=256)]
+        public string Identifier
         {
-            get { return this._dimensions; }
-            set { this._dimensions = value; }
+            get { return this._identifier; }
+            set { this._identifier = value; }
         }
 
-        // Check to see if Dimensions property is set
-        internal bool IsSetDimensions()
+        // Check to see if Identifier property is set
+        internal bool IsSetIdentifier()
         {
-            return this._dimensions != null && this._dimensions.Count > 0; 
+            return this._identifier != null;
         }
 
     }

@@ -80,8 +80,8 @@ namespace Amazon.PI.Model
         /// <summary>
         /// Gets and sets the property Identifier. 
         /// <para>
-        /// An immutable, AWS Region-unique identifier for a data source. Performance Insights
-        /// gathers metrics from this data source.
+        /// An immutable, Amazon Web Services Region-unique identifier for a data source. Performance
+        /// Insights gathers metrics from this data source.
         /// </para>
         ///  
         /// <para>
@@ -213,8 +213,8 @@ namespace Amazon.PI.Model
         /// <summary>
         /// Gets and sets the property ServiceType. 
         /// <para>
-        /// The AWS service for which Performance Insights returns metrics. The only valid value
-        /// for <i>ServiceType</i> is <code>RDS</code>.
+        /// The Amazon Web Services service for which Performance Insights returns metrics. The
+        /// only valid value for <i>ServiceType</i> is <code>RDS</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

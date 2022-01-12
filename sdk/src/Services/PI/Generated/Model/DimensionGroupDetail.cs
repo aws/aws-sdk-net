@@ -29,22 +29,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PI.Model
 {
     /// <summary>
-    /// If <code>PartitionBy</code> was specified in a <code>DescribeDimensionKeys</code>
-    /// request, the dimensions are returned in an array. Each element in the array specifies
-    /// one dimension.
+    /// Information about dimensions within a dimension group.
     /// </summary>
-    public partial class ResponsePartitionKey
+    public partial class DimensionGroupDetail
     {
-        private Dictionary<string, string> _dimensions = new Dictionary<string, string>();
+        private List<DimensionDetail> _dimensions = new List<DimensionDetail>();
+        private string _group;
 
         /// <summary>
         /// Gets and sets the property Dimensions. 
         /// <para>
-        /// A dimension map that contains the dimensions for this partition.
+        /// The dimensions within a dimension group.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public Dictionary<string, string> Dimensions
+        public List<DimensionDetail> Dimensions
         {
             get { return this._dimensions; }
             set { this._dimensions = value; }
@@ -54,6 +52,25 @@ namespace Amazon.PI.Model
         internal bool IsSetDimensions()
         {
             return this._dimensions != null && this._dimensions.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Group. 
+        /// <para>
+        /// The name of the dimension group.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=256)]
+        public string Group
+        {
+            get { return this._group; }
+            set { this._group = value; }
+        }
+
+        // Check to see if Group property is set
+        internal bool IsSetGroup()
+        {
+            return this._group != null;
         }
 
     }

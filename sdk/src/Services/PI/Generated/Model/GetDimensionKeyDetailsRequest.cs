@@ -32,7 +32,7 @@ namespace Amazon.PI.Model
     /// Container for the parameters to the GetDimensionKeyDetails operation.
     /// Get the attributes of the specified dimension group for a DB instance or data source.
     /// For example, if you specify a SQL ID, <code>GetDimensionKeyDetails</code> retrieves
-    /// the full text of the dimension <code>db.sql.statement</code> associated with this
+    /// the full text of the dimension <code>db.sql.statement</code>cassociated with this
     /// ID. This operation is useful because <code>GetResourceMetrics</code> and <code>DescribeDimensionKeys</code>
     /// don't support retrieval of large SQL statement text.
     /// </summary>
@@ -88,8 +88,8 @@ namespace Amazon.PI.Model
         /// Gets and sets the property Identifier. 
         /// <para>
         /// The ID for a data source from which to gather dimension data. This ID must be immutable
-        /// and unique within an AWS Region. When a DB instance is the data source, specify its
-        /// <code>DbiResourceId</code> value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>.
+        /// and unique within an Amazon Web Services Region. When a DB instance is the data source,
+        /// specify its <code>DbiResourceId</code> value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>.
         /// 
         /// </para>
         /// </summary>
@@ -113,7 +113,7 @@ namespace Amazon.PI.Model
         /// For the dimension group <code>db.sql</code>, specify either the full dimension name
         /// <code>db.sql.statement</code> or the short dimension name <code>statement</code>.
         /// If you don't specify this parameter, Performance Insights returns all dimension data
-        /// within the specified dimension group.
+        /// within the specified dimension group. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
@@ -132,8 +132,8 @@ namespace Amazon.PI.Model
         /// <summary>
         /// Gets and sets the property ServiceType. 
         /// <para>
-        /// The AWS service for which Performance Insights returns data. The only valid value
-        /// is <code>RDS</code>.
+        /// The Amazon Web Services service for which Performance Insights returns data. The only
+        /// valid value is <code>RDS</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

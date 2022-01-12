@@ -36,38 +36,45 @@ namespace Amazon.PI
     /// Amazon RDS Performance Insights enables you to monitor and explore different dimensions
     /// of database load based on data captured from a running DB instance. The guide provides
     /// detailed information about Performance Insights data types, parameters and errors.
+    /// 
     /// </para>
     ///  
     /// <para>
     /// When Performance Insights is enabled, the Amazon RDS Performance Insights API provides
     /// visibility into the performance of your DB instance. Amazon CloudWatch provides the
-    /// authoritative source for AWS service-vended monitoring metrics. Performance Insights
-    /// offers a domain-specific view of DB load. 
+    /// authoritative source for Amazon Web Services service-vended monitoring metrics. Performance
+    /// Insights offers a domain-specific view of DB load. 
     /// </para>
     ///  
     /// <para>
-    /// DB load is measured as Average Active Sessions. Performance Insights provides the
+    /// DB load is measured as average active sessions. Performance Insights provides the
     /// data to API consumers as a two-dimensional time-series dataset. The time dimension
     /// provides DB load data for each time point in the queried time range. Each time point
     /// decomposes overall load in relation to the requested dimensions, measured at that
-    /// time point. Examples include SQL, Wait event, User, and Host.
+    /// time point. Examples include SQL, Wait event, User, and Host. 
     /// </para>
     ///  <ul> <li> 
     /// <para>
     /// To learn more about Performance Insights and Amazon Aurora DB instances, go to the
-    /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_PerfInsights.html">Amazon
-    /// Aurora User Guide</a>.
+    /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_PerfInsights.html">
+    /// Amazon Aurora User Guide</a>. 
     /// </para>
     ///  </li> <li> 
     /// <para>
     /// To learn more about Performance Insights and Amazon RDS DB instances, go to the <a
-    /// href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Amazon
-    /// RDS User Guide</a>.
+    /// href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">
+    /// Amazon RDS User Guide</a>. 
     /// </para>
     ///  </li> </ul>
     /// </summary>
     public partial interface IAmazonPI : IAmazonService, IDisposable
     {
+#if AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IPIPaginatorFactory Paginators { get; }
+#endif
                 
         #region  DescribeDimensionKeys
 
@@ -75,6 +82,7 @@ namespace Amazon.PI
 
         /// <summary>
         /// For a specific time period, retrieve the top <code>N</code> dimension keys for a metric.
+        /// 
         /// 
         ///  <note> 
         /// <para>
@@ -110,7 +118,7 @@ namespace Amazon.PI
         /// <summary>
         /// Get the attributes of the specified dimension group for a DB instance or data source.
         /// For example, if you specify a SQL ID, <code>GetDimensionKeyDetails</code> retrieves
-        /// the full text of the dimension <code>db.sql.statement</code> associated with this
+        /// the full text of the dimension <code>db.sql.statement</code>cassociated with this
         /// ID. This operation is useful because <code>GetResourceMetrics</code> and <code>DescribeDimensionKeys</code>
         /// don't support retrieval of large SQL statement text.
         /// </summary>
@@ -131,6 +139,34 @@ namespace Amazon.PI
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/GetDimensionKeyDetails">REST API Reference for GetDimensionKeyDetails Operation</seealso>
         Task<GetDimensionKeyDetailsResponse> GetDimensionKeyDetailsAsync(GetDimensionKeyDetailsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetResourceMetadata
+
+
+
+        /// <summary>
+        /// Retrieve the metadata for different features. For example, the metadata might indicate
+        /// that a feature is turned on or off on a specific DB instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResourceMetadata service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetResourceMetadata service method, as returned by PI.</returns>
+        /// <exception cref="Amazon.PI.Model.InternalServiceErrorException">
+        /// The request failed due to an unknown error.
+        /// </exception>
+        /// <exception cref="Amazon.PI.Model.InvalidArgumentException">
+        /// One of the arguments provided is invalid for this request.
+        /// </exception>
+        /// <exception cref="Amazon.PI.Model.NotAuthorizedException">
+        /// The user is not authorized to perform this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/GetResourceMetadata">REST API Reference for GetResourceMetadata Operation</seealso>
+        Task<GetResourceMetadataResponse> GetResourceMetadataAsync(GetResourceMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -167,6 +203,61 @@ namespace Amazon.PI
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/GetResourceMetrics">REST API Reference for GetResourceMetrics Operation</seealso>
         Task<GetResourceMetricsResponse> GetResourceMetricsAsync(GetResourceMetricsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListAvailableResourceDimensions
+
+
+
+        /// <summary>
+        /// Retrieve the dimensions that can be queried for each specified metric type on a specified
+        /// DB instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAvailableResourceDimensions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAvailableResourceDimensions service method, as returned by PI.</returns>
+        /// <exception cref="Amazon.PI.Model.InternalServiceErrorException">
+        /// The request failed due to an unknown error.
+        /// </exception>
+        /// <exception cref="Amazon.PI.Model.InvalidArgumentException">
+        /// One of the arguments provided is invalid for this request.
+        /// </exception>
+        /// <exception cref="Amazon.PI.Model.NotAuthorizedException">
+        /// The user is not authorized to perform this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/ListAvailableResourceDimensions">REST API Reference for ListAvailableResourceDimensions Operation</seealso>
+        Task<ListAvailableResourceDimensionsResponse> ListAvailableResourceDimensionsAsync(ListAvailableResourceDimensionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListAvailableResourceMetrics
+
+
+
+        /// <summary>
+        /// Retrieve metrics of the specified types that can be queried for a specified DB instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAvailableResourceMetrics service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAvailableResourceMetrics service method, as returned by PI.</returns>
+        /// <exception cref="Amazon.PI.Model.InternalServiceErrorException">
+        /// The request failed due to an unknown error.
+        /// </exception>
+        /// <exception cref="Amazon.PI.Model.InvalidArgumentException">
+        /// One of the arguments provided is invalid for this request.
+        /// </exception>
+        /// <exception cref="Amazon.PI.Model.NotAuthorizedException">
+        /// The user is not authorized to perform this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/ListAvailableResourceMetrics">REST API Reference for ListAvailableResourceMetrics Operation</seealso>
+        Task<ListAvailableResourceMetricsResponse> ListAvailableResourceMetricsAsync(ListAvailableResourceMetricsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

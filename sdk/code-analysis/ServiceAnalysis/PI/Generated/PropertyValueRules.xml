@@ -48,6 +48,18 @@
     <pattern>^db-[a-zA-Z0-9-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.PI.Model.GetResourceMetadataRequest.Identifier</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PI.Model.GetResourceMetadataResponse.Identifier</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.PI.Model.GetResourceMetricsRequest.Identifier</property>
     <min>0</min>
     <max>256</max>
@@ -77,6 +89,58 @@
     <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.PI.Model.ListAvailableResourceDimensionsRequest.Identifier</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PI.Model.ListAvailableResourceDimensionsRequest.MaxResults</property>
+    <min>0</min>
+    <max>20</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PI.Model.ListAvailableResourceDimensionsRequest.NextToken</property>
+    <min>1</min>
+    <max>8192</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PI.Model.ListAvailableResourceDimensionsResponse.NextToken</property>
+    <min>1</min>
+    <max>8192</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PI.Model.ListAvailableResourceMetricsRequest.Identifier</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PI.Model.ListAvailableResourceMetricsRequest.MaxResults</property>
+    <min>0</min>
+    <max>20</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PI.Model.ListAvailableResourceMetricsRequest.NextToken</property>
+    <min>1</min>
+    <max>8192</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PI.Model.ListAvailableResourceMetricsResponse.NextToken</property>
+    <min>1</min>
+    <max>8192</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PI.Model.DimensionDetail.Identifier</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.PI.Model.DimensionGroup.Group</property>
     <min>0</min>
     <max>256</max>
@@ -86,6 +150,12 @@
     <property>Amazon.PI.Model.DimensionGroup.Limit</property>
     <min>1</min>
     <max>10</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PI.Model.DimensionGroupDetail.Group</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PI.Model.DimensionKeyDetail.Dimension</property>
@@ -100,7 +170,30 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.PI.Model.MetricDimensionGroups.Metric</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.PI.Model.MetricQuery.Metric</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PI.Model.ResponseResourceMetric.Description</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PI.Model.ResponseResourceMetric.Metric</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PI.Model.ResponseResourceMetric.Unit</property>
     <min>0</min>
     <max>256</max>
     <pattern>.*\S.*</pattern>
