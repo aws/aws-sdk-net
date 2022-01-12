@@ -7409,6 +7409,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType Hi14xlarge = new InstanceType("hi1.4xlarge");
         /// <summary>
+        /// Constant Hpc6a48xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType Hpc6a48xlarge = new InstanceType("hpc6a.48xlarge");
+        /// <summary>
         /// Constant Hs18xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType Hs18xlarge = new InstanceType("hs1.8xlarge");
