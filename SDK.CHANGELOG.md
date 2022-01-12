@@ -1,3 +1,17 @@
+### 3.7.189.0 (2022-01-12 19:15 UTC)
+* EC2 (3.7.55.0)
+	* Hpc6a instances are powered by a third-generation AMD EPYC processors (Milan) delivering all-core turbo frequency of 3.4 GHz
+* ElastiCache (3.7.4.13)
+	* Doc only update for ElastiCache
+* FMS (3.7.4.0)
+	* Shield Advanced policies for Amazon CloudFront resources now support automatic application layer DDoS mitigation. The max length for SecurityServicePolicyData ManagedServiceData is now 8192 characters, instead of 4096.
+* Honeycode (3.7.1.0)
+	* Honeycode is releasing new APIs to allow user to create, delete and list tags on resources.
+* LexModelsV2 (3.7.11.0)
+	* This release adds support for Custom vocabulary in Amazon Lex V2 APIs for model building. Customers can give Amazon Lex V2 more information about how to process audio conversations with a bot by creating a custom vocabulary in a specific language.
+* PI (3.7.2.0)
+	* This release adds three Performance Insights APIs. Use ListAvailableResourceMetrics to get available metrics, GetResourceMetadata to get feature metadata, and ListAvailableResourceDimensions to list available dimensions. The AdditionalMetrics field in DescribeDimensionKeys retrieves per-SQL metrics.
+
 ### 3.7.188.0 (2022-01-11 19:45 UTC)
 * CostExplorer (3.7.3.62)
 	* Doc only update for Cost Explorer API that fixes missing clarifications for MatchOptions definitions

@@ -32,7 +32,7 @@ namespace Amazon.Honeycode
     public partial class AmazonHoneycodeConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.114");
+            InternalSDKUtils.BuildUserAgentString("3.7.1.0");
 
         private string _userAgent = UserAgentString;
 

@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.7.188.0",
+    "ProductVersion" : "3.7.189.0",
     "CoreVersion"    : "3.7.5.13",
     "OverrideCoreVersion" : "3.3",
     "DefaultToPreview"    : false,
@@ -152,7 +152,7 @@
             "InPreview"               : false
         },
         "EC2"               : {
-            "Version" : "3.7.54.0",
+            "Version" : "3.7.55.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.5.13"
@@ -168,7 +168,7 @@
             "InPreview"               : false
         },
         "ElastiCache"       : {
-            "Version" : "3.7.4.12",
+            "Version" : "3.7.4.13",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.5.13"
@@ -1066,7 +1066,7 @@
             "InPreview"               : false
         },
         "FMS"                             : {
-            "Version" : "3.7.3.59",
+            "Version" : "3.7.4.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.5.13"
@@ -1114,7 +1114,7 @@
             "InPreview"               : false
         },
         "PI"                              : {
-            "Version" : "3.7.1.85",
+            "Version" : "3.7.2.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.5.13"
@@ -1794,7 +1794,7 @@
             "InPreview"               : false
         },
         "Honeycode"                       : {
-            "Version" : "3.7.0.114",
+            "Version" : "3.7.1.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.5.13"
@@ -2066,7 +2066,7 @@
             "InPreview"               : false
         },
         "LexModelsV2"                     : {
-            "Version" : "3.7.10.8",
+            "Version" : "3.7.11.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.5.13"
