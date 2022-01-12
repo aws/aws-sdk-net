@@ -147,8 +147,14 @@ namespace Amazon.LexModelsV2.Model
         /// <para>
         /// If the response from the <code>ListIntents</code> operation contains more results
         /// than specified in the <code>maxResults</code> parameter, a token is returned in the
-        /// response. Use that token in the <code>nextToken</code> parameter to return the next
-        /// page of results.
+        /// response.
+        /// </para>
+        ///  
+        /// <para>
+        /// Use the returned token in the <code>nextToken</code> parameter of a <code>ListIntents</code>
+        /// request to return the next page of results. For a complete set of results, call the
+        /// <code>ListIntents</code> operation until the <code>nextToken</code> returned in the
+        /// response is null.
         /// </para>
         /// </summary>
         public string NextToken

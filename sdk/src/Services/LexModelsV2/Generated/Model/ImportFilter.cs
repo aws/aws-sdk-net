@@ -82,7 +82,8 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property Values. 
         /// <para>
-        /// The values to use to filter the response.
+        /// The values to use to filter the response. The values must be <code>Bot</code>, <code>BotLocale</code>,
+        /// or <code>CustomVocabulary</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1)]

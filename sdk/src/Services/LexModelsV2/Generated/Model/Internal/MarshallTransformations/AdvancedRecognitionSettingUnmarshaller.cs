@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for SlotValueSelectionSetting Object
+    /// Response Unmarshaller for AdvancedRecognitionSetting Object
     /// </summary>  
-    public class SlotValueSelectionSettingUnmarshaller : IUnmarshaller<SlotValueSelectionSetting, XmlUnmarshallerContext>, IUnmarshaller<SlotValueSelectionSetting, JsonUnmarshallerContext>
+    public class AdvancedRecognitionSettingUnmarshaller : IUnmarshaller<AdvancedRecognitionSetting, XmlUnmarshallerContext>, IUnmarshaller<AdvancedRecognitionSetting, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        SlotValueSelectionSetting IUnmarshaller<SlotValueSelectionSetting, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AdvancedRecognitionSetting IUnmarshaller<AdvancedRecognitionSetting, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,21 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public SlotValueSelectionSetting Unmarshall(JsonUnmarshallerContext context)
+        public AdvancedRecognitionSetting Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            SlotValueSelectionSetting unmarshalledObject = new SlotValueSelectionSetting();
+            AdvancedRecognitionSetting unmarshalledObject = new AdvancedRecognitionSetting();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("advancedRecognitionSetting", targetDepth))
-                {
-                    var unmarshaller = AdvancedRecognitionSettingUnmarshaller.Instance;
-                    unmarshalledObject.AdvancedRecognitionSetting = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("regexFilter", targetDepth))
-                {
-                    var unmarshaller = SlotValueRegexFilterUnmarshaller.Instance;
-                    unmarshalledObject.RegexFilter = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("resolutionStrategy", targetDepth))
+                if (context.TestExpression("audioRecognitionStrategy", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResolutionStrategy = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AudioRecognitionStrategy = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +76,12 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         }
 
 
-        private static SlotValueSelectionSettingUnmarshaller _instance = new SlotValueSelectionSettingUnmarshaller();        
+        private static AdvancedRecognitionSettingUnmarshaller _instance = new AdvancedRecognitionSettingUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SlotValueSelectionSettingUnmarshaller Instance
+        public static AdvancedRecognitionSettingUnmarshaller Instance
         {
             get
             {

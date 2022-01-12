@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// SlotValueSelectionSetting Marshaller
+    /// CustomVocabularyImportSpecification Marshaller
     /// </summary>       
-    public class SlotValueSelectionSettingMarshaller : IRequestMarshaller<SlotValueSelectionSetting, JsonMarshallerContext> 
+    public class CustomVocabularyImportSpecificationMarshaller : IRequestMarshaller<CustomVocabularyImportSpecification, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,34 +43,24 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(SlotValueSelectionSetting requestObject, JsonMarshallerContext context)
+        public void Marshall(CustomVocabularyImportSpecification requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetAdvancedRecognitionSetting())
+            if(requestObject.IsSetBotId())
             {
-                context.Writer.WritePropertyName("advancedRecognitionSetting");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = AdvancedRecognitionSettingMarshaller.Instance;
-                marshaller.Marshall(requestObject.AdvancedRecognitionSetting, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("botId");
+                context.Writer.Write(requestObject.BotId);
             }
 
-            if(requestObject.IsSetRegexFilter())
+            if(requestObject.IsSetBotVersion())
             {
-                context.Writer.WritePropertyName("regexFilter");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = SlotValueRegexFilterMarshaller.Instance;
-                marshaller.Marshall(requestObject.RegexFilter, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("botVersion");
+                context.Writer.Write(requestObject.BotVersion);
             }
 
-            if(requestObject.IsSetResolutionStrategy())
+            if(requestObject.IsSetLocaleId())
             {
-                context.Writer.WritePropertyName("resolutionStrategy");
-                context.Writer.Write(requestObject.ResolutionStrategy);
+                context.Writer.WritePropertyName("localeId");
+                context.Writer.Write(requestObject.LocaleId);
             }
 
         }
@@ -78,7 +68,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static SlotValueSelectionSettingMarshaller Instance = new SlotValueSelectionSettingMarshaller();
+        public readonly static CustomVocabularyImportSpecificationMarshaller Instance = new CustomVocabularyImportSpecificationMarshaller();
 
     }
 }

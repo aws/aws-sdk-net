@@ -85,8 +85,14 @@ namespace Amazon.LexModelsV2.Model
         /// <para>
         /// If the response from the <code>ListBots</code> operation contains more results than
         /// specified in the <code>maxResults</code> parameter, a token is returned in the response.
-        /// Use that token in the <code>nextToken</code> parameter to return the next page of
-        /// results.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// Use the returned token in the <code>nextToken</code> parameter of a <code>ListBots</code>
+        /// request to return the next page of results. For a complete set of results, call the
+        /// <code>ListBots</code> operation until the <code>nextToken</code> returned in the response
+        /// is null.
         /// </para>
         /// </summary>
         public string NextToken

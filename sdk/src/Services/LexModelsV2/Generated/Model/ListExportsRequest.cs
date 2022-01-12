@@ -30,13 +30,15 @@ namespace Amazon.LexModelsV2.Model
 {
     /// <summary>
     /// Container for the parameters to the ListExports operation.
-    /// Lists the exports for a bot or bot locale. Exports are kept in the list for 7 days.
+    /// Lists the exports for a bot, bot locale, or custom vocabulary. Exports are kept in
+    /// the list for 7 days.
     /// </summary>
     public partial class ListExportsRequest : AmazonLexModelsV2Request
     {
         private string _botId;
         private string _botVersion;
         private List<ExportFilter> _filters = new List<ExportFilter>();
+        private string _localeId;
         private int? _maxResults;
         private string _nextToken;
         private ExportSortBy _sortBy;
@@ -101,6 +103,26 @@ namespace Amazon.LexModelsV2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LocaleId. 
+        /// <para>
+        /// Specifies the resources that should be exported. If you don't specify a resource type
+        /// in the <code>filters</code> parameter, both bot locales and custom vocabularies are
+        /// exported.
+        /// </para>
+        /// </summary>
+        public string LocaleId
+        {
+            get { return this._localeId; }
+            set { this._localeId = value; }
+        }
+
+        // Check to see if LocaleId property is set
+        internal bool IsSetLocaleId()
+        {
+            return this._localeId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The maximum number of exports to return in each page of results. If there are fewer
@@ -125,8 +147,14 @@ namespace Amazon.LexModelsV2.Model
         /// <para>
         /// If the response from the <code>ListExports</code> operation contains more results
         /// that specified in the <code>maxResults</code> parameter, a token is returned in the
-        /// response. Use that token in the <code>nextToken</code> parameter to return the next
-        /// page of results.
+        /// response. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Use the returned token in the <code>nextToken</code> parameter of a <code>ListExports</code>
+        /// request to return the next page of results. For a complete set of results, call the
+        /// <code>ListExports</code> operation until the <code>nextToken</code> returned in the
+        /// response is null.
         /// </para>
         /// </summary>
         public string NextToken

@@ -29,23 +29,21 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LexModelsV2.Model
 {
     /// <summary>
-    /// This is the response object from the ListImports operation.
+    /// Provides the parameters required for importing a custom vocabulary.
     /// </summary>
-    public partial class ListImportsResponse : AmazonWebServiceResponse
+    public partial class CustomVocabularyImportSpecification
     {
         private string _botId;
         private string _botVersion;
-        private List<ImportSummary> _importSummaries = new List<ImportSummary>();
         private string _localeId;
-        private string _nextToken;
 
         /// <summary>
         /// Gets and sets the property BotId. 
         /// <para>
-        /// The unique identifier assigned by Amazon Lex to the bot.
+        /// The identifier of the bot to import the custom vocabulary to.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=10, Max=10)]
+        [AWSProperty(Required=true, Min=10, Max=10)]
         public string BotId
         {
             get { return this._botId; }
@@ -61,10 +59,10 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property BotVersion. 
         /// <para>
-        /// The version of the bot that was imported. It will always be <code>DRAFT</code>.
+        /// The version of the bot to import the custom vocabulary to.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=5, Max=5)]
+        [AWSProperty(Required=true, Min=5, Max=5)]
         public string BotVersion
         {
             get { return this._botVersion; }
@@ -78,32 +76,13 @@ namespace Amazon.LexModelsV2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ImportSummaries. 
-        /// <para>
-        /// Summary information for the imports that meet the filter criteria specified in the
-        /// request. The length of the list is specified in the <code>maxResults</code> parameter.
-        /// If there are more imports available, the <code>nextToken</code> field contains a token
-        /// to get the next page of results.
-        /// </para>
-        /// </summary>
-        public List<ImportSummary> ImportSummaries
-        {
-            get { return this._importSummaries; }
-            set { this._importSummaries = value; }
-        }
-
-        // Check to see if ImportSummaries property is set
-        internal bool IsSetImportSummaries()
-        {
-            return this._importSummaries != null && this._importSummaries.Count > 0; 
-        }
-
-        /// <summary>
         /// Gets and sets the property LocaleId. 
         /// <para>
-        /// The locale specified in the request.
+        /// The identifier of the local to import the custom vocabulary to. The value must be
+        /// <code>en_GB</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string LocaleId
         {
             get { return this._localeId; }
@@ -114,27 +93,6 @@ namespace Amazon.LexModelsV2.Model
         internal bool IsSetLocaleId()
         {
             return this._localeId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property NextToken. 
-        /// <para>
-        /// A token that indicates whether there are more results to return in a response to the
-        /// <code>ListImports</code> operation. If the <code>nextToken</code> field is present,
-        /// you send the contents as the <code>nextToken</code> parameter of a <code>ListImports</code>
-        /// operation request to get the next page of results.
-        /// </para>
-        /// </summary>
-        public string NextToken
-        {
-            get { return this._nextToken; }
-            set { this._nextToken = value; }
-        }
-
-        // Check to see if NextToken property is set
-        internal bool IsSetNextToken()
-        {
-            return this._nextToken != null;
         }
 
     }

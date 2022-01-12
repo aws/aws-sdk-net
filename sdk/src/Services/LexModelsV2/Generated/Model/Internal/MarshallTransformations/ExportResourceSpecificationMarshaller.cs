@@ -67,6 +67,17 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetCustomVocabularyExportSpecification())
+            {
+                context.Writer.WritePropertyName("customVocabularyExportSpecification");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = CustomVocabularyExportSpecificationMarshaller.Instance;
+                marshaller.Marshall(requestObject.CustomVocabularyExportSpecification, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

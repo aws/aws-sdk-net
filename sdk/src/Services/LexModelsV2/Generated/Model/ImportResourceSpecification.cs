@@ -37,6 +37,7 @@ namespace Amazon.LexModelsV2.Model
     {
         private BotImportSpecification _botImportSpecification;
         private BotLocaleImportSpecification _botLocaleImportSpecification;
+        private CustomVocabularyImportSpecification _customVocabularyImportSpecification;
 
         /// <summary>
         /// Gets and sets the property BotImportSpecification. 
@@ -72,6 +73,21 @@ namespace Amazon.LexModelsV2.Model
         internal bool IsSetBotLocaleImportSpecification()
         {
             return this._botLocaleImportSpecification != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomVocabularyImportSpecification.
+        /// </summary>
+        public CustomVocabularyImportSpecification CustomVocabularyImportSpecification
+        {
+            get { return this._customVocabularyImportSpecification; }
+            set { this._customVocabularyImportSpecification = value; }
+        }
+
+        // Check to see if CustomVocabularyImportSpecification property is set
+        internal bool IsSetCustomVocabularyImportSpecification()
+        {
+            return this._customVocabularyImportSpecification != null;
         }
 
     }

@@ -93,6 +93,12 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetLocaleId())
+                {
+                    context.Writer.WritePropertyName("localeId");
+                    context.Writer.Write(publicRequest.LocaleId);
+                }
+
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("maxResults");
