@@ -289,6 +289,204 @@ namespace Amazon.NimbleStudio
 
 
     /// <summary>
+    /// Constants used for properties of type LaunchProfileValidationState.
+    /// </summary>
+    public class LaunchProfileValidationState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant VALIDATION_FAILED for LaunchProfileValidationState
+        /// </summary>
+        public static readonly LaunchProfileValidationState VALIDATION_FAILED = new LaunchProfileValidationState("VALIDATION_FAILED");
+        /// <summary>
+        /// Constant VALIDATION_FAILED_INTERNAL_SERVER_ERROR for LaunchProfileValidationState
+        /// </summary>
+        public static readonly LaunchProfileValidationState VALIDATION_FAILED_INTERNAL_SERVER_ERROR = new LaunchProfileValidationState("VALIDATION_FAILED_INTERNAL_SERVER_ERROR");
+        /// <summary>
+        /// Constant VALIDATION_IN_PROGRESS for LaunchProfileValidationState
+        /// </summary>
+        public static readonly LaunchProfileValidationState VALIDATION_IN_PROGRESS = new LaunchProfileValidationState("VALIDATION_IN_PROGRESS");
+        /// <summary>
+        /// Constant VALIDATION_NOT_STARTED for LaunchProfileValidationState
+        /// </summary>
+        public static readonly LaunchProfileValidationState VALIDATION_NOT_STARTED = new LaunchProfileValidationState("VALIDATION_NOT_STARTED");
+        /// <summary>
+        /// Constant VALIDATION_SUCCESS for LaunchProfileValidationState
+        /// </summary>
+        public static readonly LaunchProfileValidationState VALIDATION_SUCCESS = new LaunchProfileValidationState("VALIDATION_SUCCESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LaunchProfileValidationState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LaunchProfileValidationState FindValue(string value)
+        {
+            return FindValue<LaunchProfileValidationState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LaunchProfileValidationState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LaunchProfileValidationStatusCode.
+    /// </summary>
+    public class LaunchProfileValidationStatusCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant VALIDATION_FAILED_INTERNAL_SERVER_ERROR for LaunchProfileValidationStatusCode
+        /// </summary>
+        public static readonly LaunchProfileValidationStatusCode VALIDATION_FAILED_INTERNAL_SERVER_ERROR = new LaunchProfileValidationStatusCode("VALIDATION_FAILED_INTERNAL_SERVER_ERROR");
+        /// <summary>
+        /// Constant VALIDATION_FAILED_INVALID_ACTIVE_DIRECTORY for LaunchProfileValidationStatusCode
+        /// </summary>
+        public static readonly LaunchProfileValidationStatusCode VALIDATION_FAILED_INVALID_ACTIVE_DIRECTORY = new LaunchProfileValidationStatusCode("VALIDATION_FAILED_INVALID_ACTIVE_DIRECTORY");
+        /// <summary>
+        /// Constant VALIDATION_FAILED_INVALID_SECURITY_GROUP_ASSOCIATION for LaunchProfileValidationStatusCode
+        /// </summary>
+        public static readonly LaunchProfileValidationStatusCode VALIDATION_FAILED_INVALID_SECURITY_GROUP_ASSOCIATION = new LaunchProfileValidationStatusCode("VALIDATION_FAILED_INVALID_SECURITY_GROUP_ASSOCIATION");
+        /// <summary>
+        /// Constant VALIDATION_FAILED_INVALID_SUBNET_ROUTE_TABLE_ASSOCIATION for LaunchProfileValidationStatusCode
+        /// </summary>
+        public static readonly LaunchProfileValidationStatusCode VALIDATION_FAILED_INVALID_SUBNET_ROUTE_TABLE_ASSOCIATION = new LaunchProfileValidationStatusCode("VALIDATION_FAILED_INVALID_SUBNET_ROUTE_TABLE_ASSOCIATION");
+        /// <summary>
+        /// Constant VALIDATION_FAILED_SUBNET_NOT_FOUND for LaunchProfileValidationStatusCode
+        /// </summary>
+        public static readonly LaunchProfileValidationStatusCode VALIDATION_FAILED_SUBNET_NOT_FOUND = new LaunchProfileValidationStatusCode("VALIDATION_FAILED_SUBNET_NOT_FOUND");
+        /// <summary>
+        /// Constant VALIDATION_FAILED_UNAUTHORIZED for LaunchProfileValidationStatusCode
+        /// </summary>
+        public static readonly LaunchProfileValidationStatusCode VALIDATION_FAILED_UNAUTHORIZED = new LaunchProfileValidationStatusCode("VALIDATION_FAILED_UNAUTHORIZED");
+        /// <summary>
+        /// Constant VALIDATION_IN_PROGRESS for LaunchProfileValidationStatusCode
+        /// </summary>
+        public static readonly LaunchProfileValidationStatusCode VALIDATION_IN_PROGRESS = new LaunchProfileValidationStatusCode("VALIDATION_IN_PROGRESS");
+        /// <summary>
+        /// Constant VALIDATION_NOT_STARTED for LaunchProfileValidationStatusCode
+        /// </summary>
+        public static readonly LaunchProfileValidationStatusCode VALIDATION_NOT_STARTED = new LaunchProfileValidationStatusCode("VALIDATION_NOT_STARTED");
+        /// <summary>
+        /// Constant VALIDATION_SUCCESS for LaunchProfileValidationStatusCode
+        /// </summary>
+        public static readonly LaunchProfileValidationStatusCode VALIDATION_SUCCESS = new LaunchProfileValidationStatusCode("VALIDATION_SUCCESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LaunchProfileValidationStatusCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LaunchProfileValidationStatusCode FindValue(string value)
+        {
+            return FindValue<LaunchProfileValidationStatusCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LaunchProfileValidationStatusCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LaunchProfileValidationType.
+    /// </summary>
+    public class LaunchProfileValidationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant VALIDATE_ACTIVE_DIRECTORY_STUDIO_COMPONENT for LaunchProfileValidationType
+        /// </summary>
+        public static readonly LaunchProfileValidationType VALIDATE_ACTIVE_DIRECTORY_STUDIO_COMPONENT = new LaunchProfileValidationType("VALIDATE_ACTIVE_DIRECTORY_STUDIO_COMPONENT");
+        /// <summary>
+        /// Constant VALIDATE_NETWORK_ACL_ASSOCIATION for LaunchProfileValidationType
+        /// </summary>
+        public static readonly LaunchProfileValidationType VALIDATE_NETWORK_ACL_ASSOCIATION = new LaunchProfileValidationType("VALIDATE_NETWORK_ACL_ASSOCIATION");
+        /// <summary>
+        /// Constant VALIDATE_SECURITY_GROUP_ASSOCIATION for LaunchProfileValidationType
+        /// </summary>
+        public static readonly LaunchProfileValidationType VALIDATE_SECURITY_GROUP_ASSOCIATION = new LaunchProfileValidationType("VALIDATE_SECURITY_GROUP_ASSOCIATION");
+        /// <summary>
+        /// Constant VALIDATE_SUBNET_ASSOCIATION for LaunchProfileValidationType
+        /// </summary>
+        public static readonly LaunchProfileValidationType VALIDATE_SUBNET_ASSOCIATION = new LaunchProfileValidationType("VALIDATE_SUBNET_ASSOCIATION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LaunchProfileValidationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LaunchProfileValidationType FindValue(string value)
+        {
+            return FindValue<LaunchProfileValidationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LaunchProfileValidationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type StreamingClipboardMode.
     /// </summary>
     public class StreamingClipboardMode : ConstantClass
@@ -690,6 +888,10 @@ namespace Amazon.NimbleStudio
         /// Constant ACTIVE_DIRECTORY_DOMAIN_JOIN_ERROR for StreamingSessionStatusCode
         /// </summary>
         public static readonly StreamingSessionStatusCode ACTIVE_DIRECTORY_DOMAIN_JOIN_ERROR = new StreamingSessionStatusCode("ACTIVE_DIRECTORY_DOMAIN_JOIN_ERROR");
+        /// <summary>
+        /// Constant AMI_VALIDATION_ERROR for StreamingSessionStatusCode
+        /// </summary>
+        public static readonly StreamingSessionStatusCode AMI_VALIDATION_ERROR = new StreamingSessionStatusCode("AMI_VALIDATION_ERROR");
         /// <summary>
         /// Constant DECRYPT_STREAMING_IMAGE_ERROR for StreamingSessionStatusCode
         /// </summary>

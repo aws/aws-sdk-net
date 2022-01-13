@@ -108,7 +108,8 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property OwnedBy. 
         /// <para>
-        /// The user ID of the user that owns the streaming session.
+        /// The user ID of the user that owns the streaming session. The user that owns the session
+        /// will be logging into the session and interacting with the virtual workstation.
         /// </para>
         /// </summary>
         public string OwnedBy

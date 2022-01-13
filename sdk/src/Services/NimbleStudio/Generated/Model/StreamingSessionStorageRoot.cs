@@ -40,8 +40,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property Linux. 
         /// <para>
-        /// The folder path in Linux workstations where files are uploaded. The default path is
-        /// <code>$HOME/Downloads</code>.
+        /// The folder path in Linux workstations where files are uploaded.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -60,8 +59,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property Windows. 
         /// <para>
-        /// The folder path in Windows workstations where files are uploaded. The default path
-        /// is <code>%HOMEPATH%\Downloads</code>.
+        /// The folder path in Windows workstations where files are uploaded.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
