@@ -1,3 +1,22 @@
+### 3.7.190.0 (2022-01-13 19:24 UTC)
+* ElastiCache (3.7.5.0)
+	* AWS ElastiCache for Redis has added a new Engine Log LogType in LogDelivery feature. You can now publish the Engine Log from your Amazon ElastiCache for Redis clusters to Amazon CloudWatch Logs and Amazon Kinesis Data Firehose.
+* Glue (3.7.12.0)
+	* This SDK release adds support to pass run properties when starting a workflow run
+* LexRuntimeV2 (3.7.4.0)
+	* This release adds support for sending hints to Amazon Lex V2 runtime APIs. Bot developers can provide runtime hints to help improve the recognition of slot values.
+* NimbleStudio (3.7.4.0)
+	* Amazon Nimble Studio now supports validation for Launch Profiles. Launch Profiles now report static validation results after create/update to detect errors in network or active directory configuration.
+* Pinpoint (3.7.5.0)
+	* Adds JourneyChannelSettings to WriteJourneyRequest
+* SimpleSystemsManagement (3.7.12.0)
+	* AWS Systems Manager adds category support for DescribeDocument API
+* Core 3.7.5.14
+	* Updating endpoints.json file.
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.189.0 (2022-01-12 19:15 UTC)
 * EC2 (3.7.55.0)
 	* Hpc6a instances are powered by a third-generation AMD EPYC processors (Milan) delivering all-core turbo frequency of 3.4 GHz
