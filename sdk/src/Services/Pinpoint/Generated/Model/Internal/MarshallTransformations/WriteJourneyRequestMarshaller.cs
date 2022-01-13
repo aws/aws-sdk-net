@@ -70,6 +70,17 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.CreationDate);
             }
 
+            if(requestObject.IsSetJourneyChannelSettings())
+            {
+                context.Writer.WritePropertyName("JourneyChannelSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = JourneyChannelSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.JourneyChannelSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetLastModifiedDate())
             {
                 context.Writer.WritePropertyName("LastModifiedDate");

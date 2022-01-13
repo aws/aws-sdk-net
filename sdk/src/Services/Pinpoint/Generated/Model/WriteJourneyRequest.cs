@@ -35,6 +35,7 @@ namespace Amazon.Pinpoint.Model
     {
         private Dictionary<string, Activity> _activities = new Dictionary<string, Activity>();
         private string _creationDate;
+        private JourneyChannelSettings _journeyChannelSettings;
         private string _lastModifiedDate;
         private JourneyLimits _limits;
         private bool? _localTime;
@@ -85,6 +86,24 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetCreationDate()
         {
             return this._creationDate != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property JourneyChannelSettings. 
+        /// <para>
+        /// The channel-specific configurations for the journey.
+        /// </para>
+        /// </summary>
+        public JourneyChannelSettings JourneyChannelSettings
+        {
+            get { return this._journeyChannelSettings; }
+            set { this._journeyChannelSettings = value; }
+        }
+
+        // Check to see if JourneyChannelSettings property is set
+        internal bool IsSetJourneyChannelSettings()
+        {
+            return this._journeyChannelSettings != null;
         }
 
         /// <summary>
