@@ -121,7 +121,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// The number of targets for which the command invocation reached a terminal state. Terminal
         /// states include the following: Success, Failed, Execution Timed Out, Delivery Timed
-        /// Out, Canceled, Terminated, or Undeliverable.
+        /// Out, Cancelled, Terminated, or Undeliverable.
         /// </para>
         /// </summary>
         public int CompletedCount
@@ -494,7 +494,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Canceled: The command was terminated before it was completed. This is a terminal state.
+        /// Cancelled: The command was terminated before it was completed. This is a terminal
+        /// state.
         /// </para>
         ///  </li> <li> 
         /// <para>

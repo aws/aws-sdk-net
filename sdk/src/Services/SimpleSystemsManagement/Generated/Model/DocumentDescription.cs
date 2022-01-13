@@ -29,13 +29,15 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// Describes a Amazon Web Services Systems Manager document (SSM document).
+    /// Describes an Amazon Web Services Systems Manager document (SSM document).
     /// </summary>
     public partial class DocumentDescription
     {
         private string _approvedVersion;
         private List<AttachmentInformation> _attachmentsInformation = new List<AttachmentInformation>();
         private string _author;
+        private List<string> _category = new List<string>();
+        private List<string> _categoryEnum = new List<string>();
         private DateTime? _createdDate;
         private string _defaultVersion;
         private string _description;
@@ -115,6 +117,44 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetAuthor()
         {
             return this._author != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Category. 
+        /// <para>
+        /// The classification of a document to help you identify and categorize its use.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=3)]
+        public List<string> Category
+        {
+            get { return this._category; }
+            set { this._category = value; }
+        }
+
+        // Check to see if Category property is set
+        internal bool IsSetCategory()
+        {
+            return this._category != null && this._category.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CategoryEnum. 
+        /// <para>
+        /// The value that identifies a document's category.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=3)]
+        public List<string> CategoryEnum
+        {
+            get { return this._categoryEnum; }
+            set { this._categoryEnum = value; }
+        }
+
+        // Check to see if CategoryEnum property is set
+        internal bool IsSetCategoryEnum()
+        {
+            return this._categoryEnum != null && this._categoryEnum.Count > 0; 
         }
 
         /// <summary>
@@ -385,7 +425,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property PlatformTypes. 
         /// <para>
-        /// The list of OS platforms compatible with this SSM document. 
+        /// The list of operating system (OS) platforms compatible with this SSM document. 
         /// </para>
         /// </summary>
         public List<string> PlatformTypes
