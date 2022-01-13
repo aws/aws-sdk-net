@@ -88,6 +88,12 @@ namespace Amazon.LexRuntimeV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.OriginatingRequestId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("runtimeHints", targetDepth))
+                {
+                    var unmarshaller = RuntimeHintsUnmarshaller.Instance;
+                    unmarshalledObject.RuntimeHints = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("sessionAttributes", targetDepth))
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
