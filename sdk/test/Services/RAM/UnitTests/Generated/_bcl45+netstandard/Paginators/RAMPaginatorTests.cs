@@ -276,6 +276,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("RAM")]
+        public void ListPermissionVersionsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListPermissionVersionsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListPermissionVersionsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListPermissionVersionsResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListPermissionVersions(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListPermissionVersions(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("RAM")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListPermissionVersionsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListPermissionVersionsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListPermissionVersionsResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListPermissionVersions(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListPermissionVersions(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("RAM")]
         public void ListPrincipalsTest_TwoPages()
         {
             var request = InstantiateClassGenerator.Execute<ListPrincipalsRequest>();

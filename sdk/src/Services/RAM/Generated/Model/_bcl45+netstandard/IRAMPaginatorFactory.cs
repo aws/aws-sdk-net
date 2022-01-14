@@ -56,6 +56,11 @@ namespace Amazon.RAM.Model
         IListPermissionsPaginator ListPermissions(ListPermissionsRequest request);
 
         /// <summary>
+        /// Paginator for ListPermissionVersions operation
+        ///</summary>
+        IListPermissionVersionsPaginator ListPermissionVersions(ListPermissionVersionsRequest request);
+
+        /// <summary>
         /// Paginator for ListPrincipals operation
         ///</summary>
         IListPrincipalsPaginator ListPrincipals(ListPrincipalsRequest request);

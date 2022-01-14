@@ -84,6 +84,14 @@ namespace Amazon.RAM.Model
         }
 
         /// <summary>
+        /// Paginator for ListPermissionVersions operation
+        ///</summary>
+        public IListPermissionVersionsPaginator ListPermissionVersions(ListPermissionVersionsRequest request) 
+        {
+            return new ListPermissionVersionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListPrincipals operation
         ///</summary>
         public IListPrincipalsPaginator ListPrincipals(ListPrincipalsRequest request) 
