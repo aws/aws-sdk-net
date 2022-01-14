@@ -1557,6 +1557,18 @@ namespace Amazon.ConfigService
         /// </summary>
         public static readonly ResourceType AWSCodeBuildProject = new ResourceType("AWS::CodeBuild::Project");
         /// <summary>
+        /// Constant AWSCodeDeployApplication for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSCodeDeployApplication = new ResourceType("AWS::CodeDeploy::Application");
+        /// <summary>
+        /// Constant AWSCodeDeployDeploymentConfig for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSCodeDeployDeploymentConfig = new ResourceType("AWS::CodeDeploy::DeploymentConfig");
+        /// <summary>
+        /// Constant AWSCodeDeployDeploymentGroup for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSCodeDeployDeploymentGroup = new ResourceType("AWS::CodeDeploy::DeploymentGroup");
+        /// <summary>
         /// Constant AWSCodePipelinePipeline for ResourceType
         /// </summary>
         public static readonly ResourceType AWSCodePipelinePipeline = new ResourceType("AWS::CodePipeline::Pipeline");
@@ -1628,6 +1640,10 @@ namespace Amazon.ConfigService
         /// Constant AWSEC2Subnet for ResourceType
         /// </summary>
         public static readonly ResourceType AWSEC2Subnet = new ResourceType("AWS::EC2::Subnet");
+        /// <summary>
+        /// Constant AWSEC2TransitGateway for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSEC2TransitGateway = new ResourceType("AWS::EC2::TransitGateway");
         /// <summary>
         /// Constant AWSEC2Volume for ResourceType
         /// </summary>
@@ -1724,6 +1740,14 @@ namespace Amazon.ConfigService
         /// Constant AWSIAMUser for ResourceType
         /// </summary>
         public static readonly ResourceType AWSIAMUser = new ResourceType("AWS::IAM::User");
+        /// <summary>
+        /// Constant AWSKinesisStream for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSKinesisStream = new ResourceType("AWS::Kinesis::Stream");
+        /// <summary>
+        /// Constant AWSKinesisStreamConsumer for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSKinesisStreamConsumer = new ResourceType("AWS::Kinesis::StreamConsumer");
         /// <summary>
         /// Constant AWSKMSKey for ResourceType
         /// </summary>
