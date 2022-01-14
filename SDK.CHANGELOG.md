@@ -1,3 +1,20 @@
+### 3.7.191.0 (2022-01-14 19:31 UTC)
+* ApplicationInsights (3.7.2.14)
+	* Application Insights support for Active Directory and SharePoint
+* ConfigService (3.7.6.0)
+	* Update ResourceType enum with values for CodeDeploy, EC2 and Kinesis resources
+* Honeycode (3.7.2.0)
+	* Added read and write api support for multi-select picklist. And added errorcode field to DescribeTableDataImportJob API output, when import job fails.
+* LookoutMetrics (3.7.7.0)
+	* This release adds a new DeactivateAnomalyDetector API operation.
+* RAM (3.7.3.0)
+	* This release adds the ListPermissionVersions API which lists the versions for a given permission.
+* Core 3.7.5.15
+	* Updating endpoints.json file.
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.190.0 (2022-01-13 19:24 UTC)
 * ElastiCache (3.7.5.0)
 	* AWS ElastiCache for Redis has added a new Engine Log LogType in LogDelivery feature. You can now publish the Engine Log from your Amazon ElastiCache for Redis clusters to Amazon CloudWatch Logs and Amazon Kinesis Data Firehose.
