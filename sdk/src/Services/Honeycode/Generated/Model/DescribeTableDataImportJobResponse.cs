@@ -33,9 +33,28 @@ namespace Amazon.Honeycode.Model
     /// </summary>
     public partial class DescribeTableDataImportJobResponse : AmazonWebServiceResponse
     {
+        private ErrorCode _errorCode;
         private TableDataImportJobMetadata _jobMetadata;
         private TableDataImportJobStatus _jobStatus;
         private string _message;
+
+        /// <summary>
+        /// Gets and sets the property ErrorCode. 
+        /// <para>
+        ///  If job status is failed, error code to understand reason for the failure. 
+        /// </para>
+        /// </summary>
+        public ErrorCode ErrorCode
+        {
+            get { return this._errorCode; }
+            set { this._errorCode = value; }
+        }
+
+        // Check to see if ErrorCode property is set
+        internal bool IsSetErrorCode()
+        {
+            return this._errorCode != null;
+        }
 
         /// <summary>
         /// Gets and sets the property JobMetadata. 

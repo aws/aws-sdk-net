@@ -76,6 +76,12 @@ namespace Amazon.Honeycode.Model.Internal.MarshallTransformations
                     unmarshalledObject.FormattedValue = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("formattedValues", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.FormattedValues = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("formula", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

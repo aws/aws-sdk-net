@@ -51,6 +51,17 @@ namespace Amazon.Honeycode.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Fact);
             }
 
+            if(requestObject.IsSetFacts())
+            {
+                context.Writer.WritePropertyName("facts");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectFactsListValue in requestObject.Facts)
+                {
+                        context.Writer.Write(requestObjectFactsListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
         }
 
         /// <summary>

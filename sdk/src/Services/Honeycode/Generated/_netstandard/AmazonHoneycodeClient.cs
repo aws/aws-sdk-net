@@ -560,6 +560,9 @@ namespace Amazon.Honeycode
         /// <exception cref="Amazon.Honeycode.Model.InternalServerException">
         /// There were unexpected errors from the server.
         /// </exception>
+        /// <exception cref="Amazon.Honeycode.Model.RequestTimeoutException">
+        /// The request timed out.
+        /// </exception>
         /// <exception cref="Amazon.Honeycode.Model.ResourceNotFoundException">
         /// A Workbook, Table, App, Screen or Screen Automation was not found with the given ID.
         /// </exception>
@@ -687,6 +690,9 @@ namespace Amazon.Honeycode
         /// </exception>
         /// <exception cref="Amazon.Honeycode.Model.ResourceNotFoundException">
         /// A Workbook, Table, App, Screen or Screen Automation was not found with the given ID.
+        /// </exception>
+        /// <exception cref="Amazon.Honeycode.Model.ServiceQuotaExceededException">
+        /// The request caused service quota to be breached.
         /// </exception>
         /// <exception cref="Amazon.Honeycode.Model.ServiceUnavailableException">
         /// Remote service is unreachable.
@@ -1029,8 +1035,14 @@ namespace Amazon.Honeycode
         /// <exception cref="Amazon.Honeycode.Model.InternalServerException">
         /// There were unexpected errors from the server.
         /// </exception>
+        /// <exception cref="Amazon.Honeycode.Model.RequestTimeoutException">
+        /// The request timed out.
+        /// </exception>
         /// <exception cref="Amazon.Honeycode.Model.ResourceNotFoundException">
         /// A Workbook, Table, App, Screen or Screen Automation was not found with the given ID.
+        /// </exception>
+        /// <exception cref="Amazon.Honeycode.Model.ServiceQuotaExceededException">
+        /// The request caused service quota to be breached.
         /// </exception>
         /// <exception cref="Amazon.Honeycode.Model.ServiceUnavailableException">
         /// Remote service is unreachable.
