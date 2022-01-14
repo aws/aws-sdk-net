@@ -56,7 +56,7 @@ namespace Amazon.Mobile.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Mobile");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-07-01";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-07-01";
             request.HttpMethod = "POST";
 
             
@@ -70,7 +70,7 @@ namespace Amazon.Mobile.Model.Internal.MarshallTransformations
                 request.Parameters.Add("snapshotId", StringUtils.FromString(publicRequest.SnapshotId));
             request.ResourcePath = "/projects";
             request.ContentStream =  publicRequest.Contents ?? new MemoryStream();
-            request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] =  
+            request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] =
                 request.ContentStream.Length.ToString(CultureInfo.InvariantCulture);
             request.Headers[Amazon.Util.HeaderKeys.ContentTypeHeader] = "binary/octet-stream"; 
             if (request.ContentStream != null && request.ContentStream.Length == 0)

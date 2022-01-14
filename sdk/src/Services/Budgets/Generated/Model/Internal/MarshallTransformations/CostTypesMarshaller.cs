@@ -34,7 +34,7 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CostTypes Marshaller
-    /// </summary>       
+    /// </summary>
     public class CostTypesMarshaller : IRequestMarshaller<CostTypes, JsonMarshallerContext> 
     {
         /// <summary>
@@ -115,7 +115,7 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CostTypesMarshaller Instance = new CostTypesMarshaller();
 
     }

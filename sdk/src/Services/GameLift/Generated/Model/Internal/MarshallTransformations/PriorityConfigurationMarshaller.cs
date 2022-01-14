@@ -34,7 +34,7 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// PriorityConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class PriorityConfigurationMarshaller : IRequestMarshaller<PriorityConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static PriorityConfigurationMarshaller Instance = new PriorityConfigurationMarshaller();
 
     }

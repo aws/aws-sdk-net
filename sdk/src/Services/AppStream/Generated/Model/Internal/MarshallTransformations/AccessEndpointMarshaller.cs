@@ -34,7 +34,7 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AccessEndpoint Marshaller
-    /// </summary>       
+    /// </summary>
     public class AccessEndpointMarshaller : IRequestMarshaller<AccessEndpoint, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AccessEndpointMarshaller Instance = new AccessEndpointMarshaller();
 
     }

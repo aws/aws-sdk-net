@@ -40,6 +40,7 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics
         /// Default constructor
         /// </summary>
         public AmazonAWSMarketplaceCommerceAnalyticsConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonAWSMarketplaceCommerceAnalyticsDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "marketplacecommerceanalytics";
         }

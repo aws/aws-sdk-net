@@ -58,7 +58,7 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
             string target = "AWSStepFunctions.UpdateStateMachine";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.0";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-11-23";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-11-23";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -107,7 +107,6 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

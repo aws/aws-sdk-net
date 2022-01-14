@@ -55,7 +55,7 @@ namespace Amazon.MWAA.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListTagsForResourceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.MWAA");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-07-01";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-07-01";
             request.HttpMethod = "GET";
 
             if (!publicRequest.IsSetResourceArn())

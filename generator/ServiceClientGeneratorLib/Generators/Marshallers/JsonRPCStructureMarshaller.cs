@@ -52,7 +52,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             
             #line default
             #line hidden
-            this.Write(" Marshaller\r\n\t/// </summary>       \r\n\tpublic class ");
+            this.Write(" Marshaller\r\n\t/// </summary>\r\n\tpublic class ");
             
             #line 18 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Structure.Name));
@@ -91,7 +91,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line default
             #line hidden
             this.Write("\t\t}\r\n\r\n        /// <summary>\r\n        /// Singleton Marshaller.\r\n        /// </su" +
-                    "mmary>  \r\n\t\tpublic readonly static ");
+                    "mmary>\r\n\t\tpublic readonly static ");
             
             #line 36 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Structure.Name));
@@ -515,7 +515,7 @@ this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
         #line hidden
         
         #line 94 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
-this.Write("                context.Writer.Write(Guid.NewGuid().ToString());\t\t\t\t\t\t\t\t\t\t\t\t\r\n");
+this.Write("                context.Writer.Write(Guid.NewGuid().ToString());\r\n");
 
         
         #line default

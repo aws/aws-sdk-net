@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AwsEcsTaskDefinitionProxyConfigurationDetails Marshaller
-    /// </summary>       
+    /// </summary>
     public class AwsEcsTaskDefinitionProxyConfigurationDetailsMarshaller : IRequestMarshaller<AwsEcsTaskDefinitionProxyConfigurationDetails, JsonMarshallerContext> 
     {
         /// <summary>
@@ -77,7 +77,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AwsEcsTaskDefinitionProxyConfigurationDetailsMarshaller Instance = new AwsEcsTaskDefinitionProxyConfigurationDetailsMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// VideoBlackFailoverSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class VideoBlackFailoverSettingsMarshaller : IRequestMarshaller<VideoBlackFailoverSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static VideoBlackFailoverSettingsMarshaller Instance = new VideoBlackFailoverSettingsMarshaller();
 
     }

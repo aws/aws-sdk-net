@@ -34,7 +34,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// UpdateCsvClassifierRequest Marshaller
-    /// </summary>       
+    /// </summary>
     public class UpdateCsvClassifierRequestMarshaller : IRequestMarshaller<UpdateCsvClassifierRequest, JsonMarshallerContext> 
     {
         /// <summary>
@@ -96,7 +96,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static UpdateCsvClassifierRequestMarshaller Instance = new UpdateCsvClassifierRequestMarshaller();
 
     }

@@ -40,6 +40,7 @@ namespace Amazon.MediaPackage
         /// Default constructor
         /// </summary>
         public AmazonMediaPackageConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonMediaPackageDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "mediapackage";
         }

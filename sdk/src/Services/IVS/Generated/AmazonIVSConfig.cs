@@ -40,6 +40,7 @@ namespace Amazon.IVS
         /// Default constructor
         /// </summary>
         public AmazonIVSConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonIVSDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "ivs";
         }

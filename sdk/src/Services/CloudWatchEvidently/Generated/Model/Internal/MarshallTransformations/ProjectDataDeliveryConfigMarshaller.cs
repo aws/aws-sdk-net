@@ -34,7 +34,7 @@ namespace Amazon.CloudWatchEvidently.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ProjectDataDeliveryConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class ProjectDataDeliveryConfigMarshaller : IRequestMarshaller<ProjectDataDeliveryConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.CloudWatchEvidently.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ProjectDataDeliveryConfigMarshaller Instance = new ProjectDataDeliveryConfigMarshaller();
 
     }

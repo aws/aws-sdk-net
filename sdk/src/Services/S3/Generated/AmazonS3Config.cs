@@ -40,6 +40,7 @@ namespace Amazon.S3
         /// Default constructor
         /// </summary>
         public AmazonS3Config()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonS3DefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "s3";
         }

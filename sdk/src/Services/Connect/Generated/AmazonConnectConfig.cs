@@ -40,6 +40,7 @@ namespace Amazon.Connect
         /// Default constructor
         /// </summary>
         public AmazonConnectConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonConnectDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "connect";
         }

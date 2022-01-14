@@ -40,6 +40,7 @@ namespace Amazon.NimbleStudio
         /// Default constructor
         /// </summary>
         public AmazonNimbleStudioConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonNimbleStudioDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "nimble";
         }

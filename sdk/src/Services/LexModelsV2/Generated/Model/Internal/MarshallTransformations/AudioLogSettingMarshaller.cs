@@ -34,7 +34,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AudioLogSetting Marshaller
-    /// </summary>       
+    /// </summary>
     public class AudioLogSettingMarshaller : IRequestMarshaller<AudioLogSetting, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AudioLogSettingMarshaller Instance = new AudioLogSettingMarshaller();
 
     }

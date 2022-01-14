@@ -34,7 +34,7 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// LambdaLinuxProcessParams Marshaller
-    /// </summary>       
+    /// </summary>
     public class LambdaLinuxProcessParamsMarshaller : IRequestMarshaller<LambdaLinuxProcessParams, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static LambdaLinuxProcessParamsMarshaller Instance = new LambdaLinuxProcessParamsMarshaller();
 
     }

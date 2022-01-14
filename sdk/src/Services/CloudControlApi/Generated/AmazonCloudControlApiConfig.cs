@@ -40,6 +40,7 @@ namespace Amazon.CloudControlApi
         /// Default constructor
         /// </summary>
         public AmazonCloudControlApiConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonCloudControlApiDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "cloudcontrolapi";
         }

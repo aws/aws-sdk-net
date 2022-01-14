@@ -40,6 +40,7 @@ namespace Amazon.MobileAnalytics
         /// Default constructor
         /// </summary>
         public AmazonMobileAnalyticsConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonMobileAnalyticsDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "mobileanalytics";
         }

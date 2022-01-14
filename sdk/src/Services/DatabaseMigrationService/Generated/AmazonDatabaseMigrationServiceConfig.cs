@@ -40,6 +40,7 @@ namespace Amazon.DatabaseMigrationService
         /// Default constructor
         /// </summary>
         public AmazonDatabaseMigrationServiceConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonDatabaseMigrationServiceDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "dms";
         }

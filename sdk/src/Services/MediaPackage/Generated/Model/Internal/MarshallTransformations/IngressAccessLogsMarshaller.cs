@@ -34,7 +34,7 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// IngressAccessLogs Marshaller
-    /// </summary>       
+    /// </summary>
     public class IngressAccessLogsMarshaller : IRequestMarshaller<IngressAccessLogs, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static IngressAccessLogsMarshaller Instance = new IngressAccessLogsMarshaller();
 
     }

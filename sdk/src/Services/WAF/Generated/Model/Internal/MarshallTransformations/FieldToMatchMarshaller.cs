@@ -34,7 +34,7 @@ namespace Amazon.WAF.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// FieldToMatch Marshaller
-    /// </summary>       
+    /// </summary>
     public class FieldToMatchMarshaller : IRequestMarshaller<FieldToMatch, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.WAF.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static FieldToMatchMarshaller Instance = new FieldToMatchMarshaller();
 
     }

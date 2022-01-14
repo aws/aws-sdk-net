@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Remediation Marshaller
-    /// </summary>       
+    /// </summary>
     public class RemediationMarshaller : IRequestMarshaller<Remediation, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RemediationMarshaller Instance = new RemediationMarshaller();
 
     }

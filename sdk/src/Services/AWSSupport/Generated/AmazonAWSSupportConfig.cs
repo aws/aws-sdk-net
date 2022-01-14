@@ -40,6 +40,7 @@ namespace Amazon.AWSSupport
         /// Default constructor
         /// </summary>
         public AmazonAWSSupportConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonAWSSupportDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "support";
         }

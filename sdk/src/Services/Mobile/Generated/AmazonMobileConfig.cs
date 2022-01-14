@@ -40,6 +40,7 @@ namespace Amazon.Mobile
         /// Default constructor
         /// </summary>
         public AmazonMobileConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonMobileDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "AWSMobileHubService";
         }

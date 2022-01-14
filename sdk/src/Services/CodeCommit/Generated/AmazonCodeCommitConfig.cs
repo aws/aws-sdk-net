@@ -40,6 +40,7 @@ namespace Amazon.CodeCommit
         /// Default constructor
         /// </summary>
         public AmazonCodeCommitConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonCodeCommitDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "codecommit";
         }

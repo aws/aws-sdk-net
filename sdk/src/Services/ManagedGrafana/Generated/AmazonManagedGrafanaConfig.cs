@@ -40,6 +40,7 @@ namespace Amazon.ManagedGrafana
         /// Default constructor
         /// </summary>
         public AmazonManagedGrafanaConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonManagedGrafanaDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "grafana";
         }

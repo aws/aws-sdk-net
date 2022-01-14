@@ -40,6 +40,7 @@ namespace Amazon.Drs
         /// Default constructor
         /// </summary>
         public AmazonDrsConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonDrsDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "drs";
         }

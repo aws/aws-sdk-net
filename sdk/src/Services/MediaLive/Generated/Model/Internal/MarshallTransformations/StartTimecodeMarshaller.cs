@@ -34,7 +34,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// StartTimecode Marshaller
-    /// </summary>       
+    /// </summary>
     public class StartTimecodeMarshaller : IRequestMarshaller<StartTimecode, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static StartTimecodeMarshaller Instance = new StartTimecodeMarshaller();
 
     }

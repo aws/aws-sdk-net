@@ -40,6 +40,7 @@ namespace Amazon.MediaPackageVod
         /// Default constructor
         /// </summary>
         public AmazonMediaPackageVodConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonMediaPackageVodDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "mediapackage-vod";
         }

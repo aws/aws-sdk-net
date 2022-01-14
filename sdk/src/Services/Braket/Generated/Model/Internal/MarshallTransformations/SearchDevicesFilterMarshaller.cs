@@ -34,7 +34,7 @@ namespace Amazon.Braket.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SearchDevicesFilter Marshaller
-    /// </summary>       
+    /// </summary>
     public class SearchDevicesFilterMarshaller : IRequestMarshaller<SearchDevicesFilter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.Braket.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SearchDevicesFilterMarshaller Instance = new SearchDevicesFilterMarshaller();
 
     }

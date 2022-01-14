@@ -40,6 +40,7 @@ namespace Amazon.Route53RecoveryCluster
         /// Default constructor
         /// </summary>
         public AmazonRoute53RecoveryClusterConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonRoute53RecoveryClusterDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "route53-recovery-cluster";
         }

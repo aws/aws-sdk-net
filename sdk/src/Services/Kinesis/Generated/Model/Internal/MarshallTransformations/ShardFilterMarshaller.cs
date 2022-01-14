@@ -34,7 +34,7 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ShardFilter Marshaller
-    /// </summary>       
+    /// </summary>
     public class ShardFilterMarshaller : IRequestMarshaller<ShardFilter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ShardFilterMarshaller Instance = new ShardFilterMarshaller();
 
     }

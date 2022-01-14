@@ -56,7 +56,7 @@ namespace Amazon.IoTJobsDataPlane.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.IoTJobsDataPlane");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-09-29";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-09-29";
             request.HttpMethod = "PUT";
 
             if (!publicRequest.IsSetThingName())
@@ -88,7 +88,6 @@ namespace Amazon.IoTJobsDataPlane.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.StepTimeoutInMinutes);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

@@ -34,7 +34,7 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ActivityType Marshaller
-    /// </summary>       
+    /// </summary>
     public class ActivityTypeMarshaller : IRequestMarshaller<ActivityType, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ActivityTypeMarshaller Instance = new ActivityTypeMarshaller();
 
     }

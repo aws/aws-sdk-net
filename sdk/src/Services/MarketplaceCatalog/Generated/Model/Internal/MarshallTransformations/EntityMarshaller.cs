@@ -34,7 +34,7 @@ namespace Amazon.MarketplaceCatalog.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Entity Marshaller
-    /// </summary>       
+    /// </summary>
     public class EntityMarshaller : IRequestMarshaller<Entity, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.MarketplaceCatalog.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static EntityMarshaller Instance = new EntityMarshaller();
 
     }

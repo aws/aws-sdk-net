@@ -34,7 +34,7 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ElasticsearchBufferingHints Marshaller
-    /// </summary>       
+    /// </summary>
     public class ElasticsearchBufferingHintsMarshaller : IRequestMarshaller<ElasticsearchBufferingHints, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ElasticsearchBufferingHintsMarshaller Instance = new ElasticsearchBufferingHintsMarshaller();
 
     }

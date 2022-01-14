@@ -34,7 +34,7 @@ namespace Amazon.RDSDataService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ArrayValue Marshaller
-    /// </summary>       
+    /// </summary>
     public class ArrayValueMarshaller : IRequestMarshaller<ArrayValue, JsonMarshallerContext> 
     {
         /// <summary>
@@ -109,7 +109,7 @@ namespace Amazon.RDSDataService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ArrayValueMarshaller Instance = new ArrayValueMarshaller();
 
     }

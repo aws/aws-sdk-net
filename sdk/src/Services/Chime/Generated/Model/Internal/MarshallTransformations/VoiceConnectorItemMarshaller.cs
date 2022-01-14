@@ -34,7 +34,7 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// VoiceConnectorItem Marshaller
-    /// </summary>       
+    /// </summary>
     public class VoiceConnectorItemMarshaller : IRequestMarshaller<VoiceConnectorItem, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static VoiceConnectorItemMarshaller Instance = new VoiceConnectorItemMarshaller();
 
     }

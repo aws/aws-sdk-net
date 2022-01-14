@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DriftCheckModelDataQuality Marshaller
-    /// </summary>       
+    /// </summary>
     public class DriftCheckModelDataQualityMarshaller : IRequestMarshaller<DriftCheckModelDataQuality, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DriftCheckModelDataQualityMarshaller Instance = new DriftCheckModelDataQualityMarshaller();
 
     }

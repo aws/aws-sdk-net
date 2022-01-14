@@ -56,7 +56,7 @@ namespace Amazon.RAM.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.RAM");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-01-04";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-01-04";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/enablesharingwithawsorganization";

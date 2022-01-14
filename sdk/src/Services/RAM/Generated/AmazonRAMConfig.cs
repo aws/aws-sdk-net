@@ -40,6 +40,7 @@ namespace Amazon.RAM
         /// Default constructor
         /// </summary>
         public AmazonRAMConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonRAMDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "ram";
         }

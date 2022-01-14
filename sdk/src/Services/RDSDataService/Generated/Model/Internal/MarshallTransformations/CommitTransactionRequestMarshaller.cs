@@ -56,7 +56,7 @@ namespace Amazon.RDSDataService.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.RDSDataService");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-08-01";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-08-01";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/CommitTransaction";
@@ -83,7 +83,6 @@ namespace Amazon.RDSDataService.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.TransactionId);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

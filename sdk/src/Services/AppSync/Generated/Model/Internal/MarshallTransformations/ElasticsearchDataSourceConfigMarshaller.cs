@@ -34,7 +34,7 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ElasticsearchDataSourceConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class ElasticsearchDataSourceConfigMarshaller : IRequestMarshaller<ElasticsearchDataSourceConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ElasticsearchDataSourceConfigMarshaller Instance = new ElasticsearchDataSourceConfigMarshaller();
 
     }

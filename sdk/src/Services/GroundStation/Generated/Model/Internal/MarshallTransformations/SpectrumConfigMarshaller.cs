@@ -34,7 +34,7 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SpectrumConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class SpectrumConfigMarshaller : IRequestMarshaller<SpectrumConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -77,7 +77,7 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SpectrumConfigMarshaller Instance = new SpectrumConfigMarshaller();
 
     }

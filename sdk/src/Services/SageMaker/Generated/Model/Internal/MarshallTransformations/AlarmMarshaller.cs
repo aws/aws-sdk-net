@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Alarm Marshaller
-    /// </summary>       
+    /// </summary>
     public class AlarmMarshaller : IRequestMarshaller<Alarm, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AlarmMarshaller Instance = new AlarmMarshaller();
 
     }

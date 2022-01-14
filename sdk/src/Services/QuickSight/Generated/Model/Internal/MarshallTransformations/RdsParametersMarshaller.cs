@@ -34,7 +34,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RdsParameters Marshaller
-    /// </summary>       
+    /// </summary>
     public class RdsParametersMarshaller : IRequestMarshaller<RdsParameters, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RdsParametersMarshaller Instance = new RdsParametersMarshaller();
 
     }

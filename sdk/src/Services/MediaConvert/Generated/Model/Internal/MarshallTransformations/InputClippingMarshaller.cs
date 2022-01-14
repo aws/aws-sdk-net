@@ -34,7 +34,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// InputClipping Marshaller
-    /// </summary>       
+    /// </summary>
     public class InputClippingMarshaller : IRequestMarshaller<InputClipping, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static InputClippingMarshaller Instance = new InputClippingMarshaller();
 
     }

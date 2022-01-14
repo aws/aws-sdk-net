@@ -34,7 +34,7 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// EntitlementAttribute Marshaller
-    /// </summary>       
+    /// </summary>
     public class EntitlementAttributeMarshaller : IRequestMarshaller<EntitlementAttribute, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static EntitlementAttributeMarshaller Instance = new EntitlementAttributeMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// EncryptionOptions Marshaller
-    /// </summary>       
+    /// </summary>
     public class EncryptionOptionsMarshaller : IRequestMarshaller<EncryptionOptions, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static EncryptionOptionsMarshaller Instance = new EncryptionOptionsMarshaller();
 
     }

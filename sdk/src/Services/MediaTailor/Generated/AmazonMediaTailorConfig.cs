@@ -40,6 +40,7 @@ namespace Amazon.MediaTailor
         /// Default constructor
         /// </summary>
         public AmazonMediaTailorConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonMediaTailorDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "mediatailor";
         }

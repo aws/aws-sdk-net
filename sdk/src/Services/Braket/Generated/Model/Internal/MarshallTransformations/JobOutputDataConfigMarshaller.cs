@@ -34,7 +34,7 @@ namespace Amazon.Braket.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// JobOutputDataConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class JobOutputDataConfigMarshaller : IRequestMarshaller<JobOutputDataConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Braket.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static JobOutputDataConfigMarshaller Instance = new JobOutputDataConfigMarshaller();
 
     }

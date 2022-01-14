@@ -40,6 +40,7 @@ namespace Amazon.ResourceGroups
         /// Default constructor
         /// </summary>
         public AmazonResourceGroupsConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonResourceGroupsDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "resource-groups";
         }

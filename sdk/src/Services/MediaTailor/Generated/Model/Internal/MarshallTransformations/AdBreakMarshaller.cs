@@ -34,7 +34,7 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AdBreak Marshaller
-    /// </summary>       
+    /// </summary>
     public class AdBreakMarshaller : IRequestMarshaller<AdBreak, JsonMarshallerContext> 
     {
         /// <summary>
@@ -83,7 +83,7 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AdBreakMarshaller Instance = new AdBreakMarshaller();
 
     }

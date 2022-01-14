@@ -34,7 +34,7 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// S3LogsConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class S3LogsConfigurationMarshaller : IRequestMarshaller<S3LogsConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static S3LogsConfigurationMarshaller Instance = new S3LogsConfigurationMarshaller();
 
     }

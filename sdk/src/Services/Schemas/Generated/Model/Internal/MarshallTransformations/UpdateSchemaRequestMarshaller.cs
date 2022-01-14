@@ -56,7 +56,7 @@ namespace Amazon.Schemas.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Schemas");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-12-02";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-12-02";
             request.HttpMethod = "PUT";
 
             if (!publicRequest.IsSetRegistryName())
@@ -80,7 +80,7 @@ namespace Amazon.Schemas.Model.Internal.MarshallTransformations
                 else if(!(publicRequest.IsSetClientTokenId()))
                 {
                     context.Writer.WritePropertyName("ClientTokenId");
-                    context.Writer.Write(Guid.NewGuid().ToString());                                                
+                    context.Writer.Write(Guid.NewGuid().ToString());
                 }
                 if(publicRequest.IsSetContent())
                 {
@@ -100,7 +100,6 @@ namespace Amazon.Schemas.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Type);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

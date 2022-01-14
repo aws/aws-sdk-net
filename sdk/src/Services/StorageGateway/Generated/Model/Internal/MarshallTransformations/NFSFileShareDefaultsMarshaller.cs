@@ -34,7 +34,7 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// NFSFileShareDefaults Marshaller
-    /// </summary>       
+    /// </summary>
     public class NFSFileShareDefaultsMarshaller : IRequestMarshaller<NFSFileShareDefaults, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static NFSFileShareDefaultsMarshaller Instance = new NFSFileShareDefaultsMarshaller();
 
     }

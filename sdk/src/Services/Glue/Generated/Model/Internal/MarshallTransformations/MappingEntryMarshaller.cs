@@ -34,7 +34,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// MappingEntry Marshaller
-    /// </summary>       
+    /// </summary>
     public class MappingEntryMarshaller : IRequestMarshaller<MappingEntry, JsonMarshallerContext> 
     {
         /// <summary>
@@ -85,7 +85,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static MappingEntryMarshaller Instance = new MappingEntryMarshaller();
 
     }

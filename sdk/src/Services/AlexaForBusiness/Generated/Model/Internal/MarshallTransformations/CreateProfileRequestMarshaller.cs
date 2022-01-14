@@ -58,7 +58,7 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
             string target = "AlexaForBusiness.CreateProfile";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-11-09";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-11-09";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -82,7 +82,7 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
                 else if(!(publicRequest.IsSetClientRequestToken()))
                 {
                     context.Writer.WritePropertyName("ClientRequestToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());                                                
+                    context.Writer.Write(Guid.NewGuid().ToString());
                 }
                 if(publicRequest.IsSetDataRetentionOptIn())
                 {
@@ -171,7 +171,6 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.WakeWord);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

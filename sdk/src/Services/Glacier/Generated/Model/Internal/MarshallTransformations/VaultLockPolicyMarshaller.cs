@@ -34,7 +34,7 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// VaultLockPolicy Marshaller
-    /// </summary>       
+    /// </summary>
     public class VaultLockPolicyMarshaller : IRequestMarshaller<VaultLockPolicy, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static VaultLockPolicyMarshaller Instance = new VaultLockPolicyMarshaller();
 
     }

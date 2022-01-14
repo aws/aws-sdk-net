@@ -34,7 +34,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SalesforceSourceProperties Marshaller
-    /// </summary>       
+    /// </summary>
     public class SalesforceSourcePropertiesMarshaller : IRequestMarshaller<SalesforceSourceProperties, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SalesforceSourcePropertiesMarshaller Instance = new SalesforceSourcePropertiesMarshaller();
 
     }

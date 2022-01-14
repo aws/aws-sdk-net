@@ -34,7 +34,7 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Scram Marshaller
-    /// </summary>       
+    /// </summary>
     public class ScramMarshaller : IRequestMarshaller<Scram, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ScramMarshaller Instance = new ScramMarshaller();
 
     }

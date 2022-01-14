@@ -34,7 +34,7 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// BatchPutGeofenceRequestEntry Marshaller
-    /// </summary>       
+    /// </summary>
     public class BatchPutGeofenceRequestEntryMarshaller : IRequestMarshaller<BatchPutGeofenceRequestEntry, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static BatchPutGeofenceRequestEntryMarshaller Instance = new BatchPutGeofenceRequestEntryMarshaller();
 
     }

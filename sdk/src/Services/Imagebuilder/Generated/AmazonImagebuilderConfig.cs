@@ -40,6 +40,7 @@ namespace Amazon.Imagebuilder
         /// Default constructor
         /// </summary>
         public AmazonImagebuilderConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonImagebuilderDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "imagebuilder";
         }

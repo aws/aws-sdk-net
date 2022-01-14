@@ -34,7 +34,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TaskDefinitionPlacementConstraint Marshaller
-    /// </summary>       
+    /// </summary>
     public class TaskDefinitionPlacementConstraintMarshaller : IRequestMarshaller<TaskDefinitionPlacementConstraint, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TaskDefinitionPlacementConstraintMarshaller Instance = new TaskDefinitionPlacementConstraintMarshaller();
 
     }

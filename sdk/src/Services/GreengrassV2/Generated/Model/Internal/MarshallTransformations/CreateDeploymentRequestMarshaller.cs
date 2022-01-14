@@ -56,7 +56,7 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.GreengrassV2");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-11-30";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-11-30";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/greengrass/v2/deployments";
@@ -74,7 +74,7 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
                 else if(!(publicRequest.IsSetClientToken()))
                 {
                     context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());                                                
+                    context.Writer.Write(Guid.NewGuid().ToString());
                 }
                 if(publicRequest.IsSetComponents())
                 {
@@ -143,7 +143,6 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.TargetArn);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

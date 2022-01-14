@@ -40,6 +40,7 @@ namespace Amazon.ApiGatewayV2
         /// Default constructor
         /// </summary>
         public AmazonApiGatewayV2Config()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonApiGatewayV2DefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "apigateway";
         }

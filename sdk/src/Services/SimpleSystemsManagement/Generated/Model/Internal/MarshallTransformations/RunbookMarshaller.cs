@@ -34,7 +34,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Runbook Marshaller
-    /// </summary>       
+    /// </summary>
     public class RunbookMarshaller : IRequestMarshaller<Runbook, JsonMarshallerContext> 
     {
         /// <summary>
@@ -130,7 +130,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RunbookMarshaller Instance = new RunbookMarshaller();
 
     }

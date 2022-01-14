@@ -34,7 +34,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// InputChannelLevel Marshaller
-    /// </summary>       
+    /// </summary>
     public class InputChannelLevelMarshaller : IRequestMarshaller<InputChannelLevel, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static InputChannelLevelMarshaller Instance = new InputChannelLevelMarshaller();
 
     }

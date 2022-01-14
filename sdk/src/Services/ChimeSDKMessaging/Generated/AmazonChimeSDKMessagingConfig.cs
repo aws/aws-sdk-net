@@ -40,6 +40,7 @@ namespace Amazon.ChimeSDKMessaging
         /// Default constructor
         /// </summary>
         public AmazonChimeSDKMessagingConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonChimeSDKMessagingDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "chime";
         }

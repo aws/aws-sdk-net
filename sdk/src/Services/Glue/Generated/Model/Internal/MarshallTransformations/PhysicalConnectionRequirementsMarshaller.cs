@@ -34,7 +34,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// PhysicalConnectionRequirements Marshaller
-    /// </summary>       
+    /// </summary>
     public class PhysicalConnectionRequirementsMarshaller : IRequestMarshaller<PhysicalConnectionRequirements, JsonMarshallerContext> 
     {
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static PhysicalConnectionRequirementsMarshaller Instance = new PhysicalConnectionRequirementsMarshaller();
 
     }

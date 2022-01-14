@@ -34,7 +34,7 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// BatchParameters Marshaller
-    /// </summary>       
+    /// </summary>
     public class BatchParametersMarshaller : IRequestMarshaller<BatchParameters, JsonMarshallerContext> 
     {
         /// <summary>
@@ -83,7 +83,7 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static BatchParametersMarshaller Instance = new BatchParametersMarshaller();
 
     }

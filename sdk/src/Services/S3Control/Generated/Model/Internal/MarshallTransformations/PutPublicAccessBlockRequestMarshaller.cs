@@ -57,8 +57,10 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             var request = new DefaultRequest(publicRequest, "Amazon.S3Control");
             request.HttpMethod = "PUT";
         
-            if(publicRequest.IsSetAccountId())
+            if (publicRequest.IsSetAccountId()) 
+            {
                 request.Headers["x-amz-account-id"] = publicRequest.AccountId;
+            }
             request.ResourcePath = "/v20180820/configuration/publicAccessBlock";
 
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);

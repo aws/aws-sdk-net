@@ -58,7 +58,7 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
             string target = "SimpleWorkflowService.PollForDecisionTask";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.0";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2012-01-25";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2012-01-25";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -108,7 +108,6 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

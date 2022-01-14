@@ -40,6 +40,7 @@ namespace Amazon.LookoutEquipment
         /// Default constructor
         /// </summary>
         public AmazonLookoutEquipmentConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonLookoutEquipmentDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "lookoutequipment";
         }

@@ -34,7 +34,7 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RegionMapInputValue Marshaller
-    /// </summary>       
+    /// </summary>
     public class RegionMapInputValueMarshaller : IRequestMarshaller<RegionMapInputValue, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RegionMapInputValueMarshaller Instance = new RegionMapInputValueMarshaller();
 
     }

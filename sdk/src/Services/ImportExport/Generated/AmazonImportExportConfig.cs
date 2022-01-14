@@ -40,6 +40,7 @@ namespace Amazon.ImportExport
         /// Default constructor
         /// </summary>
         public AmazonImportExportConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonImportExportDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "importexport";
         }

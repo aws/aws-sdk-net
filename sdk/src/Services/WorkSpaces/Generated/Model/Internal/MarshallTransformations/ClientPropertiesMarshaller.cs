@@ -34,7 +34,7 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ClientProperties Marshaller
-    /// </summary>       
+    /// </summary>
     public class ClientPropertiesMarshaller : IRequestMarshaller<ClientProperties, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ClientPropertiesMarshaller Instance = new ClientPropertiesMarshaller();
 
     }

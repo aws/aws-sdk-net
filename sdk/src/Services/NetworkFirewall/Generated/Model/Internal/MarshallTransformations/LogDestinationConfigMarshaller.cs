@@ -34,7 +34,7 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// LogDestinationConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class LogDestinationConfigMarshaller : IRequestMarshaller<LogDestinationConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -75,7 +75,7 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static LogDestinationConfigMarshaller Instance = new LogDestinationConfigMarshaller();
 
     }

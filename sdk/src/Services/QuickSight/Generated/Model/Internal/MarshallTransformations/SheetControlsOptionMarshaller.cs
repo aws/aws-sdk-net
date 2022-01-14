@@ -34,7 +34,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SheetControlsOption Marshaller
-    /// </summary>       
+    /// </summary>
     public class SheetControlsOptionMarshaller : IRequestMarshaller<SheetControlsOption, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SheetControlsOptionMarshaller Instance = new SheetControlsOptionMarshaller();
 
     }

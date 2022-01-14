@@ -40,6 +40,7 @@ namespace Amazon.LicenseManager
         /// Default constructor
         /// </summary>
         public AmazonLicenseManagerConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonLicenseManagerDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "license-manager";
         }

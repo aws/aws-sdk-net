@@ -40,6 +40,7 @@ namespace Amazon.PinpointEmail
         /// Default constructor
         /// </summary>
         public AmazonPinpointEmailConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonPinpointEmailDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "ses";
         }

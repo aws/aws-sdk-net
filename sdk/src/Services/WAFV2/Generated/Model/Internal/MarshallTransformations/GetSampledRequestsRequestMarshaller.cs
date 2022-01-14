@@ -58,7 +58,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             string target = "AWSWAF_20190729.GetSampledRequests";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-07-29";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-07-29";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -102,7 +102,6 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.WebAclArn);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

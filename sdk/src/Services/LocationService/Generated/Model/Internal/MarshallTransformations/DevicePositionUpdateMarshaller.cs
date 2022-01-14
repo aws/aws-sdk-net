@@ -34,7 +34,7 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DevicePositionUpdate Marshaller
-    /// </summary>       
+    /// </summary>
     public class DevicePositionUpdateMarshaller : IRequestMarshaller<DevicePositionUpdate, JsonMarshallerContext> 
     {
         /// <summary>
@@ -97,7 +97,7 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DevicePositionUpdateMarshaller Instance = new DevicePositionUpdateMarshaller();
 
     }

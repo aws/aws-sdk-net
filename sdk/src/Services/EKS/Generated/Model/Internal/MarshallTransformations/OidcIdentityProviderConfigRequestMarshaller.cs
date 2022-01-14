@@ -34,7 +34,7 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// OidcIdentityProviderConfigRequest Marshaller
-    /// </summary>       
+    /// </summary>
     public class OidcIdentityProviderConfigRequestMarshaller : IRequestMarshaller<OidcIdentityProviderConfigRequest, JsonMarshallerContext> 
     {
         /// <summary>
@@ -105,7 +105,7 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static OidcIdentityProviderConfigRequestMarshaller Instance = new OidcIdentityProviderConfigRequestMarshaller();
 
     }

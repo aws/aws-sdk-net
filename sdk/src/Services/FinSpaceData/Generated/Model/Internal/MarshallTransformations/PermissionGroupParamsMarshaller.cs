@@ -34,7 +34,7 @@ namespace Amazon.FinSpaceData.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// PermissionGroupParams Marshaller
-    /// </summary>       
+    /// </summary>
     public class PermissionGroupParamsMarshaller : IRequestMarshaller<PermissionGroupParams, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.FinSpaceData.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static PermissionGroupParamsMarshaller Instance = new PermissionGroupParamsMarshaller();
 
     }

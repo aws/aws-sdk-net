@@ -34,7 +34,7 @@ namespace Amazon.WAFRegional.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// XssMatchTuple Marshaller
-    /// </summary>       
+    /// </summary>
     public class XssMatchTupleMarshaller : IRequestMarshaller<XssMatchTuple, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.WAFRegional.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static XssMatchTupleMarshaller Instance = new XssMatchTupleMarshaller();
 
     }

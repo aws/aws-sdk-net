@@ -34,7 +34,7 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// UserStackAssociation Marshaller
-    /// </summary>       
+    /// </summary>
     public class UserStackAssociationMarshaller : IRequestMarshaller<UserStackAssociation, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static UserStackAssociationMarshaller Instance = new UserStackAssociationMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// UpdateCloudFormationCollectionFilter Marshaller
-    /// </summary>       
+    /// </summary>
     public class UpdateCloudFormationCollectionFilterMarshaller : IRequestMarshaller<UpdateCloudFormationCollectionFilter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static UpdateCloudFormationCollectionFilterMarshaller Instance = new UpdateCloudFormationCollectionFilterMarshaller();
 
     }

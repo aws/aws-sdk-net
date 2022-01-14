@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AwsDynamoDbTableLocalSecondaryIndex Marshaller
-    /// </summary>       
+    /// </summary>
     public class AwsDynamoDbTableLocalSecondaryIndexMarshaller : IRequestMarshaller<AwsDynamoDbTableLocalSecondaryIndex, JsonMarshallerContext> 
     {
         /// <summary>
@@ -88,7 +88,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AwsDynamoDbTableLocalSecondaryIndexMarshaller Instance = new AwsDynamoDbTableLocalSecondaryIndexMarshaller();
 
     }

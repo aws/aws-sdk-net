@@ -40,6 +40,7 @@ namespace Amazon.DataSync
         /// Default constructor
         /// </summary>
         public AmazonDataSyncConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonDataSyncDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "datasync";
         }

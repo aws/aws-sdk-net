@@ -34,7 +34,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DataSetReference Marshaller
-    /// </summary>       
+    /// </summary>
     public class DataSetReferenceMarshaller : IRequestMarshaller<DataSetReference, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DataSetReferenceMarshaller Instance = new DataSetReferenceMarshaller();
 
     }

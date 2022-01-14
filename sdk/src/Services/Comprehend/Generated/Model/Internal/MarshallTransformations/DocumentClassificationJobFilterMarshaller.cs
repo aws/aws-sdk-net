@@ -34,7 +34,7 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DocumentClassificationJobFilter Marshaller
-    /// </summary>       
+    /// </summary>
     public class DocumentClassificationJobFilterMarshaller : IRequestMarshaller<DocumentClassificationJobFilter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DocumentClassificationJobFilterMarshaller Instance = new DocumentClassificationJobFilterMarshaller();
 
     }

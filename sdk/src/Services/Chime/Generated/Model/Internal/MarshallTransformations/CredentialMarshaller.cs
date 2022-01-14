@@ -34,7 +34,7 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Credential Marshaller
-    /// </summary>       
+    /// </summary>
     public class CredentialMarshaller : IRequestMarshaller<Credential, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CredentialMarshaller Instance = new CredentialMarshaller();
 
     }

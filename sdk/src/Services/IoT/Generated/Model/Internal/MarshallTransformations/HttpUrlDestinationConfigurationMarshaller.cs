@@ -34,7 +34,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// HttpUrlDestinationConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class HttpUrlDestinationConfigurationMarshaller : IRequestMarshaller<HttpUrlDestinationConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static HttpUrlDestinationConfigurationMarshaller Instance = new HttpUrlDestinationConfigurationMarshaller();
 
     }

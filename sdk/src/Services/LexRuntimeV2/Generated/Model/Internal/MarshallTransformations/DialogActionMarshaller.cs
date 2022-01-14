@@ -34,7 +34,7 @@ namespace Amazon.LexRuntimeV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DialogAction Marshaller
-    /// </summary>       
+    /// </summary>
     public class DialogActionMarshaller : IRequestMarshaller<DialogAction, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.LexRuntimeV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DialogActionMarshaller Instance = new DialogActionMarshaller();
 
     }

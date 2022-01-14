@@ -34,7 +34,7 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// JWTConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class JWTConfigurationMarshaller : IRequestMarshaller<JWTConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static JWTConfigurationMarshaller Instance = new JWTConfigurationMarshaller();
 
     }

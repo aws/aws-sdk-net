@@ -34,7 +34,7 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// BackupPolicy Marshaller
-    /// </summary>       
+    /// </summary>
     public class BackupPolicyMarshaller : IRequestMarshaller<BackupPolicy, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static BackupPolicyMarshaller Instance = new BackupPolicyMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.KinesisAnalytics.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CloudWatchLoggingOptionUpdate Marshaller
-    /// </summary>       
+    /// </summary>
     public class CloudWatchLoggingOptionUpdateMarshaller : IRequestMarshaller<CloudWatchLoggingOptionUpdate, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.KinesisAnalytics.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CloudWatchLoggingOptionUpdateMarshaller Instance = new CloudWatchLoggingOptionUpdateMarshaller();
 
     }

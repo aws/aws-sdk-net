@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AutoMLJobConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class AutoMLJobConfigMarshaller : IRequestMarshaller<AutoMLJobConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AutoMLJobConfigMarshaller Instance = new AutoMLJobConfigMarshaller();
 
     }

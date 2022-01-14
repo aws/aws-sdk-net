@@ -34,7 +34,7 @@ namespace Amazon.TimestreamQuery.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// NotificationConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class NotificationConfigurationMarshaller : IRequestMarshaller<NotificationConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.TimestreamQuery.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static NotificationConfigurationMarshaller Instance = new NotificationConfigurationMarshaller();
 
     }

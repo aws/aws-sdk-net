@@ -34,7 +34,7 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// PasswordPolicyType Marshaller
-    /// </summary>       
+    /// </summary>
     public class PasswordPolicyTypeMarshaller : IRequestMarshaller<PasswordPolicyType, JsonMarshallerContext> 
     {
         /// <summary>
@@ -85,7 +85,7 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static PasswordPolicyTypeMarshaller Instance = new PasswordPolicyTypeMarshaller();
 
     }

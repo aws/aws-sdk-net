@@ -34,7 +34,7 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ExecutionConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class ExecutionConfigurationMarshaller : IRequestMarshaller<ExecutionConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -79,7 +79,7 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ExecutionConfigurationMarshaller Instance = new ExecutionConfigurationMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.HealthLake.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DatastoreFilter Marshaller
-    /// </summary>       
+    /// </summary>
     public class DatastoreFilterMarshaller : IRequestMarshaller<DatastoreFilter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.HealthLake.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DatastoreFilterMarshaller Instance = new DatastoreFilterMarshaller();
 
     }

@@ -40,6 +40,7 @@ namespace Amazon.Redshift
         /// Default constructor
         /// </summary>
         public AmazonRedshiftConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonRedshiftDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "redshift";
         }

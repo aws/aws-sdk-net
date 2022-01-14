@@ -40,6 +40,7 @@ namespace Amazon.SageMakerRuntime
         /// Default constructor
         /// </summary>
         public AmazonSageMakerRuntimeConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonSageMakerRuntimeDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "sagemaker";
         }

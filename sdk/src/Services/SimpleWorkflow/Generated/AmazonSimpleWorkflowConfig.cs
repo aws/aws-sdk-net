@@ -40,6 +40,7 @@ namespace Amazon.SimpleWorkflow
         /// Default constructor
         /// </summary>
         public AmazonSimpleWorkflowConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonSimpleWorkflowDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "swf";
         }

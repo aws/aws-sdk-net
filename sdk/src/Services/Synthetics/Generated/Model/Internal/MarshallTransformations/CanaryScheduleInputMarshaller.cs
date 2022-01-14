@@ -34,7 +34,7 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CanaryScheduleInput Marshaller
-    /// </summary>       
+    /// </summary>
     public class CanaryScheduleInputMarshaller : IRequestMarshaller<CanaryScheduleInput, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CanaryScheduleInputMarshaller Instance = new CanaryScheduleInputMarshaller();
 
     }

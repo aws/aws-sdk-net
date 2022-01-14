@@ -50,7 +50,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new CreateHomeRegionControlRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<CreateHomeRegionControlRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -63,8 +63,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("CreateHomeRegionControl").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = CreateHomeRegionControlResponseUnmarshaller.Instance.Unmarshall(context)
-                as CreateHomeRegionControlResponse;
+            var response = CreateHomeRegionControlResponseUnmarshaller.Instance.Unmarshall(context) as CreateHomeRegionControlResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -270,7 +269,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DescribeHomeRegionControlsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<DescribeHomeRegionControlsRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -283,8 +282,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeHomeRegionControls").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = DescribeHomeRegionControlsResponseUnmarshaller.Instance.Unmarshall(context)
-                as DescribeHomeRegionControlsResponse;
+            var response = DescribeHomeRegionControlsResponseUnmarshaller.Instance.Unmarshall(context) as DescribeHomeRegionControlsResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -458,7 +456,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetHomeRegionRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<GetHomeRegionRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -471,8 +469,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GetHomeRegion").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = GetHomeRegionResponseUnmarshaller.Instance.Unmarshall(context)
-                as GetHomeRegionResponse;
+            var response = GetHomeRegionResponseUnmarshaller.Instance.Unmarshall(context) as GetHomeRegionResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 

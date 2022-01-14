@@ -34,7 +34,7 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Notification Marshaller
-    /// </summary>       
+    /// </summary>
     public class NotificationMarshaller : IRequestMarshaller<Notification, JsonMarshallerContext> 
     {
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static NotificationMarshaller Instance = new NotificationMarshaller();
 
     }

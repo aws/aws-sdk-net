@@ -34,7 +34,7 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// FilterConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class FilterConfigurationMarshaller : IRequestMarshaller<FilterConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static FilterConfigurationMarshaller Instance = new FilterConfigurationMarshaller();
 
     }

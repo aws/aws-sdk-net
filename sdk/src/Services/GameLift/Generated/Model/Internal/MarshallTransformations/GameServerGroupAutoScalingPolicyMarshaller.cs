@@ -34,7 +34,7 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// GameServerGroupAutoScalingPolicy Marshaller
-    /// </summary>       
+    /// </summary>
     public class GameServerGroupAutoScalingPolicyMarshaller : IRequestMarshaller<GameServerGroupAutoScalingPolicy, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static GameServerGroupAutoScalingPolicyMarshaller Instance = new GameServerGroupAutoScalingPolicyMarshaller();
 
     }

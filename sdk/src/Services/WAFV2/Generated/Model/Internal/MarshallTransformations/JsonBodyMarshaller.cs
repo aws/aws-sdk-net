@@ -34,7 +34,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// JsonBody Marshaller
-    /// </summary>       
+    /// </summary>
     public class JsonBodyMarshaller : IRequestMarshaller<JsonBody, JsonMarshallerContext> 
     {
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static JsonBodyMarshaller Instance = new JsonBodyMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// UserPoolPolicyType Marshaller
-    /// </summary>       
+    /// </summary>
     public class UserPoolPolicyTypeMarshaller : IRequestMarshaller<UserPoolPolicyType, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static UserPoolPolicyTypeMarshaller Instance = new UserPoolPolicyTypeMarshaller();
 
     }

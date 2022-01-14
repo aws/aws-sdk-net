@@ -34,7 +34,7 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// GameSessionQueueDestination Marshaller
-    /// </summary>       
+    /// </summary>
     public class GameSessionQueueDestinationMarshaller : IRequestMarshaller<GameSessionQueueDestination, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static GameSessionQueueDestinationMarshaller Instance = new GameSessionQueueDestinationMarshaller();
 
     }

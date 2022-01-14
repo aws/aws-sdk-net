@@ -34,7 +34,7 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DeviceRegistrationStateEventConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class DeviceRegistrationStateEventConfigurationMarshaller : IRequestMarshaller<DeviceRegistrationStateEventConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DeviceRegistrationStateEventConfigurationMarshaller Instance = new DeviceRegistrationStateEventConfigurationMarshaller();
 
     }

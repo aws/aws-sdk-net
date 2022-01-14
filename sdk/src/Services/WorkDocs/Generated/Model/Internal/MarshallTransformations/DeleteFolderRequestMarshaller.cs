@@ -55,7 +55,7 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
         public IRequest Marshall(DeleteFolderRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.WorkDocs");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-05-01";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-05-01";
             request.HttpMethod = "DELETE";
 
             if (!publicRequest.IsSetFolderId())
@@ -63,8 +63,10 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
             request.AddPathResource("{FolderId}", StringUtils.FromString(publicRequest.FolderId));
             request.ResourcePath = "/api/v1/folders/{FolderId}";
         
-            if(publicRequest.IsSetAuthenticationToken())
+            if (publicRequest.IsSetAuthenticationToken()) 
+            {
                 request.Headers["Authentication"] = publicRequest.AuthenticationToken;
+            }
 
             return request;
         }

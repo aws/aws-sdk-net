@@ -34,7 +34,7 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// EnrollmentFilter Marshaller
-    /// </summary>       
+    /// </summary>
     public class EnrollmentFilterMarshaller : IRequestMarshaller<EnrollmentFilter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static EnrollmentFilterMarshaller Instance = new EnrollmentFilterMarshaller();
 
     }

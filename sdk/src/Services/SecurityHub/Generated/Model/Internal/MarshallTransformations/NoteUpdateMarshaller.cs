@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// NoteUpdate Marshaller
-    /// </summary>       
+    /// </summary>
     public class NoteUpdateMarshaller : IRequestMarshaller<NoteUpdate, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static NoteUpdateMarshaller Instance = new NoteUpdateMarshaller();
 
     }

@@ -55,7 +55,7 @@ namespace Amazon.ServerlessApplicationRepository.Model.Internal.MarshallTransfor
         public IRequest Marshall(GetApplicationPolicyRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ServerlessApplicationRepository");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-09-08";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-09-08";
             request.HttpMethod = "GET";
 
             if (!publicRequest.IsSetApplicationId())

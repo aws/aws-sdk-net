@@ -50,7 +50,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DeleteRecommendationPreferencesRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<DeleteRecommendationPreferencesRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -63,8 +63,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DeleteRecommendationPreferences").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = DeleteRecommendationPreferencesResponseUnmarshaller.Instance.Unmarshall(context)
-                as DeleteRecommendationPreferencesResponse;
+            var response = DeleteRecommendationPreferencesResponseUnmarshaller.Instance.Unmarshall(context) as DeleteRecommendationPreferencesResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -334,7 +333,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DescribeRecommendationExportJobsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<DescribeRecommendationExportJobsRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -347,8 +346,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeRecommendationExportJobs").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = DescribeRecommendationExportJobsResponseUnmarshaller.Instance.Unmarshall(context)
-                as DescribeRecommendationExportJobsResponse;
+            var response = DescribeRecommendationExportJobsResponseUnmarshaller.Instance.Unmarshall(context) as DescribeRecommendationExportJobsResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -618,7 +616,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ExportAutoScalingGroupRecommendationsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<ExportAutoScalingGroupRecommendationsRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -631,8 +629,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ExportAutoScalingGroupRecommendations").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = ExportAutoScalingGroupRecommendationsResponseUnmarshaller.Instance.Unmarshall(context)
-                as ExportAutoScalingGroupRecommendationsResponse;
+            var response = ExportAutoScalingGroupRecommendationsResponseUnmarshaller.Instance.Unmarshall(context) as ExportAutoScalingGroupRecommendationsResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -902,7 +899,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ExportEBSVolumeRecommendationsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<ExportEBSVolumeRecommendationsRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -915,8 +912,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ExportEBSVolumeRecommendations").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = ExportEBSVolumeRecommendationsResponseUnmarshaller.Instance.Unmarshall(context)
-                as ExportEBSVolumeRecommendationsResponse;
+            var response = ExportEBSVolumeRecommendationsResponseUnmarshaller.Instance.Unmarshall(context) as ExportEBSVolumeRecommendationsResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -1186,7 +1182,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ExportEC2InstanceRecommendationsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<ExportEC2InstanceRecommendationsRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -1199,8 +1195,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ExportEC2InstanceRecommendations").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = ExportEC2InstanceRecommendationsResponseUnmarshaller.Instance.Unmarshall(context)
-                as ExportEC2InstanceRecommendationsResponse;
+            var response = ExportEC2InstanceRecommendationsResponseUnmarshaller.Instance.Unmarshall(context) as ExportEC2InstanceRecommendationsResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -1470,7 +1465,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ExportLambdaFunctionRecommendationsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<ExportLambdaFunctionRecommendationsRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -1483,8 +1478,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ExportLambdaFunctionRecommendations").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = ExportLambdaFunctionRecommendationsResponseUnmarshaller.Instance.Unmarshall(context)
-                as ExportLambdaFunctionRecommendationsResponse;
+            var response = ExportLambdaFunctionRecommendationsResponseUnmarshaller.Instance.Unmarshall(context) as ExportLambdaFunctionRecommendationsResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -1754,7 +1748,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetAutoScalingGroupRecommendationsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<GetAutoScalingGroupRecommendationsRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -1767,8 +1761,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GetAutoScalingGroupRecommendations").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = GetAutoScalingGroupRecommendationsResponseUnmarshaller.Instance.Unmarshall(context)
-                as GetAutoScalingGroupRecommendationsResponse;
+            var response = GetAutoScalingGroupRecommendationsResponseUnmarshaller.Instance.Unmarshall(context) as GetAutoScalingGroupRecommendationsResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -2038,7 +2031,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetEBSVolumeRecommendationsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<GetEBSVolumeRecommendationsRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -2051,8 +2044,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GetEBSVolumeRecommendations").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = GetEBSVolumeRecommendationsResponseUnmarshaller.Instance.Unmarshall(context)
-                as GetEBSVolumeRecommendationsResponse;
+            var response = GetEBSVolumeRecommendationsResponseUnmarshaller.Instance.Unmarshall(context) as GetEBSVolumeRecommendationsResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -2322,7 +2314,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetEC2InstanceRecommendationsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<GetEC2InstanceRecommendationsRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -2335,8 +2327,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GetEC2InstanceRecommendations").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = GetEC2InstanceRecommendationsResponseUnmarshaller.Instance.Unmarshall(context)
-                as GetEC2InstanceRecommendationsResponse;
+            var response = GetEC2InstanceRecommendationsResponseUnmarshaller.Instance.Unmarshall(context) as GetEC2InstanceRecommendationsResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -2606,7 +2597,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetEC2RecommendationProjectedMetricsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<GetEC2RecommendationProjectedMetricsRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -2619,8 +2610,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GetEC2RecommendationProjectedMetrics").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = GetEC2RecommendationProjectedMetricsResponseUnmarshaller.Instance.Unmarshall(context)
-                as GetEC2RecommendationProjectedMetricsResponse;
+            var response = GetEC2RecommendationProjectedMetricsResponseUnmarshaller.Instance.Unmarshall(context) as GetEC2RecommendationProjectedMetricsResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -2890,7 +2880,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetEffectiveRecommendationPreferencesRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<GetEffectiveRecommendationPreferencesRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -2903,8 +2893,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GetEffectiveRecommendationPreferences").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = GetEffectiveRecommendationPreferencesResponseUnmarshaller.Instance.Unmarshall(context)
-                as GetEffectiveRecommendationPreferencesResponse;
+            var response = GetEffectiveRecommendationPreferencesResponseUnmarshaller.Instance.Unmarshall(context) as GetEffectiveRecommendationPreferencesResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -3174,7 +3163,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetEnrollmentStatusRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<GetEnrollmentStatusRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -3187,8 +3176,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GetEnrollmentStatus").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = GetEnrollmentStatusResponseUnmarshaller.Instance.Unmarshall(context)
-                as GetEnrollmentStatusResponse;
+            var response = GetEnrollmentStatusResponseUnmarshaller.Instance.Unmarshall(context) as GetEnrollmentStatusResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -3394,7 +3382,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetEnrollmentStatusesForOrganizationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<GetEnrollmentStatusesForOrganizationRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -3407,8 +3395,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GetEnrollmentStatusesForOrganization").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = GetEnrollmentStatusesForOrganizationResponseUnmarshaller.Instance.Unmarshall(context)
-                as GetEnrollmentStatusesForOrganizationResponse;
+            var response = GetEnrollmentStatusesForOrganizationResponseUnmarshaller.Instance.Unmarshall(context) as GetEnrollmentStatusesForOrganizationResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -3614,7 +3601,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetLambdaFunctionRecommendationsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<GetLambdaFunctionRecommendationsRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -3627,8 +3614,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GetLambdaFunctionRecommendations").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = GetLambdaFunctionRecommendationsResponseUnmarshaller.Instance.Unmarshall(context)
-                as GetLambdaFunctionRecommendationsResponse;
+            var response = GetLambdaFunctionRecommendationsResponseUnmarshaller.Instance.Unmarshall(context) as GetLambdaFunctionRecommendationsResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -3898,7 +3884,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetRecommendationPreferencesRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<GetRecommendationPreferencesRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -3911,8 +3897,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GetRecommendationPreferences").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = GetRecommendationPreferencesResponseUnmarshaller.Instance.Unmarshall(context)
-                as GetRecommendationPreferencesResponse;
+            var response = GetRecommendationPreferencesResponseUnmarshaller.Instance.Unmarshall(context) as GetRecommendationPreferencesResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -4182,7 +4167,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetRecommendationSummariesRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<GetRecommendationSummariesRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -4195,8 +4180,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GetRecommendationSummaries").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = GetRecommendationSummariesResponseUnmarshaller.Instance.Unmarshall(context)
-                as GetRecommendationSummariesResponse;
+            var response = GetRecommendationSummariesResponseUnmarshaller.Instance.Unmarshall(context) as GetRecommendationSummariesResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -4434,7 +4418,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new PutRecommendationPreferencesRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<PutRecommendationPreferencesRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -4447,8 +4431,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("PutRecommendationPreferences").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = PutRecommendationPreferencesResponseUnmarshaller.Instance.Unmarshall(context)
-                as PutRecommendationPreferencesResponse;
+            var response = PutRecommendationPreferencesResponseUnmarshaller.Instance.Unmarshall(context) as PutRecommendationPreferencesResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -4718,7 +4701,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new UpdateEnrollmentStatusRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<UpdateEnrollmentStatusRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -4731,8 +4714,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("UpdateEnrollmentStatus").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = UpdateEnrollmentStatusResponseUnmarshaller.Instance.Unmarshall(context)
-                as UpdateEnrollmentStatusResponse;
+            var response = UpdateEnrollmentStatusResponseUnmarshaller.Instance.Unmarshall(context) as UpdateEnrollmentStatusResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 

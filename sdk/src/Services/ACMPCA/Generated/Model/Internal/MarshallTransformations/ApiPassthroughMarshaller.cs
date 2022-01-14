@@ -34,7 +34,7 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ApiPassthrough Marshaller
-    /// </summary>       
+    /// </summary>
     public class ApiPassthroughMarshaller : IRequestMarshaller<ApiPassthrough, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ApiPassthroughMarshaller Instance = new ApiPassthroughMarshaller();
 
     }

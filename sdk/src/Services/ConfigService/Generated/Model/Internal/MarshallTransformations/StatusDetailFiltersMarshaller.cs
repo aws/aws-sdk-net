@@ -34,7 +34,7 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// StatusDetailFilters Marshaller
-    /// </summary>       
+    /// </summary>
     public class StatusDetailFiltersMarshaller : IRequestMarshaller<StatusDetailFilters, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static StatusDetailFiltersMarshaller Instance = new StatusDetailFiltersMarshaller();
 
     }

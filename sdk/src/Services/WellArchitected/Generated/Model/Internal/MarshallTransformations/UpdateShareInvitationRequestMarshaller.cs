@@ -56,7 +56,7 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.WellArchitected");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-03-31";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-03-31";
             request.HttpMethod = "PATCH";
 
             if (!publicRequest.IsSetShareInvitationId())
@@ -74,7 +74,6 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ShareInvitationAction);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

@@ -40,6 +40,7 @@ namespace Amazon.SimpleEmailV2
         /// Default constructor
         /// </summary>
         public AmazonSimpleEmailServiceV2Config()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonSimpleEmailServiceV2DefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "ses";
         }

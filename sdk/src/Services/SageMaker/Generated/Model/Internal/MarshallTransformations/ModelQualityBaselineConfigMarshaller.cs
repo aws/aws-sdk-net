@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ModelQualityBaselineConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class ModelQualityBaselineConfigMarshaller : IRequestMarshaller<ModelQualityBaselineConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ModelQualityBaselineConfigMarshaller Instance = new ModelQualityBaselineConfigMarshaller();
 
     }

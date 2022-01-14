@@ -34,7 +34,7 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ResultConfigurationUpdates Marshaller
-    /// </summary>       
+    /// </summary>
     public class ResultConfigurationUpdatesMarshaller : IRequestMarshaller<ResultConfigurationUpdates, JsonMarshallerContext> 
     {
         /// <summary>
@@ -78,7 +78,7 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ResultConfigurationUpdatesMarshaller Instance = new ResultConfigurationUpdatesMarshaller();
 
     }

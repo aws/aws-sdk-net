@@ -34,7 +34,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// NotificationProperty Marshaller
-    /// </summary>       
+    /// </summary>
     public class NotificationPropertyMarshaller : IRequestMarshaller<NotificationProperty, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static NotificationPropertyMarshaller Instance = new NotificationPropertyMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// UpdateAssessmentFrameworkControlSet Marshaller
-    /// </summary>       
+    /// </summary>
     public class UpdateAssessmentFrameworkControlSetMarshaller : IRequestMarshaller<UpdateAssessmentFrameworkControlSet, JsonMarshallerContext> 
     {
         /// <summary>
@@ -77,7 +77,7 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static UpdateAssessmentFrameworkControlSetMarshaller Instance = new UpdateAssessmentFrameworkControlSetMarshaller();
 
     }

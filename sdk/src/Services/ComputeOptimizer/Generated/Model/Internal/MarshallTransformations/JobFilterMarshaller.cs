@@ -34,7 +34,7 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// JobFilter Marshaller
-    /// </summary>       
+    /// </summary>
     public class JobFilterMarshaller : IRequestMarshaller<JobFilter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static JobFilterMarshaller Instance = new JobFilterMarshaller();
 
     }

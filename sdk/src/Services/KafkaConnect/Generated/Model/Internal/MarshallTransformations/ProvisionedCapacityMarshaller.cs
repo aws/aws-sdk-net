@@ -34,7 +34,7 @@ namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ProvisionedCapacity Marshaller
-    /// </summary>       
+    /// </summary>
     public class ProvisionedCapacityMarshaller : IRequestMarshaller<ProvisionedCapacity, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ProvisionedCapacityMarshaller Instance = new ProvisionedCapacityMarshaller();
 
     }

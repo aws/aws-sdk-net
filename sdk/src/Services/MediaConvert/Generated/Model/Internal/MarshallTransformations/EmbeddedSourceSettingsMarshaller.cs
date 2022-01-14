@@ -34,7 +34,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// EmbeddedSourceSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class EmbeddedSourceSettingsMarshaller : IRequestMarshaller<EmbeddedSourceSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static EmbeddedSourceSettingsMarshaller Instance = new EmbeddedSourceSettingsMarshaller();
 
     }

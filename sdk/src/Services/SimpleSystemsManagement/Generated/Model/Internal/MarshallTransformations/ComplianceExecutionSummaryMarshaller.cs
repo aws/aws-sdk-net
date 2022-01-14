@@ -34,7 +34,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ComplianceExecutionSummary Marshaller
-    /// </summary>       
+    /// </summary>
     public class ComplianceExecutionSummaryMarshaller : IRequestMarshaller<ComplianceExecutionSummary, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ComplianceExecutionSummaryMarshaller Instance = new ComplianceExecutionSummaryMarshaller();
 
     }

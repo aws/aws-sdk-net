@@ -34,7 +34,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DecimalNumber Marshaller
-    /// </summary>       
+    /// </summary>
     public class DecimalNumberMarshaller : IRequestMarshaller<DecimalNumber, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DecimalNumberMarshaller Instance = new DecimalNumberMarshaller();
 
     }

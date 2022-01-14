@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AwsRdsDbOptionGroupMembership Marshaller
-    /// </summary>       
+    /// </summary>
     public class AwsRdsDbOptionGroupMembershipMarshaller : IRequestMarshaller<AwsRdsDbOptionGroupMembership, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AwsRdsDbOptionGroupMembershipMarshaller Instance = new AwsRdsDbOptionGroupMembershipMarshaller();
 
     }

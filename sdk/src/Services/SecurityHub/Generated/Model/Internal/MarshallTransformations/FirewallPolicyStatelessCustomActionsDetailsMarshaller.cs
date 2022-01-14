@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// FirewallPolicyStatelessCustomActionsDetails Marshaller
-    /// </summary>       
+    /// </summary>
     public class FirewallPolicyStatelessCustomActionsDetailsMarshaller : IRequestMarshaller<FirewallPolicyStatelessCustomActionsDetails, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static FirewallPolicyStatelessCustomActionsDetailsMarshaller Instance = new FirewallPolicyStatelessCustomActionsDetailsMarshaller();
 
     }

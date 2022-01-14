@@ -40,6 +40,7 @@ namespace Amazon.Route53
         /// Default constructor
         /// </summary>
         public AmazonRoute53Config()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonRoute53DefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "route53";
         }

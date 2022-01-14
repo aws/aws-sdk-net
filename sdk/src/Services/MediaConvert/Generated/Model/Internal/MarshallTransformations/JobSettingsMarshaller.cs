@@ -34,7 +34,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// JobSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class JobSettingsMarshaller : IRequestMarshaller<JobSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -186,7 +186,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static JobSettingsMarshaller Instance = new JobSettingsMarshaller();
 
     }

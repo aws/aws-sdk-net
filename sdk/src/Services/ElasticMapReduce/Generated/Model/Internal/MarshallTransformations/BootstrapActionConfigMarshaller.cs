@@ -34,7 +34,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// BootstrapActionConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class BootstrapActionConfigMarshaller : IRequestMarshaller<BootstrapActionConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static BootstrapActionConfigMarshaller Instance = new BootstrapActionConfigMarshaller();
 
     }

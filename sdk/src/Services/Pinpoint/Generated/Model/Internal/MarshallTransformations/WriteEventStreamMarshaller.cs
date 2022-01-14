@@ -34,7 +34,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// WriteEventStream Marshaller
-    /// </summary>       
+    /// </summary>
     public class WriteEventStreamMarshaller : IRequestMarshaller<WriteEventStream, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static WriteEventStreamMarshaller Instance = new WriteEventStreamMarshaller();
 
     }

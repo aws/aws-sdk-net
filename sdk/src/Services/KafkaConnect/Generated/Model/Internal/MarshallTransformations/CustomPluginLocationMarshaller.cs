@@ -34,7 +34,7 @@ namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CustomPluginLocation Marshaller
-    /// </summary>       
+    /// </summary>
     public class CustomPluginLocationMarshaller : IRequestMarshaller<CustomPluginLocation, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CustomPluginLocationMarshaller Instance = new CustomPluginLocationMarshaller();
 
     }

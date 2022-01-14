@@ -40,6 +40,7 @@ namespace Amazon.Organizations
         /// Default constructor
         /// </summary>
         public AmazonOrganizationsConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonOrganizationsDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "organizations";
         }

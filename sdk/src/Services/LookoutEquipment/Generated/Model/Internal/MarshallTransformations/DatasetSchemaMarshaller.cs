@@ -34,7 +34,7 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DatasetSchema Marshaller
-    /// </summary>       
+    /// </summary>
     public class DatasetSchemaMarshaller : IRequestMarshaller<DatasetSchema, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DatasetSchemaMarshaller Instance = new DatasetSchemaMarshaller();
 
     }

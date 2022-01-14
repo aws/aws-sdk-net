@@ -40,6 +40,7 @@ namespace Amazon.SecurityToken
         /// Default constructor
         /// </summary>
         public AmazonSecurityTokenServiceConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonSecurityTokenServiceDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "sts";
             var region = FallbackRegionFactory.GetRegionEndpoint(false);

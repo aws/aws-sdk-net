@@ -40,6 +40,7 @@ namespace Amazon.FraudDetector
         /// Default constructor
         /// </summary>
         public AmazonFraudDetectorConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonFraudDetectorDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "frauddetector";
         }

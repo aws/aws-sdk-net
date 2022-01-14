@@ -40,6 +40,7 @@ namespace Amazon.Translate
         /// Default constructor
         /// </summary>
         public AmazonTranslateConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonTranslateDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "translate";
         }

@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DesiredWeightAndCapacity Marshaller
-    /// </summary>       
+    /// </summary>
     public class DesiredWeightAndCapacityMarshaller : IRequestMarshaller<DesiredWeightAndCapacity, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DesiredWeightAndCapacityMarshaller Instance = new DesiredWeightAndCapacityMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// S3ReferenceDataSource Marshaller
-    /// </summary>       
+    /// </summary>
     public class S3ReferenceDataSourceMarshaller : IRequestMarshaller<S3ReferenceDataSource, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static S3ReferenceDataSourceMarshaller Instance = new S3ReferenceDataSourceMarshaller();
 
     }

@@ -40,6 +40,7 @@ namespace Amazon.LocationService
         /// Default constructor
         /// </summary>
         public AmazonLocationServiceConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonLocationServiceDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "geo";
         }

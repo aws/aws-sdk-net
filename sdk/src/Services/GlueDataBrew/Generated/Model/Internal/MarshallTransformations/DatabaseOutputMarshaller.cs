@@ -34,7 +34,7 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DatabaseOutput Marshaller
-    /// </summary>       
+    /// </summary>
     public class DatabaseOutputMarshaller : IRequestMarshaller<DatabaseOutput, JsonMarshallerContext> 
     {
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DatabaseOutputMarshaller Instance = new DatabaseOutputMarshaller();
 
     }

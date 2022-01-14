@@ -34,7 +34,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RepublishAction Marshaller
-    /// </summary>       
+    /// </summary>
     public class RepublishActionMarshaller : IRequestMarshaller<RepublishAction, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RepublishActionMarshaller Instance = new RepublishActionMarshaller();
 
     }

@@ -40,6 +40,7 @@ namespace Amazon.EMRContainers
         /// Default constructor
         /// </summary>
         public AmazonEMRContainersConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonEMRContainersDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "emr-containers";
         }

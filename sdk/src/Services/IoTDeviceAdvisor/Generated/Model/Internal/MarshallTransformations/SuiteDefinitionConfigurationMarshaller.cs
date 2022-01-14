@@ -34,7 +34,7 @@ namespace Amazon.IoTDeviceAdvisor.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SuiteDefinitionConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class SuiteDefinitionConfigurationMarshaller : IRequestMarshaller<SuiteDefinitionConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -89,7 +89,7 @@ namespace Amazon.IoTDeviceAdvisor.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SuiteDefinitionConfigurationMarshaller Instance = new SuiteDefinitionConfigurationMarshaller();
 
     }

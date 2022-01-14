@@ -34,7 +34,7 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// BlockerDeclaration Marshaller
-    /// </summary>       
+    /// </summary>
     public class BlockerDeclarationMarshaller : IRequestMarshaller<BlockerDeclaration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static BlockerDeclarationMarshaller Instance = new BlockerDeclarationMarshaller();
 
     }

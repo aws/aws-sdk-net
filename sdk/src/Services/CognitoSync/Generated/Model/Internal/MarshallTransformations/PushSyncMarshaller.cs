@@ -34,7 +34,7 @@ namespace Amazon.CognitoSync.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// PushSync Marshaller
-    /// </summary>       
+    /// </summary>
     public class PushSyncMarshaller : IRequestMarshaller<PushSync, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.CognitoSync.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static PushSyncMarshaller Instance = new PushSyncMarshaller();
 
     }

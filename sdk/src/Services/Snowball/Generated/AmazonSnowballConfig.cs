@@ -40,6 +40,7 @@ namespace Amazon.Snowball
         /// Default constructor
         /// </summary>
         public AmazonSnowballConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonSnowballDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "snowball";
         }

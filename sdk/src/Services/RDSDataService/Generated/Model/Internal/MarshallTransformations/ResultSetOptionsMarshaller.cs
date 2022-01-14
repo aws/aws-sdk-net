@@ -34,7 +34,7 @@ namespace Amazon.RDSDataService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ResultSetOptions Marshaller
-    /// </summary>       
+    /// </summary>
     public class ResultSetOptionsMarshaller : IRequestMarshaller<ResultSetOptions, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.RDSDataService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ResultSetOptionsMarshaller Instance = new ResultSetOptionsMarshaller();
 
     }

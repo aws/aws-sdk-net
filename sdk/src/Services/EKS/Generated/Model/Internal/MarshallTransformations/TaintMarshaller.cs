@@ -34,7 +34,7 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Taint Marshaller
-    /// </summary>       
+    /// </summary>
     public class TaintMarshaller : IRequestMarshaller<Taint, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TaintMarshaller Instance = new TaintMarshaller();
 
     }

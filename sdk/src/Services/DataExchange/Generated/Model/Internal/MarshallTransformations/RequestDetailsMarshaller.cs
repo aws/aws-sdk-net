@@ -34,7 +34,7 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RequestDetails Marshaller
-    /// </summary>       
+    /// </summary>
     public class RequestDetailsMarshaller : IRequestMarshaller<RequestDetails, JsonMarshallerContext> 
     {
         /// <summary>
@@ -126,7 +126,7 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RequestDetailsMarshaller Instance = new RequestDetailsMarshaller();
 
     }

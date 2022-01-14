@@ -34,7 +34,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// NielsenNaesIiNw Marshaller
-    /// </summary>       
+    /// </summary>
     public class NielsenNaesIiNwMarshaller : IRequestMarshaller<NielsenNaesIiNw, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static NielsenNaesIiNwMarshaller Instance = new NielsenNaesIiNwMarshaller();
 
     }

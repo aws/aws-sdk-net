@@ -56,7 +56,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.AppMesh");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-01-25";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-01-25";
             request.HttpMethod = "PUT";
 
             if (!publicRequest.IsSetMeshName())
@@ -80,7 +80,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
                 else if(!(publicRequest.IsSetClientToken()))
                 {
                     context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());                                                
+                    context.Writer.Write(Guid.NewGuid().ToString());
                 }
                 if(publicRequest.IsSetSpec())
                 {
@@ -115,7 +115,6 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.VirtualRouterName);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

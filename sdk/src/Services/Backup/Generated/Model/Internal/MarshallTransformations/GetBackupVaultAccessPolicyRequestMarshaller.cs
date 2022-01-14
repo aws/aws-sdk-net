@@ -55,7 +55,7 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
         public IRequest Marshall(GetBackupVaultAccessPolicyRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Backup");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-11-15";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-11-15";
             request.HttpMethod = "GET";
 
             if (!publicRequest.IsSetBackupVaultName())

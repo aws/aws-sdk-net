@@ -40,6 +40,7 @@ namespace Amazon.AppRunner
         /// Default constructor
         /// </summary>
         public AmazonAppRunnerConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonAppRunnerDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "apprunner";
         }

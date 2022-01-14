@@ -40,6 +40,7 @@ namespace Amazon.SimpleNotificationService
         /// Default constructor
         /// </summary>
         public AmazonSimpleNotificationServiceConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonSimpleNotificationServiceDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "sns";
         }

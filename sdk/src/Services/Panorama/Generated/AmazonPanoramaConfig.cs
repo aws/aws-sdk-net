@@ -40,6 +40,7 @@ namespace Amazon.Panorama
         /// Default constructor
         /// </summary>
         public AmazonPanoramaConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonPanoramaDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "panorama";
         }

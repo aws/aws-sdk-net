@@ -34,7 +34,7 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Video Marshaller
-    /// </summary>       
+    /// </summary>
     public class VideoMarshaller : IRequestMarshaller<Video, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static VideoMarshaller Instance = new VideoMarshaller();
 
     }

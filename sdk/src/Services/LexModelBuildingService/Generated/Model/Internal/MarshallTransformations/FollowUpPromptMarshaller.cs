@@ -34,7 +34,7 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// FollowUpPrompt Marshaller
-    /// </summary>       
+    /// </summary>
     public class FollowUpPromptMarshaller : IRequestMarshaller<FollowUpPrompt, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static FollowUpPromptMarshaller Instance = new FollowUpPromptMarshaller();
 
     }

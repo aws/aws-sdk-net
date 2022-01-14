@@ -34,7 +34,7 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// PublicDnsNamespaceProperties Marshaller
-    /// </summary>       
+    /// </summary>
     public class PublicDnsNamespacePropertiesMarshaller : IRequestMarshaller<PublicDnsNamespaceProperties, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static PublicDnsNamespacePropertiesMarshaller Instance = new PublicDnsNamespacePropertiesMarshaller();
 
     }

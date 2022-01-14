@@ -34,7 +34,7 @@ namespace Amazon.Inspector.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AssessmentTargetFilter Marshaller
-    /// </summary>       
+    /// </summary>
     public class AssessmentTargetFilterMarshaller : IRequestMarshaller<AssessmentTargetFilter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.Inspector.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AssessmentTargetFilterMarshaller Instance = new AssessmentTargetFilterMarshaller();
 
     }

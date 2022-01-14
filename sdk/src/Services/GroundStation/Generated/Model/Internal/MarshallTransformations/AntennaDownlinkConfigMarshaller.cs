@@ -34,7 +34,7 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AntennaDownlinkConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class AntennaDownlinkConfigMarshaller : IRequestMarshaller<AntennaDownlinkConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AntennaDownlinkConfigMarshaller Instance = new AntennaDownlinkConfigMarshaller();
 
     }

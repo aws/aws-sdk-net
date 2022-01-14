@@ -34,7 +34,7 @@ namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Monitor Marshaller
-    /// </summary>       
+    /// </summary>
     public class MonitorMarshaller : IRequestMarshaller<Monitor, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static MonitorMarshaller Instance = new MonitorMarshaller();
 
     }

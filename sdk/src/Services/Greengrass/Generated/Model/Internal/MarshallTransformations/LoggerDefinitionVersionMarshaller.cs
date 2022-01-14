@@ -34,7 +34,7 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// LoggerDefinitionVersion Marshaller
-    /// </summary>       
+    /// </summary>
     public class LoggerDefinitionVersionMarshaller : IRequestMarshaller<LoggerDefinitionVersion, JsonMarshallerContext> 
     {
         /// <summary>
@@ -65,7 +65,7 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static LoggerDefinitionVersionMarshaller Instance = new LoggerDefinitionVersionMarshaller();
 
     }

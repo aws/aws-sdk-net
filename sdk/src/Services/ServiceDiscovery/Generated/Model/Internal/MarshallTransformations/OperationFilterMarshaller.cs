@@ -34,7 +34,7 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// OperationFilter Marshaller
-    /// </summary>       
+    /// </summary>
     public class OperationFilterMarshaller : IRequestMarshaller<OperationFilter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static OperationFilterMarshaller Instance = new OperationFilterMarshaller();
 
     }

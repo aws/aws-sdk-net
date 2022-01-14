@@ -34,7 +34,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RegisteredUserQuickSightConsoleEmbeddingConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class RegisteredUserQuickSightConsoleEmbeddingConfigurationMarshaller : IRequestMarshaller<RegisteredUserQuickSightConsoleEmbeddingConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RegisteredUserQuickSightConsoleEmbeddingConfigurationMarshaller Instance = new RegisteredUserQuickSightConsoleEmbeddingConfigurationMarshaller();
 
     }

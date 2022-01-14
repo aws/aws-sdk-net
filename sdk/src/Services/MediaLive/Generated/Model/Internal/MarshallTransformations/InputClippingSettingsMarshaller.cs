@@ -34,7 +34,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// InputClippingSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class InputClippingSettingsMarshaller : IRequestMarshaller<InputClippingSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -77,7 +77,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static InputClippingSettingsMarshaller Instance = new InputClippingSettingsMarshaller();
 
     }

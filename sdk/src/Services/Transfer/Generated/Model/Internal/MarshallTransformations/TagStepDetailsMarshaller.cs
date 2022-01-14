@@ -34,7 +34,7 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TagStepDetails Marshaller
-    /// </summary>       
+    /// </summary>
     public class TagStepDetailsMarshaller : IRequestMarshaller<TagStepDetails, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TagStepDetailsMarshaller Instance = new TagStepDetailsMarshaller();
 
     }

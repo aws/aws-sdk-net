@@ -34,7 +34,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// NetworkConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class NetworkConfigurationMarshaller : IRequestMarshaller<NetworkConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static NetworkConfigurationMarshaller Instance = new NetworkConfigurationMarshaller();
 
     }

@@ -40,6 +40,7 @@ namespace Amazon.CustomerProfiles
         /// Default constructor
         /// </summary>
         public AmazonCustomerProfilesConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonCustomerProfilesDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "profile";
         }

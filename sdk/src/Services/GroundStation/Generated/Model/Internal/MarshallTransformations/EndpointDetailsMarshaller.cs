@@ -34,7 +34,7 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// EndpointDetails Marshaller
-    /// </summary>       
+    /// </summary>
     public class EndpointDetailsMarshaller : IRequestMarshaller<EndpointDetails, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static EndpointDetailsMarshaller Instance = new EndpointDetailsMarshaller();
 
     }

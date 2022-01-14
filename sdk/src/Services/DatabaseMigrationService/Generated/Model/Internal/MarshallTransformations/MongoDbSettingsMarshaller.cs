@@ -34,7 +34,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// MongoDbSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class MongoDbSettingsMarshaller : IRequestMarshaller<MongoDbSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -133,7 +133,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static MongoDbSettingsMarshaller Instance = new MongoDbSettingsMarshaller();
 
     }

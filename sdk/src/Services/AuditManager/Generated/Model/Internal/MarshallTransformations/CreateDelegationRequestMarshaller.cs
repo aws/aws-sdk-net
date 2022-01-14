@@ -34,7 +34,7 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CreateDelegationRequest Marshaller
-    /// </summary>       
+    /// </summary>
     public class CreateDelegationRequestMarshaller : IRequestMarshaller<CreateDelegationRequest, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CreateDelegationRequestMarshaller Instance = new CreateDelegationRequestMarshaller();
 
     }

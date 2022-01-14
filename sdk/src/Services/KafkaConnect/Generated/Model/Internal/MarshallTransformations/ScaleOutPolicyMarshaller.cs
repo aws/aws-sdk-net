@@ -34,7 +34,7 @@ namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ScaleOutPolicy Marshaller
-    /// </summary>       
+    /// </summary>
     public class ScaleOutPolicyMarshaller : IRequestMarshaller<ScaleOutPolicy, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ScaleOutPolicyMarshaller Instance = new ScaleOutPolicyMarshaller();
 
     }

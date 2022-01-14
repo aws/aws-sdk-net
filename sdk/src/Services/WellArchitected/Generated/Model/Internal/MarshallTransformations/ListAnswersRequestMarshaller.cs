@@ -55,7 +55,7 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListAnswersRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.WellArchitected");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-03-31";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-03-31";
             request.HttpMethod = "GET";
 
             if (!publicRequest.IsSetLensAlias())

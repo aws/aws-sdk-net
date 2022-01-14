@@ -40,6 +40,7 @@ namespace Amazon.MarketplaceEntitlementService
         /// Default constructor
         /// </summary>
         public AmazonMarketplaceEntitlementServiceConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonMarketplaceEntitlementServiceDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "aws-marketplace";
         }

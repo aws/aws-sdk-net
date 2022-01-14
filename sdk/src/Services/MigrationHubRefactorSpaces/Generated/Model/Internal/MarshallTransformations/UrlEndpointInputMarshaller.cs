@@ -34,7 +34,7 @@ namespace Amazon.MigrationHubRefactorSpaces.Model.Internal.MarshallTransformatio
 {
     /// <summary>
     /// UrlEndpointInput Marshaller
-    /// </summary>       
+    /// </summary>
     public class UrlEndpointInputMarshaller : IRequestMarshaller<UrlEndpointInput, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.MigrationHubRefactorSpaces.Model.Internal.MarshallTransformatio
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static UrlEndpointInputMarshaller Instance = new UrlEndpointInputMarshaller();
 
     }

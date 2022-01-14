@@ -56,7 +56,7 @@ namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ManagedBlockchain");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-09-24";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-09-24";
             request.HttpMethod = "PATCH";
 
             if (!publicRequest.IsSetNetworkId())
@@ -88,7 +88,6 @@ namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.MemberId);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

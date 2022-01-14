@@ -34,7 +34,7 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// HttpEndpointRequestConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class HttpEndpointRequestConfigurationMarshaller : IRequestMarshaller<HttpEndpointRequestConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static HttpEndpointRequestConfigurationMarshaller Instance = new HttpEndpointRequestConfigurationMarshaller();
 
     }

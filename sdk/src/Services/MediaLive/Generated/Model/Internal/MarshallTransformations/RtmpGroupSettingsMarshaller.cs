@@ -34,7 +34,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RtmpGroupSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class RtmpGroupSettingsMarshaller : IRequestMarshaller<RtmpGroupSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -96,7 +96,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RtmpGroupSettingsMarshaller Instance = new RtmpGroupSettingsMarshaller();
 
     }

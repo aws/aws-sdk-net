@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails Marshaller
-    /// </summary>       
+    /// </summary>
     public class AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetailsMarshaller : IRequestMarshaller<AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails, JsonMarshallerContext> 
     {
         /// <summary>
@@ -76,7 +76,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetailsMarshaller Instance = new AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetailsMarshaller();
 
     }

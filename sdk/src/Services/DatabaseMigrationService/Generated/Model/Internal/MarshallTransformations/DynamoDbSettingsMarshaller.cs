@@ -34,7 +34,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DynamoDbSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class DynamoDbSettingsMarshaller : IRequestMarshaller<DynamoDbSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DynamoDbSettingsMarshaller Instance = new DynamoDbSettingsMarshaller();
 
     }

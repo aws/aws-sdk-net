@@ -34,7 +34,7 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ComputeCapacity Marshaller
-    /// </summary>       
+    /// </summary>
     public class ComputeCapacityMarshaller : IRequestMarshaller<ComputeCapacity, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ComputeCapacityMarshaller Instance = new ComputeCapacityMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// IamRoleConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class IamRoleConfigurationMarshaller : IRequestMarshaller<IamRoleConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static IamRoleConfigurationMarshaller Instance = new IamRoleConfigurationMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// OrganizationDataSourceConfigurations Marshaller
-    /// </summary>       
+    /// </summary>
     public class OrganizationDataSourceConfigurationsMarshaller : IRequestMarshaller<OrganizationDataSourceConfigurations, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static OrganizationDataSourceConfigurationsMarshaller Instance = new OrganizationDataSourceConfigurationsMarshaller();
 
     }

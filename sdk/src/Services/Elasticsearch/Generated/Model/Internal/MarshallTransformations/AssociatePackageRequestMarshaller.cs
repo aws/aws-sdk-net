@@ -56,7 +56,7 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Elasticsearch");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-01-01";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-01-01";
             request.HttpMethod = "POST";
 
             if (!publicRequest.IsSetDomainName())

@@ -40,6 +40,7 @@ namespace Amazon.IoTThingsGraph
         /// Default constructor
         /// </summary>
         public AmazonIoTThingsGraphConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonIoTThingsGraphDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "iotthingsgraph";
         }

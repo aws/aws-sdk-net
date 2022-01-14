@@ -40,6 +40,7 @@ namespace Amazon.Comprehend
         /// Default constructor
         /// </summary>
         public AmazonComprehendConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonComprehendDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "comprehend";
         }

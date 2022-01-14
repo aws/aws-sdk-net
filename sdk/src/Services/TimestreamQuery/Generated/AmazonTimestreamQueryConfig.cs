@@ -40,6 +40,7 @@ namespace Amazon.TimestreamQuery
         /// Default constructor
         /// </summary>
         public AmazonTimestreamQueryConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonTimestreamQueryDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "timestream";
         }

@@ -34,7 +34,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// HttpAuthorization Marshaller
-    /// </summary>       
+    /// </summary>
     public class HttpAuthorizationMarshaller : IRequestMarshaller<HttpAuthorization, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static HttpAuthorizationMarshaller Instance = new HttpAuthorizationMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ProximityEventConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class ProximityEventConfigurationMarshaller : IRequestMarshaller<ProximityEventConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ProximityEventConfigurationMarshaller Instance = new ProximityEventConfigurationMarshaller();
 
     }

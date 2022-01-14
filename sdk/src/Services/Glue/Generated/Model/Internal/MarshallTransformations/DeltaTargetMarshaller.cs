@@ -34,7 +34,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DeltaTarget Marshaller
-    /// </summary>       
+    /// </summary>
     public class DeltaTargetMarshaller : IRequestMarshaller<DeltaTarget, JsonMarshallerContext> 
     {
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DeltaTargetMarshaller Instance = new DeltaTargetMarshaller();
 
     }

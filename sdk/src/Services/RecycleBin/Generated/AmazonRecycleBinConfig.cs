@@ -40,6 +40,7 @@ namespace Amazon.RecycleBin
         /// Default constructor
         /// </summary>
         public AmazonRecycleBinConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonRecycleBinDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "rbin";
         }

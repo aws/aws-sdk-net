@@ -34,7 +34,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// S3Settings Marshaller
-    /// </summary>       
+    /// </summary>
     public class S3SettingsMarshaller : IRequestMarshaller<S3Settings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -277,7 +277,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static S3SettingsMarshaller Instance = new S3SettingsMarshaller();
 
     }

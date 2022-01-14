@@ -34,7 +34,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// WebvttDestinationSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class WebvttDestinationSettingsMarshaller : IRequestMarshaller<WebvttDestinationSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static WebvttDestinationSettingsMarshaller Instance = new WebvttDestinationSettingsMarshaller();
 
     }

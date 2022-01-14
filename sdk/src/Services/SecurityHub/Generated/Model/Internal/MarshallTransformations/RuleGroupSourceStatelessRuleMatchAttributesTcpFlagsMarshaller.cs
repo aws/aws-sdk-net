@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RuleGroupSourceStatelessRuleMatchAttributesTcpFlags Marshaller
-    /// </summary>       
+    /// </summary>
     public class RuleGroupSourceStatelessRuleMatchAttributesTcpFlagsMarshaller : IRequestMarshaller<RuleGroupSourceStatelessRuleMatchAttributesTcpFlags, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RuleGroupSourceStatelessRuleMatchAttributesTcpFlagsMarshaller Instance = new RuleGroupSourceStatelessRuleMatchAttributesTcpFlagsMarshaller();
 
     }

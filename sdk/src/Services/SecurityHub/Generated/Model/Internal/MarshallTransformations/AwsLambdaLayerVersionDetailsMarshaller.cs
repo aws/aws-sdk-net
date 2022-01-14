@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AwsLambdaLayerVersionDetails Marshaller
-    /// </summary>       
+    /// </summary>
     public class AwsLambdaLayerVersionDetailsMarshaller : IRequestMarshaller<AwsLambdaLayerVersionDetails, JsonMarshallerContext> 
     {
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AwsLambdaLayerVersionDetailsMarshaller Instance = new AwsLambdaLayerVersionDetailsMarshaller();
 
     }

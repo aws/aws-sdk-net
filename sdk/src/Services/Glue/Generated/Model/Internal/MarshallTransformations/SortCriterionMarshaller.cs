@@ -34,7 +34,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SortCriterion Marshaller
-    /// </summary>       
+    /// </summary>
     public class SortCriterionMarshaller : IRequestMarshaller<SortCriterion, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SortCriterionMarshaller Instance = new SortCriterionMarshaller();
 
     }

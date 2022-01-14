@@ -55,7 +55,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         public IRequest Marshall(DeletePolicyRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.MediaConvert");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-08-29";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-08-29";
             request.HttpMethod = "DELETE";
 
             request.ResourcePath = "/2017-08-29/policy";

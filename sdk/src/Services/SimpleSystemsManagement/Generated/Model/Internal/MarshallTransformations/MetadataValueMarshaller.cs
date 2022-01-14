@@ -34,7 +34,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// MetadataValue Marshaller
-    /// </summary>       
+    /// </summary>
     public class MetadataValueMarshaller : IRequestMarshaller<MetadataValue, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static MetadataValueMarshaller Instance = new MetadataValueMarshaller();
 
     }

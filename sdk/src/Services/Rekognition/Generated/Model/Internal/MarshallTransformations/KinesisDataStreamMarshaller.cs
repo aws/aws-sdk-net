@@ -34,7 +34,7 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// KinesisDataStream Marshaller
-    /// </summary>       
+    /// </summary>
     public class KinesisDataStreamMarshaller : IRequestMarshaller<KinesisDataStream, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static KinesisDataStreamMarshaller Instance = new KinesisDataStreamMarshaller();
 
     }

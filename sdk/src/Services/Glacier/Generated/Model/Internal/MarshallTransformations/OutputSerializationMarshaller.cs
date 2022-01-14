@@ -34,7 +34,7 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// OutputSerialization Marshaller
-    /// </summary>       
+    /// </summary>
     public class OutputSerializationMarshaller : IRequestMarshaller<OutputSerialization, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static OutputSerializationMarshaller Instance = new OutputSerializationMarshaller();
 
     }

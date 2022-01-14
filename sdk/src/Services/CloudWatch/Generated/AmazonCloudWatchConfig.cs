@@ -40,6 +40,7 @@ namespace Amazon.CloudWatch
         /// Default constructor
         /// </summary>
         public AmazonCloudWatchConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonCloudWatchDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "monitoring";
         }

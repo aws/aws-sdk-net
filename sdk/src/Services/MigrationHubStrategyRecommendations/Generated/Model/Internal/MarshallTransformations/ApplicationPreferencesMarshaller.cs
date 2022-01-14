@@ -34,7 +34,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
 {
     /// <summary>
     /// ApplicationPreferences Marshaller
-    /// </summary>       
+    /// </summary>
     public class ApplicationPreferencesMarshaller : IRequestMarshaller<ApplicationPreferences, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ApplicationPreferencesMarshaller Instance = new ApplicationPreferencesMarshaller();
 
     }

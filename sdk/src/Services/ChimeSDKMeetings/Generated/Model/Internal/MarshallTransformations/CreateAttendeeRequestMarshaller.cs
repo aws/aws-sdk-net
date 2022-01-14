@@ -56,7 +56,7 @@ namespace Amazon.ChimeSDKMeetings.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ChimeSDKMeetings");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-07-15";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-07-15";
             request.HttpMethod = "POST";
 
             if (!publicRequest.IsSetMeetingId())
@@ -74,7 +74,6 @@ namespace Amazon.ChimeSDKMeetings.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ExternalUserId);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

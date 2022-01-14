@@ -34,7 +34,7 @@ namespace Amazon.Translate.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TranslationSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class TranslationSettingsMarshaller : IRequestMarshaller<TranslationSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.Translate.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TranslationSettingsMarshaller Instance = new TranslationSettingsMarshaller();
 
     }

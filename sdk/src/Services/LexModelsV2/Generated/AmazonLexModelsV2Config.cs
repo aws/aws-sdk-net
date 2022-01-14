@@ -40,6 +40,7 @@ namespace Amazon.LexModelsV2
         /// Default constructor
         /// </summary>
         public AmazonLexModelsV2Config()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonLexModelsV2DefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "lex";
         }

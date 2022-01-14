@@ -40,6 +40,7 @@ namespace Amazon.CertificateManager
         /// Default constructor
         /// </summary>
         public AmazonCertificateManagerConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonCertificateManagerDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "acm";
         }

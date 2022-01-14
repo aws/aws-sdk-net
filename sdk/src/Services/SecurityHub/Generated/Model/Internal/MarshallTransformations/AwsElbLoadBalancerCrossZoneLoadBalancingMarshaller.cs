@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AwsElbLoadBalancerCrossZoneLoadBalancing Marshaller
-    /// </summary>       
+    /// </summary>
     public class AwsElbLoadBalancerCrossZoneLoadBalancingMarshaller : IRequestMarshaller<AwsElbLoadBalancerCrossZoneLoadBalancing, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AwsElbLoadBalancerCrossZoneLoadBalancingMarshaller Instance = new AwsElbLoadBalancerCrossZoneLoadBalancingMarshaller();
 
     }

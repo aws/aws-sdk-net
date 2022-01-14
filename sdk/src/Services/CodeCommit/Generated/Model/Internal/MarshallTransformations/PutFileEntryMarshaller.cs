@@ -34,7 +34,7 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// PutFileEntry Marshaller
-    /// </summary>       
+    /// </summary>
     public class PutFileEntryMarshaller : IRequestMarshaller<PutFileEntry, JsonMarshallerContext> 
     {
         /// <summary>
@@ -78,7 +78,7 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static PutFileEntryMarshaller Instance = new PutFileEntryMarshaller();
 
     }

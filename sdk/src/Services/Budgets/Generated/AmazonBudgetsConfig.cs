@@ -40,6 +40,7 @@ namespace Amazon.Budgets
         /// Default constructor
         /// </summary>
         public AmazonBudgetsConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonBudgetsDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "budgets";
         }

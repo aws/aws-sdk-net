@@ -34,7 +34,7 @@ namespace Amazon.CostAndUsageReport.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ReportDefinition Marshaller
-    /// </summary>       
+    /// </summary>
     public class ReportDefinitionMarshaller : IRequestMarshaller<ReportDefinition, JsonMarshallerContext> 
     {
         /// <summary>
@@ -131,7 +131,7 @@ namespace Amazon.CostAndUsageReport.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ReportDefinitionMarshaller Instance = new ReportDefinitionMarshaller();
 
     }

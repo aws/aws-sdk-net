@@ -34,7 +34,7 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ConfigurationId Marshaller
-    /// </summary>       
+    /// </summary>
     public class ConfigurationIdMarshaller : IRequestMarshaller<ConfigurationId, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ConfigurationIdMarshaller Instance = new ConfigurationIdMarshaller();
 
     }

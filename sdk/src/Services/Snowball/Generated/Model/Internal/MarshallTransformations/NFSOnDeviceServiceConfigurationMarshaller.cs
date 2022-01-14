@@ -34,7 +34,7 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// NFSOnDeviceServiceConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class NFSOnDeviceServiceConfigurationMarshaller : IRequestMarshaller<NFSOnDeviceServiceConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static NFSOnDeviceServiceConfigurationMarshaller Instance = new NFSOnDeviceServiceConfigurationMarshaller();
 
     }

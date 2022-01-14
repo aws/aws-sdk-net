@@ -34,7 +34,7 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CompromisedCredentialsRiskConfigurationType Marshaller
-    /// </summary>       
+    /// </summary>
     public class CompromisedCredentialsRiskConfigurationTypeMarshaller : IRequestMarshaller<CompromisedCredentialsRiskConfigurationType, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CompromisedCredentialsRiskConfigurationTypeMarshaller Instance = new CompromisedCredentialsRiskConfigurationTypeMarshaller();
 
     }

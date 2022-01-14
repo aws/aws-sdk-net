@@ -34,7 +34,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// OracleSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class OracleSettingsMarshaller : IRequestMarshaller<OracleSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -294,7 +294,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static OracleSettingsMarshaller Instance = new OracleSettingsMarshaller();
 
     }

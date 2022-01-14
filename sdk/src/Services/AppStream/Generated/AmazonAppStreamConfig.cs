@@ -40,6 +40,7 @@ namespace Amazon.AppStream
         /// Default constructor
         /// </summary>
         public AmazonAppStreamConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonAppStreamDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "appstream";
         }

@@ -34,7 +34,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TimecodeBurnin Marshaller
-    /// </summary>       
+    /// </summary>
     public class TimecodeBurninMarshaller : IRequestMarshaller<TimecodeBurnin, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TimecodeBurninMarshaller Instance = new TimecodeBurninMarshaller();
 
     }

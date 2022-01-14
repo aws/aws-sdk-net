@@ -34,7 +34,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// OneDriveConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class OneDriveConfigurationMarshaller : IRequestMarshaller<OneDriveConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -116,7 +116,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static OneDriveConfigurationMarshaller Instance = new OneDriveConfigurationMarshaller();
 
     }

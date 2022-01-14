@@ -40,6 +40,7 @@ namespace Amazon.PI
         /// Default constructor
         /// </summary>
         public AmazonPIConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonPIDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "pi";
         }

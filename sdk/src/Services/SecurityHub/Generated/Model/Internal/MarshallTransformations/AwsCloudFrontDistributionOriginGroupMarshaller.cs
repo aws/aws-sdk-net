@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AwsCloudFrontDistributionOriginGroup Marshaller
-    /// </summary>       
+    /// </summary>
     public class AwsCloudFrontDistributionOriginGroupMarshaller : IRequestMarshaller<AwsCloudFrontDistributionOriginGroup, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AwsCloudFrontDistributionOriginGroupMarshaller Instance = new AwsCloudFrontDistributionOriginGroupMarshaller();
 
     }

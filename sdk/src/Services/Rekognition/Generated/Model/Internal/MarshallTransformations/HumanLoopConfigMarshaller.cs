@@ -34,7 +34,7 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// HumanLoopConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class HumanLoopConfigMarshaller : IRequestMarshaller<HumanLoopConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static HumanLoopConfigMarshaller Instance = new HumanLoopConfigMarshaller();
 
     }

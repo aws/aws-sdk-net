@@ -40,6 +40,7 @@ namespace Amazon.RDS
         /// Default constructor
         /// </summary>
         public AmazonRDSConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonRDSDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "rds";
         }

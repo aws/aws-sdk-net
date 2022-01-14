@@ -55,7 +55,7 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
         public IRequest Marshall(DescribeChannelModeratorRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Chime");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-01";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-01";
             request.HttpMethod = "GET";
 
             if (!publicRequest.IsSetChannelArn())
@@ -66,8 +66,10 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
             request.AddPathResource("{channelModeratorArn}", StringUtils.FromString(publicRequest.ChannelModeratorArn));
             request.ResourcePath = "/channels/{channelArn}/moderators/{channelModeratorArn}";
         
-            if(publicRequest.IsSetChimeBearer())
+            if (publicRequest.IsSetChimeBearer()) 
+            {
                 request.Headers["x-amz-chime-bearer"] = publicRequest.ChimeBearer;
+            }
             
             request.HostPrefix = $"messaging-";
 

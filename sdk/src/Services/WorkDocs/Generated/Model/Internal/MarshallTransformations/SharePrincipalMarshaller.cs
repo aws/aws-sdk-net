@@ -34,7 +34,7 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SharePrincipal Marshaller
-    /// </summary>       
+    /// </summary>
     public class SharePrincipalMarshaller : IRequestMarshaller<SharePrincipal, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SharePrincipalMarshaller Instance = new SharePrincipalMarshaller();
 
     }

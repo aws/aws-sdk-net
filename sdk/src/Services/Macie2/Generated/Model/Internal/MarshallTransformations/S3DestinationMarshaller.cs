@@ -34,7 +34,7 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// S3Destination Marshaller
-    /// </summary>       
+    /// </summary>
     public class S3DestinationMarshaller : IRequestMarshaller<S3Destination, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static S3DestinationMarshaller Instance = new S3DestinationMarshaller();
 
     }

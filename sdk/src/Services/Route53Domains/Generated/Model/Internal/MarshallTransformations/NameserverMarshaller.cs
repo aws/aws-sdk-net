@@ -34,7 +34,7 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Nameserver Marshaller
-    /// </summary>       
+    /// </summary>
     public class NameserverMarshaller : IRequestMarshaller<Nameserver, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static NameserverMarshaller Instance = new NameserverMarshaller();
 
     }

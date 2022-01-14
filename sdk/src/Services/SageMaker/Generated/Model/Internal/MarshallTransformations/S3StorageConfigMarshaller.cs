@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// S3StorageConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class S3StorageConfigMarshaller : IRequestMarshaller<S3StorageConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static S3StorageConfigMarshaller Instance = new S3StorageConfigMarshaller();
 
     }

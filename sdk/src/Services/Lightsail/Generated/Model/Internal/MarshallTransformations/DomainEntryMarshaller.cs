@@ -34,7 +34,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DomainEntry Marshaller
-    /// </summary>       
+    /// </summary>
     public class DomainEntryMarshaller : IRequestMarshaller<DomainEntry, JsonMarshallerContext> 
     {
         /// <summary>
@@ -93,7 +93,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DomainEntryMarshaller Instance = new DomainEntryMarshaller();
 
     }

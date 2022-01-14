@@ -34,7 +34,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SimpleCondition Marshaller
-    /// </summary>       
+    /// </summary>
     public class SimpleConditionMarshaller : IRequestMarshaller<SimpleCondition, JsonMarshallerContext> 
     {
         /// <summary>
@@ -82,7 +82,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SimpleConditionMarshaller Instance = new SimpleConditionMarshaller();
 
     }

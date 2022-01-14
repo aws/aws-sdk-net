@@ -34,7 +34,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// PresignedUrlConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class PresignedUrlConfigMarshaller : IRequestMarshaller<PresignedUrlConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static PresignedUrlConfigMarshaller Instance = new PresignedUrlConfigMarshaller();
 
     }

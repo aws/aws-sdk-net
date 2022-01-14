@@ -34,7 +34,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// BatchScheduleActionDeleteRequest Marshaller
-    /// </summary>       
+    /// </summary>
     public class BatchScheduleActionDeleteRequestMarshaller : IRequestMarshaller<BatchScheduleActionDeleteRequest, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static BatchScheduleActionDeleteRequestMarshaller Instance = new BatchScheduleActionDeleteRequestMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// NotifyEmailType Marshaller
-    /// </summary>       
+    /// </summary>
     public class NotifyEmailTypeMarshaller : IRequestMarshaller<NotifyEmailType, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static NotifyEmailTypeMarshaller Instance = new NotifyEmailTypeMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// VirtualGatewayHealthCheckPolicy Marshaller
-    /// </summary>       
+    /// </summary>
     public class VirtualGatewayHealthCheckPolicyMarshaller : IRequestMarshaller<VirtualGatewayHealthCheckPolicy, JsonMarshallerContext> 
     {
         /// <summary>
@@ -91,7 +91,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static VirtualGatewayHealthCheckPolicyMarshaller Instance = new VirtualGatewayHealthCheckPolicyMarshaller();
 
     }

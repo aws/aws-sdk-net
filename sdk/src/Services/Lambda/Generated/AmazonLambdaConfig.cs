@@ -40,6 +40,7 @@ namespace Amazon.Lambda
         /// Default constructor
         /// </summary>
         public AmazonLambdaConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonLambdaDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "lambda";
         }

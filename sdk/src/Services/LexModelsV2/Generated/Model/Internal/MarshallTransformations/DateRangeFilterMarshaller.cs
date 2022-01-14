@@ -34,7 +34,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DateRangeFilter Marshaller
-    /// </summary>       
+    /// </summary>
     public class DateRangeFilterMarshaller : IRequestMarshaller<DateRangeFilter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DateRangeFilterMarshaller Instance = new DateRangeFilterMarshaller();
 
     }

@@ -56,7 +56,7 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.MediaConnect");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-11-14";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-11-14";
             request.HttpMethod = "POST";
 
             if (!publicRequest.IsSetFlowArn())

@@ -40,6 +40,7 @@ namespace Amazon.Athena
         /// Default constructor
         /// </summary>
         public AmazonAthenaConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonAthenaDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "athena";
         }

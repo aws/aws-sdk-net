@@ -40,6 +40,7 @@ namespace Amazon.ManagedBlockchain
         /// Default constructor
         /// </summary>
         public AmazonManagedBlockchainConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonManagedBlockchainDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "managedblockchain";
         }

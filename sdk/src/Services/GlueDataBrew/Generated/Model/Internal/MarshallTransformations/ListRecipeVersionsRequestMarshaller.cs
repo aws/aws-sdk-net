@@ -55,7 +55,7 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListRecipeVersionsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.GlueDataBrew");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-07-25";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-07-25";
             request.HttpMethod = "GET";
 
             

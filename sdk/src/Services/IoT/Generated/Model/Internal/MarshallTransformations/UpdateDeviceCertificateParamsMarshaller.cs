@@ -34,7 +34,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// UpdateDeviceCertificateParams Marshaller
-    /// </summary>       
+    /// </summary>
     public class UpdateDeviceCertificateParamsMarshaller : IRequestMarshaller<UpdateDeviceCertificateParams, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static UpdateDeviceCertificateParamsMarshaller Instance = new UpdateDeviceCertificateParamsMarshaller();
 
     }

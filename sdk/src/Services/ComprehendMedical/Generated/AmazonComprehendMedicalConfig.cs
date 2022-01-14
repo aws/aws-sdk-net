@@ -40,6 +40,7 @@ namespace Amazon.ComprehendMedical
         /// Default constructor
         /// </summary>
         public AmazonComprehendMedicalConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonComprehendMedicalDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "comprehendmedical";
         }

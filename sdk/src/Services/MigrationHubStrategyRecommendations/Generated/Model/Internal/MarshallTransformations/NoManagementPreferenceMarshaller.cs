@@ -34,7 +34,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
 {
     /// <summary>
     /// NoManagementPreference Marshaller
-    /// </summary>       
+    /// </summary>
     public class NoManagementPreferenceMarshaller : IRequestMarshaller<NoManagementPreference, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static NoManagementPreferenceMarshaller Instance = new NoManagementPreferenceMarshaller();
 
     }

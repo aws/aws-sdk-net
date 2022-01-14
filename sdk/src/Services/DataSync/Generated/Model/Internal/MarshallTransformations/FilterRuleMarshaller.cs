@@ -34,7 +34,7 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// FilterRule Marshaller
-    /// </summary>       
+    /// </summary>
     public class FilterRuleMarshaller : IRequestMarshaller<FilterRule, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static FilterRuleMarshaller Instance = new FilterRuleMarshaller();
 
     }

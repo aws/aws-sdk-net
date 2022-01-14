@@ -40,6 +40,7 @@ namespace Amazon.CodeDeploy
         /// Default constructor
         /// </summary>
         public AmazonCodeDeployConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonCodeDeployDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "codedeploy";
         }

@@ -34,7 +34,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// OnDemandProvisioningSpecification Marshaller
-    /// </summary>       
+    /// </summary>
     public class OnDemandProvisioningSpecificationMarshaller : IRequestMarshaller<OnDemandProvisioningSpecification, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static OnDemandProvisioningSpecificationMarshaller Instance = new OnDemandProvisioningSpecificationMarshaller();
 
     }

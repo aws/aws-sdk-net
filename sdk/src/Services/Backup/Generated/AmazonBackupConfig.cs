@@ -40,6 +40,7 @@ namespace Amazon.Backup
         /// Default constructor
         /// </summary>
         public AmazonBackupConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonBackupDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "backup";
         }

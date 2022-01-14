@@ -34,7 +34,7 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// VariableEntry Marshaller
-    /// </summary>       
+    /// </summary>
     public class VariableEntryMarshaller : IRequestMarshaller<VariableEntry, JsonMarshallerContext> 
     {
         /// <summary>
@@ -85,7 +85,7 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static VariableEntryMarshaller Instance = new VariableEntryMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AuditNotificationTarget Marshaller
-    /// </summary>       
+    /// </summary>
     public class AuditNotificationTargetMarshaller : IRequestMarshaller<AuditNotificationTarget, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AuditNotificationTargetMarshaller Instance = new AuditNotificationTargetMarshaller();
 
     }

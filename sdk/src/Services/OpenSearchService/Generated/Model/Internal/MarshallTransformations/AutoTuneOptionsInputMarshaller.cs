@@ -34,7 +34,7 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AutoTuneOptionsInput Marshaller
-    /// </summary>       
+    /// </summary>
     public class AutoTuneOptionsInputMarshaller : IRequestMarshaller<AutoTuneOptionsInput, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AutoTuneOptionsInputMarshaller Instance = new AutoTuneOptionsInputMarshaller();
 
     }

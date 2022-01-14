@@ -58,7 +58,7 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             string target = "RekognitionService.CreateStreamProcessor";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-06-27";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-06-27";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -126,7 +126,6 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

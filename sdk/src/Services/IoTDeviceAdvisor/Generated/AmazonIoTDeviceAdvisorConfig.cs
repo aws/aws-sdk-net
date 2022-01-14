@@ -40,6 +40,7 @@ namespace Amazon.IoTDeviceAdvisor
         /// Default constructor
         /// </summary>
         public AmazonIoTDeviceAdvisorConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonIoTDeviceAdvisorDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "iotdeviceadvisor";
         }

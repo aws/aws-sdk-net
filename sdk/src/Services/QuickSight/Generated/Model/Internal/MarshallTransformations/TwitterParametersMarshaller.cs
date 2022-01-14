@@ -34,7 +34,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TwitterParameters Marshaller
-    /// </summary>       
+    /// </summary>
     public class TwitterParametersMarshaller : IRequestMarshaller<TwitterParameters, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TwitterParametersMarshaller Instance = new TwitterParametersMarshaller();
 
     }

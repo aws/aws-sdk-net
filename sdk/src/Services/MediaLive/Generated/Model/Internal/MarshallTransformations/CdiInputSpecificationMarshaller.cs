@@ -34,7 +34,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CdiInputSpecification Marshaller
-    /// </summary>       
+    /// </summary>
     public class CdiInputSpecificationMarshaller : IRequestMarshaller<CdiInputSpecification, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CdiInputSpecificationMarshaller Instance = new CdiInputSpecificationMarshaller();
 
     }

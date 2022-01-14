@@ -40,6 +40,7 @@ namespace Amazon.IoTSecureTunneling
         /// Default constructor
         /// </summary>
         public AmazonIoTSecureTunnelingConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonIoTSecureTunnelingDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "IoTSecuredTunneling";
         }

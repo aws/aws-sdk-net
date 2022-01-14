@@ -40,6 +40,7 @@ namespace Amazon.LookoutforVision
         /// Default constructor
         /// </summary>
         public AmazonLookoutforVisionConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonLookoutforVisionDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "lookoutvision";
         }

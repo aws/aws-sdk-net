@@ -34,7 +34,7 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SsmActionDefinition Marshaller
-    /// </summary>       
+    /// </summary>
     public class SsmActionDefinitionMarshaller : IRequestMarshaller<SsmActionDefinition, JsonMarshallerContext> 
     {
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SsmActionDefinitionMarshaller Instance = new SsmActionDefinitionMarshaller();
 
     }

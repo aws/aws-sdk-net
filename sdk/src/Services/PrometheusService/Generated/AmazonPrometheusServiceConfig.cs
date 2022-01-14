@@ -40,6 +40,7 @@ namespace Amazon.PrometheusService
         /// Default constructor
         /// </summary>
         public AmazonPrometheusServiceConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonPrometheusServiceDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "aps";
         }

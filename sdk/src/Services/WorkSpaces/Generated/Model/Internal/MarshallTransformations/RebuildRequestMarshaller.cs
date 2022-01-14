@@ -34,7 +34,7 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RebuildRequest Marshaller
-    /// </summary>       
+    /// </summary>
     public class RebuildRequestMarshaller : IRequestMarshaller<RebuildRequest, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RebuildRequestMarshaller Instance = new RebuildRequestMarshaller();
 
     }

@@ -40,6 +40,7 @@ namespace Amazon.AppSync
         /// Default constructor
         /// </summary>
         public AmazonAppSyncConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonAppSyncDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "appsync";
         }

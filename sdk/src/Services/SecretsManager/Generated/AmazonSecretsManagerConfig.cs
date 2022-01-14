@@ -40,6 +40,7 @@ namespace Amazon.SecretsManager
         /// Default constructor
         /// </summary>
         public AmazonSecretsManagerConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonSecretsManagerDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "secretsmanager";
         }

@@ -34,7 +34,7 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ChefConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class ChefConfigurationMarshaller : IRequestMarshaller<ChefConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ChefConfigurationMarshaller Instance = new ChefConfigurationMarshaller();
 
     }

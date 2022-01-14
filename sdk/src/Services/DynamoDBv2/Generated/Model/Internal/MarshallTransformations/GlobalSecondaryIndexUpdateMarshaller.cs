@@ -34,7 +34,7 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// GlobalSecondaryIndexUpdate Marshaller
-    /// </summary>       
+    /// </summary>
     public class GlobalSecondaryIndexUpdateMarshaller : IRequestMarshaller<GlobalSecondaryIndexUpdate, JsonMarshallerContext> 
     {
         /// <summary>
@@ -82,7 +82,7 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static GlobalSecondaryIndexUpdateMarshaller Instance = new GlobalSecondaryIndexUpdateMarshaller();
 
     }

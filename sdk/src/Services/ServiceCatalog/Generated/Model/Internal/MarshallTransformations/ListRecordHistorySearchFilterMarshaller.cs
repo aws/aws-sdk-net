@@ -34,7 +34,7 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ListRecordHistorySearchFilter Marshaller
-    /// </summary>       
+    /// </summary>
     public class ListRecordHistorySearchFilterMarshaller : IRequestMarshaller<ListRecordHistorySearchFilter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ListRecordHistorySearchFilterMarshaller Instance = new ListRecordHistorySearchFilterMarshaller();
 
     }

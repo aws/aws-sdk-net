@@ -34,7 +34,7 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TimePeriod Marshaller
-    /// </summary>       
+    /// </summary>
     public class TimePeriodMarshaller : IRequestMarshaller<TimePeriod, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TimePeriodMarshaller Instance = new TimePeriodMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// MeasurementProcessingConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class MeasurementProcessingConfigMarshaller : IRequestMarshaller<MeasurementProcessingConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static MeasurementProcessingConfigMarshaller Instance = new MeasurementProcessingConfigMarshaller();
 
     }

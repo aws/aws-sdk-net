@@ -34,7 +34,7 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// EdiPartyName Marshaller
-    /// </summary>       
+    /// </summary>
     public class EdiPartyNameMarshaller : IRequestMarshaller<EdiPartyName, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static EdiPartyNameMarshaller Instance = new EdiPartyNameMarshaller();
 
     }

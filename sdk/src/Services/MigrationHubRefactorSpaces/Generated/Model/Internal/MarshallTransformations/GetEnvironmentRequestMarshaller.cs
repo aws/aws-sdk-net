@@ -55,7 +55,7 @@ namespace Amazon.MigrationHubRefactorSpaces.Model.Internal.MarshallTransformatio
         public IRequest Marshall(GetEnvironmentRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.MigrationHubRefactorSpaces");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-10-26";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-10-26";
             request.HttpMethod = "GET";
 
             if (!publicRequest.IsSetEnvironmentIdentifier())

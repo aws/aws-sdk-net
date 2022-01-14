@@ -34,7 +34,7 @@ namespace Amazon.WAFRegional.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ByteMatchTuple Marshaller
-    /// </summary>       
+    /// </summary>
     public class ByteMatchTupleMarshaller : IRequestMarshaller<ByteMatchTuple, JsonMarshallerContext> 
     {
         /// <summary>
@@ -78,7 +78,7 @@ namespace Amazon.WAFRegional.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ByteMatchTupleMarshaller Instance = new ByteMatchTupleMarshaller();
 
     }

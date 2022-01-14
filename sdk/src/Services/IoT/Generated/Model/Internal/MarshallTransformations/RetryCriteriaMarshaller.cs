@@ -34,7 +34,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RetryCriteria Marshaller
-    /// </summary>       
+    /// </summary>
     public class RetryCriteriaMarshaller : IRequestMarshaller<RetryCriteria, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RetryCriteriaMarshaller Instance = new RetryCriteriaMarshaller();
 
     }

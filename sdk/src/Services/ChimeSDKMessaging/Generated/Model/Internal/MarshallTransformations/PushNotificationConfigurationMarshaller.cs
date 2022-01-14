@@ -34,7 +34,7 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// PushNotificationConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class PushNotificationConfigurationMarshaller : IRequestMarshaller<PushNotificationConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static PushNotificationConfigurationMarshaller Instance = new PushNotificationConfigurationMarshaller();
 
     }

@@ -40,6 +40,7 @@ namespace Amazon.Account
         /// Default constructor
         /// </summary>
         public AmazonAccountConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonAccountDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "account";
         }

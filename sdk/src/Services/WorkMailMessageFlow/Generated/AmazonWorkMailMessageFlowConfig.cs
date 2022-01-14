@@ -40,6 +40,7 @@ namespace Amazon.WorkMailMessageFlow
         /// Default constructor
         /// </summary>
         public AmazonWorkMailMessageFlowConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonWorkMailMessageFlowDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "workmailmessageflow";
         }

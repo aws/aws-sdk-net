@@ -58,7 +58,7 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             string target = "AWSCognitoIdentityProviderService.RespondToAuthChallenge";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-04-18";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-04-18";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -135,7 +135,6 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

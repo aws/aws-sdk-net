@@ -34,7 +34,7 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ClusterConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class ClusterConfigMarshaller : IRequestMarshaller<ClusterConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -125,7 +125,7 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ClusterConfigMarshaller Instance = new ClusterConfigMarshaller();
 
     }

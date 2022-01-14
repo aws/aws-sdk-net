@@ -34,7 +34,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// HopDestination Marshaller
-    /// </summary>       
+    /// </summary>
     public class HopDestinationMarshaller : IRequestMarshaller<HopDestination, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static HopDestinationMarshaller Instance = new HopDestinationMarshaller();
 
     }

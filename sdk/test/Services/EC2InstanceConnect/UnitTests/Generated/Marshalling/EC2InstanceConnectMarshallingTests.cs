@@ -50,7 +50,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new SendSerialConsoleSSHPublicKeyRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<SendSerialConsoleSSHPublicKeyRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -63,8 +63,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("SendSerialConsoleSSHPublicKey").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = SendSerialConsoleSSHPublicKeyResponseUnmarshaller.Instance.Unmarshall(context)
-                as SendSerialConsoleSSHPublicKeyResponse;
+            var response = SendSerialConsoleSSHPublicKeyResponseUnmarshaller.Instance.Unmarshall(context) as SendSerialConsoleSSHPublicKeyResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -366,7 +365,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new SendSSHPublicKeyRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<SendSSHPublicKeyRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -379,8 +378,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("SendSSHPublicKey").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = SendSSHPublicKeyResponseUnmarshaller.Instance.Unmarshall(context)
-                as SendSSHPublicKeyResponse;
+            var response = SendSSHPublicKeyResponseUnmarshaller.Instance.Unmarshall(context) as SendSSHPublicKeyResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 

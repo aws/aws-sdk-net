@@ -34,7 +34,7 @@ namespace Amazon.WAF.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ExcludedRule Marshaller
-    /// </summary>       
+    /// </summary>
     public class ExcludedRuleMarshaller : IRequestMarshaller<ExcludedRule, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.WAF.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ExcludedRuleMarshaller Instance = new ExcludedRuleMarshaller();
 
     }

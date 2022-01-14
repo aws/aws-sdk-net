@@ -34,7 +34,7 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AutoRollbackConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class AutoRollbackConfigurationMarshaller : IRequestMarshaller<AutoRollbackConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AutoRollbackConfigurationMarshaller Instance = new AutoRollbackConfigurationMarshaller();
 
     }

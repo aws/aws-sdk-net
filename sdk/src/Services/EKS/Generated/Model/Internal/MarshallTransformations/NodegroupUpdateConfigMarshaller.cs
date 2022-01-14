@@ -34,7 +34,7 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// NodegroupUpdateConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class NodegroupUpdateConfigMarshaller : IRequestMarshaller<NodegroupUpdateConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static NodegroupUpdateConfigMarshaller Instance = new NodegroupUpdateConfigMarshaller();
 
     }

@@ -40,6 +40,7 @@ namespace Amazon.ElasticInference
         /// Default constructor
         /// </summary>
         public AmazonElasticInferenceConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonElasticInferenceDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "elastic-inference";
         }

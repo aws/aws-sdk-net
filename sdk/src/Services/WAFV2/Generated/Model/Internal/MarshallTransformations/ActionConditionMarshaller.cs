@@ -34,7 +34,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ActionCondition Marshaller
-    /// </summary>       
+    /// </summary>
     public class ActionConditionMarshaller : IRequestMarshaller<ActionCondition, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ActionConditionMarshaller Instance = new ActionConditionMarshaller();
 
     }

@@ -53,7 +53,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DeleteConnectionRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("DeleteConnection", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DeleteConnection", request, internalRequest, service_model);
 
         }
 
@@ -165,7 +165,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetConnectionRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("GetConnection", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetConnection", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -179,9 +179,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = GetConnectionResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as GetConnectionResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as GetConnectionResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -292,7 +291,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new PostToConnectionRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("PostToConnection", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("PostToConnection", request, internalRequest, service_model);
 
         }
 

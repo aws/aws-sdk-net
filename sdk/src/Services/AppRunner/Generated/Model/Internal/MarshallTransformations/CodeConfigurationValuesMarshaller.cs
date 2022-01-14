@@ -34,7 +34,7 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CodeConfigurationValues Marshaller
-    /// </summary>       
+    /// </summary>
     public class CodeConfigurationValuesMarshaller : IRequestMarshaller<CodeConfigurationValues, JsonMarshallerContext> 
     {
         /// <summary>
@@ -87,7 +87,7 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CodeConfigurationValuesMarshaller Instance = new CodeConfigurationValuesMarshaller();
 
     }

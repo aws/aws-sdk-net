@@ -34,7 +34,7 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ParameterConstraints Marshaller
-    /// </summary>       
+    /// </summary>
     public class ParameterConstraintsMarshaller : IRequestMarshaller<ParameterConstraints, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ParameterConstraintsMarshaller Instance = new ParameterConstraintsMarshaller();
 
     }

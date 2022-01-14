@@ -56,7 +56,7 @@ namespace Amazon.Lex.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Lex");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-11-28";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-11-28";
             request.HttpMethod = "POST";
 
             if (!publicRequest.IsSetBotAlias())
@@ -131,15 +131,16 @@ namespace Amazon.Lex.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
 
         
-            if(publicRequest.IsSetAccept())
+            if (publicRequest.IsSetAccept()) 
+            {
                 request.Headers["Accept"] = publicRequest.Accept;
+            }
 
             return request;
         }

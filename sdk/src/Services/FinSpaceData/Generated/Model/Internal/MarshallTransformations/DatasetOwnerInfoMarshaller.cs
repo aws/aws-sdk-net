@@ -34,7 +34,7 @@ namespace Amazon.FinSpaceData.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DatasetOwnerInfo Marshaller
-    /// </summary>       
+    /// </summary>
     public class DatasetOwnerInfoMarshaller : IRequestMarshaller<DatasetOwnerInfo, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.FinSpaceData.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DatasetOwnerInfoMarshaller Instance = new DatasetOwnerInfoMarshaller();
 
     }

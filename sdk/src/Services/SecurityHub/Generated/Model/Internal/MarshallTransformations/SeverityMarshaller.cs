@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Severity Marshaller
-    /// </summary>       
+    /// </summary>
     public class SeverityMarshaller : IRequestMarshaller<Severity, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SeverityMarshaller Instance = new SeverityMarshaller();
 
     }

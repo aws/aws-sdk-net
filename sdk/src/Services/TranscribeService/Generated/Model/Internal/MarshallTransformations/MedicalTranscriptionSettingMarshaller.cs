@@ -34,7 +34,7 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// MedicalTranscriptionSetting Marshaller
-    /// </summary>       
+    /// </summary>
     public class MedicalTranscriptionSettingMarshaller : IRequestMarshaller<MedicalTranscriptionSetting, JsonMarshallerContext> 
     {
         /// <summary>
@@ -85,7 +85,7 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static MedicalTranscriptionSettingMarshaller Instance = new MedicalTranscriptionSettingMarshaller();
 
     }

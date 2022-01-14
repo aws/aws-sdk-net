@@ -40,6 +40,7 @@ namespace Amazon.FMS
         /// Default constructor
         /// </summary>
         public AmazonFMSConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonFMSDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "fms";
         }

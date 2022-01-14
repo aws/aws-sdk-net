@@ -55,7 +55,7 @@ namespace Amazon.IoTDeviceAdvisor.Model.Internal.MarshallTransformations
         public IRequest Marshall(GetSuiteRunReportRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.IoTDeviceAdvisor");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-09-18";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-09-18";
             request.HttpMethod = "GET";
 
             if (!publicRequest.IsSetSuiteDefinitionId())

@@ -34,7 +34,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// OutboundCallerConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class OutboundCallerConfigMarshaller : IRequestMarshaller<OutboundCallerConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static OutboundCallerConfigMarshaller Instance = new OutboundCallerConfigMarshaller();
 
     }

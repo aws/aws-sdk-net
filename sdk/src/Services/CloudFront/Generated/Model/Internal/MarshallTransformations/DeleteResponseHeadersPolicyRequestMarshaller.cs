@@ -57,8 +57,10 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");
             request.HttpMethod = "DELETE";
         
-            if(publicRequest.IsSetIfMatch())
+            if (publicRequest.IsSetIfMatch()) 
+            {
                 request.Headers["If-Match"] = publicRequest.IfMatch;
+            }
             if (!publicRequest.IsSetId())
                 throw new AmazonCloudFrontException("Request object does not have required field Id set");
             request.AddPathResource("{Id}", StringUtils.FromString(publicRequest.Id));

@@ -56,7 +56,7 @@ namespace Amazon.CognitoSync.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CognitoSync");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2014-06-30";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2014-06-30";
             request.HttpMethod = "POST";
 
             if (!publicRequest.IsSetIdentityPoolId())
@@ -90,7 +90,6 @@ namespace Amazon.CognitoSync.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

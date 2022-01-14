@@ -34,7 +34,7 @@ namespace Amazon.NimbleStudio.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// StreamConfigurationSessionStorage Marshaller
-    /// </summary>       
+    /// </summary>
     public class StreamConfigurationSessionStorageMarshaller : IRequestMarshaller<StreamConfigurationSessionStorage, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.NimbleStudio.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static StreamConfigurationSessionStorageMarshaller Instance = new StreamConfigurationSessionStorageMarshaller();
 
     }

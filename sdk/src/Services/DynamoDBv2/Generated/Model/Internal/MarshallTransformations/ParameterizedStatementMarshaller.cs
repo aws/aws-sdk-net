@@ -34,7 +34,7 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ParameterizedStatement Marshaller
-    /// </summary>       
+    /// </summary>
     public class ParameterizedStatementMarshaller : IRequestMarshaller<ParameterizedStatement, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ParameterizedStatementMarshaller Instance = new ParameterizedStatementMarshaller();
 
     }

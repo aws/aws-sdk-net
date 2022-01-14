@@ -34,7 +34,7 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Extensions Marshaller
-    /// </summary>       
+    /// </summary>
     public class ExtensionsMarshaller : IRequestMarshaller<Extensions, JsonMarshallerContext> 
     {
         /// <summary>
@@ -108,7 +108,7 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ExtensionsMarshaller Instance = new ExtensionsMarshaller();
 
     }

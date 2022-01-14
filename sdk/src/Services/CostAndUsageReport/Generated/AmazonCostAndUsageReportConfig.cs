@@ -40,6 +40,7 @@ namespace Amazon.CostAndUsageReport
         /// Default constructor
         /// </summary>
         public AmazonCostAndUsageReportConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonCostAndUsageReportDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "cur";
         }

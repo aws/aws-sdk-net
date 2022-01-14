@@ -34,7 +34,7 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TestCaseFilter Marshaller
-    /// </summary>       
+    /// </summary>
     public class TestCaseFilterMarshaller : IRequestMarshaller<TestCaseFilter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TestCaseFilterMarshaller Instance = new TestCaseFilterMarshaller();
 
     }

@@ -40,6 +40,7 @@ namespace Amazon.CodeGuruProfiler
         /// Default constructor
         /// </summary>
         public AmazonCodeGuruProfilerConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonCodeGuruProfilerDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "codeguru-profiler";
         }

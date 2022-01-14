@@ -34,7 +34,7 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AvailMatchingCriteria Marshaller
-    /// </summary>       
+    /// </summary>
     public class AvailMatchingCriteriaMarshaller : IRequestMarshaller<AvailMatchingCriteria, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AvailMatchingCriteriaMarshaller Instance = new AvailMatchingCriteriaMarshaller();
 
     }

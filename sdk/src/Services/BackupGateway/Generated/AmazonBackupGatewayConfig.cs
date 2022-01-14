@@ -40,6 +40,7 @@ namespace Amazon.BackupGateway
         /// Default constructor
         /// </summary>
         public AmazonBackupGatewayConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonBackupGatewayDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "backup-gateway";
         }

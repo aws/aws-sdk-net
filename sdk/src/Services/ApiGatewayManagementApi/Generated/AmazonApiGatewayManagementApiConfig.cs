@@ -40,6 +40,7 @@ namespace Amazon.ApiGatewayManagementApi
         /// Default constructor
         /// </summary>
         public AmazonApiGatewayManagementApiConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonApiGatewayManagementApiDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "execute-api";
         }

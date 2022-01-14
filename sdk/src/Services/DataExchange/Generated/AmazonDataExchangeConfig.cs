@@ -40,6 +40,7 @@ namespace Amazon.DataExchange
         /// Default constructor
         /// </summary>
         public AmazonDataExchangeConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonDataExchangeDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "dataexchange";
         }

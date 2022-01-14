@@ -34,7 +34,7 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AddObjectInput Marshaller
-    /// </summary>       
+    /// </summary>
     public class AddObjectInputMarshaller : IRequestMarshaller<AddObjectInput, JsonMarshallerContext> 
     {
         /// <summary>
@@ -78,7 +78,7 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AddObjectInputMarshaller Instance = new AddObjectInputMarshaller();
 
     }

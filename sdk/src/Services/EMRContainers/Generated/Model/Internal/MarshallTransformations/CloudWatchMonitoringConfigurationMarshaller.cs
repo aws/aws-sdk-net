@@ -34,7 +34,7 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CloudWatchMonitoringConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class CloudWatchMonitoringConfigurationMarshaller : IRequestMarshaller<CloudWatchMonitoringConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CloudWatchMonitoringConfigurationMarshaller Instance = new CloudWatchMonitoringConfigurationMarshaller();
 
     }

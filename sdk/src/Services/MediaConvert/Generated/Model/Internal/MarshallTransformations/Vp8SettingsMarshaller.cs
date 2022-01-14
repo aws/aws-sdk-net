@@ -34,7 +34,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Vp8Settings Marshaller
-    /// </summary>       
+    /// </summary>
     public class Vp8SettingsMarshaller : IRequestMarshaller<Vp8Settings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -127,7 +127,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static Vp8SettingsMarshaller Instance = new Vp8SettingsMarshaller();
 
     }

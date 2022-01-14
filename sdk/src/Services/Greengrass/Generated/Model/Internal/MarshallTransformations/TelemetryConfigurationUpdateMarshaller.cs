@@ -34,7 +34,7 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TelemetryConfigurationUpdate Marshaller
-    /// </summary>       
+    /// </summary>
     public class TelemetryConfigurationUpdateMarshaller : IRequestMarshaller<TelemetryConfigurationUpdate, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TelemetryConfigurationUpdateMarshaller Instance = new TelemetryConfigurationUpdateMarshaller();
 
     }

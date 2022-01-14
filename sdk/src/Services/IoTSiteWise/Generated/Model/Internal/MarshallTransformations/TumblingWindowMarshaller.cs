@@ -34,7 +34,7 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TumblingWindow Marshaller
-    /// </summary>       
+    /// </summary>
     public class TumblingWindowMarshaller : IRequestMarshaller<TumblingWindow, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TumblingWindowMarshaller Instance = new TumblingWindowMarshaller();
 
     }

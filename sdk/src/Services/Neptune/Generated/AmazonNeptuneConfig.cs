@@ -40,6 +40,7 @@ namespace Amazon.Neptune
         /// Default constructor
         /// </summary>
         public AmazonNeptuneConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonNeptuneDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "rds";
         }

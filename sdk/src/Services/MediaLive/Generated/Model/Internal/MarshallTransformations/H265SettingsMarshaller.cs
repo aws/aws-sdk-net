@@ -34,7 +34,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// H265Settings Marshaller
-    /// </summary>       
+    /// </summary>
     public class H265SettingsMarshaller : IRequestMarshaller<H265Settings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -233,7 +233,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static H265SettingsMarshaller Instance = new H265SettingsMarshaller();
 
     }

@@ -55,7 +55,7 @@ namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
         public IRequest Marshall(DeleteHostedConfigurationVersionRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.AppConfig");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-10-09";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-10-09";
             request.HttpMethod = "DELETE";
 
             if (!publicRequest.IsSetApplicationId())

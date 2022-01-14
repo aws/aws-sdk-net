@@ -34,7 +34,7 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DeltaTime Marshaller
-    /// </summary>       
+    /// </summary>
     public class DeltaTimeMarshaller : IRequestMarshaller<DeltaTime, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DeltaTimeMarshaller Instance = new DeltaTimeMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// BatchCreateObject Marshaller
-    /// </summary>       
+    /// </summary>
     public class BatchCreateObjectMarshaller : IRequestMarshaller<BatchCreateObject, JsonMarshallerContext> 
     {
         /// <summary>
@@ -104,7 +104,7 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static BatchCreateObjectMarshaller Instance = new BatchCreateObjectMarshaller();
 
     }

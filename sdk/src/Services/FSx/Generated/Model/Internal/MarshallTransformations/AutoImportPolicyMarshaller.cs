@@ -34,7 +34,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AutoImportPolicy Marshaller
-    /// </summary>       
+    /// </summary>
     public class AutoImportPolicyMarshaller : IRequestMarshaller<AutoImportPolicy, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AutoImportPolicyMarshaller Instance = new AutoImportPolicyMarshaller();
 
     }

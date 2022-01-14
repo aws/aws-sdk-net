@@ -56,7 +56,7 @@ namespace Amazon.FinSpaceData.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.FinSpaceData");
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-07-13";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-07-13";
             request.HttpMethod = "POST";
 
             if (!publicRequest.IsSetDatasetId())
@@ -89,7 +89,7 @@ namespace Amazon.FinSpaceData.Model.Internal.MarshallTransformations
                 else if(!(publicRequest.IsSetClientToken()))
                 {
                     context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());                                                
+                    context.Writer.Write(Guid.NewGuid().ToString());
                 }
                 if(publicRequest.IsSetDestinationTypeParams())
                 {
@@ -124,7 +124,6 @@ namespace Amazon.FinSpaceData.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

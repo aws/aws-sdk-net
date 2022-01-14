@@ -55,7 +55,7 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
         public IRequest Marshall(DeleteElasticsearchServiceRoleRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Elasticsearch");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-01-01";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-01-01";
             request.HttpMethod = "DELETE";
 
             request.ResourcePath = "/2015-01-01/es/role";

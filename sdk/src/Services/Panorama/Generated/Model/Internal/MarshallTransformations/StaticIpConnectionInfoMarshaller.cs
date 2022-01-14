@@ -34,7 +34,7 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// StaticIpConnectionInfo Marshaller
-    /// </summary>       
+    /// </summary>
     public class StaticIpConnectionInfoMarshaller : IRequestMarshaller<StaticIpConnectionInfo, JsonMarshallerContext> 
     {
         /// <summary>
@@ -78,7 +78,7 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static StaticIpConnectionInfoMarshaller Instance = new StaticIpConnectionInfoMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.HealthLake.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SseConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class SseConfigurationMarshaller : IRequestMarshaller<SseConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.HealthLake.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SseConfigurationMarshaller Instance = new SseConfigurationMarshaller();
 
     }

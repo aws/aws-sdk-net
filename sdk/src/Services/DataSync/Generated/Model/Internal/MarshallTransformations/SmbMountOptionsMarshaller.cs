@@ -34,7 +34,7 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SmbMountOptions Marshaller
-    /// </summary>       
+    /// </summary>
     public class SmbMountOptionsMarshaller : IRequestMarshaller<SmbMountOptions, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SmbMountOptionsMarshaller Instance = new SmbMountOptionsMarshaller();
 
     }

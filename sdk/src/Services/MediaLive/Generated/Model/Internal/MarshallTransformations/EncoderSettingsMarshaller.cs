@@ -34,7 +34,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// EncoderSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class EncoderSettingsMarshaller : IRequestMarshaller<EncoderSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -201,7 +201,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static EncoderSettingsMarshaller Instance = new EncoderSettingsMarshaller();
 
     }

@@ -55,7 +55,7 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListTagsForResourceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Inspector2");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-06-08";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-06-08";
             request.HttpMethod = "GET";
 
             if (!publicRequest.IsSetResourceArn())

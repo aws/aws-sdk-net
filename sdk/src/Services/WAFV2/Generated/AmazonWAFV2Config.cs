@@ -40,6 +40,7 @@ namespace Amazon.WAFV2
         /// Default constructor
         /// </summary>
         public AmazonWAFV2Config()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonWAFV2DefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "wafv2";
         }

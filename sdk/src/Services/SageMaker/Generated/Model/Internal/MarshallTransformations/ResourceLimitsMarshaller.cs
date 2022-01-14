@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ResourceLimits Marshaller
-    /// </summary>       
+    /// </summary>
     public class ResourceLimitsMarshaller : IRequestMarshaller<ResourceLimits, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ResourceLimitsMarshaller Instance = new ResourceLimitsMarshaller();
 
     }

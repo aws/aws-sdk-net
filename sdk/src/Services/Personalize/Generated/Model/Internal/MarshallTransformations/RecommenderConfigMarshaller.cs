@@ -34,7 +34,7 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RecommenderConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class RecommenderConfigMarshaller : IRequestMarshaller<RecommenderConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -63,7 +63,7 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RecommenderConfigMarshaller Instance = new RecommenderConfigMarshaller();
 
     }

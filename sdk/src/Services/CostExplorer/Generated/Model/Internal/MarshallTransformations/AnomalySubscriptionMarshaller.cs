@@ -34,7 +34,7 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AnomalySubscription Marshaller
-    /// </summary>       
+    /// </summary>
     public class AnomalySubscriptionMarshaller : IRequestMarshaller<AnomalySubscription, JsonMarshallerContext> 
     {
         /// <summary>
@@ -106,7 +106,7 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AnomalySubscriptionMarshaller Instance = new AnomalySubscriptionMarshaller();
 
     }

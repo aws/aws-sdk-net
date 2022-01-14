@@ -34,7 +34,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TagRef Marshaller
-    /// </summary>       
+    /// </summary>
     public class TagRefMarshaller : IRequestMarshaller<TagRef, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TagRefMarshaller Instance = new TagRefMarshaller();
 
     }

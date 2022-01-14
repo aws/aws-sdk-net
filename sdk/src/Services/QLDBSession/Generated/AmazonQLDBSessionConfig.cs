@@ -40,6 +40,7 @@ namespace Amazon.QLDBSession
         /// Default constructor
         /// </summary>
         public AmazonQLDBSessionConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonQLDBSessionDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "qldb";
         }

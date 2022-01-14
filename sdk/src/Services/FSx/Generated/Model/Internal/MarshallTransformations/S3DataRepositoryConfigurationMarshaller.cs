@@ -34,7 +34,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// S3DataRepositoryConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class S3DataRepositoryConfigurationMarshaller : IRequestMarshaller<S3DataRepositoryConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static S3DataRepositoryConfigurationMarshaller Instance = new S3DataRepositoryConfigurationMarshaller();
 
     }

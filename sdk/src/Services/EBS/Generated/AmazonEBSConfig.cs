@@ -40,6 +40,7 @@ namespace Amazon.EBS
         /// Default constructor
         /// </summary>
         public AmazonEBSConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonEBSDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "ebs";
         }

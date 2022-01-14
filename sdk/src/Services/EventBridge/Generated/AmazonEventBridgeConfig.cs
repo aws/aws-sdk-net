@@ -40,6 +40,7 @@ namespace Amazon.EventBridge
         /// Default constructor
         /// </summary>
         public AmazonEventBridgeConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonEventBridgeDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "events";
         }

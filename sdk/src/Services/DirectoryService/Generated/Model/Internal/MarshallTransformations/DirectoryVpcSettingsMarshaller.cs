@@ -34,7 +34,7 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DirectoryVpcSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class DirectoryVpcSettingsMarshaller : IRequestMarshaller<DirectoryVpcSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DirectoryVpcSettingsMarshaller Instance = new DirectoryVpcSettingsMarshaller();
 
     }

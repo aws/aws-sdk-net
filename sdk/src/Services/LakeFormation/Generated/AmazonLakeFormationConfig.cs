@@ -40,6 +40,7 @@ namespace Amazon.LakeFormation
         /// Default constructor
         /// </summary>
         public AmazonLakeFormationConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonLakeFormationDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "lakeformation";
         }

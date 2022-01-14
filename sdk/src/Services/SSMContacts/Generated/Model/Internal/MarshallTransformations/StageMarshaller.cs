@@ -34,7 +34,7 @@ namespace Amazon.SSMContacts.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Stage Marshaller
-    /// </summary>       
+    /// </summary>
     public class StageMarshaller : IRequestMarshaller<Stage, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.SSMContacts.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static StageMarshaller Instance = new StageMarshaller();
 
     }

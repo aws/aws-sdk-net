@@ -34,7 +34,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// UploadSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class UploadSettingsMarshaller : IRequestMarshaller<UploadSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -79,7 +79,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static UploadSettingsMarshaller Instance = new UploadSettingsMarshaller();
 
     }

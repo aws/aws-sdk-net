@@ -34,7 +34,7 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// StartTechnicalCueDetectionFilter Marshaller
-    /// </summary>       
+    /// </summary>
     public class StartTechnicalCueDetectionFilterMarshaller : IRequestMarshaller<StartTechnicalCueDetectionFilter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static StartTechnicalCueDetectionFilterMarshaller Instance = new StartTechnicalCueDetectionFilterMarshaller();
 
     }

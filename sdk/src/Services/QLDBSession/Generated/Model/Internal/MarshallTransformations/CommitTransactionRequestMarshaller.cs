@@ -34,7 +34,7 @@ namespace Amazon.QLDBSession.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CommitTransactionRequest Marshaller
-    /// </summary>       
+    /// </summary>
     public class CommitTransactionRequestMarshaller : IRequestMarshaller<CommitTransactionRequest, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.QLDBSession.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CommitTransactionRequestMarshaller Instance = new CommitTransactionRequestMarshaller();
 
     }

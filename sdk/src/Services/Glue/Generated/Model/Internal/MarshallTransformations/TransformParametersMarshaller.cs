@@ -34,7 +34,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TransformParameters Marshaller
-    /// </summary>       
+    /// </summary>
     public class TransformParametersMarshaller : IRequestMarshaller<TransformParameters, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TransformParametersMarshaller Instance = new TransformParametersMarshaller();
 
     }

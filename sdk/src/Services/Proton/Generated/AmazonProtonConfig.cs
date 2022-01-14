@@ -40,6 +40,7 @@ namespace Amazon.Proton
         /// Default constructor
         /// </summary>
         public AmazonProtonConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonProtonDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "proton";
         }

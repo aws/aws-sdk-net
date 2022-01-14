@@ -34,7 +34,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Fmp4HlsSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class Fmp4HlsSettingsMarshaller : IRequestMarshaller<Fmp4HlsSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static Fmp4HlsSettingsMarshaller Instance = new Fmp4HlsSettingsMarshaller();
 
     }

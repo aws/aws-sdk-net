@@ -40,6 +40,7 @@ namespace Amazon.AmplifyUIBuilder
         /// Default constructor
         /// </summary>
         public AmazonAmplifyUIBuilderConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonAmplifyUIBuilderDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "amplifyuibuilder";
         }

@@ -34,7 +34,7 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SourceCodeVersion Marshaller
-    /// </summary>       
+    /// </summary>
     public class SourceCodeVersionMarshaller : IRequestMarshaller<SourceCodeVersion, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SourceCodeVersionMarshaller Instance = new SourceCodeVersionMarshaller();
 
     }

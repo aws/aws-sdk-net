@@ -34,7 +34,7 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// PatchOperation Marshaller
-    /// </summary>       
+    /// </summary>
     public class PatchOperationMarshaller : IRequestMarshaller<PatchOperation, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static PatchOperationMarshaller Instance = new PatchOperationMarshaller();
 
     }

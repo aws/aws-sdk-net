@@ -34,7 +34,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// HealthCheckPolicy Marshaller
-    /// </summary>       
+    /// </summary>
     public class HealthCheckPolicyMarshaller : IRequestMarshaller<HealthCheckPolicy, JsonMarshallerContext> 
     {
         /// <summary>
@@ -91,7 +91,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static HealthCheckPolicyMarshaller Instance = new HealthCheckPolicyMarshaller();
 
     }

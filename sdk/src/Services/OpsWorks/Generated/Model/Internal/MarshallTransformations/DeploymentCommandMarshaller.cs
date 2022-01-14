@@ -34,7 +34,7 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DeploymentCommand Marshaller
-    /// </summary>       
+    /// </summary>
     public class DeploymentCommandMarshaller : IRequestMarshaller<DeploymentCommand, JsonMarshallerContext> 
     {
         /// <summary>
@@ -74,7 +74,7 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DeploymentCommandMarshaller Instance = new DeploymentCommandMarshaller();
 
     }

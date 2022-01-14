@@ -40,6 +40,7 @@ namespace Amazon.Greengrass
         /// Default constructor
         /// </summary>
         public AmazonGreengrassConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonGreengrassDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "greengrass";
         }

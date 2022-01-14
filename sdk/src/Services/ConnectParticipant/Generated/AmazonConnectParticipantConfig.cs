@@ -40,6 +40,7 @@ namespace Amazon.ConnectParticipant
         /// Default constructor
         /// </summary>
         public AmazonConnectParticipantConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonConnectParticipantDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "execute-api";
         }

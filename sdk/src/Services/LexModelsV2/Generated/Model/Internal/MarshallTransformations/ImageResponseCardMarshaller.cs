@@ -34,7 +34,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ImageResponseCard Marshaller
-    /// </summary>       
+    /// </summary>
     public class ImageResponseCardMarshaller : IRequestMarshaller<ImageResponseCard, JsonMarshallerContext> 
     {
         /// <summary>
@@ -83,7 +83,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ImageResponseCardMarshaller Instance = new ImageResponseCardMarshaller();
 
     }

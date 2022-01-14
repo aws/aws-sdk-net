@@ -34,7 +34,7 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SslConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class SslConfigurationMarshaller : IRequestMarshaller<SslConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SslConfigurationMarshaller Instance = new SslConfigurationMarshaller();
 
     }

@@ -40,6 +40,7 @@ namespace Amazon.WellArchitected
         /// Default constructor
         /// </summary>
         public AmazonWellArchitectedConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonWellArchitectedDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "wellarchitected";
         }

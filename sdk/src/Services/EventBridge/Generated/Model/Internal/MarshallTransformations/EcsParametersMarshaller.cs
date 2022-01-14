@@ -34,7 +34,7 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// EcsParameters Marshaller
-    /// </summary>       
+    /// </summary>
     public class EcsParametersMarshaller : IRequestMarshaller<EcsParameters, JsonMarshallerContext> 
     {
         /// <summary>
@@ -178,7 +178,7 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static EcsParametersMarshaller Instance = new EcsParametersMarshaller();
 
     }

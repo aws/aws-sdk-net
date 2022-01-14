@@ -34,7 +34,7 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// WorkspaceRequest Marshaller
-    /// </summary>       
+    /// </summary>
     public class WorkspaceRequestMarshaller : IRequestMarshaller<WorkspaceRequest, JsonMarshallerContext> 
     {
         /// <summary>
@@ -112,7 +112,7 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static WorkspaceRequestMarshaller Instance = new WorkspaceRequestMarshaller();
 
     }

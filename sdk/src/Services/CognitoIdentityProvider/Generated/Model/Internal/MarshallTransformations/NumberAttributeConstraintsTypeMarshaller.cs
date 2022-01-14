@@ -34,7 +34,7 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// NumberAttributeConstraintsType Marshaller
-    /// </summary>       
+    /// </summary>
     public class NumberAttributeConstraintsTypeMarshaller : IRequestMarshaller<NumberAttributeConstraintsType, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static NumberAttributeConstraintsTypeMarshaller Instance = new NumberAttributeConstraintsTypeMarshaller();
 
     }

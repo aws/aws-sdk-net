@@ -34,7 +34,7 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ReplicationConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class ReplicationConfigurationMarshaller : IRequestMarshaller<ReplicationConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -65,7 +65,7 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ReplicationConfigurationMarshaller Instance = new ReplicationConfigurationMarshaller();
 
     }

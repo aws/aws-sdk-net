@@ -40,6 +40,7 @@ namespace Amazon.ElasticTranscoder
         /// Default constructor
         /// </summary>
         public AmazonElasticTranscoderConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonElasticTranscoderDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "elastictranscoder";
         }

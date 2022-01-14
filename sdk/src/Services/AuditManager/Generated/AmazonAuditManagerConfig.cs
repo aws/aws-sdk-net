@@ -40,6 +40,7 @@ namespace Amazon.AuditManager
         /// Default constructor
         /// </summary>
         public AmazonAuditManagerConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonAuditManagerDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "auditmanager";
         }

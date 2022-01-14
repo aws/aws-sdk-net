@@ -34,7 +34,7 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// UsageStatisticsSortBy Marshaller
-    /// </summary>       
+    /// </summary>
     public class UsageStatisticsSortByMarshaller : IRequestMarshaller<UsageStatisticsSortBy, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static UsageStatisticsSortByMarshaller Instance = new UsageStatisticsSortByMarshaller();
 
     }

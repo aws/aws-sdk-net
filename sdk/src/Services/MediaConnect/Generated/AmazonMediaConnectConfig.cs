@@ -40,6 +40,7 @@ namespace Amazon.MediaConnect
         /// Default constructor
         /// </summary>
         public AmazonMediaConnectConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonMediaConnectDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "mediaconnect";
         }

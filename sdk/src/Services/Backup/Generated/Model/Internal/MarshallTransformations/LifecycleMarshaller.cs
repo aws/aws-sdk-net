@@ -34,7 +34,7 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Lifecycle Marshaller
-    /// </summary>       
+    /// </summary>
     public class LifecycleMarshaller : IRequestMarshaller<Lifecycle, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static LifecycleMarshaller Instance = new LifecycleMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AudioNormalizationSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class AudioNormalizationSettingsMarshaller : IRequestMarshaller<AudioNormalizationSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -85,7 +85,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AudioNormalizationSettingsMarshaller Instance = new AudioNormalizationSettingsMarshaller();
 
     }

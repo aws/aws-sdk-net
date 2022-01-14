@@ -34,7 +34,7 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// InputContext Marshaller
-    /// </summary>       
+    /// </summary>
     public class InputContextMarshaller : IRequestMarshaller<InputContext, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static InputContextMarshaller Instance = new InputContextMarshaller();
 
     }

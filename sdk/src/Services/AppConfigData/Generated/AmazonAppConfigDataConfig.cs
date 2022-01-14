@@ -40,6 +40,7 @@ namespace Amazon.AppConfigData
         /// Default constructor
         /// </summary>
         public AmazonAppConfigDataConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonAppConfigDataDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "appconfig";
         }

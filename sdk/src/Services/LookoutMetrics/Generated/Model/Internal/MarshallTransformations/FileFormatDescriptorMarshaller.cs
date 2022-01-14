@@ -34,7 +34,7 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// FileFormatDescriptor Marshaller
-    /// </summary>       
+    /// </summary>
     public class FileFormatDescriptorMarshaller : IRequestMarshaller<FileFormatDescriptor, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static FileFormatDescriptorMarshaller Instance = new FileFormatDescriptorMarshaller();
 
     }

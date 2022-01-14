@@ -34,7 +34,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// WaitAndContinueSpecification Marshaller
-    /// </summary>       
+    /// </summary>
     public class WaitAndContinueSpecificationMarshaller : IRequestMarshaller<WaitAndContinueSpecification, JsonMarshallerContext> 
     {
         /// <summary>
@@ -88,7 +88,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static WaitAndContinueSpecificationMarshaller Instance = new WaitAndContinueSpecificationMarshaller();
 
     }

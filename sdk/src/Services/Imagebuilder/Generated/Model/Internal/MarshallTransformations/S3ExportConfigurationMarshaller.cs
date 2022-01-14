@@ -34,7 +34,7 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// S3ExportConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class S3ExportConfigurationMarshaller : IRequestMarshaller<S3ExportConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static S3ExportConfigurationMarshaller Instance = new S3ExportConfigurationMarshaller();
 
     }

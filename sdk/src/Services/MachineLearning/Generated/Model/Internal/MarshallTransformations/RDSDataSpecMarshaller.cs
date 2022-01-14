@@ -34,7 +34,7 @@ namespace Amazon.MachineLearning.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RDSDataSpec Marshaller
-    /// </summary>       
+    /// </summary>
     public class RDSDataSpecMarshaller : IRequestMarshaller<RDSDataSpec, JsonMarshallerContext> 
     {
         /// <summary>
@@ -130,7 +130,7 @@ namespace Amazon.MachineLearning.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RDSDataSpecMarshaller Instance = new RDSDataSpecMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// UpdateUserRequestItem Marshaller
-    /// </summary>       
+    /// </summary>
     public class UpdateUserRequestItemMarshaller : IRequestMarshaller<UpdateUserRequestItem, JsonMarshallerContext> 
     {
         /// <summary>
@@ -78,7 +78,7 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static UpdateUserRequestItemMarshaller Instance = new UpdateUserRequestItemMarshaller();
 
     }

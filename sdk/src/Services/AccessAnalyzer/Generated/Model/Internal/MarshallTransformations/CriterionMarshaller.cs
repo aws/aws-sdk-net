@@ -34,7 +34,7 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Criterion Marshaller
-    /// </summary>       
+    /// </summary>
     public class CriterionMarshaller : IRequestMarshaller<Criterion, JsonMarshallerContext> 
     {
         /// <summary>
@@ -88,7 +88,7 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CriterionMarshaller Instance = new CriterionMarshaller();
 
     }

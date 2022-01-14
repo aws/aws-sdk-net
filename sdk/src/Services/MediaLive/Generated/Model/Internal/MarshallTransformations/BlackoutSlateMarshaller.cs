@@ -34,7 +34,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// BlackoutSlate Marshaller
-    /// </summary>       
+    /// </summary>
     public class BlackoutSlateMarshaller : IRequestMarshaller<BlackoutSlate, JsonMarshallerContext> 
     {
         /// <summary>
@@ -89,7 +89,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static BlackoutSlateMarshaller Instance = new BlackoutSlateMarshaller();
 
     }

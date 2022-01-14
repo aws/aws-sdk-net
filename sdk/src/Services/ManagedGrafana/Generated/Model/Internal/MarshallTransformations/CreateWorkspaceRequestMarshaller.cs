@@ -56,7 +56,7 @@ namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ManagedGrafana");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-08-18";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-08-18";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/workspaces";
@@ -91,7 +91,7 @@ namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
                 else if(!(publicRequest.IsSetClientToken()))
                 {
                     context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());                                                
+                    context.Writer.Write(Guid.NewGuid().ToString());
                 }
                 if(publicRequest.IsSetOrganizationRoleName())
                 {
@@ -162,7 +162,6 @@ namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.WorkspaceRoleArn);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

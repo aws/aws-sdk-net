@@ -34,7 +34,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ScalingRule Marshaller
-    /// </summary>       
+    /// </summary>
     public class ScalingRuleMarshaller : IRequestMarshaller<ScalingRule, JsonMarshallerContext> 
     {
         /// <summary>
@@ -83,7 +83,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ScalingRuleMarshaller Instance = new ScalingRuleMarshaller();
 
     }

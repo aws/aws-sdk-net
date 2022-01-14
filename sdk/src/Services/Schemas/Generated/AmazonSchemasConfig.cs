@@ -40,6 +40,7 @@ namespace Amazon.Schemas
         /// Default constructor
         /// </summary>
         public AmazonSchemasConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonSchemasDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "schemas";
         }

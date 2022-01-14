@@ -40,6 +40,7 @@ namespace Amazon.PersonalizeEvents
         /// Default constructor
         /// </summary>
         public AmazonPersonalizeEventsConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonPersonalizeEventsDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "personalize";
         }

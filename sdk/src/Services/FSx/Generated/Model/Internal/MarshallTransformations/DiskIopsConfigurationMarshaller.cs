@@ -34,7 +34,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DiskIopsConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class DiskIopsConfigurationMarshaller : IRequestMarshaller<DiskIopsConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DiskIopsConfigurationMarshaller Instance = new DiskIopsConfigurationMarshaller();
 
     }

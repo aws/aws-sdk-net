@@ -40,6 +40,7 @@ namespace Amazon.AppIntegrationsService
         /// Default constructor
         /// </summary>
         public AmazonAppIntegrationsServiceConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonAppIntegrationsServiceDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "app-integrations";
         }

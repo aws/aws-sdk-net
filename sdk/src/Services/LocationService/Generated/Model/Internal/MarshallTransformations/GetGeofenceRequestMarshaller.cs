@@ -55,7 +55,7 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
         public IRequest Marshall(GetGeofenceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.LocationService");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-11-19";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-11-19";
             request.HttpMethod = "GET";
 
             if (!publicRequest.IsSetCollectionName())

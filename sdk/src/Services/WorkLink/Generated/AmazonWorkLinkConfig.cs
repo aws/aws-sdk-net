@@ -40,6 +40,7 @@ namespace Amazon.WorkLink
         /// Default constructor
         /// </summary>
         public AmazonWorkLinkConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonWorkLinkDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "worklink";
         }

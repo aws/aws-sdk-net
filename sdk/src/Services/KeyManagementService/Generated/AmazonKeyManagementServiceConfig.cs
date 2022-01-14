@@ -40,6 +40,7 @@ namespace Amazon.KeyManagementService
         /// Default constructor
         /// </summary>
         public AmazonKeyManagementServiceConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonKeyManagementServiceDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "kms";
         }

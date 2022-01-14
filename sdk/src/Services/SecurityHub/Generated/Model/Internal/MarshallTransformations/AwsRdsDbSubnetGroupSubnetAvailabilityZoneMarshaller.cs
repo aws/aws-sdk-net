@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AwsRdsDbSubnetGroupSubnetAvailabilityZone Marshaller
-    /// </summary>       
+    /// </summary>
     public class AwsRdsDbSubnetGroupSubnetAvailabilityZoneMarshaller : IRequestMarshaller<AwsRdsDbSubnetGroupSubnetAvailabilityZone, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AwsRdsDbSubnetGroupSubnetAvailabilityZoneMarshaller Instance = new AwsRdsDbSubnetGroupSubnetAvailabilityZoneMarshaller();
 
     }

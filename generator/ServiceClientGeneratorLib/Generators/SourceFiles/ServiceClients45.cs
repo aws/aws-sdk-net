@@ -1016,7 +1016,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             
             #line 412 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
 
-            }            
+            }
 
             
             #line default
@@ -1192,7 +1192,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             
             #line 462 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients45.tt"
 
-            }            
+            }
 
             
             #line default

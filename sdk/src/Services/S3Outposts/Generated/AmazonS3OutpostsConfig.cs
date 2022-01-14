@@ -40,6 +40,7 @@ namespace Amazon.S3Outposts
         /// Default constructor
         /// </summary>
         public AmazonS3OutpostsConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonS3OutpostsDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "s3-outposts";
         }

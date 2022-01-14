@@ -40,6 +40,7 @@ namespace Amazon.SSMContacts
         /// Default constructor
         /// </summary>
         public AmazonSSMContactsConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonSSMContactsDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "ssm-contacts";
         }

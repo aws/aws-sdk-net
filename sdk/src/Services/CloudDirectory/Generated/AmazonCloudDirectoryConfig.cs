@@ -40,6 +40,7 @@ namespace Amazon.CloudDirectory
         /// Default constructor
         /// </summary>
         public AmazonCloudDirectoryConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonCloudDirectoryDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "clouddirectory";
         }

@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// MonitoringResources Marshaller
-    /// </summary>       
+    /// </summary>
     public class MonitoringResourcesMarshaller : IRequestMarshaller<MonitoringResources, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static MonitoringResourcesMarshaller Instance = new MonitoringResourcesMarshaller();
 
     }

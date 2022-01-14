@@ -34,7 +34,7 @@ namespace Amazon.RestJsonTest.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// PayloadConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class PayloadConfigMarshaller : IRequestMarshaller<PayloadConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.RestJsonTest.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static PayloadConfigMarshaller Instance = new PayloadConfigMarshaller();
 
     }

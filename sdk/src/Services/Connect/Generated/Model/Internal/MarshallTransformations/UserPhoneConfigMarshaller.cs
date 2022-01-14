@@ -34,7 +34,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// UserPhoneConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class UserPhoneConfigMarshaller : IRequestMarshaller<UserPhoneConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static UserPhoneConfigMarshaller Instance = new UserPhoneConfigMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Ec2InstanceAggregation Marshaller
-    /// </summary>       
+    /// </summary>
     public class Ec2InstanceAggregationMarshaller : IRequestMarshaller<Ec2InstanceAggregation, JsonMarshallerContext> 
     {
         /// <summary>
@@ -125,7 +125,7 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static Ec2InstanceAggregationMarshaller Instance = new Ec2InstanceAggregationMarshaller();
 
     }

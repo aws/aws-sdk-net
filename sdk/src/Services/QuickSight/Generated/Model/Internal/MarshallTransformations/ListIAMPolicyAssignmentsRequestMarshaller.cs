@@ -55,7 +55,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListIAMPolicyAssignmentsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.QuickSight");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-04-01";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-04-01";
             request.HttpMethod = "GET";
 
             if (!publicRequest.IsSetAwsAccountId())
@@ -82,7 +82,6 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.AssignmentStatus);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

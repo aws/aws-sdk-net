@@ -53,7 +53,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new PutEventsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("PutEvents", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("PutEvents", request, internalRequest, service_model);
 
         }
 
@@ -101,7 +101,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new PutItemsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("PutItems", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("PutItems", request, internalRequest, service_model);
 
         }
 
@@ -213,7 +213,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new PutUsersRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("PutUsers", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("PutUsers", request, internalRequest, service_model);
 
         }
 

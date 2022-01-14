@@ -40,6 +40,7 @@ namespace Amazon.Synthetics
         /// Default constructor
         /// </summary>
         public AmazonSyntheticsConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonSyntheticsDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "synthetics";
         }

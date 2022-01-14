@@ -40,6 +40,7 @@ namespace Amazon.KinesisAnalyticsV2
         /// Default constructor
         /// </summary>
         public AmazonKinesisAnalyticsV2Config()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonKinesisAnalyticsV2DefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "kinesisanalytics";
         }

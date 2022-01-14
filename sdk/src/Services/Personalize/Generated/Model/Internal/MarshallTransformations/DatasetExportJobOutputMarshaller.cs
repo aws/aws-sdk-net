@@ -34,7 +34,7 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DatasetExportJobOutput Marshaller
-    /// </summary>       
+    /// </summary>
     public class DatasetExportJobOutputMarshaller : IRequestMarshaller<DatasetExportJobOutput, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DatasetExportJobOutputMarshaller Instance = new DatasetExportJobOutputMarshaller();
 
     }

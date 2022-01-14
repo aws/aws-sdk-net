@@ -34,7 +34,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DataPrivacy Marshaller
-    /// </summary>       
+    /// </summary>
     public class DataPrivacyMarshaller : IRequestMarshaller<DataPrivacy, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DataPrivacyMarshaller Instance = new DataPrivacyMarshaller();
 
     }

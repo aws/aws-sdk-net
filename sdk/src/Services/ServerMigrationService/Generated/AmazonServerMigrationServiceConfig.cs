@@ -40,6 +40,7 @@ namespace Amazon.ServerMigrationService
         /// Default constructor
         /// </summary>
         public AmazonServerMigrationServiceConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonServerMigrationServiceDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "sms";
         }

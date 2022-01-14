@@ -58,7 +58,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             string target = "AWSKendraFrontendService.CreateFaq";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-02-03";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-02-03";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -76,7 +76,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                 else if(!(publicRequest.IsSetClientToken()))
                 {
                     context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());                                                
+                    context.Writer.Write(Guid.NewGuid().ToString());
                 }
                 if(publicRequest.IsSetDescription())
                 {
@@ -141,7 +141,6 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

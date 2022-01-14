@@ -56,7 +56,7 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ChimeSDKMessaging");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-05-15";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-05-15";
             request.HttpMethod = "PUT";
 
             if (!publicRequest.IsSetChannelArn())
@@ -86,15 +86,16 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Name);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
 
         
-            if(publicRequest.IsSetChimeBearer())
+            if (publicRequest.IsSetChimeBearer()) 
+            {
                 request.Headers["x-amz-chime-bearer"] = publicRequest.ChimeBearer;
+            }
 
             return request;
         }

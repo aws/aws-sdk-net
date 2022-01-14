@@ -34,7 +34,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// HadoopJarStepConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class HadoopJarStepConfigMarshaller : IRequestMarshaller<HadoopJarStepConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -88,7 +88,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static HadoopJarStepConfigMarshaller Instance = new HadoopJarStepConfigMarshaller();
 
     }

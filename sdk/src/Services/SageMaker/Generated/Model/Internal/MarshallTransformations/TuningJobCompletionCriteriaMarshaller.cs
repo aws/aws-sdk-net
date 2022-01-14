@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TuningJobCompletionCriteria Marshaller
-    /// </summary>       
+    /// </summary>
     public class TuningJobCompletionCriteriaMarshaller : IRequestMarshaller<TuningJobCompletionCriteria, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TuningJobCompletionCriteriaMarshaller Instance = new TuningJobCompletionCriteriaMarshaller();
 
     }

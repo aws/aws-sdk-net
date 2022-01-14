@@ -34,7 +34,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CloudWatchLogGroupLogDestination Marshaller
-    /// </summary>       
+    /// </summary>
     public class CloudWatchLogGroupLogDestinationMarshaller : IRequestMarshaller<CloudWatchLogGroupLogDestination, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CloudWatchLogGroupLogDestinationMarshaller Instance = new CloudWatchLogGroupLogDestinationMarshaller();
 
     }

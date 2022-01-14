@@ -34,7 +34,7 @@ namespace Amazon.TimestreamQuery.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ErrorReportConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class ErrorReportConfigurationMarshaller : IRequestMarshaller<ErrorReportConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.TimestreamQuery.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ErrorReportConfigurationMarshaller Instance = new ErrorReportConfigurationMarshaller();
 
     }

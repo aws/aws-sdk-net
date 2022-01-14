@@ -34,7 +34,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CustomResponse Marshaller
-    /// </summary>       
+    /// </summary>
     public class CustomResponseMarshaller : IRequestMarshaller<CustomResponse, JsonMarshallerContext> 
     {
         /// <summary>
@@ -77,7 +77,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CustomResponseMarshaller Instance = new CustomResponseMarshaller();
 
     }

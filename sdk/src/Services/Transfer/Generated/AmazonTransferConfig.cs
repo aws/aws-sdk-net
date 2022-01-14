@@ -40,6 +40,7 @@ namespace Amazon.Transfer
         /// Default constructor
         /// </summary>
         public AmazonTransferConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonTransferDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "transfer";
         }

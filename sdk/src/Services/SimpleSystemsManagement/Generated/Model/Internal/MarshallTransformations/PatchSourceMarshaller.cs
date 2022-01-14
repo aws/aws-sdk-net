@@ -34,7 +34,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// PatchSource Marshaller
-    /// </summary>       
+    /// </summary>
     public class PatchSourceMarshaller : IRequestMarshaller<PatchSource, JsonMarshallerContext> 
     {
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static PatchSourceMarshaller Instance = new PatchSourceMarshaller();
 
     }

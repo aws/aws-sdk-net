@@ -40,6 +40,7 @@ namespace Amazon.CloudFormation
         /// Default constructor
         /// </summary>
         public AmazonCloudFormationConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonCloudFormationDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "cloudformation";
         }

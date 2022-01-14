@@ -56,7 +56,7 @@ namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.AppConfig");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-10-09";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-10-09";
             request.HttpMethod = "PATCH";
 
             if (!publicRequest.IsSetDeploymentStrategyId())
@@ -98,7 +98,6 @@ namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.GrowthType);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

@@ -40,6 +40,7 @@ namespace Amazon.LookoutMetrics
         /// Default constructor
         /// </summary>
         public AmazonLookoutMetricsConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonLookoutMetricsDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "lookoutmetrics";
         }

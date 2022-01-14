@@ -40,6 +40,7 @@ namespace Amazon.MediaStore
         /// Default constructor
         /// </summary>
         public AmazonMediaStoreConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonMediaStoreDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "mediastore";
         }

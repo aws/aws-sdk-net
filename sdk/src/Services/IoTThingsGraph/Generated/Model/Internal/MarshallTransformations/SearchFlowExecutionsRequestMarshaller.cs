@@ -58,7 +58,7 @@ namespace Amazon.IoTThingsGraph.Model.Internal.MarshallTransformations
             string target = "IotThingsGraphFrontEndService.SearchFlowExecutions";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-09-06";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-09-06";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -103,7 +103,6 @@ namespace Amazon.IoTThingsGraph.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.SystemInstanceId);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

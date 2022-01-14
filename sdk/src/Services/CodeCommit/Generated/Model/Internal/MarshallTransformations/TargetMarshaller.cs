@@ -34,7 +34,7 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Target Marshaller
-    /// </summary>       
+    /// </summary>
     public class TargetMarshaller : IRequestMarshaller<Target, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TargetMarshaller Instance = new TargetMarshaller();
 
     }

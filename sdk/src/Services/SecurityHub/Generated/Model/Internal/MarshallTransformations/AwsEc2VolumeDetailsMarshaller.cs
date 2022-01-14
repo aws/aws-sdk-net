@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AwsEc2VolumeDetails Marshaller
-    /// </summary>       
+    /// </summary>
     public class AwsEc2VolumeDetailsMarshaller : IRequestMarshaller<AwsEc2VolumeDetails, JsonMarshallerContext> 
     {
         /// <summary>
@@ -101,7 +101,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AwsEc2VolumeDetailsMarshaller Instance = new AwsEc2VolumeDetailsMarshaller();
 
     }

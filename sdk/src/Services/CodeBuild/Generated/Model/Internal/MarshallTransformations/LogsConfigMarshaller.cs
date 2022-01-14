@@ -34,7 +34,7 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// LogsConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class LogsConfigMarshaller : IRequestMarshaller<LogsConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static LogsConfigMarshaller Instance = new LogsConfigMarshaller();
 
     }

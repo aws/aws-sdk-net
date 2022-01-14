@@ -40,6 +40,7 @@ namespace Amazon.CloudWatchEvidently
         /// Default constructor
         /// </summary>
         public AmazonCloudWatchEvidentlyConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonCloudWatchEvidentlyDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "evidently";
         }

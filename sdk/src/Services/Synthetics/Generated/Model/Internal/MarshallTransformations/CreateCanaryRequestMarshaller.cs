@@ -56,7 +56,7 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Synthetics");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-10-11";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-10-11";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/canary";
@@ -170,7 +170,6 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

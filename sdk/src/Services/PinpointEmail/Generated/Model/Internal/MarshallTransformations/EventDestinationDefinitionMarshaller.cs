@@ -34,7 +34,7 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// EventDestinationDefinition Marshaller
-    /// </summary>       
+    /// </summary>
     public class EventDestinationDefinitionMarshaller : IRequestMarshaller<EventDestinationDefinition, JsonMarshallerContext> 
     {
         /// <summary>
@@ -110,7 +110,7 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static EventDestinationDefinitionMarshaller Instance = new EventDestinationDefinitionMarshaller();
 
     }

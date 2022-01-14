@@ -55,7 +55,7 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         public IRequest Marshall(DescribeOrganizationConfigurationRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.GuardDuty");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-11-28";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-11-28";
             request.HttpMethod = "GET";
 
             if (!publicRequest.IsSetDetectorId())

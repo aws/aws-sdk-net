@@ -34,7 +34,7 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DynamodbDataSourceConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class DynamodbDataSourceConfigMarshaller : IRequestMarshaller<DynamodbDataSourceConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -84,7 +84,7 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DynamodbDataSourceConfigMarshaller Instance = new DynamodbDataSourceConfigMarshaller();
 
     }

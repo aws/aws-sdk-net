@@ -40,6 +40,7 @@ namespace Amazon.MQ
         /// Default constructor
         /// </summary>
         public AmazonMQConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonMQDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "mq";
         }

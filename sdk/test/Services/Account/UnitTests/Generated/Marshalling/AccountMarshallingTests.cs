@@ -53,7 +53,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DeleteAlternateContactRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("DeleteAlternateContact", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DeleteAlternateContact", request, internalRequest, service_model);
 
         }
 
@@ -229,7 +229,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetAlternateContactRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("GetAlternateContact", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetAlternateContact", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -243,9 +243,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = GetAlternateContactResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as GetAlternateContactResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as GetAlternateContactResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -420,7 +419,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new PutAlternateContactRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("PutAlternateContact", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("PutAlternateContact", request, internalRequest, service_model);
 
         }
 

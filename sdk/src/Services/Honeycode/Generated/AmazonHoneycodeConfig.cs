@@ -40,6 +40,7 @@ namespace Amazon.Honeycode
         /// Default constructor
         /// </summary>
         public AmazonHoneycodeConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonHoneycodeDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "honeycode";
         }

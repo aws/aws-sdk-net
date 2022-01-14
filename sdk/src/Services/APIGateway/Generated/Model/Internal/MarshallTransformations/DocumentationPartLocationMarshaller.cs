@@ -34,7 +34,7 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DocumentationPartLocation Marshaller
-    /// </summary>       
+    /// </summary>
     public class DocumentationPartLocationMarshaller : IRequestMarshaller<DocumentationPartLocation, JsonMarshallerContext> 
     {
         /// <summary>
@@ -79,7 +79,7 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DocumentationPartLocationMarshaller Instance = new DocumentationPartLocationMarshaller();
 
     }

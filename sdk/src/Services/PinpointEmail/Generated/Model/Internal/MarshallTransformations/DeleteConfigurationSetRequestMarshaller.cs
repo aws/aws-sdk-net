@@ -55,7 +55,7 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
         public IRequest Marshall(DeleteConfigurationSetRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.PinpointEmail");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-07-26";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-07-26";
             request.HttpMethod = "DELETE";
 
             if (!publicRequest.IsSetConfigurationSetName())

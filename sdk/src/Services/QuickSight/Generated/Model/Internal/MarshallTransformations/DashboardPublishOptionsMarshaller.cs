@@ -34,7 +34,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DashboardPublishOptions Marshaller
-    /// </summary>       
+    /// </summary>
     public class DashboardPublishOptionsMarshaller : IRequestMarshaller<DashboardPublishOptions, JsonMarshallerContext> 
     {
         /// <summary>
@@ -82,7 +82,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DashboardPublishOptionsMarshaller Instance = new DashboardPublishOptionsMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Attachment Marshaller
-    /// </summary>       
+    /// </summary>
     public class AttachmentMarshaller : IRequestMarshaller<Attachment, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AttachmentMarshaller Instance = new AttachmentMarshaller();
 
     }

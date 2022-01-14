@@ -40,6 +40,7 @@ namespace Amazon.MemoryDB
         /// Default constructor
         /// </summary>
         public AmazonMemoryDBConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonMemoryDBDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "memorydb";
         }

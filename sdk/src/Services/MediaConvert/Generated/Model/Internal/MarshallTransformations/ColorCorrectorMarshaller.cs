@@ -34,7 +34,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ColorCorrector Marshaller
-    /// </summary>       
+    /// </summary>
     public class ColorCorrectorMarshaller : IRequestMarshaller<ColorCorrector, JsonMarshallerContext> 
     {
         /// <summary>
@@ -96,7 +96,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ColorCorrectorMarshaller Instance = new ColorCorrectorMarshaller();
 
     }

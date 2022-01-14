@@ -34,7 +34,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SMSTemplateRequest Marshaller
-    /// </summary>       
+    /// </summary>
     public class SMSTemplateRequestMarshaller : IRequestMarshaller<SMSTemplateRequest, JsonMarshallerContext> 
     {
         /// <summary>
@@ -87,7 +87,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SMSTemplateRequestMarshaller Instance = new SMSTemplateRequestMarshaller();
 
     }

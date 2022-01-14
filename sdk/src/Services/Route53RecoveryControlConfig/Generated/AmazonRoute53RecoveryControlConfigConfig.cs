@@ -40,6 +40,7 @@ namespace Amazon.Route53RecoveryControlConfig
         /// Default constructor
         /// </summary>
         public AmazonRoute53RecoveryControlConfigConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonRoute53RecoveryControlConfigDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "route53-recovery-control-config";
         }

@@ -34,7 +34,7 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// JsonFormatDescriptor Marshaller
-    /// </summary>       
+    /// </summary>
     public class JsonFormatDescriptorMarshaller : IRequestMarshaller<JsonFormatDescriptor, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static JsonFormatDescriptorMarshaller Instance = new JsonFormatDescriptorMarshaller();
 
     }

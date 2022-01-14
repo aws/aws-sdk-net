@@ -40,6 +40,7 @@ namespace Amazon.SSMIncidents
         /// Default constructor
         /// </summary>
         public AmazonSSMIncidentsConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonSSMIncidentsDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "ssm-incidents";
         }

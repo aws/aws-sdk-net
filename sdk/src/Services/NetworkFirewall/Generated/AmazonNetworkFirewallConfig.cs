@@ -40,6 +40,7 @@ namespace Amazon.NetworkFirewall
         /// Default constructor
         /// </summary>
         public AmazonNetworkFirewallConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonNetworkFirewallDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "network-firewall";
         }

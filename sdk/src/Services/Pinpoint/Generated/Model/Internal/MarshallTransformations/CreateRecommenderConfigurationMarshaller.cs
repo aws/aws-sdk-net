@@ -34,7 +34,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CreateRecommenderConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class CreateRecommenderConfigurationMarshaller : IRequestMarshaller<CreateRecommenderConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -111,7 +111,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CreateRecommenderConfigurationMarshaller Instance = new CreateRecommenderConfigurationMarshaller();
 
     }

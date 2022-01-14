@@ -40,6 +40,7 @@ namespace Amazon.ServiceCatalog
         /// Default constructor
         /// </summary>
         public AmazonServiceCatalogConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonServiceCatalogDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "servicecatalog";
         }

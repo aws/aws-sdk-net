@@ -34,7 +34,7 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ParentEntityUpdateRequest Marshaller
-    /// </summary>       
+    /// </summary>
     public class ParentEntityUpdateRequestMarshaller : IRequestMarshaller<ParentEntityUpdateRequest, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ParentEntityUpdateRequestMarshaller Instance = new ParentEntityUpdateRequestMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Ulimit Marshaller
-    /// </summary>       
+    /// </summary>
     public class UlimitMarshaller : IRequestMarshaller<Ulimit, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static UlimitMarshaller Instance = new UlimitMarshaller();
 
     }

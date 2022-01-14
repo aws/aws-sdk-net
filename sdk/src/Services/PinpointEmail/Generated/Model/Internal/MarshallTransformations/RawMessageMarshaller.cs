@@ -34,7 +34,7 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RawMessage Marshaller
-    /// </summary>       
+    /// </summary>
     public class RawMessageMarshaller : IRequestMarshaller<RawMessage, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RawMessageMarshaller Instance = new RawMessageMarshaller();
 
     }

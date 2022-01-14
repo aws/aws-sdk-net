@@ -40,6 +40,7 @@ namespace Amazon.GroundStation
         /// Default constructor
         /// </summary>
         public AmazonGroundStationConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonGroundStationDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "groundstation";
         }

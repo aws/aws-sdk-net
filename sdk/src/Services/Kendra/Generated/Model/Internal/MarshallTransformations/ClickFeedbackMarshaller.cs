@@ -34,7 +34,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ClickFeedback Marshaller
-    /// </summary>       
+    /// </summary>
     public class ClickFeedbackMarshaller : IRequestMarshaller<ClickFeedback, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ClickFeedbackMarshaller Instance = new ClickFeedbackMarshaller();
 
     }

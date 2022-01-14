@@ -34,7 +34,7 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ReputationOptions Marshaller
-    /// </summary>       
+    /// </summary>
     public class ReputationOptionsMarshaller : IRequestMarshaller<ReputationOptions, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ReputationOptionsMarshaller Instance = new ReputationOptionsMarshaller();
 
     }

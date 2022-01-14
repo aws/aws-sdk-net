@@ -34,7 +34,7 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DecodeConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class DecodeConfigMarshaller : IRequestMarshaller<DecodeConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DecodeConfigMarshaller Instance = new DecodeConfigMarshaller();
 
     }

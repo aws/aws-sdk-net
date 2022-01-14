@@ -34,7 +34,7 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// VpcConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class VpcConfigMarshaller : IRequestMarshaller<VpcConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -77,7 +77,7 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static VpcConfigMarshaller Instance = new VpcConfigMarshaller();
 
     }

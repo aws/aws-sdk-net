@@ -40,6 +40,7 @@ namespace Amazon.Lightsail
         /// Default constructor
         /// </summary>
         public AmazonLightsailConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonLightsailDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "lightsail";
         }

@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// HyperParameterAlgorithmSpecification Marshaller
-    /// </summary>       
+    /// </summary>
     public class HyperParameterAlgorithmSpecificationMarshaller : IRequestMarshaller<HyperParameterAlgorithmSpecification, JsonMarshallerContext> 
     {
         /// <summary>
@@ -83,7 +83,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static HyperParameterAlgorithmSpecificationMarshaller Instance = new HyperParameterAlgorithmSpecificationMarshaller();
 
     }

@@ -40,6 +40,7 @@ namespace Amazon.EKS
         /// Default constructor
         /// </summary>
         public AmazonEKSConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonEKSDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "eks";
         }

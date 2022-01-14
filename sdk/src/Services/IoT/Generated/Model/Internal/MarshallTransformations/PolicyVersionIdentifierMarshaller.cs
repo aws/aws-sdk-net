@@ -34,7 +34,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// PolicyVersionIdentifier Marshaller
-    /// </summary>       
+    /// </summary>
     public class PolicyVersionIdentifierMarshaller : IRequestMarshaller<PolicyVersionIdentifier, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static PolicyVersionIdentifierMarshaller Instance = new PolicyVersionIdentifierMarshaller();
 
     }

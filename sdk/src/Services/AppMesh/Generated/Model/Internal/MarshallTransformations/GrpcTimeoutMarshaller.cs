@@ -34,7 +34,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// GrpcTimeout Marshaller
-    /// </summary>       
+    /// </summary>
     public class GrpcTimeoutMarshaller : IRequestMarshaller<GrpcTimeout, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static GrpcTimeoutMarshaller Instance = new GrpcTimeoutMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ListManagementOptions Marshaller
-    /// </summary>       
+    /// </summary>
     public class ListManagementOptionsMarshaller : IRequestMarshaller<ListManagementOptions, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ListManagementOptionsMarshaller Instance = new ListManagementOptionsMarshaller();
 
     }

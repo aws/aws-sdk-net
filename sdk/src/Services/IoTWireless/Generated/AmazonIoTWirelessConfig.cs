@@ -40,6 +40,7 @@ namespace Amazon.IoTWireless
         /// Default constructor
         /// </summary>
         public AmazonIoTWirelessConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonIoTWirelessDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "iotwireless";
         }

@@ -34,7 +34,7 @@ namespace Amazon.Braket.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AlgorithmSpecification Marshaller
-    /// </summary>       
+    /// </summary>
     public class AlgorithmSpecificationMarshaller : IRequestMarshaller<AlgorithmSpecification, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.Braket.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AlgorithmSpecificationMarshaller Instance = new AlgorithmSpecificationMarshaller();
 
     }

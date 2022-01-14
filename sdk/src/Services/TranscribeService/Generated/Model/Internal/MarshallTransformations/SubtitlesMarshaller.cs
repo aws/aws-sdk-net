@@ -34,7 +34,7 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Subtitles Marshaller
-    /// </summary>       
+    /// </summary>
     public class SubtitlesMarshaller : IRequestMarshaller<Subtitles, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SubtitlesMarshaller Instance = new SubtitlesMarshaller();
 
     }

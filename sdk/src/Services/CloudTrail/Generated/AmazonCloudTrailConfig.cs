@@ -40,6 +40,7 @@ namespace Amazon.CloudTrail
         /// Default constructor
         /// </summary>
         public AmazonCloudTrailConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonCloudTrailDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "cloudtrail";
         }

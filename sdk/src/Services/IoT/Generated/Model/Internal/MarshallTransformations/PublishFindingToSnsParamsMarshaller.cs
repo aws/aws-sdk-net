@@ -34,7 +34,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// PublishFindingToSnsParams Marshaller
-    /// </summary>       
+    /// </summary>
     public class PublishFindingToSnsParamsMarshaller : IRequestMarshaller<PublishFindingToSnsParams, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static PublishFindingToSnsParamsMarshaller Instance = new PublishFindingToSnsParamsMarshaller();
 
     }

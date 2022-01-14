@@ -40,6 +40,7 @@ namespace Amazon.MachineLearning
         /// Default constructor
         /// </summary>
         public AmazonMachineLearningConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonMachineLearningDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "machinelearning";
         }

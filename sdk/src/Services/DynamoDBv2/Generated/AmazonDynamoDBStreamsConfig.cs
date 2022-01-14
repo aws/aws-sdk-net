@@ -40,6 +40,7 @@ namespace Amazon.DynamoDBv2
         /// Default constructor
         /// </summary>
         public AmazonDynamoDBStreamsConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonDynamoDBStreamsDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "dynamodb";
             this.MaxErrorRetry = 10;

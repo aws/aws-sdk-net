@@ -55,7 +55,7 @@ namespace Amazon.SageMakerFeatureStoreRuntime.Model.Internal.MarshallTransformat
         public IRequest Marshall(GetRecordRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.SageMakerFeatureStoreRuntime");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-07-01";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-07-01";
             request.HttpMethod = "GET";
 
             if (!publicRequest.IsSetFeatureGroupName())

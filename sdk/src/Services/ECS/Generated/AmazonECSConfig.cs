@@ -40,6 +40,7 @@ namespace Amazon.ECS
         /// Default constructor
         /// </summary>
         public AmazonECSConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonECSDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "ecs";
         }

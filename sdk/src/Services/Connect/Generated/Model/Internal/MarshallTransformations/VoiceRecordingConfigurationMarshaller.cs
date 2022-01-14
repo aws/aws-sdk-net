@@ -34,7 +34,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// VoiceRecordingConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class VoiceRecordingConfigurationMarshaller : IRequestMarshaller<VoiceRecordingConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static VoiceRecordingConfigurationMarshaller Instance = new VoiceRecordingConfigurationMarshaller();
 
     }

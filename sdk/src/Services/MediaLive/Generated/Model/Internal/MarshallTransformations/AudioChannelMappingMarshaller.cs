@@ -34,7 +34,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AudioChannelMapping Marshaller
-    /// </summary>       
+    /// </summary>
     public class AudioChannelMappingMarshaller : IRequestMarshaller<AudioChannelMapping, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AudioChannelMappingMarshaller Instance = new AudioChannelMappingMarshaller();
 
     }

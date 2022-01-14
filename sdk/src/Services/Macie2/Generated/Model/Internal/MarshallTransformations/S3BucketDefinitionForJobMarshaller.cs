@@ -34,7 +34,7 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// S3BucketDefinitionForJob Marshaller
-    /// </summary>       
+    /// </summary>
     public class S3BucketDefinitionForJobMarshaller : IRequestMarshaller<S3BucketDefinitionForJob, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static S3BucketDefinitionForJobMarshaller Instance = new S3BucketDefinitionForJobMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// GrammarSlotTypeSetting Marshaller
-    /// </summary>       
+    /// </summary>
     public class GrammarSlotTypeSettingMarshaller : IRequestMarshaller<GrammarSlotTypeSetting, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static GrammarSlotTypeSettingMarshaller Instance = new GrammarSlotTypeSettingMarshaller();
 
     }

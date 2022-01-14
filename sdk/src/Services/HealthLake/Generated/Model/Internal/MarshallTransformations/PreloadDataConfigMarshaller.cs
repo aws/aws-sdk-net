@@ -34,7 +34,7 @@ namespace Amazon.HealthLake.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// PreloadDataConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class PreloadDataConfigMarshaller : IRequestMarshaller<PreloadDataConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.HealthLake.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static PreloadDataConfigMarshaller Instance = new PreloadDataConfigMarshaller();
 
     }

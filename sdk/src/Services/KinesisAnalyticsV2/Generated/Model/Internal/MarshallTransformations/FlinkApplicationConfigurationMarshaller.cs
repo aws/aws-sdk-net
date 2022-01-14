@@ -34,7 +34,7 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// FlinkApplicationConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class FlinkApplicationConfigurationMarshaller : IRequestMarshaller<FlinkApplicationConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -82,7 +82,7 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static FlinkApplicationConfigurationMarshaller Instance = new FlinkApplicationConfigurationMarshaller();
 
     }

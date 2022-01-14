@@ -34,7 +34,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// IBMDb2Settings Marshaller
-    /// </summary>       
+    /// </summary>
     public class IBMDb2SettingsMarshaller : IRequestMarshaller<IBMDb2Settings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -109,7 +109,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static IBMDb2SettingsMarshaller Instance = new IBMDb2SettingsMarshaller();
 
     }

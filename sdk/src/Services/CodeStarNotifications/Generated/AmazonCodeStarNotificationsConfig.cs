@@ -40,6 +40,7 @@ namespace Amazon.CodeStarNotifications
         /// Default constructor
         /// </summary>
         public AmazonCodeStarNotificationsConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonCodeStarNotificationsDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "codestar-notifications";
         }

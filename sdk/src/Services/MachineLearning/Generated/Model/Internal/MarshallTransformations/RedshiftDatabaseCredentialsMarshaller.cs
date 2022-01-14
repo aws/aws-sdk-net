@@ -34,7 +34,7 @@ namespace Amazon.MachineLearning.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RedshiftDatabaseCredentials Marshaller
-    /// </summary>       
+    /// </summary>
     public class RedshiftDatabaseCredentialsMarshaller : IRequestMarshaller<RedshiftDatabaseCredentials, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.MachineLearning.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RedshiftDatabaseCredentialsMarshaller Instance = new RedshiftDatabaseCredentialsMarshaller();
 
     }

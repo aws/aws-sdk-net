@@ -34,7 +34,7 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// KmsKeyConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class KmsKeyConfigurationMarshaller : IRequestMarshaller<KmsKeyConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -79,7 +79,7 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static KmsKeyConfigurationMarshaller Instance = new KmsKeyConfigurationMarshaller();
 
     }

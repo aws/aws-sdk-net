@@ -55,7 +55,7 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
         public IRequest Marshall(DeleteFlowRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.MediaConnect");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-11-14";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-11-14";
             request.HttpMethod = "DELETE";
 
             if (!publicRequest.IsSetFlowArn())

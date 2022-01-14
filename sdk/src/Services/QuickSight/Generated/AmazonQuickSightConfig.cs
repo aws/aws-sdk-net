@@ -40,6 +40,7 @@ namespace Amazon.QuickSight
         /// Default constructor
         /// </summary>
         public AmazonQuickSightConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonQuickSightDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "quicksight";
         }

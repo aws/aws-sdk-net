@@ -34,7 +34,7 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// S3ContentLocationUpdate Marshaller
-    /// </summary>       
+    /// </summary>
     public class S3ContentLocationUpdateMarshaller : IRequestMarshaller<S3ContentLocationUpdate, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static S3ContentLocationUpdateMarshaller Instance = new S3ContentLocationUpdateMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DetectedProperties Marshaller
-    /// </summary>       
+    /// </summary>
     public class DetectedPropertiesMarshaller : IRequestMarshaller<DetectedProperties, JsonMarshallerContext> 
     {
         /// <summary>
@@ -79,7 +79,7 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DetectedPropertiesMarshaller Instance = new DetectedPropertiesMarshaller();
 
     }

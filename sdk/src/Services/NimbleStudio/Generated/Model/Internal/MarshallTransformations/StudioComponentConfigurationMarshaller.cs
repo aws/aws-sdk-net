@@ -34,7 +34,7 @@ namespace Amazon.NimbleStudio.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// StudioComponentConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class StudioComponentConfigurationMarshaller : IRequestMarshaller<StudioComponentConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -93,7 +93,7 @@ namespace Amazon.NimbleStudio.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static StudioComponentConfigurationMarshaller Instance = new StudioComponentConfigurationMarshaller();
 
     }

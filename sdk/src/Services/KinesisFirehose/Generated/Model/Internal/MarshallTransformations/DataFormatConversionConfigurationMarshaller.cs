@@ -34,7 +34,7 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DataFormatConversionConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class DataFormatConversionConfigurationMarshaller : IRequestMarshaller<DataFormatConversionConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -88,7 +88,7 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DataFormatConversionConfigurationMarshaller Instance = new DataFormatConversionConfigurationMarshaller();
 
     }

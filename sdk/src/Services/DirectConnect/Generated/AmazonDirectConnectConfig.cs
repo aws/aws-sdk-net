@@ -40,6 +40,7 @@ namespace Amazon.DirectConnect
         /// Default constructor
         /// </summary>
         public AmazonDirectConnectConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonDirectConnectDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "directconnect";
         }

@@ -34,7 +34,7 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ComponentVariant Marshaller
-    /// </summary>       
+    /// </summary>
     public class ComponentVariantMarshaller : IRequestMarshaller<ComponentVariant, JsonMarshallerContext> 
     {
         /// <summary>
@@ -85,7 +85,7 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ComponentVariantMarshaller Instance = new ComponentVariantMarshaller();
 
     }

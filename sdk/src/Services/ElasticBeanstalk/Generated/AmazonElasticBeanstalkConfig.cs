@@ -40,6 +40,7 @@ namespace Amazon.ElasticBeanstalk
         /// Default constructor
         /// </summary>
         public AmazonElasticBeanstalkConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonElasticBeanstalkDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "elasticbeanstalk";
         }

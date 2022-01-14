@@ -40,6 +40,7 @@ namespace Amazon.ServerlessApplicationRepository
         /// Default constructor
         /// </summary>
         public AmazonServerlessApplicationRepositoryConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonServerlessApplicationRepositoryDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "serverlessrepo";
         }

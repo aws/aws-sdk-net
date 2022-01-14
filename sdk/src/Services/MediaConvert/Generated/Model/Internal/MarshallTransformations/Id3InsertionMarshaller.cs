@@ -34,7 +34,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Id3Insertion Marshaller
-    /// </summary>       
+    /// </summary>
     public class Id3InsertionMarshaller : IRequestMarshaller<Id3Insertion, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static Id3InsertionMarshaller Instance = new Id3InsertionMarshaller();
 
     }

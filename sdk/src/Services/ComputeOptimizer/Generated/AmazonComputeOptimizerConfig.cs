@@ -40,6 +40,7 @@ namespace Amazon.ComputeOptimizer
         /// Default constructor
         /// </summary>
         public AmazonComputeOptimizerConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonComputeOptimizerDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "compute-optimizer";
         }

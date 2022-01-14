@@ -40,6 +40,7 @@ namespace Amazon.Kafka
         /// Default constructor
         /// </summary>
         public AmazonKafkaConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonKafkaDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "kafka";
         }

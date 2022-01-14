@@ -40,6 +40,7 @@ namespace Amazon.DeviceFarm
         /// Default constructor
         /// </summary>
         public AmazonDeviceFarmConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonDeviceFarmDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "devicefarm";
         }

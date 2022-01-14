@@ -34,7 +34,7 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AutomaticTapeCreationRule Marshaller
-    /// </summary>       
+    /// </summary>
     public class AutomaticTapeCreationRuleMarshaller : IRequestMarshaller<AutomaticTapeCreationRule, JsonMarshallerContext> 
     {
         /// <summary>
@@ -79,7 +79,7 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AutomaticTapeCreationRuleMarshaller Instance = new AutomaticTapeCreationRuleMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.Route53RecoveryCluster.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// UpdateRoutingControlStateEntry Marshaller
-    /// </summary>       
+    /// </summary>
     public class UpdateRoutingControlStateEntryMarshaller : IRequestMarshaller<UpdateRoutingControlStateEntry, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Route53RecoveryCluster.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static UpdateRoutingControlStateEntryMarshaller Instance = new UpdateRoutingControlStateEntryMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AutoEnable Marshaller
-    /// </summary>       
+    /// </summary>
     public class AutoEnableMarshaller : IRequestMarshaller<AutoEnable, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AutoEnableMarshaller Instance = new AutoEnableMarshaller();
 
     }

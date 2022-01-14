@@ -34,7 +34,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// EmailChannelRequest Marshaller
-    /// </summary>       
+    /// </summary>
     public class EmailChannelRequestMarshaller : IRequestMarshaller<EmailChannelRequest, JsonMarshallerContext> 
     {
         /// <summary>
@@ -79,7 +79,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static EmailChannelRequestMarshaller Instance = new EmailChannelRequestMarshaller();
 
     }

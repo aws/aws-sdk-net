@@ -34,7 +34,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AttachmentStateChange Marshaller
-    /// </summary>       
+    /// </summary>
     public class AttachmentStateChangeMarshaller : IRequestMarshaller<AttachmentStateChange, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AttachmentStateChangeMarshaller Instance = new AttachmentStateChangeMarshaller();
 
     }

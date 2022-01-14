@@ -34,7 +34,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ZendeskDestinationProperties Marshaller
-    /// </summary>       
+    /// </summary>
     public class ZendeskDestinationPropertiesMarshaller : IRequestMarshaller<ZendeskDestinationProperties, JsonMarshallerContext> 
     {
         /// <summary>
@@ -83,7 +83,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ZendeskDestinationPropertiesMarshaller Instance = new ZendeskDestinationPropertiesMarshaller();
 
     }

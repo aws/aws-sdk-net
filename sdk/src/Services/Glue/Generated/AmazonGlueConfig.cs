@@ -40,6 +40,7 @@ namespace Amazon.Glue
         /// Default constructor
         /// </summary>
         public AmazonGlueConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonGlueDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "glue";
         }

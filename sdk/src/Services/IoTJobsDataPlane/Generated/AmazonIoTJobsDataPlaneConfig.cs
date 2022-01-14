@@ -40,6 +40,7 @@ namespace Amazon.IoTJobsDataPlane
         /// Default constructor
         /// </summary>
         public AmazonIoTJobsDataPlaneConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonIoTJobsDataPlaneDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "iot-jobs-data";
         }

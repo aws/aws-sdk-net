@@ -34,7 +34,7 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// UsageCriteria Marshaller
-    /// </summary>       
+    /// </summary>
     public class UsageCriteriaMarshaller : IRequestMarshaller<UsageCriteria, JsonMarshallerContext> 
     {
         /// <summary>
@@ -82,7 +82,7 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static UsageCriteriaMarshaller Instance = new UsageCriteriaMarshaller();
 
     }

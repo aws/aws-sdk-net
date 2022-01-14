@@ -34,7 +34,7 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// OnPremConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class OnPremConfigMarshaller : IRequestMarshaller<OnPremConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static OnPremConfigMarshaller Instance = new OnPremConfigMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TableToReload Marshaller
-    /// </summary>       
+    /// </summary>
     public class TableToReloadMarshaller : IRequestMarshaller<TableToReload, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TableToReloadMarshaller Instance = new TableToReloadMarshaller();
 
     }

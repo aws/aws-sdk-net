@@ -40,6 +40,7 @@ namespace Amazon.Mgn
         /// Default constructor
         /// </summary>
         public AmazonMgnConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonMgnDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "mgn";
         }

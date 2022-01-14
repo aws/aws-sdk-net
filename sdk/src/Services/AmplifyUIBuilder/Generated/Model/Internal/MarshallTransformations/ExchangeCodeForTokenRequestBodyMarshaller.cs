@@ -34,7 +34,7 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ExchangeCodeForTokenRequestBody Marshaller
-    /// </summary>       
+    /// </summary>
     public class ExchangeCodeForTokenRequestBodyMarshaller : IRequestMarshaller<ExchangeCodeForTokenRequestBody, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ExchangeCodeForTokenRequestBodyMarshaller Instance = new ExchangeCodeForTokenRequestBodyMarshaller();
 
     }

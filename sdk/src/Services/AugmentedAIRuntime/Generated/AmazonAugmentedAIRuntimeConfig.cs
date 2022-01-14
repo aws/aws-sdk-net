@@ -40,6 +40,7 @@ namespace Amazon.AugmentedAIRuntime
         /// Default constructor
         /// </summary>
         public AmazonAugmentedAIRuntimeConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonAugmentedAIRuntimeDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "sagemaker";
         }

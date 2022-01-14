@@ -34,7 +34,7 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// EvaluationParameters Marshaller
-    /// </summary>       
+    /// </summary>
     public class EvaluationParametersMarshaller : IRequestMarshaller<EvaluationParameters, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static EvaluationParametersMarshaller Instance = new EvaluationParametersMarshaller();
 
     }

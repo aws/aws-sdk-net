@@ -34,7 +34,7 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// WirelessConnection Marshaller
-    /// </summary>       
+    /// </summary>
     public class WirelessConnectionMarshaller : IRequestMarshaller<WirelessConnection, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static WirelessConnectionMarshaller Instance = new WirelessConnectionMarshaller();
 
     }

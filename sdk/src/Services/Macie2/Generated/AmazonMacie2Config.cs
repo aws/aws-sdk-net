@@ -40,6 +40,7 @@ namespace Amazon.Macie2
         /// Default constructor
         /// </summary>
         public AmazonMacie2Config()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonMacie2DefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "macie2";
         }

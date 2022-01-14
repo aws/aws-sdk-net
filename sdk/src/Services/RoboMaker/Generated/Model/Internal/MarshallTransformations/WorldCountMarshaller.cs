@@ -34,7 +34,7 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// WorldCount Marshaller
-    /// </summary>       
+    /// </summary>
     public class WorldCountMarshaller : IRequestMarshaller<WorldCount, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static WorldCountMarshaller Instance = new WorldCountMarshaller();
 
     }

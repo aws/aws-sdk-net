@@ -34,7 +34,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// PrestoParameters Marshaller
-    /// </summary>       
+    /// </summary>
     public class PrestoParametersMarshaller : IRequestMarshaller<PrestoParameters, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static PrestoParametersMarshaller Instance = new PrestoParametersMarshaller();
 
     }

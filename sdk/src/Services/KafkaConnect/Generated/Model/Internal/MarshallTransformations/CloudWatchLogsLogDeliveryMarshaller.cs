@@ -34,7 +34,7 @@ namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CloudWatchLogsLogDelivery Marshaller
-    /// </summary>       
+    /// </summary>
     public class CloudWatchLogsLogDeliveryMarshaller : IRequestMarshaller<CloudWatchLogsLogDelivery, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CloudWatchLogsLogDeliveryMarshaller Instance = new CloudWatchLogsLogDeliveryMarshaller();
 
     }

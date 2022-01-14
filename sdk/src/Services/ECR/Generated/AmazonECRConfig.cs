@@ -40,6 +40,7 @@ namespace Amazon.ECR
         /// Default constructor
         /// </summary>
         public AmazonECRConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonECRDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "ecr";
         }

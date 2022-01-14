@@ -34,7 +34,7 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ExcelOptions Marshaller
-    /// </summary>       
+    /// </summary>
     public class ExcelOptionsMarshaller : IRequestMarshaller<ExcelOptions, JsonMarshallerContext> 
     {
         /// <summary>
@@ -77,7 +77,7 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ExcelOptionsMarshaller Instance = new ExcelOptionsMarshaller();
 
     }

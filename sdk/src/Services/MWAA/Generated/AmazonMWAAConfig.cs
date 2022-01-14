@@ -40,6 +40,7 @@ namespace Amazon.MWAA
         /// Default constructor
         /// </summary>
         public AmazonMWAAConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonMWAADefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "airflow";
         }

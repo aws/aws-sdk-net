@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AwsElbAppCookieStickinessPolicy Marshaller
-    /// </summary>       
+    /// </summary>
     public class AwsElbAppCookieStickinessPolicyMarshaller : IRequestMarshaller<AwsElbAppCookieStickinessPolicy, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AwsElbAppCookieStickinessPolicyMarshaller Instance = new AwsElbAppCookieStickinessPolicyMarshaller();
 
     }

@@ -40,6 +40,7 @@ namespace Amazon.GuardDuty
         /// Default constructor
         /// </summary>
         public AmazonGuardDutyConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonGuardDutyDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "guardduty";
         }

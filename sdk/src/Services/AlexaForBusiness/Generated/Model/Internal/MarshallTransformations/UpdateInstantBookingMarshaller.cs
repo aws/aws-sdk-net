@@ -34,7 +34,7 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// UpdateInstantBooking Marshaller
-    /// </summary>       
+    /// </summary>
     public class UpdateInstantBookingMarshaller : IRequestMarshaller<UpdateInstantBooking, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static UpdateInstantBookingMarshaller Instance = new UpdateInstantBookingMarshaller();
 
     }

@@ -40,6 +40,7 @@ namespace Amazon.AWSHealth
         /// Default constructor
         /// </summary>
         public AmazonAWSHealthConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonAWSHealthDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "health";
         }

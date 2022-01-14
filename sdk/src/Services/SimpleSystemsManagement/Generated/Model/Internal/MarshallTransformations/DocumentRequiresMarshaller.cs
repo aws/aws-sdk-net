@@ -34,7 +34,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DocumentRequires Marshaller
-    /// </summary>       
+    /// </summary>
     public class DocumentRequiresMarshaller : IRequestMarshaller<DocumentRequires, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DocumentRequiresMarshaller Instance = new DocumentRequiresMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SharingSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class SharingSettingsMarshaller : IRequestMarshaller<SharingSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SharingSettingsMarshaller Instance = new SharingSettingsMarshaller();
 
     }

@@ -40,6 +40,7 @@ namespace Amazon.DirectoryService
         /// Default constructor
         /// </summary>
         public AmazonDirectoryServiceConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonDirectoryServiceDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "ds";
         }

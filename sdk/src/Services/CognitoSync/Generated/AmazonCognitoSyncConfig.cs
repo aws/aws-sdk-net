@@ -40,6 +40,7 @@ namespace Amazon.CognitoSync
         /// Default constructor
         /// </summary>
         public AmazonCognitoSyncConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonCognitoSyncDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "cognito-sync";
         }

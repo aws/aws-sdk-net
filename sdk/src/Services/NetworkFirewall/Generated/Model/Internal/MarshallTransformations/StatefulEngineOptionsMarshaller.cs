@@ -34,7 +34,7 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// StatefulEngineOptions Marshaller
-    /// </summary>       
+    /// </summary>
     public class StatefulEngineOptionsMarshaller : IRequestMarshaller<StatefulEngineOptions, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static StatefulEngineOptionsMarshaller Instance = new StatefulEngineOptionsMarshaller();
 
     }

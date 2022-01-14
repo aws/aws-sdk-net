@@ -40,6 +40,7 @@ namespace Amazon.IdentityManagement
         /// Default constructor
         /// </summary>
         public AmazonIdentityManagementServiceConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonIdentityManagementServiceDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "iam";
             var region = FallbackRegionFactory.GetRegionEndpoint(false);

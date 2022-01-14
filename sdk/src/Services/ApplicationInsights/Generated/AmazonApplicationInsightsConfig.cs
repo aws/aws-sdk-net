@@ -40,6 +40,7 @@ namespace Amazon.ApplicationInsights
         /// Default constructor
         /// </summary>
         public AmazonApplicationInsightsConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonApplicationInsightsDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "applicationinsights";
         }

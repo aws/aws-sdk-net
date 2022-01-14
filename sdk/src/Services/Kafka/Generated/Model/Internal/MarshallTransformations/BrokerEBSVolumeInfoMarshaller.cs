@@ -34,7 +34,7 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// BrokerEBSVolumeInfo Marshaller
-    /// </summary>       
+    /// </summary>
     public class BrokerEBSVolumeInfoMarshaller : IRequestMarshaller<BrokerEBSVolumeInfo, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static BrokerEBSVolumeInfoMarshaller Instance = new BrokerEBSVolumeInfoMarshaller();
 
     }

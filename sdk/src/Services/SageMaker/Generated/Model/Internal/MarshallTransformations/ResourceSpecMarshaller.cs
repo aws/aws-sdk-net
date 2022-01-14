@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ResourceSpec Marshaller
-    /// </summary>       
+    /// </summary>
     public class ResourceSpecMarshaller : IRequestMarshaller<ResourceSpec, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ResourceSpecMarshaller Instance = new ResourceSpecMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// S3Source Marshaller
-    /// </summary>       
+    /// </summary>
     public class S3SourceMarshaller : IRequestMarshaller<S3Source, JsonMarshallerContext> 
     {
         /// <summary>
@@ -82,7 +82,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static S3SourceMarshaller Instance = new S3SourceMarshaller();
 
     }

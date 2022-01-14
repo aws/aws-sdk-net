@@ -34,7 +34,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SeedUrlConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class SeedUrlConfigurationMarshaller : IRequestMarshaller<SeedUrlConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SeedUrlConfigurationMarshaller Instance = new SeedUrlConfigurationMarshaller();
 
     }

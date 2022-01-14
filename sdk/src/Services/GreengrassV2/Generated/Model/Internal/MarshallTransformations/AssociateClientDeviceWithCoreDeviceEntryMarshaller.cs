@@ -34,7 +34,7 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AssociateClientDeviceWithCoreDeviceEntry Marshaller
-    /// </summary>       
+    /// </summary>
     public class AssociateClientDeviceWithCoreDeviceEntryMarshaller : IRequestMarshaller<AssociateClientDeviceWithCoreDeviceEntry, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AssociateClientDeviceWithCoreDeviceEntryMarshaller Instance = new AssociateClientDeviceWithCoreDeviceEntryMarshaller();
 
     }

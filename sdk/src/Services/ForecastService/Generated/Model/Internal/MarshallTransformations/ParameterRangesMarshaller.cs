@@ -34,7 +34,7 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ParameterRanges Marshaller
-    /// </summary>       
+    /// </summary>
     public class ParameterRangesMarshaller : IRequestMarshaller<ParameterRanges, JsonMarshallerContext> 
     {
         /// <summary>
@@ -97,7 +97,7 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ParameterRangesMarshaller Instance = new ParameterRangesMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TracingConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class TracingConfigurationMarshaller : IRequestMarshaller<TracingConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TracingConfigurationMarshaller Instance = new TracingConfigurationMarshaller();
 
     }

@@ -40,6 +40,7 @@ namespace Amazon.DevOpsGuru
         /// Default constructor
         /// </summary>
         public AmazonDevOpsGuruConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonDevOpsGuruDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "devops-guru";
         }

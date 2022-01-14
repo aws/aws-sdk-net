@@ -34,7 +34,7 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// EntityPropertyReference Marshaller
-    /// </summary>       
+    /// </summary>
     public class EntityPropertyReferenceMarshaller : IRequestMarshaller<EntityPropertyReference, JsonMarshallerContext> 
     {
         /// <summary>
@@ -81,7 +81,7 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static EntityPropertyReferenceMarshaller Instance = new EntityPropertyReferenceMarshaller();
 
     }

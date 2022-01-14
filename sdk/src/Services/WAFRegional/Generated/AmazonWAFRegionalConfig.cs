@@ -40,6 +40,7 @@ namespace Amazon.WAFRegional
         /// Default constructor
         /// </summary>
         public AmazonWAFRegionalConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonWAFRegionalDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "waf-regional";
         }

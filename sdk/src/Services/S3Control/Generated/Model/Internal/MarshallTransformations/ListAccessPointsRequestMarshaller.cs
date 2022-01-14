@@ -64,8 +64,10 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 );
             }
         
-            if(publicRequest.IsSetAccountId())
+            if (publicRequest.IsSetAccountId()) 
+            {
                 request.Headers["x-amz-account-id"] = publicRequest.AccountId;
+            }
             
             if (publicRequest.IsSetBucket())
                 request.Parameters.Add("bucket", StringUtils.FromString(publicRequest.Bucket));

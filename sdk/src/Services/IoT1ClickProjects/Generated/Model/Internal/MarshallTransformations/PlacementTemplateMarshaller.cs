@@ -34,7 +34,7 @@ namespace Amazon.IoT1ClickProjects.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// PlacementTemplate Marshaller
-    /// </summary>       
+    /// </summary>
     public class PlacementTemplateMarshaller : IRequestMarshaller<PlacementTemplate, JsonMarshallerContext> 
     {
         /// <summary>
@@ -82,7 +82,7 @@ namespace Amazon.IoT1ClickProjects.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static PlacementTemplateMarshaller Instance = new PlacementTemplateMarshaller();
 
     }

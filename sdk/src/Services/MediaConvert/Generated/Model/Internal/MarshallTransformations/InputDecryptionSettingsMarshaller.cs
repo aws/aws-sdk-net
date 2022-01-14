@@ -34,7 +34,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// InputDecryptionSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class InputDecryptionSettingsMarshaller : IRequestMarshaller<InputDecryptionSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static InputDecryptionSettingsMarshaller Instance = new InputDecryptionSettingsMarshaller();
 
     }

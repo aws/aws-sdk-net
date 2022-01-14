@@ -34,7 +34,7 @@ namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Filters Marshaller
-    /// </summary>       
+    /// </summary>
     public class FiltersMarshaller : IRequestMarshaller<Filters, JsonMarshallerContext> 
     {
         /// <summary>
@@ -82,7 +82,7 @@ namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static FiltersMarshaller Instance = new FiltersMarshaller();
 
     }

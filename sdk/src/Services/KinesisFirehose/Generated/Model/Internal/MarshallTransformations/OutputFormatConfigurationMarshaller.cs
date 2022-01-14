@@ -34,7 +34,7 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// OutputFormatConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class OutputFormatConfigurationMarshaller : IRequestMarshaller<OutputFormatConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static OutputFormatConfigurationMarshaller Instance = new OutputFormatConfigurationMarshaller();
 
     }

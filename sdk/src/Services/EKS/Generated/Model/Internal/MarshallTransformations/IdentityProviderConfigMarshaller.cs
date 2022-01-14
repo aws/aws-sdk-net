@@ -34,7 +34,7 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// IdentityProviderConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class IdentityProviderConfigMarshaller : IRequestMarshaller<IdentityProviderConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static IdentityProviderConfigMarshaller Instance = new IdentityProviderConfigMarshaller();
 
     }

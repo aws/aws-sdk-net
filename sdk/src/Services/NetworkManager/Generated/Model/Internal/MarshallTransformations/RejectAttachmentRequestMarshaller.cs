@@ -56,7 +56,7 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.NetworkManager");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-07-05";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-07-05";
             request.HttpMethod = "POST";
 
             if (!publicRequest.IsSetAttachmentId())

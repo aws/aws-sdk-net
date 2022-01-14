@@ -55,7 +55,7 @@ namespace Amazon.S3Outposts.Model.Internal.MarshallTransformations
         public IRequest Marshall(DeleteEndpointRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.S3Outposts");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-07-25";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-07-25";
             request.HttpMethod = "DELETE";
 
             

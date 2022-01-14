@@ -34,7 +34,7 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// BatchRemoveFacetFromObject Marshaller
-    /// </summary>       
+    /// </summary>
     public class BatchRemoveFacetFromObjectMarshaller : IRequestMarshaller<BatchRemoveFacetFromObject, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static BatchRemoveFacetFromObjectMarshaller Instance = new BatchRemoveFacetFromObjectMarshaller();
 
     }

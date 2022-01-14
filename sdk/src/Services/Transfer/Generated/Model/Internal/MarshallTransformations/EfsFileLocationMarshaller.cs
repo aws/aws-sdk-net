@@ -34,7 +34,7 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// EfsFileLocation Marshaller
-    /// </summary>       
+    /// </summary>
     public class EfsFileLocationMarshaller : IRequestMarshaller<EfsFileLocation, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static EfsFileLocationMarshaller Instance = new EfsFileLocationMarshaller();
 
     }

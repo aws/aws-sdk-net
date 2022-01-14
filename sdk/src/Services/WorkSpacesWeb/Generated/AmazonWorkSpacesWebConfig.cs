@@ -40,6 +40,7 @@ namespace Amazon.WorkSpacesWeb
         /// Default constructor
         /// </summary>
         public AmazonWorkSpacesWebConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonWorkSpacesWebDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "workspaces-web";
         }

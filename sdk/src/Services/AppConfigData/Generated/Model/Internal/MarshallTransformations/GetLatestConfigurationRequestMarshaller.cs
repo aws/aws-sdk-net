@@ -55,7 +55,7 @@ namespace Amazon.AppConfigData.Model.Internal.MarshallTransformations
         public IRequest Marshall(GetLatestConfigurationRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.AppConfigData");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-11-11";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-11-11";
             request.HttpMethod = "GET";
 
             

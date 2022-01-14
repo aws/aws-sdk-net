@@ -34,7 +34,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// BurninDestinationSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class BurninDestinationSettingsMarshaller : IRequestMarshaller<BurninDestinationSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -175,7 +175,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static BurninDestinationSettingsMarshaller Instance = new BurninDestinationSettingsMarshaller();
 
     }

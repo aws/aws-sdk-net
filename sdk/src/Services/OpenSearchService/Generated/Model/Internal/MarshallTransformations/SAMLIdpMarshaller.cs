@@ -34,7 +34,7 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SAMLIdp Marshaller
-    /// </summary>       
+    /// </summary>
     public class SAMLIdpMarshaller : IRequestMarshaller<SAMLIdp, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SAMLIdpMarshaller Instance = new SAMLIdpMarshaller();
 
     }

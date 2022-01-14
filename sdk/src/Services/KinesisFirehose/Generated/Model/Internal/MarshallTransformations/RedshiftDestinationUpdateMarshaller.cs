@@ -34,7 +34,7 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RedshiftDestinationUpdate Marshaller
-    /// </summary>       
+    /// </summary>
     public class RedshiftDestinationUpdateMarshaller : IRequestMarshaller<RedshiftDestinationUpdate, JsonMarshallerContext> 
     {
         /// <summary>
@@ -145,7 +145,7 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RedshiftDestinationUpdateMarshaller Instance = new RedshiftDestinationUpdateMarshaller();
 
     }

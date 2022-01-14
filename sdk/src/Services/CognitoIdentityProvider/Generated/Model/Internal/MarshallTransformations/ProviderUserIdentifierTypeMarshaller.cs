@@ -34,7 +34,7 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ProviderUserIdentifierType Marshaller
-    /// </summary>       
+    /// </summary>
     public class ProviderUserIdentifierTypeMarshaller : IRequestMarshaller<ProviderUserIdentifierType, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ProviderUserIdentifierTypeMarshaller Instance = new ProviderUserIdentifierTypeMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// VersionToPublish Marshaller
-    /// </summary>       
+    /// </summary>
     public class VersionToPublishMarshaller : IRequestMarshaller<VersionToPublish, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static VersionToPublishMarshaller Instance = new VersionToPublishMarshaller();
 
     }

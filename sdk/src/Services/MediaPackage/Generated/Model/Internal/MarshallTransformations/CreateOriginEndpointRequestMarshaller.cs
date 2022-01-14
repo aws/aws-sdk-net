@@ -56,7 +56,7 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.MediaPackage");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-10-12";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-10-12";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/origin_endpoints";
@@ -187,7 +187,6 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

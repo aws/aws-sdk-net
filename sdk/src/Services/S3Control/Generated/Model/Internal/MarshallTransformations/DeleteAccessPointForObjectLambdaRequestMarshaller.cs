@@ -57,8 +57,10 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             var request = new DefaultRequest(publicRequest, "Amazon.S3Control");
             request.HttpMethod = "DELETE";
         
-            if(publicRequest.IsSetAccountId())
+            if (publicRequest.IsSetAccountId()) 
+            {
                 request.Headers["x-amz-account-id"] = publicRequest.AccountId;
+            }
             if (!publicRequest.IsSetName())
                 throw new AmazonS3ControlException("Request object does not have required field Name set");
             request.AddPathResource("{name}", StringUtils.FromString(publicRequest.Name));

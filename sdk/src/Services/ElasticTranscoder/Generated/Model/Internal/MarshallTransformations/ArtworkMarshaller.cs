@@ -34,7 +34,7 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Artwork Marshaller
-    /// </summary>       
+    /// </summary>
     public class ArtworkMarshaller : IRequestMarshaller<Artwork, JsonMarshallerContext> 
     {
         /// <summary>
@@ -96,7 +96,7 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ArtworkMarshaller Instance = new ArtworkMarshaller();
 
     }

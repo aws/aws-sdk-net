@@ -34,7 +34,7 @@ namespace Amazon.WAF.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RuleUpdate Marshaller
-    /// </summary>       
+    /// </summary>
     public class RuleUpdateMarshaller : IRequestMarshaller<RuleUpdate, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.WAF.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RuleUpdateMarshaller Instance = new RuleUpdateMarshaller();
 
     }

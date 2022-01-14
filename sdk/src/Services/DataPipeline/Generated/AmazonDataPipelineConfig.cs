@@ -40,6 +40,7 @@ namespace Amazon.DataPipeline
         /// Default constructor
         /// </summary>
         public AmazonDataPipelineConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonDataPipelineDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "datapipeline";
         }

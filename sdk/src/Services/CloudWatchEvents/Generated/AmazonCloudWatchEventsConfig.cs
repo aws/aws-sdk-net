@@ -40,6 +40,7 @@ namespace Amazon.CloudWatchEvents
         /// Default constructor
         /// </summary>
         public AmazonCloudWatchEventsConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonCloudWatchEventsDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "events";
         }

@@ -34,7 +34,7 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// S3Tag Marshaller
-    /// </summary>       
+    /// </summary>
     public class S3TagMarshaller : IRequestMarshaller<S3Tag, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static S3TagMarshaller Instance = new S3TagMarshaller();
 
     }

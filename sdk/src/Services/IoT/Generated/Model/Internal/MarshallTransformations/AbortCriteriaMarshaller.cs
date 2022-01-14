@@ -34,7 +34,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AbortCriteria Marshaller
-    /// </summary>       
+    /// </summary>
     public class AbortCriteriaMarshaller : IRequestMarshaller<AbortCriteria, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AbortCriteriaMarshaller Instance = new AbortCriteriaMarshaller();
 
     }

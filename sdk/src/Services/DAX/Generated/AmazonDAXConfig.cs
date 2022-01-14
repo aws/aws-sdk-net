@@ -40,6 +40,7 @@ namespace Amazon.DAX
         /// Default constructor
         /// </summary>
         public AmazonDAXConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonDAXDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "dax";
         }

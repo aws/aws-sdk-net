@@ -34,7 +34,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// OpenZFSClientConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class OpenZFSClientConfigurationMarshaller : IRequestMarshaller<OpenZFSClientConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static OpenZFSClientConfigurationMarshaller Instance = new OpenZFSClientConfigurationMarshaller();
 
     }

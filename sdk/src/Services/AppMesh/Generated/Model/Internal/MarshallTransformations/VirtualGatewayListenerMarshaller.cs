@@ -34,7 +34,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// VirtualGatewayListener Marshaller
-    /// </summary>       
+    /// </summary>
     public class VirtualGatewayListenerMarshaller : IRequestMarshaller<VirtualGatewayListener, JsonMarshallerContext> 
     {
         /// <summary>
@@ -93,7 +93,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static VirtualGatewayListenerMarshaller Instance = new VirtualGatewayListenerMarshaller();
 
     }

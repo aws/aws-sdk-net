@@ -34,7 +34,7 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// LambdaDeviceMount Marshaller
-    /// </summary>       
+    /// </summary>
     public class LambdaDeviceMountMarshaller : IRequestMarshaller<LambdaDeviceMount, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static LambdaDeviceMountMarshaller Instance = new LambdaDeviceMountMarshaller();
 
     }

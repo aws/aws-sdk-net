@@ -34,7 +34,7 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DatasetContentVersionValue Marshaller
-    /// </summary>       
+    /// </summary>
     public class DatasetContentVersionValueMarshaller : IRequestMarshaller<DatasetContentVersionValue, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DatasetContentVersionValueMarshaller Instance = new DatasetContentVersionValueMarshaller();
 
     }

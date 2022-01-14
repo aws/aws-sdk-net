@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ProductionVariantServerlessConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class ProductionVariantServerlessConfigMarshaller : IRequestMarshaller<ProductionVariantServerlessConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ProductionVariantServerlessConfigMarshaller Instance = new ProductionVariantServerlessConfigMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// LambdaContainerParams Marshaller
-    /// </summary>       
+    /// </summary>
     public class LambdaContainerParamsMarshaller : IRequestMarshaller<LambdaContainerParams, JsonMarshallerContext> 
     {
         /// <summary>
@@ -93,7 +93,7 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static LambdaContainerParamsMarshaller Instance = new LambdaContainerParamsMarshaller();
 
     }

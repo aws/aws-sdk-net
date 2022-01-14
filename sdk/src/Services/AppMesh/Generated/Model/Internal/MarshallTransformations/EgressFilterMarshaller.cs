@@ -34,7 +34,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// EgressFilter Marshaller
-    /// </summary>       
+    /// </summary>
     public class EgressFilterMarshaller : IRequestMarshaller<EgressFilter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static EgressFilterMarshaller Instance = new EgressFilterMarshaller();
 
     }

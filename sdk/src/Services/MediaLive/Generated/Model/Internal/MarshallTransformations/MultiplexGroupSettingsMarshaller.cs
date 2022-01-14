@@ -34,7 +34,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// MultiplexGroupSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class MultiplexGroupSettingsMarshaller : IRequestMarshaller<MultiplexGroupSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -49,7 +49,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static MultiplexGroupSettingsMarshaller Instance = new MultiplexGroupSettingsMarshaller();
 
     }

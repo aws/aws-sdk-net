@@ -34,7 +34,7 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// VpcOptions Marshaller
-    /// </summary>       
+    /// </summary>
     public class VpcOptionsMarshaller : IRequestMarshaller<VpcOptions, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static VpcOptionsMarshaller Instance = new VpcOptionsMarshaller();
 
     }

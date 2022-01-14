@@ -34,7 +34,7 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CloudTrailDetails Marshaller
-    /// </summary>       
+    /// </summary>
     public class CloudTrailDetailsMarshaller : IRequestMarshaller<CloudTrailDetails, JsonMarshallerContext> 
     {
         /// <summary>
@@ -83,7 +83,7 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CloudTrailDetailsMarshaller Instance = new CloudTrailDetailsMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.MigrationHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ResourceAttribute Marshaller
-    /// </summary>       
+    /// </summary>
     public class ResourceAttributeMarshaller : IRequestMarshaller<ResourceAttribute, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.MigrationHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ResourceAttributeMarshaller Instance = new ResourceAttributeMarshaller();
 
     }

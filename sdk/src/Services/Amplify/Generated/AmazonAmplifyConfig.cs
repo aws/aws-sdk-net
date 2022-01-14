@@ -40,6 +40,7 @@ namespace Amazon.Amplify
         /// Default constructor
         /// </summary>
         public AmazonAmplifyConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonAmplifyDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "amplify";
         }

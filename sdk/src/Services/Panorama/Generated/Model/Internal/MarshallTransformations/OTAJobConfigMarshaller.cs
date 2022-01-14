@@ -34,7 +34,7 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// OTAJobConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class OTAJobConfigMarshaller : IRequestMarshaller<OTAJobConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static OTAJobConfigMarshaller Instance = new OTAJobConfigMarshaller();
 
     }

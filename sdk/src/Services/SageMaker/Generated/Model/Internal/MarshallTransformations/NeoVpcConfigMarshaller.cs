@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// NeoVpcConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class NeoVpcConfigMarshaller : IRequestMarshaller<NeoVpcConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static NeoVpcConfigMarshaller Instance = new NeoVpcConfigMarshaller();
 
     }

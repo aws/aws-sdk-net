@@ -40,6 +40,7 @@ namespace Amazon.CloudWatchRUM
         /// Default constructor
         /// </summary>
         public AmazonCloudWatchRUMConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonCloudWatchRUMDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "rum";
         }

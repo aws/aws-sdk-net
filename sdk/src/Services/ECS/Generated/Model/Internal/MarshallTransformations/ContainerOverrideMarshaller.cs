@@ -34,7 +34,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ContainerOverride Marshaller
-    /// </summary>       
+    /// </summary>
     public class ContainerOverrideMarshaller : IRequestMarshaller<ContainerOverride, JsonMarshallerContext> 
     {
         /// <summary>
@@ -132,7 +132,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ContainerOverrideMarshaller Instance = new ContainerOverrideMarshaller();
 
     }

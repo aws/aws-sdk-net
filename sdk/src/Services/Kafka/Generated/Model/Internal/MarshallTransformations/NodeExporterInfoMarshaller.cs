@@ -34,7 +34,7 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// NodeExporterInfo Marshaller
-    /// </summary>       
+    /// </summary>
     public class NodeExporterInfoMarshaller : IRequestMarshaller<NodeExporterInfo, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static NodeExporterInfoMarshaller Instance = new NodeExporterInfoMarshaller();
 
     }

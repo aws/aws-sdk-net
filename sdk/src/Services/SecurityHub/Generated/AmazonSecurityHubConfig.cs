@@ -40,6 +40,7 @@ namespace Amazon.SecurityHub
         /// Default constructor
         /// </summary>
         public AmazonSecurityHubConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonSecurityHubDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "securityhub";
         }

@@ -34,7 +34,7 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SubnetMapping Marshaller
-    /// </summary>       
+    /// </summary>
     public class SubnetMappingMarshaller : IRequestMarshaller<SubnetMapping, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SubnetMappingMarshaller Instance = new SubnetMappingMarshaller();
 
     }

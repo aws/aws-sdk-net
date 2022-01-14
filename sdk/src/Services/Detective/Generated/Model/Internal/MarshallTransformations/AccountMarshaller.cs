@@ -34,7 +34,7 @@ namespace Amazon.Detective.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Account Marshaller
-    /// </summary>       
+    /// </summary>
     public class AccountMarshaller : IRequestMarshaller<Account, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Detective.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AccountMarshaller Instance = new AccountMarshaller();
 
     }

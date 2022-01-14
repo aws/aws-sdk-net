@@ -34,7 +34,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Scale Marshaller
-    /// </summary>       
+    /// </summary>
     public class ScaleMarshaller : IRequestMarshaller<Scale, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ScaleMarshaller Instance = new ScaleMarshaller();
 
     }

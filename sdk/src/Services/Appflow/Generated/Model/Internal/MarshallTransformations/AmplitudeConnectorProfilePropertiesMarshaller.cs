@@ -34,7 +34,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AmplitudeConnectorProfileProperties Marshaller
-    /// </summary>       
+    /// </summary>
     public class AmplitudeConnectorProfilePropertiesMarshaller : IRequestMarshaller<AmplitudeConnectorProfileProperties, JsonMarshallerContext> 
     {
         /// <summary>
@@ -49,7 +49,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AmplitudeConnectorProfilePropertiesMarshaller Instance = new AmplitudeConnectorProfilePropertiesMarshaller();
 
     }

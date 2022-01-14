@@ -34,7 +34,7 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// HlsEncryption Marshaller
-    /// </summary>       
+    /// </summary>
     public class HlsEncryptionMarshaller : IRequestMarshaller<HlsEncryption, JsonMarshallerContext> 
     {
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static HlsEncryptionMarshaller Instance = new HlsEncryptionMarshaller();
 
     }

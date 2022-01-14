@@ -34,7 +34,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// HoursOfOperationTimeSlice Marshaller
-    /// </summary>       
+    /// </summary>
     public class HoursOfOperationTimeSliceMarshaller : IRequestMarshaller<HoursOfOperationTimeSlice, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static HoursOfOperationTimeSliceMarshaller Instance = new HoursOfOperationTimeSliceMarshaller();
 
     }

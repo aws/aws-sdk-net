@@ -40,6 +40,7 @@ namespace Amazon.FIS
         /// Default constructor
         /// </summary>
         public AmazonFISConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonFISDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "fis";
         }

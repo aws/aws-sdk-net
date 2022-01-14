@@ -40,6 +40,7 @@ namespace Amazon.Elasticsearch
         /// Default constructor
         /// </summary>
         public AmazonElasticsearchConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonElasticsearchDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "es";
         }

@@ -40,6 +40,7 @@ namespace Amazon.ConnectContactLens
         /// Default constructor
         /// </summary>
         public AmazonConnectContactLensConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonConnectContactLensDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "connect";
         }

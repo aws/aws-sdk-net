@@ -34,7 +34,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DolbyVisionLevel6Metadata Marshaller
-    /// </summary>       
+    /// </summary>
     public class DolbyVisionLevel6MetadataMarshaller : IRequestMarshaller<DolbyVisionLevel6Metadata, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DolbyVisionLevel6MetadataMarshaller Instance = new DolbyVisionLevel6MetadataMarshaller();
 
     }

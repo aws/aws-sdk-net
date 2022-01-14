@@ -34,7 +34,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
 {
     /// <summary>
     /// Heterogeneous Marshaller
-    /// </summary>       
+    /// </summary>
     public class HeterogeneousMarshaller : IRequestMarshaller<Heterogeneous, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static HeterogeneousMarshaller Instance = new HeterogeneousMarshaller();
 
     }

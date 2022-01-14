@@ -34,7 +34,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DeleteFileSystemOpenZFSConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class DeleteFileSystemOpenZFSConfigurationMarshaller : IRequestMarshaller<DeleteFileSystemOpenZFSConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DeleteFileSystemOpenZFSConfigurationMarshaller Instance = new DeleteFileSystemOpenZFSConfigurationMarshaller();
 
     }

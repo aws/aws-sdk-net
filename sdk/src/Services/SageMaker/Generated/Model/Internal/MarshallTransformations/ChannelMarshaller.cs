@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Channel Marshaller
-    /// </summary>       
+    /// </summary>
     public class ChannelMarshaller : IRequestMarshaller<Channel, JsonMarshallerContext> 
     {
         /// <summary>
@@ -101,7 +101,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ChannelMarshaller Instance = new ChannelMarshaller();
 
     }

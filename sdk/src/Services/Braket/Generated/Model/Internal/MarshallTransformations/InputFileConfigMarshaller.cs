@@ -34,7 +34,7 @@ namespace Amazon.Braket.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// InputFileConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class InputFileConfigMarshaller : IRequestMarshaller<InputFileConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.Braket.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static InputFileConfigMarshaller Instance = new InputFileConfigMarshaller();
 
     }

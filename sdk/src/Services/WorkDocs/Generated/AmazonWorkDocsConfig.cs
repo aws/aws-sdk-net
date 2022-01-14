@@ -40,6 +40,7 @@ namespace Amazon.WorkDocs
         /// Default constructor
         /// </summary>
         public AmazonWorkDocsConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonWorkDocsDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "workdocs";
         }

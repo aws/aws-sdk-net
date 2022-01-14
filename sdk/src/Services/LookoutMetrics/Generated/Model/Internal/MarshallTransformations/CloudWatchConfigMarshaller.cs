@@ -34,7 +34,7 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CloudWatchConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class CloudWatchConfigMarshaller : IRequestMarshaller<CloudWatchConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CloudWatchConfigMarshaller Instance = new CloudWatchConfigMarshaller();
 
     }

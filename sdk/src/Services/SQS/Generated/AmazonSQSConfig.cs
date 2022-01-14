@@ -40,6 +40,7 @@ namespace Amazon.SQS
         /// Default constructor
         /// </summary>
         public AmazonSQSConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonSQSDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "sqs";
         }

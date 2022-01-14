@@ -34,7 +34,7 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// WriteOperation Marshaller
-    /// </summary>       
+    /// </summary>
     public class WriteOperationMarshaller : IRequestMarshaller<WriteOperation, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static WriteOperationMarshaller Instance = new WriteOperationMarshaller();
 
     }

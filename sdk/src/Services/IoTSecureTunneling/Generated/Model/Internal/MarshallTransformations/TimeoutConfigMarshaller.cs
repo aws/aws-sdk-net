@@ -34,7 +34,7 @@ namespace Amazon.IoTSecureTunneling.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TimeoutConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class TimeoutConfigMarshaller : IRequestMarshaller<TimeoutConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.IoTSecureTunneling.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TimeoutConfigMarshaller Instance = new TimeoutConfigMarshaller();
 
     }

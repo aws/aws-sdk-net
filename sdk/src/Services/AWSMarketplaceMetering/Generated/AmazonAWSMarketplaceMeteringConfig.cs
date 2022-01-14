@@ -40,6 +40,7 @@ namespace Amazon.AWSMarketplaceMetering
         /// Default constructor
         /// </summary>
         public AmazonAWSMarketplaceMeteringConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonAWSMarketplaceMeteringDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "aws-marketplace";
         }

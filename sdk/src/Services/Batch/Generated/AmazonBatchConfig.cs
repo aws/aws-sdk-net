@@ -40,6 +40,7 @@ namespace Amazon.Batch
         /// Default constructor
         /// </summary>
         public AmazonBatchConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonBatchDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "batch";
         }

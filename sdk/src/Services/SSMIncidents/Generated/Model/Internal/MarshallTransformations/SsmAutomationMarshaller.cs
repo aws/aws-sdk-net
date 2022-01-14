@@ -34,7 +34,7 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SsmAutomation Marshaller
-    /// </summary>       
+    /// </summary>
     public class SsmAutomationMarshaller : IRequestMarshaller<SsmAutomation, JsonMarshallerContext> 
     {
         /// <summary>
@@ -92,7 +92,7 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SsmAutomationMarshaller Instance = new SsmAutomationMarshaller();
 
     }

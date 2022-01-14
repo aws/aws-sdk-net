@@ -40,6 +40,7 @@ namespace Amazon.MigrationHub
         /// Default constructor
         /// </summary>
         public AmazonMigrationHubConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonMigrationHubDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "mgh";
         }

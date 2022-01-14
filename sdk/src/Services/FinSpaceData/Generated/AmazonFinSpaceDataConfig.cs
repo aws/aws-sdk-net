@@ -40,6 +40,7 @@ namespace Amazon.FinSpaceData
         /// Default constructor
         /// </summary>
         public AmazonFinSpaceDataConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonFinSpaceDataDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "finspace-api";
         }

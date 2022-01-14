@@ -34,7 +34,7 @@ namespace Amazon.ChimeSDKIdentity.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// EndpointAttributes Marshaller
-    /// </summary>       
+    /// </summary>
     public class EndpointAttributesMarshaller : IRequestMarshaller<EndpointAttributes, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.ChimeSDKIdentity.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static EndpointAttributesMarshaller Instance = new EndpointAttributesMarshaller();
 
     }

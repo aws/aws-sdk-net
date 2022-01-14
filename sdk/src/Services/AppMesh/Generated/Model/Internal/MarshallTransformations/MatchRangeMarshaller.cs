@@ -34,7 +34,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// MatchRange Marshaller
-    /// </summary>       
+    /// </summary>
     public class MatchRangeMarshaller : IRequestMarshaller<MatchRange, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static MatchRangeMarshaller Instance = new MatchRangeMarshaller();
 
     }

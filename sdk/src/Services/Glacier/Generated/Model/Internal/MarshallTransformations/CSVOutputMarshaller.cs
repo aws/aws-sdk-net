@@ -34,7 +34,7 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CSVOutput Marshaller
-    /// </summary>       
+    /// </summary>
     public class CSVOutputMarshaller : IRequestMarshaller<CSVOutput, JsonMarshallerContext> 
     {
         /// <summary>
@@ -79,7 +79,7 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CSVOutputMarshaller Instance = new CSVOutputMarshaller();
 
     }

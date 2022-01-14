@@ -40,6 +40,7 @@ namespace Amazon.Rekognition
         /// Default constructor
         /// </summary>
         public AmazonRekognitionConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonRekognitionDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "rekognition";
         }

@@ -34,7 +34,7 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// EntityTypesListItem Marshaller
-    /// </summary>       
+    /// </summary>
     public class EntityTypesListItemMarshaller : IRequestMarshaller<EntityTypesListItem, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static EntityTypesListItemMarshaller Instance = new EntityTypesListItemMarshaller();
 
     }

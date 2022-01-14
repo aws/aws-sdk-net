@@ -103,31 +103,32 @@ namespace ServiceClientGenerator.Generators.Marshallers
             this.Write("\");\r\n");
             
             #line 38 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCRequestMarshaller.tt"
- if(!string.IsNullOrEmpty(this.Config.ServiceModel.TargetPrefix))
+ if (!string.IsNullOrEmpty(this.Config.ServiceModel.TargetPrefix))
 	{
+
             
             #line default
             #line hidden
             this.Write("\t\t\tstring target = \"");
             
-            #line 40 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCRequestMarshaller.tt"
+            #line 41 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCRequestMarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ServiceModel.TargetPrefix));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 40 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCRequestMarshaller.tt"
+            #line 41 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCRequestMarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Operation.Name));
             
             #line default
             #line hidden
             this.Write("\";\r\n\t\t\trequest.Headers[\"X-Amz-Target\"] = target;\r\n");
             
-            #line 42 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCRequestMarshaller.tt"
+            #line 43 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCRequestMarshaller.tt"
 
 	}
-	if(this.Operation.HttpMethod != "GET" && this.Operation.HttpMethod != "DELETE")
+	if (this.Operation.HttpMethod != "GET" && this.Operation.HttpMethod != "DELETE")
 	{
 
 		if (this.Config.ServiceModel.Customizations.OverrideContentType != null)
@@ -138,17 +139,17 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line hidden
             this.Write("\t\t\trequest.Headers[\"Content-Type\"] = \"");
             
-            #line 50 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCRequestMarshaller.tt"
+            #line 51 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCRequestMarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ServiceModel.Customizations.OverrideContentType));
             
             #line default
             #line hidden
             this.Write("\";\r\n");
             
-            #line 51 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCRequestMarshaller.tt"
+            #line 52 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCRequestMarshaller.tt"
 
 		}
-		else if(this.Config.ServiceModel.Type != ServiceType.Rest_Json)
+		else if (this.Config.ServiceModel.Type != ServiceType.Rest_Json)
 		{
 
             
@@ -156,14 +157,14 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line hidden
             this.Write("\t\t\trequest.Headers[\"Content-Type\"] = \"application/x-amz-json-");
             
-            #line 56 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCRequestMarshaller.tt"
+            #line 57 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCRequestMarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ServiceModel.JsonVersion));
             
             #line default
             #line hidden
             this.Write("\";\r\n");
             
-            #line 57 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCRequestMarshaller.tt"
+            #line 58 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCRequestMarshaller.tt"
 
 		}
 		else
@@ -174,7 +175,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line hidden
             this.Write("\t\t\trequest.Headers[\"Content-Type\"] = \"application/json\";\r\n");
             
-            #line 63 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCRequestMarshaller.tt"
+            #line 64 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCRequestMarshaller.tt"
 
 		}
 	}
@@ -184,21 +185,21 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line hidden
             this.Write("            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = \"");
             
-            #line 67 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCRequestMarshaller.tt"
+            #line 68 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCRequestMarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ServiceModel.APIVersion));
             
             #line default
             #line hidden
-            this.Write("\";            \r\n\t\t\trequest.HttpMethod = \"");
+            this.Write("\";\r\n            request.HttpMethod = \"");
             
-            #line 68 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCRequestMarshaller.tt"
+            #line 69 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCRequestMarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Operation.HttpMethod));
             
             #line default
             #line hidden
             this.Write("\";\r\n\r\n");
             
-            #line 70 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCRequestMarshaller.tt"
+            #line 71 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCRequestMarshaller.tt"
 
 	var requestStructure = this.Operation.RequestStructure;
 	
@@ -207,7 +208,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
 
 	if (this.Config.ServiceModel.Type == ServiceType.Rest_Json)
 	{
-		ProcessUriMembers("publicRequest", this.Operation);		
+		ProcessUriMembers("publicRequest", this.Operation);
 		ProcessQueryStringMembers("publicRequest", this.Operation);
 	}
 
@@ -216,20 +217,20 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line hidden
             this.Write("\t\t\trequest.ResourcePath = \"");
             
-            #line 82 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCRequestMarshaller.tt"
+            #line 83 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCRequestMarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Operation.RequestUri));
             
             #line default
             #line hidden
             this.Write("\";\r\n");
             
-            #line 83 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCRequestMarshaller.tt"
+            #line 84 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCRequestMarshaller.tt"
   
 
     var payload = this.Operation.RequestPayloadMember;
     var shouldMarshallPayload = (payload != null && !payload.IsMemoryStream && !payload.Shape.IsString);
 	// Process any members which are marshalled as part of the request body
-	if(this.Operation.RequestHasBodyMembers || shouldMarshallPayload)
+	if (this.Operation.RequestHasBodyMembers || shouldMarshallPayload)
 	{
 
             
@@ -238,9 +239,9 @@ namespace ServiceClientGenerator.Generators.Marshallers
             this.Write("\t\t\tusing (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCultu" +
                     "re))\r\n\t\t\t{\r\n\t\t\t\tJsonWriter writer = new JsonWriter(stringWriter);\r\n");
             
-            #line 94 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCRequestMarshaller.tt"
+            #line 95 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCRequestMarshaller.tt"
 		
-		if(shouldMarshallPayload)	
+		if (shouldMarshallPayload)
 		{
 
             
@@ -248,7 +249,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line hidden
             this.Write("\t\t\t\tvar context = new JsonMarshallerContext(request, writer);\r\n");
             
-            #line 99 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCRequestMarshaller.tt"
+            #line 100 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCRequestMarshaller.tt"
 		
 			ProcessStructure(0, "publicRequest." + payload.PropertyName, payload.Shape);
 		}
@@ -261,14 +262,14 @@ namespace ServiceClientGenerator.Generators.Marshallers
             this.Write("\t\t\t\twriter.WriteObjectStart();\r\n\t\t\t\tvar context = new JsonMarshallerContext(reque" +
                     "st, writer);\r\n");
             
-            #line 107 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCRequestMarshaller.tt"
+            #line 108 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCRequestMarshaller.tt"
 		
-			ProcessMembers(1, "publicRequest", this.Operation.RequestBodyMembers);
+				ProcessMembers(1, "publicRequest", this.Operation.RequestBodyMembers);
 
             
             #line default
             #line hidden
-            this.Write("\t\t\r\n\t\t\t\twriter.WriteObjectEnd();\r\n");
+            this.Write("\t\t\t\twriter.WriteObjectEnd();\r\n");
             
             #line 112 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCRequestMarshaller.tt"
 
@@ -282,7 +283,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             
             #line 117 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCRequestMarshaller.tt"
 
-					CheckContentMd5Header(this.Operation, "snippet");
+			CheckContentMd5Header(this.Operation, "snippet");
 
             
             #line default
@@ -327,14 +328,14 @@ namespace ServiceClientGenerator.Generators.Marshallers
             
             #line 134 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCRequestMarshaller.tt"
 		
-		var requiresLength = payload.RequiresLength;		
-		if(!requiresLength && payload.IsStreaming && this.Operation.AuthType == OperationAuthType.V4UnsignedBody)
+		var requiresLength = payload.RequiresLength;
+		if (!requiresLength && payload.IsStreaming && this.Operation.AuthType == OperationAuthType.V4UnsignedBody)
 		{
 
             
             #line default
             #line hidden
-            this.Write(@"			if(request.ContentStream.CanSeek)
+            this.Write(@"			if (request.ContentStream.CanSeek)
 			{
 				request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] =  
 					request.ContentStream.Length.ToString(CultureInfo.InvariantCulture);
@@ -350,15 +351,15 @@ namespace ServiceClientGenerator.Generators.Marshallers
 		}
 		else
 		{
-			if(payload.IsStreaming && requiresLength)
+			if (payload.IsStreaming && requiresLength)
 			{
 
             
             #line default
             #line hidden
-            this.Write("\t\t\tif(!request.ContentStream.CanSeek)\r\n\t\t\t{\r\n\t\t\t\tthrow new System.InvalidOperatio" +
-                    "nException(\"Cannot determine stream length for the payload when content-length i" +
-                    "s required.\");\r\n\t\t\t}\r\n");
+            this.Write("\t\t\tif (!request.ContentStream.CanSeek)\r\n\t\t\t{\r\n\t\t\t\tthrow new System.InvalidOperati" +
+                    "onException(\"Cannot determine stream length for the payload when content-length " +
+                    "is required.\");\r\n\t\t\t}\r\n");
             
             #line 159 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCRequestMarshaller.tt"
 
@@ -367,12 +368,12 @@ namespace ServiceClientGenerator.Generators.Marshallers
             
             #line default
             #line hidden
-            this.Write("\t\t\trequest.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] =  \r\n\t\t\t\trequest.C" +
-                    "ontentStream.Length.ToString(CultureInfo.InvariantCulture);\r\n");
+            this.Write("\t\t\trequest.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] =\r\n\t\t\t\trequest.Con" +
+                    "tentStream.Length.ToString(CultureInfo.InvariantCulture);\r\n");
             
             #line 164 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCRequestMarshaller.tt"
 
-		}		
+		}
 
             
             #line default
@@ -420,7 +421,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
 	}
 
 	// If there aren't any members that are marshalled as part of the body or streamed	
-	if(this.Operation.UseQueryString)
+	if (this.Operation.UseQueryString)
 	{
 
             
@@ -431,7 +432,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line 203 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCRequestMarshaller.tt"
 	}
 
-	if(!string.IsNullOrEmpty(this.Operation.EndpointHostPrefix))
+	if (!string.IsNullOrEmpty(this.Operation.EndpointHostPrefix))
 	{
 		ProcessEndpointHostPrefixMembers("publicRequest", this.Operation);
 	}

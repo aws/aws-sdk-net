@@ -40,6 +40,7 @@ namespace Amazon.MarketplaceCatalog
         /// Default constructor
         /// </summary>
         public AmazonMarketplaceCatalogConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonMarketplaceCatalogDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "aws-marketplace";
         }

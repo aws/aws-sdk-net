@@ -40,6 +40,7 @@ namespace Amazon.SimpleSystemsManagement
         /// Default constructor
         /// </summary>
         public AmazonSimpleSystemsManagementConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonSimpleSystemsManagementDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "ssm";
         }

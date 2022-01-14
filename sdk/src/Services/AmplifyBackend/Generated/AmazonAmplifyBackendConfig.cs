@@ -40,6 +40,7 @@ namespace Amazon.AmplifyBackend
         /// Default constructor
         /// </summary>
         public AmazonAmplifyBackendConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonAmplifyBackendDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "amplifybackend";
         }

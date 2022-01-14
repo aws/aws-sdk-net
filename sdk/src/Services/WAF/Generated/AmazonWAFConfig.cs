@@ -40,6 +40,7 @@ namespace Amazon.WAF
         /// Default constructor
         /// </summary>
         public AmazonWAFConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonWAFDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "waf";
         }

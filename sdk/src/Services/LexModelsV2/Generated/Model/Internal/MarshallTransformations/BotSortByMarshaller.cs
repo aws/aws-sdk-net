@@ -34,7 +34,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// BotSortBy Marshaller
-    /// </summary>       
+    /// </summary>
     public class BotSortByMarshaller : IRequestMarshaller<BotSortBy, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static BotSortByMarshaller Instance = new BotSortByMarshaller();
 
     }

@@ -40,6 +40,7 @@ namespace Amazon.CognitoIdentityProvider
         /// Default constructor
         /// </summary>
         public AmazonCognitoIdentityProviderConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonCognitoIdentityProviderDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "cognito-idp";
         }

@@ -40,6 +40,7 @@ namespace Amazon.CodeBuild
         /// Default constructor
         /// </summary>
         public AmazonCodeBuildConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonCodeBuildDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "codebuild";
         }

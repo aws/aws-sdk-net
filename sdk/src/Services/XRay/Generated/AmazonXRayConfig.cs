@@ -40,6 +40,7 @@ namespace Amazon.XRay
         /// Default constructor
         /// </summary>
         public AmazonXRayConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonXRayDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "xray";
         }

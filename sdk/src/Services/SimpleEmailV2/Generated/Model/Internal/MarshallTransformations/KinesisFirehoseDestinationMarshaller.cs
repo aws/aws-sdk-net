@@ -34,7 +34,7 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// KinesisFirehoseDestination Marshaller
-    /// </summary>       
+    /// </summary>
     public class KinesisFirehoseDestinationMarshaller : IRequestMarshaller<KinesisFirehoseDestination, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static KinesisFirehoseDestinationMarshaller Instance = new KinesisFirehoseDestinationMarshaller();
 
     }

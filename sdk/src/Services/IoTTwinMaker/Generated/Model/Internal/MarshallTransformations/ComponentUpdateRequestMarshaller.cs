@@ -34,7 +34,7 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ComponentUpdateRequest Marshaller
-    /// </summary>       
+    /// </summary>
     public class ComponentUpdateRequestMarshaller : IRequestMarshaller<ComponentUpdateRequest, JsonMarshallerContext> 
     {
         /// <summary>
@@ -86,7 +86,7 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ComponentUpdateRequestMarshaller Instance = new ComponentUpdateRequestMarshaller();
 
     }

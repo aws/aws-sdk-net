@@ -40,6 +40,7 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// Default constructor
         /// </summary>
         public AmazonMigrationHubStrategyRecommendationsConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonMigrationHubStrategyRecommendationsDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "migrationhub-strategy";
         }

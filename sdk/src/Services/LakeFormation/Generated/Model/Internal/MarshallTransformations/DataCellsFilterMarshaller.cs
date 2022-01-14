@@ -34,7 +34,7 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DataCellsFilter Marshaller
-    /// </summary>       
+    /// </summary>
     public class DataCellsFilterMarshaller : IRequestMarshaller<DataCellsFilter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -106,7 +106,7 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DataCellsFilterMarshaller Instance = new DataCellsFilterMarshaller();
 
     }

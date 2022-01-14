@@ -34,7 +34,7 @@ namespace Amazon.WAF.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SizeConstraint Marshaller
-    /// </summary>       
+    /// </summary>
     public class SizeConstraintMarshaller : IRequestMarshaller<SizeConstraint, JsonMarshallerContext> 
     {
         /// <summary>
@@ -78,7 +78,7 @@ namespace Amazon.WAF.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SizeConstraintMarshaller Instance = new SizeConstraintMarshaller();
 
     }

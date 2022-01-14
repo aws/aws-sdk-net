@@ -34,7 +34,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// WeightedTarget Marshaller
-    /// </summary>       
+    /// </summary>
     public class WeightedTargetMarshaller : IRequestMarshaller<WeightedTarget, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static WeightedTargetMarshaller Instance = new WeightedTargetMarshaller();
 
     }

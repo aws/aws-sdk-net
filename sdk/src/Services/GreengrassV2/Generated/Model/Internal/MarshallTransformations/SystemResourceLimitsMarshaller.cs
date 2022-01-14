@@ -34,7 +34,7 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SystemResourceLimits Marshaller
-    /// </summary>       
+    /// </summary>
     public class SystemResourceLimitsMarshaller : IRequestMarshaller<SystemResourceLimits, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SystemResourceLimitsMarshaller Instance = new SystemResourceLimitsMarshaller();
 
     }

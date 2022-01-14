@@ -40,6 +40,7 @@ namespace Amazon.AppRegistry
         /// Default constructor
         /// </summary>
         public AmazonAppRegistryConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonAppRegistryDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "servicecatalog";
         }

@@ -34,7 +34,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CodeSigningSignature Marshaller
-    /// </summary>       
+    /// </summary>
     public class CodeSigningSignatureMarshaller : IRequestMarshaller<CodeSigningSignature, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CodeSigningSignatureMarshaller Instance = new CodeSigningSignatureMarshaller();
 
     }

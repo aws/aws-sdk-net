@@ -34,7 +34,7 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// S3RecordingConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class S3RecordingConfigMarshaller : IRequestMarshaller<S3RecordingConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static S3RecordingConfigMarshaller Instance = new S3RecordingConfigMarshaller();
 
     }

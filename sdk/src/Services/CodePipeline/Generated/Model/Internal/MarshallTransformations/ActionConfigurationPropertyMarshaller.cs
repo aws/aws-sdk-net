@@ -34,7 +34,7 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ActionConfigurationProperty Marshaller
-    /// </summary>       
+    /// </summary>
     public class ActionConfigurationPropertyMarshaller : IRequestMarshaller<ActionConfigurationProperty, JsonMarshallerContext> 
     {
         /// <summary>
@@ -91,7 +91,7 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ActionConfigurationPropertyMarshaller Instance = new ActionConfigurationPropertyMarshaller();
 
     }

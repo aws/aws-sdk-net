@@ -34,7 +34,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CustomVocabularyImportSpecification Marshaller
-    /// </summary>       
+    /// </summary>
     public class CustomVocabularyImportSpecificationMarshaller : IRequestMarshaller<CustomVocabularyImportSpecification, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CustomVocabularyImportSpecificationMarshaller Instance = new CustomVocabularyImportSpecificationMarshaller();
 
     }

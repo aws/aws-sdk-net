@@ -58,7 +58,7 @@ namespace Amazon.QLDBSession.Model.Internal.MarshallTransformations
             string target = "QLDBSession.SendCommand";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.0";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-07-11";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-07-11";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -150,7 +150,6 @@ namespace Amazon.QLDBSession.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

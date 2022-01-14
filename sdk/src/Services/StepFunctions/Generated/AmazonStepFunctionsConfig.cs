@@ -40,6 +40,7 @@ namespace Amazon.StepFunctions
         /// Default constructor
         /// </summary>
         public AmazonStepFunctionsConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonStepFunctionsDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "states";
         }

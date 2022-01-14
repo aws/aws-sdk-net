@@ -34,7 +34,7 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SortCondition Marshaller
-    /// </summary>       
+    /// </summary>
     public class SortConditionMarshaller : IRequestMarshaller<SortCondition, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SortConditionMarshaller Instance = new SortConditionMarshaller();
 
     }

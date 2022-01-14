@@ -34,7 +34,7 @@ namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// OperationStatusFilter Marshaller
-    /// </summary>       
+    /// </summary>
     public class OperationStatusFilterMarshaller : IRequestMarshaller<OperationStatusFilter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static OperationStatusFilterMarshaller Instance = new OperationStatusFilterMarshaller();
 
     }

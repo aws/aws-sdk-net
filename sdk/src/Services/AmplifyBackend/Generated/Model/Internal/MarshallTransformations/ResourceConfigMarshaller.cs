@@ -34,7 +34,7 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ResourceConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class ResourceConfigMarshaller : IRequestMarshaller<ResourceConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -49,7 +49,7 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ResourceConfigMarshaller Instance = new ResourceConfigMarshaller();
 
     }

@@ -40,6 +40,7 @@ namespace Amazon.MTurk
         /// Default constructor
         /// </summary>
         public AmazonMTurkConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonMTurkDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "mturk-requester";
         }

@@ -34,7 +34,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Xavc4kIntraVbrProfileSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class Xavc4kIntraVbrProfileSettingsMarshaller : IRequestMarshaller<Xavc4kIntraVbrProfileSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static Xavc4kIntraVbrProfileSettingsMarshaller Instance = new Xavc4kIntraVbrProfileSettingsMarshaller();
 
     }

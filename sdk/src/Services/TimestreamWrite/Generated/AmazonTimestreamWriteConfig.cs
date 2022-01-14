@@ -40,6 +40,7 @@ namespace Amazon.TimestreamWrite
         /// Default constructor
         /// </summary>
         public AmazonTimestreamWriteConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonTimestreamWriteDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "timestream";
         }

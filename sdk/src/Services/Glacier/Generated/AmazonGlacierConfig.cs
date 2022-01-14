@@ -40,6 +40,7 @@ namespace Amazon.Glacier
         /// Default constructor
         /// </summary>
         public AmazonGlacierConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonGlacierDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "glacier";
         }

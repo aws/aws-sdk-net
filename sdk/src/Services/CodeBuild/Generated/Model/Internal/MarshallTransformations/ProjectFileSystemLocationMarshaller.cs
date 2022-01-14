@@ -34,7 +34,7 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ProjectFileSystemLocation Marshaller
-    /// </summary>       
+    /// </summary>
     public class ProjectFileSystemLocationMarshaller : IRequestMarshaller<ProjectFileSystemLocation, JsonMarshallerContext> 
     {
         /// <summary>
@@ -79,7 +79,7 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ProjectFileSystemLocationMarshaller Instance = new ProjectFileSystemLocationMarshaller();
 
     }

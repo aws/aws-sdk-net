@@ -40,6 +40,7 @@ namespace Amazon.Pricing
         /// Default constructor
         /// </summary>
         public AmazonPricingConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonPricingDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "pricing";
         }

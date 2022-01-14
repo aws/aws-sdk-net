@@ -40,6 +40,7 @@ namespace Amazon.GlobalAccelerator
         /// Default constructor
         /// </summary>
         public AmazonGlobalAcceleratorConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonGlobalAcceleratorDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "globalaccelerator";
         }

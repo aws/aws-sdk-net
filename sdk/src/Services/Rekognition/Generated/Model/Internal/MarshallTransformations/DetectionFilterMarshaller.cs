@@ -34,7 +34,7 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DetectionFilter Marshaller
-    /// </summary>       
+    /// </summary>
     public class DetectionFilterMarshaller : IRequestMarshaller<DetectionFilter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DetectionFilterMarshaller Instance = new DetectionFilterMarshaller();
 
     }

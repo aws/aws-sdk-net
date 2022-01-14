@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// HumanLoopActivationConditionsConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class HumanLoopActivationConditionsConfigMarshaller : IRequestMarshaller<HumanLoopActivationConditionsConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static HumanLoopActivationConditionsConfigMarshaller Instance = new HumanLoopActivationConditionsConfigMarshaller();
 
     }

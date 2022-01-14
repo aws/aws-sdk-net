@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AwsCloudTrailTrailDetails Marshaller
-    /// </summary>       
+    /// </summary>
     public class AwsCloudTrailTrailDetailsMarshaller : IRequestMarshaller<AwsCloudTrailTrailDetails, JsonMarshallerContext> 
     {
         /// <summary>
@@ -139,7 +139,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AwsCloudTrailTrailDetailsMarshaller Instance = new AwsCloudTrailTrailDetailsMarshaller();
 
     }

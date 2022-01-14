@@ -40,6 +40,7 @@ namespace Amazon.NetworkManager
         /// Default constructor
         /// </summary>
         public AmazonNetworkManagerConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonNetworkManagerDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "networkmanager";
         }

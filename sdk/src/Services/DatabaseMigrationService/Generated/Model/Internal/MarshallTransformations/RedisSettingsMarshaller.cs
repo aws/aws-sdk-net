@@ -34,7 +34,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RedisSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class RedisSettingsMarshaller : IRequestMarshaller<RedisSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -91,7 +91,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RedisSettingsMarshaller Instance = new RedisSettingsMarshaller();
 
     }

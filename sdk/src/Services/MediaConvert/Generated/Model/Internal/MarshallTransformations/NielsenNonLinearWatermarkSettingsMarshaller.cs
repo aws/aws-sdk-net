@@ -34,7 +34,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// NielsenNonLinearWatermarkSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class NielsenNonLinearWatermarkSettingsMarshaller : IRequestMarshaller<NielsenNonLinearWatermarkSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -115,7 +115,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static NielsenNonLinearWatermarkSettingsMarshaller Instance = new NielsenNonLinearWatermarkSettingsMarshaller();
 
     }

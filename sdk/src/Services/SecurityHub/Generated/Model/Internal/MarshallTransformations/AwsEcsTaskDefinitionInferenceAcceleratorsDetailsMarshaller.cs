@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AwsEcsTaskDefinitionInferenceAcceleratorsDetails Marshaller
-    /// </summary>       
+    /// </summary>
     public class AwsEcsTaskDefinitionInferenceAcceleratorsDetailsMarshaller : IRequestMarshaller<AwsEcsTaskDefinitionInferenceAcceleratorsDetails, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AwsEcsTaskDefinitionInferenceAcceleratorsDetailsMarshaller Instance = new AwsEcsTaskDefinitionInferenceAcceleratorsDetailsMarshaller();
 
     }

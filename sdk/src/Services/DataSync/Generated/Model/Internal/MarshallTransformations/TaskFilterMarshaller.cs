@@ -34,7 +34,7 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TaskFilter Marshaller
-    /// </summary>       
+    /// </summary>
     public class TaskFilterMarshaller : IRequestMarshaller<TaskFilter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TaskFilterMarshaller Instance = new TaskFilterMarshaller();
 
     }

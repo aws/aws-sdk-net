@@ -34,7 +34,7 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SuperuserParameters Marshaller
-    /// </summary>       
+    /// </summary>
     public class SuperuserParametersMarshaller : IRequestMarshaller<SuperuserParameters, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SuperuserParametersMarshaller Instance = new SuperuserParametersMarshaller();
 
     }

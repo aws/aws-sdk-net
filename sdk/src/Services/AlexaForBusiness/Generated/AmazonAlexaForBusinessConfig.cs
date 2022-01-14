@@ -40,6 +40,7 @@ namespace Amazon.AlexaForBusiness
         /// Default constructor
         /// </summary>
         public AmazonAlexaForBusinessConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonAlexaForBusinessDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "a4b";
         }

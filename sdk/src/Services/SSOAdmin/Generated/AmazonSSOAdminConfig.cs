@@ -40,6 +40,7 @@ namespace Amazon.SSOAdmin
         /// Default constructor
         /// </summary>
         public AmazonSSOAdminConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonSSOAdminDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "sso";
         }

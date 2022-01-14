@@ -34,7 +34,7 @@ namespace Amazon.AutoScalingPlans.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ApplicationSource Marshaller
-    /// </summary>       
+    /// </summary>
     public class ApplicationSourceMarshaller : IRequestMarshaller<ApplicationSource, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.AutoScalingPlans.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ApplicationSourceMarshaller Instance = new ApplicationSourceMarshaller();
 
     }

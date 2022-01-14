@@ -40,6 +40,7 @@ namespace Amazon.ApplicationCostProfiler
         /// Default constructor
         /// </summary>
         public AmazonApplicationCostProfilerConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonApplicationCostProfilerDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "application-cost-profiler";
         }

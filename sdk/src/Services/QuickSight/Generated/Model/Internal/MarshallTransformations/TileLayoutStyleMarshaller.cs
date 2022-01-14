@@ -34,7 +34,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TileLayoutStyle Marshaller
-    /// </summary>       
+    /// </summary>
     public class TileLayoutStyleMarshaller : IRequestMarshaller<TileLayoutStyle, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TileLayoutStyleMarshaller Instance = new TileLayoutStyleMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// LFTag Marshaller
-    /// </summary>       
+    /// </summary>
     public class LFTagMarshaller : IRequestMarshaller<LFTag, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static LFTagMarshaller Instance = new LFTagMarshaller();
 
     }

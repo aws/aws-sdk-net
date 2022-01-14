@@ -34,7 +34,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CreateGrokClassifierRequest Marshaller
-    /// </summary>       
+    /// </summary>
     public class CreateGrokClassifierRequestMarshaller : IRequestMarshaller<CreateGrokClassifierRequest, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CreateGrokClassifierRequestMarshaller Instance = new CreateGrokClassifierRequestMarshaller();
 
     }

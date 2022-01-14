@@ -34,7 +34,7 @@ namespace Amazon.NimbleStudio.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ComputeFarmConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class ComputeFarmConfigurationMarshaller : IRequestMarshaller<ComputeFarmConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.NimbleStudio.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ComputeFarmConfigurationMarshaller Instance = new ComputeFarmConfigurationMarshaller();
 
     }

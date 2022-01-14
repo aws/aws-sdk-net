@@ -34,7 +34,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// EnableIoTLoggingParams Marshaller
-    /// </summary>       
+    /// </summary>
     public class EnableIoTLoggingParamsMarshaller : IRequestMarshaller<EnableIoTLoggingParams, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static EnableIoTLoggingParamsMarshaller Instance = new EnableIoTLoggingParamsMarshaller();
 
     }

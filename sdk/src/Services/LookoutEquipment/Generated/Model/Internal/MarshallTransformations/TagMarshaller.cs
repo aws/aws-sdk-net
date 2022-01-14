@@ -34,7 +34,7 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Tag Marshaller
-    /// </summary>       
+    /// </summary>
     public class TagMarshaller : IRequestMarshaller<Tag, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TagMarshaller Instance = new TagMarshaller();
 
     }

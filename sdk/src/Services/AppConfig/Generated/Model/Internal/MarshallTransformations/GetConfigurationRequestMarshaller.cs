@@ -55,7 +55,7 @@ namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
         public IRequest Marshall(GetConfigurationRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.AppConfig");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-10-09";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-10-09";
             request.HttpMethod = "GET";
 
             if (!publicRequest.IsSetApplication())

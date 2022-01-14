@@ -34,7 +34,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// LexV2Bot Marshaller
-    /// </summary>       
+    /// </summary>
     public class LexV2BotMarshaller : IRequestMarshaller<LexV2Bot, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static LexV2BotMarshaller Instance = new LexV2BotMarshaller();
 
     }

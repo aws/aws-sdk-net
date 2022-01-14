@@ -55,7 +55,7 @@ namespace Amazon.ChimeSDKMeetings.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListAttendeesRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ChimeSDKMeetings");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-07-15";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-07-15";
             request.HttpMethod = "GET";
 
             if (!publicRequest.IsSetMeetingId())

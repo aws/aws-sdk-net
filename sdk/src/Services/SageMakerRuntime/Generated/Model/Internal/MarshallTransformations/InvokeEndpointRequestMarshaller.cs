@@ -56,7 +56,7 @@ namespace Amazon.SageMakerRuntime.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.SageMakerRuntime");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-05-13";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-05-13";
             request.HttpMethod = "POST";
 
             if (!publicRequest.IsSetEndpointName())
@@ -64,7 +64,7 @@ namespace Amazon.SageMakerRuntime.Model.Internal.MarshallTransformations
             request.AddPathResource("{EndpointName}", StringUtils.FromString(publicRequest.EndpointName));
             request.ResourcePath = "/endpoints/{EndpointName}/invocations";
             request.ContentStream =  publicRequest.Body ?? new MemoryStream();
-            request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] =  
+            request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] =
                 request.ContentStream.Length.ToString(CultureInfo.InvariantCulture);
             request.Headers[Amazon.Util.HeaderKeys.ContentTypeHeader] = "binary/octet-stream"; 
             if (request.ContentStream != null && request.ContentStream.Length == 0)
@@ -72,26 +72,40 @@ namespace Amazon.SageMakerRuntime.Model.Internal.MarshallTransformations
                 request.Headers.Remove(Amazon.Util.HeaderKeys.ContentTypeHeader);
             }
         
-            if(publicRequest.IsSetAccept())
+            if (publicRequest.IsSetAccept()) 
+            {
                 request.Headers["Accept"] = publicRequest.Accept;
+            }
         
-            if(publicRequest.IsSetContentType())
+            if (publicRequest.IsSetContentType()) 
+            {
                 request.Headers["Content-Type"] = publicRequest.ContentType;
+            }
         
-            if(publicRequest.IsSetCustomAttributes())
+            if (publicRequest.IsSetCustomAttributes()) 
+            {
                 request.Headers["X-Amzn-SageMaker-Custom-Attributes"] = publicRequest.CustomAttributes;
+            }
         
-            if(publicRequest.IsSetInferenceId())
+            if (publicRequest.IsSetInferenceId()) 
+            {
                 request.Headers["X-Amzn-SageMaker-Inference-Id"] = publicRequest.InferenceId;
+            }
         
-            if(publicRequest.IsSetTargetContainerHostname())
+            if (publicRequest.IsSetTargetContainerHostname()) 
+            {
                 request.Headers["X-Amzn-SageMaker-Target-Container-Hostname"] = publicRequest.TargetContainerHostname;
+            }
         
-            if(publicRequest.IsSetTargetModel())
+            if (publicRequest.IsSetTargetModel()) 
+            {
                 request.Headers["X-Amzn-SageMaker-Target-Model"] = publicRequest.TargetModel;
+            }
         
-            if(publicRequest.IsSetTargetVariant())
+            if (publicRequest.IsSetTargetVariant()) 
+            {
                 request.Headers["X-Amzn-SageMaker-Target-Variant"] = publicRequest.TargetVariant;
+            }
 
             return request;
         }

@@ -40,6 +40,7 @@ namespace Amazon.CloudHSMV2
         /// Default constructor
         /// </summary>
         public AmazonCloudHSMV2Config()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonCloudHSMV2DefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "cloudhsm";
         }

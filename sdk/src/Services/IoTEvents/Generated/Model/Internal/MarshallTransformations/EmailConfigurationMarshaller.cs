@@ -34,7 +34,7 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// EmailConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class EmailConfigurationMarshaller : IRequestMarshaller<EmailConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -77,7 +77,7 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static EmailConfigurationMarshaller Instance = new EmailConfigurationMarshaller();
 
     }

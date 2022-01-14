@@ -40,6 +40,7 @@ namespace Amazon.VoiceID
         /// Default constructor
         /// </summary>
         public AmazonVoiceIDConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonVoiceIDDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "voiceid";
         }

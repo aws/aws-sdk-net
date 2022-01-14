@@ -40,6 +40,7 @@ namespace Amazon.KafkaConnect
         /// Default constructor
         /// </summary>
         public AmazonKafkaConnectConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonKafkaConnectDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "kafkaconnect";
         }

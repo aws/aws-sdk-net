@@ -58,7 +58,7 @@ namespace Amazon.DAX.Model.Internal.MarshallTransformations
             string target = "AmazonDAXV3.UntagResource";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-04-19";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-04-19";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -84,7 +84,6 @@ namespace Amazon.DAX.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

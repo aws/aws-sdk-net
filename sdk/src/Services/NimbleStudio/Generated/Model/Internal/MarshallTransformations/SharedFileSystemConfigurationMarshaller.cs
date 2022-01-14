@@ -34,7 +34,7 @@ namespace Amazon.NimbleStudio.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SharedFileSystemConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class SharedFileSystemConfigurationMarshaller : IRequestMarshaller<SharedFileSystemConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -79,7 +79,7 @@ namespace Amazon.NimbleStudio.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SharedFileSystemConfigurationMarshaller Instance = new SharedFileSystemConfigurationMarshaller();
 
     }

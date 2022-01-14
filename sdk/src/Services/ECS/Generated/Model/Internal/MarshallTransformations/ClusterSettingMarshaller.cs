@@ -34,7 +34,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ClusterSetting Marshaller
-    /// </summary>       
+    /// </summary>
     public class ClusterSettingMarshaller : IRequestMarshaller<ClusterSetting, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ClusterSettingMarshaller Instance = new ClusterSettingMarshaller();
 
     }

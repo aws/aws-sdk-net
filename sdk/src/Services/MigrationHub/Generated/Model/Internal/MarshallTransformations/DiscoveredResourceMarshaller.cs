@@ -34,7 +34,7 @@ namespace Amazon.MigrationHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DiscoveredResource Marshaller
-    /// </summary>       
+    /// </summary>
     public class DiscoveredResourceMarshaller : IRequestMarshaller<DiscoveredResource, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.MigrationHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DiscoveredResourceMarshaller Instance = new DiscoveredResourceMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DataResource Marshaller
-    /// </summary>       
+    /// </summary>
     public class DataResourceMarshaller : IRequestMarshaller<DataResource, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DataResourceMarshaller Instance = new DataResourceMarshaller();
 
     }

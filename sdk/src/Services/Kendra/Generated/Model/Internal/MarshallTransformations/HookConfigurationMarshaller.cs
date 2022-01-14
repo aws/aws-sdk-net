@@ -34,7 +34,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// HookConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class HookConfigurationMarshaller : IRequestMarshaller<HookConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static HookConfigurationMarshaller Instance = new HookConfigurationMarshaller();
 
     }

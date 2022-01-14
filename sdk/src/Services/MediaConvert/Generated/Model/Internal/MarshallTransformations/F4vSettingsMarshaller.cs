@@ -34,7 +34,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// F4vSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class F4vSettingsMarshaller : IRequestMarshaller<F4vSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static F4vSettingsMarshaller Instance = new F4vSettingsMarshaller();
 
     }

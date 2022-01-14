@@ -34,7 +34,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// UserIdentityInfo Marshaller
-    /// </summary>       
+    /// </summary>
     public class UserIdentityInfoMarshaller : IRequestMarshaller<UserIdentityInfo, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static UserIdentityInfoMarshaller Instance = new UserIdentityInfoMarshaller();
 
     }

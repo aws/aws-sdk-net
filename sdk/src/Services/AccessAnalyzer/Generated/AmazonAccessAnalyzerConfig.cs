@@ -40,6 +40,7 @@ namespace Amazon.AccessAnalyzer
         /// Default constructor
         /// </summary>
         public AmazonAccessAnalyzerConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonAccessAnalyzerDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "access-analyzer";
         }

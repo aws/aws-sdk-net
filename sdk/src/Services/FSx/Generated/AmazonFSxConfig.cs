@@ -40,6 +40,7 @@ namespace Amazon.FSx
         /// Default constructor
         /// </summary>
         public AmazonFSxConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonFSxDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "fsx";
         }

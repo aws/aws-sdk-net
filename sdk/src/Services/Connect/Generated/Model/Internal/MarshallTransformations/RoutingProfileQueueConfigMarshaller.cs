@@ -34,7 +34,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RoutingProfileQueueConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class RoutingProfileQueueConfigMarshaller : IRequestMarshaller<RoutingProfileQueueConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RoutingProfileQueueConfigMarshaller Instance = new RoutingProfileQueueConfigMarshaller();
 
     }

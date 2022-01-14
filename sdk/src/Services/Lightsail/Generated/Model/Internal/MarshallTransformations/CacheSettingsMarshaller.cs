@@ -34,7 +34,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CacheSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class CacheSettingsMarshaller : IRequestMarshaller<CacheSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -112,7 +112,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CacheSettingsMarshaller Instance = new CacheSettingsMarshaller();
 
     }

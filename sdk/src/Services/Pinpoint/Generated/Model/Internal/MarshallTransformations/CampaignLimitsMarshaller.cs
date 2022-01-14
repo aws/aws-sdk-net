@@ -34,7 +34,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CampaignLimits Marshaller
-    /// </summary>       
+    /// </summary>
     public class CampaignLimitsMarshaller : IRequestMarshaller<CampaignLimits, JsonMarshallerContext> 
     {
         /// <summary>
@@ -79,7 +79,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CampaignLimitsMarshaller Instance = new CampaignLimitsMarshaller();
 
     }

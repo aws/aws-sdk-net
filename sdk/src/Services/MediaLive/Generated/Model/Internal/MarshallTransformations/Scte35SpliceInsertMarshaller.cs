@@ -34,7 +34,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Scte35SpliceInsert Marshaller
-    /// </summary>       
+    /// </summary>
     public class Scte35SpliceInsertMarshaller : IRequestMarshaller<Scte35SpliceInsert, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static Scte35SpliceInsertMarshaller Instance = new Scte35SpliceInsertMarshaller();
 
     }

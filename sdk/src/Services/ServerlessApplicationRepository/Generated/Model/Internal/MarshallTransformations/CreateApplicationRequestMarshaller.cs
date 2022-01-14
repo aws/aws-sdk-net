@@ -56,7 +56,7 @@ namespace Amazon.ServerlessApplicationRepository.Model.Internal.MarshallTransfor
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ServerlessApplicationRepository");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-09-08";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-09-08";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/applications";
@@ -160,7 +160,6 @@ namespace Amazon.ServerlessApplicationRepository.Model.Internal.MarshallTransfor
                     context.Writer.Write(publicRequest.TemplateUrl);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

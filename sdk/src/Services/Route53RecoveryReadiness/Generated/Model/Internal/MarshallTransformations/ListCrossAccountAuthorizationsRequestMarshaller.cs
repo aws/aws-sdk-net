@@ -55,7 +55,7 @@ namespace Amazon.Route53RecoveryReadiness.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListCrossAccountAuthorizationsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Route53RecoveryReadiness");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-12-02";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-12-02";
             request.HttpMethod = "GET";
 
             

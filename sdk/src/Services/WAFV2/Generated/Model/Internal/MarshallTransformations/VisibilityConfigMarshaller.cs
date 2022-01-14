@@ -34,7 +34,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// VisibilityConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class VisibilityConfigMarshaller : IRequestMarshaller<VisibilityConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static VisibilityConfigMarshaller Instance = new VisibilityConfigMarshaller();
 
     }

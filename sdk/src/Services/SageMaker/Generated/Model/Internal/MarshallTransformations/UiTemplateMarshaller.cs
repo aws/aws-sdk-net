@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// UiTemplate Marshaller
-    /// </summary>       
+    /// </summary>
     public class UiTemplateMarshaller : IRequestMarshaller<UiTemplate, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static UiTemplateMarshaller Instance = new UiTemplateMarshaller();
 
     }

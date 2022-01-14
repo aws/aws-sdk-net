@@ -34,7 +34,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// WriteApplicationSettingsRequest Marshaller
-    /// </summary>       
+    /// </summary>
     public class WriteApplicationSettingsRequestMarshaller : IRequestMarshaller<WriteApplicationSettingsRequest, JsonMarshallerContext> 
     {
         /// <summary>
@@ -94,7 +94,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static WriteApplicationSettingsRequestMarshaller Instance = new WriteApplicationSettingsRequestMarshaller();
 
     }

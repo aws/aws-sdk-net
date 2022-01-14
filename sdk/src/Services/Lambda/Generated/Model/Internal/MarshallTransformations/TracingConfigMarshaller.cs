@@ -34,7 +34,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TracingConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class TracingConfigMarshaller : IRequestMarshaller<TracingConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TracingConfigMarshaller Instance = new TracingConfigMarshaller();
 
     }

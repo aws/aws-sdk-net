@@ -34,7 +34,7 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SipRuleTargetApplication Marshaller
-    /// </summary>       
+    /// </summary>
     public class SipRuleTargetApplicationMarshaller : IRequestMarshaller<SipRuleTargetApplication, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SipRuleTargetApplicationMarshaller Instance = new SipRuleTargetApplicationMarshaller();
 
     }

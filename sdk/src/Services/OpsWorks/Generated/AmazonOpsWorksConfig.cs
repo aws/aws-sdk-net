@@ -40,6 +40,7 @@ namespace Amazon.OpsWorks
         /// Default constructor
         /// </summary>
         public AmazonOpsWorksConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonOpsWorksDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "opsworks";
         }

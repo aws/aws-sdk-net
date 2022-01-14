@@ -34,7 +34,7 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DomainNameConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class DomainNameConfigurationMarshaller : IRequestMarshaller<DomainNameConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -109,7 +109,7 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DomainNameConfigurationMarshaller Instance = new DomainNameConfigurationMarshaller();
 
     }

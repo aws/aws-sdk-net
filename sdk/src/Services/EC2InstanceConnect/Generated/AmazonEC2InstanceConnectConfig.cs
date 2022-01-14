@@ -40,6 +40,7 @@ namespace Amazon.EC2InstanceConnect
         /// Default constructor
         /// </summary>
         public AmazonEC2InstanceConnectConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonEC2InstanceConnectDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "ec2-instance-connect";
         }

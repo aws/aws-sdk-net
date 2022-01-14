@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// GitConfigForUpdate Marshaller
-    /// </summary>       
+    /// </summary>
     public class GitConfigForUpdateMarshaller : IRequestMarshaller<GitConfigForUpdate, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static GitConfigForUpdateMarshaller Instance = new GitConfigForUpdateMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// PSTNDialIn Marshaller
-    /// </summary>       
+    /// </summary>
     public class PSTNDialInMarshaller : IRequestMarshaller<PSTNDialIn, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static PSTNDialInMarshaller Instance = new PSTNDialInMarshaller();
 
     }

@@ -40,6 +40,7 @@ namespace Amazon.IoTAnalytics
         /// Default constructor
         /// </summary>
         public AmazonIoTAnalyticsConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonIoTAnalyticsDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "iotanalytics";
         }

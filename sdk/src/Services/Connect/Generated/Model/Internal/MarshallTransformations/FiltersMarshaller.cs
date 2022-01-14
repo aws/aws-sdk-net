@@ -34,7 +34,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Filters Marshaller
-    /// </summary>       
+    /// </summary>
     public class FiltersMarshaller : IRequestMarshaller<Filters, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static FiltersMarshaller Instance = new FiltersMarshaller();
 
     }

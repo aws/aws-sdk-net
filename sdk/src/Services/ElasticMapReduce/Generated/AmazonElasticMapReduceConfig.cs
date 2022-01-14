@@ -40,6 +40,7 @@ namespace Amazon.ElasticMapReduce
         /// Default constructor
         /// </summary>
         public AmazonElasticMapReduceConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonElasticMapReduceDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "elasticmapreduce";
         }

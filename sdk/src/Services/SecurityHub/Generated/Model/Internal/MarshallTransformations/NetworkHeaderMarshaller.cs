@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// NetworkHeader Marshaller
-    /// </summary>       
+    /// </summary>
     public class NetworkHeaderMarshaller : IRequestMarshaller<NetworkHeader, JsonMarshallerContext> 
     {
         /// <summary>
@@ -77,7 +77,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static NetworkHeaderMarshaller Instance = new NetworkHeaderMarshaller();
 
     }

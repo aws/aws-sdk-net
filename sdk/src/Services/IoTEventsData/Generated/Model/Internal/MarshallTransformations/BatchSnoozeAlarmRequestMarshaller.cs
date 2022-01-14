@@ -56,7 +56,7 @@ namespace Amazon.IoTEventsData.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.IoTEventsData");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-10-23";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-10-23";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/alarms/snooze";
@@ -81,7 +81,6 @@ namespace Amazon.IoTEventsData.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

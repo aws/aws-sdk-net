@@ -34,7 +34,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// PortMapping Marshaller
-    /// </summary>       
+    /// </summary>
     public class PortMappingMarshaller : IRequestMarshaller<PortMapping, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static PortMappingMarshaller Instance = new PortMappingMarshaller();
 
     }

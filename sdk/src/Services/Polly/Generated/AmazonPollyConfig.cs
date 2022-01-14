@@ -40,6 +40,7 @@ namespace Amazon.Polly
         /// Default constructor
         /// </summary>
         public AmazonPollyConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonPollyDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "polly";
         }

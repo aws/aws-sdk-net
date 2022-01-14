@@ -34,7 +34,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// OutputChannelMapping Marshaller
-    /// </summary>       
+    /// </summary>
     public class OutputChannelMappingMarshaller : IRequestMarshaller<OutputChannelMapping, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static OutputChannelMappingMarshaller Instance = new OutputChannelMappingMarshaller();
 
     }

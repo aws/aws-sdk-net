@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// PipelineDefinitionS3Location Marshaller
-    /// </summary>       
+    /// </summary>
     public class PipelineDefinitionS3LocationMarshaller : IRequestMarshaller<PipelineDefinitionS3Location, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static PipelineDefinitionS3LocationMarshaller Instance = new PipelineDefinitionS3LocationMarshaller();
 
     }

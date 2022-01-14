@@ -55,7 +55,7 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListPortalsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.IoTSiteWise");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-12-02";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-12-02";
             request.HttpMethod = "GET";
 
             

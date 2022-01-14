@@ -40,6 +40,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// Default constructor
         /// </summary>
         public AmazonElasticLoadBalancingV2Config()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonElasticLoadBalancingV2DefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "elasticloadbalancing";
         }

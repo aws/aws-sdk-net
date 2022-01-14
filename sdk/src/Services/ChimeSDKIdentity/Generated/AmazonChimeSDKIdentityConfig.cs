@@ -40,6 +40,7 @@ namespace Amazon.ChimeSDKIdentity
         /// Default constructor
         /// </summary>
         public AmazonChimeSDKIdentityConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonChimeSDKIdentityDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "chime";
         }

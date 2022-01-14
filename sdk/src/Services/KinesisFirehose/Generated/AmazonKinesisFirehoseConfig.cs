@@ -40,6 +40,7 @@ namespace Amazon.KinesisFirehose
         /// Default constructor
         /// </summary>
         public AmazonKinesisFirehoseConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonKinesisFirehoseDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "firehose";
         }

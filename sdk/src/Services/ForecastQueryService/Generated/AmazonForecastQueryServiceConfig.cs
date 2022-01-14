@@ -40,6 +40,7 @@ namespace Amazon.ForecastQueryService
         /// Default constructor
         /// </summary>
         public AmazonForecastQueryServiceConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonForecastQueryServiceDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "forecast";
         }

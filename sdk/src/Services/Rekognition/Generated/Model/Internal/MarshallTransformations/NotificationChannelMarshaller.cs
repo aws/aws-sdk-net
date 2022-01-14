@@ -34,7 +34,7 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// NotificationChannel Marshaller
-    /// </summary>       
+    /// </summary>
     public class NotificationChannelMarshaller : IRequestMarshaller<NotificationChannel, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static NotificationChannelMarshaller Instance = new NotificationChannelMarshaller();
 
     }

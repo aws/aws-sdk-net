@@ -34,7 +34,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AutoScalingPolicy Marshaller
-    /// </summary>       
+    /// </summary>
     public class AutoScalingPolicyMarshaller : IRequestMarshaller<AutoScalingPolicy, JsonMarshallerContext> 
     {
         /// <summary>
@@ -76,7 +76,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AutoScalingPolicyMarshaller Instance = new AutoScalingPolicyMarshaller();
 
     }

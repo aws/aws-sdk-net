@@ -34,7 +34,7 @@ namespace Amazon.IoTEventsData.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DisableAlarmActionRequest Marshaller
-    /// </summary>       
+    /// </summary>
     public class DisableAlarmActionRequestMarshaller : IRequestMarshaller<DisableAlarmActionRequest, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.IoTEventsData.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DisableAlarmActionRequestMarshaller Instance = new DisableAlarmActionRequestMarshaller();
 
     }

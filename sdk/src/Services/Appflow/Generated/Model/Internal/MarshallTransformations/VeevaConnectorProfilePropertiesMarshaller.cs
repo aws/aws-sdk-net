@@ -34,7 +34,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// VeevaConnectorProfileProperties Marshaller
-    /// </summary>       
+    /// </summary>
     public class VeevaConnectorProfilePropertiesMarshaller : IRequestMarshaller<VeevaConnectorProfileProperties, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static VeevaConnectorProfilePropertiesMarshaller Instance = new VeevaConnectorProfilePropertiesMarshaller();
 
     }

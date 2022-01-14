@@ -57,11 +57,15 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             var request = new DefaultRequest(publicRequest, "Amazon.S3Control");
             request.HttpMethod = "GET";
         
-            if(publicRequest.IsSetAccountId())
+            if (publicRequest.IsSetAccountId()) 
+            {
                 request.Headers["x-amz-account-id"] = publicRequest.AccountId;
+            }
         
-            if(publicRequest.IsSetOutpostId())
+            if (publicRequest.IsSetOutpostId()) 
+            {
                 request.Headers["x-amz-outpost-id"] = publicRequest.OutpostId;
+            }
             
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));

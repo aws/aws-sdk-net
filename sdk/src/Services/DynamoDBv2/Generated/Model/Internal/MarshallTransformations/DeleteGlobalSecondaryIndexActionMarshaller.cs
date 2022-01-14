@@ -34,7 +34,7 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DeleteGlobalSecondaryIndexAction Marshaller
-    /// </summary>       
+    /// </summary>
     public class DeleteGlobalSecondaryIndexActionMarshaller : IRequestMarshaller<DeleteGlobalSecondaryIndexAction, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DeleteGlobalSecondaryIndexActionMarshaller Instance = new DeleteGlobalSecondaryIndexActionMarshaller();
 
     }

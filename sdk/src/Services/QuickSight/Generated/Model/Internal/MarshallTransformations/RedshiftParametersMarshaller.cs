@@ -34,7 +34,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RedshiftParameters Marshaller
-    /// </summary>       
+    /// </summary>
     public class RedshiftParametersMarshaller : IRequestMarshaller<RedshiftParameters, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RedshiftParametersMarshaller Instance = new RedshiftParametersMarshaller();
 
     }

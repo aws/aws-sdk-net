@@ -34,7 +34,7 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// LoginAuthConfigReqObj Marshaller
-    /// </summary>       
+    /// </summary>
     public class LoginAuthConfigReqObjMarshaller : IRequestMarshaller<LoginAuthConfigReqObj, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static LoginAuthConfigReqObjMarshaller Instance = new LoginAuthConfigReqObjMarshaller();
 
     }

@@ -58,7 +58,7 @@ namespace Amazon.MediaStore.Model.Internal.MarshallTransformations
             string target = "MediaStore_20170901.GetCorsPolicy";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-09-01";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-09-01";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -73,7 +73,6 @@ namespace Amazon.MediaStore.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ContainerName);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

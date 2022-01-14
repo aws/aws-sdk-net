@@ -40,6 +40,7 @@ namespace Amazon.ServiceQuotas
         /// Default constructor
         /// </summary>
         public AmazonServiceQuotasConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonServiceQuotasDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "servicequotas";
         }

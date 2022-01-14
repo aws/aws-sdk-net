@@ -34,7 +34,7 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// JobWatermark Marshaller
-    /// </summary>       
+    /// </summary>
     public class JobWatermarkMarshaller : IRequestMarshaller<JobWatermark, JsonMarshallerContext> 
     {
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static JobWatermarkMarshaller Instance = new JobWatermarkMarshaller();
 
     }

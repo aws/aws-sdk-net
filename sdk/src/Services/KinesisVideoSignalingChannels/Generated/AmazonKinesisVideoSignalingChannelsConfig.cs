@@ -40,6 +40,7 @@ namespace Amazon.KinesisVideoSignalingChannels
         /// Default constructor
         /// </summary>
         public AmazonKinesisVideoSignalingChannelsConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonKinesisVideoSignalingChannelsDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "kinesisvideo";
         }

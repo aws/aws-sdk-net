@@ -34,7 +34,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// VirtualGatewayClientPolicy Marshaller
-    /// </summary>       
+    /// </summary>
     public class VirtualGatewayClientPolicyMarshaller : IRequestMarshaller<VirtualGatewayClientPolicy, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static VirtualGatewayClientPolicyMarshaller Instance = new VirtualGatewayClientPolicyMarshaller();
 
     }

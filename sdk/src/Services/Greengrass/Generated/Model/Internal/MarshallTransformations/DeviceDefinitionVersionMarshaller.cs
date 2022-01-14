@@ -34,7 +34,7 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DeviceDefinitionVersion Marshaller
-    /// </summary>       
+    /// </summary>
     public class DeviceDefinitionVersionMarshaller : IRequestMarshaller<DeviceDefinitionVersion, JsonMarshallerContext> 
     {
         /// <summary>
@@ -65,7 +65,7 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DeviceDefinitionVersionMarshaller Instance = new DeviceDefinitionVersionMarshaller();
 
     }

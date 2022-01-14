@@ -34,7 +34,7 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// IpAddressRequest Marshaller
-    /// </summary>       
+    /// </summary>
     public class IpAddressRequestMarshaller : IRequestMarshaller<IpAddressRequest, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static IpAddressRequestMarshaller Instance = new IpAddressRequestMarshaller();
 
     }

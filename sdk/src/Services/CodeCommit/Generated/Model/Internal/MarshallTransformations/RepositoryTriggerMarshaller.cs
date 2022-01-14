@@ -34,7 +34,7 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RepositoryTrigger Marshaller
-    /// </summary>       
+    /// </summary>
     public class RepositoryTriggerMarshaller : IRequestMarshaller<RepositoryTrigger, JsonMarshallerContext> 
     {
         /// <summary>
@@ -89,7 +89,7 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RepositoryTriggerMarshaller Instance = new RepositoryTriggerMarshaller();
 
     }

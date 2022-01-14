@@ -40,6 +40,7 @@ namespace Amazon.Textract
         /// Default constructor
         /// </summary>
         public AmazonTextractConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonTextractDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "textract";
         }

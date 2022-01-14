@@ -34,7 +34,7 @@ namespace Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CreateConnectionOAuthClientRequestParameters Marshaller
-    /// </summary>       
+    /// </summary>
     public class CreateConnectionOAuthClientRequestParametersMarshaller : IRequestMarshaller<CreateConnectionOAuthClientRequestParameters, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CreateConnectionOAuthClientRequestParametersMarshaller Instance = new CreateConnectionOAuthClientRequestParametersMarshaller();
 
     }

@@ -40,6 +40,7 @@ namespace Amazon.RoboMaker
         /// Default constructor
         /// </summary>
         public AmazonRoboMakerConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonRoboMakerDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "robomaker";
         }

@@ -34,7 +34,7 @@ namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RotationRulesType Marshaller
-    /// </summary>       
+    /// </summary>
     public class RotationRulesTypeMarshaller : IRequestMarshaller<RotationRulesType, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RotationRulesTypeMarshaller Instance = new RotationRulesTypeMarshaller();
 
     }

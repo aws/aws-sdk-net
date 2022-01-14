@@ -34,7 +34,7 @@ namespace Amazon.AWSHealth.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DateTimeRange Marshaller
-    /// </summary>       
+    /// </summary>
     public class DateTimeRangeMarshaller : IRequestMarshaller<DateTimeRange, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.AWSHealth.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DateTimeRangeMarshaller Instance = new DateTimeRangeMarshaller();
 
     }

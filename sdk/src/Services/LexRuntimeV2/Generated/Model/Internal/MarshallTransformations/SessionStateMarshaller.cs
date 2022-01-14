@@ -34,7 +34,7 @@ namespace Amazon.LexRuntimeV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SessionState Marshaller
-    /// </summary>       
+    /// </summary>
     public class SessionStateMarshaller : IRequestMarshaller<SessionState, JsonMarshallerContext> 
     {
         /// <summary>
@@ -118,7 +118,7 @@ namespace Amazon.LexRuntimeV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SessionStateMarshaller Instance = new SessionStateMarshaller();
 
     }

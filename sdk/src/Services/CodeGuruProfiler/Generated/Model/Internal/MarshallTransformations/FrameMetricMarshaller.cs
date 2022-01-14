@@ -34,7 +34,7 @@ namespace Amazon.CodeGuruProfiler.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// FrameMetric Marshaller
-    /// </summary>       
+    /// </summary>
     public class FrameMetricMarshaller : IRequestMarshaller<FrameMetric, JsonMarshallerContext> 
     {
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.CodeGuruProfiler.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static FrameMetricMarshaller Instance = new FrameMetricMarshaller();
 
     }

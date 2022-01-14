@@ -34,7 +34,7 @@ namespace Amazon.CloudWatchEvidently.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ScheduledSplitConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class ScheduledSplitConfigMarshaller : IRequestMarshaller<ScheduledSplitConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -69,7 +69,7 @@ namespace Amazon.CloudWatchEvidently.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ScheduledSplitConfigMarshaller Instance = new ScheduledSplitConfigMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// NotificationConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class NotificationConfigMarshaller : IRequestMarshaller<NotificationConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static NotificationConfigMarshaller Instance = new NotificationConfigMarshaller();
 
     }

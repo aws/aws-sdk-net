@@ -40,6 +40,7 @@ namespace Amazon.TranscribeService
         /// Default constructor
         /// </summary>
         public AmazonTranscribeServiceConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonTranscribeServiceDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "transcribe";
         }

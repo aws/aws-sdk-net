@@ -34,7 +34,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ProxyConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class ProxyConfigurationMarshaller : IRequestMarshaller<ProxyConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -77,7 +77,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ProxyConfigurationMarshaller Instance = new ProxyConfigurationMarshaller();
 
     }

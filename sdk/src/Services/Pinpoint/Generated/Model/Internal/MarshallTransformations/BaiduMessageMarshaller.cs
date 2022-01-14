@@ -34,7 +34,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// BaiduMessage Marshaller
-    /// </summary>       
+    /// </summary>
     public class BaiduMessageMarshaller : IRequestMarshaller<BaiduMessage, JsonMarshallerContext> 
     {
         /// <summary>
@@ -154,7 +154,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static BaiduMessageMarshaller Instance = new BaiduMessageMarshaller();
 
     }

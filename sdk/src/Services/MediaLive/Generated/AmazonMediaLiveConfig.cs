@@ -40,6 +40,7 @@ namespace Amazon.MediaLive
         /// Default constructor
         /// </summary>
         public AmazonMediaLiveConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonMediaLiveDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "medialive";
         }

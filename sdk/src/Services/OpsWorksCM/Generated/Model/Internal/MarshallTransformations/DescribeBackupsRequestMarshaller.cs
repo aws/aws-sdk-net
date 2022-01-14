@@ -58,7 +58,7 @@ namespace Amazon.OpsWorksCM.Model.Internal.MarshallTransformations
             string target = "OpsWorksCM_V2016_11_01.DescribeBackups";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-11-01";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-11-01";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -91,7 +91,6 @@ namespace Amazon.OpsWorksCM.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ServerName);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

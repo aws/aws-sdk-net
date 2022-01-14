@@ -34,7 +34,7 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RowFilter Marshaller
-    /// </summary>       
+    /// </summary>
     public class RowFilterMarshaller : IRequestMarshaller<RowFilter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RowFilterMarshaller Instance = new RowFilterMarshaller();
 
     }

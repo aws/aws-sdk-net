@@ -34,7 +34,7 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// S3SourceProperties Marshaller
-    /// </summary>       
+    /// </summary>
     public class S3SourcePropertiesMarshaller : IRequestMarshaller<S3SourceProperties, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static S3SourcePropertiesMarshaller Instance = new S3SourcePropertiesMarshaller();
 
     }

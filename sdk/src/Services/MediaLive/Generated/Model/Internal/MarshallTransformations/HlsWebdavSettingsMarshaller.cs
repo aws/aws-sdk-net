@@ -34,7 +34,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// HlsWebdavSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class HlsWebdavSettingsMarshaller : IRequestMarshaller<HlsWebdavSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -79,7 +79,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static HlsWebdavSettingsMarshaller Instance = new HlsWebdavSettingsMarshaller();
 
     }

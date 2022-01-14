@@ -34,7 +34,7 @@ namespace Amazon.NimbleStudio.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// StudioEncryptionConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class StudioEncryptionConfigurationMarshaller : IRequestMarshaller<StudioEncryptionConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.NimbleStudio.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static StudioEncryptionConfigurationMarshaller Instance = new StudioEncryptionConfigurationMarshaller();
 
     }

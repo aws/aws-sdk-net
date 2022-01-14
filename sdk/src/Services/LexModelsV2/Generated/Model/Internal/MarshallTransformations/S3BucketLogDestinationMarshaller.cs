@@ -34,7 +34,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// S3BucketLogDestination Marshaller
-    /// </summary>       
+    /// </summary>
     public class S3BucketLogDestinationMarshaller : IRequestMarshaller<S3BucketLogDestination, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static S3BucketLogDestinationMarshaller Instance = new S3BucketLogDestinationMarshaller();
 
     }

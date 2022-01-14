@@ -40,6 +40,7 @@ namespace Amazon.IoTFleetHub
         /// Default constructor
         /// </summary>
         public AmazonIoTFleetHubConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonIoTFleetHubDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "iotfleethub";
         }

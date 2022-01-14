@@ -34,7 +34,7 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SecurityServicePolicyData Marshaller
-    /// </summary>       
+    /// </summary>
     public class SecurityServicePolicyDataMarshaller : IRequestMarshaller<SecurityServicePolicyData, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SecurityServicePolicyDataMarshaller Instance = new SecurityServicePolicyDataMarshaller();
 
     }

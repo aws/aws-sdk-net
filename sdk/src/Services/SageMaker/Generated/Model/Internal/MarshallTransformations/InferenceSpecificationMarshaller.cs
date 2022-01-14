@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// InferenceSpecification Marshaller
-    /// </summary>       
+    /// </summary>
     public class InferenceSpecificationMarshaller : IRequestMarshaller<InferenceSpecification, JsonMarshallerContext> 
     {
         /// <summary>
@@ -109,7 +109,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static InferenceSpecificationMarshaller Instance = new InferenceSpecificationMarshaller();
 
     }

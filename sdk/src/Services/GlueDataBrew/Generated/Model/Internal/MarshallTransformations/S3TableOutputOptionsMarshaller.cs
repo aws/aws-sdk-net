@@ -34,7 +34,7 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// S3TableOutputOptions Marshaller
-    /// </summary>       
+    /// </summary>
     public class S3TableOutputOptionsMarshaller : IRequestMarshaller<S3TableOutputOptions, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static S3TableOutputOptionsMarshaller Instance = new S3TableOutputOptionsMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AwsSecurityFindingFilters Marshaller
-    /// </summary>       
+    /// </summary>
     public class AwsSecurityFindingFiltersMarshaller : IRequestMarshaller<AwsSecurityFindingFilters, JsonMarshallerContext> 
     {
         /// <summary>
@@ -1553,7 +1553,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AwsSecurityFindingFiltersMarshaller Instance = new AwsSecurityFindingFiltersMarshaller();
 
     }

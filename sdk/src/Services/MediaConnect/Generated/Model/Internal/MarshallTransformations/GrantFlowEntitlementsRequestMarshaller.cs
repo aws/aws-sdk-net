@@ -56,7 +56,7 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.MediaConnect");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-11-14";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-11-14";
             request.HttpMethod = "POST";
 
             if (!publicRequest.IsSetFlowArn())
@@ -84,7 +84,6 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

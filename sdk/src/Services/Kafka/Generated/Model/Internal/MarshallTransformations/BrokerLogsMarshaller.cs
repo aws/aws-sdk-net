@@ -34,7 +34,7 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// BrokerLogs Marshaller
-    /// </summary>       
+    /// </summary>
     public class BrokerLogsMarshaller : IRequestMarshaller<BrokerLogs, JsonMarshallerContext> 
     {
         /// <summary>
@@ -82,7 +82,7 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static BrokerLogsMarshaller Instance = new BrokerLogsMarshaller();
 
     }

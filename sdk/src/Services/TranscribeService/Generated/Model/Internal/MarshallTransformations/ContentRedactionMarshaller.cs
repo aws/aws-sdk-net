@@ -34,7 +34,7 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ContentRedaction Marshaller
-    /// </summary>       
+    /// </summary>
     public class ContentRedactionMarshaller : IRequestMarshaller<ContentRedaction, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ContentRedactionMarshaller Instance = new ContentRedactionMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// HlsContentProtection Marshaller
-    /// </summary>       
+    /// </summary>
     public class HlsContentProtectionMarshaller : IRequestMarshaller<HlsContentProtection, JsonMarshallerContext> 
     {
         /// <summary>
@@ -85,7 +85,7 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static HlsContentProtectionMarshaller Instance = new HlsContentProtectionMarshaller();
 
     }

@@ -40,6 +40,7 @@ namespace Amazon.ResilienceHub
         /// Default constructor
         /// </summary>
         public AmazonResilienceHubConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonResilienceHubDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "resiliencehub";
         }

@@ -40,6 +40,7 @@ namespace Amazon.ACMPCA
         /// Default constructor
         /// </summary>
         public AmazonACMPCAConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonACMPCADefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "acm-pca";
         }

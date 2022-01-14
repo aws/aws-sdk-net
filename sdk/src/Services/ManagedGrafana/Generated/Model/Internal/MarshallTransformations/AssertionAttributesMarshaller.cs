@@ -34,7 +34,7 @@ namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AssertionAttributes Marshaller
-    /// </summary>       
+    /// </summary>
     public class AssertionAttributesMarshaller : IRequestMarshaller<AssertionAttributes, JsonMarshallerContext> 
     {
         /// <summary>
@@ -85,7 +85,7 @@ namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AssertionAttributesMarshaller Instance = new AssertionAttributesMarshaller();
 
     }

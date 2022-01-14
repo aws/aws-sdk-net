@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// JupyterServerAppSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class JupyterServerAppSettingsMarshaller : IRequestMarshaller<JupyterServerAppSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static JupyterServerAppSettingsMarshaller Instance = new JupyterServerAppSettingsMarshaller();
 
     }

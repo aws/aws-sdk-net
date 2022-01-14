@@ -34,7 +34,7 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// EbsInstanceBlockDeviceSpecification Marshaller
-    /// </summary>       
+    /// </summary>
     public class EbsInstanceBlockDeviceSpecificationMarshaller : IRequestMarshaller<EbsInstanceBlockDeviceSpecification, JsonMarshallerContext> 
     {
         /// <summary>
@@ -97,7 +97,7 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static EbsInstanceBlockDeviceSpecificationMarshaller Instance = new EbsInstanceBlockDeviceSpecificationMarshaller();
 
     }

@@ -56,7 +56,7 @@ namespace Amazon.Braket.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Braket");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-09-01";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-09-01";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/quantum-tasks";
@@ -93,7 +93,6 @@ namespace Amazon.Braket.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.NextToken);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

@@ -34,7 +34,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// KinesisFirehoseConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class KinesisFirehoseConfigMarshaller : IRequestMarshaller<KinesisFirehoseConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static KinesisFirehoseConfigMarshaller Instance = new KinesisFirehoseConfigMarshaller();
 
     }

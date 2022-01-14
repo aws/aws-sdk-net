@@ -34,7 +34,7 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ELBInfo Marshaller
-    /// </summary>       
+    /// </summary>
     public class ELBInfoMarshaller : IRequestMarshaller<ELBInfo, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ELBInfoMarshaller Instance = new ELBInfoMarshaller();
 
     }

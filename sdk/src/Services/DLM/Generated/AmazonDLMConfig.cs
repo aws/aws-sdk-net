@@ -40,6 +40,7 @@ namespace Amazon.DLM
         /// Default constructor
         /// </summary>
         public AmazonDLMConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonDLMDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "dlm";
         }

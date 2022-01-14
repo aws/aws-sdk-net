@@ -34,7 +34,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TableInput Marshaller
-    /// </summary>       
+    /// </summary>
     public class TableInputMarshaller : IRequestMarshaller<TableInput, JsonMarshallerContext> 
     {
         /// <summary>
@@ -155,7 +155,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TableInputMarshaller Instance = new TableInputMarshaller();
 
     }

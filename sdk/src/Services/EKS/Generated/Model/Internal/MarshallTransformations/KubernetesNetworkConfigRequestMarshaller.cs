@@ -34,7 +34,7 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// KubernetesNetworkConfigRequest Marshaller
-    /// </summary>       
+    /// </summary>
     public class KubernetesNetworkConfigRequestMarshaller : IRequestMarshaller<KubernetesNetworkConfigRequest, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static KubernetesNetworkConfigRequestMarshaller Instance = new KubernetesNetworkConfigRequestMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SyncConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class SyncConfigMarshaller : IRequestMarshaller<SyncConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SyncConfigMarshaller Instance = new SyncConfigMarshaller();
 
     }

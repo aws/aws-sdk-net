@@ -40,6 +40,7 @@ namespace Amazon.SavingsPlans
         /// Default constructor
         /// </summary>
         public AmazonSavingsPlansConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonSavingsPlansDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "savingsplans";
         }

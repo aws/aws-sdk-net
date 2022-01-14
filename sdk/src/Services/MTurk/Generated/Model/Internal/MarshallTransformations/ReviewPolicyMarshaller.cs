@@ -34,7 +34,7 @@ namespace Amazon.MTurk.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ReviewPolicy Marshaller
-    /// </summary>       
+    /// </summary>
     public class ReviewPolicyMarshaller : IRequestMarshaller<ReviewPolicy, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.MTurk.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ReviewPolicyMarshaller Instance = new ReviewPolicyMarshaller();
 
     }

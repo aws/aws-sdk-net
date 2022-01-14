@@ -34,7 +34,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// UpdateFileSystemOntapConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class UpdateFileSystemOntapConfigurationMarshaller : IRequestMarshaller<UpdateFileSystemOntapConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static UpdateFileSystemOntapConfigurationMarshaller Instance = new UpdateFileSystemOntapConfigurationMarshaller();
 
     }

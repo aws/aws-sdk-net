@@ -34,7 +34,7 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CopyStepDetails Marshaller
-    /// </summary>       
+    /// </summary>
     public class CopyStepDetailsMarshaller : IRequestMarshaller<CopyStepDetails, JsonMarshallerContext> 
     {
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CopyStepDetailsMarshaller Instance = new CopyStepDetailsMarshaller();
 
     }

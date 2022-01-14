@@ -34,7 +34,7 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CanaryCodeInput Marshaller
-    /// </summary>       
+    /// </summary>
     public class CanaryCodeInputMarshaller : IRequestMarshaller<CanaryCodeInput, JsonMarshallerContext> 
     {
         /// <summary>
@@ -79,7 +79,7 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CanaryCodeInputMarshaller Instance = new CanaryCodeInputMarshaller();
 
     }

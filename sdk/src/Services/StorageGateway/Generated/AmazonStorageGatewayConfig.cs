@@ -40,6 +40,7 @@ namespace Amazon.StorageGateway
         /// Default constructor
         /// </summary>
         public AmazonStorageGatewayConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonStorageGatewayDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "storagegateway";
         }

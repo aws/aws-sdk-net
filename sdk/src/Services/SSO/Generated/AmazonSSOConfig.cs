@@ -40,6 +40,7 @@ namespace Amazon.SSO
         /// Default constructor
         /// </summary>
         public AmazonSSOConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonSSODefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "awsssoportal";
         }

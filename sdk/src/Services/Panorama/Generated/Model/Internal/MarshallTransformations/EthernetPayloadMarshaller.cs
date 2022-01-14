@@ -34,7 +34,7 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// EthernetPayload Marshaller
-    /// </summary>       
+    /// </summary>
     public class EthernetPayloadMarshaller : IRequestMarshaller<EthernetPayload, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static EthernetPayloadMarshaller Instance = new EthernetPayloadMarshaller();
 
     }

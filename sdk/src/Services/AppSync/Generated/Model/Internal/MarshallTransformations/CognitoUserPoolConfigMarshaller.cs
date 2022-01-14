@@ -34,7 +34,7 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CognitoUserPoolConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class CognitoUserPoolConfigMarshaller : IRequestMarshaller<CognitoUserPoolConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CognitoUserPoolConfigMarshaller Instance = new CognitoUserPoolConfigMarshaller();
 
     }

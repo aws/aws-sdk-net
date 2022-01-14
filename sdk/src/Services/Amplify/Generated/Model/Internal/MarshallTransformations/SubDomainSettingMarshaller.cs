@@ -34,7 +34,7 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SubDomainSetting Marshaller
-    /// </summary>       
+    /// </summary>
     public class SubDomainSettingMarshaller : IRequestMarshaller<SubDomainSetting, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SubDomainSettingMarshaller Instance = new SubDomainSettingMarshaller();
 
     }

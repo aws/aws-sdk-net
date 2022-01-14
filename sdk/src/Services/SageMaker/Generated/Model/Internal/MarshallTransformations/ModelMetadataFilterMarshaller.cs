@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ModelMetadataFilter Marshaller
-    /// </summary>       
+    /// </summary>
     public class ModelMetadataFilterMarshaller : IRequestMarshaller<ModelMetadataFilter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ModelMetadataFilterMarshaller Instance = new ModelMetadataFilterMarshaller();
 
     }

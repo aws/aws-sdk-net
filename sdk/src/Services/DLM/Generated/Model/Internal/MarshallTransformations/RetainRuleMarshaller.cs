@@ -34,7 +34,7 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RetainRule Marshaller
-    /// </summary>       
+    /// </summary>
     public class RetainRuleMarshaller : IRequestMarshaller<RetainRule, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RetainRuleMarshaller Instance = new RetainRuleMarshaller();
 
     }

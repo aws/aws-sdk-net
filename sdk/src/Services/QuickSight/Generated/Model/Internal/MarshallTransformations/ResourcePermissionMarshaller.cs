@@ -34,7 +34,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ResourcePermission Marshaller
-    /// </summary>       
+    /// </summary>
     public class ResourcePermissionMarshaller : IRequestMarshaller<ResourcePermission, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ResourcePermissionMarshaller Instance = new ResourcePermissionMarshaller();
 
     }

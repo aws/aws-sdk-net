@@ -34,7 +34,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ClusterConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class ClusterConfigurationMarshaller : IRequestMarshaller<ClusterConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ClusterConfigurationMarshaller Instance = new ClusterConfigurationMarshaller();
 
     }

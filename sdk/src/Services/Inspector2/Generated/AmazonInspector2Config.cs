@@ -40,6 +40,7 @@ namespace Amazon.Inspector2
         /// Default constructor
         /// </summary>
         public AmazonInspector2Config()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonInspector2DefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "inspector2";
         }

@@ -40,6 +40,7 @@ namespace Amazon.ElastiCache
         /// Default constructor
         /// </summary>
         public AmazonElastiCacheConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonElastiCacheDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "elasticache";
         }

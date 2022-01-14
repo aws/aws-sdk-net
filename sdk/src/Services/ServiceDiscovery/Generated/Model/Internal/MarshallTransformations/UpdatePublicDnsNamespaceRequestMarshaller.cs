@@ -58,7 +58,7 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
             string target = "Route53AutoNaming_v20170314.UpdatePublicDnsNamespace";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-03-14";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-03-14";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -93,9 +93,8 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
                 else if(!(publicRequest.IsSetUpdaterRequestId()))
                 {
                     context.Writer.WritePropertyName("UpdaterRequestId");
-                    context.Writer.Write(Guid.NewGuid().ToString());                                                
+                    context.Writer.Write(Guid.NewGuid().ToString());
                 }
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

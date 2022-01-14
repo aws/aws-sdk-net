@@ -40,6 +40,7 @@ namespace Amazon.CodeStarconnections
         /// Default constructor
         /// </summary>
         public AmazonCodeStarconnectionsConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonCodeStarconnectionsDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "codestar-connections";
         }

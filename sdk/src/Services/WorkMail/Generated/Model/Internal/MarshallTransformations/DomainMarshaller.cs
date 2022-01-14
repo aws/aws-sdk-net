@@ -34,7 +34,7 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Domain Marshaller
-    /// </summary>       
+    /// </summary>
     public class DomainMarshaller : IRequestMarshaller<Domain, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DomainMarshaller Instance = new DomainMarshaller();
 
     }

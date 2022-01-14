@@ -34,7 +34,7 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TypedAttributeValue Marshaller
-    /// </summary>       
+    /// </summary>
     public class TypedAttributeValueMarshaller : IRequestMarshaller<TypedAttributeValue, JsonMarshallerContext> 
     {
         /// <summary>
@@ -79,7 +79,7 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TypedAttributeValueMarshaller Instance = new TypedAttributeValueMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.MWAA.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// MetricDatum Marshaller
-    /// </summary>       
+    /// </summary>
     public class MetricDatumMarshaller : IRequestMarshaller<MetricDatum, JsonMarshallerContext> 
     {
         /// <summary>
@@ -100,7 +100,7 @@ namespace Amazon.MWAA.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static MetricDatumMarshaller Instance = new MetricDatumMarshaller();
 
     }

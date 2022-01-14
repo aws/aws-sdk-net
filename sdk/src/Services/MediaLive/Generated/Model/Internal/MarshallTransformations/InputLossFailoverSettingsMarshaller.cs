@@ -34,7 +34,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// InputLossFailoverSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class InputLossFailoverSettingsMarshaller : IRequestMarshaller<InputLossFailoverSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static InputLossFailoverSettingsMarshaller Instance = new InputLossFailoverSettingsMarshaller();
 
     }

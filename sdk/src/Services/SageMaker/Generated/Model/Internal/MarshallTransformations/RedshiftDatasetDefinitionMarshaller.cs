@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RedshiftDatasetDefinition Marshaller
-    /// </summary>       
+    /// </summary>
     public class RedshiftDatasetDefinitionMarshaller : IRequestMarshaller<RedshiftDatasetDefinition, JsonMarshallerContext> 
     {
         /// <summary>
@@ -103,7 +103,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RedshiftDatasetDefinitionMarshaller Instance = new RedshiftDatasetDefinitionMarshaller();
 
     }

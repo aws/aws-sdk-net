@@ -34,7 +34,7 @@ namespace Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SqsParameters Marshaller
-    /// </summary>       
+    /// </summary>
     public class SqsParametersMarshaller : IRequestMarshaller<SqsParameters, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SqsParametersMarshaller Instance = new SqsParametersMarshaller();
 
     }

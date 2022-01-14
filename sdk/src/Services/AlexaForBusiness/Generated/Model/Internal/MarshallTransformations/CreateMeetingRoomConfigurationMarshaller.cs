@@ -34,7 +34,7 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CreateMeetingRoomConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class CreateMeetingRoomConfigurationMarshaller : IRequestMarshaller<CreateMeetingRoomConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -88,7 +88,7 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CreateMeetingRoomConfigurationMarshaller Instance = new CreateMeetingRoomConfigurationMarshaller();
 
     }

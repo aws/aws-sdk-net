@@ -34,7 +34,7 @@ namespace Amazon.IoTEventsData.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ResetAlarmActionRequest Marshaller
-    /// </summary>       
+    /// </summary>
     public class ResetAlarmActionRequestMarshaller : IRequestMarshaller<ResetAlarmActionRequest, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.IoTEventsData.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ResetAlarmActionRequestMarshaller Instance = new ResetAlarmActionRequestMarshaller();
 
     }

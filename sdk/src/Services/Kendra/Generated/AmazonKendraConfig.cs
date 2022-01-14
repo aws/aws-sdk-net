@@ -40,6 +40,7 @@ namespace Amazon.Kendra
         /// Default constructor
         /// </summary>
         public AmazonKendraConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonKendraDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "kendra";
         }

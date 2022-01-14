@@ -34,7 +34,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ResourceUri Marshaller
-    /// </summary>       
+    /// </summary>
     public class ResourceUriMarshaller : IRequestMarshaller<ResourceUri, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ResourceUriMarshaller Instance = new ResourceUriMarshaller();
 
     }

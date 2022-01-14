@@ -34,7 +34,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// PassThroughSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class PassThroughSettingsMarshaller : IRequestMarshaller<PassThroughSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -49,7 +49,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static PassThroughSettingsMarshaller Instance = new PassThroughSettingsMarshaller();
 
     }

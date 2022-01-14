@@ -40,6 +40,7 @@ namespace Amazon.Outposts
         /// Default constructor
         /// </summary>
         public AmazonOutpostsConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonOutpostsDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "outposts";
         }

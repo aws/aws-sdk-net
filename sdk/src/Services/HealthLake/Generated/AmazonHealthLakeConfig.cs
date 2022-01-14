@@ -40,6 +40,7 @@ namespace Amazon.HealthLake
         /// Default constructor
         /// </summary>
         public AmazonHealthLakeConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonHealthLakeDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "healthlake";
         }

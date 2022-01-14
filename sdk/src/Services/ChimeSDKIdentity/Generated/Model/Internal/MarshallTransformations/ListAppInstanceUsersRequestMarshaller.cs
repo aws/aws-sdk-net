@@ -55,7 +55,7 @@ namespace Amazon.ChimeSDKIdentity.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListAppInstanceUsersRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ChimeSDKIdentity");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-04-20";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-04-20";
             request.HttpMethod = "GET";
 
             

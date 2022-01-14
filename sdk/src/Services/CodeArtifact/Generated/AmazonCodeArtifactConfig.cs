@@ -40,6 +40,7 @@ namespace Amazon.CodeArtifact
         /// Default constructor
         /// </summary>
         public AmazonCodeArtifactConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonCodeArtifactDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "codeartifact";
         }

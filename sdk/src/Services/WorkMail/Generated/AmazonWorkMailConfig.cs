@@ -40,6 +40,7 @@ namespace Amazon.WorkMail
         /// Default constructor
         /// </summary>
         public AmazonWorkMailConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonWorkMailDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "workmail";
         }

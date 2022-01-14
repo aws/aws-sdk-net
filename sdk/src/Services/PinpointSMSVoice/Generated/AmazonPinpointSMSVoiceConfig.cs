@@ -40,6 +40,7 @@ namespace Amazon.PinpointSMSVoice
         /// Default constructor
         /// </summary>
         public AmazonPinpointSMSVoiceConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonPinpointSMSVoiceDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "sms-voice";
         }

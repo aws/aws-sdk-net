@@ -34,7 +34,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// GetConnectionsFilter Marshaller
-    /// </summary>       
+    /// </summary>
     public class GetConnectionsFilterMarshaller : IRequestMarshaller<GetConnectionsFilter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static GetConnectionsFilterMarshaller Instance = new GetConnectionsFilterMarshaller();
 
     }

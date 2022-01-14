@@ -34,7 +34,7 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RecommendationPreferences Marshaller
-    /// </summary>       
+    /// </summary>
     public class RecommendationPreferencesMarshaller : IRequestMarshaller<RecommendationPreferences, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RecommendationPreferencesMarshaller Instance = new RecommendationPreferencesMarshaller();
 
     }

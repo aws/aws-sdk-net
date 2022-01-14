@@ -34,7 +34,7 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// StepAdjustment Marshaller
-    /// </summary>       
+    /// </summary>
     public class StepAdjustmentMarshaller : IRequestMarshaller<StepAdjustment, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static StepAdjustmentMarshaller Instance = new StepAdjustmentMarshaller();
 
     }

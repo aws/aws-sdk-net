@@ -40,6 +40,7 @@ namespace Amazon.RedshiftDataAPIService
         /// Default constructor
         /// </summary>
         public AmazonRedshiftDataAPIServiceConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonRedshiftDataAPIServiceDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "redshift-data";
         }

@@ -34,7 +34,7 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// FailureDetails Marshaller
-    /// </summary>       
+    /// </summary>
     public class FailureDetailsMarshaller : IRequestMarshaller<FailureDetails, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static FailureDetailsMarshaller Instance = new FailureDetailsMarshaller();
 
     }

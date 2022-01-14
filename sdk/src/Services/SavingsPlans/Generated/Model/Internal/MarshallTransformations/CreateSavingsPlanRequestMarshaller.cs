@@ -56,7 +56,7 @@ namespace Amazon.SavingsPlans.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.SavingsPlans");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-06-28";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-06-28";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/CreateSavingsPlan";
@@ -74,7 +74,7 @@ namespace Amazon.SavingsPlans.Model.Internal.MarshallTransformations
                 else if(!(publicRequest.IsSetClientToken()))
                 {
                     context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());                                                
+                    context.Writer.Write(Guid.NewGuid().ToString());
                 }
                 if(publicRequest.IsSetCommitment())
                 {
@@ -114,7 +114,6 @@ namespace Amazon.SavingsPlans.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.UpfrontPaymentAmount);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

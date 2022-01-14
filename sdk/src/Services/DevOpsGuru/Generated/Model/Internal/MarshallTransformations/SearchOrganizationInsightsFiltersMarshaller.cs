@@ -34,7 +34,7 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SearchOrganizationInsightsFilters Marshaller
-    /// </summary>       
+    /// </summary>
     public class SearchOrganizationInsightsFiltersMarshaller : IRequestMarshaller<SearchOrganizationInsightsFilters, JsonMarshallerContext> 
     {
         /// <summary>
@@ -93,7 +93,7 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SearchOrganizationInsightsFiltersMarshaller Instance = new SearchOrganizationInsightsFiltersMarshaller();
 
     }

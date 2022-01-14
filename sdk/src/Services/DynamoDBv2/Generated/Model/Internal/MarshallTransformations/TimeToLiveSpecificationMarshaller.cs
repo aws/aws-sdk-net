@@ -34,7 +34,7 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TimeToLiveSpecification Marshaller
-    /// </summary>       
+    /// </summary>
     public class TimeToLiveSpecificationMarshaller : IRequestMarshaller<TimeToLiveSpecification, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TimeToLiveSpecificationMarshaller Instance = new TimeToLiveSpecificationMarshaller();
 
     }

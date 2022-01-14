@@ -34,7 +34,7 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// IdentityProviderDetails Marshaller
-    /// </summary>       
+    /// </summary>
     public class IdentityProviderDetailsMarshaller : IRequestMarshaller<IdentityProviderDetails, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static IdentityProviderDetailsMarshaller Instance = new IdentityProviderDetailsMarshaller();
 
     }

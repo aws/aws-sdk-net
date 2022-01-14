@@ -40,6 +40,7 @@ namespace Amazon.DocDB
         /// Default constructor
         /// </summary>
         public AmazonDocDBConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonDocDBDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "rds";
         }

@@ -58,7 +58,7 @@ namespace Amazon.ComprehendMedical.Model.Internal.MarshallTransformations
             string target = "ComprehendMedical_20181030.StartEntitiesDetectionV2Job";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-10-30";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-10-30";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -76,7 +76,7 @@ namespace Amazon.ComprehendMedical.Model.Internal.MarshallTransformations
                 else if(!(publicRequest.IsSetClientRequestToken()))
                 {
                     context.Writer.WritePropertyName("ClientRequestToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());                                                
+                    context.Writer.Write(Guid.NewGuid().ToString());
                 }
                 if(publicRequest.IsSetDataAccessRoleArn())
                 {
@@ -124,7 +124,6 @@ namespace Amazon.ComprehendMedical.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

@@ -34,7 +34,7 @@ namespace Amazon.LexRuntimeV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RuntimeHintDetails Marshaller
-    /// </summary>       
+    /// </summary>
     public class RuntimeHintDetailsMarshaller : IRequestMarshaller<RuntimeHintDetails, JsonMarshallerContext> 
     {
         /// <summary>
@@ -65,7 +65,7 @@ namespace Amazon.LexRuntimeV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RuntimeHintDetailsMarshaller Instance = new RuntimeHintDetailsMarshaller();
 
     }

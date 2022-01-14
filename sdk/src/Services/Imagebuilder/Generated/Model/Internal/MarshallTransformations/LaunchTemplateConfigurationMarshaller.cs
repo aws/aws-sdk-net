@@ -34,7 +34,7 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// LaunchTemplateConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class LaunchTemplateConfigurationMarshaller : IRequestMarshaller<LaunchTemplateConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static LaunchTemplateConfigurationMarshaller Instance = new LaunchTemplateConfigurationMarshaller();
 
     }

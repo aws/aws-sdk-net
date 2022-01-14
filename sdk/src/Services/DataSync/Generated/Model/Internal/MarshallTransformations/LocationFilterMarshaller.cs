@@ -34,7 +34,7 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// LocationFilter Marshaller
-    /// </summary>       
+    /// </summary>
     public class LocationFilterMarshaller : IRequestMarshaller<LocationFilter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static LocationFilterMarshaller Instance = new LocationFilterMarshaller();
 
     }

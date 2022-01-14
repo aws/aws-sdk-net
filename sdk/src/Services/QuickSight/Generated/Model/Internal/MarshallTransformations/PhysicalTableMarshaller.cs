@@ -34,7 +34,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// PhysicalTable Marshaller
-    /// </summary>       
+    /// </summary>
     public class PhysicalTableMarshaller : IRequestMarshaller<PhysicalTable, JsonMarshallerContext> 
     {
         /// <summary>
@@ -82,7 +82,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static PhysicalTableMarshaller Instance = new PhysicalTableMarshaller();
 
     }

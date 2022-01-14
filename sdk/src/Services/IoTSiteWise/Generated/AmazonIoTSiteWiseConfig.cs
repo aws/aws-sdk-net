@@ -40,6 +40,7 @@ namespace Amazon.IoTSiteWise
         /// Default constructor
         /// </summary>
         public AmazonIoTSiteWiseConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonIoTSiteWiseDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "iotsitewise";
         }

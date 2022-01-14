@@ -34,7 +34,7 @@ namespace Amazon.RDSDataService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SqlParameter Marshaller
-    /// </summary>       
+    /// </summary>
     public class SqlParameterMarshaller : IRequestMarshaller<SqlParameter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.RDSDataService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SqlParameterMarshaller Instance = new SqlParameterMarshaller();
 
     }

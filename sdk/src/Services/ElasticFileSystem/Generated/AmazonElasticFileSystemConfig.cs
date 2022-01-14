@@ -40,6 +40,7 @@ namespace Amazon.ElasticFileSystem
         /// Default constructor
         /// </summary>
         public AmazonElasticFileSystemConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonElasticFileSystemDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "elasticfilesystem";
         }

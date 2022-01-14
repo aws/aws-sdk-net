@@ -58,7 +58,7 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
             string target = "Textract.AnalyzeDocument";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-06-27";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-06-27";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -100,7 +100,6 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

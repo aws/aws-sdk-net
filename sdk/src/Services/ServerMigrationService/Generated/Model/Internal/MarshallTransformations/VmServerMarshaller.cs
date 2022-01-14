@@ -34,7 +34,7 @@ namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// VmServer Marshaller
-    /// </summary>       
+    /// </summary>
     public class VmServerMarshaller : IRequestMarshaller<VmServer, JsonMarshallerContext> 
     {
         /// <summary>
@@ -84,7 +84,7 @@ namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static VmServerMarshaller Instance = new VmServerMarshaller();
 
     }

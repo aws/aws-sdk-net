@@ -58,7 +58,7 @@ namespace Amazon.PI.Model.Internal.MarshallTransformations
             string target = "PerformanceInsightsv20180227.GetResourceMetrics";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-02-27";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-02-27";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -125,7 +125,6 @@ namespace Amazon.PI.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.StartTime);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

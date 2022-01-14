@@ -34,7 +34,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AudioHlsRenditionSelection Marshaller
-    /// </summary>       
+    /// </summary>
     public class AudioHlsRenditionSelectionMarshaller : IRequestMarshaller<AudioHlsRenditionSelection, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AudioHlsRenditionSelectionMarshaller Instance = new AudioHlsRenditionSelectionMarshaller();
 
     }

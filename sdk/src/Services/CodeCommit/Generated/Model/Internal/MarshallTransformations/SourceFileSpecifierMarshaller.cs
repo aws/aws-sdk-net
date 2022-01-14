@@ -34,7 +34,7 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SourceFileSpecifier Marshaller
-    /// </summary>       
+    /// </summary>
     public class SourceFileSpecifierMarshaller : IRequestMarshaller<SourceFileSpecifier, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SourceFileSpecifierMarshaller Instance = new SourceFileSpecifierMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.LookoutforVision.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ModelPackagingConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class ModelPackagingConfigurationMarshaller : IRequestMarshaller<ModelPackagingConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.LookoutforVision.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ModelPackagingConfigurationMarshaller Instance = new ModelPackagingConfigurationMarshaller();
 
     }

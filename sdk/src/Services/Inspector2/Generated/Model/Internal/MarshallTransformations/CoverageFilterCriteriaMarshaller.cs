@@ -34,7 +34,7 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CoverageFilterCriteria Marshaller
-    /// </summary>       
+    /// </summary>
     public class CoverageFilterCriteriaMarshaller : IRequestMarshaller<CoverageFilterCriteria, JsonMarshallerContext> 
     {
         /// <summary>
@@ -193,7 +193,7 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CoverageFilterCriteriaMarshaller Instance = new CoverageFilterCriteriaMarshaller();
 
     }

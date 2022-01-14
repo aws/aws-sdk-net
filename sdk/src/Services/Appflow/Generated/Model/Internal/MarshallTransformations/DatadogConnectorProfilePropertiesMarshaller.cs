@@ -34,7 +34,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DatadogConnectorProfileProperties Marshaller
-    /// </summary>       
+    /// </summary>
     public class DatadogConnectorProfilePropertiesMarshaller : IRequestMarshaller<DatadogConnectorProfileProperties, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DatadogConnectorProfilePropertiesMarshaller Instance = new DatadogConnectorProfilePropertiesMarshaller();
 
     }

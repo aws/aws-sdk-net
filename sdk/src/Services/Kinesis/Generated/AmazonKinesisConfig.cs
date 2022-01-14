@@ -40,6 +40,7 @@ namespace Amazon.Kinesis
         /// Default constructor
         /// </summary>
         public AmazonKinesisConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonKinesisDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "kinesis";
         }

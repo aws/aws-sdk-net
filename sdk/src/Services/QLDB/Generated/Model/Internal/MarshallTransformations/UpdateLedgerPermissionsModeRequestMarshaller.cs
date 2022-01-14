@@ -56,7 +56,7 @@ namespace Amazon.QLDB.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.QLDB");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-01-02";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-01-02";
             request.HttpMethod = "PATCH";
 
             if (!publicRequest.IsSetName())
@@ -74,7 +74,6 @@ namespace Amazon.QLDB.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.PermissionsMode);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

@@ -34,7 +34,7 @@ namespace Amazon.Braket.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ContainerImage Marshaller
-    /// </summary>       
+    /// </summary>
     public class ContainerImageMarshaller : IRequestMarshaller<ContainerImage, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.Braket.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ContainerImageMarshaller Instance = new ContainerImageMarshaller();
 
     }

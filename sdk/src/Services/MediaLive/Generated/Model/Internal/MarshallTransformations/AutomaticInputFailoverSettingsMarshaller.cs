@@ -34,7 +34,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AutomaticInputFailoverSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class AutomaticInputFailoverSettingsMarshaller : IRequestMarshaller<AutomaticInputFailoverSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -83,7 +83,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AutomaticInputFailoverSettingsMarshaller Instance = new AutomaticInputFailoverSettingsMarshaller();
 
     }

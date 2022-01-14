@@ -40,6 +40,7 @@ namespace Amazon.ConnectWisdomService
         /// Default constructor
         /// </summary>
         public AmazonConnectWisdomServiceConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonConnectWisdomServiceDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "wisdom";
         }

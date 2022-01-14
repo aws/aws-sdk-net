@@ -40,6 +40,7 @@ namespace Amazon.ApplicationAutoScaling
         /// Default constructor
         /// </summary>
         public AmazonApplicationAutoScalingConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonApplicationAutoScalingDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "application-autoscaling";
         }

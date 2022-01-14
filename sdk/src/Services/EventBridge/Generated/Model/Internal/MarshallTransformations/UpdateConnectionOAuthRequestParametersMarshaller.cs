@@ -34,7 +34,7 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// UpdateConnectionOAuthRequestParameters Marshaller
-    /// </summary>       
+    /// </summary>
     public class UpdateConnectionOAuthRequestParametersMarshaller : IRequestMarshaller<UpdateConnectionOAuthRequestParameters, JsonMarshallerContext> 
     {
         /// <summary>
@@ -83,7 +83,7 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static UpdateConnectionOAuthRequestParametersMarshaller Instance = new UpdateConnectionOAuthRequestParametersMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ProfileConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class ProfileConfigurationMarshaller : IRequestMarshaller<ProfileConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -103,7 +103,7 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ProfileConfigurationMarshaller Instance = new ProfileConfigurationMarshaller();
 
     }

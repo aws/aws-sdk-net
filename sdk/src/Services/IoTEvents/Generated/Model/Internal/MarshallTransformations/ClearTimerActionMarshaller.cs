@@ -34,7 +34,7 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ClearTimerAction Marshaller
-    /// </summary>       
+    /// </summary>
     public class ClearTimerActionMarshaller : IRequestMarshaller<ClearTimerAction, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ClearTimerActionMarshaller Instance = new ClearTimerActionMarshaller();
 
     }

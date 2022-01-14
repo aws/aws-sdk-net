@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// NotebookInstanceLifecycleHook Marshaller
-    /// </summary>       
+    /// </summary>
     public class NotebookInstanceLifecycleHookMarshaller : IRequestMarshaller<NotebookInstanceLifecycleHook, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static NotebookInstanceLifecycleHookMarshaller Instance = new NotebookInstanceLifecycleHookMarshaller();
 
     }

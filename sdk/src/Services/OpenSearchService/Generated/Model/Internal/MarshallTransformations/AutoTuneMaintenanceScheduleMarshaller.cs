@@ -34,7 +34,7 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AutoTuneMaintenanceSchedule Marshaller
-    /// </summary>       
+    /// </summary>
     public class AutoTuneMaintenanceScheduleMarshaller : IRequestMarshaller<AutoTuneMaintenanceSchedule, JsonMarshallerContext> 
     {
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AutoTuneMaintenanceScheduleMarshaller Instance = new AutoTuneMaintenanceScheduleMarshaller();
 
     }

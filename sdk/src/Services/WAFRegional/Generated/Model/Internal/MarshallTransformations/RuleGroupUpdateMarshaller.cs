@@ -34,7 +34,7 @@ namespace Amazon.WAFRegional.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RuleGroupUpdate Marshaller
-    /// </summary>       
+    /// </summary>
     public class RuleGroupUpdateMarshaller : IRequestMarshaller<RuleGroupUpdate, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.WAFRegional.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RuleGroupUpdateMarshaller Instance = new RuleGroupUpdateMarshaller();
 
     }

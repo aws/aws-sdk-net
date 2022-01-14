@@ -34,7 +34,7 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AcknowledgeFlow Marshaller
-    /// </summary>       
+    /// </summary>
     public class AcknowledgeFlowMarshaller : IRequestMarshaller<AcknowledgeFlow, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AcknowledgeFlowMarshaller Instance = new AcknowledgeFlowMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// IpRuleItem Marshaller
-    /// </summary>       
+    /// </summary>
     public class IpRuleItemMarshaller : IRequestMarshaller<IpRuleItem, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static IpRuleItemMarshaller Instance = new IpRuleItemMarshaller();
 
     }

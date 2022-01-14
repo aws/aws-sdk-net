@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AwsEc2NetworkAclAssociation Marshaller
-    /// </summary>       
+    /// </summary>
     public class AwsEc2NetworkAclAssociationMarshaller : IRequestMarshaller<AwsEc2NetworkAclAssociation, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AwsEc2NetworkAclAssociationMarshaller Instance = new AwsEc2NetworkAclAssociationMarshaller();
 
     }

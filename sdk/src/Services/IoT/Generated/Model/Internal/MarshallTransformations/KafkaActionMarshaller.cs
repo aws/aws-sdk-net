@@ -34,7 +34,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// KafkaAction Marshaller
-    /// </summary>       
+    /// </summary>
     public class KafkaActionMarshaller : IRequestMarshaller<KafkaAction, JsonMarshallerContext> 
     {
         /// <summary>
@@ -87,7 +87,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static KafkaActionMarshaller Instance = new KafkaActionMarshaller();
 
     }

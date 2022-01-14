@@ -34,7 +34,7 @@ namespace Amazon.Honeycode.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// UpsertRowData Marshaller
-    /// </summary>       
+    /// </summary>
     public class UpsertRowDataMarshaller : IRequestMarshaller<UpsertRowData, JsonMarshallerContext> 
     {
         /// <summary>
@@ -85,7 +85,7 @@ namespace Amazon.Honeycode.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static UpsertRowDataMarshaller Instance = new UpsertRowDataMarshaller();
 
     }

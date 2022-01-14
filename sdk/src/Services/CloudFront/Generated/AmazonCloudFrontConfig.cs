@@ -40,6 +40,7 @@ namespace Amazon.CloudFront
         /// Default constructor
         /// </summary>
         public AmazonCloudFrontConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonCloudFrontDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "cloudfront";
         }

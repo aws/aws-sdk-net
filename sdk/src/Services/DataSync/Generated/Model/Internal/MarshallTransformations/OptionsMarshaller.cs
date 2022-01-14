@@ -34,7 +34,7 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Options Marshaller
-    /// </summary>       
+    /// </summary>
     public class OptionsMarshaller : IRequestMarshaller<Options, JsonMarshallerContext> 
     {
         /// <summary>
@@ -133,7 +133,7 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static OptionsMarshaller Instance = new OptionsMarshaller();
 
     }

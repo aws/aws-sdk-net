@@ -34,7 +34,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// GPSPointDimension Marshaller
-    /// </summary>       
+    /// </summary>
     public class GPSPointDimensionMarshaller : IRequestMarshaller<GPSPointDimension, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static GPSPointDimensionMarshaller Instance = new GPSPointDimensionMarshaller();
 
     }

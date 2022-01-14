@@ -34,7 +34,7 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// BookingOptions Marshaller
-    /// </summary>       
+    /// </summary>
     public class BookingOptionsMarshaller : IRequestMarshaller<BookingOptions, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static BookingOptionsMarshaller Instance = new BookingOptionsMarshaller();
 
     }

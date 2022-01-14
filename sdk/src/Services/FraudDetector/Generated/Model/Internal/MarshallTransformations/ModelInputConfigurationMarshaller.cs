@@ -34,7 +34,7 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ModelInputConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class ModelInputConfigurationMarshaller : IRequestMarshaller<ModelInputConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -79,7 +79,7 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ModelInputConfigurationMarshaller Instance = new ModelInputConfigurationMarshaller();
 
     }

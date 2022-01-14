@@ -40,6 +40,7 @@ namespace Amazon.CloudWatchLogs
         /// Default constructor
         /// </summary>
         public AmazonCloudWatchLogsConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonCloudWatchLogsDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "logs";
         }

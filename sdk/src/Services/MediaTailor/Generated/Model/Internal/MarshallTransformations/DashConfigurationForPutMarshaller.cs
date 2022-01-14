@@ -34,7 +34,7 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DashConfigurationForPut Marshaller
-    /// </summary>       
+    /// </summary>
     public class DashConfigurationForPutMarshaller : IRequestMarshaller<DashConfigurationForPut, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DashConfigurationForPutMarshaller Instance = new DashConfigurationForPutMarshaller();
 
     }

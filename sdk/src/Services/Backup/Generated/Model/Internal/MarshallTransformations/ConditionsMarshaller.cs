@@ -34,7 +34,7 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Conditions Marshaller
-    /// </summary>       
+    /// </summary>
     public class ConditionsMarshaller : IRequestMarshaller<Conditions, JsonMarshallerContext> 
     {
         /// <summary>
@@ -113,7 +113,7 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ConditionsMarshaller Instance = new ConditionsMarshaller();
 
     }

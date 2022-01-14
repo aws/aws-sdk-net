@@ -34,7 +34,7 @@ namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// IdpMetadata Marshaller
-    /// </summary>       
+    /// </summary>
     public class IdpMetadataMarshaller : IRequestMarshaller<IdpMetadata, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static IdpMetadataMarshaller Instance = new IdpMetadataMarshaller();
 
     }

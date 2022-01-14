@@ -40,6 +40,7 @@ namespace Amazon.Detective
         /// Default constructor
         /// </summary>
         public AmazonDetectiveConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonDetectiveDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "detective";
         }

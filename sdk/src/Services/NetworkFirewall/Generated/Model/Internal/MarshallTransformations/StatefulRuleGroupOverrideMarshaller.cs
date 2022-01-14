@@ -34,7 +34,7 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// StatefulRuleGroupOverride Marshaller
-    /// </summary>       
+    /// </summary>
     public class StatefulRuleGroupOverrideMarshaller : IRequestMarshaller<StatefulRuleGroupOverride, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static StatefulRuleGroupOverrideMarshaller Instance = new StatefulRuleGroupOverrideMarshaller();
 
     }

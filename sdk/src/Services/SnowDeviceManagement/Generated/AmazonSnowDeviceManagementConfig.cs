@@ -40,6 +40,7 @@ namespace Amazon.SnowDeviceManagement
         /// Default constructor
         /// </summary>
         public AmazonSnowDeviceManagementConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonSnowDeviceManagementDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "snow-device-management";
         }

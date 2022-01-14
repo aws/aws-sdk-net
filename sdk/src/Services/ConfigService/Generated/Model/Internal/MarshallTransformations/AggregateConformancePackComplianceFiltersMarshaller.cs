@@ -34,7 +34,7 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AggregateConformancePackComplianceFilters Marshaller
-    /// </summary>       
+    /// </summary>
     public class AggregateConformancePackComplianceFiltersMarshaller : IRequestMarshaller<AggregateConformancePackComplianceFilters, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AggregateConformancePackComplianceFiltersMarshaller Instance = new AggregateConformancePackComplianceFiltersMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// KafkaClusterEncryptionInTransit Marshaller
-    /// </summary>       
+    /// </summary>
     public class KafkaClusterEncryptionInTransitMarshaller : IRequestMarshaller<KafkaClusterEncryptionInTransit, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static KafkaClusterEncryptionInTransitMarshaller Instance = new KafkaClusterEncryptionInTransitMarshaller();
 
     }

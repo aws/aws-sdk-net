@@ -40,6 +40,7 @@ namespace Amazon.PersonalizeRuntime
         /// Default constructor
         /// </summary>
         public AmazonPersonalizeRuntimeConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonPersonalizeRuntimeDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "personalize";
         }

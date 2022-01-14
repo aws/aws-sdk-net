@@ -34,7 +34,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// MsSmoothGroupSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class MsSmoothGroupSettingsMarshaller : IRequestMarshaller<MsSmoothGroupSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -117,7 +117,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static MsSmoothGroupSettingsMarshaller Instance = new MsSmoothGroupSettingsMarshaller();
 
     }

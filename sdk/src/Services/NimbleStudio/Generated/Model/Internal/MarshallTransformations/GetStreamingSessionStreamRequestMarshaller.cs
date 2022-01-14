@@ -55,7 +55,7 @@ namespace Amazon.NimbleStudio.Model.Internal.MarshallTransformations
         public IRequest Marshall(GetStreamingSessionStreamRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.NimbleStudio");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-08-01";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-08-01";
             request.HttpMethod = "GET";
 
             if (!publicRequest.IsSetSessionId())

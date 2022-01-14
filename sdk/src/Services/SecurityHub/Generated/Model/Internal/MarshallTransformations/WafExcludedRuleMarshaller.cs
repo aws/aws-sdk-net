@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// WafExcludedRule Marshaller
-    /// </summary>       
+    /// </summary>
     public class WafExcludedRuleMarshaller : IRequestMarshaller<WafExcludedRule, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static WafExcludedRuleMarshaller Instance = new WafExcludedRuleMarshaller();
 
     }

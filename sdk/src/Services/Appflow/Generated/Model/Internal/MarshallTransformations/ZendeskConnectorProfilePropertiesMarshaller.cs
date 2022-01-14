@@ -34,7 +34,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ZendeskConnectorProfileProperties Marshaller
-    /// </summary>       
+    /// </summary>
     public class ZendeskConnectorProfilePropertiesMarshaller : IRequestMarshaller<ZendeskConnectorProfileProperties, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ZendeskConnectorProfilePropertiesMarshaller Instance = new ZendeskConnectorProfilePropertiesMarshaller();
 
     }

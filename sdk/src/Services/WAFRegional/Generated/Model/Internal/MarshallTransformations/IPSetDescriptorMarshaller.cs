@@ -34,7 +34,7 @@ namespace Amazon.WAFRegional.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// IPSetDescriptor Marshaller
-    /// </summary>       
+    /// </summary>
     public class IPSetDescriptorMarshaller : IRequestMarshaller<IPSetDescriptor, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.WAFRegional.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static IPSetDescriptorMarshaller Instance = new IPSetDescriptorMarshaller();
 
     }

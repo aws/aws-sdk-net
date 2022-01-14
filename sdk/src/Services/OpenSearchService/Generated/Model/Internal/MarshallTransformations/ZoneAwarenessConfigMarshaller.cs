@@ -34,7 +34,7 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ZoneAwarenessConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class ZoneAwarenessConfigMarshaller : IRequestMarshaller<ZoneAwarenessConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ZoneAwarenessConfigMarshaller Instance = new ZoneAwarenessConfigMarshaller();
 
     }

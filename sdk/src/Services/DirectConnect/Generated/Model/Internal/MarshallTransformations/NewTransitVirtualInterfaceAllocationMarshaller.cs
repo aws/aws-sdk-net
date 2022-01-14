@@ -34,7 +34,7 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// NewTransitVirtualInterfaceAllocation Marshaller
-    /// </summary>       
+    /// </summary>
     public class NewTransitVirtualInterfaceAllocationMarshaller : IRequestMarshaller<NewTransitVirtualInterfaceAllocation, JsonMarshallerContext> 
     {
         /// <summary>
@@ -113,7 +113,7 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static NewTransitVirtualInterfaceAllocationMarshaller Instance = new NewTransitVirtualInterfaceAllocationMarshaller();
 
     }

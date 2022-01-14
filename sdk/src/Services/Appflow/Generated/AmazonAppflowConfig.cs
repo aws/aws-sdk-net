@@ -40,6 +40,7 @@ namespace Amazon.Appflow
         /// Default constructor
         /// </summary>
         public AmazonAppflowConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonAppflowDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "appflow";
         }

@@ -34,7 +34,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AdvancedRecognitionSetting Marshaller
-    /// </summary>       
+    /// </summary>
     public class AdvancedRecognitionSettingMarshaller : IRequestMarshaller<AdvancedRecognitionSetting, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AdvancedRecognitionSettingMarshaller Instance = new AdvancedRecognitionSettingMarshaller();
 
     }

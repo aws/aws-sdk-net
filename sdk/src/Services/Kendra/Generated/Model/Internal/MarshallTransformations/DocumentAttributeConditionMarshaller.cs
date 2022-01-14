@@ -34,7 +34,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DocumentAttributeCondition Marshaller
-    /// </summary>       
+    /// </summary>
     public class DocumentAttributeConditionMarshaller : IRequestMarshaller<DocumentAttributeCondition, JsonMarshallerContext> 
     {
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DocumentAttributeConditionMarshaller Instance = new DocumentAttributeConditionMarshaller();
 
     }

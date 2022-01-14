@@ -40,6 +40,7 @@ namespace Amazon.MediaConvert
         /// Default constructor
         /// </summary>
         public AmazonMediaConvertConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonMediaConvertDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "mediaconvert";
         }

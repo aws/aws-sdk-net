@@ -34,7 +34,7 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// S3EncryptionConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class S3EncryptionConfigMarshaller : IRequestMarshaller<S3EncryptionConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static S3EncryptionConfigMarshaller Instance = new S3EncryptionConfigMarshaller();
 
     }

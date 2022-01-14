@@ -34,7 +34,7 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CustomDomainConfigType Marshaller
-    /// </summary>       
+    /// </summary>
     public class CustomDomainConfigTypeMarshaller : IRequestMarshaller<CustomDomainConfigType, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CustomDomainConfigTypeMarshaller Instance = new CustomDomainConfigTypeMarshaller();
 
     }

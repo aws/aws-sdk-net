@@ -34,7 +34,7 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Serializer Marshaller
-    /// </summary>       
+    /// </summary>
     public class SerializerMarshaller : IRequestMarshaller<Serializer, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SerializerMarshaller Instance = new SerializerMarshaller();
 
     }

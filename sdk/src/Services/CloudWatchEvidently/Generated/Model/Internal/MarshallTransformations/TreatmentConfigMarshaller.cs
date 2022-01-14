@@ -34,7 +34,7 @@ namespace Amazon.CloudWatchEvidently.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TreatmentConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class TreatmentConfigMarshaller : IRequestMarshaller<TreatmentConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.CloudWatchEvidently.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TreatmentConfigMarshaller Instance = new TreatmentConfigMarshaller();
 
     }

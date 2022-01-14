@@ -34,7 +34,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// GoogleDriveConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class GoogleDriveConfigurationMarshaller : IRequestMarshaller<GoogleDriveConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -126,7 +126,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static GoogleDriveConfigurationMarshaller Instance = new GoogleDriveConfigurationMarshaller();
 
     }

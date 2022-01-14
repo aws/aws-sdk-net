@@ -34,7 +34,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ObfuscationSetting Marshaller
-    /// </summary>       
+    /// </summary>
     public class ObfuscationSettingMarshaller : IRequestMarshaller<ObfuscationSetting, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ObfuscationSettingMarshaller Instance = new ObfuscationSettingMarshaller();
 
     }

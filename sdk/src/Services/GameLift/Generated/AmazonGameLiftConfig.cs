@@ -40,6 +40,7 @@ namespace Amazon.GameLift
         /// Default constructor
         /// </summary>
         public AmazonGameLiftConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonGameLiftDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "gamelift";
         }

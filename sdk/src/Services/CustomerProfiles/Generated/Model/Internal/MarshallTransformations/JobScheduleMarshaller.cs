@@ -34,7 +34,7 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// JobSchedule Marshaller
-    /// </summary>       
+    /// </summary>
     public class JobScheduleMarshaller : IRequestMarshaller<JobSchedule, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static JobScheduleMarshaller Instance = new JobScheduleMarshaller();
 
     }

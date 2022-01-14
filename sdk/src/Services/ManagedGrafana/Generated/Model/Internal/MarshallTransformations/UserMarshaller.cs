@@ -34,7 +34,7 @@ namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// User Marshaller
-    /// </summary>       
+    /// </summary>
     public class UserMarshaller : IRequestMarshaller<User, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static UserMarshaller Instance = new UserMarshaller();
 
     }

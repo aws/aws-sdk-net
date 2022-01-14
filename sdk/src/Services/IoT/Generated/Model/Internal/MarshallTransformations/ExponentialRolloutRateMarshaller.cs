@@ -34,7 +34,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ExponentialRolloutRate Marshaller
-    /// </summary>       
+    /// </summary>
     public class ExponentialRolloutRateMarshaller : IRequestMarshaller<ExponentialRolloutRate, JsonMarshallerContext> 
     {
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ExponentialRolloutRateMarshaller Instance = new ExponentialRolloutRateMarshaller();
 
     }

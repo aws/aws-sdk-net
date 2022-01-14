@@ -40,6 +40,7 @@ namespace Amazon.ServiceDiscovery
         /// Default constructor
         /// </summary>
         public AmazonServiceDiscoveryConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonServiceDiscoveryDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "servicediscovery";
         }

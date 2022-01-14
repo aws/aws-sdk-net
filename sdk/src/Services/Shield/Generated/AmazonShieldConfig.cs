@@ -40,6 +40,7 @@ namespace Amazon.Shield
         /// Default constructor
         /// </summary>
         public AmazonShieldConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonShieldDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "shield";
         }

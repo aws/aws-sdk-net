@@ -40,6 +40,7 @@ namespace Amazon.MigrationHubRefactorSpaces
         /// Default constructor
         /// </summary>
         public AmazonMigrationHubRefactorSpacesConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonMigrationHubRefactorSpacesDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "refactor-spaces";
         }

@@ -40,6 +40,7 @@ namespace Amazon.CodeGuruReviewer
         /// Default constructor
         /// </summary>
         public AmazonCodeGuruReviewerConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonCodeGuruReviewerDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "codeguru-reviewer";
         }

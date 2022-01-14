@@ -34,7 +34,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// WriteJourneyRequest Marshaller
-    /// </summary>       
+    /// </summary>
     public class WriteJourneyRequestMarshaller : IRequestMarshaller<WriteJourneyRequest, JsonMarshallerContext> 
     {
         /// <summary>
@@ -177,7 +177,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static WriteJourneyRequestMarshaller Instance = new WriteJourneyRequestMarshaller();
 
     }

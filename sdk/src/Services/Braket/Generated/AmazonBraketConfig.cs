@@ -40,6 +40,7 @@ namespace Amazon.Braket
         /// Default constructor
         /// </summary>
         public AmazonBraketConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonBraketDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "braket";
         }

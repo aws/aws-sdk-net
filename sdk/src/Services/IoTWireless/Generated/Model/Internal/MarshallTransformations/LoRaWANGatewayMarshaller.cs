@@ -34,7 +34,7 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// LoRaWANGateway Marshaller
-    /// </summary>       
+    /// </summary>
     public class LoRaWANGatewayMarshaller : IRequestMarshaller<LoRaWANGateway, JsonMarshallerContext> 
     {
         /// <summary>
@@ -99,7 +99,7 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static LoRaWANGatewayMarshaller Instance = new LoRaWANGatewayMarshaller();
 
     }

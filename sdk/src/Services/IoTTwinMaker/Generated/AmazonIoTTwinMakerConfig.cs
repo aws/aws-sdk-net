@@ -40,6 +40,7 @@ namespace Amazon.IoTTwinMaker
         /// Default constructor
         /// </summary>
         public AmazonIoTTwinMakerConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonIoTTwinMakerDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "iottwinmaker";
         }

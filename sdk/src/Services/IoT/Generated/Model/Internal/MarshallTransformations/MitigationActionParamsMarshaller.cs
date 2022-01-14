@@ -34,7 +34,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// MitigationActionParams Marshaller
-    /// </summary>       
+    /// </summary>
     public class MitigationActionParamsMarshaller : IRequestMarshaller<MitigationActionParams, JsonMarshallerContext> 
     {
         /// <summary>
@@ -115,7 +115,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static MitigationActionParamsMarshaller Instance = new MitigationActionParamsMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ProcessingOutputConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class ProcessingOutputConfigMarshaller : IRequestMarshaller<ProcessingOutputConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ProcessingOutputConfigMarshaller Instance = new ProcessingOutputConfigMarshaller();
 
     }

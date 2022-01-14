@@ -55,7 +55,7 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListChannelMessagesRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Chime");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-01";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-01";
             request.HttpMethod = "GET";
 
             if (!publicRequest.IsSetChannelArn())
@@ -78,8 +78,10 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
                 request.Parameters.Add("sort-order", StringUtils.FromString(publicRequest.SortOrder));
             request.ResourcePath = "/channels/{channelArn}/messages";
         
-            if(publicRequest.IsSetChimeBearer())
+            if (publicRequest.IsSetChimeBearer()) 
+            {
                 request.Headers["x-amz-chime-bearer"] = publicRequest.ChimeBearer;
+            }
             request.UseQueryString = true;
             
             request.HostPrefix = $"messaging-";

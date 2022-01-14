@@ -34,7 +34,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// GlobalConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class GlobalConfigurationMarshaller : IRequestMarshaller<GlobalConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -90,7 +90,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static GlobalConfigurationMarshaller Instance = new GlobalConfigurationMarshaller();
 
     }

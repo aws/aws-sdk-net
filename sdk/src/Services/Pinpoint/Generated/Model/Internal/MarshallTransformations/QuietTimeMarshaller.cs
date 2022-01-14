@@ -34,7 +34,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// QuietTime Marshaller
-    /// </summary>       
+    /// </summary>
     public class QuietTimeMarshaller : IRequestMarshaller<QuietTime, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static QuietTimeMarshaller Instance = new QuietTimeMarshaller();
 
     }

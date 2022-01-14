@@ -40,6 +40,7 @@ namespace Amazon.OpenSearchService
         /// Default constructor
         /// </summary>
         public AmazonOpenSearchServiceConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonOpenSearchServiceDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "es";
         }

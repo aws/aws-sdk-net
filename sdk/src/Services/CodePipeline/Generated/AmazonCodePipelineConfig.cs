@@ -40,6 +40,7 @@ namespace Amazon.CodePipeline
         /// Default constructor
         /// </summary>
         public AmazonCodePipelineConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonCodePipelineDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "codepipeline";
         }

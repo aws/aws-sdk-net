@@ -34,7 +34,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CmafGroupSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class CmafGroupSettingsMarshaller : IRequestMarshaller<CmafGroupSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -218,7 +218,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CmafGroupSettingsMarshaller Instance = new CmafGroupSettingsMarshaller();
 
     }

@@ -56,7 +56,7 @@ namespace Amazon.SagemakerEdgeManager.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.SagemakerEdgeManager");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-09-23";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-09-23";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/SendHeartbeat";
@@ -115,7 +115,6 @@ namespace Amazon.SagemakerEdgeManager.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

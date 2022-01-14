@@ -34,7 +34,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// MountPoint Marshaller
-    /// </summary>       
+    /// </summary>
     public class MountPointMarshaller : IRequestMarshaller<MountPoint, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static MountPointMarshaller Instance = new MountPointMarshaller();
 
     }

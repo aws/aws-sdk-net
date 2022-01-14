@@ -34,7 +34,7 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// LogPublishingOption Marshaller
-    /// </summary>       
+    /// </summary>
     public class LogPublishingOptionMarshaller : IRequestMarshaller<LogPublishingOption, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static LogPublishingOptionMarshaller Instance = new LogPublishingOptionMarshaller();
 
     }

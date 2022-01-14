@@ -40,6 +40,7 @@ namespace Amazon.Cloud9
         /// Default constructor
         /// </summary>
         public AmazonCloud9Config()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonCloud9DefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "cloud9";
         }

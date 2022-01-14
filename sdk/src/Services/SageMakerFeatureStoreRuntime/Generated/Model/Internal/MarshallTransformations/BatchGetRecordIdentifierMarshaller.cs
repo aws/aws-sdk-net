@@ -34,7 +34,7 @@ namespace Amazon.SageMakerFeatureStoreRuntime.Model.Internal.MarshallTransformat
 {
     /// <summary>
     /// BatchGetRecordIdentifier Marshaller
-    /// </summary>       
+    /// </summary>
     public class BatchGetRecordIdentifierMarshaller : IRequestMarshaller<BatchGetRecordIdentifier, JsonMarshallerContext> 
     {
         /// <summary>
@@ -77,7 +77,7 @@ namespace Amazon.SageMakerFeatureStoreRuntime.Model.Internal.MarshallTransformat
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static BatchGetRecordIdentifierMarshaller Instance = new BatchGetRecordIdentifierMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// LateDataRuleConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class LateDataRuleConfigurationMarshaller : IRequestMarshaller<LateDataRuleConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static LateDataRuleConfigurationMarshaller Instance = new LateDataRuleConfigurationMarshaller();
 
     }

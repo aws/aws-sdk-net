@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AwsLambdaFunctionDeadLetterConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class AwsLambdaFunctionDeadLetterConfigMarshaller : IRequestMarshaller<AwsLambdaFunctionDeadLetterConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AwsLambdaFunctionDeadLetterConfigMarshaller Instance = new AwsLambdaFunctionDeadLetterConfigMarshaller();
 
     }

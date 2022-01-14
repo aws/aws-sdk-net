@@ -34,7 +34,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Location Marshaller
-    /// </summary>       
+    /// </summary>
     public class LocationMarshaller : IRequestMarshaller<Location, JsonMarshallerContext> 
     {
         /// <summary>
@@ -97,7 +97,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static LocationMarshaller Instance = new LocationMarshaller();
 
     }

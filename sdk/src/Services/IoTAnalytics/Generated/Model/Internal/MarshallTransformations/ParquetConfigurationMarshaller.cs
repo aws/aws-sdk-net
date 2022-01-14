@@ -34,7 +34,7 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ParquetConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class ParquetConfigurationMarshaller : IRequestMarshaller<ParquetConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ParquetConfigurationMarshaller Instance = new ParquetConfigurationMarshaller();
 
     }

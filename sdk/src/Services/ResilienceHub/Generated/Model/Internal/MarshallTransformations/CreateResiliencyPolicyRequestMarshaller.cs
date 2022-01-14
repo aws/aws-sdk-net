@@ -56,7 +56,7 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ResilienceHub");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-04-30";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-04-30";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/create-resiliency-policy";
@@ -74,7 +74,7 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
                 else if(!(publicRequest.IsSetClientToken()))
                 {
                     context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());                                                
+                    context.Writer.Write(Guid.NewGuid().ToString());
                 }
                 if(publicRequest.IsSetDataLocationConstraint())
                 {
@@ -133,7 +133,6 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Tier);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

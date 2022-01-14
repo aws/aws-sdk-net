@@ -34,7 +34,7 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// KMSEncryptionConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class KMSEncryptionConfigMarshaller : IRequestMarshaller<KMSEncryptionConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static KMSEncryptionConfigMarshaller Instance = new KMSEncryptionConfigMarshaller();
 
     }

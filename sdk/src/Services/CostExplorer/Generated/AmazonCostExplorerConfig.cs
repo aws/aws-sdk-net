@@ -40,6 +40,7 @@ namespace Amazon.CostExplorer
         /// Default constructor
         /// </summary>
         public AmazonCostExplorerConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonCostExplorerDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "ce";
         }

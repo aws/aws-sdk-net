@@ -34,7 +34,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// LayerVersionContentInput Marshaller
-    /// </summary>       
+    /// </summary>
     public class LayerVersionContentInputMarshaller : IRequestMarshaller<LayerVersionContentInput, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static LayerVersionContentInputMarshaller Instance = new LayerVersionContentInputMarshaller();
 
     }

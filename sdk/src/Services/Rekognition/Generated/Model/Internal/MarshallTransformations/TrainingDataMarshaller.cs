@@ -34,7 +34,7 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TrainingData Marshaller
-    /// </summary>       
+    /// </summary>
     public class TrainingDataMarshaller : IRequestMarshaller<TrainingData, JsonMarshallerContext> 
     {
         /// <summary>
@@ -65,7 +65,7 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TrainingDataMarshaller Instance = new TrainingDataMarshaller();
 
     }

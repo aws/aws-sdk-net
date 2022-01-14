@@ -34,7 +34,7 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// StreamSelection Marshaller
-    /// </summary>       
+    /// </summary>
     public class StreamSelectionMarshaller : IRequestMarshaller<StreamSelection, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static StreamSelectionMarshaller Instance = new StreamSelectionMarshaller();
 
     }

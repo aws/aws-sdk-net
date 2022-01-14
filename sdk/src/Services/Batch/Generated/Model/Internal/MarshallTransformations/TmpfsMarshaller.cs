@@ -34,7 +34,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Tmpfs Marshaller
-    /// </summary>       
+    /// </summary>
     public class TmpfsMarshaller : IRequestMarshaller<Tmpfs, JsonMarshallerContext> 
     {
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TmpfsMarshaller Instance = new TmpfsMarshaller();
 
     }

@@ -40,6 +40,7 @@ namespace Amazon.Signer
         /// Default constructor
         /// </summary>
         public AmazonSignerConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonSignerDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "signer";
         }

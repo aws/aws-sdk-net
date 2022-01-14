@@ -40,6 +40,7 @@ namespace Amazon.IotData
         /// Default constructor
         /// </summary>
         public AmazonIotDataConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonIotDataDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "iotdata";
         }

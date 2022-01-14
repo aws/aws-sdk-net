@@ -40,6 +40,7 @@ namespace Amazon.IdentityStore
         /// Default constructor
         /// </summary>
         public AmazonIdentityStoreConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonIdentityStoreDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "identitystore";
         }

@@ -34,7 +34,7 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DeploymentComponentUpdatePolicy Marshaller
-    /// </summary>       
+    /// </summary>
     public class DeploymentComponentUpdatePolicyMarshaller : IRequestMarshaller<DeploymentComponentUpdatePolicy, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DeploymentComponentUpdatePolicyMarshaller Instance = new DeploymentComponentUpdatePolicyMarshaller();
 
     }

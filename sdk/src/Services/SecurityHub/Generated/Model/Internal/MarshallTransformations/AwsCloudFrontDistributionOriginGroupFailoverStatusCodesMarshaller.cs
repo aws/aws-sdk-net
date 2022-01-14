@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AwsCloudFrontDistributionOriginGroupFailoverStatusCodes Marshaller
-    /// </summary>       
+    /// </summary>
     public class AwsCloudFrontDistributionOriginGroupFailoverStatusCodesMarshaller : IRequestMarshaller<AwsCloudFrontDistributionOriginGroupFailoverStatusCodes, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AwsCloudFrontDistributionOriginGroupFailoverStatusCodesMarshaller Instance = new AwsCloudFrontDistributionOriginGroupFailoverStatusCodesMarshaller();
 
     }

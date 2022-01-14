@@ -34,7 +34,7 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// InsightSelector Marshaller
-    /// </summary>       
+    /// </summary>
     public class InsightSelectorMarshaller : IRequestMarshaller<InsightSelector, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static InsightSelectorMarshaller Instance = new InsightSelectorMarshaller();
 
     }

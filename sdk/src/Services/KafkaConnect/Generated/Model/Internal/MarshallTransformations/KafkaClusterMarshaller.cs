@@ -34,7 +34,7 @@ namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// KafkaCluster Marshaller
-    /// </summary>       
+    /// </summary>
     public class KafkaClusterMarshaller : IRequestMarshaller<KafkaCluster, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static KafkaClusterMarshaller Instance = new KafkaClusterMarshaller();
 
     }

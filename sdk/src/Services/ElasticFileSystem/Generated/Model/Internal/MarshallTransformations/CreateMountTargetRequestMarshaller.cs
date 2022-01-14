@@ -56,7 +56,7 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ElasticFileSystem");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-02-01";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-02-01";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/2015-02-01/mount-targets";
@@ -94,7 +94,6 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.SubnetId);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

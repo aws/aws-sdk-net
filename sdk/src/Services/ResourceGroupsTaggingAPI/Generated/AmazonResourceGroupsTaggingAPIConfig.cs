@@ -40,6 +40,7 @@ namespace Amazon.ResourceGroupsTaggingAPI
         /// Default constructor
         /// </summary>
         public AmazonResourceGroupsTaggingAPIConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonResourceGroupsTaggingAPIDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "tagging";
         }

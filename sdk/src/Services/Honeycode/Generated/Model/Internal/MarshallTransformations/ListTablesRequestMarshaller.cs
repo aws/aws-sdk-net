@@ -55,7 +55,7 @@ namespace Amazon.Honeycode.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListTablesRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Honeycode");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-03-01";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-03-01";
             request.HttpMethod = "GET";
 
             if (!publicRequest.IsSetWorkbookId())

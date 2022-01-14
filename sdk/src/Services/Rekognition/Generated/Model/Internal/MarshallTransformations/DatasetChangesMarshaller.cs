@@ -34,7 +34,7 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DatasetChanges Marshaller
-    /// </summary>       
+    /// </summary>
     public class DatasetChangesMarshaller : IRequestMarshaller<DatasetChanges, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DatasetChangesMarshaller Instance = new DatasetChangesMarshaller();
 
     }

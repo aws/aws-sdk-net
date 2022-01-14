@@ -34,7 +34,7 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AccessMethod Marshaller
-    /// </summary>       
+    /// </summary>
     public class AccessMethodMarshaller : IRequestMarshaller<AccessMethod, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AccessMethodMarshaller Instance = new AccessMethodMarshaller();
 
     }

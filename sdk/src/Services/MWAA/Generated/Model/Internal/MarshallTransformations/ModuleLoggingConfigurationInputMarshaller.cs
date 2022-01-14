@@ -34,7 +34,7 @@ namespace Amazon.MWAA.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ModuleLoggingConfigurationInput Marshaller
-    /// </summary>       
+    /// </summary>
     public class ModuleLoggingConfigurationInputMarshaller : IRequestMarshaller<ModuleLoggingConfigurationInput, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.MWAA.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ModuleLoggingConfigurationInputMarshaller Instance = new ModuleLoggingConfigurationInputMarshaller();
 
     }

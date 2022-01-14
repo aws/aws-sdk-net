@@ -34,7 +34,7 @@ namespace Amazon.WAF.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RegexPatternSetUpdate Marshaller
-    /// </summary>       
+    /// </summary>
     public class RegexPatternSetUpdateMarshaller : IRequestMarshaller<RegexPatternSetUpdate, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.WAF.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RegexPatternSetUpdateMarshaller Instance = new RegexPatternSetUpdateMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// JobResourceTags Marshaller
-    /// </summary>       
+    /// </summary>
     public class JobResourceTagsMarshaller : IRequestMarshaller<JobResourceTags, JsonMarshallerContext> 
     {
         /// <summary>
@@ -69,7 +69,7 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static JobResourceTagsMarshaller Instance = new JobResourceTagsMarshaller();
 
     }

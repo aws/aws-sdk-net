@@ -34,7 +34,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CredentialPair Marshaller
-    /// </summary>       
+    /// </summary>
     public class CredentialPairMarshaller : IRequestMarshaller<CredentialPair, JsonMarshallerContext> 
     {
         /// <summary>
@@ -77,7 +77,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CredentialPairMarshaller Instance = new CredentialPairMarshaller();
 
     }

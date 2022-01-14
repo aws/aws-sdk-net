@@ -40,6 +40,7 @@ namespace Amazon.CloudSearch
         /// Default constructor
         /// </summary>
         public AmazonCloudSearchConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonCloudSearchDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "cloudsearch";
         }

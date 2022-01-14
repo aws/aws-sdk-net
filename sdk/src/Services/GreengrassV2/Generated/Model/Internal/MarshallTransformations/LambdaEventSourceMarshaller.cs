@@ -34,7 +34,7 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// LambdaEventSource Marshaller
-    /// </summary>       
+    /// </summary>
     public class LambdaEventSourceMarshaller : IRequestMarshaller<LambdaEventSource, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static LambdaEventSourceMarshaller Instance = new LambdaEventSourceMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CustomStepDetails Marshaller
-    /// </summary>       
+    /// </summary>
     public class CustomStepDetailsMarshaller : IRequestMarshaller<CustomStepDetails, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CustomStepDetailsMarshaller Instance = new CustomStepDetailsMarshaller();
 
     }

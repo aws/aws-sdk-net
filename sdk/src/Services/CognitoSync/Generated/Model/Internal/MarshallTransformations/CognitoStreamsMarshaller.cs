@@ -34,7 +34,7 @@ namespace Amazon.CognitoSync.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CognitoStreams Marshaller
-    /// </summary>       
+    /// </summary>
     public class CognitoStreamsMarshaller : IRequestMarshaller<CognitoStreams, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.CognitoSync.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CognitoStreamsMarshaller Instance = new CognitoStreamsMarshaller();
 
     }

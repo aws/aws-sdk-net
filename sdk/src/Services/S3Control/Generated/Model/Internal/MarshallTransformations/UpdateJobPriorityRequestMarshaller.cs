@@ -57,8 +57,10 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             var request = new DefaultRequest(publicRequest, "Amazon.S3Control");
             request.HttpMethod = "POST";
         
-            if(publicRequest.IsSetAccountId())
+            if (publicRequest.IsSetAccountId()) 
+            {
                 request.Headers["x-amz-account-id"] = publicRequest.AccountId;
+            }
             if (!publicRequest.IsSetJobId())
                 throw new AmazonS3ControlException("Request object does not have required field JobId set");
             request.AddPathResource("{id}", StringUtils.FromString(publicRequest.JobId));

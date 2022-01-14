@@ -34,7 +34,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
 {
     /// <summary>
     /// SourceCode Marshaller
-    /// </summary>       
+    /// </summary>
     public class SourceCodeMarshaller : IRequestMarshaller<SourceCode, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SourceCodeMarshaller Instance = new SourceCodeMarshaller();
 
     }

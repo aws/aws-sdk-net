@@ -34,7 +34,7 @@ namespace Amazon.Honeycode.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CellInput Marshaller
-    /// </summary>       
+    /// </summary>
     public class CellInputMarshaller : IRequestMarshaller<CellInput, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.Honeycode.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CellInputMarshaller Instance = new CellInputMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ReportFilter Marshaller
-    /// </summary>       
+    /// </summary>
     public class ReportFilterMarshaller : IRequestMarshaller<ReportFilter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ReportFilterMarshaller Instance = new ReportFilterMarshaller();
 
     }

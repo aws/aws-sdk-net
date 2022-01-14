@@ -34,7 +34,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AwsJobRateIncreaseCriteria Marshaller
-    /// </summary>       
+    /// </summary>
     public class AwsJobRateIncreaseCriteriaMarshaller : IRequestMarshaller<AwsJobRateIncreaseCriteria, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AwsJobRateIncreaseCriteriaMarshaller Instance = new AwsJobRateIncreaseCriteriaMarshaller();
 
     }

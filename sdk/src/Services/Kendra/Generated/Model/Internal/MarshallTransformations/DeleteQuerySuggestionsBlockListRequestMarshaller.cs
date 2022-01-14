@@ -58,7 +58,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             string target = "AWSKendraFrontendService.DeleteQuerySuggestionsBlockList";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-02-03";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-02-03";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -79,7 +79,6 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.IndexId);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

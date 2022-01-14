@@ -34,7 +34,7 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// WebhookAuthConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class WebhookAuthConfigurationMarshaller : IRequestMarshaller<WebhookAuthConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static WebhookAuthConfigurationMarshaller Instance = new WebhookAuthConfigurationMarshaller();
 
     }

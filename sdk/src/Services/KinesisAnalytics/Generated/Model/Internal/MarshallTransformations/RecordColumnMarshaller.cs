@@ -34,7 +34,7 @@ namespace Amazon.KinesisAnalytics.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RecordColumn Marshaller
-    /// </summary>       
+    /// </summary>
     public class RecordColumnMarshaller : IRequestMarshaller<RecordColumn, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.KinesisAnalytics.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RecordColumnMarshaller Instance = new RecordColumnMarshaller();
 
     }

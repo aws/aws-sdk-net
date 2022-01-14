@@ -34,7 +34,7 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RightsizingRecommendationConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class RightsizingRecommendationConfigurationMarshaller : IRequestMarshaller<RightsizingRecommendationConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RightsizingRecommendationConfigurationMarshaller Instance = new RightsizingRecommendationConfigurationMarshaller();
 
     }

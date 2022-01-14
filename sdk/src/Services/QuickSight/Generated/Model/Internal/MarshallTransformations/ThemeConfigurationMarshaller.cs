@@ -34,7 +34,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ThemeConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class ThemeConfigurationMarshaller : IRequestMarshaller<ThemeConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -82,7 +82,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ThemeConfigurationMarshaller Instance = new ThemeConfigurationMarshaller();
 
     }

@@ -55,7 +55,7 @@ namespace Amazon.LexRuntimeV2.Model.Internal.MarshallTransformations
         public IRequest Marshall(GetSessionRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.LexRuntimeV2");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-08-07";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-08-07";
             request.HttpMethod = "GET";
 
             if (!publicRequest.IsSetBotAliasId())

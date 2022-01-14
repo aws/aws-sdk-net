@@ -34,7 +34,7 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ReportContext Marshaller
-    /// </summary>       
+    /// </summary>
     public class ReportContextMarshaller : IRequestMarshaller<ReportContext, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ReportContextMarshaller Instance = new ReportContextMarshaller();
 
     }

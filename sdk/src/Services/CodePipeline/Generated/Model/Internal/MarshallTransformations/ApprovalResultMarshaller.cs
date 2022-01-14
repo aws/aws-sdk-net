@@ -34,7 +34,7 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ApprovalResult Marshaller
-    /// </summary>       
+    /// </summary>
     public class ApprovalResultMarshaller : IRequestMarshaller<ApprovalResult, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ApprovalResultMarshaller Instance = new ApprovalResultMarshaller();
 
     }

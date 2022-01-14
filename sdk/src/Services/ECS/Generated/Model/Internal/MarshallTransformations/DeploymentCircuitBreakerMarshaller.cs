@@ -34,7 +34,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DeploymentCircuitBreaker Marshaller
-    /// </summary>       
+    /// </summary>
     public class DeploymentCircuitBreakerMarshaller : IRequestMarshaller<DeploymentCircuitBreaker, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DeploymentCircuitBreakerMarshaller Instance = new DeploymentCircuitBreakerMarshaller();
 
     }

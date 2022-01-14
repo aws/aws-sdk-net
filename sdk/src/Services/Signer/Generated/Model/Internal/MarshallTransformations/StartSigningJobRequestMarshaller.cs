@@ -56,7 +56,7 @@ namespace Amazon.Signer.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Signer");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-08-25";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-08-25";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/signing-jobs";
@@ -74,7 +74,7 @@ namespace Amazon.Signer.Model.Internal.MarshallTransformations
                 else if(!(publicRequest.IsSetClientRequestToken()))
                 {
                     context.Writer.WritePropertyName("clientRequestToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());                                                
+                    context.Writer.Write(Guid.NewGuid().ToString());
                 }
                 if(publicRequest.IsSetDestination())
                 {
@@ -110,7 +110,6 @@ namespace Amazon.Signer.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

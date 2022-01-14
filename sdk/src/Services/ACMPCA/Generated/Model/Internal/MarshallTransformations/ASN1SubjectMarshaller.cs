@@ -34,7 +34,7 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ASN1Subject Marshaller
-    /// </summary>       
+    /// </summary>
     public class ASN1SubjectMarshaller : IRequestMarshaller<ASN1Subject, JsonMarshallerContext> 
     {
         /// <summary>
@@ -133,7 +133,7 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ASN1SubjectMarshaller Instance = new ASN1SubjectMarshaller();
 
     }

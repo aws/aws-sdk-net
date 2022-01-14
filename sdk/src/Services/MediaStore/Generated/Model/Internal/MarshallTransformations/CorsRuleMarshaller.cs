@@ -34,7 +34,7 @@ namespace Amazon.MediaStore.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CorsRule Marshaller
-    /// </summary>       
+    /// </summary>
     public class CorsRuleMarshaller : IRequestMarshaller<CorsRule, JsonMarshallerContext> 
     {
         /// <summary>
@@ -99,7 +99,7 @@ namespace Amazon.MediaStore.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CorsRuleMarshaller Instance = new CorsRuleMarshaller();
 
     }

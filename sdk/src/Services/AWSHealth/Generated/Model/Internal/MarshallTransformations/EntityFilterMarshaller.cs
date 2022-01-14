@@ -34,7 +34,7 @@ namespace Amazon.AWSHealth.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// EntityFilter Marshaller
-    /// </summary>       
+    /// </summary>
     public class EntityFilterMarshaller : IRequestMarshaller<EntityFilter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -128,7 +128,7 @@ namespace Amazon.AWSHealth.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static EntityFilterMarshaller Instance = new EntityFilterMarshaller();
 
     }

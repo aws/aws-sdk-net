@@ -40,6 +40,7 @@ namespace Amazon.Chime
         /// Default constructor
         /// </summary>
         public AmazonChimeConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonChimeDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "chime";
         }

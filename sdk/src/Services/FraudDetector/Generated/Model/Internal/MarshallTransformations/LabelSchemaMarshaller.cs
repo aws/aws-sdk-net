@@ -34,7 +34,7 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// LabelSchema Marshaller
-    /// </summary>       
+    /// </summary>
     public class LabelSchemaMarshaller : IRequestMarshaller<LabelSchema, JsonMarshallerContext> 
     {
         /// <summary>
@@ -74,7 +74,7 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static LabelSchemaMarshaller Instance = new LabelSchemaMarshaller();
 
     }

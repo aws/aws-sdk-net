@@ -40,6 +40,7 @@ namespace Amazon.SimpleDB
         /// Default constructor
         /// </summary>
         public AmazonSimpleDBConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonSimpleDBDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "sdb";
         }

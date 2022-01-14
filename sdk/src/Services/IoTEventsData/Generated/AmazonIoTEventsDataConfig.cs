@@ -40,6 +40,7 @@ namespace Amazon.IoTEventsData
         /// Default constructor
         /// </summary>
         public AmazonIoTEventsDataConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonIoTEventsDataDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "ioteventsdata";
         }

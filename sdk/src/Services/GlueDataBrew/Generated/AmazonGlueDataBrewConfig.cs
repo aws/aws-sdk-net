@@ -40,6 +40,7 @@ namespace Amazon.GlueDataBrew
         /// Default constructor
         /// </summary>
         public AmazonGlueDataBrewConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonGlueDataBrewDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "databrew";
         }

@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// PublicWorkforceTaskPrice Marshaller
-    /// </summary>       
+    /// </summary>
     public class PublicWorkforceTaskPriceMarshaller : IRequestMarshaller<PublicWorkforceTaskPrice, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static PublicWorkforceTaskPriceMarshaller Instance = new PublicWorkforceTaskPriceMarshaller();
 
     }

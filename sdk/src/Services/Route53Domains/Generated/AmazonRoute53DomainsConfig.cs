@@ -40,6 +40,7 @@ namespace Amazon.Route53Domains
         /// Default constructor
         /// </summary>
         public AmazonRoute53DomainsConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonRoute53DomainsDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "route53domains";
         }

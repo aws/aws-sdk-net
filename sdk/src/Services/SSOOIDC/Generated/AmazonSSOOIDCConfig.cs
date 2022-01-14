@@ -40,6 +40,7 @@ namespace Amazon.SSOOIDC
         /// Default constructor
         /// </summary>
         public AmazonSSOOIDCConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonSSOOIDCDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "awsssooidc";
         }

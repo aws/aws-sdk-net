@@ -40,6 +40,7 @@ namespace Amazon.IoT1ClickProjects
         /// Default constructor
         /// </summary>
         public AmazonIoT1ClickProjectsConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonIoT1ClickProjectsDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "iot1click";
         }

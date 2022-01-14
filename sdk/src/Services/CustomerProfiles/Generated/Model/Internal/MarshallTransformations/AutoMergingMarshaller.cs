@@ -34,7 +34,7 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AutoMerging Marshaller
-    /// </summary>       
+    /// </summary>
     public class AutoMergingMarshaller : IRequestMarshaller<AutoMerging, JsonMarshallerContext> 
     {
         /// <summary>
@@ -77,7 +77,7 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AutoMergingMarshaller Instance = new AutoMergingMarshaller();
 
     }

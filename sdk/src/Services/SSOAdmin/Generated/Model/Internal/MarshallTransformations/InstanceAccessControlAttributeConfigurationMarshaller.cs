@@ -34,7 +34,7 @@ namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// InstanceAccessControlAttributeConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class InstanceAccessControlAttributeConfigurationMarshaller : IRequestMarshaller<InstanceAccessControlAttributeConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -65,7 +65,7 @@ namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static InstanceAccessControlAttributeConfigurationMarshaller Instance = new InstanceAccessControlAttributeConfigurationMarshaller();
 
     }

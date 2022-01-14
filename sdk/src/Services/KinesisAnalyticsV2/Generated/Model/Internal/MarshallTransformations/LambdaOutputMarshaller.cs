@@ -34,7 +34,7 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// LambdaOutput Marshaller
-    /// </summary>       
+    /// </summary>
     public class LambdaOutputMarshaller : IRequestMarshaller<LambdaOutput, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static LambdaOutputMarshaller Instance = new LambdaOutputMarshaller();
 
     }

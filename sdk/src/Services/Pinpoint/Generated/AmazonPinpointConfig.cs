@@ -40,6 +40,7 @@ namespace Amazon.Pinpoint
         /// Default constructor
         /// </summary>
         public AmazonPinpointConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonPinpointDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "mobiletargeting";
         }

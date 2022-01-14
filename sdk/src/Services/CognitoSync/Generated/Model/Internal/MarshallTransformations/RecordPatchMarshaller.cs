@@ -34,7 +34,7 @@ namespace Amazon.CognitoSync.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RecordPatch Marshaller
-    /// </summary>       
+    /// </summary>
     public class RecordPatchMarshaller : IRequestMarshaller<RecordPatch, JsonMarshallerContext> 
     {
         /// <summary>
@@ -79,7 +79,7 @@ namespace Amazon.CognitoSync.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RecordPatchMarshaller Instance = new RecordPatchMarshaller();
 
     }

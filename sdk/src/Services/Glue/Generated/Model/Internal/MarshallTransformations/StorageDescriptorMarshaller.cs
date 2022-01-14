@@ -34,7 +34,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// StorageDescriptor Marshaller
-    /// </summary>       
+    /// </summary>
     public class StorageDescriptorMarshaller : IRequestMarshaller<StorageDescriptor, JsonMarshallerContext> 
     {
         /// <summary>
@@ -186,7 +186,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static StorageDescriptorMarshaller Instance = new StorageDescriptorMarshaller();
 
     }
