@@ -251,6 +251,10 @@ namespace Amazon.LookoutMetrics
         /// </summary>
         public static readonly AnomalyDetectorFailureType BACK_TEST_ACTIVATION_FAILURE = new AnomalyDetectorFailureType("BACK_TEST_ACTIVATION_FAILURE");
         /// <summary>
+        /// Constant DEACTIVATION_FAILURE for AnomalyDetectorFailureType
+        /// </summary>
+        public static readonly AnomalyDetectorFailureType DEACTIVATION_FAILURE = new AnomalyDetectorFailureType("DEACTIVATION_FAILURE");
+        /// <summary>
         /// Constant DELETION_FAILURE for AnomalyDetectorFailureType
         /// </summary>
         public static readonly AnomalyDetectorFailureType DELETION_FAILURE = new AnomalyDetectorFailureType("DELETION_FAILURE");
@@ -316,6 +320,14 @@ namespace Amazon.LookoutMetrics
         /// Constant BACK_TEST_COMPLETE for AnomalyDetectorStatus
         /// </summary>
         public static readonly AnomalyDetectorStatus BACK_TEST_COMPLETE = new AnomalyDetectorStatus("BACK_TEST_COMPLETE");
+        /// <summary>
+        /// Constant DEACTIVATED for AnomalyDetectorStatus
+        /// </summary>
+        public static readonly AnomalyDetectorStatus DEACTIVATED = new AnomalyDetectorStatus("DEACTIVATED");
+        /// <summary>
+        /// Constant DEACTIVATING for AnomalyDetectorStatus
+        /// </summary>
+        public static readonly AnomalyDetectorStatus DEACTIVATING = new AnomalyDetectorStatus("DEACTIVATING");
         /// <summary>
         /// Constant DELETING for AnomalyDetectorStatus
         /// </summary>
