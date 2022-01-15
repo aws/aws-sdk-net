@@ -1,3 +1,8 @@
+### 3.7.192.0 (2022-01-15 10:19 UTC)
+* Core 3.7.6.0
+	* Add support for Default Configuration Modes.
+	* All services packages updated to require new Core
+
 ### 3.7.191.0 (2022-01-14 19:31 UTC)
 * ApplicationInsights (3.7.2.14)
 	* Application Insights support for Active Directory and SharePoint
