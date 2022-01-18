@@ -39,6 +39,7 @@ namespace Amazon.EC2.Model
         private List<ClientVpnAuthenticationRequest> _authenticationOptions = new List<ClientVpnAuthenticationRequest>();
         private string _clientCidrBlock;
         private ClientConnectOptions _clientConnectOptions;
+        private ClientLoginBannerOptions _clientLoginBannerOptions;
         private string _clientToken;
         private ConnectionLogOptions _connectionLogOptions;
         private string _description;
@@ -46,6 +47,7 @@ namespace Amazon.EC2.Model
         private List<string> _securityGroupIds = new List<string>();
         private SelfServicePortal _selfServicePortal;
         private string _serverCertificateArn;
+        private int? _sessionTimeoutHours;
         private bool? _splitTunnel;
         private List<TagSpecification> _tagSpecifications = new List<TagSpecification>();
         private TransportProtocol _transportProtocol;
@@ -110,6 +112,21 @@ namespace Amazon.EC2.Model
         internal bool IsSetClientConnectOptions()
         {
             return this._clientConnectOptions != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ClientLoginBannerOptions.
+        /// </summary>
+        public ClientLoginBannerOptions ClientLoginBannerOptions
+        {
+            get { return this._clientLoginBannerOptions; }
+            set { this._clientLoginBannerOptions = value; }
+        }
+
+        // Check to see if ClientLoginBannerOptions property is set
+        internal bool IsSetClientLoginBannerOptions()
+        {
+            return this._clientLoginBannerOptions != null;
         }
 
         /// <summary>
@@ -270,6 +287,21 @@ namespace Amazon.EC2.Model
         internal bool IsSetServerCertificateArn()
         {
             return this._serverCertificateArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SessionTimeoutHours.
+        /// </summary>
+        public int SessionTimeoutHours
+        {
+            get { return this._sessionTimeoutHours.GetValueOrDefault(); }
+            set { this._sessionTimeoutHours = value; }
+        }
+
+        // Check to see if SessionTimeoutHours property is set
+        internal bool IsSetSessionTimeoutHours()
+        {
+            return this._sessionTimeoutHours.HasValue; 
         }
 
         /// <summary>
