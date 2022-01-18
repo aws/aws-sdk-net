@@ -1,3 +1,15 @@
+### 3.7.193.0 (2022-01-18 19:15 UTC)
+* CloudTrail (3.7.2.7)
+	* This release fixes a documentation bug in the description for the readOnly field selector in advanced event selectors. The description now clarifies that users omit the readOnly field selector to select both Read and Write management events.
+* EC2 (3.7.56.0)
+	* Add support for AWS Client VPN client login banner and session timeout.
+* IVS (3.7.4.0)
+	* This release adds support for the new Thumbnail Configuration property for Recording Configurations. For more information see https://docs.aws.amazon.com/ivs/latest/userguide/record-to-s3.html
+* LocationService (3.7.8.0)
+	* This release adds the CalculateRouteMatrix API which calculates routes for the provided departure and destination positions. The release also deprecates the use of pricing plan across all verticals.
+* StorageGateway (3.7.4.14)
+	* Documentation update for adding bandwidth throttling support for S3 File Gateways.
+
 ### 3.7.192.0 (2022-01-15 10:19 UTC)
 * Core 3.7.6.0
 	* Add support for Default Configuration Modes.
