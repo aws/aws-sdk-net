@@ -418,4 +418,9 @@
     <max>26</max>
     <pattern>^st-[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVS.Model.ThumbnailConfiguration.TargetIntervalSeconds</property>
+    <min>5</min>
+    <max>60</max>
+  </property-value-rule>
 </property-value-rules>
