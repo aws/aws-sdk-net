@@ -349,6 +349,72 @@ namespace Amazon.LocationService
 
 
     /// <summary>
+    /// Constants used for properties of type RouteMatrixErrorCode.
+    /// </summary>
+    public class RouteMatrixErrorCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DeparturePositionNotFound for RouteMatrixErrorCode
+        /// </summary>
+        public static readonly RouteMatrixErrorCode DeparturePositionNotFound = new RouteMatrixErrorCode("DeparturePositionNotFound");
+        /// <summary>
+        /// Constant DestinationPositionNotFound for RouteMatrixErrorCode
+        /// </summary>
+        public static readonly RouteMatrixErrorCode DestinationPositionNotFound = new RouteMatrixErrorCode("DestinationPositionNotFound");
+        /// <summary>
+        /// Constant OtherValidationError for RouteMatrixErrorCode
+        /// </summary>
+        public static readonly RouteMatrixErrorCode OtherValidationError = new RouteMatrixErrorCode("OtherValidationError");
+        /// <summary>
+        /// Constant PositionsNotFound for RouteMatrixErrorCode
+        /// </summary>
+        public static readonly RouteMatrixErrorCode PositionsNotFound = new RouteMatrixErrorCode("PositionsNotFound");
+        /// <summary>
+        /// Constant RouteNotFound for RouteMatrixErrorCode
+        /// </summary>
+        public static readonly RouteMatrixErrorCode RouteNotFound = new RouteMatrixErrorCode("RouteNotFound");
+        /// <summary>
+        /// Constant RouteTooLong for RouteMatrixErrorCode
+        /// </summary>
+        public static readonly RouteMatrixErrorCode RouteTooLong = new RouteMatrixErrorCode("RouteTooLong");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RouteMatrixErrorCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RouteMatrixErrorCode FindValue(string value)
+        {
+            return FindValue<RouteMatrixErrorCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RouteMatrixErrorCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type TravelMode.
     /// </summary>
     public class TravelMode : ConstantClass

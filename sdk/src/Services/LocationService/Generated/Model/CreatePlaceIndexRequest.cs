@@ -35,6 +35,15 @@ namespace Amazon.LocationService.Model
     /// operation, and reverse geocode coordinates by using the <code>SearchPlaceIndexForPosition</code>
     /// operation, and enable autosuggestions by using the <code>SearchPlaceIndexForSuggestions</code>
     /// operation.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// If your application is tracking or routing assets you use in your business, such as
+    /// delivery vehicles or employees, you may only use HERE as your geolocation provider.
+    /// See section 82 of the <a href="http://aws.amazon.com/service-terms">AWS service terms</a>
+    /// for more details.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class CreatePlaceIndexRequest : AmazonLocationServiceRequest
     {
@@ -174,14 +183,10 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property PricingPlan. 
         /// <para>
-        /// Optionally specifies the pricing plan for the place index resource. Defaults to <code>RequestBasedUsage</code>.
-        /// </para>
-        ///  
-        /// <para>
-        /// For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon
-        /// Location Service pricing</a>.
+        /// No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.
         /// </para>
         /// </summary>
+        [Obsolete("Deprecated. If included, the only allowed value is RequestBasedUsage.")]
         public PricingPlan PricingPlan
         {
             get { return this._pricingPlan; }

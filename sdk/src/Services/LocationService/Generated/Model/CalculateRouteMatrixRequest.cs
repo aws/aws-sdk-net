@@ -29,16 +29,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LocationService.Model
 {
     /// <summary>
-    /// Container for the parameters to the CalculateRoute operation.
-    /// <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html">Calculates
-    /// a route</a> given the following required parameters: <code>DeparturePosition</code>
-    /// and <code>DestinationPosition</code>. Requires that you first <a href="https://docs.aws.amazon.com/location-routes/latest/APIReference/API_CreateRouteCalculator.html">create
-    /// a route calculator resource</a>.
+    /// Container for the parameters to the CalculateRouteMatrix operation.
+    /// <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route-matrix.html">
+    /// Calculates a route matrix</a> given the following required parameters: <code>DeparturePositions</code>
+    /// and <code>DestinationPositions</code>. <code>CalculateRouteMatrix</code> calculates
+    /// routes and returns the travel time and travel distance from each departure position
+    /// to each destination position in the request. For example, given departure positions
+    /// A and B, and destination positions X and Y, <code>CalculateRouteMatrix</code> will
+    /// return time and distance for routes from A to X, A to Y, B to X, and B to Y (in that
+    /// order). The number of results returned (and routes calculated) will be the number
+    /// of <code>DeparturePositions</code> times the number of <code>DestinationPositions</code>.
     /// 
+    ///  <note> 
+    /// <para>
+    /// Your account is charged for each route calculated, not the number of requests.
+    /// </para>
+    ///  </note> 
+    /// <para>
+    /// Requires that you first <a href="https://docs.aws.amazon.com/location-routes/latest/APIReference/API_CreateRouteCalculator.html">create
+    /// a route calculator resource</a>.
+    /// </para>
     ///  
     /// <para>
     /// By default, a request that doesn't specify a departure time uses the best time of
-    /// day to travel with the best traffic conditions when calculating the route.
+    /// day to travel with the best traffic conditions when calculating routes.
     /// </para>
     ///  
     /// <para>
@@ -46,9 +60,9 @@ namespace Amazon.LocationService.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/location/latest/developerguide/departure-time.html">Specifying
-    /// a departure time</a> using either <code>DepartureTime</code> or <code>DepartNow</code>.
-    /// This calculates a route based on predictive traffic data at the given time. 
+    ///  <a href="https://docs.aws.amazon.com/location/latest/developerguide/departure-time.html">
+    /// Specifying a departure time</a> using either <code>DepartureTime</code> or <code>DepartNow</code>.
+    /// This calculates routes based on predictive traffic data at the given time. 
     /// </para>
     ///  <note> 
     /// <para>
@@ -65,25 +79,23 @@ namespace Amazon.LocationService.Model
     /// </para>
     ///  </li> </ul>
     /// </summary>
-    public partial class CalculateRouteRequest : AmazonLocationServiceRequest
+    public partial class CalculateRouteMatrixRequest : AmazonLocationServiceRequest
     {
         private string _calculatorName;
         private CalculateRouteCarModeOptions _carModeOptions;
         private bool? _departNow;
-        private List<double> _departurePosition = new List<double>();
+        private List<List<double>> _departurePositions = new List<List<double>>();
         private DateTime? _departureTime;
-        private List<double> _destinationPosition = new List<double>();
+        private List<List<double>> _destinationPositions = new List<List<double>>();
         private DistanceUnit _distanceUnit;
-        private bool? _includeLegGeometry;
         private TravelMode _travelMode;
         private CalculateRouteTruckModeOptions _truckModeOptions;
-        private List<List<double>> _waypointPositions = new List<List<double>>();
 
         /// <summary>
         /// Gets and sets the property CalculatorName. 
         /// <para>
-        /// The name of the route calculator resource that you want to use to calculate the route.
-        /// 
+        /// The name of the route calculator resource that you want to use to calculate the route
+        /// matrix. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
@@ -126,8 +138,9 @@ namespace Amazon.LocationService.Model
         /// Gets and sets the property DepartNow. 
         /// <para>
         /// Sets the time of departure as the current time. Uses the current time to calculate
-        /// a route. Otherwise, the best time of day to travel with the best traffic conditions
-        /// is used to calculate the route.
+        /// the route matrix. You can't set both <code>DepartureTime</code> and <code>DepartNow</code>.
+        /// If neither is set, the best time of day to travel with the best traffic conditions
+        /// is used to calculate the route matrix.
         /// </para>
         ///  
         /// <para>
@@ -151,46 +164,50 @@ namespace Amazon.LocationService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DeparturePosition. 
+        /// Gets and sets the property DeparturePositions. 
         /// <para>
-        /// The start position for the route. Defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS
-        /// 84</a> format: <code>[longitude, latitude]</code>.
+        /// The list of departure (origin) positions for the route matrix. An array of points,
+        /// each of which is itself a 2-value array defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS
+        /// 84</a> format: <code>[longitude, latitude]</code>. For example, <code>[-123.115, 49.285]</code>.
         /// </para>
-        ///  <ul> <li> 
+        ///  <important> 
         /// <para>
-        /// For example, <code>[-123.115, 49.285]</code> 
+        /// Depending on the data provider selected in the route calculator resource there may
+        /// be additional restrictions on the inputs you can choose. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route-matrix.html#matrix-routing-position-limits">
+        /// Position restrictions</a> in the <i>Amazon Location Service Developer Guide</i>.
         /// </para>
-        ///  </li> </ul> <note> 
+        ///  </important> <note> 
         /// <para>
-        /// If you specify a departure that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves
-        /// the position to the nearest road</a>. If Esri is the provider for your route calculator,
-        /// specifying a route that is longer than 400 km returns a <code>400 RoutesValidationException</code>
-        /// error.
+        /// For route calculators that use Esri as the data provider, if you specify a departure
+        /// that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">
+        /// moves the position to the nearest road</a>. The snapped value is available in the
+        /// result in <code>SnappedDeparturePositions</code>.
         /// </para>
         ///  </note> 
         /// <para>
         /// Valid Values: <code>[-180 to 180,-90 to 90]</code> 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=2, Max=2)]
-        public List<double> DeparturePosition
+        [AWSProperty(Required=true, Min=1, Max=350)]
+        public List<List<double>> DeparturePositions
         {
-            get { return this._departurePosition; }
-            set { this._departurePosition = value; }
+            get { return this._departurePositions; }
+            set { this._departurePositions = value; }
         }
 
-        // Check to see if DeparturePosition property is set
-        internal bool IsSetDeparturePosition()
+        // Check to see if DeparturePositions property is set
+        internal bool IsSetDeparturePositions()
         {
-            return this._departurePosition != null && this._departurePosition.Count > 0; 
+            return this._departurePositions != null && this._departurePositions.Count > 0; 
         }
 
         /// <summary>
         /// Gets and sets the property DepartureTime. 
         /// <para>
-        /// Specifies the desired time of departure. Uses the given time to calculate the route.
-        /// Otherwise, the best time of day to travel with the best traffic conditions is used
-        /// to calculate the route.
+        /// Specifies the desired time of departure. Uses the given time to calculate the route
+        /// matrix. You can't set both <code>DepartureTime</code> and <code>DepartNow</code>.
+        /// If neither is set, the best time of day to travel with the best traffic conditions
+        /// is used to calculate the route matrix.
         /// </para>
         ///  <note> 
         /// <para>
@@ -218,36 +235,42 @@ namespace Amazon.LocationService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DestinationPosition. 
+        /// Gets and sets the property DestinationPositions. 
         /// <para>
-        /// The finish position for the route. Defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS
-        /// 84</a> format: <code>[longitude, latitude]</code>.
+        /// The list of destination positions for the route matrix. An array of points, each of
+        /// which is itself a 2-value array defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS
+        /// 84</a> format: <code>[longitude, latitude]</code>. For example, <code>[-122.339, 47.615]</code>
+        /// 
         /// </para>
-        ///  <ul> <li> 
+        ///  <important> 
         /// <para>
-        ///  For example, <code>[-122.339, 47.615]</code> 
+        /// Depending on the data provider selected in the route calculator resource there may
+        /// be additional restrictions on the inputs you can choose. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route-matrix.html#matrix-routing-position-limits">
+        /// Position restrictions</a> in the <i>Amazon Location Service Developer Guide</i>.
         /// </para>
-        ///  </li> </ul> <note> 
+        ///  </important> <note> 
         /// <para>
-        /// If you specify a destination that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves
-        /// the position to the nearest road</a>. 
+        /// For route calculators that use Esri as the data provider, if you specify a destination
+        /// that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">
+        /// moves the position to the nearest road</a>. The snapped value is available in the
+        /// result in <code>SnappedDestinationPositions</code>.
         /// </para>
         ///  </note> 
         /// <para>
         /// Valid Values: <code>[-180 to 180,-90 to 90]</code> 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=2, Max=2)]
-        public List<double> DestinationPosition
+        [AWSProperty(Required=true, Min=1, Max=350)]
+        public List<List<double>> DestinationPositions
         {
-            get { return this._destinationPosition; }
-            set { this._destinationPosition = value; }
+            get { return this._destinationPositions; }
+            set { this._destinationPositions = value; }
         }
 
-        // Check to see if DestinationPosition property is set
-        internal bool IsSetDestinationPosition()
+        // Check to see if DestinationPositions property is set
+        internal bool IsSetDestinationPositions()
         {
-            return this._destinationPosition != null && this._destinationPosition.Count > 0; 
+            return this._destinationPositions != null && this._destinationPositions.Count > 0; 
         }
 
         /// <summary>
@@ -270,33 +293,6 @@ namespace Amazon.LocationService.Model
         internal bool IsSetDistanceUnit()
         {
             return this._distanceUnit != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property IncludeLegGeometry. 
-        /// <para>
-        /// Set to include the geometry details in the result for each path between a pair of
-        /// positions.
-        /// </para>
-        ///  
-        /// <para>
-        /// Default Value: <code>false</code> 
-        /// </para>
-        ///  
-        /// <para>
-        /// Valid Values: <code>false</code> | <code>true</code> 
-        /// </para>
-        /// </summary>
-        public bool IncludeLegGeometry
-        {
-            get { return this._includeLegGeometry.GetValueOrDefault(); }
-            set { this._includeLegGeometry = value; }
-        }
-
-        // Check to see if IncludeLegGeometry property is set
-        internal bool IsSetIncludeLegGeometry()
-        {
-            return this._includeLegGeometry.HasValue; 
         }
 
         /// <summary>
@@ -357,51 +353,6 @@ namespace Amazon.LocationService.Model
         internal bool IsSetTruckModeOptions()
         {
             return this._truckModeOptions != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property WaypointPositions. 
-        /// <para>
-        /// Specifies an ordered list of up to 23 intermediate positions to include along a route
-        /// between the departure position and destination position. 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// For example, from the <code>DeparturePosition</code> <code>[-123.115, 49.285]</code>,
-        /// the route follows the order that the waypoint positions are given <code>[[-122.757,
-        /// 49.0021],[-122.349, 47.620]]</code> 
-        /// </para>
-        ///  </li> </ul> <note> 
-        /// <para>
-        /// If you specify a waypoint position that's not located on a road, Amazon Location <a
-        /// href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves
-        /// the position to the nearest road</a>. 
-        /// </para>
-        ///  
-        /// <para>
-        /// Specifying more than 23 waypoints returns a <code>400 ValidationException</code> error.
-        /// </para>
-        ///  
-        /// <para>
-        /// If Esri is the provider for your route calculator, specifying a route that is longer
-        /// than 400 km returns a <code>400 RoutesValidationException</code> error.
-        /// </para>
-        ///  </note> 
-        /// <para>
-        /// Valid Values: <code>[-180 to 180,-90 to 90]</code> 
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=0, Max=23)]
-        public List<List<double>> WaypointPositions
-        {
-            get { return this._waypointPositions; }
-            set { this._waypointPositions = value; }
-        }
-
-        // Check to see if WaypointPositions property is set
-        internal bool IsSetWaypointPositions()
-        {
-            return this._waypointPositions != null && this._waypointPositions.Count > 0; 
         }
 
     }

@@ -378,7 +378,7 @@ namespace Amazon.LocationService
 
         /// <summary>
         /// <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html">Calculates
-        /// a route</a> given the following required parameters: <code>DeparturePostiton</code>
+        /// a route</a> given the following required parameters: <code>DeparturePosition</code>
         /// and <code>DestinationPosition</code>. Requires that you first <a href="https://docs.aws.amazon.com/location-routes/latest/APIReference/API_CreateRouteCalculator.html">create
         /// a route calculator resource</a>.
         /// 
@@ -393,26 +393,24 @@ namespace Amazon.LocationService
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#departure-time">Specifying
-        /// a departure time</a> using either <code>DepartureTime</code> or <code>DepartureNow</code>.
+        ///  <a href="https://docs.aws.amazon.com/location/latest/developerguide/departure-time.html">Specifying
+        /// a departure time</a> using either <code>DepartureTime</code> or <code>DepartNow</code>.
         /// This calculates a route based on predictive traffic data at the given time. 
         /// </para>
         ///  <note> 
         /// <para>
-        /// You can't specify both <code>DepartureTime</code> and <code>DepartureNow</code> in
-        /// a single request. Specifying both parameters returns a validation error.
+        /// You can't specify both <code>DepartureTime</code> and <code>DepartNow</code> in a
+        /// single request. Specifying both parameters returns a validation error.
         /// </para>
         ///  </note> </li> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#travel-mode">Specifying
-        /// a travel mode</a> using TravelMode. This lets you specify an additional route preference
-        /// such as <code>CarModeOptions</code> if traveling by <code>Car</code>, or <code>TruckModeOptions</code>
-        /// if traveling by <code>Truck</code>.
+        ///  <a href="https://docs.aws.amazon.com/location/latest/developerguide/travel-mode.html">Specifying
+        /// a travel mode</a> using TravelMode sets the transportation mode used to calculate
+        /// the routes. This also lets you specify additional route preferences in <code>CarModeOptions</code>
+        /// if traveling by <code>Car</code>, or <code>TruckModeOptions</code> if traveling by
+        /// <code>Truck</code>.
         /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        ///  
-        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CalculateRoute service method.</param>
         /// <param name="cancellationToken">
@@ -439,6 +437,88 @@ namespace Amazon.LocationService
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/CalculateRoute">REST API Reference for CalculateRoute Operation</seealso>
         Task<CalculateRouteResponse> CalculateRouteAsync(CalculateRouteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CalculateRouteMatrix
+
+
+
+        /// <summary>
+        /// <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route-matrix.html">
+        /// Calculates a route matrix</a> given the following required parameters: <code>DeparturePositions</code>
+        /// and <code>DestinationPositions</code>. <code>CalculateRouteMatrix</code> calculates
+        /// routes and returns the travel time and travel distance from each departure position
+        /// to each destination position in the request. For example, given departure positions
+        /// A and B, and destination positions X and Y, <code>CalculateRouteMatrix</code> will
+        /// return time and distance for routes from A to X, A to Y, B to X, and B to Y (in that
+        /// order). The number of results returned (and routes calculated) will be the number
+        /// of <code>DeparturePositions</code> times the number of <code>DestinationPositions</code>.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Your account is charged for each route calculated, not the number of requests.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Requires that you first <a href="https://docs.aws.amazon.com/location-routes/latest/APIReference/API_CreateRouteCalculator.html">create
+        /// a route calculator resource</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// By default, a request that doesn't specify a departure time uses the best time of
+        /// day to travel with the best traffic conditions when calculating routes.
+        /// </para>
+        ///  
+        /// <para>
+        /// Additional options include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/location/latest/developerguide/departure-time.html">
+        /// Specifying a departure time</a> using either <code>DepartureTime</code> or <code>DepartNow</code>.
+        /// This calculates routes based on predictive traffic data at the given time. 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// You can't specify both <code>DepartureTime</code> and <code>DepartNow</code> in a
+        /// single request. Specifying both parameters returns a validation error.
+        /// </para>
+        ///  </note> </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/location/latest/developerguide/travel-mode.html">Specifying
+        /// a travel mode</a> using TravelMode sets the transportation mode used to calculate
+        /// the routes. This also lets you specify additional route preferences in <code>CarModeOptions</code>
+        /// if traveling by <code>Car</code>, or <code>TruckModeOptions</code> if traveling by
+        /// <code>Truck</code>.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CalculateRouteMatrix service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CalculateRouteMatrix service method, as returned by LocationService.</returns>
+        /// <exception cref="Amazon.LocationService.Model.AccessDeniedException">
+        /// The request was denied because of insufficient access or permissions. Check with an
+        /// administrator to verify your permissions.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.InternalServerException">
+        /// The request has failed to process because of an unknown server error, exception, or
+        /// failure.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ResourceNotFoundException">
+        /// The resource that you've entered was not found in your AWS account.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ThrottlingException">
+        /// The request was denied because of request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ValidationException">
+        /// The input failed to meet the constraints specified by the AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/CalculateRouteMatrix">REST API Reference for CalculateRouteMatrix Operation</seealso>
+        Task<CalculateRouteMatrixResponse> CalculateRouteMatrixAsync(CalculateRouteMatrixRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -484,6 +564,15 @@ namespace Amazon.LocationService
         /// <summary>
         /// Creates a map resource in your AWS account, which provides map tiles of different
         /// styles sourced from global location data providers.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// If your application is tracking or routing assets you use in your business, such as
+        /// delivery vehicles or employees, you may only use HERE as your geolocation provider.
+        /// See section 82 of the <a href="http://aws.amazon.com/service-terms">AWS service terms</a>
+        /// for more details.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateMap service method.</param>
         /// <param name="cancellationToken">
@@ -523,6 +612,15 @@ namespace Amazon.LocationService
         /// operation, and reverse geocode coordinates by using the <code>SearchPlaceIndexForPosition</code>
         /// operation, and enable autosuggestions by using the <code>SearchPlaceIndexForSuggestions</code>
         /// operation.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// If your application is tracking or routing assets you use in your business, such as
+        /// delivery vehicles or employees, you may only use HERE as your geolocation provider.
+        /// See section 82 of the <a href="http://aws.amazon.com/service-terms">AWS service terms</a>
+        /// for more details.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePlaceIndex service method.</param>
         /// <param name="cancellationToken">
@@ -565,6 +663,14 @@ namespace Amazon.LocationService
         /// and get directions. A route calculator sources traffic and road network data from
         /// your chosen data provider.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If your application is tracking or routing assets you use in your business, such as
+        /// delivery vehicles or employees, you may only use HERE as your geolocation provider.
+        /// See section 82 of the <a href="http://aws.amazon.com/service-terms">AWS service terms</a>
+        /// for more details.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateRouteCalculator service method.</param>
         /// <param name="cancellationToken">
