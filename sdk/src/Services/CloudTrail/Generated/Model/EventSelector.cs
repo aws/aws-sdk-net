@@ -88,7 +88,8 @@ namespace Amazon.CloudTrail.Model
         /// or it can filter out Key Management Service or Amazon RDS Data API events by containing
         /// <code>kms.amazonaws.com</code> or <code>rdsdata.amazonaws.com</code>. By default,
         /// <code>ExcludeManagementEventSources</code> is empty, and KMS and Amazon RDS Data API
-        /// events are logged to your trail.
+        /// events are logged to your trail. You can exclude management event sources only in
+        /// regions that support the event source.
         /// </para>
         /// </summary>
         public List<string> ExcludeManagementEventSources
