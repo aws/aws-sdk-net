@@ -1,0 +1,11 @@
+﻿{
+  "AWS": {
+    "Region": "us-west-2",
+    "Logging": {
+      "LogTo": "Console",
+      "LogResponses": "OnError",
+      "LogResponsesSizeLimit": 2000,
+      "LogMetrics": true
+    }
+  }
+}

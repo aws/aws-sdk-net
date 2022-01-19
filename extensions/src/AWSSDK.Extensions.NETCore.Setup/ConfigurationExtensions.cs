@@ -13,15 +13,11 @@
  * permissions and limitations under the License.
  */
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Threading.Tasks;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
 
 using Amazon;
 using Amazon.Runtime;
+using Amazon.Util;
 
 using Amazon.Extensions.NETCore.Setup;
 
@@ -126,6 +122,57 @@ namespace Microsoft.Extensions.Configuration
             else if (!string.IsNullOrEmpty(section["AWSRegion"]))
             {
                 options.Region = RegionEndpoint.GetBySystemName(section["AWSRegion"]);
+            }
+
+            if (!string.IsNullOrEmpty(section["DefaultsMode"]))
+            {
+                if(!Enum.TryParse<DefaultConfigurationMode>(section["DefaultsMode"], out var mode))
+                {
+                    throw new ArgumentException($"Invalid value for DefaultConfiguration. Valid values are: {string.Join(", ", Enum.GetNames(typeof(DefaultConfigurationMode)))} ");
+                }
+                options.DefaultConfigurationMode = mode;
+            }
+
+            var loggingSection = section.GetSection("Logging");
+            if(loggingSection != null)
+            {
+                options.Logging = new AWSOptions.LoggingSetting();
+
+                if (!string.IsNullOrEmpty(loggingSection[nameof(AWSOptions.LoggingSetting.LogTo)]))
+                {
+                    if (!Enum.TryParse<LoggingOptions>(loggingSection[nameof(AWSOptions.LoggingSetting.LogTo)], out var logTo))
+                    {
+                        throw new ArgumentException($"Invalid value for {nameof(AWSOptions.LoggingSetting.LogTo)}. Valid values are: {string.Join(", ", Enum.GetNames(typeof(LoggingOptions)))} ");
+                    }
+                    options.Logging.LogTo = logTo;
+                }
+
+                if (!string.IsNullOrEmpty(loggingSection[nameof(AWSOptions.LoggingSetting.LogResponses)]))
+                {
+                    if (!Enum.TryParse<ResponseLoggingOption>(loggingSection[nameof(AWSOptions.LoggingSetting.LogResponses)], out var logResponses))
+                    {
+                        throw new ArgumentException($"Invalid value for {nameof(AWSOptions.LoggingSetting.LogResponses)}. Valid values are: {string.Join(", ", Enum.GetNames(typeof(ResponseLoggingOption)))} ");
+                    }
+                    options.Logging.LogResponses = logResponses;
+                }
+
+                if (!string.IsNullOrEmpty(loggingSection[nameof(AWSOptions.LoggingSetting.LogResponsesSizeLimit)]))
+                {
+                    if (!int.TryParse(loggingSection[nameof(AWSOptions.LoggingSetting.LogResponsesSizeLimit)], out var logResponsesSizeLimit))
+                    {
+                        throw new ArgumentException($"Invalid integer value for {nameof(AWSOptions.LoggingSetting.LogResponsesSizeLimit)}.");
+                    }
+                    options.Logging.LogResponsesSizeLimit = logResponsesSizeLimit;
+                }
+
+                if (!string.IsNullOrEmpty(loggingSection[nameof(AWSOptions.LoggingSetting.LogMetrics)]))
+                {
+                    if (!bool.TryParse(loggingSection[nameof(AWSOptions.LoggingSetting.LogMetrics)], out var logMetrics))
+                    {
+                        throw new ArgumentException($"Invalid boolean value for {nameof(AWSOptions.LoggingSetting.LogMetrics)}.");
+                    }
+                    options.Logging.LogMetrics = logMetrics;
+                }
             }
 
             return options;

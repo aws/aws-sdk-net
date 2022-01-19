@@ -77,10 +77,46 @@ namespace Amazon.Extensions.NETCore.Setup
         /// <returns>The AWS service client</returns>
         internal static IAmazonService CreateServiceClient(ILogger logger, Type serviceInterfaceType, AWSOptions options)
         {
+            PerformGlobalConfig(logger, options);
             var credentials = CreateCredentials(logger, options);
             var config = CreateConfig(serviceInterfaceType, options);
             var client = CreateClient(serviceInterfaceType, credentials, config);
             return client as IAmazonService;
+        }
+
+        /// <summary>
+        /// Performs all of the global settings that have been specified in AWSOptions.
+        /// </summary>
+        /// <param name="logger"></param>
+        /// <param name="options"></param>
+        private static void PerformGlobalConfig(ILogger logger, AWSOptions options)
+        {
+            if(options?.Logging != null)
+            {
+                if(options.Logging.LogTo.HasValue && AWSConfigs.LoggingConfig.LogTo != options.Logging.LogTo.Value)
+                {
+                    AWSConfigs.LoggingConfig.LogTo = options.Logging.LogTo.Value;
+                    logger?.LogDebug($"Configuring SDK LogTo: {AWSConfigs.LoggingConfig.LogTo}");
+                }
+
+                if (options.Logging.LogResponses.HasValue && AWSConfigs.LoggingConfig.LogResponses != options.Logging.LogResponses.Value)
+                {
+                    AWSConfigs.LoggingConfig.LogResponses = options.Logging.LogResponses.Value;
+                    logger?.LogDebug($"Configuring SDK LogResponses: {AWSConfigs.LoggingConfig.LogResponses}");
+                }
+
+                if (options.Logging.LogMetrics.HasValue && AWSConfigs.LoggingConfig.LogMetrics != options.Logging.LogMetrics.Value)
+                {
+                    AWSConfigs.LoggingConfig.LogMetrics = options.Logging.LogMetrics.Value;
+                    logger?.LogDebug($"Configuring SDK LogMetrics: {AWSConfigs.LoggingConfig.LogMetrics}");
+                }
+
+                if (options.Logging.LogResponsesSizeLimit.HasValue && AWSConfigs.LoggingConfig.LogResponsesSizeLimit != options.Logging.LogResponsesSizeLimit.Value)
+                {
+                    AWSConfigs.LoggingConfig.LogResponsesSizeLimit = options.Logging.LogResponsesSizeLimit.Value;
+                    logger?.LogDebug($"Configuring SDK LogResponsesSizeLimit: {AWSConfigs.LoggingConfig.LogResponsesSizeLimit}");
+                }
+            }
         }
 
         /// <summary>
@@ -170,6 +206,11 @@ namespace Amazon.Extensions.NETCore.Setup
                 options = new AWSOptions();
             }
 
+            if (options.DefaultConfigurationMode.HasValue)
+            {
+                config.DefaultConfigurationMode = options.DefaultConfigurationMode.Value;
+            }
+
             var defaultConfig = options.DefaultClientConfig;
             if (options.IsDefaultClientConfigSet)
             {
@@ -184,6 +225,19 @@ namespace Amazon.Extensions.NETCore.Setup
                         // Skip RegionEndpoint because it is set below and calling the get method on the
                         // property triggers the default region fallback mechanism.
                         if (string.Equals(property.Name, "RegionEndpoint", StringComparison.Ordinal))
+                            continue;
+
+                        // DefaultConfigurationMode is skipped from the DefaultClientConfig because it is expected to be set
+                        // at the top level of AWSOptions which is done before this loop.
+                        if (string.Equals(property.Name, "DefaultConfigurationMode", StringComparison.Ordinal))
+                            continue;
+
+                        // Skip setting RetryMode if it is set to legacy but the DefaultConfigurationMode is not legacy.
+                        // This will allow the retry mode to be configured from the DefaultConfiguration.
+                        // This is a workaround to handle the inability to tell if RetryMode was explicitly set.
+                        if (string.Equals(property.Name, "RetryMode", StringComparison.Ordinal) && 
+                            defaultConfig.RetryMode == RequestRetryMode.Legacy && 
+                            config.DefaultConfigurationMode != DefaultConfigurationMode.Legacy)
                             continue;
 
                         singleArray[0] = property.GetMethod.Invoke(defaultConfig, emptyArray);

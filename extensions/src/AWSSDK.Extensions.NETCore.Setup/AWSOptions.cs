@@ -51,6 +51,11 @@ namespace Amazon.Extensions.NETCore.Setup
         /// </summary>
         public AWSCredentials Credentials { get; set; }
 
+        /// <summary>
+        /// The default configuration mode set for created service clients.
+        /// </summary>
+        public DefaultConfigurationMode? DefaultConfigurationMode { get; set; }
+
         private ClientConfig _defaultClientConfig;
 
         /// <summary>
@@ -67,6 +72,12 @@ namespace Amazon.Extensions.NETCore.Setup
                 return this._defaultClientConfig;
             }
         }
+
+        /// <summary>
+        /// Logging settings that should be applied to SDK global configuration. This setting is applied while creating
+        /// the service client through this package.
+        /// </summary>
+        public LoggingSetting Logging { get; set; }
 
         internal bool IsDefaultClientConfigSet
         {
@@ -86,6 +97,34 @@ namespace Amazon.Extensions.NETCore.Setup
         public T CreateServiceClient<T>() where T : IAmazonService
         {
             return (T)ClientFactory.CreateServiceClient(null, typeof(T), this);
+        }
+
+        /// <summary>
+        /// Container for logging settings of the SDK
+        /// </summary>
+        public class LoggingSetting
+        {
+            /// <summary>
+            /// Logging destination.
+            /// </summary>
+            public LoggingOptions? LogTo { get; set; }
+
+            /// <summary>
+            /// When to log responses.
+            /// </summary>
+            public ResponseLoggingOption? LogResponses { get; set; }
+
+            /// <summary>
+            /// Gets or sets the size limit in bytes for logged responses. If logging for response
+            ///     body is enabled, logged response body is limited to this size. The SDK defaults to 1KB if this property is net set.
+            /// </summary>
+            public int? LogResponsesSizeLimit { get; set; }
+
+            /// <summary>
+            /// Whether or not to log SDK metrics.
+            /// </summary>
+            public bool? LogMetrics { get; set; }
+
         }
     }
 }
