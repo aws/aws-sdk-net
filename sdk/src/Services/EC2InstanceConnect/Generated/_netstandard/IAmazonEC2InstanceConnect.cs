@@ -60,6 +60,11 @@ namespace Amazon.EC2InstanceConnect
         /// <exception cref="Amazon.EC2InstanceConnect.Model.EC2InstanceNotFoundException">
         /// The specified instance was not found.
         /// </exception>
+        /// <exception cref="Amazon.EC2InstanceConnect.Model.EC2InstanceStateInvalidException">
+        /// Unable to connect because the instance is not in a valid state. Connecting to a stopped
+        /// or terminated instance is not supported. If the instance is stopped, start your instance,
+        /// and try to connect again.
+        /// </exception>
         /// <exception cref="Amazon.EC2InstanceConnect.Model.EC2InstanceTypeInvalidException">
         /// The instance type is not supported for connecting via the serial console. Only Nitro
         /// instance types are currently supported.
@@ -112,6 +117,11 @@ namespace Amazon.EC2InstanceConnect
         /// </exception>
         /// <exception cref="Amazon.EC2InstanceConnect.Model.EC2InstanceNotFoundException">
         /// The specified instance was not found.
+        /// </exception>
+        /// <exception cref="Amazon.EC2InstanceConnect.Model.EC2InstanceStateInvalidException">
+        /// Unable to connect because the instance is not in a valid state. Connecting to a stopped
+        /// or terminated instance is not supported. If the instance is stopped, start your instance,
+        /// and try to connect again.
         /// </exception>
         /// <exception cref="Amazon.EC2InstanceConnect.Model.InvalidArgsException">
         /// One of the parameters is not valid.
