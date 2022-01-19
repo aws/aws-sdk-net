@@ -1,3 +1,9 @@
+### 3.7.194.0 (2022-01-19 19:16 UTC)
+* EC2InstanceConnect (3.7.2.0)
+	* Adds support for ED25519 keys. PushSSHPublicKey Availability Zone parameter is now optional. Adds EC2InstanceStateInvalidException for instances that are not running. This was previously a service exception, so this may require updating your code to handle this new exception.
+* Macie2 (3.7.7.0)
+	* This release of the Amazon Macie API introduces stricter validation of requests to create custom data identifiers.
+
 ### 3.7.193.0 (2022-01-18 19:15 UTC)
 * CloudTrail (3.7.2.7)
 	* This release fixes a documentation bug in the description for the readOnly field selector in advanced event selectors. The description now clarifies that users omit the readOnly field selector to select both Read and Write management events.

@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.7.193.0",
+    "ProductVersion" : "3.7.194.0",
     "CoreVersion"    : "3.7.6.0",
     "OverrideCoreVersion" : "3.3",
     "DefaultToPreview"    : false,
@@ -1474,7 +1474,7 @@
             "InPreview"               : false
         },
         "EC2InstanceConnect"              : {
-            "Version" : "3.7.1.114",
+            "Version" : "3.7.2.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.6.0"
@@ -1778,7 +1778,7 @@
             "InPreview"               : false
         },
         "Macie2"                          : {
-            "Version" : "3.7.6.27",
+            "Version" : "3.7.7.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.6.0"
