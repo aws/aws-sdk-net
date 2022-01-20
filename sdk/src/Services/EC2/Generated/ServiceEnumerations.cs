@@ -7169,6 +7169,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType C6iLarge = new InstanceType("c6i.large");
         /// <summary>
+        /// Constant C6iMetal for InstanceType
+        /// </summary>
+        public static readonly InstanceType C6iMetal = new InstanceType("c6i.metal");
+        /// <summary>
         /// Constant C6iXlarge for InstanceType
         /// </summary>
         public static readonly InstanceType C6iXlarge = new InstanceType("c6i.xlarge");
@@ -8005,6 +8009,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType M6iLarge = new InstanceType("m6i.large");
         /// <summary>
+        /// Constant M6iMetal for InstanceType
+        /// </summary>
+        public static readonly InstanceType M6iMetal = new InstanceType("m6i.metal");
+        /// <summary>
         /// Constant M6iXlarge for InstanceType
         /// </summary>
         public static readonly InstanceType M6iXlarge = new InstanceType("m6i.xlarge");
@@ -8404,6 +8412,46 @@ namespace Amazon.EC2
         /// Constant R6gXlarge for InstanceType
         /// </summary>
         public static readonly InstanceType R6gXlarge = new InstanceType("r6g.xlarge");
+        /// <summary>
+        /// Constant R6i12xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R6i12xlarge = new InstanceType("r6i.12xlarge");
+        /// <summary>
+        /// Constant R6i16xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R6i16xlarge = new InstanceType("r6i.16xlarge");
+        /// <summary>
+        /// Constant R6i24xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R6i24xlarge = new InstanceType("r6i.24xlarge");
+        /// <summary>
+        /// Constant R6i2xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R6i2xlarge = new InstanceType("r6i.2xlarge");
+        /// <summary>
+        /// Constant R6i32xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R6i32xlarge = new InstanceType("r6i.32xlarge");
+        /// <summary>
+        /// Constant R6i4xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R6i4xlarge = new InstanceType("r6i.4xlarge");
+        /// <summary>
+        /// Constant R6i8xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R6i8xlarge = new InstanceType("r6i.8xlarge");
+        /// <summary>
+        /// Constant R6iLarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R6iLarge = new InstanceType("r6i.large");
+        /// <summary>
+        /// Constant R6iMetal for InstanceType
+        /// </summary>
+        public static readonly InstanceType R6iMetal = new InstanceType("r6i.metal");
+        /// <summary>
+        /// Constant R6iXlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R6iXlarge = new InstanceType("r6i.xlarge");
         /// <summary>
         /// Constant T1Micro for InstanceType
         /// </summary>
