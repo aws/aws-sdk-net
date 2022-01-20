@@ -101,6 +101,22 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetSegmentDeliveryConfigurations())
+                {
+                    context.Writer.WritePropertyName("SegmentDeliveryConfigurations");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestSegmentDeliveryConfigurationsListValue in publicRequest.SegmentDeliveryConfigurations)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = SegmentDeliveryConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequestSegmentDeliveryConfigurationsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("tags");

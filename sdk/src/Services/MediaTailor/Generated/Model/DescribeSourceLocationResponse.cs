@@ -39,6 +39,7 @@ namespace Amazon.MediaTailor.Model
         private DefaultSegmentDeliveryConfiguration _defaultSegmentDeliveryConfiguration;
         private HttpConfiguration _httpConfiguration;
         private DateTime? _lastModifiedTime;
+        private List<SegmentDeliveryConfiguration> _segmentDeliveryConfigurations = new List<SegmentDeliveryConfiguration>();
         private string _sourceLocationName;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
@@ -148,6 +149,21 @@ namespace Amazon.MediaTailor.Model
         internal bool IsSetLastModifiedTime()
         {
             return this._lastModifiedTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SegmentDeliveryConfigurations.
+        /// </summary>
+        public List<SegmentDeliveryConfiguration> SegmentDeliveryConfigurations
+        {
+            get { return this._segmentDeliveryConfigurations; }
+            set { this._segmentDeliveryConfigurations = value; }
+        }
+
+        // Check to see if SegmentDeliveryConfigurations property is set
+        internal bool IsSetSegmentDeliveryConfigurations()
+        {
+            return this._segmentDeliveryConfigurations != null && this._segmentDeliveryConfigurations.Count > 0; 
         }
 
         /// <summary>
