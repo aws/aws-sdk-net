@@ -30,7 +30,7 @@ namespace Amazon.FIS.Model
 {
     /// <summary>
     /// Container for the parameters to the GetAction operation.
-    /// Gets information about the specified AWS FIS action.
+    /// Gets information about the specified FIS action.
     /// </summary>
     public partial class GetActionRequest : AmazonFISRequest
     {

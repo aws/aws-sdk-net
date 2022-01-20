@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FIS.Model
 {
     /// <summary>
-    /// Describes an action. For more information, see <a href="https://docs.aws.amazon.com/fis/latest/userguide/fis-actions-reference.html">AWS
-    /// FIS actions</a> in the <i>AWS Fault Injection Simulator User Guide</i>.
+    /// Describes an action. For more information, see <a href="https://docs.aws.amazon.com/fis/latest/userguide/fis-actions-reference.html">FIS
+    /// actions</a> in the <i>Fault Injection Simulator User Guide</i>.
     /// </summary>
     public partial class Action
     {

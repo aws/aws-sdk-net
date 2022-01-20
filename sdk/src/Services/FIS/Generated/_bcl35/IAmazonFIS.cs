@@ -29,9 +29,10 @@ namespace Amazon.FIS
     /// <summary>
     /// Interface for accessing FIS
     ///
-    /// AWS Fault Injection Simulator is a managed service that enables you to perform fault
-    /// injection experiments on your AWS workloads. For more information, see the <a href="https://docs.aws.amazon.com/fis/latest/userguide/">AWS
-    /// Fault Injection Simulator User Guide</a>.
+    /// Fault Injection Simulator is a managed service that enables you to perform fault injection
+    /// experiments on your Amazon Web Services workloads. For more information, see the <a
+    /// href="https://docs.aws.amazon.com/fis/latest/userguide/">Fault Injection Simulator
+    /// User Guide</a>.
     /// </summary>
     public partial interface IAmazonFIS : IAmazonService, IDisposable
     {
@@ -54,13 +55,13 @@ namespace Amazon.FIS
         /// 
         ///  
         /// <para>
-        /// To create a template, specify the following information: 
+        /// An experiment template includes the following components:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>Targets</b>: A target can be a specific resource in your AWS environment, or one
-        /// or more resources that match criteria that you specify, for example, resources that
-        /// have specific tags.
+        ///  <b>Targets</b>: A target can be a specific resource in your Amazon Web Services environment,
+        /// or one or more resources that match criteria that you specify, for example, resources
+        /// that have specific tags.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -75,8 +76,8 @@ namespace Amazon.FIS
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information, see the <a href="https://docs.aws.amazon.com/fis/latest/userguide/">AWS
-        /// Fault Injection Simulator User Guide</a>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/fis/latest/userguide/experiment-templates.html">Experiment
+        /// templates</a> in the <i>Fault Injection Simulator User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateExperimentTemplate service method.</param>
@@ -175,7 +176,7 @@ namespace Amazon.FIS
 
 
         /// <summary>
-        /// Gets information about the specified AWS FIS action.
+        /// Gets information about the specified FIS action.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAction service method.</param>
         /// 
@@ -313,7 +314,7 @@ namespace Amazon.FIS
 
 
         /// <summary>
-        /// Lists the available AWS FIS actions.
+        /// Lists the available FIS actions.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListActions service method.</param>
         /// 

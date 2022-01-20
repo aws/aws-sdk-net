@@ -31,6 +31,12 @@ namespace Amazon.FIS.Model
     /// <summary>
     /// Specifies a target for an experiment. You must specify at least one Amazon Resource
     /// Name (ARN) or at least one resource tag. You cannot specify both ARNs and tags.
+    /// 
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/fis/latest/userguide/targets.html">Targets</a>
+    /// in the <i>Fault Injection Simulator User Guide</i>.
+    /// </para>
     /// </summary>
     public partial class CreateExperimentTemplateTargetInput
     {
@@ -99,7 +105,8 @@ namespace Amazon.FIS.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The AWS resource type. The resource type must be supported for the specified action.
+        /// The Amazon Web Services resource type. The resource type must be supported for the
+        /// specified action.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=64)]

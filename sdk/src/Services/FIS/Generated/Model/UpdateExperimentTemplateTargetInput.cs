@@ -99,7 +99,8 @@ namespace Amazon.FIS.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The AWS resource type. The resource type must be supported for the specified action.
+        /// The Amazon Web Services resource type. The resource type must be supported for the
+        /// specified action.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=64)]
