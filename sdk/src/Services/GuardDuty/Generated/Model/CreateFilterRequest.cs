@@ -315,6 +315,26 @@ namespace Amazon.GuardDuty.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// resource.s3BucketDetails.publicAccess.effectivePermissions
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// resource.s3BucketDetails.name
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// resource.s3BucketDetails.tags.key
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// resource.s3BucketDetails.tags.value
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// resource.s3BucketDetails.type
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// service.archived
         /// </para>
         ///  

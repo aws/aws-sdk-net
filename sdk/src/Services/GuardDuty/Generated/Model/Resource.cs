@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// Contains information about the AWS resource associated with the activity that prompted
-    /// GuardDuty to generate a finding.
+    /// Contains information about the Amazon Web Services resource associated with the activity
+    /// that prompted GuardDuty to generate a finding.
     /// </summary>
     public partial class Resource
     {
@@ -80,7 +80,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The type of AWS resource.
+        /// The type of Amazon Web Services resource.
         /// </para>
         /// </summary>
         public string ResourceType

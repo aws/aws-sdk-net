@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// Contains information on the sum of usage based on an AWS resource.
+    /// Contains information on the sum of usage based on an Amazon Web Services resource.
     /// </summary>
     public partial class UsageResourceResult
     {
@@ -39,7 +39,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Resource. 
         /// <para>
-        /// The AWS resource that generated usage.
+        /// The Amazon Web Services resource that generated usage.
         /// </para>
         /// </summary>
         public string Resource

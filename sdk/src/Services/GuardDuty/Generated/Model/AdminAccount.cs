@@ -39,7 +39,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property AdminAccountId. 
         /// <para>
-        /// The AWS account ID for the account.
+        /// The Amazon Web Services account ID for the account.
         /// </para>
         /// </summary>
         public string AdminAccountId

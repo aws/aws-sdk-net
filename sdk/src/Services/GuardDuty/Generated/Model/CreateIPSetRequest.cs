@@ -32,9 +32,9 @@ namespace Amazon.GuardDuty.Model
     /// Container for the parameters to the CreateIPSet operation.
     /// Creates a new IPSet, which is called a trusted IP list in the console user interface.
     /// An IPSet is a list of IP addresses that are trusted for secure communication with
-    /// AWS infrastructure and applications. GuardDuty doesn't generate findings for IP addresses
-    /// that are included in IPSets. Only users from the administrator account can use this
-    /// operation.
+    /// Amazon Web Services infrastructure and applications. GuardDuty doesn't generate findings
+    /// for IP addresses that are included in IPSets. Only users from the administrator account
+    /// can use this operation.
     /// </summary>
     public partial class CreateIPSetRequest : AmazonGuardDutyRequest
     {
@@ -126,7 +126,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Location. 
         /// <para>
-        /// The URI of the file that contains the IPSet. For example: https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.
+        /// The URI of the file that contains the IPSet. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=300)]

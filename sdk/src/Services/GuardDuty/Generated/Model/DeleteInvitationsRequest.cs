@@ -30,8 +30,8 @@ namespace Amazon.GuardDuty.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteInvitations operation.
-    /// Deletes invitations sent to the current member account by AWS accounts specified by
-    /// their account IDs.
+    /// Deletes invitations sent to the current member account by Amazon Web Services accounts
+    /// specified by their account IDs.
     /// </summary>
     public partial class DeleteInvitationsRequest : AmazonGuardDutyRequest
     {
@@ -40,8 +40,8 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property AccountIds. 
         /// <para>
-        /// A list of account IDs of the AWS accounts that sent invitations to the current member
-        /// account that you want to delete invitations from.
+        /// A list of account IDs of the Amazon Web Services accounts that sent invitations to
+        /// the current member account that you want to delete invitations from.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=50)]

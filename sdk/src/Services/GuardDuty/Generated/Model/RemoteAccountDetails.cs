@@ -29,20 +29,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// Contains information about the accounts that weren't processed.
+    /// Contains details about the remote Amazon Web Services account that made the API call.
     /// </summary>
-    public partial class UnprocessedAccount
+    public partial class RemoteAccountDetails
     {
         private string _accountId;
-        private string _result;
+        private bool? _affiliated;
 
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The Amazon Web Services account ID.
+        /// The Amazon Web Services account ID of the remote API caller.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=12, Max=12)]
         public string AccountId
         {
             get { return this._accountId; }
@@ -56,22 +55,24 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Result. 
+        /// Gets and sets the property Affiliated. 
         /// <para>
-        /// A reason why the account hasn't been processed.
+        /// Details on whether the Amazon Web Services account of the remote API caller is related
+        /// to your GuardDuty environment. If this value is <code>True</code> the API caller is
+        /// affiliated to your account in some way. If it is <code>False</code> the API caller
+        /// is from outside your environment.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public string Result
+        public bool Affiliated
         {
-            get { return this._result; }
-            set { this._result = value; }
+            get { return this._affiliated.GetValueOrDefault(); }
+            set { this._affiliated = value; }
         }
 
-        // Check to see if Result property is set
-        internal bool IsSetResult()
+        // Check to see if Affiliated property is set
+        internal bool IsSetAffiliated()
         {
-            return this._result != null;
+            return this._affiliated.HasValue; 
         }
 
     }

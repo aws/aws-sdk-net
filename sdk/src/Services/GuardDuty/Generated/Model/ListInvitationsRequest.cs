@@ -30,7 +30,8 @@ namespace Amazon.GuardDuty.Model
 {
     /// <summary>
     /// Container for the parameters to the ListInvitations operation.
-    /// Lists all GuardDuty membership invitations that were sent to the current AWS account.
+    /// Lists all GuardDuty membership invitations that were sent to the current Amazon Web
+    /// Services account.
     /// </summary>
     public partial class ListInvitationsRequest : AmazonGuardDutyRequest
     {
