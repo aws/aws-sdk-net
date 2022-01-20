@@ -37,6 +37,7 @@ namespace Amazon.Connect.Model
         private string _instanceId;
         private string _name;
         private string _parentGroupId;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
         /// Gets and sets the property InstanceId. 
@@ -94,6 +95,25 @@ namespace Amazon.Connect.Model
         internal bool IsSetParentGroupId()
         {
             return this._parentGroupId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags used to organize, track, or control access for this resource.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=50)]
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

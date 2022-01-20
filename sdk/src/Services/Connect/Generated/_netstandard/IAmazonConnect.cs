@@ -49,8 +49,8 @@ namespace Amazon.Connect
     /// </para>
     ///  
     /// <para>
-    /// You can connect programmatically to an AWS service by using an endpoint. For a list
-    /// of Amazon Connect endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
+    /// You can connect programmatically to an Amazon Web Services service by using an endpoint.
+    /// For a list of Amazon Connect endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
     /// Connect Endpoints</a>.
     /// </para>
     ///  <note> 
@@ -651,7 +651,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Creates an AWS resource association with an Amazon Connect instance.
+        /// Creates an Amazon Web Services resource association with an Amazon Connect instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateIntegrationAssociation service method.</param>
         /// <param name="cancellationToken">
@@ -1118,8 +1118,8 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Deletes an AWS resource association from an Amazon Connect instance. The association
-        /// must not have any use cases associated with it.
+        /// Deletes an Amazon Web Services resource association from an Amazon Connect instance.
+        /// The association must not have any use cases associated with it.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteIntegrationAssociation service method.</param>
         /// <param name="cancellationToken">
@@ -2724,8 +2724,8 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Provides summary information about the AWS resource associations for the specified
-        /// Amazon Connect instance.
+        /// Provides summary information about the Amazon Web Services resource associations for
+        /// the specified Amazon Connect instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListIntegrationAssociations service method.</param>
         /// <param name="cancellationToken">

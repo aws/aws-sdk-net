@@ -58,7 +58,10 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Queues. 
         /// <para>
-        /// The queues to use to filter the metrics. You can specify up to 100 queues per request.
+        /// The queues to use to filter the metrics. You should specify at least one queue, and
+        /// can specify up to 100 queues per request. The <code>GetCurrentMetricsData</code> API
+        /// in particular requires a queue when you include a <code>Filter</code> in your request.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
