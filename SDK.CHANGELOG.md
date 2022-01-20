@@ -1,3 +1,15 @@
+### 3.7.195.0 (2022-01-20 19:17 UTC)
+* Connect (3.7.11.0)
+	* This release adds tagging support for UserHierarchyGroups resource.
+* EC2 (3.7.57.0)
+	* C6i, M6i and R6i instances are powered by a third-generation Intel Xeon Scalable processor (Ice Lake) delivering all-core turbo frequency of 3.5 GHz
+* FIS (3.7.1.0)
+	* Added action startTime and action endTime timestamp fields to the ExperimentAction object
+* GuardDuty (3.7.1.0)
+	* Amazon GuardDuty findings now include remoteAccountDetails under AwsApiCallAction section if instance credential is exfiltrated.
+* MediaTailor (3.7.8.0)
+	* This release adds support for multiple Segment Delivery Configurations. Users can provide a list of names and URLs when creating or editing a source location. When retrieving content, users can send a header to choose which URL should be used to serve content.
+
 ### 3.7.194.0 (2022-01-19 19:16 UTC)
 * EC2InstanceConnect (3.7.2.0)
 	* Adds support for ED25519 keys. PushSSHPublicKey Availability Zone parameter is now optional. Adds EC2InstanceStateInvalidException for instances that are not running. This was previously a service exception, so this may require updating your code to handle this new exception.
