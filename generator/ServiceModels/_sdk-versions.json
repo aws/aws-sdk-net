@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.7.195.0",
+    "ProductVersion" : "3.7.196.0",
     "CoreVersion"    : "3.7.6.0",
     "OverrideCoreVersion" : "3.3",
     "DefaultToPreview"    : false,
@@ -898,7 +898,7 @@
             "InPreview"               : false
         },
         "MediaConvert"                    : {
-            "Version" : "3.7.11.7",
+            "Version" : "3.7.12.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.6.0"
@@ -1050,7 +1050,7 @@
             "InPreview"               : false
         },
         "TranscribeService"               : {
-            "Version" : "3.7.9.30",
+            "Version" : "3.7.10.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.6.0"
