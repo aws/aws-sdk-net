@@ -39,6 +39,7 @@ namespace Amazon.MediaConvert.Model
         private MpdCaptionContainerType _captionContainerType;
         private MpdScte35Esam _scte35Esam;
         private MpdScte35Source _scte35Source;
+        private MpdTimedMetadata _timedMetadata;
 
         /// <summary>
         /// Gets and sets the property AccessibilityCaptionHints. Optional. Choose Include (INCLUDE)
@@ -141,6 +142,23 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetScte35Source()
         {
             return this._scte35Source != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TimedMetadata. Applies to DASH outputs. Use this setting
+        /// to specify whether the service inserts the ID3 timed metadata from the input in this
+        /// output.
+        /// </summary>
+        public MpdTimedMetadata TimedMetadata
+        {
+            get { return this._timedMetadata; }
+            set { this._timedMetadata = value; }
+        }
+
+        // Check to see if TimedMetadata property is set
+        internal bool IsSetTimedMetadata()
+        {
+            return this._timedMetadata != null;
         }
 
     }

@@ -75,6 +75,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Scte35Source);
             }
 
+            if(requestObject.IsSetTimedMetadata())
+            {
+                context.Writer.WritePropertyName("timedMetadata");
+                context.Writer.Write(requestObject.TimedMetadata);
+            }
+
         }
 
         /// <summary>

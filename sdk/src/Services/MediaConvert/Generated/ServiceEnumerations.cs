@@ -1849,6 +1849,56 @@ namespace Amazon.MediaConvert
 
 
     /// <summary>
+    /// Constants used for properties of type Av1BitDepth.
+    /// </summary>
+    public class Av1BitDepth : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BIT_10 for Av1BitDepth
+        /// </summary>
+        public static readonly Av1BitDepth BIT_10 = new Av1BitDepth("BIT_10");
+        /// <summary>
+        /// Constant BIT_8 for Av1BitDepth
+        /// </summary>
+        public static readonly Av1BitDepth BIT_8 = new Av1BitDepth("BIT_8");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Av1BitDepth(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Av1BitDepth FindValue(string value)
+        {
+            return FindValue<Av1BitDepth>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Av1BitDepth(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Av1FramerateControl.
     /// </summary>
     public class Av1FramerateControl : ConstantClass
@@ -4454,6 +4504,56 @@ namespace Amazon.MediaConvert
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator CmfcScte35Source(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CmfcTimedMetadata.
+    /// </summary>
+    public class CmfcTimedMetadata : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NONE for CmfcTimedMetadata
+        /// </summary>
+        public static readonly CmfcTimedMetadata NONE = new CmfcTimedMetadata("NONE");
+        /// <summary>
+        /// Constant PASSTHROUGH for CmfcTimedMetadata
+        /// </summary>
+        public static readonly CmfcTimedMetadata PASSTHROUGH = new CmfcTimedMetadata("PASSTHROUGH");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CmfcTimedMetadata(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CmfcTimedMetadata FindValue(string value)
+        {
+            return FindValue<CmfcTimedMetadata>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CmfcTimedMetadata(string value)
         {
             return FindValue(value);
         }
@@ -9395,6 +9495,10 @@ namespace Amazon.MediaConvert
     {
 
         /// <summary>
+        /// Constant AUTO for H265AdaptiveQuantization
+        /// </summary>
+        public static readonly H265AdaptiveQuantization AUTO = new H265AdaptiveQuantization("AUTO");
+        /// <summary>
         /// Constant HIGH for H265AdaptiveQuantization
         /// </summary>
         public static readonly H265AdaptiveQuantization HIGH = new H265AdaptiveQuantization("HIGH");
@@ -12041,6 +12145,56 @@ namespace Amazon.MediaConvert
 
 
     /// <summary>
+    /// Constants used for properties of type ImscAccessibilitySubs.
+    /// </summary>
+    public class ImscAccessibilitySubs : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for ImscAccessibilitySubs
+        /// </summary>
+        public static readonly ImscAccessibilitySubs DISABLED = new ImscAccessibilitySubs("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for ImscAccessibilitySubs
+        /// </summary>
+        public static readonly ImscAccessibilitySubs ENABLED = new ImscAccessibilitySubs("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ImscAccessibilitySubs(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ImscAccessibilitySubs FindValue(string value)
+        {
+            return FindValue<ImscAccessibilitySubs>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ImscAccessibilitySubs(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ImscStylePassthrough.
     /// </summary>
     public class ImscStylePassthrough : ConstantClass
@@ -13368,6 +13522,10 @@ namespace Amazon.MediaConvert
         /// Constant SRD for LanguageCode
         /// </summary>
         public static readonly LanguageCode SRD = new LanguageCode("SRD");
+        /// <summary>
+        /// Constant SRP for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode SRP = new LanguageCode("SRP");
         /// <summary>
         /// Constant SSW for LanguageCode
         /// </summary>
@@ -15300,6 +15458,56 @@ namespace Amazon.MediaConvert
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator MpdScte35Source(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MpdTimedMetadata.
+    /// </summary>
+    public class MpdTimedMetadata : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NONE for MpdTimedMetadata
+        /// </summary>
+        public static readonly MpdTimedMetadata NONE = new MpdTimedMetadata("NONE");
+        /// <summary>
+        /// Constant PASSTHROUGH for MpdTimedMetadata
+        /// </summary>
+        public static readonly MpdTimedMetadata PASSTHROUGH = new MpdTimedMetadata("PASSTHROUGH");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MpdTimedMetadata(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MpdTimedMetadata FindValue(string value)
+        {
+            return FindValue<MpdTimedMetadata>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MpdTimedMetadata(string value)
         {
             return FindValue(value);
         }
@@ -19928,6 +20136,56 @@ namespace Amazon.MediaConvert
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator WavFormat(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type WebvttAccessibilitySubs.
+    /// </summary>
+    public class WebvttAccessibilitySubs : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for WebvttAccessibilitySubs
+        /// </summary>
+        public static readonly WebvttAccessibilitySubs DISABLED = new WebvttAccessibilitySubs("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for WebvttAccessibilitySubs
+        /// </summary>
+        public static readonly WebvttAccessibilitySubs ENABLED = new WebvttAccessibilitySubs("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public WebvttAccessibilitySubs(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static WebvttAccessibilitySubs FindValue(string value)
+        {
+            return FindValue<WebvttAccessibilitySubs>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator WebvttAccessibilitySubs(string value)
         {
             return FindValue(value);
         }

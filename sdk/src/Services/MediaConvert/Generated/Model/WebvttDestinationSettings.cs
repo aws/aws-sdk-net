@@ -38,7 +38,27 @@ namespace Amazon.MediaConvert.Model
     /// </summary>
     public partial class WebvttDestinationSettings
     {
+        private WebvttAccessibilitySubs _accessibility;
         private WebvttStylePassthrough _stylePassthrough;
+
+        /// <summary>
+        /// Gets and sets the property Accessibility. Specify whether to flag this caption track
+        /// as accessibility in your HLS/CMAF parent manifest. When you choose ENABLED, MediaConvert
+        /// includes the parameters CHARACTERISTICS="public.accessibility.describes-spoken-dialog,public.accessibility.describes-music-and-sound"
+        /// and AUTOSELECT="YES" in the EXT-X-MEDIA entry for this track. When you keep the default
+        /// choice, DISABLED, MediaConvert leaves this parameter out.
+        /// </summary>
+        public WebvttAccessibilitySubs Accessibility
+        {
+            get { return this._accessibility; }
+            set { this._accessibility = value; }
+        }
+
+        // Check to see if Accessibility property is set
+        internal bool IsSetAccessibility()
+        {
+            return this._accessibility != null;
+        }
 
         /// <summary>
         /// Gets and sets the property StylePassthrough. Set Style passthrough (StylePassthrough)

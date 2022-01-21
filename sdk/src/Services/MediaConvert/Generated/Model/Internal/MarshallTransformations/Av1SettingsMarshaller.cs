@@ -51,6 +51,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.AdaptiveQuantization);
             }
 
+            if(requestObject.IsSetBitDepth())
+            {
+                context.Writer.WritePropertyName("bitDepth");
+                context.Writer.Write(requestObject.BitDepth);
+            }
+
             if(requestObject.IsSetFramerateControl())
             {
                 context.Writer.WritePropertyName("framerateControl");

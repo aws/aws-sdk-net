@@ -125,6 +125,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.DenoiseFilter);
             }
 
+            if(requestObject.IsSetDolbyVisionMetadataXml())
+            {
+                context.Writer.WritePropertyName("dolbyVisionMetadataXml");
+                context.Writer.Write(requestObject.DolbyVisionMetadataXml);
+            }
+
             if(requestObject.IsSetFilterEnable())
             {
                 context.Writer.WritePropertyName("filterEnable");

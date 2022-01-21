@@ -45,6 +45,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ImscDestinationSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAccessibility())
+            {
+                context.Writer.WritePropertyName("accessibility");
+                context.Writer.Write(requestObject.Accessibility);
+            }
+
             if(requestObject.IsSetStylePassthrough())
             {
                 context.Writer.WritePropertyName("stylePassthrough");

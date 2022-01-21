@@ -106,6 +106,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.DenoiseFilter = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("dolbyVisionMetadataXml", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DolbyVisionMetadataXml = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("fileInput", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

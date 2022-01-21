@@ -34,6 +34,7 @@ namespace Amazon.MediaConvert.Model
     public partial class Av1Settings
     {
         private Av1AdaptiveQuantization _adaptiveQuantization;
+        private Av1BitDepth _bitDepth;
         private Av1FramerateControl _framerateControl;
         private Av1FramerateConversionAlgorithm _framerateConversionAlgorithm;
         private int? _framerateDenominator;
@@ -61,6 +62,22 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetAdaptiveQuantization()
         {
             return this._adaptiveQuantization != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BitDepth. Specify the Bit depth (Av1BitDepth). You can
+        /// choose 8-bit (BIT_8) or 10-bit (BIT_10).
+        /// </summary>
+        public Av1BitDepth BitDepth
+        {
+            get { return this._bitDepth; }
+            set { this._bitDepth = value; }
+        }
+
+        // Check to see if BitDepth property is set
+        internal bool IsSetBitDepth()
+        {
+            return this._bitDepth != null;
         }
 
         /// <summary>
