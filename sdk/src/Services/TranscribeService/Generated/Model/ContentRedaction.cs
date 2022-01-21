@@ -33,8 +33,29 @@ namespace Amazon.TranscribeService.Model
     /// </summary>
     public partial class ContentRedaction
     {
+        private List<string> _piiEntityTypes = new List<string>();
         private RedactionOutput _redactionOutput;
         private RedactionType _redactionType;
+
+        /// <summary>
+        /// Gets and sets the property PiiEntityTypes. 
+        /// <para>
+        /// The types of personally identifiable information (PII) you want to redact in your
+        /// transcript.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=11)]
+        public List<string> PiiEntityTypes
+        {
+            get { return this._piiEntityTypes; }
+            set { this._piiEntityTypes = value; }
+        }
+
+        // Check to see if PiiEntityTypes property is set
+        internal bool IsSetPiiEntityTypes()
+        {
+            return this._piiEntityTypes != null && this._piiEntityTypes.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property RedactionOutput. 
