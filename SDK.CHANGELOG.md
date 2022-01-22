@@ -1,3 +1,7 @@
+### 3.7.196.1 (2022-01-21 22:42 UTC)
+* S3 (3.7.7.15)
+	* Fixed handling of Outposts ARNs causing incorrect append to endpoint. Fixed an issue where TransferProgressArgs.PercentDone was throwing DivideByZeroException for zero length downloads.
+
 ### 3.7.196.0 (2022-01-21 19:16 UTC)
 * MediaConvert (3.7.12.0)
 	* AWS Elemental MediaConvert SDK has added support for 4K AV1 output resolutions & 10-bit AV1 color, the ability to ingest sidecar Dolby Vision XML metadata files, and the ability to flag WebVTT and IMSC tracks for accessibility in HLS.
