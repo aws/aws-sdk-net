@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.7.196.1",
+    "ProductVersion" : "3.7.196.2",
     "CoreVersion"    : "3.7.6.0",
     "OverrideCoreVersion" : "3.3",
     "DefaultToPreview"    : false,
@@ -2170,7 +2170,7 @@
             "InPreview"               : false
         },
         "Route53RecoveryReadiness"        : {
-            "Version" : "3.7.0.72",
+            "Version" : "3.7.0.73",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.6.0"

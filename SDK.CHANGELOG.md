@@ -1,3 +1,7 @@
+### 3.7.196.2 (2022-01-24 19:12 UTC)
+* Route53RecoveryReadiness (3.7.0.73)
+	* Updated documentation for Route53 Recovery Readiness APIs.
+
 ### 3.7.196.1 (2022-01-21 22:42 UTC)
 * S3 (3.7.7.15)
 	* Fixed handling of Outposts ARNs causing incorrect append to endpoint. Fixed an issue where TransferProgressArgs.PercentDone was throwing DivideByZeroException for zero length downloads.
