@@ -30,8 +30,9 @@ namespace Amazon.Route53RecoveryReadiness.Model
 {
     /// <summary>
     /// Container for the parameters to the GetReadinessCheckResourceStatus operation.
-    /// Returns detailed information about the status of an individual resource within a Readiness
-    /// Check's Resource Set.
+    /// Gets individual readiness status for a readiness check. To see the overall readiness
+    /// status for a recovery group, that considers the readiness status for all the readiness
+    /// checks in the recovery group, use GetRecoveryGroupReadinessSummary.
     /// </summary>
     public partial class GetReadinessCheckResourceStatusRequest : AmazonRoute53RecoveryReadinessRequest
     {
@@ -41,7 +42,10 @@ namespace Amazon.Route53RecoveryReadiness.Model
         private string _resourceIdentifier;
 
         /// <summary>
-        /// Gets and sets the property MaxResults. Upper bound on number of records to return.
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// The number of objects that you want to return with this call.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
         public int MaxResults
@@ -57,8 +61,10 @@ namespace Amazon.Route53RecoveryReadiness.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken. A token used to resume pagination from the end
-        /// of a previous request.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token that identifies which batch of results you want to see.
+        /// </para>
         /// </summary>
         public string NextToken
         {
@@ -73,7 +79,10 @@ namespace Amazon.Route53RecoveryReadiness.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ReadinessCheckName. The ReadinessCheck to get
+        /// Gets and sets the property ReadinessCheckName. 
+        /// <para>
+        /// Name of a readiness check.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string ReadinessCheckName
@@ -89,8 +98,12 @@ namespace Amazon.Route53RecoveryReadiness.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ResourceIdentifier. The resource ARN or component Id to
-        /// get
+        /// Gets and sets the property ResourceIdentifier. 
+        /// <para>
+        /// The resource identifier, which is the Amazon Resource Name (ARN) or the identifier
+        /// generated for the resource by Application Recovery Controller (for example, for a
+        /// DNS target resource).
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string ResourceIdentifier

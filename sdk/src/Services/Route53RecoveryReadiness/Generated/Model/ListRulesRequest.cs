@@ -30,7 +30,7 @@ namespace Amazon.Route53RecoveryReadiness.Model
 {
     /// <summary>
     /// Container for the parameters to the ListRules operation.
-    /// Returns a collection of rules that are applied as part of Readiness Checks.
+    /// Lists all readiness rules, or lists the readiness rules for a specific resource type.
     /// </summary>
     public partial class ListRulesRequest : AmazonRoute53RecoveryReadinessRequest
     {
@@ -39,7 +39,10 @@ namespace Amazon.Route53RecoveryReadiness.Model
         private string _resourceType;
 
         /// <summary>
-        /// Gets and sets the property MaxResults. Upper bound on number of records to return.
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// The number of objects that you want to return with this call.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
         public int MaxResults
@@ -55,8 +58,10 @@ namespace Amazon.Route53RecoveryReadiness.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken. A token used to resume pagination from the end
-        /// of a previous request.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token that identifies which batch of results you want to see.
+        /// </para>
         /// </summary>
         public string NextToken
         {
@@ -71,8 +76,10 @@ namespace Amazon.Route53RecoveryReadiness.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ResourceType. Filter parameter which specifies the rules
-        /// to return given a resource type.
+        /// Gets and sets the property ResourceType. 
+        /// <para>
+        /// The resource type that a readiness rule applies to.
+        /// </para>
         /// </summary>
         public string ResourceType
         {

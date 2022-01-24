@@ -30,7 +30,10 @@ namespace Amazon.Route53RecoveryReadiness.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateReadinessCheck operation.
-    /// Creates a new Readiness Check.
+    /// Creates a readiness check in an account. A readiness check monitors a resource set
+    /// in your application, such as a set of Amazon Aurora instances, that Application Recovery
+    /// Controller is auditing recovery readiness for. The audits run once every minute on
+    /// every resource that's associated with a readiness check.
     /// </summary>
     public partial class CreateReadinessCheckRequest : AmazonRoute53RecoveryReadinessRequest
     {
@@ -39,7 +42,10 @@ namespace Amazon.Route53RecoveryReadiness.Model
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
-        /// Gets and sets the property ReadinessCheckName. The name of the ReadinessCheck to create
+        /// Gets and sets the property ReadinessCheckName. 
+        /// <para>
+        /// The name of the readiness check to create.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string ReadinessCheckName
@@ -55,7 +61,10 @@ namespace Amazon.Route53RecoveryReadiness.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ResourceSetName. The name of the ResourceSet to check
+        /// Gets and sets the property ResourceSetName. 
+        /// <para>
+        /// The name of the resource set to check.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string ResourceSetName

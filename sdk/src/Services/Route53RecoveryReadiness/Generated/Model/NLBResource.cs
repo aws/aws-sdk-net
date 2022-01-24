@@ -29,14 +29,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53RecoveryReadiness.Model
 {
     /// <summary>
-    /// The NLB resource a DNS Target Resource points to
+    /// The Network Load Balancer resource that a DNS target resource points to.
     /// </summary>
     public partial class NLBResource
     {
         private string _arn;
 
         /// <summary>
-        /// Gets and sets the property Arn. An NLB resource arn
+        /// Gets and sets the property Arn. 
+        /// <para>
+        /// The Network Load Balancer resource Amazon Resource Name (ARN).
+        /// </para>
         /// </summary>
         public string Arn
         {

@@ -30,7 +30,7 @@ namespace Amazon.Route53RecoveryReadiness.Model
 {
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
-    /// Removes tags from the specified resource. You can specify one or more tags to remove.
+    /// Removes a tag from a resource.
     /// </summary>
     public partial class UntagResourceRequest : AmazonRoute53RecoveryReadinessRequest
     {
@@ -38,8 +38,10 @@ namespace Amazon.Route53RecoveryReadiness.Model
         private List<string> _tagKeys = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property ResourceArn. The Amazon Resource Name (ARN) for the resource.
-        /// You can get this from the response to any request to the resource.
+        /// Gets and sets the property ResourceArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) for a resource.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string ResourceArn
@@ -55,8 +57,10 @@ namespace Amazon.Route53RecoveryReadiness.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TagKeys. A comma-separated list of the tag keys to remove
-        /// from the resource.
+        /// Gets and sets the property TagKeys. 
+        /// <para>
+        /// The keys for tags you add to resources.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public List<string> TagKeys

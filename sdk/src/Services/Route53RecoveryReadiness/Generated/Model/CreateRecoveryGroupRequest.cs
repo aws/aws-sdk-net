@@ -30,7 +30,8 @@ namespace Amazon.Route53RecoveryReadiness.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateRecoveryGroup operation.
-    /// Creates a new Recovery Group.
+    /// Creates a recovery group in an account. A recovery group corresponds to an application
+    /// and includes a list of the cells that make up the application.
     /// </summary>
     public partial class CreateRecoveryGroupRequest : AmazonRoute53RecoveryReadinessRequest
     {
@@ -39,7 +40,10 @@ namespace Amazon.Route53RecoveryReadiness.Model
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
-        /// Gets and sets the property Cells. A list of Cell arns
+        /// Gets and sets the property Cells. 
+        /// <para>
+        /// A list of the cell Amazon Resource Names (ARNs) in the recovery group.
+        /// </para>
         /// </summary>
         public List<string> Cells
         {
@@ -54,7 +58,10 @@ namespace Amazon.Route53RecoveryReadiness.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RecoveryGroupName. The name of the RecoveryGroup to create
+        /// Gets and sets the property RecoveryGroupName. 
+        /// <para>
+        /// The name of the recovery group to create.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string RecoveryGroupName

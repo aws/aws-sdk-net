@@ -30,14 +30,19 @@ namespace Amazon.Route53RecoveryReadiness.Model
 {
     /// <summary>
     /// Container for the parameters to the GetCell operation.
-    /// Returns information about a Cell.
+    /// Gets information about a cell including cell name, cell Amazon Resource Name (ARN),
+    /// ARNs of nested cells for this cell, and a list of those cell ARNs with their associated
+    /// recovery group ARNs.
     /// </summary>
     public partial class GetCellRequest : AmazonRoute53RecoveryReadinessRequest
     {
         private string _cellName;
 
         /// <summary>
-        /// Gets and sets the property CellName. The Cell to get
+        /// Gets and sets the property CellName. 
+        /// <para>
+        /// The name of the cell.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string CellName

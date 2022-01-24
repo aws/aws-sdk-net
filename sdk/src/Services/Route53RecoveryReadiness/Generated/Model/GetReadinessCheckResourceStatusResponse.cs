@@ -38,8 +38,10 @@ namespace Amazon.Route53RecoveryReadiness.Model
         private List<RuleResult> _rules = new List<RuleResult>();
 
         /// <summary>
-        /// Gets and sets the property NextToken. A token that can be used to resume pagination
-        /// from the end of the collection.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token that identifies which batch of results you want to see.
+        /// </para>
         /// </summary>
         public string NextToken
         {
@@ -54,7 +56,10 @@ namespace Amazon.Route53RecoveryReadiness.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Readiness. The readiness at rule level.
+        /// Gets and sets the property Readiness. 
+        /// <para>
+        /// The readiness at a rule level.
+        /// </para>
         /// </summary>
         public Readiness Readiness
         {
@@ -69,7 +74,10 @@ namespace Amazon.Route53RecoveryReadiness.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Rules. Details of the rules's results
+        /// Gets and sets the property Rules. 
+        /// <para>
+        /// Details of the rule's results.
+        /// </para>
         /// </summary>
         public List<RuleResult> Rules
         {

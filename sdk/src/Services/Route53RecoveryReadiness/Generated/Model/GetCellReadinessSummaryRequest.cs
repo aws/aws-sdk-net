@@ -30,7 +30,8 @@ namespace Amazon.Route53RecoveryReadiness.Model
 {
     /// <summary>
     /// Container for the parameters to the GetCellReadinessSummary operation.
-    /// Returns information about readiness of a Cell.
+    /// Gets readiness for a cell. Aggregates the readiness of all the resources that are
+    /// associated with the cell into a single value.
     /// </summary>
     public partial class GetCellReadinessSummaryRequest : AmazonRoute53RecoveryReadinessRequest
     {
@@ -39,7 +40,10 @@ namespace Amazon.Route53RecoveryReadiness.Model
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property CellName. The name of the Cell
+        /// Gets and sets the property CellName. 
+        /// <para>
+        /// The name of the cell.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string CellName
@@ -55,7 +59,10 @@ namespace Amazon.Route53RecoveryReadiness.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaxResults. Upper bound on number of records to return.
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// The number of objects that you want to return with this call.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
         public int MaxResults
@@ -71,8 +78,10 @@ namespace Amazon.Route53RecoveryReadiness.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken. A token used to resume pagination from the end
-        /// of a previous request.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token that identifies which batch of results you want to see.
+        /// </para>
         /// </summary>
         public string NextToken
         {

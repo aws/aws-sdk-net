@@ -30,14 +30,18 @@ namespace Amazon.Route53RecoveryReadiness.Model
 {
     /// <summary>
     /// Container for the parameters to the GetResourceSet operation.
-    /// Returns information about a Resource Set.
+    /// Displays the details about a resource set, including a list of the resources in the
+    /// set.
     /// </summary>
     public partial class GetResourceSetRequest : AmazonRoute53RecoveryReadinessRequest
     {
         private string _resourceSetName;
 
         /// <summary>
-        /// Gets and sets the property ResourceSetName. The ResourceSet to get
+        /// Gets and sets the property ResourceSetName. 
+        /// <para>
+        /// Name of a resource set.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string ResourceSetName

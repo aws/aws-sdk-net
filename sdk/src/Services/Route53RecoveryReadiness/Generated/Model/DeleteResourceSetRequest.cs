@@ -30,14 +30,17 @@ namespace Amazon.Route53RecoveryReadiness.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteResourceSet operation.
-    /// Deletes an existing Resource Set.
+    /// Deletes a resource set.
     /// </summary>
     public partial class DeleteResourceSetRequest : AmazonRoute53RecoveryReadinessRequest
     {
         private string _resourceSetName;
 
         /// <summary>
-        /// Gets and sets the property ResourceSetName. The ResourceSet to delete
+        /// Gets and sets the property ResourceSetName. 
+        /// <para>
+        /// Name of a resource set.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string ResourceSetName
