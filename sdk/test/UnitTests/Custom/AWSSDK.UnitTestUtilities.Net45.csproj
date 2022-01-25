@@ -22,6 +22,7 @@
   <ItemGroup>
     <Compile Remove="**\**" />
     <Compile Include="Runtime\DeprecatedCodeTest.cs" />
+    <Compile Include="Runtime\EC2InstanceMetadataServlet.cs" />
     <Compile Include="Runtime\HttpHandlerTests.cs" />
     <Compile Include="Utils.cs" />
     <Compile Include="ConstantClassTestBase.cs" />
@@ -52,6 +53,7 @@
     <ProjectReference Include="..\..\..\..\generator\ServiceClientGeneratorLib\ServiceClientGeneratorLib.csproj" />
     <ProjectReference Include="..\..\..\src\Core\AWSSDK.Core.Net45.csproj" />
     <ProjectReference Include="..\..\..\src\Services\S3\AWSSDK.S3.Net45.csproj" />
+    <ProjectReference Include="..\..\Common\AWSSDK.CommonTest.csproj" />
   </ItemGroup>
 
   <ItemGroup>

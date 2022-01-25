@@ -29,17 +29,21 @@ namespace Amazon.Runtime
     /// </summary>
     internal class DefaultInstanceProfileAWSCredentials : AWSCredentials, IDisposable
     {
-        private static object instanceLock = new object();
-        private ReaderWriterLockSlim credentialsLock = new ReaderWriterLockSlim(); // Lock to control getting credentials across multiple threads.
+        private static readonly object _instanceLock = new object();
+        private readonly ReaderWriterLockSlim _credentialsLock = new ReaderWriterLockSlim(); // Lock to control getting credentials across multiple threads.
 
-        private Timer credentialsRetrieverTimer;
-        private ImmutableCredentials lastRetrievedCredentials;
-        private Logger logger;
+        private readonly Timer _credentialsRetrieverTimer;
+        private RefreshingAWSCredentials.CredentialsRefreshState _lastRetrievedCredentials;
+        private Logger _logger;
 
-        private static readonly TimeSpan neverTimespan = TimeSpan.FromMilliseconds(-1);
-        private static readonly TimeSpan refreshRate = TimeSpan.FromMinutes(2); // EC2 refreshes credentials 5 min before expiration
+        private static readonly TimeSpan _neverTimespan = TimeSpan.FromMilliseconds(-1);
+        private static readonly TimeSpan _refreshRate = TimeSpan.FromMinutes(2); // EC2 refreshes credentials 5 min before expiration
         private const string FailedToGetCredentialsMessage = "Failed to retrieve credentials from EC2 Instance Metadata Service.";
-        private static readonly TimeSpan credentialsLockTimeout = TimeSpan.FromMilliseconds(5000);
+        private static readonly TimeSpan _credentialsLockTimeout = TimeSpan.FromSeconds(5);
+
+        private const string _usingExpiredCredentialsFromIMDS =
+            "Attempting credential expiration extension due to a credential service availability issue. " +
+            "A refresh of these credentials will be attempted again in 5-15 minutes.";
 
         private static DefaultInstanceProfileAWSCredentials _instance;
 
@@ -51,7 +55,7 @@ namespace Amazon.Runtime
 
                 if (_instance == null)
                 {
-                    lock (instanceLock)
+                    lock (_instanceLock)
                     {
                         if (_instance == null)
                         {
@@ -69,9 +73,9 @@ namespace Amazon.Runtime
             // if IMDS is turned off, no need to spin up the timer task
             if (!EC2InstanceMetadata.IsIMDSEnabled) return;
 
-            logger = Logger.GetLogger(typeof(DefaultInstanceProfileAWSCredentials));
+            _logger = Logger.GetLogger(typeof(DefaultInstanceProfileAWSCredentials));
             
-            credentialsRetrieverTimer = new Timer(RenewCredentials, null, TimeSpan.Zero, neverTimespan);
+            _credentialsRetrieverTimer = new Timer(RenewCredentials, null, TimeSpan.Zero, _neverTimespan);
         }
 
         #region Overrides
@@ -84,39 +88,51 @@ namespace Amazon.Runtime
             ImmutableCredentials credentials = null;
 
             // Try to acquire read lock. The thread would be blocked if another thread has write lock.
-            if (credentialsLock.TryEnterReadLock(credentialsLockTimeout))
+            if (_credentialsLock.TryEnterReadLock(_credentialsLockTimeout))
             {
                 try
                 {
-                    credentials = lastRetrievedCredentials?.Copy();
-
-                    if (credentials != null)
+                    if (null != _lastRetrievedCredentials)
                     {
-                        return credentials;
+                        // if credentials are expired, we'll still return them, but log a message about
+                        // them being expired.
+                        if (_lastRetrievedCredentials.IsExpiredWithin(TimeSpan.Zero))
+                        {
+                            _logger.InfoFormat(_usingExpiredCredentialsFromIMDS);
+                        }
+
+                        return _lastRetrievedCredentials?.Credentials.Copy();
                     }
                 }
                 finally
                 {
-                    credentialsLock.ExitReadLock();
+                    _credentialsLock.ExitReadLock();
                 }
             }
 
             // If there's no credentials cached, hit IMDS directly. Try to acquire write lock.
-            if (credentialsLock.TryEnterWriteLock(credentialsLockTimeout))
+            if (_credentialsLock.TryEnterWriteLock(_credentialsLockTimeout))
             {
                 try
                 {
                     // Check for last retrieved credentials again in case other thread might have already fetched it.
-                    credentials = lastRetrievedCredentials?.Copy();
-                    if (credentials == null)
+                    if (null == _lastRetrievedCredentials)
                     {
-                        credentials = FetchCredentials();
-                        lastRetrievedCredentials = credentials;
+                        _lastRetrievedCredentials = FetchCredentials();
                     }
+
+                    // if credentials are expired, we'll still return them, but log a message about
+                    // them being expired.
+                    if (_lastRetrievedCredentials.IsExpiredWithin(TimeSpan.Zero))
+                    {
+                        _logger.InfoFormat(_usingExpiredCredentialsFromIMDS);
+                    }
+
+                    credentials = _lastRetrievedCredentials.Credentials?.Copy();
                 }
                 finally
                 {
-                    credentialsLock.ExitWriteLock();
+                    _credentialsLock.ExitWriteLock();
                 }
             }
 
@@ -142,33 +158,40 @@ namespace Amazon.Runtime
         #region Private members
         private void RenewCredentials(object unused)
         {
+            // By default, the refreshRate will continue to be 
+            // _refreshRate, but if FetchCredentials() returns an expired credential,
+            // the refresh rate will be adjusted
+            var refreshRate = _refreshRate;
+
             try
             {
-                ImmutableCredentials newCredentials = FetchCredentials();
+                // if FetchCredentials() call were to fail, _lastRetrievedCredentials
+                // would remain unchanged and would continue to be returned in GetCredentials()
+                _lastRetrievedCredentials = FetchCredentials();
 
-                lastRetrievedCredentials = newCredentials;
+                if (_lastRetrievedCredentials.IsExpiredWithin(TimeSpan.Zero))
+                {
+                    // relax the refresh rate to at least 5 minutes
+                    refreshRate = TimeSpan.FromMinutes(new Random().Next(5, 16));
+                }
             }
             catch (OperationCanceledException e)
             {
-                // in this case, keep the lastRetrievedCredentials
-                logger.Error(e, "RenewCredentials task canceled");
+                _logger.Error(e, "RenewCredentials task canceled");
             }
             catch (Exception e)
             {
-                lastRetrievedCredentials = null;
-
                 // we want to suppress any exceptions from this timer task.
-                logger.Error(e, FailedToGetCredentialsMessage);
-
+                _logger.Error(e, FailedToGetCredentialsMessage);
             }
             finally
             {
-                // re-invoke this task once after time specified by refreshRate
-                credentialsRetrieverTimer.Change(refreshRate, neverTimespan);
+                // re-invoke this task once after time specified by refreshRate set at beginning of this method
+                _credentialsRetrieverTimer.Change(refreshRate, _neverTimespan);
             }
         }
 
-        private static ImmutableCredentials FetchCredentials()
+        private static RefreshingAWSCredentials.CredentialsRefreshState FetchCredentials()
         {
             var securityCredentials = EC2InstanceMetadata.IAMSecurityCredentials;
             if (securityCredentials == null)
@@ -188,7 +211,9 @@ namespace Amazon.Runtime
             if (metadata == null)
                 throw new AmazonServiceException("Unable to get credentials for role \"" + firstRole + "\" from EC2 Instance Metadata Service.");
 
-            return new ImmutableCredentials(metadata.AccessKeyId, metadata.SecretAccessKey, metadata.Token);
+            return new RefreshingAWSCredentials.CredentialsRefreshState(
+                new ImmutableCredentials(metadata.AccessKeyId, metadata.SecretAccessKey, metadata.Token),
+                metadata.Expiration);
         }
 
         private static void CheckIsIMDSEnabled()
@@ -199,23 +224,23 @@ namespace Amazon.Runtime
 #endregion
 
 #region IDisposable Support
-        private bool isDisposed = false;
+        private bool _isDisposed = false;
 
         protected virtual void Dispose(bool disposing)
         {
-            if (!isDisposed)
+            if (!_isDisposed)
             {
                 if (disposing)
                 {
-                    lock (instanceLock)
+                    lock (_instanceLock)
                     {
-                        credentialsRetrieverTimer.Dispose();
-                        logger = null;
+                        _credentialsRetrieverTimer.Dispose();
+                        _logger = null;
                         _instance = null;
                     }
                 }
 
-                isDisposed = true;
+                _isDisposed = true;
             }
         }
 

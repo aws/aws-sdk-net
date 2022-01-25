@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading;
 using System.IO;
 using System.Collections.Specialized;
+using System.Diagnostics;
 using System.Globalization;
 
 namespace AWSSDK_DotNet.CommonTest.Utils
@@ -222,7 +223,7 @@ namespace AWSSDK_DotNet.CommonTest.Utils
 
         #region IDisposable Members
 
-        public void Dispose()
+        public virtual void Dispose()
         {
             Stop();
             _thread.Join();
@@ -326,6 +327,7 @@ namespace AWSSDK_DotNet.CommonTest.Utils
     {
         public MultipleResponseServlet() : base() { }
 
+        [DebuggerDisplay("{" + nameof(StatusCode) + "} - {" + nameof(Contents) + "}")]
         public class Response
         {
             public int StatusCode { get; set; }

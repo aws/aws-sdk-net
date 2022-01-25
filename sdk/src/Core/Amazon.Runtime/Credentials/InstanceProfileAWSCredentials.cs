@@ -25,17 +25,28 @@ namespace Amazon.Runtime
     /// <summary>
     /// Credentials that are retrieved from the Instance Profile service on an EC2 instance
     /// </summary>
+    /// <remarks>
+    /// This is meant to be used when building a <see cref="AmazonServiceClient"/>, as opposed
+    /// to <see cref="DefaultInstanceProfileAWSCredentials"/>, which is part of the
+    /// <see cref="FallbackCredentialsFactory"/> chain.
+    /// </remarks>
     public class InstanceProfileAWSCredentials : URIBasedRefreshingCredentialHelper
     {
         #region Private members
 
         // Set preempt expiry to 15 minutes. New access keys are available at least 15 minutes before expiry time.
         // http://docs.aws.amazon.com/IAM/latest/UserGuide/role-usecase-ec2app.html
-        private static TimeSpan _preemptExpiryTime = TimeSpan.FromMinutes(15);
-        private static TimeSpan _refreshAttemptPeriod = TimeSpan.FromHours(1);
+        private static readonly TimeSpan _preemptExpiryTime = TimeSpan.FromMinutes(15);
+        private static readonly TimeSpan _refreshAttemptPeriod = TimeSpan.FromHours(1);
 
         private CredentialsRefreshState _currentRefreshState = null;
-        private IWebProxy _proxy = null;
+        private readonly IWebProxy _proxy = null;
+
+        private const string _receivedExpiredCredentialsFromIMDS =
+            "Attempting credential expiration extension due to a credential service availability issue. " +
+            "A refresh of these credentials will be attempted again in 5-15 minutes.";
+
+        private Logger _logger;
 
         #endregion
 
@@ -74,11 +85,41 @@ namespace Amazon.Runtime
 
                 var logger = Logger.GetLogger(typeof(InstanceProfileAWSCredentials));
                 logger.InfoFormat("Error getting credentials from Instance Profile service: {0}", e);
+
+                // if we already have cached credentials, we'll continue to use those credentials,
+                // but try again to refresh them in 2 minutes.
+                if (null != _currentRefreshState)
+                {
+                    #pragma warning disable CS0612 // Type or member is obsolete
+                    var newExpiryTime = AWSSDKUtils.CorrectedUtcNow.ToLocalTime() + TimeSpan.FromMinutes(2);
+#pragma warning restore CS0612 // Type or member is obsolete
+
+                    _currentRefreshState = new CredentialsRefreshState(_currentRefreshState.Credentials.Copy(), newExpiryTime);
+                    return _currentRefreshState;
+                }
+            }
+
+            if (newState?.IsExpiredWithin(TimeSpan.Zero) == true)
+            {
+                // special case - credentials returned are expired
+                _logger.InfoFormat(_receivedExpiredCredentialsFromIMDS);
+
+                // use a custom refresh time
+
+                #pragma warning disable CS0612 // Type or member is obsolete
+                var newExpiryTime = AWSSDKUtils.CorrectedUtcNow.ToLocalTime() + TimeSpan.FromMinutes(new Random().Next(5, 16));
+                #pragma warning restore CS0612 // Type or member is obsolete
+
+                _currentRefreshState = new CredentialsRefreshState(newState.Credentials.Copy(), newExpiryTime);
+
+                return _currentRefreshState;
             }
 
             // If successful, save new credentials
             if (newState != null)
+            {
                 _currentRefreshState = newState;
+            }
 
             // If still not successful (no credentials available at start), attempt once more to
             // get credentials, but now without swallowing exception
@@ -87,7 +128,7 @@ namespace Amazon.Runtime
                 try
                 {
                     _currentRefreshState = GetRefreshState(token);
-                }             
+                }
                 catch (Exception e)
                 {
                     HttpStatusCode? httpStatusCode = ExceptionUtils.DetermineHttpStatusCode(e);
@@ -100,7 +141,7 @@ namespace Amazon.Runtime
 
                     throw;
                 }
-            }                
+            }
 
             // Return credentials that will expire in at most one hour
             CredentialsRefreshState state = GetEarlyRefreshState(_currentRefreshState);
@@ -125,6 +166,8 @@ namespace Amazon.Runtime
         /// <param name="role">Role to use</param>
         public InstanceProfileAWSCredentials(string role, IWebProxy proxy)
         {
+            _logger = Logger.GetLogger(GetType());
+
             this._proxy = proxy;
 
             if (role == null)
@@ -237,7 +280,8 @@ namespace Amazon.Runtime
 #pragma warning disable CS0612 // Type or member is obsolete
             var newExpiryTime = AWSSDKUtils.CorrectedUtcNow.ToLocalTime() + _refreshAttemptPeriod + PreemptExpiryTime;
 #pragma warning restore CS0612 // Type or member is obsolete
-                              // Use this only if the time is earlier than the default expiration time
+            
+            // Use this only if the time is earlier than the default expiration time
             if (newExpiryTime.ToUniversalTime() > state.Expiration.ToUniversalTime())
                 newExpiryTime = state.Expiration;
 
@@ -253,9 +297,16 @@ namespace Amazon.Runtime
                     "Unable to retrieve credentials. Message = \"{0}\".",
                     info.Message));
             }
-            SecurityCredentials credentials = GetRoleCredentials(token);
 
-            CredentialsRefreshState refreshState = new CredentialsRefreshState(new ImmutableCredentials(credentials.AccessKeyId, credentials.SecretAccessKey, credentials.Token), credentials.Expiration);
+            var credentials = GetRoleCredentials(token);
+
+            var refreshState = 
+                new CredentialsRefreshState(
+                    new ImmutableCredentials(
+                        credentials.AccessKeyId, 
+                        credentials.SecretAccessKey, 
+                        credentials.Token), 
+                    credentials.Expiration);
 
             return refreshState;
         }
