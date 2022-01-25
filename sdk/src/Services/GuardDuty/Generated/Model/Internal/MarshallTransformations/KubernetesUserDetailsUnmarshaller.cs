@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for OrganizationDataSourceConfigurationsResult Object
+    /// Response Unmarshaller for KubernetesUserDetails Object
     /// </summary>  
-    public class OrganizationDataSourceConfigurationsResultUnmarshaller : IUnmarshaller<OrganizationDataSourceConfigurationsResult, XmlUnmarshallerContext>, IUnmarshaller<OrganizationDataSourceConfigurationsResult, JsonUnmarshallerContext>
+    public class KubernetesUserDetailsUnmarshaller : IUnmarshaller<KubernetesUserDetails, XmlUnmarshallerContext>, IUnmarshaller<KubernetesUserDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        OrganizationDataSourceConfigurationsResult IUnmarshaller<OrganizationDataSourceConfigurationsResult, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        KubernetesUserDetails IUnmarshaller<KubernetesUserDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,33 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public OrganizationDataSourceConfigurationsResult Unmarshall(JsonUnmarshallerContext context)
+        public KubernetesUserDetails Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            OrganizationDataSourceConfigurationsResult unmarshalledObject = new OrganizationDataSourceConfigurationsResult();
+            KubernetesUserDetails unmarshalledObject = new KubernetesUserDetails();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("kubernetes", targetDepth))
+                if (context.TestExpression("groups", targetDepth))
                 {
-                    var unmarshaller = OrganizationKubernetesConfigurationResultUnmarshaller.Instance;
-                    unmarshalledObject.Kubernetes = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.Groups = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("s3Logs", targetDepth))
+                if (context.TestExpression("uid", targetDepth))
                 {
-                    var unmarshaller = OrganizationS3LogsConfigurationResultUnmarshaller.Instance;
-                    unmarshalledObject.S3Logs = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Uid = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("username", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Username = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +88,12 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         }
 
 
-        private static OrganizationDataSourceConfigurationsResultUnmarshaller _instance = new OrganizationDataSourceConfigurationsResultUnmarshaller();        
+        private static KubernetesUserDetailsUnmarshaller _instance = new KubernetesUserDetailsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static OrganizationDataSourceConfigurationsResultUnmarshaller Instance
+        public static KubernetesUserDetailsUnmarshaller Instance
         {
             get
             {

@@ -82,6 +82,12 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                     unmarshalledObject.FlowLogs = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("kubernetes", targetDepth))
+                {
+                    var unmarshaller = KubernetesConfigurationResultUnmarshaller.Instance;
+                    unmarshalledObject.Kubernetes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("s3Logs", targetDepth))
                 {
                     var unmarshaller = S3LogsConfigurationResultUnmarshaller.Instance;

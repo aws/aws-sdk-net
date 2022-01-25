@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for OrganizationDataSourceConfigurationsResult Object
+    /// Response Unmarshaller for VolumeMount Object
     /// </summary>  
-    public class OrganizationDataSourceConfigurationsResultUnmarshaller : IUnmarshaller<OrganizationDataSourceConfigurationsResult, XmlUnmarshallerContext>, IUnmarshaller<OrganizationDataSourceConfigurationsResult, JsonUnmarshallerContext>
+    public class VolumeMountUnmarshaller : IUnmarshaller<VolumeMount, XmlUnmarshallerContext>, IUnmarshaller<VolumeMount, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        OrganizationDataSourceConfigurationsResult IUnmarshaller<OrganizationDataSourceConfigurationsResult, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        VolumeMount IUnmarshaller<VolumeMount, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,27 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public OrganizationDataSourceConfigurationsResult Unmarshall(JsonUnmarshallerContext context)
+        public VolumeMount Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            OrganizationDataSourceConfigurationsResult unmarshalledObject = new OrganizationDataSourceConfigurationsResult();
+            VolumeMount unmarshalledObject = new VolumeMount();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("kubernetes", targetDepth))
+                if (context.TestExpression("mountPath", targetDepth))
                 {
-                    var unmarshaller = OrganizationKubernetesConfigurationResultUnmarshaller.Instance;
-                    unmarshalledObject.Kubernetes = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.MountPath = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("s3Logs", targetDepth))
+                if (context.TestExpression("name", targetDepth))
                 {
-                    var unmarshaller = OrganizationS3LogsConfigurationResultUnmarshaller.Instance;
-                    unmarshalledObject.S3Logs = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +82,12 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         }
 
 
-        private static OrganizationDataSourceConfigurationsResultUnmarshaller _instance = new OrganizationDataSourceConfigurationsResultUnmarshaller();        
+        private static VolumeMountUnmarshaller _instance = new VolumeMountUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static OrganizationDataSourceConfigurationsResultUnmarshaller Instance
+        public static VolumeMountUnmarshaller Instance
         {
             get
             {

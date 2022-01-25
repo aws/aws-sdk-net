@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for OrganizationDataSourceConfigurationsResult Object
+    /// Response Unmarshaller for EksClusterDetails Object
     /// </summary>  
-    public class OrganizationDataSourceConfigurationsResultUnmarshaller : IUnmarshaller<OrganizationDataSourceConfigurationsResult, XmlUnmarshallerContext>, IUnmarshaller<OrganizationDataSourceConfigurationsResult, JsonUnmarshallerContext>
+    public class EksClusterDetailsUnmarshaller : IUnmarshaller<EksClusterDetails, XmlUnmarshallerContext>, IUnmarshaller<EksClusterDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        OrganizationDataSourceConfigurationsResult IUnmarshaller<OrganizationDataSourceConfigurationsResult, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        EksClusterDetails IUnmarshaller<EksClusterDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,51 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public OrganizationDataSourceConfigurationsResult Unmarshall(JsonUnmarshallerContext context)
+        public EksClusterDetails Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            OrganizationDataSourceConfigurationsResult unmarshalledObject = new OrganizationDataSourceConfigurationsResult();
+            EksClusterDetails unmarshalledObject = new EksClusterDetails();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("kubernetes", targetDepth))
+                if (context.TestExpression("arn", targetDepth))
                 {
-                    var unmarshaller = OrganizationKubernetesConfigurationResultUnmarshaller.Instance;
-                    unmarshalledObject.Kubernetes = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("s3Logs", targetDepth))
+                if (context.TestExpression("createdAt", targetDepth))
                 {
-                    var unmarshaller = OrganizationS3LogsConfigurationResultUnmarshaller.Instance;
-                    unmarshalledObject.S3Logs = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("name", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("status", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("tags", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
+                    unmarshalledObject.Tags = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("vpcId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.VpcId = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +106,12 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         }
 
 
-        private static OrganizationDataSourceConfigurationsResultUnmarshaller _instance = new OrganizationDataSourceConfigurationsResultUnmarshaller();        
+        private static EksClusterDetailsUnmarshaller _instance = new EksClusterDetailsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static OrganizationDataSourceConfigurationsResultUnmarshaller Instance
+        public static EksClusterDetailsUnmarshaller Instance
         {
             get
             {

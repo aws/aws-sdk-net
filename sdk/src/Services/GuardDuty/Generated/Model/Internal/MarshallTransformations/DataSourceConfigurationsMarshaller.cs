@@ -45,6 +45,17 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DataSourceConfigurations requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetKubernetes())
+            {
+                context.Writer.WritePropertyName("kubernetes");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = KubernetesConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.Kubernetes, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetS3Logs())
             {
                 context.Writer.WritePropertyName("s3Logs");

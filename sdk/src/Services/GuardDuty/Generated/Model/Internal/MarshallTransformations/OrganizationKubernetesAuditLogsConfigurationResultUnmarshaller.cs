@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for OrganizationDataSourceConfigurationsResult Object
+    /// Response Unmarshaller for OrganizationKubernetesAuditLogsConfigurationResult Object
     /// </summary>  
-    public class OrganizationDataSourceConfigurationsResultUnmarshaller : IUnmarshaller<OrganizationDataSourceConfigurationsResult, XmlUnmarshallerContext>, IUnmarshaller<OrganizationDataSourceConfigurationsResult, JsonUnmarshallerContext>
+    public class OrganizationKubernetesAuditLogsConfigurationResultUnmarshaller : IUnmarshaller<OrganizationKubernetesAuditLogsConfigurationResult, XmlUnmarshallerContext>, IUnmarshaller<OrganizationKubernetesAuditLogsConfigurationResult, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        OrganizationDataSourceConfigurationsResult IUnmarshaller<OrganizationDataSourceConfigurationsResult, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        OrganizationKubernetesAuditLogsConfigurationResult IUnmarshaller<OrganizationKubernetesAuditLogsConfigurationResult, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,21 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public OrganizationDataSourceConfigurationsResult Unmarshall(JsonUnmarshallerContext context)
+        public OrganizationKubernetesAuditLogsConfigurationResult Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            OrganizationDataSourceConfigurationsResult unmarshalledObject = new OrganizationDataSourceConfigurationsResult();
+            OrganizationKubernetesAuditLogsConfigurationResult unmarshalledObject = new OrganizationKubernetesAuditLogsConfigurationResult();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("kubernetes", targetDepth))
+                if (context.TestExpression("autoEnable", targetDepth))
                 {
-                    var unmarshaller = OrganizationKubernetesConfigurationResultUnmarshaller.Instance;
-                    unmarshalledObject.Kubernetes = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("s3Logs", targetDepth))
-                {
-                    var unmarshaller = OrganizationS3LogsConfigurationResultUnmarshaller.Instance;
-                    unmarshalledObject.S3Logs = unmarshaller.Unmarshall(context);
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.AutoEnable = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +76,12 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         }
 
 
-        private static OrganizationDataSourceConfigurationsResultUnmarshaller _instance = new OrganizationDataSourceConfigurationsResultUnmarshaller();        
+        private static OrganizationKubernetesAuditLogsConfigurationResultUnmarshaller _instance = new OrganizationKubernetesAuditLogsConfigurationResultUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static OrganizationDataSourceConfigurationsResultUnmarshaller Instance
+        public static OrganizationKubernetesAuditLogsConfigurationResultUnmarshaller Instance
         {
             get
             {

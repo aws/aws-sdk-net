@@ -29,49 +29,48 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// An object that contains information on which data sources are automatically enabled
-    /// for new members within the organization.
+    /// Volume used by the Kubernetes workload.
     /// </summary>
-    public partial class OrganizationDataSourceConfigurationsResult
+    public partial class Volume
     {
-        private OrganizationKubernetesConfigurationResult _kubernetes;
-        private OrganizationS3LogsConfigurationResult _s3Logs;
+        private HostPath _hostPath;
+        private string _name;
 
         /// <summary>
-        /// Gets and sets the property Kubernetes. 
+        /// Gets and sets the property HostPath. 
         /// <para>
-        /// Describes the configuration of Kubernetes data sources.
+        /// Represents a pre-existing file or directory on the host machine that the volume maps
+        /// to.
         /// </para>
         /// </summary>
-        public OrganizationKubernetesConfigurationResult Kubernetes
+        public HostPath HostPath
         {
-            get { return this._kubernetes; }
-            set { this._kubernetes = value; }
+            get { return this._hostPath; }
+            set { this._hostPath = value; }
         }
 
-        // Check to see if Kubernetes property is set
-        internal bool IsSetKubernetes()
+        // Check to see if HostPath property is set
+        internal bool IsSetHostPath()
         {
-            return this._kubernetes != null;
+            return this._hostPath != null;
         }
 
         /// <summary>
-        /// Gets and sets the property S3Logs. 
+        /// Gets and sets the property Name. 
         /// <para>
-        /// Describes whether S3 data event logs are enabled as a data source.
+        /// Volume name.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public OrganizationS3LogsConfigurationResult S3Logs
+        public string Name
         {
-            get { return this._s3Logs; }
-            set { this._s3Logs = value; }
+            get { return this._name; }
+            set { this._name = value; }
         }
 
-        // Check to see if S3Logs property is set
-        internal bool IsSetS3Logs()
+        // Check to see if Name property is set
+        internal bool IsSetName()
         {
-            return this._s3Logs != null;
+            return this._name != null;
         }
 
     }

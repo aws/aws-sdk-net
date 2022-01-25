@@ -40,6 +40,7 @@ namespace Amazon.GuardDuty.Model
         private RemoteAccountDetails _remoteAccountDetails;
         private RemoteIpDetails _remoteIpDetails;
         private string _serviceName;
+        private string _userAgent;
 
         /// <summary>
         /// Gets and sets the property Api. 
@@ -167,6 +168,21 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetServiceName()
         {
             return this._serviceName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UserAgent.
+        /// </summary>
+        public string UserAgent
+        {
+            get { return this._userAgent; }
+            set { this._userAgent = value; }
+        }
+
+        // Check to see if UserAgent property is set
+        internal bool IsSetUserAgent()
+        {
+            return this._userAgent != null;
         }
 
     }

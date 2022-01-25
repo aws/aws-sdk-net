@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// OrganizationDataSourceConfigurations Marshaller
+    /// KubernetesAuditLogsConfiguration Marshaller
     /// </summary>
-    public class OrganizationDataSourceConfigurationsMarshaller : IRequestMarshaller<OrganizationDataSourceConfigurations, JsonMarshallerContext> 
+    public class KubernetesAuditLogsConfigurationMarshaller : IRequestMarshaller<KubernetesAuditLogsConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,28 +43,12 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(OrganizationDataSourceConfigurations requestObject, JsonMarshallerContext context)
+        public void Marshall(KubernetesAuditLogsConfiguration requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetKubernetes())
+            if(requestObject.IsSetEnable())
             {
-                context.Writer.WritePropertyName("kubernetes");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = OrganizationKubernetesConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.Kubernetes, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetS3Logs())
-            {
-                context.Writer.WritePropertyName("s3Logs");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = OrganizationS3LogsConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.S3Logs, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("enable");
+                context.Writer.Write(requestObject.Enable);
             }
 
         }
@@ -72,7 +56,7 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static OrganizationDataSourceConfigurationsMarshaller Instance = new OrganizationDataSourceConfigurationsMarshaller();
+        public readonly static KubernetesAuditLogsConfigurationMarshaller Instance = new KubernetesAuditLogsConfigurationMarshaller();
 
     }
 }

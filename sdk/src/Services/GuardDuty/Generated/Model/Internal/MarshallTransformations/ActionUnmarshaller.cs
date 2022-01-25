@@ -82,6 +82,12 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                     unmarshalledObject.DnsRequestAction = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("kubernetesApiCallAction", targetDepth))
+                {
+                    var unmarshaller = KubernetesApiCallActionUnmarshaller.Instance;
+                    unmarshalledObject.KubernetesApiCallAction = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("networkConnectionAction", targetDepth))
                 {
                     var unmarshaller = NetworkConnectionActionUnmarshaller.Instance;

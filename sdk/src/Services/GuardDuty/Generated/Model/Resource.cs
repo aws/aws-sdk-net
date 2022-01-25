@@ -35,7 +35,9 @@ namespace Amazon.GuardDuty.Model
     public partial class Resource
     {
         private AccessKeyDetails _accessKeyDetails;
+        private EksClusterDetails _eksClusterDetails;
         private InstanceDetails _instanceDetails;
+        private KubernetesDetails _kubernetesDetails;
         private string _resourceType;
         private List<S3BucketDetail> _s3BucketDetails = new List<S3BucketDetail>();
 
@@ -59,6 +61,24 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EksClusterDetails. 
+        /// <para>
+        /// Details about the EKS cluster involved in a Kubernetes finding.
+        /// </para>
+        /// </summary>
+        public EksClusterDetails EksClusterDetails
+        {
+            get { return this._eksClusterDetails; }
+            set { this._eksClusterDetails = value; }
+        }
+
+        // Check to see if EksClusterDetails property is set
+        internal bool IsSetEksClusterDetails()
+        {
+            return this._eksClusterDetails != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property InstanceDetails. 
         /// <para>
         /// The information about the EC2 instance associated with the activity that prompted
@@ -75,6 +95,24 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetInstanceDetails()
         {
             return this._instanceDetails != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KubernetesDetails. 
+        /// <para>
+        /// Details about the Kubernetes user and workload involved in a Kubernetes finding.
+        /// </para>
+        /// </summary>
+        public KubernetesDetails KubernetesDetails
+        {
+            get { return this._kubernetesDetails; }
+            set { this._kubernetesDetails = value; }
+        }
+
+        // Check to see if KubernetesDetails property is set
+        internal bool IsSetKubernetesDetails()
+        {
+            return this._kubernetesDetails != null;
         }
 
         /// <summary>

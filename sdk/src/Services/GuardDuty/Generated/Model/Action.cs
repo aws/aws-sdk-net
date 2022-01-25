@@ -36,6 +36,7 @@ namespace Amazon.GuardDuty.Model
         private string _actionType;
         private AwsApiCallAction _awsApiCallAction;
         private DnsRequestAction _dnsRequestAction;
+        private KubernetesApiCallAction _kubernetesApiCallAction;
         private NetworkConnectionAction _networkConnectionAction;
         private PortProbeAction _portProbeAction;
 
@@ -91,6 +92,24 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetDnsRequestAction()
         {
             return this._dnsRequestAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KubernetesApiCallAction. 
+        /// <para>
+        /// Information about the Kubernetes API call action described in this finding.
+        /// </para>
+        /// </summary>
+        public KubernetesApiCallAction KubernetesApiCallAction
+        {
+            get { return this._kubernetesApiCallAction; }
+            set { this._kubernetesApiCallAction = value; }
+        }
+
+        // Check to see if KubernetesApiCallAction property is set
+        internal bool IsSetKubernetesApiCallAction()
+        {
+            return this._kubernetesApiCallAction != null;
         }
 
         /// <summary>
