@@ -1,3 +1,18 @@
+### 3.7.197.0 (2022-01-25 19:17 UTC)
+* Connect (3.7.12.0)
+	* This release adds support for custom vocabularies to be used with Contact Lens. Custom vocabularies improve transcription accuracy for one or more specific words.
+* ElasticFileSystem (3.7.4.0)
+	* Use Amazon EFS Replication to replicate your Amazon EFS file system in the AWS Region of your preference.
+* FSx (3.7.7.0)
+	* This release adds support for growing SSD storage capacity and growing/shrinking SSD IOPS for FSx for ONTAP file systems.
+* GuardDuty (3.7.2.0)
+	* Amazon GuardDuty expands threat detection coverage to protect Amazon Elastic Kubernetes Service (EKS) workloads.
+* Core 3.7.6.1
+	* Updating endpoints.json file.
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.196.2 (2022-01-24 19:12 UTC)
 * Route53RecoveryReadiness (3.7.0.73)
 	* Updated documentation for Route53 Recovery Readiness APIs.
