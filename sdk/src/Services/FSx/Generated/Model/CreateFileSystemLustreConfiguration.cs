@@ -241,7 +241,7 @@ namespace Amazon.FSx.Model
         ///  
         /// <para>
         /// Choose <code>PERSISTENT_1</code> for longer-term storage and for throughput-focused
-        /// workloads that aren’t latency-sensitive. a. <code>PERSISTENT_1</code> supports encryption
+        /// workloads that aren’t latency-sensitive. <code>PERSISTENT_1</code> supports encryption
         /// of data in transit, and is available in all Amazon Web Services Regions in which FSx
         /// for Lustre is available.
         /// </para>

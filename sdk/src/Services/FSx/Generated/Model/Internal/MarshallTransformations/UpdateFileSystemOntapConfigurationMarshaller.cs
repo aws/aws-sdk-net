@@ -57,6 +57,17 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.DailyAutomaticBackupStartTime);
             }
 
+            if(requestObject.IsSetDiskIopsConfiguration())
+            {
+                context.Writer.WritePropertyName("DiskIopsConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = DiskIopsConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.DiskIopsConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetFsxAdminPassword())
             {
                 context.Writer.WritePropertyName("FsxAdminPassword");

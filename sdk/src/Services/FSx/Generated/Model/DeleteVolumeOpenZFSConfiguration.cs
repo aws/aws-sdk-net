@@ -38,7 +38,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property Options. 
         /// <para>
-        /// To delete the volume's children and snapshots, use the string <code>DELETE_CHILD_VOLUMES_AND_SNAPSHOTS</code>.
+        /// To delete the volume's child volumes, snapshots, and clones, use the string <code>DELETE_CHILD_VOLUMES_AND_SNAPSHOTS</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1)]
