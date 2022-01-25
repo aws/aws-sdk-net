@@ -178,7 +178,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// Backup is not available in all Amazon Web Services Regionswhere Amazon EFS is available.
+        /// Backup is not available in all Amazon Web Services Regions where Amazon EFS is available.
         /// </para>
         ///  </note>
         /// </summary>
@@ -217,10 +217,10 @@ namespace Amazon.ElasticFileSystem.Model
         /// Gets and sets the property Encrypted. 
         /// <para>
         /// A Boolean value that, if true, creates an encrypted file system. When creating an
-        /// encrypted file system, you have the option of specifying <a>CreateFileSystemRequest$KmsKeyId</a>
-        /// for an existing Key Management Service (KMS customer master key (CMK). If you don't
-        /// specify a CMK, then the default CMK for Amazon EFS, <code>/aws/elasticfilesystem</code>,
-        /// is used to protect the encrypted file system. 
+        /// encrypted file system, you have the option of specifying an existing Key Management
+        /// Service key (KMS key). If you don't specify a KMS key, then the default KMS key for
+        /// Amazon EFS, <code>/aws/elasticfilesystem</code>, is used to protect the encrypted
+        /// file system. 
         /// </para>
         /// </summary>
         public bool Encrypted
@@ -238,10 +238,10 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The ID of the KMS CMK that you want to use to protect the encrypted file system. This
+        /// The ID of the KMS key that you want to use to protect the encrypted file system. This
         /// parameter is only required if you want to use a non-default KMS key. If this parameter
-        /// is not specified, the default CMK for Amazon EFS is used. This ID can be in one of
-        /// the following formats:
+        /// is not specified, the default KMS key for Amazon EFS is used. You can specify a KMS
+        /// key ID using the following formats:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -261,13 +261,13 @@ namespace Amazon.ElasticFileSystem.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If <code>KmsKeyId</code> is specified, the <a>CreateFileSystemRequest$Encrypted</a>
-        /// parameter must be set to true.
+        /// If you use <code>KmsKeyId</code>, you must set the <a>CreateFileSystemRequest$Encrypted</a>
+        /// parameter to true.
         /// </para>
         ///  <important> 
         /// <para>
-        /// EFS accepts only symmetric KMS keys. You cannot use asymmetric KMS keys with EFS file
-        /// systems.
+        /// EFS accepts only symmetric KMS keys. You cannot use asymmetric KMS keys with Amazon
+        /// EFS file systems.
         /// </para>
         ///  </important>
         /// </summary>

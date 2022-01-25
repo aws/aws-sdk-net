@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for PutFileSystemPolicy operation
+    /// Response Unmarshaller for CreateReplicationConfiguration operation
     /// </summary>  
-    public class PutFileSystemPolicyResponseUnmarshaller : JsonResponseUnmarshaller
+    public class CreateReplicationConfigurationResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,22 +45,46 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            PutFileSystemPolicyResponse response = new PutFileSystemPolicyResponse();
+            CreateReplicationConfigurationResponse response = new CreateReplicationConfigurationResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("FileSystemId", targetDepth))
+                if (context.TestExpression("CreationTime", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.FileSystemId = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    response.CreationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Policy", targetDepth))
+                if (context.TestExpression("Destinations", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<Destination, DestinationUnmarshaller>(DestinationUnmarshaller.Instance);
+                    response.Destinations = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("OriginalSourceFileSystemArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.Policy = unmarshaller.Unmarshall(context);
+                    response.OriginalSourceFileSystemArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SourceFileSystemArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.SourceFileSystemArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SourceFileSystemId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.SourceFileSystemId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SourceFileSystemRegion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.SourceFileSystemRegion = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -90,6 +114,10 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
                 {
                     return BadRequestExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("FileSystemLimitExceeded"))
+                {
+                    return FileSystemLimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("FileSystemNotFound"))
                 {
                     return FileSystemNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -98,21 +126,37 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
                 {
                     return IncorrectFileSystemLifeCycleStateExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InsufficientThroughputCapacity"))
+                {
+                    return InsufficientThroughputCapacityExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerError"))
                 {
                     return InternalServerErrorExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidPolicyException"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ReplicationNotFound"))
                 {
-                    return InvalidPolicyExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return ReplicationNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ThroughputLimitExceeded"))
+                {
+                    return ThroughputLimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("UnsupportedAvailabilityZone"))
+                {
+                    return UnsupportedAvailabilityZoneExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ValidationException"))
+                {
+                    return ValidationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
             }
             return new AmazonElasticFileSystemException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static PutFileSystemPolicyResponseUnmarshaller _instance = new PutFileSystemPolicyResponseUnmarshaller();        
+        private static CreateReplicationConfigurationResponseUnmarshaller _instance = new CreateReplicationConfigurationResponseUnmarshaller();        
 
-        internal static PutFileSystemPolicyResponseUnmarshaller GetInstance()
+        internal static CreateReplicationConfigurationResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -120,7 +164,7 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PutFileSystemPolicyResponseUnmarshaller Instance
+        public static CreateReplicationConfigurationResponseUnmarshaller Instance
         {
             get
             {

@@ -32,10 +32,10 @@ namespace Amazon.ElasticFileSystem
     /// Amazon Elastic File System 
     /// <para>
     /// Amazon Elastic File System (Amazon EFS) provides simple, scalable file storage for
-    /// use with Amazon EC2 instances in the Amazon Web Services Cloud. With Amazon EFS, storage
-    /// capacity is elastic, growing and shrinking automatically as you add and remove files,
-    /// so your applications have the storage they need, when they need it. For more information,
-    /// see the <a href="https://docs.aws.amazon.com/efs/latest/ug/api-reference.html">Amazon
+    /// use with Amazon EC2 Linux and Mac instances in the Amazon Web Services Cloud. With
+    /// Amazon EFS, storage capacity is elastic, growing and shrinking automatically as you
+    /// add and remove files, so your applications have the storage they need, when they need
+    /// it. For more information, see the <a href="https://docs.aws.amazon.com/efs/latest/ug/api-reference.html">Amazon
     /// Elastic File System API Reference</a> and the <a href="https://docs.aws.amazon.com/efs/latest/ug/whatisefs.html">Amazon
     /// Elastic File System User Guide</a>.
     /// </para>
@@ -646,6 +646,159 @@ namespace Amazon.ElasticFileSystem
 
         #endregion
         
+        #region  CreateReplicationConfiguration
+
+
+        /// <summary>
+        /// Creates a replication configuration that replicates an existing EFS file system to
+        /// a new, read-only file system. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-replication.html">Amazon
+        /// EFS replication</a>. The replication configuration specifies the following:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>Source file system</b> - an existing EFS file system that you want replicated.
+        /// The source file system cannot be a destination file system in an existing replication
+        /// configuration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Destination file system configuration</b> - the configuration of the destination
+        /// file system to which the source file system will be replicated. There can only be
+        /// one destination file system in a replication configuration.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>Amazon Web Services Region</b> - The Amazon Web Services Region in which the destination
+        /// file system is created. EFS Replication is available in all Amazon Web Services Region
+        /// that Amazon EFS is available in, except the following regions: Asia Pacific (Hong
+        /// Kong) Europe (Milan), Middle East (Bahrain), Africa (Cape Town), and Asia Pacific
+        /// (Jakarta).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Availability zone</b> - If you want the destination file system to use One Zone
+        /// availability and durability, you must specify the Availability Zone to create the
+        /// file system in. For more information about EFS storage classes, see <a href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">
+        /// Amazon EFS storage classes</a> in the <i>Amazon EFS User Guide</i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Encryption</b> - All destination file systems are created with encryption at rest
+        /// enabled. You can specify the KMS key that is used to encrypt the destination file
+        /// system. Your service-managed KMS key for Amazon EFS is used if you don't specify a
+        /// KMS key. You cannot change this after the file system is created.
+        /// </para>
+        ///  </li> </ul> </li> </ul> 
+        /// <para>
+        /// The following properties are set by default:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>Performance mode</b> - The destination file system's performance mode will match
+        /// that of the source file system, unless the destination file system uses One Zone storage.
+        /// In that case, the <i>General Purpose</i> performance mode is used. The Performance
+        /// mode cannot be changed.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Throughput mode</b> - The destination file system use the Bursting throughput
+        /// mode by default. You can modify the throughput mode once the file system is created.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The following properties are turned off by default:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>Lifecycle management</b> - EFS lifecycle management and intelligent tiering are
+        /// not enabled on the destination file system. You can enable EFS lifecycle management
+        /// and intelligent tiering after the destination file system is created.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Automatic backups</b> - Automatic daily backups not enabled on the destination
+        /// file system. You can change this setting after the file system is created.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-replication.html">Amazon
+        /// EFS replication</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateReplicationConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the CreateReplicationConfiguration service method, as returned by ElasticFileSystem.</returns>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.BadRequestException">
+        /// Returned if the request is malformed or contains an error such as an invalid parameter
+        /// value or a missing required parameter.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.FileSystemLimitExceededException">
+        /// Returned if the Amazon Web Services account has already created the maximum number
+        /// of file systems allowed per account.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.FileSystemNotFoundException">
+        /// Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's
+        /// Amazon Web Services account.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.IncorrectFileSystemLifeCycleStateException">
+        /// Returned if the file system's lifecycle state is not "available".
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.InsufficientThroughputCapacityException">
+        /// Returned if there's not enough capacity to provision additional throughput. This value
+        /// might be returned when you try to create a file system in provisioned throughput mode,
+        /// when you attempt to increase the provisioned throughput of an existing file system,
+        /// or when you attempt to change an existing file system from bursting to provisioned
+        /// throughput mode. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
+        /// Returned if an error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.ReplicationNotFoundException">
+        /// Returned if the specified file system did not have a replication configuration.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.ThroughputLimitExceededException">
+        /// Returned if the throughput mode or amount of provisioned throughput can't be changed
+        /// because the throughput limit of 1024 MiB/s has been reached.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.UnsupportedAvailabilityZoneException">
+        /// Returned if the requested Amazon EFS functionality is not available in the specified
+        /// Availability Zone.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.ValidationException">
+        /// Returned if the Backup service is not available in the Amazon Web Services Region
+        /// in which the request was made.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/CreateReplicationConfiguration">REST API Reference for CreateReplicationConfiguration Operation</seealso>
+        CreateReplicationConfigurationResponse CreateReplicationConfiguration(CreateReplicationConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateReplicationConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateReplicationConfiguration operation on AmazonElasticFileSystemClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateReplicationConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/CreateReplicationConfiguration">REST API Reference for CreateReplicationConfiguration Operation</seealso>
+        IAsyncResult BeginCreateReplicationConfiguration(CreateReplicationConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateReplicationConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateReplicationConfiguration.</param>
+        /// 
+        /// <returns>Returns a  CreateReplicationConfigurationResult from ElasticFileSystem.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/CreateReplicationConfiguration">REST API Reference for CreateReplicationConfiguration Operation</seealso>
+        CreateReplicationConfigurationResponse EndCreateReplicationConfiguration(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateTags
 
 
@@ -915,6 +1068,10 @@ namespace Amazon.ElasticFileSystem
         /// <param name="request">Container for the necessary parameters to execute the DeleteFileSystemPolicy service method.</param>
         /// 
         /// <returns>The response from the DeleteFileSystemPolicy service method, as returned by ElasticFileSystem.</returns>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.BadRequestException">
+        /// Returned if the request is malformed or contains an error such as an invalid parameter
+        /// value or a missing required parameter.
+        /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.FileSystemNotFoundException">
         /// Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's
         /// Amazon Web Services account.
@@ -1104,6 +1261,63 @@ namespace Amazon.ElasticFileSystem
         /// <returns>Returns a  DeleteMountTargetResult from ElasticFileSystem.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DeleteMountTarget">REST API Reference for DeleteMountTarget Operation</seealso>
         DeleteMountTargetResponse EndDeleteMountTarget(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteReplicationConfiguration
+
+
+        /// <summary>
+        /// Deletes an existing replication configuration. To delete a replication configuration,
+        /// you must make the request from the Amazon Web Services Region in which the destination
+        /// file system is located. Deleting a replication configuration ends the replication
+        /// process. You can write to the destination file system once it's status becomes <code>Writeable</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteReplicationConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DeleteReplicationConfiguration service method, as returned by ElasticFileSystem.</returns>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.BadRequestException">
+        /// Returned if the request is malformed or contains an error such as an invalid parameter
+        /// value or a missing required parameter.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.FileSystemNotFoundException">
+        /// Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's
+        /// Amazon Web Services account.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
+        /// Returned if an error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.ReplicationNotFoundException">
+        /// Returned if the specified file system did not have a replication configuration.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DeleteReplicationConfiguration">REST API Reference for DeleteReplicationConfiguration Operation</seealso>
+        DeleteReplicationConfigurationResponse DeleteReplicationConfiguration(DeleteReplicationConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteReplicationConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteReplicationConfiguration operation on AmazonElasticFileSystemClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteReplicationConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DeleteReplicationConfiguration">REST API Reference for DeleteReplicationConfiguration Operation</seealso>
+        IAsyncResult BeginDeleteReplicationConfiguration(DeleteReplicationConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteReplicationConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteReplicationConfiguration.</param>
+        /// 
+        /// <returns>Returns a  DeleteReplicationConfigurationResult from ElasticFileSystem.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DeleteReplicationConfiguration">REST API Reference for DeleteReplicationConfiguration Operation</seealso>
+        DeleteReplicationConfigurationResponse EndDeleteReplicationConfiguration(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1360,6 +1574,10 @@ namespace Amazon.ElasticFileSystem
         /// <param name="request">Container for the necessary parameters to execute the DescribeFileSystemPolicy service method.</param>
         /// 
         /// <returns>The response from the DescribeFileSystemPolicy service method, as returned by ElasticFileSystem.</returns>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.BadRequestException">
+        /// Returned if the request is malformed or contains an error such as an invalid parameter
+        /// value or a missing required parameter.
+        /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.FileSystemNotFoundException">
         /// Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's
         /// Amazon Web Services account.
@@ -1768,6 +1986,66 @@ namespace Amazon.ElasticFileSystem
 
         #endregion
         
+        #region  DescribeReplicationConfigurations
+
+
+        /// <summary>
+        /// Retrieves the replication configurations for either a specific file system, or all
+        /// configurations for the Amazon Web Services account in an Amazon Web Services Region
+        /// if a file system is not specified.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeReplicationConfigurations service method.</param>
+        /// 
+        /// <returns>The response from the DescribeReplicationConfigurations service method, as returned by ElasticFileSystem.</returns>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.BadRequestException">
+        /// Returned if the request is malformed or contains an error such as an invalid parameter
+        /// value or a missing required parameter.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.FileSystemNotFoundException">
+        /// Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's
+        /// Amazon Web Services account.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
+        /// Returned if an error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.ReplicationNotFoundException">
+        /// Returned if the specified file system did not have a replication configuration.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.ValidationException">
+        /// Returned if the Backup service is not available in the Amazon Web Services Region
+        /// in which the request was made.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeReplicationConfigurations">REST API Reference for DescribeReplicationConfigurations Operation</seealso>
+        DescribeReplicationConfigurationsResponse DescribeReplicationConfigurations(DescribeReplicationConfigurationsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeReplicationConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeReplicationConfigurations operation on AmazonElasticFileSystemClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeReplicationConfigurations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeReplicationConfigurations">REST API Reference for DescribeReplicationConfigurations Operation</seealso>
+        IAsyncResult BeginDescribeReplicationConfigurations(DescribeReplicationConfigurationsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeReplicationConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeReplicationConfigurations.</param>
+        /// 
+        /// <returns>Returns a  DescribeReplicationConfigurationsResult from ElasticFileSystem.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeReplicationConfigurations">REST API Reference for DescribeReplicationConfigurations Operation</seealso>
+        DescribeReplicationConfigurationsResponse EndDescribeReplicationConfigurations(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeTags
 
 
@@ -2169,6 +2447,10 @@ namespace Amazon.ElasticFileSystem
         /// <param name="request">Container for the necessary parameters to execute the PutFileSystemPolicy service method.</param>
         /// 
         /// <returns>The response from the PutFileSystemPolicy service method, as returned by ElasticFileSystem.</returns>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.BadRequestException">
+        /// Returned if the request is malformed or contains an error such as an invalid parameter
+        /// value or a missing required parameter.
+        /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.FileSystemNotFoundException">
         /// Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's
         /// Amazon Web Services account.

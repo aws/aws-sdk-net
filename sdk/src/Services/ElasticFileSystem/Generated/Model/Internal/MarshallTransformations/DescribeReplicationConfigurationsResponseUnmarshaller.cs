@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for PutFileSystemPolicy operation
+    /// Response Unmarshaller for DescribeReplicationConfigurations operation
     /// </summary>  
-    public class PutFileSystemPolicyResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DescribeReplicationConfigurationsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,22 +45,22 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            PutFileSystemPolicyResponse response = new PutFileSystemPolicyResponse();
+            DescribeReplicationConfigurationsResponse response = new DescribeReplicationConfigurationsResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("FileSystemId", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.FileSystemId = unmarshaller.Unmarshall(context);
+                    response.NextToken = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Policy", targetDepth))
+                if (context.TestExpression("Replications", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Policy = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<ReplicationConfigurationDescription, ReplicationConfigurationDescriptionUnmarshaller>(ReplicationConfigurationDescriptionUnmarshaller.Instance);
+                    response.Replications = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,25 +94,25 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
                 {
                     return FileSystemNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("IncorrectFileSystemLifeCycleState"))
-                {
-                    return IncorrectFileSystemLifeCycleStateExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerError"))
                 {
                     return InternalServerErrorExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidPolicyException"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ReplicationNotFound"))
                 {
-                    return InvalidPolicyExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return ReplicationNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ValidationException"))
+                {
+                    return ValidationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
             }
             return new AmazonElasticFileSystemException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static PutFileSystemPolicyResponseUnmarshaller _instance = new PutFileSystemPolicyResponseUnmarshaller();        
+        private static DescribeReplicationConfigurationsResponseUnmarshaller _instance = new DescribeReplicationConfigurationsResponseUnmarshaller();        
 
-        internal static PutFileSystemPolicyResponseUnmarshaller GetInstance()
+        internal static DescribeReplicationConfigurationsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -120,7 +120,7 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PutFileSystemPolicyResponseUnmarshaller Instance
+        public static DescribeReplicationConfigurationsResponseUnmarshaller Instance
         {
             get
             {

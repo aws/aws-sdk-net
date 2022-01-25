@@ -967,6 +967,356 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("ElasticFileSystem")]
+        public void CreateReplicationConfigurationMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateReplicationConfiguration");
+
+            var request = InstantiateClassGenerator.Execute<CreateReplicationConfigurationRequest>();
+            var marshaller = new CreateReplicationConfigurationRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("CreateReplicationConfiguration", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = CreateReplicationConfigurationResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as CreateReplicationConfigurationResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ElasticFileSystem")]
+        public void CreateReplicationConfiguration_BadRequestExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateReplicationConfiguration");
+
+            var request = InstantiateClassGenerator.Execute<CreateReplicationConfigurationRequest>();
+            var marshaller = new CreateReplicationConfigurationRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("CreateReplicationConfiguration", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("BadRequestException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","BadRequestException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = CreateReplicationConfigurationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ElasticFileSystem")]
+        public void CreateReplicationConfiguration_FileSystemLimitExceededExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateReplicationConfiguration");
+
+            var request = InstantiateClassGenerator.Execute<CreateReplicationConfigurationRequest>();
+            var marshaller = new CreateReplicationConfigurationRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("CreateReplicationConfiguration", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("FileSystemLimitExceededException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","FileSystemLimitExceededException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = CreateReplicationConfigurationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ElasticFileSystem")]
+        public void CreateReplicationConfiguration_FileSystemNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateReplicationConfiguration");
+
+            var request = InstantiateClassGenerator.Execute<CreateReplicationConfigurationRequest>();
+            var marshaller = new CreateReplicationConfigurationRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("CreateReplicationConfiguration", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("FileSystemNotFoundException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","FileSystemNotFoundException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = CreateReplicationConfigurationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ElasticFileSystem")]
+        public void CreateReplicationConfiguration_IncorrectFileSystemLifeCycleStateExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateReplicationConfiguration");
+
+            var request = InstantiateClassGenerator.Execute<CreateReplicationConfigurationRequest>();
+            var marshaller = new CreateReplicationConfigurationRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("CreateReplicationConfiguration", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("IncorrectFileSystemLifeCycleStateException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","IncorrectFileSystemLifeCycleStateException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = CreateReplicationConfigurationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ElasticFileSystem")]
+        public void CreateReplicationConfiguration_InsufficientThroughputCapacityExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateReplicationConfiguration");
+
+            var request = InstantiateClassGenerator.Execute<CreateReplicationConfigurationRequest>();
+            var marshaller = new CreateReplicationConfigurationRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("CreateReplicationConfiguration", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InsufficientThroughputCapacityException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InsufficientThroughputCapacityException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = CreateReplicationConfigurationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ElasticFileSystem")]
+        public void CreateReplicationConfiguration_InternalServerErrorExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateReplicationConfiguration");
+
+            var request = InstantiateClassGenerator.Execute<CreateReplicationConfigurationRequest>();
+            var marshaller = new CreateReplicationConfigurationRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("CreateReplicationConfiguration", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InternalServerErrorException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InternalServerErrorException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = CreateReplicationConfigurationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ElasticFileSystem")]
+        public void CreateReplicationConfiguration_ReplicationNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateReplicationConfiguration");
+
+            var request = InstantiateClassGenerator.Execute<CreateReplicationConfigurationRequest>();
+            var marshaller = new CreateReplicationConfigurationRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("CreateReplicationConfiguration", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ReplicationNotFoundException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ReplicationNotFoundException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = CreateReplicationConfigurationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ElasticFileSystem")]
+        public void CreateReplicationConfiguration_ThroughputLimitExceededExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateReplicationConfiguration");
+
+            var request = InstantiateClassGenerator.Execute<CreateReplicationConfigurationRequest>();
+            var marshaller = new CreateReplicationConfigurationRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("CreateReplicationConfiguration", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ThroughputLimitExceededException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ThroughputLimitExceededException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = CreateReplicationConfigurationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ElasticFileSystem")]
+        public void CreateReplicationConfiguration_UnsupportedAvailabilityZoneExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateReplicationConfiguration");
+
+            var request = InstantiateClassGenerator.Execute<CreateReplicationConfigurationRequest>();
+            var marshaller = new CreateReplicationConfigurationRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("CreateReplicationConfiguration", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("UnsupportedAvailabilityZoneException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","UnsupportedAvailabilityZoneException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = CreateReplicationConfigurationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ElasticFileSystem")]
+        public void CreateReplicationConfiguration_ValidationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateReplicationConfiguration");
+
+            var request = InstantiateClassGenerator.Execute<CreateReplicationConfigurationRequest>();
+            var marshaller = new CreateReplicationConfigurationRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("CreateReplicationConfiguration", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ValidationException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = CreateReplicationConfigurationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ElasticFileSystem")]
         public void CreateTagsMarshallTest()
         {
             var operation = service_model.FindOperation("CreateTags");
@@ -1351,6 +1701,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("ElasticFileSystem")]
+        public void DeleteFileSystemPolicy_BadRequestExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteFileSystemPolicy");
+
+            var request = InstantiateClassGenerator.Execute<DeleteFileSystemPolicyRequest>();
+            var marshaller = new DeleteFileSystemPolicyRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DeleteFileSystemPolicy", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("BadRequestException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","BadRequestException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DeleteFileSystemPolicyResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ElasticFileSystem")]
         public void DeleteFileSystemPolicy_FileSystemNotFoundExceptionMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteFileSystemPolicy");
@@ -1583,6 +1965,150 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
             var response = DeleteMountTargetResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ElasticFileSystem")]
+        public void DeleteReplicationConfigurationMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteReplicationConfiguration");
+
+            var request = InstantiateClassGenerator.Execute<DeleteReplicationConfigurationRequest>();
+            var marshaller = new DeleteReplicationConfigurationRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("DeleteReplicationConfiguration", request, internalRequest, service_model);
+
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ElasticFileSystem")]
+        public void DeleteReplicationConfiguration_BadRequestExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteReplicationConfiguration");
+
+            var request = InstantiateClassGenerator.Execute<DeleteReplicationConfigurationRequest>();
+            var marshaller = new DeleteReplicationConfigurationRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DeleteReplicationConfiguration", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("BadRequestException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","BadRequestException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DeleteReplicationConfigurationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ElasticFileSystem")]
+        public void DeleteReplicationConfiguration_FileSystemNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteReplicationConfiguration");
+
+            var request = InstantiateClassGenerator.Execute<DeleteReplicationConfigurationRequest>();
+            var marshaller = new DeleteReplicationConfigurationRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DeleteReplicationConfiguration", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("FileSystemNotFoundException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","FileSystemNotFoundException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DeleteReplicationConfigurationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ElasticFileSystem")]
+        public void DeleteReplicationConfiguration_InternalServerErrorExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteReplicationConfiguration");
+
+            var request = InstantiateClassGenerator.Execute<DeleteReplicationConfigurationRequest>();
+            var marshaller = new DeleteReplicationConfigurationRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DeleteReplicationConfiguration", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InternalServerErrorException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InternalServerErrorException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DeleteReplicationConfigurationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ElasticFileSystem")]
+        public void DeleteReplicationConfiguration_ReplicationNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteReplicationConfiguration");
+
+            var request = InstantiateClassGenerator.Execute<DeleteReplicationConfigurationRequest>();
+            var marshaller = new DeleteReplicationConfigurationRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DeleteReplicationConfiguration", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ReplicationNotFoundException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ReplicationNotFoundException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DeleteReplicationConfigurationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -2136,6 +2662,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = DescribeFileSystemPolicyResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context) as DescribeFileSystemPolicyResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ElasticFileSystem")]
+        public void DescribeFileSystemPolicy_BadRequestExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeFileSystemPolicy");
+
+            var request = InstantiateClassGenerator.Execute<DescribeFileSystemPolicyRequest>();
+            var marshaller = new DescribeFileSystemPolicyRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DescribeFileSystemPolicy", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("BadRequestException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","BadRequestException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DescribeFileSystemPolicyResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -2831,6 +3389,196 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
             var response = DescribeMountTargetSecurityGroupsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ElasticFileSystem")]
+        public void DescribeReplicationConfigurationsMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeReplicationConfigurations");
+
+            var request = InstantiateClassGenerator.Execute<DescribeReplicationConfigurationsRequest>();
+            var marshaller = new DescribeReplicationConfigurationsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("DescribeReplicationConfigurations", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = DescribeReplicationConfigurationsResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as DescribeReplicationConfigurationsResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ElasticFileSystem")]
+        public void DescribeReplicationConfigurations_BadRequestExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeReplicationConfigurations");
+
+            var request = InstantiateClassGenerator.Execute<DescribeReplicationConfigurationsRequest>();
+            var marshaller = new DescribeReplicationConfigurationsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DescribeReplicationConfigurations", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("BadRequestException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","BadRequestException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DescribeReplicationConfigurationsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ElasticFileSystem")]
+        public void DescribeReplicationConfigurations_FileSystemNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeReplicationConfigurations");
+
+            var request = InstantiateClassGenerator.Execute<DescribeReplicationConfigurationsRequest>();
+            var marshaller = new DescribeReplicationConfigurationsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DescribeReplicationConfigurations", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("FileSystemNotFoundException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","FileSystemNotFoundException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DescribeReplicationConfigurationsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ElasticFileSystem")]
+        public void DescribeReplicationConfigurations_InternalServerErrorExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeReplicationConfigurations");
+
+            var request = InstantiateClassGenerator.Execute<DescribeReplicationConfigurationsRequest>();
+            var marshaller = new DescribeReplicationConfigurationsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DescribeReplicationConfigurations", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InternalServerErrorException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InternalServerErrorException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DescribeReplicationConfigurationsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ElasticFileSystem")]
+        public void DescribeReplicationConfigurations_ReplicationNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeReplicationConfigurations");
+
+            var request = InstantiateClassGenerator.Execute<DescribeReplicationConfigurationsRequest>();
+            var marshaller = new DescribeReplicationConfigurationsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DescribeReplicationConfigurations", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ReplicationNotFoundException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ReplicationNotFoundException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DescribeReplicationConfigurationsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ElasticFileSystem")]
+        public void DescribeReplicationConfigurations_ValidationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeReplicationConfigurations");
+
+            var request = InstantiateClassGenerator.Execute<DescribeReplicationConfigurationsRequest>();
+            var marshaller = new DescribeReplicationConfigurationsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DescribeReplicationConfigurations", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ValidationException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DescribeReplicationConfigurationsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -3638,6 +4386,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = PutFileSystemPolicyResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context) as PutFileSystemPolicyResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ElasticFileSystem")]
+        public void PutFileSystemPolicy_BadRequestExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("PutFileSystemPolicy");
+
+            var request = InstantiateClassGenerator.Execute<PutFileSystemPolicyRequest>();
+            var marshaller = new PutFileSystemPolicyRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("PutFileSystemPolicy", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("BadRequestException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","BadRequestException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = PutFileSystemPolicyResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
