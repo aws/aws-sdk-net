@@ -100,6 +100,14 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Paginator for ListDefaultVocabularies operation
+        ///</summary>
+        public IListDefaultVocabulariesPaginator ListDefaultVocabularies(ListDefaultVocabulariesRequest request) 
+        {
+            return new ListDefaultVocabulariesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListHoursOfOperations operation
         ///</summary>
         public IListHoursOfOperationsPaginator ListHoursOfOperations(ListHoursOfOperationsRequest request) 
@@ -257,6 +265,14 @@ namespace Amazon.Connect.Model
         public IListUsersPaginator ListUsers(ListUsersRequest request) 
         {
             return new ListUsersPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for SearchVocabularies operation
+        ///</summary>
+        public ISearchVocabulariesPaginator SearchVocabularies(SearchVocabulariesRequest request) 
+        {
+            return new SearchVocabulariesPaginator(this.client, request);
         }
     }
 }

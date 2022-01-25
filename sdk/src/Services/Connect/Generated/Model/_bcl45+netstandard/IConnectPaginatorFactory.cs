@@ -66,6 +66,11 @@ namespace Amazon.Connect.Model
         IListContactReferencesPaginator ListContactReferences(ListContactReferencesRequest request);
 
         /// <summary>
+        /// Paginator for ListDefaultVocabularies operation
+        ///</summary>
+        IListDefaultVocabulariesPaginator ListDefaultVocabularies(ListDefaultVocabulariesRequest request);
+
+        /// <summary>
         /// Paginator for ListHoursOfOperations operation
         ///</summary>
         IListHoursOfOperationsPaginator ListHoursOfOperations(ListHoursOfOperationsRequest request);
@@ -164,5 +169,10 @@ namespace Amazon.Connect.Model
         /// Paginator for ListUsers operation
         ///</summary>
         IListUsersPaginator ListUsers(ListUsersRequest request);
+
+        /// <summary>
+        /// Paginator for SearchVocabularies operation
+        ///</summary>
+        ISearchVocabulariesPaginator SearchVocabularies(SearchVocabulariesRequest request);
     }
 }
