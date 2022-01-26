@@ -69,6 +69,7 @@ namespace Amazon.SecurityHub.Model
         private List<RelatedFinding> _relatedFindings = new List<RelatedFinding>();
         private Remediation _remediation;
         private List<Resource> _resources = new List<Resource>();
+        private bool? _sample;
         private string _schemaVersion;
         private Severity _severity;
         private string _sourceUrl;
@@ -671,6 +672,24 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetResources()
         {
             return this._resources != null && this._resources.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Sample. 
+        /// <para>
+        /// Indicates whether the finding is a sample finding.
+        /// </para>
+        /// </summary>
+        public bool Sample
+        {
+            get { return this._sample.GetValueOrDefault(); }
+            set { this._sample = value; }
+        }
+
+        // Check to see if Sample property is set
+        internal bool IsSetSample()
+        {
+            return this._sample.HasValue; 
         }
 
         /// <summary>

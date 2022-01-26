@@ -226,6 +226,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.Resources = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Sample", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.Sample = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SchemaVersion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
