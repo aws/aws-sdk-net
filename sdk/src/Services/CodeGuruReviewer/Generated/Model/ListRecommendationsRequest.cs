@@ -64,7 +64,7 @@ namespace Amazon.CodeGuruReviewer.Model
         ///  The maximum number of results that are returned per call. The default is 100. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
+        [AWSProperty(Min=1, Max=300)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
