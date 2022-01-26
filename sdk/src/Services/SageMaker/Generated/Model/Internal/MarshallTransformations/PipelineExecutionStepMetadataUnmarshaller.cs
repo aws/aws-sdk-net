@@ -88,6 +88,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.EMR = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Fail", targetDepth))
+                {
+                    var unmarshaller = FailStepMetadataUnmarshaller.Instance;
+                    unmarshalledObject.Fail = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Lambda", targetDepth))
                 {
                     var unmarshaller = LambdaStepMetadataUnmarshaller.Instance;

@@ -37,6 +37,7 @@ namespace Amazon.SageMaker.Model
         private ClarifyCheckStepMetadata _clarifyCheck;
         private ConditionStepMetadata _condition;
         private EMRStepMetadata _emr;
+        private FailStepMetadata _fail;
         private LambdaStepMetadata _lambda;
         private ModelStepMetadata _model;
         private ProcessingJobStepMetadata _processingJob;
@@ -152,6 +153,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetEMR()
         {
             return this._emr != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Fail. 
+        /// <para>
+        /// The configurations and outcomes of a Fail step execution.
+        /// </para>
+        /// </summary>
+        public FailStepMetadata Fail
+        {
+            get { return this._fail; }
+            set { this._fail = value; }
+        }
+
+        // Check to see if Fail property is set
+        internal bool IsSetFail()
+        {
+            return this._fail != null;
         }
 
         /// <summary>

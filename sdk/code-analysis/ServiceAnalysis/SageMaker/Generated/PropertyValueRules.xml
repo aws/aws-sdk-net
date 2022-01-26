@@ -5782,6 +5782,10 @@
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,119}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.FailStepMetadata.ErrorMessage</property>
+    <max>3072</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.FeatureDefinition.FeatureName</property>
     <min>1</min>
     <max>64</max>
@@ -7236,6 +7240,10 @@
     <min>1</min>
     <max>82</max>
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,81}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.PipelineExecutionSummary.PipelineExecutionFailureReason</property>
+    <max>3072</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.PipelineExperimentConfig.ExperimentName</property>

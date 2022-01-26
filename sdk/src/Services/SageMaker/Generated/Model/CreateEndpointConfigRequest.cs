@@ -83,8 +83,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property AsyncInferenceConfig. 
         /// <para>
         /// Specifies configuration for how an endpoint performs asynchronous inference. This
-        /// is a required field in order for your Endpoint to be invoked using <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html">
-        /// <code>InvokeEndpointAsync</code> </a>.
+        /// is a required field in order for your Endpoint to be invoked using <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpointAsync.html">InvokeEndpointAsync</a>.
         /// </para>
         /// </summary>
         public AsyncInferenceConfig AsyncInferenceConfig
