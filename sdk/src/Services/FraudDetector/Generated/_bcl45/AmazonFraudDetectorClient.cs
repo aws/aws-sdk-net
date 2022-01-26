@@ -3201,6 +3201,83 @@ namespace Amazon.FraudDetector
 
         #endregion
         
+        #region  GetEventPredictionMetadata
+
+
+        /// <summary>
+        /// Gets details of the past fraud predictions for the specified event ID, event type,
+        /// detector ID, and detector version ID that was generated in the specified time period.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetEventPredictionMetadata service method.</param>
+        /// 
+        /// <returns>The response from the GetEventPredictionMetadata service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
+        /// An exception indicating an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ResourceNotFoundException">
+        /// An exception indicating the specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ThrottlingException">
+        /// An exception indicating a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ValidationException">
+        /// An exception indicating a specified value is not allowed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetEventPredictionMetadata">REST API Reference for GetEventPredictionMetadata Operation</seealso>
+        public virtual GetEventPredictionMetadataResponse GetEventPredictionMetadata(GetEventPredictionMetadataRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetEventPredictionMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEventPredictionMetadataResponseUnmarshaller.Instance;
+
+            return Invoke<GetEventPredictionMetadataResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Gets details of the past fraud predictions for the specified event ID, event type,
+        /// detector ID, and detector version ID that was generated in the specified time period.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetEventPredictionMetadata service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetEventPredictionMetadata service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
+        /// An exception indicating an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ResourceNotFoundException">
+        /// An exception indicating the specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ThrottlingException">
+        /// An exception indicating a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ValidationException">
+        /// An exception indicating a specified value is not allowed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetEventPredictionMetadata">REST API Reference for GetEventPredictionMetadata Operation</seealso>
+        public virtual Task<GetEventPredictionMetadataResponse> GetEventPredictionMetadataAsync(GetEventPredictionMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetEventPredictionMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEventPredictionMetadataResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetEventPredictionMetadataResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetEventTypes
 
 
@@ -3958,6 +4035,107 @@ namespace Amazon.FraudDetector
             options.ResponseUnmarshaller = GetVariablesResponseUnmarshaller.Instance;
             
             return InvokeAsync<GetVariablesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListEventPredictions
+
+
+        /// <summary>
+        /// Gets a list of past predictions. The list can be filtered by detector ID, detector
+        /// version ID, event ID, event type, or by specifying a time period. If filter is not
+        /// specified, the most recent prediction is returned.
+        /// 
+        ///  
+        /// <para>
+        /// For example, the following filter lists all past predictions for <code>xyz</code>
+        /// event type - <code>{ "eventType":{ "value": "xyz" }” } </code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// This is a paginated API. If you provide a null <code>maxResults</code>, this action
+        /// will retrieve a maximum of 10 records per page. If you provide a <code>maxResults</code>,
+        /// the value must be between 50 and 100. To get the next page results, provide the <code>nextToken</code>
+        /// from the response as part of your request. A null <code>nextToken</code> fetches the
+        /// records from the beginning. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListEventPredictions service method.</param>
+        /// 
+        /// <returns>The response from the ListEventPredictions service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
+        /// An exception indicating an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ThrottlingException">
+        /// An exception indicating a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ValidationException">
+        /// An exception indicating a specified value is not allowed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/ListEventPredictions">REST API Reference for ListEventPredictions Operation</seealso>
+        public virtual ListEventPredictionsResponse ListEventPredictions(ListEventPredictionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListEventPredictionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEventPredictionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListEventPredictionsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Gets a list of past predictions. The list can be filtered by detector ID, detector
+        /// version ID, event ID, event type, or by specifying a time period. If filter is not
+        /// specified, the most recent prediction is returned.
+        /// 
+        ///  
+        /// <para>
+        /// For example, the following filter lists all past predictions for <code>xyz</code>
+        /// event type - <code>{ "eventType":{ "value": "xyz" }” } </code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// This is a paginated API. If you provide a null <code>maxResults</code>, this action
+        /// will retrieve a maximum of 10 records per page. If you provide a <code>maxResults</code>,
+        /// the value must be between 50 and 100. To get the next page results, provide the <code>nextToken</code>
+        /// from the response as part of your request. A null <code>nextToken</code> fetches the
+        /// records from the beginning. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListEventPredictions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListEventPredictions service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
+        /// An exception indicating an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ThrottlingException">
+        /// An exception indicating a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ValidationException">
+        /// An exception indicating a specified value is not allowed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/ListEventPredictions">REST API Reference for ListEventPredictions Operation</seealso>
+        public virtual Task<ListEventPredictionsResponse> ListEventPredictionsAsync(ListEventPredictionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListEventPredictionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEventPredictionsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListEventPredictionsResponse>(request, options, cancellationToken);
         }
 
         #endregion

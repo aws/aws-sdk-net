@@ -86,6 +86,11 @@ namespace Amazon.FraudDetector.Model
         IGetVariablesPaginator GetVariables(GetVariablesRequest request);
 
         /// <summary>
+        /// Paginator for ListEventPredictions operation
+        ///</summary>
+        IListEventPredictionsPaginator ListEventPredictions(ListEventPredictionsRequest request);
+
+        /// <summary>
         /// Paginator for ListTagsForResource operation
         ///</summary>
         IListTagsForResourcePaginator ListTagsForResource(ListTagsForResourceRequest request);

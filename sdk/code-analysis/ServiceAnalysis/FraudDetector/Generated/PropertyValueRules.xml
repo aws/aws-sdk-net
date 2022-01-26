@@ -413,6 +413,69 @@
     <max>30</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.FraudDetector.Model.GetEventPredictionMetadataRequest.DetectorId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[0-9a-z_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FraudDetector.Model.GetEventPredictionMetadataRequest.DetectorVersionId</property>
+    <min>1</min>
+    <max>5</max>
+    <pattern>^([1-9][0-9]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FraudDetector.Model.GetEventPredictionMetadataRequest.EventId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[0-9a-z_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FraudDetector.Model.GetEventPredictionMetadataRequest.EventTypeName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[0-9a-z_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FraudDetector.Model.GetEventPredictionMetadataRequest.PredictionTimestamp</property>
+    <min>11</min>
+    <max>30</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FraudDetector.Model.GetEventPredictionMetadataResponse.DetectorId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[0-9a-z_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FraudDetector.Model.GetEventPredictionMetadataResponse.DetectorVersionId</property>
+    <min>1</min>
+    <max>5</max>
+    <pattern>^([1-9][0-9]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FraudDetector.Model.GetEventPredictionMetadataResponse.EventId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[0-9a-z_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FraudDetector.Model.GetEventPredictionMetadataResponse.EventTimestamp</property>
+    <min>11</min>
+    <max>30</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FraudDetector.Model.GetEventPredictionMetadataResponse.EventTypeName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[0-9a-z_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FraudDetector.Model.GetEventPredictionMetadataResponse.PredictionTimestamp</property>
+    <min>11</min>
+    <max>30</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.FraudDetector.Model.GetEventTypesRequest.MaxResults</property>
     <min>5</min>
     <max>10</max>
@@ -516,6 +579,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FraudDetector.Model.GetVariablesRequest.MaxResults</property>
+    <min>50</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FraudDetector.Model.ListEventPredictionsRequest.MaxResults</property>
     <min>50</min>
     <max>100</max>
   </property-value-rule>
@@ -960,6 +1028,52 @@
     <max>30</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.FraudDetector.Model.EvaluatedRule.RuleId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[0-9a-z_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FraudDetector.Model.EvaluatedRule.RuleVersion</property>
+    <min>1</min>
+    <max>5</max>
+    <pattern>^([1-9][0-9]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FraudDetector.Model.EventPredictionSummary.DetectorId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[0-9a-z_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FraudDetector.Model.EventPredictionSummary.DetectorVersionId</property>
+    <min>1</min>
+    <max>5</max>
+    <pattern>^([1-9][0-9]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FraudDetector.Model.EventPredictionSummary.EventId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[0-9a-z_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FraudDetector.Model.EventPredictionSummary.EventTimestamp</property>
+    <min>11</min>
+    <max>30</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FraudDetector.Model.EventPredictionSummary.EventTypeName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[0-9a-z_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FraudDetector.Model.EventPredictionSummary.PredictionTimestamp</property>
+    <min>11</min>
+    <max>30</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.FraudDetector.Model.EventType.Arn</property>
     <min>1</min>
     <max>256</max>
@@ -1007,6 +1121,12 @@
     <property>Amazon.FraudDetector.Model.ExternalModel.LastUpdatedTime</property>
     <min>11</min>
     <max>30</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FraudDetector.Model.FilterCondition.Value</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[0-9A-Za-z_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FraudDetector.Model.IngestedEventStatistics.LastUpdatedTime</property>
@@ -1180,6 +1300,16 @@
     <min>1</min>
     <max>64</max>
     <pattern>^[0-9a-z_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FraudDetector.Model.PredictionTimeRange.EndTime</property>
+    <min>11</min>
+    <max>30</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FraudDetector.Model.PredictionTimeRange.StartTime</property>
+    <min>11</min>
+    <max>30</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FraudDetector.Model.Rule.DetectorId</property>

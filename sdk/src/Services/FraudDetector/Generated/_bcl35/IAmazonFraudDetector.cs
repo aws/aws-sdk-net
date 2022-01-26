@@ -2221,6 +2221,64 @@ namespace Amazon.FraudDetector
 
         #endregion
         
+        #region  GetEventPredictionMetadata
+
+
+        /// <summary>
+        /// Gets details of the past fraud predictions for the specified event ID, event type,
+        /// detector ID, and detector version ID that was generated in the specified time period.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetEventPredictionMetadata service method.</param>
+        /// 
+        /// <returns>The response from the GetEventPredictionMetadata service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
+        /// An exception indicating an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ResourceNotFoundException">
+        /// An exception indicating the specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ThrottlingException">
+        /// An exception indicating a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ValidationException">
+        /// An exception indicating a specified value is not allowed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetEventPredictionMetadata">REST API Reference for GetEventPredictionMetadata Operation</seealso>
+        GetEventPredictionMetadataResponse GetEventPredictionMetadata(GetEventPredictionMetadataRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetEventPredictionMetadata operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetEventPredictionMetadata operation on AmazonFraudDetectorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetEventPredictionMetadata
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetEventPredictionMetadata">REST API Reference for GetEventPredictionMetadata Operation</seealso>
+        IAsyncResult BeginGetEventPredictionMetadata(GetEventPredictionMetadataRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetEventPredictionMetadata operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetEventPredictionMetadata.</param>
+        /// 
+        /// <returns>Returns a  GetEventPredictionMetadataResult from FraudDetector.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetEventPredictionMetadata">REST API Reference for GetEventPredictionMetadata Operation</seealso>
+        GetEventPredictionMetadataResponse EndGetEventPredictionMetadata(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetEventTypes
 
 
@@ -2774,6 +2832,76 @@ namespace Amazon.FraudDetector
         /// <returns>Returns a  GetVariablesResult from FraudDetector.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetVariables">REST API Reference for GetVariables Operation</seealso>
         GetVariablesResponse EndGetVariables(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListEventPredictions
+
+
+        /// <summary>
+        /// Gets a list of past predictions. The list can be filtered by detector ID, detector
+        /// version ID, event ID, event type, or by specifying a time period. If filter is not
+        /// specified, the most recent prediction is returned.
+        /// 
+        ///  
+        /// <para>
+        /// For example, the following filter lists all past predictions for <code>xyz</code>
+        /// event type - <code>{ "eventType":{ "value": "xyz" }” } </code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// This is a paginated API. If you provide a null <code>maxResults</code>, this action
+        /// will retrieve a maximum of 10 records per page. If you provide a <code>maxResults</code>,
+        /// the value must be between 50 and 100. To get the next page results, provide the <code>nextToken</code>
+        /// from the response as part of your request. A null <code>nextToken</code> fetches the
+        /// records from the beginning. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListEventPredictions service method.</param>
+        /// 
+        /// <returns>The response from the ListEventPredictions service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
+        /// An exception indicating an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ThrottlingException">
+        /// An exception indicating a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ValidationException">
+        /// An exception indicating a specified value is not allowed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/ListEventPredictions">REST API Reference for ListEventPredictions Operation</seealso>
+        ListEventPredictionsResponse ListEventPredictions(ListEventPredictionsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListEventPredictions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListEventPredictions operation on AmazonFraudDetectorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListEventPredictions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/ListEventPredictions">REST API Reference for ListEventPredictions Operation</seealso>
+        IAsyncResult BeginListEventPredictions(ListEventPredictionsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListEventPredictions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListEventPredictions.</param>
+        /// 
+        /// <returns>Returns a  ListEventPredictionsResult from FraudDetector.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/ListEventPredictions">REST API Reference for ListEventPredictions Operation</seealso>
+        ListEventPredictionsResponse EndListEventPredictions(IAsyncResult asyncResult);
 
         #endregion
         

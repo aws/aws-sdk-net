@@ -132,6 +132,14 @@ namespace Amazon.FraudDetector.Model
         }
 
         /// <summary>
+        /// Paginator for ListEventPredictions operation
+        ///</summary>
+        public IListEventPredictionsPaginator ListEventPredictions(ListEventPredictionsRequest request) 
+        {
+            return new ListEventPredictionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListTagsForResource operation
         ///</summary>
         public IListTagsForResourcePaginator ListTagsForResource(ListTagsForResourceRequest request) 
