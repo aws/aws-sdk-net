@@ -42,7 +42,18 @@ namespace Amazon.EBS.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The number of results to return.
+        /// The maximum number of blocks to be returned by the request.
+        /// </para>
+        ///  
+        /// <para>
+        /// Even if additional blocks can be retrieved from the snapshot, the request can return
+        /// less blocks than <b>MaxResults</b> or an empty array of blocks.
+        /// </para>
+        ///  
+        /// <para>
+        /// To retrieve the next set of blocks from the snapshot, make another request with the
+        /// returned <b>NextToken</b> value. The value of <b>NextToken</b> is <code>null</code>
+        /// when there are no more blocks to return.
         /// </para>
         /// </summary>
         [AWSProperty(Min=100, Max=10000)]
@@ -62,6 +73,10 @@ namespace Amazon.EBS.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// The token to request the next page of results.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify <b>NextToken</b>, then <b>StartingBlockIndex</b> is ignored.
         /// </para>
         /// </summary>
         [AWSProperty(Max=256)]
@@ -101,6 +116,10 @@ namespace Amazon.EBS.Model
         /// <para>
         /// The block index from which the list should start. The list in the response will start
         /// from this block index or the next valid block index in the snapshot.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify <b>NextToken</b>, then <b>StartingBlockIndex</b> is ignored.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
