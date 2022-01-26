@@ -1,3 +1,15 @@
+### 3.7.198.0 (2022-01-26 19:13 UTC)
+* CodeGuruReviewer (3.7.5.0)
+	* Added failure state and adjusted timeout in waiter
+* EBS (3.7.0.121)
+	* Documentation updates for Amazon EBS Direct APIs.
+* FraudDetector (3.7.6.0)
+	* Added new APIs for viewing past predictions and obtaining prediction metadata including prediction explanations: ListEventPredictions and GetEventPredictionMetadata
+* SageMaker (3.7.27.0)
+	* API changes relating to Fail steps in model building pipeline and add PipelineExecutionFailureReason in PipelineExecutionSummary.
+* SecurityHub (3.7.9.0)
+	* Adding top level Sample boolean field
+
 ### 3.7.197.0 (2022-01-25 19:17 UTC)
 * Connect (3.7.12.0)
 	* This release adds support for custom vocabularies to be used with Contact Lens. Custom vocabularies improve transcription accuracy for one or more specific words.
