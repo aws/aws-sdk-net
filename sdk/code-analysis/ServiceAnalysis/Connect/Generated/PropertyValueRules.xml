@@ -933,6 +933,11 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.StartChatContactRequest.ChatDurationInMinutes</property>
+    <min>60</min>
+    <max>10080</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.StartChatContactRequest.ClientToken</property>
     <max>500</max>
   </property-value-rule>
