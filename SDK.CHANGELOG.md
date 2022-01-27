@@ -1,3 +1,15 @@
+### 3.7.199.0 (2022-01-27 21:44 UTC)
+* Amplify (3.7.0.119)
+	* Doc only update to the description of basicauthcredentials to describe the required encoding and format.
+* Connect (3.7.13.0)
+	* This release adds support for configuring a custom chat duration when starting a new chat session via the StartChatContact API. The default value for chat duration is 25 hours, minimum configurable value is 1 hour (60 minutes) and maximum configurable value is 7 days (10,080 minutes).
+* EC2 (3.7.58.0)
+	* X2ezn instances are powered by Intel Cascade Lake CPUs that deliver turbo all core frequency of up to 4.5 GHz and up to 100 Gbps of networking bandwidth
+* Kafka (3.7.6.0)
+	* Amazon MSK has updated the CreateCluster and UpdateBrokerStorage API that allows you to specify volume throughput during cluster creation and broker volume updates.
+* OpenSearchService (3.7.4.0)
+	* Allows customers to get progress updates for blue/green deployments
+
 ### 3.7.198.0 (2022-01-26 19:13 UTC)
 * CodeGuruReviewer (3.7.5.0)
 	* Added failure state and adjusted timeout in waiter
