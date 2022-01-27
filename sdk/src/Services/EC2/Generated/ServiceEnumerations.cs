@@ -8685,6 +8685,30 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType X2gdXlarge = new InstanceType("x2gd.xlarge");
         /// <summary>
+        /// Constant X2iezn12xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType X2iezn12xlarge = new InstanceType("x2iezn.12xlarge");
+        /// <summary>
+        /// Constant X2iezn2xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType X2iezn2xlarge = new InstanceType("x2iezn.2xlarge");
+        /// <summary>
+        /// Constant X2iezn4xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType X2iezn4xlarge = new InstanceType("x2iezn.4xlarge");
+        /// <summary>
+        /// Constant X2iezn6xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType X2iezn6xlarge = new InstanceType("x2iezn.6xlarge");
+        /// <summary>
+        /// Constant X2iezn8xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType X2iezn8xlarge = new InstanceType("x2iezn.8xlarge");
+        /// <summary>
+        /// Constant X2ieznMetal for InstanceType
+        /// </summary>
+        public static readonly InstanceType X2ieznMetal = new InstanceType("x2iezn.metal");
+        /// <summary>
         /// Constant Z1d12xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType Z1d12xlarge = new InstanceType("z1d.12xlarge");
