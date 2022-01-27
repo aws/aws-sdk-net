@@ -1171,6 +1171,64 @@ namespace Amazon.OpenSearchService
 
 
     /// <summary>
+    /// Constants used for properties of type OverallChangeStatus.
+    /// </summary>
+    public class OverallChangeStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETED for OverallChangeStatus
+        /// </summary>
+        public static readonly OverallChangeStatus COMPLETED = new OverallChangeStatus("COMPLETED");
+        /// <summary>
+        /// Constant FAILED for OverallChangeStatus
+        /// </summary>
+        public static readonly OverallChangeStatus FAILED = new OverallChangeStatus("FAILED");
+        /// <summary>
+        /// Constant PENDING for OverallChangeStatus
+        /// </summary>
+        public static readonly OverallChangeStatus PENDING = new OverallChangeStatus("PENDING");
+        /// <summary>
+        /// Constant PROCESSING for OverallChangeStatus
+        /// </summary>
+        public static readonly OverallChangeStatus PROCESSING = new OverallChangeStatus("PROCESSING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OverallChangeStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OverallChangeStatus FindValue(string value)
+        {
+            return FindValue<OverallChangeStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OverallChangeStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type PackageStatus.
     /// </summary>
     public class PackageStatus : ConstantClass

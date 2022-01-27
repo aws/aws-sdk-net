@@ -37,6 +37,7 @@ namespace Amazon.OpenSearchService.Model
         private AdvancedOptionsStatus _advancedOptions;
         private AdvancedSecurityOptionsStatus _advancedSecurityOptions;
         private AutoTuneOptionsStatus _autoTuneOptions;
+        private ChangeProgressDetails _changeProgressDetails;
         private ClusterConfigStatus _clusterConfig;
         private CognitoOptionsStatus _cognitoOptions;
         private DomainEndpointOptionsStatus _domainEndpointOptions;
@@ -119,6 +120,24 @@ namespace Amazon.OpenSearchService.Model
         internal bool IsSetAutoTuneOptions()
         {
             return this._autoTuneOptions != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChangeProgressDetails. 
+        /// <para>
+        /// Specifies change details of the domain configuration change.
+        /// </para>
+        /// </summary>
+        public ChangeProgressDetails ChangeProgressDetails
+        {
+            get { return this._changeProgressDetails; }
+            set { this._changeProgressDetails = value; }
+        }
+
+        // Check to see if ChangeProgressDetails property is set
+        internal bool IsSetChangeProgressDetails()
+        {
+            return this._changeProgressDetails != null;
         }
 
         /// <summary>

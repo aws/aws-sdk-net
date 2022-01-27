@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for UpgradeDomain operation
+    /// Response Unmarshaller for DescribeDomainChangeProgress operation
     /// </summary>  
-    public class UpgradeDomainResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DescribeDomainChangeProgressResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,46 +45,16 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            UpgradeDomainResponse response = new UpgradeDomainResponse();
+            DescribeDomainChangeProgressResponse response = new DescribeDomainChangeProgressResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("AdvancedOptions", targetDepth))
+                if (context.TestExpression("ChangeProgressStatus", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    response.AdvancedOptions = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ChangeProgressDetails", targetDepth))
-                {
-                    var unmarshaller = ChangeProgressDetailsUnmarshaller.Instance;
-                    response.ChangeProgressDetails = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("DomainName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.DomainName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("PerformCheckOnly", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    response.PerformCheckOnly = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("TargetVersion", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.TargetVersion = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("UpgradeId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.UpgradeId = unmarshaller.Unmarshall(context);
+                    var unmarshaller = ChangeProgressStatusDetailsUnmarshaller.Instance;
+                    response.ChangeProgressStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -114,17 +84,9 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                 {
                     return BaseExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("DisabledOperationException"))
-                {
-                    return DisabledOperationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalException"))
                 {
                     return InternalExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceAlreadyExistsException"))
-                {
-                    return ResourceAlreadyExistsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                 {
@@ -138,9 +100,9 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
             return new AmazonOpenSearchServiceException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static UpgradeDomainResponseUnmarshaller _instance = new UpgradeDomainResponseUnmarshaller();        
+        private static DescribeDomainChangeProgressResponseUnmarshaller _instance = new DescribeDomainChangeProgressResponseUnmarshaller();        
 
-        internal static UpgradeDomainResponseUnmarshaller GetInstance()
+        internal static DescribeDomainChangeProgressResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -148,7 +110,7 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpgradeDomainResponseUnmarshaller Instance
+        public static DescribeDomainChangeProgressResponseUnmarshaller Instance
         {
             get
             {
