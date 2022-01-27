@@ -70,6 +70,12 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
                     unmarshalledObject.KafkaBrokerNodeId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("provisionedThroughput", targetDepth))
+                {
+                    var unmarshaller = ProvisionedThroughputUnmarshaller.Instance;
+                    unmarshalledObject.ProvisionedThroughput = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("volumeSizeGB", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

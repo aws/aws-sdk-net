@@ -34,7 +34,24 @@ namespace Amazon.Kafka.Model
     /// </summary>
     public partial class EBSStorageInfo
     {
+        private ProvisionedThroughput _provisionedThroughput;
         private int? _volumeSize;
+
+        /// <summary>
+        /// Gets and sets the property ProvisionedThroughput. EBS volume provisioned throughput
+        /// information.
+        /// </summary>
+        public ProvisionedThroughput ProvisionedThroughput
+        {
+            get { return this._provisionedThroughput; }
+            set { this._provisionedThroughput = value; }
+        }
+
+        // Check to see if ProvisionedThroughput property is set
+        internal bool IsSetProvisionedThroughput()
+        {
+            return this._provisionedThroughput != null;
+        }
 
         /// <summary>
         /// Gets and sets the property VolumeSize.             

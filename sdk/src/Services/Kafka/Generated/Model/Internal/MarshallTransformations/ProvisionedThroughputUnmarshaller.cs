@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Kafka.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for EBSStorageInfo Object
+    /// Response Unmarshaller for ProvisionedThroughput Object
     /// </summary>  
-    public class EBSStorageInfoUnmarshaller : IUnmarshaller<EBSStorageInfo, XmlUnmarshallerContext>, IUnmarshaller<EBSStorageInfo, JsonUnmarshallerContext>
+    public class ProvisionedThroughputUnmarshaller : IUnmarshaller<ProvisionedThroughput, XmlUnmarshallerContext>, IUnmarshaller<ProvisionedThroughput, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        EBSStorageInfo IUnmarshaller<EBSStorageInfo, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ProvisionedThroughput IUnmarshaller<ProvisionedThroughput, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,27 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public EBSStorageInfo Unmarshall(JsonUnmarshallerContext context)
+        public ProvisionedThroughput Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            EBSStorageInfo unmarshalledObject = new EBSStorageInfo();
+            ProvisionedThroughput unmarshalledObject = new ProvisionedThroughput();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("provisionedThroughput", targetDepth))
+                if (context.TestExpression("enabled", targetDepth))
                 {
-                    var unmarshaller = ProvisionedThroughputUnmarshaller.Instance;
-                    unmarshalledObject.ProvisionedThroughput = unmarshaller.Unmarshall(context);
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.Enabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("volumeSize", targetDepth))
+                if (context.TestExpression("volumeThroughput", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.VolumeSize = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.VolumeThroughput = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +82,12 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
         }
 
 
-        private static EBSStorageInfoUnmarshaller _instance = new EBSStorageInfoUnmarshaller();        
+        private static ProvisionedThroughputUnmarshaller _instance = new ProvisionedThroughputUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static EBSStorageInfoUnmarshaller Instance
+        public static ProvisionedThroughputUnmarshaller Instance
         {
             get
             {

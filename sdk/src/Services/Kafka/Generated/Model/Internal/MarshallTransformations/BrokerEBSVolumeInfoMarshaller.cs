@@ -51,6 +51,17 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.KafkaBrokerNodeId);
             }
 
+            if(requestObject.IsSetProvisionedThroughput())
+            {
+                context.Writer.WritePropertyName("provisionedThroughput");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ProvisionedThroughputMarshaller.Instance;
+                marshaller.Marshall(requestObject.ProvisionedThroughput, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetVolumeSizeGB())
             {
                 context.Writer.WritePropertyName("volumeSizeGB");

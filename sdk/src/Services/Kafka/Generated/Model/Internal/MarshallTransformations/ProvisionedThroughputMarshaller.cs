@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Kafka.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// EBSStorageInfo Marshaller
+    /// ProvisionedThroughput Marshaller
     /// </summary>
-    public class EBSStorageInfoMarshaller : IRequestMarshaller<EBSStorageInfo, JsonMarshallerContext> 
+    public class ProvisionedThroughputMarshaller : IRequestMarshaller<ProvisionedThroughput, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,23 +43,18 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(EBSStorageInfo requestObject, JsonMarshallerContext context)
+        public void Marshall(ProvisionedThroughput requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetProvisionedThroughput())
+            if(requestObject.IsSetEnabled())
             {
-                context.Writer.WritePropertyName("provisionedThroughput");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = ProvisionedThroughputMarshaller.Instance;
-                marshaller.Marshall(requestObject.ProvisionedThroughput, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("enabled");
+                context.Writer.Write(requestObject.Enabled);
             }
 
-            if(requestObject.IsSetVolumeSize())
+            if(requestObject.IsSetVolumeThroughput())
             {
-                context.Writer.WritePropertyName("volumeSize");
-                context.Writer.Write(requestObject.VolumeSize);
+                context.Writer.WritePropertyName("volumeThroughput");
+                context.Writer.Write(requestObject.VolumeThroughput);
             }
 
         }
@@ -67,7 +62,7 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static EBSStorageInfoMarshaller Instance = new EBSStorageInfoMarshaller();
+        public readonly static ProvisionedThroughputMarshaller Instance = new ProvisionedThroughputMarshaller();
 
     }
 }

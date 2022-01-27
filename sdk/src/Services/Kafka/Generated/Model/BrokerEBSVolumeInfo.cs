@@ -35,6 +35,7 @@ namespace Amazon.Kafka.Model
     public partial class BrokerEBSVolumeInfo
     {
         private string _kafkaBrokerNodeId;
+        private ProvisionedThroughput _provisionedThroughput;
         private int? _volumeSizeGB;
 
         /// <summary>
@@ -57,12 +58,27 @@ namespace Amazon.Kafka.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ProvisionedThroughput. EBS volume provisioned throughput
+        /// information.
+        /// </summary>
+        public ProvisionedThroughput ProvisionedThroughput
+        {
+            get { return this._provisionedThroughput; }
+            set { this._provisionedThroughput = value; }
+        }
+
+        // Check to see if ProvisionedThroughput property is set
+        internal bool IsSetProvisionedThroughput()
+        {
+            return this._provisionedThroughput != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property VolumeSizeGB.             
         /// <para>
         /// Size of the EBS volume to update.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public int VolumeSizeGB
         {
             get { return this._volumeSizeGB.GetValueOrDefault(); }
