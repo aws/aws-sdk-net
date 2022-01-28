@@ -30,11 +30,11 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the AdminSetUserMFAPreference operation.
-    /// Sets the user's multi-factor authentication (MFA) preference, including which MFA
-    /// options are enabled and if any are preferred. Only one factor can be set as preferred.
+    /// The user's multi-factor authentication (MFA) preference, including which MFA options
+    /// are activated, and if any are preferred. Only one factor can be set as preferred.
     /// The preferred MFA factor will be used to authenticate a user if multiple factors are
-    /// enabled. If multiple options are enabled and no preference is set, a challenge to
-    /// choose an MFA option will be returned during sign in.
+    /// activated. If multiple options are activated and no preference is set, a challenge
+    /// to choose an MFA option will be returned during sign-in.
     /// </summary>
     public partial class AdminSetUserMFAPreferenceRequest : AmazonCognitoIdentityProviderRequest
     {

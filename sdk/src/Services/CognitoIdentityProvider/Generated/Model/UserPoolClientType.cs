@@ -61,7 +61,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Gets and sets the property AccessTokenValidity. 
         /// <para>
         /// The time limit, specified by tokenValidityUnits, defaulting to hours, after which
-        /// the access token is no longer valid and cannot be used.
+        /// the access token is no longer valid and can't be used.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=86400)]
@@ -117,7 +117,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Gets and sets the property AllowedOAuthFlowsUserPoolClient. 
         /// <para>
         /// Set to true if the client is allowed to follow the OAuth protocol when interacting
-        /// with Cognito user pools.
+        /// with Amazon Cognito user pools.
         /// </para>
         /// </summary>
         public bool AllowedOAuthFlowsUserPoolClient
@@ -161,9 +161,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// Cognito User Pools only supports sending events to Amazon Pinpoint projects in the
-        /// US East (N. Virginia) us-east-1 Region, regardless of the region in which the user
-        /// pool resides.
+        /// Amazon Cognito User Pools only supports sending events to Amazon Pinpoint projects
+        /// in the US East (N. Virginia) us-east-1 Region, regardless of the Region in which the
+        /// user pool resides.
         /// </para>
         ///  </note>
         /// </summary>
@@ -355,9 +355,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property EnableTokenRevocation. 
         /// <para>
-        /// Indicates whether token revocation is enabled for the user pool client. When you create
-        /// a new user pool client, token revocation is enabled by default. For more information
-        /// about revoking tokens, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RevokeToken.html">RevokeToken</a>.
+        /// Indicates whether token revocation is activated for the user pool client. When you
+        /// create a new user pool client, token revocation is activated by default. For more
+        /// information about revoking tokens, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RevokeToken.html">RevokeToken</a>.
         /// </para>
         /// </summary>
         public bool EnableTokenRevocation
@@ -376,9 +376,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Gets and sets the property ExplicitAuthFlows. 
         /// <para>
         /// The authentication flows that are supported by the user pool clients. Flow names without
-        /// the <code>ALLOW_</code> prefix are deprecated in favor of new names with the <code>ALLOW_</code>
-        /// prefix. Note that values with <code>ALLOW_</code> prefix cannot be used along with
-        /// values without <code>ALLOW_</code> prefix.
+        /// the <code>ALLOW_</code> prefix are no longer supported in favor of new names with
+        /// the <code>ALLOW_</code> prefix. Note that values with <code>ALLOW_</code> prefix must
+        /// be used only along with values including the <code>ALLOW_</code> prefix.
         /// </para>
         ///  
         /// <para>
@@ -388,8 +388,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <para>
         ///  <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password authentication
         /// flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces the <code>ADMIN_NO_SRP_AUTH</code>
-        /// setting. With this authentication flow, Cognito receives the password in the request
-        /// instead of using the SRP (Secure Remote Password protocol) protocol to verify passwords.
+        /// setting. With this authentication flow, Amazon Cognito receives the password in the
+        /// request instead of using the Secure Remote Password (SRP) protocol to verify passwords.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -398,12 +398,12 @@ namespace Amazon.CognitoIdentityProvider.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based authentication.
-        /// In this flow, Cognito receives the password in the request instead of using the SRP
-        /// protocol to verify passwords.
+        /// In this flow, Amazon Cognito receives the password in the request instead of using
+        /// the SRP protocol to verify passwords.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP based authentication.
+        ///  <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP-based authentication.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -426,8 +426,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property IdTokenValidity. 
         /// <para>
-        /// The time limit, specified by tokenValidityUnits, defaulting to hours, after which
-        /// the refresh token is no longer valid and cannot be used.
+        /// The time limit specified by tokenValidityUnits, defaulting to hours, after which the
+        /// refresh token is no longer valid and can't be used.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=86400)]
@@ -483,14 +483,13 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property PreventUserExistenceErrors. 
         /// <para>
-        /// Use this setting to choose which errors and responses are returned by Cognito APIs
-        /// during authentication, account confirmation, and password recovery when the user does
-        /// not exist in the user pool. When set to <code>ENABLED</code> and the user does not
-        /// exist, authentication returns an error indicating either the username or password
-        /// was incorrect, and account confirmation and password recovery return a response indicating
-        /// a code was sent to a simulated destination. When set to <code>LEGACY</code>, those
-        /// APIs will return a <code>UserNotFoundException</code> exception if the user does not
-        /// exist in the user pool.
+        /// Errors and responses that you want Amazon Cognito APIs to return during authentication,
+        /// account confirmation, and password recovery when the user doesn't exist in the user
+        /// pool. When set to <code>ENABLED</code> and the user doesn't exist, authentication
+        /// returns an error indicating either the username or password was incorrect. Account
+        /// confirmation and password recovery return a response indicating a code was sent to
+        /// a simulated destination. When set to <code>LEGACY</code>, those APIs return a <code>UserNotFoundException</code>
+        /// exception if the user doesn't exist in the user pool.
         /// </para>
         ///  
         /// <para>
@@ -503,15 +502,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>LEGACY</code> - This represents the old behavior of Cognito where user existence
-        /// related errors are not prevented.
+        /// related errors aren't prevented.
         /// </para>
-        ///  </li> </ul> <note> 
-        /// <para>
-        /// After February 15th 2020, the value of <code>PreventUserExistenceErrors</code> will
-        /// default to <code>ENABLED</code> for newly created user pool clients if no value is
-        /// provided.
-        /// </para>
-        ///  </note>
+        ///  </li> </ul>
         /// </summary>
         public PreventUserExistenceErrorTypes PreventUserExistenceErrors
         {
@@ -546,7 +539,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property RefreshTokenValidity. 
         /// <para>
-        /// The time limit, in days, after which the refresh token is no longer valid and cannot
+        /// The time limit, in days, after which the refresh token is no longer valid and can't
         /// be used.
         /// </para>
         /// </summary>

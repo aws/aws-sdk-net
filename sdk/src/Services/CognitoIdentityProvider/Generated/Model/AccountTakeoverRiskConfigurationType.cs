@@ -40,7 +40,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Actions. 
         /// <para>
-        /// Account takeover risk configuration actions
+        /// Account takeover risk configuration actions.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// This exception is thrown when a user is not authorized.
+    /// This exception is thrown when a user isn't authorized.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

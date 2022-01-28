@@ -143,9 +143,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property KMSKeyID. 
         /// <para>
-        /// The Amazon Resource Name of Key Management Service <a href="/kms/latest/developerguide/concepts.html#master_keys">Customer
-        /// master keys</a> . Amazon Cognito uses the key to encrypt codes and temporary passwords
-        /// sent to <code>CustomEmailSender</code> and <code>CustomSMSSender</code>.
+        /// The Amazon Resource Name (ARN) of an <a href="/kms/latest/developerguide/concepts.html#master_keys">KMS
+        /// key</a>. Amazon Cognito uses the key to encrypt codes and temporary passwords sent
+        /// to <code>CustomEmailSender</code> and <code>CustomSMSSender</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]

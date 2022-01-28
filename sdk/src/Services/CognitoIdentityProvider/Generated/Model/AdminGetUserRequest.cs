@@ -46,7 +46,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Username. 
         /// <para>
-        /// The user name of the user you wish to retrieve.
+        /// The user name of the user you want to retrieve.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

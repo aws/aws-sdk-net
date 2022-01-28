@@ -68,12 +68,12 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AccountRecoverySetting. 
         /// <para>
-        /// Use this setting to define which verified available method a user can use to recover
-        /// their password when they call <code>ForgotPassword</code>. It allows you to define
-        /// a preferred method when a user has more than one method available. With this setting,
-        /// SMS does not qualify for a valid password recovery mechanism if the user also has
-        /// SMS MFA enabled. In the absence of this setting, Cognito uses the legacy behavior
-        /// to determine the recovery method where SMS is preferred over email.
+        /// The available verified method a user can use to recover their password when they call
+        /// <code>ForgotPassword</code>. You can use this setting to define a preferred method
+        /// when a user has more than one method available. With this setting, SMS doesn't qualify
+        /// for a valid password recovery mechanism if the user also has SMS multi-factor authentication
+        /// (MFA) activated. In the absence of this setting, Amazon Cognito uses the legacy behavior
+        /// to determine the recovery method where SMS is preferred through email.
         /// </para>
         /// </summary>
         public AccountRecoverySettingType AccountRecoverySetting
@@ -109,7 +109,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AliasAttributes. 
         /// <para>
-        /// Specifies the attributes that are aliased in a user pool.
+        /// The attributes that are aliased in a user pool.
         /// </para>
         /// </summary>
         public List<string> AliasAttributes
@@ -146,7 +146,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AutoVerifiedAttributes. 
         /// <para>
-        /// Specifies the attributes that are auto-verified in a user pool.
+        /// The attributes that are auto-verified in a user pool.
         /// </para>
         /// </summary>
         public List<string> AutoVerifiedAttributes
@@ -184,7 +184,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <para>
         /// A custom domain name that you provide to Amazon Cognito. This parameter applies only
         /// if you use a custom domain to host the sign-up and sign-in pages for your application.
-        /// For example: <code>auth.example.com</code>.
+        /// An example of a custom domain name might be <code>auth.example.com</code>.
         /// </para>
         ///  
         /// <para>
@@ -226,7 +226,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Domain. 
         /// <para>
-        /// Holds the domain prefix if the user pool has a domain associated with it.
+        /// The domain prefix, if the user pool has a domain associated with it.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=63)]
@@ -263,7 +263,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property EmailConfigurationFailure. 
         /// <para>
-        /// The reason why the email configuration cannot send the messages to your users.
+        /// The reason why the email configuration can't send the messages to your users.
         /// </para>
         /// </summary>
         public string EmailConfigurationFailure
@@ -396,13 +396,13 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>OFF</code> - MFA tokens are not required and cannot be specified during user
+        ///  <code>OFF</code> - MFA tokens aren't required and can't be specified during user
         /// registration.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>ON</code> - MFA tokens are required for all user registrations. You can only
-        /// specify required when you are initially creating a user pool.
+        /// specify required when you're initially creating a user pool.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -518,7 +518,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property SmsConfigurationFailure. 
         /// <para>
-        /// The reason why the SMS configuration cannot send the messages to your users.
+        /// The reason why the SMS configuration can't send the messages to your users.
         /// </para>
         ///  
         /// <para>
@@ -527,15 +527,16 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// InvalidSmsRoleAccessPolicyException - The IAM role which Cognito uses to send SMS
-        /// messages is not properly configured. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SmsConfigurationType.html">SmsConfigurationType</a>.
+        /// InvalidSmsRoleAccessPolicyException - The Identity and Access Management role that
+        /// Amazon Cognito uses to send SMS messages isn't properly configured. For more information,
+        /// see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SmsConfigurationType.html">SmsConfigurationType</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SNSSandbox - The account is in SNS Sandbox and messages won’t reach unverified end
-        /// users. This parameter won’t get populated with SNSSandbox if the IAM user creating
-        /// the user pool doesn’t have SNS permissions. To learn how to move your account out
-        /// of the sandbox, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox-moving-to-production.html">Moving
+        /// SNSSandbox - The Amazon Web Services account is in SNS Sandbox and messages will only
+        /// reach verified end users. This parameter won’t get populated with SNSSandbox if the
+        /// IAM user creating the user pool doesn’t have SNS permissions. To learn how to move
+        /// your Amazon Web Services account out of the sandbox, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox-moving-to-production.html">Moving
         /// out of the SMS sandbox</a>.
         /// </para>
         ///  </li> </ul>
@@ -592,8 +593,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UsernameAttributes. 
         /// <para>
-        /// Specifies whether email addresses or phone numbers can be specified as usernames when
-        /// a user signs up.
+        /// Specifies whether a user can use an email address or phone number as a username when
+        /// they sign up.
         /// </para>
         /// </summary>
         public List<string> UsernameAttributes
@@ -611,10 +612,10 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UsernameConfiguration. 
         /// <para>
-        /// You can choose to enable case sensitivity on the username input for the selected sign-in
-        /// option. For example, when this is set to <code>False</code>, users will be able to
-        /// sign in using either "username" or "Username". This configuration is immutable once
-        /// it has been set. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UsernameConfigurationType.html">UsernameConfigurationType</a>.
+        /// Case sensitivity of the username input for the selected sign-in option. For example,
+        /// when case sensitivity is set to <code>False</code>, users can sign in using either
+        /// "username" or "Username". This configuration is immutable once it has been set. For
+        /// more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UsernameConfigurationType.html">UsernameConfigurationType</a>.
         /// </para>
         /// </summary>
         public UsernameConfigurationType UsernameConfiguration

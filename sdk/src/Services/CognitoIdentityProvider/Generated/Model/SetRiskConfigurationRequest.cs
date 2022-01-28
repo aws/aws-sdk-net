@@ -35,7 +35,7 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// 
     ///  
     /// <para>
-    /// To enable Amazon Cognito advanced security features, update the user pool to include
+    /// To activate Amazon Cognito advanced security features, update the user pool to include
     /// the <code>UserPoolAddOns</code> key<code>AdvancedSecurityMode</code>.
     /// </para>
     /// </summary>
@@ -74,7 +74,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  
         /// <para>
-        /// Otherwise, <code>ClientId</code> is mapped to the client. When the client ID is not
+        /// Otherwise, <code>ClientId</code> is mapped to the client. When the client ID isn't
         /// null, the user pool configuration is overridden and the risk configuration for the
         /// client is used instead.
         /// </para>

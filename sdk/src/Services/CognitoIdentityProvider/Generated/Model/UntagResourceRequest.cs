@@ -31,7 +31,7 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
     /// Removes the specified tags from an Amazon Cognito user pool. You can use this action
-    /// up to 5 times per second, per account
+    /// up to 5 times per second, per account.
     /// </summary>
     public partial class UntagResourceRequest : AmazonCognitoIdentityProviderRequest
     {

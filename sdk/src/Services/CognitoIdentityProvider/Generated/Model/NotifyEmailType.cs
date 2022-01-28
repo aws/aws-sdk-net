@@ -40,7 +40,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property HtmlBody. 
         /// <para>
-        /// The HTML body.
+        /// The email HTML body.
         /// </para>
         /// </summary>
         [AWSProperty(Min=6, Max=20000)]
@@ -59,7 +59,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Subject. 
         /// <para>
-        /// The subject.
+        /// The email subject.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=140)]
@@ -78,7 +78,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property TextBody. 
         /// <para>
-        /// The text body.
+        /// The email text body.
         /// </para>
         /// </summary>
         [AWSProperty(Min=6, Max=20000)]

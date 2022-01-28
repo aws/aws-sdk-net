@@ -146,7 +146,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// For OIDC providers:
+        /// For OpenID Connect (OIDC) providers:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -187,6 +187,11 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <para>
         /// jwks_uri <i>if not available from discovery URL specified by oidc_issuer key</i> 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// attributes_url_add_attributes <i>a read-only property that is set automatically</i>
+        /// 
+        /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
         /// For SAML providers:
@@ -197,7 +202,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// IDPSignout <i>optional</i> 
+        /// IDPSignout (optional)
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </summary>

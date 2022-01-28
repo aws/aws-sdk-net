@@ -46,7 +46,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UserAttributeNames. 
         /// <para>
-        /// An array of strings representing the user attribute names you wish to delete.
+        /// An array of strings representing the user attribute names you want to delete.
         /// </para>
         ///  
         /// <para>

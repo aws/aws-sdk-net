@@ -41,8 +41,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AuthenticationResult. 
         /// <para>
-        /// The result of the authentication response. This is only returned if the caller does
-        /// not need to pass another challenge. If the caller does need to pass another challenge
+        /// The result of the authentication response. This is only returned if the caller doesn't
+        /// need to pass another challenge. If the caller does need to pass another challenge
         /// before it gets tokens, <code>ChallengeName</code>, <code>ChallengeParameters</code>,
         /// and <code>Session</code> are returned.
         /// </para>
@@ -62,20 +62,20 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property ChallengeName. 
         /// <para>
-        /// The name of the challenge which you are responding to with this call. This is returned
-        /// to you in the <code>AdminInitiateAuth</code> response if you need to pass another
-        /// challenge.
+        /// The name of the challenge that you're responding to with this call. This is returned
+        /// in the <code>AdminInitiateAuth</code> response if you must pass another challenge.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>MFA_SETUP</code>: If MFA is required, users who do not have at least one of
+        ///  <code>MFA_SETUP</code>: If MFA is required, users who don't have at least one of
         /// the MFA methods set up are presented with an <code>MFA_SETUP</code> challenge. The
         /// user must set up at least one MFA type to continue to authenticate.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>SELECT_MFA_TYPE</code>: Selects the MFA type. Valid MFA options are <code>SMS_MFA</code>
-        /// for text SMS MFA, and <code>SOFTWARE_TOKEN_MFA</code> for TOTP software token MFA.
+        /// for text SMS MFA, and <code>SOFTWARE_TOKEN_MFA</code> for time-based one-time password
+        /// (TOTP) software token MFA.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -95,9 +95,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DEVICE_SRP_AUTH</code>: If device tracking was enabled on your user pool and
-        /// the previous challenges were passed, this challenge is returned so that Amazon Cognito
-        /// can start tracking this device.
+        ///  <code>DEVICE_SRP_AUTH</code>: If device tracking was activated in your user pool
+        /// and the previous challenges were passed, this challenge is returned so that Amazon
+        /// Cognito can start tracking this device.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -106,9 +106,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ADMIN_NO_SRP_AUTH</code>: This is returned if you need to authenticate with
-        /// <code>USERNAME</code> and <code>PASSWORD</code> directly. An app client must be enabled
-        /// to use this flow.
+        ///  <code>ADMIN_NO_SRP_AUTH</code>: This is returned if you must authenticate with <code>USERNAME</code>
+        /// and <code>PASSWORD</code> directly. An app client must be enabled to use this flow.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -118,16 +117,16 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MFA_SETUP</code>: For users who are required to setup an MFA factor before
-        /// they can sign-in. The MFA types enabled for the user pool will be listed in the challenge
-        /// parameters <code>MFA_CAN_SETUP</code> value. 
+        ///  <code>MFA_SETUP</code>: For users who are required to set up an MFA factor before
+        /// they can sign in. The MFA types activated for the user pool will be listed in the
+        /// challenge parameters <code>MFA_CAN_SETUP</code> value. 
         /// </para>
         ///  
         /// <para>
-        ///  To setup software token MFA, use the session returned here from <code>InitiateAuth</code>
+        ///  To set up software token MFA, use the session returned here from <code>InitiateAuth</code>
         /// as an input to <code>AssociateSoftwareToken</code>, and use the session returned by
         /// <code>VerifySoftwareToken</code> as an input to <code>RespondToAuthChallenge</code>
-        /// with challenge name <code>MFA_SETUP</code> to complete sign-in. To setup SMS MFA,
+        /// with challenge name <code>MFA_SETUP</code> to complete sign-in. To set up SMS MFA,
         /// users will need help from an administrator to add a phone number to their account
         /// and then call <code>InitiateAuth</code> again to restart sign-in.
         /// </para>
@@ -149,7 +148,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Gets and sets the property ChallengeParameters. 
         /// <para>
         /// The challenge parameters. These are returned to you in the <code>AdminInitiateAuth</code>
-        /// response if you need to pass another challenge. The responses in this parameter should
+        /// response if you must pass another challenge. The responses in this parameter should
         /// be used to compute inputs to the next call (<code>AdminRespondToAuthChallenge</code>).
         /// </para>
         ///  
@@ -158,10 +157,10 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  
         /// <para>
-        /// The value of the <code>USER_ID_FOR_SRP</code> attribute will be the user's actual
-        /// username, not an alias (such as email address or phone number), even if you specified
-        /// an alias in your call to <code>AdminInitiateAuth</code>. This is because, in the <code>AdminRespondToAuthChallenge</code>
-        /// API <code>ChallengeResponses</code>, the <code>USERNAME</code> attribute cannot be
+        /// The value of the <code>USER_ID_FOR_SRP</code> attribute is the user's actual username,
+        /// not an alias (such as email address or phone number), even if you specified an alias
+        /// in your call to <code>AdminInitiateAuth</code>. This happens because, in the <code>AdminRespondToAuthChallenge</code>
+        /// API <code>ChallengeResponses</code>, the <code>USERNAME</code> attribute can't be
         /// an alias.
         /// </para>
         /// </summary>
@@ -180,11 +179,11 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Session. 
         /// <para>
-        /// The session which should be passed both ways in challenge-response calls to the service.
+        /// The session that should be passed both ways in challenge-response calls to the service.
         /// If <code>AdminInitiateAuth</code> or <code>AdminRespondToAuthChallenge</code> API
-        /// call determines that the caller needs to go through another challenge, they return
-        /// a session with other challenge parameters. This session should be passed as it is
-        /// to the next <code>AdminRespondToAuthChallenge</code> API call.
+        /// call determines that the caller must pass another challenge, they return a session
+        /// with other challenge parameters. This session should be passed as it is to the next
+        /// <code>AdminRespondToAuthChallenge</code> API call.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]

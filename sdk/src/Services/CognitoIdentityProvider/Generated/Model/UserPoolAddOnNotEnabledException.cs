@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// This exception is thrown when user pool add-ons are not enabled.
+    /// This exception is thrown when user pool add-ons aren't enabled.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

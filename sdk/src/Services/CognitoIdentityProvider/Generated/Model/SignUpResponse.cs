@@ -78,7 +78,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UserSub. 
         /// <para>
-        /// The UUID of the authenticated user. This is not the same as <code>username</code>.
+        /// The UUID of the authenticated user. This isn't the same as <code>username</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

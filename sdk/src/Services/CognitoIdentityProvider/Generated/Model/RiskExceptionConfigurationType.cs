@@ -40,8 +40,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Gets and sets the property BlockedIPRangeList. 
         /// <para>
         /// Overrides the risk decision to always block the pre-authentication requests. The IP
-        /// range is in CIDR notation: a compact representation of an IP address and its associated
-        /// routing prefix.
+        /// range is in CIDR notation, a compact representation of an IP address and its routing
+        /// prefix.
         /// </para>
         /// </summary>
         [AWSProperty(Max=20)]
@@ -60,7 +60,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property SkippedIPRangeList. 
         /// <para>
-        /// Risk detection is not performed on the IP addresses in the range list. The IP range
+        /// Risk detection isn't performed on the IP addresses in this range list. The IP range
         /// is in CIDR notation.
         /// </para>
         /// </summary>

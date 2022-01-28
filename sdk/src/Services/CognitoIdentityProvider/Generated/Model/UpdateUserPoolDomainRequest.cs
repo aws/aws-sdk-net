@@ -36,7 +36,7 @@ namespace Amazon.CognitoIdentityProvider.Model
     ///  
     /// <para>
     /// You can use this operation to provide the Amazon Resource Name (ARN) of a new certificate
-    /// to Amazon Cognito. You cannot use it to change the domain for a user pool.
+    /// to Amazon Cognito. You can't use it to change the domain for a user pool.
     /// </para>
     ///  
     /// <para>
@@ -60,7 +60,7 @@ namespace Amazon.CognitoIdentityProvider.Model
     ///  
     /// <para>
     /// When you add your new certificate in ACM, you must choose US East (N. Virginia) as
-    /// the Region.
+    /// the Amazon Web Services Region.
     /// </para>
     ///  
     /// <para>
@@ -104,11 +104,11 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Gets and sets the property Domain. 
         /// <para>
         /// The domain name for the custom domain that hosts the sign-up and sign-in pages for
-        /// your application. For example: <code>auth.example.com</code>. 
+        /// your application. One example might be <code>auth.example.com</code>. 
         /// </para>
         ///  
         /// <para>
-        /// This string can include only lowercase letters, numbers, and hyphens. Do not use a
+        /// This string can include only lowercase letters, numbers, and hyphens. Don't use a
         /// hyphen for the first or last character. Use periods to separate subdomain names.
         /// </para>
         /// </summary>
@@ -128,8 +128,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UserPoolId. 
         /// <para>
-        /// The ID of the user pool that is associated with the custom domain that you are updating
-        /// the certificate for.
+        /// The ID of the user pool that is associated with the custom domain whose certificate
+        /// you're updating.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=55)]

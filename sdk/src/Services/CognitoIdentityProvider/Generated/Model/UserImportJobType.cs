@@ -50,9 +50,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property CloudWatchLogsRoleArn. 
         /// <para>
-        /// The role ARN for the Amazon CloudWatch Logging role for the user import job. For more
-        /// information, see "Creating the CloudWatch Logs IAM Role" in the Amazon Cognito Developer
-        /// Guide.
+        /// The role Amazon Resource Name (ARN) for the Amazon CloudWatch Logging role for the
+        /// user import job. For more information, see "Creating the CloudWatch Logs IAM Role"
+        /// in the Amazon Cognito Developer Guide.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -126,7 +126,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property FailedUsers. 
         /// <para>
-        /// The number of users that could not be imported.
+        /// The number of users that couldn't be imported.
         /// </para>
         /// </summary>
         public long FailedUsers
@@ -291,7 +291,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>Expired</code> - You created a job, but did not start the job within 24-48
-        /// hours. All data associated with the job was deleted, and the job cannot be started.
+        /// hours. All data associated with the job was deleted, and the job can't be started.
         /// </para>
         ///  </li> </ul>
         /// </summary>

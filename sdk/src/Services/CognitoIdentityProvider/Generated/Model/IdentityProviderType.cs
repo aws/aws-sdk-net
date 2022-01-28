@@ -224,13 +224,18 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <para>
         /// jwks_uri <i>if not available from discovery URL specified by oidc_issuer key</i> 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// attributes_url_add_attributes <i>a read-only property that is set automatically</i>
+        /// 
+        /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
         /// For SAML providers:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// MetadataFile OR MetadataURL
+        /// MetadataFile or MetadataURL
         /// </para>
         ///  </li> <li> 
         /// <para>

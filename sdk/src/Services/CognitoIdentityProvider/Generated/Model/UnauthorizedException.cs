@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// This exception is thrown when the request is not authorized. This can happen due to
+    /// Exception that is thrown when the request isn't authorized. This can happen due to
     /// an invalid access token in the request.
     /// </summary>
     #if !NETSTANDARD

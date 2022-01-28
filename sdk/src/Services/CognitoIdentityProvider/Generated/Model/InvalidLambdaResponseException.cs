@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// This exception is thrown when the Amazon Cognito service encounters an invalid Lambda
-    /// response.
+    /// This exception is thrown when Amazon Cognito encounters an invalid Lambda response.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
