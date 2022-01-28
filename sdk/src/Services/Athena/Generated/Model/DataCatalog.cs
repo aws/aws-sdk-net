@@ -61,8 +61,8 @@ namespace Amazon.Athena.Model
         /// Gets and sets the property Name. 
         /// <para>
         /// The name of the data catalog. The catalog name must be unique for the Amazon Web Services
-        /// account and can use a maximum of 128 alphanumeric, underscore, at sign, or hyphen
-        /// characters.
+        /// account and can use a maximum of 127 alphanumeric, underscore, at sign, or hyphen
+        /// characters. The remainder of the length constraint of 256 is reserved for use by Athena.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]

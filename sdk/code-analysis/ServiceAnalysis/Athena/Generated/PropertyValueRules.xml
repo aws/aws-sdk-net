@@ -381,6 +381,11 @@
     <pattern>[a-zA-Z0-9._-]{1,128}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Athena.Model.AthenaError.ErrorCategory</property>
+    <min>1</min>
+    <max>3</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Athena.Model.Column.Comment</property>
     <min>0</min>
     <max>255</max>

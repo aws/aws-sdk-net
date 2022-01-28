@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Athena.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for QueryExecutionStatus Object
+    /// Response Unmarshaller for AthenaError Object
     /// </summary>  
-    public class QueryExecutionStatusUnmarshaller : IUnmarshaller<QueryExecutionStatus, XmlUnmarshallerContext>, IUnmarshaller<QueryExecutionStatus, JsonUnmarshallerContext>
+    public class AthenaErrorUnmarshaller : IUnmarshaller<AthenaError, XmlUnmarshallerContext>, IUnmarshaller<AthenaError, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        QueryExecutionStatus IUnmarshaller<QueryExecutionStatus, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AthenaError IUnmarshaller<AthenaError, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,21 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public QueryExecutionStatus Unmarshall(JsonUnmarshallerContext context)
+        public AthenaError Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            QueryExecutionStatus unmarshalledObject = new QueryExecutionStatus();
+            AthenaError unmarshalledObject = new AthenaError();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("AthenaError", targetDepth))
+                if (context.TestExpression("ErrorCategory", targetDepth))
                 {
-                    var unmarshaller = AthenaErrorUnmarshaller.Instance;
-                    unmarshalledObject.AthenaError = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("CompletionDateTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CompletionDateTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("State", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.State = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("StateChangeReason", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StateChangeReason = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SubmissionDateTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.SubmissionDateTime = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.ErrorCategory = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +76,12 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
         }
 
 
-        private static QueryExecutionStatusUnmarshaller _instance = new QueryExecutionStatusUnmarshaller();        
+        private static AthenaErrorUnmarshaller _instance = new AthenaErrorUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static QueryExecutionStatusUnmarshaller Instance
+        public static AthenaErrorUnmarshaller Instance
         {
             get
             {
