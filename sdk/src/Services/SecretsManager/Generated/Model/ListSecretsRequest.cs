@@ -49,11 +49,10 @@ namespace Amazon.SecretsManager.Model
     /// </para>
     ///  
     /// <para>
-    ///  <b>Minimum permissions</b> 
-    /// </para>
-    ///  
-    /// <para>
-    /// To run this command, you must have <code>secretsmanager:ListSecrets</code> permissions.
+    ///  <b>Required permissions: </b> <code>secretsmanager:ListSecrets</code>. For more information,
+    /// see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+    /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+    /// and access control in Secrets Manager</a>. 
     /// </para>
     /// </summary>
     public partial class ListSecretsRequest : AmazonSecretsManagerRequest

@@ -32,6 +32,14 @@ namespace Amazon.SecretsManager.Model
     /// Container for the parameters to the DeleteResourcePolicy operation.
     /// Deletes the resource-based permission policy attached to the secret. To attach a policy
     /// to a secret, use <a>PutResourcePolicy</a>.
+    /// 
+    ///  
+    /// <para>
+    ///  <b>Required permissions: </b> <code>secretsmanager:DeleteResourcePolicy</code>. For
+    /// more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+    /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+    /// and access control in Secrets Manager</a>. 
+    /// </para>
     /// </summary>
     public partial class DeleteResourcePolicyRequest : AmazonSecretsManagerRequest
     {

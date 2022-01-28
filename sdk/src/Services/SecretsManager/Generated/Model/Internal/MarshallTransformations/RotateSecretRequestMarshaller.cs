@@ -78,6 +78,12 @@ namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
                     context.Writer.WritePropertyName("ClientRequestToken");
                     context.Writer.Write(Guid.NewGuid().ToString());
                 }
+                if(publicRequest.IsSetRotateImmediately())
+                {
+                    context.Writer.WritePropertyName("RotateImmediately");
+                    context.Writer.Write(publicRequest.RotateImmediately);
+                }
+
                 if(publicRequest.IsSetRotationLambdaARN())
                 {
                     context.Writer.WritePropertyName("RotationLambdaARN");

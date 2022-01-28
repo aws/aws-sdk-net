@@ -32,6 +32,14 @@ namespace Amazon.SecretsManager.Model
     /// Container for the parameters to the RestoreSecret operation.
     /// Cancels the scheduled deletion of a secret by removing the <code>DeletedDate</code>
     /// time stamp. You can access a secret again after it has been restored.
+    /// 
+    ///  
+    /// <para>
+    ///  <b>Required permissions: </b> <code>secretsmanager:RestoreSecret</code>. For more
+    /// information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+    /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+    /// and access control in Secrets Manager</a>. 
+    /// </para>
     /// </summary>
     public partial class RestoreSecretRequest : AmazonSecretsManagerRequest
     {

@@ -51,6 +51,18 @@ namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.AutomaticallyAfterDays);
             }
 
+            if(requestObject.IsSetDuration())
+            {
+                context.Writer.WritePropertyName("Duration");
+                context.Writer.Write(requestObject.Duration);
+            }
+
+            if(requestObject.IsSetScheduleExpression())
+            {
+                context.Writer.WritePropertyName("ScheduleExpression");
+                context.Writer.Write(requestObject.ScheduleExpression);
+            }
+
         }
 
         /// <summary>

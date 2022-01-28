@@ -98,6 +98,10 @@ namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
             {
+                if (errorResponse.Code != null && errorResponse.Code.Equals("DecryptionFailure"))
+                {
+                    return DecryptionFailureExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("EncryptionFailure"))
                 {
                     return EncryptionFailureExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

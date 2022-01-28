@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecretsManager.Model
 {
     /// <summary>
-    /// The parameter name is invalid value.
+    /// The parameter name or value is invalid.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

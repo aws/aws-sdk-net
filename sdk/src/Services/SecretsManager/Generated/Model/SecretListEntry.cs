@@ -31,7 +31,8 @@ namespace Amazon.SecretsManager.Model
     /// <summary>
     /// A structure that contains the details about a secret. It does not include the encrypted
     /// <code>SecretString</code> and <code>SecretBinary</code> values. To get those values,
-    /// use the <a>GetSecretValue</a> operation.
+    /// use <a href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_GetSecretValue.html">GetSecretValue</a>
+    /// .
     /// </summary>
     public partial class SecretListEntry
     {
@@ -94,8 +95,8 @@ namespace Amazon.SecretsManager.Model
         /// <para>
         /// The date and time the deletion of the secret occurred. Not present on active secrets.
         /// The secret can be recovered until the number of days in the recovery window has passed,
-        /// as specified in the <code>RecoveryWindowInDays</code> parameter of the <a>DeleteSecret</a>
-        /// operation.
+        /// as specified in the <code>RecoveryWindowInDays</code> parameter of the <a href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_DeleteSecret.html">
+        /// <code>DeleteSecret</code> </a> operation.
         /// </para>
         /// </summary>
         public DateTime DeletedDate
@@ -289,7 +290,8 @@ namespace Amazon.SecretsManager.Model
         /// <para>
         /// The ARN of an Amazon Web Services Lambda function invoked by Secrets Manager to rotate
         /// and expire the secret either automatically per the schedule or manually by a call
-        /// to <a>RotateSecret</a>.
+        /// to <a href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_RotateSecret.html">
+        /// <code>RotateSecret</code> </a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]
@@ -353,7 +355,9 @@ namespace Amazon.SecretsManager.Model
         /// Gets and sets the property Tags. 
         /// <para>
         /// The list of user-defined tags associated with the secret. To add tags to a secret,
-        /// use <a>TagResource</a>. To remove tags, use <a>UntagResource</a>.
+        /// use <a href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_TagResource.html">
+        /// <code>TagResource</code> </a>. To remove tags, use <a href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_UntagResource.html">
+        /// <code>UntagResource</code> </a>.
         /// </para>
         /// </summary>
         public List<Tag> Tags
