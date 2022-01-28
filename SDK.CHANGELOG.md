@@ -1,3 +1,22 @@
+### 3.7.200.0 (2022-01-28 19:16 UTC)
+* AppConfig (3.7.1.19)
+	* Documentation updates for AWS AppConfig
+* AppConfigData (3.7.0.19)
+	* Documentation updates for AWS AppConfig Data.
+* Athena (3.7.1.0)
+	* This release adds a field, AthenaError, to the GetQueryExecution response object when a query fails.
+* CognitoIdentityProvider (3.7.1.91)
+	* Doc updates for Cognito user pools API Reference.
+* SageMaker (3.7.28.0)
+	* This release added a new NNA accelerator compilation support for Sagemaker Neo.
+* SecretsManager (3.7.2.0)
+	* Feature are ready to release on Jan 28th
+* Core 3.7.6.2
+	* Updating endpoints.json file.
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.199.0 (2022-01-27 21:44 UTC)
 * Amplify (3.7.0.119)
 	* Doc only update to the description of basicauthcredentials to describe the required encoding and format.
