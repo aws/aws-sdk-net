@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppConfigData.Model
 {
     /// <summary>
-    /// Details describing why the request was invalid
+    /// Detailed information about the input that failed to satisfy the constraints specified
+    /// by a call.
     /// </summary>
     public partial class BadRequestDetails
     {
@@ -38,7 +39,7 @@ namespace Amazon.AppConfigData.Model
         /// <summary>
         /// Gets and sets the property InvalidParameters. 
         /// <para>
-        /// Present if the Reason for the bad request was 'InvalidParameters'
+        /// One or more specified parameters are not valid for the call.
         /// </para>
         /// </summary>
         public Dictionary<string, InvalidParameterDetail> InvalidParameters

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppConfigData.Model
 {
     /// <summary>
-    /// Response parameters for the GetLatestConfiguration API
+    /// This is the response object from the GetLatestConfiguration operation.
     /// </summary>
     public partial class GetLatestConfigurationResponse : AmazonWebServiceResponse
     {
@@ -41,8 +41,8 @@ namespace Amazon.AppConfigData.Model
         /// <summary>
         /// Gets and sets the property Configuration. 
         /// <para>
-        /// The data of the configuration. Note that this may be empty if the client already has
-        /// the latest version of configuration.
+        /// The data of the configuration. This may be empty if the client already has the latest
+        /// version of configuration.
         /// </para>
         /// </summary>
         public MemoryStream Configuration
@@ -79,7 +79,7 @@ namespace Amazon.AppConfigData.Model
         /// Gets and sets the property NextPollConfigurationToken. 
         /// <para>
         /// The latest token describing the current state of the configuration session. This MUST
-        /// be provided to the next call to GetLatestConfiguration.
+        /// be provided to the next call to <code>GetLatestConfiguration.</code> 
         /// </para>
         /// </summary>
         public string NextPollConfigurationToken
@@ -98,7 +98,8 @@ namespace Amazon.AppConfigData.Model
         /// Gets and sets the property NextPollIntervalInSeconds. 
         /// <para>
         /// The amount of time the client should wait before polling for configuration updates
-        /// again. See RequiredMinimumPollIntervalInSeconds to set the desired poll interval.
+        /// again. Use <code>RequiredMinimumPollIntervalInSeconds</code> to set the desired poll
+        /// interval.
         /// </para>
         /// </summary>
         public int NextPollIntervalInSeconds
