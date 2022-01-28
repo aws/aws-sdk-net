@@ -30,7 +30,7 @@ namespace Amazon.AppConfig.Model
 {
     /// <summary>
     /// Detailed information about the input that failed to satisfy the constraints specified
-    /// by an AWS service.
+    /// by a call.
     /// </summary>
     public partial class BadRequestDetails
     {

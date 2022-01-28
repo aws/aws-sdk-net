@@ -43,9 +43,9 @@ namespace Amazon.AppConfig
     /// systems where a simple typo could cause an unexpected outage, AppConfig includes validators.
     /// A validator provides a syntactic or semantic check to ensure that the configuration
     /// you want to deploy works as intended. To validate your application configuration data,
-    /// you provide a schema or a Lambda function that runs against the configuration. The
-    /// configuration deployment or update can only proceed when the configuration data is
-    /// valid.
+    /// you provide a schema or an Amazon Web Services Lambda function that runs against the
+    /// configuration. The configuration deployment or update can only proceed when the configuration
+    /// data is valid.
     /// </para>
     ///  
     /// <para>
@@ -62,13 +62,13 @@ namespace Amazon.AppConfig
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <b>Application tuning</b>: Use AppConfig to carefully introduce changes to your application
-    /// that can only be tested with production traffic.
+    ///  <b>Feature flags</b>: Use AppConfig to turn on new features that require a timely
+    /// deployment, such as a product launch or announcement. 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b>Feature toggle</b>: Use AppConfig to turn on new features that require a timely
-    /// deployment, such as a product launch or announcement. 
+    ///  <b>Application tuning</b>: Use AppConfig to carefully introduce changes to your application
+    /// that can only be tested with production traffic.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -147,7 +147,7 @@ namespace Amazon.AppConfig
         ///  </li> <li> 
         /// <para>
         /// A validator for the configuration data. Available validators include either a JSON
-        /// Schema or an Lambda function.
+        /// Schema or an Amazon Web Services Lambda function.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -452,9 +452,24 @@ namespace Amazon.AppConfig
 
 
         /// <summary>
-        /// Retrieves information about a configuration.
+        /// Retrieves the latest deployed configuration.
         /// 
         ///  <important> 
+        /// <para>
+        /// Note the following important information.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// This API action has been deprecated. Calls to receive configuration data should use
+        /// the <a href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_appconfigdata_StartConfigurationSession.html">StartConfigurationSession</a>
+        /// and <a href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_appconfigdata_GetLatestConfiguration.html">GetLatestConfiguration</a>
+        /// APIs instead. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>GetConfiguration</code> is a priced call. For more information, see <a href="https://aws.amazon.com/systems-manager/pricing/">Pricing</a>.
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         /// AppConfig uses the value of the <code>ClientConfigurationVersion</code> parameter
         /// to identify the configuration version on your clients. If you don’t send <code>ClientConfigurationVersion</code>
@@ -463,12 +478,15 @@ namespace Amazon.AppConfig
         /// </para>
         ///  
         /// <para>
-        /// To avoid excess charges, we recommend that you include the <code>ClientConfigurationVersion</code>
-        /// value with every call to <code>GetConfiguration</code>. This value must be saved on
-        /// your client. Subsequent calls to <code>GetConfiguration</code> must pass this value
-        /// by using the <code>ClientConfigurationVersion</code> parameter. 
+        /// To avoid excess charges, we recommend you use the <a href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/StartConfigurationSession.html">StartConfigurationSession</a>
+        /// and <a href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/GetLatestConfiguration.html">GetLatestConfiguration</a>
+        /// APIs, which track the client configuration version on your behalf. If you choose to
+        /// continue using <code>GetConfiguration</code>, we recommend that you include the <code>ClientConfigurationVersion</code>
+        /// value with every call to <code>GetConfiguration</code>. The value to use for <code>ClientConfigurationVersion</code>
+        /// comes from the <code>ConfigurationVersion</code> attribute returned by <code>GetConfiguration</code>
+        /// when there is new or updated data, and should be saved for subsequent calls to <code>GetConfiguration</code>.
         /// </para>
-        ///  </important>
+        ///  </li> </ul> </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -486,6 +504,7 @@ namespace Amazon.AppConfig
         /// The requested resource could not be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/GetConfiguration">REST API Reference for GetConfiguration Operation</seealso>
+        [Obsolete("This API has been deprecated in favor of the GetLatestConfiguration API used in conjunction with StartConfigurationSession.")]
         Task<GetConfigurationResponse> GetConfigurationAsync(GetConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -690,7 +709,7 @@ namespace Amazon.AppConfig
 
 
         /// <summary>
-        /// Lists the deployments for an environment.
+        /// Lists the deployments for an environment in descending deployment number order.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDeployments service method.</param>
         /// <param name="cancellationToken">

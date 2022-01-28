@@ -63,11 +63,10 @@ namespace Amazon.AppConfig.Model
         /// </para>
         ///  <important> 
         /// <para>
-        /// Compare the configuration version numbers of the configuration cached locally on your
-        /// machine and the configuration number in the the header. If the configuration numbers
-        /// are the same, the content can be ignored. The <code>Content</code> section only appears
-        /// if the system finds new or updated configuration data. If the system doesn't find
-        /// new or updated configuration data, then the <code>Content</code> section is not returned.
+        /// The <code>Content</code> attribute only contains data if the system finds new or updated
+        /// configuration data. If there is no new or updated data and <code>ClientConfigurationVersion</code>
+        /// matches the version of the current configuration, AppConfig returns a <code>204 No
+        /// Content</code> HTTP response code and the <code>Content</code> value will be empty.
         /// </para>
         ///  </important>
         /// </summary>
