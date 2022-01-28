@@ -10099,6 +10099,10 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly TargetPlatformAccelerator MALI = new TargetPlatformAccelerator("MALI");
         /// <summary>
+        /// Constant NNA for TargetPlatformAccelerator
+        /// </summary>
+        public static readonly TargetPlatformAccelerator NNA = new TargetPlatformAccelerator("NNA");
+        /// <summary>
         /// Constant NVIDIA for TargetPlatformAccelerator
         /// </summary>
         public static readonly TargetPlatformAccelerator NVIDIA = new TargetPlatformAccelerator("NVIDIA");
