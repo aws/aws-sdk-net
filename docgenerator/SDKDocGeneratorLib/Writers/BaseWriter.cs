@@ -634,7 +634,7 @@ namespace SDKDocGenerator.Writers
                 typeName = typeName.Substring(lastPeriodIndex + 1);
             }
 
-            return string.Format("<a href=\"{0}\" {2}>{1}</a>", url, typeName, target);
+            return string.Format("<a href=\"{0}\" {2} rel=\"noopener noreferrer\">{1}</a>", url, typeName, target);
         }
     }
 

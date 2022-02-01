@@ -401,7 +401,7 @@ namespace SDKDocGenerator
             var href = rootNode.Attribute("href");
             if (href != null)
             {
-                content += string.Format(@"<div><a href=""{0}"" target=""_blank"">{1}</a></div>", href.Value, innerXml);
+                content += string.Format(@"<div><a href=""{0}"" target=""_parent"" rel=""noopener noreferrer"">{1}</a></div>", href.Value, innerXml);
             }
 
             var cref = rootNode.Attribute("cref");

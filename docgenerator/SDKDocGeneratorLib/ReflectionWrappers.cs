@@ -671,7 +671,7 @@ namespace SDKDocGenerator
                     throw new ApplicationException($"Type {this.FullName} is not a System or Amazon type, no idea how to handle its help URL");
                 }
 
-                html = $"<a{target} href=\"{url}\">{label}</a>";
+                html = $"<a{target} href=\"{url}\" rel=\"noopener noreferrer\">{label}</a>";
             }
 
             return html;
