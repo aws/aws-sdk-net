@@ -1,3 +1,27 @@
+### 3.7.201.0 (2022-02-02 19:22 UTC)
+* Appflow (3.7.5.0)
+	* Launching Amazon AppFlow Custom Connector SDK.
+* Comprehend (3.7.5.0)
+	* Amazon Comprehend now supports sharing and importing custom trained models from one AWS account to another within the same region.
+* CostExplorer (3.7.3.68)
+	* Doc-only update for Cost Explorer API that adds INVOICING_ENTITY dimensions
+* DynamoDBv2 (3.7.2.15)
+	* Documentation update for DynamoDB Java SDK.
+* ElastiCache (3.7.5.5)
+	* Documentation update for AWS ElastiCache
+* ElasticMapReduce (3.7.4.57)
+	* Documentation updates for Amazon EMR.
+* Elasticsearch (3.7.5.0)
+	* Allows customers to get progress updates for blue/green deployments
+* FIS (3.7.2.0)
+	* Added GetTargetResourceType and ListTargetResourceTypesAPI actions. These actions return additional details about resource types and parameters that can be targeted by FIS actions. Added a parameters field for the targets that can be specified in experiment templates.
+* Glue (3.7.13.0)
+	* Launch Protobuf support for AWS Glue Schema Registry
+* IoT (3.7.11.0)
+	* This release adds support for configuring AWS IoT logging level per client ID, source IP, or principal ID.
+* Personalize (3.7.7.0)
+	* Adding minRecommendationRequestsPerSecond attribute to recommender APIs.
+
 ### 3.7.200.0 (2022-01-28 19:16 UTC)
 * AppConfig (3.7.1.19)
 	* Documentation updates for AWS AppConfig
