@@ -35,9 +35,29 @@ namespace Amazon.Appflow.Model
     /// </summary>
     public partial class DescribeConnectorEntityRequest : AmazonAppflowRequest
     {
+        private string _apiVersion;
         private string _connectorEntityName;
         private string _connectorProfileName;
         private ConnectorType _connectorType;
+
+        /// <summary>
+        /// Gets and sets the property ApiVersion. 
+        /// <para>
+        /// The version of the API that's used by the connector.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=256)]
+        public string ApiVersion
+        {
+            get { return this._apiVersion; }
+            set { this._apiVersion = value; }
+        }
+
+        // Check to see if ApiVersion property is set
+        internal bool IsSetApiVersion()
+        {
+            return this._apiVersion != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ConnectorEntityName. 
@@ -45,7 +65,7 @@ namespace Amazon.Appflow.Model
         ///  The entity name for that connector. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=128)]
+        [AWSProperty(Required=true, Max=1024)]
         public string ConnectorEntityName
         {
             get { return this._connectorEntityName; }

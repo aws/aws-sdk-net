@@ -71,6 +71,12 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ConnectionMode);
                 }
 
+                if(publicRequest.IsSetConnectorLabel())
+                {
+                    context.Writer.WritePropertyName("connectorLabel");
+                    context.Writer.Write(publicRequest.ConnectorLabel);
+                }
+
                 if(publicRequest.IsSetConnectorProfileConfig())
                 {
                     context.Writer.WritePropertyName("connectorProfileConfig");

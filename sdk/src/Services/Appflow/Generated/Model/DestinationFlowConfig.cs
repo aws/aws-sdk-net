@@ -34,9 +34,29 @@ namespace Amazon.Appflow.Model
     /// </summary>
     public partial class DestinationFlowConfig
     {
+        private string _apiVersion;
         private string _connectorProfileName;
         private ConnectorType _connectorType;
         private DestinationConnectorProperties _destinationConnectorProperties;
+
+        /// <summary>
+        /// Gets and sets the property ApiVersion. 
+        /// <para>
+        /// The API version that the destination connector uses.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=256)]
+        public string ApiVersion
+        {
+            get { return this._apiVersion; }
+            set { this._apiVersion = value; }
+        }
+
+        // Check to see if ApiVersion property is set
+        internal bool IsSetApiVersion()
+        {
+            return this._apiVersion != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ConnectorProfileName. 

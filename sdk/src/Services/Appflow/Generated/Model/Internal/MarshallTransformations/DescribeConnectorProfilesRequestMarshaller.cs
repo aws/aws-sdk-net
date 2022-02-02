@@ -65,6 +65,12 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetConnectorLabel())
+                {
+                    context.Writer.WritePropertyName("connectorLabel");
+                    context.Writer.Write(publicRequest.ConnectorLabel);
+                }
+
                 if(publicRequest.IsSetConnectorProfileNames())
                 {
                     context.Writer.WritePropertyName("connectorProfileNames");

@@ -64,10 +64,22 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("fieldLengthRange", targetDepth))
+                {
+                    var unmarshaller = RangeUnmarshaller.Instance;
+                    unmarshalledObject.FieldLengthRange = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("fieldType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FieldType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("fieldValueRange", targetDepth))
+                {
+                    var unmarshaller = RangeUnmarshaller.Instance;
+                    unmarshalledObject.FieldValueRange = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("filterOperators", targetDepth))
@@ -76,10 +88,22 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
                     unmarshalledObject.FilterOperators = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("supportedDateFormat", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SupportedDateFormat = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("supportedValues", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.SupportedValues = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("valueRegexPattern", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ValueRegexPattern = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

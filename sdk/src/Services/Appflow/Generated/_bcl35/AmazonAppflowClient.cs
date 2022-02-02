@@ -597,6 +597,73 @@ namespace Amazon.Appflow
 
         #endregion
         
+        #region  DescribeConnector
+
+        /// <summary>
+        /// Describes the given custom connector registered in your Amazon Web Services account.
+        /// This API can be used for custom connectors that are registered in your account and
+        /// also for Amazon authored connectors.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeConnector service method.</param>
+        /// 
+        /// <returns>The response from the DescribeConnector service method, as returned by Appflow.</returns>
+        /// <exception cref="Amazon.Appflow.Model.InternalServerException">
+        /// An internal service error occurred during the processing of your request. Try again
+        /// later.
+        /// </exception>
+        /// <exception cref="Amazon.Appflow.Model.ResourceNotFoundException">
+        /// The resource specified in the request (such as the source or destination connector
+        /// profile) is not found.
+        /// </exception>
+        /// <exception cref="Amazon.Appflow.Model.ValidationException">
+        /// The request has invalid or missing parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/DescribeConnector">REST API Reference for DescribeConnector Operation</seealso>
+        public virtual DescribeConnectorResponse DescribeConnector(DescribeConnectorRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeConnectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeConnectorResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeConnectorResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeConnector operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeConnector operation on AmazonAppflowClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeConnector
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/DescribeConnector">REST API Reference for DescribeConnector Operation</seealso>
+        public virtual IAsyncResult BeginDescribeConnector(DescribeConnectorRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeConnectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeConnectorResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeConnector operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeConnector.</param>
+        /// 
+        /// <returns>Returns a  DescribeConnectorResult from Appflow.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/DescribeConnector">REST API Reference for DescribeConnector Operation</seealso>
+        public virtual DescribeConnectorResponse EndDescribeConnector(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeConnectorResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeConnectorEntity
 
         /// <summary>
@@ -1004,6 +1071,69 @@ namespace Amazon.Appflow
 
         #endregion
         
+        #region  ListConnectors
+
+        /// <summary>
+        /// Returns the list of all registered custom connectors in your Amazon Web Services account.
+        /// This API lists only custom connectors registered in this account, not the Amazon Web
+        /// Services authored connectors.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListConnectors service method.</param>
+        /// 
+        /// <returns>The response from the ListConnectors service method, as returned by Appflow.</returns>
+        /// <exception cref="Amazon.Appflow.Model.InternalServerException">
+        /// An internal service error occurred during the processing of your request. Try again
+        /// later.
+        /// </exception>
+        /// <exception cref="Amazon.Appflow.Model.ValidationException">
+        /// The request has invalid or missing parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/ListConnectors">REST API Reference for ListConnectors Operation</seealso>
+        public virtual ListConnectorsResponse ListConnectors(ListConnectorsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListConnectorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListConnectorsResponseUnmarshaller.Instance;
+
+            return Invoke<ListConnectorsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListConnectors operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListConnectors operation on AmazonAppflowClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListConnectors
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/ListConnectors">REST API Reference for ListConnectors Operation</seealso>
+        public virtual IAsyncResult BeginListConnectors(ListConnectorsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListConnectorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListConnectorsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListConnectors operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListConnectors.</param>
+        /// 
+        /// <returns>Returns a  ListConnectorsResult from Appflow.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/ListConnectors">REST API Reference for ListConnectors Operation</seealso>
+        public virtual ListConnectorsResponse EndListConnectors(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListConnectorsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListFlows
 
         /// <summary>
@@ -1126,6 +1256,92 @@ namespace Amazon.Appflow
         public virtual ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult)
         {
             return EndInvoke<ListTagsForResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  RegisterConnector
+
+        /// <summary>
+        /// Registers a new connector with your Amazon Web Services account. Before you can register
+        /// the connector, you must deploy lambda in your account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterConnector service method.</param>
+        /// 
+        /// <returns>The response from the RegisterConnector service method, as returned by Appflow.</returns>
+        /// <exception cref="Amazon.Appflow.Model.AccessDeniedException">
+        /// AppFlow/Requester has invalid or missing permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Appflow.Model.ConflictException">
+        /// There was a conflict when processing the request (for example, a flow with the given
+        /// name already exists within the account. Check for conflicting resource names and try
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.Appflow.Model.ConnectorAuthenticationException">
+        /// An error occurred when authenticating with the connector endpoint.
+        /// </exception>
+        /// <exception cref="Amazon.Appflow.Model.ConnectorServerException">
+        /// An error occurred when retrieving data from the connector endpoint.
+        /// </exception>
+        /// <exception cref="Amazon.Appflow.Model.InternalServerException">
+        /// An internal service error occurred during the processing of your request. Try again
+        /// later.
+        /// </exception>
+        /// <exception cref="Amazon.Appflow.Model.ResourceNotFoundException">
+        /// The resource specified in the request (such as the source or destination connector
+        /// profile) is not found.
+        /// </exception>
+        /// <exception cref="Amazon.Appflow.Model.ServiceQuotaExceededException">
+        /// The request would cause a service quota (such as the number of flows) to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Appflow.Model.ThrottlingException">
+        /// API calls have exceeded the maximum allowed API request rate per account and per Region.
+        /// </exception>
+        /// <exception cref="Amazon.Appflow.Model.ValidationException">
+        /// The request has invalid or missing parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/RegisterConnector">REST API Reference for RegisterConnector Operation</seealso>
+        public virtual RegisterConnectorResponse RegisterConnector(RegisterConnectorRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RegisterConnectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterConnectorResponseUnmarshaller.Instance;
+
+            return Invoke<RegisterConnectorResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RegisterConnector operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RegisterConnector operation on AmazonAppflowClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRegisterConnector
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/RegisterConnector">REST API Reference for RegisterConnector Operation</seealso>
+        public virtual IAsyncResult BeginRegisterConnector(RegisterConnectorRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RegisterConnectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterConnectorResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RegisterConnector operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRegisterConnector.</param>
+        /// 
+        /// <returns>Returns a  RegisterConnectorResult from Appflow.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/RegisterConnector">REST API Reference for RegisterConnector Operation</seealso>
+        public virtual RegisterConnectorResponse EndRegisterConnector(IAsyncResult asyncResult)
+        {
+            return EndInvoke<RegisterConnectorResponse>(asyncResult);
         }
 
         #endregion
@@ -1334,6 +1550,74 @@ namespace Amazon.Appflow
         public virtual TagResourceResponse EndTagResource(IAsyncResult asyncResult)
         {
             return EndInvoke<TagResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UnregisterConnector
+
+        /// <summary>
+        /// Unregisters the custom connector registered in your account that matches the connectorLabel
+        /// provided in the request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UnregisterConnector service method.</param>
+        /// 
+        /// <returns>The response from the UnregisterConnector service method, as returned by Appflow.</returns>
+        /// <exception cref="Amazon.Appflow.Model.ConflictException">
+        /// There was a conflict when processing the request (for example, a flow with the given
+        /// name already exists within the account. Check for conflicting resource names and try
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.Appflow.Model.InternalServerException">
+        /// An internal service error occurred during the processing of your request. Try again
+        /// later.
+        /// </exception>
+        /// <exception cref="Amazon.Appflow.Model.ResourceNotFoundException">
+        /// The resource specified in the request (such as the source or destination connector
+        /// profile) is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/UnregisterConnector">REST API Reference for UnregisterConnector Operation</seealso>
+        public virtual UnregisterConnectorResponse UnregisterConnector(UnregisterConnectorRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UnregisterConnectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UnregisterConnectorResponseUnmarshaller.Instance;
+
+            return Invoke<UnregisterConnectorResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UnregisterConnector operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UnregisterConnector operation on AmazonAppflowClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUnregisterConnector
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/UnregisterConnector">REST API Reference for UnregisterConnector Operation</seealso>
+        public virtual IAsyncResult BeginUnregisterConnector(UnregisterConnectorRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UnregisterConnectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UnregisterConnectorResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UnregisterConnector operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUnregisterConnector.</param>
+        /// 
+        /// <returns>Returns a  UnregisterConnectorResult from Appflow.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/UnregisterConnector">REST API Reference for UnregisterConnector Operation</seealso>
+        public virtual UnregisterConnectorResponse EndUnregisterConnector(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UnregisterConnectorResponse>(asyncResult);
         }
 
         #endregion

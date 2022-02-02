@@ -67,7 +67,7 @@ namespace Amazon.Appflow.Model
         /// such as update or delete. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=1)]
+        [AWSProperty(Min=0)]
         public List<string> IdFieldNames
         {
             get { return this._idFieldNames; }

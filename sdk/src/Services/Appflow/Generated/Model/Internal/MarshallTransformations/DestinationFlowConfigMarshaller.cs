@@ -45,6 +45,12 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DestinationFlowConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetApiVersion())
+            {
+                context.Writer.WritePropertyName("apiVersion");
+                context.Writer.Write(requestObject.ApiVersion);
+            }
+
             if(requestObject.IsSetConnectorProfileName())
             {
                 context.Writer.WritePropertyName("connectorProfileName");

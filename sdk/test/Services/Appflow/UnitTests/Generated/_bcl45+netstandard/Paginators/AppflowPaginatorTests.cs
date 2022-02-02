@@ -159,6 +159,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Appflow")]
+        public void ListConnectorsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListConnectorsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListConnectorsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListConnectorsResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListConnectors(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListConnectors(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Appflow")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListConnectorsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListConnectorsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListConnectorsResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListConnectors(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListConnectors(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Appflow")]
         public void ListFlowsTest_TwoPages()
         {
             var request = InstantiateClassGenerator.Execute<ListFlowsRequest>();

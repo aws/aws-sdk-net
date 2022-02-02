@@ -57,6 +57,12 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
                     response.ConnectorConfigurations = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("connectors", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ConnectorDetail, ConnectorDetailUnmarshaller>(ConnectorDetailUnmarshaller.Instance);
+                    response.Connectors = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("nextToken", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

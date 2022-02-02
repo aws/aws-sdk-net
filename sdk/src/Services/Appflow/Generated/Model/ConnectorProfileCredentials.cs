@@ -34,6 +34,7 @@ namespace Amazon.Appflow.Model
     public partial class ConnectorProfileCredentials
     {
         private AmplitudeConnectorProfileCredentials _amplitude;
+        private CustomConnectorProfileCredentials _customConnector;
         private DatadogConnectorProfileCredentials _datadog;
         private DynatraceConnectorProfileCredentials _dynatrace;
         private GoogleAnalyticsConnectorProfileCredentials _googleAnalytics;
@@ -67,6 +68,21 @@ namespace Amazon.Appflow.Model
         internal bool IsSetAmplitude()
         {
             return this._amplitude != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomConnector.
+        /// </summary>
+        public CustomConnectorProfileCredentials CustomConnector
+        {
+            get { return this._customConnector; }
+            set { this._customConnector = value; }
+        }
+
+        // Check to see if CustomConnector property is set
+        internal bool IsSetCustomConnector()
+        {
+            return this._customConnector != null;
         }
 
         /// <summary>

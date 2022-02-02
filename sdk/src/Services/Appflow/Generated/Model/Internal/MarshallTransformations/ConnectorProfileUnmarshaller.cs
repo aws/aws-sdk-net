@@ -70,6 +70,12 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
                     unmarshalledObject.ConnectionMode = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("connectorLabel", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ConnectorLabel = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("connectorProfileArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

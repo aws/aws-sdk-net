@@ -34,6 +34,7 @@ namespace Amazon.Appflow.Model
     public partial class ConnectorOperator
     {
         private AmplitudeConnectorOperator _amplitude;
+        private Operator _customConnector;
         private DatadogConnectorOperator _datadog;
         private DynatraceConnectorOperator _dynatrace;
         private GoogleAnalyticsConnectorOperator _googleAnalytics;
@@ -65,6 +66,24 @@ namespace Amazon.Appflow.Model
         internal bool IsSetAmplitude()
         {
             return this._amplitude != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomConnector. 
+        /// <para>
+        /// Operators supported by the custom connector.
+        /// </para>
+        /// </summary>
+        public Operator CustomConnector
+        {
+            get { return this._customConnector; }
+            set { this._customConnector = value; }
+        }
+
+        // Check to see if CustomConnector property is set
+        internal bool IsSetCustomConnector()
+        {
+            return this._customConnector != null;
         }
 
         /// <summary>

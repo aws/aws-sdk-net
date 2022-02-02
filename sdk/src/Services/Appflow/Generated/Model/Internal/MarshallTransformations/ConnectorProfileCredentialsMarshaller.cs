@@ -56,6 +56,17 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetCustomConnector())
+            {
+                context.Writer.WritePropertyName("CustomConnector");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = CustomConnectorProfileCredentialsMarshaller.Instance;
+                marshaller.Marshall(requestObject.CustomConnector, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetDatadog())
             {
                 context.Writer.WritePropertyName("Datadog");

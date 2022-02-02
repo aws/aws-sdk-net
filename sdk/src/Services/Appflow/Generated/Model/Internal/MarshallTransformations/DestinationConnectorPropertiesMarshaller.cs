@@ -45,6 +45,17 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DestinationConnectorProperties requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetCustomConnector())
+            {
+                context.Writer.WritePropertyName("CustomConnector");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = CustomConnectorDestinationPropertiesMarshaller.Instance;
+                marshaller.Marshall(requestObject.CustomConnector, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetCustomerProfiles())
             {
                 context.Writer.WritePropertyName("CustomerProfiles");

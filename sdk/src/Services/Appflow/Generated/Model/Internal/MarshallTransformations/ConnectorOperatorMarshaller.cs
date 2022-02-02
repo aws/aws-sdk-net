@@ -51,6 +51,12 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Amplitude);
             }
 
+            if(requestObject.IsSetCustomConnector())
+            {
+                context.Writer.WritePropertyName("CustomConnector");
+                context.Writer.Write(requestObject.CustomConnector);
+            }
+
             if(requestObject.IsSetDatadog())
             {
                 context.Writer.WritePropertyName("Datadog");

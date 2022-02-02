@@ -43,7 +43,7 @@ namespace Amazon.Appflow.Model
         ///  The credentials used to access protected Amazon Honeycode resources. 
         /// </para>
         /// </summary>
-        [AWSProperty(Max=512)]
+        [AWSProperty(Max=2048)]
         public string AccessToken
         {
             get { return this._accessToken; }
@@ -77,7 +77,7 @@ namespace Amazon.Appflow.Model
         ///  The credentials used to acquire new access tokens. 
         /// </para>
         /// </summary>
-        [AWSProperty(Max=512)]
+        [AWSProperty(Max=1024)]
         public string RefreshToken
         {
             get { return this._refreshToken; }

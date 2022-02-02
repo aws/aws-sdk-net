@@ -70,6 +70,12 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
                     unmarshalledObject.Amplitude = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("CustomConnector", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CustomConnector = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Datadog", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
