@@ -730,9 +730,12 @@ namespace Amazon.DynamoDBv2
 
         /// <summary>
         /// The <code>BatchWriteItem</code> operation puts or deletes multiple items in one or
-        /// more tables. A single call to <code>BatchWriteItem</code> can write up to 16 MB of
-        /// data, which can comprise as many as 25 put or delete requests. Individual items to
-        /// be written can be as large as 400 KB.
+        /// more tables. A single call to <code>BatchWriteItem</code> can transmit up to 16MB
+        /// of data over the network, consisting of up to 25 item put or delete operations. While
+        /// individual items can be up to 400 KB once stored, it's important to note that an item's
+        /// representation might be greater than 400KB while being sent in DynamoDB's JSON format
+        /// for the API call. For more details on this distinction, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html">Naming
+        /// Rules and Data Types</a>.
         /// 
         ///  <note> 
         /// <para>
@@ -862,9 +865,12 @@ namespace Amazon.DynamoDBv2
 
         /// <summary>
         /// The <code>BatchWriteItem</code> operation puts or deletes multiple items in one or
-        /// more tables. A single call to <code>BatchWriteItem</code> can write up to 16 MB of
-        /// data, which can comprise as many as 25 put or delete requests. Individual items to
-        /// be written can be as large as 400 KB.
+        /// more tables. A single call to <code>BatchWriteItem</code> can transmit up to 16MB
+        /// of data over the network, consisting of up to 25 item put or delete operations. While
+        /// individual items can be up to 400 KB once stored, it's important to note that an item's
+        /// representation might be greater than 400KB while being sent in DynamoDB's JSON format
+        /// for the API call. For more details on this distinction, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html">Naming
+        /// Rules and Data Types</a>.
         /// 
         ///  <note> 
         /// <para>
@@ -995,9 +1001,12 @@ namespace Amazon.DynamoDBv2
 
         /// <summary>
         /// The <code>BatchWriteItem</code> operation puts or deletes multiple items in one or
-        /// more tables. A single call to <code>BatchWriteItem</code> can write up to 16 MB of
-        /// data, which can comprise as many as 25 put or delete requests. Individual items to
-        /// be written can be as large as 400 KB.
+        /// more tables. A single call to <code>BatchWriteItem</code> can transmit up to 16MB
+        /// of data over the network, consisting of up to 25 item put or delete operations. While
+        /// individual items can be up to 400 KB once stored, it's important to note that an item's
+        /// representation might be greater than 400KB while being sent in DynamoDB's JSON format
+        /// for the API call. For more details on this distinction, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html">Naming
+        /// Rules and Data Types</a>.
         /// 
         ///  <note> 
         /// <para>
@@ -1131,9 +1140,12 @@ namespace Amazon.DynamoDBv2
 
         /// <summary>
         /// The <code>BatchWriteItem</code> operation puts or deletes multiple items in one or
-        /// more tables. A single call to <code>BatchWriteItem</code> can write up to 16 MB of
-        /// data, which can comprise as many as 25 put or delete requests. Individual items to
-        /// be written can be as large as 400 KB.
+        /// more tables. A single call to <code>BatchWriteItem</code> can transmit up to 16MB
+        /// of data over the network, consisting of up to 25 item put or delete operations. While
+        /// individual items can be up to 400 KB once stored, it's important to note that an item's
+        /// representation might be greater than 400KB while being sent in DynamoDB's JSON format
+        /// for the API call. For more details on this distinction, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html">Naming
+        /// Rules and Data Types</a>.
         /// 
         ///  <note> 
         /// <para>
@@ -8856,9 +8868,10 @@ namespace Amazon.DynamoDBv2
         /// Updates the status for contributor insights for a specific table or index. CloudWatch
         /// Contributor Insights for DynamoDB graphs display the partition key and (if applicable)
         /// sort key of frequently accessed items and frequently throttled items in plaintext.
-        /// If you require the use of AWS Key Management Service (KMS) to encrypt this table’s
-        /// partition key and sort key data with an AWS managed key or customer managed key, you
-        /// should not enable CloudWatch Contributor Insights for DynamoDB for this table.
+        /// If you require the use of Amazon Web Services Key Management Service (KMS) to encrypt
+        /// this table’s partition key and sort key data with an Amazon Web Services managed key
+        /// or customer managed key, you should not enable CloudWatch Contributor Insights for
+        /// DynamoDB for this table.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateContributorInsights service method.</param>
         /// 
@@ -8879,9 +8892,10 @@ namespace Amazon.DynamoDBv2
         /// Updates the status for contributor insights for a specific table or index. CloudWatch
         /// Contributor Insights for DynamoDB graphs display the partition key and (if applicable)
         /// sort key of frequently accessed items and frequently throttled items in plaintext.
-        /// If you require the use of AWS Key Management Service (KMS) to encrypt this table’s
-        /// partition key and sort key data with an AWS managed key or customer managed key, you
-        /// should not enable CloudWatch Contributor Insights for DynamoDB for this table.
+        /// If you require the use of Amazon Web Services Key Management Service (KMS) to encrypt
+        /// this table’s partition key and sort key data with an Amazon Web Services managed key
+        /// or customer managed key, you should not enable CloudWatch Contributor Insights for
+        /// DynamoDB for this table.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateContributorInsights service method.</param>
         /// <param name="cancellationToken">
