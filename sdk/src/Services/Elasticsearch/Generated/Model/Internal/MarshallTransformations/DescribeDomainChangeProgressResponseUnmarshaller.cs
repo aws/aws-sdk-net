@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for UpgradeElasticsearchDomain operation
+    /// Response Unmarshaller for DescribeDomainChangeProgress operation
     /// </summary>  
-    public class UpgradeElasticsearchDomainResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DescribeDomainChangeProgressResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,34 +45,16 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            UpgradeElasticsearchDomainResponse response = new UpgradeElasticsearchDomainResponse();
+            DescribeDomainChangeProgressResponse response = new DescribeDomainChangeProgressResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ChangeProgressDetails", targetDepth))
+                if (context.TestExpression("ChangeProgressStatus", targetDepth))
                 {
-                    var unmarshaller = ChangeProgressDetailsUnmarshaller.Instance;
-                    response.ChangeProgressDetails = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("DomainName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.DomainName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("PerformCheckOnly", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    response.PerformCheckOnly = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("TargetVersion", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.TargetVersion = unmarshaller.Unmarshall(context);
+                    var unmarshaller = ChangeProgressStatusDetailsUnmarshaller.Instance;
+                    response.ChangeProgressStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -102,17 +84,9 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
                 {
                     return BaseExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("DisabledOperationException"))
-                {
-                    return DisabledOperationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalException"))
                 {
                     return InternalExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceAlreadyExistsException"))
-                {
-                    return ResourceAlreadyExistsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                 {
@@ -126,9 +100,9 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
             return new AmazonElasticsearchException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static UpgradeElasticsearchDomainResponseUnmarshaller _instance = new UpgradeElasticsearchDomainResponseUnmarshaller();        
+        private static DescribeDomainChangeProgressResponseUnmarshaller _instance = new DescribeDomainChangeProgressResponseUnmarshaller();        
 
-        internal static UpgradeElasticsearchDomainResponseUnmarshaller GetInstance()
+        internal static DescribeDomainChangeProgressResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -136,7 +110,7 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpgradeElasticsearchDomainResponseUnmarshaller Instance
+        public static DescribeDomainChangeProgressResponseUnmarshaller Instance
         {
             get
             {

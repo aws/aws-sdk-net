@@ -57,6 +57,15 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Elasticsearch.Model.DescribeDomainChangeProgressRequest.ChangeId</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Elasticsearch.Model.DescribeDomainChangeProgressRequest.DomainName</property>
+    <min>3</min>
+    <max>28</max>
+    <pattern>[a-z][a-z0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Elasticsearch.Model.DescribeElasticsearchDomainRequest.DomainName</property>
     <min>3</min>
     <max>28</max>
@@ -231,6 +240,27 @@
   <property-value-rule>
     <property>Amazon.Elasticsearch.Model.AutoTuneStatus.UpdateVersion</property>
     <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Elasticsearch.Model.ChangeProgressDetails.ChangeId</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Elasticsearch.Model.ChangeProgressDetails.Message</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Elasticsearch.Model.ChangeProgressStage.Name</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Elasticsearch.Model.ChangeProgressStage.Status</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Elasticsearch.Model.ChangeProgressStatusDetails.ChangeId</property>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Elasticsearch.Model.CognitoOptions.IdentityPoolId</property>
