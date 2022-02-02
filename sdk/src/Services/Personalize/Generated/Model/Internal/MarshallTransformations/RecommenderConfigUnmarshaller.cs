@@ -70,6 +70,12 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
                     unmarshalledObject.ItemExplorationConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("minRecommendationRequestsPerSecond", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.MinRecommendationRequestsPerSecond = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

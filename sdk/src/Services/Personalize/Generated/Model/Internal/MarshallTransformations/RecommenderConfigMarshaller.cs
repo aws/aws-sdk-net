@@ -59,6 +59,12 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetMinRecommendationRequestsPerSecond())
+            {
+                context.Writer.WritePropertyName("minRecommendationRequestsPerSecond");
+                context.Writer.Write(requestObject.MinRecommendationRequestsPerSecond);
+            }
+
         }
 
         /// <summary>
