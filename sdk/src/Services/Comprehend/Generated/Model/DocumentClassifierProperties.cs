@@ -43,6 +43,7 @@ namespace Amazon.Comprehend.Model
         private DocumentClassifierMode _mode;
         private string _modelKmsKeyId;
         private DocumentClassifierOutputDataConfig _outputDataConfig;
+        private string _sourceModelArn;
         private ModelStatus _status;
         private DateTime? _submitTime;
         private DateTime? _trainingEndTime;
@@ -251,6 +252,26 @@ namespace Amazon.Comprehend.Model
         internal bool IsSetOutputDataConfig()
         {
             return this._outputDataConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceModelArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the source model. This model was imported from a
+        /// different AWS account to create the document classifier model in your AWS account.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=256)]
+        public string SourceModelArn
+        {
+            get { return this._sourceModelArn; }
+            set { this._sourceModelArn = value; }
+        }
+
+        // Check to see if SourceModelArn property is set
+        internal bool IsSetSourceModelArn()
+        {
+            return this._sourceModelArn != null;
         }
 
         /// <summary>

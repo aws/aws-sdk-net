@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateEntityRecognizer Request Marshaller
+    /// ImportModel Request Marshaller
     /// </summary>       
-    public class CreateEntityRecognizerRequestMarshaller : IMarshaller<IRequest, CreateEntityRecognizerRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class ImportModelRequestMarshaller : IMarshaller<IRequest, ImportModelRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateEntityRecognizerRequest)input);
+            return this.Marshall((ImportModelRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateEntityRecognizerRequest publicRequest)
+        public IRequest Marshall(ImportModelRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Comprehend");
-            string target = "Comprehend_20171127.CreateEntityRecognizer";
+            string target = "Comprehend_20171127.ImportModel";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-11-27";
@@ -67,38 +67,10 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientRequestToken())
-                {
-                    context.Writer.WritePropertyName("ClientRequestToken");
-                    context.Writer.Write(publicRequest.ClientRequestToken);
-                }
-
-                else if(!(publicRequest.IsSetClientRequestToken()))
-                {
-                    context.Writer.WritePropertyName("ClientRequestToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
                 if(publicRequest.IsSetDataAccessRoleArn())
                 {
                     context.Writer.WritePropertyName("DataAccessRoleArn");
                     context.Writer.Write(publicRequest.DataAccessRoleArn);
-                }
-
-                if(publicRequest.IsSetInputDataConfig())
-                {
-                    context.Writer.WritePropertyName("InputDataConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = EntityRecognizerInputDataConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.InputDataConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetLanguageCode())
-                {
-                    context.Writer.WritePropertyName("LanguageCode");
-                    context.Writer.Write(publicRequest.LanguageCode);
                 }
 
                 if(publicRequest.IsSetModelKmsKeyId())
@@ -107,16 +79,16 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ModelKmsKeyId);
                 }
 
-                if(publicRequest.IsSetModelPolicy())
+                if(publicRequest.IsSetModelName())
                 {
-                    context.Writer.WritePropertyName("ModelPolicy");
-                    context.Writer.Write(publicRequest.ModelPolicy);
+                    context.Writer.WritePropertyName("ModelName");
+                    context.Writer.Write(publicRequest.ModelName);
                 }
 
-                if(publicRequest.IsSetRecognizerName())
+                if(publicRequest.IsSetSourceModelArn())
                 {
-                    context.Writer.WritePropertyName("RecognizerName");
-                    context.Writer.Write(publicRequest.RecognizerName);
+                    context.Writer.WritePropertyName("SourceModelArn");
+                    context.Writer.Write(publicRequest.SourceModelArn);
                 }
 
                 if(publicRequest.IsSetTags())
@@ -141,23 +113,6 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.VersionName);
                 }
 
-                if(publicRequest.IsSetVolumeKmsKeyId())
-                {
-                    context.Writer.WritePropertyName("VolumeKmsKeyId");
-                    context.Writer.Write(publicRequest.VolumeKmsKeyId);
-                }
-
-                if(publicRequest.IsSetVpcConfig())
-                {
-                    context.Writer.WritePropertyName("VpcConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = VpcConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.VpcConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
@@ -166,9 +121,9 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateEntityRecognizerRequestMarshaller _instance = new CreateEntityRecognizerRequestMarshaller();        
+        private static ImportModelRequestMarshaller _instance = new ImportModelRequestMarshaller();        
 
-        internal static CreateEntityRecognizerRequestMarshaller GetInstance()
+        internal static ImportModelRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -176,7 +131,7 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateEntityRecognizerRequestMarshaller Instance
+        public static ImportModelRequestMarshaller Instance
         {
             get
             {

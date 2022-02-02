@@ -41,6 +41,7 @@ namespace Amazon.Comprehend.Model
         private string _message;
         private string _modelKmsKeyId;
         private EntityRecognizerMetadata _recognizerMetadata;
+        private string _sourceModelArn;
         private ModelStatus _status;
         private DateTime? _submitTime;
         private DateTime? _trainingEndTime;
@@ -207,6 +208,26 @@ namespace Amazon.Comprehend.Model
         internal bool IsSetRecognizerMetadata()
         {
             return this._recognizerMetadata != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceModelArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the source model. This model was imported from a
+        /// different AWS account to create the entity recognizer model in your AWS account.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=256)]
+        public string SourceModelArn
+        {
+            get { return this._sourceModelArn; }
+            set { this._sourceModelArn = value; }
+        }
+
+        // Check to see if SourceModelArn property is set
+        internal bool IsSetSourceModelArn()
+        {
+            return this._sourceModelArn != null;
         }
 
         /// <summary>
