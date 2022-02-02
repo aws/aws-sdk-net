@@ -588,6 +588,59 @@ namespace Amazon.FIS
 
         #endregion
         
+        #region  GetTargetResourceType
+
+
+        /// <summary>
+        /// Gets information about the specified resource type.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTargetResourceType service method.</param>
+        /// 
+        /// <returns>The response from the GetTargetResourceType service method, as returned by FIS.</returns>
+        /// <exception cref="Amazon.FIS.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.FIS.Model.ValidationException">
+        /// The specified input is not valid, or fails to satisfy the constraints for the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/GetTargetResourceType">REST API Reference for GetTargetResourceType Operation</seealso>
+        public virtual GetTargetResourceTypeResponse GetTargetResourceType(GetTargetResourceTypeRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTargetResourceTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTargetResourceTypeResponseUnmarshaller.Instance;
+
+            return Invoke<GetTargetResourceTypeResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Gets information about the specified resource type.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTargetResourceType service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetTargetResourceType service method, as returned by FIS.</returns>
+        /// <exception cref="Amazon.FIS.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.FIS.Model.ValidationException">
+        /// The specified input is not valid, or fails to satisfy the constraints for the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/GetTargetResourceType">REST API Reference for GetTargetResourceType Operation</seealso>
+        public virtual Task<GetTargetResourceTypeResponse> GetTargetResourceTypeAsync(GetTargetResourceTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTargetResourceTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTargetResourceTypeResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetTargetResourceTypeResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListActions
 
 
@@ -766,6 +819,53 @@ namespace Amazon.FIS
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListTargetResourceTypes
+
+
+        /// <summary>
+        /// Lists the target resource types.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTargetResourceTypes service method.</param>
+        /// 
+        /// <returns>The response from the ListTargetResourceTypes service method, as returned by FIS.</returns>
+        /// <exception cref="Amazon.FIS.Model.ValidationException">
+        /// The specified input is not valid, or fails to satisfy the constraints for the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/ListTargetResourceTypes">REST API Reference for ListTargetResourceTypes Operation</seealso>
+        public virtual ListTargetResourceTypesResponse ListTargetResourceTypes(ListTargetResourceTypesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTargetResourceTypesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTargetResourceTypesResponseUnmarshaller.Instance;
+
+            return Invoke<ListTargetResourceTypesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists the target resource types.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTargetResourceTypes service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTargetResourceTypes service method, as returned by FIS.</returns>
+        /// <exception cref="Amazon.FIS.Model.ValidationException">
+        /// The specified input is not valid, or fails to satisfy the constraints for the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/ListTargetResourceTypes">REST API Reference for ListTargetResourceTypes Operation</seealso>
+        public virtual Task<ListTargetResourceTypesResponse> ListTargetResourceTypesAsync(ListTargetResourceTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTargetResourceTypesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTargetResourceTypesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListTargetResourceTypesResponse>(request, options, cancellationToken);
         }
 
         #endregion

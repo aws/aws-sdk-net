@@ -61,6 +61,20 @@ namespace Amazon.FIS.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetParameters())
+            {
+                context.Writer.WritePropertyName("parameters");
+                context.Writer.WriteObjectStart();
+                foreach (var requestObjectParametersKvp in requestObject.Parameters)
+                {
+                    context.Writer.WritePropertyName(requestObjectParametersKvp.Key);
+                    var requestObjectParametersValue = requestObjectParametersKvp.Value;
+
+                        context.Writer.Write(requestObjectParametersValue);
+                }
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetResourceArns())
             {
                 context.Writer.WritePropertyName("resourceArns");

@@ -38,6 +38,11 @@
     <pattern>[\S]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.FIS.Model.GetTargetResourceTypeRequest.ResourceType</property>
+    <max>128</max>
+    <pattern>[\S]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.FIS.Model.ListActionsRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
@@ -92,6 +97,23 @@
     <property>Amazon.FIS.Model.ListTagsForResourceRequest.ResourceArn</property>
     <min>20</min>
     <max>2048</max>
+    <pattern>[\S]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FIS.Model.ListTargetResourceTypesRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FIS.Model.ListTargetResourceTypesRequest.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>[\S]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FIS.Model.ListTargetResourceTypesResponse.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
     <pattern>[\S]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -191,7 +213,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.CreateExperimentTemplateTargetInput.ResourceType</property>
-    <max>64</max>
+    <max>128</max>
     <pattern>[\S]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -258,7 +280,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ExperimentTarget.ResourceType</property>
-    <max>64</max>
+    <max>128</max>
     <pattern>[\S]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -320,7 +342,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ExperimentTemplateTarget.ResourceType</property>
-    <max>64</max>
+    <max>128</max>
     <pattern>[\S]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -336,6 +358,31 @@
   <property-value-rule>
     <property>Amazon.FIS.Model.ExperimentTemplateTargetInputFilter.Path</property>
     <max>256</max>
+    <pattern>[\S]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FIS.Model.TargetResourceType.Description</property>
+    <max>512</max>
+    <pattern>[\s\S]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FIS.Model.TargetResourceType.ResourceType</property>
+    <max>128</max>
+    <pattern>[\S]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FIS.Model.TargetResourceTypeParameter.Description</property>
+    <max>512</max>
+    <pattern>[\s\S]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FIS.Model.TargetResourceTypeSummary.Description</property>
+    <max>512</max>
+    <pattern>[\s\S]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FIS.Model.TargetResourceTypeSummary.ResourceType</property>
+    <max>128</max>
     <pattern>[\S]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -361,7 +408,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.UpdateExperimentTemplateTargetInput.ResourceType</property>
-    <max>64</max>
+    <max>128</max>
     <pattern>[\S]+</pattern>
   </property-value-rule>
   <property-value-rule>

@@ -591,6 +591,66 @@ namespace Amazon.FIS
 
         #endregion
         
+        #region  GetTargetResourceType
+
+        /// <summary>
+        /// Gets information about the specified resource type.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTargetResourceType service method.</param>
+        /// 
+        /// <returns>The response from the GetTargetResourceType service method, as returned by FIS.</returns>
+        /// <exception cref="Amazon.FIS.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.FIS.Model.ValidationException">
+        /// The specified input is not valid, or fails to satisfy the constraints for the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/GetTargetResourceType">REST API Reference for GetTargetResourceType Operation</seealso>
+        public virtual GetTargetResourceTypeResponse GetTargetResourceType(GetTargetResourceTypeRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTargetResourceTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTargetResourceTypeResponseUnmarshaller.Instance;
+
+            return Invoke<GetTargetResourceTypeResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetTargetResourceType operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetTargetResourceType operation on AmazonFISClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetTargetResourceType
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/GetTargetResourceType">REST API Reference for GetTargetResourceType Operation</seealso>
+        public virtual IAsyncResult BeginGetTargetResourceType(GetTargetResourceTypeRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTargetResourceTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTargetResourceTypeResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetTargetResourceType operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetTargetResourceType.</param>
+        /// 
+        /// <returns>Returns a  GetTargetResourceTypeResult from FIS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/GetTargetResourceType">REST API Reference for GetTargetResourceType Operation</seealso>
+        public virtual GetTargetResourceTypeResponse EndGetTargetResourceType(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetTargetResourceTypeResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListActions
 
         /// <summary>
@@ -812,6 +872,63 @@ namespace Amazon.FIS
         public virtual ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult)
         {
             return EndInvoke<ListTagsForResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListTargetResourceTypes
+
+        /// <summary>
+        /// Lists the target resource types.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTargetResourceTypes service method.</param>
+        /// 
+        /// <returns>The response from the ListTargetResourceTypes service method, as returned by FIS.</returns>
+        /// <exception cref="Amazon.FIS.Model.ValidationException">
+        /// The specified input is not valid, or fails to satisfy the constraints for the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/ListTargetResourceTypes">REST API Reference for ListTargetResourceTypes Operation</seealso>
+        public virtual ListTargetResourceTypesResponse ListTargetResourceTypes(ListTargetResourceTypesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTargetResourceTypesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTargetResourceTypesResponseUnmarshaller.Instance;
+
+            return Invoke<ListTargetResourceTypesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTargetResourceTypes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTargetResourceTypes operation on AmazonFISClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTargetResourceTypes
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/ListTargetResourceTypes">REST API Reference for ListTargetResourceTypes Operation</seealso>
+        public virtual IAsyncResult BeginListTargetResourceTypes(ListTargetResourceTypesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTargetResourceTypesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTargetResourceTypesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTargetResourceTypes operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTargetResourceTypes.</param>
+        /// 
+        /// <returns>Returns a  ListTargetResourceTypesResult from FIS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/ListTargetResourceTypes">REST API Reference for ListTargetResourceTypes Operation</seealso>
+        public virtual ListTargetResourceTypesResponse EndListTargetResourceTypes(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListTargetResourceTypesResponse>(asyncResult);
         }
 
         #endregion

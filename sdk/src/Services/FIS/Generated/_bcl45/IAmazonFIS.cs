@@ -311,6 +311,46 @@ namespace Amazon.FIS
 
         #endregion
         
+        #region  GetTargetResourceType
+
+
+        /// <summary>
+        /// Gets information about the specified resource type.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTargetResourceType service method.</param>
+        /// 
+        /// <returns>The response from the GetTargetResourceType service method, as returned by FIS.</returns>
+        /// <exception cref="Amazon.FIS.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.FIS.Model.ValidationException">
+        /// The specified input is not valid, or fails to satisfy the constraints for the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/GetTargetResourceType">REST API Reference for GetTargetResourceType Operation</seealso>
+        GetTargetResourceTypeResponse GetTargetResourceType(GetTargetResourceTypeRequest request);
+
+
+
+        /// <summary>
+        /// Gets information about the specified resource type.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTargetResourceType service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetTargetResourceType service method, as returned by FIS.</returns>
+        /// <exception cref="Amazon.FIS.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.FIS.Model.ValidationException">
+        /// The specified input is not valid, or fails to satisfy the constraints for the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/GetTargetResourceType">REST API Reference for GetTargetResourceType Operation</seealso>
+        Task<GetTargetResourceTypeResponse> GetTargetResourceTypeAsync(GetTargetResourceTypeRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListActions
 
 
@@ -438,6 +478,40 @@ namespace Amazon.FIS
         /// <returns>The response from the ListTagsForResource service method, as returned by FIS.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListTargetResourceTypes
+
+
+        /// <summary>
+        /// Lists the target resource types.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTargetResourceTypes service method.</param>
+        /// 
+        /// <returns>The response from the ListTargetResourceTypes service method, as returned by FIS.</returns>
+        /// <exception cref="Amazon.FIS.Model.ValidationException">
+        /// The specified input is not valid, or fails to satisfy the constraints for the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/ListTargetResourceTypes">REST API Reference for ListTargetResourceTypes Operation</seealso>
+        ListTargetResourceTypesResponse ListTargetResourceTypes(ListTargetResourceTypesRequest request);
+
+
+
+        /// <summary>
+        /// Lists the target resource types.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTargetResourceTypes service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTargetResourceTypes service method, as returned by FIS.</returns>
+        /// <exception cref="Amazon.FIS.Model.ValidationException">
+        /// The specified input is not valid, or fails to satisfy the constraints for the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/ListTargetResourceTypes">REST API Reference for ListTargetResourceTypes Operation</seealso>
+        Task<ListTargetResourceTypesResponse> ListTargetResourceTypesAsync(ListTargetResourceTypesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

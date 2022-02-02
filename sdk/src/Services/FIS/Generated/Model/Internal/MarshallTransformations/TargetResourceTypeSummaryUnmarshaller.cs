@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.FIS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ExperimentTarget Object
+    /// Response Unmarshaller for TargetResourceTypeSummary Object
     /// </summary>  
-    public class ExperimentTargetUnmarshaller : IUnmarshaller<ExperimentTarget, XmlUnmarshallerContext>, IUnmarshaller<ExperimentTarget, JsonUnmarshallerContext>
+    public class TargetResourceTypeSummaryUnmarshaller : IUnmarshaller<TargetResourceTypeSummary, XmlUnmarshallerContext>, IUnmarshaller<TargetResourceTypeSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ExperimentTarget IUnmarshaller<ExperimentTarget, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        TargetResourceTypeSummary IUnmarshaller<TargetResourceTypeSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,21 @@ namespace Amazon.FIS.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ExperimentTarget Unmarshall(JsonUnmarshallerContext context)
+        public TargetResourceTypeSummary Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ExperimentTarget unmarshalledObject = new ExperimentTarget();
+            TargetResourceTypeSummary unmarshalledObject = new TargetResourceTypeSummary();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("filters", targetDepth))
+                if (context.TestExpression("description", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<ExperimentTargetFilter, ExperimentTargetFilterUnmarshaller>(ExperimentTargetFilterUnmarshaller.Instance);
-                    unmarshalledObject.Filters = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("parameters", targetDepth))
-                {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    unmarshalledObject.Parameters = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("resourceArns", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.ResourceArns = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("resourceTags", targetDepth))
-                {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    unmarshalledObject.ResourceTags = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("resourceType", targetDepth))
@@ -94,24 +76,18 @@ namespace Amazon.FIS.Model.Internal.MarshallTransformations
                     unmarshalledObject.ResourceType = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("selectionMode", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SelectionMode = unmarshaller.Unmarshall(context);
-                    continue;
-                }
             }
           
             return unmarshalledObject;
         }
 
 
-        private static ExperimentTargetUnmarshaller _instance = new ExperimentTargetUnmarshaller();        
+        private static TargetResourceTypeSummaryUnmarshaller _instance = new TargetResourceTypeSummaryUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ExperimentTargetUnmarshaller Instance
+        public static TargetResourceTypeSummaryUnmarshaller Instance
         {
             get
             {
