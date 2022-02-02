@@ -38,6 +38,13 @@ namespace Amazon.ElasticMapReduce.Model
     /// later, excluding 5.0.x versions. Spot Instance allocation strategy is available in
     /// Amazon EMR version 5.12.1 and later.
     /// </para>
+    ///  </note> <note> 
+    /// <para>
+    /// Spot Instances with a defined duration (also known as Spot blocks) are no longer available
+    /// to new customers from July 1, 2021. For customers who have previously used the feature,
+    /// we will continue to support Spot Instances with a defined duration until December
+    /// 31, 2022. 
+    /// </para>
     ///  </note>
     /// </summary>
     public partial class SpotProvisioningSpecification
@@ -78,6 +85,14 @@ namespace Amazon.ElasticMapReduce.Model
         /// termination and provides a Spot Instance termination notice, which gives the instance
         /// a two-minute warning before it terminates. 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Spot Instances with a defined duration (also known as Spot blocks) are no longer available
+        /// to new customers from July 1, 2021. For customers who have previously used the feature,
+        /// we will continue to support Spot Instances with a defined duration until December
+        /// 31, 2022. 
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=0)]
         public int BlockDurationMinutes

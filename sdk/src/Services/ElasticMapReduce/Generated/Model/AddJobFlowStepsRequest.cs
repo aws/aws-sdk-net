@@ -60,6 +60,12 @@ namespace Amazon.ElasticMapReduce.Model
     /// You can only add steps to a cluster that is in one of the following states: STARTING,
     /// BOOTSTRAPPING, RUNNING, or WAITING.
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// The string values passed into <code>HadoopJarStep</code> object cannot exceed a total
+    /// of 10240 characters.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class AddJobFlowStepsRequest : AmazonElasticMapReduceRequest
     {

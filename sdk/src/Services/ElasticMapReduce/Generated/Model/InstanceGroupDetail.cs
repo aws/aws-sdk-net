@@ -61,7 +61,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <param name="instanceType">EC2 instance type.</param>
         /// <param name="instanceRequestCount">Target number of instances to run in the instance group.</param>
         /// <param name="instanceRunningCount">Actual count of running instances.</param>
-        /// <param name="state">State of instance group. The following values are deprecated: STARTING, TERMINATED, and FAILED.</param>
+        /// <param name="state">State of instance group. The following values are no longer supported: STARTING, TERMINATED, and FAILED.</param>
         /// <param name="creationDateTime">The date/time the instance group was created.</param>
         public InstanceGroupDetail(InstanceRoleType instanceRole, string instanceType, int instanceRequestCount, int instanceRunningCount, InstanceGroupState state, DateTime creationDateTime)
         {
@@ -341,7 +341,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// State of instance group. The following values are deprecated: STARTING, TERMINATED,
+        /// State of instance group. The following values are no longer supported: STARTING, TERMINATED,
         /// and FAILED.
         /// </para>
         /// </summary>

@@ -30,10 +30,19 @@ namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
     /// Container for the parameters to the PutAutoTerminationPolicy operation.
+    /// <note> 
+    /// <para>
+    /// Auto-termination is supported in Amazon EMR versions 5.30.0 and 6.1.0 and later. For
+    /// more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-auto-termination-policy.html">Using
+    /// an auto-termination policy</a>.
+    /// </para>
+    ///  </note> 
+    /// <para>
     /// Creates or updates an auto-termination policy for an Amazon EMR cluster. An auto-termination
     /// policy defines the amount of idle time in seconds after which a cluster automatically
     /// terminates. For alternative cluster termination options, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-termination.html">Control
     /// cluster termination</a>.
+    /// </para>
     /// </summary>
     public partial class PutAutoTerminationPolicyRequest : AmazonElasticMapReduceRequest
     {

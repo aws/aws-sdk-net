@@ -169,6 +169,12 @@ namespace Amazon.ElasticMapReduce
         /// You can only add steps to a cluster that is in one of the following states: STARTING,
         /// BOOTSTRAPPING, RUNNING, or WAITING.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The string values passed into <code>HadoopJarStep</code> object cannot exceed a total
+        /// of 10240 characters.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AddJobFlowSteps service method.</param>
         /// 
@@ -213,6 +219,12 @@ namespace Amazon.ElasticMapReduce
         /// You can only add steps to a cluster that is in one of the following states: STARTING,
         /// BOOTSTRAPPING, RUNNING, or WAITING.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The string values passed into <code>HadoopJarStep</code> object cannot exceed a total
+        /// of 10240 characters.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AddJobFlowSteps service method.</param>
         /// <param name="cancellationToken">
@@ -2109,10 +2121,19 @@ namespace Amazon.ElasticMapReduce
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// Auto-termination is supported in Amazon EMR versions 5.30.0 and 6.1.0 and later. For
+        /// more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-auto-termination-policy.html">Using
+        /// an auto-termination policy</a>.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Creates or updates an auto-termination policy for an Amazon EMR cluster. An auto-termination
         /// policy defines the amount of idle time in seconds after which a cluster automatically
         /// terminates. For alternative cluster termination options, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-termination.html">Control
         /// cluster termination</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutAutoTerminationPolicy service method.</param>
         /// 
@@ -2123,10 +2144,19 @@ namespace Amazon.ElasticMapReduce
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// Auto-termination is supported in Amazon EMR versions 5.30.0 and 6.1.0 and later. For
+        /// more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-auto-termination-policy.html">Using
+        /// an auto-termination policy</a>.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Creates or updates an auto-termination policy for an Amazon EMR cluster. An auto-termination
         /// policy defines the amount of idle time in seconds after which a cluster automatically
         /// terminates. For alternative cluster termination options, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-termination.html">Control
         /// cluster termination</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutAutoTerminationPolicy service method.</param>
         /// <param name="cancellationToken">
@@ -2551,13 +2581,22 @@ namespace Amazon.ElasticMapReduce
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// The SetVisibleToAllUsers parameter is no longer supported. Your cluster may be visible
+        /// to all users in your account. To restrict cluster access using an IAM policy, see
+        /// <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-access-iam.html">Identity
+        /// and Access Management for EMR</a>. 
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// Sets the <a>Cluster$VisibleToAllUsers</a> value for an EMR cluster. When <code>true</code>,
         /// IAM principals in the Amazon Web Services account can perform EMR cluster actions
         /// that their IAM policies allow. When <code>false</code>, only the IAM principal that
         /// created the cluster and the Amazon Web Services account root user can perform EMR
         /// actions on the cluster, regardless of IAM permissions policies attached to other IAM
         /// principals.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// This action works on running clusters. When you create a cluster, use the <a>RunJobFlowInput$VisibleToAllUsers</a>
@@ -2582,13 +2621,22 @@ namespace Amazon.ElasticMapReduce
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// The SetVisibleToAllUsers parameter is no longer supported. Your cluster may be visible
+        /// to all users in your account. To restrict cluster access using an IAM policy, see
+        /// <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-access-iam.html">Identity
+        /// and Access Management for EMR</a>. 
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// Sets the <a>Cluster$VisibleToAllUsers</a> value for an EMR cluster. When <code>true</code>,
         /// IAM principals in the Amazon Web Services account can perform EMR cluster actions
         /// that their IAM policies allow. When <code>false</code>, only the IAM principal that
         /// created the cluster and the Amazon Web Services account root user can perform EMR
         /// actions on the cluster, regardless of IAM permissions policies attached to other IAM
         /// principals.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// This action works on running clusters. When you create a cluster, use the <a>RunJobFlowInput$VisibleToAllUsers</a>
