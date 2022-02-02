@@ -73,14 +73,14 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  
         /// <para>
-        /// The default values are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>. Valid
-        /// values for <code>MatchOptions</code> for <code>Dimensions</code> are <code>EQUALS</code>
-        /// and <code>CASE_SENSITIVE</code>.
+        /// Valid values for <code>MatchOptions</code> for <code>CostCategories</code> and <code>Tags</code>
+        /// are <code>EQUALS</code>, <code>ABSENT</code>, and <code>CASE_SENSITIVE</code>.
         /// </para>
         ///  
         /// <para>
-        /// Valid values for <code>MatchOptions</code> for <code>CostCategories</code> and <code>Tags</code>
-        /// are <code>EQUALS</code>, <code>ABSENT</code>, and <code>CASE_SENSITIVE</code>.
+        /// The default values are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>. Valid
+        /// values for <code>MatchOptions</code> for <code>Dimensions</code> are <code>EQUALS</code>
+        /// and <code>CASE_SENSITIVE</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

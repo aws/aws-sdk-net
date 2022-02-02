@@ -1274,13 +1274,7 @@ namespace Amazon.CostExplorer
         /// <para>
         ///  <code>INSTANCE_FAMILY</code> 
         /// </para>
-        ///  </li> </ul> <note> 
-        /// <para>
-        ///  <code>GetSavingsPlansCoverage</code> doesn't support filtering by tags. <code>GetSavingsPlansCoverage</code>
-        /// also doesn't support the <code>OR</code> operator between filter dimensions. For the
-        /// full request syntax with supported parameters, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetSavingsPlansCoverage.html#API_GetSavingsPlansCoverage_Examples">Examples</a>.
-        /// </para>
-        ///  </note> 
+        ///  </li> </ul> 
         /// <para>
         /// To determine valid values for a dimension, use the <code>GetDimensionValues</code>
         /// operation.
@@ -1376,12 +1370,6 @@ namespace Amazon.CostExplorer
         /// <para>
         /// You cannot group by any dimension values for <code>GetSavingsPlansUtilization</code>.
         /// </para>
-        ///  
-        /// <para>
-        ///  <code>GetSavingsPlansUtilization</code> doesn't support filtering by tags. <code>GetSavingsPlansUtilization</code>
-        /// also doesn't support the <code>OR</code> operator between filter dimensions. For the
-        /// full request syntax with supported parameters, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetSavingsPlansUtilization.html#API_GetSavingsPlansUtilization_Examples">Examples</a>.
-        /// </para>
         ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetSavingsPlansUtilization service method.</param>
@@ -1432,13 +1420,6 @@ namespace Amazon.CostExplorer
         ///  <note> 
         /// <para>
         ///  <code>GetSavingsPlanUtilizationDetails</code> internally groups data by <code>SavingsPlansArn</code>.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>GetSavingsPlansUtilizationDetails</code> doesn't support filtering by tags.
-        /// <code>GetSavingsPlansUtilizationDetails</code> also doesn't support the <code>OR</code>
-        /// operator between filter dimensions. For the full request syntax with supported parameters,
-        /// see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetSavingsPlansUtilizationDetails.html#API_GetSavingsPlansUtilizationDetails_Examples">Examples</a>.
         /// </para>
         ///  </note>
         /// </summary>

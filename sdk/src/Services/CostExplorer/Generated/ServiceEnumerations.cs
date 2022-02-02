@@ -621,6 +621,10 @@ namespace Amazon.CostExplorer
         /// </summary>
         public static readonly Dimension INSTANCE_TYPE_FAMILY = new Dimension("INSTANCE_TYPE_FAMILY");
         /// <summary>
+        /// Constant INVOICING_ENTITY for Dimension
+        /// </summary>
+        public static readonly Dimension INVOICING_ENTITY = new Dimension("INVOICING_ENTITY");
+        /// <summary>
         /// Constant LEGAL_ENTITY_NAME for Dimension
         /// </summary>
         public static readonly Dimension LEGAL_ENTITY_NAME = new Dimension("LEGAL_ENTITY_NAME");

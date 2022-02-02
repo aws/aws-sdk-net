@@ -41,13 +41,6 @@ namespace Amazon.CostExplorer.Model
     /// <para>
     ///  <code>GetSavingsPlanUtilizationDetails</code> internally groups data by <code>SavingsPlansArn</code>.
     /// </para>
-    ///  
-    /// <para>
-    ///  <code>GetSavingsPlansUtilizationDetails</code> doesn't support filtering by tags.
-    /// <code>GetSavingsPlansUtilizationDetails</code> also doesn't support the <code>OR</code>
-    /// operator between filter dimensions. For the full request syntax with supported parameters,
-    /// see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetSavingsPlansUtilizationDetails.html#API_GetSavingsPlansUtilizationDetails_Examples">Examples</a>.
-    /// </para>
     ///  </note>
     /// </summary>
     public partial class GetSavingsPlansUtilizationDetailsRequest : AmazonCostExplorerRequest
@@ -108,10 +101,6 @@ namespace Amazon.CostExplorer.Model
         ///  <code>GetSavingsPlansUtilizationDetails</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
         /// object as the other operations, but only <code>AND</code> is supported among each
         /// dimension.
-        /// </para>
-        ///  
-        /// <para>
-        /// Filtering by tags isn't supported.
         /// </para>
         /// </summary>
         public Expression Filter
