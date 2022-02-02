@@ -2669,9 +2669,21 @@ namespace Amazon.IoT
     {
 
         /// <summary>
+        /// Constant CLIENT_ID for LogTargetType
+        /// </summary>
+        public static readonly LogTargetType CLIENT_ID = new LogTargetType("CLIENT_ID");
+        /// <summary>
         /// Constant DEFAULT for LogTargetType
         /// </summary>
         public static readonly LogTargetType DEFAULT = new LogTargetType("DEFAULT");
+        /// <summary>
+        /// Constant PRINCIPAL_ID for LogTargetType
+        /// </summary>
+        public static readonly LogTargetType PRINCIPAL_ID = new LogTargetType("PRINCIPAL_ID");
+        /// <summary>
+        /// Constant SOURCE_IP for LogTargetType
+        /// </summary>
+        public static readonly LogTargetType SOURCE_IP = new LogTargetType("SOURCE_IP");
         /// <summary>
         /// Constant THING_GROUP for LogTargetType
         /// </summary>
