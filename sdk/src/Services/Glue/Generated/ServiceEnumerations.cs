@@ -974,6 +974,10 @@ namespace Amazon.Glue
         /// Constant JSON for DataFormat
         /// </summary>
         public static readonly DataFormat JSON = new DataFormat("JSON");
+        /// <summary>
+        /// Constant PROTOBUF for DataFormat
+        /// </summary>
+        public static readonly DataFormat PROTOBUF = new DataFormat("PROTOBUF");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
