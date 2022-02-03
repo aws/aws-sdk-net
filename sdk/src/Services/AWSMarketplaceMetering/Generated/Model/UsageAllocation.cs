@@ -33,7 +33,8 @@ namespace Amazon.AWSMarketplaceMetering.Model
     /// 
     ///  
     /// <para>
-    /// Each UsageAllocation indicates the usage quantity for a specific set of tags.
+    /// Each <code>UsageAllocation</code> indicates the usage quantity for a specific set
+    /// of tags.
     /// </para>
     /// </summary>
     public partial class UsageAllocation
