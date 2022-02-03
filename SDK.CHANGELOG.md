@@ -1,3 +1,18 @@
+### 3.7.202.0 (2022-02-03 21:14 UTC)
+* AWSMarketplaceMetering (3.7.1.0)
+	* Add CustomerAWSAccountId to ResolveCustomer API response and increase UsageAllocation limit to 2500.
+* EC2 (3.7.59.0)
+	* adds support for AMIs in Recycle Bin
+* RecycleBin (3.7.1.0)
+	* Add EC2 Image recycle bin support.
+* RoboMaker (3.7.6.0)
+	* The release deprecates the use various APIs of RoboMaker Deployment Service in favor of AWS IoT GreenGrass v2.0.
+* Core 3.7.6.3
+	* Updating endpoints.json file.
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.201.0 (2022-02-02 19:22 UTC)
 * Appflow (3.7.5.0)
 	* Launching Amazon AppFlow Custom Connector SDK.
