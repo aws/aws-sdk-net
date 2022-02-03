@@ -40,7 +40,7 @@ namespace Amazon.RecycleBin.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description for the retention rule.
+        /// The retention rule description.
         /// </para>
         /// </summary>
         public string Description
@@ -76,7 +76,7 @@ namespace Amazon.RecycleBin.Model
         /// <summary>
         /// Gets and sets the property RetentionPeriod. 
         /// <para>
-        /// Information about the retention period for which the retention rule retains resources
+        /// Information about the retention period for which the retention rule is to retain resources.
         /// </para>
         /// </summary>
         public RetentionPeriod RetentionPeriod

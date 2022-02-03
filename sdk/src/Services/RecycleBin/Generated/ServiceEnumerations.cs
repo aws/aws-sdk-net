@@ -80,6 +80,10 @@ namespace Amazon.RecycleBin
         /// Constant EBS_SNAPSHOT for ResourceType
         /// </summary>
         public static readonly ResourceType EBS_SNAPSHOT = new ResourceType("EBS_SNAPSHOT");
+        /// <summary>
+        /// Constant EC2_IMAGE for ResourceType
+        /// </summary>
+        public static readonly ResourceType EC2_IMAGE = new ResourceType("EC2_IMAGE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RecycleBin.Model
 {
     /// <summary>
-    /// Information about the tags assigned to a Recycle Bin retention rule.
+    /// Information about the tags to assign to the retention rule.
     /// </summary>
     public partial class Tag
     {

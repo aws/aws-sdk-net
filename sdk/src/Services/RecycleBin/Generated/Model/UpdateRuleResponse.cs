@@ -133,7 +133,7 @@ namespace Amazon.RecycleBin.Model
         /// Gets and sets the property Status. 
         /// <para>
         /// The state of the retention rule. Only retention rules that are in the <code>available</code>
-        /// state retain snapshots.
+        /// state retain resources.
         /// </para>
         /// </summary>
         public RuleStatus Status

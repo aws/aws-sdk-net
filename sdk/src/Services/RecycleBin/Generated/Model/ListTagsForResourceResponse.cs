@@ -38,7 +38,7 @@ namespace Amazon.RecycleBin.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Information about the tags assigned to the resource.
+        /// Information about the tags assigned to the retention rule.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=200)]

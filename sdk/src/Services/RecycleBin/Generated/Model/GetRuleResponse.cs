@@ -43,7 +43,7 @@ namespace Amazon.RecycleBin.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description assigned to the retention rule.
+        /// The retention rule description.
         /// </para>
         /// </summary>
         public string Description
@@ -79,8 +79,8 @@ namespace Amazon.RecycleBin.Model
         /// <summary>
         /// Gets and sets the property ResourceTags. 
         /// <para>
-        /// The resource tags used to identify resources that are to be retained by the retention
-        /// rule.
+        /// Information about the resource tags used to identify resources that are retained by
+        /// the retention rule.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]
@@ -99,8 +99,7 @@ namespace Amazon.RecycleBin.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The resource type retained by the retention rule. Currently, only Amazon EBS snapshots
-        /// are supported.
+        /// The resource type retained by the retention rule.
         /// </para>
         /// </summary>
         public ResourceType ResourceType
@@ -118,7 +117,7 @@ namespace Amazon.RecycleBin.Model
         /// <summary>
         /// Gets and sets the property RetentionPeriod. 
         /// <para>
-        /// Information about the period for which the retention rule retains resources.
+        /// Information about the retention period for which the retention rule is to retain resources.
         /// </para>
         /// </summary>
         public RetentionPeriod RetentionPeriod
@@ -137,7 +136,7 @@ namespace Amazon.RecycleBin.Model
         /// Gets and sets the property Status. 
         /// <para>
         /// The state of the retention rule. Only retention rules that are in the <code>available</code>
-        /// state retain snapshots.
+        /// state retain resources.
         /// </para>
         /// </summary>
         public RuleStatus Status

@@ -42,10 +42,8 @@ namespace Amazon.RecycleBin.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of results to return for the request in a single page. The remaining
-        /// results can be seen by sending another request with the returned <code>nextToken</code>
-        /// value. This value can be between 5 and 500. If <code>maxResults</code> is given a
-        /// larger value than 500, you receive an error.
+        /// The maximum number of results to return with a single call. To retrieve the remaining
+        /// results, make another call with the returned <code>NextToken</code> value.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
@@ -64,7 +62,7 @@ namespace Amazon.RecycleBin.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token to use to retrieve the next page of results.
+        /// The token for the next page of results.
         /// </para>
         /// </summary>
         public string NextToken
@@ -82,7 +80,8 @@ namespace Amazon.RecycleBin.Model
         /// <summary>
         /// Gets and sets the property ResourceTags. 
         /// <para>
-        /// The tags used to identify resources that are to be retained by the retention rule.
+        /// Information about the resource tags used to identify resources that are retained by
+        /// the retention rule.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]
@@ -102,7 +101,9 @@ namespace Amazon.RecycleBin.Model
         /// Gets and sets the property ResourceType. 
         /// <para>
         /// The resource type retained by the retention rule. Only retention rules that retain
-        /// the specified resource type are listed.
+        /// the specified resource type are listed. Currently, only Amazon EBS snapshots and EBS-backed
+        /// AMIs are supported. To list retention rules that retain snapshots, specify <code>EBS_SNAPSHOT</code>.
+        /// To list retention rules that retain EBS-backed AMIs, specify <code>EC2_IMAGE</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
