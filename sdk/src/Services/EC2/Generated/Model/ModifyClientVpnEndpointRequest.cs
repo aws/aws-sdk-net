@@ -68,7 +68,11 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ClientLoginBannerOptions.
+        /// Gets and sets the property ClientLoginBannerOptions. 
+        /// <para>
+        /// Options for enabling a customizable text banner that will be displayed on Amazon Web
+        /// Services provided clients when a VPN session is established.
+        /// </para>
         /// </summary>
         public ClientLoginBannerOptions ClientLoginBannerOptions
         {
@@ -234,7 +238,18 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SessionTimeoutHours.
+        /// Gets and sets the property SessionTimeoutHours. 
+        /// <para>
+        /// The maximum VPN session duration time in hours.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values: <code>8 | 10 | 12 | 24</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Default value: <code>24</code> 
+        /// </para>
         /// </summary>
         public int SessionTimeoutHours
         {

@@ -4488,6 +4488,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("EC2")]
+        public void ListImagesInRecycleBinTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListImagesInRecycleBinRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListImagesInRecycleBinResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListImagesInRecycleBinResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListImagesInRecycleBin(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListImagesInRecycleBin(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("EC2")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListImagesInRecycleBinTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListImagesInRecycleBinRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListImagesInRecycleBinResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListImagesInRecycleBin(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListImagesInRecycleBin(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("EC2")]
         public void ListSnapshotsInRecycleBinTest_TwoPages()
         {
             var request = InstantiateClassGenerator.Execute<ListSnapshotsInRecycleBinRequest>();

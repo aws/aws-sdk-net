@@ -9465,6 +9465,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void ListImagesInRecycleBinMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListImagesInRecycleBin");
+
+            var request = InstantiateClassGenerator.Execute<ListImagesInRecycleBinRequest>();
+            var marshaller = new ListImagesInRecycleBinRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = ListImagesInRecycleBinResponseUnmarshaller.Instance.Unmarshall(context)
+                as ListImagesInRecycleBinResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void ListSnapshotsInRecycleBinMarshallTest()
         {
             var operation = service_model.FindOperation("ListSnapshotsInRecycleBin");
@@ -11622,6 +11646,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
             var response = RestoreAddressToClassicResponseUnmarshaller.Instance.Unmarshall(context)
                 as RestoreAddressToClassicResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void RestoreImageFromRecycleBinMarshallTest()
+        {
+            var operation = service_model.FindOperation("RestoreImageFromRecycleBin");
+
+            var request = InstantiateClassGenerator.Execute<RestoreImageFromRecycleBinRequest>();
+            var marshaller = new RestoreImageFromRecycleBinRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = RestoreImageFromRecycleBinResponseUnmarshaller.Instance.Unmarshall(context)
+                as RestoreImageFromRecycleBinResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 

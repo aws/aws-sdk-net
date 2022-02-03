@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// 
+    /// Options for enabling a customizable text banner that will be displayed on Amazon Web
+    /// Services provided clients when a VPN session is established.
     /// </summary>
     public partial class ClientLoginBannerOptions
     {
@@ -37,7 +38,12 @@ namespace Amazon.EC2.Model
         private bool? _enabled;
 
         /// <summary>
-        /// Gets and sets the property BannerText.
+        /// Gets and sets the property BannerText. 
+        /// <para>
+        /// Customizable text that will be displayed in a banner on Amazon Web Services provided
+        /// clients when a VPN session is established. UTF-8 encoded characters only. Maximum
+        /// of 1400 characters.
+        /// </para>
         /// </summary>
         public string BannerText
         {
@@ -52,7 +58,19 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Enabled.
+        /// Gets and sets the property Enabled. 
+        /// <para>
+        /// Enable or disable a customizable text banner that will be displayed on Amazon Web
+        /// Services provided clients when a VPN session is established.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values: <code>true | false</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Default value: <code>false</code> 
+        /// </para>
         /// </summary>
         public bool Enabled
         {

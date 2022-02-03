@@ -29,48 +29,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Container for the parameters to the DisableFastLaunch operation.
-    /// Discontinue faster launching for a Windows AMI, and clean up existing pre-provisioned
-    /// snapshots. When you disable faster launching, the AMI uses the standard launch process
-    /// for each instance. All pre-provisioned snapshots must be removed before you can enable
-    /// faster launching again.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// To change these settings, you must own the AMI.
-    /// </para>
-    ///  </note>
+    /// Container for the parameters to the RestoreImageFromRecycleBin operation.
+    /// Restores an AMI from the Recycle Bin. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin.html">Recycle
+    /// Bin</a> in the Amazon Elastic Compute Cloud User Guide.
     /// </summary>
-    public partial class DisableFastLaunchRequest : AmazonEC2Request
+    public partial class RestoreImageFromRecycleBinRequest : AmazonEC2Request
     {
-        private bool? _force;
         private string _imageId;
-
-        /// <summary>
-        /// Gets and sets the property Force. 
-        /// <para>
-        /// Forces the image settings to turn off faster launching for your Windows AMI. This
-        /// parameter overrides any errors that are encountered while cleaning up resources in
-        /// your account.
-        /// </para>
-        /// </summary>
-        public bool Force
-        {
-            get { return this._force.GetValueOrDefault(); }
-            set { this._force = value; }
-        }
-
-        // Check to see if Force property is set
-        internal bool IsSetForce()
-        {
-            return this._force.HasValue; 
-        }
 
         /// <summary>
         /// Gets and sets the property ImageId. 
         /// <para>
-        /// The ID of the image for which you’re turning off faster launching, and removing pre-provisioned
-        /// snapshots.
+        /// The ID of the AMI to restore.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

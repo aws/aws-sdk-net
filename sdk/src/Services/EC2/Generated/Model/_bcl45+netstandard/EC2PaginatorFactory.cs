@@ -948,6 +948,14 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Paginator for ListImagesInRecycleBin operation
+        ///</summary>
+        public IListImagesInRecycleBinPaginator ListImagesInRecycleBin(ListImagesInRecycleBinRequest request) 
+        {
+            return new ListImagesInRecycleBinPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListSnapshotsInRecycleBin operation
         ///</summary>
         public IListSnapshotsInRecycleBinPaginator ListSnapshotsInRecycleBin(ListSnapshotsInRecycleBinRequest request) 

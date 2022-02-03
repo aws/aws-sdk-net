@@ -596,6 +596,11 @@ namespace Amazon.EC2.Model
         IGetVpnConnectionDeviceTypesPaginator GetVpnConnectionDeviceTypes(GetVpnConnectionDeviceTypesRequest request);
 
         /// <summary>
+        /// Paginator for ListImagesInRecycleBin operation
+        ///</summary>
+        IListImagesInRecycleBinPaginator ListImagesInRecycleBin(ListImagesInRecycleBinRequest request);
+
+        /// <summary>
         /// Paginator for ListSnapshotsInRecycleBin operation
         ///</summary>
         IListSnapshotsInRecycleBinPaginator ListSnapshotsInRecycleBin(ListSnapshotsInRecycleBinRequest request);

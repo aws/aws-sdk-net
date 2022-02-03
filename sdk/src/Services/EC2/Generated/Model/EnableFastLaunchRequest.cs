@@ -36,6 +36,12 @@ namespace Amazon.EC2.Model
     /// Then it creates a set of reserved snapshots that are used for subsequent launches.
     /// The reserved snapshots are automatically replenished as they are used, depending on
     /// your settings for launch frequency.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// To change these settings, you must own the AMI.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class EnableFastLaunchRequest : AmazonEC2Request
     {
@@ -87,7 +93,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property MaxParallelLaunches. 
         /// <para>
-        /// The maximum number of parallel instances to launch for creating resources.
+        /// The maximum number of parallel instances to launch for creating resources. Value must
+        /// be <code>6</code> or greater. 
         /// </para>
         /// </summary>
         public int MaxParallelLaunches
