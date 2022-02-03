@@ -152,6 +152,13 @@ namespace Amazon.RoboMaker
 
         /// <summary>
         /// Cancels the specified deployment job.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// This API will no longer be supported as of May 2, 2022. Use it to remove resources
+        /// that were created for Deployment Service.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelDeploymentJob service method.</param>
         /// 
@@ -170,6 +177,7 @@ namespace Amazon.RoboMaker
         /// AWS RoboMaker is temporarily unable to process the request. Try your call again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/CancelDeploymentJob">REST API Reference for CancelDeploymentJob Operation</seealso>
+        [Obsolete("Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.")]
         CancelDeploymentJobResponse CancelDeploymentJob(CancelDeploymentJobRequest request);
 
         /// <summary>
@@ -184,6 +192,7 @@ namespace Amazon.RoboMaker
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCancelDeploymentJob
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/CancelDeploymentJob">REST API Reference for CancelDeploymentJob Operation</seealso>
+        [Obsolete("Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.")]
         IAsyncResult BeginCancelDeploymentJob(CancelDeploymentJobRequest request, AsyncCallback callback, object state);
 
 
@@ -196,6 +205,7 @@ namespace Amazon.RoboMaker
         /// 
         /// <returns>Returns a  CancelDeploymentJobResult from RoboMaker.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/CancelDeploymentJob">REST API Reference for CancelDeploymentJob Operation</seealso>
+        [Obsolete("Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.")]
         CancelDeploymentJobResponse EndCancelDeploymentJob(IAsyncResult asyncResult);
 
         #endregion
@@ -419,7 +429,11 @@ namespace Amazon.RoboMaker
         /// <summary>
         /// Deploys a specific version of a robot application to robots in a fleet.
         /// 
-        ///  
+        ///  <important> 
+        /// <para>
+        /// This API is no longer supported and will throw an error if used.
+        /// </para>
+        ///  </important> 
         /// <para>
         /// The robot application must have a numbered <code>applicationVersion</code> for consistency
         /// reasons. To create a new version, use <code>CreateRobotApplicationVersion</code> or
@@ -461,6 +475,7 @@ namespace Amazon.RoboMaker
         /// AWS RoboMaker is temporarily unable to process the request. Try your call again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/CreateDeploymentJob">REST API Reference for CreateDeploymentJob Operation</seealso>
+        [Obsolete("AWS RoboMaker is unable to process this request as the support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.")]
         CreateDeploymentJobResponse CreateDeploymentJob(CreateDeploymentJobRequest request);
 
         /// <summary>
@@ -475,6 +490,7 @@ namespace Amazon.RoboMaker
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateDeploymentJob
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/CreateDeploymentJob">REST API Reference for CreateDeploymentJob Operation</seealso>
+        [Obsolete("AWS RoboMaker is unable to process this request as the support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.")]
         IAsyncResult BeginCreateDeploymentJob(CreateDeploymentJobRequest request, AsyncCallback callback, object state);
 
 
@@ -487,6 +503,7 @@ namespace Amazon.RoboMaker
         /// 
         /// <returns>Returns a  CreateDeploymentJobResult from RoboMaker.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/CreateDeploymentJob">REST API Reference for CreateDeploymentJob Operation</seealso>
+        [Obsolete("AWS RoboMaker is unable to process this request as the support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.")]
         CreateDeploymentJobResponse EndCreateDeploymentJob(IAsyncResult asyncResult);
 
         #endregion
@@ -496,6 +513,12 @@ namespace Amazon.RoboMaker
 
         /// <summary>
         /// Creates a fleet, a logical group of robots running the same robot application.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// This API is no longer supported and will throw an error if used.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateFleet service method.</param>
         /// 
@@ -515,6 +538,7 @@ namespace Amazon.RoboMaker
         /// AWS RoboMaker is temporarily unable to process the request. Try your call again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/CreateFleet">REST API Reference for CreateFleet Operation</seealso>
+        [Obsolete("AWS RoboMaker is unable to process this request as the support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.")]
         CreateFleetResponse CreateFleet(CreateFleetRequest request);
 
         /// <summary>
@@ -529,6 +553,7 @@ namespace Amazon.RoboMaker
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateFleet
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/CreateFleet">REST API Reference for CreateFleet Operation</seealso>
+        [Obsolete("AWS RoboMaker is unable to process this request as the support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.")]
         IAsyncResult BeginCreateFleet(CreateFleetRequest request, AsyncCallback callback, object state);
 
 
@@ -541,6 +566,7 @@ namespace Amazon.RoboMaker
         /// 
         /// <returns>Returns a  CreateFleetResult from RoboMaker.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/CreateFleet">REST API Reference for CreateFleet Operation</seealso>
+        [Obsolete("AWS RoboMaker is unable to process this request as the support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.")]
         CreateFleetResponse EndCreateFleet(IAsyncResult asyncResult);
 
         #endregion
@@ -550,6 +576,12 @@ namespace Amazon.RoboMaker
 
         /// <summary>
         /// Creates a robot.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// This API is no longer supported and will throw an error if used.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateRobot service method.</param>
         /// 
@@ -572,6 +604,7 @@ namespace Amazon.RoboMaker
         /// AWS RoboMaker is temporarily unable to process the request. Try your call again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/CreateRobot">REST API Reference for CreateRobot Operation</seealso>
+        [Obsolete("AWS RoboMaker is unable to process this request as the support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.")]
         CreateRobotResponse CreateRobot(CreateRobotRequest request);
 
         /// <summary>
@@ -586,6 +619,7 @@ namespace Amazon.RoboMaker
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateRobot
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/CreateRobot">REST API Reference for CreateRobot Operation</seealso>
+        [Obsolete("AWS RoboMaker is unable to process this request as the support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.")]
         IAsyncResult BeginCreateRobot(CreateRobotRequest request, AsyncCallback callback, object state);
 
 
@@ -598,6 +632,7 @@ namespace Amazon.RoboMaker
         /// 
         /// <returns>Returns a  CreateRobotResult from RoboMaker.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/CreateRobot">REST API Reference for CreateRobot Operation</seealso>
+        [Obsolete("AWS RoboMaker is unable to process this request as the support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.")]
         CreateRobotResponse EndCreateRobot(IAsyncResult asyncResult);
 
         #endregion
@@ -1100,6 +1135,13 @@ namespace Amazon.RoboMaker
 
         /// <summary>
         /// Deletes a fleet.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// This API will no longer be supported as of May 2, 2022. Use it to remove resources
+        /// that were created for Deployment Service.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteFleet service method.</param>
         /// 
@@ -1115,6 +1157,7 @@ namespace Amazon.RoboMaker
         /// AWS RoboMaker is temporarily unable to process the request. Try your call again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/DeleteFleet">REST API Reference for DeleteFleet Operation</seealso>
+        [Obsolete("Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.")]
         DeleteFleetResponse DeleteFleet(DeleteFleetRequest request);
 
         /// <summary>
@@ -1129,6 +1172,7 @@ namespace Amazon.RoboMaker
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteFleet
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/DeleteFleet">REST API Reference for DeleteFleet Operation</seealso>
+        [Obsolete("Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.")]
         IAsyncResult BeginDeleteFleet(DeleteFleetRequest request, AsyncCallback callback, object state);
 
 
@@ -1141,6 +1185,7 @@ namespace Amazon.RoboMaker
         /// 
         /// <returns>Returns a  DeleteFleetResult from RoboMaker.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/DeleteFleet">REST API Reference for DeleteFleet Operation</seealso>
+        [Obsolete("Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.")]
         DeleteFleetResponse EndDeleteFleet(IAsyncResult asyncResult);
 
         #endregion
@@ -1150,6 +1195,13 @@ namespace Amazon.RoboMaker
 
         /// <summary>
         /// Deletes a robot.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// This API will no longer be supported as of May 2, 2022. Use it to remove resources
+        /// that were created for Deployment Service.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteRobot service method.</param>
         /// 
@@ -1165,6 +1217,7 @@ namespace Amazon.RoboMaker
         /// AWS RoboMaker is temporarily unable to process the request. Try your call again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/DeleteRobot">REST API Reference for DeleteRobot Operation</seealso>
+        [Obsolete("Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.")]
         DeleteRobotResponse DeleteRobot(DeleteRobotRequest request);
 
         /// <summary>
@@ -1179,6 +1232,7 @@ namespace Amazon.RoboMaker
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteRobot
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/DeleteRobot">REST API Reference for DeleteRobot Operation</seealso>
+        [Obsolete("Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.")]
         IAsyncResult BeginDeleteRobot(DeleteRobotRequest request, AsyncCallback callback, object state);
 
 
@@ -1191,6 +1245,7 @@ namespace Amazon.RoboMaker
         /// 
         /// <returns>Returns a  DeleteRobotResult from RoboMaker.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/DeleteRobot">REST API Reference for DeleteRobot Operation</seealso>
+        [Obsolete("Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.")]
         DeleteRobotResponse EndDeleteRobot(IAsyncResult asyncResult);
 
         #endregion
@@ -1353,6 +1408,13 @@ namespace Amazon.RoboMaker
 
         /// <summary>
         /// Deregisters a robot.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// This API will no longer be supported as of May 2, 2022. Use it to remove resources
+        /// that were created for Deployment Service.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeregisterRobot service method.</param>
         /// 
@@ -1371,6 +1433,7 @@ namespace Amazon.RoboMaker
         /// AWS RoboMaker is temporarily unable to process the request. Try your call again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/DeregisterRobot">REST API Reference for DeregisterRobot Operation</seealso>
+        [Obsolete("Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.")]
         DeregisterRobotResponse DeregisterRobot(DeregisterRobotRequest request);
 
         /// <summary>
@@ -1385,6 +1448,7 @@ namespace Amazon.RoboMaker
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeregisterRobot
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/DeregisterRobot">REST API Reference for DeregisterRobot Operation</seealso>
+        [Obsolete("Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.")]
         IAsyncResult BeginDeregisterRobot(DeregisterRobotRequest request, AsyncCallback callback, object state);
 
 
@@ -1397,6 +1461,7 @@ namespace Amazon.RoboMaker
         /// 
         /// <returns>Returns a  DeregisterRobotResult from RoboMaker.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/DeregisterRobot">REST API Reference for DeregisterRobot Operation</seealso>
+        [Obsolete("Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.")]
         DeregisterRobotResponse EndDeregisterRobot(IAsyncResult asyncResult);
 
         #endregion
@@ -1406,6 +1471,13 @@ namespace Amazon.RoboMaker
 
         /// <summary>
         /// Describes a deployment job.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// This API will no longer be supported as of May 2, 2022. Use it to remove resources
+        /// that were created for Deployment Service.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDeploymentJob service method.</param>
         /// 
@@ -1424,6 +1496,7 @@ namespace Amazon.RoboMaker
         /// AWS RoboMaker is temporarily unable to process the request. Try your call again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/DescribeDeploymentJob">REST API Reference for DescribeDeploymentJob Operation</seealso>
+        [Obsolete("Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.")]
         DescribeDeploymentJobResponse DescribeDeploymentJob(DescribeDeploymentJobRequest request);
 
         /// <summary>
@@ -1438,6 +1511,7 @@ namespace Amazon.RoboMaker
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeDeploymentJob
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/DescribeDeploymentJob">REST API Reference for DescribeDeploymentJob Operation</seealso>
+        [Obsolete("Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.")]
         IAsyncResult BeginDescribeDeploymentJob(DescribeDeploymentJobRequest request, AsyncCallback callback, object state);
 
 
@@ -1450,6 +1524,7 @@ namespace Amazon.RoboMaker
         /// 
         /// <returns>Returns a  DescribeDeploymentJobResult from RoboMaker.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/DescribeDeploymentJob">REST API Reference for DescribeDeploymentJob Operation</seealso>
+        [Obsolete("Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.")]
         DescribeDeploymentJobResponse EndDescribeDeploymentJob(IAsyncResult asyncResult);
 
         #endregion
@@ -1459,6 +1534,13 @@ namespace Amazon.RoboMaker
 
         /// <summary>
         /// Describes a fleet.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// This API will no longer be supported as of May 2, 2022. Use it to remove resources
+        /// that were created for Deployment Service.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeFleet service method.</param>
         /// 
@@ -1477,6 +1559,7 @@ namespace Amazon.RoboMaker
         /// AWS RoboMaker is temporarily unable to process the request. Try your call again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/DescribeFleet">REST API Reference for DescribeFleet Operation</seealso>
+        [Obsolete("Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.")]
         DescribeFleetResponse DescribeFleet(DescribeFleetRequest request);
 
         /// <summary>
@@ -1491,6 +1574,7 @@ namespace Amazon.RoboMaker
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeFleet
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/DescribeFleet">REST API Reference for DescribeFleet Operation</seealso>
+        [Obsolete("Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.")]
         IAsyncResult BeginDescribeFleet(DescribeFleetRequest request, AsyncCallback callback, object state);
 
 
@@ -1503,6 +1587,7 @@ namespace Amazon.RoboMaker
         /// 
         /// <returns>Returns a  DescribeFleetResult from RoboMaker.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/DescribeFleet">REST API Reference for DescribeFleet Operation</seealso>
+        [Obsolete("Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.")]
         DescribeFleetResponse EndDescribeFleet(IAsyncResult asyncResult);
 
         #endregion
@@ -1512,6 +1597,13 @@ namespace Amazon.RoboMaker
 
         /// <summary>
         /// Describes a robot.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// This API will no longer be supported as of May 2, 2022. Use it to remove resources
+        /// that were created for Deployment Service.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeRobot service method.</param>
         /// 
@@ -1530,6 +1622,7 @@ namespace Amazon.RoboMaker
         /// AWS RoboMaker is temporarily unable to process the request. Try your call again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/DescribeRobot">REST API Reference for DescribeRobot Operation</seealso>
+        [Obsolete("Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.")]
         DescribeRobotResponse DescribeRobot(DescribeRobotRequest request);
 
         /// <summary>
@@ -1544,6 +1637,7 @@ namespace Amazon.RoboMaker
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeRobot
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/DescribeRobot">REST API Reference for DescribeRobot Operation</seealso>
+        [Obsolete("Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.")]
         IAsyncResult BeginDescribeRobot(DescribeRobotRequest request, AsyncCallback callback, object state);
 
 
@@ -1556,6 +1650,7 @@ namespace Amazon.RoboMaker
         /// 
         /// <returns>Returns a  DescribeRobotResult from RoboMaker.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/DescribeRobot">REST API Reference for DescribeRobot Operation</seealso>
+        [Obsolete("Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.")]
         DescribeRobotResponse EndDescribeRobot(IAsyncResult asyncResult);
 
         #endregion
@@ -2040,6 +2135,13 @@ namespace Amazon.RoboMaker
         /// <summary>
         /// Returns a list of deployment jobs for a fleet. You can optionally provide filters
         /// to retrieve specific deployment jobs.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// This API will no longer be supported as of May 2, 2022. Use it to remove resources
+        /// that were created for Deployment Service.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDeploymentJobs service method.</param>
         /// 
@@ -2058,6 +2160,7 @@ namespace Amazon.RoboMaker
         /// AWS RoboMaker is temporarily unable to process the request. Try your call again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/ListDeploymentJobs">REST API Reference for ListDeploymentJobs Operation</seealso>
+        [Obsolete("Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.")]
         ListDeploymentJobsResponse ListDeploymentJobs(ListDeploymentJobsRequest request);
 
         /// <summary>
@@ -2072,6 +2175,7 @@ namespace Amazon.RoboMaker
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDeploymentJobs
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/ListDeploymentJobs">REST API Reference for ListDeploymentJobs Operation</seealso>
+        [Obsolete("Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.")]
         IAsyncResult BeginListDeploymentJobs(ListDeploymentJobsRequest request, AsyncCallback callback, object state);
 
 
@@ -2084,6 +2188,7 @@ namespace Amazon.RoboMaker
         /// 
         /// <returns>Returns a  ListDeploymentJobsResult from RoboMaker.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/ListDeploymentJobs">REST API Reference for ListDeploymentJobs Operation</seealso>
+        [Obsolete("Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.")]
         ListDeploymentJobsResponse EndListDeploymentJobs(IAsyncResult asyncResult);
 
         #endregion
@@ -2094,6 +2199,13 @@ namespace Amazon.RoboMaker
         /// <summary>
         /// Returns a list of fleets. You can optionally provide filters to retrieve specific
         /// fleets.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// This API will no longer be supported as of May 2, 2022. Use it to remove resources
+        /// that were created for Deployment Service.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListFleets service method.</param>
         /// 
@@ -2112,6 +2224,7 @@ namespace Amazon.RoboMaker
         /// AWS RoboMaker is temporarily unable to process the request. Try your call again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/ListFleets">REST API Reference for ListFleets Operation</seealso>
+        [Obsolete("Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.")]
         ListFleetsResponse ListFleets(ListFleetsRequest request);
 
         /// <summary>
@@ -2126,6 +2239,7 @@ namespace Amazon.RoboMaker
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListFleets
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/ListFleets">REST API Reference for ListFleets Operation</seealso>
+        [Obsolete("Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.")]
         IAsyncResult BeginListFleets(ListFleetsRequest request, AsyncCallback callback, object state);
 
 
@@ -2138,6 +2252,7 @@ namespace Amazon.RoboMaker
         /// 
         /// <returns>Returns a  ListFleetsResult from RoboMaker.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/ListFleets">REST API Reference for ListFleets Operation</seealso>
+        [Obsolete("Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.")]
         ListFleetsResponse EndListFleets(IAsyncResult asyncResult);
 
         #endregion
@@ -2199,6 +2314,13 @@ namespace Amazon.RoboMaker
         /// <summary>
         /// Returns a list of robots. You can optionally provide filters to retrieve specific
         /// robots.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// This API will no longer be supported as of May 2, 2022. Use it to remove resources
+        /// that were created for Deployment Service.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRobots service method.</param>
         /// 
@@ -2217,6 +2339,7 @@ namespace Amazon.RoboMaker
         /// AWS RoboMaker is temporarily unable to process the request. Try your call again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/ListRobots">REST API Reference for ListRobots Operation</seealso>
+        [Obsolete("Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.")]
         ListRobotsResponse ListRobots(ListRobotsRequest request);
 
         /// <summary>
@@ -2231,6 +2354,7 @@ namespace Amazon.RoboMaker
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListRobots
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/ListRobots">REST API Reference for ListRobots Operation</seealso>
+        [Obsolete("Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.")]
         IAsyncResult BeginListRobots(ListRobotsRequest request, AsyncCallback callback, object state);
 
 
@@ -2243,6 +2367,7 @@ namespace Amazon.RoboMaker
         /// 
         /// <returns>Returns a  ListRobotsResult from RoboMaker.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/ListRobots">REST API Reference for ListRobots Operation</seealso>
+        [Obsolete("Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.")]
         ListRobotsResponse EndListRobots(IAsyncResult asyncResult);
 
         #endregion
@@ -2655,6 +2780,12 @@ namespace Amazon.RoboMaker
 
         /// <summary>
         /// Registers a robot with a fleet.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// This API is no longer supported and will throw an error if used.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RegisterRobot service method.</param>
         /// 
@@ -2677,6 +2808,7 @@ namespace Amazon.RoboMaker
         /// AWS RoboMaker is temporarily unable to process the request. Try your call again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/RegisterRobot">REST API Reference for RegisterRobot Operation</seealso>
+        [Obsolete("AWS RoboMaker is unable to process this request as the support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.")]
         RegisterRobotResponse RegisterRobot(RegisterRobotRequest request);
 
         /// <summary>
@@ -2691,6 +2823,7 @@ namespace Amazon.RoboMaker
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRegisterRobot
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/RegisterRobot">REST API Reference for RegisterRobot Operation</seealso>
+        [Obsolete("AWS RoboMaker is unable to process this request as the support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.")]
         IAsyncResult BeginRegisterRobot(RegisterRobotRequest request, AsyncCallback callback, object state);
 
 
@@ -2703,6 +2836,7 @@ namespace Amazon.RoboMaker
         /// 
         /// <returns>Returns a  RegisterRobotResult from RoboMaker.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/RegisterRobot">REST API Reference for RegisterRobot Operation</seealso>
+        [Obsolete("AWS RoboMaker is unable to process this request as the support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.")]
         RegisterRobotResponse EndRegisterRobot(IAsyncResult asyncResult);
 
         #endregion
@@ -2829,6 +2963,13 @@ namespace Amazon.RoboMaker
         /// <summary>
         /// Syncrhonizes robots in a fleet to the latest deployment. This is helpful if robots
         /// were added after a deployment.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// This API will no longer be supported as of May 2, 2022. Use it to remove resources
+        /// that were created for Deployment Service.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SyncDeploymentJob service method.</param>
         /// 
@@ -2858,6 +2999,7 @@ namespace Amazon.RoboMaker
         /// AWS RoboMaker is temporarily unable to process the request. Try your call again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/SyncDeploymentJob">REST API Reference for SyncDeploymentJob Operation</seealso>
+        [Obsolete("Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.")]
         SyncDeploymentJobResponse SyncDeploymentJob(SyncDeploymentJobRequest request);
 
         /// <summary>
@@ -2872,6 +3014,7 @@ namespace Amazon.RoboMaker
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSyncDeploymentJob
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/SyncDeploymentJob">REST API Reference for SyncDeploymentJob Operation</seealso>
+        [Obsolete("Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.")]
         IAsyncResult BeginSyncDeploymentJob(SyncDeploymentJobRequest request, AsyncCallback callback, object state);
 
 
@@ -2884,6 +3027,7 @@ namespace Amazon.RoboMaker
         /// 
         /// <returns>Returns a  SyncDeploymentJobResult from RoboMaker.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/SyncDeploymentJob">REST API Reference for SyncDeploymentJob Operation</seealso>
+        [Obsolete("Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.")]
         SyncDeploymentJobResponse EndSyncDeploymentJob(IAsyncResult asyncResult);
 
         #endregion
