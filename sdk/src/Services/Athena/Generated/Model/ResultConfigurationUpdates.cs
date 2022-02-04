@@ -35,8 +35,10 @@ namespace Amazon.Athena.Model
     public partial class ResultConfigurationUpdates
     {
         private EncryptionConfiguration _encryptionConfiguration;
+        private string _expectedBucketOwner;
         private string _outputLocation;
         private bool? _removeEncryptionConfiguration;
+        private bool? _removeExpectedBucketOwner;
         private bool? _removeOutputLocation;
 
         /// <summary>
@@ -55,6 +57,37 @@ namespace Amazon.Athena.Model
         internal bool IsSetEncryptionConfiguration()
         {
             return this._encryptionConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExpectedBucketOwner. 
+        /// <para>
+        /// The Amazon Web Services account ID that you expect to be the owner of the Amazon S3
+        /// bucket specified by <a>ResultConfiguration$OutputLocation</a>. If set, Athena uses
+        /// the value for <code>ExpectedBucketOwner</code> when it makes Amazon S3 calls to your
+        /// specified output location. If the <code>ExpectedBucketOwner</code> Amazon Web Services
+        /// account ID does not match the actual owner of the Amazon S3 bucket, the call fails
+        /// with a permissions error.
+        /// </para>
+        ///  
+        /// <para>
+        /// If workgroup settings override client-side settings, then the query uses the <code>ExpectedBucketOwner</code>
+        /// setting that is specified for the workgroup, and also uses the location for storing
+        /// query results specified in the workgroup. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>
+        /// and <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup
+        /// Settings Override Client-Side Settings</a>.
+        /// </para>
+        /// </summary>
+        public string ExpectedBucketOwner
+        {
+            get { return this._expectedBucketOwner; }
+            set { this._expectedBucketOwner = value; }
+        }
+
+        // Check to see if ExpectedBucketOwner property is set
+        internal bool IsSetExpectedBucketOwner()
+        {
+            return this._expectedBucketOwner != null;
         }
 
         /// <summary>
@@ -87,7 +120,7 @@ namespace Amazon.Athena.Model
         /// (also known as the client-side setting) for queries in this workgroup should be ignored
         /// and set to null. If set to "false" or not set, and a value is present in the <code>EncryptionConfiguration</code>
         /// in <code>ResultConfigurationUpdates</code> (the client-side setting), the <code>EncryptionConfiguration</code>
-        /// in the workgroup's <code>ResultConfiguration</code> will be updated with the new value.
+        /// in the workgroup's <code>ResultConfiguration</code> is updated with the new value.
         /// For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup
         /// Settings Override Client-Side Settings</a>.
         /// </para>
@@ -105,13 +138,37 @@ namespace Amazon.Athena.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RemoveExpectedBucketOwner. 
+        /// <para>
+        /// If set to "true", removes the Amazon Web Services account ID previously specified
+        /// for <a>ResultConfiguration$ExpectedBucketOwner</a>. If set to "false" or not set,
+        /// and a value is present in the <code>ExpectedBucketOwner</code> in <code>ResultConfigurationUpdates</code>
+        /// (the client-side setting), the <code>ExpectedBucketOwner</code> in the workgroup's
+        /// <code>ResultConfiguration</code> is updated with the new value. For more information,
+        /// see <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup
+        /// Settings Override Client-Side Settings</a>.
+        /// </para>
+        /// </summary>
+        public bool RemoveExpectedBucketOwner
+        {
+            get { return this._removeExpectedBucketOwner.GetValueOrDefault(); }
+            set { this._removeExpectedBucketOwner = value; }
+        }
+
+        // Check to see if RemoveExpectedBucketOwner property is set
+        internal bool IsSetRemoveExpectedBucketOwner()
+        {
+            return this._removeExpectedBucketOwner.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property RemoveOutputLocation. 
         /// <para>
         /// If set to "true", indicates that the previously-specified query results location (also
         /// known as a client-side setting) for queries in this workgroup should be ignored and
         /// set to null. If set to "false" or not set, and a value is present in the <code>OutputLocation</code>
         /// in <code>ResultConfigurationUpdates</code> (the client-side setting), the <code>OutputLocation</code>
-        /// in the workgroup's <code>ResultConfiguration</code> will be updated with the new value.
+        /// in the workgroup's <code>ResultConfiguration</code> is updated with the new value.
         /// For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup
         /// Settings Override Client-Side Settings</a>.
         /// </para>

@@ -56,6 +56,12 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetExpectedBucketOwner())
+            {
+                context.Writer.WritePropertyName("ExpectedBucketOwner");
+                context.Writer.Write(requestObject.ExpectedBucketOwner);
+            }
+
             if(requestObject.IsSetOutputLocation())
             {
                 context.Writer.WritePropertyName("OutputLocation");
@@ -66,6 +72,12 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("RemoveEncryptionConfiguration");
                 context.Writer.Write(requestObject.RemoveEncryptionConfiguration);
+            }
+
+            if(requestObject.IsSetRemoveExpectedBucketOwner())
+            {
+                context.Writer.WritePropertyName("RemoveExpectedBucketOwner");
+                context.Writer.Write(requestObject.RemoveExpectedBucketOwner);
             }
 
             if(requestObject.IsSetRemoveOutputLocation())

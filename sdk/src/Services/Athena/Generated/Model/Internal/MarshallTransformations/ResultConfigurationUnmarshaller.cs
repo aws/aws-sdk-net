@@ -70,6 +70,12 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
                     unmarshalledObject.EncryptionConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ExpectedBucketOwner", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ExpectedBucketOwner = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("OutputLocation", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

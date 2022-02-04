@@ -36,6 +36,7 @@ namespace Amazon.Athena.Model
     public partial class ResultConfiguration
     {
         private EncryptionConfiguration _encryptionConfiguration;
+        private string _expectedBucketOwner;
         private string _outputLocation;
 
         /// <summary>
@@ -60,6 +61,38 @@ namespace Amazon.Athena.Model
         internal bool IsSetEncryptionConfiguration()
         {
             return this._encryptionConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExpectedBucketOwner. 
+        /// <para>
+        /// The Amazon Web Services account ID that you expect to be the owner of the Amazon S3
+        /// bucket specified by <a>ResultConfiguration$OutputLocation</a>. If set, Athena uses
+        /// the value for <code>ExpectedBucketOwner</code> when it makes Amazon S3 calls to your
+        /// specified output location. If the <code>ExpectedBucketOwner</code> Amazon Web Services
+        /// account ID does not match the actual owner of the Amazon S3 bucket, the call fails
+        /// with a permissions error.
+        /// </para>
+        ///  
+        /// <para>
+        /// This is a client-side setting. If workgroup settings override client-side settings,
+        /// then the query uses the <code>ExpectedBucketOwner</code> setting that is specified
+        /// for the workgroup, and also uses the location for storing query results specified
+        /// in the workgroup. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>
+        /// and <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup
+        /// Settings Override Client-Side Settings</a>.
+        /// </para>
+        /// </summary>
+        public string ExpectedBucketOwner
+        {
+            get { return this._expectedBucketOwner; }
+            set { this._expectedBucketOwner = value; }
+        }
+
+        // Check to see if ExpectedBucketOwner property is set
+        internal bool IsSetExpectedBucketOwner()
+        {
+            return this._expectedBucketOwner != null;
         }
 
         /// <summary>
