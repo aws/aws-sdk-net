@@ -1604,10 +1604,17 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Creates a custom DB engine version (CEV). A CEV is a binary volume snapshot of a database
-        /// engine and specific AMI. The only supported engine is Oracle Database 19c Enterprise
-        /// Edition with the January 2021 or later RU/RUR.
+        /// engine and specific AMI. The supported engines are the following:
         /// 
-        ///  
+        ///  <ul> <li> 
+        /// <para>
+        ///  Oracle Database 12.1 Enterprise Edition with the January 2021 or later RU/RUR
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  Oracle Database 19c Enterprise Edition with the January 2021 or later RU/RUR
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// Amazon RDS, which is a fully managed service, supplies the Amazon Machine Image (AMI)
         /// and database software. The Amazon RDS database software is preinstalled, so you need
@@ -1673,10 +1680,17 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Creates a custom DB engine version (CEV). A CEV is a binary volume snapshot of a database
-        /// engine and specific AMI. The only supported engine is Oracle Database 19c Enterprise
-        /// Edition with the January 2021 or later RU/RUR.
+        /// engine and specific AMI. The supported engines are the following:
         /// 
-        ///  
+        ///  <ul> <li> 
+        /// <para>
+        ///  Oracle Database 12.1 Enterprise Edition with the January 2021 or later RU/RUR
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  Oracle Database 19c Enterprise Edition with the January 2021 or later RU/RUR
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// Amazon RDS, which is a fully managed service, supplies the Amazon Machine Image (AMI)
         /// and database software. The Amazon RDS database software is preinstalled, so you need
@@ -3224,7 +3238,7 @@ namespace Amazon.RDS
         /// You have reached the maximum number of event subscriptions.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.SNSInvalidTopicException">
-        /// SNS has responded that there is a problem with the SND topic specified.
+        /// SNS has responded that there is a problem with the SNS topic specified.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.SNSNoAuthorizationException">
         /// You do not have permission to publish to the SNS topic ARN.
@@ -3294,7 +3308,7 @@ namespace Amazon.RDS
         /// You have reached the maximum number of event subscriptions.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.SNSInvalidTopicException">
-        /// SNS has responded that there is a problem with the SND topic specified.
+        /// SNS has responded that there is a problem with the SNS topic specified.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.SNSNoAuthorizationException">
         /// You do not have permission to publish to the SNS topic ARN.
@@ -9818,7 +9832,7 @@ namespace Amazon.RDS
         /// You have reached the maximum number of event subscriptions.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.SNSInvalidTopicException">
-        /// SNS has responded that there is a problem with the SND topic specified.
+        /// SNS has responded that there is a problem with the SNS topic specified.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.SNSNoAuthorizationException">
         /// You do not have permission to publish to the SNS topic ARN.
@@ -9867,7 +9881,7 @@ namespace Amazon.RDS
         /// You have reached the maximum number of event subscriptions.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.SNSInvalidTopicException">
-        /// SNS has responded that there is a problem with the SND topic specified.
+        /// SNS has responded that there is a problem with the SNS topic specified.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.SNSNoAuthorizationException">
         /// You do not have permission to publish to the SNS topic ARN.

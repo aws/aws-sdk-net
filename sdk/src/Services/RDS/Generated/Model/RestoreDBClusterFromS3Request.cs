@@ -307,11 +307,11 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraints: If supplied, must match the name of an existing DBSubnetGroup. 
+        /// Constraints: If supplied, must match the name of an existing DBSubnetGroup.
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>mySubnetgroup</code> 
+        /// Example: <code>mydbsubnetgroup</code> 
         /// </para>
         /// </summary>
         public string DBSubnetGroupName
