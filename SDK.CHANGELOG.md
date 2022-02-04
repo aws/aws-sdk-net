@@ -1,3 +1,16 @@
+### 3.7.203.0 (2022-02-04 19:55 UTC)
+* Athena (3.7.2.0)
+	* You can now optionally specify the account ID that you expect to be the owner of your query results output location bucket in Athena. If the account ID of the query results bucket owner does not match the specified account ID, attempts to output to the bucket will fail with an S3 permissions error.
+* LakeFormation (3.7.4.0)
+	* Add support for calling Update Table Objects without a TransactionId.
+* RDS (3.7.9.7)
+	* updates for RDS Custom for Oracle 12.1 support
+* Core 3.7.6.4
+	* Updating endpoints.json file.
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.202.0 (2022-02-03 21:14 UTC)
 * AWSMarketplaceMetering (3.7.1.0)
 	* Add CustomerAWSAccountId to ResolveCustomer API response and increase UsageAllocation limit to 2500.
