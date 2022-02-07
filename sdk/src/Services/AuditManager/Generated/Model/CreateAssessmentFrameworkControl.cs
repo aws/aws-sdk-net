@@ -42,7 +42,7 @@ namespace Amazon.AuditManager.Model
         ///  The unique identifier of the control. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=36, Max=36)]
+        [AWSProperty(Required=true, Min=36, Max=36)]
         public string Id
         {
             get { return this._id; }
