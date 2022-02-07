@@ -128,7 +128,12 @@ namespace Amazon.Synthetics.Model
         /// <para>
         /// If you input your canary script directly into the canary instead of referring to an
         /// S3 location, the value of this parameter is the base64-encoded contents of the .zip
-        /// file that contains the script. It must be smaller than 256 Kb.
+        /// file that contains the script. It must be smaller than 225 Kb.
+        /// </para>
+        ///  
+        /// <para>
+        /// For large canary scripts, we recommend that you use an S3 location instead of inputting
+        /// it directly with this parameter.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10000000)]

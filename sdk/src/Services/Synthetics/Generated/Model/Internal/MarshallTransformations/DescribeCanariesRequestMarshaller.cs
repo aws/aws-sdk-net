@@ -71,6 +71,17 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.MaxResults);
                 }
 
+                if(publicRequest.IsSetNames())
+                {
+                    context.Writer.WritePropertyName("Names");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestNamesListValue in publicRequest.Names)
+                    {
+                            context.Writer.Write(publicRequestNamesListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetNextToken())
                 {
                     context.Writer.WritePropertyName("NextToken");
