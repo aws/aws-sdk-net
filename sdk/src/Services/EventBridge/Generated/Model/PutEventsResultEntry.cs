@@ -29,7 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EventBridge.Model
 {
     /// <summary>
-    /// Represents an event that failed to be submitted.
+    /// Represents an event that failed to be submitted. For information about the errors
+    /// that are common to all actions, see <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/CommonErrors.html">Common
+    /// Errors</a>.
     /// </summary>
     public partial class PutEventsResultEntry
     {

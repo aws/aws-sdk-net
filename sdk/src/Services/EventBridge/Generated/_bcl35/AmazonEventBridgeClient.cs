@@ -3135,7 +3135,11 @@ namespace Amazon.EventBridge
         /// <para>
         /// Targets are the resources that are invoked when a rule is triggered.
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// Each rule can have up to five (5) targets associated with it at one time.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// You can configure the following as targets for Events:
         /// </para>
@@ -3171,6 +3175,10 @@ namespace Amazon.EventBridge
         ///  </li> <li> 
         /// <para>
         /// Amazon EC2 <code>CreateSnapshot</code> API call
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// EC2 Image Builder
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3223,7 +3231,7 @@ namespace Amazon.EventBridge
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Amazon SQS queues (includes FIFO queues
+        /// Amazon SQS queues (includes FIFO queues)
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3488,7 +3496,12 @@ namespace Amazon.EventBridge
         /// Removes the specified targets from the specified rule. When the rule is triggered,
         /// those targets are no longer be invoked.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// A successful execution of <code>RemoveTargets</code> doesn't guarantee all targets
+        /// are removed from the rule, it means that the target(s) listed in the request are removed.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// When you remove a target, when the associated rule triggers, removed targets might
         /// continue to be invoked. Allow a short period of time for changes to take effect.
