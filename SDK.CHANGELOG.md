@@ -1,3 +1,13 @@
+### 3.7.204.0 (2022-02-07 19:16 UTC)
+* AuditManager (3.7.8.0)
+	* This release updates 3 API parameters. UpdateAssessmentFrameworkControlSet now requires the controls attribute, and CreateAssessmentFrameworkControl requires the id attribute. Additionally, UpdateAssessmentFramework now has a minimum length constraint for the controlSets attribute.
+* EventBridge (3.7.4.67)
+	* Documentation updates for EventBridge
+* SSMIncidents (3.7.3.0)
+	* Update RelatedItem enum to support SSM Automation
+* Synthetics (3.7.3.0)
+	* Adding names parameters to the Describe APIs.
+
 ### 3.7.203.0 (2022-02-04 19:55 UTC)
 * Athena (3.7.2.0)
 	* You can now optionally specify the account ID that you expect to be the owner of your query results output location bucket in Athena. If the account ID of the query results bucket owner does not match the specified account ID, attempts to output to the bucket will fail with an S3 permissions error.
