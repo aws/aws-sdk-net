@@ -89,6 +89,10 @@ namespace Amazon.SSMIncidents
         /// </summary>
         public static readonly ItemType ATTACHMENT = new ItemType("ATTACHMENT");
         /// <summary>
+        /// Constant AUTOMATION for ItemType
+        /// </summary>
+        public static readonly ItemType AUTOMATION = new ItemType("AUTOMATION");
+        /// <summary>
         /// Constant INCIDENT for ItemType
         /// </summary>
         public static readonly ItemType INCIDENT = new ItemType("INCIDENT");
