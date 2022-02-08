@@ -106,6 +106,17 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetNetworkConfiguration())
+                {
+                    context.Writer.WritePropertyName("NetworkConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = NetworkConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.NetworkConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetServiceName())
                 {
                     context.Writer.WritePropertyName("ServiceName");

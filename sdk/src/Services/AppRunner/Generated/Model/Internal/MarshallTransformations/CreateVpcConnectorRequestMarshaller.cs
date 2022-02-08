@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// UpdateService Request Marshaller
+    /// CreateVpcConnector Request Marshaller
     /// </summary>       
-    public class UpdateServiceRequestMarshaller : IMarshaller<IRequest, UpdateServiceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class CreateVpcConnectorRequestMarshaller : IMarshaller<IRequest, CreateVpcConnectorRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((UpdateServiceRequest)input);
+            return this.Marshall((CreateVpcConnectorRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(UpdateServiceRequest publicRequest)
+        public IRequest Marshall(CreateVpcConnectorRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.AppRunner");
-            string target = "AppRunner.UpdateService";
+            string target = "AppRunner.CreateVpcConnector";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.0";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-05-15";
@@ -67,60 +67,48 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAutoScalingConfigurationArn())
+                if(publicRequest.IsSetSecurityGroups())
                 {
-                    context.Writer.WritePropertyName("AutoScalingConfigurationArn");
-                    context.Writer.Write(publicRequest.AutoScalingConfigurationArn);
+                    context.Writer.WritePropertyName("SecurityGroups");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestSecurityGroupsListValue in publicRequest.SecurityGroups)
+                    {
+                            context.Writer.Write(publicRequestSecurityGroupsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
                 }
 
-                if(publicRequest.IsSetHealthCheckConfiguration())
+                if(publicRequest.IsSetSubnets())
                 {
-                    context.Writer.WritePropertyName("HealthCheckConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = HealthCheckConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.HealthCheckConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WritePropertyName("Subnets");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestSubnetsListValue in publicRequest.Subnets)
+                    {
+                            context.Writer.Write(publicRequestSubnetsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
                 }
 
-                if(publicRequest.IsSetInstanceConfiguration())
+                if(publicRequest.IsSetTags())
                 {
-                    context.Writer.WritePropertyName("InstanceConfiguration");
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WritePropertyName("Tags");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    {
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = InstanceConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.InstanceConfiguration, context);
+                        var marshaller = TagMarshaller.Instance;
+                        marshaller.Marshall(publicRequestTagsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
                 }
 
-                if(publicRequest.IsSetNetworkConfiguration())
+                if(publicRequest.IsSetVpcConnectorName())
                 {
-                    context.Writer.WritePropertyName("NetworkConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = NetworkConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.NetworkConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetServiceArn())
-                {
-                    context.Writer.WritePropertyName("ServiceArn");
-                    context.Writer.Write(publicRequest.ServiceArn);
-                }
-
-                if(publicRequest.IsSetSourceConfiguration())
-                {
-                    context.Writer.WritePropertyName("SourceConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SourceConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SourceConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WritePropertyName("VpcConnectorName");
+                    context.Writer.Write(publicRequest.VpcConnectorName);
                 }
 
                 writer.WriteObjectEnd();
@@ -131,9 +119,9 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static UpdateServiceRequestMarshaller _instance = new UpdateServiceRequestMarshaller();        
+        private static CreateVpcConnectorRequestMarshaller _instance = new CreateVpcConnectorRequestMarshaller();        
 
-        internal static UpdateServiceRequestMarshaller GetInstance()
+        internal static CreateVpcConnectorRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -141,7 +129,7 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdateServiceRequestMarshaller Instance
+        public static CreateVpcConnectorRequestMarshaller Instance
         {
             get
             {

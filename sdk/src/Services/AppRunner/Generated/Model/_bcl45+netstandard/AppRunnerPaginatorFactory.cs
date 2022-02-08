@@ -74,5 +74,13 @@ namespace Amazon.AppRunner.Model
         {
             return new ListServicesPaginator(this.client, request);
         }
+
+        /// <summary>
+        /// Paginator for ListVpcConnectors operation
+        ///</summary>
+        public IListVpcConnectorsPaginator ListVpcConnectors(ListVpcConnectorsRequest request) 
+        {
+            return new ListVpcConnectorsPaginator(this.client, request);
+        }
     }
 }

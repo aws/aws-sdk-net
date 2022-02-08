@@ -385,10 +385,11 @@ namespace Amazon.AppRunner
         /// 
         ///  
         /// <para>
-        /// Create multiple revisions of a configuration by using the same <code>AutoScalingConfigurationName</code>
-        /// and different <code>AutoScalingConfigurationRevision</code> values. When you create
-        /// a service, you can set it to use the latest active revision of an auto scaling configuration
-        /// or a specific revision.
+        /// Create multiple revisions of a configuration by calling this action multiple times
+        /// using the same <code>AutoScalingConfigurationName</code>. The call returns incremental
+        /// <code>AutoScalingConfigurationRevision</code> values. When you create a service, you
+        /// can set it to use the latest active revision of an auto scaling configuration or a
+        /// specific revision.
         /// </para>
         ///  
         /// <para>
@@ -440,10 +441,11 @@ namespace Amazon.AppRunner
         /// 
         ///  
         /// <para>
-        /// Create multiple revisions of a configuration by using the same <code>AutoScalingConfigurationName</code>
-        /// and different <code>AutoScalingConfigurationRevision</code> values. When you create
-        /// a service, you can set it to use the latest active revision of an auto scaling configuration
-        /// or a specific revision.
+        /// Create multiple revisions of a configuration by calling this action multiple times
+        /// using the same <code>AutoScalingConfigurationName</code>. The call returns incremental
+        /// <code>AutoScalingConfigurationRevision</code> values. When you create a service, you
+        /// can set it to use the latest active revision of an auto scaling configuration or a
+        /// specific revision.
         /// </para>
         ///  
         /// <para>
@@ -674,6 +676,85 @@ namespace Amazon.AppRunner
 
         #endregion
         
+        #region  CreateVpcConnector
+
+
+        /// <summary>
+        /// Create an App Runner VPC connector resource. App Runner requires this resource when
+        /// you want to associate your App Runner service to a custom Amazon Virtual Private Cloud
+        /// (Amazon VPC).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateVpcConnector service method.</param>
+        /// 
+        /// <returns>The response from the CreateVpcConnector service method, as returned by AppRunner.</returns>
+        /// <exception cref="Amazon.AppRunner.Model.InternalServiceErrorException">
+        /// An unexpected service exception occurred.
+        /// </exception>
+        /// <exception cref="Amazon.AppRunner.Model.InvalidRequestException">
+        /// One or more input parameters aren't valid. Refer to the API action's document page,
+        /// correct the input parameters, and try the action again.
+        /// </exception>
+        /// <exception cref="Amazon.AppRunner.Model.ServiceQuotaExceededException">
+        /// App Runner can't create this resource. You've reached your account quota for this
+        /// resource type.
+        /// 
+        ///  
+        /// <para>
+        /// For App Runner per-resource quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/apprunner.html">App
+        /// Runner endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/CreateVpcConnector">REST API Reference for CreateVpcConnector Operation</seealso>
+        public virtual CreateVpcConnectorResponse CreateVpcConnector(CreateVpcConnectorRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateVpcConnectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateVpcConnectorResponseUnmarshaller.Instance;
+
+            return Invoke<CreateVpcConnectorResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Create an App Runner VPC connector resource. App Runner requires this resource when
+        /// you want to associate your App Runner service to a custom Amazon Virtual Private Cloud
+        /// (Amazon VPC).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateVpcConnector service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateVpcConnector service method, as returned by AppRunner.</returns>
+        /// <exception cref="Amazon.AppRunner.Model.InternalServiceErrorException">
+        /// An unexpected service exception occurred.
+        /// </exception>
+        /// <exception cref="Amazon.AppRunner.Model.InvalidRequestException">
+        /// One or more input parameters aren't valid. Refer to the API action's document page,
+        /// correct the input parameters, and try the action again.
+        /// </exception>
+        /// <exception cref="Amazon.AppRunner.Model.ServiceQuotaExceededException">
+        /// App Runner can't create this resource. You've reached your account quota for this
+        /// resource type.
+        /// 
+        ///  
+        /// <para>
+        /// For App Runner per-resource quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/apprunner.html">App
+        /// Runner endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/CreateVpcConnector">REST API Reference for CreateVpcConnector Operation</seealso>
+        public virtual Task<CreateVpcConnectorResponse> CreateVpcConnectorAsync(CreateVpcConnectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateVpcConnectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateVpcConnectorResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateVpcConnectorResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteAutoScalingConfiguration
 
 
@@ -891,6 +972,71 @@ namespace Amazon.AppRunner
 
         #endregion
         
+        #region  DeleteVpcConnector
+
+
+        /// <summary>
+        /// Delete an App Runner VPC connector resource. You can't delete a connector that's used
+        /// by one or more App Runner services.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVpcConnector service method.</param>
+        /// 
+        /// <returns>The response from the DeleteVpcConnector service method, as returned by AppRunner.</returns>
+        /// <exception cref="Amazon.AppRunner.Model.InternalServiceErrorException">
+        /// An unexpected service exception occurred.
+        /// </exception>
+        /// <exception cref="Amazon.AppRunner.Model.InvalidRequestException">
+        /// One or more input parameters aren't valid. Refer to the API action's document page,
+        /// correct the input parameters, and try the action again.
+        /// </exception>
+        /// <exception cref="Amazon.AppRunner.Model.ResourceNotFoundException">
+        /// A resource doesn't exist for the specified Amazon Resource Name (ARN) in your Amazon
+        /// Web Services account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DeleteVpcConnector">REST API Reference for DeleteVpcConnector Operation</seealso>
+        public virtual DeleteVpcConnectorResponse DeleteVpcConnector(DeleteVpcConnectorRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteVpcConnectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteVpcConnectorResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteVpcConnectorResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Delete an App Runner VPC connector resource. You can't delete a connector that's used
+        /// by one or more App Runner services.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVpcConnector service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteVpcConnector service method, as returned by AppRunner.</returns>
+        /// <exception cref="Amazon.AppRunner.Model.InternalServiceErrorException">
+        /// An unexpected service exception occurred.
+        /// </exception>
+        /// <exception cref="Amazon.AppRunner.Model.InvalidRequestException">
+        /// One or more input parameters aren't valid. Refer to the API action's document page,
+        /// correct the input parameters, and try the action again.
+        /// </exception>
+        /// <exception cref="Amazon.AppRunner.Model.ResourceNotFoundException">
+        /// A resource doesn't exist for the specified Amazon Resource Name (ARN) in your Amazon
+        /// Web Services account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DeleteVpcConnector">REST API Reference for DeleteVpcConnector Operation</seealso>
+        public virtual Task<DeleteVpcConnectorResponse> DeleteVpcConnectorAsync(DeleteVpcConnectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteVpcConnectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteVpcConnectorResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteVpcConnectorResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeAutoScalingConfiguration
 
 
@@ -1078,6 +1224,69 @@ namespace Amazon.AppRunner
             options.ResponseUnmarshaller = DescribeServiceResponseUnmarshaller.Instance;
             
             return InvokeAsync<DescribeServiceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeVpcConnector
+
+
+        /// <summary>
+        /// Return a description of an App Runner VPC connector resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVpcConnector service method.</param>
+        /// 
+        /// <returns>The response from the DescribeVpcConnector service method, as returned by AppRunner.</returns>
+        /// <exception cref="Amazon.AppRunner.Model.InternalServiceErrorException">
+        /// An unexpected service exception occurred.
+        /// </exception>
+        /// <exception cref="Amazon.AppRunner.Model.InvalidRequestException">
+        /// One or more input parameters aren't valid. Refer to the API action's document page,
+        /// correct the input parameters, and try the action again.
+        /// </exception>
+        /// <exception cref="Amazon.AppRunner.Model.ResourceNotFoundException">
+        /// A resource doesn't exist for the specified Amazon Resource Name (ARN) in your Amazon
+        /// Web Services account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DescribeVpcConnector">REST API Reference for DescribeVpcConnector Operation</seealso>
+        public virtual DescribeVpcConnectorResponse DescribeVpcConnector(DescribeVpcConnectorRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeVpcConnectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeVpcConnectorResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeVpcConnectorResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Return a description of an App Runner VPC connector resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVpcConnector service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeVpcConnector service method, as returned by AppRunner.</returns>
+        /// <exception cref="Amazon.AppRunner.Model.InternalServiceErrorException">
+        /// An unexpected service exception occurred.
+        /// </exception>
+        /// <exception cref="Amazon.AppRunner.Model.InvalidRequestException">
+        /// One or more input parameters aren't valid. Refer to the API action's document page,
+        /// correct the input parameters, and try the action again.
+        /// </exception>
+        /// <exception cref="Amazon.AppRunner.Model.ResourceNotFoundException">
+        /// A resource doesn't exist for the specified Amazon Resource Name (ARN) in your Amazon
+        /// Web Services account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DescribeVpcConnector">REST API Reference for DescribeVpcConnector Operation</seealso>
+        public virtual Task<DescribeVpcConnectorResponse> DescribeVpcConnectorAsync(DescribeVpcConnectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeVpcConnectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeVpcConnectorResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeVpcConnectorResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1484,6 +1693,61 @@ namespace Amazon.AppRunner
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListVpcConnectors
+
+
+        /// <summary>
+        /// Returns a list of App Runner VPC connectors in your Amazon Web Services account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListVpcConnectors service method.</param>
+        /// 
+        /// <returns>The response from the ListVpcConnectors service method, as returned by AppRunner.</returns>
+        /// <exception cref="Amazon.AppRunner.Model.InternalServiceErrorException">
+        /// An unexpected service exception occurred.
+        /// </exception>
+        /// <exception cref="Amazon.AppRunner.Model.InvalidRequestException">
+        /// One or more input parameters aren't valid. Refer to the API action's document page,
+        /// correct the input parameters, and try the action again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/ListVpcConnectors">REST API Reference for ListVpcConnectors Operation</seealso>
+        public virtual ListVpcConnectorsResponse ListVpcConnectors(ListVpcConnectorsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListVpcConnectorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListVpcConnectorsResponseUnmarshaller.Instance;
+
+            return Invoke<ListVpcConnectorsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns a list of App Runner VPC connectors in your Amazon Web Services account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListVpcConnectors service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListVpcConnectors service method, as returned by AppRunner.</returns>
+        /// <exception cref="Amazon.AppRunner.Model.InternalServiceErrorException">
+        /// An unexpected service exception occurred.
+        /// </exception>
+        /// <exception cref="Amazon.AppRunner.Model.InvalidRequestException">
+        /// One or more input parameters aren't valid. Refer to the API action's document page,
+        /// correct the input parameters, and try the action again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/ListVpcConnectors">REST API Reference for ListVpcConnectors Operation</seealso>
+        public virtual Task<ListVpcConnectorsResponse> ListVpcConnectorsAsync(ListVpcConnectorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListVpcConnectorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListVpcConnectorsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListVpcConnectorsResponse>(request, options, cancellationToken);
         }
 
         #endregion

@@ -29,9 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppRunner.Model
 {
     /// <summary>
-    /// Describes an App Runner automatic scaling configuration resource. Multiple revisions
-    /// of a configuration have the same <code>AutoScalingConfigurationName</code> and different
-    /// <code>AutoScalingConfigurationRevision</code> values.
+    /// Describes an App Runner automatic scaling configuration resource.
     /// 
     ///  
     /// <para>
@@ -43,6 +41,11 @@ namespace Amazon.AppRunner.Model
     /// <para>
     /// A lower <code>MaxSize</code> controls your cost. The tradeoff is lower responsiveness
     /// during peak demand.
+    /// </para>
+    ///  
+    /// <para>
+    /// Multiple revisions of a configuration might have the same <code>AutoScalingConfigurationName</code>
+    /// and different <code>AutoScalingConfigurationRevision</code> values.
     /// </para>
     /// </summary>
     public partial class AutoScalingConfiguration

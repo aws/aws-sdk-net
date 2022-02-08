@@ -46,6 +46,7 @@ namespace Amazon.AppRunner.Model
         private EncryptionConfiguration _encryptionConfiguration;
         private HealthCheckConfiguration _healthCheckConfiguration;
         private InstanceConfiguration _instanceConfiguration;
+        private NetworkConfiguration _networkConfiguration;
         private string _serviceName;
         private SourceConfiguration _sourceConfiguration;
         private List<Tag> _tags = new List<Tag>();
@@ -54,8 +55,8 @@ namespace Amazon.AppRunner.Model
         /// Gets and sets the property AutoScalingConfigurationArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of an App Runner automatic scaling configuration resource
-        /// that you want to associate with your service. If not provided, App Runner associates
-        /// the latest revision of a default auto scaling configuration.
+        /// that you want to associate with the App Runner service. If not provided, App Runner
+        /// associates the latest revision of a default auto scaling configuration.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1011)]
@@ -76,7 +77,7 @@ namespace Amazon.AppRunner.Model
         /// <para>
         /// An optional custom encryption key that App Runner uses to encrypt the copy of your
         /// source repository that it maintains and your service logs. By default, App Runner
-        /// uses an Amazon Web Services managed CMK.
+        /// uses an Amazon Web Services managed key.
         /// </para>
         /// </summary>
         public EncryptionConfiguration EncryptionConfiguration
@@ -95,7 +96,7 @@ namespace Amazon.AppRunner.Model
         /// Gets and sets the property HealthCheckConfiguration. 
         /// <para>
         /// The settings for the health check that App Runner performs to monitor the health of
-        /// your service.
+        /// the App Runner service.
         /// </para>
         /// </summary>
         public HealthCheckConfiguration HealthCheckConfiguration
@@ -129,10 +130,29 @@ namespace Amazon.AppRunner.Model
         }
 
         /// <summary>
+        /// Gets and sets the property NetworkConfiguration. 
+        /// <para>
+        /// Configuration settings related to network traffic of the web application that the
+        /// App Runner service runs.
+        /// </para>
+        /// </summary>
+        public NetworkConfiguration NetworkConfiguration
+        {
+            get { return this._networkConfiguration; }
+            set { this._networkConfiguration = value; }
+        }
+
+        // Check to see if NetworkConfiguration property is set
+        internal bool IsSetNetworkConfiguration()
+        {
+            return this._networkConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ServiceName. 
         /// <para>
-        /// A name for the new service. It must be unique across all the running App Runner services
-        /// in your Amazon Web Services account in the Amazon Web Services Region.
+        /// A name for the App Runner service. It must be unique across all the running App Runner
+        /// services in your Amazon Web Services account in the Amazon Web Services Region.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=4, Max=40)]
@@ -170,8 +190,8 @@ namespace Amazon.AppRunner.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// An optional list of metadata items that you can associate with your service resource.
-        /// A tag is a key-value pair.
+        /// An optional list of metadata items that you can associate with the App Runner service
+        /// resource. A tag is a key-value pair.
         /// </para>
         /// </summary>
         public List<Tag> Tags
