@@ -30,11 +30,10 @@ namespace Amazon.S3Control.Model
 {
     /// <summary>
     /// Container for the parameters to the ListAccessPointsForObjectLambda operation.
-    /// Returns a list of the access points associated with the Object Lambda Access Point.
-    /// You can retrieve up to 1000 access points per call. If there are more than 1,000 access
-    /// points (or the number specified in <code>maxResults</code>, whichever is less), the
-    /// response will include a continuation token that you can use to list the additional
-    /// access points.
+    /// Returns some or all (up to 1,000) access points associated with the Object Lambda
+    /// Access Point per call. If there are more access points than what can be returned in
+    /// one call, the response will include a continuation token that you can use to list
+    /// the additional access points.
     /// 
     ///  
     /// <para>
@@ -85,10 +84,11 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of access points that you want to include in the list. If there
-        /// are more than this number of access points, then the response will include a continuation
-        /// token in the <code>NextToken</code> field that you can use to retrieve the next page
-        /// of access points.
+        /// The maximum number of access points that you want to include in the list. The response
+        /// may contain fewer access points but will never contain more. If there are more than
+        /// this number of access points, then the response will include a continuation token
+        /// in the <code>NextToken</code> field that you can use to retrieve the next page of
+        /// access points.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1000)]

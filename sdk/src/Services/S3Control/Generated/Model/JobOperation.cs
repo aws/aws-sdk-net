@@ -43,6 +43,7 @@ namespace Amazon.S3Control.Model
         private S3SetObjectLegalHoldOperation _s3PutObjectLegalHold;
         private S3SetObjectRetentionOperation _s3PutObjectRetention;
         private S3SetObjectTaggingOperation _s3PutObjectTagging;
+        private S3ReplicateObjectOperation _s3ReplicateObject;
 
         /// <summary>
         /// Gets and sets the property LambdaInvoke. 
@@ -183,6 +184,25 @@ namespace Amazon.S3Control.Model
         internal bool IsSetS3PutObjectTagging()
         {
             return this._s3PutObjectTagging != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3ReplicateObject. 
+        /// <para>
+        /// Directs the specified job to invoke <code>ReplicateObject</code> on every object in
+        /// the job's manifest.
+        /// </para>
+        /// </summary>
+        public S3ReplicateObjectOperation S3ReplicateObject
+        {
+            get { return this._s3ReplicateObject; }
+            set { this._s3ReplicateObject = value; }
+        }
+
+        // Check to see if S3ReplicateObject property is set
+        internal bool IsSetS3ReplicateObject()
+        {
+            return this._s3ReplicateObject != null;
         }
 
     }

@@ -33,18 +33,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.S3Control.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for JobProgressSummary Object
+    /// Response Unmarshaller for JobTimers Object
     /// </summary>  
-    public class JobProgressSummaryUnmarshaller : IUnmarshaller<JobProgressSummary, XmlUnmarshallerContext>
+    public class JobTimersUnmarshaller : IUnmarshaller<JobTimers, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public JobProgressSummary Unmarshall(XmlUnmarshallerContext context)
+        public JobTimers Unmarshall(XmlUnmarshallerContext context)
         {
-            JobProgressSummary unmarshalledObject = new JobProgressSummary();
+            JobTimers unmarshalledObject = new JobTimers();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -55,28 +55,10 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("NumberOfTasksFailed", targetDepth))
+                    if (context.TestExpression("ElapsedTimeInActiveSeconds", targetDepth))
                     {
                         var unmarshaller = LongUnmarshaller.Instance;
-                        unmarshalledObject.NumberOfTasksFailed = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("NumberOfTasksSucceeded", targetDepth))
-                    {
-                        var unmarshaller = LongUnmarshaller.Instance;
-                        unmarshalledObject.NumberOfTasksSucceeded = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("Timers", targetDepth))
-                    {
-                        var unmarshaller = JobTimersUnmarshaller.Instance;
-                        unmarshalledObject.Timers = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("TotalNumberOfTasks", targetDepth))
-                    {
-                        var unmarshaller = LongUnmarshaller.Instance;
-                        unmarshalledObject.TotalNumberOfTasks = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.ElapsedTimeInActiveSeconds = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -88,12 +70,12 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
-        private static JobProgressSummaryUnmarshaller _instance = new JobProgressSummaryUnmarshaller();        
+        private static JobTimersUnmarshaller _instance = new JobTimersUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static JobProgressSummaryUnmarshaller Instance
+        public static JobTimersUnmarshaller Instance
         {
             get
             {

@@ -33,18 +33,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.S3Control.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for JobProgressSummary Object
+    /// Response Unmarshaller for S3ReplicateObjectOperation Object
     /// </summary>  
-    public class JobProgressSummaryUnmarshaller : IUnmarshaller<JobProgressSummary, XmlUnmarshallerContext>
+    public class S3ReplicateObjectOperationUnmarshaller : IUnmarshaller<S3ReplicateObjectOperation, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public JobProgressSummary Unmarshall(XmlUnmarshallerContext context)
+        public S3ReplicateObjectOperation Unmarshall(XmlUnmarshallerContext context)
         {
-            JobProgressSummary unmarshalledObject = new JobProgressSummary();
+            S3ReplicateObjectOperation unmarshalledObject = new S3ReplicateObjectOperation();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -55,30 +55,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("NumberOfTasksFailed", targetDepth))
-                    {
-                        var unmarshaller = LongUnmarshaller.Instance;
-                        unmarshalledObject.NumberOfTasksFailed = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("NumberOfTasksSucceeded", targetDepth))
-                    {
-                        var unmarshaller = LongUnmarshaller.Instance;
-                        unmarshalledObject.NumberOfTasksSucceeded = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("Timers", targetDepth))
-                    {
-                        var unmarshaller = JobTimersUnmarshaller.Instance;
-                        unmarshalledObject.Timers = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("TotalNumberOfTasks", targetDepth))
-                    {
-                        var unmarshaller = LongUnmarshaller.Instance;
-                        unmarshalledObject.TotalNumberOfTasks = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -88,12 +64,12 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
-        private static JobProgressSummaryUnmarshaller _instance = new JobProgressSummaryUnmarshaller();        
+        private static S3ReplicateObjectOperationUnmarshaller _instance = new S3ReplicateObjectOperationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static JobProgressSummaryUnmarshaller Instance
+        public static S3ReplicateObjectOperationUnmarshaller Instance
         {
             get
             {

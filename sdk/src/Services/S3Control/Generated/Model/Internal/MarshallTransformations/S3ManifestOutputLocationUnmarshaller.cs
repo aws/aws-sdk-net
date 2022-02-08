@@ -33,18 +33,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.S3Control.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for JobProgressSummary Object
+    /// Response Unmarshaller for S3ManifestOutputLocation Object
     /// </summary>  
-    public class JobProgressSummaryUnmarshaller : IUnmarshaller<JobProgressSummary, XmlUnmarshallerContext>
+    public class S3ManifestOutputLocationUnmarshaller : IUnmarshaller<S3ManifestOutputLocation, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public JobProgressSummary Unmarshall(XmlUnmarshallerContext context)
+        public S3ManifestOutputLocation Unmarshall(XmlUnmarshallerContext context)
         {
-            JobProgressSummary unmarshalledObject = new JobProgressSummary();
+            S3ManifestOutputLocation unmarshalledObject = new S3ManifestOutputLocation();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -55,28 +55,34 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("NumberOfTasksFailed", targetDepth))
+                    if (context.TestExpression("Bucket", targetDepth))
                     {
-                        var unmarshaller = LongUnmarshaller.Instance;
-                        unmarshalledObject.NumberOfTasksFailed = unmarshaller.Unmarshall(context);
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Bucket = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("NumberOfTasksSucceeded", targetDepth))
+                    if (context.TestExpression("ExpectedManifestBucketOwner", targetDepth))
                     {
-                        var unmarshaller = LongUnmarshaller.Instance;
-                        unmarshalledObject.NumberOfTasksSucceeded = unmarshaller.Unmarshall(context);
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ExpectedManifestBucketOwner = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("Timers", targetDepth))
+                    if (context.TestExpression("ManifestEncryption", targetDepth))
                     {
-                        var unmarshaller = JobTimersUnmarshaller.Instance;
-                        unmarshalledObject.Timers = unmarshaller.Unmarshall(context);
+                        var unmarshaller = GeneratedManifestEncryptionUnmarshaller.Instance;
+                        unmarshalledObject.ManifestEncryption = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("TotalNumberOfTasks", targetDepth))
+                    if (context.TestExpression("ManifestFormat", targetDepth))
                     {
-                        var unmarshaller = LongUnmarshaller.Instance;
-                        unmarshalledObject.TotalNumberOfTasks = unmarshaller.Unmarshall(context);
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ManifestFormat = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ManifestPrefix", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ManifestPrefix = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -88,12 +94,12 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
-        private static JobProgressSummaryUnmarshaller _instance = new JobProgressSummaryUnmarshaller();        
+        private static S3ManifestOutputLocationUnmarshaller _instance = new S3ManifestOutputLocationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static JobProgressSummaryUnmarshaller Instance
+        public static S3ManifestOutputLocationUnmarshaller Instance
         {
             get
             {

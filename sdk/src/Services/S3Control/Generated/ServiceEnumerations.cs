@@ -323,6 +323,52 @@ namespace Amazon.S3Control
 
 
     /// <summary>
+    /// Constants used for properties of type GeneratedManifestFormat.
+    /// </summary>
+    public class GeneratedManifestFormat : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant S3InventoryReport_CSV_20211130 for GeneratedManifestFormat
+        /// </summary>
+        public static readonly GeneratedManifestFormat S3InventoryReport_CSV_20211130 = new GeneratedManifestFormat("S3InventoryReport_CSV_20211130");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GeneratedManifestFormat(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GeneratedManifestFormat FindValue(string value)
+        {
+            return FindValue<GeneratedManifestFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GeneratedManifestFormat(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type JobManifestFieldName.
     /// </summary>
     public class JobManifestFieldName : ConstantClass
@@ -870,6 +916,10 @@ namespace Amazon.S3Control
         /// Constant S3PutObjectTagging for OperationName
         /// </summary>
         public static readonly OperationName S3PutObjectTagging = new OperationName("S3PutObjectTagging");
+        /// <summary>
+        /// Constant S3ReplicateObject for OperationName
+        /// </summary>
+        public static readonly OperationName S3ReplicateObject = new OperationName("S3ReplicateObject");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -946,6 +996,64 @@ namespace Amazon.S3Control
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator OutputSchemaVersion(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ReplicationStatus.
+    /// </summary>
+    public class ReplicationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETED for ReplicationStatus
+        /// </summary>
+        public static readonly ReplicationStatus COMPLETED = new ReplicationStatus("COMPLETED");
+        /// <summary>
+        /// Constant FAILED for ReplicationStatus
+        /// </summary>
+        public static readonly ReplicationStatus FAILED = new ReplicationStatus("FAILED");
+        /// <summary>
+        /// Constant NONE for ReplicationStatus
+        /// </summary>
+        public static readonly ReplicationStatus NONE = new ReplicationStatus("NONE");
+        /// <summary>
+        /// Constant REPLICA for ReplicationStatus
+        /// </summary>
+        public static readonly ReplicationStatus REPLICA = new ReplicationStatus("REPLICA");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ReplicationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ReplicationStatus FindValue(string value)
+        {
+            return FindValue<ReplicationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ReplicationStatus(string value)
         {
             return FindValue(value);
         }
@@ -1502,6 +1610,10 @@ namespace Amazon.S3Control
         /// Constant GLACIER for S3StorageClass
         /// </summary>
         public static readonly S3StorageClass GLACIER = new S3StorageClass("GLACIER");
+        /// <summary>
+        /// Constant GLACIER_IR for S3StorageClass
+        /// </summary>
+        public static readonly S3StorageClass GLACIER_IR = new S3StorageClass("GLACIER_IR");
         /// <summary>
         /// Constant INTELLIGENT_TIERING for S3StorageClass
         /// </summary>

@@ -38,9 +38,11 @@ namespace Amazon.S3Control.Model
         private DateTime? _creationTime;
         private string _description;
         private List<JobFailure> _failureReasons = new List<JobFailure>();
+        private S3GeneratedManifestDescriptor _generatedManifestDescriptor;
         private string _jobArn;
         private string _jobId;
         private JobManifest _manifest;
+        private JobManifestGenerator _manifestGenerator;
         private JobOperation _operation;
         private int? _priority;
         private JobProgressSummary _progressSummary;
@@ -128,6 +130,24 @@ namespace Amazon.S3Control.Model
         }
 
         /// <summary>
+        /// Gets and sets the property GeneratedManifestDescriptor. 
+        /// <para>
+        /// The attribute of the JobDescriptor containing details about the job's generated manifest.
+        /// </para>
+        /// </summary>
+        public S3GeneratedManifestDescriptor GeneratedManifestDescriptor
+        {
+            get { return this._generatedManifestDescriptor; }
+            set { this._generatedManifestDescriptor = value; }
+        }
+
+        // Check to see if GeneratedManifestDescriptor property is set
+        internal bool IsSetGeneratedManifestDescriptor()
+        {
+            return this._generatedManifestDescriptor != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property JobArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) for this job.
@@ -181,6 +201,24 @@ namespace Amazon.S3Control.Model
         internal bool IsSetManifest()
         {
             return this._manifest != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ManifestGenerator. 
+        /// <para>
+        /// The manifest generator that was used to generate a job manifest for this job.
+        /// </para>
+        /// </summary>
+        public JobManifestGenerator ManifestGenerator
+        {
+            get { return this._manifestGenerator; }
+            set { this._manifestGenerator = value; }
+        }
+
+        // Check to see if ManifestGenerator property is set
+        internal bool IsSetManifestGenerator()
+        {
+            return this._manifestGenerator != null;
         }
 
         /// <summary>
