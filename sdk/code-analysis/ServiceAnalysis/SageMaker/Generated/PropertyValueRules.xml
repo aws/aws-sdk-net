@@ -5087,6 +5087,10 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.CandidateArtifactLocations.ModelInsights</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.CapacitySize.Value</property>
     <min>1</min>
   </property-value-rule>
