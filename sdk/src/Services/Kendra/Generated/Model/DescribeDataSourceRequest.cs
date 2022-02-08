@@ -30,7 +30,7 @@ namespace Amazon.Kendra.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeDataSource operation.
-    /// Gets information about a Amazon Kendra data source.
+    /// Gets information about an Amazon Kendra data source.
     /// </summary>
     public partial class DescribeDataSourceRequest : AmazonKendraRequest
     {

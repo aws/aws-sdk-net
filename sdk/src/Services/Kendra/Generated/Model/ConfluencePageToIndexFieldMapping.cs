@@ -34,8 +34,7 @@ namespace Amazon.Kendra.Model
     /// 
     ///  
     /// <para>
-    /// You must first create the index field using the <code>UpdateIndex</code> operation.
-    /// 
+    /// You must first create the index field using the <code>UpdateIndex</code> API.
     /// </para>
     /// </summary>
     public partial class ConfluencePageToIndexFieldMapping

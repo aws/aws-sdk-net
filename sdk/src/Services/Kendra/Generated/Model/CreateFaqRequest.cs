@@ -53,8 +53,8 @@ namespace Amazon.Kendra.Model
         /// Gets and sets the property ClientToken. 
         /// <para>
         /// A token that you provide to identify the request to create a FAQ. Multiple calls to
-        /// the <code>CreateFaqRequest</code> operation with the same client token will create
-        /// only one FAQ. 
+        /// the <code>CreateFaqRequest</code> API with the same client token will create only
+        /// one FAQ. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

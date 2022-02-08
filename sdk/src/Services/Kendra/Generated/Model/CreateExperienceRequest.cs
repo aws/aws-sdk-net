@@ -47,8 +47,8 @@ namespace Amazon.Kendra.Model
         /// Gets and sets the property ClientToken. 
         /// <para>
         /// A token that you provide to identify the request to create your Amazon Kendra experience.
-        /// Multiple calls to the <code>CreateExperience</code> operation with the same client
-        /// token creates only one Amazon Kendra experience.
+        /// Multiple calls to the <code>CreateExperience</code> API with the same client token
+        /// creates only one Amazon Kendra experience.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -146,10 +146,10 @@ namespace Amazon.Kendra.Model
         /// Gets and sets the property RoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code>
-        /// operations, <code>QuerySuggestions</code> operations, <code>SubmitFeedback</code>
-        /// operations, and Amazon Web Services SSO that stores your user and group information.
-        /// For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM
-        /// roles for Amazon Kendra</a>.
+        /// API, <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and Amazon
+        /// Web Services SSO that stores your user and group information. For more information,
+        /// see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles
+        /// for Amazon Kendra</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1284)]

@@ -35,6 +35,7 @@ namespace Amazon.Kendra.Model
     {
         private ConfluenceConfiguration _confluenceConfiguration;
         private DatabaseConfiguration _databaseConfiguration;
+        private FsxConfiguration _fsxConfiguration;
         private GoogleDriveConfiguration _googleDriveConfiguration;
         private OneDriveConfiguration _oneDriveConfiguration;
         private S3DataSourceConfiguration _s3Configuration;
@@ -78,6 +79,24 @@ namespace Amazon.Kendra.Model
         internal bool IsSetDatabaseConfiguration()
         {
             return this._databaseConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FsxConfiguration. 
+        /// <para>
+        /// Provides the configuration information to connect to Amazon FSx as your data source.
+        /// </para>
+        /// </summary>
+        public FsxConfiguration FsxConfiguration
+        {
+            get { return this._fsxConfiguration; }
+            set { this._fsxConfiguration = value; }
+        }
+
+        // Check to see if FsxConfiguration property is set
+        internal bool IsSetFsxConfiguration()
+        {
+            return this._fsxConfiguration != null;
         }
 
         /// <summary>
@@ -208,7 +227,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property WorkDocsConfiguration. 
         /// <para>
-        /// Provides the configuration information to connect to WorkDocs as your data source.
+        /// Provides the configuration information to connect to Amazon WorkDocs as your data
+        /// source.
         /// </para>
         /// </summary>
         public WorkDocsConfiguration WorkDocsConfiguration

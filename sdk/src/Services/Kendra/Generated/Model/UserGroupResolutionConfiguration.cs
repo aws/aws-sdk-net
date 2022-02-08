@@ -34,7 +34,7 @@ namespace Amazon.Kendra.Model
     /// up user context filtering, where Amazon Kendra filters search results for different
     /// users based on their group's access to documents. You can also map your users to their
     /// groups for user context filtering using the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_PutPrincipalMapping.html">PutPrincipalMapping
-    /// operation</a>.
+    /// API</a>.
     /// 
     ///  
     /// <para>
@@ -49,8 +49,8 @@ namespace Amazon.Kendra.Model
     /// <para>
     /// Amazon Kendra currently does not support using <code>UserGroupResolutionConfiguration</code>
     /// with an Amazon Web Services organization member account for your Amazon Web Services
-    /// SSO identify source. You must create your index in the parent account for the organization
-    /// in order to use <code>UserGroupResolutionConfiguration</code>.
+    /// SSO identify source. You must create your index in the management account for the
+    /// organization in order to use <code>UserGroupResolutionConfiguration</code>.
     /// </para>
     /// </summary>
     public partial class UserGroupResolutionConfiguration

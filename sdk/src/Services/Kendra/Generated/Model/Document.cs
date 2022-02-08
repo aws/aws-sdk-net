@@ -67,6 +67,13 @@ namespace Amazon.Kendra.Model
         /// information for searching, to provide facets for refining searches, and to provide
         /// additional information in the query response.
         /// </para>
+        ///  
+        /// <para>
+        /// For example, 'DataSourceId' and 'DataSourceSyncJobId' are custom attributes that provide
+        /// information on the synchronization of documents running on a data source. Note, 'DataSourceSyncJobId'
+        /// could be an optional custom attribute as Amazon Kendra will use the ID of a running
+        /// sync job.
+        /// </para>
         /// </summary>
         public List<DocumentAttribute> Attributes
         {
@@ -89,8 +96,8 @@ namespace Amazon.Kendra.Model
         /// <para>
         /// Documents passed to the <code>Blob</code> parameter must be base64 encoded. Your code
         /// might not need to encode the document file bytes if you're using an Amazon Web Services
-        /// SDK to call Amazon Kendra operations. If you are calling the Amazon Kendra endpoint
-        /// directly using REST, you must base64 encode the contents before sending.
+        /// SDK to call Amazon Kendra APIs. If you are calling the Amazon Kendra endpoint directly
+        /// using REST, you must base64 encode the contents before sending.
         /// </para>
         /// </summary>
         public MemoryStream Blob

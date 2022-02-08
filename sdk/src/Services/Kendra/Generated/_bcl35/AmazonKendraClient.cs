@@ -411,7 +411,7 @@ namespace Amazon.Kendra
 
         /// <summary>
         /// Removes one or more documents from an index. The documents must have been added with
-        /// the <code>BatchPutDocument</code> operation.
+        /// the <code>BatchPutDocument</code> API.
         /// 
         ///  
         /// <para>
@@ -491,20 +491,20 @@ namespace Amazon.Kendra
 
         /// <summary>
         /// Returns the indexing status for one or more documents submitted with the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_BatchPutDocument.html">
-        /// BatchPutDocument</a> operation.
+        /// BatchPutDocument</a> API.
         /// 
         ///  
         /// <para>
-        /// When you use the <code>BatchPutDocument</code> operation, documents are indexed asynchronously.
-        /// You can use the <code>BatchGetDocumentStatus</code> operation to get the current status
+        /// When you use the <code>BatchPutDocument</code> API, documents are indexed asynchronously.
+        /// You can use the <code>BatchGetDocumentStatus</code> API to get the current status
         /// of a list of documents so that you can determine if they have been successfully indexed.
         /// </para>
         ///  
         /// <para>
-        /// You can also use the <code>BatchGetDocumentStatus</code> operation to check the status
-        /// of the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_BatchDeleteDocument.html">
-        /// BatchDeleteDocument</a> operation. When a document is deleted from the index, Amazon
-        /// Kendra returns <code>NOT_FOUND</code> as the status.
+        /// You can also use the <code>BatchGetDocumentStatus</code> API to check the status of
+        /// the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_BatchDeleteDocument.html">
+        /// BatchDeleteDocument</a> API. When a document is deleted from the index, Amazon Kendra
+        /// returns <code>NOT_FOUND</code> as the status.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchGetDocumentStatus service method.</param>
@@ -581,10 +581,10 @@ namespace Amazon.Kendra
         /// 
         ///  
         /// <para>
-        /// The <code>BatchPutDocument</code> operation enables you to ingest inline documents
-        /// or a set of documents stored in an Amazon S3 bucket. Use this operation to ingest
-        /// your text and unstructured text into an index, add custom attributes to the documents,
-        /// and to attach an access control list to the documents added to the index.
+        /// The <code>BatchPutDocument</code> API enables you to ingest inline documents or a
+        /// set of documents stored in an Amazon S3 bucket. Use this API to ingest your text and
+        /// unstructured text into an index, add custom attributes to the documents, and to attach
+        /// an access control list to the documents added to the index.
         /// </para>
         ///  
         /// <para>
@@ -1004,15 +1004,15 @@ namespace Amazon.Kendra
         #region  CreateIndex
 
         /// <summary>
-        /// Creates a new Amazon Kendra index. Index creation is an asynchronous operation. To
-        /// determine if index creation has completed, check the <code>Status</code> field returned
-        /// from a call to <code>DescribeIndex</code>. The <code>Status</code> field is set to
-        /// <code>ACTIVE</code> when the index is ready to use.
+        /// Creates a new Amazon Kendra index. Index creation is an asynchronous API. To determine
+        /// if index creation has completed, check the <code>Status</code> field returned from
+        /// a call to <code>DescribeIndex</code>. The <code>Status</code> field is set to <code>ACTIVE</code>
+        /// when the index is ready to use.
         /// 
         ///  
         /// <para>
         /// Once the index is active you can index your documents using the <code>BatchPutDocument</code>
-        /// operation or using one of the supported data sources. 
+        /// API or using one of the supported data sources. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateIndex service method.</param>
@@ -1262,8 +1262,8 @@ namespace Amazon.Kendra
         /// <summary>
         /// Deletes an Amazon Kendra data source. An exception is not thrown if the data source
         /// is already being deleted. While the data source is being deleted, the <code>Status</code>
-        /// field returned by a call to the <code>DescribeDataSource</code> operation is set to
-        /// <code>DELETING</code>. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/delete-data-source.html">Deleting
+        /// field returned by a call to the <code>DescribeDataSource</code> API is set to <code>DELETING</code>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/delete-data-source.html">Deleting
         /// Data Sources</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDataSource service method.</param>
@@ -1484,7 +1484,7 @@ namespace Amazon.Kendra
         /// <summary>
         /// Deletes an existing Amazon Kendra index. An exception is not thrown if the index is
         /// already being deleted. While the index is being deleted, the <code>Status</code> field
-        /// returned by a call to the <code>DescribeIndex</code> operation is set to <code>DELETING</code>.
+        /// returned by a call to the <code>DescribeIndex</code> API is set to <code>DELETING</code>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteIndex service method.</param>
         /// 
@@ -1804,7 +1804,7 @@ namespace Amazon.Kendra
         #region  DescribeDataSource
 
         /// <summary>
-        /// Gets information about a Amazon Kendra data source.
+        /// Gets information about an Amazon Kendra data source.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDataSource service method.</param>
         /// 
@@ -3573,12 +3573,12 @@ namespace Amazon.Kendra
 
         /// <summary>
         /// Searches an active index. Use this API to search your documents using query. The <code>Query</code>
-        /// operation enables to do faceted search and to filter results based on document attributes.
+        /// API enables to do faceted search and to filter results based on document attributes.
         /// 
         ///  
         /// <para>
         /// It also enables you to provide user context that Amazon Kendra uses to enforce document
-        /// access control in the search results. 
+        /// access control in the search results.
         /// </para>
         ///  
         /// <para>
@@ -3756,7 +3756,8 @@ namespace Amazon.Kendra
         #region  StopDataSourceSyncJob
 
         /// <summary>
-        /// Stops a running synchronization job. You can't stop a scheduled synchronization job.
+        /// Stops a synchronization job that is currently running. You can't stop a scheduled
+        /// synchronization job.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopDataSourceSyncJob service method.</param>
         /// 

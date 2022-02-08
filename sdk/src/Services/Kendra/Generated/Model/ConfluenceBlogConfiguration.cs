@@ -31,7 +31,7 @@ namespace Amazon.Kendra.Model
     /// <summary>
     /// Specifies the blog settings for the Confluence data source. Blogs are always indexed
     /// unless filtered from the index by the <code>ExclusionPatterns</code> or <code>InclusionPatterns</code>
-    /// fields in the <code>ConfluenceConfiguration</code> type.
+    /// fields in the <code>ConfluenceConfiguration</code> object.
     /// </summary>
     public partial class ConfluenceBlogConfiguration
     {
@@ -42,7 +42,7 @@ namespace Amazon.Kendra.Model
         /// <para>
         /// Defines how blog metadata fields should be mapped to index fields. Before you can
         /// map a field, you must first create an index field with a matching type using the console
-        /// or the <code>UpdateIndex</code> operation.
+        /// or the <code>UpdateIndex</code> API.
         /// </para>
         ///  
         /// <para>

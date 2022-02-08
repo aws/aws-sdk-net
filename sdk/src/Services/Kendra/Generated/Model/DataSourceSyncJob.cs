@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kendra.Model
 {
     /// <summary>
-    /// Provides information about a synchronization job.
+    /// Provides information about a data source synchronization job.
     /// </summary>
     public partial class DataSourceSyncJob
     {
@@ -65,7 +65,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
-        /// The UNIX datetime that the synchronization job was completed.
+        /// The UNIX datetime that the synchronization job completed.
         /// </para>
         /// </summary>
         public DateTime EndTime
@@ -84,7 +84,7 @@ namespace Amazon.Kendra.Model
         /// Gets and sets the property ErrorCode. 
         /// <para>
         /// If the <code>Status</code> field is set to <code>FAILED</code>, the <code>ErrorCode</code>
-        /// field contains a the reason that the synchronization failed.
+        /// field indicates the reason the synchronization failed.
         /// </para>
         /// </summary>
         public ErrorCode ErrorCode
@@ -160,7 +160,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        /// The UNIX datetime that the synchronization job was started.
+        /// The UNIX datetime that the synchronization job started.
         /// </para>
         /// </summary>
         public DateTime StartTime

@@ -31,20 +31,20 @@ namespace Amazon.Kendra.Model
     /// <summary>
     /// Container for the parameters to the BatchGetDocumentStatus operation.
     /// Returns the indexing status for one or more documents submitted with the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_BatchPutDocument.html">
-    /// BatchPutDocument</a> operation.
+    /// BatchPutDocument</a> API.
     /// 
     ///  
     /// <para>
-    /// When you use the <code>BatchPutDocument</code> operation, documents are indexed asynchronously.
-    /// You can use the <code>BatchGetDocumentStatus</code> operation to get the current status
+    /// When you use the <code>BatchPutDocument</code> API, documents are indexed asynchronously.
+    /// You can use the <code>BatchGetDocumentStatus</code> API to get the current status
     /// of a list of documents so that you can determine if they have been successfully indexed.
     /// </para>
     ///  
     /// <para>
-    /// You can also use the <code>BatchGetDocumentStatus</code> operation to check the status
-    /// of the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_BatchDeleteDocument.html">
-    /// BatchDeleteDocument</a> operation. When a document is deleted from the index, Amazon
-    /// Kendra returns <code>NOT_FOUND</code> as the status.
+    /// You can also use the <code>BatchGetDocumentStatus</code> API to check the status of
+    /// the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_BatchDeleteDocument.html">
+    /// BatchDeleteDocument</a> API. When a document is deleted from the index, Amazon Kendra
+    /// returns <code>NOT_FOUND</code> as the status.
     /// </para>
     /// </summary>
     public partial class BatchGetDocumentStatusRequest : AmazonKendraRequest
@@ -76,8 +76,8 @@ namespace Amazon.Kendra.Model
         /// Gets and sets the property IndexId. 
         /// <para>
         /// The identifier of the index to add documents to. The index ID is returned by the <a
-        /// href="https://docs.aws.amazon.com/kendra/latest/dg/API_CreateIndex.html"> CreateIndex
-        /// </a> operation.
+        /// href="https://docs.aws.amazon.com/kendra/latest/dg/API_CreateIndex.html">CreateIndex
+        /// </a> API.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]
