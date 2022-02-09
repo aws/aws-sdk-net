@@ -33,7 +33,6 @@ namespace Amazon.Runtime
 {
     public abstract class AmazonServiceClient : IDisposable
     {
-        private readonly object _lock = new object();
         private bool _disposed;
         private Logger _logger;
         protected EndpointDiscoveryResolverBase EndpointDiscoveryResolver { get; private set; }
@@ -49,99 +48,25 @@ namespace Amazon.Runtime
 
         #region Events
 
-
-        private PreRequestEventHandler mBeforeMarshallingEvent;
-
         /// <summary>
         /// Occurs before a request is marshalled.
         /// </summary>
-        internal event PreRequestEventHandler BeforeMarshallingEvent
-        {
-            add
-            {
-                lock (_lock)
-                {
-                    mBeforeMarshallingEvent += value;
-                }
-            }
-            remove
-            {
-                lock (_lock)
-                {
-                    mBeforeMarshallingEvent -= value;
-                }
-            }
-        }
-
-
-        private RequestEventHandler mBeforeRequestEvent;
+        internal event PreRequestEventHandler BeforeMarshallingEvent;
 
         /// <summary>
         /// Occurs before a request is issued against the service.
         /// </summary>
-        public event RequestEventHandler BeforeRequestEvent
-        {
-            add
-            {
-                lock (_lock)
-                {
-                    mBeforeRequestEvent += value;
-                }
-            }
-            remove
-            {
-                lock (_lock)
-                {
-                    mBeforeRequestEvent -= value;
-                }
-            }
-        }
-
-        private ResponseEventHandler mAfterResponseEvent;
+        public event RequestEventHandler BeforeRequestEvent;
 
         /// <summary>
         /// Occurs after a response is received from the service.
         /// </summary>
-        public event ResponseEventHandler AfterResponseEvent
-        {
-            add
-            {
-                lock (_lock)
-                {
-                    mAfterResponseEvent += value;
-                }
-            }
-            remove
-            {
-                lock (_lock)
-                {
-                    mAfterResponseEvent -= value;
-                }
-            }
-        }
-
-        private ExceptionEventHandler mExceptionEvent;
+        public event ResponseEventHandler AfterResponseEvent;
 
         /// <summary>
         /// Occurs after an exception is encountered.
         /// </summary>
-        public event ExceptionEventHandler ExceptionEvent
-        {
-            add
-            {
-                lock (_lock)
-                {
-                    mExceptionEvent += value;
-                }
-            }
-            remove
-            {
-                lock (_lock)
-                {
-                    mExceptionEvent -= value;
-                }
-            }
-        }
+        public event ExceptionEventHandler ExceptionEvent;
 
         #endregion
 
@@ -345,13 +270,11 @@ namespace Amazon.Runtime
 
         protected void ProcessPreRequestHandlers(IExecutionContext executionContext)
         {
-            //if (request == null)
-            //    return;
-            if (mBeforeMarshallingEvent == null)
+            if (BeforeMarshallingEvent == null)
                 return;
 
             PreRequestEventArgs args = PreRequestEventArgs.Create(executionContext.RequestContext.OriginalRequest);
-            mBeforeMarshallingEvent(this, args);
+            BeforeMarshallingEvent(this, args);
         }
 
         protected void ProcessRequestHandlers(IExecutionContext executionContext)
@@ -362,13 +285,13 @@ namespace Amazon.Runtime
             if (request.OriginalRequest != null)
                 request.OriginalRequest.FireBeforeRequestEvent(this, args);
 
-            if (mBeforeRequestEvent != null)
-                mBeforeRequestEvent(this, args);
+            if (BeforeRequestEvent != null)
+                BeforeRequestEvent(this, args);
         }
 
         protected void ProcessResponseHandlers(IExecutionContext executionContext)
         {
-            if (mAfterResponseEvent == null)
+            if (AfterResponseEvent == null)
                 return;
 
             WebServiceResponseEventArgs args = WebServiceResponseEventArgs.Create(
@@ -376,16 +299,16 @@ namespace Amazon.Runtime
                 executionContext.RequestContext.Request,
                 executionContext.ResponseContext.HttpResponse);
 
-            mAfterResponseEvent(this, args);
+            AfterResponseEvent(this, args);
         }
 
         protected virtual void ProcessExceptionHandlers(IExecutionContext executionContext, Exception exception)
         {
-            if (mExceptionEvent == null)
+            if (ExceptionEvent == null)
                 return;
 
             WebServiceExceptionEventArgs args = WebServiceExceptionEventArgs.Create(exception, executionContext.RequestContext.Request);
-            mExceptionEvent(this, args);
+            ExceptionEvent(this, args);
         }
 
 #endregion
