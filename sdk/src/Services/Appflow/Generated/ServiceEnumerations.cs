@@ -121,6 +121,64 @@ namespace Amazon.Appflow
 
 
     /// <summary>
+    /// Constants used for properties of type AuthenticationType.
+    /// </summary>
+    public class AuthenticationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant APIKEY for AuthenticationType
+        /// </summary>
+        public static readonly AuthenticationType APIKEY = new AuthenticationType("APIKEY");
+        /// <summary>
+        /// Constant BASIC for AuthenticationType
+        /// </summary>
+        public static readonly AuthenticationType BASIC = new AuthenticationType("BASIC");
+        /// <summary>
+        /// Constant CUSTOM for AuthenticationType
+        /// </summary>
+        public static readonly AuthenticationType CUSTOM = new AuthenticationType("CUSTOM");
+        /// <summary>
+        /// Constant OAUTH2 for AuthenticationType
+        /// </summary>
+        public static readonly AuthenticationType OAUTH2 = new AuthenticationType("OAUTH2");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AuthenticationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AuthenticationType FindValue(string value)
+        {
+            return FindValue<AuthenticationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AuthenticationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ConnectionMode.
     /// </summary>
     public class ConnectionMode : ConstantClass
@@ -171,6 +229,52 @@ namespace Amazon.Appflow
 
 
     /// <summary>
+    /// Constants used for properties of type ConnectorProvisioningType.
+    /// </summary>
+    public class ConnectorProvisioningType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant LAMBDA for ConnectorProvisioningType
+        /// </summary>
+        public static readonly ConnectorProvisioningType LAMBDA = new ConnectorProvisioningType("LAMBDA");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConnectorProvisioningType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConnectorProvisioningType FindValue(string value)
+        {
+            return FindValue<ConnectorProvisioningType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConnectorProvisioningType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ConnectorType.
     /// </summary>
     public class ConnectorType : ConstantClass
@@ -180,6 +284,10 @@ namespace Amazon.Appflow
         /// Constant Amplitude for ConnectorType
         /// </summary>
         public static readonly ConnectorType Amplitude = new ConnectorType("Amplitude");
+        /// <summary>
+        /// Constant CustomConnector for ConnectorType
+        /// </summary>
+        public static readonly ConnectorType CustomConnector = new ConnectorType("CustomConnector");
         /// <summary>
         /// Constant CustomerProfiles for ConnectorType
         /// </summary>
@@ -987,6 +1095,56 @@ namespace Amazon.Appflow
 
 
     /// <summary>
+    /// Constants used for properties of type OAuth2GrantType.
+    /// </summary>
+    public class OAuth2GrantType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUTHORIZATION_CODE for OAuth2GrantType
+        /// </summary>
+        public static readonly OAuth2GrantType AUTHORIZATION_CODE = new OAuth2GrantType("AUTHORIZATION_CODE");
+        /// <summary>
+        /// Constant CLIENT_CREDENTIALS for OAuth2GrantType
+        /// </summary>
+        public static readonly OAuth2GrantType CLIENT_CREDENTIALS = new OAuth2GrantType("CLIENT_CREDENTIALS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OAuth2GrantType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OAuth2GrantType FindValue(string value)
+        {
+            return FindValue<OAuth2GrantType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OAuth2GrantType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Operator.
     /// </summary>
     public class Operator : ConstantClass
@@ -1208,6 +1366,132 @@ namespace Amazon.Appflow
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator OperatorPropertiesKeys(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Operators.
+    /// </summary>
+    public class Operators : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ADDITION for Operators
+        /// </summary>
+        public static readonly Operators ADDITION = new Operators("ADDITION");
+        /// <summary>
+        /// Constant BETWEEN for Operators
+        /// </summary>
+        public static readonly Operators BETWEEN = new Operators("BETWEEN");
+        /// <summary>
+        /// Constant CONTAINS for Operators
+        /// </summary>
+        public static readonly Operators CONTAINS = new Operators("CONTAINS");
+        /// <summary>
+        /// Constant DIVISION for Operators
+        /// </summary>
+        public static readonly Operators DIVISION = new Operators("DIVISION");
+        /// <summary>
+        /// Constant EQUAL_TO for Operators
+        /// </summary>
+        public static readonly Operators EQUAL_TO = new Operators("EQUAL_TO");
+        /// <summary>
+        /// Constant GREATER_THAN for Operators
+        /// </summary>
+        public static readonly Operators GREATER_THAN = new Operators("GREATER_THAN");
+        /// <summary>
+        /// Constant GREATER_THAN_OR_EQUAL_TO for Operators
+        /// </summary>
+        public static readonly Operators GREATER_THAN_OR_EQUAL_TO = new Operators("GREATER_THAN_OR_EQUAL_TO");
+        /// <summary>
+        /// Constant LESS_THAN for Operators
+        /// </summary>
+        public static readonly Operators LESS_THAN = new Operators("LESS_THAN");
+        /// <summary>
+        /// Constant LESS_THAN_OR_EQUAL_TO for Operators
+        /// </summary>
+        public static readonly Operators LESS_THAN_OR_EQUAL_TO = new Operators("LESS_THAN_OR_EQUAL_TO");
+        /// <summary>
+        /// Constant MASK_ALL for Operators
+        /// </summary>
+        public static readonly Operators MASK_ALL = new Operators("MASK_ALL");
+        /// <summary>
+        /// Constant MASK_FIRST_N for Operators
+        /// </summary>
+        public static readonly Operators MASK_FIRST_N = new Operators("MASK_FIRST_N");
+        /// <summary>
+        /// Constant MASK_LAST_N for Operators
+        /// </summary>
+        public static readonly Operators MASK_LAST_N = new Operators("MASK_LAST_N");
+        /// <summary>
+        /// Constant MULTIPLICATION for Operators
+        /// </summary>
+        public static readonly Operators MULTIPLICATION = new Operators("MULTIPLICATION");
+        /// <summary>
+        /// Constant NO_OP for Operators
+        /// </summary>
+        public static readonly Operators NO_OP = new Operators("NO_OP");
+        /// <summary>
+        /// Constant NOT_EQUAL_TO for Operators
+        /// </summary>
+        public static readonly Operators NOT_EQUAL_TO = new Operators("NOT_EQUAL_TO");
+        /// <summary>
+        /// Constant PROJECTION for Operators
+        /// </summary>
+        public static readonly Operators PROJECTION = new Operators("PROJECTION");
+        /// <summary>
+        /// Constant SUBTRACTION for Operators
+        /// </summary>
+        public static readonly Operators SUBTRACTION = new Operators("SUBTRACTION");
+        /// <summary>
+        /// Constant VALIDATE_NON_NEGATIVE for Operators
+        /// </summary>
+        public static readonly Operators VALIDATE_NON_NEGATIVE = new Operators("VALIDATE_NON_NEGATIVE");
+        /// <summary>
+        /// Constant VALIDATE_NON_NULL for Operators
+        /// </summary>
+        public static readonly Operators VALIDATE_NON_NULL = new Operators("VALIDATE_NON_NULL");
+        /// <summary>
+        /// Constant VALIDATE_NON_ZERO for Operators
+        /// </summary>
+        public static readonly Operators VALIDATE_NON_ZERO = new Operators("VALIDATE_NON_ZERO");
+        /// <summary>
+        /// Constant VALIDATE_NUMERIC for Operators
+        /// </summary>
+        public static readonly Operators VALIDATE_NUMERIC = new Operators("VALIDATE_NUMERIC");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Operators(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Operators FindValue(string value)
+        {
+            return FindValue<Operators>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Operators(string value)
         {
             return FindValue(value);
         }
@@ -2636,6 +2920,10 @@ namespace Amazon.Appflow
     public class WriteOperationType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant DELETE for WriteOperationType
+        /// </summary>
+        public static readonly WriteOperationType DELETE = new WriteOperationType("DELETE");
         /// <summary>
         /// Constant INSERT for WriteOperationType
         /// </summary>

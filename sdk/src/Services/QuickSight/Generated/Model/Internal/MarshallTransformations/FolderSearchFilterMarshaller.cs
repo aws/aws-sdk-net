@@ -34,7 +34,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// FolderSearchFilter Marshaller
-    /// </summary>       
+    /// </summary>
     public class FolderSearchFilterMarshaller : IRequestMarshaller<FolderSearchFilter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static FolderSearchFilterMarshaller Instance = new FolderSearchFilterMarshaller();
 
     }

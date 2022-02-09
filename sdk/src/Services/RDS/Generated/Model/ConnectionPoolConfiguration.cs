@@ -97,9 +97,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property MaxConnectionsPercent. 
         /// <para>
-        /// The maximum size of the connection pool for each target in a target group. For Aurora
-        /// MySQL, it is expressed as a percentage of the <code>max_connections</code> setting
-        /// for the RDS DB instance or Aurora DB cluster used by the target group.
+        /// The maximum size of the connection pool for each target in a target group. The value
+        /// is expressed as a percentage of the <code>max_connections</code> setting for the RDS
+        /// DB instance or Aurora DB cluster used by the target group.
         /// </para>
         ///  
         /// <para>
@@ -126,11 +126,11 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property MaxIdleConnectionsPercent. 
         /// <para>
         ///  Controls how actively the proxy closes idle database connections in the connection
-        /// pool. A high value enables the proxy to leave a high percentage of idle connections
-        /// open. A low value causes the proxy to close idle client connections and return the
-        /// underlying database connections to the connection pool. For Aurora MySQL, it is expressed
-        /// as a percentage of the <code>max_connections</code> setting for the RDS DB instance
-        /// or Aurora DB cluster used by the target group. 
+        /// pool. The value is expressed as a percentage of the <code>max_connections</code> setting
+        /// for the RDS DB instance or Aurora DB cluster used by the target group. With a high
+        /// value, the proxy leaves a high percentage of idle database connections open. A low
+        /// value causes the proxy to close more idle connections and return them to the database.
+        /// 
         /// </para>
         ///  
         /// <para>

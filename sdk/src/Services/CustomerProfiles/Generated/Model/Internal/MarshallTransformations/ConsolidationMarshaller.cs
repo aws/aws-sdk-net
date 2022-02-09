@@ -34,7 +34,7 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Consolidation Marshaller
-    /// </summary>       
+    /// </summary>
     public class ConsolidationMarshaller : IRequestMarshaller<Consolidation, JsonMarshallerContext> 
     {
         /// <summary>
@@ -65,7 +65,7 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ConsolidationMarshaller Instance = new ConsolidationMarshaller();
 
     }

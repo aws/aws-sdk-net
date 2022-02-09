@@ -34,7 +34,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// MaintenanceWindowLambdaParameters Marshaller
-    /// </summary>       
+    /// </summary>
     public class MaintenanceWindowLambdaParametersMarshaller : IRequestMarshaller<MaintenanceWindowLambdaParameters, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static MaintenanceWindowLambdaParametersMarshaller Instance = new MaintenanceWindowLambdaParametersMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DescribeImagesFilter Marshaller
-    /// </summary>       
+    /// </summary>
     public class DescribeImagesFilterMarshaller : IRequestMarshaller<DescribeImagesFilter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DescribeImagesFilterMarshaller Instance = new DescribeImagesFilterMarshaller();
 
     }

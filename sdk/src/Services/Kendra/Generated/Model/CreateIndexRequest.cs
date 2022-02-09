@@ -30,15 +30,15 @@ namespace Amazon.Kendra.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateIndex operation.
-    /// Creates a new Amazon Kendra index. Index creation is an asynchronous operation. To
-    /// determine if index creation has completed, check the <code>Status</code> field returned
-    /// from a call to <code>DescribeIndex</code>. The <code>Status</code> field is set to
-    /// <code>ACTIVE</code> when the index is ready to use.
+    /// Creates a new Amazon Kendra index. Index creation is an asynchronous API. To determine
+    /// if index creation has completed, check the <code>Status</code> field returned from
+    /// a call to <code>DescribeIndex</code>. The <code>Status</code> field is set to <code>ACTIVE</code>
+    /// when the index is ready to use.
     /// 
     ///  
     /// <para>
     /// Once the index is active you can index your documents using the <code>BatchPutDocument</code>
-    /// operation or using one of the supported data sources. 
+    /// API or using one of the supported data sources. 
     /// </para>
     /// </summary>
     public partial class CreateIndexRequest : AmazonKendraRequest
@@ -58,8 +58,8 @@ namespace Amazon.Kendra.Model
         /// Gets and sets the property ClientToken. 
         /// <para>
         /// A token that you provide to identify the request to create an index. Multiple calls
-        /// to the <code>CreateIndex</code> operation with the same client token will create only
-        /// one index.
+        /// to the <code>CreateIndex</code> API with the same client token will create only one
+        /// index.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -149,8 +149,7 @@ namespace Amazon.Kendra.Model
         /// <para>
         /// An Identity and Access Management(IAM) role that gives Amazon Kendra permissions to
         /// access your Amazon CloudWatch logs and metrics. This is also the role used when you
-        /// use the <code>BatchPutDocument</code> operation to index documents from an Amazon
-        /// S3 bucket.
+        /// use the <code>BatchPutDocument</code> API to index documents from an Amazon S3 bucket.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1284)]

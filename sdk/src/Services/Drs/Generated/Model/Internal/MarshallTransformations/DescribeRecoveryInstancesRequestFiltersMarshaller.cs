@@ -34,7 +34,7 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DescribeRecoveryInstancesRequestFilters Marshaller
-    /// </summary>       
+    /// </summary>
     public class DescribeRecoveryInstancesRequestFiltersMarshaller : IRequestMarshaller<DescribeRecoveryInstancesRequestFilters, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DescribeRecoveryInstancesRequestFiltersMarshaller Instance = new DescribeRecoveryInstancesRequestFiltersMarshaller();
 
     }

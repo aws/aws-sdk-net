@@ -56,7 +56,7 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.RoboMaker");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-06-29";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-06-29";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/createWorldExportJob";
@@ -74,7 +74,7 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
                 else if(!(publicRequest.IsSetClientRequestToken()))
                 {
                     context.Writer.WritePropertyName("clientRequestToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());                                                
+                    context.Writer.Write(Guid.NewGuid().ToString());
                 }
                 if(publicRequest.IsSetIamRole())
                 {
@@ -118,7 +118,6 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

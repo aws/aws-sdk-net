@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// City Marshaller
-    /// </summary>       
+    /// </summary>
     public class CityMarshaller : IRequestMarshaller<City, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CityMarshaller Instance = new CityMarshaller();
 
     }

@@ -32,7 +32,7 @@ namespace Amazon.RoboMaker
     public partial class AmazonRoboMakerConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.5.30");
+            InternalSDKUtils.BuildUserAgentString("3.7.6.1");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.RoboMaker
         /// Default constructor
         /// </summary>
         public AmazonRoboMakerConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonRoboMakerDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "robomaker";
         }

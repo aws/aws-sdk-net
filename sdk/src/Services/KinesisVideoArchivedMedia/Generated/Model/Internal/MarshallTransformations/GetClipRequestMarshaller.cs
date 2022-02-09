@@ -56,7 +56,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model.Internal.MarshallTransformation
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.KinesisVideoArchivedMedia");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-09-30";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-09-30";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/getClip";
@@ -88,7 +88,6 @@ namespace Amazon.KinesisVideoArchivedMedia.Model.Internal.MarshallTransformation
                     context.Writer.Write(publicRequest.StreamName);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

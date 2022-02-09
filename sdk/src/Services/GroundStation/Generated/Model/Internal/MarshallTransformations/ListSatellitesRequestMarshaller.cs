@@ -55,7 +55,7 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListSatellitesRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.GroundStation");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-05-23";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-05-23";
             request.HttpMethod = "GET";
 
             

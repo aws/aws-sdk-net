@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AwsDynamoDbTableGlobalSecondaryIndex Marshaller
-    /// </summary>       
+    /// </summary>
     public class AwsDynamoDbTableGlobalSecondaryIndexMarshaller : IRequestMarshaller<AwsDynamoDbTableGlobalSecondaryIndex, JsonMarshallerContext> 
     {
         /// <summary>
@@ -123,7 +123,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AwsDynamoDbTableGlobalSecondaryIndexMarshaller Instance = new AwsDynamoDbTableGlobalSecondaryIndexMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ReplicationConfigurationReplicatedDisk Marshaller
-    /// </summary>       
+    /// </summary>
     public class ReplicationConfigurationReplicatedDiskMarshaller : IRequestMarshaller<ReplicationConfigurationReplicatedDisk, JsonMarshallerContext> 
     {
         /// <summary>
@@ -79,7 +79,7 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ReplicationConfigurationReplicatedDiskMarshaller Instance = new ReplicationConfigurationReplicatedDiskMarshaller();
 
     }

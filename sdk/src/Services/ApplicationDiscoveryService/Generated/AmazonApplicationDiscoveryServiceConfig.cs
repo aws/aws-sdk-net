@@ -32,7 +32,7 @@ namespace Amazon.ApplicationDiscoveryService
     public partial class AmazonApplicationDiscoveryServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.112");
+            InternalSDKUtils.BuildUserAgentString("3.7.0.121");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// Default constructor
         /// </summary>
         public AmazonApplicationDiscoveryServiceConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonApplicationDiscoveryServiceDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "discovery";
         }

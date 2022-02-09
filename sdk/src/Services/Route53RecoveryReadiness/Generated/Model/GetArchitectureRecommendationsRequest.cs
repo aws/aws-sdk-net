@@ -30,8 +30,8 @@ namespace Amazon.Route53RecoveryReadiness.Model
 {
     /// <summary>
     /// Container for the parameters to the GetArchitectureRecommendations operation.
-    /// Returns a collection of recommendations to improve resilliance and readiness check
-    /// quality for a Recovery Group.
+    /// Gets recommendations about architecture designs for improving resiliency for an application,
+    /// based on a recovery group.
     /// </summary>
     public partial class GetArchitectureRecommendationsRequest : AmazonRoute53RecoveryReadinessRequest
     {
@@ -40,7 +40,10 @@ namespace Amazon.Route53RecoveryReadiness.Model
         private string _recoveryGroupName;
 
         /// <summary>
-        /// Gets and sets the property MaxResults. Upper bound on number of records to return.
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// The number of objects that you want to return with this call.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
         public int MaxResults
@@ -56,8 +59,10 @@ namespace Amazon.Route53RecoveryReadiness.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken. A token that can be used to resume pagination
-        /// from the end of the collection.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token that identifies which batch of results you want to see.
+        /// </para>
         /// </summary>
         public string NextToken
         {
@@ -72,8 +77,10 @@ namespace Amazon.Route53RecoveryReadiness.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RecoveryGroupName. Name of RecoveryGroup (top level resource)
-        /// to be analyzed.
+        /// Gets and sets the property RecoveryGroupName. 
+        /// <para>
+        /// The name of a recovery group.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string RecoveryGroupName

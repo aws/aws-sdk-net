@@ -34,7 +34,7 @@ namespace Amazon.Signer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SignatureValidityPeriod Marshaller
-    /// </summary>       
+    /// </summary>
     public class SignatureValidityPeriodMarshaller : IRequestMarshaller<SignatureValidityPeriod, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Signer.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SignatureValidityPeriodMarshaller Instance = new SignatureValidityPeriodMarshaller();
 
     }

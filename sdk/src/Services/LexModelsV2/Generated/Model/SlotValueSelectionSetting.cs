@@ -33,8 +33,27 @@ namespace Amazon.LexModelsV2.Model
     /// </summary>
     public partial class SlotValueSelectionSetting
     {
+        private AdvancedRecognitionSetting _advancedRecognitionSetting;
         private SlotValueRegexFilter _regexFilter;
         private SlotValueResolutionStrategy _resolutionStrategy;
+
+        /// <summary>
+        /// Gets and sets the property AdvancedRecognitionSetting. 
+        /// <para>
+        /// Provides settings that enable advanced recognition settings for slot values.
+        /// </para>
+        /// </summary>
+        public AdvancedRecognitionSetting AdvancedRecognitionSetting
+        {
+            get { return this._advancedRecognitionSetting; }
+            set { this._advancedRecognitionSetting = value; }
+        }
+
+        // Check to see if AdvancedRecognitionSetting property is set
+        internal bool IsSetAdvancedRecognitionSetting()
+        {
+            return this._advancedRecognitionSetting != null;
+        }
 
         /// <summary>
         /// Gets and sets the property RegexFilter. 

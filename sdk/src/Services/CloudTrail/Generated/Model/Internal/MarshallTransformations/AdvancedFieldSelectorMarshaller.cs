@@ -34,7 +34,7 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AdvancedFieldSelector Marshaller
-    /// </summary>       
+    /// </summary>
     public class AdvancedFieldSelectorMarshaller : IRequestMarshaller<AdvancedFieldSelector, JsonMarshallerContext> 
     {
         /// <summary>
@@ -121,7 +121,7 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AdvancedFieldSelectorMarshaller Instance = new AdvancedFieldSelectorMarshaller();
 
     }

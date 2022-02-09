@@ -34,7 +34,7 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RegistryScanningRule Marshaller
-    /// </summary>       
+    /// </summary>
     public class RegistryScanningRuleMarshaller : IRequestMarshaller<RegistryScanningRule, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RegistryScanningRuleMarshaller Instance = new RegistryScanningRuleMarshaller();
 
     }

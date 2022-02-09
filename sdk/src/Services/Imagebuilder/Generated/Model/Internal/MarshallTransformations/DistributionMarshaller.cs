@@ -34,7 +34,7 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Distribution Marshaller
-    /// </summary>       
+    /// </summary>
     public class DistributionMarshaller : IRequestMarshaller<Distribution, JsonMarshallerContext> 
     {
         /// <summary>
@@ -115,7 +115,7 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DistributionMarshaller Instance = new DistributionMarshaller();
 
     }

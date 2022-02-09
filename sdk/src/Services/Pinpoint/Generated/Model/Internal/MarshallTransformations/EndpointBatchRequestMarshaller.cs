@@ -34,7 +34,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// EndpointBatchRequest Marshaller
-    /// </summary>       
+    /// </summary>
     public class EndpointBatchRequestMarshaller : IRequestMarshaller<EndpointBatchRequest, JsonMarshallerContext> 
     {
         /// <summary>
@@ -65,7 +65,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static EndpointBatchRequestMarshaller Instance = new EndpointBatchRequestMarshaller();
 
     }

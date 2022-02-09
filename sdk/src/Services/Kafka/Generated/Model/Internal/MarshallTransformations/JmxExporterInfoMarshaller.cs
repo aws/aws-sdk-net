@@ -34,7 +34,7 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// JmxExporterInfo Marshaller
-    /// </summary>       
+    /// </summary>
     public class JmxExporterInfoMarshaller : IRequestMarshaller<JmxExporterInfo, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static JmxExporterInfoMarshaller Instance = new JmxExporterInfoMarshaller();
 
     }

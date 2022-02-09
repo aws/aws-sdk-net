@@ -34,7 +34,7 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Expression Marshaller
-    /// </summary>       
+    /// </summary>
     public class ExpressionMarshaller : IRequestMarshaller<Expression, JsonMarshallerContext> 
     {
         /// <summary>
@@ -125,7 +125,7 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ExpressionMarshaller Instance = new ExpressionMarshaller();
 
     }

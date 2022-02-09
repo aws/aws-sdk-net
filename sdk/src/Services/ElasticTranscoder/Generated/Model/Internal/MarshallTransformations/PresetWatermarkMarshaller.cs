@@ -34,7 +34,7 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// PresetWatermark Marshaller
-    /// </summary>       
+    /// </summary>
     public class PresetWatermarkMarshaller : IRequestMarshaller<PresetWatermark, JsonMarshallerContext> 
     {
         /// <summary>
@@ -109,7 +109,7 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static PresetWatermarkMarshaller Instance = new PresetWatermarkMarshaller();
 
     }

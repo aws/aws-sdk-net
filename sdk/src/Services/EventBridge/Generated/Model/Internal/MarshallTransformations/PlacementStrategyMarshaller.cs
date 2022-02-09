@@ -34,7 +34,7 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// PlacementStrategy Marshaller
-    /// </summary>       
+    /// </summary>
     public class PlacementStrategyMarshaller : IRequestMarshaller<PlacementStrategy, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static PlacementStrategyMarshaller Instance = new PlacementStrategyMarshaller();
 
     }

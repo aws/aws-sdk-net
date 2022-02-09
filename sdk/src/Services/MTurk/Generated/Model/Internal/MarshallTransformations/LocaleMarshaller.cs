@@ -34,7 +34,7 @@ namespace Amazon.MTurk.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Locale Marshaller
-    /// </summary>       
+    /// </summary>
     public class LocaleMarshaller : IRequestMarshaller<Locale, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.MTurk.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static LocaleMarshaller Instance = new LocaleMarshaller();
 
     }

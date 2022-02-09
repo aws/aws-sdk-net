@@ -34,7 +34,7 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// PipelineConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class PipelineConfigMarshaller : IRequestMarshaller<PipelineConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static PipelineConfigMarshaller Instance = new PipelineConfigMarshaller();
 
     }

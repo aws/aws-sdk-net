@@ -36,6 +36,7 @@ namespace Amazon.Appflow.Model
     {
         private bool? _isQueryable;
         private bool? _isRetrievable;
+        private bool? _isTimestampFieldForIncrementalQueries;
 
         /// <summary>
         /// Gets and sets the property IsQueryable. 
@@ -71,6 +72,24 @@ namespace Amazon.Appflow.Model
         internal bool IsSetIsRetrievable()
         {
             return this._isRetrievable.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsTimestampFieldForIncrementalQueries. 
+        /// <para>
+        /// Indicates if this timestamp field can be used for incremental queries.
+        /// </para>
+        /// </summary>
+        public bool IsTimestampFieldForIncrementalQueries
+        {
+            get { return this._isTimestampFieldForIncrementalQueries.GetValueOrDefault(); }
+            set { this._isTimestampFieldForIncrementalQueries = value; }
+        }
+
+        // Check to see if IsTimestampFieldForIncrementalQueries property is set
+        internal bool IsSetIsTimestampFieldForIncrementalQueries()
+        {
+            return this._isTimestampFieldForIncrementalQueries.HasValue; 
         }
 
     }

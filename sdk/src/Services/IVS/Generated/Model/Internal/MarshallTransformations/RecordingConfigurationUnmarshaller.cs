@@ -94,6 +94,12 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
                     unmarshalledObject.Tags = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("thumbnailConfiguration", targetDepth))
+                {
+                    var unmarshaller = ThumbnailConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.ThumbnailConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

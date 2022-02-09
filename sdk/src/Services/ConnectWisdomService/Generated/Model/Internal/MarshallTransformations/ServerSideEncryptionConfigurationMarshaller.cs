@@ -34,7 +34,7 @@ namespace Amazon.ConnectWisdomService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ServerSideEncryptionConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class ServerSideEncryptionConfigurationMarshaller : IRequestMarshaller<ServerSideEncryptionConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.ConnectWisdomService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ServerSideEncryptionConfigurationMarshaller Instance = new ServerSideEncryptionConfigurationMarshaller();
 
     }

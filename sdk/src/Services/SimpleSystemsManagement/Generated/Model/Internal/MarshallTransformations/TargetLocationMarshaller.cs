@@ -34,7 +34,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TargetLocation Marshaller
-    /// </summary>       
+    /// </summary>
     public class TargetLocationMarshaller : IRequestMarshaller<TargetLocation, JsonMarshallerContext> 
     {
         /// <summary>
@@ -89,7 +89,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TargetLocationMarshaller Instance = new TargetLocationMarshaller();
 
     }

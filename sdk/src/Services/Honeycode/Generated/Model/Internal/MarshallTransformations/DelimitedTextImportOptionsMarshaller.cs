@@ -34,7 +34,7 @@ namespace Amazon.Honeycode.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DelimitedTextImportOptions Marshaller
-    /// </summary>       
+    /// </summary>
     public class DelimitedTextImportOptionsMarshaller : IRequestMarshaller<DelimitedTextImportOptions, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.Honeycode.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DelimitedTextImportOptionsMarshaller Instance = new DelimitedTextImportOptionsMarshaller();
 
     }

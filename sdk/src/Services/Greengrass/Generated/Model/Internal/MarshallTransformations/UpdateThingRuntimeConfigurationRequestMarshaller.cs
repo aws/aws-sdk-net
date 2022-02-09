@@ -56,7 +56,7 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Greengrass");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-06-07";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-06-07";
             request.HttpMethod = "PUT";
 
             if (!publicRequest.IsSetThingName())
@@ -79,7 +79,6 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

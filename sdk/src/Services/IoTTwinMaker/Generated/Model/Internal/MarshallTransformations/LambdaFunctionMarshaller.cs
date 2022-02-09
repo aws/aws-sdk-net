@@ -34,7 +34,7 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// LambdaFunction Marshaller
-    /// </summary>       
+    /// </summary>
     public class LambdaFunctionMarshaller : IRequestMarshaller<LambdaFunction, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static LambdaFunctionMarshaller Instance = new LambdaFunctionMarshaller();
 
     }

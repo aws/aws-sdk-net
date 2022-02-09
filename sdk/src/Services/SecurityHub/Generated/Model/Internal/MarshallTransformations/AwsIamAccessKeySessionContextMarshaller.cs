@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AwsIamAccessKeySessionContext Marshaller
-    /// </summary>       
+    /// </summary>
     public class AwsIamAccessKeySessionContextMarshaller : IRequestMarshaller<AwsIamAccessKeySessionContext, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AwsIamAccessKeySessionContextMarshaller Instance = new AwsIamAccessKeySessionContextMarshaller();
 
     }

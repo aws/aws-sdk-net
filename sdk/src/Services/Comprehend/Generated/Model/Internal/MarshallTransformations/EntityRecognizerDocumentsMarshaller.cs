@@ -34,7 +34,7 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// EntityRecognizerDocuments Marshaller
-    /// </summary>       
+    /// </summary>
     public class EntityRecognizerDocumentsMarshaller : IRequestMarshaller<EntityRecognizerDocuments, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static EntityRecognizerDocumentsMarshaller Instance = new EntityRecognizerDocumentsMarshaller();
 
     }

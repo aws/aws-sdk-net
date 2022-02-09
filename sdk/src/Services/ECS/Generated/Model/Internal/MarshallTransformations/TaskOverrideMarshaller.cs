@@ -34,7 +34,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TaskOverride Marshaller
-    /// </summary>       
+    /// </summary>
     public class TaskOverrideMarshaller : IRequestMarshaller<TaskOverride, JsonMarshallerContext> 
     {
         /// <summary>
@@ -116,7 +116,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TaskOverrideMarshaller Instance = new TaskOverrideMarshaller();
 
     }

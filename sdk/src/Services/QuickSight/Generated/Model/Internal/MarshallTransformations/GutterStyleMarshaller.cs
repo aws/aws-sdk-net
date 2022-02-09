@@ -34,7 +34,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// GutterStyle Marshaller
-    /// </summary>       
+    /// </summary>
     public class GutterStyleMarshaller : IRequestMarshaller<GutterStyle, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static GutterStyleMarshaller Instance = new GutterStyleMarshaller();
 
     }

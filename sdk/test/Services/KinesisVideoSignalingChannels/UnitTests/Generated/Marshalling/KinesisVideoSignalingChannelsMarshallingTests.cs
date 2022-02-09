@@ -53,7 +53,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetIceServerConfigRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("GetIceServerConfig", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetIceServerConfig", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -67,9 +67,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = GetIceServerConfigResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as GetIceServerConfigResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as GetIceServerConfigResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -276,7 +275,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new SendAlexaOfferToMasterRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("SendAlexaOfferToMaster", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("SendAlexaOfferToMaster", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -290,9 +289,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = SendAlexaOfferToMasterResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as SendAlexaOfferToMasterResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as SendAlexaOfferToMasterResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]

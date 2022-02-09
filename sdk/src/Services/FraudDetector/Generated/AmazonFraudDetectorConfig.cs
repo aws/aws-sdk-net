@@ -32,7 +32,7 @@ namespace Amazon.FraudDetector
     public partial class AmazonFraudDetectorConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.5.33");
+            InternalSDKUtils.BuildUserAgentString("3.7.6.3");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.FraudDetector
         /// Default constructor
         /// </summary>
         public AmazonFraudDetectorConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonFraudDetectorDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "frauddetector";
         }

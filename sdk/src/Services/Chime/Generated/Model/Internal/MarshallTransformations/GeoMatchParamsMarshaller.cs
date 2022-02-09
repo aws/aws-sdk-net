@@ -34,7 +34,7 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// GeoMatchParams Marshaller
-    /// </summary>       
+    /// </summary>
     public class GeoMatchParamsMarshaller : IRequestMarshaller<GeoMatchParams, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static GeoMatchParamsMarshaller Instance = new GeoMatchParamsMarshaller();
 
     }

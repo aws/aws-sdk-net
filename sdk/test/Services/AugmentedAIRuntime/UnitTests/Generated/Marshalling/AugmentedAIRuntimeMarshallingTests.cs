@@ -53,7 +53,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DeleteHumanLoopRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("DeleteHumanLoop", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DeleteHumanLoop", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -67,9 +67,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = DeleteHumanLoopResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as DeleteHumanLoopResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as DeleteHumanLoopResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -212,7 +211,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DescribeHumanLoopRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("DescribeHumanLoop", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DescribeHumanLoop", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -226,9 +225,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = DescribeHumanLoopResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as DescribeHumanLoopResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as DescribeHumanLoopResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -371,7 +369,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListHumanLoopsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("ListHumanLoops", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("ListHumanLoops", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -385,9 +383,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = ListHumanLoopsResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as ListHumanLoopsResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as ListHumanLoopsResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -530,7 +527,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new StartHumanLoopRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("StartHumanLoop", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("StartHumanLoop", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -544,9 +541,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = StartHumanLoopResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as StartHumanLoopResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as StartHumanLoopResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -721,7 +717,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new StopHumanLoopRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("StopHumanLoop", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("StopHumanLoop", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -735,9 +731,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = StopHumanLoopResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as StopHumanLoopResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as StopHumanLoopResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]

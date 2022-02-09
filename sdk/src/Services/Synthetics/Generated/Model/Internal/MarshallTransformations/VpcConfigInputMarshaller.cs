@@ -34,7 +34,7 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// VpcConfigInput Marshaller
-    /// </summary>       
+    /// </summary>
     public class VpcConfigInputMarshaller : IRequestMarshaller<VpcConfigInput, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static VpcConfigInputMarshaller Instance = new VpcConfigInputMarshaller();
 
     }

@@ -32,7 +32,7 @@ namespace Amazon.AmplifyUIBuilder
     public partial class AmazonAmplifyUIBuilderConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.7");
+            InternalSDKUtils.BuildUserAgentString("3.7.0.16");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.AmplifyUIBuilder
         /// Default constructor
         /// </summary>
         public AmazonAmplifyUIBuilderConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonAmplifyUIBuilderDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "amplifyuibuilder";
         }

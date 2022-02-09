@@ -34,7 +34,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Mpeg2FilterSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class Mpeg2FilterSettingsMarshaller : IRequestMarshaller<Mpeg2FilterSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static Mpeg2FilterSettingsMarshaller Instance = new Mpeg2FilterSettingsMarshaller();
 
     }

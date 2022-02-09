@@ -32,7 +32,7 @@ namespace Amazon.MediaConvert
     public partial class AmazonMediaConvertConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.11.2");
+            InternalSDKUtils.BuildUserAgentString("3.7.12.4");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.MediaConvert
         /// Default constructor
         /// </summary>
         public AmazonMediaConvertConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonMediaConvertDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "mediaconvert";
         }

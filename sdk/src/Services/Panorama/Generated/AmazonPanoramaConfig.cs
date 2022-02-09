@@ -32,7 +32,7 @@ namespace Amazon.Panorama
     public partial class AmazonPanoramaConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.30");
+            InternalSDKUtils.BuildUserAgentString("3.7.0.39");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.Panorama
         /// Default constructor
         /// </summary>
         public AmazonPanoramaConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonPanoramaDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "panorama";
         }

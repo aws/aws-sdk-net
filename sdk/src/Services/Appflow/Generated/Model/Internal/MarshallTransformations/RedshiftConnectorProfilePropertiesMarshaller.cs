@@ -34,7 +34,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RedshiftConnectorProfileProperties Marshaller
-    /// </summary>       
+    /// </summary>
     public class RedshiftConnectorProfilePropertiesMarshaller : IRequestMarshaller<RedshiftConnectorProfileProperties, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RedshiftConnectorProfilePropertiesMarshaller Instance = new RedshiftConnectorProfilePropertiesMarshaller();
 
     }

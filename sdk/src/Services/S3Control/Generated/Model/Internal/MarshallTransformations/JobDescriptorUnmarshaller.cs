@@ -79,6 +79,12 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         unmarshalledObject.FailureReasons.Add(unmarshaller.Unmarshall(context));
                         continue;
                     }
+                    if (context.TestExpression("GeneratedManifestDescriptor", targetDepth))
+                    {
+                        var unmarshaller = S3GeneratedManifestDescriptorUnmarshaller.Instance;
+                        unmarshalledObject.GeneratedManifestDescriptor = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("JobArn", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -95,6 +101,12 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = JobManifestUnmarshaller.Instance;
                         unmarshalledObject.Manifest = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ManifestGenerator", targetDepth))
+                    {
+                        var unmarshaller = JobManifestGeneratorUnmarshaller.Instance;
+                        unmarshalledObject.ManifestGenerator = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Operation", targetDepth))

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppConfigData.Model
 {
     /// <summary>
-    /// Contains details about an invalid parameter.
+    /// Information about an invalid parameter.
     /// </summary>
     public partial class InvalidParameterDetail
     {
@@ -38,8 +38,7 @@ namespace Amazon.AppConfigData.Model
         /// <summary>
         /// Gets and sets the property Problem. 
         /// <para>
-        /// Detail describing why an individual parameter did not satisfy the constraints specified
-        /// by the service
+        /// The reason the parameter is invalid.
         /// </para>
         /// </summary>
         public InvalidParameterProblem Problem

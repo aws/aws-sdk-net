@@ -34,7 +34,7 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ComponentPlatform Marshaller
-    /// </summary>       
+    /// </summary>
     public class ComponentPlatformMarshaller : IRequestMarshaller<ComponentPlatform, JsonMarshallerContext> 
     {
         /// <summary>
@@ -69,7 +69,7 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ComponentPlatformMarshaller Instance = new ComponentPlatformMarshaller();
 
     }

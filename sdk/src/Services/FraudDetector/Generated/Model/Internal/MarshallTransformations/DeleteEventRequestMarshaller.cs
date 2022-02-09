@@ -58,7 +58,7 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
             string target = "AWSHawksNestServiceFacade.DeleteEvent";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-11-15";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-11-15";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -85,7 +85,6 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.EventTypeName);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

@@ -34,7 +34,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AllowedPublishers Marshaller
-    /// </summary>       
+    /// </summary>
     public class AllowedPublishersMarshaller : IRequestMarshaller<AllowedPublishers, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AllowedPublishersMarshaller Instance = new AllowedPublishersMarshaller();
 
     }

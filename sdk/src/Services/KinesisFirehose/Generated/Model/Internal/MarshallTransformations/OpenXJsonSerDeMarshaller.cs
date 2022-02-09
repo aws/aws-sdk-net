@@ -34,7 +34,7 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// OpenXJsonSerDe Marshaller
-    /// </summary>       
+    /// </summary>
     public class OpenXJsonSerDeMarshaller : IRequestMarshaller<OpenXJsonSerDe, JsonMarshallerContext> 
     {
         /// <summary>
@@ -75,7 +75,7 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static OpenXJsonSerDeMarshaller Instance = new OpenXJsonSerDeMarshaller();
 
     }

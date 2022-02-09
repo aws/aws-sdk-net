@@ -240,6 +240,37 @@ namespace Amazon.Appflow
 
         #endregion
                 
+        #region  DescribeConnector
+
+
+
+        /// <summary>
+        /// Describes the given custom connector registered in your Amazon Web Services account.
+        /// This API can be used for custom connectors that are registered in your account and
+        /// also for Amazon authored connectors.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeConnector service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeConnector service method, as returned by Appflow.</returns>
+        /// <exception cref="Amazon.Appflow.Model.InternalServerException">
+        /// An internal service error occurred during the processing of your request. Try again
+        /// later.
+        /// </exception>
+        /// <exception cref="Amazon.Appflow.Model.ResourceNotFoundException">
+        /// The resource specified in the request (such as the source or destination connector
+        /// profile) is not found.
+        /// </exception>
+        /// <exception cref="Amazon.Appflow.Model.ValidationException">
+        /// The request has invalid or missing parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/DescribeConnector">REST API Reference for DescribeConnector Operation</seealso>
+        Task<DescribeConnectorResponse> DescribeConnectorAsync(DescribeConnectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DescribeConnectorEntity
 
 
@@ -431,6 +462,33 @@ namespace Amazon.Appflow
 
         #endregion
                 
+        #region  ListConnectors
+
+
+
+        /// <summary>
+        /// Returns the list of all registered custom connectors in your Amazon Web Services account.
+        /// This API lists only custom connectors registered in this account, not the Amazon Web
+        /// Services authored connectors.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListConnectors service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListConnectors service method, as returned by Appflow.</returns>
+        /// <exception cref="Amazon.Appflow.Model.InternalServerException">
+        /// An internal service error occurred during the processing of your request. Try again
+        /// later.
+        /// </exception>
+        /// <exception cref="Amazon.Appflow.Model.ValidationException">
+        /// The request has invalid or missing parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/ListConnectors">REST API Reference for ListConnectors Operation</seealso>
+        Task<ListConnectorsResponse> ListConnectorsAsync(ListConnectorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListFlows
 
 
@@ -482,6 +540,56 @@ namespace Amazon.Appflow
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  RegisterConnector
+
+
+
+        /// <summary>
+        /// Registers a new connector with your Amazon Web Services account. Before you can register
+        /// the connector, you must deploy lambda in your account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterConnector service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RegisterConnector service method, as returned by Appflow.</returns>
+        /// <exception cref="Amazon.Appflow.Model.AccessDeniedException">
+        /// AppFlow/Requester has invalid or missing permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Appflow.Model.ConflictException">
+        /// There was a conflict when processing the request (for example, a flow with the given
+        /// name already exists within the account. Check for conflicting resource names and try
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.Appflow.Model.ConnectorAuthenticationException">
+        /// An error occurred when authenticating with the connector endpoint.
+        /// </exception>
+        /// <exception cref="Amazon.Appflow.Model.ConnectorServerException">
+        /// An error occurred when retrieving data from the connector endpoint.
+        /// </exception>
+        /// <exception cref="Amazon.Appflow.Model.InternalServerException">
+        /// An internal service error occurred during the processing of your request. Try again
+        /// later.
+        /// </exception>
+        /// <exception cref="Amazon.Appflow.Model.ResourceNotFoundException">
+        /// The resource specified in the request (such as the source or destination connector
+        /// profile) is not found.
+        /// </exception>
+        /// <exception cref="Amazon.Appflow.Model.ServiceQuotaExceededException">
+        /// The request would cause a service quota (such as the number of flows) to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Appflow.Model.ThrottlingException">
+        /// API calls have exceeded the maximum allowed API request rate per account and per Region.
+        /// </exception>
+        /// <exception cref="Amazon.Appflow.Model.ValidationException">
+        /// The request has invalid or missing parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/RegisterConnector">REST API Reference for RegisterConnector Operation</seealso>
+        Task<RegisterConnectorResponse> RegisterConnectorAsync(RegisterConnectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -582,6 +690,38 @@ namespace Amazon.Appflow
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/TagResource">REST API Reference for TagResource Operation</seealso>
         Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UnregisterConnector
+
+
+
+        /// <summary>
+        /// Unregisters the custom connector registered in your account that matches the connectorLabel
+        /// provided in the request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UnregisterConnector service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UnregisterConnector service method, as returned by Appflow.</returns>
+        /// <exception cref="Amazon.Appflow.Model.ConflictException">
+        /// There was a conflict when processing the request (for example, a flow with the given
+        /// name already exists within the account. Check for conflicting resource names and try
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.Appflow.Model.InternalServerException">
+        /// An internal service error occurred during the processing of your request. Try again
+        /// later.
+        /// </exception>
+        /// <exception cref="Amazon.Appflow.Model.ResourceNotFoundException">
+        /// The resource specified in the request (such as the source or destination connector
+        /// profile) is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/UnregisterConnector">REST API Reference for UnregisterConnector Operation</seealso>
+        Task<UnregisterConnectorResponse> UnregisterConnectorAsync(UnregisterConnectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

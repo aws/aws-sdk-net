@@ -43,7 +43,7 @@ namespace Amazon.Connect.Model
     /// </para>
     ///  
     /// <para>
-    /// A 429 error occurs in two situations:
+    /// A 429 error occurs in the following situations:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -57,6 +57,12 @@ namespace Amazon.Connect.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
+    /// If you use the <code>ChatDurationInMinutes</code> parameter and receive a 400 error,
+    /// your account may not support the ability to configure custom chat durations. For more
+    /// information, contact Amazon Web Services Support. 
+    /// </para>
+    ///  
+    /// <para>
     /// For more information about chat, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/chat.html">Chat</a>
     /// in the <i>Amazon Connect Administrator Guide</i>.
     /// </para>
@@ -64,6 +70,7 @@ namespace Amazon.Connect.Model
     public partial class StartChatContactRequest : AmazonConnectRequest
     {
         private Dictionary<string, string> _attributes = new Dictionary<string, string>();
+        private int? _chatDurationInMinutes;
         private string _clientToken;
         private string _contactFlowId;
         private ChatMessage _initialMessage;
@@ -93,6 +100,27 @@ namespace Amazon.Connect.Model
         internal bool IsSetAttributes()
         {
             return this._attributes != null && this._attributes.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChatDurationInMinutes. 
+        /// <para>
+        /// The total duration of the newly started chat session. If not specified, the chat session
+        /// duration defaults to 25 hour. The minumum configurable time is 60 minutes. The maximum
+        /// configurable time is 10,080 minutes (7 days).
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=60, Max=10080)]
+        public int ChatDurationInMinutes
+        {
+            get { return this._chatDurationInMinutes.GetValueOrDefault(); }
+            set { this._chatDurationInMinutes = value; }
+        }
+
+        // Check to see if ChatDurationInMinutes property is set
+        internal bool IsSetChatDurationInMinutes()
+        {
+            return this._chatDurationInMinutes.HasValue; 
         }
 
         /// <summary>

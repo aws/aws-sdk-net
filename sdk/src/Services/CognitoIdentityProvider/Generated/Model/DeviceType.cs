@@ -97,7 +97,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property DeviceLastAuthenticatedDate. 
         /// <para>
-        /// The date in which the device was last authenticated.
+        /// The date when the device was last authenticated.
         /// </para>
         /// </summary>
         public DateTime DeviceLastAuthenticatedDate

@@ -53,7 +53,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new BatchGetRecordRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("BatchGetRecord", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("BatchGetRecord", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -67,9 +67,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = BatchGetRecordResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as BatchGetRecordResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as BatchGetRecordResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -212,7 +211,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DeleteRecordRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("DeleteRecord", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DeleteRecord", request, internalRequest, service_model);
 
         }
 
@@ -356,7 +355,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetRecordRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("GetRecord", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetRecord", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -370,9 +369,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = GetRecordResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as GetRecordResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as GetRecordResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -547,7 +545,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new PutRecordRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("PutRecord", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("PutRecord", request, internalRequest, service_model);
 
         }
 

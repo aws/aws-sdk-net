@@ -34,7 +34,7 @@ namespace Amazon.IoTDeviceAdvisor.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DeviceUnderTest Marshaller
-    /// </summary>       
+    /// </summary>
     public class DeviceUnderTestMarshaller : IRequestMarshaller<DeviceUnderTest, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.IoTDeviceAdvisor.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DeviceUnderTestMarshaller Instance = new DeviceUnderTestMarshaller();
 
     }

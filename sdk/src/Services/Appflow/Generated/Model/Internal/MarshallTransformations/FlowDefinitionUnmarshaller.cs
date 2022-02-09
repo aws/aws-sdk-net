@@ -82,6 +82,12 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("destinationConnectorLabel", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DestinationConnectorLabel = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("destinationConnectorType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -122,6 +128,12 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LastUpdatedBy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("sourceConnectorLabel", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SourceConnectorLabel = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("sourceConnectorType", targetDepth))

@@ -154,7 +154,7 @@ namespace Amazon.Kendra.Model
         /// <para>
         /// By default, Amazon Kendra enables query suggestions.<code>LEARN_ONLY</code> turns
         /// off query suggestions for your users. You can change the mode using the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UpdateQuerySuggestionsConfig.html">UpdateQuerySuggestionsConfig</a>
-        /// operation.
+        /// API.
         /// </para>
         /// </summary>
         public Mode Mode

@@ -34,7 +34,7 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DeleteRegionAction Marshaller
-    /// </summary>       
+    /// </summary>
     public class DeleteRegionActionMarshaller : IRequestMarshaller<DeleteRegionAction, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DeleteRegionActionMarshaller Instance = new DeleteRegionActionMarshaller();
 
     }

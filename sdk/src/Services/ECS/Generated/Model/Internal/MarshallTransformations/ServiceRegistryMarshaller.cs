@@ -34,7 +34,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ServiceRegistry Marshaller
-    /// </summary>       
+    /// </summary>
     public class ServiceRegistryMarshaller : IRequestMarshaller<ServiceRegistry, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ServiceRegistryMarshaller Instance = new ServiceRegistryMarshaller();
 
     }

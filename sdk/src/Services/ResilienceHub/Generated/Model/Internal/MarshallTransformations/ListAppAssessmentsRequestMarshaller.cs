@@ -55,7 +55,7 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListAppAssessmentsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ResilienceHub");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-04-30";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-04-30";
             request.HttpMethod = "GET";
 
             

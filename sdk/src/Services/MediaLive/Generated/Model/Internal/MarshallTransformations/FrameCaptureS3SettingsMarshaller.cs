@@ -34,7 +34,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// FrameCaptureS3Settings Marshaller
-    /// </summary>       
+    /// </summary>
     public class FrameCaptureS3SettingsMarshaller : IRequestMarshaller<FrameCaptureS3Settings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static FrameCaptureS3SettingsMarshaller Instance = new FrameCaptureS3SettingsMarshaller();
 
     }

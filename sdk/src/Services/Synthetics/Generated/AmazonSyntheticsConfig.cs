@@ -32,7 +32,7 @@ namespace Amazon.Synthetics
     public partial class AmazonSyntheticsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.2.37");
+            InternalSDKUtils.BuildUserAgentString("3.7.3.0");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.Synthetics
         /// Default constructor
         /// </summary>
         public AmazonSyntheticsConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonSyntheticsDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "synthetics";
         }

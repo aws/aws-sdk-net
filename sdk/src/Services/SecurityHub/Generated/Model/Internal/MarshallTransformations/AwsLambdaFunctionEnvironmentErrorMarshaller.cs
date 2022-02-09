@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AwsLambdaFunctionEnvironmentError Marshaller
-    /// </summary>       
+    /// </summary>
     public class AwsLambdaFunctionEnvironmentErrorMarshaller : IRequestMarshaller<AwsLambdaFunctionEnvironmentError, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AwsLambdaFunctionEnvironmentErrorMarshaller Instance = new AwsLambdaFunctionEnvironmentErrorMarshaller();
 
     }

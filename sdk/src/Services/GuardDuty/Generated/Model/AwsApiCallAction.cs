@@ -37,13 +37,15 @@ namespace Amazon.GuardDuty.Model
         private string _callerType;
         private DomainDetails _domainDetails;
         private string _errorCode;
+        private RemoteAccountDetails _remoteAccountDetails;
         private RemoteIpDetails _remoteIpDetails;
         private string _serviceName;
+        private string _userAgent;
 
         /// <summary>
         /// Gets and sets the property Api. 
         /// <para>
-        /// The AWS API name.
+        /// The Amazon Web Services API name.
         /// </para>
         /// </summary>
         public string Api
@@ -61,7 +63,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property CallerType. 
         /// <para>
-        /// The AWS API caller type.
+        /// The Amazon Web Services API caller type.
         /// </para>
         /// </summary>
         public string CallerType
@@ -79,7 +81,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property DomainDetails. 
         /// <para>
-        /// The domain information for the AWS API call.
+        /// The domain information for the Amazon Web Services API call.
         /// </para>
         /// </summary>
         public DomainDetails DomainDetails
@@ -97,7 +99,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property ErrorCode. 
         /// <para>
-        /// The error code of the failed AWS API action.
+        /// The error code of the failed Amazon Web Services API action.
         /// </para>
         /// </summary>
         public string ErrorCode
@@ -113,9 +115,29 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RemoteAccountDetails. 
+        /// <para>
+        /// The details of the Amazon Web Services account that made the API call. This field
+        /// appears if the call was made from outside your account.
+        /// </para>
+        /// </summary>
+        public RemoteAccountDetails RemoteAccountDetails
+        {
+            get { return this._remoteAccountDetails; }
+            set { this._remoteAccountDetails = value; }
+        }
+
+        // Check to see if RemoteAccountDetails property is set
+        internal bool IsSetRemoteAccountDetails()
+        {
+            return this._remoteAccountDetails != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property RemoteIpDetails. 
         /// <para>
-        /// The remote IP information of the connection that initiated the AWS API call.
+        /// The remote IP information of the connection that initiated the Amazon Web Services
+        /// API call.
         /// </para>
         /// </summary>
         public RemoteIpDetails RemoteIpDetails
@@ -133,7 +155,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property ServiceName. 
         /// <para>
-        /// The AWS service name whose API was invoked.
+        /// The Amazon Web Services service name whose API was invoked.
         /// </para>
         /// </summary>
         public string ServiceName
@@ -146,6 +168,21 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetServiceName()
         {
             return this._serviceName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UserAgent.
+        /// </summary>
+        public string UserAgent
+        {
+            get { return this._userAgent; }
+            set { this._userAgent = value; }
+        }
+
+        // Check to see if UserAgent property is set
+        internal bool IsSetUserAgent()
+        {
+            return this._userAgent != null;
         }
 
     }

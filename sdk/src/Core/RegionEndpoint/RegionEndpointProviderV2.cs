@@ -211,7 +211,7 @@ namespace Amazon.Internal
 
             // Creates a new RegionEndpoint and stores it in the hash
             private static RegionEndpoint GetEndpoint(string systemName, string displayName)
-            {                
+            {        
                 RegionEndpoint regionEndpoint = null;
                 lock (hashBySystemName)
                 {

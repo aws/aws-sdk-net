@@ -49,5 +49,10 @@ namespace Amazon.AppRunner.Model
         /// Paginator for ListServices operation
         ///</summary>
         IListServicesPaginator ListServices(ListServicesRequest request);
+
+        /// <summary>
+        /// Paginator for ListVpcConnectors operation
+        ///</summary>
+        IListVpcConnectorsPaginator ListVpcConnectors(ListVpcConnectorsRequest request);
     }
 }

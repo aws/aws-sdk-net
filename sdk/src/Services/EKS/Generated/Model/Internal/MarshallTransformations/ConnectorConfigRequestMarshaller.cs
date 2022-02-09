@@ -34,7 +34,7 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ConnectorConfigRequest Marshaller
-    /// </summary>       
+    /// </summary>
     public class ConnectorConfigRequestMarshaller : IRequestMarshaller<ConnectorConfigRequest, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ConnectorConfigRequestMarshaller Instance = new ConnectorConfigRequestMarshaller();
 
     }

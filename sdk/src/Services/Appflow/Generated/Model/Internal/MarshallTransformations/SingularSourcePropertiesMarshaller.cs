@@ -34,7 +34,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SingularSourceProperties Marshaller
-    /// </summary>       
+    /// </summary>
     public class SingularSourcePropertiesMarshaller : IRequestMarshaller<SingularSourceProperties, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SingularSourcePropertiesMarshaller Instance = new SingularSourcePropertiesMarshaller();
 
     }

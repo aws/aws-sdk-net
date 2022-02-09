@@ -34,7 +34,7 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AugmentedManifestsListItem Marshaller
-    /// </summary>       
+    /// </summary>
     public class AugmentedManifestsListItemMarshaller : IRequestMarshaller<AugmentedManifestsListItem, JsonMarshallerContext> 
     {
         /// <summary>
@@ -90,7 +90,7 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AugmentedManifestsListItemMarshaller Instance = new AugmentedManifestsListItemMarshaller();
 
     }

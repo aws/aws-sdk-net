@@ -34,7 +34,7 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// LoRaWANUpdateGatewayTaskCreate Marshaller
-    /// </summary>       
+    /// </summary>
     public class LoRaWANUpdateGatewayTaskCreateMarshaller : IRequestMarshaller<LoRaWANUpdateGatewayTaskCreate, JsonMarshallerContext> 
     {
         /// <summary>
@@ -83,7 +83,7 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static LoRaWANUpdateGatewayTaskCreateMarshaller Instance = new LoRaWANUpdateGatewayTaskCreateMarshaller();
 
     }

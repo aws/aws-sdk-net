@@ -30,14 +30,19 @@ namespace Amazon.Route53RecoveryReadiness.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateCrossAccountAuthorization operation.
-    /// Create a new cross account readiness authorization.
+    /// Creates a cross-account readiness authorization. This lets you authorize another account
+    /// to work with Route 53 Application Recovery Controller, for example, to check the readiness
+    /// status of resources in a separate account.
     /// </summary>
     public partial class CreateCrossAccountAuthorizationRequest : AmazonRoute53RecoveryReadinessRequest
     {
         private string _crossAccountAuthorization;
 
         /// <summary>
-        /// Gets and sets the property CrossAccountAuthorization. The cross account authorization
+        /// Gets and sets the property CrossAccountAuthorization. 
+        /// <para>
+        /// The cross-account authorization.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string CrossAccountAuthorization

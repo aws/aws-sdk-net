@@ -34,7 +34,7 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ChimeSdkMeetingConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class ChimeSdkMeetingConfigurationMarshaller : IRequestMarshaller<ChimeSdkMeetingConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ChimeSdkMeetingConfigurationMarshaller Instance = new ChimeSdkMeetingConfigurationMarshaller();
 
     }

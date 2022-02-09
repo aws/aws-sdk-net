@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RuleGroupSourceStatelessRulesDetails Marshaller
-    /// </summary>       
+    /// </summary>
     public class RuleGroupSourceStatelessRulesDetailsMarshaller : IRequestMarshaller<RuleGroupSourceStatelessRulesDetails, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RuleGroupSourceStatelessRulesDetailsMarshaller Instance = new RuleGroupSourceStatelessRulesDetailsMarshaller();
 
     }

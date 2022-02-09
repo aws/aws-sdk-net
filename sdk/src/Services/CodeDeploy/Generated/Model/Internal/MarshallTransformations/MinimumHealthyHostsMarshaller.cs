@@ -34,7 +34,7 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// MinimumHealthyHosts Marshaller
-    /// </summary>       
+    /// </summary>
     public class MinimumHealthyHostsMarshaller : IRequestMarshaller<MinimumHealthyHosts, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static MinimumHealthyHostsMarshaller Instance = new MinimumHealthyHostsMarshaller();
 
     }

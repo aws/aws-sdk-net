@@ -34,7 +34,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// HostVolumeProperties Marshaller
-    /// </summary>       
+    /// </summary>
     public class HostVolumePropertiesMarshaller : IRequestMarshaller<HostVolumeProperties, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static HostVolumePropertiesMarshaller Instance = new HostVolumePropertiesMarshaller();
 
     }

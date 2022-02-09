@@ -51,6 +51,7 @@ namespace Amazon.AppRunner.Model
         private EncryptionConfiguration _encryptionConfiguration;
         private HealthCheckConfiguration _healthCheckConfiguration;
         private InstanceConfiguration _instanceConfiguration;
+        private NetworkConfiguration _networkConfiguration;
         private string _serviceArn;
         private string _serviceId;
         private string _serviceName;
@@ -121,7 +122,7 @@ namespace Amazon.AppRunner.Model
         /// <para>
         /// The encryption key that App Runner uses to encrypt the service logs and the copy of
         /// the source repository that App Runner maintains for the service. It can be either
-        /// a customer-provided encryption key or an Amazon Web Services managed CMK.
+        /// a customer-provided encryption key or an Amazon Web Services managed key.
         /// </para>
         /// </summary>
         public EncryptionConfiguration EncryptionConfiguration
@@ -172,6 +173,26 @@ namespace Amazon.AppRunner.Model
         internal bool IsSetInstanceConfiguration()
         {
             return this._instanceConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkConfiguration. 
+        /// <para>
+        /// Configuration settings related to network traffic of the web application that this
+        /// service runs.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public NetworkConfiguration NetworkConfiguration
+        {
+            get { return this._networkConfiguration; }
+            set { this._networkConfiguration = value; }
+        }
+
+        // Check to see if NetworkConfiguration property is set
+        internal bool IsSetNetworkConfiguration()
+        {
+            return this._networkConfiguration != null;
         }
 
         /// <summary>

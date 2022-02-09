@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CognitoConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class CognitoConfigMarshaller : IRequestMarshaller<CognitoConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CognitoConfigMarshaller Instance = new CognitoConfigMarshaller();
 
     }

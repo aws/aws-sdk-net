@@ -34,7 +34,7 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TestGridVpcConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class TestGridVpcConfigMarshaller : IRequestMarshaller<TestGridVpcConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -77,7 +77,7 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TestGridVpcConfigMarshaller Instance = new TestGridVpcConfigMarshaller();
 
     }

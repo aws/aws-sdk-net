@@ -32,7 +32,7 @@ namespace Amazon.EMRContainers
     public partial class AmazonEMRContainersConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.2.26");
+            InternalSDKUtils.BuildUserAgentString("3.7.2.35");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.EMRContainers
         /// Default constructor
         /// </summary>
         public AmazonEMRContainersConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonEMRContainersDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "emr-containers";
         }

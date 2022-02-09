@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// HyperParameterTrainingJobDefinition Marshaller
-    /// </summary>       
+    /// </summary>
     public class HyperParameterTrainingJobDefinitionMarshaller : IRequestMarshaller<HyperParameterTrainingJobDefinition, JsonMarshallerContext> 
     {
         /// <summary>
@@ -208,7 +208,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static HyperParameterTrainingJobDefinitionMarshaller Instance = new HyperParameterTrainingJobDefinitionMarshaller();
 
     }

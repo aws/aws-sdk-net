@@ -32,7 +32,7 @@ namespace Amazon.StepFunctions
     public partial class AmazonStepFunctionsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.112");
+            InternalSDKUtils.BuildUserAgentString("3.7.0.121");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.StepFunctions
         /// Default constructor
         /// </summary>
         public AmazonStepFunctionsConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonStepFunctionsDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "states";
         }

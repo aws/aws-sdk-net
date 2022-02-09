@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// This exception is thrown when an unsupported token is passed to an operation.
+    /// Exception that is thrown when an unsupported token is passed to an operation.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

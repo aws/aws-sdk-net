@@ -34,7 +34,7 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// EventsDetectionJobFilter Marshaller
-    /// </summary>       
+    /// </summary>
     public class EventsDetectionJobFilterMarshaller : IRequestMarshaller<EventsDetectionJobFilter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static EventsDetectionJobFilterMarshaller Instance = new EventsDetectionJobFilterMarshaller();
 
     }

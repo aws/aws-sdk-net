@@ -34,7 +34,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ResultAttribute Marshaller
-    /// </summary>       
+    /// </summary>
     public class ResultAttributeMarshaller : IRequestMarshaller<ResultAttribute, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ResultAttributeMarshaller Instance = new ResultAttributeMarshaller();
 
     }

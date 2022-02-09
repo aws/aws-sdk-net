@@ -34,7 +34,7 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// WorkflowDetails Marshaller
-    /// </summary>       
+    /// </summary>
     public class WorkflowDetailsMarshaller : IRequestMarshaller<WorkflowDetails, JsonMarshallerContext> 
     {
         /// <summary>
@@ -65,7 +65,7 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static WorkflowDetailsMarshaller Instance = new WorkflowDetailsMarshaller();
 
     }

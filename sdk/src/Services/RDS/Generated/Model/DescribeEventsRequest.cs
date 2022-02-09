@@ -31,14 +31,14 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// Container for the parameters to the DescribeEvents operation.
     /// Returns events related to DB instances, DB clusters, DB parameter groups, DB security
-    /// groups, DB snapshots, and DB cluster snapshots for the past 14 days. Events specific
-    /// to a particular DB instances, DB clusters, DB parameter groups, DB security groups,
-    /// DB snapshots, and DB cluster snapshots group can be obtained by providing the name
-    /// as a parameter.
+    /// groups, DB snapshots, DB cluster snapshots, and RDS Proxies for the past 14 days.
+    /// Events specific to a particular DB instance, DB cluster, DB parameter group, DB security
+    /// group, DB snapshot, DB cluster snapshot group, or RDS Proxy can be obtained by providing
+    /// the name as a parameter.
     /// 
     ///  <note> 
     /// <para>
-    /// By default, the past hour of events are returned.
+    /// By default, RDS returns events that were generated in the past hour.
     /// </para>
     ///  </note>
     /// </summary>
@@ -233,6 +233,10 @@ namespace Amazon.RDS.Model
         /// <para>
         /// If the source type is a DB cluster snapshot, a <code>DBClusterSnapshotIdentifier</code>
         /// value must be supplied.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the source type is an RDS Proxy, a <code>DBProxyName</code> value must be supplied.
         /// </para>
         ///  </li> <li> 
         /// <para>

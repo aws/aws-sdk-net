@@ -34,7 +34,7 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AbpV1_0_x Marshaller
-    /// </summary>       
+    /// </summary>
     public class AbpV1_0_xMarshaller : IRequestMarshaller<AbpV1_0_x, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AbpV1_0_xMarshaller Instance = new AbpV1_0_xMarshaller();
 
     }

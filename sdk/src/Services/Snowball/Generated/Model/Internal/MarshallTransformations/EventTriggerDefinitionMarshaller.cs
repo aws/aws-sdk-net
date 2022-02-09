@@ -34,7 +34,7 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// EventTriggerDefinition Marshaller
-    /// </summary>       
+    /// </summary>
     public class EventTriggerDefinitionMarshaller : IRequestMarshaller<EventTriggerDefinition, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static EventTriggerDefinitionMarshaller Instance = new EventTriggerDefinitionMarshaller();
 
     }

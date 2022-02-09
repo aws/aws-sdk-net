@@ -34,7 +34,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CmafImageBasedTrickPlaySettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class CmafImageBasedTrickPlaySettingsMarshaller : IRequestMarshaller<CmafImageBasedTrickPlaySettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -85,7 +85,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CmafImageBasedTrickPlaySettingsMarshaller Instance = new CmafImageBasedTrickPlaySettingsMarshaller();
 
     }

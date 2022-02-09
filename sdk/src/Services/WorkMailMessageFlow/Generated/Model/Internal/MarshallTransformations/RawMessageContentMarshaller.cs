@@ -34,7 +34,7 @@ namespace Amazon.WorkMailMessageFlow.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RawMessageContent Marshaller
-    /// </summary>       
+    /// </summary>
     public class RawMessageContentMarshaller : IRequestMarshaller<RawMessageContent, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.WorkMailMessageFlow.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RawMessageContentMarshaller Instance = new RawMessageContentMarshaller();
 
     }

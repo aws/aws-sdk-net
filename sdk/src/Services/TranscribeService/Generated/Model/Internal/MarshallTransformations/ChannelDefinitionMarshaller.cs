@@ -34,7 +34,7 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ChannelDefinition Marshaller
-    /// </summary>       
+    /// </summary>
     public class ChannelDefinitionMarshaller : IRequestMarshaller<ChannelDefinition, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ChannelDefinitionMarshaller Instance = new ChannelDefinitionMarshaller();
 
     }

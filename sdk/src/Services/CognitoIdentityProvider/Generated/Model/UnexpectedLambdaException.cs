@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// This exception is thrown when the Amazon Cognito service encounters an unexpected
-    /// exception with the Lambda service.
+    /// This exception is thrown when Amazon Cognito encounters an unexpected exception with
+    /// Lambda.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

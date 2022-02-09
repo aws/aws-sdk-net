@@ -3011,6 +3011,190 @@ namespace Amazon.Connect
 
 
     /// <summary>
+    /// Constants used for properties of type VocabularyLanguageCode.
+    /// </summary>
+    public class VocabularyLanguageCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ArAE for VocabularyLanguageCode
+        /// </summary>
+        public static readonly VocabularyLanguageCode ArAE = new VocabularyLanguageCode("ar-AE");
+        /// <summary>
+        /// Constant DeCH for VocabularyLanguageCode
+        /// </summary>
+        public static readonly VocabularyLanguageCode DeCH = new VocabularyLanguageCode("de-CH");
+        /// <summary>
+        /// Constant DeDE for VocabularyLanguageCode
+        /// </summary>
+        public static readonly VocabularyLanguageCode DeDE = new VocabularyLanguageCode("de-DE");
+        /// <summary>
+        /// Constant EnAB for VocabularyLanguageCode
+        /// </summary>
+        public static readonly VocabularyLanguageCode EnAB = new VocabularyLanguageCode("en-AB");
+        /// <summary>
+        /// Constant EnAU for VocabularyLanguageCode
+        /// </summary>
+        public static readonly VocabularyLanguageCode EnAU = new VocabularyLanguageCode("en-AU");
+        /// <summary>
+        /// Constant EnGB for VocabularyLanguageCode
+        /// </summary>
+        public static readonly VocabularyLanguageCode EnGB = new VocabularyLanguageCode("en-GB");
+        /// <summary>
+        /// Constant EnIE for VocabularyLanguageCode
+        /// </summary>
+        public static readonly VocabularyLanguageCode EnIE = new VocabularyLanguageCode("en-IE");
+        /// <summary>
+        /// Constant EnIN for VocabularyLanguageCode
+        /// </summary>
+        public static readonly VocabularyLanguageCode EnIN = new VocabularyLanguageCode("en-IN");
+        /// <summary>
+        /// Constant EnUS for VocabularyLanguageCode
+        /// </summary>
+        public static readonly VocabularyLanguageCode EnUS = new VocabularyLanguageCode("en-US");
+        /// <summary>
+        /// Constant EnWL for VocabularyLanguageCode
+        /// </summary>
+        public static readonly VocabularyLanguageCode EnWL = new VocabularyLanguageCode("en-WL");
+        /// <summary>
+        /// Constant EsES for VocabularyLanguageCode
+        /// </summary>
+        public static readonly VocabularyLanguageCode EsES = new VocabularyLanguageCode("es-ES");
+        /// <summary>
+        /// Constant EsUS for VocabularyLanguageCode
+        /// </summary>
+        public static readonly VocabularyLanguageCode EsUS = new VocabularyLanguageCode("es-US");
+        /// <summary>
+        /// Constant FrCA for VocabularyLanguageCode
+        /// </summary>
+        public static readonly VocabularyLanguageCode FrCA = new VocabularyLanguageCode("fr-CA");
+        /// <summary>
+        /// Constant FrFR for VocabularyLanguageCode
+        /// </summary>
+        public static readonly VocabularyLanguageCode FrFR = new VocabularyLanguageCode("fr-FR");
+        /// <summary>
+        /// Constant HiIN for VocabularyLanguageCode
+        /// </summary>
+        public static readonly VocabularyLanguageCode HiIN = new VocabularyLanguageCode("hi-IN");
+        /// <summary>
+        /// Constant ItIT for VocabularyLanguageCode
+        /// </summary>
+        public static readonly VocabularyLanguageCode ItIT = new VocabularyLanguageCode("it-IT");
+        /// <summary>
+        /// Constant JaJP for VocabularyLanguageCode
+        /// </summary>
+        public static readonly VocabularyLanguageCode JaJP = new VocabularyLanguageCode("ja-JP");
+        /// <summary>
+        /// Constant KoKR for VocabularyLanguageCode
+        /// </summary>
+        public static readonly VocabularyLanguageCode KoKR = new VocabularyLanguageCode("ko-KR");
+        /// <summary>
+        /// Constant PtBR for VocabularyLanguageCode
+        /// </summary>
+        public static readonly VocabularyLanguageCode PtBR = new VocabularyLanguageCode("pt-BR");
+        /// <summary>
+        /// Constant PtPT for VocabularyLanguageCode
+        /// </summary>
+        public static readonly VocabularyLanguageCode PtPT = new VocabularyLanguageCode("pt-PT");
+        /// <summary>
+        /// Constant ZhCN for VocabularyLanguageCode
+        /// </summary>
+        public static readonly VocabularyLanguageCode ZhCN = new VocabularyLanguageCode("zh-CN");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VocabularyLanguageCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VocabularyLanguageCode FindValue(string value)
+        {
+            return FindValue<VocabularyLanguageCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VocabularyLanguageCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type VocabularyState.
+    /// </summary>
+    public class VocabularyState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for VocabularyState
+        /// </summary>
+        public static readonly VocabularyState ACTIVE = new VocabularyState("ACTIVE");
+        /// <summary>
+        /// Constant CREATION_FAILED for VocabularyState
+        /// </summary>
+        public static readonly VocabularyState CREATION_FAILED = new VocabularyState("CREATION_FAILED");
+        /// <summary>
+        /// Constant CREATION_IN_PROGRESS for VocabularyState
+        /// </summary>
+        public static readonly VocabularyState CREATION_IN_PROGRESS = new VocabularyState("CREATION_IN_PROGRESS");
+        /// <summary>
+        /// Constant DELETE_IN_PROGRESS for VocabularyState
+        /// </summary>
+        public static readonly VocabularyState DELETE_IN_PROGRESS = new VocabularyState("DELETE_IN_PROGRESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VocabularyState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VocabularyState FindValue(string value)
+        {
+            return FindValue<VocabularyState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VocabularyState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type VoiceRecordingTrack.
     /// </summary>
     public class VoiceRecordingTrack : ConstantClass

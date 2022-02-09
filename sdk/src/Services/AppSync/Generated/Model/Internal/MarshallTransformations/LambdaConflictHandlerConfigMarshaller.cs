@@ -34,7 +34,7 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// LambdaConflictHandlerConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class LambdaConflictHandlerConfigMarshaller : IRequestMarshaller<LambdaConflictHandlerConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static LambdaConflictHandlerConfigMarshaller Instance = new LambdaConflictHandlerConfigMarshaller();
 
     }

@@ -78,7 +78,7 @@ namespace Amazon.FinSpaceData.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// A token used to ensure idempotency.
+        /// A token that ensures idempotency. This token expires in 10 minutes.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -144,9 +144,26 @@ namespace Amazon.FinSpaceData.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  For example, you could specify the following for <code>formatParams</code>: <code>
-        /// "formatParams": { "formatType": "CSV", "withHeader": "true", "separator": ",", "compression":"None"
-        /// } </code> 
+        /// Here is an example of how you could specify the <code>formatParams</code>:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code> "formatParams": { "formatType": "CSV", "withHeader": "true", "separator":
+        /// ",", "compression":"None" } </code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Note that if you only provide <code>formatType</code> as <code>CSV</code>, the rest
+        /// of the attributes will automatically default to CSV values as following:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code> { "withHeader": "true", "separator": "," } </code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  For more information about supported file formats, see <a href="https://docs.aws.amazon.com/finspace/latest/userguide/supported-data-types.html">Supported
+        /// Data Types and File Formats</a> in the FinSpace User Guide.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -165,7 +182,28 @@ namespace Amazon.FinSpaceData.Model
         /// <summary>
         /// Gets and sets the property SourceParams. 
         /// <para>
-        /// Options that define the location of the data being ingested.
+        /// Options that define the location of the data being ingested (<code>s3SourcePath</code>)
+        /// and the source of the changeset (<code>sourceType</code>).
+        /// </para>
+        ///  
+        /// <para>
+        /// Both <code>s3SourcePath</code> and <code>sourceType</code> are required attributes.
+        /// </para>
+        ///  
+        /// <para>
+        /// Here is an example of how you could specify the <code>sourceParams</code>:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code> "sourceParams": { "s3SourcePath": "s3://finspace-landing-us-east-2-bk7gcfvitndqa6ebnvys4d/scratch/wr5hh8pwkpqqkxa4sxrmcw/ingestion/equity.csv",
+        /// "sourceType": "S3" } </code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The S3 path that you specify must allow the FinSpace role access. To do that, you
+        /// first need to configure the IAM policy on S3 bucket. For more information, see <a
+        /// href="https://docs.aws.amazon.com/finspace/latest/data-api/fs-using-the-finspace-api.html#access-s3-buckets">Loading
+        /// data from an Amazon S3 Bucket using the FinSpace API</a>section.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

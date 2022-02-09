@@ -34,7 +34,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Predicate Marshaller
-    /// </summary>       
+    /// </summary>
     public class PredicateMarshaller : IRequestMarshaller<Predicate, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static PredicateMarshaller Instance = new PredicateMarshaller();
 
     }

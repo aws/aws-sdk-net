@@ -38,6 +38,7 @@ namespace Amazon.IVS.Model
         private string _name;
         private RecordingConfigurationState _state;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private ThumbnailConfiguration _thumbnailConfiguration;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -133,6 +134,26 @@ namespace Amazon.IVS.Model
         internal bool IsSetTags()
         {
             return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ThumbnailConfiguration. 
+        /// <para>
+        /// A complex type that allows you to enable/disable the recording of thumbnails for a
+        /// live session and modify the interval at which thumbnails are generated for the live
+        /// session.
+        /// </para>
+        /// </summary>
+        public ThumbnailConfiguration ThumbnailConfiguration
+        {
+            get { return this._thumbnailConfiguration; }
+            set { this._thumbnailConfiguration = value; }
+        }
+
+        // Check to see if ThumbnailConfiguration property is set
+        internal bool IsSetThumbnailConfiguration()
+        {
+            return this._thumbnailConfiguration != null;
         }
 
     }

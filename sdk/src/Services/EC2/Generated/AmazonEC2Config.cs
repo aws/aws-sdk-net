@@ -32,7 +32,7 @@ namespace Amazon.EC2
     public partial class AmazonEC2Config : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.52.0");
+            InternalSDKUtils.BuildUserAgentString("3.7.59.1");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.EC2
         /// Default constructor
         /// </summary>
         public AmazonEC2Config()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonEC2DefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "ec2";
         }

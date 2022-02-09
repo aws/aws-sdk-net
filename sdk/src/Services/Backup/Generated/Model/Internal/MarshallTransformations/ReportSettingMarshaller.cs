@@ -34,7 +34,7 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ReportSetting Marshaller
-    /// </summary>       
+    /// </summary>
     public class ReportSettingMarshaller : IRequestMarshaller<ReportSetting, JsonMarshallerContext> 
     {
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ReportSettingMarshaller Instance = new ReportSettingMarshaller();
 
     }

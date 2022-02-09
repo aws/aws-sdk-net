@@ -31,7 +31,7 @@ namespace Amazon.LocationService.Model
     /// <summary>
     /// Container for the parameters to the CalculateRoute operation.
     /// <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html">Calculates
-    /// a route</a> given the following required parameters: <code>DeparturePostiton</code>
+    /// a route</a> given the following required parameters: <code>DeparturePosition</code>
     /// and <code>DestinationPosition</code>. Requires that you first <a href="https://docs.aws.amazon.com/location-routes/latest/APIReference/API_CreateRouteCalculator.html">create
     /// a route calculator resource</a>.
     /// 
@@ -46,26 +46,24 @@ namespace Amazon.LocationService.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#departure-time">Specifying
-    /// a departure time</a> using either <code>DepartureTime</code> or <code>DepartureNow</code>.
+    ///  <a href="https://docs.aws.amazon.com/location/latest/developerguide/departure-time.html">Specifying
+    /// a departure time</a> using either <code>DepartureTime</code> or <code>DepartNow</code>.
     /// This calculates a route based on predictive traffic data at the given time. 
     /// </para>
     ///  <note> 
     /// <para>
-    /// You can't specify both <code>DepartureTime</code> and <code>DepartureNow</code> in
-    /// a single request. Specifying both parameters returns a validation error.
+    /// You can't specify both <code>DepartureTime</code> and <code>DepartNow</code> in a
+    /// single request. Specifying both parameters returns a validation error.
     /// </para>
     ///  </note> </li> <li> 
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#travel-mode">Specifying
-    /// a travel mode</a> using TravelMode. This lets you specify an additional route preference
-    /// such as <code>CarModeOptions</code> if traveling by <code>Car</code>, or <code>TruckModeOptions</code>
-    /// if traveling by <code>Truck</code>.
+    ///  <a href="https://docs.aws.amazon.com/location/latest/developerguide/travel-mode.html">Specifying
+    /// a travel mode</a> using TravelMode sets the transportation mode used to calculate
+    /// the routes. This also lets you specify additional route preferences in <code>CarModeOptions</code>
+    /// if traveling by <code>Car</code>, or <code>TruckModeOptions</code> if traveling by
+    /// <code>Truck</code>.
     /// </para>
-    ///  </li> </ul> 
-    /// <para>
-    ///  
-    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class CalculateRouteRequest : AmazonLocationServiceRequest
     {
@@ -164,7 +162,7 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// If you specify a departure that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">moves
+        /// If you specify a departure that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves
         /// the position to the nearest road</a>. If Esri is the provider for your route calculator,
         /// specifying a route that is longer than 400 km returns a <code>400 RoutesValidationException</code>
         /// error.
@@ -231,7 +229,7 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// If you specify a destination that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">moves
+        /// If you specify a destination that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves
         /// the position to the nearest road</a>. 
         /// </para>
         ///  </note> 
@@ -309,7 +307,7 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  
         /// <para>
-        /// The <code>TravelMode</code> you specify determines how you specify route preferences:
+        /// The <code>TravelMode</code> you specify also determines how you specify route preferences:
         /// 
         /// </para>
         ///  <ul> <li> 
@@ -376,7 +374,7 @@ namespace Amazon.LocationService.Model
         ///  </li> </ul> <note> 
         /// <para>
         /// If you specify a waypoint position that's not located on a road, Amazon Location <a
-        /// href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">moves
+        /// href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves
         /// the position to the nearest road</a>. 
         /// </para>
         ///  

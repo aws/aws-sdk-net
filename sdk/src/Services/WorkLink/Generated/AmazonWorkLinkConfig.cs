@@ -32,7 +32,7 @@ namespace Amazon.WorkLink
     public partial class AmazonWorkLinkConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.112");
+            InternalSDKUtils.BuildUserAgentString("3.7.0.121");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.WorkLink
         /// Default constructor
         /// </summary>
         public AmazonWorkLinkConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonWorkLinkDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "worklink";
         }

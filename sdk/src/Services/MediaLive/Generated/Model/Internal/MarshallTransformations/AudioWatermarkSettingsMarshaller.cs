@@ -34,7 +34,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AudioWatermarkSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class AudioWatermarkSettingsMarshaller : IRequestMarshaller<AudioWatermarkSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AudioWatermarkSettingsMarshaller Instance = new AudioWatermarkSettingsMarshaller();
 
     }

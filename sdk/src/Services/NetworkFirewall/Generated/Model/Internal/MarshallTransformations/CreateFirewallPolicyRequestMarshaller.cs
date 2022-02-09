@@ -58,7 +58,7 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
             string target = "NetworkFirewall_20201112.CreateFirewallPolicy";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.0";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-11-12";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-11-12";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -112,7 +112,6 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

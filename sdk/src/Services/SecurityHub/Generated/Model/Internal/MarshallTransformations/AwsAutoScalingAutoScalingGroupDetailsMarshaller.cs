@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AwsAutoScalingAutoScalingGroupDetails Marshaller
-    /// </summary>       
+    /// </summary>
     public class AwsAutoScalingAutoScalingGroupDetailsMarshaller : IRequestMarshaller<AwsAutoScalingAutoScalingGroupDetails, JsonMarshallerContext> 
     {
         /// <summary>
@@ -111,7 +111,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AwsAutoScalingAutoScalingGroupDetailsMarshaller Instance = new AwsAutoScalingAutoScalingGroupDetailsMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RepositoryAnalysis Marshaller
-    /// </summary>       
+    /// </summary>
     public class RepositoryAnalysisMarshaller : IRequestMarshaller<RepositoryAnalysis, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RepositoryAnalysisMarshaller Instance = new RepositoryAnalysisMarshaller();
 
     }

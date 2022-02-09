@@ -53,7 +53,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new CreateEnvironmentRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("CreateEnvironment", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("CreateEnvironment", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -67,9 +67,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = CreateEnvironmentResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as CreateEnvironmentResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as CreateEnvironmentResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -276,7 +275,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DeleteEnvironmentRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("DeleteEnvironment", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DeleteEnvironment", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -290,9 +289,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = DeleteEnvironmentResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as DeleteEnvironmentResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as DeleteEnvironmentResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -467,7 +465,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetEnvironmentRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("GetEnvironment", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetEnvironment", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -481,9 +479,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = GetEnvironmentResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as GetEnvironmentResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as GetEnvironmentResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -626,7 +623,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListEnvironmentsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("ListEnvironments", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("ListEnvironments", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -640,9 +637,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = ListEnvironmentsResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as ListEnvironmentsResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as ListEnvironmentsResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -721,7 +717,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListTagsForResourceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("ListTagsForResource", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("ListTagsForResource", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -735,9 +731,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as ListTagsForResourceResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as ListTagsForResourceResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -848,7 +843,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new TagResourceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("TagResource", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("TagResource", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -862,9 +857,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = TagResourceResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as TagResourceResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as TagResourceResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -975,7 +969,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new UntagResourceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("UntagResource", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("UntagResource", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -989,9 +983,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = UntagResourceResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as UntagResourceResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as UntagResourceResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -1102,7 +1095,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new UpdateEnvironmentRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("UpdateEnvironment", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("UpdateEnvironment", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -1116,9 +1109,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = UpdateEnvironmentResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as UpdateEnvironmentResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as UpdateEnvironmentResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]

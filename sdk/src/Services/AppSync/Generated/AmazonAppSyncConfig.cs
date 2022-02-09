@@ -32,7 +32,7 @@ namespace Amazon.AppSync
     public partial class AmazonAppSyncConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.4.0");
+            InternalSDKUtils.BuildUserAgentString("3.7.4.9");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.AppSync
         /// Default constructor
         /// </summary>
         public AmazonAppSyncConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonAppSyncDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "appsync";
         }

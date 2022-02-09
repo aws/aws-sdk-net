@@ -135,7 +135,8 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property BasicAuthCredentials. 
         /// <para>
-        ///  The basic authorization credentials for branches for the Amplify app. 
+        ///  The basic authorization credentials for branches for the Amplify app. You must base64-encode
+        /// the authorization credentials and provide them in the format <code>user:password</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2000)]

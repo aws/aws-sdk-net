@@ -34,7 +34,7 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ObjectTypeField Marshaller
-    /// </summary>       
+    /// </summary>
     public class ObjectTypeFieldMarshaller : IRequestMarshaller<ObjectTypeField, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ObjectTypeFieldMarshaller Instance = new ObjectTypeFieldMarshaller();
 
     }

@@ -32,7 +32,7 @@ namespace Amazon.QuickSight
     public partial class AmazonQuickSightConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.9.9");
+            InternalSDKUtils.BuildUserAgentString("3.7.9.18");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.QuickSight
         /// Default constructor
         /// </summary>
         public AmazonQuickSightConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonQuickSightDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "quicksight";
         }

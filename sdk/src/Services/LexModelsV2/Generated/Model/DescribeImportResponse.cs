@@ -197,7 +197,7 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property ResourceSpecification. 
         /// <para>
-        /// The specifications of the imported bot or bot locale.
+        /// The specifications of the imported bot, bot locale, or custom vocabulary.
         /// </para>
         /// </summary>
         public ImportResourceSpecification ResourceSpecification

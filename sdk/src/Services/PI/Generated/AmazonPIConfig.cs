@@ -32,7 +32,7 @@ namespace Amazon.PI
     public partial class AmazonPIConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.1.83");
+            InternalSDKUtils.BuildUserAgentString("3.7.2.7");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.PI
         /// Default constructor
         /// </summary>
         public AmazonPIConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonPIDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "pi";
         }

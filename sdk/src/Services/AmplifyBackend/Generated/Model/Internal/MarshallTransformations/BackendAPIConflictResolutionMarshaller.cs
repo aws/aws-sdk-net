@@ -34,7 +34,7 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// BackendAPIConflictResolution Marshaller
-    /// </summary>       
+    /// </summary>
     public class BackendAPIConflictResolutionMarshaller : IRequestMarshaller<BackendAPIConflictResolution, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static BackendAPIConflictResolutionMarshaller Instance = new BackendAPIConflictResolutionMarshaller();
 
     }

@@ -33,6 +33,7 @@ namespace Amazon.Appflow.Model
     /// </summary>
     public partial class DestinationConnectorProperties
     {
+        private CustomConnectorDestinationProperties _customConnector;
         private CustomerProfilesDestinationProperties _customerProfiles;
         private EventBridgeDestinationProperties _eventBridge;
         private HoneycodeDestinationProperties _honeycode;
@@ -43,6 +44,24 @@ namespace Amazon.Appflow.Model
         private SnowflakeDestinationProperties _snowflake;
         private UpsolverDestinationProperties _upsolver;
         private ZendeskDestinationProperties _zendesk;
+
+        /// <summary>
+        /// Gets and sets the property CustomConnector. 
+        /// <para>
+        /// The properties that are required to query the custom Connector.
+        /// </para>
+        /// </summary>
+        public CustomConnectorDestinationProperties CustomConnector
+        {
+            get { return this._customConnector; }
+            set { this._customConnector = value; }
+        }
+
+        // Check to see if CustomConnector property is set
+        internal bool IsSetCustomConnector()
+        {
+            return this._customConnector != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CustomerProfiles. 

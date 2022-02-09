@@ -34,7 +34,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CustomPayload Marshaller
-    /// </summary>       
+    /// </summary>
     public class CustomPayloadMarshaller : IRequestMarshaller<CustomPayload, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CustomPayloadMarshaller Instance = new CustomPayloadMarshaller();
 
     }

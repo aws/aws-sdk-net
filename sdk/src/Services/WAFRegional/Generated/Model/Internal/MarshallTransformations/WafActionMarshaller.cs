@@ -34,7 +34,7 @@ namespace Amazon.WAFRegional.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// WafAction Marshaller
-    /// </summary>       
+    /// </summary>
     public class WafActionMarshaller : IRequestMarshaller<WafAction, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.WAFRegional.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static WafActionMarshaller Instance = new WafActionMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// MasterUserOptions Marshaller
-    /// </summary>       
+    /// </summary>
     public class MasterUserOptionsMarshaller : IRequestMarshaller<MasterUserOptions, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static MasterUserOptionsMarshaller Instance = new MasterUserOptionsMarshaller();
 
     }

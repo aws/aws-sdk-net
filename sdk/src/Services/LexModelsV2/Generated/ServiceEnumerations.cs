@@ -221,6 +221,52 @@ namespace Amazon.LexModelsV2
 
 
     /// <summary>
+    /// Constants used for properties of type AudioRecognitionStrategy.
+    /// </summary>
+    public class AudioRecognitionStrategy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant UseSlotValuesAsCustomVocabulary for AudioRecognitionStrategy
+        /// </summary>
+        public static readonly AudioRecognitionStrategy UseSlotValuesAsCustomVocabulary = new AudioRecognitionStrategy("UseSlotValuesAsCustomVocabulary");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AudioRecognitionStrategy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AudioRecognitionStrategy FindValue(string value)
+        {
+            return FindValue<AudioRecognitionStrategy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AudioRecognitionStrategy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type BotAliasStatus.
     /// </summary>
     public class BotAliasStatus : ConstantClass
@@ -919,6 +965,68 @@ namespace Amazon.LexModelsV2
 
 
     /// <summary>
+    /// Constants used for properties of type CustomVocabularyStatus.
+    /// </summary>
+    public class CustomVocabularyStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Creating for CustomVocabularyStatus
+        /// </summary>
+        public static readonly CustomVocabularyStatus Creating = new CustomVocabularyStatus("Creating");
+        /// <summary>
+        /// Constant Deleting for CustomVocabularyStatus
+        /// </summary>
+        public static readonly CustomVocabularyStatus Deleting = new CustomVocabularyStatus("Deleting");
+        /// <summary>
+        /// Constant Exporting for CustomVocabularyStatus
+        /// </summary>
+        public static readonly CustomVocabularyStatus Exporting = new CustomVocabularyStatus("Exporting");
+        /// <summary>
+        /// Constant Importing for CustomVocabularyStatus
+        /// </summary>
+        public static readonly CustomVocabularyStatus Importing = new CustomVocabularyStatus("Importing");
+        /// <summary>
+        /// Constant Ready for CustomVocabularyStatus
+        /// </summary>
+        public static readonly CustomVocabularyStatus Ready = new CustomVocabularyStatus("Ready");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CustomVocabularyStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CustomVocabularyStatus FindValue(string value)
+        {
+            return FindValue<CustomVocabularyStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CustomVocabularyStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Effect.
     /// </summary>
     public class Effect : ConstantClass
@@ -1178,6 +1286,10 @@ namespace Amazon.LexModelsV2
         /// Constant LexJson for ImportExportFileFormat
         /// </summary>
         public static readonly ImportExportFileFormat LexJson = new ImportExportFileFormat("LexJson");
+        /// <summary>
+        /// Constant TSV for ImportExportFileFormat
+        /// </summary>
+        public static readonly ImportExportFileFormat TSV = new ImportExportFileFormat("TSV");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1304,6 +1416,60 @@ namespace Amazon.LexModelsV2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ImportFilterOperator(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ImportResourceType.
+    /// </summary>
+    public class ImportResourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Bot for ImportResourceType
+        /// </summary>
+        public static readonly ImportResourceType Bot = new ImportResourceType("Bot");
+        /// <summary>
+        /// Constant BotLocale for ImportResourceType
+        /// </summary>
+        public static readonly ImportResourceType BotLocale = new ImportResourceType("BotLocale");
+        /// <summary>
+        /// Constant CustomVocabulary for ImportResourceType
+        /// </summary>
+        public static readonly ImportResourceType CustomVocabulary = new ImportResourceType("CustomVocabulary");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ImportResourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ImportResourceType FindValue(string value)
+        {
+            return FindValue<ImportResourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ImportResourceType(string value)
         {
             return FindValue(value);
         }

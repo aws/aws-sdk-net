@@ -526,6 +526,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.ResourceType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Sample", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<BooleanFilter, BooleanFilterUnmarshaller>(BooleanFilterUnmarshaller.Instance);
+                    unmarshalledObject.Sample = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SeverityLabel", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<StringFilter, StringFilterUnmarshaller>(StringFilterUnmarshaller.Instance);

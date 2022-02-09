@@ -55,7 +55,7 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
         public IRequest Marshall(GetDeliverabilityTestReportRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.PinpointEmail");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-07-26";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-07-26";
             request.HttpMethod = "GET";
 
             if (!publicRequest.IsSetReportId())

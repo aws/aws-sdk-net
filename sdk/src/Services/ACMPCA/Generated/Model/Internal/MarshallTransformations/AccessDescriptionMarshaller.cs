@@ -34,7 +34,7 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AccessDescription Marshaller
-    /// </summary>       
+    /// </summary>
     public class AccessDescriptionMarshaller : IRequestMarshaller<AccessDescription, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AccessDescriptionMarshaller Instance = new AccessDescriptionMarshaller();
 
     }

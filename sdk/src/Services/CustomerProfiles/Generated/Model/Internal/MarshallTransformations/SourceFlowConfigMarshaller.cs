@@ -34,7 +34,7 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SourceFlowConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class SourceFlowConfigMarshaller : IRequestMarshaller<SourceFlowConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -83,7 +83,7 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SourceFlowConfigMarshaller Instance = new SourceFlowConfigMarshaller();
 
     }

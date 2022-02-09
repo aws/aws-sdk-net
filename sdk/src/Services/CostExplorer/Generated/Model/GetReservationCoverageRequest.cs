@@ -240,6 +240,10 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVOICING_ENTITY
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// LINKED_ACCOUNT
         /// </para>
         ///  </li> <li> 

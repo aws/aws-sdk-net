@@ -34,7 +34,7 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// OpenMonitoringInfo Marshaller
-    /// </summary>       
+    /// </summary>
     public class OpenMonitoringInfoMarshaller : IRequestMarshaller<OpenMonitoringInfo, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static OpenMonitoringInfoMarshaller Instance = new OpenMonitoringInfoMarshaller();
 
     }

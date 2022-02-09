@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AwsXrayEncryptionConfigDetails Marshaller
-    /// </summary>       
+    /// </summary>
     public class AwsXrayEncryptionConfigDetailsMarshaller : IRequestMarshaller<AwsXrayEncryptionConfigDetails, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AwsXrayEncryptionConfigDetailsMarshaller Instance = new AwsXrayEncryptionConfigDetailsMarshaller();
 
     }

@@ -32,7 +32,7 @@ namespace Amazon.ElasticInference
     public partial class AmazonElasticInferenceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.112");
+            InternalSDKUtils.BuildUserAgentString("3.7.0.121");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.ElasticInference
         /// Default constructor
         /// </summary>
         public AmazonElasticInferenceConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonElasticInferenceDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "elastic-inference";
         }

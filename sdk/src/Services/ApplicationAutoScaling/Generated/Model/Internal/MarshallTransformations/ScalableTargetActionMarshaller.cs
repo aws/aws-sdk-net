@@ -34,7 +34,7 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ScalableTargetAction Marshaller
-    /// </summary>       
+    /// </summary>
     public class ScalableTargetActionMarshaller : IRequestMarshaller<ScalableTargetAction, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ScalableTargetActionMarshaller Instance = new ScalableTargetActionMarshaller();
 
     }

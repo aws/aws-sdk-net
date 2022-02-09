@@ -55,7 +55,7 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
         public IRequest Marshall(GetUtterancesViewRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.LexModelBuildingService");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-04-19";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-04-19";
             request.HttpMethod = "GET";
 
             request.AddSubResource("view", "aggregation");

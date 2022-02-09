@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails Marshaller
-    /// </summary>       
+    /// </summary>
     public class AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetailsMarshaller : IRequestMarshaller<AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetailsMarshaller Instance = new AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetailsMarshaller();
 
     }

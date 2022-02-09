@@ -56,7 +56,7 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Macie2");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-01-01";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-01-01";
             request.HttpMethod = "PATCH";
 
             if (!publicRequest.IsSetId())
@@ -74,7 +74,6 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Status);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

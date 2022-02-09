@@ -32,7 +32,7 @@ namespace Amazon.ChimeSDKIdentity
     public partial class AmazonChimeSDKIdentityConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.1.26");
+            InternalSDKUtils.BuildUserAgentString("3.7.1.35");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.ChimeSDKIdentity
         /// Default constructor
         /// </summary>
         public AmazonChimeSDKIdentityConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonChimeSDKIdentityDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "chime";
         }

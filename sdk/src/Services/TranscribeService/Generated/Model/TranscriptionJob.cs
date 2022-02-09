@@ -253,7 +253,7 @@ namespace Amazon.TranscribeService.Model
         /// <para>
         /// Language-specific settings that can be specified when language identification is enabled
         /// for your transcription job. These settings include <code>VocabularyName</code>, <code>VocabularyFilterName</code>,
-        /// and <code>LanguageModelName</code>LanguageModelName.
+        /// and <code>LanguageModelName</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=5)]
@@ -328,7 +328,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property MediaSampleRateHertz. 
         /// <para>
-        /// The sample rate, in Hertz, of the audio track in the input media file. 
+        /// The sample rate, in Hertz (Hz), of the audio track in the input media file.
         /// </para>
         /// </summary>
         [AWSProperty(Min=8000, Max=48000)]

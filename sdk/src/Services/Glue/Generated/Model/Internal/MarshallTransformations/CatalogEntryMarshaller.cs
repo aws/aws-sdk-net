@@ -34,7 +34,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CatalogEntry Marshaller
-    /// </summary>       
+    /// </summary>
     public class CatalogEntryMarshaller : IRequestMarshaller<CatalogEntry, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CatalogEntryMarshaller Instance = new CatalogEntryMarshaller();
 
     }

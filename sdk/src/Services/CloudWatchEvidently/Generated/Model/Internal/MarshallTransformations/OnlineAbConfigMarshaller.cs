@@ -34,7 +34,7 @@ namespace Amazon.CloudWatchEvidently.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// OnlineAbConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class OnlineAbConfigMarshaller : IRequestMarshaller<OnlineAbConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -69,7 +69,7 @@ namespace Amazon.CloudWatchEvidently.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static OnlineAbConfigMarshaller Instance = new OnlineAbConfigMarshaller();
 
     }

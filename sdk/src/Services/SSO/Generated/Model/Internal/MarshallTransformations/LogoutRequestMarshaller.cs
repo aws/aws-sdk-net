@@ -56,13 +56,15 @@ namespace Amazon.SSO.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.SSO");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-06-10";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-06-10";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/logout";
         
-            if(publicRequest.IsSetAccessToken())
+            if (publicRequest.IsSetAccessToken()) 
+            {
                 request.Headers["x-amz-sso_bearer_token"] = publicRequest.AccessToken;
+            }
 
             return request;
         }

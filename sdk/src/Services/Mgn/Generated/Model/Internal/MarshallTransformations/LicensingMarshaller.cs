@@ -34,7 +34,7 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Licensing Marshaller
-    /// </summary>       
+    /// </summary>
     public class LicensingMarshaller : IRequestMarshaller<Licensing, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static LicensingMarshaller Instance = new LicensingMarshaller();
 
     }

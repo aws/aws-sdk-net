@@ -34,7 +34,7 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// EncryptionKey Marshaller
-    /// </summary>       
+    /// </summary>
     public class EncryptionKeyMarshaller : IRequestMarshaller<EncryptionKey, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static EncryptionKeyMarshaller Instance = new EncryptionKeyMarshaller();
 
     }

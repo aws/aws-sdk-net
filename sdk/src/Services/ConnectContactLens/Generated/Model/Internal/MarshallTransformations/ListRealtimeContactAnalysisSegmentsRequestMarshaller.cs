@@ -56,7 +56,7 @@ namespace Amazon.ConnectContactLens.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ConnectContactLens");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-08-21";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-08-21";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/realtime-contact-analysis/analysis-segments";
@@ -89,7 +89,6 @@ namespace Amazon.ConnectContactLens.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.NextToken);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

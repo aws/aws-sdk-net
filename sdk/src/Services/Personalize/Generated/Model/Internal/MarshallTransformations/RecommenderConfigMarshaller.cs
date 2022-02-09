@@ -34,7 +34,7 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RecommenderConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class RecommenderConfigMarshaller : IRequestMarshaller<RecommenderConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -59,11 +59,17 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetMinRecommendationRequestsPerSecond())
+            {
+                context.Writer.WritePropertyName("minRecommendationRequestsPerSecond");
+                context.Writer.Write(requestObject.MinRecommendationRequestsPerSecond);
+            }
+
         }
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RecommenderConfigMarshaller Instance = new RecommenderConfigMarshaller();
 
     }

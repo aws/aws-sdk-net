@@ -34,7 +34,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// IntentClosingSetting Marshaller
-    /// </summary>       
+    /// </summary>
     public class IntentClosingSettingMarshaller : IRequestMarshaller<IntentClosingSetting, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static IntentClosingSettingMarshaller Instance = new IntentClosingSettingMarshaller();
 
     }

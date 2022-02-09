@@ -34,7 +34,7 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ResourceMapping Marshaller
-    /// </summary>       
+    /// </summary>
     public class ResourceMappingMarshaller : IRequestMarshaller<ResourceMapping, JsonMarshallerContext> 
     {
         /// <summary>
@@ -90,7 +90,7 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ResourceMappingMarshaller Instance = new ResourceMappingMarshaller();
 
     }

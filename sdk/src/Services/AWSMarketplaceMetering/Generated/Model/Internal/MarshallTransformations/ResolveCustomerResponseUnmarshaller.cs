@@ -51,6 +51,12 @@ namespace Amazon.AWSMarketplaceMetering.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("CustomerAWSAccountId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.CustomerAWSAccountId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CustomerIdentifier", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

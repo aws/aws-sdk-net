@@ -34,7 +34,7 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TargetAddress Marshaller
-    /// </summary>       
+    /// </summary>
     public class TargetAddressMarshaller : IRequestMarshaller<TargetAddress, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TargetAddressMarshaller Instance = new TargetAddressMarshaller();
 
     }

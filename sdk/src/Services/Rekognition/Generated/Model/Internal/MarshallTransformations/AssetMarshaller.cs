@@ -34,7 +34,7 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Asset Marshaller
-    /// </summary>       
+    /// </summary>
     public class AssetMarshaller : IRequestMarshaller<Asset, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AssetMarshaller Instance = new AssetMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ModelEndpointDataBlob Marshaller
-    /// </summary>       
+    /// </summary>
     public class ModelEndpointDataBlobMarshaller : IRequestMarshaller<ModelEndpointDataBlob, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ModelEndpointDataBlobMarshaller Instance = new ModelEndpointDataBlobMarshaller();
 
     }

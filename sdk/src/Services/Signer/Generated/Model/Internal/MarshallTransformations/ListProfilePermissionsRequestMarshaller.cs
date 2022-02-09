@@ -55,7 +55,7 @@ namespace Amazon.Signer.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListProfilePermissionsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Signer");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-08-25";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-08-25";
             request.HttpMethod = "GET";
 
             if (!publicRequest.IsSetProfileName())

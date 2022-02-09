@@ -34,7 +34,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ClientPolicy Marshaller
-    /// </summary>       
+    /// </summary>
     public class ClientPolicyMarshaller : IRequestMarshaller<ClientPolicy, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ClientPolicyMarshaller Instance = new ClientPolicyMarshaller();
 
     }

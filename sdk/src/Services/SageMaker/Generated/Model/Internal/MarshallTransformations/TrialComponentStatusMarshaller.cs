@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TrialComponentStatus Marshaller
-    /// </summary>       
+    /// </summary>
     public class TrialComponentStatusMarshaller : IRequestMarshaller<TrialComponentStatus, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TrialComponentStatusMarshaller Instance = new TrialComponentStatusMarshaller();
 
     }

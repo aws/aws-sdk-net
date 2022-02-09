@@ -34,7 +34,7 @@ namespace Amazon.SnowDeviceManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Reboot Marshaller
-    /// </summary>       
+    /// </summary>
     public class RebootMarshaller : IRequestMarshaller<Reboot, JsonMarshallerContext> 
     {
         /// <summary>
@@ -49,7 +49,7 @@ namespace Amazon.SnowDeviceManagement.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RebootMarshaller Instance = new RebootMarshaller();
 
     }

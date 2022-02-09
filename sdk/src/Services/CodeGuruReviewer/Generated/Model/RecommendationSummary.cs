@@ -49,7 +49,7 @@ namespace Amazon.CodeGuruReviewer.Model
         /// of code between the start line and the end line. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2048)]
+        [AWSProperty(Min=1, Max=5000)]
         public string Description
         {
             get { return this._description; }

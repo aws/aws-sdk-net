@@ -34,7 +34,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// HlsId3SegmentTaggingScheduleActionSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class HlsId3SegmentTaggingScheduleActionSettingsMarshaller : IRequestMarshaller<HlsId3SegmentTaggingScheduleActionSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static HlsId3SegmentTaggingScheduleActionSettingsMarshaller Instance = new HlsId3SegmentTaggingScheduleActionSettingsMarshaller();
 
     }

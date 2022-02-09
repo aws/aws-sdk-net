@@ -555,6 +555,10 @@ namespace Amazon.ElastiCache
     {
 
         /// <summary>
+        /// Constant EngineLog for LogType
+        /// </summary>
+        public static readonly LogType EngineLog = new LogType("engine-log");
+        /// <summary>
         /// Constant SlowLog for LogType
         /// </summary>
         public static readonly LogType SlowLog = new LogType("slow-log");

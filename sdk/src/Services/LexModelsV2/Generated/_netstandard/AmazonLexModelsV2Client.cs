@@ -1269,6 +1269,62 @@ namespace Amazon.LexModelsV2
 
         #endregion
         
+        #region  DeleteCustomVocabulary
+
+        internal virtual DeleteCustomVocabularyResponse DeleteCustomVocabulary(DeleteCustomVocabularyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCustomVocabularyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCustomVocabularyResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteCustomVocabularyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Removes a custom vocabulary from the specified locale in the specified bot.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCustomVocabulary service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteCustomVocabulary service method, as returned by LexModelsV2.</returns>
+        /// <exception cref="Amazon.LexModelsV2.Model.ConflictException">
+        /// The action that you tried to perform couldn't be completed because the resource is
+        /// in a conflicting state. For example, deleting a bot that is in the CREATING state.
+        /// Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
+        /// The service encountered an unexpected condition. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.PreconditionFailedException">
+        /// Your request couldn't be completed because one or more request fields aren't valid.
+        /// Check the fields in your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
+        /// You have reached a quota for your bot.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
+        /// Your request rate is too high. Reduce the frequency of requests.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DeleteCustomVocabulary">REST API Reference for DeleteCustomVocabulary Operation</seealso>
+        public virtual Task<DeleteCustomVocabularyResponse> DeleteCustomVocabularyAsync(DeleteCustomVocabularyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCustomVocabularyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCustomVocabularyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteCustomVocabularyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteExport
 
         internal virtual DeleteExportResponse DeleteExport(DeleteExportRequest request)
@@ -1962,6 +2018,57 @@ namespace Amazon.LexModelsV2
             options.ResponseUnmarshaller = DescribeBotVersionResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeBotVersionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeCustomVocabularyMetadata
+
+        internal virtual DescribeCustomVocabularyMetadataResponse DescribeCustomVocabularyMetadata(DescribeCustomVocabularyMetadataRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeCustomVocabularyMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeCustomVocabularyMetadataResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeCustomVocabularyMetadataResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Provides metadata information about a custom vocabulary.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCustomVocabularyMetadata service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeCustomVocabularyMetadata service method, as returned by LexModelsV2.</returns>
+        /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
+        /// The service encountered an unexpected condition. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ResourceNotFoundException">
+        /// You asked to describe a resource that doesn't exist. Check the resource that you are
+        /// requesting and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
+        /// You have reached a quota for your bot.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
+        /// Your request rate is too high. Reduce the frequency of requests.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DescribeCustomVocabularyMetadata">REST API Reference for DescribeCustomVocabularyMetadata Operation</seealso>
+        public virtual Task<DescribeCustomVocabularyMetadataResponse> DescribeCustomVocabularyMetadataAsync(DescribeCustomVocabularyMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeCustomVocabularyMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeCustomVocabularyMetadataResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeCustomVocabularyMetadataResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2707,7 +2814,8 @@ namespace Amazon.LexModelsV2
 
 
         /// <summary>
-        /// Lists the exports for a bot or bot locale. Exports are kept in the list for 7 days.
+        /// Lists the exports for a bot, bot locale, or custom vocabulary. Exports are kept in
+        /// the list for 7 days.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListExports service method.</param>
         /// <param name="cancellationToken">
@@ -2751,7 +2859,8 @@ namespace Amazon.LexModelsV2
 
 
         /// <summary>
-        /// Lists the imports for a bot or bot locale. Imports are kept in the list for 7 days.
+        /// Lists the imports for a bot, bot locale, or custom vocabulary. Imports are kept in
+        /// the list for 7 days.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListImports service method.</param>
         /// <param name="cancellationToken">
@@ -3148,8 +3257,8 @@ namespace Amazon.LexModelsV2
 
 
         /// <summary>
-        /// Starts importing a bot or bot locale from a zip archive that you uploaded to an S3
-        /// bucket.
+        /// Starts importing a bot, bot locale, or custom vocabulary from a zip archive that you
+        /// uploaded to an S3 bucket.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartImport service method.</param>
         /// <param name="cancellationToken">

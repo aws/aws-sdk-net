@@ -34,7 +34,7 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// BusinessReportContentRange Marshaller
-    /// </summary>       
+    /// </summary>
     public class BusinessReportContentRangeMarshaller : IRequestMarshaller<BusinessReportContentRange, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static BusinessReportContentRangeMarshaller Instance = new BusinessReportContentRangeMarshaller();
 
     }

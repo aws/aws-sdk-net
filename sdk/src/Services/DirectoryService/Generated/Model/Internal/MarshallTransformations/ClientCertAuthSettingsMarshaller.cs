@@ -34,7 +34,7 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ClientCertAuthSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class ClientCertAuthSettingsMarshaller : IRequestMarshaller<ClientCertAuthSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ClientCertAuthSettingsMarshaller Instance = new ClientCertAuthSettingsMarshaller();
 
     }

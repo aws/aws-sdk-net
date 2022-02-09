@@ -14,8 +14,8 @@ namespace ServiceClientGeneratorTests
         // This goes serviceAbbreviation : serviceFullName : serviceId
         static readonly IList<Tuple<string, string, string>> serviceIDMetadata = new List<Tuple<string, string, string>>();
         private readonly ServiceModel _model;
-        private readonly string _modelsPath = "../../../TestModel.json";
-        private readonly string _paginatorsPath = "../../../TestPaginators.json";
+        private readonly string _modelsPath = "../../../Content/TestModel.json";
+        private readonly string _paginatorsPath = "../../../Content/TestPaginators.json";
 
         public UnitTests()
         {
@@ -31,7 +31,7 @@ namespace ServiceClientGeneratorTests
         {
             foreach (var tuple in serviceIDMetadata)
             {
-                Assert.Equal(tuple.Item3, Utils.DetermineServiceId(tuple.Item1, tuple.Item2));
+                Assert.Equal(tuple.Item3, ServiceClientGenerator.Utils.DetermineServiceId(tuple.Item1, tuple.Item2));
             }
         }
 

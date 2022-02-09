@@ -34,7 +34,7 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// OptimizationObjective Marshaller
-    /// </summary>       
+    /// </summary>
     public class OptimizationObjectiveMarshaller : IRequestMarshaller<OptimizationObjective, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static OptimizationObjectiveMarshaller Instance = new OptimizationObjectiveMarshaller();
 
     }

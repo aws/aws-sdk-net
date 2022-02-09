@@ -32,7 +32,7 @@ namespace Amazon.Route53RecoveryControlConfig
     public partial class AmazonRoute53RecoveryControlConfigConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.1.6");
+            InternalSDKUtils.BuildUserAgentString("3.7.1.15");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.Route53RecoveryControlConfig
         /// Default constructor
         /// </summary>
         public AmazonRoute53RecoveryControlConfigConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonRoute53RecoveryControlConfigDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "route53-recovery-control-config";
         }

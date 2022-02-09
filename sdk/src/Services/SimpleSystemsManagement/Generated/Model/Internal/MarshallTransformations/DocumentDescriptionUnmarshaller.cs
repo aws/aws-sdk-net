@@ -82,6 +82,18 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     unmarshalledObject.Author = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Category", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.Category = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("CategoryEnum", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.CategoryEnum = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CreatedDate", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

@@ -34,7 +34,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TrendmicroSourceProperties Marshaller
-    /// </summary>       
+    /// </summary>
     public class TrendmicroSourcePropertiesMarshaller : IRequestMarshaller<TrendmicroSourceProperties, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TrendmicroSourcePropertiesMarshaller Instance = new TrendmicroSourcePropertiesMarshaller();
 
     }

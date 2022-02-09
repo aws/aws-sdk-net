@@ -56,8 +56,7 @@ namespace Amazon.TranscribeService.Model
         ///  
         /// <para>
         /// You can't set both <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code>
-        /// in the same request. If you set both, your request returns a <code>BadRequestException</code>
-        /// 
+        /// in the same request. If you set both, your request returns a <code>BadRequestException</code>.
         /// </para>
         /// </summary>
         public bool ChannelIdentification

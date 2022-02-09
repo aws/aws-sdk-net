@@ -32,7 +32,7 @@ namespace Amazon.WorkMailMessageFlow
     public partial class AmazonWorkMailMessageFlowConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.112");
+            InternalSDKUtils.BuildUserAgentString("3.7.0.121");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.WorkMailMessageFlow
         /// Default constructor
         /// </summary>
         public AmazonWorkMailMessageFlowConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonWorkMailMessageFlowDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "workmailmessageflow";
         }

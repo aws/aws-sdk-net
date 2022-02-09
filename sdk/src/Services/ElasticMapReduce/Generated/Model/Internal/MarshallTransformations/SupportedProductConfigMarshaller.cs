@@ -34,7 +34,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SupportedProductConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class SupportedProductConfigMarshaller : IRequestMarshaller<SupportedProductConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SupportedProductConfigMarshaller Instance = new SupportedProductConfigMarshaller();
 
     }

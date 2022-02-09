@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AWSMarketplaceMetering.Model
 {
     /// <summary>
-    /// The usage dimension does not match one of the UsageDimensions associated with products.
+    /// The usage dimension does not match one of the <code>UsageDimensions</code> associated
+    /// with products.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

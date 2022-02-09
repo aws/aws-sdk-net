@@ -34,7 +34,7 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ImportAssetFromApiGatewayApiRequestDetails Marshaller
-    /// </summary>       
+    /// </summary>
     public class ImportAssetFromApiGatewayApiRequestDetailsMarshaller : IRequestMarshaller<ImportAssetFromApiGatewayApiRequestDetails, JsonMarshallerContext> 
     {
         /// <summary>
@@ -103,7 +103,7 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ImportAssetFromApiGatewayApiRequestDetailsMarshaller Instance = new ImportAssetFromApiGatewayApiRequestDetailsMarshaller();
 
     }

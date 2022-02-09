@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ActionRemotePortDetails Marshaller
-    /// </summary>       
+    /// </summary>
     public class ActionRemotePortDetailsMarshaller : IRequestMarshaller<ActionRemotePortDetails, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ActionRemotePortDetailsMarshaller Instance = new ActionRemotePortDetailsMarshaller();
 
     }

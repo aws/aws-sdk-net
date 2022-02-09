@@ -34,7 +34,7 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ResultConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class ResultConfigurationMarshaller : IRequestMarshaller<ResultConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -56,6 +56,12 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetExpectedBucketOwner())
+            {
+                context.Writer.WritePropertyName("ExpectedBucketOwner");
+                context.Writer.Write(requestObject.ExpectedBucketOwner);
+            }
+
             if(requestObject.IsSetOutputLocation())
             {
                 context.Writer.WritePropertyName("OutputLocation");
@@ -66,7 +72,7 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ResultConfigurationMarshaller Instance = new ResultConfigurationMarshaller();
 
     }

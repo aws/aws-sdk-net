@@ -34,7 +34,7 @@ namespace Amazon.PI.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DimensionGroup Marshaller
-    /// </summary>       
+    /// </summary>
     public class DimensionGroupMarshaller : IRequestMarshaller<DimensionGroup, JsonMarshallerContext> 
     {
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.PI.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DimensionGroupMarshaller Instance = new DimensionGroupMarshaller();
 
     }

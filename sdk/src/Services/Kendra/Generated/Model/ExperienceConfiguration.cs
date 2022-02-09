@@ -42,8 +42,8 @@ namespace Amazon.Kendra.Model
         /// Gets and sets the property ContentSourceConfiguration. 
         /// <para>
         /// The identifiers of your data sources and FAQs. Or, you can specify that you want to
-        /// use documents indexed via the <code>BatchPutDocument</code> operation. This is the
-        /// content you want to use for your Amazon Kendra experience.
+        /// use documents indexed via the <code>BatchPutDocument</code> API. This is the content
+        /// you want to use for your Amazon Kendra experience.
         /// </para>
         /// </summary>
         public ContentSourceConfiguration ContentSourceConfiguration

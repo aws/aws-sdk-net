@@ -34,7 +34,7 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TimestampPartition Marshaller
-    /// </summary>       
+    /// </summary>
     public class TimestampPartitionMarshaller : IRequestMarshaller<TimestampPartition, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TimestampPartitionMarshaller Instance = new TimestampPartitionMarshaller();
 
     }

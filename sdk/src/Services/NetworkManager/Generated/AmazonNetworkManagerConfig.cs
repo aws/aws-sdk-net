@@ -32,7 +32,7 @@ namespace Amazon.NetworkManager
     public partial class AmazonNetworkManagerConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.2.7");
+            InternalSDKUtils.BuildUserAgentString("3.7.2.16");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.NetworkManager
         /// Default constructor
         /// </summary>
         public AmazonNetworkManagerConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonNetworkManagerDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "networkmanager";
         }

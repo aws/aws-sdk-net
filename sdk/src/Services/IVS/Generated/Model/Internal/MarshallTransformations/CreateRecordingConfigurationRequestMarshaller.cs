@@ -56,7 +56,7 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.IVS");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-07-14";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-07-14";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/CreateRecordingConfiguration";
@@ -96,7 +96,17 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
-        
+                if(publicRequest.IsSetThumbnailConfiguration())
+                {
+                    context.Writer.WritePropertyName("thumbnailConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ThumbnailConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ThumbnailConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

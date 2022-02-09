@@ -32,7 +32,7 @@ namespace Amazon.IdentityManagement
     public partial class AmazonIdentityManagementServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.2.92");
+            InternalSDKUtils.BuildUserAgentString("3.7.2.101");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.IdentityManagement
         /// Default constructor
         /// </summary>
         public AmazonIdentityManagementServiceConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonIdentityManagementServiceDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "iam";
             var region = FallbackRegionFactory.GetRegionEndpoint(false);

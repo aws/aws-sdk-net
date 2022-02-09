@@ -82,7 +82,7 @@ namespace Amazon.Kendra.Model
         /// Gets and sets the property Id. 
         /// <para>
         /// A unique identifier for the index. Use this to identify the index when you are using
-        /// operations such as <code>Query</code>, <code>DescribeIndex</code>, <code>UpdateIndex</code>,
+        /// APIs such as <code>Query</code>, <code>DescribeIndex</code>, <code>UpdateIndex</code>,
         /// and <code>DeleteIndex</code>.
         /// </para>
         /// </summary>
@@ -142,7 +142,7 @@ namespace Amazon.Kendra.Model
         /// Gets and sets the property UpdatedAt. 
         /// <para>
         /// The Unix timestamp when the index was last updated by the <code>UpdateIndex</code>
-        /// operation.
+        /// API.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

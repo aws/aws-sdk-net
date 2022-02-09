@@ -161,7 +161,7 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// ARN of a KMS Key Alias: "arn:aws:kms:region:account ID:alias/ExampleAlias"
+        /// ARN of a KMS Key Alias: "arn:aws:kms:region:accountID:alias/ExampleAlias"
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -208,7 +208,7 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  
         /// <para>
-        /// f you specify a path, Amazon Transcribe saves the output of the analytics job as s3://DOC-EXAMPLE-BUCKET1/folder/your-transcription-job-name.json
+        /// f you specify a path, Amazon Transcribe saves the output of the analytics job as s3://DOC-EXAMPLE-BUCKET1/folder/your-transcription-job-name.json.
         /// </para>
         ///  
         /// <para>
@@ -216,12 +216,12 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// s3://DOC-EXAMPLE-BUCKET1/folder/filename.json
+        /// s3://DOC-EXAMPLE-BUCKET1/folder/filename.json.
         /// </para>
         ///  
         /// <para>
         ///  If you provide a path that has the filename specified, Amazon Transcribe saves the
-        /// output of the analytics job as s3://DOC-EXAMPLEBUCKET1/folder/filename.json
+        /// output of the analytics job as s3://DOC-EXAMPLEBUCKET1/folder/filename.json.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -248,7 +248,7 @@ namespace Amazon.TranscribeService.Model
         /// Gets and sets the property Settings. 
         /// <para>
         /// A <code>Settings</code> object that provides optional settings for a call analytics
-        /// job. 
+        /// job.
         /// </para>
         /// </summary>
         public CallAnalyticsJobSettings Settings

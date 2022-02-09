@@ -34,7 +34,7 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// InputDataConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class InputDataConfigMarshaller : IRequestMarshaller<InputDataConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static InputDataConfigMarshaller Instance = new InputDataConfigMarshaller();
 
     }

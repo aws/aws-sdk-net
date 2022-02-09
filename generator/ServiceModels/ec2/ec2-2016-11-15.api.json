@@ -1874,6 +1874,15 @@
       "input":{"shape":"DescribeExportTasksRequest"},
       "output":{"shape":"DescribeExportTasksResult"}
     },
+    "DescribeFastLaunchImages":{
+      "name":"DescribeFastLaunchImages",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DescribeFastLaunchImagesRequest"},
+      "output":{"shape":"DescribeFastLaunchImagesResult"}
+    },
     "DescribeFastSnapshotRestores":{
       "name":"DescribeFastSnapshotRestores",
       "http":{
@@ -2897,6 +2906,15 @@
       "input":{"shape":"DisableEbsEncryptionByDefaultRequest"},
       "output":{"shape":"DisableEbsEncryptionByDefaultResult"}
     },
+    "DisableFastLaunch":{
+      "name":"DisableFastLaunch",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DisableFastLaunchRequest"},
+      "output":{"shape":"DisableFastLaunchResult"}
+    },
     "DisableFastSnapshotRestores":{
       "name":"DisableFastSnapshotRestores",
       "http":{
@@ -3073,6 +3091,15 @@
       },
       "input":{"shape":"EnableEbsEncryptionByDefaultRequest"},
       "output":{"shape":"EnableEbsEncryptionByDefaultResult"}
+    },
+    "EnableFastLaunch":{
+      "name":"EnableFastLaunch",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"EnableFastLaunchRequest"},
+      "output":{"shape":"EnableFastLaunchResult"}
     },
     "EnableFastSnapshotRestores":{
       "name":"EnableFastSnapshotRestores",
@@ -3548,6 +3575,15 @@
       },
       "input":{"shape":"ImportVolumeRequest"},
       "output":{"shape":"ImportVolumeResult"}
+    },
+    "ListImagesInRecycleBin":{
+      "name":"ListImagesInRecycleBin",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"ListImagesInRecycleBinRequest"},
+      "output":{"shape":"ListImagesInRecycleBinResult"}
     },
     "ListSnapshotsInRecycleBin":{
       "name":"ListSnapshotsInRecycleBin",
@@ -4376,6 +4412,15 @@
       },
       "input":{"shape":"RestoreAddressToClassicRequest"},
       "output":{"shape":"RestoreAddressToClassicResult"}
+    },
+    "RestoreImageFromRecycleBin":{
+      "name":"RestoreImageFromRecycleBin",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"RestoreImageFromRecycleBinRequest"},
+      "output":{"shape":"RestoreImageFromRecycleBinResult"}
     },
     "RestoreManagedPrefixListVersion":{
       "name":"RestoreManagedPrefixListVersion",
@@ -7407,7 +7452,13 @@
         "Windows with SQL Server Web",
         "Linux with SQL Server Standard",
         "Linux with SQL Server Web",
-        "Linux with SQL Server Enterprise"
+        "Linux with SQL Server Enterprise",
+        "RHEL with SQL Server Standard",
+        "RHEL with SQL Server Enterprise",
+        "RHEL with SQL Server Web",
+        "RHEL with HA",
+        "RHEL with HA and SQL Server Standard",
+        "RHEL with HA and SQL Server Enterprise"
       ]
     },
     "CapacityReservationOptions":{
@@ -7717,6 +7768,26 @@
         "UploadStart":{"shape":"DateTime"}
       }
     },
+    "ClientLoginBannerOptions":{
+      "type":"structure",
+      "members":{
+        "Enabled":{"shape":"Boolean"},
+        "BannerText":{"shape":"String"}
+      }
+    },
+    "ClientLoginBannerResponseOptions":{
+      "type":"structure",
+      "members":{
+        "Enabled":{
+          "shape":"Boolean",
+          "locationName":"enabled"
+        },
+        "BannerText":{
+          "shape":"String",
+          "locationName":"bannerText"
+        }
+      }
+    },
     "ClientVpnAssociationId":{"type":"string"},
     "ClientVpnAuthentication":{
       "type":"structure",
@@ -7967,6 +8038,14 @@
         "ClientConnectOptions":{
           "shape":"ClientConnectResponseOptions",
           "locationName":"clientConnectOptions"
+        },
+        "SessionTimeoutHours":{
+          "shape":"Integer",
+          "locationName":"sessionTimeoutHours"
+        },
+        "ClientLoginBannerOptions":{
+          "shape":"ClientLoginBannerResponseOptions",
+          "locationName":"clientLoginBannerOptions"
         }
       }
     },
@@ -8657,7 +8736,9 @@
         },
         "VpcId":{"shape":"VpcId"},
         "SelfServicePortal":{"shape":"SelfServicePortal"},
-        "ClientConnectOptions":{"shape":"ClientConnectOptions"}
+        "ClientConnectOptions":{"shape":"ClientConnectOptions"},
+        "SessionTimeoutHours":{"shape":"Integer"},
+        "ClientLoginBannerOptions":{"shape":"ClientLoginBannerOptions"}
       }
     },
     "CreateClientVpnEndpointResult":{
@@ -9541,8 +9622,8 @@
       "members":{
         "SourceIp":{"shape":"IpAddress"},
         "DestinationIp":{"shape":"IpAddress"},
-        "Source":{"shape":"String"},
-        "Destination":{"shape":"String"},
+        "Source":{"shape":"NetworkInsightsResourceId"},
+        "Destination":{"shape":"NetworkInsightsResourceId"},
         "Protocol":{"shape":"Protocol"},
         "DestinationPort":{"shape":"Port"},
         "TagSpecifications":{
@@ -12969,6 +13050,88 @@
           "shape":"ExportTaskList",
           "locationName":"exportTaskSet"
         }
+      }
+    },
+    "DescribeFastLaunchImagesRequest":{
+      "type":"structure",
+      "members":{
+        "ImageIds":{
+          "shape":"FastLaunchImageIdList",
+          "locationName":"ImageId"
+        },
+        "Filters":{
+          "shape":"FilterList",
+          "locationName":"Filter"
+        },
+        "MaxResults":{"shape":"DescribeFastLaunchImagesRequestMaxResults"},
+        "NextToken":{"shape":"NextToken"},
+        "DryRun":{"shape":"Boolean"}
+      }
+    },
+    "DescribeFastLaunchImagesRequestMaxResults":{
+      "type":"integer",
+      "max":200,
+      "min":0
+    },
+    "DescribeFastLaunchImagesResult":{
+      "type":"structure",
+      "members":{
+        "FastLaunchImages":{
+          "shape":"DescribeFastLaunchImagesSuccessSet",
+          "locationName":"fastLaunchImageSet"
+        },
+        "NextToken":{
+          "shape":"NextToken",
+          "locationName":"nextToken"
+        }
+      }
+    },
+    "DescribeFastLaunchImagesSuccessItem":{
+      "type":"structure",
+      "members":{
+        "ImageId":{
+          "shape":"ImageId",
+          "locationName":"imageId"
+        },
+        "ResourceType":{
+          "shape":"FastLaunchResourceType",
+          "locationName":"resourceType"
+        },
+        "SnapshotConfiguration":{
+          "shape":"FastLaunchSnapshotConfigurationResponse",
+          "locationName":"snapshotConfiguration"
+        },
+        "LaunchTemplate":{
+          "shape":"FastLaunchLaunchTemplateSpecificationResponse",
+          "locationName":"launchTemplate"
+        },
+        "MaxParallelLaunches":{
+          "shape":"Integer",
+          "locationName":"maxParallelLaunches"
+        },
+        "OwnerId":{
+          "shape":"String",
+          "locationName":"ownerId"
+        },
+        "State":{
+          "shape":"FastLaunchStateCode",
+          "locationName":"state"
+        },
+        "StateTransitionReason":{
+          "shape":"String",
+          "locationName":"stateTransitionReason"
+        },
+        "StateTransitionTime":{
+          "shape":"MillisecondDateTime",
+          "locationName":"stateTransitionTime"
+        }
+      }
+    },
+    "DescribeFastLaunchImagesSuccessSet":{
+      "type":"list",
+      "member":{
+        "shape":"DescribeFastLaunchImagesSuccessItem",
+        "locationName":"item"
       }
     },
     "DescribeFastSnapshotRestoreSuccessItem":{
@@ -16668,6 +16831,56 @@
         }
       }
     },
+    "DisableFastLaunchRequest":{
+      "type":"structure",
+      "required":["ImageId"],
+      "members":{
+        "ImageId":{"shape":"ImageId"},
+        "Force":{"shape":"Boolean"},
+        "DryRun":{"shape":"Boolean"}
+      }
+    },
+    "DisableFastLaunchResult":{
+      "type":"structure",
+      "members":{
+        "ImageId":{
+          "shape":"ImageId",
+          "locationName":"imageId"
+        },
+        "ResourceType":{
+          "shape":"FastLaunchResourceType",
+          "locationName":"resourceType"
+        },
+        "SnapshotConfiguration":{
+          "shape":"FastLaunchSnapshotConfigurationResponse",
+          "locationName":"snapshotConfiguration"
+        },
+        "LaunchTemplate":{
+          "shape":"FastLaunchLaunchTemplateSpecificationResponse",
+          "locationName":"launchTemplate"
+        },
+        "MaxParallelLaunches":{
+          "shape":"Integer",
+          "locationName":"maxParallelLaunches"
+        },
+        "OwnerId":{
+          "shape":"String",
+          "locationName":"ownerId"
+        },
+        "State":{
+          "shape":"FastLaunchStateCode",
+          "locationName":"state"
+        },
+        "StateTransitionReason":{
+          "shape":"String",
+          "locationName":"stateTransitionReason"
+        },
+        "StateTransitionTime":{
+          "shape":"MillisecondDateTime",
+          "locationName":"stateTransitionTime"
+        }
+      }
+    },
     "DisableFastSnapshotRestoreErrorItem":{
       "type":"structure",
       "members":{
@@ -17701,6 +17914,59 @@
         }
       }
     },
+    "EnableFastLaunchRequest":{
+      "type":"structure",
+      "required":["ImageId"],
+      "members":{
+        "ImageId":{"shape":"ImageId"},
+        "ResourceType":{"shape":"String"},
+        "SnapshotConfiguration":{"shape":"FastLaunchSnapshotConfigurationRequest"},
+        "LaunchTemplate":{"shape":"FastLaunchLaunchTemplateSpecificationRequest"},
+        "MaxParallelLaunches":{"shape":"Integer"},
+        "DryRun":{"shape":"Boolean"}
+      }
+    },
+    "EnableFastLaunchResult":{
+      "type":"structure",
+      "members":{
+        "ImageId":{
+          "shape":"ImageId",
+          "locationName":"imageId"
+        },
+        "ResourceType":{
+          "shape":"FastLaunchResourceType",
+          "locationName":"resourceType"
+        },
+        "SnapshotConfiguration":{
+          "shape":"FastLaunchSnapshotConfigurationResponse",
+          "locationName":"snapshotConfiguration"
+        },
+        "LaunchTemplate":{
+          "shape":"FastLaunchLaunchTemplateSpecificationResponse",
+          "locationName":"launchTemplate"
+        },
+        "MaxParallelLaunches":{
+          "shape":"Integer",
+          "locationName":"maxParallelLaunches"
+        },
+        "OwnerId":{
+          "shape":"String",
+          "locationName":"ownerId"
+        },
+        "State":{
+          "shape":"FastLaunchStateCode",
+          "locationName":"state"
+        },
+        "StateTransitionReason":{
+          "shape":"String",
+          "locationName":"stateTransitionReason"
+        },
+        "StateTransitionTime":{
+          "shape":"MillisecondDateTime",
+          "locationName":"stateTransitionTime"
+        }
+      }
+    },
     "EnableFastSnapshotRestoreErrorItem":{
       "type":"structure",
       "members":{
@@ -18633,6 +18899,69 @@
         "shape":"FailedQueuedPurchaseDeletion",
         "locationName":"item"
       }
+    },
+    "FastLaunchImageIdList":{
+      "type":"list",
+      "member":{
+        "shape":"ImageId",
+        "locationName":"ImageId"
+      }
+    },
+    "FastLaunchLaunchTemplateSpecificationRequest":{
+      "type":"structure",
+      "required":["Version"],
+      "members":{
+        "LaunchTemplateId":{"shape":"LaunchTemplateId"},
+        "LaunchTemplateName":{"shape":"String"},
+        "Version":{"shape":"String"}
+      }
+    },
+    "FastLaunchLaunchTemplateSpecificationResponse":{
+      "type":"structure",
+      "members":{
+        "LaunchTemplateId":{
+          "shape":"LaunchTemplateId",
+          "locationName":"launchTemplateId"
+        },
+        "LaunchTemplateName":{
+          "shape":"String",
+          "locationName":"launchTemplateName"
+        },
+        "Version":{
+          "shape":"String",
+          "locationName":"version"
+        }
+      }
+    },
+    "FastLaunchResourceType":{
+      "type":"string",
+      "enum":["snapshot"]
+    },
+    "FastLaunchSnapshotConfigurationRequest":{
+      "type":"structure",
+      "members":{
+        "TargetResourceCount":{"shape":"Integer"}
+      }
+    },
+    "FastLaunchSnapshotConfigurationResponse":{
+      "type":"structure",
+      "members":{
+        "TargetResourceCount":{
+          "shape":"Integer",
+          "locationName":"targetResourceCount"
+        }
+      }
+    },
+    "FastLaunchStateCode":{
+      "type":"string",
+      "enum":[
+        "enabling",
+        "enabling-failed",
+        "enabled",
+        "enabled-failed",
+        "disabling",
+        "disabling-failed"
+      ]
     },
     "FastSnapshotRestoreStateCode":{
       "type":"string",
@@ -21106,6 +21435,38 @@
         "locationName":"item"
       }
     },
+    "ImageRecycleBinInfo":{
+      "type":"structure",
+      "members":{
+        "ImageId":{
+          "shape":"String",
+          "locationName":"imageId"
+        },
+        "Name":{
+          "shape":"String",
+          "locationName":"name"
+        },
+        "Description":{
+          "shape":"String",
+          "locationName":"description"
+        },
+        "RecycleBinEnterTime":{
+          "shape":"MillisecondDateTime",
+          "locationName":"recycleBinEnterTime"
+        },
+        "RecycleBinExitTime":{
+          "shape":"MillisecondDateTime",
+          "locationName":"recycleBinExitTime"
+        }
+      }
+    },
+    "ImageRecycleBinInfoList":{
+      "type":"list",
+      "member":{
+        "shape":"ImageRecycleBinInfo",
+        "locationName":"item"
+      }
+    },
     "ImageState":{
       "type":"string",
       "enum":[
@@ -23300,6 +23661,7 @@
         "c6i.16xlarge",
         "c6i.24xlarge",
         "c6i.32xlarge",
+        "c6i.metal",
         "cc1.4xlarge",
         "cc2.8xlarge",
         "cg1.4xlarge",
@@ -23355,6 +23717,7 @@
         "g5g.16xlarge",
         "g5g.metal",
         "hi1.4xlarge",
+        "hpc6a.48xlarge",
         "hs1.8xlarge",
         "h1.2xlarge",
         "h1.4xlarge",
@@ -23508,6 +23871,7 @@
         "m6i.16xlarge",
         "m6i.24xlarge",
         "m6i.32xlarge",
+        "m6i.metal",
         "mac1.metal",
         "p2.xlarge",
         "p2.8xlarge",
@@ -23607,6 +23971,16 @@
         "r6gd.12xlarge",
         "r6gd.16xlarge",
         "r6gd.metal",
+        "r6i.large",
+        "r6i.xlarge",
+        "r6i.2xlarge",
+        "r6i.4xlarge",
+        "r6i.8xlarge",
+        "r6i.12xlarge",
+        "r6i.16xlarge",
+        "r6i.24xlarge",
+        "r6i.32xlarge",
+        "r6i.metal",
         "t1.micro",
         "t2.nano",
         "t2.micro",
@@ -23656,6 +24030,12 @@
         "x1e.8xlarge",
         "x1e.16xlarge",
         "x1e.32xlarge",
+        "x2iezn.2xlarge",
+        "x2iezn.4xlarge",
+        "x2iezn.6xlarge",
+        "x2iezn.8xlarge",
+        "x2iezn.12xlarge",
+        "x2iezn.metal",
         "x2gd.medium",
         "x2gd.large",
         "x2gd.xlarge",
@@ -25908,6 +26288,36 @@
         "locationName":"item"
       }
     },
+    "ListImagesInRecycleBinMaxResults":{
+      "type":"integer",
+      "max":1000,
+      "min":1
+    },
+    "ListImagesInRecycleBinRequest":{
+      "type":"structure",
+      "members":{
+        "ImageIds":{
+          "shape":"ImageIdStringList",
+          "locationName":"ImageId"
+        },
+        "NextToken":{"shape":"String"},
+        "MaxResults":{"shape":"ListImagesInRecycleBinMaxResults"},
+        "DryRun":{"shape":"Boolean"}
+      }
+    },
+    "ListImagesInRecycleBinResult":{
+      "type":"structure",
+      "members":{
+        "Images":{
+          "shape":"ImageRecycleBinInfoList",
+          "locationName":"imageSet"
+        },
+        "NextToken":{
+          "shape":"String",
+          "locationName":"nextToken"
+        }
+      }
+    },
     "ListSnapshotsInRecycleBinMaxResults":{
       "type":"integer",
       "max":1000,
@@ -26629,7 +27039,9 @@
         },
         "VpcId":{"shape":"VpcId"},
         "SelfServicePortal":{"shape":"SelfServicePortal"},
-        "ClientConnectOptions":{"shape":"ClientConnectOptions"}
+        "ClientConnectOptions":{"shape":"ClientConnectOptions"},
+        "SessionTimeoutHours":{"shape":"Integer"},
+        "ClientLoginBannerOptions":{"shape":"ClientLoginBannerOptions"}
       }
     },
     "ModifyClientVpnEndpointResult":{
@@ -28621,6 +29033,7 @@
         "locationName":"item"
       }
     },
+    "NetworkInsightsResourceId":{"type":"string"},
     "NetworkInterface":{
       "type":"structure",
       "members":{
@@ -32423,6 +32836,23 @@
         "Status":{
           "shape":"Status",
           "locationName":"status"
+        }
+      }
+    },
+    "RestoreImageFromRecycleBinRequest":{
+      "type":"structure",
+      "required":["ImageId"],
+      "members":{
+        "ImageId":{"shape":"ImageId"},
+        "DryRun":{"shape":"Boolean"}
+      }
+    },
+    "RestoreImageFromRecycleBinResult":{
+      "type":"structure",
+      "members":{
+        "Return":{
+          "shape":"Boolean",
+          "locationName":"return"
         }
       }
     },

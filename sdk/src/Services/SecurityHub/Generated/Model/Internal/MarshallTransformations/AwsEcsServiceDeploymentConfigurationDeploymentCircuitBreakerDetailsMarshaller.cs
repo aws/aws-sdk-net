@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails Marshaller
-    /// </summary>       
+    /// </summary>
     public class AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetailsMarshaller : IRequestMarshaller<AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetailsMarshaller Instance = new AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetailsMarshaller();
 
     }

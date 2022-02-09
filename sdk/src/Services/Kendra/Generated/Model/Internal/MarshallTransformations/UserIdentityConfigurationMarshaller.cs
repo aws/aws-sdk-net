@@ -34,7 +34,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// UserIdentityConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class UserIdentityConfigurationMarshaller : IRequestMarshaller<UserIdentityConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static UserIdentityConfigurationMarshaller Instance = new UserIdentityConfigurationMarshaller();
 
     }

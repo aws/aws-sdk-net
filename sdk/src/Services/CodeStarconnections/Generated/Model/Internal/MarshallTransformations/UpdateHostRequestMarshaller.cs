@@ -58,7 +58,7 @@ namespace Amazon.CodeStarconnections.Model.Internal.MarshallTransformations
             string target = "com.amazonaws.codestar.connections.CodeStar_connections_20191201.UpdateHost";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.0";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-12-01";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-12-01";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -90,7 +90,6 @@ namespace Amazon.CodeStarconnections.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

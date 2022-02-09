@@ -32,7 +32,7 @@ namespace Amazon.DataExchange
     public partial class AmazonDataExchangeConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.3.3");
+            InternalSDKUtils.BuildUserAgentString("3.7.3.12");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.DataExchange
         /// Default constructor
         /// </summary>
         public AmazonDataExchangeConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonDataExchangeDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "dataexchange";
         }

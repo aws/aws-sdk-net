@@ -34,7 +34,7 @@ namespace Amazon.Route53RecoveryReadiness.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TargetResource Marshaller
-    /// </summary>       
+    /// </summary>
     public class TargetResourceMarshaller : IRequestMarshaller<TargetResource, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.Route53RecoveryReadiness.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TargetResourceMarshaller Instance = new TargetResourceMarshaller();
 
     }

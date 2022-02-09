@@ -34,7 +34,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TieringPolicy Marshaller
-    /// </summary>       
+    /// </summary>
     public class TieringPolicyMarshaller : IRequestMarshaller<TieringPolicy, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TieringPolicyMarshaller Instance = new TieringPolicyMarshaller();
 
     }

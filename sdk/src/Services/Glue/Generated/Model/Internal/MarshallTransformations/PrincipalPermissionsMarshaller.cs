@@ -34,7 +34,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// PrincipalPermissions Marshaller
-    /// </summary>       
+    /// </summary>
     public class PrincipalPermissionsMarshaller : IRequestMarshaller<PrincipalPermissions, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static PrincipalPermissionsMarshaller Instance = new PrincipalPermissionsMarshaller();
 
     }

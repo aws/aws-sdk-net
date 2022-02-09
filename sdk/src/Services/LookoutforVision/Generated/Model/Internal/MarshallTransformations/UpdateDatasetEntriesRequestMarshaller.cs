@@ -56,7 +56,7 @@ namespace Amazon.LookoutforVision.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.LookoutforVision");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-11-20";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-11-20";
             request.HttpMethod = "PATCH";
 
             if (!publicRequest.IsSetDatasetType())
@@ -77,15 +77,16 @@ namespace Amazon.LookoutforVision.Model.Internal.MarshallTransformations
                     context.Writer.Write(StringUtils.FromMemoryStream(publicRequest.Changes));
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
 
         
-            if(publicRequest.IsSetClientToken())
+            if (publicRequest.IsSetClientToken()) 
+            {
                 request.Headers["X-Amzn-Client-Token"] = publicRequest.ClientToken;
+            }
 
             return request;
         }

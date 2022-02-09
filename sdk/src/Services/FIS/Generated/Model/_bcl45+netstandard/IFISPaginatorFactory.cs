@@ -39,5 +39,10 @@ namespace Amazon.FIS.Model
         /// Paginator for ListExperimentTemplates operation
         ///</summary>
         IListExperimentTemplatesPaginator ListExperimentTemplates(ListExperimentTemplatesRequest request);
+
+        /// <summary>
+        /// Paginator for ListTargetResourceTypes operation
+        ///</summary>
+        IListTargetResourceTypesPaginator ListTargetResourceTypes(ListTargetResourceTypesRequest request);
     }
 }

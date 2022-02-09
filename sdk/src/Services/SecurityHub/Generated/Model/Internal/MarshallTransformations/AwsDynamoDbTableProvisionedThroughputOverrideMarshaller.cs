@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AwsDynamoDbTableProvisionedThroughputOverride Marshaller
-    /// </summary>       
+    /// </summary>
     public class AwsDynamoDbTableProvisionedThroughputOverrideMarshaller : IRequestMarshaller<AwsDynamoDbTableProvisionedThroughputOverride, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AwsDynamoDbTableProvisionedThroughputOverrideMarshaller Instance = new AwsDynamoDbTableProvisionedThroughputOverrideMarshaller();
 
     }

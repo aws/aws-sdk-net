@@ -34,7 +34,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// FileSourceSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class FileSourceSettingsMarshaller : IRequestMarshaller<FileSourceSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -84,7 +84,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static FileSourceSettingsMarshaller Instance = new FileSourceSettingsMarshaller();
 
     }

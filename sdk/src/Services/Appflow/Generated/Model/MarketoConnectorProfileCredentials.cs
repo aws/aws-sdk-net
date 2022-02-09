@@ -44,7 +44,7 @@ namespace Amazon.Appflow.Model
         ///  The credentials used to access protected Marketo resources. 
         /// </para>
         /// </summary>
-        [AWSProperty(Max=512)]
+        [AWSProperty(Max=2048)]
         public string AccessToken
         {
             get { return this._accessToken; }

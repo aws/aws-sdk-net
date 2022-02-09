@@ -34,7 +34,7 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DataConnector Marshaller
-    /// </summary>       
+    /// </summary>
     public class DataConnectorMarshaller : IRequestMarshaller<DataConnector, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DataConnectorMarshaller Instance = new DataConnectorMarshaller();
 
     }

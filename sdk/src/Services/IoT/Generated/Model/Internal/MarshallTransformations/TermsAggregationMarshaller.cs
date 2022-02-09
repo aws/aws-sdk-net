@@ -34,7 +34,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TermsAggregation Marshaller
-    /// </summary>       
+    /// </summary>
     public class TermsAggregationMarshaller : IRequestMarshaller<TermsAggregation, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TermsAggregationMarshaller Instance = new TermsAggregationMarshaller();
 
     }

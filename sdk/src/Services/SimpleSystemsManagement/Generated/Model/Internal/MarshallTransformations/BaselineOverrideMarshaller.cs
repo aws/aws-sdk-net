@@ -34,7 +34,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// BaselineOverride Marshaller
-    /// </summary>       
+    /// </summary>
     public class BaselineOverrideMarshaller : IRequestMarshaller<BaselineOverride, JsonMarshallerContext> 
     {
         /// <summary>
@@ -133,7 +133,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static BaselineOverrideMarshaller Instance = new BaselineOverrideMarshaller();
 
     }

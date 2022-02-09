@@ -32,7 +32,7 @@ namespace Amazon.Honeycode
     public partial class AmazonHoneycodeConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.112");
+            InternalSDKUtils.BuildUserAgentString("3.7.2.5");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.Honeycode
         /// Default constructor
         /// </summary>
         public AmazonHoneycodeConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonHoneycodeDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "honeycode";
         }

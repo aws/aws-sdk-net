@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ModelBiasBaselineConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class ModelBiasBaselineConfigMarshaller : IRequestMarshaller<ModelBiasBaselineConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ModelBiasBaselineConfigMarshaller Instance = new ModelBiasBaselineConfigMarshaller();
 
     }

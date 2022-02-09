@@ -66,7 +66,7 @@ namespace Amazon.Runtime.Internal
 
         public CapacityManager(int throttleRetryCount, int throttleRetryCost, int throttleCost) 
             : this(throttleRetryCount, throttleRetryCost, throttleCost, throttleRetryCost)
-        {            
+        {    
         }
 
         public CapacityManager(int throttleRetryCount, int throttleRetryCost, int throttleCost, int timeoutRetryCost)
@@ -121,7 +121,7 @@ namespace Amazon.Runtime.Internal
         [Obsolete("This method is no longer used in favor of allowing the caller to specify the type of capacity to release.")]
         public void TryReleaseCapacity(bool isRetryRequest, RetryCapacity retryCapacity) 
         {
-            ReleaseCapacity(isRetryRequest ? CapacityType.Retry : CapacityType.Increment, retryCapacity);            
+            ReleaseCapacity(isRetryRequest ? CapacityType.Retry : CapacityType.Increment, retryCapacity);
         }
 
         /// <summary>

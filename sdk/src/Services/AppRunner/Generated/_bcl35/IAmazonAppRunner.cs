@@ -151,10 +151,11 @@ namespace Amazon.AppRunner
         /// 
         ///  
         /// <para>
-        /// Create multiple revisions of a configuration by using the same <code>AutoScalingConfigurationName</code>
-        /// and different <code>AutoScalingConfigurationRevision</code> values. When you create
-        /// a service, you can set it to use the latest active revision of an auto scaling configuration
-        /// or a specific revision.
+        /// Create multiple revisions of a configuration by calling this action multiple times
+        /// using the same <code>AutoScalingConfigurationName</code>. The call returns incremental
+        /// <code>AutoScalingConfigurationRevision</code> values. When you create a service, you
+        /// can set it to use the latest active revision of an auto scaling configuration or a
+        /// specific revision.
         /// </para>
         ///  
         /// <para>
@@ -349,6 +350,65 @@ namespace Amazon.AppRunner
 
         #endregion
         
+        #region  CreateVpcConnector
+
+
+        /// <summary>
+        /// Create an App Runner VPC connector resource. App Runner requires this resource when
+        /// you want to associate your App Runner service to a custom Amazon Virtual Private Cloud
+        /// (Amazon VPC).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateVpcConnector service method.</param>
+        /// 
+        /// <returns>The response from the CreateVpcConnector service method, as returned by AppRunner.</returns>
+        /// <exception cref="Amazon.AppRunner.Model.InternalServiceErrorException">
+        /// An unexpected service exception occurred.
+        /// </exception>
+        /// <exception cref="Amazon.AppRunner.Model.InvalidRequestException">
+        /// One or more input parameters aren't valid. Refer to the API action's document page,
+        /// correct the input parameters, and try the action again.
+        /// </exception>
+        /// <exception cref="Amazon.AppRunner.Model.ServiceQuotaExceededException">
+        /// App Runner can't create this resource. You've reached your account quota for this
+        /// resource type.
+        /// 
+        ///  
+        /// <para>
+        /// For App Runner per-resource quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/apprunner.html">App
+        /// Runner endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/CreateVpcConnector">REST API Reference for CreateVpcConnector Operation</seealso>
+        CreateVpcConnectorResponse CreateVpcConnector(CreateVpcConnectorRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateVpcConnector operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateVpcConnector operation on AmazonAppRunnerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateVpcConnector
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/CreateVpcConnector">REST API Reference for CreateVpcConnector Operation</seealso>
+        IAsyncResult BeginCreateVpcConnector(CreateVpcConnectorRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateVpcConnector operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateVpcConnector.</param>
+        /// 
+        /// <returns>Returns a  CreateVpcConnectorResult from AppRunner.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/CreateVpcConnector">REST API Reference for CreateVpcConnector Operation</seealso>
+        CreateVpcConnectorResponse EndCreateVpcConnector(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteAutoScalingConfiguration
 
 
@@ -516,6 +576,58 @@ namespace Amazon.AppRunner
 
         #endregion
         
+        #region  DeleteVpcConnector
+
+
+        /// <summary>
+        /// Delete an App Runner VPC connector resource. You can't delete a connector that's used
+        /// by one or more App Runner services.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVpcConnector service method.</param>
+        /// 
+        /// <returns>The response from the DeleteVpcConnector service method, as returned by AppRunner.</returns>
+        /// <exception cref="Amazon.AppRunner.Model.InternalServiceErrorException">
+        /// An unexpected service exception occurred.
+        /// </exception>
+        /// <exception cref="Amazon.AppRunner.Model.InvalidRequestException">
+        /// One or more input parameters aren't valid. Refer to the API action's document page,
+        /// correct the input parameters, and try the action again.
+        /// </exception>
+        /// <exception cref="Amazon.AppRunner.Model.ResourceNotFoundException">
+        /// A resource doesn't exist for the specified Amazon Resource Name (ARN) in your Amazon
+        /// Web Services account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DeleteVpcConnector">REST API Reference for DeleteVpcConnector Operation</seealso>
+        DeleteVpcConnectorResponse DeleteVpcConnector(DeleteVpcConnectorRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteVpcConnector operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVpcConnector operation on AmazonAppRunnerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteVpcConnector
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DeleteVpcConnector">REST API Reference for DeleteVpcConnector Operation</seealso>
+        IAsyncResult BeginDeleteVpcConnector(DeleteVpcConnectorRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteVpcConnector operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteVpcConnector.</param>
+        /// 
+        /// <returns>Returns a  DeleteVpcConnectorResult from AppRunner.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DeleteVpcConnector">REST API Reference for DeleteVpcConnector Operation</seealso>
+        DeleteVpcConnectorResponse EndDeleteVpcConnector(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeAutoScalingConfiguration
 
 
@@ -667,6 +779,57 @@ namespace Amazon.AppRunner
         /// <returns>Returns a  DescribeServiceResult from AppRunner.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DescribeService">REST API Reference for DescribeService Operation</seealso>
         DescribeServiceResponse EndDescribeService(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeVpcConnector
+
+
+        /// <summary>
+        /// Return a description of an App Runner VPC connector resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVpcConnector service method.</param>
+        /// 
+        /// <returns>The response from the DescribeVpcConnector service method, as returned by AppRunner.</returns>
+        /// <exception cref="Amazon.AppRunner.Model.InternalServiceErrorException">
+        /// An unexpected service exception occurred.
+        /// </exception>
+        /// <exception cref="Amazon.AppRunner.Model.InvalidRequestException">
+        /// One or more input parameters aren't valid. Refer to the API action's document page,
+        /// correct the input parameters, and try the action again.
+        /// </exception>
+        /// <exception cref="Amazon.AppRunner.Model.ResourceNotFoundException">
+        /// A resource doesn't exist for the specified Amazon Resource Name (ARN) in your Amazon
+        /// Web Services account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DescribeVpcConnector">REST API Reference for DescribeVpcConnector Operation</seealso>
+        DescribeVpcConnectorResponse DescribeVpcConnector(DescribeVpcConnectorRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeVpcConnector operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVpcConnector operation on AmazonAppRunnerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeVpcConnector
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DescribeVpcConnector">REST API Reference for DescribeVpcConnector Operation</seealso>
+        IAsyncResult BeginDescribeVpcConnector(DescribeVpcConnectorRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeVpcConnector operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeVpcConnector.</param>
+        /// 
+        /// <returns>Returns a  DescribeVpcConnectorResult from AppRunner.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DescribeVpcConnector">REST API Reference for DescribeVpcConnector Operation</seealso>
+        DescribeVpcConnectorResponse EndDescribeVpcConnector(IAsyncResult asyncResult);
 
         #endregion
         
@@ -987,6 +1150,53 @@ namespace Amazon.AppRunner
         /// <returns>Returns a  ListTagsForResourceResult from AppRunner.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListVpcConnectors
+
+
+        /// <summary>
+        /// Returns a list of App Runner VPC connectors in your Amazon Web Services account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListVpcConnectors service method.</param>
+        /// 
+        /// <returns>The response from the ListVpcConnectors service method, as returned by AppRunner.</returns>
+        /// <exception cref="Amazon.AppRunner.Model.InternalServiceErrorException">
+        /// An unexpected service exception occurred.
+        /// </exception>
+        /// <exception cref="Amazon.AppRunner.Model.InvalidRequestException">
+        /// One or more input parameters aren't valid. Refer to the API action's document page,
+        /// correct the input parameters, and try the action again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/ListVpcConnectors">REST API Reference for ListVpcConnectors Operation</seealso>
+        ListVpcConnectorsResponse ListVpcConnectors(ListVpcConnectorsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListVpcConnectors operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListVpcConnectors operation on AmazonAppRunnerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListVpcConnectors
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/ListVpcConnectors">REST API Reference for ListVpcConnectors Operation</seealso>
+        IAsyncResult BeginListVpcConnectors(ListVpcConnectorsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListVpcConnectors operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListVpcConnectors.</param>
+        /// 
+        /// <returns>Returns a  ListVpcConnectorsResult from AppRunner.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/ListVpcConnectors">REST API Reference for ListVpcConnectors Operation</seealso>
+        ListVpcConnectorsResponse EndListVpcConnectors(IAsyncResult asyncResult);
 
         #endregion
         

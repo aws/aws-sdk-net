@@ -789,6 +789,10 @@ namespace Amazon.Kendra
         /// </summary>
         public static readonly DataSourceType DATABASE = new DataSourceType("DATABASE");
         /// <summary>
+        /// Constant FSX for DataSourceType
+        /// </summary>
+        public static readonly DataSourceType FSX = new DataSourceType("FSX");
+        /// <summary>
         /// Constant GOOGLEDRIVE for DataSourceType
         /// </summary>
         public static readonly DataSourceType GOOGLEDRIVE = new DataSourceType("GOOGLEDRIVE");
@@ -1294,6 +1298,52 @@ namespace Amazon.Kendra
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator FaqStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FsxFileSystemType.
+    /// </summary>
+    public class FsxFileSystemType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant WINDOWS for FsxFileSystemType
+        /// </summary>
+        public static readonly FsxFileSystemType WINDOWS = new FsxFileSystemType("WINDOWS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FsxFileSystemType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FsxFileSystemType FindValue(string value)
+        {
+            return FindValue<FsxFileSystemType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FsxFileSystemType(string value)
         {
             return FindValue(value);
         }
@@ -2870,6 +2920,52 @@ namespace Amazon.Kendra
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator UserGroupResolutionMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type WarningCode.
+    /// </summary>
+    public class WarningCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant QUERY_LANGUAGE_INVALID_SYNTAX for WarningCode
+        /// </summary>
+        public static readonly WarningCode QUERY_LANGUAGE_INVALID_SYNTAX = new WarningCode("QUERY_LANGUAGE_INVALID_SYNTAX");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public WarningCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static WarningCode FindValue(string value)
+        {
+            return FindValue<WarningCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator WarningCode(string value)
         {
             return FindValue(value);
         }

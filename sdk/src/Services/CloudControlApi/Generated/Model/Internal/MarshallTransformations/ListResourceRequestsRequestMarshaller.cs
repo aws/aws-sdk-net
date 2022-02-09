@@ -58,7 +58,7 @@ namespace Amazon.CloudControlApi.Model.Internal.MarshallTransformations
             string target = "CloudApiService.ListResourceRequests";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.0";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-09-30";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-09-30";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -90,7 +90,6 @@ namespace Amazon.CloudControlApi.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

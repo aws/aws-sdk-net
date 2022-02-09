@@ -70,6 +70,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.AdaptiveQuantization = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("bitDepth", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.BitDepth = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("framerateControl", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

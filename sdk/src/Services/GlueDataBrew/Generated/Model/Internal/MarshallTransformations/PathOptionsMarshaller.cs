@@ -34,7 +34,7 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// PathOptions Marshaller
-    /// </summary>       
+    /// </summary>
     public class PathOptionsMarshaller : IRequestMarshaller<PathOptions, JsonMarshallerContext> 
     {
         /// <summary>
@@ -90,7 +90,7 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static PathOptionsMarshaller Instance = new PathOptionsMarshaller();
 
     }

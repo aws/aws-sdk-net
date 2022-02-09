@@ -34,7 +34,7 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Bandwidth Marshaller
-    /// </summary>       
+    /// </summary>
     public class BandwidthMarshaller : IRequestMarshaller<Bandwidth, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static BandwidthMarshaller Instance = new BandwidthMarshaller();
 
     }

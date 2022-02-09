@@ -342,6 +342,28 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             progressValidator.AssertOnCompletion();
         }
 
+        [TestMethod]
+        [TestCategory("S3")]
+        public void DownloadProgressZeroLengthFileTest()
+        {
+            var fileName = UtilityMethods.GenerateName(@"DownloadTest\File");
+            var progressValidator = new TransferProgressValidator<WriteObjectProgressArgs>
+            {
+                Validate = (p) =>
+                {
+                    Assert.AreEqual(p.BucketName, bucketName);
+                    Assert.AreEqual(p.Key, fileName);
+                    Assert.IsNotNull(p.FilePath);
+                    Assert.IsTrue(p.FilePath.Contains(fileName));
+                    Assert.AreEqual(p.TotalBytes, 0);
+                    Assert.AreEqual(p.TransferredBytes, 0);
+                    Assert.AreEqual(p.PercentDone, 100);
+                }
+            };
+            Download(fileName, 0, progressValidator);
+            progressValidator.AssertOnCompletion();
+        }
+
         void Download(string fileName, long size, TransferProgressValidator<WriteObjectProgressArgs> progressValidator)
         {
             var key = fileName;

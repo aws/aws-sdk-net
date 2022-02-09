@@ -34,7 +34,7 @@ namespace Amazon.ComprehendMedical.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ComprehendMedicalAsyncJobFilter Marshaller
-    /// </summary>       
+    /// </summary>
     public class ComprehendMedicalAsyncJobFilterMarshaller : IRequestMarshaller<ComprehendMedicalAsyncJobFilter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.ComprehendMedical.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ComprehendMedicalAsyncJobFilterMarshaller Instance = new ComprehendMedicalAsyncJobFilterMarshaller();
 
     }

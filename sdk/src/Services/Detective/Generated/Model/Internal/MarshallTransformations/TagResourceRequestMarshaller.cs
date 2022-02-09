@@ -56,7 +56,7 @@ namespace Amazon.Detective.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Detective");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-10-26";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-10-26";
             request.HttpMethod = "POST";
 
             if (!publicRequest.IsSetResourceArn())
@@ -82,7 +82,6 @@ namespace Amazon.Detective.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

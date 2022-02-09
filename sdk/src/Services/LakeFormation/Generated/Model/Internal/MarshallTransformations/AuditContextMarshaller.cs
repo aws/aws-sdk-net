@@ -34,7 +34,7 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AuditContext Marshaller
-    /// </summary>       
+    /// </summary>
     public class AuditContextMarshaller : IRequestMarshaller<AuditContext, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AuditContextMarshaller Instance = new AuditContextMarshaller();
 
     }

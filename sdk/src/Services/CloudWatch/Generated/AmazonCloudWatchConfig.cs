@@ -32,7 +32,7 @@ namespace Amazon.CloudWatch
     public partial class AmazonCloudWatchConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.3.11");
+            InternalSDKUtils.BuildUserAgentString("3.7.3.20");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.CloudWatch
         /// Default constructor
         /// </summary>
         public AmazonCloudWatchConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonCloudWatchDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "monitoring";
         }

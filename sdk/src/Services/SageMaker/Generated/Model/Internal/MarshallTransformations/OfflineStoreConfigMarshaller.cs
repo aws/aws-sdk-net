@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// OfflineStoreConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class OfflineStoreConfigMarshaller : IRequestMarshaller<OfflineStoreConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -77,7 +77,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static OfflineStoreConfigMarshaller Instance = new OfflineStoreConfigMarshaller();
 
     }

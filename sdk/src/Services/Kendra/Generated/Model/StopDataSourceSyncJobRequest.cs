@@ -30,7 +30,8 @@ namespace Amazon.Kendra.Model
 {
     /// <summary>
     /// Container for the parameters to the StopDataSourceSyncJob operation.
-    /// Stops a running synchronization job. You can't stop a scheduled synchronization job.
+    /// Stops a synchronization job that is currently running. You can't stop a scheduled
+    /// synchronization job.
     /// </summary>
     public partial class StopDataSourceSyncJobRequest : AmazonKendraRequest
     {

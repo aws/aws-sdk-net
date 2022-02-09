@@ -34,7 +34,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TimecodeConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class TimecodeConfigMarshaller : IRequestMarshaller<TimecodeConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TimecodeConfigMarshaller Instance = new TimecodeConfigMarshaller();
 
     }

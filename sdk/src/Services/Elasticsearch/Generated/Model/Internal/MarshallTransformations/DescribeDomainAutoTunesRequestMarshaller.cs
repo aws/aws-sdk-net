@@ -55,7 +55,7 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
         public IRequest Marshall(DescribeDomainAutoTunesRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Elasticsearch");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-01-01";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-01-01";
             request.HttpMethod = "GET";
 
             if (!publicRequest.IsSetDomainName())
@@ -79,7 +79,6 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.NextToken);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

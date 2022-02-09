@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ModelPackageContainerDefinition Marshaller
-    /// </summary>       
+    /// </summary>
     public class ModelPackageContainerDefinitionMarshaller : IRequestMarshaller<ModelPackageContainerDefinition, JsonMarshallerContext> 
     {
         /// <summary>
@@ -122,7 +122,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ModelPackageContainerDefinitionMarshaller Instance = new ModelPackageContainerDefinitionMarshaller();
 
     }

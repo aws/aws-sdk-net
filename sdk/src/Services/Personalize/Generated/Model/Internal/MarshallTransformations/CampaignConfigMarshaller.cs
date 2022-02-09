@@ -34,7 +34,7 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CampaignConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class CampaignConfigMarshaller : IRequestMarshaller<CampaignConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -63,7 +63,7 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CampaignConfigMarshaller Instance = new CampaignConfigMarshaller();
 
     }

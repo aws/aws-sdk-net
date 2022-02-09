@@ -34,7 +34,7 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CreationInfo Marshaller
-    /// </summary>       
+    /// </summary>
     public class CreationInfoMarshaller : IRequestMarshaller<CreationInfo, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CreationInfoMarshaller Instance = new CreationInfoMarshaller();
 
     }

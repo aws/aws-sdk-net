@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DataQualityJobInput Marshaller
-    /// </summary>       
+    /// </summary>
     public class DataQualityJobInputMarshaller : IRequestMarshaller<DataQualityJobInput, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DataQualityJobInputMarshaller Instance = new DataQualityJobInputMarshaller();
 
     }

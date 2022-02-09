@@ -34,7 +34,7 @@ namespace Amazon.QLDBSession.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// FetchPageRequest Marshaller
-    /// </summary>       
+    /// </summary>
     public class FetchPageRequestMarshaller : IRequestMarshaller<FetchPageRequest, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.QLDBSession.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static FetchPageRequestMarshaller Instance = new FetchPageRequestMarshaller();
 
     }

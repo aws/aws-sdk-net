@@ -34,7 +34,7 @@ namespace Amazon.VoiceID.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// OutputDataConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class OutputDataConfigMarshaller : IRequestMarshaller<OutputDataConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.VoiceID.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static OutputDataConfigMarshaller Instance = new OutputDataConfigMarshaller();
 
     }

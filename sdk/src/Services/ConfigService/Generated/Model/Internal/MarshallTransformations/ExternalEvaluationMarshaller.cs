@@ -34,7 +34,7 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ExternalEvaluation Marshaller
-    /// </summary>       
+    /// </summary>
     public class ExternalEvaluationMarshaller : IRequestMarshaller<ExternalEvaluation, JsonMarshallerContext> 
     {
         /// <summary>
@@ -79,7 +79,7 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ExternalEvaluationMarshaller Instance = new ExternalEvaluationMarshaller();
 
     }

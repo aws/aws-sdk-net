@@ -34,6 +34,7 @@ namespace Amazon.OpenSearchService.Model
     public partial class UpgradeDomainResponse : AmazonWebServiceResponse
     {
         private Dictionary<string, string> _advancedOptions = new Dictionary<string, string>();
+        private ChangeProgressDetails _changeProgressDetails;
         private string _domainName;
         private bool? _performCheckOnly;
         private string _targetVersion;
@@ -52,6 +53,21 @@ namespace Amazon.OpenSearchService.Model
         internal bool IsSetAdvancedOptions()
         {
             return this._advancedOptions != null && this._advancedOptions.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChangeProgressDetails.
+        /// </summary>
+        public ChangeProgressDetails ChangeProgressDetails
+        {
+            get { return this._changeProgressDetails; }
+            set { this._changeProgressDetails = value; }
+        }
+
+        // Check to see if ChangeProgressDetails property is set
+        internal bool IsSetChangeProgressDetails()
+        {
+            return this._changeProgressDetails != null;
         }
 
         /// <summary>

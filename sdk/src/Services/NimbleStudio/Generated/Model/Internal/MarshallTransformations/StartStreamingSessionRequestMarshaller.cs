@@ -56,7 +56,7 @@ namespace Amazon.NimbleStudio.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.NimbleStudio");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-08-01";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-08-01";
             request.HttpMethod = "POST";
 
             if (!publicRequest.IsSetSessionId())
@@ -67,8 +67,10 @@ namespace Amazon.NimbleStudio.Model.Internal.MarshallTransformations
             request.AddPathResource("{studioId}", StringUtils.FromString(publicRequest.StudioId));
             request.ResourcePath = "/2020-08-01/studios/{studioId}/streaming-sessions/{sessionId}/start";
         
-            if(publicRequest.IsSetClientToken())
+            if (publicRequest.IsSetClientToken()) 
+            {
                 request.Headers["X-Amz-Client-Token"] = publicRequest.ClientToken;
+            }
 
             return request;
         }

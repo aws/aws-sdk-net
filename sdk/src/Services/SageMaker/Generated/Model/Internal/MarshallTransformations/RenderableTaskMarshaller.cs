@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RenderableTask Marshaller
-    /// </summary>       
+    /// </summary>
     public class RenderableTaskMarshaller : IRequestMarshaller<RenderableTask, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RenderableTaskMarshaller Instance = new RenderableTaskMarshaller();
 
     }

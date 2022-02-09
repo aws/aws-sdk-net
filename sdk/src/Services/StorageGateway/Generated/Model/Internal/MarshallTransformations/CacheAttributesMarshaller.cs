@@ -34,7 +34,7 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CacheAttributes Marshaller
-    /// </summary>       
+    /// </summary>
     public class CacheAttributesMarshaller : IRequestMarshaller<CacheAttributes, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CacheAttributesMarshaller Instance = new CacheAttributesMarshaller();
 
     }

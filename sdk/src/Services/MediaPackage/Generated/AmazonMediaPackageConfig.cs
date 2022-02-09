@@ -32,7 +32,7 @@ namespace Amazon.MediaPackage
     public partial class AmazonMediaPackageConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.4.30");
+            InternalSDKUtils.BuildUserAgentString("3.7.4.39");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.MediaPackage
         /// Default constructor
         /// </summary>
         public AmazonMediaPackageConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonMediaPackageDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "mediapackage";
         }

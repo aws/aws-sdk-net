@@ -34,7 +34,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RowLevelPermissionTagConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class RowLevelPermissionTagConfigurationMarshaller : IRequestMarshaller<RowLevelPermissionTagConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RowLevelPermissionTagConfigurationMarshaller Instance = new RowLevelPermissionTagConfigurationMarshaller();
 
     }

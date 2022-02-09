@@ -67,7 +67,7 @@ namespace Amazon.Runtime.Internal
         {
             await base.InvokeAsync<T>(executionContext).ConfigureAwait(false);
             // Unmarshall the response
-            Unmarshall(executionContext);            
+            Unmarshall(executionContext);
             return (T)executionContext.ResponseContext.Response;
         }
 
@@ -84,7 +84,7 @@ namespace Amazon.Runtime.Internal
         {
             await base.InvokeAsync<T>(executionContext).ConfigureAwait(false);
             // Unmarshall the response
-            await UnmarshallAsync(executionContext).ConfigureAwait(false);            
+            await UnmarshallAsync(executionContext).ConfigureAwait(false);
             return (T)executionContext.ResponseContext.Response;
         }
 
@@ -154,7 +154,7 @@ namespace Amazon.Runtime.Internal
                 finally
                 {
                     if (!unmarshaller.HasStreamingProperty)
-                        responseContext.HttpResponse.ResponseBody.Dispose();                 
+                        responseContext.HttpResponse.ResponseBody.Dispose();     
                 }
             }
         }

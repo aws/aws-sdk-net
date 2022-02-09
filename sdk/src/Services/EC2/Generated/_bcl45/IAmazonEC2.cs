@@ -3355,7 +3355,15 @@ namespace Amazon.EC2
         /// Creates an Amazon EBS-backed AMI from an Amazon EBS-backed instance that is either
         /// running or stopped.
         /// 
-        ///  
+        ///  <important> 
+        /// <para>
+        /// By default, Amazon EC2 shuts down and reboots the instance before creating the AMI
+        /// to ensure that everything on the instance is stopped and in a consistent state during
+        /// the creation process. If you're confident that your instance is in a consistent state
+        /// appropriate for AMI creation, use the <b>NoReboot</b> parameter to prevent Amazon
+        /// EC2 from shutting down and rebooting the instance. 
+        /// </para>
+        ///  </important> 
         /// <para>
         /// If you customized your instance with instance store volumes or Amazon EBS volumes
         /// in addition to the root device volume, the new AMI contains block device mapping information
@@ -3380,7 +3388,15 @@ namespace Amazon.EC2
         /// Creates an Amazon EBS-backed AMI from an Amazon EBS-backed instance that is either
         /// running or stopped.
         /// 
-        ///  
+        ///  <important> 
+        /// <para>
+        /// By default, Amazon EC2 shuts down and reboots the instance before creating the AMI
+        /// to ensure that everything on the instance is stopped and in a consistent state during
+        /// the creation process. If you're confident that your instance is in a consistent state
+        /// appropriate for AMI creation, use the <b>NoReboot</b> parameter to prevent Amazon
+        /// EC2 from shutting down and rebooting the instance. 
+        /// </para>
+        ///  </important> 
         /// <para>
         /// If you customized your instance with instance store volumes or Amazon EBS volumes
         /// in addition to the root device volume, the new AMI contains block device mapping information
@@ -8907,10 +8923,21 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Deregisters the specified AMI. After you deregister an AMI, it can't be used to launch
-        /// new instances; however, it doesn't affect any instances that you've already launched
+        /// new instances.
+        /// 
+        ///  
+        /// <para>
+        /// If you deregister an AMI that matches a Recycle Bin retention rule, the AMI is retained
+        /// in the Recycle Bin for the specified retention period. For more information, see <a
+        /// href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin.html">Recycle
+        /// Bin</a> in the Amazon Elastic Compute Cloud User Guide.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you deregister an AMI, it doesn't affect any instances that you've already launched
         /// from the AMI. You'll continue to incur usage costs for those instances until you terminate
         /// them.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// When you deregister an Amazon EBS-backed AMI, it doesn't affect the snapshot that
@@ -8929,10 +8956,21 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Deregisters the specified AMI. After you deregister an AMI, it can't be used to launch
-        /// new instances; however, it doesn't affect any instances that you've already launched
+        /// new instances.
+        /// 
+        ///  
+        /// <para>
+        /// If you deregister an AMI that matches a Recycle Bin retention rule, the AMI is retained
+        /// in the Recycle Bin for the specified retention period. For more information, see <a
+        /// href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin.html">Recycle
+        /// Bin</a> in the Amazon Elastic Compute Cloud User Guide.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you deregister an AMI, it doesn't affect any instances that you've already launched
         /// from the AMI. You'll continue to incur usage costs for those instances until you terminate
         /// them.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// When you deregister an Amazon EBS-backed AMI, it doesn't affect the snapshot that
@@ -10281,6 +10319,34 @@ namespace Amazon.EC2
         /// <returns>The response from the DescribeExportTasks service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeExportTasks">REST API Reference for DescribeExportTasks Operation</seealso>
         Task<DescribeExportTasksResponse> DescribeExportTasksAsync(DescribeExportTasksRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeFastLaunchImages
+
+
+        /// <summary>
+        /// Describe details for Windows AMIs that are configured for faster launching.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFastLaunchImages service method.</param>
+        /// 
+        /// <returns>The response from the DescribeFastLaunchImages service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFastLaunchImages">REST API Reference for DescribeFastLaunchImages Operation</seealso>
+        DescribeFastLaunchImagesResponse DescribeFastLaunchImages(DescribeFastLaunchImagesRequest request);
+
+
+
+        /// <summary>
+        /// Describe details for Windows AMIs that are configured for faster launching.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFastLaunchImages service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeFastLaunchImages service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFastLaunchImages">REST API Reference for DescribeFastLaunchImages Operation</seealso>
+        Task<DescribeFastLaunchImagesResponse> DescribeFastLaunchImagesAsync(DescribeFastLaunchImagesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -16247,6 +16313,52 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DisableFastLaunch
+
+
+        /// <summary>
+        /// Discontinue faster launching for a Windows AMI, and clean up existing pre-provisioned
+        /// snapshots. When you disable faster launching, the AMI uses the standard launch process
+        /// for each instance. All pre-provisioned snapshots must be removed before you can enable
+        /// faster launching again.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// To change these settings, you must own the AMI.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableFastLaunch service method.</param>
+        /// 
+        /// <returns>The response from the DisableFastLaunch service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableFastLaunch">REST API Reference for DisableFastLaunch Operation</seealso>
+        DisableFastLaunchResponse DisableFastLaunch(DisableFastLaunchRequest request);
+
+
+
+        /// <summary>
+        /// Discontinue faster launching for a Windows AMI, and clean up existing pre-provisioned
+        /// snapshots. When you disable faster launching, the AMI uses the standard launch process
+        /// for each instance. All pre-provisioned snapshots must be removed before you can enable
+        /// faster launching again.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// To change these settings, you must own the AMI.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableFastLaunch service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisableFastLaunch service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableFastLaunch">REST API Reference for DisableFastLaunch Operation</seealso>
+        Task<DisableFastLaunchResponse> DisableFastLaunchAsync(DisableFastLaunchRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DisableFastSnapshotRestores
 
 
@@ -17044,6 +17156,56 @@ namespace Amazon.EC2
         /// <returns>The response from the EnableEbsEncryptionByDefault service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableEbsEncryptionByDefault">REST API Reference for EnableEbsEncryptionByDefault Operation</seealso>
         Task<EnableEbsEncryptionByDefaultResponse> EnableEbsEncryptionByDefaultAsync(EnableEbsEncryptionByDefaultRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  EnableFastLaunch
+
+
+        /// <summary>
+        /// When you enable faster launching for a Windows AMI, images are pre-provisioned, using
+        /// snapshots to launch instances up to 65% faster. To create the optimized Windows image,
+        /// Amazon EC2 launches an instance and runs through Sysprep steps, rebooting as required.
+        /// Then it creates a set of reserved snapshots that are used for subsequent launches.
+        /// The reserved snapshots are automatically replenished as they are used, depending on
+        /// your settings for launch frequency.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// To change these settings, you must own the AMI.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableFastLaunch service method.</param>
+        /// 
+        /// <returns>The response from the EnableFastLaunch service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableFastLaunch">REST API Reference for EnableFastLaunch Operation</seealso>
+        EnableFastLaunchResponse EnableFastLaunch(EnableFastLaunchRequest request);
+
+
+
+        /// <summary>
+        /// When you enable faster launching for a Windows AMI, images are pre-provisioned, using
+        /// snapshots to launch instances up to 65% faster. To create the optimized Windows image,
+        /// Amazon EC2 launches an instance and runs through Sysprep steps, rebooting as required.
+        /// Then it creates a set of reserved snapshots that are used for subsequent launches.
+        /// The reserved snapshots are automatically replenished as they are used, depending on
+        /// your settings for launch frequency.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// To change these settings, you must own the AMI.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableFastLaunch service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the EnableFastLaunch service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableFastLaunch">REST API Reference for EnableFastLaunch Operation</seealso>
+        Task<EnableFastLaunchResponse> EnableFastLaunchAsync(EnableFastLaunchRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -19108,6 +19270,38 @@ namespace Amazon.EC2
         /// <returns>The response from the ImportVolume service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportVolume">REST API Reference for ImportVolume Operation</seealso>
         Task<ImportVolumeResponse> ImportVolumeAsync(ImportVolumeRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListImagesInRecycleBin
+
+
+        /// <summary>
+        /// Lists one or more AMIs that are currently in the Recycle Bin. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin.html">Recycle
+        /// Bin</a> in the Amazon Elastic Compute Cloud User Guide.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListImagesInRecycleBin service method.</param>
+        /// 
+        /// <returns>The response from the ListImagesInRecycleBin service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ListImagesInRecycleBin">REST API Reference for ListImagesInRecycleBin Operation</seealso>
+        ListImagesInRecycleBinResponse ListImagesInRecycleBin(ListImagesInRecycleBinRequest request);
+
+
+
+        /// <summary>
+        /// Lists one or more AMIs that are currently in the Recycle Bin. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin.html">Recycle
+        /// Bin</a> in the Amazon Elastic Compute Cloud User Guide.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListImagesInRecycleBin service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListImagesInRecycleBin service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ListImagesInRecycleBin">REST API Reference for ListImagesInRecycleBin Operation</seealso>
+        Task<ListImagesInRecycleBinResponse> ListImagesInRecycleBinAsync(ListImagesInRecycleBinRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -23702,6 +23896,36 @@ namespace Amazon.EC2
         /// <returns>The response from the RestoreAddressToClassic service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RestoreAddressToClassic">REST API Reference for RestoreAddressToClassic Operation</seealso>
         Task<RestoreAddressToClassicResponse> RestoreAddressToClassicAsync(RestoreAddressToClassicRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  RestoreImageFromRecycleBin
+
+
+        /// <summary>
+        /// Restores an AMI from the Recycle Bin. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin.html">Recycle
+        /// Bin</a> in the Amazon Elastic Compute Cloud User Guide.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RestoreImageFromRecycleBin service method.</param>
+        /// 
+        /// <returns>The response from the RestoreImageFromRecycleBin service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RestoreImageFromRecycleBin">REST API Reference for RestoreImageFromRecycleBin Operation</seealso>
+        RestoreImageFromRecycleBinResponse RestoreImageFromRecycleBin(RestoreImageFromRecycleBinRequest request);
+
+
+
+        /// <summary>
+        /// Restores an AMI from the Recycle Bin. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin.html">Recycle
+        /// Bin</a> in the Amazon Elastic Compute Cloud User Guide.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RestoreImageFromRecycleBin service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RestoreImageFromRecycleBin service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RestoreImageFromRecycleBin">REST API Reference for RestoreImageFromRecycleBin Operation</seealso>
+        Task<RestoreImageFromRecycleBinResponse> RestoreImageFromRecycleBinAsync(RestoreImageFromRecycleBinRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

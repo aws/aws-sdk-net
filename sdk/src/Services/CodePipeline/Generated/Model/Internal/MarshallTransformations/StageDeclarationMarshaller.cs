@@ -34,7 +34,7 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// StageDeclaration Marshaller
-    /// </summary>       
+    /// </summary>
     public class StageDeclarationMarshaller : IRequestMarshaller<StageDeclaration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -87,7 +87,7 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static StageDeclarationMarshaller Instance = new StageDeclarationMarshaller();
 
     }

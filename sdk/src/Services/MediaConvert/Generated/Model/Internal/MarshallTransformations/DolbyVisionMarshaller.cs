@@ -34,7 +34,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DolbyVision Marshaller
-    /// </summary>       
+    /// </summary>
     public class DolbyVisionMarshaller : IRequestMarshaller<DolbyVision, JsonMarshallerContext> 
     {
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DolbyVisionMarshaller Instance = new DolbyVisionMarshaller();
 
     }

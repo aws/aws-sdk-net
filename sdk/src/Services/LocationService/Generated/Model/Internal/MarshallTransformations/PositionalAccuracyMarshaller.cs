@@ -34,7 +34,7 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// PositionalAccuracy Marshaller
-    /// </summary>       
+    /// </summary>
     public class PositionalAccuracyMarshaller : IRequestMarshaller<PositionalAccuracy, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static PositionalAccuracyMarshaller Instance = new PositionalAccuracyMarshaller();
 
     }

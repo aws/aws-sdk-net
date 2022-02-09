@@ -34,7 +34,7 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DirectoryConnectSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class DirectoryConnectSettingsMarshaller : IRequestMarshaller<DirectoryConnectSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -83,7 +83,7 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DirectoryConnectSettingsMarshaller Instance = new DirectoryConnectSettingsMarshaller();
 
     }

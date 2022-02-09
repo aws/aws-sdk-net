@@ -34,7 +34,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Listener Marshaller
-    /// </summary>       
+    /// </summary>
     public class ListenerMarshaller : IRequestMarshaller<Listener, JsonMarshallerContext> 
     {
         /// <summary>
@@ -115,7 +115,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ListenerMarshaller Instance = new ListenerMarshaller();
 
     }

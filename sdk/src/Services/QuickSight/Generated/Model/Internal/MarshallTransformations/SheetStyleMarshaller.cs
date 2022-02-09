@@ -34,7 +34,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SheetStyle Marshaller
-    /// </summary>       
+    /// </summary>
     public class SheetStyleMarshaller : IRequestMarshaller<SheetStyle, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SheetStyleMarshaller Instance = new SheetStyleMarshaller();
 
     }

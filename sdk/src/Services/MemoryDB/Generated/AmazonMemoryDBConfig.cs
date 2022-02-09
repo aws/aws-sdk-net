@@ -32,7 +32,7 @@ namespace Amazon.MemoryDB
     public partial class AmazonMemoryDBConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.59");
+            InternalSDKUtils.BuildUserAgentString("3.7.0.68");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.MemoryDB
         /// Default constructor
         /// </summary>
         public AmazonMemoryDBConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonMemoryDBDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "memorydb";
         }

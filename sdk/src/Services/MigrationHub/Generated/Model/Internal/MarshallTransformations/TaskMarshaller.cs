@@ -34,7 +34,7 @@ namespace Amazon.MigrationHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Task Marshaller
-    /// </summary>       
+    /// </summary>
     public class TaskMarshaller : IRequestMarshaller<Task, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.MigrationHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TaskMarshaller Instance = new TaskMarshaller();
 
     }

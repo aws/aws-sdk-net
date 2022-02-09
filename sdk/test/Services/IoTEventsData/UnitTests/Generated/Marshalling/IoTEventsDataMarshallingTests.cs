@@ -53,7 +53,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new BatchAcknowledgeAlarmRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("BatchAcknowledgeAlarm", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("BatchAcknowledgeAlarm", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -67,9 +67,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = BatchAcknowledgeAlarmResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as BatchAcknowledgeAlarmResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as BatchAcknowledgeAlarmResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -212,7 +211,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new BatchDisableAlarmRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("BatchDisableAlarm", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("BatchDisableAlarm", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -226,9 +225,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = BatchDisableAlarmResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as BatchDisableAlarmResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as BatchDisableAlarmResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -371,7 +369,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new BatchEnableAlarmRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("BatchEnableAlarm", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("BatchEnableAlarm", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -385,9 +383,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = BatchEnableAlarmResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as BatchEnableAlarmResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as BatchEnableAlarmResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -530,7 +527,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new BatchPutMessageRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("BatchPutMessage", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("BatchPutMessage", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -544,9 +541,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = BatchPutMessageResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as BatchPutMessageResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as BatchPutMessageResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -689,7 +685,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new BatchResetAlarmRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("BatchResetAlarm", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("BatchResetAlarm", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -703,9 +699,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = BatchResetAlarmResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as BatchResetAlarmResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as BatchResetAlarmResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -848,7 +843,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new BatchSnoozeAlarmRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("BatchSnoozeAlarm", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("BatchSnoozeAlarm", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -862,9 +857,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = BatchSnoozeAlarmResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as BatchSnoozeAlarmResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as BatchSnoozeAlarmResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -1007,7 +1001,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new BatchUpdateDetectorRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("BatchUpdateDetector", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("BatchUpdateDetector", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -1021,9 +1015,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = BatchUpdateDetectorResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as BatchUpdateDetectorResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as BatchUpdateDetectorResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -1166,7 +1159,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DescribeAlarmRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("DescribeAlarm", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DescribeAlarm", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -1180,9 +1173,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = DescribeAlarmResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as DescribeAlarmResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as DescribeAlarmResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -1357,7 +1349,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DescribeDetectorRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("DescribeDetector", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DescribeDetector", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -1371,9 +1363,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = DescribeDetectorResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as DescribeDetectorResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as DescribeDetectorResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -1548,7 +1539,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListAlarmsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("ListAlarms", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("ListAlarms", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -1562,9 +1553,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = ListAlarmsResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as ListAlarmsResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as ListAlarmsResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -1739,7 +1729,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListDetectorsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("ListDetectors", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("ListDetectors", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -1753,9 +1743,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = ListDetectorsResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as ListDetectorsResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as ListDetectorsResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]

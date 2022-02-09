@@ -65,12 +65,52 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// BILLING_ENTITY - The Amazon Web Services seller that your account is with. Possible
+        /// values are the following:
+        /// </para>
+        ///  
+        /// <para>
+        /// - Amazon Web Services(Amazon Web Services): The entity that sells Amazon Web Services
+        /// services.
+        /// </para>
+        ///  
+        /// <para>
+        /// - AISPL (Amazon Internet Services Pvt. Ltd.): The local Indian entity that is an acting
+        /// reseller for Amazon Web Services services in India.
+        /// </para>
+        ///  
+        /// <para>
+        /// - Amazon Web Services Marketplace: The entity that supports the sale of solutions
+        /// built on Amazon Web Services by third-party software providers.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CACHE_ENGINE - The Amazon ElastiCache operating system. Examples are Windows or Linux.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DEPLOYMENT_OPTION - The scope of Amazon Relational Database Service deployments. Valid
+        /// values are <code>SingleAZ</code> and <code>MultiAZ</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// DATABASE_ENGINE - The Amazon Relational Database Service database. Examples are Aurora
         /// or MySQL.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INSTANCE_TYPE_FAMILY - A family of instance types optimized to fit different use cases.
+        /// Examples are <code>Compute Optimized</code> (<code>C4</code>, <code>C5</code>, <code>C6g</code>,
+        /// <code>C7g</code> etc.), <code>Memory Optimization</code> (<code>R4</code>, <code>R5n</code>,
+        /// <code>R5b</code>, <code>R6g</code> etc).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVOICING_ENTITY - The name of the entity issuing the Amazon Web Services invoice.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -102,7 +142,23 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// RESERVATION_ID - The unique identifier for an Amazon Web Services Reservation Instance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// SAVINGS_PLAN_ARN - The unique identifier for your Savings Plans.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// SAVINGS_PLANS_TYPE - Type of Savings Plans (EC2 Instance or Compute).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// SERVICE - The Amazon Web Services service such as Amazon DynamoDB.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TENANCY - The tenancy of a resource. Examples are shared or dedicated.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -207,7 +263,7 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SAVINGS_PLAN_ARN - The unique identifier for your Savings Plan
+        /// SAVINGS_PLAN_ARN - The unique identifier for your Savings Plans.
         /// </para>
         ///  </li> </ul>
         /// </summary>

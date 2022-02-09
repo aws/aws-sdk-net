@@ -32,7 +32,7 @@ namespace Amazon.ElasticBeanstalk
     public partial class AmazonElasticBeanstalkConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.112");
+            InternalSDKUtils.BuildUserAgentString("3.7.0.121");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.ElasticBeanstalk
         /// Default constructor
         /// </summary>
         public AmazonElasticBeanstalkConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonElasticBeanstalkDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "elasticbeanstalk";
         }

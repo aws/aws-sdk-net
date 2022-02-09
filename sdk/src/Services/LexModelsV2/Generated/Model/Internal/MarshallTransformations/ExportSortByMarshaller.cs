@@ -34,7 +34,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ExportSortBy Marshaller
-    /// </summary>       
+    /// </summary>
     public class ExportSortByMarshaller : IRequestMarshaller<ExportSortBy, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ExportSortByMarshaller Instance = new ExportSortByMarshaller();
 
     }

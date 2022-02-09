@@ -34,7 +34,7 @@ namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ProposalActions Marshaller
-    /// </summary>       
+    /// </summary>
     public class ProposalActionsMarshaller : IRequestMarshaller<ProposalActions, JsonMarshallerContext> 
     {
         /// <summary>
@@ -81,7 +81,7 @@ namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ProposalActionsMarshaller Instance = new ProposalActionsMarshaller();
 
     }

@@ -53,7 +53,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new CompleteSnapshotRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("CompleteSnapshot", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("CompleteSnapshot", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -67,9 +67,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = CompleteSnapshotResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as CompleteSnapshotResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as CompleteSnapshotResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -276,7 +275,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetSnapshotBlockRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("GetSnapshotBlock", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetSnapshotBlock", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -293,9 +292,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = GetSnapshotBlockResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as GetSnapshotBlockResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as GetSnapshotBlockResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -520,7 +518,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListChangedBlocksRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("ListChangedBlocks", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("ListChangedBlocks", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -534,9 +532,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = ListChangedBlocksResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as ListChangedBlocksResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as ListChangedBlocksResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -743,7 +740,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListSnapshotBlocksRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("ListSnapshotBlocks", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("ListSnapshotBlocks", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -757,9 +754,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = ListSnapshotBlocksResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as ListSnapshotBlocksResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as ListSnapshotBlocksResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -966,7 +962,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new PutSnapshotBlockRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("PutSnapshotBlock", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("PutSnapshotBlock", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -982,9 +978,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = PutSnapshotBlockResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as PutSnapshotBlockResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as PutSnapshotBlockResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -1203,7 +1198,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new StartSnapshotRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("StartSnapshot", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("StartSnapshot", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -1217,9 +1212,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = StartSnapshotResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as StartSnapshotResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as StartSnapshotResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]

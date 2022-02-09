@@ -34,7 +34,7 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// EBSOptions Marshaller
-    /// </summary>       
+    /// </summary>
     public class EBSOptionsMarshaller : IRequestMarshaller<EBSOptions, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static EBSOptionsMarshaller Instance = new EBSOptionsMarshaller();
 
     }

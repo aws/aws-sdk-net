@@ -34,7 +34,7 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// BackendStoragePermissions Marshaller
-    /// </summary>       
+    /// </summary>
     public class BackendStoragePermissionsMarshaller : IRequestMarshaller<BackendStoragePermissions, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static BackendStoragePermissionsMarshaller Instance = new BackendStoragePermissionsMarshaller();
 
     }

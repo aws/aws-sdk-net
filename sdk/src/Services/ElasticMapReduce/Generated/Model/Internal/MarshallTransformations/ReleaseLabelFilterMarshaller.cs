@@ -34,7 +34,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ReleaseLabelFilter Marshaller
-    /// </summary>       
+    /// </summary>
     public class ReleaseLabelFilterMarshaller : IRequestMarshaller<ReleaseLabelFilter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ReleaseLabelFilterMarshaller Instance = new ReleaseLabelFilterMarshaller();
 
     }

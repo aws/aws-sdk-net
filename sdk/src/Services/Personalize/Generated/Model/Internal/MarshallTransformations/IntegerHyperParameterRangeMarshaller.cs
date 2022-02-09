@@ -34,7 +34,7 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// IntegerHyperParameterRange Marshaller
-    /// </summary>       
+    /// </summary>
     public class IntegerHyperParameterRangeMarshaller : IRequestMarshaller<IntegerHyperParameterRange, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static IntegerHyperParameterRangeMarshaller Instance = new IntegerHyperParameterRangeMarshaller();
 
     }

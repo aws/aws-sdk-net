@@ -34,7 +34,7 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RefreshTokenRequestBody Marshaller
-    /// </summary>       
+    /// </summary>
     public class RefreshTokenRequestBodyMarshaller : IRequestMarshaller<RefreshTokenRequestBody, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RefreshTokenRequestBodyMarshaller Instance = new RefreshTokenRequestBodyMarshaller();
 
     }

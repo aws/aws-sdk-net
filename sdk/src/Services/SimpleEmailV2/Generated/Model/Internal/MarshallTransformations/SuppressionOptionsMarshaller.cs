@@ -34,7 +34,7 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SuppressionOptions Marshaller
-    /// </summary>       
+    /// </summary>
     public class SuppressionOptionsMarshaller : IRequestMarshaller<SuppressionOptions, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SuppressionOptionsMarshaller Instance = new SuppressionOptionsMarshaller();
 
     }

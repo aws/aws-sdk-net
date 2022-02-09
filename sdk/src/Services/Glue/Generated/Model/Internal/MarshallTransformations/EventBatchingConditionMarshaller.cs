@@ -34,7 +34,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// EventBatchingCondition Marshaller
-    /// </summary>       
+    /// </summary>
     public class EventBatchingConditionMarshaller : IRequestMarshaller<EventBatchingCondition, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static EventBatchingConditionMarshaller Instance = new EventBatchingConditionMarshaller();
 
     }

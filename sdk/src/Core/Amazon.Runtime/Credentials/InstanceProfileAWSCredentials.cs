@@ -182,7 +182,7 @@ namespace Amazon.Runtime
                 if (httpStatusCode == HttpStatusCode.Unauthorized)
                 {
                     EC2InstanceMetadata.ClearTokenFlag();
-                    Logger.GetLogger(typeof(EC2InstanceMetadata)).Error(e, "EC2 Metadata service returned unauthorized for token based secure data flow.");                    
+                    Logger.GetLogger(typeof(EC2InstanceMetadata)).Error(e, "EC2 Metadata service returned unauthorized for token based secure data flow.");
                 }
 
                 throw;
@@ -262,13 +262,13 @@ namespace Amazon.Runtime
 
         private static SecurityInfo GetServiceInfo(IWebProxy proxy, string token)
         {
-            CheckIsIMDSEnabled();            
+            CheckIsIMDSEnabled();
             return GetObjectFromResponse<SecurityInfo>(InfoUri, proxy, CreateMetadataTokenHeaders(token));
         }
 
         private SecurityCredentials GetRoleCredentials(string token)
         {
-            CheckIsIMDSEnabled();            
+            CheckIsIMDSEnabled();
             return GetObjectFromResponse<SecurityCredentials>(CurrentRoleUri, _proxy, CreateMetadataTokenHeaders(token));
         }
 
@@ -314,7 +314,7 @@ namespace Amazon.Runtime
 
         private static Dictionary<string, string> CreateMetadataTokenHeaders(string token)
         {
-            Dictionary<string, string> headers = null;            
+            Dictionary<string, string> headers = null;
             if (!string.IsNullOrEmpty(token))
             {
                 headers = new Dictionary<string, string>();

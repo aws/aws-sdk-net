@@ -32,7 +32,7 @@ namespace Amazon.NetworkFirewall
     public partial class AmazonNetworkFirewallConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.2.6");
+            InternalSDKUtils.BuildUserAgentString("3.7.2.15");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.NetworkFirewall
         /// Default constructor
         /// </summary>
         public AmazonNetworkFirewallConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonNetworkFirewallDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "network-firewall";
         }

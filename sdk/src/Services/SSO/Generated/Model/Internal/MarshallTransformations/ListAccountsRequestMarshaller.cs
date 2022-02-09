@@ -55,7 +55,7 @@ namespace Amazon.SSO.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListAccountsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.SSO");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-06-10";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-06-10";
             request.HttpMethod = "GET";
 
             
@@ -66,8 +66,10 @@ namespace Amazon.SSO.Model.Internal.MarshallTransformations
                 request.Parameters.Add("next_token", StringUtils.FromString(publicRequest.NextToken));
             request.ResourcePath = "/assignment/accounts";
         
-            if(publicRequest.IsSetAccessToken())
+            if (publicRequest.IsSetAccessToken()) 
+            {
                 request.Headers["x-amz-sso_bearer_token"] = publicRequest.AccessToken;
+            }
             request.UseQueryString = true;
 
             return request;

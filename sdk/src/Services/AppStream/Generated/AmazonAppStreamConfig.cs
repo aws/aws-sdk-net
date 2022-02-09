@@ -32,7 +32,7 @@ namespace Amazon.AppStream
     public partial class AmazonAppStreamConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.4.1");
+            InternalSDKUtils.BuildUserAgentString("3.7.4.10");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.AppStream
         /// Default constructor
         /// </summary>
         public AmazonAppStreamConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonAppStreamDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "appstream";
         }

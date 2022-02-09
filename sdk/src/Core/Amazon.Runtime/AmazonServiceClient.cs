@@ -25,7 +25,9 @@ using System.IO;
 using System.Reflection;
 using System.Text;
 using System.Linq;
+using System.Threading;
 using Amazon.Util.Internal;
+using ExecutionContext = Amazon.Runtime.Internal.ExecutionContext;
 
 namespace Amazon.Runtime
 {
@@ -37,7 +39,8 @@ namespace Amazon.Runtime
         protected EndpointDiscoveryResolverBase EndpointDiscoveryResolver { get; private set; }
         protected RuntimePipeline RuntimePipeline { get; set; }
         protected internal AWSCredentials Credentials { get; private set; }
-        public IClientConfig Config { get; private set; }
+        public IClientConfig Config => _config;
+        private readonly ClientConfig _config;
         protected virtual IServiceMetadata ServiceMetadata { get; } = new ServiceMetadata();
         protected virtual bool SupportResponseLogging
         {
@@ -152,8 +155,8 @@ namespace Amazon.Runtime
                 _logger = Logger.GetLogger(this.GetType());
 
             config.Validate();
-            this.Config = config;
             this.Credentials = credentials;
+            _config = config;
             Signer = CreateSigner();
             EndpointDiscoveryResolver = new EndpointDiscoveryResolver(config, _logger);
             Initialize();
@@ -196,7 +199,7 @@ namespace Amazon.Runtime
             return Invoke<TResponse>(request, options);
         }
 
-        protected TResponse Invoke<TResponse>(AmazonWebServiceRequest request, InvokeOptionsBase options)            
+        protected TResponse Invoke<TResponse>(AmazonWebServiceRequest request, InvokeOptionsBase options)
             where TResponse : AmazonWebServiceResponse
         {
             ThrowIfDisposed();
@@ -222,9 +225,11 @@ namespace Amazon.Runtime
 #if AWS_ASYNC_API
 
         [Obsolete("InvokeAsync taking marshallers is obsolete. Use InvokeAsync taking InvokeOptionsBase instead.")]
-        protected System.Threading.Tasks.Task<TResponse> InvokeAsync<TRequest, TResponse>(TRequest request, 
-            IMarshaller<IRequest, AmazonWebServiceRequest> marshaller, ResponseUnmarshaller unmarshaller,
-            System.Threading.CancellationToken cancellationToken)            
+        protected System.Threading.Tasks.Task<TResponse> InvokeAsync<TRequest, TResponse>(
+            TRequest request, 
+            IMarshaller<IRequest, AmazonWebServiceRequest> marshaller,
+            ResponseUnmarshaller unmarshaller,
+            System.Threading.CancellationToken cancellationToken)
             where TRequest: AmazonWebServiceRequest
             where TResponse : AmazonWebServiceResponse, new()
         {
@@ -234,11 +239,18 @@ namespace Amazon.Runtime
             return InvokeAsync<TResponse>(request, options, cancellationToken);
         }
 
-        protected System.Threading.Tasks.Task<TResponse> InvokeAsync<TResponse>(AmazonWebServiceRequest request,
-            InvokeOptionsBase options, System.Threading.CancellationToken cancellationToken)            
+        protected System.Threading.Tasks.Task<TResponse> InvokeAsync<TResponse>(
+            AmazonWebServiceRequest request,
+            InvokeOptionsBase options,
+            System.Threading.CancellationToken cancellationToken)
             where TResponse : AmazonWebServiceResponse, new()
         {
             ThrowIfDisposed();
+
+#if AWS_ASYNC_API
+            if (cancellationToken == default(CancellationToken))
+                cancellationToken = _config.BuildDefaultCancellationToken();
+#endif
 
             var executionContext = new ExecutionContext(
                 new RequestContext(this.Config.LogMetrics, Signer)
@@ -250,7 +262,7 @@ namespace Amazon.Runtime
                     IsAsync = true,
                     CancellationToken = cancellationToken,
                     ServiceMetaData = this.ServiceMetadata,
-                    Options = options                    
+                    Options = options
                 },
                 new ResponseContext()
             );
@@ -272,7 +284,7 @@ namespace Amazon.Runtime
         }
 
         protected IAsyncResult BeginInvoke(AmazonWebServiceRequest request,
-            InvokeOptionsBase options, AsyncCallback callback, object state)            
+            InvokeOptionsBase options, AsyncCallback callback, object state)
         {
             ThrowIfDisposed();
 
@@ -460,7 +472,7 @@ namespace Amazon.Runtime
                     //EndpointDiscoveryResolver must come after CredentialsRetriever, RetryHander, and EndpointResolver as it depends on
                     //credentials, retrying of requests for 421 web exceptions, and the current set regional endpoint.
                     new EndpointDiscoveryHandler(), 
-                    new CredentialsRetriever(this.Credentials),                                        
+                    new CredentialsRetriever(this.Credentials),
                     new RetryHandler(retryPolicy),
                     postMarshallHandler,
                     new EndpointResolver(),
@@ -555,7 +567,7 @@ namespace Amazon.Runtime
             }
             else
             {
-                if (AWSSDKUtils.HasBidiControlCharacters(resourcePath))                
+                if (AWSSDKUtils.HasBidiControlCharacters(resourcePath))
                         throw new AmazonClientException(string.Format(CultureInfo.InvariantCulture,
                             "Target resource path [{0}] has bidirectional characters, which are not supported" +
                             "by System.Uri and thus cannot be handled by the .NET SDK.", resourcePath));

@@ -40,6 +40,7 @@ namespace Amazon.Comprehend.Model
         private EntityRecognizerInputDataConfig _inputDataConfig;
         private LanguageCode _languageCode;
         private string _modelKmsKeyId;
+        private string _modelPolicy;
         private string _recognizerName;
         private List<Tag> _tags = new List<Tag>();
         private string _versionName;
@@ -156,6 +157,46 @@ namespace Amazon.Comprehend.Model
         internal bool IsSetModelKmsKeyId()
         {
             return this._modelKmsKeyId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ModelPolicy. 
+        /// <para>
+        /// The JSON resource-based policy to attach to your custom entity recognizer model. You
+        /// can use this policy to allow another AWS account to import your custom model.
+        /// </para>
+        ///  
+        /// <para>
+        /// Provide your JSON as a UTF-8 encoded string without line breaks. To provide valid
+        /// JSON for your policy, enclose the attribute names and values in double quotes. If
+        /// the JSON body is also enclosed in double quotes, then you must escape the double quotes
+        /// that are inside the policy:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>"{\"attribute\": \"value\", \"attribute\": [\"value\"]}"</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// To avoid escaping quotes, you can use single quotes to enclose the policy and double
+        /// quotes to enclose the JSON names and values:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>'{"attribute": "value", "attribute": ["value"]}'</code> 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=20000)]
+        public string ModelPolicy
+        {
+            get { return this._modelPolicy; }
+            set { this._modelPolicy = value; }
+        }
+
+        // Check to see if ModelPolicy property is set
+        internal bool IsSetModelPolicy()
+        {
+            return this._modelPolicy != null;
         }
 
         /// <summary>

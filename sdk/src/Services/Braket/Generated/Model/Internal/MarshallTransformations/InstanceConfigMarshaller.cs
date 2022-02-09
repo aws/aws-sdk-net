@@ -34,7 +34,7 @@ namespace Amazon.Braket.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// InstanceConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class InstanceConfigMarshaller : IRequestMarshaller<InstanceConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Braket.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static InstanceConfigMarshaller Instance = new InstanceConfigMarshaller();
 
     }

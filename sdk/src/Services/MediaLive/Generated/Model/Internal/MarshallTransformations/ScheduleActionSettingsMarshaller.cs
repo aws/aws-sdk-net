@@ -34,7 +34,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ScheduleActionSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class ScheduleActionSettingsMarshaller : IRequestMarshaller<ScheduleActionSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -181,7 +181,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ScheduleActionSettingsMarshaller Instance = new ScheduleActionSettingsMarshaller();
 
     }

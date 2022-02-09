@@ -34,7 +34,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Av1Settings Marshaller
-    /// </summary>       
+    /// </summary>
     public class Av1SettingsMarshaller : IRequestMarshaller<Av1Settings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -49,6 +49,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("adaptiveQuantization");
                 context.Writer.Write(requestObject.AdaptiveQuantization);
+            }
+
+            if(requestObject.IsSetBitDepth())
+            {
+                context.Writer.WritePropertyName("bitDepth");
+                context.Writer.Write(requestObject.BitDepth);
             }
 
             if(requestObject.IsSetFramerateControl())
@@ -126,7 +132,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static Av1SettingsMarshaller Instance = new Av1SettingsMarshaller();
 
     }

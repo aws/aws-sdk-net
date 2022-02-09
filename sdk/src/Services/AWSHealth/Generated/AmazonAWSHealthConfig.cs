@@ -32,7 +32,7 @@ namespace Amazon.AWSHealth
     public partial class AmazonAWSHealthConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.1.69");
+            InternalSDKUtils.BuildUserAgentString("3.7.1.78");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.AWSHealth
         /// Default constructor
         /// </summary>
         public AmazonAWSHealthConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonAWSHealthDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "health";
         }

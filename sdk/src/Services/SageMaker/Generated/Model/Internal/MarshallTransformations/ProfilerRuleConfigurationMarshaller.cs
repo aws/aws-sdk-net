@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ProfilerRuleConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class ProfilerRuleConfigurationMarshaller : IRequestMarshaller<ProfilerRuleConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -99,7 +99,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ProfilerRuleConfigurationMarshaller Instance = new ProfilerRuleConfigurationMarshaller();
 
     }

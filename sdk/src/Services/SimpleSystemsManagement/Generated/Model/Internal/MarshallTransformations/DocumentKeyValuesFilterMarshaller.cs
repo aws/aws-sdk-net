@@ -34,7 +34,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DocumentKeyValuesFilter Marshaller
-    /// </summary>       
+    /// </summary>
     public class DocumentKeyValuesFilterMarshaller : IRequestMarshaller<DocumentKeyValuesFilter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DocumentKeyValuesFilterMarshaller Instance = new DocumentKeyValuesFilterMarshaller();
 
     }

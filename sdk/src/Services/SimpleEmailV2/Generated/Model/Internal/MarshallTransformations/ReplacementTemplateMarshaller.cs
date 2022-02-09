@@ -34,7 +34,7 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ReplacementTemplate Marshaller
-    /// </summary>       
+    /// </summary>
     public class ReplacementTemplateMarshaller : IRequestMarshaller<ReplacementTemplate, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ReplacementTemplateMarshaller Instance = new ReplacementTemplateMarshaller();
 
     }

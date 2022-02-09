@@ -32,7 +32,7 @@ namespace Amazon.Shield
     public partial class AmazonShieldConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.2.7");
+            InternalSDKUtils.BuildUserAgentString("3.7.2.16");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.Shield
         /// Default constructor
         /// </summary>
         public AmazonShieldConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonShieldDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "shield";
         }

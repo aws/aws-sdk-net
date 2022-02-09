@@ -34,7 +34,7 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// GeneralName Marshaller
-    /// </summary>       
+    /// </summary>
     public class GeneralNameMarshaller : IRequestMarshaller<GeneralName, JsonMarshallerContext> 
     {
         /// <summary>
@@ -112,7 +112,7 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static GeneralNameMarshaller Instance = new GeneralNameMarshaller();
 
     }

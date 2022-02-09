@@ -58,7 +58,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             string target = "SageMaker.ListActions";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-07-24";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-07-24";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -115,7 +115,6 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.SourceUri);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

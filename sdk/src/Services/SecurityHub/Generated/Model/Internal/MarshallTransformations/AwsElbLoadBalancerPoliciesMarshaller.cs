@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AwsElbLoadBalancerPolicies Marshaller
-    /// </summary>       
+    /// </summary>
     public class AwsElbLoadBalancerPoliciesMarshaller : IRequestMarshaller<AwsElbLoadBalancerPolicies, JsonMarshallerContext> 
     {
         /// <summary>
@@ -92,7 +92,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AwsElbLoadBalancerPoliciesMarshaller Instance = new AwsElbLoadBalancerPoliciesMarshaller();
 
     }

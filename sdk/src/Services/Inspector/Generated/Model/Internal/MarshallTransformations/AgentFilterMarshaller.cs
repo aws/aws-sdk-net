@@ -34,7 +34,7 @@ namespace Amazon.Inspector.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AgentFilter Marshaller
-    /// </summary>       
+    /// </summary>
     public class AgentFilterMarshaller : IRequestMarshaller<AgentFilter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.Inspector.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AgentFilterMarshaller Instance = new AgentFilterMarshaller();
 
     }

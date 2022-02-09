@@ -34,7 +34,7 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ElasticsearchRetryOptions Marshaller
-    /// </summary>       
+    /// </summary>
     public class ElasticsearchRetryOptionsMarshaller : IRequestMarshaller<ElasticsearchRetryOptions, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ElasticsearchRetryOptionsMarshaller Instance = new ElasticsearchRetryOptionsMarshaller();
 
     }

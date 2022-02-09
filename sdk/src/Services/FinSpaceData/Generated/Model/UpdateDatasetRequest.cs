@@ -64,7 +64,7 @@ namespace Amazon.FinSpaceData.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// A token used to ensure idempotency.
+        /// A token that ensures idempotency. This token expires in 10 minutes.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

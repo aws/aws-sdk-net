@@ -32,7 +32,7 @@ namespace Amazon.WellArchitected
     public partial class AmazonWellArchitectedConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.2.9");
+            InternalSDKUtils.BuildUserAgentString("3.7.2.18");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.WellArchitected
         /// Default constructor
         /// </summary>
         public AmazonWellArchitectedConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonWellArchitectedDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "wellarchitected";
         }

@@ -56,7 +56,7 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Mgn");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-02-26";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-02-26";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/DescribeReplicationConfigurationTemplates";
@@ -88,7 +88,6 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

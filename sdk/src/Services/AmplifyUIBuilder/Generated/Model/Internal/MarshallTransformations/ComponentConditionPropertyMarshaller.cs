@@ -34,7 +34,7 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ComponentConditionProperty Marshaller
-    /// </summary>       
+    /// </summary>
     public class ComponentConditionPropertyMarshaller : IRequestMarshaller<ComponentConditionProperty, JsonMarshallerContext> 
     {
         /// <summary>
@@ -95,7 +95,7 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ComponentConditionPropertyMarshaller Instance = new ComponentConditionPropertyMarshaller();
 
     }

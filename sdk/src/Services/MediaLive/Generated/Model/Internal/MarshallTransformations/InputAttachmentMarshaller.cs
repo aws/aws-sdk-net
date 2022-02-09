@@ -34,7 +34,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// InputAttachment Marshaller
-    /// </summary>       
+    /// </summary>
     public class InputAttachmentMarshaller : IRequestMarshaller<InputAttachment, JsonMarshallerContext> 
     {
         /// <summary>
@@ -83,7 +83,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static InputAttachmentMarshaller Instance = new InputAttachmentMarshaller();
 
     }

@@ -32,7 +32,7 @@ namespace Amazon.Organizations
     public partial class AmazonOrganizationsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.113");
+            InternalSDKUtils.BuildUserAgentString("3.7.0.122");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.Organizations
         /// Default constructor
         /// </summary>
         public AmazonOrganizationsConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonOrganizationsDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "organizations";
         }

@@ -32,7 +32,7 @@ namespace Amazon.RecycleBin
     public partial class AmazonRecycleBinConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.9");
+            InternalSDKUtils.BuildUserAgentString("3.7.1.1");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.RecycleBin
         /// Default constructor
         /// </summary>
         public AmazonRecycleBinConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonRecycleBinDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "rbin";
         }

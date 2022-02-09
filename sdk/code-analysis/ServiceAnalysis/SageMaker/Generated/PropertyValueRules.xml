@@ -5087,6 +5087,10 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.CandidateArtifactLocations.ModelInsights</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.CapacitySize.Value</property>
     <min>1</min>
   </property-value-rule>
@@ -5780,6 +5784,10 @@
     <min>1</min>
     <max>120</max>
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,119}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.FailStepMetadata.ErrorMessage</property>
+    <max>3072</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.FeatureDefinition.FeatureName</property>
@@ -7236,6 +7244,10 @@
     <min>1</min>
     <max>82</max>
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,81}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.PipelineExecutionSummary.PipelineExecutionFailureReason</property>
+    <max>3072</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.PipelineExperimentConfig.ExperimentName</property>

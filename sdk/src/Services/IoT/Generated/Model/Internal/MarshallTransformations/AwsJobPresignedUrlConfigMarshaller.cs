@@ -34,7 +34,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AwsJobPresignedUrlConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class AwsJobPresignedUrlConfigMarshaller : IRequestMarshaller<AwsJobPresignedUrlConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AwsJobPresignedUrlConfigMarshaller Instance = new AwsJobPresignedUrlConfigMarshaller();
 
     }

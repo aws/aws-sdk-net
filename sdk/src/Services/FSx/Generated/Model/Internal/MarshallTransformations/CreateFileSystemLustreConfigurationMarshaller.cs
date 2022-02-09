@@ -34,7 +34,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CreateFileSystemLustreConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class CreateFileSystemLustreConfigurationMarshaller : IRequestMarshaller<CreateFileSystemLustreConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -132,7 +132,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CreateFileSystemLustreConfigurationMarshaller Instance = new CreateFileSystemLustreConfigurationMarshaller();
 
     }

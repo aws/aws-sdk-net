@@ -34,7 +34,7 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RetentionPeriod Marshaller
-    /// </summary>       
+    /// </summary>
     public class RetentionPeriodMarshaller : IRequestMarshaller<RetentionPeriod, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RetentionPeriodMarshaller Instance = new RetentionPeriodMarshaller();
 
     }

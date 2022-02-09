@@ -34,7 +34,7 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ProductInformation Marshaller
-    /// </summary>       
+    /// </summary>
     public class ProductInformationMarshaller : IRequestMarshaller<ProductInformation, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ProductInformationMarshaller Instance = new ProductInformationMarshaller();
 
     }

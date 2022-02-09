@@ -34,7 +34,7 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SchemaFacet Marshaller
-    /// </summary>       
+    /// </summary>
     public class SchemaFacetMarshaller : IRequestMarshaller<SchemaFacet, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SchemaFacetMarshaller Instance = new SchemaFacetMarshaller();
 
     }

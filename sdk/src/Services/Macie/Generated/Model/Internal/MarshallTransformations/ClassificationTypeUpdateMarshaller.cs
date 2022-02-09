@@ -34,7 +34,7 @@ namespace Amazon.Macie.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ClassificationTypeUpdate Marshaller
-    /// </summary>       
+    /// </summary>
     public class ClassificationTypeUpdateMarshaller : IRequestMarshaller<ClassificationTypeUpdate, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Macie.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ClassificationTypeUpdateMarshaller Instance = new ClassificationTypeUpdateMarshaller();
 
     }

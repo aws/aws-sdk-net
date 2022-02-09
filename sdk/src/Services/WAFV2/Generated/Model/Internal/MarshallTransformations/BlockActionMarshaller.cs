@@ -34,7 +34,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// BlockAction Marshaller
-    /// </summary>       
+    /// </summary>
     public class BlockActionMarshaller : IRequestMarshaller<BlockAction, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static BlockActionMarshaller Instance = new BlockActionMarshaller();
 
     }

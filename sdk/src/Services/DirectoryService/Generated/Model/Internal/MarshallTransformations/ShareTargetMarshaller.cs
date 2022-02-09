@@ -34,7 +34,7 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ShareTarget Marshaller
-    /// </summary>       
+    /// </summary>
     public class ShareTargetMarshaller : IRequestMarshaller<ShareTarget, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ShareTargetMarshaller Instance = new ShareTargetMarshaller();
 
     }

@@ -34,7 +34,26 @@ namespace Amazon.GuardDuty.Model
     /// </summary>
     public partial class OrganizationDataSourceConfigurationsResult
     {
+        private OrganizationKubernetesConfigurationResult _kubernetes;
         private OrganizationS3LogsConfigurationResult _s3Logs;
+
+        /// <summary>
+        /// Gets and sets the property Kubernetes. 
+        /// <para>
+        /// Describes the configuration of Kubernetes data sources.
+        /// </para>
+        /// </summary>
+        public OrganizationKubernetesConfigurationResult Kubernetes
+        {
+            get { return this._kubernetes; }
+            set { this._kubernetes = value; }
+        }
+
+        // Check to see if Kubernetes property is set
+        internal bool IsSetKubernetes()
+        {
+            return this._kubernetes != null;
+        }
 
         /// <summary>
         /// Gets and sets the property S3Logs. 

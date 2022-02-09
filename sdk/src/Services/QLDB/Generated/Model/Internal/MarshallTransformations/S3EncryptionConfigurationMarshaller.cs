@@ -34,7 +34,7 @@ namespace Amazon.QLDB.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// S3EncryptionConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class S3EncryptionConfigurationMarshaller : IRequestMarshaller<S3EncryptionConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.QLDB.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static S3EncryptionConfigurationMarshaller Instance = new S3EncryptionConfigurationMarshaller();
 
     }

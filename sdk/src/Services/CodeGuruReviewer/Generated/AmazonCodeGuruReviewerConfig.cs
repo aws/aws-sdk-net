@@ -32,7 +32,7 @@ namespace Amazon.CodeGuruReviewer
     public partial class AmazonCodeGuruReviewerConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.4.49");
+            InternalSDKUtils.BuildUserAgentString("3.7.5.3");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.CodeGuruReviewer
         /// Default constructor
         /// </summary>
         public AmazonCodeGuruReviewerConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonCodeGuruReviewerDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "codeguru-reviewer";
         }

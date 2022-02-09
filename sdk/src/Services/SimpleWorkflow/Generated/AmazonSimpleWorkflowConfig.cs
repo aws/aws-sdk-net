@@ -32,7 +32,7 @@ namespace Amazon.SimpleWorkflow
     public partial class AmazonSimpleWorkflowConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.113");
+            InternalSDKUtils.BuildUserAgentString("3.7.0.122");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.SimpleWorkflow
         /// Default constructor
         /// </summary>
         public AmazonSimpleWorkflowConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonSimpleWorkflowDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "swf";
         }

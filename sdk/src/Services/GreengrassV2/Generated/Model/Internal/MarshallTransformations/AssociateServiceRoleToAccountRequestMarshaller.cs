@@ -56,7 +56,7 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.GreengrassV2");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-11-30";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-11-30";
             request.HttpMethod = "PUT";
 
             request.ResourcePath = "/greengrass/servicerole";
@@ -71,7 +71,6 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.RoleArn);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

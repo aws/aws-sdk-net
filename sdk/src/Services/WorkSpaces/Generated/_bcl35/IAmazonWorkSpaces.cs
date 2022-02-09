@@ -317,6 +317,67 @@ namespace Amazon.WorkSpaces
 
         #endregion
         
+        #region  CreateConnectClientAddIn
+
+
+        /// <summary>
+        /// Creates a client-add-in for Amazon Connect within a directory. You can create only
+        /// one Amazon Connect client add-in within a directory.
+        /// 
+        ///  
+        /// <para>
+        /// This client add-in allows WorkSpaces users to seamlessly connect to Amazon Connect.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateConnectClientAddIn service method.</param>
+        /// 
+        /// <returns>The response from the CreateConnectClientAddIn service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceAlreadyExistsException">
+        /// The specified resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceCreationFailedException">
+        /// The resource could not be created.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateConnectClientAddIn">REST API Reference for CreateConnectClientAddIn Operation</seealso>
+        CreateConnectClientAddInResponse CreateConnectClientAddIn(CreateConnectClientAddInRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateConnectClientAddIn operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateConnectClientAddIn operation on AmazonWorkSpacesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateConnectClientAddIn
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateConnectClientAddIn">REST API Reference for CreateConnectClientAddIn Operation</seealso>
+        IAsyncResult BeginCreateConnectClientAddIn(CreateConnectClientAddInRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateConnectClientAddIn operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateConnectClientAddIn.</param>
+        /// 
+        /// <returns>Returns a  CreateConnectClientAddInResult from WorkSpaces.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateConnectClientAddIn">REST API Reference for CreateConnectClientAddIn Operation</seealso>
+        CreateConnectClientAddInResponse EndCreateConnectClientAddIn(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateConnectionAlias
 
 
@@ -691,6 +752,55 @@ namespace Amazon.WorkSpaces
         /// <returns>Returns a  CreateWorkspacesResult from WorkSpaces.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateWorkspaces">REST API Reference for CreateWorkspaces Operation</seealso>
         CreateWorkspacesResponse EndCreateWorkspaces(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteConnectClientAddIn
+
+
+        /// <summary>
+        /// Deletes a client-add-in for Amazon Connect that is configured within a directory.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConnectClientAddIn service method.</param>
+        /// 
+        /// <returns>The response from the DeleteConnectClientAddIn service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeleteConnectClientAddIn">REST API Reference for DeleteConnectClientAddIn Operation</seealso>
+        DeleteConnectClientAddInResponse DeleteConnectClientAddIn(DeleteConnectClientAddInRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteConnectClientAddIn operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConnectClientAddIn operation on AmazonWorkSpacesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteConnectClientAddIn
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeleteConnectClientAddIn">REST API Reference for DeleteConnectClientAddIn Operation</seealso>
+        IAsyncResult BeginDeleteConnectClientAddIn(DeleteConnectClientAddInRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteConnectClientAddIn operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteConnectClientAddIn.</param>
+        /// 
+        /// <returns>Returns a  DeleteConnectClientAddInResult from WorkSpaces.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeleteConnectClientAddIn">REST API Reference for DeleteConnectClientAddIn Operation</seealso>
+        DeleteConnectClientAddInResponse EndDeleteConnectClientAddIn(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1186,6 +1296,55 @@ namespace Amazon.WorkSpaces
         /// <returns>Returns a  DescribeClientPropertiesResult from WorkSpaces.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeClientProperties">REST API Reference for DescribeClientProperties Operation</seealso>
         DescribeClientPropertiesResponse EndDescribeClientProperties(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeConnectClientAddIns
+
+
+        /// <summary>
+        /// Retrieves a list of Amazon Connect client add-ins that have been created.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeConnectClientAddIns service method.</param>
+        /// 
+        /// <returns>The response from the DescribeConnectClientAddIns service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeConnectClientAddIns">REST API Reference for DescribeConnectClientAddIns Operation</seealso>
+        DescribeConnectClientAddInsResponse DescribeConnectClientAddIns(DescribeConnectClientAddInsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeConnectClientAddIns operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeConnectClientAddIns operation on AmazonWorkSpacesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeConnectClientAddIns
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeConnectClientAddIns">REST API Reference for DescribeConnectClientAddIns Operation</seealso>
+        IAsyncResult BeginDescribeConnectClientAddIns(DescribeConnectClientAddInsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeConnectClientAddIns operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeConnectClientAddIns.</param>
+        /// 
+        /// <returns>Returns a  DescribeConnectClientAddInsResult from WorkSpaces.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeConnectClientAddIns">REST API Reference for DescribeConnectClientAddIns Operation</seealso>
+        DescribeConnectClientAddInsResponse EndDescribeConnectClientAddIns(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2917,6 +3076,56 @@ namespace Amazon.WorkSpaces
         /// <returns>Returns a  TerminateWorkspacesResult from WorkSpaces.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/TerminateWorkspaces">REST API Reference for TerminateWorkspaces Operation</seealso>
         TerminateWorkspacesResponse EndTerminateWorkspaces(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateConnectClientAddIn
+
+
+        /// <summary>
+        /// Updates a Amazon Connect client add-in. Use this action to update the name and endpoint
+        /// URL of a Amazon Connect client add-in.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConnectClientAddIn service method.</param>
+        /// 
+        /// <returns>The response from the UpdateConnectClientAddIn service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/UpdateConnectClientAddIn">REST API Reference for UpdateConnectClientAddIn Operation</seealso>
+        UpdateConnectClientAddInResponse UpdateConnectClientAddIn(UpdateConnectClientAddInRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateConnectClientAddIn operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConnectClientAddIn operation on AmazonWorkSpacesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateConnectClientAddIn
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/UpdateConnectClientAddIn">REST API Reference for UpdateConnectClientAddIn Operation</seealso>
+        IAsyncResult BeginUpdateConnectClientAddIn(UpdateConnectClientAddInRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateConnectClientAddIn operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateConnectClientAddIn.</param>
+        /// 
+        /// <returns>Returns a  UpdateConnectClientAddInResult from WorkSpaces.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/UpdateConnectClientAddIn">REST API Reference for UpdateConnectClientAddIn Operation</seealso>
+        UpdateConnectClientAddInResponse EndUpdateConnectClientAddIn(IAsyncResult asyncResult);
 
         #endregion
         

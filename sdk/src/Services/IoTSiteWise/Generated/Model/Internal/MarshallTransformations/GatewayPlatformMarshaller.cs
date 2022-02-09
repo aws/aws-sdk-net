@@ -34,7 +34,7 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// GatewayPlatform Marshaller
-    /// </summary>       
+    /// </summary>
     public class GatewayPlatformMarshaller : IRequestMarshaller<GatewayPlatform, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static GatewayPlatformMarshaller Instance = new GatewayPlatformMarshaller();
 
     }

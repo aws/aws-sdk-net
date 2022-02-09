@@ -32,7 +32,7 @@ namespace Amazon.Elasticsearch
     public partial class AmazonElasticsearchConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.4.0");
+            InternalSDKUtils.BuildUserAgentString("3.7.5.2");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.Elasticsearch
         /// Default constructor
         /// </summary>
         public AmazonElasticsearchConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonElasticsearchDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "es";
         }

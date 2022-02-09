@@ -30,7 +30,7 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateIntegrationAssociation operation.
-    /// Creates an AWS resource association with an Amazon Connect instance.
+    /// Creates an Amazon Web Services resource association with an Amazon Connect instance.
     /// </summary>
     public partial class CreateIntegrationAssociationRequest : AmazonConnectRequest
     {

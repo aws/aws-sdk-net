@@ -66,12 +66,23 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraints: Must contain no more than 255 letters, numbers, periods, underscores,
-        /// spaces, or hyphens. Must not be default.
+        /// Constraints:
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// Example: <code>mySubnetgroup</code> 
+        /// Must contain no more than 255 letters, numbers, periods, underscores, spaces, or hyphens.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Must not be default.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// First character must be a letter.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Example: <code>mydbsubnetgroup</code> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

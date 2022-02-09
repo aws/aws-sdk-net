@@ -353,7 +353,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul> </li> </ul> 
         /// <para>
-        /// Example: <code>mySubnetgroup</code> 
+        /// Example: <code>mydbsubnetgroup</code> 
         /// </para>
         /// </summary>
         public string DBSubnetGroupName

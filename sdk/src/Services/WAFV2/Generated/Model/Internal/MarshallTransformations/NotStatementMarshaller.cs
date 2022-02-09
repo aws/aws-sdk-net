@@ -34,7 +34,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// NotStatement Marshaller
-    /// </summary>       
+    /// </summary>
     public class NotStatementMarshaller : IRequestMarshaller<NotStatement, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static NotStatementMarshaller Instance = new NotStatementMarshaller();
 
     }

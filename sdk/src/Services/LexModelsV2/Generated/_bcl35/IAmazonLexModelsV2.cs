@@ -1151,6 +1151,68 @@ namespace Amazon.LexModelsV2
 
         #endregion
         
+        #region  DeleteCustomVocabulary
+
+
+        /// <summary>
+        /// Removes a custom vocabulary from the specified locale in the specified bot.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCustomVocabulary service method.</param>
+        /// 
+        /// <returns>The response from the DeleteCustomVocabulary service method, as returned by LexModelsV2.</returns>
+        /// <exception cref="Amazon.LexModelsV2.Model.ConflictException">
+        /// The action that you tried to perform couldn't be completed because the resource is
+        /// in a conflicting state. For example, deleting a bot that is in the CREATING state.
+        /// Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
+        /// The service encountered an unexpected condition. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.PreconditionFailedException">
+        /// Your request couldn't be completed because one or more request fields aren't valid.
+        /// Check the fields in your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
+        /// You have reached a quota for your bot.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
+        /// Your request rate is too high. Reduce the frequency of requests.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DeleteCustomVocabulary">REST API Reference for DeleteCustomVocabulary Operation</seealso>
+        DeleteCustomVocabularyResponse DeleteCustomVocabulary(DeleteCustomVocabularyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteCustomVocabulary operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCustomVocabulary operation on AmazonLexModelsV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteCustomVocabulary
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DeleteCustomVocabulary">REST API Reference for DeleteCustomVocabulary Operation</seealso>
+        IAsyncResult BeginDeleteCustomVocabulary(DeleteCustomVocabularyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteCustomVocabulary operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteCustomVocabulary.</param>
+        /// 
+        /// <returns>Returns a  DeleteCustomVocabularyResult from LexModelsV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DeleteCustomVocabulary">REST API Reference for DeleteCustomVocabulary Operation</seealso>
+        DeleteCustomVocabularyResponse EndDeleteCustomVocabulary(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteExport
 
 
@@ -1923,6 +1985,63 @@ namespace Amazon.LexModelsV2
         /// <returns>Returns a  DescribeBotVersionResult from LexModelsV2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DescribeBotVersion">REST API Reference for DescribeBotVersion Operation</seealso>
         DescribeBotVersionResponse EndDescribeBotVersion(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeCustomVocabularyMetadata
+
+
+        /// <summary>
+        /// Provides metadata information about a custom vocabulary.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCustomVocabularyMetadata service method.</param>
+        /// 
+        /// <returns>The response from the DescribeCustomVocabularyMetadata service method, as returned by LexModelsV2.</returns>
+        /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
+        /// The service encountered an unexpected condition. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ResourceNotFoundException">
+        /// You asked to describe a resource that doesn't exist. Check the resource that you are
+        /// requesting and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
+        /// You have reached a quota for your bot.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
+        /// Your request rate is too high. Reduce the frequency of requests.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DescribeCustomVocabularyMetadata">REST API Reference for DescribeCustomVocabularyMetadata Operation</seealso>
+        DescribeCustomVocabularyMetadataResponse DescribeCustomVocabularyMetadata(DescribeCustomVocabularyMetadataRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeCustomVocabularyMetadata operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCustomVocabularyMetadata operation on AmazonLexModelsV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeCustomVocabularyMetadata
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DescribeCustomVocabularyMetadata">REST API Reference for DescribeCustomVocabularyMetadata Operation</seealso>
+        IAsyncResult BeginDescribeCustomVocabularyMetadata(DescribeCustomVocabularyMetadataRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeCustomVocabularyMetadata operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeCustomVocabularyMetadata.</param>
+        /// 
+        /// <returns>Returns a  DescribeCustomVocabularyMetadataResult from LexModelsV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DescribeCustomVocabularyMetadata">REST API Reference for DescribeCustomVocabularyMetadata Operation</seealso>
+        DescribeCustomVocabularyMetadataResponse EndDescribeCustomVocabularyMetadata(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2741,7 +2860,8 @@ namespace Amazon.LexModelsV2
 
 
         /// <summary>
-        /// Lists the exports for a bot or bot locale. Exports are kept in the list for 7 days.
+        /// Lists the exports for a bot, bot locale, or custom vocabulary. Exports are kept in
+        /// the list for 7 days.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListExports service method.</param>
         /// 
@@ -2791,7 +2911,8 @@ namespace Amazon.LexModelsV2
 
 
         /// <summary>
-        /// Lists the imports for a bot or bot locale. Imports are kept in the list for 7 days.
+        /// Lists the imports for a bot, bot locale, or custom vocabulary. Imports are kept in
+        /// the list for 7 days.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListImports service method.</param>
         /// 
@@ -3236,8 +3357,8 @@ namespace Amazon.LexModelsV2
 
 
         /// <summary>
-        /// Starts importing a bot or bot locale from a zip archive that you uploaded to an S3
-        /// bucket.
+        /// Starts importing a bot, bot locale, or custom vocabulary from a zip archive that you
+        /// uploaded to an S3 bucket.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartImport service method.</param>
         /// 

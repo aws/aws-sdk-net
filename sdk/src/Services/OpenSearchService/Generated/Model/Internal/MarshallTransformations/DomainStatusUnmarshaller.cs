@@ -94,6 +94,12 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                     unmarshalledObject.AutoTuneOptions = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ChangeProgressDetails", targetDepth))
+                {
+                    var unmarshaller = ChangeProgressDetailsUnmarshaller.Instance;
+                    unmarshalledObject.ChangeProgressDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ClusterConfig", targetDepth))
                 {
                     var unmarshaller = ClusterConfigUnmarshaller.Instance;

@@ -34,7 +34,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// JobCommand Marshaller
-    /// </summary>       
+    /// </summary>
     public class JobCommandMarshaller : IRequestMarshaller<JobCommand, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static JobCommandMarshaller Instance = new JobCommandMarshaller();
 
     }

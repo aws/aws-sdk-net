@@ -34,7 +34,7 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Featurization Marshaller
-    /// </summary>       
+    /// </summary>
     public class FeaturizationMarshaller : IRequestMarshaller<Featurization, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static FeaturizationMarshaller Instance = new FeaturizationMarshaller();
 
     }

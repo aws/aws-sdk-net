@@ -56,7 +56,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Appflow");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-08-23";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-08-23";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/create-connector-profile";
@@ -69,6 +69,12 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("connectionMode");
                     context.Writer.Write(publicRequest.ConnectionMode);
+                }
+
+                if(publicRequest.IsSetConnectorLabel())
+                {
+                    context.Writer.WritePropertyName("connectorLabel");
+                    context.Writer.Write(publicRequest.ConnectorLabel);
                 }
 
                 if(publicRequest.IsSetConnectorProfileConfig())
@@ -100,7 +106,6 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.KmsArn);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

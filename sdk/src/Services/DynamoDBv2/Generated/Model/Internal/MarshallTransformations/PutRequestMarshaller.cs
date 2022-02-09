@@ -34,7 +34,7 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// PutRequest Marshaller
-    /// </summary>       
+    /// </summary>
     public class PutRequestMarshaller : IRequestMarshaller<PutRequest, JsonMarshallerContext> 
     {
         /// <summary>
@@ -68,7 +68,7 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static PutRequestMarshaller Instance = new PutRequestMarshaller();
 
     }

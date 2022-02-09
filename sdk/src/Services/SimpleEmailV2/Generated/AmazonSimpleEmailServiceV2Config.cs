@@ -32,7 +32,7 @@ namespace Amazon.SimpleEmailV2
     public partial class AmazonSimpleEmailServiceV2Config : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.1.39");
+            InternalSDKUtils.BuildUserAgentString("3.7.1.48");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.SimpleEmailV2
         /// Default constructor
         /// </summary>
         public AmazonSimpleEmailServiceV2Config()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonSimpleEmailServiceV2DefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "ses";
         }

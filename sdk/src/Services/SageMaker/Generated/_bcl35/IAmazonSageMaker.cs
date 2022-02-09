@@ -10708,8 +10708,8 @@ namespace Amazon.SageMaker
         ///  
         /// <para>
         /// A pipeline execution won't stop while a callback step is running. When you call <code>StopPipelineExecution</code>
-        /// on a pipeline execution with a running callback step, Amazon SageMaker Pipelines sends
-        /// an additional Amazon SQS message to the specified SQS queue. The body of the SQS message
+        /// on a pipeline execution with a running callback step, SageMaker Pipelines sends an
+        /// additional Amazon SQS message to the specified SQS queue. The body of the SQS message
         /// contains a "Status" field which is set to "Stopping".
         /// </para>
         ///  
@@ -10720,8 +10720,8 @@ namespace Amazon.SageMaker
         /// </para>
         ///  
         /// <para>
-        /// Only when Amazon SageMaker Pipelines receives one of these calls will it stop the
-        /// pipeline execution.
+        /// Only when SageMaker Pipelines receives one of these calls will it stop the pipeline
+        /// execution.
         /// </para>
         ///  
         /// <para>

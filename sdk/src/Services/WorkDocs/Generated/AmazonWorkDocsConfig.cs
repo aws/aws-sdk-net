@@ -32,7 +32,7 @@ namespace Amazon.WorkDocs
     public partial class AmazonWorkDocsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.112");
+            InternalSDKUtils.BuildUserAgentString("3.7.0.121");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.WorkDocs
         /// Default constructor
         /// </summary>
         public AmazonWorkDocsConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonWorkDocsDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "workdocs";
         }

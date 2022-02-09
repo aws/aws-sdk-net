@@ -56,7 +56,7 @@ namespace Amazon.MobileAnalytics.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.MobileAnalytics");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2014-06-05";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2014-06-05";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/2014-06-05/events";
@@ -81,18 +81,21 @@ namespace Amazon.MobileAnalytics.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
 
         
-            if(publicRequest.IsSetClientContext())
+            if (publicRequest.IsSetClientContext()) 
+            {
                 request.Headers["x-amz-Client-Context"] = publicRequest.ClientContext;
+            }
         
-            if(publicRequest.IsSetClientContextEncoding())
+            if (publicRequest.IsSetClientContextEncoding()) 
+            {
                 request.Headers["x-amz-Client-Context-Encoding"] = publicRequest.ClientContextEncoding;
+            }
 
             return request;
         }

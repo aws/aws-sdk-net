@@ -53,7 +53,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new AddProfilePermissionRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("AddProfilePermission", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("AddProfilePermission", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -67,9 +67,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = AddProfilePermissionResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as AddProfilePermissionResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as AddProfilePermissionResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -308,7 +307,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new CancelSigningProfileRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("CancelSigningProfile", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("CancelSigningProfile", request, internalRequest, service_model);
 
         }
 
@@ -452,7 +451,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DescribeSigningJobRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("DescribeSigningJob", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DescribeSigningJob", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -466,9 +465,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = DescribeSigningJobResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as DescribeSigningJobResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as DescribeSigningJobResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -611,7 +609,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetSigningPlatformRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("GetSigningPlatform", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetSigningPlatform", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -625,9 +623,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = GetSigningPlatformResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as GetSigningPlatformResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as GetSigningPlatformResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -770,7 +767,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetSigningProfileRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("GetSigningProfile", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetSigningProfile", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -784,9 +781,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = GetSigningProfileResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as GetSigningProfileResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as GetSigningProfileResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -929,7 +925,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListProfilePermissionsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("ListProfilePermissions", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("ListProfilePermissions", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -943,9 +939,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = ListProfilePermissionsResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as ListProfilePermissionsResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as ListProfilePermissionsResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -1120,7 +1115,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListSigningJobsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("ListSigningJobs", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("ListSigningJobs", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -1134,9 +1129,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = ListSigningJobsResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as ListSigningJobsResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as ListSigningJobsResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -1279,7 +1273,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListSigningPlatformsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("ListSigningPlatforms", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("ListSigningPlatforms", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -1293,9 +1287,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = ListSigningPlatformsResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as ListSigningPlatformsResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as ListSigningPlatformsResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -1438,7 +1431,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListSigningProfilesRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("ListSigningProfiles", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("ListSigningProfiles", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -1452,9 +1445,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = ListSigningProfilesResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as ListSigningProfilesResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as ListSigningProfilesResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -1565,7 +1557,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListTagsForResourceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("ListTagsForResource", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("ListTagsForResource", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -1579,9 +1571,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as ListTagsForResourceResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as ListTagsForResourceResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -1724,7 +1715,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new PutSigningProfileRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("PutSigningProfile", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("PutSigningProfile", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -1738,9 +1729,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = PutSigningProfileResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as PutSigningProfileResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as PutSigningProfileResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -1915,7 +1905,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new RemoveProfilePermissionRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("RemoveProfilePermission", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("RemoveProfilePermission", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -1929,9 +1919,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = RemoveProfilePermissionResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as RemoveProfilePermissionResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as RemoveProfilePermissionResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -2138,7 +2127,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new RevokeSignatureRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("RevokeSignature", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("RevokeSignature", request, internalRequest, service_model);
 
         }
 
@@ -2314,7 +2303,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new RevokeSigningProfileRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("RevokeSigningProfile", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("RevokeSigningProfile", request, internalRequest, service_model);
 
         }
 
@@ -2490,7 +2479,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new StartSigningJobRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("StartSigningJob", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("StartSigningJob", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -2504,9 +2493,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = StartSigningJobResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as StartSigningJobResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as StartSigningJobResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -2713,7 +2701,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new TagResourceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("TagResource", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("TagResource", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -2727,9 +2715,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = TagResourceResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as TagResourceResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as TagResourceResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -2872,7 +2859,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new UntagResourceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("UntagResource", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("UntagResource", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -2886,9 +2873,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = UntagResourceResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as UntagResourceResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as UntagResourceResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]

@@ -34,7 +34,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// M3u8Settings Marshaller
-    /// </summary>       
+    /// </summary>
     public class M3u8SettingsMarshaller : IRequestMarshaller<M3u8Settings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -168,7 +168,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static M3u8SettingsMarshaller Instance = new M3u8SettingsMarshaller();
 
     }

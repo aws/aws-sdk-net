@@ -53,7 +53,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new CompleteAttachmentUploadRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("CompleteAttachmentUpload", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("CompleteAttachmentUpload", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -67,9 +67,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = CompleteAttachmentUploadResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as CompleteAttachmentUploadResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as CompleteAttachmentUploadResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -276,7 +275,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new CreateParticipantConnectionRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("CreateParticipantConnection", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("CreateParticipantConnection", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -290,9 +289,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = CreateParticipantConnectionResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as CreateParticipantConnectionResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as CreateParticipantConnectionResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -435,7 +433,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DisconnectParticipantRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("DisconnectParticipant", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DisconnectParticipant", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -449,9 +447,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = DisconnectParticipantResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as DisconnectParticipantResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as DisconnectParticipantResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -594,7 +591,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetAttachmentRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("GetAttachment", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetAttachment", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -608,9 +605,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = GetAttachmentResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as GetAttachmentResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as GetAttachmentResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -753,7 +749,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetTranscriptRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("GetTranscript", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetTranscript", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -767,9 +763,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = GetTranscriptResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as GetTranscriptResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as GetTranscriptResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -912,7 +907,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new SendEventRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("SendEvent", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("SendEvent", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -926,9 +921,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = SendEventResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as SendEventResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as SendEventResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -1071,7 +1065,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new SendMessageRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("SendMessage", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("SendMessage", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -1085,9 +1079,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = SendMessageResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as SendMessageResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as SendMessageResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -1230,7 +1223,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new StartAttachmentUploadRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("StartAttachmentUpload", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("StartAttachmentUpload", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -1244,9 +1237,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = StartAttachmentUploadResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as StartAttachmentUploadResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as StartAttachmentUploadResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]

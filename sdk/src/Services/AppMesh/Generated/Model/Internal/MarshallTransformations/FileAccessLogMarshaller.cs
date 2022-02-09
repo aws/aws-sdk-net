@@ -34,7 +34,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// FileAccessLog Marshaller
-    /// </summary>       
+    /// </summary>
     public class FileAccessLogMarshaller : IRequestMarshaller<FileAccessLog, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static FileAccessLogMarshaller Instance = new FileAccessLogMarshaller();
 
     }

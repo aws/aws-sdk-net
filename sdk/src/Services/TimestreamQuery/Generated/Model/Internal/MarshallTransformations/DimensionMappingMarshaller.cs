@@ -34,7 +34,7 @@ namespace Amazon.TimestreamQuery.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DimensionMapping Marshaller
-    /// </summary>       
+    /// </summary>
     public class DimensionMappingMarshaller : IRequestMarshaller<DimensionMapping, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.TimestreamQuery.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DimensionMappingMarshaller Instance = new DimensionMappingMarshaller();
 
     }

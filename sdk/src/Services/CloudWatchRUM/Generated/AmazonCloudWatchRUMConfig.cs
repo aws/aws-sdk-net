@@ -32,7 +32,7 @@ namespace Amazon.CloudWatchRUM
     public partial class AmazonCloudWatchRUMConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.9");
+            InternalSDKUtils.BuildUserAgentString("3.7.0.18");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.CloudWatchRUM
         /// Default constructor
         /// </summary>
         public AmazonCloudWatchRUMConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonCloudWatchRUMDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "rum";
         }

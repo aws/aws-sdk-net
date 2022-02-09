@@ -32,7 +32,7 @@ namespace Amazon.ApplicationInsights
     public partial class AmazonApplicationInsightsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.2.10");
+            InternalSDKUtils.BuildUserAgentString("3.7.2.19");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.ApplicationInsights
         /// Default constructor
         /// </summary>
         public AmazonApplicationInsightsConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonApplicationInsightsDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "applicationinsights";
         }

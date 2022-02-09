@@ -32,7 +32,7 @@ namespace Amazon.GuardDuty
     public partial class AmazonGuardDutyConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.112");
+            InternalSDKUtils.BuildUserAgentString("3.7.2.3");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.GuardDuty
         /// Default constructor
         /// </summary>
         public AmazonGuardDutyConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonGuardDutyDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "guardduty";
         }

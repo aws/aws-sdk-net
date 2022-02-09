@@ -69,6 +69,12 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                     response.ExportSummaries = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("localeId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.LocaleId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("nextToken", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -48,7 +48,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Instantiates Tag with the parameterized properties
         /// </summary>
-        /// <param name="key">A user-defined key, which is the minimum required information for a valid tag. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-tags.html">Tag </a>. </param>
+        /// <param name="key">A user-defined key, which is the minimum required information for a valid tag. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-tags.html">Tag</a>. </param>
         /// <param name="value">A user-defined value, which is optional in a tag. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-tags.html">Tag Clusters</a>. </param>
         public Tag(string key, string value)
         {
@@ -60,8 +60,8 @@ namespace Amazon.ElasticMapReduce.Model
         /// Gets and sets the property Key. 
         /// <para>
         /// A user-defined key, which is the minimum required information for a valid tag. For
-        /// more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-tags.html">Tag
-        /// </a>. 
+        /// more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-tags.html">Tag</a>.
+        /// 
         /// </para>
         /// </summary>
         public string Key

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// The status response from the request to update the device, as an administrator.
+    /// The status response to the request to update the device, as an administrator.
     /// </summary>
     public partial class AdminUpdateDeviceStatusResponse : AmazonWebServiceResponse
     {

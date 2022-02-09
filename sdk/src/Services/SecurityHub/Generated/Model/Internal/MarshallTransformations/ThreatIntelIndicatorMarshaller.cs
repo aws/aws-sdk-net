@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ThreatIntelIndicator Marshaller
-    /// </summary>       
+    /// </summary>
     public class ThreatIntelIndicatorMarshaller : IRequestMarshaller<ThreatIntelIndicator, JsonMarshallerContext> 
     {
         /// <summary>
@@ -85,7 +85,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ThreatIntelIndicatorMarshaller Instance = new ThreatIntelIndicatorMarshaller();
 
     }

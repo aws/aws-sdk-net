@@ -34,7 +34,7 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ReferenceDataSourceUpdate Marshaller
-    /// </summary>       
+    /// </summary>
     public class ReferenceDataSourceUpdateMarshaller : IRequestMarshaller<ReferenceDataSourceUpdate, JsonMarshallerContext> 
     {
         /// <summary>
@@ -83,7 +83,7 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ReferenceDataSourceUpdateMarshaller Instance = new ReferenceDataSourceUpdateMarshaller();
 
     }

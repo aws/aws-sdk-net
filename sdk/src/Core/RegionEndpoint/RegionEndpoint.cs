@@ -61,7 +61,7 @@ namespace Amazon
             {
                 List<RegionEndpoint> list = new List<RegionEndpoint>();
                 foreach (IRegionEndpoint endpoint in RegionEndpointProvider.AllRegionEndpoints)
-                {                        
+                {
                     list.Add(GetEndpoint(endpoint.RegionName, endpoint.DisplayName));
                 }
                 return list;

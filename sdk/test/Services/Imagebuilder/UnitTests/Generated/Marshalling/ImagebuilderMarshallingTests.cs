@@ -53,7 +53,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new CancelImageCreationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("CancelImageCreation", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("CancelImageCreation", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -67,9 +67,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = CancelImageCreationResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as CancelImageCreationResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as CancelImageCreationResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -340,7 +339,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new CreateComponentRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("CreateComponent", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("CreateComponent", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -354,9 +353,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = CreateComponentResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as CreateComponentResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as CreateComponentResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -723,7 +721,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new CreateContainerRecipeRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("CreateContainerRecipe", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("CreateContainerRecipe", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -737,9 +735,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = CreateContainerRecipeResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as CreateContainerRecipeResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as CreateContainerRecipeResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -1106,7 +1103,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new CreateDistributionConfigurationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("CreateDistributionConfiguration", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("CreateDistributionConfiguration", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -1120,9 +1117,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = CreateDistributionConfigurationResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as CreateDistributionConfigurationResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as CreateDistributionConfigurationResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -1489,7 +1485,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new CreateImageRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("CreateImage", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("CreateImage", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -1503,9 +1499,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = CreateImageResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as CreateImageResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as CreateImageResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -1808,7 +1803,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new CreateImagePipelineRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("CreateImagePipeline", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("CreateImagePipeline", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -1822,9 +1817,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = CreateImagePipelineResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as CreateImagePipelineResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as CreateImagePipelineResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -2159,7 +2153,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new CreateImageRecipeRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("CreateImageRecipe", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("CreateImageRecipe", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -2173,9 +2167,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = CreateImageRecipeResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as CreateImageRecipeResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as CreateImageRecipeResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -2542,7 +2535,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new CreateInfrastructureConfigurationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("CreateInfrastructureConfiguration", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("CreateInfrastructureConfiguration", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -2556,9 +2549,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = CreateInfrastructureConfigurationResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as CreateInfrastructureConfigurationResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as CreateInfrastructureConfigurationResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -2893,7 +2885,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DeleteComponentRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("DeleteComponent", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DeleteComponent", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -2907,9 +2899,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = DeleteComponentResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as DeleteComponentResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as DeleteComponentResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -3148,7 +3139,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DeleteContainerRecipeRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("DeleteContainerRecipe", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DeleteContainerRecipe", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -3162,9 +3153,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = DeleteContainerRecipeResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as DeleteContainerRecipeResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as DeleteContainerRecipeResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -3403,7 +3393,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DeleteDistributionConfigurationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("DeleteDistributionConfiguration", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DeleteDistributionConfiguration", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -3417,9 +3407,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = DeleteDistributionConfigurationResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as DeleteDistributionConfigurationResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as DeleteDistributionConfigurationResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -3658,7 +3647,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DeleteImageRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("DeleteImage", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DeleteImage", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -3672,9 +3661,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = DeleteImageResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as DeleteImageResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as DeleteImageResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -3913,7 +3901,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DeleteImagePipelineRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("DeleteImagePipeline", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DeleteImagePipeline", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -3927,9 +3915,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = DeleteImagePipelineResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as DeleteImagePipelineResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as DeleteImagePipelineResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -4168,7 +4155,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DeleteImageRecipeRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("DeleteImageRecipe", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DeleteImageRecipe", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -4182,9 +4169,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = DeleteImageRecipeResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as DeleteImageRecipeResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as DeleteImageRecipeResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -4423,7 +4409,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DeleteInfrastructureConfigurationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("DeleteInfrastructureConfiguration", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DeleteInfrastructureConfiguration", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -4437,9 +4423,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = DeleteInfrastructureConfigurationResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as DeleteInfrastructureConfigurationResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as DeleteInfrastructureConfigurationResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -4678,7 +4663,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetComponentRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("GetComponent", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetComponent", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -4692,9 +4677,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = GetComponentResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as GetComponentResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as GetComponentResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -4901,7 +4885,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetComponentPolicyRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("GetComponentPolicy", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetComponentPolicy", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -4915,9 +4899,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = GetComponentPolicyResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as GetComponentPolicyResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as GetComponentPolicyResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -5124,7 +5107,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetContainerRecipeRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("GetContainerRecipe", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetContainerRecipe", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -5138,9 +5121,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = GetContainerRecipeResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as GetContainerRecipeResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as GetContainerRecipeResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -5347,7 +5329,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetContainerRecipePolicyRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("GetContainerRecipePolicy", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetContainerRecipePolicy", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -5361,9 +5343,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = GetContainerRecipePolicyResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as GetContainerRecipePolicyResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as GetContainerRecipePolicyResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -5570,7 +5551,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetDistributionConfigurationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("GetDistributionConfiguration", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetDistributionConfiguration", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -5584,9 +5565,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = GetDistributionConfigurationResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as GetDistributionConfigurationResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as GetDistributionConfigurationResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -5793,7 +5773,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetImageRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("GetImage", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetImage", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -5807,9 +5787,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = GetImageResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as GetImageResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as GetImageResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -6016,7 +5995,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetImagePipelineRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("GetImagePipeline", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetImagePipeline", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -6030,9 +6009,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = GetImagePipelineResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as GetImagePipelineResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as GetImagePipelineResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -6239,7 +6217,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetImagePolicyRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("GetImagePolicy", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetImagePolicy", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -6253,9 +6231,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = GetImagePolicyResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as GetImagePolicyResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as GetImagePolicyResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -6462,7 +6439,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetImageRecipeRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("GetImageRecipe", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetImageRecipe", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -6476,9 +6453,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = GetImageRecipeResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as GetImageRecipeResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as GetImageRecipeResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -6685,7 +6661,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetImageRecipePolicyRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("GetImageRecipePolicy", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetImageRecipePolicy", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -6699,9 +6675,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = GetImageRecipePolicyResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as GetImageRecipePolicyResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as GetImageRecipePolicyResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -6908,7 +6883,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetInfrastructureConfigurationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("GetInfrastructureConfiguration", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetInfrastructureConfiguration", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -6922,9 +6897,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = GetInfrastructureConfigurationResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as GetInfrastructureConfigurationResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as GetInfrastructureConfigurationResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -7131,7 +7105,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ImportComponentRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("ImportComponent", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("ImportComponent", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -7145,9 +7119,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = ImportComponentResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as ImportComponentResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as ImportComponentResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -7482,7 +7455,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ImportVmImageRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("ImportVmImage", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("ImportVmImage", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -7496,9 +7469,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = ImportVmImageResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as ImportVmImageResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as ImportVmImageResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -7609,7 +7581,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListComponentBuildVersionsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("ListComponentBuildVersions", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("ListComponentBuildVersions", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -7623,9 +7595,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = ListComponentBuildVersionsResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as ListComponentBuildVersionsResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as ListComponentBuildVersionsResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -7864,7 +7835,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListComponentsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("ListComponents", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("ListComponents", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -7878,9 +7849,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = ListComponentsResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as ListComponentsResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as ListComponentsResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -8119,7 +8089,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListContainerRecipesRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("ListContainerRecipes", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("ListContainerRecipes", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -8133,9 +8103,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = ListContainerRecipesResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as ListContainerRecipesResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as ListContainerRecipesResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -8374,7 +8343,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListDistributionConfigurationsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("ListDistributionConfigurations", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("ListDistributionConfigurations", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -8388,9 +8357,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = ListDistributionConfigurationsResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as ListDistributionConfigurationsResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as ListDistributionConfigurationsResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -8629,7 +8597,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListImageBuildVersionsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("ListImageBuildVersions", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("ListImageBuildVersions", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -8643,9 +8611,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = ListImageBuildVersionsResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as ListImageBuildVersionsResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as ListImageBuildVersionsResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -8884,7 +8851,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListImagePackagesRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("ListImagePackages", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("ListImagePackages", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -8898,9 +8865,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = ListImagePackagesResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as ListImagePackagesResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as ListImagePackagesResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -9171,7 +9137,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListImagePipelineImagesRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("ListImagePipelineImages", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("ListImagePipelineImages", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -9185,9 +9151,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = ListImagePipelineImagesResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as ListImagePipelineImagesResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as ListImagePipelineImagesResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -9458,7 +9423,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListImagePipelinesRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("ListImagePipelines", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("ListImagePipelines", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -9472,9 +9437,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = ListImagePipelinesResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as ListImagePipelinesResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as ListImagePipelinesResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -9713,7 +9677,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListImageRecipesRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("ListImageRecipes", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("ListImageRecipes", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -9727,9 +9691,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = ListImageRecipesResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as ListImageRecipesResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as ListImageRecipesResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -9968,7 +9931,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListImagesRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("ListImages", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("ListImages", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -9982,9 +9945,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = ListImagesResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as ListImagesResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as ListImagesResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -10223,7 +10185,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListInfrastructureConfigurationsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("ListInfrastructureConfigurations", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("ListInfrastructureConfigurations", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -10237,9 +10199,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = ListInfrastructureConfigurationsResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as ListInfrastructureConfigurationsResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as ListInfrastructureConfigurationsResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -10478,7 +10439,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListTagsForResourceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("ListTagsForResource", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("ListTagsForResource", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -10492,9 +10453,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as ListTagsForResourceResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as ListTagsForResourceResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -10605,7 +10565,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new PutComponentPolicyRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("PutComponentPolicy", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("PutComponentPolicy", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -10619,9 +10579,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = PutComponentPolicyResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as PutComponentPolicyResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as PutComponentPolicyResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -10892,7 +10851,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new PutContainerRecipePolicyRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("PutContainerRecipePolicy", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("PutContainerRecipePolicy", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -10906,9 +10865,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = PutContainerRecipePolicyResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as PutContainerRecipePolicyResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as PutContainerRecipePolicyResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -11179,7 +11137,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new PutImagePolicyRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("PutImagePolicy", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("PutImagePolicy", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -11193,9 +11151,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = PutImagePolicyResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as PutImagePolicyResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as PutImagePolicyResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -11466,7 +11423,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new PutImageRecipePolicyRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("PutImageRecipePolicy", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("PutImageRecipePolicy", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -11480,9 +11437,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = PutImageRecipePolicyResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as PutImageRecipePolicyResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as PutImageRecipePolicyResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -11753,7 +11709,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new StartImagePipelineExecutionRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("StartImagePipelineExecution", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("StartImagePipelineExecution", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -11767,9 +11723,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = StartImagePipelineExecutionResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as StartImagePipelineExecutionResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as StartImagePipelineExecutionResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -12072,7 +12027,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new TagResourceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("TagResource", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("TagResource", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -12086,9 +12041,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = TagResourceResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as TagResourceResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as TagResourceResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -12199,7 +12153,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new UntagResourceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("UntagResource", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("UntagResource", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -12213,9 +12167,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = UntagResourceResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as UntagResourceResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as UntagResourceResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -12326,7 +12279,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new UpdateDistributionConfigurationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("UpdateDistributionConfiguration", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("UpdateDistributionConfiguration", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -12340,9 +12293,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = UpdateDistributionConfigurationResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as UpdateDistributionConfigurationResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as UpdateDistributionConfigurationResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -12645,7 +12597,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new UpdateImagePipelineRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("UpdateImagePipeline", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("UpdateImagePipeline", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -12659,9 +12611,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = UpdateImagePipelineResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as UpdateImagePipelineResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as UpdateImagePipelineResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -12932,7 +12883,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new UpdateInfrastructureConfigurationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("UpdateInfrastructureConfiguration", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("UpdateInfrastructureConfiguration", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -12946,9 +12897,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = UpdateInfrastructureConfigurationResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as UpdateInfrastructureConfigurationResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as UpdateInfrastructureConfigurationResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]

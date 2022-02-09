@@ -34,7 +34,7 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DocumentLocation Marshaller
-    /// </summary>       
+    /// </summary>
     public class DocumentLocationMarshaller : IRequestMarshaller<DocumentLocation, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DocumentLocationMarshaller Instance = new DocumentLocationMarshaller();
 
     }

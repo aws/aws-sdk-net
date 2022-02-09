@@ -34,7 +34,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RemixSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class RemixSettingsMarshaller : IRequestMarshaller<RemixSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RemixSettingsMarshaller Instance = new RemixSettingsMarshaller();
 
     }

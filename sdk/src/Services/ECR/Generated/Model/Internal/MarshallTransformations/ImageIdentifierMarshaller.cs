@@ -34,7 +34,7 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ImageIdentifier Marshaller
-    /// </summary>       
+    /// </summary>
     public class ImageIdentifierMarshaller : IRequestMarshaller<ImageIdentifier, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ImageIdentifierMarshaller Instance = new ImageIdentifierMarshaller();
 
     }

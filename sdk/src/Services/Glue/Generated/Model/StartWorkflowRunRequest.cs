@@ -35,6 +35,7 @@ namespace Amazon.Glue.Model
     public partial class StartWorkflowRunRequest : AmazonGlueRequest
     {
         private string _name;
+        private Dictionary<string, string> _runProperties = new Dictionary<string, string>();
 
         /// <summary>
         /// Gets and sets the property Name. 
@@ -53,6 +54,24 @@ namespace Amazon.Glue.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RunProperties. 
+        /// <para>
+        /// The workflow run properties for the new workflow run.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> RunProperties
+        {
+            get { return this._runProperties; }
+            set { this._runProperties = value; }
+        }
+
+        // Check to see if RunProperties property is set
+        internal bool IsSetRunProperties()
+        {
+            return this._runProperties != null && this._runProperties.Count > 0; 
         }
 
     }

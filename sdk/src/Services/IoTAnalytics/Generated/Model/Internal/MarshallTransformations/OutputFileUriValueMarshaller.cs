@@ -34,7 +34,7 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// OutputFileUriValue Marshaller
-    /// </summary>       
+    /// </summary>
     public class OutputFileUriValueMarshaller : IRequestMarshaller<OutputFileUriValue, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static OutputFileUriValueMarshaller Instance = new OutputFileUriValueMarshaller();
 
     }

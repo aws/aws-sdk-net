@@ -160,7 +160,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// Applies to Amazon EMR releases 4.0 and later. A case-insensitive list of applications
         /// for Amazon EMR to install and configure when launching the cluster. For a list of
         /// applications available for each Amazon EMR release version, see the <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">Amazon
-        /// EMR Release Guide</a>.
+        /// EMRRelease Guide</a>.
         /// </para>
         /// </summary>
         public List<Application> Applications
@@ -719,7 +719,12 @@ namespace Amazon.ElasticMapReduce.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VisibleToAllUsers. 
+        /// Gets and sets the property VisibleToAllUsers. <important> 
+        /// <para>
+        /// The VisibleToAllUsers parameter is no longer supported. By default, the value is set
+        /// to <code>true</code>. Setting it to <code>false</code> now has no effect.
+        /// </para>
+        ///  </important> 
         /// <para>
         /// Set this value to <code>true</code> so that IAM principals in the Amazon Web Services
         /// account associated with the cluster can perform EMR actions on the cluster that their

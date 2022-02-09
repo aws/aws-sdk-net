@@ -42,7 +42,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AccessToken. 
         /// <para>
-        /// Represents the access token of the request to verify user attributes.
+        /// The access token of the request to verify user attributes.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

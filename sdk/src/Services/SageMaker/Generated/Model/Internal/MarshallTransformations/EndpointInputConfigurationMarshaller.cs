@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// EndpointInputConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class EndpointInputConfigurationMarshaller : IRequestMarshaller<EndpointInputConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static EndpointInputConfigurationMarshaller Instance = new EndpointInputConfigurationMarshaller();
 
     }

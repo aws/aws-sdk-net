@@ -34,7 +34,7 @@ namespace Amazon.Lex.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ActiveContext Marshaller
-    /// </summary>       
+    /// </summary>
     public class ActiveContextMarshaller : IRequestMarshaller<ActiveContext, JsonMarshallerContext> 
     {
         /// <summary>
@@ -80,7 +80,7 @@ namespace Amazon.Lex.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ActiveContextMarshaller Instance = new ActiveContextMarshaller();
 
     }

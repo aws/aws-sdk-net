@@ -32,7 +32,7 @@ namespace Amazon.MigrationHubRefactorSpaces
     public partial class AmazonMigrationHubRefactorSpacesConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.9");
+            InternalSDKUtils.BuildUserAgentString("3.7.0.18");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.MigrationHubRefactorSpaces
         /// Default constructor
         /// </summary>
         public AmazonMigrationHubRefactorSpacesConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonMigrationHubRefactorSpacesDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "refactor-spaces";
         }

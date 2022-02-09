@@ -34,7 +34,7 @@ namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RotationRulesType Marshaller
-    /// </summary>       
+    /// </summary>
     public class RotationRulesTypeMarshaller : IRequestMarshaller<RotationRulesType, JsonMarshallerContext> 
     {
         /// <summary>
@@ -51,11 +51,23 @@ namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.AutomaticallyAfterDays);
             }
 
+            if(requestObject.IsSetDuration())
+            {
+                context.Writer.WritePropertyName("Duration");
+                context.Writer.Write(requestObject.Duration);
+            }
+
+            if(requestObject.IsSetScheduleExpression())
+            {
+                context.Writer.WritePropertyName("ScheduleExpression");
+                context.Writer.Write(requestObject.ScheduleExpression);
+            }
+
         }
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RotationRulesTypeMarshaller Instance = new RotationRulesTypeMarshaller();
 
     }

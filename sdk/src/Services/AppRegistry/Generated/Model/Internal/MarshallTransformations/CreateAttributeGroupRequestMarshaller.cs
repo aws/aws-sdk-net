@@ -56,7 +56,7 @@ namespace Amazon.AppRegistry.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.AppRegistry");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-06-24";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-06-24";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/attribute-groups";
@@ -80,7 +80,7 @@ namespace Amazon.AppRegistry.Model.Internal.MarshallTransformations
                 else if(!(publicRequest.IsSetClientToken()))
                 {
                     context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());                                                
+                    context.Writer.Write(Guid.NewGuid().ToString());
                 }
                 if(publicRequest.IsSetDescription())
                 {
@@ -108,7 +108,6 @@ namespace Amazon.AppRegistry.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

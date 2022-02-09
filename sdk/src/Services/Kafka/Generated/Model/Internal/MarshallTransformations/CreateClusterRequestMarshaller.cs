@@ -56,7 +56,7 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Kafka");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-11-14";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-11-14";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/v1/clusters";
@@ -169,7 +169,6 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

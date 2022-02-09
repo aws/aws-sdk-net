@@ -32,7 +32,7 @@ namespace Amazon.AccessAnalyzer
     public partial class AmazonAccessAnalyzerConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.2.8");
+            InternalSDKUtils.BuildUserAgentString("3.7.2.17");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.AccessAnalyzer
         /// Default constructor
         /// </summary>
         public AmazonAccessAnalyzerConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonAccessAnalyzerDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "access-analyzer";
         }

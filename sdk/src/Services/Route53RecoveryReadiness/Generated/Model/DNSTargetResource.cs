@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53RecoveryReadiness.Model
 {
     /// <summary>
-    /// A component for DNS/Routing Control Readiness Checks
+    /// A component for DNS/routing control readiness checks and architecture checks.
     /// </summary>
     public partial class DNSTargetResource
     {
@@ -40,8 +40,10 @@ namespace Amazon.Route53RecoveryReadiness.Model
         private TargetResource _targetResource;
 
         /// <summary>
-        /// Gets and sets the property DomainName. The DNS Name that acts as ingress point to
-        /// a portion of application
+        /// Gets and sets the property DomainName. 
+        /// <para>
+        /// The domain name that acts as an ingress point to a portion of the customer application.
+        /// </para>
         /// </summary>
         public string DomainName
         {
@@ -56,8 +58,11 @@ namespace Amazon.Route53RecoveryReadiness.Model
         }
 
         /// <summary>
-        /// Gets and sets the property HostedZoneArn. The Hosted Zone ARN that contains the DNS
-        /// record with the provided name of target resource.
+        /// Gets and sets the property HostedZoneArn. 
+        /// <para>
+        /// The hosted zone Amazon Resource Name (ARN) that contains the DNS record with the provided
+        /// name of the target resource.
+        /// </para>
         /// </summary>
         public string HostedZoneArn
         {
@@ -72,8 +77,11 @@ namespace Amazon.Route53RecoveryReadiness.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RecordSetId. The R53 Set Id to uniquely identify a record
-        /// given a Name and a Type
+        /// Gets and sets the property RecordSetId. 
+        /// <para>
+        /// The Route 53 record set ID that uniquely identifies a DNS record, given a name and
+        /// a type.
+        /// </para>
         /// </summary>
         public string RecordSetId
         {
@@ -88,7 +96,10 @@ namespace Amazon.Route53RecoveryReadiness.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RecordType. The Type of DNS Record of target resource
+        /// Gets and sets the property RecordType. 
+        /// <para>
+        /// The type of DNS record of the target resource.
+        /// </para>
         /// </summary>
         public string RecordType
         {
@@ -103,7 +114,10 @@ namespace Amazon.Route53RecoveryReadiness.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TargetResource.
+        /// Gets and sets the property TargetResource. 
+        /// <para>
+        /// The target resource of the DNS target resource.
+        /// </para>
         /// </summary>
         public TargetResource TargetResource
         {

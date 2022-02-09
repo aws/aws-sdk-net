@@ -34,7 +34,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TemplateSourceAnalysis Marshaller
-    /// </summary>       
+    /// </summary>
     public class TemplateSourceAnalysisMarshaller : IRequestMarshaller<TemplateSourceAnalysis, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TemplateSourceAnalysisMarshaller Instance = new TemplateSourceAnalysisMarshaller();
 
     }

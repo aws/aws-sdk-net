@@ -56,7 +56,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Appflow");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-08-23";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-08-23";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/describe-connectors";
@@ -76,13 +76,18 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetMaxResults())
+                {
+                    context.Writer.WritePropertyName("maxResults");
+                    context.Writer.Write(publicRequest.MaxResults);
+                }
+
                 if(publicRequest.IsSetNextToken())
                 {
                     context.Writer.WritePropertyName("nextToken");
                     context.Writer.Write(publicRequest.NextToken);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

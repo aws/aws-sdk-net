@@ -34,7 +34,7 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// 
     ///  
     /// <para>
-    /// When you create a new user pool client, token revocation is automatically enabled.
+    /// When you create a new user pool client, token revocation is automatically activated.
     /// For more information about revoking tokens, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RevokeToken.html">RevokeToken</a>.
     /// </para>
     /// </summary>
@@ -65,8 +65,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Gets and sets the property AccessTokenValidity. 
         /// <para>
         /// The time limit, between 5 minutes and 1 day, after which the access token is no longer
-        /// valid and cannot be used. This value will be overridden if you have entered a value
-        /// in TokenValidityUnits.
+        /// valid and can't be used. If you supply a TokenValidityUnits value, you will override
+        /// the default time unit.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=86400)]
@@ -122,7 +122,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Gets and sets the property AllowedOAuthFlowsUserPoolClient. 
         /// <para>
         /// Set to true if the client is allowed to follow the OAuth protocol when interacting
-        /// with Cognito user pools.
+        /// with Amazon Cognito user pools.
         /// </para>
         /// </summary>
         public bool AllowedOAuthFlowsUserPoolClient
@@ -166,10 +166,10 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// In regions where Pinpoint is not available, Cognito User Pools only supports sending
-        /// events to Amazon Pinpoint projects in us-east-1. In regions where Pinpoint is available,
-        /// Cognito User Pools will support sending events to Amazon Pinpoint projects within
-        /// that same region. 
+        /// In Amazon Web Services Regions where isn't available, User Pools only supports sending
+        /// events to Amazon Pinpoint projects in Amazon Web Services Region us-east-1. In Regions
+        /// where is available, User Pools will support sending events to Amazon Pinpoint projects
+        /// within that same Region. 
         /// </para>
         ///  </note>
         /// </summary>
@@ -305,12 +305,12 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property EnableTokenRevocation. 
         /// <para>
-        /// Enables or disables token revocation. For more information about revoking tokens,
+        /// Activates or deactivates token revocation. For more information about revoking tokens,
         /// see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RevokeToken.html">RevokeToken</a>.
         /// </para>
         ///  
         /// <para>
-        /// If you don't include this parameter, token revocation is automatically enabled for
+        /// If you don't include this parameter, token revocation is automatically activated for
         /// the new user pool client.
         /// </para>
         /// </summary>
@@ -330,9 +330,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Gets and sets the property ExplicitAuthFlows. 
         /// <para>
         /// The authentication flows that are supported by the user pool clients. Flow names without
-        /// the <code>ALLOW_</code> prefix are deprecated in favor of new names with the <code>ALLOW_</code>
-        /// prefix. Note that values with <code>ALLOW_</code> prefix cannot be used along with
-        /// values without <code>ALLOW_</code> prefix.
+        /// the <code>ALLOW_</code> prefix are no longer supported, in favor of new names with
+        /// the <code>ALLOW_</code> prefix. Note that values with <code>ALLOW_</code> prefix must
+        /// be used only along with the <code>ALLOW_</code> prefix.
         /// </para>
         ///  
         /// <para>
@@ -342,8 +342,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <para>
         ///  <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password authentication
         /// flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces the <code>ADMIN_NO_SRP_AUTH</code>
-        /// setting. With this authentication flow, Cognito receives the password in the request
-        /// instead of using the SRP (Secure Remote Password protocol) protocol to verify passwords.
+        /// setting. With this authentication flow, Amazon Cognito receives the password in the
+        /// request instead of using the Secure Remote Password (SRP) protocol to verify passwords.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -352,12 +352,12 @@ namespace Amazon.CognitoIdentityProvider.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based authentication.
-        /// In this flow, Cognito receives the password in the request instead of using the SRP
-        /// protocol to verify passwords.
+        /// In this flow, Amazon Cognito receives the password in the request instead of using
+        /// the SRP protocol to verify passwords.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP based authentication.
+        ///  <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP-based authentication.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -399,9 +399,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property IdTokenValidity. 
         /// <para>
-        /// The time limit, between 5 minutes and 1 day, after which the ID token is no longer
-        /// valid and cannot be used. This value will be overridden if you have entered a value
-        /// in TokenValidityUnits.
+        /// The time limit, between 5 minutes and 1 day, after which the access token is no longer
+        /// valid and can't be used. If you supply a TokenValidityUnits value, you will override
+        /// the default time unit.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=86400)]
@@ -439,14 +439,13 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property PreventUserExistenceErrors. 
         /// <para>
-        /// Use this setting to choose which errors and responses are returned by Cognito APIs
-        /// during authentication, account confirmation, and password recovery when the user does
-        /// not exist in the user pool. When set to <code>ENABLED</code> and the user does not
-        /// exist, authentication returns an error indicating either the username or password
-        /// was incorrect, and account confirmation and password recovery return a response indicating
-        /// a code was sent to a simulated destination. When set to <code>LEGACY</code>, those
-        /// APIs will return a <code>UserNotFoundException</code> exception if the user does not
-        /// exist in the user pool.
+        /// Errors and responses that you want Amazon Cognito APIs to return during authentication,
+        /// account confirmation, and password recovery when the user doesn't exist in the user
+        /// pool. When set to <code>ENABLED</code> and the user doesn't exist, authentication
+        /// returns an error indicating either the username or password was incorrect. Account
+        /// confirmation and password recovery return a response indicating a code was sent to
+        /// a simulated destination. When set to <code>LEGACY</code>, those APIs return a <code>UserNotFoundException</code>
+        /// exception if the user doesn't exist in the user pool.
         /// </para>
         ///  
         /// <para>
@@ -458,16 +457,10 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>LEGACY</code> - This represents the old behavior of Cognito where user existence
-        /// related errors are not prevented.
+        ///  <code>LEGACY</code> - This represents the early behavior of Amazon Cognito where
+        /// user existence related errors aren't prevented.
         /// </para>
-        ///  </li> </ul> <note> 
-        /// <para>
-        /// After February 15th 2020, the value of <code>PreventUserExistenceErrors</code> will
-        /// default to <code>ENABLED</code> for newly created user pool clients if no value is
-        /// provided.
-        /// </para>
-        ///  </note>
+        ///  </li> </ul>
         /// </summary>
         public PreventUserExistenceErrorTypes PreventUserExistenceErrors
         {
@@ -502,7 +495,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property RefreshTokenValidity. 
         /// <para>
-        /// The time limit, in days, after which the refresh token is no longer valid and cannot
+        /// The time limit, in days, after which the refresh token is no longer valid and can't
         /// be used.
         /// </para>
         /// </summary>
@@ -542,8 +535,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property TokenValidityUnits. 
         /// <para>
-        /// The units in which the validity times are represented in. Default for RefreshToken
-        /// is days, and default for ID and access tokens are hours.
+        /// The units in which the validity times are represented. Default for RefreshToken is
+        /// days, and default for ID and access tokens are hours.
         /// </para>
         /// </summary>
         public TokenValidityUnitsType TokenValidityUnits
@@ -588,7 +581,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// must include all attributes that are mapped to identity provider attributes. Amazon
         /// Cognito updates mapped attributes when users sign in to your application through an
         /// identity provider. If your app client lacks write access to a mapped attribute, Amazon
-        /// Cognito throws an error when it attempts to update the attribute. For more information,
+        /// Cognito throws an error when it tries to update the attribute. For more information,
         /// see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html">Specifying
         /// Identity Provider Attribute Mappings for Your User Pool</a>.
         /// </para>

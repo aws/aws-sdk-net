@@ -34,7 +34,7 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// FPorts Marshaller
-    /// </summary>       
+    /// </summary>
     public class FPortsMarshaller : IRequestMarshaller<FPorts, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static FPortsMarshaller Instance = new FPortsMarshaller();
 
     }

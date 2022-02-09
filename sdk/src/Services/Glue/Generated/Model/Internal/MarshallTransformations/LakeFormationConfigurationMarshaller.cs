@@ -34,7 +34,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// LakeFormationConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class LakeFormationConfigurationMarshaller : IRequestMarshaller<LakeFormationConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static LakeFormationConfigurationMarshaller Instance = new LakeFormationConfigurationMarshaller();
 
     }

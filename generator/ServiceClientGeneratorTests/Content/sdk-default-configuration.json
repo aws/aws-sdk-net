@@ -1,0 +1,76 @@
+﻿{
+  "version": 1,
+  "base": {
+    "retryMode": "standard",
+    "stsRegionalEndpoints": "regional",
+    "s3UsEast1RegionalEndpoints": "regional",
+    "connectTimeoutInMillis": 1100,
+    "tlsNegotiationTimeoutInMillis": 1100,
+    "timeToFirstByteTimeoutInMillis": 1100,
+    "httpRequestTimeoutInMillis": 1100
+  },
+  "modes": {
+    "standard": {
+      "connectTimeoutInMillis": {
+        "multiply": 2.8
+      },
+      "tlsNegotiationTimeoutInMillis": {
+        "multiply": 2.8
+      }
+    },
+    "in-region": {
+      "connectTimeoutInMillis": {
+        "multiply": 1
+      },
+      "tlsNegotiationTimeoutInMillis": {
+        "multiply": 1
+      }
+    },
+    "cross-region": {
+      "connectTimeoutInMillis": {
+        "multiply": 2.8
+      },
+      "tlsNegotiationTimeoutInMillis": {
+        "multiply": 2.8
+      }
+    },
+    "mobile": {
+      "connectTimeoutInMillis": {
+        "override": 10000
+      },
+      "tlsNegotiationTimeoutInMillis": {
+        "override": 10000
+      }
+    },
+    "add-test": {
+      "connectTimeoutInMillis": {
+        "add": 42
+      }
+    },
+    "override-enum-test": {
+      "retryMode": {
+        "override": "adaptive"
+      } 
+    } 
+  },
+  "documentation": {
+    "modes": {
+      "standard": "PLACEHOLDER",
+      "in-region": "PLACEHOLDER",
+      "cross-region": "PLACEHOLDER",
+      "mobile": "PLACEHOLDER",
+      "auto": "PLACEHOLDER",
+      "legacy": "PLACEHOLDER",
+      "add-test": "",
+      "override-enum-test": "",
+      "mode-with-no-overrides": ""
+    },
+    "configuration": {
+      "retryMode": "PLACEHOLDER",
+      "stsRegionalEndpoints": "PLACEHOLDER",
+      "s3UsEast1RegionalEndpoints": "PLACEHOLDER",
+      "connectTimeoutInMillis": "PLACEHOLDER",
+      "tlsNegotiationTimeoutInMillis": "PLACEHOLDER"
+    }
+  }
+}

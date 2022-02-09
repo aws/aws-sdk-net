@@ -32,7 +32,7 @@ namespace Amazon.IoTWireless
     public partial class AmazonIoTWirelessConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.9.0");
+            InternalSDKUtils.BuildUserAgentString("3.7.9.9");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.IoTWireless
         /// Default constructor
         /// </summary>
         public AmazonIoTWirelessConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonIoTWirelessDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "iotwireless";
         }

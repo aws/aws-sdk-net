@@ -55,7 +55,7 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListDeploymentsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.GreengrassV2");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-11-30";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-11-30";
             request.HttpMethod = "GET";
 
             

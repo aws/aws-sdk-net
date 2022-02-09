@@ -55,7 +55,7 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListTagsForResourceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.IVS");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-07-14";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-07-14";
             request.HttpMethod = "GET";
 
             if (!publicRequest.IsSetResourceArn())

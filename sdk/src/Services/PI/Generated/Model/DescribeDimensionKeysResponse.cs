@@ -44,7 +44,7 @@ namespace Amazon.PI.Model
         /// <para>
         /// The end time for the returned dimension keys, after alignment to a granular boundary
         /// (as specified by <code>PeriodInSeconds</code>). <code>AlignedEndTime</code> will be
-        /// greater than or equal to the value of the user-specified <code>Endtime</code>.
+        /// greater than or equal to the value of the user-specified <code>Endtime</code>. 
         /// </para>
         /// </summary>
         public DateTime AlignedEndTime
@@ -64,7 +64,7 @@ namespace Amazon.PI.Model
         /// <para>
         /// The start time for the returned dimension keys, after alignment to a granular boundary
         /// (as specified by <code>PeriodInSeconds</code>). <code>AlignedStartTime</code> will
-        /// be less than or equal to the value of the user-specified <code>StartTime</code>.
+        /// be less than or equal to the value of the user-specified <code>StartTime</code>. 
         /// </para>
         /// </summary>
         public DateTime AlignedStartTime
@@ -100,9 +100,10 @@ namespace Amazon.PI.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the token, up to the value specified
-        /// by <code>MaxRecords</code>.
+        /// A pagination token that indicates the response didn’t return all available records
+        /// because <code>MaxRecords</code> was specified in the previous request. To get the
+        /// remaining records, specify <code>NextToken</code> in a separate request with this
+        /// value. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=8192)]
@@ -122,7 +123,7 @@ namespace Amazon.PI.Model
         /// Gets and sets the property PartitionKeys. 
         /// <para>
         /// If <code>PartitionBy</code> was present in the request, <code>PartitionKeys</code>
-        /// contains the breakdown of dimension keys by the specified partitions.
+        /// contains the breakdown of dimension keys by the specified partitions. 
         /// </para>
         /// </summary>
         public List<ResponsePartitionKey> PartitionKeys

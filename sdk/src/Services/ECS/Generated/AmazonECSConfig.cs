@@ -32,7 +32,7 @@ namespace Amazon.ECS
     public partial class AmazonECSConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.4.19");
+            InternalSDKUtils.BuildUserAgentString("3.7.4.28");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.ECS
         /// Default constructor
         /// </summary>
         public AmazonECSConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonECSDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "ecs";
         }

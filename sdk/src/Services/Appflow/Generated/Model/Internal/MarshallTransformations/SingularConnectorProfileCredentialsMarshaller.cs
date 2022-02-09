@@ -34,7 +34,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SingularConnectorProfileCredentials Marshaller
-    /// </summary>       
+    /// </summary>
     public class SingularConnectorProfileCredentialsMarshaller : IRequestMarshaller<SingularConnectorProfileCredentials, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SingularConnectorProfileCredentialsMarshaller Instance = new SingularConnectorProfileCredentialsMarshaller();
 
     }

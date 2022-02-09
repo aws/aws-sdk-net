@@ -32,7 +32,7 @@ namespace Amazon.CloudSearch
     public partial class AmazonCloudSearchConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.2.32");
+            InternalSDKUtils.BuildUserAgentString("3.7.2.41");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.CloudSearch
         /// Default constructor
         /// </summary>
         public AmazonCloudSearchConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonCloudSearchDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "cloudsearch";
         }

@@ -70,6 +70,12 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
                     unmarshalledObject.Bucket = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("BucketOwner", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.BucketOwner = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Key", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

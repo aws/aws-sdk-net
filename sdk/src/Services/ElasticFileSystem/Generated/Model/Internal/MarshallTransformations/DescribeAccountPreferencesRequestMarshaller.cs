@@ -55,7 +55,7 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
         public IRequest Marshall(DescribeAccountPreferencesRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ElasticFileSystem");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-02-01";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-02-01";
             request.HttpMethod = "GET";
 
             request.ResourcePath = "/2015-02-01/account-preferences";
@@ -76,7 +76,6 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.NextToken);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

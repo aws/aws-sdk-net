@@ -34,7 +34,7 @@ namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Vpc Marshaller
-    /// </summary>       
+    /// </summary>
     public class VpcMarshaller : IRequestMarshaller<Vpc, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static VpcMarshaller Instance = new VpcMarshaller();
 
     }

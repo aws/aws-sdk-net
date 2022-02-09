@@ -34,7 +34,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// KeyValue Marshaller
-    /// </summary>       
+    /// </summary>
     public class KeyValueMarshaller : IRequestMarshaller<KeyValue, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static KeyValueMarshaller Instance = new KeyValueMarshaller();
 
     }

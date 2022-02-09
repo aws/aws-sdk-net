@@ -56,7 +56,7 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.IVS");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-07-14";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-07-14";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/GetPlaybackKeyPair";
@@ -71,7 +71,6 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Arn);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

@@ -313,7 +313,7 @@ namespace AWSSDK.UnitTests
         [TestCategory("Runtime")]
         public void VerifyClientRateLimitingNoHangMultipleAttemptsNoTokenBucketCapacity()
         {
-            var config = CreateConfig();            
+            var config = CreateConfig();
             RunRetryTest((executionContext, retryPolicy) =>
             {
                 retryPolicy.EmptyTokenBucketCapacity();
@@ -383,7 +383,7 @@ namespace AWSSDK.UnitTests
             for (var timestamp = baseTimestamp; timestamp <= 12; timestamp++)
             {
                 tokenBucket.CurrentTimestamp = timestamp;
-                tokenBucket.DoTestCalculation(timestamp == 7 || timestamp == 8);                
+                tokenBucket.DoTestCalculation(timestamp == 7 || timestamp == 8);    
                 Assert.AreEqual(expectedRates[timestamp - baseTimestamp], tokenBucket.LastCalculatedRate, .00000000001);
             }
         }
@@ -411,7 +411,7 @@ namespace AWSSDK.UnitTests
 
             var tokenBucket = new MockedTokenBucket(minRate: 0.5, minCapacity: 1.0, beta: 0.7, scaleConstant: 0.4, smooth: 0.8);
             for (var request = 1; request <= 17; request++)
-            {                
+            {            
                 tokenBucket.CurrentTimestamp = request * 0.2;
                 tokenBucket.UpdateClientSendingRate(request == 10 || request == 16);
                 Assert.AreEqual(measuredTxRate[request - 1], tokenBucket.LastMeasuredTxRate, .000001);
@@ -436,7 +436,7 @@ namespace AWSSDK.UnitTests
         public static void SetCapacityManagerInstance(CapacityManager capacityManager)
         {
             _originalCapacityManager = CapacityManagerInstance;
-            CapacityManagerInstance = capacityManager;            
+            CapacityManagerInstance = capacityManager;
         }
                 
         public static void RestoreManagers()
@@ -475,14 +475,14 @@ namespace AWSSDK.UnitTests
         {
             var mockedTokenBucket = new MockedTokenBucket();
             mockedTokenBucket.EmptyCapacity();
-            TokenBucket = mockedTokenBucket;            
+            TokenBucket = mockedTokenBucket;
         }
 
         public MockedTokenBucket TokenBucketInstance => TokenBucket as MockedTokenBucket;
     }
 
     public class MockedTokenBucket : TokenBucket
-    {        
+    {    
         public MockedTokenBucket()
            : base()
         {
@@ -520,7 +520,7 @@ namespace AWSSDK.UnitTests
         }                
 
         public void DoTestCalculation(bool throttle)
-        {            
+        {        
             if (throttle)
             {
                 LastMaxRate = LastCalculatedRate;
@@ -536,7 +536,7 @@ namespace AWSSDK.UnitTests
         }
 
         protected override void TokenBucketUpdateRate(double newRps)
-        {            
+        {        
             base.TokenBucketUpdateRate(newRps);
             LastNewTokenBucketRate = FillRate.Value;
         }

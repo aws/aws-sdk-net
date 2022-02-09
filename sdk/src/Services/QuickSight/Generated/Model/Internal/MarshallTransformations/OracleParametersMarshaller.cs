@@ -34,7 +34,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// OracleParameters Marshaller
-    /// </summary>       
+    /// </summary>
     public class OracleParametersMarshaller : IRequestMarshaller<OracleParameters, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static OracleParametersMarshaller Instance = new OracleParametersMarshaller();
 
     }

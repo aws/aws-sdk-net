@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AwsEc2SecurityGroupIpRange Marshaller
-    /// </summary>       
+    /// </summary>
     public class AwsEc2SecurityGroupIpRangeMarshaller : IRequestMarshaller<AwsEc2SecurityGroupIpRange, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AwsEc2SecurityGroupIpRangeMarshaller Instance = new AwsEc2SecurityGroupIpRangeMarshaller();
 
     }

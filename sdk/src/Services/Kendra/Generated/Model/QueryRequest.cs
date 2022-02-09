@@ -31,12 +31,12 @@ namespace Amazon.Kendra.Model
     /// <summary>
     /// Container for the parameters to the Query operation.
     /// Searches an active index. Use this API to search your documents using query. The <code>Query</code>
-    /// operation enables to do faceted search and to filter results based on document attributes.
+    /// API enables to do faceted search and to filter results based on document attributes.
     /// 
     ///  
     /// <para>
     /// It also enables you to provide user context that Amazon Kendra uses to enforce document
-    /// access control in the search results. 
+    /// access control in the search results.
     /// </para>
     ///  
     /// <para>
@@ -166,7 +166,7 @@ namespace Amazon.Kendra.Model
         /// Gets and sets the property IndexId. 
         /// <para>
         /// The unique identifier of the index to search. The identifier is returned in the response
-        /// from the <code>CreateIndex</code> operation.
+        /// from the <code>CreateIndex</code> API.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]
@@ -246,7 +246,7 @@ namespace Amazon.Kendra.Model
         /// The text to search for.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1000)]
+        [AWSProperty(Min=1, Max=1000)]
         public string QueryText
         {
             get { return this._queryText; }

@@ -34,7 +34,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// PostFulfillmentStatusSpecification Marshaller
-    /// </summary>       
+    /// </summary>
     public class PostFulfillmentStatusSpecificationMarshaller : IRequestMarshaller<PostFulfillmentStatusSpecification, JsonMarshallerContext> 
     {
         /// <summary>
@@ -82,7 +82,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static PostFulfillmentStatusSpecificationMarshaller Instance = new PostFulfillmentStatusSpecificationMarshaller();
 
     }

@@ -32,7 +32,7 @@ namespace Amazon.CodeArtifact
     public partial class AmazonCodeArtifactConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.112");
+            InternalSDKUtils.BuildUserAgentString("3.7.0.121");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.CodeArtifact
         /// Default constructor
         /// </summary>
         public AmazonCodeArtifactConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonCodeArtifactDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "codeartifact";
         }

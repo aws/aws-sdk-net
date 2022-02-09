@@ -34,7 +34,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Facet Marshaller
-    /// </summary>       
+    /// </summary>
     public class FacetMarshaller : IRequestMarshaller<Facet, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static FacetMarshaller Instance = new FacetMarshaller();
 
     }

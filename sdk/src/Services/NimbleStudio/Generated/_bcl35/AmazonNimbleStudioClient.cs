@@ -1976,7 +1976,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// anvoke this operation to poll for a streaming session state while creating or deleting
+        /// Invoke this operation to poll for a streaming session state while creating or deleting
         /// a session.
         /// </para>
         /// </summary>

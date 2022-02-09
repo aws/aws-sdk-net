@@ -34,7 +34,7 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// UnshareTarget Marshaller
-    /// </summary>       
+    /// </summary>
     public class UnshareTargetMarshaller : IRequestMarshaller<UnshareTarget, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static UnshareTargetMarshaller Instance = new UnshareTargetMarshaller();
 
     }

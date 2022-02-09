@@ -34,7 +34,7 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ProvisionalConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class ProvisionalConfigurationMarshaller : IRequestMarshaller<ProvisionalConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ProvisionalConfigurationMarshaller Instance = new ProvisionalConfigurationMarshaller();
 
     }

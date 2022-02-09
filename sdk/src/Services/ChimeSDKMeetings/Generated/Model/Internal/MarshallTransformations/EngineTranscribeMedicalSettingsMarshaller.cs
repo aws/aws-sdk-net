@@ -34,7 +34,7 @@ namespace Amazon.ChimeSDKMeetings.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// EngineTranscribeMedicalSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class EngineTranscribeMedicalSettingsMarshaller : IRequestMarshaller<EngineTranscribeMedicalSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -85,7 +85,7 @@ namespace Amazon.ChimeSDKMeetings.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static EngineTranscribeMedicalSettingsMarshaller Instance = new EngineTranscribeMedicalSettingsMarshaller();
 
     }

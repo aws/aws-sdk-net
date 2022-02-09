@@ -55,7 +55,7 @@ namespace Amazon.Route53RecoveryControlConfig.Model.Internal.MarshallTransformat
         public IRequest Marshall(DeleteControlPanelRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Route53RecoveryControlConfig");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-11-02";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-11-02";
             request.HttpMethod = "DELETE";
 
             if (!publicRequest.IsSetControlPanelArn())

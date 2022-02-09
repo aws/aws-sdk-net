@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AwsRdsDbInstanceDetails Marshaller
-    /// </summary>       
+    /// </summary>
     public class AwsRdsDbInstanceDetailsMarshaller : IRequestMarshaller<AwsRdsDbInstanceDetails, JsonMarshallerContext> 
     {
         /// <summary>
@@ -501,7 +501,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AwsRdsDbInstanceDetailsMarshaller Instance = new AwsRdsDbInstanceDetailsMarshaller();
 
     }

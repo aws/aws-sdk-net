@@ -53,7 +53,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DeleteLexiconRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("DeleteLexicon", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DeleteLexicon", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -67,9 +67,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = DeleteLexiconResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as DeleteLexiconResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as DeleteLexiconResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -148,7 +147,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DescribeVoicesRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("DescribeVoices", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DescribeVoices", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -162,9 +161,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = DescribeVoicesResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as DescribeVoicesResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as DescribeVoicesResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -243,7 +241,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetLexiconRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("GetLexicon", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetLexicon", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -257,9 +255,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = GetLexiconResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as GetLexiconResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as GetLexiconResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -338,7 +335,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetSpeechSynthesisTaskRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("GetSpeechSynthesisTask", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetSpeechSynthesisTask", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -352,9 +349,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = GetSpeechSynthesisTaskResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as GetSpeechSynthesisTaskResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as GetSpeechSynthesisTaskResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -465,7 +461,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListLexiconsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("ListLexicons", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("ListLexicons", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -479,9 +475,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = ListLexiconsResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as ListLexiconsResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as ListLexiconsResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -560,7 +555,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListSpeechSynthesisTasksRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("ListSpeechSynthesisTasks", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("ListSpeechSynthesisTasks", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -574,9 +569,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = ListSpeechSynthesisTasksResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as ListSpeechSynthesisTasksResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as ListSpeechSynthesisTasksResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -655,7 +649,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new PutLexiconRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("PutLexicon", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("PutLexicon", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -669,9 +663,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = PutLexiconResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as PutLexiconResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as PutLexiconResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -910,7 +903,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new StartSpeechSynthesisTaskRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("StartSpeechSynthesisTask", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("StartSpeechSynthesisTask", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -924,9 +917,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = StartSpeechSynthesisTaskResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as StartSpeechSynthesisTaskResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as StartSpeechSynthesisTaskResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -1325,7 +1317,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new SynthesizeSpeechRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("SynthesizeSpeech", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("SynthesizeSpeech", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -1341,9 +1333,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = SynthesizeSpeechResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as SynthesizeSpeechResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as SynthesizeSpeechResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]

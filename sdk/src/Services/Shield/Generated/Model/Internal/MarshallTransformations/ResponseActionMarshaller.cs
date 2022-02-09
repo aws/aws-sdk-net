@@ -34,7 +34,7 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ResponseAction Marshaller
-    /// </summary>       
+    /// </summary>
     public class ResponseActionMarshaller : IRequestMarshaller<ResponseAction, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ResponseActionMarshaller Instance = new ResponseActionMarshaller();
 
     }

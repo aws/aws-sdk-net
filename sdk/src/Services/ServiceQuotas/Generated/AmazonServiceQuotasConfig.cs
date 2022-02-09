@@ -32,7 +32,7 @@ namespace Amazon.ServiceQuotas
     public partial class AmazonServiceQuotasConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.112");
+            InternalSDKUtils.BuildUserAgentString("3.7.0.121");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.ServiceQuotas
         /// Default constructor
         /// </summary>
         public AmazonServiceQuotasConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonServiceQuotasDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "servicequotas";
         }

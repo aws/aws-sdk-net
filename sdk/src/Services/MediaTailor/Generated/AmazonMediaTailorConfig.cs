@@ -32,7 +32,7 @@ namespace Amazon.MediaTailor
     public partial class AmazonMediaTailorConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.7.0");
+            InternalSDKUtils.BuildUserAgentString("3.7.8.4");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.MediaTailor
         /// Default constructor
         /// </summary>
         public AmazonMediaTailorConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonMediaTailorDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "mediatailor";
         }

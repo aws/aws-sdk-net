@@ -34,7 +34,7 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// PolicyDetails Marshaller
-    /// </summary>       
+    /// </summary>
     public class PolicyDetailsMarshaller : IRequestMarshaller<PolicyDetails, JsonMarshallerContext> 
     {
         /// <summary>
@@ -147,7 +147,7 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static PolicyDetailsMarshaller Instance = new PolicyDetailsMarshaller();
 
     }

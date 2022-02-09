@@ -34,7 +34,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// JobFlowInstancesConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class JobFlowInstancesConfigMarshaller : IRequestMarshaller<JobFlowInstancesConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -191,7 +191,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static JobFlowInstancesConfigMarshaller Instance = new JobFlowInstancesConfigMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ProjectEnvironment Marshaller
-    /// </summary>       
+    /// </summary>
     public class ProjectEnvironmentMarshaller : IRequestMarshaller<ProjectEnvironment, JsonMarshallerContext> 
     {
         /// <summary>
@@ -112,7 +112,7 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ProjectEnvironmentMarshaller Instance = new ProjectEnvironmentMarshaller();
 
     }

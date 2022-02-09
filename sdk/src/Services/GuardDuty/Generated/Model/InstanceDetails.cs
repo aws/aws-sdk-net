@@ -212,8 +212,8 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property OutpostArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the AWS Outpost. Only applicable to AWS Outposts
-        /// instances.
+        /// The Amazon Resource Name (ARN) of the Amazon Web Services Outpost. Only applicable
+        /// to Amazon Web Services Outposts instances.
         /// </para>
         /// </summary>
         public string OutpostArn

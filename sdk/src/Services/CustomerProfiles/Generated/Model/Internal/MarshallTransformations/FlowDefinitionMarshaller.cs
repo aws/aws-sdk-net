@@ -34,7 +34,7 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// FlowDefinition Marshaller
-    /// </summary>       
+    /// </summary>
     public class FlowDefinitionMarshaller : IRequestMarshaller<FlowDefinition, JsonMarshallerContext> 
     {
         /// <summary>
@@ -105,7 +105,7 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static FlowDefinitionMarshaller Instance = new FlowDefinitionMarshaller();
 
     }

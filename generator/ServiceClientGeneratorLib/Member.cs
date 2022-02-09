@@ -979,7 +979,7 @@ namespace ServiceClientGenerator
         }
 
         /// <summary>
-        /// TimestampFormat that may be specified on a member or a shape.        
+        /// TimestampFormat that may be specified on a member or a shape.
         /// </summary>
         public TimestampFormat TimestampFormat
         {
@@ -998,8 +998,8 @@ namespace ServiceClientGenerator
                 {
                     // Fallback to shape's TimestampFormat if not specified at member level
                     // Fallback to marshall location/protocol rules if not specified at shape level
-                    resolvedTimestampFormat = this.Shape.GetTimestampFormat(this.MarshallLocation);                    
-                }                
+                    resolvedTimestampFormat = this.Shape.GetTimestampFormat(this.MarshallLocation);
+                }
                 return resolvedTimestampFormat;
             }
         }
@@ -1034,7 +1034,7 @@ namespace ServiceClientGenerator
 
             }
         }
-                        
+
         /// <summary>
         /// Creates a representation of the member as a string using the member name
         /// </summary>
@@ -1048,7 +1048,7 @@ namespace ServiceClientGenerator
         {
             // Rules used to default the format if timestampFormat is not specified.
             // 1. All timestamp values serialized in HTTP headers are formatted using rfc822 by default.
-            // 2. All timestamp values serialized in query strings are formatted using iso8601 by default.    
+            // 2. All timestamp values serialized in query strings are formatted using iso8601 by default.
             if (marshallLocation == MarshallLocation.Header)
             {
                 return TimestampFormat.RFC822;
@@ -1065,7 +1065,7 @@ namespace ServiceClientGenerator
                 //     jsonrpc: unixTimestamp
                 //     rest-xml: iso8601
                 //     query: iso8601
-                //     ec2: iso8601                
+                //     ec2: iso8601
                 switch (serviceType)
                 {
                     case ServiceType.Rest_Json:
@@ -1083,6 +1083,5 @@ namespace ServiceClientGenerator
                 }
             }
         }
-
     }
 }

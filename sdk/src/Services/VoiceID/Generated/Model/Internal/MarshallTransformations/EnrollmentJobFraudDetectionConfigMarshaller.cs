@@ -34,7 +34,7 @@ namespace Amazon.VoiceID.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// EnrollmentJobFraudDetectionConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class EnrollmentJobFraudDetectionConfigMarshaller : IRequestMarshaller<EnrollmentJobFraudDetectionConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.VoiceID.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static EnrollmentJobFraudDetectionConfigMarshaller Instance = new EnrollmentJobFraudDetectionConfigMarshaller();
 
     }

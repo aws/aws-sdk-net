@@ -64,11 +64,15 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 );
             }
         
-            if(publicRequest.IsSetAccountId())
+            if (publicRequest.IsSetAccountId()) 
+            {
                 request.Headers["x-amz-account-id"] = publicRequest.AccountId;
+            }
         
-            if(publicRequest.IsSetConfirmRemoveSelfBucketAccess())
+            if (publicRequest.IsSetConfirmRemoveSelfBucketAccess()) 
+            {
                 request.Headers["x-amz-confirm-remove-self-bucket-access"] = StringUtils.FromBool(publicRequest.ConfirmRemoveSelfBucketAccess);
+            }
             if (!publicRequest.IsSetBucket())
                 throw new AmazonS3ControlException("Request object does not have required field Bucket set");
             request.AddPathResource("{name}", StringUtils.FromString(publicRequest.Bucket));

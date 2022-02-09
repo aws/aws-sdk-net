@@ -32,7 +32,7 @@ namespace Amazon.SavingsPlans
     public partial class AmazonSavingsPlansConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.2.67");
+            InternalSDKUtils.BuildUserAgentString("3.7.2.76");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.SavingsPlans
         /// Default constructor
         /// </summary>
         public AmazonSavingsPlansConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonSavingsPlansDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "savingsplans";
         }

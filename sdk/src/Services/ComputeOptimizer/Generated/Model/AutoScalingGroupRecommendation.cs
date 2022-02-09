@@ -40,6 +40,7 @@ namespace Amazon.ComputeOptimizer.Model
         private CurrentPerformanceRisk _currentPerformanceRisk;
         private EffectiveRecommendationPreferences _effectiveRecommendationPreferences;
         private Finding _finding;
+        private List<string> _inferredWorkloadTypes = new List<string>();
         private DateTime? _lastRefreshTimestamp;
         private double? _lookBackPeriodInDays;
         private List<AutoScalingGroupRecommendationOption> _recommendationOptions = new List<AutoScalingGroupRecommendationOption>();
@@ -190,6 +191,60 @@ namespace Amazon.ComputeOptimizer.Model
         internal bool IsSetFinding()
         {
             return this._finding != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InferredWorkloadTypes. 
+        /// <para>
+        /// The applications that might be running on the instances in the Auto Scaling group
+        /// as inferred by Compute Optimizer.
+        /// </para>
+        ///  
+        /// <para>
+        /// Compute Optimizer can infer if one of the following applications might be running
+        /// on the instances:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>AmazonEmr</code> - Infers that Amazon EMR might be running on the instances.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ApacheCassandra</code> - Infers that Apache Cassandra might be running on the
+        /// instances.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ApacheHadoop</code> - Infers that Apache Hadoop might be running on the instances.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Memcached</code> - Infers that Memcached might be running on the instances.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>NGINX</code> - Infers that NGINX might be running on the instances.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>PostgreSql</code> - Infers that PostgreSQL might be running on the instances.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Redis</code> - Infers that Redis might be running on the instances.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public List<string> InferredWorkloadTypes
+        {
+            get { return this._inferredWorkloadTypes; }
+            set { this._inferredWorkloadTypes = value; }
+        }
+
+        // Check to see if InferredWorkloadTypes property is set
+        internal bool IsSetInferredWorkloadTypes()
+        {
+            return this._inferredWorkloadTypes != null && this._inferredWorkloadTypes.Count > 0; 
         }
 
         /// <summary>

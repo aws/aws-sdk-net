@@ -34,7 +34,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// FSxWindowsFileServerVolumeConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class FSxWindowsFileServerVolumeConfigurationMarshaller : IRequestMarshaller<FSxWindowsFileServerVolumeConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static FSxWindowsFileServerVolumeConfigurationMarshaller Instance = new FSxWindowsFileServerVolumeConfigurationMarshaller();
 
     }

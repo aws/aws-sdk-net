@@ -56,7 +56,7 @@ namespace Amazon.SageMakerRuntime.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.SageMakerRuntime");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-05-13";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-05-13";
             request.HttpMethod = "POST";
 
             if (!publicRequest.IsSetEndpointName())
@@ -64,23 +64,35 @@ namespace Amazon.SageMakerRuntime.Model.Internal.MarshallTransformations
             request.AddPathResource("{EndpointName}", StringUtils.FromString(publicRequest.EndpointName));
             request.ResourcePath = "/endpoints/{EndpointName}/async-invocations";
         
-            if(publicRequest.IsSetAccept())
+            if (publicRequest.IsSetAccept()) 
+            {
                 request.Headers["X-Amzn-SageMaker-Accept"] = publicRequest.Accept;
+            }
         
-            if(publicRequest.IsSetContentType())
+            if (publicRequest.IsSetContentType()) 
+            {
                 request.Headers["X-Amzn-SageMaker-Content-Type"] = publicRequest.ContentType;
+            }
         
-            if(publicRequest.IsSetCustomAttributes())
+            if (publicRequest.IsSetCustomAttributes()) 
+            {
                 request.Headers["X-Amzn-SageMaker-Custom-Attributes"] = publicRequest.CustomAttributes;
+            }
         
-            if(publicRequest.IsSetInferenceId())
+            if (publicRequest.IsSetInferenceId()) 
+            {
                 request.Headers["X-Amzn-SageMaker-Inference-Id"] = publicRequest.InferenceId;
+            }
         
-            if(publicRequest.IsSetInputLocation())
+            if (publicRequest.IsSetInputLocation()) 
+            {
                 request.Headers["X-Amzn-SageMaker-InputLocation"] = publicRequest.InputLocation;
+            }
         
-            if(publicRequest.IsSetRequestTTLSeconds())
+            if (publicRequest.IsSetRequestTTLSeconds()) 
+            {
                 request.Headers["X-Amzn-SageMaker-RequestTTLSeconds"] = StringUtils.FromInt(publicRequest.RequestTTLSeconds);
+            }
 
             return request;
         }

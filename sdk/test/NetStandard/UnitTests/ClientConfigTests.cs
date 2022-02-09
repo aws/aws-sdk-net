@@ -50,6 +50,7 @@ namespace UnitTests
             "DisableHostPrefixInjection",
             "EndpointDiscoveryEnabled",
             "EndpointDiscoveryCacheLimit",
+            "DefaultConfigurationMode",
             "UseAlternateUserAgentHeader",
             "IsMaxErrorRetrySet",
             "RetryMode",
@@ -60,17 +61,19 @@ namespace UnitTests
         [Trait("Category", "Core")]
         public void CheckForNewConfigProperties()
         {
-            List<string> unknownProperties = new List<string>();
-            var properties = typeof(ClientConfig).GetTypeInfo().DeclaredProperties;
-            foreach(var property in properties)
-            {
-                if(!KNOWN_PROPERTIES.Contains(property.Name))
-                {
-                    unknownProperties.Add(property.Name);
-                }
-            }
+            var unknownProperties =
+                typeof(ClientConfig)
+                    .GetTypeInfo()
+                    .DeclaredProperties
+                    .Where(p => p.GetMethod?.IsPublic == true)
+                    .Where(p => !KNOWN_PROPERTIES.Contains(p.Name))
+                    .ToList();
 
-            Assert.True(unknownProperties.Count == 0, $"New properties added to ClientConfig. ClientConfig properties that are set on the HttpClient must be added to the HttpRequestMessageFactory.CreateConfigUniqueString. Once evaluated add the new properties to known properties collection. ({string.Join(",", unknownProperties)})");
+            Assert.False(
+                unknownProperties.Any(),
+                "New properties added to ClientConfig. ClientConfig properties that are set on the HttpClient must be added to the " +
+                "HttpRequestMessageFactory.CreateConfigUniqueString.  Once evaluated add the new properties to known properties collection. " +
+                $"({string.Join(",", unknownProperties)})");
         }
     }
 }

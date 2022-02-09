@@ -34,7 +34,7 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CopyCommand Marshaller
-    /// </summary>       
+    /// </summary>
     public class CopyCommandMarshaller : IRequestMarshaller<CopyCommand, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CopyCommandMarshaller Instance = new CopyCommandMarshaller();
 
     }

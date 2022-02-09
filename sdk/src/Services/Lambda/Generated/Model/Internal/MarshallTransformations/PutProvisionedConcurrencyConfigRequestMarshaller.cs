@@ -56,7 +56,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Lambda");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-03-31";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-03-31";
             request.HttpMethod = "PUT";
 
             if (!publicRequest.IsSetFunctionName())
@@ -77,7 +77,6 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ProvisionedConcurrentExecutions);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

@@ -34,7 +34,7 @@ namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// EventInfo Marshaller
-    /// </summary>       
+    /// </summary>
     public class EventInfoMarshaller : IRequestMarshaller<EventInfo, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static EventInfoMarshaller Instance = new EventInfoMarshaller();
 
     }

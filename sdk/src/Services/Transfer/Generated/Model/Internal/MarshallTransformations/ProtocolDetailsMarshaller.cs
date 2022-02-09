@@ -34,7 +34,7 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ProtocolDetails Marshaller
-    /// </summary>       
+    /// </summary>
     public class ProtocolDetailsMarshaller : IRequestMarshaller<ProtocolDetails, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ProtocolDetailsMarshaller Instance = new ProtocolDetailsMarshaller();
 
     }

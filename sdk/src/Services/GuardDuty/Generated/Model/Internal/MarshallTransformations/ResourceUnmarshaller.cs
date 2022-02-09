@@ -70,10 +70,22 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                     unmarshalledObject.AccessKeyDetails = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("eksClusterDetails", targetDepth))
+                {
+                    var unmarshaller = EksClusterDetailsUnmarshaller.Instance;
+                    unmarshalledObject.EksClusterDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("instanceDetails", targetDepth))
                 {
                     var unmarshaller = InstanceDetailsUnmarshaller.Instance;
                     unmarshalledObject.InstanceDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("kubernetesDetails", targetDepth))
+                {
+                    var unmarshaller = KubernetesDetailsUnmarshaller.Instance;
+                    unmarshalledObject.KubernetesDetails = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("resourceType", targetDepth))

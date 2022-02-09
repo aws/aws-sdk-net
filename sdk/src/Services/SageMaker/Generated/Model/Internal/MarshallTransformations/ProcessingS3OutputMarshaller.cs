@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ProcessingS3Output Marshaller
-    /// </summary>       
+    /// </summary>
     public class ProcessingS3OutputMarshaller : IRequestMarshaller<ProcessingS3Output, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ProcessingS3OutputMarshaller Instance = new ProcessingS3OutputMarshaller();
 
     }

@@ -30,7 +30,7 @@ namespace Amazon.Route53RecoveryReadiness.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateCell operation.
-    /// Creates a new Cell.
+    /// Creates a cell in an account.
     /// </summary>
     public partial class CreateCellRequest : AmazonRoute53RecoveryReadinessRequest
     {
@@ -39,7 +39,10 @@ namespace Amazon.Route53RecoveryReadiness.Model
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
-        /// Gets and sets the property CellName. The name of the Cell to create
+        /// Gets and sets the property CellName. 
+        /// <para>
+        /// The name of the cell to create.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string CellName
@@ -55,8 +58,12 @@ namespace Amazon.Route53RecoveryReadiness.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Cells. A list of Cell arns contained within this Cell (for
-        /// use in nested Cells, e.g. regions within which AZs)
+        /// Gets and sets the property Cells. 
+        /// <para>
+        /// A list of cell Amazon Resource Names (ARNs) contained within this cell, for use in
+        /// nested cells. For example, Availability Zones within specific Amazon Web Services
+        /// Regions.
+        /// </para>
         /// </summary>
         public List<string> Cells
         {

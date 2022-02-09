@@ -32,7 +32,7 @@ namespace Amazon.CloudTrail
     public partial class AmazonCloudTrailConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.2.1");
+            InternalSDKUtils.BuildUserAgentString("3.7.2.11");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.CloudTrail
         /// Default constructor
         /// </summary>
         public AmazonCloudTrailConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonCloudTrailDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "cloudtrail";
         }

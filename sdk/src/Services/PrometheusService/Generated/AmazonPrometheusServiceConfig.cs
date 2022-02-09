@@ -32,7 +32,7 @@ namespace Amazon.PrometheusService
     public partial class AmazonPrometheusServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.2.39");
+            InternalSDKUtils.BuildUserAgentString("3.7.2.48");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.PrometheusService
         /// Default constructor
         /// </summary>
         public AmazonPrometheusServiceConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonPrometheusServiceDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "aps";
         }

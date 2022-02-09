@@ -41,8 +41,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AuthenticationResult. 
         /// <para>
-        /// The result of the authentication response. This is only returned if the caller does
-        /// not need to pass another challenge. If the caller does need to pass another challenge
+        /// The result of the authentication response. This result is only returned if the caller
+        /// doesn't need to pass another challenge. If the caller does need to pass another challenge
         /// before it gets tokens, <code>ChallengeName</code>, <code>ChallengeParameters</code>,
         /// and <code>Session</code> are returned.
         /// </para>
@@ -62,9 +62,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property ChallengeName. 
         /// <para>
-        /// The name of the challenge which you are responding to with this call. This is returned
-        /// to you in the <code>AdminInitiateAuth</code> response if you need to pass another
-        /// challenge.
+        /// The name of the challenge that you're responding to with this call. This name is returned
+        /// in the <code>AdminInitiateAuth</code> response if you must pass another challenge.
         /// </para>
         ///  
         /// <para>
@@ -89,9 +88,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DEVICE_SRP_AUTH</code>: If device tracking was enabled on your user pool and
-        /// the previous challenges were passed, this challenge is returned so that Amazon Cognito
-        /// can start tracking this device.
+        ///  <code>DEVICE_SRP_AUTH</code>: If device tracking was activated on your user pool
+        /// and the previous challenges were passed, this challenge is returned so that Amazon
+        /// Cognito can start tracking this device.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -107,17 +106,17 @@ namespace Amazon.CognitoIdentityProvider.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>MFA_SETUP</code>: For users who are required to setup an MFA factor before
-        /// they can sign-in. The MFA types enabled for the user pool will be listed in the challenge
-        /// parameters <code>MFA_CAN_SETUP</code> value. 
+        /// they can sign in. The MFA types activated for the user pool will be listed in the
+        /// challenge parameters <code>MFA_CAN_SETUP</code> value. 
         /// </para>
         ///  
         /// <para>
-        ///  To setup software token MFA, use the session returned here from <code>InitiateAuth</code>
-        /// as an input to <code>AssociateSoftwareToken</code>, and use the session returned by
-        /// <code>VerifySoftwareToken</code> as an input to <code>RespondToAuthChallenge</code>
-        /// with challenge name <code>MFA_SETUP</code> to complete sign-in. To setup SMS MFA,
-        /// users will need help from an administrator to add a phone number to their account
-        /// and then call <code>InitiateAuth</code> again to restart sign-in.
+        ///  To set up software token MFA, use the session returned here from <code>InitiateAuth</code>
+        /// as an input to <code>AssociateSoftwareToken</code>. Use the session returned by <code>VerifySoftwareToken</code>
+        /// as an input to <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code>
+        /// to complete sign-in. To set up SMS MFA, an administrator should help the user to add
+        /// a phone number to their account, and then the user should call <code>InitiateAuth</code>
+        /// again to restart sign-in.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -136,10 +135,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property ChallengeParameters. 
         /// <para>
-        /// The challenge parameters. These are returned to you in the <code>InitiateAuth</code>
-        /// response if you need to pass another challenge. The responses in this parameter should
-        /// be used to compute inputs to the next call (<code>RespondToAuthChallenge</code>).
-        /// 
+        /// The challenge parameters. These are returned in the <code>InitiateAuth</code> response
+        /// if you must pass another challenge. The responses in this parameter should be used
+        /// to compute inputs to the next call (<code>RespondToAuthChallenge</code>). 
         /// </para>
         ///  
         /// <para>
@@ -161,9 +159,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Session. 
         /// <para>
-        /// The session which should be passed both ways in challenge-response calls to the service.
-        /// If the caller needs to go through another challenge, they return a session with other
-        /// challenge parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code>
+        /// The session that should pass both ways in challenge-response calls to the service.
+        /// If the caller must pass another challenge, they return a session with other challenge
+        /// parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code>
         /// API call.
         /// </para>
         /// </summary>

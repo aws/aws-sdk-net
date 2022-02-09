@@ -43,8 +43,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property EncodedData. 
         /// <para>
-        /// Encoded data containing device fingerprinting details, collected using the Amazon
-        /// Cognito context data collection library.
+        /// Encoded data containing device fingerprinting details collected using the Amazon Cognito
+        /// context data collection library.
         /// </para>
         /// </summary>
         public string EncodedData
@@ -119,7 +119,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property ServerPath. 
         /// <para>
-        /// Your server path where this API is invoked. 
+        /// Your server path where this API is invoked.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

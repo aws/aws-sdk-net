@@ -32,7 +32,7 @@ namespace Amazon.TimestreamWrite
     public partial class AmazonTimestreamWriteConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.1.9");
+            InternalSDKUtils.BuildUserAgentString("3.7.1.18");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.TimestreamWrite
         /// Default constructor
         /// </summary>
         public AmazonTimestreamWriteConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonTimestreamWriteDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "timestream";
         }

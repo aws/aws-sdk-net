@@ -34,7 +34,7 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// PlayerLatencyPolicy Marshaller
-    /// </summary>       
+    /// </summary>
     public class PlayerLatencyPolicyMarshaller : IRequestMarshaller<PlayerLatencyPolicy, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static PlayerLatencyPolicyMarshaller Instance = new PlayerLatencyPolicyMarshaller();
 
     }

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53RecoveryReadiness.Model
 {
     /// <summary>
-    /// The target resource the R53 record points to
+    /// The target resource that the Route 53 record points to.
     /// </summary>
     public partial class TargetResource
     {
@@ -37,7 +37,10 @@ namespace Amazon.Route53RecoveryReadiness.Model
         private R53ResourceRecord _r53Resource;
 
         /// <summary>
-        /// Gets and sets the property NLBResource.
+        /// Gets and sets the property NLBResource. 
+        /// <para>
+        /// The Network Load Balancer Resource.
+        /// </para>
         /// </summary>
         public NLBResource NLBResource
         {
@@ -52,7 +55,10 @@ namespace Amazon.Route53RecoveryReadiness.Model
         }
 
         /// <summary>
-        /// Gets and sets the property R53Resource.
+        /// Gets and sets the property R53Resource. 
+        /// <para>
+        /// The Route 53 resource.
+        /// </para>
         /// </summary>
         public R53ResourceRecord R53Resource
         {

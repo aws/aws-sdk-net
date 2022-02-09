@@ -30,8 +30,8 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the AdminListUserAuthEvents operation.
-    /// Lists a history of user activity and any risks detected as part of Amazon Cognito
-    /// advanced security.
+    /// A history of user activity and any risks detected as part of Amazon Cognito advanced
+    /// security.
     /// </summary>
     public partial class AdminListUserAuthEventsRequest : AmazonCognitoIdentityProviderRequest
     {

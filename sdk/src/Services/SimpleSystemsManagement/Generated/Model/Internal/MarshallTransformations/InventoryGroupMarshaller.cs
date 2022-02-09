@@ -34,7 +34,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// InventoryGroup Marshaller
-    /// </summary>       
+    /// </summary>
     public class InventoryGroupMarshaller : IRequestMarshaller<InventoryGroup, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static InventoryGroupMarshaller Instance = new InventoryGroupMarshaller();
 
     }

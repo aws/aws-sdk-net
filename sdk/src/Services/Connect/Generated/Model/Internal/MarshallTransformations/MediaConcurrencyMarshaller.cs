@@ -34,7 +34,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// MediaConcurrency Marshaller
-    /// </summary>       
+    /// </summary>
     public class MediaConcurrencyMarshaller : IRequestMarshaller<MediaConcurrency, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static MediaConcurrencyMarshaller Instance = new MediaConcurrencyMarshaller();
 
     }

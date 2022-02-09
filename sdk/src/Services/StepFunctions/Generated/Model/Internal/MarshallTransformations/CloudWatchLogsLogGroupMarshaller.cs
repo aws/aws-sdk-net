@@ -34,7 +34,7 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CloudWatchLogsLogGroup Marshaller
-    /// </summary>       
+    /// </summary>
     public class CloudWatchLogsLogGroupMarshaller : IRequestMarshaller<CloudWatchLogsLogGroup, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CloudWatchLogsLogGroupMarshaller Instance = new CloudWatchLogsLogGroupMarshaller();
 
     }

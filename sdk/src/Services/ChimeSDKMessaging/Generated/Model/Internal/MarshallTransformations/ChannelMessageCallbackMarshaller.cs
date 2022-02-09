@@ -34,7 +34,7 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ChannelMessageCallback Marshaller
-    /// </summary>       
+    /// </summary>
     public class ChannelMessageCallbackMarshaller : IRequestMarshaller<ChannelMessageCallback, JsonMarshallerContext> 
     {
         /// <summary>
@@ -97,7 +97,7 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ChannelMessageCallbackMarshaller Instance = new ChannelMessageCallbackMarshaller();
 
     }

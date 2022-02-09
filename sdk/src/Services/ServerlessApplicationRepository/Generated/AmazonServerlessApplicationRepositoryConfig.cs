@@ -32,7 +32,7 @@ namespace Amazon.ServerlessApplicationRepository
     public partial class AmazonServerlessApplicationRepositoryConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.112");
+            InternalSDKUtils.BuildUserAgentString("3.7.0.121");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.ServerlessApplicationRepository
         /// Default constructor
         /// </summary>
         public AmazonServerlessApplicationRepositoryConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonServerlessApplicationRepositoryDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "serverlessrepo";
         }

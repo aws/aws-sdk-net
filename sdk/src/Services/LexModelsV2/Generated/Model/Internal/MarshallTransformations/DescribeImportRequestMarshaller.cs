@@ -55,7 +55,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         public IRequest Marshall(DescribeImportRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.LexModelsV2");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-08-07";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-08-07";
             request.HttpMethod = "GET";
 
             if (!publicRequest.IsSetImportId())

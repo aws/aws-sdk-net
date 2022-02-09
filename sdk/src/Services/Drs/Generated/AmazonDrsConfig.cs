@@ -32,7 +32,7 @@ namespace Amazon.Drs
     public partial class AmazonDrsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.12");
+            InternalSDKUtils.BuildUserAgentString("3.7.0.21");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.Drs
         /// Default constructor
         /// </summary>
         public AmazonDrsConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonDrsDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "drs";
         }

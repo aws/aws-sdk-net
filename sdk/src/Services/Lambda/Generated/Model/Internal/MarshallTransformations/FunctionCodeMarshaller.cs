@@ -34,7 +34,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// FunctionCode Marshaller
-    /// </summary>       
+    /// </summary>
     public class FunctionCodeMarshaller : IRequestMarshaller<FunctionCode, JsonMarshallerContext> 
     {
         /// <summary>
@@ -79,7 +79,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static FunctionCodeMarshaller Instance = new FunctionCodeMarshaller();
 
     }

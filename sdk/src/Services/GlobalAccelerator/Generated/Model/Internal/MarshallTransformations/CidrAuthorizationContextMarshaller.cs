@@ -34,7 +34,7 @@ namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CidrAuthorizationContext Marshaller
-    /// </summary>       
+    /// </summary>
     public class CidrAuthorizationContextMarshaller : IRequestMarshaller<CidrAuthorizationContext, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CidrAuthorizationContextMarshaller Instance = new CidrAuthorizationContextMarshaller();
 
     }

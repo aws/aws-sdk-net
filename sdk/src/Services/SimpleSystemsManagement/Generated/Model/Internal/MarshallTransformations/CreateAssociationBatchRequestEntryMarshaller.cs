@@ -34,7 +34,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CreateAssociationBatchRequestEntry Marshaller
-    /// </summary>       
+    /// </summary>
     public class CreateAssociationBatchRequestEntryMarshaller : IRequestMarshaller<CreateAssociationBatchRequestEntry, JsonMarshallerContext> 
     {
         /// <summary>
@@ -188,7 +188,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CreateAssociationBatchRequestEntryMarshaller Instance = new CreateAssociationBatchRequestEntryMarshaller();
 
     }

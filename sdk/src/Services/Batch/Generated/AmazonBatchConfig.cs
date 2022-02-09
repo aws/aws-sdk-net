@@ -32,7 +32,7 @@ namespace Amazon.Batch
     public partial class AmazonBatchConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.3.19");
+            InternalSDKUtils.BuildUserAgentString("3.7.3.28");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.Batch
         /// Default constructor
         /// </summary>
         public AmazonBatchConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonBatchDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "batch";
         }

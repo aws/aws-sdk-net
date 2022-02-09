@@ -32,7 +32,7 @@ namespace Amazon.ElasticFileSystem
     public partial class AmazonElasticFileSystemConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.3.38");
+            InternalSDKUtils.BuildUserAgentString("3.7.4.3");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.ElasticFileSystem
         /// Default constructor
         /// </summary>
         public AmazonElasticFileSystemConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonElasticFileSystemDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "elasticfilesystem";
         }

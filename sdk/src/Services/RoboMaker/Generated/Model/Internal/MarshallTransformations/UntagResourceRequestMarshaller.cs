@@ -55,7 +55,7 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
         public IRequest Marshall(UntagResourceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.RoboMaker");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-06-29";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-06-29";
             request.HttpMethod = "DELETE";
 
             if (!publicRequest.IsSetResourceArn())

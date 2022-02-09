@@ -32,7 +32,7 @@ namespace Amazon.VoiceID
     public partial class AmazonVoiceIDConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.40");
+            InternalSDKUtils.BuildUserAgentString("3.7.0.49");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.VoiceID
         /// Default constructor
         /// </summary>
         public AmazonVoiceIDConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonVoiceIDDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "voiceid";
         }

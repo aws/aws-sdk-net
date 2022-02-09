@@ -55,7 +55,7 @@ namespace Amazon.FinSpaceData.Model.Internal.MarshallTransformations
         public IRequest Marshall(GetProgrammaticAccessCredentialsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.FinSpaceData");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-07-13";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-07-13";
             request.HttpMethod = "GET";
 
             

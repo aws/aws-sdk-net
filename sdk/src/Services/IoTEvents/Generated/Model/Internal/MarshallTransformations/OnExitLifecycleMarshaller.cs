@@ -34,7 +34,7 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// OnExitLifecycle Marshaller
-    /// </summary>       
+    /// </summary>
     public class OnExitLifecycleMarshaller : IRequestMarshaller<OnExitLifecycle, JsonMarshallerContext> 
     {
         /// <summary>
@@ -65,7 +65,7 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static OnExitLifecycleMarshaller Instance = new OnExitLifecycleMarshaller();
 
     }

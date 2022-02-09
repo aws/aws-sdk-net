@@ -34,7 +34,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// UserGroupResolutionConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class UserGroupResolutionConfigurationMarshaller : IRequestMarshaller<UserGroupResolutionConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static UserGroupResolutionConfigurationMarshaller Instance = new UserGroupResolutionConfigurationMarshaller();
 
     }

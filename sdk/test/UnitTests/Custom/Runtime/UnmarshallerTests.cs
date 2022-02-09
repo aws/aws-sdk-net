@@ -164,7 +164,7 @@ namespace AWSSDK.UnitTests
         {
             string jsonResponse = @"
             {
-                ""Cluster"": {        
+                ""Cluster"": {    
                     ""Configurations"": [                    
                         {
                             ""Classification"": ""value1"",

@@ -34,7 +34,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// WriteJourneyRequest Marshaller
-    /// </summary>       
+    /// </summary>
     public class WriteJourneyRequestMarshaller : IRequestMarshaller<WriteJourneyRequest, JsonMarshallerContext> 
     {
         /// <summary>
@@ -68,6 +68,17 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("CreationDate");
                 context.Writer.Write(requestObject.CreationDate);
+            }
+
+            if(requestObject.IsSetJourneyChannelSettings())
+            {
+                context.Writer.WritePropertyName("JourneyChannelSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = JourneyChannelSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.JourneyChannelSettings, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
             if(requestObject.IsSetLastModifiedDate())
@@ -166,7 +177,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static WriteJourneyRequestMarshaller Instance = new WriteJourneyRequestMarshaller();
 
     }

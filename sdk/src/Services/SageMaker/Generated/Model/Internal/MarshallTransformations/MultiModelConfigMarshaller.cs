@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// MultiModelConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class MultiModelConfigMarshaller : IRequestMarshaller<MultiModelConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static MultiModelConfigMarshaller Instance = new MultiModelConfigMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// EC2TagSet Marshaller
-    /// </summary>       
+    /// </summary>
     public class EC2TagSetMarshaller : IRequestMarshaller<EC2TagSet, JsonMarshallerContext> 
     {
         /// <summary>
@@ -70,7 +70,7 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static EC2TagSetMarshaller Instance = new EC2TagSetMarshaller();
 
     }

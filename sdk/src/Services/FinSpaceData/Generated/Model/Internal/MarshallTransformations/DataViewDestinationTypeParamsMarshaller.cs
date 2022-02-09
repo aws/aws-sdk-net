@@ -34,7 +34,7 @@ namespace Amazon.FinSpaceData.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DataViewDestinationTypeParams Marshaller
-    /// </summary>       
+    /// </summary>
     public class DataViewDestinationTypeParamsMarshaller : IRequestMarshaller<DataViewDestinationTypeParams, JsonMarshallerContext> 
     {
         /// <summary>
@@ -75,7 +75,7 @@ namespace Amazon.FinSpaceData.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DataViewDestinationTypeParamsMarshaller Instance = new DataViewDestinationTypeParamsMarshaller();
 
     }

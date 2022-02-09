@@ -32,7 +32,7 @@ namespace Amazon.GameLift
     public partial class AmazonGameLiftConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.1.25");
+            InternalSDKUtils.BuildUserAgentString("3.7.1.34");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.GameLift
         /// Default constructor
         /// </summary>
         public AmazonGameLiftConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonGameLiftDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "gamelift";
         }

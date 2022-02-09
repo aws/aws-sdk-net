@@ -34,7 +34,7 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ProcessorConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class ProcessorConfigurationMarshaller : IRequestMarshaller<ProcessorConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ProcessorConfigurationMarshaller Instance = new ProcessorConfigurationMarshaller();
 
     }

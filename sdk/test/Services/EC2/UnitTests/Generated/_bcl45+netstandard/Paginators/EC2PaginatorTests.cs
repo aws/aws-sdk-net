@@ -627,6 +627,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("EC2")]
+        public void DescribeFastLaunchImagesTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribeFastLaunchImagesRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<DescribeFastLaunchImagesResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<DescribeFastLaunchImagesResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.DescribeFastLaunchImages(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.DescribeFastLaunchImages(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("EC2")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void DescribeFastLaunchImagesTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribeFastLaunchImagesRequest>();
+
+            var response = InstantiateClassGenerator.Execute<DescribeFastLaunchImagesResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.DescribeFastLaunchImages(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.DescribeFastLaunchImages(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("EC2")]
         public void DescribeFastSnapshotRestoresTest_TwoPages()
         {
             var request = InstantiateClassGenerator.Execute<DescribeFastSnapshotRestoresRequest>();
@@ -4437,6 +4476,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
 
             _mockClient.Setup(x => x.GetVpnConnectionDeviceTypes(request)).Returns(response);
             var paginator = _mockClient.Object.Paginators.GetVpnConnectionDeviceTypes(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("EC2")]
+        public void ListImagesInRecycleBinTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListImagesInRecycleBinRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListImagesInRecycleBinResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListImagesInRecycleBinResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListImagesInRecycleBin(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListImagesInRecycleBin(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("EC2")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListImagesInRecycleBinTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListImagesInRecycleBinRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListImagesInRecycleBinResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListImagesInRecycleBin(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListImagesInRecycleBin(request);
 
             // Should work the first time
             paginator.Responses.ToList();

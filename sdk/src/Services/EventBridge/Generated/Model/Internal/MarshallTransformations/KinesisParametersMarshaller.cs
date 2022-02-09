@@ -34,7 +34,7 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// KinesisParameters Marshaller
-    /// </summary>       
+    /// </summary>
     public class KinesisParametersMarshaller : IRequestMarshaller<KinesisParameters, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static KinesisParametersMarshaller Instance = new KinesisParametersMarshaller();
 
     }

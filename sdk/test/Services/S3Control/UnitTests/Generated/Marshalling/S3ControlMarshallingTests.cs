@@ -53,7 +53,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new CreateAccessPointRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("CreateAccessPoint", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("CreateAccessPoint", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -67,9 +67,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = CreateAccessPointResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as CreateAccessPointResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+            var response = unmarshaller.Unmarshall(context) as CreateAccessPointResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -84,7 +83,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new CreateAccessPointForObjectLambdaRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("CreateAccessPointForObjectLambda", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("CreateAccessPointForObjectLambda", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -98,9 +97,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = CreateAccessPointForObjectLambdaResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as CreateAccessPointForObjectLambdaResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+            var response = unmarshaller.Unmarshall(context) as CreateAccessPointForObjectLambdaResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -115,7 +113,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new CreateBucketRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("CreateBucket", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("CreateBucket", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -130,9 +128,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = CreateBucketResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as CreateBucketResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+            var response = unmarshaller.Unmarshall(context) as CreateBucketResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -211,7 +208,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new CreateJobRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("CreateJob", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("CreateJob", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -225,9 +222,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = CreateJobResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as CreateJobResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+            var response = unmarshaller.Unmarshall(context) as CreateJobResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -366,7 +362,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new CreateMultiRegionAccessPointRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("CreateMultiRegionAccessPoint", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("CreateMultiRegionAccessPoint", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -380,9 +376,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = CreateMultiRegionAccessPointResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as CreateMultiRegionAccessPointResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+            var response = unmarshaller.Unmarshall(context) as CreateMultiRegionAccessPointResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -397,7 +392,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DeleteAccessPointRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("DeleteAccessPoint", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DeleteAccessPoint", request, internalRequest, service_model);
 
         }
 
@@ -413,7 +408,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DeleteAccessPointForObjectLambdaRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("DeleteAccessPointForObjectLambda", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DeleteAccessPointForObjectLambda", request, internalRequest, service_model);
 
         }
 
@@ -429,7 +424,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DeleteAccessPointPolicyRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("DeleteAccessPointPolicy", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DeleteAccessPointPolicy", request, internalRequest, service_model);
 
         }
 
@@ -445,7 +440,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DeleteAccessPointPolicyForObjectLambdaRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("DeleteAccessPointPolicyForObjectLambda", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DeleteAccessPointPolicyForObjectLambda", request, internalRequest, service_model);
 
         }
 
@@ -461,7 +456,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DeleteBucketRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("DeleteBucket", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DeleteBucket", request, internalRequest, service_model);
 
         }
 
@@ -477,7 +472,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DeleteBucketLifecycleConfigurationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("DeleteBucketLifecycleConfiguration", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DeleteBucketLifecycleConfiguration", request, internalRequest, service_model);
 
         }
 
@@ -493,7 +488,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DeleteBucketPolicyRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("DeleteBucketPolicy", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DeleteBucketPolicy", request, internalRequest, service_model);
 
         }
 
@@ -509,7 +504,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DeleteBucketTaggingRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("DeleteBucketTagging", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DeleteBucketTagging", request, internalRequest, service_model);
 
         }
 
@@ -525,7 +520,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DeleteJobTaggingRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("DeleteJobTagging", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DeleteJobTagging", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -539,9 +534,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = DeleteJobTaggingResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as DeleteJobTaggingResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+            var response = unmarshaller.Unmarshall(context) as DeleteJobTaggingResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -649,7 +643,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DeleteMultiRegionAccessPointRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("DeleteMultiRegionAccessPoint", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DeleteMultiRegionAccessPoint", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -663,9 +657,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = DeleteMultiRegionAccessPointResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as DeleteMultiRegionAccessPointResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+            var response = unmarshaller.Unmarshall(context) as DeleteMultiRegionAccessPointResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -680,7 +673,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DeletePublicAccessBlockRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("DeletePublicAccessBlock", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DeletePublicAccessBlock", request, internalRequest, service_model);
 
         }
 
@@ -696,7 +689,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DeleteStorageLensConfigurationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("DeleteStorageLensConfiguration", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DeleteStorageLensConfiguration", request, internalRequest, service_model);
 
         }
 
@@ -712,7 +705,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DeleteStorageLensConfigurationTaggingRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("DeleteStorageLensConfigurationTagging", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DeleteStorageLensConfigurationTagging", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -726,9 +719,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = DeleteStorageLensConfigurationTaggingResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as DeleteStorageLensConfigurationTaggingResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+            var response = unmarshaller.Unmarshall(context) as DeleteStorageLensConfigurationTaggingResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -743,7 +735,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DescribeJobRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("DescribeJob", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DescribeJob", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -757,9 +749,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = DescribeJobResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as DescribeJobResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+            var response = unmarshaller.Unmarshall(context) as DescribeJobResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -898,7 +889,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DescribeMultiRegionAccessPointOperationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("DescribeMultiRegionAccessPointOperation", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DescribeMultiRegionAccessPointOperation", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -912,9 +903,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = DescribeMultiRegionAccessPointOperationResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as DescribeMultiRegionAccessPointOperationResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+            var response = unmarshaller.Unmarshall(context) as DescribeMultiRegionAccessPointOperationResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -929,7 +919,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetAccessPointRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("GetAccessPoint", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetAccessPoint", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -943,9 +933,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = GetAccessPointResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as GetAccessPointResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+            var response = unmarshaller.Unmarshall(context) as GetAccessPointResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -960,7 +949,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetAccessPointConfigurationForObjectLambdaRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("GetAccessPointConfigurationForObjectLambda", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetAccessPointConfigurationForObjectLambda", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -974,9 +963,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = GetAccessPointConfigurationForObjectLambdaResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as GetAccessPointConfigurationForObjectLambdaResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+            var response = unmarshaller.Unmarshall(context) as GetAccessPointConfigurationForObjectLambdaResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -991,7 +979,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetAccessPointForObjectLambdaRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("GetAccessPointForObjectLambda", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetAccessPointForObjectLambda", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -1005,9 +993,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = GetAccessPointForObjectLambdaResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as GetAccessPointForObjectLambdaResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+            var response = unmarshaller.Unmarshall(context) as GetAccessPointForObjectLambdaResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -1022,7 +1009,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetAccessPointPolicyRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("GetAccessPointPolicy", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetAccessPointPolicy", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -1036,9 +1023,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = GetAccessPointPolicyResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as GetAccessPointPolicyResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+            var response = unmarshaller.Unmarshall(context) as GetAccessPointPolicyResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -1053,7 +1039,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetAccessPointPolicyForObjectLambdaRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("GetAccessPointPolicyForObjectLambda", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetAccessPointPolicyForObjectLambda", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -1067,9 +1053,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = GetAccessPointPolicyForObjectLambdaResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as GetAccessPointPolicyForObjectLambdaResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+            var response = unmarshaller.Unmarshall(context) as GetAccessPointPolicyForObjectLambdaResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -1084,7 +1069,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetAccessPointPolicyStatusRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("GetAccessPointPolicyStatus", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetAccessPointPolicyStatus", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -1098,9 +1083,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = GetAccessPointPolicyStatusResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as GetAccessPointPolicyStatusResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+            var response = unmarshaller.Unmarshall(context) as GetAccessPointPolicyStatusResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -1115,7 +1099,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetAccessPointPolicyStatusForObjectLambdaRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("GetAccessPointPolicyStatusForObjectLambda", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetAccessPointPolicyStatusForObjectLambda", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -1129,9 +1113,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = GetAccessPointPolicyStatusForObjectLambdaResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as GetAccessPointPolicyStatusForObjectLambdaResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+            var response = unmarshaller.Unmarshall(context) as GetAccessPointPolicyStatusForObjectLambdaResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -1146,7 +1129,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetBucketRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("GetBucket", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetBucket", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -1160,9 +1143,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = GetBucketResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as GetBucketResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+            var response = unmarshaller.Unmarshall(context) as GetBucketResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -1177,7 +1159,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetBucketLifecycleConfigurationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("GetBucketLifecycleConfiguration", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetBucketLifecycleConfiguration", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -1191,9 +1173,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = GetBucketLifecycleConfigurationResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as GetBucketLifecycleConfigurationResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+            var response = unmarshaller.Unmarshall(context) as GetBucketLifecycleConfigurationResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -1208,7 +1189,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetBucketPolicyRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("GetBucketPolicy", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetBucketPolicy", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -1222,9 +1203,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = GetBucketPolicyResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as GetBucketPolicyResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+            var response = unmarshaller.Unmarshall(context) as GetBucketPolicyResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -1239,7 +1219,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetBucketTaggingRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("GetBucketTagging", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetBucketTagging", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -1253,9 +1233,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = GetBucketTaggingResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as GetBucketTaggingResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+            var response = unmarshaller.Unmarshall(context) as GetBucketTaggingResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -1270,7 +1249,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetJobTaggingRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("GetJobTagging", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetJobTagging", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -1284,9 +1263,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = GetJobTaggingResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as GetJobTaggingResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+            var response = unmarshaller.Unmarshall(context) as GetJobTaggingResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -1394,7 +1372,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetMultiRegionAccessPointRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("GetMultiRegionAccessPoint", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetMultiRegionAccessPoint", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -1408,9 +1386,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = GetMultiRegionAccessPointResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as GetMultiRegionAccessPointResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+            var response = unmarshaller.Unmarshall(context) as GetMultiRegionAccessPointResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -1425,7 +1402,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetMultiRegionAccessPointPolicyRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("GetMultiRegionAccessPointPolicy", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetMultiRegionAccessPointPolicy", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -1439,9 +1416,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = GetMultiRegionAccessPointPolicyResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as GetMultiRegionAccessPointPolicyResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+            var response = unmarshaller.Unmarshall(context) as GetMultiRegionAccessPointPolicyResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -1456,7 +1432,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetMultiRegionAccessPointPolicyStatusRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("GetMultiRegionAccessPointPolicyStatus", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetMultiRegionAccessPointPolicyStatus", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -1470,9 +1446,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = GetMultiRegionAccessPointPolicyStatusResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as GetMultiRegionAccessPointPolicyStatusResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+            var response = unmarshaller.Unmarshall(context) as GetMultiRegionAccessPointPolicyStatusResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -1487,7 +1462,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetPublicAccessBlockRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("GetPublicAccessBlock", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetPublicAccessBlock", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -1501,9 +1476,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = GetPublicAccessBlockResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as GetPublicAccessBlockResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+            var response = unmarshaller.Unmarshall(context) as GetPublicAccessBlockResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -1549,7 +1523,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetStorageLensConfigurationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("GetStorageLensConfiguration", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetStorageLensConfiguration", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -1563,9 +1537,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = GetStorageLensConfigurationResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as GetStorageLensConfigurationResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+            var response = unmarshaller.Unmarshall(context) as GetStorageLensConfigurationResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -1580,7 +1553,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetStorageLensConfigurationTaggingRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("GetStorageLensConfigurationTagging", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetStorageLensConfigurationTagging", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -1594,9 +1567,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = GetStorageLensConfigurationTaggingResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as GetStorageLensConfigurationTaggingResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+            var response = unmarshaller.Unmarshall(context) as GetStorageLensConfigurationTaggingResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -1611,7 +1583,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListAccessPointsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("ListAccessPoints", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("ListAccessPoints", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -1625,9 +1597,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = ListAccessPointsResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as ListAccessPointsResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+            var response = unmarshaller.Unmarshall(context) as ListAccessPointsResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -1642,7 +1613,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListAccessPointsForObjectLambdaRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("ListAccessPointsForObjectLambda", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("ListAccessPointsForObjectLambda", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -1656,9 +1627,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = ListAccessPointsForObjectLambdaResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as ListAccessPointsForObjectLambdaResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+            var response = unmarshaller.Unmarshall(context) as ListAccessPointsForObjectLambdaResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -1673,7 +1643,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListJobsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("ListJobs", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("ListJobs", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -1687,9 +1657,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = ListJobsResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as ListJobsResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+            var response = unmarshaller.Unmarshall(context) as ListJobsResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -1797,7 +1766,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListMultiRegionAccessPointsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("ListMultiRegionAccessPoints", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("ListMultiRegionAccessPoints", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -1811,9 +1780,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = ListMultiRegionAccessPointsResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as ListMultiRegionAccessPointsResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+            var response = unmarshaller.Unmarshall(context) as ListMultiRegionAccessPointsResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -1828,7 +1796,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListRegionalBucketsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("ListRegionalBuckets", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("ListRegionalBuckets", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -1842,9 +1810,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = ListRegionalBucketsResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as ListRegionalBucketsResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+            var response = unmarshaller.Unmarshall(context) as ListRegionalBucketsResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -1859,7 +1826,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListStorageLensConfigurationsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("ListStorageLensConfigurations", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("ListStorageLensConfigurations", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -1873,9 +1840,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = ListStorageLensConfigurationsResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as ListStorageLensConfigurationsResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+            var response = unmarshaller.Unmarshall(context) as ListStorageLensConfigurationsResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -1890,7 +1856,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new PutAccessPointConfigurationForObjectLambdaRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("PutAccessPointConfigurationForObjectLambda", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("PutAccessPointConfigurationForObjectLambda", request, internalRequest, service_model);
 
         }
 
@@ -1906,7 +1872,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new PutAccessPointPolicyRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("PutAccessPointPolicy", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("PutAccessPointPolicy", request, internalRequest, service_model);
 
         }
 
@@ -1922,7 +1888,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new PutAccessPointPolicyForObjectLambdaRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("PutAccessPointPolicyForObjectLambda", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("PutAccessPointPolicyForObjectLambda", request, internalRequest, service_model);
 
         }
 
@@ -1938,7 +1904,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new PutBucketLifecycleConfigurationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("PutBucketLifecycleConfiguration", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("PutBucketLifecycleConfiguration", request, internalRequest, service_model);
 
         }
 
@@ -1954,7 +1920,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new PutBucketPolicyRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("PutBucketPolicy", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("PutBucketPolicy", request, internalRequest, service_model);
 
         }
 
@@ -1970,7 +1936,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new PutBucketTaggingRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("PutBucketTagging", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("PutBucketTagging", request, internalRequest, service_model);
 
         }
 
@@ -1986,7 +1952,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new PutJobTaggingRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("PutJobTagging", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("PutJobTagging", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -2000,9 +1966,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = PutJobTaggingResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as PutJobTaggingResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+            var response = unmarshaller.Unmarshall(context) as PutJobTaggingResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -2141,7 +2106,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new PutMultiRegionAccessPointPolicyRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("PutMultiRegionAccessPointPolicy", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("PutMultiRegionAccessPointPolicy", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -2155,9 +2120,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = PutMultiRegionAccessPointPolicyResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as PutMultiRegionAccessPointPolicyResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+            var response = unmarshaller.Unmarshall(context) as PutMultiRegionAccessPointPolicyResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -2172,7 +2136,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new PutPublicAccessBlockRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("PutPublicAccessBlock", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("PutPublicAccessBlock", request, internalRequest, service_model);
 
         }
 
@@ -2188,7 +2152,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new PutStorageLensConfigurationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("PutStorageLensConfiguration", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("PutStorageLensConfiguration", request, internalRequest, service_model);
 
         }
 
@@ -2204,7 +2168,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new PutStorageLensConfigurationTaggingRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("PutStorageLensConfigurationTagging", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("PutStorageLensConfigurationTagging", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -2218,9 +2182,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = PutStorageLensConfigurationTaggingResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as PutStorageLensConfigurationTaggingResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+            var response = unmarshaller.Unmarshall(context) as PutStorageLensConfigurationTaggingResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -2235,7 +2198,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new UpdateJobPriorityRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("UpdateJobPriority", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("UpdateJobPriority", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -2249,9 +2212,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = UpdateJobPriorityResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as UpdateJobPriorityResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+            var response = unmarshaller.Unmarshall(context) as UpdateJobPriorityResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -2390,7 +2352,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new UpdateJobStatusRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("UpdateJobStatus", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("UpdateJobStatus", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -2404,9 +2366,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = UpdateJobStatusResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as UpdateJobStatusResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+            var response = unmarshaller.Unmarshall(context) as UpdateJobStatusResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]

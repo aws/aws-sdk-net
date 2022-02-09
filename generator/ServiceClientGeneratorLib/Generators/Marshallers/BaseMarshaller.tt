@@ -36,7 +36,8 @@ using Amazon.Runtime.Internal.Util;
 		foreach(var member in members)
 		{
 #>		
-			if(<#=variableName#>.IsSet<#=member.PropertyName#>())
+            if (<#=variableName#>.IsSet<#=member.PropertyName#>()) 
+            {
 <#+
             if (member.CustomMarshallerTransformation != null)
             {
@@ -99,6 +100,9 @@ using Amazon.Runtime.Internal.Util;
 <#+
                 }
             }
+            #>
+            }
+<#+
         }
 	}
 

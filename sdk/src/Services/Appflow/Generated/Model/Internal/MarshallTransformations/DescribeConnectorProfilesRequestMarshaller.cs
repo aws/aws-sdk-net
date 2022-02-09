@@ -56,7 +56,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Appflow");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-08-23";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-08-23";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/describe-connector-profiles";
@@ -65,6 +65,12 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetConnectorLabel())
+                {
+                    context.Writer.WritePropertyName("connectorLabel");
+                    context.Writer.Write(publicRequest.ConnectorLabel);
+                }
+
                 if(publicRequest.IsSetConnectorProfileNames())
                 {
                     context.Writer.WritePropertyName("connectorProfileNames");
@@ -94,7 +100,6 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.NextToken);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

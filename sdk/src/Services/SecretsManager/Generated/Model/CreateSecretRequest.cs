@@ -64,6 +64,13 @@ namespace Amazon.SecretsManager.Model
     /// the API, then you can't use <code>aws/secretsmanager</code> to encrypt the secret,
     /// and you must create and use a customer managed KMS key. 
     /// </para>
+    ///  
+    /// <para>
+    ///  <b>Required permissions: </b> <code>secretsmanager:CreateSecret</code>. For more
+    /// information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+    /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+    /// and access control in Secrets Manager</a>. 
+    /// </para>
     /// </summary>
     public partial class CreateSecretRequest : AmazonSecretsManagerRequest
     {

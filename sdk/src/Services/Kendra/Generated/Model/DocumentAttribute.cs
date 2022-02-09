@@ -30,6 +30,12 @@ namespace Amazon.Kendra.Model
 {
     /// <summary>
     /// A custom attribute value assigned to a document.
+    /// 
+    ///  
+    /// <para>
+    /// For more information on how to create custom document attributes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-attributes.html">Custom
+    /// Attributes</a>.
+    /// </para>
     /// </summary>
     public partial class DocumentAttribute
     {

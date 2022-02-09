@@ -55,7 +55,7 @@ namespace Amazon.ApplicationCostProfiler.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListReportDefinitionsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ApplicationCostProfiler");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-09-10";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-09-10";
             request.HttpMethod = "GET";
 
             

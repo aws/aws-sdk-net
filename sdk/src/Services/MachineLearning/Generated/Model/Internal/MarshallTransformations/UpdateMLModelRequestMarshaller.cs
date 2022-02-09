@@ -58,7 +58,7 @@ namespace Amazon.MachineLearning.Model.Internal.MarshallTransformations
             string target = "AmazonML_20141212.UpdateMLModel";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2014-12-12";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2014-12-12";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -85,7 +85,6 @@ namespace Amazon.MachineLearning.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ScoreThreshold);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

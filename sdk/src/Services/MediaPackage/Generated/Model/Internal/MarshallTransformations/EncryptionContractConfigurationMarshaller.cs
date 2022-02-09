@@ -34,7 +34,7 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// EncryptionContractConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class EncryptionContractConfigurationMarshaller : IRequestMarshaller<EncryptionContractConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static EncryptionContractConfigurationMarshaller Instance = new EncryptionContractConfigurationMarshaller();
 
     }

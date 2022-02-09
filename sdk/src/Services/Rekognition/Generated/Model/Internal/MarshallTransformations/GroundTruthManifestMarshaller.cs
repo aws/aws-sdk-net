@@ -34,7 +34,7 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// GroundTruthManifest Marshaller
-    /// </summary>       
+    /// </summary>
     public class GroundTruthManifestMarshaller : IRequestMarshaller<GroundTruthManifest, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static GroundTruthManifestMarshaller Instance = new GroundTruthManifestMarshaller();
 
     }

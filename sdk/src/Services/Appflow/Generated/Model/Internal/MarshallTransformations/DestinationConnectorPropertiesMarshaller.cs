@@ -34,7 +34,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DestinationConnectorProperties Marshaller
-    /// </summary>       
+    /// </summary>
     public class DestinationConnectorPropertiesMarshaller : IRequestMarshaller<DestinationConnectorProperties, JsonMarshallerContext> 
     {
         /// <summary>
@@ -45,6 +45,17 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DestinationConnectorProperties requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetCustomConnector())
+            {
+                context.Writer.WritePropertyName("CustomConnector");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = CustomConnectorDestinationPropertiesMarshaller.Instance;
+                marshaller.Marshall(requestObject.CustomConnector, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetCustomerProfiles())
             {
                 context.Writer.WritePropertyName("CustomerProfiles");
@@ -159,7 +170,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DestinationConnectorPropertiesMarshaller Instance = new DestinationConnectorPropertiesMarshaller();
 
     }

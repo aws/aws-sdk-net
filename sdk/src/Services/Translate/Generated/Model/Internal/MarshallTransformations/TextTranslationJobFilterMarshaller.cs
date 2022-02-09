@@ -34,7 +34,7 @@ namespace Amazon.Translate.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TextTranslationJobFilter Marshaller
-    /// </summary>       
+    /// </summary>
     public class TextTranslationJobFilterMarshaller : IRequestMarshaller<TextTranslationJobFilter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.Translate.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TextTranslationJobFilterMarshaller Instance = new TextTranslationJobFilterMarshaller();
 
     }

@@ -56,7 +56,7 @@ namespace Amazon.ResourceGroups.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ResourceGroups");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-11-27";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-11-27";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/ungroup-resources";
@@ -82,7 +82,6 @@ namespace Amazon.ResourceGroups.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

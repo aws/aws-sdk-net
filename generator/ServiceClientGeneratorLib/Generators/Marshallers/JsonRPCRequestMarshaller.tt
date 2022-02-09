@@ -10,7 +10,7 @@
 #>
 using ThirdParty.Json.LitJson;
 
-namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformations
+namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 {
 	/// <summary>
 	/// <#=this.Operation.Name #> Request Marshaller
@@ -24,7 +24,7 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
         /// <returns></returns>
 		public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((<#=this.Operation.Name#>Request)input);
+            return this.Marshall((<#=this.Operation.Name #>Request)input);
         }
 
         /// <summary>
@@ -32,28 +32,29 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-		public IRequest Marshall(<#=        this.Operation.Name #>Request publicRequest)
+		public IRequest Marshall(<#=this.Operation.Name #>Request publicRequest)
 		{
-			IRequest request = new DefaultRequest(publicRequest, "<#=this.Config.Namespace#>");
-<# if(!string.IsNullOrEmpty(this.Config.ServiceModel.TargetPrefix))
-	{#>
-			string target = "<#=this.Config.ServiceModel.TargetPrefix#>.<#=this.Operation.Name#>";
+			IRequest request = new DefaultRequest(publicRequest, "<#=this.Config.Namespace #>");
+<# if (!string.IsNullOrEmpty(this.Config.ServiceModel.TargetPrefix))
+	{
+#>
+			string target = "<#=this.Config.ServiceModel.TargetPrefix #>.<#=this.Operation.Name #>";
 			request.Headers["X-Amz-Target"] = target;
 <#
 	}
-	if(this.Operation.HttpMethod != "GET" && this.Operation.HttpMethod != "DELETE")
+	if (this.Operation.HttpMethod != "GET" && this.Operation.HttpMethod != "DELETE")
 	{
 
 		if (this.Config.ServiceModel.Customizations.OverrideContentType != null)
 		{
 #>
-			request.Headers["Content-Type"] = "<#=this.Config.ServiceModel.Customizations.OverrideContentType#>";
+			request.Headers["Content-Type"] = "<#=this.Config.ServiceModel.Customizations.OverrideContentType #>";
 <#
 		}
-		else if(this.Config.ServiceModel.Type != ServiceType.Rest_Json)
+		else if (this.Config.ServiceModel.Type != ServiceType.Rest_Json)
 		{
 #>
-			request.Headers["Content-Type"] = "application/x-amz-json-<#=this.Config.ServiceModel.JsonVersion#>";
+			request.Headers["Content-Type"] = "application/x-amz-json-<#=this.Config.ServiceModel.JsonVersion #>";
 <#
 		}
 		else
@@ -64,8 +65,8 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
 		}
 	}
 #>
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "<#=this.Config.ServiceModel.APIVersion#>";            
-			request.HttpMethod = "<#=this.Operation.HttpMethod #>";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "<#=this.Config.ServiceModel.APIVersion #>";
+            request.HttpMethod = "<#=this.Operation.HttpMethod #>";
 
 <#
 	var requestStructure = this.Operation.RequestStructure;
@@ -75,7 +76,7 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
 
 	if (this.Config.ServiceModel.Type == ServiceType.Rest_Json)
 	{
-		ProcessUriMembers("publicRequest", this.Operation);		
+		ProcessUriMembers("publicRequest", this.Operation);
 		ProcessQueryStringMembers("publicRequest", this.Operation);
 	}
 #>
@@ -85,14 +86,14 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
     var payload = this.Operation.RequestPayloadMember;
     var shouldMarshallPayload = (payload != null && !payload.IsMemoryStream && !payload.Shape.IsString);
 	// Process any members which are marshalled as part of the request body
-	if(this.Operation.RequestHasBodyMembers || shouldMarshallPayload)
+	if (this.Operation.RequestHasBodyMembers || shouldMarshallPayload)
 	{
 #>
 			using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
 			{
 				JsonWriter writer = new JsonWriter(stringWriter);
 <#		
-		if(shouldMarshallPayload)	
+		if (shouldMarshallPayload)
 		{
 #>
 				var context = new JsonMarshallerContext(request, writer);
@@ -105,9 +106,8 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
 				writer.WriteObjectStart();
 				var context = new JsonMarshallerContext(request, writer);
 <#		
-			ProcessMembers(1, "publicRequest", this.Operation.RequestBodyMembers);
+				ProcessMembers(1, "publicRequest", this.Operation.RequestBodyMembers);
 #>
-		
 				writer.WriteObjectEnd();
 <#
 		}
@@ -115,7 +115,7 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
 				string snippet = stringWriter.ToString();
 				request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
 <#
-					CheckContentMd5Header(this.Operation, "snippet");
+			CheckContentMd5Header(this.Operation, "snippet");
 #>
 			}
 
@@ -132,11 +132,11 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
 #>
 			request.ContentStream =  publicRequest.<#=payload.PropertyName#> ?? new MemoryStream();
 <#		
-		var requiresLength = payload.RequiresLength;		
-		if(!requiresLength && payload.IsStreaming && this.Operation.AuthType == OperationAuthType.V4UnsignedBody)
+		var requiresLength = payload.RequiresLength;
+		if (!requiresLength && payload.IsStreaming && this.Operation.AuthType == OperationAuthType.V4UnsignedBody)
 		{
 #>
-			if(request.ContentStream.CanSeek)
+			if (request.ContentStream.CanSeek)
 			{
 				request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] =  
 					request.ContentStream.Length.ToString(CultureInfo.InvariantCulture);
@@ -149,20 +149,20 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
 		}
 		else
 		{
-			if(payload.IsStreaming && requiresLength)
+			if (payload.IsStreaming && requiresLength)
 			{
 #>
-			if(!request.ContentStream.CanSeek)
+			if (!request.ContentStream.CanSeek)
 			{
 				throw new System.InvalidOperationException("Cannot determine stream length for the payload when content-length is required.");
 			}
 <#
 			}
 #>
-			request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] =  
+			request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] =
 				request.ContentStream.Length.ToString(CultureInfo.InvariantCulture);
 <#
-		}		
+		}
 #>
 			request.Headers[Amazon.Util.HeaderKeys.ContentTypeHeader] = "binary/octet-stream"; 
 			if (request.ContentStream != null && request.ContentStream.Length == 0)
@@ -196,13 +196,13 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
 	}
 
 	// If there aren't any members that are marshalled as part of the body or streamed	
-	if(this.Operation.UseQueryString)
+	if (this.Operation.UseQueryString)
 	{
 #>
 			request.UseQueryString = true;
 <#	}
 
-	if(!string.IsNullOrEmpty(this.Operation.EndpointHostPrefix))
+	if (!string.IsNullOrEmpty(this.Operation.EndpointHostPrefix))
 	{
 		ProcessEndpointHostPrefixMembers("publicRequest", this.Operation);
 	}

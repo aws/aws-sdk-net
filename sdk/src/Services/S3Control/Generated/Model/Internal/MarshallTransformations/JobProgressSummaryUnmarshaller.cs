@@ -67,6 +67,12 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         unmarshalledObject.NumberOfTasksSucceeded = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("Timers", targetDepth))
+                    {
+                        var unmarshaller = JobTimersUnmarshaller.Instance;
+                        unmarshalledObject.Timers = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("TotalNumberOfTasks", targetDepth))
                     {
                         var unmarshaller = LongUnmarshaller.Instance;

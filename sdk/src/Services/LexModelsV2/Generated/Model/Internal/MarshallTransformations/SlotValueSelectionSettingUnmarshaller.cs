@@ -64,6 +64,12 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("advancedRecognitionSetting", targetDepth))
+                {
+                    var unmarshaller = AdvancedRecognitionSettingUnmarshaller.Instance;
+                    unmarshalledObject.AdvancedRecognitionSetting = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("regexFilter", targetDepth))
                 {
                     var unmarshaller = SlotValueRegexFilterUnmarshaller.Instance;

@@ -34,7 +34,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CaptionSelector Marshaller
-    /// </summary>       
+    /// </summary>
     public class CaptionSelectorMarshaller : IRequestMarshaller<CaptionSelector, JsonMarshallerContext> 
     {
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CaptionSelectorMarshaller Instance = new CaptionSelectorMarshaller();
 
     }

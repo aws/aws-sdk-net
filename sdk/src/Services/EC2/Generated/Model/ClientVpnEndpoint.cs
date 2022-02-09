@@ -37,6 +37,7 @@ namespace Amazon.EC2.Model
         private List<ClientVpnAuthentication> _authenticationOptions = new List<ClientVpnAuthentication>();
         private string _clientCidrBlock;
         private ClientConnectResponseOptions _clientConnectOptions;
+        private ClientLoginBannerResponseOptions _clientLoginBannerOptions;
         private string _clientVpnEndpointId;
         private ConnectionLogResponseOptions _connectionLogOptions;
         private string _creationTime;
@@ -47,6 +48,7 @@ namespace Amazon.EC2.Model
         private List<string> _securityGroupIds = new List<string>();
         private string _selfServicePortalUrl;
         private string _serverCertificateArn;
+        private int? _sessionTimeoutHours;
         private bool? _splitTunnel;
         private ClientVpnEndpointStatus _status;
         private List<Tag> _tags = new List<Tag>();
@@ -127,6 +129,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetClientConnectOptions()
         {
             return this._clientConnectOptions != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ClientLoginBannerOptions. 
+        /// <para>
+        /// Options for enabling a customizable text banner that will be displayed on Amazon Web
+        /// Services provided clients when a VPN session is established.
+        /// </para>
+        /// </summary>
+        public ClientLoginBannerResponseOptions ClientLoginBannerOptions
+        {
+            get { return this._clientLoginBannerOptions; }
+            set { this._clientLoginBannerOptions = value; }
+        }
+
+        // Check to see if ClientLoginBannerOptions property is set
+        internal bool IsSetClientLoginBannerOptions()
+        {
+            return this._clientLoginBannerOptions != null;
         }
 
         /// <summary>
@@ -307,6 +328,32 @@ namespace Amazon.EC2.Model
         internal bool IsSetServerCertificateArn()
         {
             return this._serverCertificateArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SessionTimeoutHours. 
+        /// <para>
+        /// The maximum VPN session duration time in hours.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values: <code>8 | 10 | 12 | 24</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Default value: <code>24</code> 
+        /// </para>
+        /// </summary>
+        public int SessionTimeoutHours
+        {
+            get { return this._sessionTimeoutHours.GetValueOrDefault(); }
+            set { this._sessionTimeoutHours = value; }
+        }
+
+        // Check to see if SessionTimeoutHours property is set
+        internal bool IsSetSessionTimeoutHours()
+        {
+            return this._sessionTimeoutHours.HasValue; 
         }
 
         /// <summary>

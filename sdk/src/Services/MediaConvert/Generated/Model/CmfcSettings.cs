@@ -42,6 +42,7 @@ namespace Amazon.MediaConvert.Model
         private CmfcIFrameOnlyManifest _iFrameOnlyManifest;
         private CmfcScte35Esam _scte35Esam;
         private CmfcScte35Source _scte35Source;
+        private CmfcTimedMetadata _timedMetadata;
 
         /// <summary>
         /// Gets and sets the property AudioDuration. Specify this setting only when your output
@@ -222,6 +223,23 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetScte35Source()
         {
             return this._scte35Source != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TimedMetadata. Applies to CMAF outputs. Use this setting
+        /// to specify whether the service inserts the ID3 timed metadata from the input in this
+        /// output.
+        /// </summary>
+        public CmfcTimedMetadata TimedMetadata
+        {
+            get { return this._timedMetadata; }
+            set { this._timedMetadata = value; }
+        }
+
+        // Check to see if TimedMetadata property is set
+        internal bool IsSetTimedMetadata()
+        {
+            return this._timedMetadata != null;
         }
 
     }

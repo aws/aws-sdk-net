@@ -34,7 +34,7 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// MessageAttributeValue Marshaller
-    /// </summary>       
+    /// </summary>
     public class MessageAttributeValueMarshaller : IRequestMarshaller<MessageAttributeValue, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static MessageAttributeValueMarshaller Instance = new MessageAttributeValueMarshaller();
 
     }

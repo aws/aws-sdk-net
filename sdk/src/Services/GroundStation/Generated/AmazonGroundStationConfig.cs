@@ -32,7 +32,7 @@ namespace Amazon.GroundStation
     public partial class AmazonGroundStationConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.1.99");
+            InternalSDKUtils.BuildUserAgentString("3.7.1.108");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.GroundStation
         /// Default constructor
         /// </summary>
         public AmazonGroundStationConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonGroundStationDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "groundstation";
         }

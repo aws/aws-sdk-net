@@ -55,7 +55,7 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
         public IRequest Marshall(GetBackendJobRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.AmplifyBackend");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-08-11";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-08-11";
             request.HttpMethod = "GET";
 
             if (!publicRequest.IsSetAppId())

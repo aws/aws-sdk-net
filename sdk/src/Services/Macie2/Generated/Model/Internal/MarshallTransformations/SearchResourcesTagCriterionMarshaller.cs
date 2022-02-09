@@ -34,7 +34,7 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SearchResourcesTagCriterion Marshaller
-    /// </summary>       
+    /// </summary>
     public class SearchResourcesTagCriterionMarshaller : IRequestMarshaller<SearchResourcesTagCriterion, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SearchResourcesTagCriterionMarshaller Instance = new SearchResourcesTagCriterionMarshaller();
 
     }

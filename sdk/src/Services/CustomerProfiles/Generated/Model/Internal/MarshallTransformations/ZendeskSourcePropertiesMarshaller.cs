@@ -34,7 +34,7 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ZendeskSourceProperties Marshaller
-    /// </summary>       
+    /// </summary>
     public class ZendeskSourcePropertiesMarshaller : IRequestMarshaller<ZendeskSourceProperties, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ZendeskSourcePropertiesMarshaller Instance = new ZendeskSourcePropertiesMarshaller();
 
     }

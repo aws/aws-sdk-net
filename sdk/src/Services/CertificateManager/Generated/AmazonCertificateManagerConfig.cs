@@ -32,7 +32,7 @@ namespace Amazon.CertificateManager
     public partial class AmazonCertificateManagerConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.1.70");
+            InternalSDKUtils.BuildUserAgentString("3.7.1.79");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.CertificateManager
         /// Default constructor
         /// </summary>
         public AmazonCertificateManagerConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonCertificateManagerDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "acm";
         }

@@ -34,7 +34,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CustomDocumentEnrichmentConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class CustomDocumentEnrichmentConfigurationMarshaller : IRequestMarshaller<CustomDocumentEnrichmentConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -93,7 +93,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CustomDocumentEnrichmentConfigurationMarshaller Instance = new CustomDocumentEnrichmentConfigurationMarshaller();
 
     }

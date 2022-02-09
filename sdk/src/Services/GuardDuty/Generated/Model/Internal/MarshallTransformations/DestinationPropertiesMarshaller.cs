@@ -34,7 +34,7 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DestinationProperties Marshaller
-    /// </summary>       
+    /// </summary>
     public class DestinationPropertiesMarshaller : IRequestMarshaller<DestinationProperties, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DestinationPropertiesMarshaller Instance = new DestinationPropertiesMarshaller();
 
     }

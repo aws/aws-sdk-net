@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// This exception is thrown when a user pool tag cannot be set or updated.
+    /// This exception is thrown when a user pool tag can't be set or updated.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

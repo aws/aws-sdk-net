@@ -55,7 +55,7 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
         public IRequest Marshall(DescribeDocumentVersionsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.WorkDocs");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-05-01";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-05-01";
             request.HttpMethod = "GET";
 
             if (!publicRequest.IsSetDocumentId())
@@ -75,8 +75,10 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
                 request.Parameters.Add("marker", StringUtils.FromString(publicRequest.Marker));
             request.ResourcePath = "/api/v1/documents/{DocumentId}/versions";
         
-            if(publicRequest.IsSetAuthenticationToken())
+            if (publicRequest.IsSetAuthenticationToken()) 
+            {
                 request.Headers["Authentication"] = publicRequest.AuthenticationToken;
+            }
             request.UseQueryString = true;
 
             return request;

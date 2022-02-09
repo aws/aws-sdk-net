@@ -34,7 +34,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// VolumeFrom Marshaller
-    /// </summary>       
+    /// </summary>
     public class VolumeFromMarshaller : IRequestMarshaller<VolumeFrom, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static VolumeFromMarshaller Instance = new VolumeFromMarshaller();
 
     }

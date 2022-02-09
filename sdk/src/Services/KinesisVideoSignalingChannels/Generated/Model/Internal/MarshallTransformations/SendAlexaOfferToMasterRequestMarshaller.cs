@@ -56,7 +56,7 @@ namespace Amazon.KinesisVideoSignalingChannels.Model.Internal.MarshallTransforma
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.KinesisVideoSignalingChannels");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-12-04";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-12-04";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/v1/send-alexa-offer-to-master";
@@ -83,7 +83,6 @@ namespace Amazon.KinesisVideoSignalingChannels.Model.Internal.MarshallTransforma
                     context.Writer.Write(publicRequest.SenderClientId);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

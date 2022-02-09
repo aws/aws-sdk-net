@@ -56,7 +56,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Pinpoint");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-12-01";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-12-01";
             request.HttpMethod = "POST";
 
             if (!publicRequest.IsSetResourceArn())

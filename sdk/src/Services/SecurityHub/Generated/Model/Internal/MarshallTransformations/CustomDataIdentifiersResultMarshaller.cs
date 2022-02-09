@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CustomDataIdentifiersResult Marshaller
-    /// </summary>       
+    /// </summary>
     public class CustomDataIdentifiersResultMarshaller : IRequestMarshaller<CustomDataIdentifiersResult, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CustomDataIdentifiersResultMarshaller Instance = new CustomDataIdentifiersResultMarshaller();
 
     }

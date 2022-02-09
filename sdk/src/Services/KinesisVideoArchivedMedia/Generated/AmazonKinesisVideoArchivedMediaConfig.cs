@@ -32,7 +32,7 @@ namespace Amazon.KinesisVideoArchivedMedia
     public partial class AmazonKinesisVideoArchivedMediaConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.112");
+            InternalSDKUtils.BuildUserAgentString("3.7.0.121");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.KinesisVideoArchivedMedia
         /// Default constructor
         /// </summary>
         public AmazonKinesisVideoArchivedMediaConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonKinesisVideoArchivedMediaDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "kinesisvideo";
         }

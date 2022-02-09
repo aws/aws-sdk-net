@@ -14,7 +14,7 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
 {
 	/// <summary>
 	/// <#=this.Structure.Name #> Marshaller
-	/// </summary>       
+	/// </summary>
 	public class <#=this.Structure.Name #>Marshaller : IRequestMarshaller<<#=this.Structure.Name #>, JsonMarshallerContext> 
 	{
         /// <summary>
@@ -32,7 +32,7 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
 		public readonly static <#=this.Structure.Name #>Marshaller Instance = new <#=this.Structure.Name #>Marshaller();
 
 	}
@@ -91,7 +91,7 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
 <#=new string(' ', level * 4)#> 		   else if(!(<#=variableName#>.IsSet<#=member.PropertyName#>()))
 <#=new string(' ', level * 4)#> 		   {
 <#=new string(' ', level * 4)#>                context.Writer.WritePropertyName("<#=member.MarshallName#>");
-<#=new string(' ', level * 4)#>                context.Writer.Write(Guid.NewGuid().ToString());												
+<#=new string(' ', level * 4)#>                context.Writer.Write(Guid.NewGuid().ToString());
 <#=new string(' ', level * 4)#> 		   }
 <#+					
 			}

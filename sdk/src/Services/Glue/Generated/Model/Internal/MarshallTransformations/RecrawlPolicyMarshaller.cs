@@ -34,7 +34,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RecrawlPolicy Marshaller
-    /// </summary>       
+    /// </summary>
     public class RecrawlPolicyMarshaller : IRequestMarshaller<RecrawlPolicy, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RecrawlPolicyMarshaller Instance = new RecrawlPolicyMarshaller();
 
     }

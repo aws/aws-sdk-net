@@ -37,6 +37,7 @@ namespace Amazon.Kendra.Model
         private string _queryId;
         private List<QueryResultItem> _resultItems = new List<QueryResultItem>();
         private int? _totalNumberOfResults;
+        private List<Warning> _warnings = new List<Warning>();
 
         /// <summary>
         /// Gets and sets the property FacetResults. 
@@ -113,6 +114,31 @@ namespace Amazon.Kendra.Model
         internal bool IsSetTotalNumberOfResults()
         {
             return this._totalNumberOfResults.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Warnings. 
+        /// <para>
+        /// A list of warning codes and their messages on problems with your query.
+        /// </para>
+        ///  
+        /// <para>
+        /// Amazon Kendra currently only supports one type of warning, which is a warning on invalid
+        /// syntax used in the query. For examples of invalid query syntax, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/searching-example.html#searching-index-query-syntax">Searching
+        /// with advanced query syntax</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<Warning> Warnings
+        {
+            get { return this._warnings; }
+            set { this._warnings = value; }
+        }
+
+        // Check to see if Warnings property is set
+        internal bool IsSetWarnings()
+        {
+            return this._warnings != null && this._warnings.Count > 0; 
         }
 
     }

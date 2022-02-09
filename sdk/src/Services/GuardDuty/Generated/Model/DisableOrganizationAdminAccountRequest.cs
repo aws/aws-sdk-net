@@ -30,7 +30,8 @@ namespace Amazon.GuardDuty.Model
 {
     /// <summary>
     /// Container for the parameters to the DisableOrganizationAdminAccount operation.
-    /// Disables an AWS account within the Organization as the GuardDuty delegated administrator.
+    /// Disables an Amazon Web Services account within the Organization as the GuardDuty delegated
+    /// administrator.
     /// </summary>
     public partial class DisableOrganizationAdminAccountRequest : AmazonGuardDutyRequest
     {
@@ -39,8 +40,8 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property AdminAccountId. 
         /// <para>
-        /// The AWS Account ID for the organizations account to be disabled as a GuardDuty delegated
-        /// administrator.
+        /// The Amazon Web Services Account ID for the organizations account to be disabled as
+        /// a GuardDuty delegated administrator.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

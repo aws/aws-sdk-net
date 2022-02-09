@@ -32,7 +32,7 @@ namespace Amazon.DAX
     public partial class AmazonDAXConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.1.78");
+            InternalSDKUtils.BuildUserAgentString("3.7.1.87");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.DAX
         /// Default constructor
         /// </summary>
         public AmazonDAXConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonDAXDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "dax";
         }

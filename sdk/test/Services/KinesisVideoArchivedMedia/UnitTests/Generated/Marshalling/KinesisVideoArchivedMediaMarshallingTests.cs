@@ -53,7 +53,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetClipRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("GetClip", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetClip", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -68,9 +68,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = GetClipResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as GetClipResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as GetClipResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -382,7 +381,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetDASHStreamingSessionURLRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("GetDASHStreamingSessionURL", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetDASHStreamingSessionURL", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -396,9 +395,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = GetDASHStreamingSessionURLResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as GetDASHStreamingSessionURLResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as GetDASHStreamingSessionURLResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -669,7 +667,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetHLSStreamingSessionURLRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("GetHLSStreamingSessionURL", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetHLSStreamingSessionURL", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -683,9 +681,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = GetHLSStreamingSessionURLResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as GetHLSStreamingSessionURLResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as GetHLSStreamingSessionURLResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -956,7 +953,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetMediaForFragmentListRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("GetMediaForFragmentList", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetMediaForFragmentList", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -971,9 +968,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = GetMediaForFragmentListResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as GetMediaForFragmentListResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as GetMediaForFragmentListResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -1120,7 +1116,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListFragmentsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("ListFragments", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("ListFragments", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -1134,9 +1130,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = ListFragmentsResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as ListFragmentsResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as ListFragmentsResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]

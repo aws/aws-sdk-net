@@ -34,7 +34,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ContactCenterActivity Marshaller
-    /// </summary>       
+    /// </summary>
     public class ContactCenterActivityMarshaller : IRequestMarshaller<ContactCenterActivity, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ContactCenterActivityMarshaller Instance = new ContactCenterActivityMarshaller();
 
     }

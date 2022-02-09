@@ -91,7 +91,7 @@ namespace Amazon.EC2InstanceConnect.Model
         /// for key pairs</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=256, Max=4096)]
+        [AWSProperty(Required=true, Min=80, Max=4096)]
         public string SSHPublicKey
         {
             get { return this._sshPublicKey; }

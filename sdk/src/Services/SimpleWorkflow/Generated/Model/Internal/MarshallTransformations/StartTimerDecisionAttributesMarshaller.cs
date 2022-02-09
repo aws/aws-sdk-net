@@ -34,7 +34,7 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// StartTimerDecisionAttributes Marshaller
-    /// </summary>       
+    /// </summary>
     public class StartTimerDecisionAttributesMarshaller : IRequestMarshaller<StartTimerDecisionAttributes, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static StartTimerDecisionAttributesMarshaller Instance = new StartTimerDecisionAttributesMarshaller();
 
     }

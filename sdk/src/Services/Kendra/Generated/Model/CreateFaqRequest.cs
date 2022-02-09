@@ -31,6 +31,11 @@ namespace Amazon.Kendra.Model
     /// <summary>
     /// Container for the parameters to the CreateFaq operation.
     /// Creates an new set of frequently asked question (FAQ) questions and answers.
+    /// 
+    ///  
+    /// <para>
+    /// Adding FAQs to an index is an asynchronous operation.
+    /// </para>
     /// </summary>
     public partial class CreateFaqRequest : AmazonKendraRequest
     {
@@ -48,8 +53,8 @@ namespace Amazon.Kendra.Model
         /// Gets and sets the property ClientToken. 
         /// <para>
         /// A token that you provide to identify the request to create a FAQ. Multiple calls to
-        /// the <code>CreateFaqRequest</code> operation with the same client token will create
-        /// only one FAQ. 
+        /// the <code>CreateFaqRequest</code> API with the same client token will create only
+        /// one FAQ. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

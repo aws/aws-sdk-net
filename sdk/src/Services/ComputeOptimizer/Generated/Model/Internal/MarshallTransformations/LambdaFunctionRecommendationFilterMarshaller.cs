@@ -34,7 +34,7 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// LambdaFunctionRecommendationFilter Marshaller
-    /// </summary>       
+    /// </summary>
     public class LambdaFunctionRecommendationFilterMarshaller : IRequestMarshaller<LambdaFunctionRecommendationFilter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static LambdaFunctionRecommendationFilterMarshaller Instance = new LambdaFunctionRecommendationFilterMarshaller();
 
     }

@@ -313,7 +313,7 @@ using System.Diagnostics.CodeAnalysis;
 
 // Do not call overridable methods in constructors
 [module: SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors", Scope = "member", Target = "Amazon.Runtime.AbstractWebServiceClient.#.ctor(Amazon.Runtime.AWSCredentials,Amazon.Runtime.ClientConfig,Amazon.Runtime.AbstractWebServiceClient+AuthenticationTypes)")]
-[module: SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors", Scope = "member", Target = "Amazon.Runtime.ClientConfig.#.ctor()")]
+[module: SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors", Scope = "member", Target = "Amazon.Runtime.ClientConfig.#.ctor(Amazon.Runtime.Internal.IDefaultConfigurationProvider)")]
 [module: SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors", Scope = "member", Target = "Amazon.Runtime.AmazonServiceClient.#.ctor(Amazon.Runtime.AWSCredentials,Amazon.Runtime.ClientConfig)")]
 [module: SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors", Scope = "member", Target = "Amazon.Runtime.Internal.ErrorHandler.#.ctor(Amazon.Runtime.Internal.Util.ILogger)")]
 [module: SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors", Scope = "member", Target = "ThirdParty.MD5.MD5Managed.#.ctor()")]

@@ -32,10 +32,27 @@ namespace Amazon.Synthetics.Model
     /// Container for the parameters to the DescribeCanariesLastRun operation.
     /// Use this operation to see information from the most recent run of each canary that
     /// you have created.
+    /// 
+    ///  
+    /// <para>
+    /// This operation supports resource-level authorization using an IAM policy and the <code>Names</code>
+    /// parameter. If you specify the <code>Names</code> parameter, the operation is successful
+    /// only if you have authorization to view all the canaries that you specify in your request.
+    /// If you do not have permission to view any of the canaries, the request fails with
+    /// a 403 response.
+    /// </para>
+    ///  
+    /// <para>
+    /// You are required to use the <code>Names</code> parameter if you are logged on to a
+    /// user or role that has an IAM policy that restricts which canaries that you are allowed
+    /// to view. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Restricted.html">
+    /// Limiting a user to viewing specific canaries</a>.
+    /// </para>
     /// </summary>
     public partial class DescribeCanariesLastRunRequest : AmazonSyntheticsRequest
     {
         private int? _maxResults;
+        private List<string> _names = new List<string>();
         private string _nextToken;
 
         /// <summary>
@@ -56,6 +73,39 @@ namespace Amazon.Synthetics.Model
         internal bool IsSetMaxResults()
         {
             return this._maxResults.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Names. 
+        /// <para>
+        /// Use this parameter to return only canaries that match the names that you specify here.
+        /// You can specify as many as five canary names.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify this parameter, the operation is successful only if you have authorization
+        /// to view all the canaries that you specify in your request. If you do not have permission
+        /// to view any of the canaries, the request fails with a 403 response.
+        /// </para>
+        ///  
+        /// <para>
+        /// You are required to use the <code>Names</code> parameter if you are logged on to a
+        /// user or role that has an IAM policy that restricts which canaries that you are allowed
+        /// to view. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Restricted.html">
+        /// Limiting a user to viewing specific canaries</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=5)]
+        public List<string> Names
+        {
+            get { return this._names; }
+            set { this._names = value; }
+        }
+
+        // Check to see if Names property is set
+        internal bool IsSetNames()
+        {
+            return this._names != null && this._names.Count > 0; 
         }
 
         /// <summary>

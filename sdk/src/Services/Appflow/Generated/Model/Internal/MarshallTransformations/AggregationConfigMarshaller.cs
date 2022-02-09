@@ -34,7 +34,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AggregationConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class AggregationConfigMarshaller : IRequestMarshaller<AggregationConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AggregationConfigMarshaller Instance = new AggregationConfigMarshaller();
 
     }

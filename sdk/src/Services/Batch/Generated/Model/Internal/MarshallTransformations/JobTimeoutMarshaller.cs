@@ -34,7 +34,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// JobTimeout Marshaller
-    /// </summary>       
+    /// </summary>
     public class JobTimeoutMarshaller : IRequestMarshaller<JobTimeout, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static JobTimeoutMarshaller Instance = new JobTimeoutMarshaller();
 
     }

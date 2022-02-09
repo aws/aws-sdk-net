@@ -90,8 +90,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         ///  <note> 
         /// <para>
         /// If you set a value for <code>TemporaryPasswordValidityDays</code> in <code>PasswordPolicy</code>,
-        /// that value will be used and <code>UnusedAccountValidityDays</code> will be deprecated
-        /// for that user pool. 
+        /// that value will be used, and <code>UnusedAccountValidityDays</code> will be no longer
+        /// be an available parameter for that user pool.
         /// </para>
         ///  </note>
         /// </summary>

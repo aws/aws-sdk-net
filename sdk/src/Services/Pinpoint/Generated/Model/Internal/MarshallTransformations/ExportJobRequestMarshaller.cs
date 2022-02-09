@@ -34,7 +34,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ExportJobRequest Marshaller
-    /// </summary>       
+    /// </summary>
     public class ExportJobRequestMarshaller : IRequestMarshaller<ExportJobRequest, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ExportJobRequestMarshaller Instance = new ExportJobRequestMarshaller();
 
     }

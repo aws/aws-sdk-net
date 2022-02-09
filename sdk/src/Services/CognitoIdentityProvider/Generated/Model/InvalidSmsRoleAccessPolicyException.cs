@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// This exception is returned when the role provided for SMS configuration does not have
+    /// This exception is returned when the role provided for SMS configuration doesn't have
     /// permission to publish using Amazon SNS.
     /// </summary>
     #if !NETSTANDARD

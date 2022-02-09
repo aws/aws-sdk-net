@@ -34,7 +34,7 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ReplicaConfigurationRequest Marshaller
-    /// </summary>       
+    /// </summary>
     public class ReplicaConfigurationRequestMarshaller : IRequestMarshaller<ReplicaConfigurationRequest, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ReplicaConfigurationRequestMarshaller Instance = new ReplicaConfigurationRequestMarshaller();
 
     }

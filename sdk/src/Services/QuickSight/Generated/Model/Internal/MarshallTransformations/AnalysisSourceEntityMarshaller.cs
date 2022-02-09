@@ -34,7 +34,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AnalysisSourceEntity Marshaller
-    /// </summary>       
+    /// </summary>
     public class AnalysisSourceEntityMarshaller : IRequestMarshaller<AnalysisSourceEntity, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AnalysisSourceEntityMarshaller Instance = new AnalysisSourceEntityMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ModelBiasJobInput Marshaller
-    /// </summary>       
+    /// </summary>
     public class ModelBiasJobInputMarshaller : IRequestMarshaller<ModelBiasJobInput, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ModelBiasJobInputMarshaller Instance = new ModelBiasJobInputMarshaller();
 
     }

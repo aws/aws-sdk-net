@@ -34,7 +34,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// FirelensConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class FirelensConfigurationMarshaller : IRequestMarshaller<FirelensConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -69,7 +69,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static FirelensConfigurationMarshaller Instance = new FirelensConfigurationMarshaller();
 
     }

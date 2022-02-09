@@ -34,7 +34,7 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// MavenReference Marshaller
-    /// </summary>       
+    /// </summary>
     public class MavenReferenceMarshaller : IRequestMarshaller<MavenReference, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static MavenReferenceMarshaller Instance = new MavenReferenceMarshaller();
 
     }

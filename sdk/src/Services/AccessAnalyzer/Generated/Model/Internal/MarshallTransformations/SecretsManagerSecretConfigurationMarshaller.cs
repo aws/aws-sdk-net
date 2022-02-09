@@ -34,7 +34,7 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SecretsManagerSecretConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class SecretsManagerSecretConfigurationMarshaller : IRequestMarshaller<SecretsManagerSecretConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SecretsManagerSecretConfigurationMarshaller Instance = new SecretsManagerSecretConfigurationMarshaller();
 
     }

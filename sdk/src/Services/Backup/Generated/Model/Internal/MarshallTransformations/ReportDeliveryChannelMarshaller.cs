@@ -34,7 +34,7 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ReportDeliveryChannel Marshaller
-    /// </summary>       
+    /// </summary>
     public class ReportDeliveryChannelMarshaller : IRequestMarshaller<ReportDeliveryChannel, JsonMarshallerContext> 
     {
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ReportDeliveryChannelMarshaller Instance = new ReportDeliveryChannelMarshaller();
 
     }

@@ -56,7 +56,7 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Glacier");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2012-06-01";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2012-06-01";
             request.HttpMethod = "POST";
 
             request.AddPathResource("{accountId}", publicRequest.IsSetAccountId() ? StringUtils.FromString(publicRequest.AccountId) : string.Empty);
@@ -65,11 +65,15 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
             request.AddPathResource("{vaultName}", StringUtils.FromString(publicRequest.VaultName));
             request.ResourcePath = "/{accountId}/vaults/{vaultName}/multipart-uploads";
         
-            if(publicRequest.IsSetArchiveDescription())
+            if (publicRequest.IsSetArchiveDescription()) 
+            {
                 request.Headers["x-amz-archive-description"] = publicRequest.ArchiveDescription;
+            }
         
-            if(publicRequest.IsSetPartSize())
+            if (publicRequest.IsSetPartSize()) 
+            {
                 request.Headers["x-amz-part-size"] = Amazon.Runtime.Internal.Util.StringUtils.FromLong(publicRequest.PartSize);
+            }
 
             return request;
         }

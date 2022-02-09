@@ -34,7 +34,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AudioSilenceFailoverSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class AudioSilenceFailoverSettingsMarshaller : IRequestMarshaller<AudioSilenceFailoverSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AudioSilenceFailoverSettingsMarshaller Instance = new AudioSilenceFailoverSettingsMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// KmsGrantConstraints Marshaller
-    /// </summary>       
+    /// </summary>
     public class KmsGrantConstraintsMarshaller : IRequestMarshaller<KmsGrantConstraints, JsonMarshallerContext> 
     {
         /// <summary>
@@ -77,7 +77,7 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static KmsGrantConstraintsMarshaller Instance = new KmsGrantConstraintsMarshaller();
 
     }

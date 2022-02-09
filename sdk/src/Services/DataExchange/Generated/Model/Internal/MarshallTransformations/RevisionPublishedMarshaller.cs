@@ -34,7 +34,7 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RevisionPublished Marshaller
-    /// </summary>       
+    /// </summary>
     public class RevisionPublishedMarshaller : IRequestMarshaller<RevisionPublished, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RevisionPublishedMarshaller Instance = new RevisionPublishedMarshaller();
 
     }

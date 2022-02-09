@@ -34,7 +34,7 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// UpdateReplicationSetAction Marshaller
-    /// </summary>       
+    /// </summary>
     public class UpdateReplicationSetActionMarshaller : IRequestMarshaller<UpdateReplicationSetAction, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static UpdateReplicationSetActionMarshaller Instance = new UpdateReplicationSetActionMarshaller();
 
     }

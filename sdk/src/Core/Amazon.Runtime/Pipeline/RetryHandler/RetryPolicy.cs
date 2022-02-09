@@ -62,9 +62,9 @@ namespace Amazon.Runtime
             "LimitExceededException",
             "RequestThrottled",
             "SlowDown",
-            "PriorRequestNotComplete"                
+            "PriorRequestNotComplete"
         };
-                
+
         /// <summary>
         /// The standard set of timeout error codes to retry on.
         /// </summary>
@@ -153,7 +153,7 @@ namespace Amazon.Runtime
             }
             return false;
         }
-                
+
         /// <summary>
         /// Returns true if the request is in a state where it can be retried, else false.
         /// </summary>
@@ -192,7 +192,7 @@ namespace Amazon.Runtime
         /// <param name="executionContext">The execution context which contains both the
         /// requests and response context.</param>
         public virtual void NotifySuccess(IExecutionContext executionContext)
-        {            
+        {    
         }
         
         /// <summary>

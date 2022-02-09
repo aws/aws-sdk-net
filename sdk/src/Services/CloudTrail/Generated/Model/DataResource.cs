@@ -153,6 +153,10 @@ namespace Amazon.CloudTrail.Model
         /// <para>
         ///  <code>AWS::DynamoDB::Stream</code> 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AWS::Glue::Table</code> 
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public string Type

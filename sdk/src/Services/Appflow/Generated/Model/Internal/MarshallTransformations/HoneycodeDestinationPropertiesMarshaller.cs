@@ -34,7 +34,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// HoneycodeDestinationProperties Marshaller
-    /// </summary>       
+    /// </summary>
     public class HoneycodeDestinationPropertiesMarshaller : IRequestMarshaller<HoneycodeDestinationProperties, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static HoneycodeDestinationPropertiesMarshaller Instance = new HoneycodeDestinationPropertiesMarshaller();
 
     }

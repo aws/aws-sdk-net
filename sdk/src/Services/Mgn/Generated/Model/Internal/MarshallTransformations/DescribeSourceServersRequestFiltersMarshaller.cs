@@ -34,7 +34,7 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DescribeSourceServersRequestFilters Marshaller
-    /// </summary>       
+    /// </summary>
     public class DescribeSourceServersRequestFiltersMarshaller : IRequestMarshaller<DescribeSourceServersRequestFilters, JsonMarshallerContext> 
     {
         /// <summary>
@@ -88,7 +88,7 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DescribeSourceServersRequestFiltersMarshaller Instance = new DescribeSourceServersRequestFiltersMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model.Internal.MarshallTransformation
 {
     /// <summary>
     /// TimestampRange Marshaller
-    /// </summary>       
+    /// </summary>
     public class TimestampRangeMarshaller : IRequestMarshaller<TimestampRange, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model.Internal.MarshallTransformation
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TimestampRangeMarshaller Instance = new TimestampRangeMarshaller();
 
     }

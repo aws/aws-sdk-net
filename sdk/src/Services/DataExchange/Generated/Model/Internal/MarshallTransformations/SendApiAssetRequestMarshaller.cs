@@ -56,7 +56,7 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.DataExchange");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-07-25";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-07-25";
             request.HttpMethod = "POST";
 
             
@@ -70,27 +70,39 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
             request.ResourcePath = "/v1";
             request.Content = System.Text.Encoding.UTF8.GetBytes(publicRequest.Body);
         
-            if(publicRequest.IsSetAssetId())
+            if (publicRequest.IsSetAssetId()) 
+            {
                 request.Headers["x-amzn-dataexchange-asset-id"] = publicRequest.AssetId;
+            }
         
-            if(publicRequest.IsSetDataSetId())
+            if (publicRequest.IsSetDataSetId()) 
+            {
                 request.Headers["x-amzn-dataexchange-data-set-id"] = publicRequest.DataSetId;
+            }
         
-            if(publicRequest.IsSetMethod())
+            if (publicRequest.IsSetMethod()) 
+            {
                 request.Headers["x-amzn-dataexchange-http-method"] = publicRequest.Method;
+            }
         
-            if(publicRequest.IsSetPath())
+            if (publicRequest.IsSetPath()) 
+            {
                 request.Headers["x-amzn-dataexchange-path"] = publicRequest.Path;
+            }
         
-            if(publicRequest.IsSetRequestHeaders())
+            if (publicRequest.IsSetRequestHeaders()) 
+            {
                 //Map of headers with prefix "x-amzn-dataexchange-header-".
                 foreach (var kvpRequestHeaders in publicRequest.RequestHeaders)
                 {
                      request.Headers[$"x-amzn-dataexchange-header-{kvpRequestHeaders.Key}"] = kvpRequestHeaders.Value;
                 }
+            }
         
-            if(publicRequest.IsSetRevisionId())
+            if (publicRequest.IsSetRevisionId()) 
+            {
                 request.Headers["x-amzn-dataexchange-revision-id"] = publicRequest.RevisionId;
+            }
             request.UseQueryString = true;
             
             request.HostPrefix = $"api-fulfill.";

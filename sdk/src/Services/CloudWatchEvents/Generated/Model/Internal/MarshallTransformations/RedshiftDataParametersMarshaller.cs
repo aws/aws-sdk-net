@@ -34,7 +34,7 @@ namespace Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RedshiftDataParameters Marshaller
-    /// </summary>       
+    /// </summary>
     public class RedshiftDataParametersMarshaller : IRequestMarshaller<RedshiftDataParameters, JsonMarshallerContext> 
     {
         /// <summary>
@@ -85,7 +85,7 @@ namespace Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RedshiftDataParametersMarshaller Instance = new RedshiftDataParametersMarshaller();
 
     }

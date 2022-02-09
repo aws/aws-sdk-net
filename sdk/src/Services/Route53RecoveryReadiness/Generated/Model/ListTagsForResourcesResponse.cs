@@ -36,7 +36,10 @@ namespace Amazon.Route53RecoveryReadiness.Model
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
-        /// Gets and sets the property Tags.
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// 
+        /// </para>
         /// </summary>
         public Dictionary<string, string> Tags
         {

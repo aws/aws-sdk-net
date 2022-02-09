@@ -32,7 +32,7 @@ namespace Amazon.CostExplorer
     public partial class AmazonCostExplorerConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.3.60");
+            InternalSDKUtils.BuildUserAgentString("3.7.3.70");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.CostExplorer
         /// Default constructor
         /// </summary>
         public AmazonCostExplorerConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonCostExplorerDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "ce";
         }

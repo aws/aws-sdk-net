@@ -34,7 +34,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// GlueTable Marshaller
-    /// </summary>       
+    /// </summary>
     public class GlueTableMarshaller : IRequestMarshaller<GlueTable, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static GlueTableMarshaller Instance = new GlueTableMarshaller();
 
     }

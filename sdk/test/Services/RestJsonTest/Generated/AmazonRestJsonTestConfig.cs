@@ -40,6 +40,7 @@ namespace Amazon.RestJsonTest
         /// Default constructor
         /// </summary>
         public AmazonRestJsonTestConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonRestJsonTestDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "Rest-Json-Test";
         }

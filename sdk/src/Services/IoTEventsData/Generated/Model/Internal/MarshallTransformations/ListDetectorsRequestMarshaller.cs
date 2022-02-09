@@ -55,7 +55,7 @@ namespace Amazon.IoTEventsData.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListDetectorsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.IoTEventsData");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-10-23";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-10-23";
             request.HttpMethod = "GET";
 
             if (!publicRequest.IsSetDetectorModelName())

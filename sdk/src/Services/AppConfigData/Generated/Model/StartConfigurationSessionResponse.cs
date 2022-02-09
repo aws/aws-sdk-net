@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppConfigData.Model
 {
     /// <summary>
-    /// Response parameters for the StartConfigurationSession API.
+    /// This is the response object from the StartConfigurationSession operation.
     /// </summary>
     public partial class StartConfigurationSessionResponse : AmazonWebServiceResponse
     {
@@ -39,13 +39,13 @@ namespace Amazon.AppConfigData.Model
         /// Gets and sets the property InitialConfigurationToken. 
         /// <para>
         /// Token encapsulating state about the configuration session. Provide this token to the
-        /// GetLatestConfiguration API to retrieve configuration data.
+        /// <code>GetLatestConfiguration</code> API to retrieve configuration data.
         /// </para>
         ///  <important> 
         /// <para>
-        /// This token should only be used once in your first call to GetLatestConfiguration.
-        /// You MUST use the new token in the GetConfiguration response (NextPollConfigurationToken)
-        /// in each subsequent call to GetLatestConfiguration.
+        /// This token should only be used once in your first call to <code>GetLatestConfiguration</code>.
+        /// You MUST use the new token in the <code>GetLatestConfiguration</code> response (<code>NextPollConfigurationToken</code>)
+        /// in each subsequent call to <code>GetLatestConfiguration</code>.
         /// </para>
         ///  </important>
         /// </summary>

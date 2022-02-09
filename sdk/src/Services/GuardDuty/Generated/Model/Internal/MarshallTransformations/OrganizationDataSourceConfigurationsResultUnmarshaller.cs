@@ -64,6 +64,12 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("kubernetes", targetDepth))
+                {
+                    var unmarshaller = OrganizationKubernetesConfigurationResultUnmarshaller.Instance;
+                    unmarshalledObject.Kubernetes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("s3Logs", targetDepth))
                 {
                     var unmarshaller = OrganizationS3LogsConfigurationResultUnmarshaller.Instance;

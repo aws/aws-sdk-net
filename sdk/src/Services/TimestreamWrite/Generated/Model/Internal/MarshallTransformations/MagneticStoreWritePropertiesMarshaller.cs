@@ -34,7 +34,7 @@ namespace Amazon.TimestreamWrite.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// MagneticStoreWriteProperties Marshaller
-    /// </summary>       
+    /// </summary>
     public class MagneticStoreWritePropertiesMarshaller : IRequestMarshaller<MagneticStoreWriteProperties, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.TimestreamWrite.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static MagneticStoreWritePropertiesMarshaller Instance = new MagneticStoreWritePropertiesMarshaller();
 
     }

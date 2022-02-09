@@ -34,7 +34,7 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ExtendedKeyUsage Marshaller
-    /// </summary>       
+    /// </summary>
     public class ExtendedKeyUsageMarshaller : IRequestMarshaller<ExtendedKeyUsage, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ExtendedKeyUsageMarshaller Instance = new ExtendedKeyUsageMarshaller();
 
     }

@@ -30,7 +30,7 @@ namespace Amazon.AppConfig.Model
 {
     /// <summary>
     /// Container for the parameters to the ListDeployments operation.
-    /// Lists the deployments for an environment.
+    /// Lists the deployments for an environment in descending deployment number order.
     /// </summary>
     public partial class ListDeploymentsRequest : AmazonAppConfigRequest
     {
@@ -80,8 +80,9 @@ namespace Amazon.AppConfig.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of items to return for this call. The call also returns a token
-        /// that you can specify in a subsequent call to get the next set of results.
+        /// The maximum number of items that may be returned for this call. If there are items
+        /// that have not yet been returned, the response will include a non-null <code>NextToken</code>
+        /// that you can provide in a subsequent call to get the next set of results.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
@@ -100,7 +101,8 @@ namespace Amazon.AppConfig.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A token to start the list. Use this token to get the next set of results.
+        /// The token returned by a prior call to this operation indicating the next set of results
+        /// to be returned. If not specified, the operation will return the first set of results.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

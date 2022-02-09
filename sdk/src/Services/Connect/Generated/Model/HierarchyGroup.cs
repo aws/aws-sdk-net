@@ -38,6 +38,7 @@ namespace Amazon.Connect.Model
         private string _id;
         private string _levelId;
         private string _name;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -127,6 +128,25 @@ namespace Amazon.Connect.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags used to organize, track, or control access for this resource.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=50)]
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

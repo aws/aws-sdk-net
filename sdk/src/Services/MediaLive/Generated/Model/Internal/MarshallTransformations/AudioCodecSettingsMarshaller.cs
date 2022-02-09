@@ -34,7 +34,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AudioCodecSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class AudioCodecSettingsMarshaller : IRequestMarshaller<AudioCodecSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -115,7 +115,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AudioCodecSettingsMarshaller Instance = new AudioCodecSettingsMarshaller();
 
     }

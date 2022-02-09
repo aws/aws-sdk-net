@@ -34,7 +34,7 @@ namespace Amazon.QLDBSession.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// EndSessionRequest Marshaller
-    /// </summary>       
+    /// </summary>
     public class EndSessionRequestMarshaller : IRequestMarshaller<EndSessionRequest, JsonMarshallerContext> 
     {
         /// <summary>
@@ -49,7 +49,7 @@ namespace Amazon.QLDBSession.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static EndSessionRequestMarshaller Instance = new EndSessionRequestMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.TimestreamQuery.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// MultiMeasureAttributeMapping Marshaller
-    /// </summary>       
+    /// </summary>
     public class MultiMeasureAttributeMappingMarshaller : IRequestMarshaller<MultiMeasureAttributeMapping, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.TimestreamQuery.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static MultiMeasureAttributeMappingMarshaller Instance = new MultiMeasureAttributeMappingMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.WorkMailMessageFlow.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// S3Reference Marshaller
-    /// </summary>       
+    /// </summary>
     public class S3ReferenceMarshaller : IRequestMarshaller<S3Reference, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.WorkMailMessageFlow.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static S3ReferenceMarshaller Instance = new S3ReferenceMarshaller();
 
     }

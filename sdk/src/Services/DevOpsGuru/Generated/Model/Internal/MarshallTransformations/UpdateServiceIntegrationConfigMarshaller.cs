@@ -34,7 +34,7 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// UpdateServiceIntegrationConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class UpdateServiceIntegrationConfigMarshaller : IRequestMarshaller<UpdateServiceIntegrationConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static UpdateServiceIntegrationConfigMarshaller Instance = new UpdateServiceIntegrationConfigMarshaller();
 
     }

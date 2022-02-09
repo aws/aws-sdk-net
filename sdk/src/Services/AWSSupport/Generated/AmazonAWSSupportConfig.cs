@@ -32,7 +32,7 @@ namespace Amazon.AWSSupport
     public partial class AmazonAWSSupportConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.113");
+            InternalSDKUtils.BuildUserAgentString("3.7.0.122");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.AWSSupport
         /// Default constructor
         /// </summary>
         public AmazonAWSSupportConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonAWSSupportDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "support";
         }

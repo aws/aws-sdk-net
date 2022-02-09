@@ -32,7 +32,7 @@ namespace Amazon.CodePipeline
     public partial class AmazonCodePipelineConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.112");
+            InternalSDKUtils.BuildUserAgentString("3.7.0.121");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.CodePipeline
         /// Default constructor
         /// </summary>
         public AmazonCodePipelineConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonCodePipelineDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "codepipeline";
         }

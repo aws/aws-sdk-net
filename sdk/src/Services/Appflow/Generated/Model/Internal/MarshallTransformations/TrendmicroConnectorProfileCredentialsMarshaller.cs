@@ -34,7 +34,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TrendmicroConnectorProfileCredentials Marshaller
-    /// </summary>       
+    /// </summary>
     public class TrendmicroConnectorProfileCredentialsMarshaller : IRequestMarshaller<TrendmicroConnectorProfileCredentials, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TrendmicroConnectorProfileCredentialsMarshaller Instance = new TrendmicroConnectorProfileCredentialsMarshaller();
 
     }

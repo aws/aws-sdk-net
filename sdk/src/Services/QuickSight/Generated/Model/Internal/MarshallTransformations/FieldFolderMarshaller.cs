@@ -34,7 +34,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// FieldFolder Marshaller
-    /// </summary>       
+    /// </summary>
     public class FieldFolderMarshaller : IRequestMarshaller<FieldFolder, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static FieldFolderMarshaller Instance = new FieldFolderMarshaller();
 
     }

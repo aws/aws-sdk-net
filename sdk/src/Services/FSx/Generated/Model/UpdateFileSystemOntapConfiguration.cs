@@ -35,6 +35,7 @@ namespace Amazon.FSx.Model
     {
         private int? _automaticBackupRetentionDays;
         private string _dailyAutomaticBackupStartTime;
+        private DiskIopsConfiguration _diskIopsConfiguration;
         private string _fsxAdminPassword;
         private string _weeklyMaintenanceStartTime;
 
@@ -68,6 +69,28 @@ namespace Amazon.FSx.Model
         internal bool IsSetDailyAutomaticBackupStartTime()
         {
             return this._dailyAutomaticBackupStartTime != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DiskIopsConfiguration. 
+        /// <para>
+        /// The SSD IOPS (input/output operations per second) configuration for an Amazon FSx
+        /// for NetApp ONTAP file system. The default is 3 IOPS per GB of storage capacity, but
+        /// you can provision additional IOPS per GB of storage. The configuration consists of
+        /// an IOPS mode (<code>AUTOMATIC</code> or <code>USER_PROVISIONED</code>), and in the
+        /// case of <code>USER_PROVISIONED</code> IOPS, the total number of SSD IOPS provisioned.
+        /// </para>
+        /// </summary>
+        public DiskIopsConfiguration DiskIopsConfiguration
+        {
+            get { return this._diskIopsConfiguration; }
+            set { this._diskIopsConfiguration = value; }
+        }
+
+        // Check to see if DiskIopsConfiguration property is set
+        internal bool IsSetDiskIopsConfiguration()
+        {
+            return this._diskIopsConfiguration != null;
         }
 
         /// <summary>

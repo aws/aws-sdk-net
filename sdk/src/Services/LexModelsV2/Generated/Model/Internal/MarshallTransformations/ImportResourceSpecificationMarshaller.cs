@@ -34,7 +34,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ImportResourceSpecification Marshaller
-    /// </summary>       
+    /// </summary>
     public class ImportResourceSpecificationMarshaller : IRequestMarshaller<ImportResourceSpecification, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,11 +67,22 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetCustomVocabularyImportSpecification())
+            {
+                context.Writer.WritePropertyName("customVocabularyImportSpecification");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = CustomVocabularyImportSpecificationMarshaller.Instance;
+                marshaller.Marshall(requestObject.CustomVocabularyImportSpecification, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ImportResourceSpecificationMarshaller Instance = new ImportResourceSpecificationMarshaller();
 
     }

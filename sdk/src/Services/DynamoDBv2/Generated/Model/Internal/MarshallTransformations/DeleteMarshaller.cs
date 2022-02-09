@@ -34,7 +34,7 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Delete Marshaller
-    /// </summary>       
+    /// </summary>
     public class DeleteMarshaller : IRequestMarshaller<Delete, JsonMarshallerContext> 
     {
         /// <summary>
@@ -119,7 +119,7 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DeleteMarshaller Instance = new DeleteMarshaller();
 
     }

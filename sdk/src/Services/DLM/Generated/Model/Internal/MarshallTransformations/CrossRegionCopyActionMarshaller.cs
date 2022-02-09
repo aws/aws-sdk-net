@@ -34,7 +34,7 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CrossRegionCopyAction Marshaller
-    /// </summary>       
+    /// </summary>
     public class CrossRegionCopyActionMarshaller : IRequestMarshaller<CrossRegionCopyAction, JsonMarshallerContext> 
     {
         /// <summary>
@@ -77,7 +77,7 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CrossRegionCopyActionMarshaller Instance = new CrossRegionCopyActionMarshaller();
 
     }

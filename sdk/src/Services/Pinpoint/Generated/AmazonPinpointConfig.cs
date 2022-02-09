@@ -32,7 +32,7 @@ namespace Amazon.Pinpoint
     public partial class AmazonPinpointConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.4.9");
+            InternalSDKUtils.BuildUserAgentString("3.7.5.6");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.Pinpoint
         /// Default constructor
         /// </summary>
         public AmazonPinpointConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonPinpointDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "mobiletargeting";
         }

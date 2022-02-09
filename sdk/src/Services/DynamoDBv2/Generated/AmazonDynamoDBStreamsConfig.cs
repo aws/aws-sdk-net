@@ -32,7 +32,7 @@ namespace Amazon.DynamoDBv2
     public partial class AmazonDynamoDBStreamsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.2.7");
+            InternalSDKUtils.BuildUserAgentString("3.7.2.17");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.DynamoDBv2
         /// Default constructor
         /// </summary>
         public AmazonDynamoDBStreamsConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonDynamoDBStreamsDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "dynamodb";
             this.MaxErrorRetry = 10;

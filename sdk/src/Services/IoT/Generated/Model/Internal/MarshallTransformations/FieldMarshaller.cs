@@ -34,7 +34,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Field Marshaller
-    /// </summary>       
+    /// </summary>
     public class FieldMarshaller : IRequestMarshaller<Field, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static FieldMarshaller Instance = new FieldMarshaller();
 
     }

@@ -32,7 +32,7 @@ namespace Amazon.DataPipeline
     public partial class AmazonDataPipelineConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.1.108");
+            InternalSDKUtils.BuildUserAgentString("3.7.1.117");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.DataPipeline
         /// Default constructor
         /// </summary>
         public AmazonDataPipelineConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonDataPipelineDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "datapipeline";
         }

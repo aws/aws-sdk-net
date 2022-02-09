@@ -29,14 +29,33 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PI.Model
 {
     /// <summary>
-    /// An array of descriptions and aggregated values for each dimension within a dimension
-    /// group.
+    /// An object that includes the requested dimension key values and aggregated metric values
+    /// within a dimension group.
     /// </summary>
     public partial class DimensionKeyDescription
     {
+        private Dictionary<string, double> _additionalMetrics = new Dictionary<string, double>();
         private Dictionary<string, string> _dimensions = new Dictionary<string, string>();
         private List<double> _partitions = new List<double>();
         private double? _total;
+
+        /// <summary>
+        /// Gets and sets the property AdditionalMetrics. 
+        /// <para>
+        /// A map that contains the value for each additional metric.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, double> AdditionalMetrics
+        {
+            get { return this._additionalMetrics; }
+            set { this._additionalMetrics = value; }
+        }
+
+        // Check to see if AdditionalMetrics property is set
+        internal bool IsSetAdditionalMetrics()
+        {
+            return this._additionalMetrics != null && this._additionalMetrics.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property Dimensions. 
@@ -78,7 +97,7 @@ namespace Amazon.PI.Model
         /// <summary>
         /// Gets and sets the property Total. 
         /// <para>
-        /// The aggregated metric value for the dimension(s), over the requested time range.
+        /// The aggregated metric value for the dimensions, over the requested time range.
         /// </para>
         /// </summary>
         public double Total

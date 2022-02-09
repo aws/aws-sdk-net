@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.Runtime.Internal
-{    
+{
     /// <summary>
     /// Class used to resolve endpoints using Endpoint Discovery.
     /// <para>
@@ -140,7 +140,7 @@ namespace Amazon.Runtime.Internal
                         //a null endpoint with an expiration time of 60 seconds so that requests are not
                         //excessively sent.
                         var cacheEndpoints = new List<DiscoveryEndpointBase>();
-                        cacheEndpoints.Add(new DiscoveryEndpoint(null, 1));                        
+                        cacheEndpoints.Add(new DiscoveryEndpoint(null, 1));            
                         _cache.AddOrUpdate(cacheKey, cacheEndpoints);
                     }
                     _logger.InfoFormat("The request to discover endpoints did not return any endpoints.");

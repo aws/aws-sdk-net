@@ -667,6 +667,96 @@ namespace Amazon.TranscribeService
 
 
     /// <summary>
+    /// Constants used for properties of type PiiEntityType.
+    /// </summary>
+    public class PiiEntityType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ADDRESS for PiiEntityType
+        /// </summary>
+        public static readonly PiiEntityType ADDRESS = new PiiEntityType("ADDRESS");
+        /// <summary>
+        /// Constant ALL for PiiEntityType
+        /// </summary>
+        public static readonly PiiEntityType ALL = new PiiEntityType("ALL");
+        /// <summary>
+        /// Constant BANK_ACCOUNT_NUMBER for PiiEntityType
+        /// </summary>
+        public static readonly PiiEntityType BANK_ACCOUNT_NUMBER = new PiiEntityType("BANK_ACCOUNT_NUMBER");
+        /// <summary>
+        /// Constant BANK_ROUTING for PiiEntityType
+        /// </summary>
+        public static readonly PiiEntityType BANK_ROUTING = new PiiEntityType("BANK_ROUTING");
+        /// <summary>
+        /// Constant CREDIT_DEBIT_CVV for PiiEntityType
+        /// </summary>
+        public static readonly PiiEntityType CREDIT_DEBIT_CVV = new PiiEntityType("CREDIT_DEBIT_CVV");
+        /// <summary>
+        /// Constant CREDIT_DEBIT_EXPIRY for PiiEntityType
+        /// </summary>
+        public static readonly PiiEntityType CREDIT_DEBIT_EXPIRY = new PiiEntityType("CREDIT_DEBIT_EXPIRY");
+        /// <summary>
+        /// Constant CREDIT_DEBIT_NUMBER for PiiEntityType
+        /// </summary>
+        public static readonly PiiEntityType CREDIT_DEBIT_NUMBER = new PiiEntityType("CREDIT_DEBIT_NUMBER");
+        /// <summary>
+        /// Constant EMAIL for PiiEntityType
+        /// </summary>
+        public static readonly PiiEntityType EMAIL = new PiiEntityType("EMAIL");
+        /// <summary>
+        /// Constant NAME for PiiEntityType
+        /// </summary>
+        public static readonly PiiEntityType NAME = new PiiEntityType("NAME");
+        /// <summary>
+        /// Constant PHONE for PiiEntityType
+        /// </summary>
+        public static readonly PiiEntityType PHONE = new PiiEntityType("PHONE");
+        /// <summary>
+        /// Constant PIN for PiiEntityType
+        /// </summary>
+        public static readonly PiiEntityType PIN = new PiiEntityType("PIN");
+        /// <summary>
+        /// Constant SSN for PiiEntityType
+        /// </summary>
+        public static readonly PiiEntityType SSN = new PiiEntityType("SSN");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PiiEntityType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PiiEntityType FindValue(string value)
+        {
+            return FindValue<PiiEntityType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PiiEntityType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type RedactionOutput.
     /// </summary>
     public class RedactionOutput : ConstantClass

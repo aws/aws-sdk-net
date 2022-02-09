@@ -34,7 +34,7 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TagCostEstimationResourceCollectionFilter Marshaller
-    /// </summary>       
+    /// </summary>
     public class TagCostEstimationResourceCollectionFilterMarshaller : IRequestMarshaller<TagCostEstimationResourceCollectionFilter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TagCostEstimationResourceCollectionFilterMarshaller Instance = new TagCostEstimationResourceCollectionFilterMarshaller();
 
     }

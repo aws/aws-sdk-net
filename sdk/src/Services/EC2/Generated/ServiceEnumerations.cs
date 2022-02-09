@@ -1979,6 +1979,30 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly CapacityReservationInstancePlatform RedHatEnterpriseLinux = new CapacityReservationInstancePlatform("Red Hat Enterprise Linux");
         /// <summary>
+        /// Constant RHELWithHA for CapacityReservationInstancePlatform
+        /// </summary>
+        public static readonly CapacityReservationInstancePlatform RHELWithHA = new CapacityReservationInstancePlatform("RHEL with HA");
+        /// <summary>
+        /// Constant RHELWithHAAndSQLServerEnterprise for CapacityReservationInstancePlatform
+        /// </summary>
+        public static readonly CapacityReservationInstancePlatform RHELWithHAAndSQLServerEnterprise = new CapacityReservationInstancePlatform("RHEL with HA and SQL Server Enterprise");
+        /// <summary>
+        /// Constant RHELWithHAAndSQLServerStandard for CapacityReservationInstancePlatform
+        /// </summary>
+        public static readonly CapacityReservationInstancePlatform RHELWithHAAndSQLServerStandard = new CapacityReservationInstancePlatform("RHEL with HA and SQL Server Standard");
+        /// <summary>
+        /// Constant RHELWithSQLServerEnterprise for CapacityReservationInstancePlatform
+        /// </summary>
+        public static readonly CapacityReservationInstancePlatform RHELWithSQLServerEnterprise = new CapacityReservationInstancePlatform("RHEL with SQL Server Enterprise");
+        /// <summary>
+        /// Constant RHELWithSQLServerStandard for CapacityReservationInstancePlatform
+        /// </summary>
+        public static readonly CapacityReservationInstancePlatform RHELWithSQLServerStandard = new CapacityReservationInstancePlatform("RHEL with SQL Server Standard");
+        /// <summary>
+        /// Constant RHELWithSQLServerWeb for CapacityReservationInstancePlatform
+        /// </summary>
+        public static readonly CapacityReservationInstancePlatform RHELWithSQLServerWeb = new CapacityReservationInstancePlatform("RHEL with SQL Server Web");
+        /// <summary>
         /// Constant SUSELinux for CapacityReservationInstancePlatform
         /// </summary>
         public static readonly CapacityReservationInstancePlatform SUSELinux = new CapacityReservationInstancePlatform("SUSE Linux");
@@ -4398,6 +4422,118 @@ namespace Amazon.EC2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ExportTaskState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FastLaunchResourceType.
+    /// </summary>
+    public class FastLaunchResourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Snapshot for FastLaunchResourceType
+        /// </summary>
+        public static readonly FastLaunchResourceType Snapshot = new FastLaunchResourceType("snapshot");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FastLaunchResourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FastLaunchResourceType FindValue(string value)
+        {
+            return FindValue<FastLaunchResourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FastLaunchResourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FastLaunchStateCode.
+    /// </summary>
+    public class FastLaunchStateCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Disabling for FastLaunchStateCode
+        /// </summary>
+        public static readonly FastLaunchStateCode Disabling = new FastLaunchStateCode("disabling");
+        /// <summary>
+        /// Constant DisablingFailed for FastLaunchStateCode
+        /// </summary>
+        public static readonly FastLaunchStateCode DisablingFailed = new FastLaunchStateCode("disabling-failed");
+        /// <summary>
+        /// Constant Enabled for FastLaunchStateCode
+        /// </summary>
+        public static readonly FastLaunchStateCode Enabled = new FastLaunchStateCode("enabled");
+        /// <summary>
+        /// Constant EnabledFailed for FastLaunchStateCode
+        /// </summary>
+        public static readonly FastLaunchStateCode EnabledFailed = new FastLaunchStateCode("enabled-failed");
+        /// <summary>
+        /// Constant Enabling for FastLaunchStateCode
+        /// </summary>
+        public static readonly FastLaunchStateCode Enabling = new FastLaunchStateCode("enabling");
+        /// <summary>
+        /// Constant EnablingFailed for FastLaunchStateCode
+        /// </summary>
+        public static readonly FastLaunchStateCode EnablingFailed = new FastLaunchStateCode("enabling-failed");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FastLaunchStateCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FastLaunchStateCode FindValue(string value)
+        {
+            return FindValue<FastLaunchStateCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FastLaunchStateCode(string value)
         {
             return FindValue(value);
         }
@@ -7033,6 +7169,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType C6iLarge = new InstanceType("c6i.large");
         /// <summary>
+        /// Constant C6iMetal for InstanceType
+        /// </summary>
+        public static readonly InstanceType C6iMetal = new InstanceType("c6i.metal");
+        /// <summary>
         /// Constant C6iXlarge for InstanceType
         /// </summary>
         public static readonly InstanceType C6iXlarge = new InstanceType("c6i.xlarge");
@@ -7272,6 +7412,10 @@ namespace Amazon.EC2
         /// Constant Hi14xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType Hi14xlarge = new InstanceType("hi1.4xlarge");
+        /// <summary>
+        /// Constant Hpc6a48xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType Hpc6a48xlarge = new InstanceType("hpc6a.48xlarge");
         /// <summary>
         /// Constant Hs18xlarge for InstanceType
         /// </summary>
@@ -7865,6 +8009,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType M6iLarge = new InstanceType("m6i.large");
         /// <summary>
+        /// Constant M6iMetal for InstanceType
+        /// </summary>
+        public static readonly InstanceType M6iMetal = new InstanceType("m6i.metal");
+        /// <summary>
         /// Constant M6iXlarge for InstanceType
         /// </summary>
         public static readonly InstanceType M6iXlarge = new InstanceType("m6i.xlarge");
@@ -8265,6 +8413,46 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType R6gXlarge = new InstanceType("r6g.xlarge");
         /// <summary>
+        /// Constant R6i12xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R6i12xlarge = new InstanceType("r6i.12xlarge");
+        /// <summary>
+        /// Constant R6i16xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R6i16xlarge = new InstanceType("r6i.16xlarge");
+        /// <summary>
+        /// Constant R6i24xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R6i24xlarge = new InstanceType("r6i.24xlarge");
+        /// <summary>
+        /// Constant R6i2xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R6i2xlarge = new InstanceType("r6i.2xlarge");
+        /// <summary>
+        /// Constant R6i32xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R6i32xlarge = new InstanceType("r6i.32xlarge");
+        /// <summary>
+        /// Constant R6i4xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R6i4xlarge = new InstanceType("r6i.4xlarge");
+        /// <summary>
+        /// Constant R6i8xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R6i8xlarge = new InstanceType("r6i.8xlarge");
+        /// <summary>
+        /// Constant R6iLarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R6iLarge = new InstanceType("r6i.large");
+        /// <summary>
+        /// Constant R6iMetal for InstanceType
+        /// </summary>
+        public static readonly InstanceType R6iMetal = new InstanceType("r6i.metal");
+        /// <summary>
+        /// Constant R6iXlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R6iXlarge = new InstanceType("r6i.xlarge");
+        /// <summary>
         /// Constant T1Micro for InstanceType
         /// </summary>
         public static readonly InstanceType T1Micro = new InstanceType("t1.micro");
@@ -8496,6 +8684,30 @@ namespace Amazon.EC2
         /// Constant X2gdXlarge for InstanceType
         /// </summary>
         public static readonly InstanceType X2gdXlarge = new InstanceType("x2gd.xlarge");
+        /// <summary>
+        /// Constant X2iezn12xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType X2iezn12xlarge = new InstanceType("x2iezn.12xlarge");
+        /// <summary>
+        /// Constant X2iezn2xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType X2iezn2xlarge = new InstanceType("x2iezn.2xlarge");
+        /// <summary>
+        /// Constant X2iezn4xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType X2iezn4xlarge = new InstanceType("x2iezn.4xlarge");
+        /// <summary>
+        /// Constant X2iezn6xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType X2iezn6xlarge = new InstanceType("x2iezn.6xlarge");
+        /// <summary>
+        /// Constant X2iezn8xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType X2iezn8xlarge = new InstanceType("x2iezn.8xlarge");
+        /// <summary>
+        /// Constant X2ieznMetal for InstanceType
+        /// </summary>
+        public static readonly InstanceType X2ieznMetal = new InstanceType("x2iezn.metal");
         /// <summary>
         /// Constant Z1d12xlarge for InstanceType
         /// </summary>

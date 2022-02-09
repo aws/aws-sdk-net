@@ -34,7 +34,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// InputTemplate Marshaller
-    /// </summary>       
+    /// </summary>
     public class InputTemplateMarshaller : IRequestMarshaller<InputTemplate, JsonMarshallerContext> 
     {
         /// <summary>
@@ -123,6 +123,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("denoiseFilter");
                 context.Writer.Write(requestObject.DenoiseFilter);
+            }
+
+            if(requestObject.IsSetDolbyVisionMetadataXml())
+            {
+                context.Writer.WritePropertyName("dolbyVisionMetadataXml");
+                context.Writer.Write(requestObject.DolbyVisionMetadataXml);
             }
 
             if(requestObject.IsSetFilterEnable())
@@ -220,7 +226,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static InputTemplateMarshaller Instance = new InputTemplateMarshaller();
 
     }

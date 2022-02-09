@@ -34,7 +34,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Duration Marshaller
-    /// </summary>       
+    /// </summary>
     public class DurationMarshaller : IRequestMarshaller<Duration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DurationMarshaller Instance = new DurationMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// LogDestination Marshaller
-    /// </summary>       
+    /// </summary>
     public class LogDestinationMarshaller : IRequestMarshaller<LogDestination, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static LogDestinationMarshaller Instance = new LogDestinationMarshaller();
 
     }

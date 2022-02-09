@@ -29,7 +29,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// The configuration for the user pool's device tracking.
+    /// The device tracking configuration for a user pool. A user pool with device tracking
+    /// deactivated returns a null value.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// When you provide values for any DeviceConfiguration field, you activate device tracking.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DeviceConfigurationType
     {
@@ -39,9 +46,16 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property ChallengeRequiredOnNewDevice. 
         /// <para>
-        /// Indicates whether a challenge is required on a new device. Only applicable to a new
-        /// device.
+        /// When true, device authentication can replace SMS and time-based one-time password
+        /// (TOTP) factors for multi-factor authentication (MFA).
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Users that sign in with devices that have not been confirmed or remembered will still
+        /// have to provide a second factor, whether or not ChallengeRequiredOnNewDevice is true,
+        /// when your user pool requires MFA.
+        /// </para>
+        ///  </note>
         /// </summary>
         public bool ChallengeRequiredOnNewDevice
         {
@@ -58,7 +72,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property DeviceOnlyRememberedOnUserPrompt. 
         /// <para>
-        /// If true, a device is only remembered on user prompt.
+        /// When true, users can opt in to remembering their device. Your app code must use callback
+        /// functions to return the user's choice.
         /// </para>
         /// </summary>
         public bool DeviceOnlyRememberedOnUserPrompt

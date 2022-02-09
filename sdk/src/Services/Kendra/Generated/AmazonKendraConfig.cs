@@ -32,7 +32,7 @@ namespace Amazon.Kendra
     public partial class AmazonKendraConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.11.7");
+            InternalSDKUtils.BuildUserAgentString("3.7.13.0");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.Kendra
         /// Default constructor
         /// </summary>
         public AmazonKendraConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonKendraDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "kendra";
         }

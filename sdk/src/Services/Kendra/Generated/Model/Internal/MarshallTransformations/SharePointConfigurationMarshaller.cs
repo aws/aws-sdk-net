@@ -34,7 +34,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SharePointConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class SharePointConfigurationMarshaller : IRequestMarshaller<SharePointConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -156,7 +156,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SharePointConfigurationMarshaller Instance = new SharePointConfigurationMarshaller();
 
     }

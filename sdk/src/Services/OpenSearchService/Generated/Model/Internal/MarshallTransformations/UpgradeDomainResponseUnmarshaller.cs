@@ -57,6 +57,12 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                     response.AdvancedOptions = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ChangeProgressDetails", targetDepth))
+                {
+                    var unmarshaller = ChangeProgressDetailsUnmarshaller.Instance;
+                    response.ChangeProgressDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DomainName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

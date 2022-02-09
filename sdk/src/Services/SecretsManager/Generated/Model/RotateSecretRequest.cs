@@ -64,14 +64,18 @@ namespace Amazon.SecretsManager.Model
     /// </para>
     ///  
     /// <para>
-    /// To run this command, you must have <code>secretsmanager:RotateSecret</code> permissions
-    /// and <code>lambda:InvokeFunction</code> permissions on the function specified in the
-    /// secret's metadata.
+    ///  <b>Required permissions: </b> <code>secretsmanager:RotateSecret</code>. For more
+    /// information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+    /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+    /// and access control in Secrets Manager</a>. You also need <code>lambda:InvokeFunction</code>
+    /// permissions on the rotation function. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotating-secrets-required-permissions-function.html">
+    /// Permissions for rotation</a>.
     /// </para>
     /// </summary>
     public partial class RotateSecretRequest : AmazonSecretsManagerRequest
     {
         private string _clientRequestToken;
+        private bool? _rotateImmediately;
         private string _rotationLambdaARN;
         private RotationRulesType _rotationRules;
         private string _secretId;
@@ -112,6 +116,37 @@ namespace Amazon.SecretsManager.Model
         internal bool IsSetClientRequestToken()
         {
             return this._clientRequestToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RotateImmediately. 
+        /// <para>
+        /// Specifies whether to rotate the secret immediately or wait until the next scheduled
+        /// rotation window. The rotation schedule is defined in <a>RotateSecretRequest$RotationRules</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you don't immediately rotate the secret, Secrets Manager tests the rotation configuration
+        /// by running the <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_how.html">
+        /// <code>testSecret</code> step</a> of the Lambda rotation function. The test creates
+        /// an <code>AWSPENDING</code> version of the secret and then removes it.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you don't specify this value, then by default, Secrets Manager rotates the secret
+        /// immediately.
+        /// </para>
+        /// </summary>
+        public bool RotateImmediately
+        {
+            get { return this._rotateImmediately.GetValueOrDefault(); }
+            set { this._rotateImmediately = value; }
+        }
+
+        // Check to see if RotateImmediately property is set
+        internal bool IsSetRotateImmediately()
+        {
+            return this._rotateImmediately.HasValue; 
         }
 
         /// <summary>

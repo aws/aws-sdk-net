@@ -34,7 +34,7 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// GlueConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class GlueConfigurationMarshaller : IRequestMarshaller<GlueConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static GlueConfigurationMarshaller Instance = new GlueConfigurationMarshaller();
 
     }

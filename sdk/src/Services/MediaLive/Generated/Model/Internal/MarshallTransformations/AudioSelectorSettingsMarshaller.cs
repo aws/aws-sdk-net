@@ -34,7 +34,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AudioSelectorSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class AudioSelectorSettingsMarshaller : IRequestMarshaller<AudioSelectorSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -93,7 +93,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AudioSelectorSettingsMarshaller Instance = new AudioSelectorSettingsMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// S3InputFormatConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class S3InputFormatConfigMarshaller : IRequestMarshaller<S3InputFormatConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static S3InputFormatConfigMarshaller Instance = new S3InputFormatConfigMarshaller();
 
     }

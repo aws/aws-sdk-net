@@ -34,7 +34,7 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// JobInput Marshaller
-    /// </summary>       
+    /// </summary>
     public class JobInputMarshaller : IRequestMarshaller<JobInput, JsonMarshallerContext> 
     {
         /// <summary>
@@ -129,7 +129,7 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static JobInputMarshaller Instance = new JobInputMarshaller();
 
     }

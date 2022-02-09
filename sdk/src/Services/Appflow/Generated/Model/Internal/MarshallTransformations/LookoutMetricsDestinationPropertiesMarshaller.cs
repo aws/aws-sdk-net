@@ -34,7 +34,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// LookoutMetricsDestinationProperties Marshaller
-    /// </summary>       
+    /// </summary>
     public class LookoutMetricsDestinationPropertiesMarshaller : IRequestMarshaller<LookoutMetricsDestinationProperties, JsonMarshallerContext> 
     {
         /// <summary>
@@ -49,7 +49,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static LookoutMetricsDestinationPropertiesMarshaller Instance = new LookoutMetricsDestinationPropertiesMarshaller();
 
     }

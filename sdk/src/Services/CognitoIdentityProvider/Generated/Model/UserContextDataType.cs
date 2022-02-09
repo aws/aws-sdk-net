@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// Contextual data such as the user's device fingerprint, IP address, or location used
+    /// Contextual data, such as the user's device fingerprint, IP address, or location, used
     /// for evaluating the risk of an unexpected event by Amazon Cognito advanced security.
     /// </summary>
     public partial class UserContextDataType
@@ -39,7 +39,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property EncodedData. 
         /// <para>
-        /// Contextual data such as the user's device fingerprint, IP address, or location used
+        /// Contextual data, such as the user's device fingerprint, IP address, or location, used
         /// for evaluating the risk of an unexpected event by Amazon Cognito advanced security.
         /// </para>
         /// </summary>

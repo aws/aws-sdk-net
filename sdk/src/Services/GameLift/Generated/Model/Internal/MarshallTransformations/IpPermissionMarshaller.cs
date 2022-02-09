@@ -34,7 +34,7 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// IpPermission Marshaller
-    /// </summary>       
+    /// </summary>
     public class IpPermissionMarshaller : IRequestMarshaller<IpPermission, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static IpPermissionMarshaller Instance = new IpPermissionMarshaller();
 
     }

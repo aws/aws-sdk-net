@@ -55,7 +55,7 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
         public IRequest Marshall(DescribeChannelFlowRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ChimeSDKMessaging");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-05-15";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-05-15";
             request.HttpMethod = "GET";
 
             if (!publicRequest.IsSetChannelFlowArn())

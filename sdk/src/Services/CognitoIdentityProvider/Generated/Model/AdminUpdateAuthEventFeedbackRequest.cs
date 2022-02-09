@@ -30,7 +30,7 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the AdminUpdateAuthEventFeedback operation.
-    /// Provides feedback for an authentication event as to whether it was from a valid user.
+    /// Provides feedback for an authentication event indicating if it was from a valid user.
     /// This feedback is used for improving the risk evaluation decision for the user pool
     /// as part of Amazon Cognito advanced security.
     /// </summary>

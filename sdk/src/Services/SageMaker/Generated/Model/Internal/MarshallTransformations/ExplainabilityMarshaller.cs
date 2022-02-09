@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Explainability Marshaller
-    /// </summary>       
+    /// </summary>
     public class ExplainabilityMarshaller : IRequestMarshaller<Explainability, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ExplainabilityMarshaller Instance = new ExplainabilityMarshaller();
 
     }

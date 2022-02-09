@@ -34,7 +34,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// VorbisSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class VorbisSettingsMarshaller : IRequestMarshaller<VorbisSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static VorbisSettingsMarshaller Instance = new VorbisSettingsMarshaller();
 
     }

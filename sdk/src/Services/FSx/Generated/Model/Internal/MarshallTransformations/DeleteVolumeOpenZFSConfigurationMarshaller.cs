@@ -34,7 +34,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DeleteVolumeOpenZFSConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class DeleteVolumeOpenZFSConfigurationMarshaller : IRequestMarshaller<DeleteVolumeOpenZFSConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DeleteVolumeOpenZFSConfigurationMarshaller Instance = new DeleteVolumeOpenZFSConfigurationMarshaller();
 
     }

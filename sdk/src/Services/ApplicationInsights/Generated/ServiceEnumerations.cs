@@ -567,6 +567,10 @@ namespace Amazon.ApplicationInsights
     {
 
         /// <summary>
+        /// Constant ACTIVE_DIRECTORY for Tier
+        /// </summary>
+        public static readonly Tier ACTIVE_DIRECTORY = new Tier("ACTIVE_DIRECTORY");
+        /// <summary>
         /// Constant CUSTOM for Tier
         /// </summary>
         public static readonly Tier CUSTOM = new Tier("CUSTOM");
@@ -618,6 +622,10 @@ namespace Amazon.ApplicationInsights
         /// Constant SAP_HANA_SINGLE_NODE for Tier
         /// </summary>
         public static readonly Tier SAP_HANA_SINGLE_NODE = new Tier("SAP_HANA_SINGLE_NODE");
+        /// <summary>
+        /// Constant SHAREPOINT for Tier
+        /// </summary>
+        public static readonly Tier SHAREPOINT = new Tier("SHAREPOINT");
         /// <summary>
         /// Constant SQL_SERVER for Tier
         /// </summary>

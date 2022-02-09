@@ -34,7 +34,7 @@ namespace Amazon.NimbleStudio.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// StreamingSessionStorageRoot Marshaller
-    /// </summary>       
+    /// </summary>
     public class StreamingSessionStorageRootMarshaller : IRequestMarshaller<StreamingSessionStorageRoot, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.NimbleStudio.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static StreamingSessionStorageRootMarshaller Instance = new StreamingSessionStorageRootMarshaller();
 
     }

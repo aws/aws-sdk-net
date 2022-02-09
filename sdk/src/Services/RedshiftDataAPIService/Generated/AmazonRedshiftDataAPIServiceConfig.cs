@@ -32,7 +32,7 @@ namespace Amazon.RedshiftDataAPIService
     public partial class AmazonRedshiftDataAPIServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.5.8");
+            InternalSDKUtils.BuildUserAgentString("3.7.5.17");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.RedshiftDataAPIService
         /// Default constructor
         /// </summary>
         public AmazonRedshiftDataAPIServiceConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonRedshiftDataAPIServiceDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "redshift-data";
         }

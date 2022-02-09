@@ -34,7 +34,7 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Validity Marshaller
-    /// </summary>       
+    /// </summary>
     public class ValidityMarshaller : IRequestMarshaller<Validity, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ValidityMarshaller Instance = new ValidityMarshaller();
 
     }

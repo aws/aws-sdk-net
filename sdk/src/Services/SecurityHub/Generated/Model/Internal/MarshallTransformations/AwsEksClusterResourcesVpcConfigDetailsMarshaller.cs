@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AwsEksClusterResourcesVpcConfigDetails Marshaller
-    /// </summary>       
+    /// </summary>
     public class AwsEksClusterResourcesVpcConfigDetailsMarshaller : IRequestMarshaller<AwsEksClusterResourcesVpcConfigDetails, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AwsEksClusterResourcesVpcConfigDetailsMarshaller Instance = new AwsEksClusterResourcesVpcConfigDetailsMarshaller();
 
     }

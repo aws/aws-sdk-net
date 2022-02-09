@@ -34,7 +34,7 @@ namespace Amazon.Braket.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DeviceConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class DeviceConfigMarshaller : IRequestMarshaller<DeviceConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.Braket.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DeviceConfigMarshaller Instance = new DeviceConfigMarshaller();
 
     }

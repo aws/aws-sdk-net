@@ -112,6 +112,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.Scte35Source = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("timedMetadata", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TimedMetadata = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

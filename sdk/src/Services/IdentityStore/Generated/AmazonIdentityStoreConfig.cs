@@ -32,7 +32,7 @@ namespace Amazon.IdentityStore
     public partial class AmazonIdentityStoreConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.113");
+            InternalSDKUtils.BuildUserAgentString("3.7.0.122");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.IdentityStore
         /// Default constructor
         /// </summary>
         public AmazonIdentityStoreConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonIdentityStoreDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "identitystore";
         }

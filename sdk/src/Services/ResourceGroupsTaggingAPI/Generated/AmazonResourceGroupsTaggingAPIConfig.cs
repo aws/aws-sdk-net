@@ -32,7 +32,7 @@ namespace Amazon.ResourceGroupsTaggingAPI
     public partial class AmazonResourceGroupsTaggingAPIConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.113");
+            InternalSDKUtils.BuildUserAgentString("3.7.0.122");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.ResourceGroupsTaggingAPI
         /// Default constructor
         /// </summary>
         public AmazonResourceGroupsTaggingAPIConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonResourceGroupsTaggingAPIDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "tagging";
         }

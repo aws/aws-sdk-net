@@ -37,7 +37,7 @@ namespace Amazon
     /// Below is a full sample configuration that illustrates all the possible options.
     /// <code>
     /// &lt;configSections&gt;
-    ///   &lt;section name="aws" type="Amazon.AWSSection, AWSSDK"/&gt;
+    ///   &lt;section name="aws" type="Amazon.AWSSection, AWSSDK.Core"/&gt;
     /// &lt;/configSections&gt;
     /// &lt;aws region="us-west-2"&gt;
     ///   &lt;logging logTo="Log4Net, SystemDiagnostics" logResponses="Always" logMetrics="true" /&gt;

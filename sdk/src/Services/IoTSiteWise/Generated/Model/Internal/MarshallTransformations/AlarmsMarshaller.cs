@@ -34,7 +34,7 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Alarms Marshaller
-    /// </summary>       
+    /// </summary>
     public class AlarmsMarshaller : IRequestMarshaller<Alarms, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AlarmsMarshaller Instance = new AlarmsMarshaller();
 
     }

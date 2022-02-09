@@ -34,7 +34,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// GeoSpatialColumnGroup Marshaller
-    /// </summary>       
+    /// </summary>
     public class GeoSpatialColumnGroupMarshaller : IRequestMarshaller<GeoSpatialColumnGroup, JsonMarshallerContext> 
     {
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static GeoSpatialColumnGroupMarshaller Instance = new GeoSpatialColumnGroupMarshaller();
 
     }

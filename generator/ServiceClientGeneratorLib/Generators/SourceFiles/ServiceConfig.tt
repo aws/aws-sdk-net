@@ -30,6 +30,7 @@ namespace <#=this.Config.Namespace#>
         /// Default constructor
         /// </summary>
         public Amazon<#=this.Config.ClassName#>Config()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(Amazon<#= this.Config.ClassName#>DefaultConfiguration.GetAllConfigurations()))
         {
 <#
             if(!string.IsNullOrEmpty(this.Config.AuthenticationServiceName))

@@ -33,10 +33,10 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// 
     ///  <note> 
     /// <para>
-    /// In regions where Pinpoint is not available, Cognito User Pools only supports sending
-    /// events to Amazon Pinpoint projects in us-east-1. In regions where Pinpoint is available,
-    /// Cognito User Pools will support sending events to Amazon Pinpoint projects within
-    /// that same region. 
+    /// In Regions where Pinpoint isn't available, User Pools only supports sending events
+    /// to Amazon Pinpoint projects in us-east-1. In Regions where Pinpoint is available,
+    /// User Pools will support sending events to Amazon Pinpoint projects within that same
+    /// Region. 
     /// </para>
     ///  </note>
     /// </summary>
@@ -52,8 +52,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Gets and sets the property ApplicationArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of an Amazon Pinpoint project. You can use the Amazon
-        /// Pinpoint project for Pinpoint integration with the chosen User Pool Client. Amazon
-        /// Cognito publishes events to the pinpoint project declared by the app ARN.
+        /// Pinpoint project for integration with the chosen User Pool Client. Amazon Cognito
+        /// publishes events to the Amazon Pinpointproject declared by the app ARN.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -108,8 +108,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The ARN of an IAM role that authorizes Amazon Cognito to publish events to Amazon
-        /// Pinpoint analytics.
+        /// The ARN of an Identity and Access Management role that authorizes Amazon Cognito to
+        /// publish events to Amazon Pinpoint analytics.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]

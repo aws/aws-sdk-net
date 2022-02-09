@@ -38,9 +38,10 @@ namespace Amazon.FIS
     /// <summary>
     /// Implementation for accessing FIS
     ///
-    /// AWS Fault Injection Simulator is a managed service that enables you to perform fault
-    /// injection experiments on your AWS workloads. For more information, see the <a href="https://docs.aws.amazon.com/fis/latest/userguide/">AWS
-    /// Fault Injection Simulator User Guide</a>.
+    /// Fault Injection Simulator is a managed service that enables you to perform fault injection
+    /// experiments on your Amazon Web Services workloads. For more information, see the <a
+    /// href="https://docs.aws.amazon.com/fis/latest/userguide/">Fault Injection Simulator
+    /// User Guide</a>.
     /// </summary>
     public partial class AmazonFISClient : AmazonServiceClient, IAmazonFIS
     {
@@ -278,13 +279,13 @@ namespace Amazon.FIS
         /// 
         ///  
         /// <para>
-        /// To create a template, specify the following information: 
+        /// An experiment template includes the following components:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>Targets</b>: A target can be a specific resource in your AWS environment, or one
-        /// or more resources that match criteria that you specify, for example, resources that
-        /// have specific tags.
+        ///  <b>Targets</b>: A target can be a specific resource in your Amazon Web Services environment,
+        /// or one or more resources that match criteria that you specify, for example, resources
+        /// that have specific tags.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -299,8 +300,8 @@ namespace Amazon.FIS
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information, see the <a href="https://docs.aws.amazon.com/fis/latest/userguide/">AWS
-        /// Fault Injection Simulator User Guide</a>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/fis/latest/userguide/experiment-templates.html">Experiment
+        /// templates</a> in the <i>Fault Injection Simulator User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateExperimentTemplate service method.</param>
@@ -387,7 +388,7 @@ namespace Amazon.FIS
 
 
         /// <summary>
-        /// Gets information about the specified AWS FIS action.
+        /// Gets information about the specified FIS action.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAction service method.</param>
         /// <param name="cancellationToken">
@@ -493,6 +494,46 @@ namespace Amazon.FIS
 
         #endregion
         
+        #region  GetTargetResourceType
+
+        internal virtual GetTargetResourceTypeResponse GetTargetResourceType(GetTargetResourceTypeRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTargetResourceTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTargetResourceTypeResponseUnmarshaller.Instance;
+
+            return Invoke<GetTargetResourceTypeResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets information about the specified resource type.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTargetResourceType service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetTargetResourceType service method, as returned by FIS.</returns>
+        /// <exception cref="Amazon.FIS.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.FIS.Model.ValidationException">
+        /// The specified input is not valid, or fails to satisfy the constraints for the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/GetTargetResourceType">REST API Reference for GetTargetResourceType Operation</seealso>
+        public virtual Task<GetTargetResourceTypeResponse> GetTargetResourceTypeAsync(GetTargetResourceTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTargetResourceTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTargetResourceTypeResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetTargetResourceTypeResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListActions
 
         internal virtual ListActionsResponse ListActions(ListActionsRequest request)
@@ -507,7 +548,7 @@ namespace Amazon.FIS
 
 
         /// <summary>
-        /// Lists the available AWS FIS actions.
+        /// Lists the available FIS actions.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListActions service method.</param>
         /// <param name="cancellationToken">
@@ -634,6 +675,43 @@ namespace Amazon.FIS
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListTargetResourceTypes
+
+        internal virtual ListTargetResourceTypesResponse ListTargetResourceTypes(ListTargetResourceTypesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTargetResourceTypesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTargetResourceTypesResponseUnmarshaller.Instance;
+
+            return Invoke<ListTargetResourceTypesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists the target resource types.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTargetResourceTypes service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTargetResourceTypes service method, as returned by FIS.</returns>
+        /// <exception cref="Amazon.FIS.Model.ValidationException">
+        /// The specified input is not valid, or fails to satisfy the constraints for the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/ListTargetResourceTypes">REST API Reference for ListTargetResourceTypes Operation</seealso>
+        public virtual Task<ListTargetResourceTypesResponse> ListTargetResourceTypesAsync(ListTargetResourceTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTargetResourceTypesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTargetResourceTypesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListTargetResourceTypesResponse>(request, options, cancellationToken);
         }
 
         #endregion

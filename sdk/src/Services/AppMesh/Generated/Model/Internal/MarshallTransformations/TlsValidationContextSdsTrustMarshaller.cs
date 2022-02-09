@@ -34,7 +34,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TlsValidationContextSdsTrust Marshaller
-    /// </summary>       
+    /// </summary>
     public class TlsValidationContextSdsTrustMarshaller : IRequestMarshaller<TlsValidationContextSdsTrust, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TlsValidationContextSdsTrustMarshaller Instance = new TlsValidationContextSdsTrustMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// HlsRenditionGroupSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class HlsRenditionGroupSettingsMarshaller : IRequestMarshaller<HlsRenditionGroupSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static HlsRenditionGroupSettingsMarshaller Instance = new HlsRenditionGroupSettingsMarshaller();
 
     }

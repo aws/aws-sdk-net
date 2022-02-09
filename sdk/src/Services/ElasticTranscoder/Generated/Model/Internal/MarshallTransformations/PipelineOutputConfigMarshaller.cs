@@ -34,7 +34,7 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// PipelineOutputConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class PipelineOutputConfigMarshaller : IRequestMarshaller<PipelineOutputConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -77,7 +77,7 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static PipelineOutputConfigMarshaller Instance = new PipelineOutputConfigMarshaller();
 
     }

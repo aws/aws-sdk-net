@@ -34,7 +34,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SpotProvisioningSpecification Marshaller
-    /// </summary>       
+    /// </summary>
     public class SpotProvisioningSpecificationMarshaller : IRequestMarshaller<SpotProvisioningSpecification, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SpotProvisioningSpecificationMarshaller Instance = new SpotProvisioningSpecificationMarshaller();
 
     }

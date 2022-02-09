@@ -34,7 +34,7 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ScheduleConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class ScheduleConfigurationMarshaller : IRequestMarshaller<ScheduleConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ScheduleConfigurationMarshaller Instance = new ScheduleConfigurationMarshaller();
 
     }

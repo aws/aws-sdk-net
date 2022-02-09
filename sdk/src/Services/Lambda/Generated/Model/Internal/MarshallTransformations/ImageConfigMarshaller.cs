@@ -34,7 +34,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ImageConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class ImageConfigMarshaller : IRequestMarshaller<ImageConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -77,7 +77,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ImageConfigMarshaller Instance = new ImageConfigMarshaller();
 
     }

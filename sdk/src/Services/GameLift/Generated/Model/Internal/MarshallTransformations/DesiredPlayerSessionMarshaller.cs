@@ -34,7 +34,7 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DesiredPlayerSession Marshaller
-    /// </summary>       
+    /// </summary>
     public class DesiredPlayerSessionMarshaller : IRequestMarshaller<DesiredPlayerSession, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DesiredPlayerSessionMarshaller Instance = new DesiredPlayerSessionMarshaller();
 
     }

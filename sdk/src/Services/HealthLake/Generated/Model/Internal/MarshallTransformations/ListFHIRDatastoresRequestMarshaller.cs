@@ -58,7 +58,7 @@ namespace Amazon.HealthLake.Model.Internal.MarshallTransformations
             string target = "HealthLake.ListFHIRDatastores";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.0";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-07-01";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-07-01";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -90,7 +90,6 @@ namespace Amazon.HealthLake.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.NextToken);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

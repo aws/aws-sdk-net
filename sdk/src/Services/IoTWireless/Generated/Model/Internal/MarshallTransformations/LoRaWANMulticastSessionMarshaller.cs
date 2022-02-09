@@ -34,7 +34,7 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// LoRaWANMulticastSession Marshaller
-    /// </summary>       
+    /// </summary>
     public class LoRaWANMulticastSessionMarshaller : IRequestMarshaller<LoRaWANMulticastSession, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static LoRaWANMulticastSessionMarshaller Instance = new LoRaWANMulticastSessionMarshaller();
 
     }

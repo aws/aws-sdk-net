@@ -34,7 +34,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// LoggingFilter Marshaller
-    /// </summary>       
+    /// </summary>
     public class LoggingFilterMarshaller : IRequestMarshaller<LoggingFilter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static LoggingFilterMarshaller Instance = new LoggingFilterMarshaller();
 
     }

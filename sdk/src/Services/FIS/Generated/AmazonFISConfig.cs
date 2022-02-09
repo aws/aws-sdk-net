@@ -32,7 +32,7 @@ namespace Amazon.FIS
     public partial class AmazonFISConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.112");
+            InternalSDKUtils.BuildUserAgentString("3.7.2.2");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.FIS
         /// Default constructor
         /// </summary>
         public AmazonFISConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonFISDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "fis";
         }

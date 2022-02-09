@@ -164,6 +164,7 @@ namespace Amazon.Macie2.Model
         /// depending on the actions that they're allowed to perform in Amazon Macie.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }
@@ -183,6 +184,7 @@ namespace Amazon.Macie2.Model
         /// can contain as many as 512 characters.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Regex
         {
             get { return this._regex; }

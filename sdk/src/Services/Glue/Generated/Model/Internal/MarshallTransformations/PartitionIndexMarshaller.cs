@@ -34,7 +34,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// PartitionIndex Marshaller
-    /// </summary>       
+    /// </summary>
     public class PartitionIndexMarshaller : IRequestMarshaller<PartitionIndex, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static PartitionIndexMarshaller Instance = new PartitionIndexMarshaller();
 
     }

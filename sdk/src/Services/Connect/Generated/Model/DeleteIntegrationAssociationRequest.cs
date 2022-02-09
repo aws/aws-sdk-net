@@ -30,8 +30,8 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteIntegrationAssociation operation.
-    /// Deletes an AWS resource association from an Amazon Connect instance. The association
-    /// must not have any use cases associated with it.
+    /// Deletes an Amazon Web Services resource association from an Amazon Connect instance.
+    /// The association must not have any use cases associated with it.
     /// </summary>
     public partial class DeleteIntegrationAssociationRequest : AmazonConnectRequest
     {

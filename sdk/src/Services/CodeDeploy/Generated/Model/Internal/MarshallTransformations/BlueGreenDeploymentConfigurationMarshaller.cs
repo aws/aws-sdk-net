@@ -34,7 +34,7 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// BlueGreenDeploymentConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class BlueGreenDeploymentConfigurationMarshaller : IRequestMarshaller<BlueGreenDeploymentConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -82,7 +82,7 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static BlueGreenDeploymentConfigurationMarshaller Instance = new BlueGreenDeploymentConfigurationMarshaller();
 
     }

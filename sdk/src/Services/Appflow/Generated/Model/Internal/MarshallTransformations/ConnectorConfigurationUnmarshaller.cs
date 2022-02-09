@@ -64,6 +64,12 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("authenticationConfig", targetDepth))
+                {
+                    var unmarshaller = AuthenticationConfigUnmarshaller.Instance;
+                    unmarshalledObject.AuthenticationConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("canUseAsDestination", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
@@ -76,10 +82,76 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
                     unmarshalledObject.CanUseAsSource = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("connectorArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ConnectorArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("connectorDescription", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ConnectorDescription = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("connectorLabel", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ConnectorLabel = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("connectorMetadata", targetDepth))
                 {
                     var unmarshaller = ConnectorMetadataUnmarshaller.Instance;
                     unmarshalledObject.ConnectorMetadata = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("connectorModes", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.ConnectorModes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("connectorName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ConnectorName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("connectorOwner", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ConnectorOwner = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("connectorProvisioningConfig", targetDepth))
+                {
+                    var unmarshaller = ConnectorProvisioningConfigUnmarshaller.Instance;
+                    unmarshalledObject.ConnectorProvisioningConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("connectorProvisioningType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ConnectorProvisioningType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("connectorRuntimeSettings", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ConnectorRuntimeSetting, ConnectorRuntimeSettingUnmarshaller>(ConnectorRuntimeSettingUnmarshaller.Instance);
+                    unmarshalledObject.ConnectorRuntimeSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("connectorType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ConnectorType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("connectorVersion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ConnectorVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("isPrivateLinkEnabled", targetDepth))
@@ -94,10 +166,40 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
                     unmarshalledObject.IsPrivateLinkEndpointUrlRequired = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("logoURL", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LogoURL = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("registeredAt", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.RegisteredAt = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("registeredBy", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RegisteredBy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("supportedApiVersions", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.SupportedApiVersions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("supportedDestinationConnectors", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.SupportedDestinationConnectors = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("supportedOperators", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.SupportedOperators = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("supportedSchedulingFrequencies", targetDepth))
@@ -110,6 +212,12 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.SupportedTriggerTypes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("supportedWriteOperations", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.SupportedWriteOperations = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

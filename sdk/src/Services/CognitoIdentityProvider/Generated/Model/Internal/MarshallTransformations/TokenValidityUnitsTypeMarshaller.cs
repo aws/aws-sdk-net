@@ -34,7 +34,7 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TokenValidityUnitsType Marshaller
-    /// </summary>       
+    /// </summary>
     public class TokenValidityUnitsTypeMarshaller : IRequestMarshaller<TokenValidityUnitsType, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TokenValidityUnitsTypeMarshaller Instance = new TokenValidityUnitsTypeMarshaller();
 
     }

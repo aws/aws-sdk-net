@@ -32,7 +32,7 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics
     public partial class AmazonAWSMarketplaceCommerceAnalyticsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.112");
+            InternalSDKUtils.BuildUserAgentString("3.7.0.121");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics
         /// Default constructor
         /// </summary>
         public AmazonAWSMarketplaceCommerceAnalyticsConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonAWSMarketplaceCommerceAnalyticsDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "marketplacecommerceanalytics";
         }

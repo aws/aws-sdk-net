@@ -25,6 +25,104 @@ namespace Amazon.Honeycode
 {
 
     /// <summary>
+    /// Constants used for properties of type ErrorCode.
+    /// </summary>
+    public class ErrorCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACCESS_DENIED for ErrorCode
+        /// </summary>
+        public static readonly ErrorCode ACCESS_DENIED = new ErrorCode("ACCESS_DENIED");
+        /// <summary>
+        /// Constant FILE_EMPTY_ERROR for ErrorCode
+        /// </summary>
+        public static readonly ErrorCode FILE_EMPTY_ERROR = new ErrorCode("FILE_EMPTY_ERROR");
+        /// <summary>
+        /// Constant FILE_NOT_FOUND_ERROR for ErrorCode
+        /// </summary>
+        public static readonly ErrorCode FILE_NOT_FOUND_ERROR = new ErrorCode("FILE_NOT_FOUND_ERROR");
+        /// <summary>
+        /// Constant FILE_PARSING_ERROR for ErrorCode
+        /// </summary>
+        public static readonly ErrorCode FILE_PARSING_ERROR = new ErrorCode("FILE_PARSING_ERROR");
+        /// <summary>
+        /// Constant FILE_SIZE_LIMIT_ERROR for ErrorCode
+        /// </summary>
+        public static readonly ErrorCode FILE_SIZE_LIMIT_ERROR = new ErrorCode("FILE_SIZE_LIMIT_ERROR");
+        /// <summary>
+        /// Constant INVALID_FILE_TYPE_ERROR for ErrorCode
+        /// </summary>
+        public static readonly ErrorCode INVALID_FILE_TYPE_ERROR = new ErrorCode("INVALID_FILE_TYPE_ERROR");
+        /// <summary>
+        /// Constant INVALID_IMPORT_OPTIONS_ERROR for ErrorCode
+        /// </summary>
+        public static readonly ErrorCode INVALID_IMPORT_OPTIONS_ERROR = new ErrorCode("INVALID_IMPORT_OPTIONS_ERROR");
+        /// <summary>
+        /// Constant INVALID_TABLE_COLUMN_ID_ERROR for ErrorCode
+        /// </summary>
+        public static readonly ErrorCode INVALID_TABLE_COLUMN_ID_ERROR = new ErrorCode("INVALID_TABLE_COLUMN_ID_ERROR");
+        /// <summary>
+        /// Constant INVALID_TABLE_ID_ERROR for ErrorCode
+        /// </summary>
+        public static readonly ErrorCode INVALID_TABLE_ID_ERROR = new ErrorCode("INVALID_TABLE_ID_ERROR");
+        /// <summary>
+        /// Constant INVALID_URL_ERROR for ErrorCode
+        /// </summary>
+        public static readonly ErrorCode INVALID_URL_ERROR = new ErrorCode("INVALID_URL_ERROR");
+        /// <summary>
+        /// Constant RESOURCE_NOT_FOUND_ERROR for ErrorCode
+        /// </summary>
+        public static readonly ErrorCode RESOURCE_NOT_FOUND_ERROR = new ErrorCode("RESOURCE_NOT_FOUND_ERROR");
+        /// <summary>
+        /// Constant SYSTEM_LIMIT_ERROR for ErrorCode
+        /// </summary>
+        public static readonly ErrorCode SYSTEM_LIMIT_ERROR = new ErrorCode("SYSTEM_LIMIT_ERROR");
+        /// <summary>
+        /// Constant TABLE_NOT_FOUND_ERROR for ErrorCode
+        /// </summary>
+        public static readonly ErrorCode TABLE_NOT_FOUND_ERROR = new ErrorCode("TABLE_NOT_FOUND_ERROR");
+        /// <summary>
+        /// Constant UNKNOWN_ERROR for ErrorCode
+        /// </summary>
+        public static readonly ErrorCode UNKNOWN_ERROR = new ErrorCode("UNKNOWN_ERROR");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ErrorCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ErrorCode FindValue(string value)
+        {
+            return FindValue<ErrorCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ErrorCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Format.
     /// </summary>
     public class Format : ConstantClass
@@ -66,6 +164,10 @@ namespace Amazon.Honeycode
         /// Constant ROWLINK for Format
         /// </summary>
         public static readonly Format ROWLINK = new Format("ROWLINK");
+        /// <summary>
+        /// Constant ROWSET for Format
+        /// </summary>
+        public static readonly Format ROWSET = new Format("ROWSET");
         /// <summary>
         /// Constant TEXT for Format
         /// </summary>

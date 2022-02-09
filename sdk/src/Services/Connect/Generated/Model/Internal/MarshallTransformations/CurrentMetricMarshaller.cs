@@ -34,7 +34,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CurrentMetric Marshaller
-    /// </summary>       
+    /// </summary>
     public class CurrentMetricMarshaller : IRequestMarshaller<CurrentMetric, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CurrentMetricMarshaller Instance = new CurrentMetricMarshaller();
 
     }

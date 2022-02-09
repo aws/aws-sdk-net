@@ -34,7 +34,7 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// MatchingRequest Marshaller
-    /// </summary>       
+    /// </summary>
     public class MatchingRequestMarshaller : IRequestMarshaller<MatchingRequest, JsonMarshallerContext> 
     {
         /// <summary>
@@ -88,7 +88,7 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static MatchingRequestMarshaller Instance = new MatchingRequestMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// FargateProfileSelector Marshaller
-    /// </summary>       
+    /// </summary>
     public class FargateProfileSelectorMarshaller : IRequestMarshaller<FargateProfileSelector, JsonMarshallerContext> 
     {
         /// <summary>
@@ -69,7 +69,7 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static FargateProfileSelectorMarshaller Instance = new FargateProfileSelectorMarshaller();
 
     }

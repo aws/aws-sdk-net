@@ -53,7 +53,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetLatestConfigurationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("GetLatestConfiguration", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetLatestConfiguration", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -70,9 +70,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = GetLatestConfigurationResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as GetLatestConfigurationResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as GetLatestConfigurationResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -227,7 +226,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new StartConfigurationSessionRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("StartConfigurationSession", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("StartConfigurationSession", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -241,9 +240,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = StartConfigurationSessionResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as StartConfigurationSessionResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as StartConfigurationSessionResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]

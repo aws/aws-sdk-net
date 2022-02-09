@@ -43,7 +43,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property MinimumLength. 
         /// <para>
-        /// The minimum length of the password policy that you have set. Cannot be less than 6.
+        /// The minimum length of the password in the policy that you have set. This value can't
+        /// be less than 6.
         /// </para>
         /// </summary>
         [AWSProperty(Min=6, Max=99)]
@@ -138,15 +139,14 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property TemporaryPasswordValidityDays. 
         /// <para>
-        /// In the password policy you have set, refers to the number of days a temporary password
-        /// is valid. If the user does not sign-in during this time, their password will need
-        /// to be reset by an administrator.
+        /// The number of days a temporary password is valid in the password policy. If the user
+        /// doesn't sign in during this time, an administrator must reset their password.
         /// </para>
         ///  <note> 
         /// <para>
-        /// When you set <code>TemporaryPasswordValidityDays</code> for a user pool, you will
-        /// no longer be able to set the deprecated <code>UnusedAccountValidityDays</code> value
-        /// for that user pool.
+        /// When you set <code>TemporaryPasswordValidityDays</code> for a user pool, you can no
+        /// longer set the deprecated <code>UnusedAccountValidityDays</code> value for that user
+        /// pool.
         /// </para>
         ///  </note>
         /// </summary>

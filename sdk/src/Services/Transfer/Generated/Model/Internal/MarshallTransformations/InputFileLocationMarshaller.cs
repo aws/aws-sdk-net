@@ -34,7 +34,7 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// InputFileLocation Marshaller
-    /// </summary>       
+    /// </summary>
     public class InputFileLocationMarshaller : IRequestMarshaller<InputFileLocation, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static InputFileLocationMarshaller Instance = new InputFileLocationMarshaller();
 
     }

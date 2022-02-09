@@ -34,7 +34,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AutoScalingGroupProviderUpdate Marshaller
-    /// </summary>       
+    /// </summary>
     public class AutoScalingGroupProviderUpdateMarshaller : IRequestMarshaller<AutoScalingGroupProviderUpdate, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AutoScalingGroupProviderUpdateMarshaller Instance = new AutoScalingGroupProviderUpdateMarshaller();
 
     }

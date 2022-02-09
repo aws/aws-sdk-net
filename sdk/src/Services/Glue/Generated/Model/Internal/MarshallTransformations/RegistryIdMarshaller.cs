@@ -34,7 +34,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RegistryId Marshaller
-    /// </summary>       
+    /// </summary>
     public class RegistryIdMarshaller : IRequestMarshaller<RegistryId, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RegistryIdMarshaller Instance = new RegistryIdMarshaller();
 
     }

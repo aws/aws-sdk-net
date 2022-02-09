@@ -29,14 +29,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53RecoveryReadiness.Model
 {
     /// <summary>
-    /// Guidance for improving Recovery Group resilliancy
+    /// Recommendations that are provided to make an application more recovery resilient.
     /// </summary>
     public partial class Recommendation
     {
         private string _recommendationText;
 
         /// <summary>
-        /// Gets and sets the property RecommendationText. Guidance text for recommendation
+        /// Gets and sets the property RecommendationText. 
+        /// <para>
+        /// Text of the recommendations that are provided to make an application more recovery
+        /// resilient.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string RecommendationText

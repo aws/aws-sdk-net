@@ -34,7 +34,7 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TemplateLocation Marshaller
-    /// </summary>       
+    /// </summary>
     public class TemplateLocationMarshaller : IRequestMarshaller<TemplateLocation, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TemplateLocationMarshaller Instance = new TemplateLocationMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RecipeReference Marshaller
-    /// </summary>       
+    /// </summary>
     public class RecipeReferenceMarshaller : IRequestMarshaller<RecipeReference, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RecipeReferenceMarshaller Instance = new RecipeReferenceMarshaller();
 
     }

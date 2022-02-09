@@ -32,7 +32,7 @@ namespace Amazon.Pricing
     public partial class AmazonPricingConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.1.108");
+            InternalSDKUtils.BuildUserAgentString("3.7.1.117");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.Pricing
         /// Default constructor
         /// </summary>
         public AmazonPricingConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonPricingDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "pricing";
         }

@@ -1000,6 +1000,49 @@ namespace Amazon.Comprehend
 
         #endregion
         
+        #region  DeleteResourcePolicy
+
+        internal virtual DeleteResourcePolicyResponse DeleteResourcePolicy(DeleteResourcePolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteResourcePolicyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a resource-based policy that is attached to a custom model.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResourcePolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteResourcePolicy service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceNotFoundException">
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
+        public virtual Task<DeleteResourcePolicyResponse> DeleteResourcePolicyAsync(DeleteResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteResourcePolicyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeDocumentClassificationJob
 
         internal virtual DescribeDocumentClassificationJobResponse DescribeDocumentClassificationJob(DescribeDocumentClassificationJobRequest request)
@@ -1421,6 +1464,50 @@ namespace Amazon.Comprehend
 
         #endregion
         
+        #region  DescribeResourcePolicy
+
+        internal virtual DescribeResourcePolicyResponse DescribeResourcePolicy(DescribeResourcePolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeResourcePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeResourcePolicyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets the details of a resource-based policy that is attached to a custom model, including
+        /// the JSON body of the policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeResourcePolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeResourcePolicy service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceNotFoundException">
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeResourcePolicy">REST API Reference for DescribeResourcePolicy Operation</seealso>
+        public virtual Task<DescribeResourcePolicyResponse> DescribeResourcePolicyAsync(DescribeResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeResourcePolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeResourcePolicyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeSentimentDetectionJob
 
         internal virtual DescribeSentimentDetectionJobResponse DescribeSentimentDetectionJob(DescribeSentimentDetectionJobRequest request)
@@ -1803,6 +1890,84 @@ namespace Amazon.Comprehend
             options.ResponseUnmarshaller = DetectSyntaxResponseUnmarshaller.Instance;
 
             return InvokeAsync<DetectSyntaxResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ImportModel
+
+        internal virtual ImportModelResponse ImportModel(ImportModelRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ImportModelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ImportModelResponseUnmarshaller.Instance;
+
+            return Invoke<ImportModelResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a new custom model that replicates a source custom model that you import.
+        /// The source model can be in your AWS account or another one.
+        /// 
+        ///  
+        /// <para>
+        /// If the source model is in another AWS account, then it must have a resource-based
+        /// policy that authorizes you to import it.
+        /// </para>
+        ///  
+        /// <para>
+        /// The source model must be in the same AWS region that you're using when you import.
+        /// You can't import a model that's in a different region.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ImportModel service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ImportModel service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.KmsKeyValidationException">
+        /// The KMS customer managed key (CMK) entered cannot be validated. Verify the key and
+        /// re-enter it.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceInUseException">
+        /// The specified resource name is already in use. Use a different name and try your request
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceLimitExceededException">
+        /// The maximum number of resources per account has been exceeded. Review the resources,
+        /// and then try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceNotFoundException">
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceUnavailableException">
+        /// The specified resource is not available. Check the resource and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyTagsException">
+        /// The request contains more tags than can be associated with a resource (50 tags per
+        /// resource). The maximum number of tags includes both existing tags and those included
+        /// in your current request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ImportModel">REST API Reference for ImportModel Operation</seealso>
+        public virtual Task<ImportModelResponse> ImportModelAsync(ImportModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ImportModelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ImportModelResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ImportModelResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2444,6 +2609,51 @@ namespace Amazon.Comprehend
             options.ResponseUnmarshaller = ListTopicsDetectionJobsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListTopicsDetectionJobsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutResourcePolicy
+
+        internal virtual PutResourcePolicyResponse PutResourcePolicy(PutResourcePolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<PutResourcePolicyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Attaches a resource-based policy to a custom model. You can use this policy to authorize
+        /// an entity in another AWS account to import the custom model, which replicates it in
+        /// Amazon Comprehend in their account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutResourcePolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutResourcePolicy service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceNotFoundException">
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
+        public virtual Task<PutResourcePolicyResponse> PutResourcePolicyAsync(PutResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutResourcePolicyResponse>(request, options, cancellationToken);
         }
 
         #endregion

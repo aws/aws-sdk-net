@@ -55,7 +55,7 @@ namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
         public IRequest Marshall(DescribeCustomPluginRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.KafkaConnect");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-09-14";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-09-14";
             request.HttpMethod = "GET";
 
             if (!publicRequest.IsSetCustomPluginArn())

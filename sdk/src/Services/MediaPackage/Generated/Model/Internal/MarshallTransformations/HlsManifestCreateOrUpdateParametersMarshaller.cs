@@ -34,7 +34,7 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// HlsManifestCreateOrUpdateParameters Marshaller
-    /// </summary>       
+    /// </summary>
     public class HlsManifestCreateOrUpdateParametersMarshaller : IRequestMarshaller<HlsManifestCreateOrUpdateParameters, JsonMarshallerContext> 
     {
         /// <summary>
@@ -108,7 +108,7 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static HlsManifestCreateOrUpdateParametersMarshaller Instance = new HlsManifestCreateOrUpdateParametersMarshaller();
 
     }

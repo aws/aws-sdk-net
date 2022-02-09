@@ -34,7 +34,7 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AvailSuppression Marshaller
-    /// </summary>       
+    /// </summary>
     public class AvailSuppressionMarshaller : IRequestMarshaller<AvailSuppression, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AvailSuppressionMarshaller Instance = new AvailSuppressionMarshaller();
 
     }

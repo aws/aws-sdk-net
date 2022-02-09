@@ -141,7 +141,12 @@ namespace Amazon.S3Control.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NewObjectMetadata.
+        /// Gets and sets the property NewObjectMetadata. 
+        /// <para>
+        /// If you don't provide this parameter, Amazon S3 copies all the metadata from the original
+        /// objects. If you specify an empty set, the new objects will have no tags. Otherwise,
+        /// Amazon S3 assigns the supplied tags to the new objects.
+        /// </para>
         /// </summary>
         public S3ObjectMetadata NewObjectMetadata
         {

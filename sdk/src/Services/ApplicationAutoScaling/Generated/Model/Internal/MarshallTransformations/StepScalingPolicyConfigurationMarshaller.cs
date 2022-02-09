@@ -34,7 +34,7 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// StepScalingPolicyConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class StepScalingPolicyConfigurationMarshaller : IRequestMarshaller<StepScalingPolicyConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -89,7 +89,7 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static StepScalingPolicyConfigurationMarshaller Instance = new StepScalingPolicyConfigurationMarshaller();
 
     }

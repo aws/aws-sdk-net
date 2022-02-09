@@ -34,7 +34,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// UserContext Marshaller
-    /// </summary>       
+    /// </summary>
     public class UserContextMarshaller : IRequestMarshaller<UserContext, JsonMarshallerContext> 
     {
         /// <summary>
@@ -88,7 +88,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static UserContextMarshaller Instance = new UserContextMarshaller();
 
     }

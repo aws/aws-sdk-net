@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CategoricalParameter Marshaller
-    /// </summary>       
+    /// </summary>
     public class CategoricalParameterMarshaller : IRequestMarshaller<CategoricalParameter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CategoricalParameterMarshaller Instance = new CategoricalParameterMarshaller();
 
     }

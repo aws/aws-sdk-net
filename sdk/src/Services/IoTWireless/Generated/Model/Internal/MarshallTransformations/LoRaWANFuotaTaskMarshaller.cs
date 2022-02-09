@@ -34,7 +34,7 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// LoRaWANFuotaTask Marshaller
-    /// </summary>       
+    /// </summary>
     public class LoRaWANFuotaTaskMarshaller : IRequestMarshaller<LoRaWANFuotaTask, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static LoRaWANFuotaTaskMarshaller Instance = new LoRaWANFuotaTaskMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.MigrationHubRefactorSpaces.Model.Internal.MarshallTransformatio
 {
     /// <summary>
     /// UriPathRouteInput Marshaller
-    /// </summary>       
+    /// </summary>
     public class UriPathRouteInputMarshaller : IRequestMarshaller<UriPathRouteInput, JsonMarshallerContext> 
     {
         /// <summary>
@@ -78,7 +78,7 @@ namespace Amazon.MigrationHubRefactorSpaces.Model.Internal.MarshallTransformatio
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static UriPathRouteInputMarshaller Instance = new UriPathRouteInputMarshaller();
 
     }

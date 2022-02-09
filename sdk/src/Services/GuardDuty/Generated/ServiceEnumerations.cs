@@ -93,6 +93,10 @@ namespace Amazon.GuardDuty
         /// </summary>
         public static readonly DataSource FLOW_LOGS = new DataSource("FLOW_LOGS");
         /// <summary>
+        /// Constant KUBERNETES_AUDIT_LOGS for DataSource
+        /// </summary>
+        public static readonly DataSource KUBERNETES_AUDIT_LOGS = new DataSource("KUBERNETES_AUDIT_LOGS");
+        /// <summary>
         /// Constant S3_LOGS for DataSource
         /// </summary>
         public static readonly DataSource S3_LOGS = new DataSource("S3_LOGS");

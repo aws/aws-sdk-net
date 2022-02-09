@@ -34,7 +34,7 @@ namespace Amazon.TimestreamWrite.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RetentionProperties Marshaller
-    /// </summary>       
+    /// </summary>
     public class RetentionPropertiesMarshaller : IRequestMarshaller<RetentionProperties, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.TimestreamWrite.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RetentionPropertiesMarshaller Instance = new RetentionPropertiesMarshaller();
 
     }

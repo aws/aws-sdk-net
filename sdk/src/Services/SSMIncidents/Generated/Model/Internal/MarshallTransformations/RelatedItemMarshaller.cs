@@ -34,7 +34,7 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RelatedItem Marshaller
-    /// </summary>       
+    /// </summary>
     public class RelatedItemMarshaller : IRequestMarshaller<RelatedItem, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RelatedItemMarshaller Instance = new RelatedItemMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// VolumeSpecification Marshaller
-    /// </summary>       
+    /// </summary>
     public class VolumeSpecificationMarshaller : IRequestMarshaller<VolumeSpecification, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static VolumeSpecificationMarshaller Instance = new VolumeSpecificationMarshaller();
 
     }

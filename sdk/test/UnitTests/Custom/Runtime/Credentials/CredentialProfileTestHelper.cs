@@ -59,25 +59,52 @@ namespace AWSSDK.UnitTests
         
         public static CredentialProfile GetRandomProfile(string profileName, CredentialProfileType profileType)
         {
-            return GetCredentialProfile(Guid.NewGuid(), profileName, GetRandomOptions(profileType), GetRandomProperties(), GetRandomRegion(), null, null, null);
+            return GetCredentialProfile(
+                uniqueKey: Guid.NewGuid(),
+                profileName: profileName,
+                options: GetRandomOptions(profileType),
+                properties: GetRandomProperties(),
+                defaultConfigurationModeName: null,
+                region: GetRandomRegion(),
+                endpointDiscoveryEnabled: null,
+                retryMode: null,
+                maxAttempts: null);
         }
 
         public static CredentialProfile GetCredentialProfile(Guid? uniqueKey, string profileName, CredentialProfileOptions options)
         {
-            return GetCredentialProfile(uniqueKey, profileName, options, null, null, null, null, null);
-        }                
+            return GetCredentialProfile(
+                uniqueKey: uniqueKey,
+                profileName: profileName,
+                options: options,
+                properties: null,
+                defaultConfigurationModeName: null,
+                region: null,
+                endpointDiscoveryEnabled: null,
+                retryMode: null,
+                maxAttempts: null);
+        }
 
-        public static CredentialProfile GetCredentialProfile(Guid? uniqueKey, string profileName, CredentialProfileOptions options,
-            Dictionary<string, string> properties, RegionEndpoint region, bool? endpointDiscoveryEnabled, RequestRetryMode? retryMode, int? maxAttempts)
+        public static CredentialProfile GetCredentialProfile(
+            Guid? uniqueKey,
+            string profileName,
+            CredentialProfileOptions options,
+            Dictionary<string, string> properties,
+            string defaultConfigurationModeName,
+            RegionEndpoint region,
+            bool? endpointDiscoveryEnabled,
+            RequestRetryMode? retryMode,
+            int? maxAttempts)
         {
             var profile = new CredentialProfile(profileName, options)
             {
+                DefaultConfigurationModeName = defaultConfigurationModeName,
                 Region = region,
                 EndpointDiscoveryEnabled = endpointDiscoveryEnabled,
                 RetryMode = retryMode,
                 MaxAttempts = maxAttempts
             };
-            CredentialProfileUtils.SetUniqueKey(profile, uniqueKey);            
+            CredentialProfileUtils.SetUniqueKey(profile, uniqueKey);
             ReflectionHelpers.Invoke(profile, "Properties", properties);
             return profile;
         }

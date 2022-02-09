@@ -46,7 +46,7 @@ namespace Amazon.TranscribeService.Model
         /// Gets and sets the property ChannelIdentification. 
         /// <para>
         /// Instructs Amazon Transcribe to process each audio channel separately and then merge
-        /// the transcription output of each channel into a single transcription. 
+        /// the transcription output of each channel into a single transcription.
         /// </para>
         ///  
         /// <para>

@@ -32,7 +32,7 @@ namespace Amazon.MigrationHubStrategyRecommendations
     public partial class AmazonMigrationHubStrategyRecommendationsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.14");
+            InternalSDKUtils.BuildUserAgentString("3.7.0.23");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// Default constructor
         /// </summary>
         public AmazonMigrationHubStrategyRecommendationsConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonMigrationHubStrategyRecommendationsDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "migrationhub-strategy";
         }

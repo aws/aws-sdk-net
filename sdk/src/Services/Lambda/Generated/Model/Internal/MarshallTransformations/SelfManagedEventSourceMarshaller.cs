@@ -34,7 +34,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SelfManagedEventSource Marshaller
-    /// </summary>       
+    /// </summary>
     public class SelfManagedEventSourceMarshaller : IRequestMarshaller<SelfManagedEventSource, JsonMarshallerContext> 
     {
         /// <summary>
@@ -68,7 +68,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SelfManagedEventSourceMarshaller Instance = new SelfManagedEventSourceMarshaller();
 
     }

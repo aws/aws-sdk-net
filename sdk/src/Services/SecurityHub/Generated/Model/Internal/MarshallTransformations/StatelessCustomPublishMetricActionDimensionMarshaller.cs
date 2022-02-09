@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// StatelessCustomPublishMetricActionDimension Marshaller
-    /// </summary>       
+    /// </summary>
     public class StatelessCustomPublishMetricActionDimensionMarshaller : IRequestMarshaller<StatelessCustomPublishMetricActionDimension, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static StatelessCustomPublishMetricActionDimensionMarshaller Instance = new StatelessCustomPublishMetricActionDimensionMarshaller();
 
     }

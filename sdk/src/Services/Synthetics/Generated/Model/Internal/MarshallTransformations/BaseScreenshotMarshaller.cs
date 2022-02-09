@@ -34,7 +34,7 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// BaseScreenshot Marshaller
-    /// </summary>       
+    /// </summary>
     public class BaseScreenshotMarshaller : IRequestMarshaller<BaseScreenshot, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static BaseScreenshotMarshaller Instance = new BaseScreenshotMarshaller();
 
     }

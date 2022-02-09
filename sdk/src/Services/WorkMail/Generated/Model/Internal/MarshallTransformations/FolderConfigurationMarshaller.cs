@@ -34,7 +34,7 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// FolderConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class FolderConfigurationMarshaller : IRequestMarshaller<FolderConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static FolderConfigurationMarshaller Instance = new FolderConfigurationMarshaller();
 
     }

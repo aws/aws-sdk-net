@@ -34,7 +34,7 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// LambdaExecutionParameters Marshaller
-    /// </summary>       
+    /// </summary>
     public class LambdaExecutionParametersMarshaller : IRequestMarshaller<LambdaExecutionParameters, JsonMarshallerContext> 
     {
         /// <summary>
@@ -143,7 +143,7 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static LambdaExecutionParametersMarshaller Instance = new LambdaExecutionParametersMarshaller();
 
     }

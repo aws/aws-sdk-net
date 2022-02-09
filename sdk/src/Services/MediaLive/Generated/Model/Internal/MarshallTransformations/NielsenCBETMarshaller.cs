@@ -34,7 +34,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// NielsenCBET Marshaller
-    /// </summary>       
+    /// </summary>
     public class NielsenCBETMarshaller : IRequestMarshaller<NielsenCBET, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static NielsenCBETMarshaller Instance = new NielsenCBETMarshaller();
 
     }

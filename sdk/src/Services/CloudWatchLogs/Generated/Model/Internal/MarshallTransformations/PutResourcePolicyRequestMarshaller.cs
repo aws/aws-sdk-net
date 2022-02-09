@@ -58,7 +58,7 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
             string target = "Logs_20140328.PutResourcePolicy";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2014-03-28";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2014-03-28";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -79,7 +79,6 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.PolicyName);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

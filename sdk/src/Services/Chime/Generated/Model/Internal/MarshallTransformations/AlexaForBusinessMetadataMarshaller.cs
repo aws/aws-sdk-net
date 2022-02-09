@@ -34,7 +34,7 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AlexaForBusinessMetadata Marshaller
-    /// </summary>       
+    /// </summary>
     public class AlexaForBusinessMetadataMarshaller : IRequestMarshaller<AlexaForBusinessMetadata, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AlexaForBusinessMetadataMarshaller Instance = new AlexaForBusinessMetadataMarshaller();
 
     }

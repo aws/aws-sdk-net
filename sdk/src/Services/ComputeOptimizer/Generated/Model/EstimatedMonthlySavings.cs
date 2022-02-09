@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ComputeOptimizer.Model
 {
     /// <summary>
-    /// Describes the estimated monthly savings amount possible for a given resource based
-    /// on On-Demand instance pricing
+    /// Describes the estimated monthly savings amount possible, based on On-Demand instance
+    /// pricing, by adopting Compute Optimizer recommendations for a given resource.
     /// 
     ///  
     /// <para>

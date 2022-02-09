@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RepositoryAuthConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class RepositoryAuthConfigMarshaller : IRequestMarshaller<RepositoryAuthConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RepositoryAuthConfigMarshaller Instance = new RepositoryAuthConfigMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DynatraceConnectorProfileProperties Marshaller
-    /// </summary>       
+    /// </summary>
     public class DynatraceConnectorProfilePropertiesMarshaller : IRequestMarshaller<DynatraceConnectorProfileProperties, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DynatraceConnectorProfilePropertiesMarshaller Instance = new DynatraceConnectorProfilePropertiesMarshaller();
 
     }

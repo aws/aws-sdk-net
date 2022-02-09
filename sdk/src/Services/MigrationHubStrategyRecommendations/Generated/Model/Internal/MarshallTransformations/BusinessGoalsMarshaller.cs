@@ -34,7 +34,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
 {
     /// <summary>
     /// BusinessGoals Marshaller
-    /// </summary>       
+    /// </summary>
     public class BusinessGoalsMarshaller : IRequestMarshaller<BusinessGoals, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static BusinessGoalsMarshaller Instance = new BusinessGoalsMarshaller();
 
     }

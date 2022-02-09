@@ -32,7 +32,7 @@ namespace Amazon.DocDB
     public partial class AmazonDocDBConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.2.84");
+            InternalSDKUtils.BuildUserAgentString("3.7.2.93");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.DocDB
         /// Default constructor
         /// </summary>
         public AmazonDocDBConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonDocDBDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "rds";
         }

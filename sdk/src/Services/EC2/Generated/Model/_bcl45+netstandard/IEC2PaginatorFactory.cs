@@ -101,6 +101,11 @@ namespace Amazon.EC2.Model
         IDescribeExportImageTasksPaginator DescribeExportImageTasks(DescribeExportImageTasksRequest request);
 
         /// <summary>
+        /// Paginator for DescribeFastLaunchImages operation
+        ///</summary>
+        IDescribeFastLaunchImagesPaginator DescribeFastLaunchImages(DescribeFastLaunchImagesRequest request);
+
+        /// <summary>
         /// Paginator for DescribeFastSnapshotRestores operation
         ///</summary>
         IDescribeFastSnapshotRestoresPaginator DescribeFastSnapshotRestores(DescribeFastSnapshotRestoresRequest request);
@@ -589,6 +594,11 @@ namespace Amazon.EC2.Model
         /// Paginator for GetVpnConnectionDeviceTypes operation
         ///</summary>
         IGetVpnConnectionDeviceTypesPaginator GetVpnConnectionDeviceTypes(GetVpnConnectionDeviceTypesRequest request);
+
+        /// <summary>
+        /// Paginator for ListImagesInRecycleBin operation
+        ///</summary>
+        IListImagesInRecycleBinPaginator ListImagesInRecycleBin(ListImagesInRecycleBinRequest request);
 
         /// <summary>
         /// Paginator for ListSnapshotsInRecycleBin operation

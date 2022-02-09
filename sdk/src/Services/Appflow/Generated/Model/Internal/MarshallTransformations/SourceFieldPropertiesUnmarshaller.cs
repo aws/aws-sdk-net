@@ -76,6 +76,12 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
                     unmarshalledObject.IsRetrievable = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("isTimestampFieldForIncrementalQueries", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.IsTimestampFieldForIncrementalQueries = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

@@ -34,7 +34,7 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CallAnalyticsJobSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class CallAnalyticsJobSettingsMarshaller : IRequestMarshaller<CallAnalyticsJobSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -114,7 +114,7 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CallAnalyticsJobSettingsMarshaller Instance = new CallAnalyticsJobSettingsMarshaller();
 
     }

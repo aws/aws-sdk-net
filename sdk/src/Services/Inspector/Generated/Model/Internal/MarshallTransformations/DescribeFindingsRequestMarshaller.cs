@@ -58,7 +58,7 @@ namespace Amazon.Inspector.Model.Internal.MarshallTransformations
             string target = "InspectorService.DescribeFindings";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-02-16";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-02-16";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -84,7 +84,6 @@ namespace Amazon.Inspector.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Locale);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

@@ -34,7 +34,7 @@ namespace Amazon.CodeStar.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CodeSource Marshaller
-    /// </summary>       
+    /// </summary>
     public class CodeSourceMarshaller : IRequestMarshaller<CodeSource, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.CodeStar.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CodeSourceMarshaller Instance = new CodeSourceMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AwsS3AccountPublicAccessBlockDetails Marshaller
-    /// </summary>       
+    /// </summary>
     public class AwsS3AccountPublicAccessBlockDetailsMarshaller : IRequestMarshaller<AwsS3AccountPublicAccessBlockDetails, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AwsS3AccountPublicAccessBlockDetailsMarshaller Instance = new AwsS3AccountPublicAccessBlockDetailsMarshaller();
 
     }

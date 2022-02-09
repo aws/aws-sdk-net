@@ -307,6 +307,56 @@ namespace Amazon.AppRunner
 
 
     /// <summary>
+    /// Constants used for properties of type EgressType.
+    /// </summary>
+    public class EgressType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DEFAULT for EgressType
+        /// </summary>
+        public static readonly EgressType DEFAULT = new EgressType("DEFAULT");
+        /// <summary>
+        /// Constant VPC for EgressType
+        /// </summary>
+        public static readonly EgressType VPC = new EgressType("VPC");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EgressType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EgressType FindValue(string value)
+        {
+            return FindValue<EgressType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EgressType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type HealthCheckProtocol.
     /// </summary>
     public class HealthCheckProtocol : ConstantClass
@@ -740,6 +790,56 @@ namespace Amazon.AppRunner
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SourceCodeVersionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type VpcConnectorStatus.
+    /// </summary>
+    public class VpcConnectorStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for VpcConnectorStatus
+        /// </summary>
+        public static readonly VpcConnectorStatus ACTIVE = new VpcConnectorStatus("ACTIVE");
+        /// <summary>
+        /// Constant INACTIVE for VpcConnectorStatus
+        /// </summary>
+        public static readonly VpcConnectorStatus INACTIVE = new VpcConnectorStatus("INACTIVE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VpcConnectorStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VpcConnectorStatus FindValue(string value)
+        {
+            return FindValue<VpcConnectorStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VpcConnectorStatus(string value)
         {
             return FindValue(value);
         }

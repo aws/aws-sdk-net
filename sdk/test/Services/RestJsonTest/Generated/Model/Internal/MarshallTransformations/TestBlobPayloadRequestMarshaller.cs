@@ -56,12 +56,12 @@ namespace Amazon.RestJsonTest.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.RestJsonTest");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-05-13";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-05-13";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/blob_payload";
             request.ContentStream =  publicRequest.Data ?? new MemoryStream();
-            request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] =  
+            request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] =
                 request.ContentStream.Length.ToString(CultureInfo.InvariantCulture);
             request.Headers[Amazon.Util.HeaderKeys.ContentTypeHeader] = "binary/octet-stream"; 
             if (request.ContentStream != null && request.ContentStream.Length == 0)
@@ -69,8 +69,10 @@ namespace Amazon.RestJsonTest.Model.Internal.MarshallTransformations
                 request.Headers.Remove(Amazon.Util.HeaderKeys.ContentTypeHeader);
             }
         
-            if(publicRequest.IsSetContentType())
+            if (publicRequest.IsSetContentType()) 
+            {
                 request.Headers["Content-Type"] = publicRequest.ContentType;
+            }
 
             return request;
         }

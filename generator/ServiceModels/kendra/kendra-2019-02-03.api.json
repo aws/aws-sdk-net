@@ -1663,7 +1663,8 @@
         "ConfluenceConfiguration":{"shape":"ConfluenceConfiguration"},
         "GoogleDriveConfiguration":{"shape":"GoogleDriveConfiguration"},
         "WebCrawlerConfiguration":{"shape":"WebCrawlerConfiguration"},
-        "WorkDocsConfiguration":{"shape":"WorkDocsConfiguration"}
+        "WorkDocsConfiguration":{"shape":"WorkDocsConfiguration"},
+        "FsxConfiguration":{"shape":"FsxConfiguration"}
       }
     },
     "DataSourceDateFieldFormat":{
@@ -1834,7 +1835,8 @@
         "CONFLUENCE",
         "GOOGLEDRIVE",
         "WEBCRAWLER",
-        "WORKDOCS"
+        "WORKDOCS",
+        "FSX"
       ]
     },
     "DataSourceVpcConfiguration":{
@@ -2701,6 +2703,33 @@
       "min":1,
       "pattern":"^\\P{C}*.\\P{C}*$"
     },
+    "FileSystemId":{
+      "type":"string",
+      "max":21,
+      "min":11,
+      "pattern":"^(fs-[0-9a-f]{8,})$"
+    },
+    "FsxConfiguration":{
+      "type":"structure",
+      "required":[
+        "FileSystemId",
+        "FileSystemType",
+        "VpcConfiguration"
+      ],
+      "members":{
+        "FileSystemId":{"shape":"FileSystemId"},
+        "FileSystemType":{"shape":"FsxFileSystemType"},
+        "VpcConfiguration":{"shape":"DataSourceVpcConfiguration"},
+        "SecretArn":{"shape":"SecretArn"},
+        "InclusionPatterns":{"shape":"DataSourceInclusionsExclusionsStrings"},
+        "ExclusionPatterns":{"shape":"DataSourceInclusionsExclusionsStrings"},
+        "FieldMappings":{"shape":"DataSourceToIndexFieldMappingList"}
+      }
+    },
+    "FsxFileSystemType":{
+      "type":"string",
+      "enum":["WINDOWS"]
+    },
     "GetQuerySuggestionsRequest":{
       "type":"structure",
       "required":[
@@ -3545,10 +3574,7 @@
     },
     "QueryRequest":{
       "type":"structure",
-      "required":[
-        "IndexId",
-        "QueryText"
-      ],
+      "required":["IndexId"],
       "members":{
         "IndexId":{"shape":"IndexId"},
         "QueryText":{"shape":"QueryText"},
@@ -3570,7 +3596,8 @@
         "QueryId":{"shape":"QueryId"},
         "ResultItems":{"shape":"QueryResultItemList"},
         "FacetResults":{"shape":"FacetResultList"},
-        "TotalNumberOfResults":{"shape":"Integer"}
+        "TotalNumberOfResults":{"shape":"Integer"},
+        "Warnings":{"shape":"WarningList"}
       }
     },
     "QueryResultItem":{
@@ -3653,8 +3680,7 @@
     "QueryText":{
       "type":"string",
       "max":1000,
-      "min":1,
-      "pattern":"^\\P{C}*$"
+      "min":1
     },
     "ReadAccessType":{
       "type":"string",
@@ -4610,6 +4636,29 @@
       "max":200,
       "min":1,
       "pattern":"[-0-9a-zA-Z]+"
+    },
+    "Warning":{
+      "type":"structure",
+      "members":{
+        "Message":{"shape":"WarningMessage"},
+        "Code":{"shape":"WarningCode"}
+      }
+    },
+    "WarningCode":{
+      "type":"string",
+      "enum":["QUERY_LANGUAGE_INVALID_SYNTAX"]
+    },
+    "WarningList":{
+      "type":"list",
+      "member":{"shape":"Warning"},
+      "max":1,
+      "min":1
+    },
+    "WarningMessage":{
+      "type":"string",
+      "max":2048,
+      "min":1,
+      "pattern":"^\\P{C}*$"
     },
     "WebCrawlerConfiguration":{
       "type":"structure",

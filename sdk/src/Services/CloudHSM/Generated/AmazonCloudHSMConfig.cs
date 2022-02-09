@@ -32,7 +32,7 @@ namespace Amazon.CloudHSM
     public partial class AmazonCloudHSMConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.1.108");
+            InternalSDKUtils.BuildUserAgentString("3.7.1.117");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.CloudHSM
         /// Default constructor
         /// </summary>
         public AmazonCloudHSMConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonCloudHSMDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "cloudhsm";
         }

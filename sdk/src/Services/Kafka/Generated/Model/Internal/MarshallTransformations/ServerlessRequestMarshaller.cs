@@ -34,7 +34,7 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ServerlessRequest Marshaller
-    /// </summary>       
+    /// </summary>
     public class ServerlessRequestMarshaller : IRequestMarshaller<ServerlessRequest, JsonMarshallerContext> 
     {
         /// <summary>
@@ -76,7 +76,7 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ServerlessRequestMarshaller Instance = new ServerlessRequestMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.ConnectWisdomService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AppIntegrationsConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class AppIntegrationsConfigurationMarshaller : IRequestMarshaller<AppIntegrationsConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.ConnectWisdomService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AppIntegrationsConfigurationMarshaller Instance = new AppIntegrationsConfigurationMarshaller();
 
     }

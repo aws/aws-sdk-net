@@ -34,7 +34,7 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// LocalSecondaryIndex Marshaller
-    /// </summary>       
+    /// </summary>
     public class LocalSecondaryIndexMarshaller : IRequestMarshaller<LocalSecondaryIndex, JsonMarshallerContext> 
     {
         /// <summary>
@@ -82,7 +82,7 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static LocalSecondaryIndexMarshaller Instance = new LocalSecondaryIndexMarshaller();
 
     }

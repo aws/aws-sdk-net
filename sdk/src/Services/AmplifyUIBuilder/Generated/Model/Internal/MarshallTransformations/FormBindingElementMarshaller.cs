@@ -34,7 +34,7 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// FormBindingElement Marshaller
-    /// </summary>       
+    /// </summary>
     public class FormBindingElementMarshaller : IRequestMarshaller<FormBindingElement, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static FormBindingElementMarshaller Instance = new FormBindingElementMarshaller();
 
     }

@@ -56,8 +56,8 @@ namespace Amazon.Connect
     /// </para>
     ///  
     /// <para>
-    /// You can connect programmatically to an AWS service by using an endpoint. For a list
-    /// of Amazon Connect endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
+    /// You can connect programmatically to an Amazon Web Services service by using an endpoint.
+    /// For a list of Amazon Connect endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
     /// Connect Endpoints</a>.
     /// </para>
     ///  <note> 
@@ -465,6 +465,79 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = AssociateBotResponseUnmarshaller.Instance;
             
             return InvokeAsync<AssociateBotResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  AssociateDefaultVocabulary
+
+
+        /// <summary>
+        /// Associates an existing vocabulary as the default. Contact Lens for Amazon Connect
+        /// uses the vocabulary in post-call and real-time analysis sessions for the given language.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateDefaultVocabulary service method.</param>
+        /// 
+        /// <returns>The response from the AssociateDefaultVocabulary service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateDefaultVocabulary">REST API Reference for AssociateDefaultVocabulary Operation</seealso>
+        public virtual AssociateDefaultVocabularyResponse AssociateDefaultVocabulary(AssociateDefaultVocabularyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateDefaultVocabularyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateDefaultVocabularyResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateDefaultVocabularyResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Associates an existing vocabulary as the default. Contact Lens for Amazon Connect
+        /// uses the vocabulary in post-call and real-time analysis sessions for the given language.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateDefaultVocabulary service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateDefaultVocabulary service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateDefaultVocabulary">REST API Reference for AssociateDefaultVocabulary Operation</seealso>
+        public virtual Task<AssociateDefaultVocabularyResponse> AssociateDefaultVocabularyAsync(AssociateDefaultVocabularyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateDefaultVocabularyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateDefaultVocabularyResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<AssociateDefaultVocabularyResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1504,7 +1577,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Creates an AWS resource association with an Amazon Connect instance.
+        /// Creates an Amazon Web Services resource association with an Amazon Connect instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateIntegrationAssociation service method.</param>
         /// 
@@ -1536,7 +1609,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Creates an AWS resource association with an Amazon Connect instance.
+        /// Creates an Amazon Web Services resource association with an Amazon Connect instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateIntegrationAssociation service method.</param>
         /// <param name="cancellationToken">
@@ -2174,6 +2247,95 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  CreateVocabulary
+
+
+        /// <summary>
+        /// Creates a custom vocabulary associated with your Amazon Connect instance. You can
+        /// set a custom vocabulary to be your default vocabulary for a given language. Contact
+        /// Lens for Amazon Connect uses the default vocabulary in post-call and real-time contact
+        /// analysis sessions for that language.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateVocabulary service method.</param>
+        /// 
+        /// <returns>The response from the CreateVocabulary service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceConflictException">
+        /// A resource already has that name.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateVocabulary">REST API Reference for CreateVocabulary Operation</seealso>
+        public virtual CreateVocabularyResponse CreateVocabulary(CreateVocabularyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateVocabularyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateVocabularyResponseUnmarshaller.Instance;
+
+            return Invoke<CreateVocabularyResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a custom vocabulary associated with your Amazon Connect instance. You can
+        /// set a custom vocabulary to be your default vocabulary for a given language. Contact
+        /// Lens for Amazon Connect uses the default vocabulary in post-call and real-time contact
+        /// analysis sessions for that language.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateVocabulary service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateVocabulary service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceConflictException">
+        /// A resource already has that name.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateVocabulary">REST API Reference for CreateVocabulary Operation</seealso>
+        public virtual Task<CreateVocabularyResponse> CreateVocabularyAsync(CreateVocabularyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateVocabularyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateVocabularyResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateVocabularyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteContactFlow
 
 
@@ -2498,8 +2660,8 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Deletes an AWS resource association from an Amazon Connect instance. The association
-        /// must not have any use cases associated with it.
+        /// Deletes an Amazon Web Services resource association from an Amazon Connect instance.
+        /// The association must not have any use cases associated with it.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteIntegrationAssociation service method.</param>
         /// 
@@ -2528,8 +2690,8 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Deletes an AWS resource association from an Amazon Connect instance. The association
-        /// must not have any use cases associated with it.
+        /// Deletes an Amazon Web Services resource association from an Amazon Connect instance.
+        /// The association must not have any use cases associated with it.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteIntegrationAssociation service method.</param>
         /// <param name="cancellationToken">
@@ -2952,6 +3114,83 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = DeleteUserHierarchyGroupResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteUserHierarchyGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteVocabulary
+
+
+        /// <summary>
+        /// Deletes the vocabulary that has the given identifier.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVocabulary service method.</param>
+        /// 
+        /// <returns>The response from the DeleteVocabulary service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
+        /// That resource is already in use. Please try another.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteVocabulary">REST API Reference for DeleteVocabulary Operation</seealso>
+        public virtual DeleteVocabularyResponse DeleteVocabulary(DeleteVocabularyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteVocabularyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteVocabularyResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteVocabularyResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes the vocabulary that has the given identifier.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVocabulary service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteVocabulary service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
+        /// That resource is already in use. Please try another.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteVocabulary">REST API Reference for DeleteVocabulary Operation</seealso>
+        public virtual Task<DeleteVocabularyResponse> DeleteVocabularyAsync(DeleteVocabularyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteVocabularyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteVocabularyResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteVocabularyResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4141,6 +4380,77 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = DescribeUserHierarchyStructureResponseUnmarshaller.Instance;
             
             return InvokeAsync<DescribeUserHierarchyStructureResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeVocabulary
+
+
+        /// <summary>
+        /// Describes the specified vocabulary.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVocabulary service method.</param>
+        /// 
+        /// <returns>The response from the DescribeVocabulary service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeVocabulary">REST API Reference for DescribeVocabulary Operation</seealso>
+        public virtual DescribeVocabularyResponse DescribeVocabulary(DescribeVocabularyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeVocabularyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeVocabularyResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeVocabularyResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Describes the specified vocabulary.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVocabulary service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeVocabulary service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeVocabulary">REST API Reference for DescribeVocabulary Operation</seealso>
+        public virtual Task<DescribeVocabularyResponse> DescribeVocabularyAsync(DescribeVocabularyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeVocabularyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeVocabularyResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeVocabularyResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5605,6 +5915,71 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  ListDefaultVocabularies
+
+
+        /// <summary>
+        /// Lists the default vocabularies for the specified Amazon Connect instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDefaultVocabularies service method.</param>
+        /// 
+        /// <returns>The response from the ListDefaultVocabularies service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListDefaultVocabularies">REST API Reference for ListDefaultVocabularies Operation</seealso>
+        public virtual ListDefaultVocabulariesResponse ListDefaultVocabularies(ListDefaultVocabulariesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDefaultVocabulariesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDefaultVocabulariesResponseUnmarshaller.Instance;
+
+            return Invoke<ListDefaultVocabulariesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists the default vocabularies for the specified Amazon Connect instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDefaultVocabularies service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDefaultVocabularies service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListDefaultVocabularies">REST API Reference for ListDefaultVocabularies Operation</seealso>
+        public virtual Task<ListDefaultVocabulariesResponse> ListDefaultVocabulariesAsync(ListDefaultVocabulariesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDefaultVocabulariesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDefaultVocabulariesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListDefaultVocabulariesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListHoursOfOperations
 
 
@@ -5925,8 +6300,8 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Provides summary information about the AWS resource associations for the specified
-        /// Amazon Connect instance.
+        /// Provides summary information about the Amazon Web Services resource associations for
+        /// the specified Amazon Connect instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListIntegrationAssociations service method.</param>
         /// 
@@ -5955,8 +6330,8 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Provides summary information about the AWS resource associations for the specified
-        /// Amazon Connect instance.
+        /// Provides summary information about the Amazon Web Services resource associations for
+        /// the specified Amazon Connect instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListIntegrationAssociations service method.</param>
         /// <param name="cancellationToken">
@@ -7341,6 +7716,73 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  SearchVocabularies
+
+
+        /// <summary>
+        /// Searches for vocabularies within a specific Amazon Connect instance using <code>State</code>,
+        /// <code>NameStartsWith</code>, and <code>LanguageCode</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchVocabularies service method.</param>
+        /// 
+        /// <returns>The response from the SearchVocabularies service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchVocabularies">REST API Reference for SearchVocabularies Operation</seealso>
+        public virtual SearchVocabulariesResponse SearchVocabularies(SearchVocabulariesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchVocabulariesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchVocabulariesResponseUnmarshaller.Instance;
+
+            return Invoke<SearchVocabulariesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Searches for vocabularies within a specific Amazon Connect instance using <code>State</code>,
+        /// <code>NameStartsWith</code>, and <code>LanguageCode</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchVocabularies service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SearchVocabularies service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchVocabularies">REST API Reference for SearchVocabularies Operation</seealso>
+        public virtual Task<SearchVocabulariesResponse> SearchVocabulariesAsync(SearchVocabulariesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchVocabulariesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchVocabulariesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<SearchVocabulariesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  StartChatContact
 
 
@@ -7358,7 +7800,7 @@ namespace Amazon.Connect
         /// </para>
         ///  
         /// <para>
-        /// A 429 error occurs in two situations:
+        /// A 429 error occurs in the following situations:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -7371,6 +7813,12 @@ namespace Amazon.Connect
         /// for concurrent active chats</a> is exceeded. Active chat throttling returns a <code>LimitExceededException</code>.
         /// </para>
         ///  </li> </ul> 
+        /// <para>
+        /// If you use the <code>ChatDurationInMinutes</code> parameter and receive a 400 error,
+        /// your account may not support the ability to configure custom chat durations. For more
+        /// information, contact Amazon Web Services Support. 
+        /// </para>
+        ///  
         /// <para>
         /// For more information about chat, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/chat.html">Chat</a>
         /// in the <i>Amazon Connect Administrator Guide</i>.
@@ -7419,7 +7867,7 @@ namespace Amazon.Connect
         /// </para>
         ///  
         /// <para>
-        /// A 429 error occurs in two situations:
+        /// A 429 error occurs in the following situations:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -7432,6 +7880,12 @@ namespace Amazon.Connect
         /// for concurrent active chats</a> is exceeded. Active chat throttling returns a <code>LimitExceededException</code>.
         /// </para>
         ///  </li> </ul> 
+        /// <para>
+        /// If you use the <code>ChatDurationInMinutes</code> parameter and receive a 400 error,
+        /// your account may not support the ability to configure custom chat durations. For more
+        /// information, contact Amazon Web Services Support. 
+        /// </para>
+        ///  
         /// <para>
         /// For more information about chat, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/chat.html">Chat</a>
         /// in the <i>Amazon Connect Administrator Guide</i>.

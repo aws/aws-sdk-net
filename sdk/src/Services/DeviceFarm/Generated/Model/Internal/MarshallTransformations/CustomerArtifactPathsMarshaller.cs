@@ -34,7 +34,7 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CustomerArtifactPaths Marshaller
-    /// </summary>       
+    /// </summary>
     public class CustomerArtifactPathsMarshaller : IRequestMarshaller<CustomerArtifactPaths, JsonMarshallerContext> 
     {
         /// <summary>
@@ -82,7 +82,7 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CustomerArtifactPathsMarshaller Instance = new CustomerArtifactPathsMarshaller();
 
     }

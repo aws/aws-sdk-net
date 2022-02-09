@@ -34,7 +34,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AwsJobAbortConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class AwsJobAbortConfigMarshaller : IRequestMarshaller<AwsJobAbortConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -65,7 +65,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AwsJobAbortConfigMarshaller Instance = new AwsJobAbortConfigMarshaller();
 
     }

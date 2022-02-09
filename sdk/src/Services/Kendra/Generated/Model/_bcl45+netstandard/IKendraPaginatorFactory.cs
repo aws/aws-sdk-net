@@ -26,6 +26,11 @@ namespace Amazon.Kendra.Model
     {
 
         /// <summary>
+        /// Paginator for GetSnapshots operation
+        ///</summary>
+        IGetSnapshotsPaginator GetSnapshots(GetSnapshotsRequest request);
+
+        /// <summary>
         /// Paginator for ListDataSources operation
         ///</summary>
         IListDataSourcesPaginator ListDataSources(ListDataSourcesRequest request);

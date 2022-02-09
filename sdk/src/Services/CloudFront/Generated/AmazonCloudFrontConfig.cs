@@ -32,7 +32,7 @@ namespace Amazon.CloudFront
     public partial class AmazonCloudFrontConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.4.22");
+            InternalSDKUtils.BuildUserAgentString("3.7.4.31");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.CloudFront
         /// Default constructor
         /// </summary>
         public AmazonCloudFrontConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonCloudFrontDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "cloudfront";
         }

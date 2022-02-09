@@ -32,7 +32,7 @@ namespace Amazon.EC2InstanceConnect
     public partial class AmazonEC2InstanceConnectConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.1.109");
+            InternalSDKUtils.BuildUserAgentString("3.7.2.4");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.EC2InstanceConnect
         /// Default constructor
         /// </summary>
         public AmazonEC2InstanceConnectConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonEC2InstanceConnectDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "ec2-instance-connect";
         }

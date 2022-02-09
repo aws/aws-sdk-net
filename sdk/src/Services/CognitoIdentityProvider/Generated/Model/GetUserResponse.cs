@@ -44,9 +44,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Gets and sets the property MFAOptions. 
         /// <para>
         ///  <i>This response parameter is no longer supported.</i> It provides information only
-        /// about SMS MFA configurations. It doesn't provide information about TOTP software token
-        /// MFA configurations. To look up information about either type of MFA configuration,
-        /// use UserMFASettingList instead.
+        /// about SMS MFA configurations. It doesn't provide information about time-based one-time
+        /// password (TOTP) software token MFA configurations. To look up information about either
+        /// type of MFA configuration, use UserMFASettingList instead.
         /// </para>
         /// </summary>
         public List<MFAOptionType> MFAOptions
@@ -106,8 +106,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UserMFASettingList. 
         /// <para>
-        /// The MFA options that are enabled for the user. The possible values in this list are
-        /// <code>SMS_MFA</code> and <code>SOFTWARE_TOKEN_MFA</code>.
+        /// The MFA options that are activated for the user. The possible values in this list
+        /// are <code>SMS_MFA</code> and <code>SOFTWARE_TOKEN_MFA</code>.
         /// </para>
         /// </summary>
         public List<string> UserMFASettingList
@@ -125,7 +125,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Username. 
         /// <para>
-        /// The user name of the user you wish to retrieve from the get user request.
+        /// The user name of the user you want to retrieve from the get user request.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

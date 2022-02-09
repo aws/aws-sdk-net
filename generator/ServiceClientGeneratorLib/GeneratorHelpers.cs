@@ -297,7 +297,6 @@ namespace ServiceClientGenerator
         /// 'Result' class suppressed (due to a void return type)
         /// </summary>
         /// <param name="operation"></param>
-        /// <returns></returns>
         public static bool HasSuppressedResult(Operation operation)
         {
             return operation.model.Customizations.ResultGenerationSuppressions.Contains(operation.Name);
@@ -326,8 +325,17 @@ namespace ServiceClientGenerator
         /// </summary>
         /// <param name="param">The name of the parameter name for the constructor</param>
         /// <returns>The parameter as a camel cased name</returns>
-        public static string CamelCaseParam(string param)
+        public static string CamelCaseParam(string param, bool removeUnderscoresAndDashes = false)
         {
+            param = param ?? "";
+
+            if (removeUnderscoresAndDashes)
+            {
+                // handle kebab-case and snake_case
+                param = string.Join("", param.Split('-').Select((s, i) => i == 0 ? s : s.ToUpperFirstCharacter()));
+                param = string.Join("", param.Split('_').Select((s, i) => i == 0 ? s : s.ToUpperFirstCharacter()));
+            }
+
             if (param.Length < 2 || char.IsUpper(param.ToCharArray()[0]) && char.IsLower(param.ToCharArray()[1]))
             {
                 if ((char.ToLower(param.ToCharArray()[0]) + param.Substring(1)).Equals("namespace"))
@@ -337,7 +345,7 @@ namespace ServiceClientGenerator
                 return param.Length < 2 ? param.ToLower() : char.ToLower(param.ToCharArray()[0]) + param.Substring(1);
             }
 
-            // If it gets here it's an accronym
+            // If it gets here it's an acronym
 
             int secondWord = 0;
             for (int i = 0; i < param.ToCharArray().Length - 1; i++)
@@ -380,6 +388,11 @@ namespace ServiceClientGenerator
 
     public static class StringExtensions
     {
+        public static string ToPascalCase(this string s)
+        {
+            return GeneratorHelpers.CamelCaseParam(s, removeUnderscoresAndDashes: true).ToUpperFirstCharacter();
+        }
+
         public static string ToCamelCase(this string s)
         {
             return GeneratorHelpers.CamelCaseParam(s);

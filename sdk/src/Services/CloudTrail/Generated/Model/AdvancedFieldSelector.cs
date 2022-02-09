@@ -94,8 +94,10 @@ namespace Amazon.CloudTrail.Model
         ///  <ul> <li> 
         /// <para>
         ///  <b> <code>readOnly</code> </b> - Optional. Can be set to <code>Equals</code> a value
-        /// of <code>true</code> or <code>false</code>. A value of <code>false</code> logs both
-        /// <code>read</code> and <code>write</code> events.
+        /// of <code>true</code> or <code>false</code>. If you do not add this field, CloudTrail
+        /// logs both both <code>read</code> and <code>write</code> events. A value of <code>true</code>
+        /// logs only <code>read</code> events. A value of <code>false</code> logs only <code>write</code>
+        /// events.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -154,6 +156,10 @@ namespace Amazon.CloudTrail.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>AWS::DynamoDB::Stream</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AWS::Glue::Table</code> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -277,6 +283,17 @@ namespace Amazon.CloudTrail.Model
         ///  <ul> <li> 
         /// <para>
         ///  <code>arn:&lt;partition&gt;:dynamodb:&lt;region&gt;:&lt;account_ID&gt;:table/&lt;table_name&gt;/stream/&lt;date_time&gt;</code>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When <code>resources.type</code> equals <code>AWS::Glue::Table</code>, and the operator
+        /// is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+        /// format:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>arn:&lt;partition&gt;:glue:&lt;region&gt;:&lt;account_ID&gt;:table/&lt;database_name&gt;/&lt;table_name&gt;</code>
         /// 
         /// </para>
         ///  </li> </ul> </li> </ul>

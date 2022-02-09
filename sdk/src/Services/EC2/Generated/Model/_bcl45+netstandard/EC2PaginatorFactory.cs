@@ -156,6 +156,14 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeFastLaunchImages operation
+        ///</summary>
+        public IDescribeFastLaunchImagesPaginator DescribeFastLaunchImages(DescribeFastLaunchImagesRequest request) 
+        {
+            return new DescribeFastLaunchImagesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeFastSnapshotRestores operation
         ///</summary>
         public IDescribeFastSnapshotRestoresPaginator DescribeFastSnapshotRestores(DescribeFastSnapshotRestoresRequest request) 
@@ -937,6 +945,14 @@ namespace Amazon.EC2.Model
         public IGetVpnConnectionDeviceTypesPaginator GetVpnConnectionDeviceTypes(GetVpnConnectionDeviceTypesRequest request) 
         {
             return new GetVpnConnectionDeviceTypesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListImagesInRecycleBin operation
+        ///</summary>
+        public IListImagesInRecycleBinPaginator ListImagesInRecycleBin(ListImagesInRecycleBinRequest request) 
+        {
+            return new ListImagesInRecycleBinPaginator(this.client, request);
         }
 
         /// <summary>

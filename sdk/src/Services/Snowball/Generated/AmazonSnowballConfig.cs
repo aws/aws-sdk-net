@@ -32,7 +32,7 @@ namespace Amazon.Snowball
     public partial class AmazonSnowballConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.4.1");
+            InternalSDKUtils.BuildUserAgentString("3.7.4.10");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.Snowball
         /// Default constructor
         /// </summary>
         public AmazonSnowballConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonSnowballDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "snowball";
         }

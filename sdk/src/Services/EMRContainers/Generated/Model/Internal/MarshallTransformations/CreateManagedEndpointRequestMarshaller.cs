@@ -56,7 +56,7 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.EMRContainers");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-10-01";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-10-01";
             request.HttpMethod = "POST";
 
             if (!publicRequest.IsSetVirtualClusterId())
@@ -83,7 +83,7 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
                 else if(!(publicRequest.IsSetClientToken()))
                 {
                     context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());                                                
+                    context.Writer.Write(Guid.NewGuid().ToString());
                 }
                 if(publicRequest.IsSetConfigurationOverrides())
                 {
@@ -134,7 +134,6 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Type);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

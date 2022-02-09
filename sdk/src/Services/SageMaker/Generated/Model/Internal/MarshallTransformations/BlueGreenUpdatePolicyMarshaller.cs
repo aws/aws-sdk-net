@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// BlueGreenUpdatePolicy Marshaller
-    /// </summary>       
+    /// </summary>
     public class BlueGreenUpdatePolicyMarshaller : IRequestMarshaller<BlueGreenUpdatePolicy, JsonMarshallerContext> 
     {
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static BlueGreenUpdatePolicyMarshaller Instance = new BlueGreenUpdatePolicyMarshaller();
 
     }

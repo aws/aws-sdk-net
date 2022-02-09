@@ -32,7 +32,7 @@ namespace Amazon.Account
     public partial class AmazonAccountConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.38");
+            InternalSDKUtils.BuildUserAgentString("3.7.0.47");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.Account
         /// Default constructor
         /// </summary>
         public AmazonAccountConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonAccountDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "account";
         }

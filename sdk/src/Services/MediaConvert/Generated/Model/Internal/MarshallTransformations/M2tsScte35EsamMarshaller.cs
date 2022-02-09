@@ -34,7 +34,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// M2tsScte35Esam Marshaller
-    /// </summary>       
+    /// </summary>
     public class M2tsScte35EsamMarshaller : IRequestMarshaller<M2tsScte35Esam, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static M2tsScte35EsamMarshaller Instance = new M2tsScte35EsamMarshaller();
 
     }

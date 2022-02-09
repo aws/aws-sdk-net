@@ -34,7 +34,7 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RequestOutputItem Marshaller
-    /// </summary>       
+    /// </summary>
     public class RequestOutputItemMarshaller : IRequestMarshaller<RequestOutputItem, JsonMarshallerContext> 
     {
         /// <summary>
@@ -83,7 +83,7 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RequestOutputItemMarshaller Instance = new RequestOutputItemMarshaller();
 
     }

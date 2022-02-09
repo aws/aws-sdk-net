@@ -32,7 +32,7 @@ namespace Amazon.ElasticMapReduce
     public partial class AmazonElasticMapReduceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.4.49");
+            InternalSDKUtils.BuildUserAgentString("3.7.4.59");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.ElasticMapReduce
         /// Default constructor
         /// </summary>
         public AmazonElasticMapReduceConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonElasticMapReduceDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "elasticmapreduce";
         }

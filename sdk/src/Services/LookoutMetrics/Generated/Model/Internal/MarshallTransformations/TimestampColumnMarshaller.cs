@@ -34,7 +34,7 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TimestampColumn Marshaller
-    /// </summary>       
+    /// </summary>
     public class TimestampColumnMarshaller : IRequestMarshaller<TimestampColumn, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TimestampColumnMarshaller Instance = new TimestampColumnMarshaller();
 
     }

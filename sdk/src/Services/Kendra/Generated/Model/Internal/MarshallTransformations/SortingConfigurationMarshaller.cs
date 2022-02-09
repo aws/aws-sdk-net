@@ -34,7 +34,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SortingConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class SortingConfigurationMarshaller : IRequestMarshaller<SortingConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SortingConfigurationMarshaller Instance = new SortingConfigurationMarshaller();
 
     }

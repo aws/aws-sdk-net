@@ -34,7 +34,7 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// PublishMetricAction Marshaller
-    /// </summary>       
+    /// </summary>
     public class PublishMetricActionMarshaller : IRequestMarshaller<PublishMetricAction, JsonMarshallerContext> 
     {
         /// <summary>
@@ -65,7 +65,7 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static PublishMetricActionMarshaller Instance = new PublishMetricActionMarshaller();
 
     }

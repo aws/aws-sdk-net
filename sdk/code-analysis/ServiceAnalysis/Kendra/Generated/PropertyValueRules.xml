@@ -1026,7 +1026,6 @@
     <property>Amazon.Kendra.Model.QueryRequest.QueryText</property>
     <min>1</min>
     <max>1000</max>
-    <pattern>^\P{C}*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Kendra.Model.QueryRequest.VisitorId</property>
@@ -1705,6 +1704,18 @@
     <pattern>[a-zA-Z0-9][a-zA-Z0-9_-]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Kendra.Model.FsxConfiguration.FileSystemId</property>
+    <min>11</min>
+    <max>21</max>
+    <pattern>^(fs-[0-9a-f]{8,})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.FsxConfiguration.SecretArn</property>
+    <min>1</min>
+    <max>1284</max>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Kendra.Model.GoogleDriveConfiguration.SecretArn</property>
     <min>1</min>
     <max>1284</max>
@@ -2148,6 +2159,12 @@
     <min>1</min>
     <max>1000</max>
     <pattern>[a-zA-Z0-9][a-zA-Z0-9_-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.Warning.Message</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^\P{C}*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Kendra.Model.WebCrawlerConfiguration.CrawlDepth</property>

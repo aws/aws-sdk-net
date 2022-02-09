@@ -34,7 +34,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// PostgreSQLSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class PostgreSQLSettingsMarshaller : IRequestMarshaller<PostgreSQLSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -157,7 +157,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static PostgreSQLSettingsMarshaller Instance = new PostgreSQLSettingsMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SslProperties Marshaller
-    /// </summary>       
+    /// </summary>
     public class SslPropertiesMarshaller : IRequestMarshaller<SslProperties, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SslPropertiesMarshaller Instance = new SslPropertiesMarshaller();
 
     }

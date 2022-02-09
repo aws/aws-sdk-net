@@ -34,7 +34,7 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DeviceConfigurationType Marshaller
-    /// </summary>       
+    /// </summary>
     public class DeviceConfigurationTypeMarshaller : IRequestMarshaller<DeviceConfigurationType, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DeviceConfigurationTypeMarshaller Instance = new DeviceConfigurationTypeMarshaller();
 
     }

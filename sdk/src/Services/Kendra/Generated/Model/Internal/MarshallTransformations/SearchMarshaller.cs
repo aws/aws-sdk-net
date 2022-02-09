@@ -34,7 +34,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Search Marshaller
-    /// </summary>       
+    /// </summary>
     public class SearchMarshaller : IRequestMarshaller<Search, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SearchMarshaller Instance = new SearchMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// InputTransformer Marshaller
-    /// </summary>       
+    /// </summary>
     public class InputTransformerMarshaller : IRequestMarshaller<InputTransformer, JsonMarshallerContext> 
     {
         /// <summary>
@@ -69,7 +69,7 @@ namespace Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static InputTransformerMarshaller Instance = new InputTransformerMarshaller();
 
     }

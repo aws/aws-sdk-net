@@ -35,6 +35,7 @@ namespace Amazon.Honeycode.Model
     {
         private Format _format;
         private string _formattedValue;
+        private List<string> _formattedValues = new List<string>();
         private string _formula;
         private string _rawValue;
 
@@ -83,6 +84,28 @@ namespace Amazon.Honeycode.Model
         internal bool IsSetFormattedValue()
         {
             return this._formattedValue != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FormattedValues. 
+        /// <para>
+        ///  A list of formatted values of the cell. This field is only returned when the cell
+        /// is ROWSET format (aka multi-select or multi-record picklist). Values in the list are
+        /// always represented as strings. The formattedValue field will be empty if this field
+        /// is returned. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=220)]
+        public List<string> FormattedValues
+        {
+            get { return this._formattedValues; }
+            set { this._formattedValues = value; }
+        }
+
+        // Check to see if FormattedValues property is set
+        internal bool IsSetFormattedValues()
+        {
+            return this._formattedValues != null && this._formattedValues.Count > 0; 
         }
 
         /// <summary>
@@ -152,6 +175,22 @@ namespace Amazon.Honeycode.Model
         /// row as the formatted value and the row id of the linked row as the raw value. For
         /// example, a cell containing a picklist to a table that displays task status might have
         /// "Completed" as the formatted value and "row:dfcefaee-5b37-4355-8f28-40c3e4ff5dd4/ca432b2f-b8eb-431d-9fb5-cbe0342f9f03"
+        /// as the raw value. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  Cells with format ROWSET (aka multi-select or multi-record picklist) will by default
+        /// have the first column of each of the linked rows as the formatted value in the list,
+        /// and the rowset id of the linked rows as the raw value. For example, a cell containing
+        /// a multi-select picklist to a table that contains items might have "Item A", "Item
+        /// B" in the formatted value list and "rows:b742c1f4-6cb0-4650-a845-35eb86fcc2bb/ [fdea123b-8f68-474a-aa8a-5ff87aa333af,6daf41f0-a138-4eee-89da-123086d36ecf]"
+        /// as the raw value. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  Cells with format ATTACHMENT will have the name of the attachment as the formatted
+        /// value and the attachment id as the raw value. For example, a cell containing an attachment
+        /// named "image.jpeg" will have "image.jpeg" as the formatted value and "attachment:ca432b2f-b8eb-431d-9fb5-cbe0342f9f03"
         /// as the raw value. 
         /// </para>
         ///  

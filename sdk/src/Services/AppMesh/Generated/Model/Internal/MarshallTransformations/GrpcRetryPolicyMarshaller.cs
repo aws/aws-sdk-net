@@ -34,7 +34,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// GrpcRetryPolicy Marshaller
-    /// </summary>       
+    /// </summary>
     public class GrpcRetryPolicyMarshaller : IRequestMarshaller<GrpcRetryPolicy, JsonMarshallerContext> 
     {
         /// <summary>
@@ -99,7 +99,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static GrpcRetryPolicyMarshaller Instance = new GrpcRetryPolicyMarshaller();
 
     }

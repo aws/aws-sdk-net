@@ -79,11 +79,81 @@ namespace Amazon.PI
 
 
     /// <summary>
+    /// Constants used for properties of type FeatureStatus.
+    /// </summary>
+    public class FeatureStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for FeatureStatus
+        /// </summary>
+        public static readonly FeatureStatus DISABLED = new FeatureStatus("DISABLED");
+        /// <summary>
+        /// Constant DISABLED_PENDING_REBOOT for FeatureStatus
+        /// </summary>
+        public static readonly FeatureStatus DISABLED_PENDING_REBOOT = new FeatureStatus("DISABLED_PENDING_REBOOT");
+        /// <summary>
+        /// Constant ENABLED for FeatureStatus
+        /// </summary>
+        public static readonly FeatureStatus ENABLED = new FeatureStatus("ENABLED");
+        /// <summary>
+        /// Constant ENABLED_PENDING_REBOOT for FeatureStatus
+        /// </summary>
+        public static readonly FeatureStatus ENABLED_PENDING_REBOOT = new FeatureStatus("ENABLED_PENDING_REBOOT");
+        /// <summary>
+        /// Constant UNKNOWN for FeatureStatus
+        /// </summary>
+        public static readonly FeatureStatus UNKNOWN = new FeatureStatus("UNKNOWN");
+        /// <summary>
+        /// Constant UNSUPPORTED for FeatureStatus
+        /// </summary>
+        public static readonly FeatureStatus UNSUPPORTED = new FeatureStatus("UNSUPPORTED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FeatureStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FeatureStatus FindValue(string value)
+        {
+            return FindValue<FeatureStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FeatureStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ServiceType.
     /// </summary>
     public class ServiceType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant DOCDB for ServiceType
+        /// </summary>
+        public static readonly ServiceType DOCDB = new ServiceType("DOCDB");
         /// <summary>
         /// Constant RDS for ServiceType
         /// </summary>

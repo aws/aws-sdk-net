@@ -34,7 +34,7 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// LoadBalancerInfo Marshaller
-    /// </summary>       
+    /// </summary>
     public class LoadBalancerInfoMarshaller : IRequestMarshaller<LoadBalancerInfo, JsonMarshallerContext> 
     {
         /// <summary>
@@ -97,7 +97,7 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static LoadBalancerInfoMarshaller Instance = new LoadBalancerInfoMarshaller();
 
     }

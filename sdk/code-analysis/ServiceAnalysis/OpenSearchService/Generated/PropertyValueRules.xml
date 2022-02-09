@@ -103,6 +103,17 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.DescribeDomainChangeProgressRequest.ChangeId</property>
+    <min>36</min>
+    <max>36</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.DescribeDomainChangeProgressRequest.DomainName</property>
+    <min>3</min>
+    <max>28</max>
+    <pattern>[a-z][a-z0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.OpenSearchService.Model.DescribeDomainConfigRequest.DomainName</property>
     <min>3</min>
     <max>28</max>
@@ -337,6 +348,31 @@
     <min>5</min>
     <max>30</max>
     <pattern>[a-z][a-z0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.ChangeProgressDetails.ChangeId</property>
+    <min>36</min>
+    <max>36</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.ChangeProgressDetails.Message</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.ChangeProgressStage.Name</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.ChangeProgressStage.Status</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.ChangeProgressStatusDetails.ChangeId</property>
+    <min>36</min>
+    <max>36</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchService.Model.CognitoOptions.IdentityPoolId</property>

@@ -56,7 +56,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Appflow");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-08-23";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-08-23";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/describe-connector-entity";
@@ -65,6 +65,12 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetApiVersion())
+                {
+                    context.Writer.WritePropertyName("apiVersion");
+                    context.Writer.Write(publicRequest.ApiVersion);
+                }
+
                 if(publicRequest.IsSetConnectorEntityName())
                 {
                     context.Writer.WritePropertyName("connectorEntityName");
@@ -83,7 +89,6 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ConnectorType);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

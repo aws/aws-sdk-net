@@ -34,7 +34,7 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AdvancedSecurityOptionsInput Marshaller
-    /// </summary>       
+    /// </summary>
     public class AdvancedSecurityOptionsInputMarshaller : IRequestMarshaller<AdvancedSecurityOptionsInput, JsonMarshallerContext> 
     {
         /// <summary>
@@ -89,7 +89,7 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AdvancedSecurityOptionsInputMarshaller Instance = new AdvancedSecurityOptionsInputMarshaller();
 
     }

@@ -56,7 +56,7 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.AuditManager");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-07-25";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-07-25";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/controls";
@@ -125,7 +125,6 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.TestingInformation);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

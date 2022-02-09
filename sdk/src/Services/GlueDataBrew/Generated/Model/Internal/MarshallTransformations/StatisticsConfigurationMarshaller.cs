@@ -34,7 +34,7 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// StatisticsConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class StatisticsConfigurationMarshaller : IRequestMarshaller<StatisticsConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -76,7 +76,7 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static StatisticsConfigurationMarshaller Instance = new StatisticsConfigurationMarshaller();
 
     }

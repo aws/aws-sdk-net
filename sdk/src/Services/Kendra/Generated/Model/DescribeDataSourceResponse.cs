@@ -252,7 +252,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Schedule. 
         /// <para>
-        /// The schedule that Amazon Kendra will update the data source.
+        /// The schedule for Amazon Kendra to update the index.
         /// </para>
         /// </summary>
         public string Schedule

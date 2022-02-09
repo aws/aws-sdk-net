@@ -34,7 +34,7 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// LoRaWANUpdateDevice Marshaller
-    /// </summary>       
+    /// </summary>
     public class LoRaWANUpdateDeviceMarshaller : IRequestMarshaller<LoRaWANUpdateDevice, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static LoRaWANUpdateDeviceMarshaller Instance = new LoRaWANUpdateDeviceMarshaller();
 
     }

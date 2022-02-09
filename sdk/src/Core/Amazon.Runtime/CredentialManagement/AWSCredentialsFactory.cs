@@ -156,7 +156,7 @@ namespace Amazon.Runtime.CredentialManagement
                 }
 #if !BCL35
                 else if (profileType == CredentialProfileType.SSO && !SSOAWSCredentials.HasCachedAccessTokenAvailable(options.SsoStartUrl))
-                {                    
+                {
                     var ssoMessage = profileName == null
                         ? $"The credential options represent {nameof(SSOAWSCredentials)}.  This is not allowed here.  " +
                           "Please use a different type of credentials."
@@ -180,8 +180,14 @@ namespace Amazon.Runtime.CredentialManagement
             return GetAWSCredentialsInternal(profileName, profileType, options, stsRegion, profileSource, true);
         }
 
-        private static AWSCredentials GetAWSCredentialsInternal(string profileName, CredentialProfileType? profileType,
-            CredentialProfileOptions options, RegionEndpoint stsRegion, ICredentialProfileSource profileSource, bool throwIfInvalid, HashSet<string> profileLoopAvoidance = null)
+        private static AWSCredentials GetAWSCredentialsInternal(
+            string profileName,
+            CredentialProfileType? profileType,
+            CredentialProfileOptions options,
+            RegionEndpoint stsRegion,
+            ICredentialProfileSource profileSource,
+            bool throwIfInvalid,
+            HashSet<string> profileLoopAvoidance = null)
         {
             if (profileType.HasValue)
             {
@@ -362,7 +368,8 @@ namespace Amazon.Runtime.CredentialManagement
                 if (sourceProfile.CanCreateAWSCredentials)
                 {
                     var sourceCredentials = GetAWSCredentialsInternal(sourceProfile.Name, sourceProfile.ProfileType, sourceProfile.Options, sourceProfile.Region, profileSource, throwIfInvalid, profileLoopAvoidance);
-                    if (sourceCredentials == null) {
+                    if (sourceCredentials == null)
+                    {
                         return ThrowOrReturnNull(string.Format(CultureInfo.InvariantCulture,
                             "Could not get credentials from source profile [{0}].", sourceProfileName), null, throwIfInvalid);
                     }

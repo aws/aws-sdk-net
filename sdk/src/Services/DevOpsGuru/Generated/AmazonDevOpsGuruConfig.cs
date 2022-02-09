@@ -32,7 +32,7 @@ namespace Amazon.DevOpsGuru
     public partial class AmazonDevOpsGuruConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.7.4");
+            InternalSDKUtils.BuildUserAgentString("3.7.7.13");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.DevOpsGuru
         /// Default constructor
         /// </summary>
         public AmazonDevOpsGuruConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonDevOpsGuruDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "devops-guru";
         }

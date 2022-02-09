@@ -56,7 +56,7 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudDirectory");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-01-11";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-01-11";
             request.HttpMethod = "PUT";
 
             request.ResourcePath = "/amazonclouddirectory/2017-01-11/schema/publish";
@@ -83,15 +83,16 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Version);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
 
         
-            if(publicRequest.IsSetDevelopmentSchemaArn())
+            if (publicRequest.IsSetDevelopmentSchemaArn()) 
+            {
                 request.Headers["x-amz-data-partition"] = publicRequest.DevelopmentSchemaArn;
+            }
 
             return request;
         }

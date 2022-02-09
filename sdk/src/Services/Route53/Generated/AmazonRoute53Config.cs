@@ -32,7 +32,7 @@ namespace Amazon.Route53
     public partial class AmazonRoute53Config : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.2.7");
+            InternalSDKUtils.BuildUserAgentString("3.7.2.16");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.Route53
         /// Default constructor
         /// </summary>
         public AmazonRoute53Config()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonRoute53DefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "route53";
         }

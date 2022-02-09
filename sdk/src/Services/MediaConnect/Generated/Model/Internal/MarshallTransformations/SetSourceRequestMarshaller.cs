@@ -34,7 +34,7 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SetSourceRequest Marshaller
-    /// </summary>       
+    /// </summary>
     public class SetSourceRequestMarshaller : IRequestMarshaller<SetSourceRequest, JsonMarshallerContext> 
     {
         /// <summary>
@@ -160,7 +160,7 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SetSourceRequestMarshaller Instance = new SetSourceRequestMarshaller();
 
     }

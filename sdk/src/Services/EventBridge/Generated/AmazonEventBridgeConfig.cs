@@ -32,7 +32,7 @@ namespace Amazon.EventBridge
     public partial class AmazonEventBridgeConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.4.57");
+            InternalSDKUtils.BuildUserAgentString("3.7.4.67");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.EventBridge
         /// Default constructor
         /// </summary>
         public AmazonEventBridgeConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonEventBridgeDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "events";
         }

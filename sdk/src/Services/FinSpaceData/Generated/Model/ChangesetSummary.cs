@@ -48,7 +48,12 @@ namespace Amazon.FinSpaceData.Model
         private string _updatesChangesetId;
 
         /// <summary>
-        /// Gets and sets the property ActiveFromTimestamp.
+        /// Gets and sets the property ActiveFromTimestamp. 
+        /// <para>
+        /// Beginning time from which the Changeset is active. The value is determined as Epoch
+        /// time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00
+        /// PM UTC is specified as 1635768000000.
+        /// </para>
         /// </summary>
         public long ActiveFromTimestamp
         {

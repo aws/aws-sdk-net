@@ -34,7 +34,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// KendraConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class KendraConfigurationMarshaller : IRequestMarshaller<KendraConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static KendraConfigurationMarshaller Instance = new KendraConfigurationMarshaller();
 
     }

@@ -32,7 +32,7 @@ namespace Amazon.AppConfigData
     public partial class AmazonAppConfigDataConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.12");
+            InternalSDKUtils.BuildUserAgentString("3.7.0.21");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.AppConfigData
         /// Default constructor
         /// </summary>
         public AmazonAppConfigDataConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonAppConfigDataDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "appconfig";
         }

@@ -34,7 +34,7 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// EngineTranscribeSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class EngineTranscribeSettingsMarshaller : IRequestMarshaller<EngineTranscribeSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -115,7 +115,7 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static EngineTranscribeSettingsMarshaller Instance = new EngineTranscribeSettingsMarshaller();
 
     }

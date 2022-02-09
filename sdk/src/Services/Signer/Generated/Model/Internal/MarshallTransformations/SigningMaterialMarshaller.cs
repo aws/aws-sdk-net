@@ -34,7 +34,7 @@ namespace Amazon.Signer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SigningMaterial Marshaller
-    /// </summary>       
+    /// </summary>
     public class SigningMaterialMarshaller : IRequestMarshaller<SigningMaterial, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.Signer.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SigningMaterialMarshaller Instance = new SigningMaterialMarshaller();
 
     }

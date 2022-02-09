@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// VariantProperty Marshaller
-    /// </summary>       
+    /// </summary>
     public class VariantPropertyMarshaller : IRequestMarshaller<VariantProperty, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static VariantPropertyMarshaller Instance = new VariantPropertyMarshaller();
 
     }

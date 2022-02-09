@@ -32,7 +32,7 @@ namespace Amazon.Inspector
     public partial class AmazonInspectorConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.112");
+            InternalSDKUtils.BuildUserAgentString("3.7.0.121");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.Inspector
         /// Default constructor
         /// </summary>
         public AmazonInspectorConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonInspectorDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "inspector";
         }

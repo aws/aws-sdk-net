@@ -34,7 +34,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TrackSourceSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class TrackSourceSettingsMarshaller : IRequestMarshaller<TrackSourceSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TrackSourceSettingsMarshaller Instance = new TrackSourceSettingsMarshaller();
 
     }

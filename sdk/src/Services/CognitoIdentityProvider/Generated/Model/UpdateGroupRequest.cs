@@ -106,8 +106,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The new role ARN for the group. This is used for setting the <code>cognito:roles</code>
-        /// and <code>cognito:preferred_role</code> claims in the token.
+        /// The new role Amazon Resource Name (ARN) for the group. This is used for setting the
+        /// <code>cognito:roles</code> and <code>cognito:preferred_role</code> claims in the token.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]

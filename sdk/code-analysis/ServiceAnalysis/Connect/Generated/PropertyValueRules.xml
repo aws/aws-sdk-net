@@ -15,6 +15,16 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.AssociateDefaultVocabularyRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.AssociateDefaultVocabularyRequest.VocabularyId</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.AssociateInstanceStorageConfigRequest.InstanceId</property>
     <min>1</min>
     <max>100</max>
@@ -278,6 +288,31 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.CreateVocabularyRequest.ClientToken</property>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.CreateVocabularyRequest.Content</property>
+    <min>1</min>
+    <max>60000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.CreateVocabularyRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.CreateVocabularyRequest.VocabularyName</property>
+    <min>1</min>
+    <max>140</max>
+    <pattern>^[0-9a-zA-Z._-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.CreateVocabularyResponse.VocabularyId</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.DeleteContactFlowRequest.ContactFlowId</property>
     <max>500</max>
   </property-value-rule>
@@ -350,6 +385,21 @@
     <property>Amazon.Connect.Model.DeleteUserHierarchyGroupRequest.InstanceId</property>
     <min>1</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.DeleteVocabularyRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.DeleteVocabularyRequest.VocabularyId</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.DeleteVocabularyResponse.VocabularyId</property>
+    <min>1</min>
+    <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.DescribeAgentStatusRequest.InstanceId</property>
@@ -444,6 +494,16 @@
     <property>Amazon.Connect.Model.DescribeUserHierarchyStructureRequest.InstanceId</property>
     <min>1</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.DescribeVocabularyRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.DescribeVocabularyRequest.VocabularyId</property>
+    <min>1</min>
+    <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.DisassociateApprovedOriginRequest.InstanceId</property>
@@ -606,6 +666,28 @@
     <property>Amazon.Connect.Model.ListContactReferencesRequest.InstanceId</property>
     <min>1</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ListDefaultVocabulariesRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ListDefaultVocabulariesRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ListDefaultVocabulariesRequest.NextToken</property>
+    <min>1</min>
+    <max>131070</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ListDefaultVocabulariesResponse.NextToken</property>
+    <min>1</min>
+    <max>131070</max>
+    <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ListHoursOfOperationsRequest.InstanceId</property>
@@ -821,6 +903,39 @@
     <property>Amazon.Connect.Model.ResumeContactRecordingRequest.InstanceId</property>
     <min>1</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.SearchVocabulariesRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.SearchVocabulariesRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.SearchVocabulariesRequest.NameStartsWith</property>
+    <min>1</min>
+    <max>140</max>
+    <pattern>^[0-9a-zA-Z._-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.SearchVocabulariesRequest.NextToken</property>
+    <min>1</min>
+    <max>131070</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.SearchVocabulariesResponse.NextToken</property>
+    <min>1</min>
+    <max>131070</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.StartChatContactRequest.ChatDurationInMinutes</property>
+    <min>60</min>
+    <max>10080</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.StartChatContactRequest.ClientToken</property>
@@ -1425,6 +1540,22 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.DefaultVocabulary.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.DefaultVocabulary.VocabularyId</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.DefaultVocabulary.VocabularyName</property>
+    <min>1</min>
+    <max>140</max>
+    <pattern>^[0-9a-zA-Z._-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.EncryptionConfig.KeyId</property>
     <min>1</min>
     <max>128</max>
@@ -1713,5 +1844,32 @@
     <property>Amazon.Connect.Model.UserSummary.Username</property>
     <min>1</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.Vocabulary.Content</property>
+    <min>1</min>
+    <max>60000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.Vocabulary.Id</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.Vocabulary.Name</property>
+    <min>1</min>
+    <max>140</max>
+    <pattern>^[0-9a-zA-Z._-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.VocabularySummary.Id</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.VocabularySummary.Name</property>
+    <min>1</min>
+    <max>140</max>
+    <pattern>^[0-9a-zA-Z._-]+</pattern>
   </property-value-rule>
 </property-value-rules>

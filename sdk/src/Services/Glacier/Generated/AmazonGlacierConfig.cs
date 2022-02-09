@@ -32,7 +32,7 @@ namespace Amazon.Glacier
     public partial class AmazonGlacierConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.113");
+            InternalSDKUtils.BuildUserAgentString("3.7.0.122");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.Glacier
         /// Default constructor
         /// </summary>
         public AmazonGlacierConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonGlacierDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "glacier";
         }

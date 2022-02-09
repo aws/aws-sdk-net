@@ -560,6 +560,9 @@ namespace Amazon.Honeycode
         /// <exception cref="Amazon.Honeycode.Model.InternalServerException">
         /// There were unexpected errors from the server.
         /// </exception>
+        /// <exception cref="Amazon.Honeycode.Model.RequestTimeoutException">
+        /// The request timed out.
+        /// </exception>
         /// <exception cref="Amazon.Honeycode.Model.ResourceNotFoundException">
         /// A Workbook, Table, App, Screen or Screen Automation was not found with the given ID.
         /// </exception>
@@ -687,6 +690,9 @@ namespace Amazon.Honeycode
         /// </exception>
         /// <exception cref="Amazon.Honeycode.Model.ResourceNotFoundException">
         /// A Workbook, Table, App, Screen or Screen Automation was not found with the given ID.
+        /// </exception>
+        /// <exception cref="Amazon.Honeycode.Model.ServiceQuotaExceededException">
+        /// The request caused service quota to be breached.
         /// </exception>
         /// <exception cref="Amazon.Honeycode.Model.ServiceUnavailableException">
         /// Remote service is unreachable.
@@ -883,6 +889,63 @@ namespace Amazon.Honeycode
 
         #endregion
         
+        #region  ListTagsForResource
+
+        internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return Invoke<ListTagsForResourceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// The ListTagsForResource API allows you to return a resource's tags.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by Honeycode.</returns>
+        /// <exception cref="Amazon.Honeycode.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action. Check that the workbook
+        /// is owned by you and your IAM policy allows access to the resource in the request.
+        /// </exception>
+        /// <exception cref="Amazon.Honeycode.Model.InternalServerException">
+        /// There were unexpected errors from the server.
+        /// </exception>
+        /// <exception cref="Amazon.Honeycode.Model.RequestTimeoutException">
+        /// The request timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Honeycode.Model.ResourceNotFoundException">
+        /// A Workbook, Table, App, Screen or Screen Automation was not found with the given ID.
+        /// </exception>
+        /// <exception cref="Amazon.Honeycode.Model.ServiceUnavailableException">
+        /// Remote service is unreachable.
+        /// </exception>
+        /// <exception cref="Amazon.Honeycode.Model.ThrottlingException">
+        /// Tps(transactions per second) rate reached.
+        /// </exception>
+        /// <exception cref="Amazon.Honeycode.Model.ValidationException">
+        /// Request is invalid. The message in the response contains details on why the request
+        /// is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/honeycode-2020-03-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  QueryTableRows
 
         internal virtual QueryTableRowsResponse QueryTableRows(QueryTableRowsRequest request)
@@ -972,8 +1035,14 @@ namespace Amazon.Honeycode
         /// <exception cref="Amazon.Honeycode.Model.InternalServerException">
         /// There were unexpected errors from the server.
         /// </exception>
+        /// <exception cref="Amazon.Honeycode.Model.RequestTimeoutException">
+        /// The request timed out.
+        /// </exception>
         /// <exception cref="Amazon.Honeycode.Model.ResourceNotFoundException">
         /// A Workbook, Table, App, Screen or Screen Automation was not found with the given ID.
+        /// </exception>
+        /// <exception cref="Amazon.Honeycode.Model.ServiceQuotaExceededException">
+        /// The request caused service quota to be breached.
         /// </exception>
         /// <exception cref="Amazon.Honeycode.Model.ServiceUnavailableException">
         /// Remote service is unreachable.
@@ -993,6 +1062,122 @@ namespace Amazon.Honeycode
             options.ResponseUnmarshaller = StartTableDataImportJobResponseUnmarshaller.Instance;
 
             return InvokeAsync<StartTableDataImportJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  TagResource
+
+        internal virtual TagResourceResponse TagResource(TagResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<TagResourceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// The TagResource API allows you to add tags to an ARN-able resource. Resource includes
+        /// workbook, table, screen and screen-automation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by Honeycode.</returns>
+        /// <exception cref="Amazon.Honeycode.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action. Check that the workbook
+        /// is owned by you and your IAM policy allows access to the resource in the request.
+        /// </exception>
+        /// <exception cref="Amazon.Honeycode.Model.InternalServerException">
+        /// There were unexpected errors from the server.
+        /// </exception>
+        /// <exception cref="Amazon.Honeycode.Model.RequestTimeoutException">
+        /// The request timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Honeycode.Model.ResourceNotFoundException">
+        /// A Workbook, Table, App, Screen or Screen Automation was not found with the given ID.
+        /// </exception>
+        /// <exception cref="Amazon.Honeycode.Model.ServiceUnavailableException">
+        /// Remote service is unreachable.
+        /// </exception>
+        /// <exception cref="Amazon.Honeycode.Model.ThrottlingException">
+        /// Tps(transactions per second) rate reached.
+        /// </exception>
+        /// <exception cref="Amazon.Honeycode.Model.ValidationException">
+        /// Request is invalid. The message in the response contains details on why the request
+        /// is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/honeycode-2020-03-01/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UntagResource
+
+        internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<UntagResourceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// The UntagResource API allows you to removes tags from an ARN-able resource. Resource
+        /// includes workbook, table, screen and screen-automation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by Honeycode.</returns>
+        /// <exception cref="Amazon.Honeycode.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action. Check that the workbook
+        /// is owned by you and your IAM policy allows access to the resource in the request.
+        /// </exception>
+        /// <exception cref="Amazon.Honeycode.Model.InternalServerException">
+        /// There were unexpected errors from the server.
+        /// </exception>
+        /// <exception cref="Amazon.Honeycode.Model.RequestTimeoutException">
+        /// The request timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Honeycode.Model.ResourceNotFoundException">
+        /// A Workbook, Table, App, Screen or Screen Automation was not found with the given ID.
+        /// </exception>
+        /// <exception cref="Amazon.Honeycode.Model.ServiceUnavailableException">
+        /// Remote service is unreachable.
+        /// </exception>
+        /// <exception cref="Amazon.Honeycode.Model.ThrottlingException">
+        /// Tps(transactions per second) rate reached.
+        /// </exception>
+        /// <exception cref="Amazon.Honeycode.Model.ValidationException">
+        /// Request is invalid. The message in the response contains details on why the request
+        /// is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/honeycode-2020-03-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
 
         #endregion

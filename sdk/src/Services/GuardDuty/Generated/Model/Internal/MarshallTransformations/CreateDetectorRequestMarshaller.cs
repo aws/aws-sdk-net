@@ -56,7 +56,7 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.GuardDuty");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-11-28";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-11-28";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/detector";
@@ -74,7 +74,7 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                 else if(!(publicRequest.IsSetClientToken()))
                 {
                     context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());                                                
+                    context.Writer.Write(Guid.NewGuid().ToString());
                 }
                 if(publicRequest.IsSetDataSources())
                 {
@@ -113,7 +113,6 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

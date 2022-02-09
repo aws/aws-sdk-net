@@ -32,7 +32,7 @@ namespace Amazon.CognitoIdentityProvider
     public partial class AmazonCognitoIdentityProviderConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.1.84");
+            InternalSDKUtils.BuildUserAgentString("3.7.1.93");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.CognitoIdentityProvider
         /// Default constructor
         /// </summary>
         public AmazonCognitoIdentityProviderConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonCognitoIdentityProviderDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "cognito-idp";
         }

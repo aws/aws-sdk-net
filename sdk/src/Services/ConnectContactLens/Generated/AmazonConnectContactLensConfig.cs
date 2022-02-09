@@ -32,7 +32,7 @@ namespace Amazon.ConnectContactLens
     public partial class AmazonConnectContactLensConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.112");
+            InternalSDKUtils.BuildUserAgentString("3.7.0.121");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.ConnectContactLens
         /// Default constructor
         /// </summary>
         public AmazonConnectContactLensConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonConnectContactLensDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "connect";
         }

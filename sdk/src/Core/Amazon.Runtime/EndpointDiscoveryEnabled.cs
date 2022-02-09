@@ -140,10 +140,10 @@ namespace Amazon.Runtime
         {
             endpointDiscoveryEnabled = null;
             EnabledGenerators = new List<ConfigGenerator>
-            {                
+            {        
                 () => (new EnvironmentVariableAWSEndpointDiscoveryEnabled()).Enabled,
                 () => (new ProfileAWSEndpointDiscoveryEnabled(credentialProfileChain)).Enabled,
-            };                        
+            };            
         }
 
         private static bool? endpointDiscoveryEnabled;

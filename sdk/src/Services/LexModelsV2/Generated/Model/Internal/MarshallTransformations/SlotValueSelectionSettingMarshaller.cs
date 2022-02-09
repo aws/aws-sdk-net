@@ -34,7 +34,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SlotValueSelectionSetting Marshaller
-    /// </summary>       
+    /// </summary>
     public class SlotValueSelectionSettingMarshaller : IRequestMarshaller<SlotValueSelectionSetting, JsonMarshallerContext> 
     {
         /// <summary>
@@ -45,6 +45,17 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SlotValueSelectionSetting requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAdvancedRecognitionSetting())
+            {
+                context.Writer.WritePropertyName("advancedRecognitionSetting");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AdvancedRecognitionSettingMarshaller.Instance;
+                marshaller.Marshall(requestObject.AdvancedRecognitionSetting, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetRegexFilter())
             {
                 context.Writer.WritePropertyName("regexFilter");
@@ -66,7 +77,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SlotValueSelectionSettingMarshaller Instance = new SlotValueSelectionSettingMarshaller();
 
     }

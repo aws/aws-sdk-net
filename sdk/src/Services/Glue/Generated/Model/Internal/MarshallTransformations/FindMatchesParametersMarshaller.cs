@@ -34,7 +34,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// FindMatchesParameters Marshaller
-    /// </summary>       
+    /// </summary>
     public class FindMatchesParametersMarshaller : IRequestMarshaller<FindMatchesParameters, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static FindMatchesParametersMarshaller Instance = new FindMatchesParametersMarshaller();
 
     }

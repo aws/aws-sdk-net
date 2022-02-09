@@ -55,7 +55,7 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListMembersRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Macie2");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-01-01";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-01-01";
             request.HttpMethod = "GET";
 
             

@@ -29,19 +29,41 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AWSMarketplaceMetering.Model
 {
     /// <summary>
-    /// The result of the ResolveCustomer operation. Contains the CustomerIdentifier and product
-    /// code.
+    /// The result of the <code>ResolveCustomer</code> operation. Contains the <code>CustomerIdentifier</code>
+    /// along with the <code>CustomerAWSAccountId</code> and <code>ProductCode</code>.
     /// </summary>
     public partial class ResolveCustomerResponse : AmazonWebServiceResponse
     {
+        private string _customerAWSAccountId;
         private string _customerIdentifier;
         private string _productCode;
 
         /// <summary>
+        /// Gets and sets the property CustomerAWSAccountId. 
+        /// <para>
+        /// The <code>CustomerAWSAccountId</code> provides the AWS account ID associated with
+        /// the <code>CustomerIdentifier</code> for the individual customer.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string CustomerAWSAccountId
+        {
+            get { return this._customerAWSAccountId; }
+            set { this._customerAWSAccountId = value; }
+        }
+
+        // Check to see if CustomerAWSAccountId property is set
+        internal bool IsSetCustomerAWSAccountId()
+        {
+            return this._customerAWSAccountId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property CustomerIdentifier. 
         /// <para>
-        /// The CustomerIdentifier is used to identify an individual customer in your application.
-        /// Calls to BatchMeterUsage require CustomerIdentifiers for each UsageRecord.
+        /// The <code>CustomerIdentifier</code> is used to identify an individual customer in
+        /// your application. Calls to <code>BatchMeterUsage</code> require <code>CustomerIdentifiers</code>
+        /// for each <code>UsageRecord</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -61,7 +83,7 @@ namespace Amazon.AWSMarketplaceMetering.Model
         /// Gets and sets the property ProductCode. 
         /// <para>
         /// The product code is returned to confirm that the buyer is registering for your product.
-        /// Subsequent BatchMeterUsage calls should be made using this product code.
+        /// Subsequent <code>BatchMeterUsage</code> calls should be made using this product code.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

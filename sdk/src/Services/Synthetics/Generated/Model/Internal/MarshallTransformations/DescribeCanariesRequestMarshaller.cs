@@ -56,7 +56,7 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Synthetics");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-10-11";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-10-11";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/canaries";
@@ -71,13 +71,23 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.MaxResults);
                 }
 
+                if(publicRequest.IsSetNames())
+                {
+                    context.Writer.WritePropertyName("Names");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestNamesListValue in publicRequest.Names)
+                    {
+                            context.Writer.Write(publicRequestNamesListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetNextToken())
                 {
                     context.Writer.WritePropertyName("NextToken");
                     context.Writer.Write(publicRequest.NextToken);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

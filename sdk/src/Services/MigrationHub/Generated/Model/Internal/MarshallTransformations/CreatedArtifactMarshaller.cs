@@ -34,7 +34,7 @@ namespace Amazon.MigrationHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CreatedArtifact Marshaller
-    /// </summary>       
+    /// </summary>
     public class CreatedArtifactMarshaller : IRequestMarshaller<CreatedArtifact, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.MigrationHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CreatedArtifactMarshaller Instance = new CreatedArtifactMarshaller();
 
     }

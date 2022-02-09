@@ -34,7 +34,7 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SourceKeyword Marshaller
-    /// </summary>       
+    /// </summary>
     public class SourceKeywordMarshaller : IRequestMarshaller<SourceKeyword, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SourceKeywordMarshaller Instance = new SourceKeywordMarshaller();
 
     }

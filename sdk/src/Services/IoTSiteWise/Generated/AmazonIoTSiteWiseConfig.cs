@@ -32,7 +32,7 @@ namespace Amazon.IoTSiteWise
     public partial class AmazonIoTSiteWiseConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.9.9");
+            InternalSDKUtils.BuildUserAgentString("3.7.9.18");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.IoTSiteWise
         /// Default constructor
         /// </summary>
         public AmazonIoTSiteWiseConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonIoTSiteWiseDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "iotsitewise";
         }

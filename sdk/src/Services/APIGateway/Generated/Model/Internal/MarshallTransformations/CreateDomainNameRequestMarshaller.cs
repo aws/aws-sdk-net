@@ -56,7 +56,7 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.APIGateway");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-07-09";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-07-09";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/domainnames";
@@ -161,7 +161,6 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

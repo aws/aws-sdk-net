@@ -34,7 +34,7 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// EventSelector Marshaller
-    /// </summary>       
+    /// </summary>
     public class EventSelectorMarshaller : IRequestMarshaller<EventSelector, JsonMarshallerContext> 
     {
         /// <summary>
@@ -88,7 +88,7 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static EventSelectorMarshaller Instance = new EventSelectorMarshaller();
 
     }

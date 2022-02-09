@@ -34,7 +34,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// MultiplexProgramServiceDescriptor Marshaller
-    /// </summary>       
+    /// </summary>
     public class MultiplexProgramServiceDescriptorMarshaller : IRequestMarshaller<MultiplexProgramServiceDescriptor, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static MultiplexProgramServiceDescriptorMarshaller Instance = new MultiplexProgramServiceDescriptorMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AccessRules Marshaller
-    /// </summary>       
+    /// </summary>
     public class AccessRulesMarshaller : IRequestMarshaller<AccessRules, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AccessRulesMarshaller Instance = new AccessRulesMarshaller();
 
     }

@@ -32,7 +32,7 @@ namespace Amazon.ACMPCA
     public partial class AmazonACMPCAConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.3.53");
+            InternalSDKUtils.BuildUserAgentString("3.7.3.62");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.ACMPCA
         /// Default constructor
         /// </summary>
         public AmazonACMPCAConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonACMPCADefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "acm-pca";
         }

@@ -32,7 +32,7 @@ namespace Amazon.AWSMarketplaceMetering
     public partial class AmazonAWSMarketplaceMeteringConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.112");
+            InternalSDKUtils.BuildUserAgentString("3.7.1.1");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.AWSMarketplaceMetering
         /// Default constructor
         /// </summary>
         public AmazonAWSMarketplaceMeteringConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonAWSMarketplaceMeteringDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "aws-marketplace";
         }

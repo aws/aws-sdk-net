@@ -34,7 +34,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// VideoPreprocessor Marshaller
-    /// </summary>       
+    /// </summary>
     public class VideoPreprocessorMarshaller : IRequestMarshaller<VideoPreprocessor, JsonMarshallerContext> 
     {
         /// <summary>
@@ -137,7 +137,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static VideoPreprocessorMarshaller Instance = new VideoPreprocessorMarshaller();
 
     }

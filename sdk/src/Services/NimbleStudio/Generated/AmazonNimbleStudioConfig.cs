@@ -32,7 +32,7 @@ namespace Amazon.NimbleStudio
     public partial class AmazonNimbleStudioConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.3.3");
+            InternalSDKUtils.BuildUserAgentString("3.7.4.6");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.NimbleStudio
         /// Default constructor
         /// </summary>
         public AmazonNimbleStudioConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonNimbleStudioDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "nimble";
         }

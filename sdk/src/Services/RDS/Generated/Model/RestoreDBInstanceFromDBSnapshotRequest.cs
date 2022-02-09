@@ -196,7 +196,20 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property CopyTagsToSnapshot. 
         /// <para>
         /// A value that indicates whether to copy all tags from the restored DB instance to snapshots
-        /// of the DB instance. By default, tags are not copied.
+        /// of the DB instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// In most cases, tags aren't copied by default. However, when you restore a DB instance
+        /// from a DB snapshot, RDS checks whether you specify new tags. If yes, the new tags
+        /// are added to the restored DB instance. If there are no new tags, RDS looks for the
+        /// tags from the source DB instance for the DB snapshot, and then adds those tags to
+        /// the restored DB instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.CopyTags">
+        /// Copying tags to DB instance snapshots</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
         /// </summary>
         public bool CopyTagsToSnapshot
@@ -233,7 +246,7 @@ namespace Amazon.RDS.Model
         ///  </li> </ul> 
         /// <para>
         /// For the list of permissions required for the IAM role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc">
-        /// Configure IAM and your VPC</a> in the <i>Amazon Relational Database Service User Guide</i>.
+        /// Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -432,7 +445,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>mySubnetgroup</code> 
+        /// Example: <code>mydbsubnetgroup</code> 
         /// </para>
         /// </summary>
         public string DBSubnetGroupName

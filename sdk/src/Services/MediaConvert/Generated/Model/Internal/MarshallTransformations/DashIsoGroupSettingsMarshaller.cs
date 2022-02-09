@@ -34,7 +34,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DashIsoGroupSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class DashIsoGroupSettingsMarshaller : IRequestMarshaller<DashIsoGroupSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -182,7 +182,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DashIsoGroupSettingsMarshaller Instance = new DashIsoGroupSettingsMarshaller();
 
     }

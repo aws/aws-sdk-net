@@ -684,7 +684,7 @@ namespace Amazon.S3Control
         /// <summary>
         /// You can use S3 Batch Operations to perform large-scale batch actions on Amazon S3
         /// objects. Batch Operations can run a single action on lists of Amazon S3 objects that
-        /// you specify. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">S3
+        /// you specify. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/batch-ops.html">S3
         /// Batch Operations</a> in the <i>Amazon S3 User Guide</i>.
         /// 
         ///  
@@ -751,7 +751,7 @@ namespace Amazon.S3Control
         /// <summary>
         /// You can use S3 Batch Operations to perform large-scale batch actions on Amazon S3
         /// objects. Batch Operations can run a single action on lists of Amazon S3 objects that
-        /// you specify. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">S3
+        /// you specify. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/batch-ops.html">S3
         /// Batch Operations</a> in the <i>Amazon S3 User Guide</i>.
         /// 
         ///  
@@ -2268,7 +2268,7 @@ namespace Amazon.S3Control
 
         /// <summary>
         /// Retrieves the configuration parameters and status for a Batch Operations job. For
-        /// more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">S3
+        /// more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/batch-ops.html">S3
         /// Batch Operations</a> in the <i>Amazon S3 User Guide</i>.
         /// 
         ///   
@@ -2325,7 +2325,7 @@ namespace Amazon.S3Control
 
         /// <summary>
         /// Retrieves the configuration parameters and status for a Batch Operations job. For
-        /// more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">S3
+        /// more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/batch-ops.html">S3
         /// Batch Operations</a> in the <i>Amazon S3 User Guide</i>.
         /// 
         ///   
@@ -4304,11 +4304,10 @@ namespace Amazon.S3Control
 
 
         /// <summary>
-        /// Returns a list of the access points associated with the Object Lambda Access Point.
-        /// You can retrieve up to 1000 access points per call. If there are more than 1,000 access
-        /// points (or the number specified in <code>maxResults</code>, whichever is less), the
-        /// response will include a continuation token that you can use to list the additional
-        /// access points.
+        /// Returns some or all (up to 1,000) access points associated with the Object Lambda
+        /// Access Point per call. If there are more access points than what can be returned in
+        /// one call, the response will include a continuation token that you can use to list
+        /// the additional access points.
         /// 
         ///  
         /// <para>
@@ -4346,11 +4345,10 @@ namespace Amazon.S3Control
 
 
         /// <summary>
-        /// Returns a list of the access points associated with the Object Lambda Access Point.
-        /// You can retrieve up to 1000 access points per call. If there are more than 1,000 access
-        /// points (or the number specified in <code>maxResults</code>, whichever is less), the
-        /// response will include a continuation token that you can use to list the additional
-        /// access points.
+        /// Returns some or all (up to 1,000) access points associated with the Object Lambda
+        /// Access Point per call. If there are more access points than what can be returned in
+        /// one call, the response will include a continuation token that you can use to list
+        /// the additional access points.
         /// 
         ///  
         /// <para>
@@ -4397,7 +4395,7 @@ namespace Amazon.S3Control
         /// <summary>
         /// Lists current S3 Batch Operations jobs and jobs that have ended within the last 30
         /// days for the Amazon Web Services account making the request. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">S3
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/batch-ops.html">S3
         /// Batch Operations</a> in the <i>Amazon S3 User Guide</i>.
         /// 
         ///  
@@ -4452,7 +4450,7 @@ namespace Amazon.S3Control
         /// <summary>
         /// Lists current S3 Batch Operations jobs and jobs that have ended within the last 30
         /// days for the Amazon Web Services account making the request. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">S3
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/batch-ops.html">S3
         /// Batch Operations</a> in the <i>Amazon S3 User Guide</i>.
         /// 
         ///  
@@ -5810,7 +5808,8 @@ namespace Amazon.S3Control
 
         /// <summary>
         /// Creates or modifies the <code>PublicAccessBlock</code> configuration for an Amazon
-        /// Web Services account. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html">
+        /// Web Services account. For this operation, users must have the <code>s3:PutBucketPublicAccessBlock</code>
+        /// permission. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html">
         /// Using Amazon S3 block public access</a>.
         /// 
         ///  
@@ -5845,7 +5844,8 @@ namespace Amazon.S3Control
 
         /// <summary>
         /// Creates or modifies the <code>PublicAccessBlock</code> configuration for an Amazon
-        /// Web Services account. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html">
+        /// Web Services account. For this operation, users must have the <code>s3:PutBucketPublicAccessBlock</code>
+        /// permission. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html">
         /// Using Amazon S3 block public access</a>.
         /// 
         ///  
@@ -6011,7 +6011,7 @@ namespace Amazon.S3Control
 
         /// <summary>
         /// Updates an existing S3 Batch Operations job's priority. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">S3
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/batch-ops.html">S3
         /// Batch Operations</a> in the <i>Amazon S3 User Guide</i>.
         /// 
         ///   
@@ -6068,7 +6068,7 @@ namespace Amazon.S3Control
 
         /// <summary>
         /// Updates an existing S3 Batch Operations job's priority. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">S3
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/batch-ops.html">S3
         /// Batch Operations</a> in the <i>Amazon S3 User Guide</i>.
         /// 
         ///   
@@ -6132,7 +6132,7 @@ namespace Amazon.S3Control
 
         /// <summary>
         /// Updates the status for the specified job. Use this action to confirm that you want
-        /// to run a job or to cancel an existing job. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">S3
+        /// to run a job or to cancel an existing job. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/batch-ops.html">S3
         /// Batch Operations</a> in the <i>Amazon S3 User Guide</i>.
         /// 
         ///   
@@ -6192,7 +6192,7 @@ namespace Amazon.S3Control
 
         /// <summary>
         /// Updates the status for the specified job. Use this action to confirm that you want
-        /// to run a job or to cancel an existing job. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">S3
+        /// to run a job or to cancel an existing job. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/batch-ops.html">S3
         /// Batch Operations</a> in the <i>Amazon S3 User Guide</i>.
         /// 
         ///   

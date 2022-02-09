@@ -32,7 +32,7 @@ namespace Amazon.Schemas
     public partial class AmazonSchemasConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.2.34");
+            InternalSDKUtils.BuildUserAgentString("3.7.2.43");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.Schemas
         /// Default constructor
         /// </summary>
         public AmazonSchemasConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonSchemasDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "schemas";
         }

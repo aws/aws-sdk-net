@@ -32,7 +32,7 @@ namespace Amazon.MarketplaceCatalog
     public partial class AmazonMarketplaceCatalogConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.1.96");
+            InternalSDKUtils.BuildUserAgentString("3.7.1.105");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.MarketplaceCatalog
         /// Default constructor
         /// </summary>
         public AmazonMarketplaceCatalogConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonMarketplaceCatalogDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "aws-marketplace";
         }

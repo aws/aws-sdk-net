@@ -34,7 +34,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CustomerProfilesDestinationProperties Marshaller
-    /// </summary>       
+    /// </summary>
     public class CustomerProfilesDestinationPropertiesMarshaller : IRequestMarshaller<CustomerProfilesDestinationProperties, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CustomerProfilesDestinationPropertiesMarshaller Instance = new CustomerProfilesDestinationPropertiesMarshaller();
 
     }

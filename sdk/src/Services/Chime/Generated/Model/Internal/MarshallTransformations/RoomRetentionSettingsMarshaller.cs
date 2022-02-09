@@ -34,7 +34,7 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RoomRetentionSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class RoomRetentionSettingsMarshaller : IRequestMarshaller<RoomRetentionSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RoomRetentionSettingsMarshaller Instance = new RoomRetentionSettingsMarshaller();
 
     }

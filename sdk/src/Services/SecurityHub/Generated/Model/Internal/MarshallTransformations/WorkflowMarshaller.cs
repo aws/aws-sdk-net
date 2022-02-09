@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Workflow Marshaller
-    /// </summary>       
+    /// </summary>
     public class WorkflowMarshaller : IRequestMarshaller<Workflow, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static WorkflowMarshaller Instance = new WorkflowMarshaller();
 
     }

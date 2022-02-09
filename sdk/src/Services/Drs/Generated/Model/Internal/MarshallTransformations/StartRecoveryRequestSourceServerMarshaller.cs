@@ -34,7 +34,7 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// StartRecoveryRequestSourceServer Marshaller
-    /// </summary>       
+    /// </summary>
     public class StartRecoveryRequestSourceServerMarshaller : IRequestMarshaller<StartRecoveryRequestSourceServer, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static StartRecoveryRequestSourceServerMarshaller Instance = new StartRecoveryRequestSourceServerMarshaller();
 
     }

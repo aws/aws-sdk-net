@@ -165,6 +165,11 @@
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeFastLaunchImagesRequest.MaxResults</property>
+    <min>0</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.DescribeFastSnapshotRestoresRequest.MaxResults</property>
     <min>0</min>
     <max>200</max>
@@ -583,6 +588,11 @@
   <property-value-rule>
     <property>Amazon.EC2.Model.GetVpnConnectionDeviceTypesRequest.MaxResults</property>
     <min>200</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.ListImagesInRecycleBinRequest.MaxResults</property>
+    <min>1</min>
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>

@@ -34,7 +34,7 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// KeyRange Marshaller
-    /// </summary>       
+    /// </summary>
     public class KeyRangeMarshaller : IRequestMarshaller<KeyRange, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static KeyRangeMarshaller Instance = new KeyRangeMarshaller();
 
     }

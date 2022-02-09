@@ -100,7 +100,7 @@ namespace Amazon.FIS.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of an IAM role that grants the AWS FIS service permission
+        /// The Amazon Resource Name (ARN) of an IAM role that grants the FIS service permission
         /// to perform service actions on your behalf.
         /// </para>
         /// </summary>

@@ -34,7 +34,7 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RedshiftDataShareAssetSourceEntry Marshaller
-    /// </summary>       
+    /// </summary>
     public class RedshiftDataShareAssetSourceEntryMarshaller : IRequestMarshaller<RedshiftDataShareAssetSourceEntry, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RedshiftDataShareAssetSourceEntryMarshaller Instance = new RedshiftDataShareAssetSourceEntryMarshaller();
 
     }

@@ -32,7 +32,7 @@ namespace Amazon.MediaLive
     public partial class AmazonMediaLiveConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.7.10");
+            InternalSDKUtils.BuildUserAgentString("3.7.8.8");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.MediaLive
         /// Default constructor
         /// </summary>
         public AmazonMediaLiveConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonMediaLiveDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "medialive";
         }

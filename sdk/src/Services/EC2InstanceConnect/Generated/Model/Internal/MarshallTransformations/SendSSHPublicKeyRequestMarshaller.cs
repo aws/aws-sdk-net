@@ -58,7 +58,7 @@ namespace Amazon.EC2InstanceConnect.Model.Internal.MarshallTransformations
             string target = "AWSEC2InstanceConnectService.SendSSHPublicKey";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-04-02";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-04-02";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -91,7 +91,6 @@ namespace Amazon.EC2InstanceConnect.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.SSHPublicKey);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

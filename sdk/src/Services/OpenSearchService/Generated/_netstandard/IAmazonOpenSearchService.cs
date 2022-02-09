@@ -513,6 +513,39 @@ namespace Amazon.OpenSearchService
 
         #endregion
                 
+        #region  DescribeDomainChangeProgress
+
+
+
+        /// <summary>
+        /// Returns information about the current blue/green deployment happening on a domain,
+        /// including a change ID, status, and progress stages.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDomainChangeProgress service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeDomainChangeProgress service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that does not exist. Gives http
+        /// status code of 400.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeDomainChangeProgress">REST API Reference for DescribeDomainChangeProgress Operation</seealso>
+        Task<DescribeDomainChangeProgressResponse> DescribeDomainChangeProgressAsync(DescribeDomainChangeProgressRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DescribeDomainConfig
 
 

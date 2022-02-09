@@ -34,7 +34,7 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// UpdateEncryption Marshaller
-    /// </summary>       
+    /// </summary>
     public class UpdateEncryptionMarshaller : IRequestMarshaller<UpdateEncryption, JsonMarshallerContext> 
     {
         /// <summary>
@@ -103,7 +103,7 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static UpdateEncryptionMarshaller Instance = new UpdateEncryptionMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TitleAggregation Marshaller
-    /// </summary>       
+    /// </summary>
     public class TitleAggregationMarshaller : IRequestMarshaller<TitleAggregation, JsonMarshallerContext> 
     {
         /// <summary>
@@ -99,7 +99,7 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TitleAggregationMarshaller Instance = new TitleAggregationMarshaller();
 
     }

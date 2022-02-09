@@ -34,7 +34,7 @@ namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SingleMasterChannelEndpointConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class SingleMasterChannelEndpointConfigurationMarshaller : IRequestMarshaller<SingleMasterChannelEndpointConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SingleMasterChannelEndpointConfigurationMarshaller Instance = new SingleMasterChannelEndpointConfigurationMarshaller();
 
     }

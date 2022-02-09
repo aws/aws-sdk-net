@@ -34,7 +34,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// MySqlParameters Marshaller
-    /// </summary>       
+    /// </summary>
     public class MySqlParametersMarshaller : IRequestMarshaller<MySqlParameters, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static MySqlParametersMarshaller Instance = new MySqlParametersMarshaller();
 
     }

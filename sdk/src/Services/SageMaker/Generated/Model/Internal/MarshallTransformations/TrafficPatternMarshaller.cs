@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TrafficPattern Marshaller
-    /// </summary>       
+    /// </summary>
     public class TrafficPatternMarshaller : IRequestMarshaller<TrafficPattern, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TrafficPatternMarshaller Instance = new TrafficPatternMarshaller();
 
     }

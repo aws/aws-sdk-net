@@ -56,7 +56,7 @@ namespace Amazon.MarketplaceCatalog.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.MarketplaceCatalog");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-09-17";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-09-17";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/ListChangeSets";
@@ -110,7 +110,6 @@ namespace Amazon.MarketplaceCatalog.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

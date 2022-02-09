@@ -43,6 +43,10 @@ namespace Amazon.FSx.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
+    /// Amazon FSx for OpenZFS
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     /// Amazon FSx for Windows File Server
     /// </para>
     ///  </li> </ul> 
@@ -358,7 +362,7 @@ namespace Amazon.FSx.Model
         ///  </li> <li> 
         /// <para>
         /// Set to <code>HDD</code> to use hard disk drive storage. HDD is supported on <code>SINGLE_AZ_2</code>
-        /// and <code>MULTI_AZ_1</code> Windows file system deployment types, and on <code>PERSISTENT</code>
+        /// and <code>MULTI_AZ_1</code> Windows file system deployment types, and on <code>PERSISTENT_1</code>
         /// Lustre file system deployment types. 
         /// </para>
         ///  </li> </ul> 

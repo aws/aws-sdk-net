@@ -34,7 +34,7 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DeltaSyncConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class DeltaSyncConfigMarshaller : IRequestMarshaller<DeltaSyncConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DeltaSyncConfigMarshaller Instance = new DeltaSyncConfigMarshaller();
 
     }

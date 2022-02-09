@@ -34,7 +34,7 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// LogConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class LogConfigMarshaller : IRequestMarshaller<LogConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static LogConfigMarshaller Instance = new LogConfigMarshaller();
 
     }

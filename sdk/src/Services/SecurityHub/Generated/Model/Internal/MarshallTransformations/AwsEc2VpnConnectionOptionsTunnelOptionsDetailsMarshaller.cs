@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AwsEc2VpnConnectionOptionsTunnelOptionsDetails Marshaller
-    /// </summary>       
+    /// </summary>
     public class AwsEc2VpnConnectionOptionsTunnelOptionsDetailsMarshaller : IRequestMarshaller<AwsEc2VpnConnectionOptionsTunnelOptionsDetails, JsonMarshallerContext> 
     {
         /// <summary>
@@ -180,7 +180,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AwsEc2VpnConnectionOptionsTunnelOptionsDetailsMarshaller Instance = new AwsEc2VpnConnectionOptionsTunnelOptionsDetailsMarshaller();
 
     }

@@ -71,6 +71,17 @@ namespace Amazon.CostExplorer.Model
         /// by or filter by a <code>ResourceId</code>. It requires the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
         /// <code>"SERVICE = Amazon Elastic Compute Cloud - Compute"</code> in the filter.
         /// </para>
+        ///  
+        /// <para>
+        /// Valid values for <code>MatchOptions</code> for <code>CostCategories</code> and <code>Tags</code>
+        /// are <code>EQUALS</code>, <code>ABSENT</code>, and <code>CASE_SENSITIVE</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The default values are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>. Valid
+        /// values for <code>MatchOptions</code> for <code>Dimensions</code> are <code>EQUALS</code>
+        /// and <code>CASE_SENSITIVE</code>.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public Expression Filter

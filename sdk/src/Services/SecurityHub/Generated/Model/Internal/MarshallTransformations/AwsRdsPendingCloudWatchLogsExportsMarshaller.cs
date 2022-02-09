@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AwsRdsPendingCloudWatchLogsExports Marshaller
-    /// </summary>       
+    /// </summary>
     public class AwsRdsPendingCloudWatchLogsExportsMarshaller : IRequestMarshaller<AwsRdsPendingCloudWatchLogsExports, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AwsRdsPendingCloudWatchLogsExportsMarshaller Instance = new AwsRdsPendingCloudWatchLogsExportsMarshaller();
 
     }

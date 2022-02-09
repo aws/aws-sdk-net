@@ -47,17 +47,17 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MFA_IF_CONFIGURED</code> Throw MFA challenge if user has configured it, else
-        /// allow the request.
+        ///  <code>MFA_IF_CONFIGURED</code> Present an MFA challenge if user has configured it,
+        /// else allow the request.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MFA_REQUIRED</code> Throw MFA challenge if user has configured it, else block
-        /// the request.
+        ///  <code>MFA_REQUIRED</code> Present an MFA challenge if user has configured it, else
+        /// block the request.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NO_ACTION</code> Allow the user sign-in.
+        ///  <code>NO_ACTION</code> Allow the user to sign in.
         /// </para>
         ///  </li> </ul>
         /// </summary>

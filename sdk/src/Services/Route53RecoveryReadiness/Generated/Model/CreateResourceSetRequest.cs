@@ -30,7 +30,9 @@ namespace Amazon.Route53RecoveryReadiness.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateResourceSet operation.
-    /// Creates a new Resource Set.
+    /// Creates a resource set. A resource set is a set of resources of one type that span
+    /// multiple cells. You can associate a resource set with a readiness check to monitor
+    /// the resources for failover readiness.
     /// </summary>
     public partial class CreateResourceSetRequest : AmazonRoute53RecoveryReadinessRequest
     {
@@ -40,7 +42,10 @@ namespace Amazon.Route53RecoveryReadiness.Model
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
-        /// Gets and sets the property Resources. A list of Resource objects
+        /// Gets and sets the property Resources. 
+        /// <para>
+        /// A list of resource objects in the resource set.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public List<Resource> Resources
@@ -56,7 +61,10 @@ namespace Amazon.Route53RecoveryReadiness.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ResourceSetName. The name of the ResourceSet to create
+        /// Gets and sets the property ResourceSetName. 
+        /// <para>
+        /// The name of the resource set to create.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string ResourceSetName
@@ -72,8 +80,20 @@ namespace Amazon.Route53RecoveryReadiness.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ResourceSetType. AWS Resource type of the resources in
-        /// the ResourceSet
+        /// Gets and sets the property ResourceSetType. 
+        /// <para>
+        /// The resource type of the resources in the resource set. Enter one of the following
+        /// values for resource type:
+        /// </para>
+        ///  
+        /// <para>
+        /// AWS::ApiGateway::Stage, AWS::ApiGatewayV2::Stage, AWS::AutoScaling::AutoScalingGroup,
+        /// AWS::CloudWatch::Alarm, AWS::EC2::CustomerGateway, AWS::DynamoDB::Table, AWS::EC2::Volume,
+        /// AWS::ElasticLoadBalancing::LoadBalancer, AWS::ElasticLoadBalancingV2::LoadBalancer,
+        /// AWS::Lambda::Function, AWS::MSK::Cluster, AWS::RDS::DBCluster, AWS::Route53::HealthCheck,
+        /// AWS::SQS::Queue, AWS::SNS::Topic, AWS::SNS::Subscription, AWS::EC2::VPC, AWS::EC2::VPNConnection,
+        /// AWS::EC2::VPNGateway, AWS::Route53RecoveryReadiness::DNSTargetResource
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string ResourceSetType
@@ -89,7 +109,10 @@ namespace Amazon.Route53RecoveryReadiness.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Tags.
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A tag to associate with the parameters for a resource set.
+        /// </para>
         /// </summary>
         public Dictionary<string, string> Tags
         {

@@ -34,7 +34,7 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SMSMfaSettingsType Marshaller
-    /// </summary>       
+    /// </summary>
     public class SMSMfaSettingsTypeMarshaller : IRequestMarshaller<SMSMfaSettingsType, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SMSMfaSettingsTypeMarshaller Instance = new SMSMfaSettingsTypeMarshaller();
 
     }

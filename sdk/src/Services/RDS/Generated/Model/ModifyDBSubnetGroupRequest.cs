@@ -69,7 +69,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>mySubnetgroup</code> 
+        /// Example: <code>mydbsubnetgroup</code> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

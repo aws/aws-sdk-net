@@ -34,7 +34,7 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SimulationSoftwareSuite Marshaller
-    /// </summary>       
+    /// </summary>
     public class SimulationSoftwareSuiteMarshaller : IRequestMarshaller<SimulationSoftwareSuite, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SimulationSoftwareSuiteMarshaller Instance = new SimulationSoftwareSuiteMarshaller();
 
     }

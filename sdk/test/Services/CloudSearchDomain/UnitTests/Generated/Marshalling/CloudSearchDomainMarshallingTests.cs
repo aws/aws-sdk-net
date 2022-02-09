@@ -53,7 +53,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new SearchRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("Search", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("Search", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -67,9 +67,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = SearchResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as SearchResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as SearchResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -116,7 +115,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new SuggestRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("Suggest", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("Suggest", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -130,9 +129,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = SuggestResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as SuggestResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as SuggestResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -179,7 +177,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new UploadDocumentsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("UploadDocuments", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("UploadDocuments", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -193,9 +191,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = UploadDocumentsResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as UploadDocumentsResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as UploadDocumentsResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]

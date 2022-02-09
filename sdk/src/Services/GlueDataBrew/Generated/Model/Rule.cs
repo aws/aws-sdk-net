@@ -55,6 +55,11 @@ namespace Amazon.GlueDataBrew.Model
         /// then there should be no columnn reference in the left side of a condition, for example,
         /// <code>is_between :val1 and :val2</code>.
         /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/profile.data-quality-available-checks.html">Available
+        /// checks</a> 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=4, Max=1024)]
         public string CheckExpression

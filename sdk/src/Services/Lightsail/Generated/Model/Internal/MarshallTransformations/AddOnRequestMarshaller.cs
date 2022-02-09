@@ -34,7 +34,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AddOnRequest Marshaller
-    /// </summary>       
+    /// </summary>
     public class AddOnRequestMarshaller : IRequestMarshaller<AddOnRequest, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AddOnRequestMarshaller Instance = new AddOnRequestMarshaller();
 
     }

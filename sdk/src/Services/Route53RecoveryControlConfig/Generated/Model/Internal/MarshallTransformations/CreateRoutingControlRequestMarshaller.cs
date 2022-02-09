@@ -56,7 +56,7 @@ namespace Amazon.Route53RecoveryControlConfig.Model.Internal.MarshallTransformat
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Route53RecoveryControlConfig");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-11-02";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-11-02";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/routingcontrol";
@@ -74,7 +74,7 @@ namespace Amazon.Route53RecoveryControlConfig.Model.Internal.MarshallTransformat
                 else if(!(publicRequest.IsSetClientToken()))
                 {
                     context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());                                                
+                    context.Writer.Write(Guid.NewGuid().ToString());
                 }
                 if(publicRequest.IsSetClusterArn())
                 {
@@ -94,7 +94,6 @@ namespace Amazon.Route53RecoveryControlConfig.Model.Internal.MarshallTransformat
                     context.Writer.Write(publicRequest.RoutingControlName);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

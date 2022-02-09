@@ -55,7 +55,7 @@ namespace Amazon.Lex.Model.Internal.MarshallTransformations
         public IRequest Marshall(DeleteSessionRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Lex");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-11-28";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-11-28";
             request.HttpMethod = "DELETE";
 
             if (!publicRequest.IsSetBotAlias())

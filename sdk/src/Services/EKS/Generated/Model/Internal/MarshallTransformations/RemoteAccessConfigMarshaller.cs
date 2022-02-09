@@ -34,7 +34,7 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RemoteAccessConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class RemoteAccessConfigMarshaller : IRequestMarshaller<RemoteAccessConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RemoteAccessConfigMarshaller Instance = new RemoteAccessConfigMarshaller();
 
     }

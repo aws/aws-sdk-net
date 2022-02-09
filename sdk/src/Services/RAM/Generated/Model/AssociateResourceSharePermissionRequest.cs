@@ -100,7 +100,8 @@ namespace Amazon.RAM.Model
         /// <para>
         /// Specifies the version of the RAM permission to associate with the resource share.
         /// If you don't specify this parameter, the operation uses the version designated as
-        /// the default.
+        /// the default. You can use the <a>ListPermissionVersions</a> operation to discover the
+        /// available versions of a permission.
         /// </para>
         /// </summary>
         public int PermissionVersion

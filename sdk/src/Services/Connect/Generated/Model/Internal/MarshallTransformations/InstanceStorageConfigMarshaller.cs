@@ -34,7 +34,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// InstanceStorageConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class InstanceStorageConfigMarshaller : IRequestMarshaller<InstanceStorageConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -105,7 +105,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static InstanceStorageConfigMarshaller Instance = new InstanceStorageConfigMarshaller();
 
     }

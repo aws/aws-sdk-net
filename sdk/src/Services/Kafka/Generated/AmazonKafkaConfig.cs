@@ -32,7 +32,7 @@ namespace Amazon.Kafka
     public partial class AmazonKafkaConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.5.8");
+            InternalSDKUtils.BuildUserAgentString("3.7.6.3");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.Kafka
         /// Default constructor
         /// </summary>
         public AmazonKafkaConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonKafkaDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "kafka";
         }

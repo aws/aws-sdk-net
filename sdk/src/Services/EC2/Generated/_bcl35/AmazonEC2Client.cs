@@ -4355,7 +4355,15 @@ namespace Amazon.EC2
         /// Creates an Amazon EBS-backed AMI from an Amazon EBS-backed instance that is either
         /// running or stopped.
         /// 
-        ///  
+        ///  <important> 
+        /// <para>
+        /// By default, Amazon EC2 shuts down and reboots the instance before creating the AMI
+        /// to ensure that everything on the instance is stopped and in a consistent state during
+        /// the creation process. If you're confident that your instance is in a consistent state
+        /// appropriate for AMI creation, use the <b>NoReboot</b> parameter to prevent Amazon
+        /// EC2 from shutting down and rebooting the instance. 
+        /// </para>
+        ///  </important> 
         /// <para>
         /// If you customized your instance with instance store volumes or Amazon EBS volumes
         /// in addition to the root device volume, the new AMI contains block device mapping information
@@ -12011,10 +12019,21 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Deregisters the specified AMI. After you deregister an AMI, it can't be used to launch
-        /// new instances; however, it doesn't affect any instances that you've already launched
+        /// new instances.
+        /// 
+        ///  
+        /// <para>
+        /// If you deregister an AMI that matches a Recycle Bin retention rule, the AMI is retained
+        /// in the Recycle Bin for the specified retention period. For more information, see <a
+        /// href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin.html">Recycle
+        /// Bin</a> in the Amazon Elastic Compute Cloud User Guide.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you deregister an AMI, it doesn't affect any instances that you've already launched
         /// from the AMI. You'll continue to incur usage costs for those instances until you terminate
         /// them.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// When you deregister an Amazon EBS-backed AMI, it doesn't affect the snapshot that
@@ -13818,6 +13837,60 @@ namespace Amazon.EC2
         public virtual DescribeExportTasksResponse EndDescribeExportTasks(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeExportTasksResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeFastLaunchImages
+
+        /// <summary>
+        /// Describe details for Windows AMIs that are configured for faster launching.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFastLaunchImages service method.</param>
+        /// 
+        /// <returns>The response from the DescribeFastLaunchImages service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFastLaunchImages">REST API Reference for DescribeFastLaunchImages Operation</seealso>
+        public virtual DescribeFastLaunchImagesResponse DescribeFastLaunchImages(DescribeFastLaunchImagesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeFastLaunchImagesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeFastLaunchImagesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeFastLaunchImagesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeFastLaunchImages operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFastLaunchImages operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeFastLaunchImages
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFastLaunchImages">REST API Reference for DescribeFastLaunchImages Operation</seealso>
+        public virtual IAsyncResult BeginDescribeFastLaunchImages(DescribeFastLaunchImagesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeFastLaunchImagesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeFastLaunchImagesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeFastLaunchImages operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeFastLaunchImages.</param>
+        /// 
+        /// <returns>Returns a  DescribeFastLaunchImagesResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFastLaunchImages">REST API Reference for DescribeFastLaunchImages Operation</seealso>
+        public virtual DescribeFastLaunchImagesResponse EndDescribeFastLaunchImages(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeFastLaunchImagesResponse>(asyncResult);
         }
 
         #endregion
@@ -21377,6 +21450,69 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DisableFastLaunch
+
+        /// <summary>
+        /// Discontinue faster launching for a Windows AMI, and clean up existing pre-provisioned
+        /// snapshots. When you disable faster launching, the AMI uses the standard launch process
+        /// for each instance. All pre-provisioned snapshots must be removed before you can enable
+        /// faster launching again.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// To change these settings, you must own the AMI.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableFastLaunch service method.</param>
+        /// 
+        /// <returns>The response from the DisableFastLaunch service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableFastLaunch">REST API Reference for DisableFastLaunch Operation</seealso>
+        public virtual DisableFastLaunchResponse DisableFastLaunch(DisableFastLaunchRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisableFastLaunchRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisableFastLaunchResponseUnmarshaller.Instance;
+
+            return Invoke<DisableFastLaunchResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisableFastLaunch operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisableFastLaunch operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisableFastLaunch
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableFastLaunch">REST API Reference for DisableFastLaunch Operation</seealso>
+        public virtual IAsyncResult BeginDisableFastLaunch(DisableFastLaunchRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisableFastLaunchRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisableFastLaunchResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisableFastLaunch operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisableFastLaunch.</param>
+        /// 
+        /// <returns>Returns a  DisableFastLaunchResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableFastLaunch">REST API Reference for DisableFastLaunch Operation</seealso>
+        public virtual DisableFastLaunchResponse EndDisableFastLaunch(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DisableFastLaunchResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DisableFastSnapshotRestores
 
         /// <summary>
@@ -22573,6 +22709,71 @@ namespace Amazon.EC2
         public virtual EnableEbsEncryptionByDefaultResponse EndEnableEbsEncryptionByDefault(IAsyncResult asyncResult)
         {
             return EndInvoke<EnableEbsEncryptionByDefaultResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  EnableFastLaunch
+
+        /// <summary>
+        /// When you enable faster launching for a Windows AMI, images are pre-provisioned, using
+        /// snapshots to launch instances up to 65% faster. To create the optimized Windows image,
+        /// Amazon EC2 launches an instance and runs through Sysprep steps, rebooting as required.
+        /// Then it creates a set of reserved snapshots that are used for subsequent launches.
+        /// The reserved snapshots are automatically replenished as they are used, depending on
+        /// your settings for launch frequency.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// To change these settings, you must own the AMI.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableFastLaunch service method.</param>
+        /// 
+        /// <returns>The response from the EnableFastLaunch service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableFastLaunch">REST API Reference for EnableFastLaunch Operation</seealso>
+        public virtual EnableFastLaunchResponse EnableFastLaunch(EnableFastLaunchRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EnableFastLaunchRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableFastLaunchResponseUnmarshaller.Instance;
+
+            return Invoke<EnableFastLaunchResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the EnableFastLaunch operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the EnableFastLaunch operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndEnableFastLaunch
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableFastLaunch">REST API Reference for EnableFastLaunch Operation</seealso>
+        public virtual IAsyncResult BeginEnableFastLaunch(EnableFastLaunchRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EnableFastLaunchRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableFastLaunchResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  EnableFastLaunch operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginEnableFastLaunch.</param>
+        /// 
+        /// <returns>Returns a  EnableFastLaunchResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableFastLaunch">REST API Reference for EnableFastLaunch Operation</seealso>
+        public virtual EnableFastLaunchResponse EndEnableFastLaunch(IAsyncResult asyncResult)
+        {
+            return EndInvoke<EnableFastLaunchResponse>(asyncResult);
         }
 
         #endregion
@@ -25725,6 +25926,62 @@ namespace Amazon.EC2
         public virtual ImportVolumeResponse EndImportVolume(IAsyncResult asyncResult)
         {
             return EndInvoke<ImportVolumeResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListImagesInRecycleBin
+
+        /// <summary>
+        /// Lists one or more AMIs that are currently in the Recycle Bin. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin.html">Recycle
+        /// Bin</a> in the Amazon Elastic Compute Cloud User Guide.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListImagesInRecycleBin service method.</param>
+        /// 
+        /// <returns>The response from the ListImagesInRecycleBin service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ListImagesInRecycleBin">REST API Reference for ListImagesInRecycleBin Operation</seealso>
+        public virtual ListImagesInRecycleBinResponse ListImagesInRecycleBin(ListImagesInRecycleBinRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListImagesInRecycleBinRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListImagesInRecycleBinResponseUnmarshaller.Instance;
+
+            return Invoke<ListImagesInRecycleBinResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListImagesInRecycleBin operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListImagesInRecycleBin operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListImagesInRecycleBin
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ListImagesInRecycleBin">REST API Reference for ListImagesInRecycleBin Operation</seealso>
+        public virtual IAsyncResult BeginListImagesInRecycleBin(ListImagesInRecycleBinRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListImagesInRecycleBinRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListImagesInRecycleBinResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListImagesInRecycleBin operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListImagesInRecycleBin.</param>
+        /// 
+        /// <returns>Returns a  ListImagesInRecycleBinResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ListImagesInRecycleBin">REST API Reference for ListImagesInRecycleBin Operation</seealso>
+        public virtual ListImagesInRecycleBinResponse EndListImagesInRecycleBin(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListImagesInRecycleBinResponse>(asyncResult);
         }
 
         #endregion
@@ -31782,6 +32039,61 @@ namespace Amazon.EC2
         public virtual RestoreAddressToClassicResponse EndRestoreAddressToClassic(IAsyncResult asyncResult)
         {
             return EndInvoke<RestoreAddressToClassicResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  RestoreImageFromRecycleBin
+
+        /// <summary>
+        /// Restores an AMI from the Recycle Bin. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin.html">Recycle
+        /// Bin</a> in the Amazon Elastic Compute Cloud User Guide.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RestoreImageFromRecycleBin service method.</param>
+        /// 
+        /// <returns>The response from the RestoreImageFromRecycleBin service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RestoreImageFromRecycleBin">REST API Reference for RestoreImageFromRecycleBin Operation</seealso>
+        public virtual RestoreImageFromRecycleBinResponse RestoreImageFromRecycleBin(RestoreImageFromRecycleBinRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RestoreImageFromRecycleBinRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RestoreImageFromRecycleBinResponseUnmarshaller.Instance;
+
+            return Invoke<RestoreImageFromRecycleBinResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RestoreImageFromRecycleBin operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RestoreImageFromRecycleBin operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRestoreImageFromRecycleBin
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RestoreImageFromRecycleBin">REST API Reference for RestoreImageFromRecycleBin Operation</seealso>
+        public virtual IAsyncResult BeginRestoreImageFromRecycleBin(RestoreImageFromRecycleBinRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RestoreImageFromRecycleBinRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RestoreImageFromRecycleBinResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RestoreImageFromRecycleBin operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRestoreImageFromRecycleBin.</param>
+        /// 
+        /// <returns>Returns a  RestoreImageFromRecycleBinResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RestoreImageFromRecycleBin">REST API Reference for RestoreImageFromRecycleBin Operation</seealso>
+        public virtual RestoreImageFromRecycleBinResponse EndRestoreImageFromRecycleBin(IAsyncResult asyncResult)
+        {
+            return EndInvoke<RestoreImageFromRecycleBinResponse>(asyncResult);
         }
 
         #endregion

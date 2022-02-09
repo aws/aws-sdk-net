@@ -134,7 +134,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Username. 
         /// <para>
-        /// The user name of the user you wish to describe.
+        /// The user name of the user you want to describe.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -153,7 +153,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UserStatus. 
         /// <para>
-        /// The user status. Can be one of the following:
+        /// The user status. This can be one of the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -173,18 +173,18 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// UNKNOWN - User status is not known.
+        /// UNKNOWN - User status isn't known.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// RESET_REQUIRED - User is confirmed, but the user must request a code and reset his
-        /// or her password before he or she can sign in.
+        /// RESET_REQUIRED - User is confirmed, but the user must request a code and reset their
+        /// password before they can sign in.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary
-        /// password, but on first sign-in, the user must change his or her password to a new
-        /// value before doing anything else. 
+        /// password, but on first sign-in, the user must change their password to a new value
+        /// before doing anything else. 
         /// </para>
         ///  </li> </ul>
         /// </summary>

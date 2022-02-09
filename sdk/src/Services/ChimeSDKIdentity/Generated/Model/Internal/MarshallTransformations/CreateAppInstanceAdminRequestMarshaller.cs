@@ -56,7 +56,7 @@ namespace Amazon.ChimeSDKIdentity.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ChimeSDKIdentity");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-04-20";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-04-20";
             request.HttpMethod = "POST";
 
             if (!publicRequest.IsSetAppInstanceArn())
@@ -74,7 +74,6 @@ namespace Amazon.ChimeSDKIdentity.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.AppInstanceAdminArn);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

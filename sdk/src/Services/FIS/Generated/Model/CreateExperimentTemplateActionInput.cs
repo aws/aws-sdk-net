@@ -30,6 +30,12 @@ namespace Amazon.FIS.Model
 {
     /// <summary>
     /// Specifies an action for an experiment template.
+    /// 
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/fis/latest/userguide/actions.html">Actions</a>
+    /// in the <i>Fault Injection Simulator User Guide</i>.
+    /// </para>
     /// </summary>
     public partial class CreateExperimentTemplateActionInput
     {
@@ -42,7 +48,7 @@ namespace Amazon.FIS.Model
         /// <summary>
         /// Gets and sets the property ActionId. 
         /// <para>
-        /// The ID of the action.
+        /// The ID of the action. The format of the action ID is: aws:<i>service-name</i>:<i>action-type</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=128)]

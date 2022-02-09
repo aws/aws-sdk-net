@@ -32,7 +32,7 @@ namespace Amazon.LicenseManager
     public partial class AmazonLicenseManagerConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.5.41");
+            InternalSDKUtils.BuildUserAgentString("3.7.5.50");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.LicenseManager
         /// Default constructor
         /// </summary>
         public AmazonLicenseManagerConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonLicenseManagerDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "license-manager";
         }

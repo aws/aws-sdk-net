@@ -32,7 +32,7 @@ namespace Amazon.AppMesh
     public partial class AmazonAppMeshConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.1.83");
+            InternalSDKUtils.BuildUserAgentString("3.7.1.92");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.AppMesh
         /// Default constructor
         /// </summary>
         public AmazonAppMeshConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonAppMeshDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "appmesh";
         }

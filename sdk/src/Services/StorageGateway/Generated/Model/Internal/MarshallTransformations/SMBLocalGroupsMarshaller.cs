@@ -34,7 +34,7 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SMBLocalGroups Marshaller
-    /// </summary>       
+    /// </summary>
     public class SMBLocalGroupsMarshaller : IRequestMarshaller<SMBLocalGroups, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SMBLocalGroupsMarshaller Instance = new SMBLocalGroupsMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DefaultButtonConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class DefaultButtonConfigurationMarshaller : IRequestMarshaller<DefaultButtonConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -85,7 +85,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DefaultButtonConfigurationMarshaller Instance = new DefaultButtonConfigurationMarshaller();
 
     }

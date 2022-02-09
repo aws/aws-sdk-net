@@ -32,7 +32,7 @@ namespace Amazon.RAM
     public partial class AmazonRAMConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.2.7");
+            InternalSDKUtils.BuildUserAgentString("3.7.3.5");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.RAM
         /// Default constructor
         /// </summary>
         public AmazonRAMConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonRAMDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "ram";
         }

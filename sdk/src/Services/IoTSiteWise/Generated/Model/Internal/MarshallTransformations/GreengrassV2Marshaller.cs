@@ -34,7 +34,7 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// GreengrassV2 Marshaller
-    /// </summary>       
+    /// </summary>
     public class GreengrassV2Marshaller : IRequestMarshaller<GreengrassV2, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static GreengrassV2Marshaller Instance = new GreengrassV2Marshaller();
 
     }

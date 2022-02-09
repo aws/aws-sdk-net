@@ -34,7 +34,7 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DomainInformationContainer Marshaller
-    /// </summary>       
+    /// </summary>
     public class DomainInformationContainerMarshaller : IRequestMarshaller<DomainInformationContainer, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DomainInformationContainerMarshaller Instance = new DomainInformationContainerMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// StorageVirtualMachineFilter Marshaller
-    /// </summary>       
+    /// </summary>
     public class StorageVirtualMachineFilterMarshaller : IRequestMarshaller<StorageVirtualMachineFilter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static StorageVirtualMachineFilterMarshaller Instance = new StorageVirtualMachineFilterMarshaller();
 
     }

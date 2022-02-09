@@ -32,7 +32,7 @@ namespace Amazon.MarketplaceEntitlementService
     public partial class AmazonMarketplaceEntitlementServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.112");
+            InternalSDKUtils.BuildUserAgentString("3.7.0.121");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.MarketplaceEntitlementService
         /// Default constructor
         /// </summary>
         public AmazonMarketplaceEntitlementServiceConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonMarketplaceEntitlementServiceDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "aws-marketplace";
         }

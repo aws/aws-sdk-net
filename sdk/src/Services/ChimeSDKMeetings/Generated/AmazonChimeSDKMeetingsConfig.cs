@@ -32,7 +32,7 @@ namespace Amazon.ChimeSDKMeetings
     public partial class AmazonChimeSDKMeetingsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.3.9");
+            InternalSDKUtils.BuildUserAgentString("3.7.3.18");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.ChimeSDKMeetings
         /// Default constructor
         /// </summary>
         public AmazonChimeSDKMeetingsConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonChimeSDKMeetingsDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "chime";
         }

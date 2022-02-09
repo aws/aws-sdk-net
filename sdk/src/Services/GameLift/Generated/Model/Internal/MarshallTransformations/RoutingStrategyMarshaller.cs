@@ -34,7 +34,7 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RoutingStrategy Marshaller
-    /// </summary>       
+    /// </summary>
     public class RoutingStrategyMarshaller : IRequestMarshaller<RoutingStrategy, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RoutingStrategyMarshaller Instance = new RoutingStrategyMarshaller();
 
     }

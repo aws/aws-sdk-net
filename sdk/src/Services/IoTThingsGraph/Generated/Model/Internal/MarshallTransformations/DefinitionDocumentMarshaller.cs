@@ -34,7 +34,7 @@ namespace Amazon.IoTThingsGraph.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DefinitionDocument Marshaller
-    /// </summary>       
+    /// </summary>
     public class DefinitionDocumentMarshaller : IRequestMarshaller<DefinitionDocument, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.IoTThingsGraph.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DefinitionDocumentMarshaller Instance = new DefinitionDocumentMarshaller();
 
     }

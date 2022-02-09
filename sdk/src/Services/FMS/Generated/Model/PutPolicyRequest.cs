@@ -62,7 +62,7 @@ namespace Amazon.FMS.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// A DNS Firewall policy, which provides Route 53 Resolver DNS Firewall rules to filter
+    /// A DNS Firewall policy, which provides Route 53 Resolver DNS Firewall rules to filter
     /// DNS queries for specified VPCs.
     /// </para>
     ///  </li> </ul> 

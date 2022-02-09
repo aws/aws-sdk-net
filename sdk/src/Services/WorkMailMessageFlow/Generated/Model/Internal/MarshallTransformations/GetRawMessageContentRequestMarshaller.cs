@@ -55,7 +55,7 @@ namespace Amazon.WorkMailMessageFlow.Model.Internal.MarshallTransformations
         public IRequest Marshall(GetRawMessageContentRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.WorkMailMessageFlow");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-05-01";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-05-01";
             request.HttpMethod = "GET";
 
             if (!publicRequest.IsSetMessageId())

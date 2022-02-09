@@ -32,7 +32,7 @@ namespace Amazon.IoTJobsDataPlane
     public partial class AmazonIoTJobsDataPlaneConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.112");
+            InternalSDKUtils.BuildUserAgentString("3.7.0.121");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.IoTJobsDataPlane
         /// Default constructor
         /// </summary>
         public AmazonIoTJobsDataPlaneConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonIoTJobsDataPlaneDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "iot-jobs-data";
         }

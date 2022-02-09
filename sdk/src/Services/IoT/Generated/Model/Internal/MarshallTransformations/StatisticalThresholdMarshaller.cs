@@ -34,7 +34,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// StatisticalThreshold Marshaller
-    /// </summary>       
+    /// </summary>
     public class StatisticalThresholdMarshaller : IRequestMarshaller<StatisticalThreshold, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static StatisticalThresholdMarshaller Instance = new StatisticalThresholdMarshaller();
 
     }

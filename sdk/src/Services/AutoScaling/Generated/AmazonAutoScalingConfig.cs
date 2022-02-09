@@ -32,7 +32,7 @@ namespace Amazon.AutoScaling
     public partial class AmazonAutoScalingConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.8.10");
+            InternalSDKUtils.BuildUserAgentString("3.7.8.19");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.AutoScaling
         /// Default constructor
         /// </summary>
         public AmazonAutoScalingConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonAutoScalingDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "autoscaling";
         }

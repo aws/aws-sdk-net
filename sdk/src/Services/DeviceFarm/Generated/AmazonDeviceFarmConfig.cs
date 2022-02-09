@@ -32,7 +32,7 @@ namespace Amazon.DeviceFarm
     public partial class AmazonDeviceFarmConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.1.84");
+            InternalSDKUtils.BuildUserAgentString("3.7.1.93");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.DeviceFarm
         /// Default constructor
         /// </summary>
         public AmazonDeviceFarmConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonDeviceFarmDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "devicefarm";
         }

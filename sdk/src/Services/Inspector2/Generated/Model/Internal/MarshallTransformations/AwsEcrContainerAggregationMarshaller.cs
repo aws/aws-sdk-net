@@ -34,7 +34,7 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AwsEcrContainerAggregation Marshaller
-    /// </summary>       
+    /// </summary>
     public class AwsEcrContainerAggregationMarshaller : IRequestMarshaller<AwsEcrContainerAggregation, JsonMarshallerContext> 
     {
         /// <summary>
@@ -141,7 +141,7 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AwsEcrContainerAggregationMarshaller Instance = new AwsEcrContainerAggregationMarshaller();
 
     }

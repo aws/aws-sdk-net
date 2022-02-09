@@ -34,7 +34,7 @@ namespace Amazon.LookoutforVision.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// GreengrassConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class GreengrassConfigurationMarshaller : IRequestMarshaller<GreengrassConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -117,7 +117,7 @@ namespace Amazon.LookoutforVision.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static GreengrassConfigurationMarshaller Instance = new GreengrassConfigurationMarshaller();
 
     }

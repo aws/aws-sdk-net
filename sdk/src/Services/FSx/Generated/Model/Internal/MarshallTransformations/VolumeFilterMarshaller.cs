@@ -34,7 +34,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// VolumeFilter Marshaller
-    /// </summary>       
+    /// </summary>
     public class VolumeFilterMarshaller : IRequestMarshaller<VolumeFilter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static VolumeFilterMarshaller Instance = new VolumeFilterMarshaller();
 
     }

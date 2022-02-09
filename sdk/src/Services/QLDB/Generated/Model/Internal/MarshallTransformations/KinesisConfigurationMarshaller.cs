@@ -34,7 +34,7 @@ namespace Amazon.QLDB.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// KinesisConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class KinesisConfigurationMarshaller : IRequestMarshaller<KinesisConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.QLDB.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static KinesisConfigurationMarshaller Instance = new KinesisConfigurationMarshaller();
 
     }

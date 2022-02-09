@@ -34,7 +34,7 @@ namespace Amazon.MWAA.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// StatisticSet Marshaller
-    /// </summary>       
+    /// </summary>
     public class StatisticSetMarshaller : IRequestMarshaller<StatisticSet, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.MWAA.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static StatisticSetMarshaller Instance = new StatisticSetMarshaller();
 
     }

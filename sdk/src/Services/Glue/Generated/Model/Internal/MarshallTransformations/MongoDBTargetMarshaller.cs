@@ -34,7 +34,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// MongoDBTarget Marshaller
-    /// </summary>       
+    /// </summary>
     public class MongoDBTargetMarshaller : IRequestMarshaller<MongoDBTarget, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static MongoDBTargetMarshaller Instance = new MongoDBTargetMarshaller();
 
     }

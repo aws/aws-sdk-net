@@ -34,7 +34,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AccountCustomization Marshaller
-    /// </summary>       
+    /// </summary>
     public class AccountCustomizationMarshaller : IRequestMarshaller<AccountCustomization, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AccountCustomizationMarshaller Instance = new AccountCustomizationMarshaller();
 
     }

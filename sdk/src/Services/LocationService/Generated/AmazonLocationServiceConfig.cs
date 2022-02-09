@@ -32,7 +32,7 @@ namespace Amazon.LocationService
     public partial class AmazonLocationServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.7.4");
+            InternalSDKUtils.BuildUserAgentString("3.7.8.4");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.LocationService
         /// Default constructor
         /// </summary>
         public AmazonLocationServiceConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonLocationServiceDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "geo";
         }

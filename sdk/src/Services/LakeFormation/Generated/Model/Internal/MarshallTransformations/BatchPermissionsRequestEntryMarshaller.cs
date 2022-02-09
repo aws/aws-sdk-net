@@ -34,7 +34,7 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// BatchPermissionsRequestEntry Marshaller
-    /// </summary>       
+    /// </summary>
     public class BatchPermissionsRequestEntryMarshaller : IRequestMarshaller<BatchPermissionsRequestEntry, JsonMarshallerContext> 
     {
         /// <summary>
@@ -99,7 +99,7 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static BatchPermissionsRequestEntryMarshaller Instance = new BatchPermissionsRequestEntryMarshaller();
 
     }

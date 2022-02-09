@@ -34,7 +34,7 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Source Marshaller
-    /// </summary>       
+    /// </summary>
     public class SourceMarshaller : IRequestMarshaller<Source, JsonMarshallerContext> 
     {
         /// <summary>
@@ -85,7 +85,7 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SourceMarshaller Instance = new SourceMarshaller();
 
     }

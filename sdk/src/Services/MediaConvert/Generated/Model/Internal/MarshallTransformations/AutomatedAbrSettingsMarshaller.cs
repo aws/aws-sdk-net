@@ -34,7 +34,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AutomatedAbrSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class AutomatedAbrSettingsMarshaller : IRequestMarshaller<AutomatedAbrSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AutomatedAbrSettingsMarshaller Instance = new AutomatedAbrSettingsMarshaller();
 
     }

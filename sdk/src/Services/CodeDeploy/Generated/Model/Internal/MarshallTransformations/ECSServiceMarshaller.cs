@@ -34,7 +34,7 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ECSService Marshaller
-    /// </summary>       
+    /// </summary>
     public class ECSServiceMarshaller : IRequestMarshaller<ECSService, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ECSServiceMarshaller Instance = new ECSServiceMarshaller();
 
     }

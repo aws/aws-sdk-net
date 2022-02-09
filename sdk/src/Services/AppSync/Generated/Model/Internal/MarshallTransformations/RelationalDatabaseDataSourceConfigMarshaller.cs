@@ -34,7 +34,7 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RelationalDatabaseDataSourceConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class RelationalDatabaseDataSourceConfigMarshaller : IRequestMarshaller<RelationalDatabaseDataSourceConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RelationalDatabaseDataSourceConfigMarshaller Instance = new RelationalDatabaseDataSourceConfigMarshaller();
 
     }

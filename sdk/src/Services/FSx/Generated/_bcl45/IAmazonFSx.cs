@@ -824,6 +824,10 @@ namespace Amazon.FSx
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// Amazon FSx for OpenZFS
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// Amazon FSx for Windows File Server
         /// </para>
         ///  </li> </ul> 
@@ -930,6 +934,10 @@ namespace Amazon.FSx
         ///  </li> <li> 
         /// <para>
         /// Amazon FSx for NetApp ONTAP
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon FSx for OpenZFS
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3285,7 +3293,7 @@ namespace Amazon.FSx
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For FSx for Lustre file systems, you can update the following properties:
+        /// For Amazon FSx for Lustre file systems, you can update the following properties:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -3313,7 +3321,7 @@ namespace Amazon.FSx
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For FSx for ONTAP file systems, you can update the following properties:
+        /// For Amazon FSx for NetApp ONTAP file systems, you can update the following properties:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -3325,7 +3333,15 @@ namespace Amazon.FSx
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>DiskIopsConfiguration</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>FsxAdminPassword</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>StorageCapacity</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3350,10 +3366,6 @@ namespace Amazon.FSx
         ///  </li> <li> 
         /// <para>
         ///  <code>DailyAutomaticBackupStartTime</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>DiskIopsConfiguration</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3436,7 +3448,7 @@ namespace Amazon.FSx
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For FSx for Lustre file systems, you can update the following properties:
+        /// For Amazon FSx for Lustre file systems, you can update the following properties:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -3464,7 +3476,7 @@ namespace Amazon.FSx
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For FSx for ONTAP file systems, you can update the following properties:
+        /// For Amazon FSx for NetApp ONTAP file systems, you can update the following properties:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -3476,7 +3488,15 @@ namespace Amazon.FSx
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>DiskIopsConfiguration</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>FsxAdminPassword</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>StorageCapacity</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3501,10 +3521,6 @@ namespace Amazon.FSx
         ///  </li> <li> 
         /// <para>
         ///  <code>DailyAutomaticBackupStartTime</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>DiskIopsConfiguration</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>

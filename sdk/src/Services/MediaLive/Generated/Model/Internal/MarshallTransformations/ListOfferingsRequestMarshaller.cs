@@ -55,7 +55,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListOfferingsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.MediaLive");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-10-14";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-10-14";
             request.HttpMethod = "GET";
 
             

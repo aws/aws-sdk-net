@@ -36,6 +36,7 @@ namespace Amazon.LexModelsV2.Model
         private string _botId;
         private string _botVersion;
         private List<ImportSummary> _importSummaries = new List<ImportSummary>();
+        private string _localeId;
         private string _nextToken;
 
         /// <summary>
@@ -95,6 +96,24 @@ namespace Amazon.LexModelsV2.Model
         internal bool IsSetImportSummaries()
         {
             return this._importSummaries != null && this._importSummaries.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LocaleId. 
+        /// <para>
+        /// The locale specified in the request.
+        /// </para>
+        /// </summary>
+        public string LocaleId
+        {
+            get { return this._localeId; }
+            set { this._localeId = value; }
+        }
+
+        // Check to see if LocaleId property is set
+        internal bool IsSetLocaleId()
+        {
+            return this._localeId != null;
         }
 
         /// <summary>

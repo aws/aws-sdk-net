@@ -32,7 +32,7 @@ namespace Amazon.AppIntegrationsService
     public partial class AmazonAppIntegrationsServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.1.40");
+            InternalSDKUtils.BuildUserAgentString("3.7.1.49");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.AppIntegrationsService
         /// Default constructor
         /// </summary>
         public AmazonAppIntegrationsServiceConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonAppIntegrationsServiceDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "app-integrations";
         }

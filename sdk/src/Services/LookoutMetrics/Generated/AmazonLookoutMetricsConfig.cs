@@ -32,7 +32,7 @@ namespace Amazon.LookoutMetrics
     public partial class AmazonLookoutMetricsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.5.3");
+            InternalSDKUtils.BuildUserAgentString("3.7.7.5");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.LookoutMetrics
         /// Default constructor
         /// </summary>
         public AmazonLookoutMetricsConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonLookoutMetricsDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "lookoutmetrics";
         }

@@ -34,7 +34,7 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// StartShotDetectionFilter Marshaller
-    /// </summary>       
+    /// </summary>
     public class StartShotDetectionFilterMarshaller : IRequestMarshaller<StartShotDetectionFilter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static StartShotDetectionFilterMarshaller Instance = new StartShotDetectionFilterMarshaller();
 
     }

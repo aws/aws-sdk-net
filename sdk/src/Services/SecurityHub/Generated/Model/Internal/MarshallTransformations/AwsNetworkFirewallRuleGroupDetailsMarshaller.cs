@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AwsNetworkFirewallRuleGroupDetails Marshaller
-    /// </summary>       
+    /// </summary>
     public class AwsNetworkFirewallRuleGroupDetailsMarshaller : IRequestMarshaller<AwsNetworkFirewallRuleGroupDetails, JsonMarshallerContext> 
     {
         /// <summary>
@@ -96,7 +96,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AwsNetworkFirewallRuleGroupDetailsMarshaller Instance = new AwsNetworkFirewallRuleGroupDetailsMarshaller();
 
     }

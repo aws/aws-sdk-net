@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// This exception is thrown when the Amazon Cognito service cannot find the requested
+    /// This exception is thrown when the Amazon Cognito service can't find the requested
     /// resource.
     /// </summary>
     #if !NETSTANDARD

@@ -34,7 +34,7 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SsmControls Marshaller
-    /// </summary>       
+    /// </summary>
     public class SsmControlsMarshaller : IRequestMarshaller<SsmControls, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SsmControlsMarshaller Instance = new SsmControlsMarshaller();
 
     }

@@ -32,7 +32,7 @@ namespace Amazon.Route53RecoveryCluster
     public partial class AmazonRoute53RecoveryClusterConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.67");
+            InternalSDKUtils.BuildUserAgentString("3.7.0.76");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.Route53RecoveryCluster
         /// Default constructor
         /// </summary>
         public AmazonRoute53RecoveryClusterConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonRoute53RecoveryClusterDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "route53-recovery-cluster";
         }

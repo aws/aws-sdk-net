@@ -74,7 +74,8 @@ namespace Amazon.PI.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>db.name</code> - The name of the database to which the client is connected
-        /// (only Aurora PostgreSQL, RDS PostgreSQL, Aurora MySQL, RDS MySQL, and MariaDB)
+        /// (only Aurora PostgreSQL, Amazon RDS PostgreSQL, Aurora MySQL, Amazon RDS MySQL, and
+        /// MariaDB)
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -157,7 +158,7 @@ namespace Amazon.PI.Model
         ///  <ul> <li> 
         /// <para>
         ///  <code>db</code> - The name of the database to which the client is connected (only
-        /// Aurora PostgreSQL, RDS PostgreSQL, Aurora MySQL, RDS MySQL, and MariaDB)
+        /// Aurora PostgreSQL, Amazon RDS PostgreSQL, Aurora MySQL, Amazon RDS MySQL, and MariaDB)
         /// </para>
         ///  </li> <li> 
         /// <para>

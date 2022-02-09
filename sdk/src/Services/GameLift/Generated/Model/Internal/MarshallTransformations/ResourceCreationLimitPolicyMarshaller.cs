@@ -34,7 +34,7 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ResourceCreationLimitPolicy Marshaller
-    /// </summary>       
+    /// </summary>
     public class ResourceCreationLimitPolicyMarshaller : IRequestMarshaller<ResourceCreationLimitPolicy, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ResourceCreationLimitPolicyMarshaller Instance = new ResourceCreationLimitPolicyMarshaller();
 
     }

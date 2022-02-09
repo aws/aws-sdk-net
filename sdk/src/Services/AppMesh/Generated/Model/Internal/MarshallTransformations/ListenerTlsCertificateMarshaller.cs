@@ -34,7 +34,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ListenerTlsCertificate Marshaller
-    /// </summary>       
+    /// </summary>
     public class ListenerTlsCertificateMarshaller : IRequestMarshaller<ListenerTlsCertificate, JsonMarshallerContext> 
     {
         /// <summary>
@@ -82,7 +82,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ListenerTlsCertificateMarshaller Instance = new ListenerTlsCertificateMarshaller();
 
     }

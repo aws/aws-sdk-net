@@ -62,16 +62,16 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property DeveloperOnlyAttribute. <note> 
         /// <para>
-        /// We recommend that you use <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UserPoolClientType.html#CognitoUserPools-Type-UserPoolClientType-WriteAttributes">WriteAttributes</a>
+        /// You should use <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UserPoolClientType.html#CognitoUserPools-Type-UserPoolClientType-WriteAttributes">WriteAttributes</a>
         /// in the user pool client to control how attributes can be mutated for new use cases
         /// instead of using <code>DeveloperOnlyAttribute</code>.
         /// </para>
         ///  </note> 
         /// <para>
         /// Specifies whether the attribute type is developer only. This attribute can only be
-        /// modified by an administrator. Users will not be able to modify this attribute using
-        /// their access token. For example, <code>DeveloperOnlyAttribute</code> can be modified
-        /// using AdminUpdateUserAttributes but cannot be updated using UpdateUserAttributes.
+        /// modified by an administrator. Users won't be able to modify this attribute using their
+        /// access token. For example, <code>DeveloperOnlyAttribute</code> can be modified using
+        /// AdminUpdateUserAttributes but can't be updated using UpdateUserAttributes.
         /// </para>
         /// </summary>
         public bool DeveloperOnlyAttribute
@@ -93,8 +93,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  
         /// <para>
-        /// For any user pool attribute that's mapped to an identity provider attribute, you must
-        /// set this parameter to <code>true</code>. Amazon Cognito updates mapped attributes
+        /// For any user pool attribute that is mapped to an identity provider attribute, you
+        /// must set this parameter to <code>true</code>. Amazon Cognito updates mapped attributes
         /// when users sign in to your application through an identity provider. If an attribute
         /// is immutable, Amazon Cognito throws an error when it attempts to update the attribute.
         /// For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html">Specifying
@@ -154,7 +154,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Gets and sets the property Required. 
         /// <para>
         /// Specifies whether a user pool attribute is required. If the attribute is required
-        /// and the user does not provide a value, registration or sign-in will fail.
+        /// and the user doesn't provide a value, registration or sign-in will fail.
         /// </para>
         /// </summary>
         public bool Required

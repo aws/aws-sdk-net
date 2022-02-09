@@ -34,7 +34,7 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ContentArtifactsConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class ContentArtifactsConfigurationMarshaller : IRequestMarshaller<ContentArtifactsConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ContentArtifactsConfigurationMarshaller Instance = new ContentArtifactsConfigurationMarshaller();
 
     }

@@ -32,7 +32,7 @@ namespace Amazon.AuditManager
     public partial class AmazonAuditManagerConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.7.11");
+            InternalSDKUtils.BuildUserAgentString("3.7.8.0");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.AuditManager
         /// Default constructor
         /// </summary>
         public AmazonAuditManagerConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonAuditManagerDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "auditmanager";
         }

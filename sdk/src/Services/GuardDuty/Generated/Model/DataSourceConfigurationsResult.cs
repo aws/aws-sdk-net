@@ -36,6 +36,7 @@ namespace Amazon.GuardDuty.Model
         private CloudTrailConfigurationResult _cloudTrail;
         private DNSLogsConfigurationResult _dnsLogs;
         private FlowLogsConfigurationResult _flowLogs;
+        private KubernetesConfigurationResult _kubernetes;
         private S3LogsConfigurationResult _s3Logs;
 
         /// <summary>
@@ -93,6 +94,24 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetFlowLogs()
         {
             return this._flowLogs != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Kubernetes. 
+        /// <para>
+        /// An object that contains information on the status of all Kubernetes data sources.
+        /// </para>
+        /// </summary>
+        public KubernetesConfigurationResult Kubernetes
+        {
+            get { return this._kubernetes; }
+            set { this._kubernetes = value; }
+        }
+
+        // Check to see if Kubernetes property is set
+        internal bool IsSetKubernetes()
+        {
+            return this._kubernetes != null;
         }
 
         /// <summary>

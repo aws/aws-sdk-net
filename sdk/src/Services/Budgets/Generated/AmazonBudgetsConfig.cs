@@ -32,7 +32,7 @@ namespace Amazon.Budgets
     public partial class AmazonBudgetsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.112");
+            InternalSDKUtils.BuildUserAgentString("3.7.0.121");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.Budgets
         /// Default constructor
         /// </summary>
         public AmazonBudgetsConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonBudgetsDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "budgets";
         }

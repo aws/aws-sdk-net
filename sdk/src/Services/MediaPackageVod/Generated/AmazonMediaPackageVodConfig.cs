@@ -32,7 +32,7 @@ namespace Amazon.MediaPackageVod
     public partial class AmazonMediaPackageVodConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.4.30");
+            InternalSDKUtils.BuildUserAgentString("3.7.4.39");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.MediaPackageVod
         /// Default constructor
         /// </summary>
         public AmazonMediaPackageVodConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonMediaPackageVodDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "mediapackage-vod";
         }

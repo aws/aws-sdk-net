@@ -58,7 +58,7 @@ namespace Amazon.ServiceQuotas.Model.Internal.MarshallTransformations
             string target = "ServiceQuotasV20190624.DisassociateServiceQuotaTemplate";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-06-24";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-06-24";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";

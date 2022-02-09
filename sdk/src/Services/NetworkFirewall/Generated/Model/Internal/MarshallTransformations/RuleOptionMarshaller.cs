@@ -34,7 +34,7 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RuleOption Marshaller
-    /// </summary>       
+    /// </summary>
     public class RuleOptionMarshaller : IRequestMarshaller<RuleOption, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RuleOptionMarshaller Instance = new RuleOptionMarshaller();
 
     }

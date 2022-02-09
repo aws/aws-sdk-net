@@ -30,8 +30,8 @@ namespace Amazon.LexModelsV2.Model
 {
     /// <summary>
     /// Container for the parameters to the StartImport operation.
-    /// Starts importing a bot or bot locale from a zip archive that you uploaded to an S3
-    /// bucket.
+    /// Starts importing a bot, bot locale, or custom vocabulary from a zip archive that you
+    /// uploaded to an S3 bucket.
     /// </summary>
     public partial class StartImportRequest : AmazonLexModelsV2Request
     {
@@ -43,7 +43,7 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property FilePassword. 
         /// <para>
-        /// The password used to encrypt the zip archive that contains the bot or bot locale definition.
+        /// The password used to encrypt the zip archive that contains the resource definition.
         /// You should always encrypt the zip archive to protect it during transit between your
         /// site and Amazon Lex.
         /// </para>
@@ -105,7 +105,7 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property ResourceSpecification. 
         /// <para>
-        /// Parameters for creating the bot or bot locale.
+        /// Parameters for creating the bot, bot locale or custom vocabulary.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

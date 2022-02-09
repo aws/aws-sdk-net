@@ -34,7 +34,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ComputeLimits Marshaller
-    /// </summary>       
+    /// </summary>
     public class ComputeLimitsMarshaller : IRequestMarshaller<ComputeLimits, JsonMarshallerContext> 
     {
         /// <summary>
@@ -79,7 +79,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ComputeLimitsMarshaller Instance = new ComputeLimitsMarshaller();
 
     }

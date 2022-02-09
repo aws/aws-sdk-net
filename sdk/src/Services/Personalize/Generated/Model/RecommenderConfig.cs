@@ -34,6 +34,7 @@ namespace Amazon.Personalize.Model
     public partial class RecommenderConfig
     {
         private Dictionary<string, string> _itemExplorationConfig = new Dictionary<string, string>();
+        private int? _minRecommendationRequestsPerSecond;
 
         /// <summary>
         /// Gets and sets the property ItemExplorationConfig. 
@@ -56,6 +57,26 @@ namespace Amazon.Personalize.Model
         internal bool IsSetItemExplorationConfig()
         {
             return this._itemExplorationConfig != null && this._itemExplorationConfig.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MinRecommendationRequestsPerSecond. 
+        /// <para>
+        /// Specifies the requested minimum provisioned recommendation requests per second that
+        /// Amazon Personalize will support.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public int MinRecommendationRequestsPerSecond
+        {
+            get { return this._minRecommendationRequestsPerSecond.GetValueOrDefault(); }
+            set { this._minRecommendationRequestsPerSecond = value; }
+        }
+
+        // Check to see if MinRecommendationRequestsPerSecond property is set
+        internal bool IsSetMinRecommendationRequestsPerSecond()
+        {
+            return this._minRecommendationRequestsPerSecond.HasValue; 
         }
 
     }

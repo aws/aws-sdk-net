@@ -34,7 +34,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CampaignSmsMessage Marshaller
-    /// </summary>       
+    /// </summary>
     public class CampaignSmsMessageMarshaller : IRequestMarshaller<CampaignSmsMessage, JsonMarshallerContext> 
     {
         /// <summary>
@@ -85,7 +85,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CampaignSmsMessageMarshaller Instance = new CampaignSmsMessageMarshaller();
 
     }

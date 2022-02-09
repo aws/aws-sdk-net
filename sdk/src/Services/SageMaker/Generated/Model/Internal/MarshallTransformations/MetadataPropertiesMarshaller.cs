@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// MetadataProperties Marshaller
-    /// </summary>       
+    /// </summary>
     public class MetadataPropertiesMarshaller : IRequestMarshaller<MetadataProperties, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static MetadataPropertiesMarshaller Instance = new MetadataPropertiesMarshaller();
 
     }

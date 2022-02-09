@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RecycleBin.Model
 {
     /// <summary>
-    /// Information about the retention period for which a retention rule is to retain resources.
+    /// Information about the retention period for which the retention rule is to retain resources.
     /// </summary>
     public partial class RetentionPeriod
     {

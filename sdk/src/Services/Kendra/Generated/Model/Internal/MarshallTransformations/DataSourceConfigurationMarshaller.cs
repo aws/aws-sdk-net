@@ -34,7 +34,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DataSourceConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class DataSourceConfigurationMarshaller : IRequestMarshaller<DataSourceConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -63,6 +63,17 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 
                 var marshaller = DatabaseConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.DatabaseConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetFsxConfiguration())
+            {
+                context.Writer.WritePropertyName("FsxConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = FsxConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.FsxConfiguration, context);
 
                 context.Writer.WriteObjectEnd();
             }
@@ -159,7 +170,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DataSourceConfigurationMarshaller Instance = new DataSourceConfigurationMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DataColorPalette Marshaller
-    /// </summary>       
+    /// </summary>
     public class DataColorPaletteMarshaller : IRequestMarshaller<DataColorPalette, JsonMarshallerContext> 
     {
         /// <summary>
@@ -77,7 +77,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DataColorPaletteMarshaller Instance = new DataColorPaletteMarshaller();
 
     }

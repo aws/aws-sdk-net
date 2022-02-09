@@ -32,7 +32,7 @@ namespace Amazon.IoT1ClickProjects
     public partial class AmazonIoT1ClickProjectsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.112");
+            InternalSDKUtils.BuildUserAgentString("3.7.0.121");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.IoT1ClickProjects
         /// Default constructor
         /// </summary>
         public AmazonIoT1ClickProjectsConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonIoT1ClickProjectsDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "iot1click";
         }

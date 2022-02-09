@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kendra.Model
 {
     /// <summary>
-    /// Summary information for a Amazon Kendra data source. Returned in a call to the <code>DescribeDataSource</code>
-    /// operation.
+    /// Summary information for an Amazon Kendra data source. Returned in a call to the <code>DescribeDataSource</code>
+    /// API.
     /// </summary>
     public partial class DataSourceSummary
     {

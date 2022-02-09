@@ -326,7 +326,7 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TimedMetadata. Applies only to HLS outputs. Use this setting
+        /// Gets and sets the property TimedMetadata. Applies to HLS outputs. Use this setting
         /// to specify whether the service inserts the ID3 timed metadata from the input in this
         /// output.
         /// </summary>

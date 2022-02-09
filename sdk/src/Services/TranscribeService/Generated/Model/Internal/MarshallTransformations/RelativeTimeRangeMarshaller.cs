@@ -34,7 +34,7 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RelativeTimeRange Marshaller
-    /// </summary>       
+    /// </summary>
     public class RelativeTimeRangeMarshaller : IRequestMarshaller<RelativeTimeRange, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RelativeTimeRangeMarshaller Instance = new RelativeTimeRangeMarshaller();
 
     }

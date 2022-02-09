@@ -29,11 +29,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Honeycode.Model
 {
     /// <summary>
-    /// CellInput object contains the data needed to create or update cells in a table.
+    /// CellInput object contains the data needed to create or update cells in a table. 
+    /// 
+    ///  <note> 
+    /// <para>
+    ///  CellInput object has only a facts field or a fact field, but not both. A 400 bad
+    /// request will be thrown if both fact and facts field are present. 
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class CellInput
     {
         private string _fact;
+        private List<string> _facts = new List<string>();
 
         /// <summary>
         /// Gets and sets the property Fact. 
@@ -53,6 +61,26 @@ namespace Amazon.Honeycode.Model
         internal bool IsSetFact()
         {
             return this._fact != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Facts. 
+        /// <para>
+        ///  A list representing the values that are entered into a ROWSET cell. Facts list can
+        /// have either only values or rowIDs, and rowIDs should from the same table. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=220)]
+        public List<string> Facts
+        {
+            get { return this._facts; }
+            set { this._facts = value; }
+        }
+
+        // Check to see if Facts property is set
+        internal bool IsSetFacts()
+        {
+            return this._facts != null && this._facts.Count > 0; 
         }
 
     }

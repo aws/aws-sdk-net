@@ -32,7 +32,7 @@ namespace Amazon.SSMIncidents
     public partial class AmazonSSMIncidentsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.2.25");
+            InternalSDKUtils.BuildUserAgentString("3.7.3.0");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.SSMIncidents
         /// Default constructor
         /// </summary>
         public AmazonSSMIncidentsConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonSSMIncidentsDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "ssm-incidents";
         }

@@ -32,7 +32,7 @@ namespace Amazon.PersonalizeRuntime
     public partial class AmazonPersonalizeRuntimeConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.1.9");
+            InternalSDKUtils.BuildUserAgentString("3.7.1.18");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.PersonalizeRuntime
         /// Default constructor
         /// </summary>
         public AmazonPersonalizeRuntimeConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonPersonalizeRuntimeDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "personalize";
         }

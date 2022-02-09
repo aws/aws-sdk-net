@@ -34,7 +34,7 @@ namespace Amazon.MediaStore.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// MetricPolicyRule Marshaller
-    /// </summary>       
+    /// </summary>
     public class MetricPolicyRuleMarshaller : IRequestMarshaller<MetricPolicyRule, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.MediaStore.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static MetricPolicyRuleMarshaller Instance = new MetricPolicyRuleMarshaller();
 
     }

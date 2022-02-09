@@ -34,7 +34,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// NielsenConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class NielsenConfigurationMarshaller : IRequestMarshaller<NielsenConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static NielsenConfigurationMarshaller Instance = new NielsenConfigurationMarshaller();
 
     }

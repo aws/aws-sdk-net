@@ -55,7 +55,7 @@ namespace Amazon.Schemas.Model.Internal.MarshallTransformations
         public IRequest Marshall(DeleteRegistryRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Schemas");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-12-02";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-12-02";
             request.HttpMethod = "DELETE";
 
             if (!publicRequest.IsSetRegistryName())

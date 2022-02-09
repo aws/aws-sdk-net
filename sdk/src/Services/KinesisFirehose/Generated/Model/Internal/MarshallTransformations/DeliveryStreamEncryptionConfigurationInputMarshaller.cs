@@ -34,7 +34,7 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DeliveryStreamEncryptionConfigurationInput Marshaller
-    /// </summary>       
+    /// </summary>
     public class DeliveryStreamEncryptionConfigurationInputMarshaller : IRequestMarshaller<DeliveryStreamEncryptionConfigurationInput, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DeliveryStreamEncryptionConfigurationInputMarshaller Instance = new DeliveryStreamEncryptionConfigurationInputMarshaller();
 
     }

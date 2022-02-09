@@ -41,8 +41,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AccessToken. 
         /// <para>
-        ///  A time unit in “seconds”, “minutes”, “hours” or “days” for the value in AccessTokenValidity,
-        /// defaults to hours.
+        ///  A time unit in “seconds”, “minutes”, “hours”, or “days” for the value in AccessTokenValidity,
+        /// defaulting to hours.
         /// </para>
         /// </summary>
         public TimeUnitsType AccessToken
@@ -60,8 +60,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property IdToken. 
         /// <para>
-        /// A time unit in “seconds”, “minutes”, “hours” or “days” for the value in IdTokenValidity,
-        /// defaults to hours.
+        /// A time unit in “seconds”, “minutes”, “hours”, or “days” for the value in IdTokenValidity,
+        /// defaulting to hours.
         /// </para>
         /// </summary>
         public TimeUnitsType IdToken
@@ -79,8 +79,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property RefreshToken. 
         /// <para>
-        /// A time unit in “seconds”, “minutes”, “hours” or “days” for the value in RefreshTokenValidity,
-        /// defaults to days.
+        /// A time unit in “seconds”, “minutes”, “hours”, or “days” for the value in RefreshTokenValidity,
+        /// defaulting to days.
         /// </para>
         /// </summary>
         public TimeUnitsType RefreshToken

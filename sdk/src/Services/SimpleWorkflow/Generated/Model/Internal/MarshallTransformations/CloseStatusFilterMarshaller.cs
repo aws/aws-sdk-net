@@ -34,7 +34,7 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CloseStatusFilter Marshaller
-    /// </summary>       
+    /// </summary>
     public class CloseStatusFilterMarshaller : IRequestMarshaller<CloseStatusFilter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CloseStatusFilterMarshaller Instance = new CloseStatusFilterMarshaller();
 
     }

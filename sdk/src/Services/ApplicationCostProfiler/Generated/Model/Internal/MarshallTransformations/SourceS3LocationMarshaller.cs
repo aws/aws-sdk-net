@@ -34,7 +34,7 @@ namespace Amazon.ApplicationCostProfiler.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SourceS3Location Marshaller
-    /// </summary>       
+    /// </summary>
     public class SourceS3LocationMarshaller : IRequestMarshaller<SourceS3Location, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.ApplicationCostProfiler.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SourceS3LocationMarshaller Instance = new SourceS3LocationMarshaller();
 
     }

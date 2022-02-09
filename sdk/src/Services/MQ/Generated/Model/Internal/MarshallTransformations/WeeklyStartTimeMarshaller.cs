@@ -34,7 +34,7 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// WeeklyStartTime Marshaller
-    /// </summary>       
+    /// </summary>
     public class WeeklyStartTimeMarshaller : IRequestMarshaller<WeeklyStartTime, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static WeeklyStartTimeMarshaller Instance = new WeeklyStartTimeMarshaller();
 
     }

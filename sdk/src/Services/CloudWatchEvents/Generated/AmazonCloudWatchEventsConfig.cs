@@ -32,7 +32,7 @@ namespace Amazon.CloudWatchEvents
     public partial class AmazonCloudWatchEventsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.4.57");
+            InternalSDKUtils.BuildUserAgentString("3.7.4.66");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.CloudWatchEvents
         /// Default constructor
         /// </summary>
         public AmazonCloudWatchEventsConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonCloudWatchEventsDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "events";
         }

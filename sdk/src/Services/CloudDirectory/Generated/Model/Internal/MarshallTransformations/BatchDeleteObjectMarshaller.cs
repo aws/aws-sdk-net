@@ -34,7 +34,7 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// BatchDeleteObject Marshaller
-    /// </summary>       
+    /// </summary>
     public class BatchDeleteObjectMarshaller : IRequestMarshaller<BatchDeleteObject, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static BatchDeleteObjectMarshaller Instance = new BatchDeleteObjectMarshaller();
 
     }

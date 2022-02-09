@@ -34,7 +34,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ConnectorProfileCredentials Marshaller
-    /// </summary>       
+    /// </summary>
     public class ConnectorProfileCredentialsMarshaller : IRequestMarshaller<ConnectorProfileCredentials, JsonMarshallerContext> 
     {
         /// <summary>
@@ -52,6 +52,17 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 
                 var marshaller = AmplitudeConnectorProfileCredentialsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Amplitude, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetCustomConnector())
+            {
+                context.Writer.WritePropertyName("CustomConnector");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = CustomConnectorProfileCredentialsMarshaller.Instance;
+                marshaller.Marshall(requestObject.CustomConnector, context);
 
                 context.Writer.WriteObjectEnd();
             }
@@ -236,7 +247,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ConnectorProfileCredentialsMarshaller Instance = new ConnectorProfileCredentialsMarshaller();
 
     }

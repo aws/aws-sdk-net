@@ -34,7 +34,7 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ExportRevisionsToS3RequestDetails Marshaller
-    /// </summary>       
+    /// </summary>
     public class ExportRevisionsToS3RequestDetailsMarshaller : IRequestMarshaller<ExportRevisionsToS3RequestDetails, JsonMarshallerContext> 
     {
         /// <summary>
@@ -82,7 +82,7 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ExportRevisionsToS3RequestDetailsMarshaller Instance = new ExportRevisionsToS3RequestDetailsMarshaller();
 
     }

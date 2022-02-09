@@ -34,7 +34,7 @@ namespace Amazon.NimbleStudio.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// StreamConfigurationCreate Marshaller
-    /// </summary>       
+    /// </summary>
     public class StreamConfigurationCreateMarshaller : IRequestMarshaller<StreamConfigurationCreate, JsonMarshallerContext> 
     {
         /// <summary>
@@ -100,7 +100,7 @@ namespace Amazon.NimbleStudio.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static StreamConfigurationCreateMarshaller Instance = new StreamConfigurationCreateMarshaller();
 
     }

@@ -98,6 +98,9 @@ namespace Amazon.Synthetics
         /// <exception cref="Amazon.Synthetics.Model.InternalServerException">
         /// An unknown internal error occurred.
         /// </exception>
+        /// <exception cref="Amazon.Synthetics.Model.RequestEntityTooLargeException">
+        /// One of the input resources is larger than is allowed.
+        /// </exception>
         /// <exception cref="Amazon.Synthetics.Model.ValidationException">
         /// A parameter could not be validated.
         /// </exception>
@@ -231,10 +234,18 @@ namespace Amazon.Synthetics
         /// 
         ///  
         /// <para>
-        /// This operation does not have resource-level authorization, so if a user is able to
-        /// use <code>DescribeCanaries</code>, the user can see all of the canaries in the account.
-        /// A deny policy can only be used to restrict access to all canaries. It cannot be used
-        /// on specific resources. 
+        /// This operation supports resource-level authorization using an IAM policy and the <code>Names</code>
+        /// parameter. If you specify the <code>Names</code> parameter, the operation is successful
+        /// only if you have authorization to view all the canaries that you specify in your request.
+        /// If you do not have permission to view any of the canaries, the request fails with
+        /// a 403 response.
+        /// </para>
+        ///  
+        /// <para>
+        /// You are required to use the <code>Names</code> parameter if you are logged on to a
+        /// user or role that has an IAM policy that restricts which canaries that you are allowed
+        /// to view. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Restricted.html">
+        /// Limiting a user to viewing specific canaries</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeCanaries service method.</param>
@@ -283,6 +294,22 @@ namespace Amazon.Synthetics
         /// <summary>
         /// Use this operation to see information from the most recent run of each canary that
         /// you have created.
+        /// 
+        ///  
+        /// <para>
+        /// This operation supports resource-level authorization using an IAM policy and the <code>Names</code>
+        /// parameter. If you specify the <code>Names</code> parameter, the operation is successful
+        /// only if you have authorization to view all the canaries that you specify in your request.
+        /// If you do not have permission to view any of the canaries, the request fails with
+        /// a 403 response.
+        /// </para>
+        ///  
+        /// <para>
+        /// You are required to use the <code>Names</code> parameter if you are logged on to a
+        /// user or role that has an IAM policy that restricts which canaries that you are allowed
+        /// to view. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Restricted.html">
+        /// Limiting a user to viewing specific canaries</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeCanariesLastRun service method.</param>
         /// 
@@ -774,6 +801,9 @@ namespace Amazon.Synthetics
         /// </exception>
         /// <exception cref="Amazon.Synthetics.Model.InternalServerException">
         /// An unknown internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Synthetics.Model.RequestEntityTooLargeException">
+        /// One of the input resources is larger than is allowed.
         /// </exception>
         /// <exception cref="Amazon.Synthetics.Model.ResourceNotFoundException">
         /// One of the specified resources was not found.

@@ -32,7 +32,7 @@ namespace Amazon.ComprehendMedical
     public partial class AmazonComprehendMedicalConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.2.6");
+            InternalSDKUtils.BuildUserAgentString("3.7.2.15");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.ComprehendMedical
         /// Default constructor
         /// </summary>
         public AmazonComprehendMedicalConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonComprehendMedicalDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "comprehendmedical";
         }

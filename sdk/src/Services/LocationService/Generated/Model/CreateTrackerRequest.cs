@@ -136,14 +136,10 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property PricingPlan. 
         /// <para>
-        /// Optionally specifies the pricing plan for the tracker resource. Defaults to <code>RequestBasedUsage</code>.
-        /// </para>
-        ///  
-        /// <para>
-        /// For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon
-        /// Location Service pricing</a>.
+        /// No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.
         /// </para>
         /// </summary>
+        [Obsolete("Deprecated. If included, the only allowed value is RequestBasedUsage.")]
         public PricingPlan PricingPlan
         {
             get { return this._pricingPlan; }
@@ -159,30 +155,10 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property PricingPlanDataSource. 
         /// <para>
-        /// Specifies the data provider for the tracker resource.
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Required value for the following pricing plans: <code>MobileAssetTracking </code>|
-        /// <code>MobileAssetManagement</code> 
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// For more information about <a href="https://aws.amazon.com/location/data-providers/">Data
-        /// Providers</a>, and <a href="https://aws.amazon.com/location/pricing/">Pricing plans</a>,
-        /// see the Amazon Location Service product page.
-        /// </para>
-        ///  <note> 
-        /// <para>
-        /// Amazon Location Service only uses <code>PricingPlanDataSource</code> to calculate
-        /// billing for your tracker resource. Your data will not be shared with the data provider,
-        /// and will remain in your AWS account or Region unless you move it.
-        /// </para>
-        ///  </note> 
-        /// <para>
-        /// Valid values: <code>Esri</code> | <code>Here</code> 
+        /// This parameter is no longer used.
         /// </para>
         /// </summary>
+        [Obsolete("Deprecated. No longer allowed.")]
         public string PricingPlanDataSource
         {
             get { return this._pricingPlanDataSource; }

@@ -34,7 +34,7 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// MonthlySchedule Marshaller
-    /// </summary>       
+    /// </summary>
     public class MonthlyScheduleMarshaller : IRequestMarshaller<MonthlySchedule, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static MonthlyScheduleMarshaller Instance = new MonthlyScheduleMarshaller();
 
     }

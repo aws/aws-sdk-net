@@ -56,7 +56,7 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.GroundStation");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-05-23";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-05-23";
             request.HttpMethod = "PUT";
 
             if (!publicRequest.IsSetMissionProfileId())
@@ -114,7 +114,6 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.TrackingConfigArn);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

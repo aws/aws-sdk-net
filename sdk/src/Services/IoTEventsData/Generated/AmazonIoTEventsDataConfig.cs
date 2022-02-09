@@ -32,7 +32,7 @@ namespace Amazon.IoTEventsData
     public partial class AmazonIoTEventsDataConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.1.84");
+            InternalSDKUtils.BuildUserAgentString("3.7.1.93");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.IoTEventsData
         /// Default constructor
         /// </summary>
         public AmazonIoTEventsDataConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonIoTEventsDataDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "ioteventsdata";
         }

@@ -34,7 +34,7 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DateFilter Marshaller
-    /// </summary>       
+    /// </summary>
     public class DateFilterMarshaller : IRequestMarshaller<DateFilter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DateFilterMarshaller Instance = new DateFilterMarshaller();
 
     }

@@ -58,7 +58,7 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
             string target = "AWSPoseidonService_V2015_11_01.DescribeTags";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-11-01";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-11-01";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -95,7 +95,6 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
                     context.Writer.Write(publicRequest.NextToken);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

@@ -56,6 +56,7 @@ namespace Amazon.NimbleStudio.Model
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private DateTime? _updatedAt;
         private string _updatedBy;
+        private List<ValidationResult> _validationResults = new List<ValidationResult>();
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -350,6 +351,24 @@ namespace Amazon.NimbleStudio.Model
         internal bool IsSetUpdatedBy()
         {
             return this._updatedBy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ValidationResults. 
+        /// <para>
+        /// The list of the latest validation results.
+        /// </para>
+        /// </summary>
+        public List<ValidationResult> ValidationResults
+        {
+            get { return this._validationResults; }
+            set { this._validationResults = value; }
+        }
+
+        // Check to see if ValidationResults property is set
+        internal bool IsSetValidationResults()
+        {
+            return this._validationResults != null && this._validationResults.Count > 0; 
         }
 
     }

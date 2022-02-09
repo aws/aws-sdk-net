@@ -90,9 +90,10 @@ namespace ServiceClientGenerator.Generators.Marshallers
     var payload = this.Operation.ResponsePayloadMember;
     var unmarshallPayload = payload != null && payload.IsStructure;
     var payloadIsStream= payload != null && !unmarshallPayload;
-    if( this.Operation.ResponseHasBodyMembers || payload != null )
+    if (this.Operation.ResponseHasBodyMembers || payload != null)
     {
-        if(this.Operation.AllowEmptyResult){
+        if (this.Operation.AllowEmptyResult)
+        {
             throw new NotImplementedException("AllowEmptyResult is not implemented for JSON unmarshallers");
         }
         else if (payloadIsStream)
@@ -105,14 +106,14 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line hidden
             this.Write("            response.");
             
-            #line 43 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCResponseUnmarshaller.tt"
+            #line 44 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCResponseUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(payload.PropertyName));
             
             #line default
             #line hidden
             this.Write(" = context.Stream;\r\n");
             
-            #line 44 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCResponseUnmarshaller.tt"
+            #line 45 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCResponseUnmarshaller.tt"
 
             }
             else if (payload.ModelShape.IsString)
@@ -124,14 +125,14 @@ namespace ServiceClientGenerator.Generators.Marshallers
             this.Write("            using (var sr = new StreamReader(context.Stream))\r\n            {\r\n   " +
                     "             response.");
             
-            #line 51 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCResponseUnmarshaller.tt"
+            #line 52 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCResponseUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(payload.PropertyName));
             
             #line default
             #line hidden
             this.Write(" = sr.ReadToEnd();\r\n            }\r\n");
             
-            #line 53 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCResponseUnmarshaller.tt"
+            #line 54 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCResponseUnmarshaller.tt"
 
             }
             else if (payload.ModelShape.IsMemoryStream)
@@ -144,14 +145,14 @@ namespace ServiceClientGenerator.Generators.Marshallers
                     "yStream(context.Stream, ms);\r\n            ms.Seek(0, SeekOrigin.Begin);\r\n       " +
                     "     response.");
             
-            #line 61 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCResponseUnmarshaller.tt"
+            #line 62 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCResponseUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(payload.PropertyName));
             
             #line default
             #line hidden
             this.Write(" = ms;\r\n");
             
-            #line 62 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCResponseUnmarshaller.tt"
+            #line 63 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCResponseUnmarshaller.tt"
 
             }
             else
@@ -171,24 +172,24 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line hidden
             this.Write("            var unmarshaller = ");
             
-            #line 76 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCResponseUnmarshaller.tt"
+            #line 77 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCResponseUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(payload.DetermineTypeUnmarshallerInstantiate()));
             
             #line default
             #line hidden
             this.Write(";\r\n            response.");
             
-            #line 77 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCResponseUnmarshaller.tt"
+            #line 78 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCResponseUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(payload.PropertyName));
             
             #line default
             #line hidden
             this.Write(" = unmarshaller.Unmarshall(context);\r\n");
             
-            #line 78 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCResponseUnmarshaller.tt"
+            #line 79 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCResponseUnmarshaller.tt"
 
         }
-		else if(this.IsWrapped)
+		else if (this.IsWrapped)
 		{
 
             
@@ -196,21 +197,21 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line hidden
             this.Write("\t\t\tresponse.");
             
-            #line 83 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCResponseUnmarshaller.tt"
+            #line 84 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCResponseUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.WrappedResultMember));
             
             #line default
             #line hidden
             this.Write(" = ");
             
-            #line 83 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCResponseUnmarshaller.tt"
+            #line 84 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCResponseUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Structure.Name));
             
             #line default
             #line hidden
             this.Write("Unmarshaller.Instance.Unmarshall(context);\r\n");
             
-            #line 84 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCResponseUnmarshaller.tt"
+            #line 85 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCResponseUnmarshaller.tt"
 
 		}
         else
@@ -222,7 +223,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             this.Write("            context.Read();\r\n            int targetDepth = context.CurrentDepth;\r" +
                     "\n            while (context.ReadAtDepth(targetDepth))\r\n            {\r\n");
             
-            #line 93 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCResponseUnmarshaller.tt"
+            #line 94 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCResponseUnmarshaller.tt"
 
         
             foreach (var member in this.Operation.ResponseBodyMembers)
@@ -233,21 +234,21 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line hidden
             this.Write("                if (context.TestExpression(\"");
             
-            #line 98 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCResponseUnmarshaller.tt"
+            #line 99 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCResponseUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallName));
             
             #line default
             #line hidden
             this.Write("\", targetDepth))\r\n                {\r\n                    var unmarshaller = ");
             
-            #line 100 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCResponseUnmarshaller.tt"
+            #line 101 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCResponseUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.DetermineTypeUnmarshallerInstantiate()));
             
             #line default
             #line hidden
             this.Write(";\r\n                    response.");
             
-            #line 101 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCResponseUnmarshaller.tt"
+            #line 102 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCResponseUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
             
             #line default
@@ -255,7 +256,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             this.Write(" = unmarshaller.Unmarshall(context);\r\n                    continue;\r\n            " +
                     "    }\r\n");
             
-            #line 104 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCResponseUnmarshaller.tt"
+            #line 105 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCResponseUnmarshaller.tt"
 
             }
 
@@ -264,7 +265,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line hidden
             this.Write("            }\r\n");
             
-            #line 108 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCResponseUnmarshaller.tt"
+            #line 109 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCResponseUnmarshaller.tt"
 
         }
     }
@@ -298,7 +299,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             {
 ");
             
-            #line 136 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCResponseUnmarshaller.tt"
+            #line 137 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCResponseUnmarshaller.tt"
 
     foreach (var exception in this.Operation.Exceptions)
     {
@@ -308,14 +309,14 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line hidden
             this.Write("                if (errorResponse.Code != null && errorResponse.Code.Equals(\"");
             
-            #line 140 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCResponseUnmarshaller.tt"
+            #line 141 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCResponseUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(exception.Code));
             
             #line default
             #line hidden
             this.Write("\"))\r\n                {\r\n                    return ");
             
-            #line 142 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCResponseUnmarshaller.tt"
+            #line 143 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCResponseUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(exception.Name));
             
             #line default
@@ -323,7 +324,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             this.Write("Unmarshaller.Instance.Unmarshall(contextCopy, errorResponse);\r\n                }\r" +
                     "\n");
             
-            #line 144 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCResponseUnmarshaller.tt"
+            #line 145 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCResponseUnmarshaller.tt"
 
     }
 
@@ -332,7 +333,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line hidden
             this.Write("            }\r\n            return new ");
             
-            #line 148 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCResponseUnmarshaller.tt"
+            #line 149 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCResponseUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.BaseException));
             
             #line default
@@ -340,7 +341,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             this.Write("(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorRe" +
                     "sponse.Code, errorResponse.RequestId, errorResponse.StatusCode);\r\n        }\r\n\r\n");
             
-            #line 151 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCResponseUnmarshaller.tt"
+            #line 152 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCResponseUnmarshaller.tt"
 
     if (payload != null && payload.IsStreaming)
     {
@@ -361,7 +362,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
 
 ");
             
-            #line 166 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCResponseUnmarshaller.tt"
+            #line 167 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCResponseUnmarshaller.tt"
 
 	}
     this.AddResponseSingletonMethod();

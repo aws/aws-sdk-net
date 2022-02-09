@@ -60,14 +60,28 @@ namespace Amazon.S3
         public string Key { get; set; }
 
         /// <summary>
-        /// The full name of the S3 Outpost Resource
+        /// The full name of the S3 Outpost Resource. This property will keep the original
+        /// delimiters of the Resource portion of the ARN. For example, if the original ARN was 
+        /// arn:aws:s3-outposts:us-east-1:ACCOUNT_ID:outpost/OUTPOST_ID/accesspoint/ACCESSPOINT_ID/obj
+        /// the returned FullAccessPointName will be 
+        /// arn:aws:s3-outposts:us-east-1:ACCOUNT_ID:outpost/OUTPOST_ID/accesspoint/ACCESSPOINT_ID.
         /// </summary>
         public string FullAccessPointName
         {
             get
             {
-                return $"arn:{_arn.Partition}:{_arn.Service}:{_arn.Region}:" +
-                    $"{_arn.AccountId}:outpost:{OutpostId}:accesspoint:{AccessPointName}";
+                var outpostsResource = new StringBuilder();
+                var parts = _arn.Resource.Split(':', '/');
+                for (var partIndex = 0; partIndex < 4; partIndex++)
+                {
+                    if (partIndex != 0)
+                    {
+                        outpostsResource.Append(_arn.Resource.Substring(outpostsResource.Length, 1));
+                    }
+                    outpostsResource.Append(parts[partIndex]);
+                }
+
+                return $"arn:{_arn.Partition}:{_arn.Service}:{_arn.Region}:{_arn.AccountId}:{outpostsResource}";
             }
         }
     }

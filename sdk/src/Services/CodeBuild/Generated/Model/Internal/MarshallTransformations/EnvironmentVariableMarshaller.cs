@@ -34,7 +34,7 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// EnvironmentVariable Marshaller
-    /// </summary>       
+    /// </summary>
     public class EnvironmentVariableMarshaller : IRequestMarshaller<EnvironmentVariable, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static EnvironmentVariableMarshaller Instance = new EnvironmentVariableMarshaller();
 
     }

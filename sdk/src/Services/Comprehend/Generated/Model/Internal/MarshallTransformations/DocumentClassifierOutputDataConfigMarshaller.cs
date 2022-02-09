@@ -34,7 +34,7 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DocumentClassifierOutputDataConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class DocumentClassifierOutputDataConfigMarshaller : IRequestMarshaller<DocumentClassifierOutputDataConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DocumentClassifierOutputDataConfigMarshaller Instance = new DocumentClassifierOutputDataConfigMarshaller();
 
     }

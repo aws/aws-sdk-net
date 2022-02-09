@@ -34,7 +34,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// OnFailure Marshaller
-    /// </summary>       
+    /// </summary>
     public class OnFailureMarshaller : IRequestMarshaller<OnFailure, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static OnFailureMarshaller Instance = new OnFailureMarshaller();
 
     }

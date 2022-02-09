@@ -34,7 +34,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// EventCondition Marshaller
-    /// </summary>       
+    /// </summary>
     public class EventConditionMarshaller : IRequestMarshaller<EventCondition, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static EventConditionMarshaller Instance = new EventConditionMarshaller();
 
     }

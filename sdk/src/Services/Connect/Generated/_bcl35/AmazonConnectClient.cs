@@ -53,8 +53,8 @@ namespace Amazon.Connect
     /// </para>
     ///  
     /// <para>
-    /// You can connect programmatically to an AWS service by using an endpoint. For a list
-    /// of Amazon Connect endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
+    /// You can connect programmatically to an Amazon Web Services service by using an endpoint.
+    /// For a list of Amazon Connect endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
     /// Connect Endpoints</a>.
     /// </para>
     ///  <note> 
@@ -439,6 +439,76 @@ namespace Amazon.Connect
         public virtual AssociateBotResponse EndAssociateBot(IAsyncResult asyncResult)
         {
             return EndInvoke<AssociateBotResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  AssociateDefaultVocabulary
+
+        /// <summary>
+        /// Associates an existing vocabulary as the default. Contact Lens for Amazon Connect
+        /// uses the vocabulary in post-call and real-time analysis sessions for the given language.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateDefaultVocabulary service method.</param>
+        /// 
+        /// <returns>The response from the AssociateDefaultVocabulary service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateDefaultVocabulary">REST API Reference for AssociateDefaultVocabulary Operation</seealso>
+        public virtual AssociateDefaultVocabularyResponse AssociateDefaultVocabulary(AssociateDefaultVocabularyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateDefaultVocabularyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateDefaultVocabularyResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateDefaultVocabularyResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateDefaultVocabulary operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateDefaultVocabulary operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateDefaultVocabulary
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateDefaultVocabulary">REST API Reference for AssociateDefaultVocabulary Operation</seealso>
+        public virtual IAsyncResult BeginAssociateDefaultVocabulary(AssociateDefaultVocabularyRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateDefaultVocabularyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateDefaultVocabularyResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AssociateDefaultVocabulary operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateDefaultVocabulary.</param>
+        /// 
+        /// <returns>Returns a  AssociateDefaultVocabularyResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateDefaultVocabulary">REST API Reference for AssociateDefaultVocabulary Operation</seealso>
+        public virtual AssociateDefaultVocabularyResponse EndAssociateDefaultVocabulary(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AssociateDefaultVocabularyResponse>(asyncResult);
         }
 
         #endregion
@@ -1330,7 +1400,7 @@ namespace Amazon.Connect
         #region  CreateIntegrationAssociation
 
         /// <summary>
-        /// Creates an AWS resource association with an Amazon Connect instance.
+        /// Creates an Amazon Web Services resource association with an Amazon Connect instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateIntegrationAssociation service method.</param>
         /// 
@@ -1932,6 +2002,84 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  CreateVocabulary
+
+        /// <summary>
+        /// Creates a custom vocabulary associated with your Amazon Connect instance. You can
+        /// set a custom vocabulary to be your default vocabulary for a given language. Contact
+        /// Lens for Amazon Connect uses the default vocabulary in post-call and real-time contact
+        /// analysis sessions for that language.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateVocabulary service method.</param>
+        /// 
+        /// <returns>The response from the CreateVocabulary service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceConflictException">
+        /// A resource already has that name.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateVocabulary">REST API Reference for CreateVocabulary Operation</seealso>
+        public virtual CreateVocabularyResponse CreateVocabulary(CreateVocabularyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateVocabularyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateVocabularyResponseUnmarshaller.Instance;
+
+            return Invoke<CreateVocabularyResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateVocabulary operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateVocabulary operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateVocabulary
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateVocabulary">REST API Reference for CreateVocabulary Operation</seealso>
+        public virtual IAsyncResult BeginCreateVocabulary(CreateVocabularyRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateVocabularyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateVocabularyResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateVocabulary operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateVocabulary.</param>
+        /// 
+        /// <returns>Returns a  CreateVocabularyResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateVocabulary">REST API Reference for CreateVocabulary Operation</seealso>
+        public virtual CreateVocabularyResponse EndCreateVocabulary(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateVocabularyResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteContactFlow
 
         /// <summary>
@@ -2229,8 +2377,8 @@ namespace Amazon.Connect
         #region  DeleteIntegrationAssociation
 
         /// <summary>
-        /// Deletes an AWS resource association from an Amazon Connect instance. The association
-        /// must not have any use cases associated with it.
+        /// Deletes an Amazon Web Services resource association from an Amazon Connect instance.
+        /// The association must not have any use cases associated with it.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteIntegrationAssociation service method.</param>
         /// 
@@ -2654,6 +2802,78 @@ namespace Amazon.Connect
         public virtual DeleteUserHierarchyGroupResponse EndDeleteUserHierarchyGroup(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteUserHierarchyGroupResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteVocabulary
+
+        /// <summary>
+        /// Deletes the vocabulary that has the given identifier.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVocabulary service method.</param>
+        /// 
+        /// <returns>The response from the DeleteVocabulary service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
+        /// That resource is already in use. Please try another.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteVocabulary">REST API Reference for DeleteVocabulary Operation</seealso>
+        public virtual DeleteVocabularyResponse DeleteVocabulary(DeleteVocabularyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteVocabularyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteVocabularyResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteVocabularyResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteVocabulary operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVocabulary operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteVocabulary
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteVocabulary">REST API Reference for DeleteVocabulary Operation</seealso>
+        public virtual IAsyncResult BeginDeleteVocabulary(DeleteVocabularyRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteVocabularyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteVocabularyResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteVocabulary operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteVocabulary.</param>
+        /// 
+        /// <returns>Returns a  DeleteVocabularyResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteVocabulary">REST API Reference for DeleteVocabulary Operation</seealso>
+        public virtual DeleteVocabularyResponse EndDeleteVocabulary(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteVocabularyResponse>(asyncResult);
         }
 
         #endregion
@@ -3751,6 +3971,75 @@ namespace Amazon.Connect
         public virtual DescribeUserHierarchyStructureResponse EndDescribeUserHierarchyStructure(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeUserHierarchyStructureResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeVocabulary
+
+        /// <summary>
+        /// Describes the specified vocabulary.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVocabulary service method.</param>
+        /// 
+        /// <returns>The response from the DescribeVocabulary service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeVocabulary">REST API Reference for DescribeVocabulary Operation</seealso>
+        public virtual DescribeVocabularyResponse DescribeVocabulary(DescribeVocabularyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeVocabularyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeVocabularyResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeVocabularyResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeVocabulary operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVocabulary operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeVocabulary
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeVocabulary">REST API Reference for DescribeVocabulary Operation</seealso>
+        public virtual IAsyncResult BeginDescribeVocabulary(DescribeVocabularyRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeVocabularyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeVocabularyResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeVocabulary operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeVocabulary.</param>
+        /// 
+        /// <returns>Returns a  DescribeVocabularyResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeVocabulary">REST API Reference for DescribeVocabulary Operation</seealso>
+        public virtual DescribeVocabularyResponse EndDescribeVocabulary(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeVocabularyResponse>(asyncResult);
         }
 
         #endregion
@@ -5088,6 +5377,72 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  ListDefaultVocabularies
+
+        /// <summary>
+        /// Lists the default vocabularies for the specified Amazon Connect instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDefaultVocabularies service method.</param>
+        /// 
+        /// <returns>The response from the ListDefaultVocabularies service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListDefaultVocabularies">REST API Reference for ListDefaultVocabularies Operation</seealso>
+        public virtual ListDefaultVocabulariesResponse ListDefaultVocabularies(ListDefaultVocabulariesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDefaultVocabulariesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDefaultVocabulariesResponseUnmarshaller.Instance;
+
+            return Invoke<ListDefaultVocabulariesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListDefaultVocabularies operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListDefaultVocabularies operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDefaultVocabularies
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListDefaultVocabularies">REST API Reference for ListDefaultVocabularies Operation</seealso>
+        public virtual IAsyncResult BeginListDefaultVocabularies(ListDefaultVocabulariesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDefaultVocabulariesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDefaultVocabulariesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListDefaultVocabularies operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDefaultVocabularies.</param>
+        /// 
+        /// <returns>Returns a  ListDefaultVocabulariesResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListDefaultVocabularies">REST API Reference for ListDefaultVocabularies Operation</seealso>
+        public virtual ListDefaultVocabulariesResponse EndListDefaultVocabularies(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListDefaultVocabulariesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListHoursOfOperations
 
         /// <summary>
@@ -5383,8 +5738,8 @@ namespace Amazon.Connect
         #region  ListIntegrationAssociations
 
         /// <summary>
-        /// Provides summary information about the AWS resource associations for the specified
-        /// Amazon Connect instance.
+        /// Provides summary information about the Amazon Web Services resource associations for
+        /// the specified Amazon Connect instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListIntegrationAssociations service method.</param>
         /// 
@@ -6693,6 +7048,73 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  SearchVocabularies
+
+        /// <summary>
+        /// Searches for vocabularies within a specific Amazon Connect instance using <code>State</code>,
+        /// <code>NameStartsWith</code>, and <code>LanguageCode</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchVocabularies service method.</param>
+        /// 
+        /// <returns>The response from the SearchVocabularies service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchVocabularies">REST API Reference for SearchVocabularies Operation</seealso>
+        public virtual SearchVocabulariesResponse SearchVocabularies(SearchVocabulariesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchVocabulariesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchVocabulariesResponseUnmarshaller.Instance;
+
+            return Invoke<SearchVocabulariesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SearchVocabularies operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SearchVocabularies operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSearchVocabularies
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchVocabularies">REST API Reference for SearchVocabularies Operation</seealso>
+        public virtual IAsyncResult BeginSearchVocabularies(SearchVocabulariesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchVocabulariesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchVocabulariesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SearchVocabularies operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSearchVocabularies.</param>
+        /// 
+        /// <returns>Returns a  SearchVocabulariesResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchVocabularies">REST API Reference for SearchVocabularies Operation</seealso>
+        public virtual SearchVocabulariesResponse EndSearchVocabularies(IAsyncResult asyncResult)
+        {
+            return EndInvoke<SearchVocabulariesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  StartChatContact
 
         /// <summary>
@@ -6709,7 +7131,7 @@ namespace Amazon.Connect
         /// </para>
         ///  
         /// <para>
-        /// A 429 error occurs in two situations:
+        /// A 429 error occurs in the following situations:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -6722,6 +7144,12 @@ namespace Amazon.Connect
         /// for concurrent active chats</a> is exceeded. Active chat throttling returns a <code>LimitExceededException</code>.
         /// </para>
         ///  </li> </ul> 
+        /// <para>
+        /// If you use the <code>ChatDurationInMinutes</code> parameter and receive a 400 error,
+        /// your account may not support the ability to configure custom chat durations. For more
+        /// information, contact Amazon Web Services Support. 
+        /// </para>
+        ///  
         /// <para>
         /// For more information about chat, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/chat.html">Chat</a>
         /// in the <i>Amazon Connect Administrator Guide</i>.

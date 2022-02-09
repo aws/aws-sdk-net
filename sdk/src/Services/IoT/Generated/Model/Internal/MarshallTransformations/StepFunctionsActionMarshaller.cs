@@ -34,7 +34,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// StepFunctionsAction Marshaller
-    /// </summary>       
+    /// </summary>
     public class StepFunctionsActionMarshaller : IRequestMarshaller<StepFunctionsAction, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static StepFunctionsActionMarshaller Instance = new StepFunctionsActionMarshaller();
 
     }

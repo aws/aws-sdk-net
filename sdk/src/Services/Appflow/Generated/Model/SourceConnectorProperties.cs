@@ -34,6 +34,7 @@ namespace Amazon.Appflow.Model
     public partial class SourceConnectorProperties
     {
         private AmplitudeSourceProperties _amplitude;
+        private CustomConnectorSourceProperties _customConnector;
         private DatadogSourceProperties _datadog;
         private DynatraceSourceProperties _dynatrace;
         private GoogleAnalyticsSourceProperties _googleAnalytics;
@@ -65,6 +66,21 @@ namespace Amazon.Appflow.Model
         internal bool IsSetAmplitude()
         {
             return this._amplitude != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomConnector.
+        /// </summary>
+        public CustomConnectorSourceProperties CustomConnector
+        {
+            get { return this._customConnector; }
+            set { this._customConnector = value; }
+        }
+
+        // Check to see if CustomConnector property is set
+        internal bool IsSetCustomConnector()
+        {
+            return this._customConnector != null;
         }
 
         /// <summary>

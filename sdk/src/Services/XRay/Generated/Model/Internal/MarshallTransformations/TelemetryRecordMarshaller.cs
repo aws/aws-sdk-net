@@ -34,7 +34,7 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TelemetryRecord Marshaller
-    /// </summary>       
+    /// </summary>
     public class TelemetryRecordMarshaller : IRequestMarshaller<TelemetryRecord, JsonMarshallerContext> 
     {
         /// <summary>
@@ -90,7 +90,7 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TelemetryRecordMarshaller Instance = new TelemetryRecordMarshaller();
 
     }

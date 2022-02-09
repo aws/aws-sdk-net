@@ -34,7 +34,7 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// FileFormatConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class FileFormatConfigurationMarshaller : IRequestMarshaller<FileFormatConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static FileFormatConfigurationMarshaller Instance = new FileFormatConfigurationMarshaller();
 
     }

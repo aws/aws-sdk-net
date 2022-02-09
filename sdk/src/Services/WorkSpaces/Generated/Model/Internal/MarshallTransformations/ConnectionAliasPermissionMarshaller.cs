@@ -34,7 +34,7 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ConnectionAliasPermission Marshaller
-    /// </summary>       
+    /// </summary>
     public class ConnectionAliasPermissionMarshaller : IRequestMarshaller<ConnectionAliasPermission, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ConnectionAliasPermissionMarshaller Instance = new ConnectionAliasPermissionMarshaller();
 
     }

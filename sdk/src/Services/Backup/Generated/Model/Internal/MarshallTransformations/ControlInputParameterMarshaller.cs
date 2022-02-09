@@ -34,7 +34,7 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ControlInputParameter Marshaller
-    /// </summary>       
+    /// </summary>
     public class ControlInputParameterMarshaller : IRequestMarshaller<ControlInputParameter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ControlInputParameterMarshaller Instance = new ControlInputParameterMarshaller();
 
     }

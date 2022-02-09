@@ -34,7 +34,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ElasticsearchSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class ElasticsearchSettingsMarshaller : IRequestMarshaller<ElasticsearchSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ElasticsearchSettingsMarshaller Instance = new ElasticsearchSettingsMarshaller();
 
     }

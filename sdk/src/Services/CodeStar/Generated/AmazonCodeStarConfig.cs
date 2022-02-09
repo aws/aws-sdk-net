@@ -32,7 +32,7 @@ namespace Amazon.CodeStar
     public partial class AmazonCodeStarConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.112");
+            InternalSDKUtils.BuildUserAgentString("3.7.0.121");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.CodeStar
         /// Default constructor
         /// </summary>
         public AmazonCodeStarConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonCodeStarDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "codestar";
         }

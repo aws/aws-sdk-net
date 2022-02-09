@@ -32,7 +32,7 @@ namespace Amazon.HealthLake
     public partial class AmazonHealthLakeConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.1.70");
+            InternalSDKUtils.BuildUserAgentString("3.7.1.79");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.HealthLake
         /// Default constructor
         /// </summary>
         public AmazonHealthLakeConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonHealthLakeDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "healthlake";
         }

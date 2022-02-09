@@ -32,7 +32,7 @@ namespace Amazon.PinpointSMSVoice
     public partial class AmazonPinpointSMSVoiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.112");
+            InternalSDKUtils.BuildUserAgentString("3.7.0.121");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.PinpointSMSVoice
         /// Default constructor
         /// </summary>
         public AmazonPinpointSMSVoiceConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonPinpointSMSVoiceDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "sms-voice";
         }

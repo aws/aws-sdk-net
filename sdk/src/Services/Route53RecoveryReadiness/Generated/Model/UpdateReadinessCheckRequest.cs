@@ -30,7 +30,7 @@ namespace Amazon.Route53RecoveryReadiness.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateReadinessCheck operation.
-    /// Updates an exisiting Readiness Check.
+    /// Updates a readiness check.
     /// </summary>
     public partial class UpdateReadinessCheckRequest : AmazonRoute53RecoveryReadinessRequest
     {
@@ -38,7 +38,10 @@ namespace Amazon.Route53RecoveryReadiness.Model
         private string _resourceSetName;
 
         /// <summary>
-        /// Gets and sets the property ReadinessCheckName. The ReadinessCheck to update
+        /// Gets and sets the property ReadinessCheckName. 
+        /// <para>
+        /// Name of a readiness check.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string ReadinessCheckName
@@ -54,7 +57,10 @@ namespace Amazon.Route53RecoveryReadiness.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ResourceSetName. The name of the ResourceSet to check
+        /// Gets and sets the property ResourceSetName. 
+        /// <para>
+        /// The name of the resource set to be checked.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string ResourceSetName

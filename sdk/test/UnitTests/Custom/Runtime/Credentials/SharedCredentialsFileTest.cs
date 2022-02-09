@@ -177,7 +177,12 @@ namespace AWSSDK.UnitTests
             .AppendLine("region=us-east-1")
             .ToString();
 
-        private static readonly string EndpointDiscoveryEnabledOnlyProfileText = new StringBuilder()
+        private static readonly string DefaultConfigurationModeOnlyProfileText = new StringBuilder()
+            .AppendLine("[default_configuration_mode_only_profile]")
+            .Append("defaults_mode=in-region")
+            .ToString();
+
+       private static readonly string EndpointDiscoveryEnabledOnlyProfileText = new StringBuilder()
             .AppendLine("[endpoint_discovery_enabled_only_profile]")
             .Append("endpoint_discovery_enabled=true")
             .ToString();
@@ -188,29 +193,29 @@ namespace AWSSDK.UnitTests
             .ToString();
 
         private static readonly string RetriesLegacyModeProfileText = new StringBuilder()
-            .AppendLine("[retries_legacymode_profile_text]")            
+            .AppendLine("[retries_legacymode_profile_text]")
             .Append("retry_mode=legacy")
             .ToString();
 
         private static readonly string RetriesStandardModeProfileText = new StringBuilder()
-            .AppendLine("[retries_standardmode_profile_text]")            
+            .AppendLine("[retries_standardmode_profile_text]")
             .Append("retry_mode=standard")
             .ToString();
 
         private static readonly string RetriesAdaptiveModeProfileText = new StringBuilder()
-            .AppendLine("[retries_adaptivemode_profile_text]")            
+            .AppendLine("[retries_adaptivemode_profile_text]")
             .Append("retry_mode=adaptive")
             .ToString();
 
         private static readonly string RetriesInvalidModeProfileText = new StringBuilder()
-            .AppendLine("[retries_invalidmode_profile_text]")            
+            .AppendLine("[retries_invalidmode_profile_text]")
             .Append("retry_mode=invalid_mode")
             .ToString();
 
         private static readonly string RetriesMaxAttemptsProfileText = new StringBuilder()
             .AppendLine("[retries_max_attempts_profile_text]")
-            .Append("max_attempts=100")            
-            .ToString();       
+            .Append("max_attempts=100")
+            .ToString();
 
 
         private static readonly CredentialProfileOptions SAMLRoleProfileOptions = new CredentialProfileOptions()
@@ -464,6 +469,17 @@ namespace AWSSDK.UnitTests
             using (var tester = new SharedCredentialsFileTestFixture(RegionOnlyProfileText))
             {
                 tester.AssertWriteProfile("region_only_profile", RegionOnlyProfileOptions, RegionOnlyProfileText);
+            }
+        }
+
+        [TestMethod]
+        public void ReadDefaultConfigurationModeNameOnlyProfile()
+        {
+            using (var tester = new SharedCredentialsFileTestFixture(DefaultConfigurationModeOnlyProfileText))
+            {
+                var profile = tester.TestTryGetProfile("default_configuration_mode_only_profile", true, false);
+
+                Assert.AreEqual("in-region", profile.DefaultConfigurationModeName);
             }
         }
 

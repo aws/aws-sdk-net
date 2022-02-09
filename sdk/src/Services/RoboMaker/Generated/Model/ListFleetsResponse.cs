@@ -31,6 +31,7 @@ namespace Amazon.RoboMaker.Model
     /// <summary>
     /// This is the response object from the ListFleets operation.
     /// </summary>
+    [Obsolete("Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.")]
     public partial class ListFleetsResponse : AmazonWebServiceResponse
     {
         private List<Fleet> _fleetDetails = new List<Fleet>();

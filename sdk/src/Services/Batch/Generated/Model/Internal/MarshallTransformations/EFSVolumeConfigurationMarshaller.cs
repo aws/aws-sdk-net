@@ -34,7 +34,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// EFSVolumeConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class EFSVolumeConfigurationMarshaller : IRequestMarshaller<EFSVolumeConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -84,7 +84,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static EFSVolumeConfigurationMarshaller Instance = new EFSVolumeConfigurationMarshaller();
 
     }

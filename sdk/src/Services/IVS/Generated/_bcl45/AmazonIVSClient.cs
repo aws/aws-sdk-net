@@ -1952,6 +1952,9 @@ namespace Amazon.IVS
         /// <exception cref="Amazon.IVS.Model.AccessDeniedException">
         /// 
         /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ValidationException">
+        /// 
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ListStreams">REST API Reference for ListStreams Operation</seealso>
         public virtual ListStreamsResponse ListStreams(ListStreamsRequest request)
         {
@@ -1974,6 +1977,9 @@ namespace Amazon.IVS
         /// 
         /// <returns>The response from the ListStreams service method, as returned by IVS.</returns>
         /// <exception cref="Amazon.IVS.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ValidationException">
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ListStreams">REST API Reference for ListStreams Operation</seealso>

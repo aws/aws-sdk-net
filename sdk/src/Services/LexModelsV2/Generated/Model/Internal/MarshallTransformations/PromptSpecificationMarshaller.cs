@@ -34,7 +34,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// PromptSpecification Marshaller
-    /// </summary>       
+    /// </summary>
     public class PromptSpecificationMarshaller : IRequestMarshaller<PromptSpecification, JsonMarshallerContext> 
     {
         /// <summary>
@@ -77,7 +77,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static PromptSpecificationMarshaller Instance = new PromptSpecificationMarshaller();
 
     }

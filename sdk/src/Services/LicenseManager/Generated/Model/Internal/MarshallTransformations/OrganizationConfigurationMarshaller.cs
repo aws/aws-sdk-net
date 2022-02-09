@@ -34,7 +34,7 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// OrganizationConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class OrganizationConfigurationMarshaller : IRequestMarshaller<OrganizationConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static OrganizationConfigurationMarshaller Instance = new OrganizationConfigurationMarshaller();
 
     }

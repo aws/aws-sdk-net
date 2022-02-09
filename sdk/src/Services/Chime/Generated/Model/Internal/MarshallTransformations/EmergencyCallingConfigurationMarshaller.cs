@@ -34,7 +34,7 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// EmergencyCallingConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class EmergencyCallingConfigurationMarshaller : IRequestMarshaller<EmergencyCallingConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -65,7 +65,7 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static EmergencyCallingConfigurationMarshaller Instance = new EmergencyCallingConfigurationMarshaller();
 
     }

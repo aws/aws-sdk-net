@@ -34,7 +34,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DetectMitigationActionsTaskTarget Marshaller
-    /// </summary>       
+    /// </summary>
     public class DetectMitigationActionsTaskTargetMarshaller : IRequestMarshaller<DetectMitigationActionsTaskTarget, JsonMarshallerContext> 
     {
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DetectMitigationActionsTaskTargetMarshaller Instance = new DetectMitigationActionsTaskTargetMarshaller();
 
     }

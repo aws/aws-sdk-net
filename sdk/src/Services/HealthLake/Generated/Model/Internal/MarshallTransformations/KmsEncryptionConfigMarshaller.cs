@@ -34,7 +34,7 @@ namespace Amazon.HealthLake.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// KmsEncryptionConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class KmsEncryptionConfigMarshaller : IRequestMarshaller<KmsEncryptionConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.HealthLake.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static KmsEncryptionConfigMarshaller Instance = new KmsEncryptionConfigMarshaller();
 
     }

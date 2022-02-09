@@ -34,7 +34,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// OAuthProperties Marshaller
-    /// </summary>       
+    /// </summary>
     public class OAuthPropertiesMarshaller : IRequestMarshaller<OAuthProperties, JsonMarshallerContext> 
     {
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static OAuthPropertiesMarshaller Instance = new OAuthPropertiesMarshaller();
 
     }

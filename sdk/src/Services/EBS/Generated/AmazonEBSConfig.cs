@@ -32,7 +32,7 @@ namespace Amazon.EBS
     public partial class AmazonEBSConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.114");
+            InternalSDKUtils.BuildUserAgentString("3.7.0.124");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.EBS
         /// Default constructor
         /// </summary>
         public AmazonEBSConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonEBSDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "ebs";
         }

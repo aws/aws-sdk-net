@@ -34,7 +34,7 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SnapshotOptions Marshaller
-    /// </summary>       
+    /// </summary>
     public class SnapshotOptionsMarshaller : IRequestMarshaller<SnapshotOptions, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SnapshotOptionsMarshaller Instance = new SnapshotOptionsMarshaller();
 
     }

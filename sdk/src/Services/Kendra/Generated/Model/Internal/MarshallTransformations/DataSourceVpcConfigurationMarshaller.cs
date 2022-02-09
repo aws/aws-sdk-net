@@ -34,7 +34,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DataSourceVpcConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class DataSourceVpcConfigurationMarshaller : IRequestMarshaller<DataSourceVpcConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DataSourceVpcConfigurationMarshaller Instance = new DataSourceVpcConfigurationMarshaller();
 
     }

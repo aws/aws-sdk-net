@@ -34,7 +34,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// GCMMessage Marshaller
-    /// </summary>       
+    /// </summary>
     public class GCMMessageMarshaller : IRequestMarshaller<GCMMessage, JsonMarshallerContext> 
     {
         /// <summary>
@@ -172,7 +172,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static GCMMessageMarshaller Instance = new GCMMessageMarshaller();
 
     }

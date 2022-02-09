@@ -32,7 +32,7 @@ namespace Amazon.MigrationHubConfig
     public partial class AmazonMigrationHubConfigConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.112");
+            InternalSDKUtils.BuildUserAgentString("3.7.0.121");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.MigrationHubConfig
         /// Default constructor
         /// </summary>
         public AmazonMigrationHubConfigConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonMigrationHubConfigDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "mgh";
         }

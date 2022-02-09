@@ -34,7 +34,7 @@ namespace Amazon.ConnectWisdomService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AssistantAssociationInputData Marshaller
-    /// </summary>       
+    /// </summary>
     public class AssistantAssociationInputDataMarshaller : IRequestMarshaller<AssistantAssociationInputData, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.ConnectWisdomService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AssistantAssociationInputDataMarshaller Instance = new AssistantAssociationInputDataMarshaller();
 
     }

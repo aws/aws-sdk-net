@@ -33,14 +33,50 @@ namespace Amazon.Appflow.Model
     /// </summary>
     public partial class ConnectorConfiguration
     {
+        private AuthenticationConfig _authenticationConfig;
         private bool? _canUseAsDestination;
         private bool? _canUseAsSource;
+        private string _connectorArn;
+        private string _connectorDescription;
+        private string _connectorLabel;
         private ConnectorMetadata _connectorMetadata;
+        private List<string> _connectorModes = new List<string>();
+        private string _connectorName;
+        private string _connectorOwner;
+        private ConnectorProvisioningConfig _connectorProvisioningConfig;
+        private ConnectorProvisioningType _connectorProvisioningType;
+        private List<ConnectorRuntimeSetting> _connectorRuntimeSettings = new List<ConnectorRuntimeSetting>();
+        private ConnectorType _connectorType;
+        private string _connectorVersion;
         private bool? _isPrivateLinkEnabled;
         private bool? _isPrivateLinkEndpointUrlRequired;
+        private string _logourl;
+        private DateTime? _registeredAt;
+        private string _registeredBy;
+        private List<string> _supportedApiVersions = new List<string>();
         private List<string> _supportedDestinationConnectors = new List<string>();
+        private List<string> _supportedOperators = new List<string>();
         private List<string> _supportedSchedulingFrequencies = new List<string>();
         private List<string> _supportedTriggerTypes = new List<string>();
+        private List<string> _supportedWriteOperations = new List<string>();
+
+        /// <summary>
+        /// Gets and sets the property AuthenticationConfig. 
+        /// <para>
+        /// The authentication config required for the connector.
+        /// </para>
+        /// </summary>
+        public AuthenticationConfig AuthenticationConfig
+        {
+            get { return this._authenticationConfig; }
+            set { this._authenticationConfig = value; }
+        }
+
+        // Check to see if AuthenticationConfig property is set
+        internal bool IsSetAuthenticationConfig()
+        {
+            return this._authenticationConfig != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CanUseAsDestination. 
@@ -79,6 +115,63 @@ namespace Amazon.Appflow.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ConnectorArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) for the registered connector.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=512)]
+        public string ConnectorArn
+        {
+            get { return this._connectorArn; }
+            set { this._connectorArn = value; }
+        }
+
+        // Check to see if ConnectorArn property is set
+        internal bool IsSetConnectorArn()
+        {
+            return this._connectorArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConnectorDescription. 
+        /// <para>
+        /// A description about the connector.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=2048)]
+        public string ConnectorDescription
+        {
+            get { return this._connectorDescription; }
+            set { this._connectorDescription = value; }
+        }
+
+        // Check to see if ConnectorDescription property is set
+        internal bool IsSetConnectorDescription()
+        {
+            return this._connectorDescription != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConnectorLabel. 
+        /// <para>
+        /// The label used for registering the connector.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=256)]
+        public string ConnectorLabel
+        {
+            get { return this._connectorLabel; }
+            set { this._connectorLabel = value; }
+        }
+
+        // Check to see if ConnectorLabel property is set
+        internal bool IsSetConnectorLabel()
+        {
+            return this._connectorLabel != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ConnectorMetadata. 
         /// <para>
         ///  Specifies connector-specific metadata such as <code>oAuthScopes</code>, <code>supportedRegions</code>,
@@ -95,6 +188,153 @@ namespace Amazon.Appflow.Model
         internal bool IsSetConnectorMetadata()
         {
             return this._connectorMetadata != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConnectorModes. 
+        /// <para>
+        /// The connection modes that the connector supports.
+        /// </para>
+        /// </summary>
+        public List<string> ConnectorModes
+        {
+            get { return this._connectorModes; }
+            set { this._connectorModes = value; }
+        }
+
+        // Check to see if ConnectorModes property is set
+        internal bool IsSetConnectorModes()
+        {
+            return this._connectorModes != null && this._connectorModes.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConnectorName. 
+        /// <para>
+        /// The connector name.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=256)]
+        public string ConnectorName
+        {
+            get { return this._connectorName; }
+            set { this._connectorName = value; }
+        }
+
+        // Check to see if ConnectorName property is set
+        internal bool IsSetConnectorName()
+        {
+            return this._connectorName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConnectorOwner. 
+        /// <para>
+        /// The owner who developed the connector.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=256)]
+        public string ConnectorOwner
+        {
+            get { return this._connectorOwner; }
+            set { this._connectorOwner = value; }
+        }
+
+        // Check to see if ConnectorOwner property is set
+        internal bool IsSetConnectorOwner()
+        {
+            return this._connectorOwner != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConnectorProvisioningConfig. 
+        /// <para>
+        /// The configuration required for registering the connector.
+        /// </para>
+        /// </summary>
+        public ConnectorProvisioningConfig ConnectorProvisioningConfig
+        {
+            get { return this._connectorProvisioningConfig; }
+            set { this._connectorProvisioningConfig = value; }
+        }
+
+        // Check to see if ConnectorProvisioningConfig property is set
+        internal bool IsSetConnectorProvisioningConfig()
+        {
+            return this._connectorProvisioningConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConnectorProvisioningType. 
+        /// <para>
+        /// The provisioning type used to register the connector.
+        /// </para>
+        /// </summary>
+        public ConnectorProvisioningType ConnectorProvisioningType
+        {
+            get { return this._connectorProvisioningType; }
+            set { this._connectorProvisioningType = value; }
+        }
+
+        // Check to see if ConnectorProvisioningType property is set
+        internal bool IsSetConnectorProvisioningType()
+        {
+            return this._connectorProvisioningType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConnectorRuntimeSettings. 
+        /// <para>
+        /// The required connector runtime settings.
+        /// </para>
+        /// </summary>
+        public List<ConnectorRuntimeSetting> ConnectorRuntimeSettings
+        {
+            get { return this._connectorRuntimeSettings; }
+            set { this._connectorRuntimeSettings = value; }
+        }
+
+        // Check to see if ConnectorRuntimeSettings property is set
+        internal bool IsSetConnectorRuntimeSettings()
+        {
+            return this._connectorRuntimeSettings != null && this._connectorRuntimeSettings.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConnectorType. 
+        /// <para>
+        /// The connector type.
+        /// </para>
+        /// </summary>
+        public ConnectorType ConnectorType
+        {
+            get { return this._connectorType; }
+            set { this._connectorType = value; }
+        }
+
+        // Check to see if ConnectorType property is set
+        internal bool IsSetConnectorType()
+        {
+            return this._connectorType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConnectorVersion. 
+        /// <para>
+        /// The connector version.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=256)]
+        public string ConnectorVersion
+        {
+            get { return this._connectorVersion; }
+            set { this._connectorVersion = value; }
+        }
+
+        // Check to see if ConnectorVersion property is set
+        internal bool IsSetConnectorVersion()
+        {
+            return this._connectorVersion != null;
         }
 
         /// <summary>
@@ -134,6 +374,80 @@ namespace Amazon.Appflow.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LogoURL. 
+        /// <para>
+        /// Logo URL of the connector.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=256)]
+        public string LogoURL
+        {
+            get { return this._logourl; }
+            set { this._logourl = value; }
+        }
+
+        // Check to see if LogoURL property is set
+        internal bool IsSetLogoURL()
+        {
+            return this._logourl != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RegisteredAt. 
+        /// <para>
+        /// The date on which the connector was registered.
+        /// </para>
+        /// </summary>
+        public DateTime RegisteredAt
+        {
+            get { return this._registeredAt.GetValueOrDefault(); }
+            set { this._registeredAt = value; }
+        }
+
+        // Check to see if RegisteredAt property is set
+        internal bool IsSetRegisteredAt()
+        {
+            return this._registeredAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RegisteredBy. 
+        /// <para>
+        /// Information about who registered the connector.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=512)]
+        public string RegisteredBy
+        {
+            get { return this._registeredBy; }
+            set { this._registeredBy = value; }
+        }
+
+        // Check to see if RegisteredBy property is set
+        internal bool IsSetRegisteredBy()
+        {
+            return this._registeredBy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportedApiVersions. 
+        /// <para>
+        /// A list of API versions that are supported by the connector.
+        /// </para>
+        /// </summary>
+        public List<string> SupportedApiVersions
+        {
+            get { return this._supportedApiVersions; }
+            set { this._supportedApiVersions = value; }
+        }
+
+        // Check to see if SupportedApiVersions property is set
+        internal bool IsSetSupportedApiVersions()
+        {
+            return this._supportedApiVersions != null && this._supportedApiVersions.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property SupportedDestinationConnectors. 
         /// <para>
         ///  Lists the connectors that are available for use as destinations. 
@@ -150,6 +464,24 @@ namespace Amazon.Appflow.Model
         internal bool IsSetSupportedDestinationConnectors()
         {
             return this._supportedDestinationConnectors != null && this._supportedDestinationConnectors.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportedOperators. 
+        /// <para>
+        /// A list of operators supported by the connector.
+        /// </para>
+        /// </summary>
+        public List<string> SupportedOperators
+        {
+            get { return this._supportedOperators; }
+            set { this._supportedOperators = value; }
+        }
+
+        // Check to see if SupportedOperators property is set
+        internal bool IsSetSupportedOperators()
+        {
+            return this._supportedOperators != null && this._supportedOperators.Count > 0; 
         }
 
         /// <summary>
@@ -186,6 +518,24 @@ namespace Amazon.Appflow.Model
         internal bool IsSetSupportedTriggerTypes()
         {
             return this._supportedTriggerTypes != null && this._supportedTriggerTypes.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportedWriteOperations. 
+        /// <para>
+        /// A list of write operations supported by the connector.
+        /// </para>
+        /// </summary>
+        public List<string> SupportedWriteOperations
+        {
+            get { return this._supportedWriteOperations; }
+            set { this._supportedWriteOperations = value; }
+        }
+
+        // Check to see if SupportedWriteOperations property is set
+        internal bool IsSetSupportedWriteOperations()
+        {
+            return this._supportedWriteOperations != null && this._supportedWriteOperations.Count > 0; 
         }
 
     }

@@ -45,7 +45,7 @@ namespace Amazon.TranscribeService.Model
         /// Gets and sets the property LanguageCode. 
         /// <para>
         /// The language code of the vocabulary entries. For a list of languages and their corresponding
-        /// language codes, see <a>transcribe-whatis</a>.
+        /// language codes, see <a>table-language-matrix</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -108,12 +108,25 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  
         /// <para>
+        ///  <code>https://s3.&lt;Amazon Web Services-region&gt;.amazonaws.com/&lt;AWSDOC-EXAMPLE-BUCKET&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt;
+        /// </code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// For example:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>https://s3.us-east-1.amazonaws.com/AWSDOC-EXAMPLE-BUCKET/vocab.txt</code> 
+        /// </para>
+        ///  
+        /// <para>
         /// For more information about S3 object names, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
         /// Keys</a> in the <i>Amazon S3 Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// For more information about custom vocabularies, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary">Custom
+        /// For more information about custom vocabularies, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html">Custom
         /// vocabularies</a>.
         /// </para>
         /// </summary>

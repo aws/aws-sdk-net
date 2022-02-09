@@ -56,7 +56,7 @@ namespace Amazon.WorkLink.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.WorkLink");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-09-25";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-09-25";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/listFleets";
@@ -77,7 +77,6 @@ namespace Amazon.WorkLink.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.NextToken);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

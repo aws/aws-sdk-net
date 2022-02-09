@@ -58,7 +58,7 @@ namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
             string target = "SWBExternalService.ListPermissionSets";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-07-20";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-07-20";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -85,7 +85,6 @@ namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.NextToken);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

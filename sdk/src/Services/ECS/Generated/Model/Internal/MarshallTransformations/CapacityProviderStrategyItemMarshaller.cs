@@ -34,7 +34,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CapacityProviderStrategyItem Marshaller
-    /// </summary>       
+    /// </summary>
     public class CapacityProviderStrategyItemMarshaller : IRequestMarshaller<CapacityProviderStrategyItem, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CapacityProviderStrategyItemMarshaller Instance = new CapacityProviderStrategyItemMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AutoScalingThresholds Marshaller
-    /// </summary>       
+    /// </summary>
     public class AutoScalingThresholdsMarshaller : IRequestMarshaller<AutoScalingThresholds, JsonMarshallerContext> 
     {
         /// <summary>
@@ -96,7 +96,7 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AutoScalingThresholdsMarshaller Instance = new AutoScalingThresholdsMarshaller();
 
     }

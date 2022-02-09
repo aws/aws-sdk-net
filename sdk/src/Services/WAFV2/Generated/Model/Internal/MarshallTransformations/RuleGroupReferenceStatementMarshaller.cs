@@ -34,7 +34,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RuleGroupReferenceStatement Marshaller
-    /// </summary>       
+    /// </summary>
     public class RuleGroupReferenceStatementMarshaller : IRequestMarshaller<RuleGroupReferenceStatement, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RuleGroupReferenceStatementMarshaller Instance = new RuleGroupReferenceStatementMarshaller();
 
     }

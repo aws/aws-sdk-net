@@ -34,7 +34,7 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// FacetAttributeReference Marshaller
-    /// </summary>       
+    /// </summary>
     public class FacetAttributeReferenceMarshaller : IRequestMarshaller<FacetAttributeReference, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static FacetAttributeReferenceMarshaller Instance = new FacetAttributeReferenceMarshaller();
 
     }

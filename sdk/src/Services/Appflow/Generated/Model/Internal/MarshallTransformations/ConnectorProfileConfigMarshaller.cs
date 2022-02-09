@@ -34,7 +34,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ConnectorProfileConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class ConnectorProfileConfigMarshaller : IRequestMarshaller<ConnectorProfileConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ConnectorProfileConfigMarshaller Instance = new ConnectorProfileConfigMarshaller();
 
     }

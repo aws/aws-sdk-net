@@ -99,7 +99,9 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property FileFormat. 
         /// <para>
-        /// The file format used for the files that define the resource.
+        /// The file format used for the files that define the resource. The <code>TSV</code>
+        /// format is required to export a custom vocabulary only; otherwise use <code>LexJson</code>
+        /// format.
         /// </para>
         /// </summary>
         public ImportExportFileFormat FileFormat

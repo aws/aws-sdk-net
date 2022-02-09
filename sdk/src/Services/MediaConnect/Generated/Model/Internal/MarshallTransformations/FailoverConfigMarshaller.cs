@@ -34,7 +34,7 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// FailoverConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class FailoverConfigMarshaller : IRequestMarshaller<FailoverConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -78,7 +78,7 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static FailoverConfigMarshaller Instance = new FailoverConfigMarshaller();
 
     }

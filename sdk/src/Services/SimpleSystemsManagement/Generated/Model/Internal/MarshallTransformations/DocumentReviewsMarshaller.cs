@@ -34,7 +34,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DocumentReviews Marshaller
-    /// </summary>       
+    /// </summary>
     public class DocumentReviewsMarshaller : IRequestMarshaller<DocumentReviews, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DocumentReviewsMarshaller Instance = new DocumentReviewsMarshaller();
 
     }

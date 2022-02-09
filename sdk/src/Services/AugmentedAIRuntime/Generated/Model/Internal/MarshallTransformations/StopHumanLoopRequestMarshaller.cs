@@ -56,7 +56,7 @@ namespace Amazon.AugmentedAIRuntime.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.AugmentedAIRuntime");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-11-07";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-11-07";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/human-loops/stop";
@@ -71,7 +71,6 @@ namespace Amazon.AugmentedAIRuntime.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.HumanLoopName);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

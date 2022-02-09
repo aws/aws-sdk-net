@@ -34,7 +34,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model.Internal.MarshallTransformation
 {
     /// <summary>
     /// HLSFragmentSelector Marshaller
-    /// </summary>       
+    /// </summary>
     public class HLSFragmentSelectorMarshaller : IRequestMarshaller<HLSFragmentSelector, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model.Internal.MarshallTransformation
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static HLSFragmentSelectorMarshaller Instance = new HLSFragmentSelectorMarshaller();
 
     }

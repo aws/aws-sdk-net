@@ -56,7 +56,7 @@ namespace Amazon.NimbleStudio.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.NimbleStudio");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-08-01";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-08-01";
             request.HttpMethod = "POST";
 
             if (!publicRequest.IsSetSessionId())
@@ -77,15 +77,16 @@ namespace Amazon.NimbleStudio.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ExpirationInSeconds);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
 
         
-            if(publicRequest.IsSetClientToken())
+            if (publicRequest.IsSetClientToken()) 
+            {
                 request.Headers["X-Amz-Client-Token"] = publicRequest.ClientToken;
+            }
 
             return request;
         }

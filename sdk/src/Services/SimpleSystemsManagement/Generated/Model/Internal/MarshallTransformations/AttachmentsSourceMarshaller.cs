@@ -34,7 +34,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AttachmentsSource Marshaller
-    /// </summary>       
+    /// </summary>
     public class AttachmentsSourceMarshaller : IRequestMarshaller<AttachmentsSource, JsonMarshallerContext> 
     {
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AttachmentsSourceMarshaller Instance = new AttachmentsSourceMarshaller();
 
     }

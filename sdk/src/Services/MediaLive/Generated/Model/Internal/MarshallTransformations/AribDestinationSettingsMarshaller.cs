@@ -34,7 +34,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AribDestinationSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class AribDestinationSettingsMarshaller : IRequestMarshaller<AribDestinationSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -49,7 +49,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AribDestinationSettingsMarshaller Instance = new AribDestinationSettingsMarshaller();
 
     }

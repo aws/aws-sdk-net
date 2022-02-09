@@ -34,7 +34,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// IntentConfirmationSetting Marshaller
-    /// </summary>       
+    /// </summary>
     public class IntentConfirmationSettingMarshaller : IRequestMarshaller<IntentConfirmationSetting, JsonMarshallerContext> 
     {
         /// <summary>
@@ -77,7 +77,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static IntentConfirmationSettingMarshaller Instance = new IntentConfirmationSettingMarshaller();
 
     }

@@ -58,7 +58,7 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
             string target = "AWS242ServiceCatalogService.CreateProvisioningArtifact";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-12-10";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-12-10";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -82,7 +82,7 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
                 else if(!(publicRequest.IsSetIdempotencyToken()))
                 {
                     context.Writer.WritePropertyName("IdempotencyToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());                                                
+                    context.Writer.Write(Guid.NewGuid().ToString());
                 }
                 if(publicRequest.IsSetParameters())
                 {
@@ -101,7 +101,6 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ProductId);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

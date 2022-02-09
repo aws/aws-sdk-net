@@ -56,7 +56,7 @@ namespace Amazon.SnowDeviceManagement.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.SnowDeviceManagement");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-08-04";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-08-04";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/task";
@@ -74,7 +74,7 @@ namespace Amazon.SnowDeviceManagement.Model.Internal.MarshallTransformations
                 else if(!(publicRequest.IsSetClientToken()))
                 {
                     context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());                                                
+                    context.Writer.Write(Guid.NewGuid().ToString());
                 }
                 if(publicRequest.IsSetCommand())
                 {
@@ -118,7 +118,6 @@ namespace Amazon.SnowDeviceManagement.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

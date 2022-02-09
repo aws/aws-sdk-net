@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AwsS3BucketServerSideEncryptionByDefault Marshaller
-    /// </summary>       
+    /// </summary>
     public class AwsS3BucketServerSideEncryptionByDefaultMarshaller : IRequestMarshaller<AwsS3BucketServerSideEncryptionByDefault, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AwsS3BucketServerSideEncryptionByDefaultMarshaller Instance = new AwsS3BucketServerSideEncryptionByDefaultMarshaller();
 
     }

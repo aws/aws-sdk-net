@@ -34,7 +34,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// GoogleAnalyticsConnectorProfileProperties Marshaller
-    /// </summary>       
+    /// </summary>
     public class GoogleAnalyticsConnectorProfilePropertiesMarshaller : IRequestMarshaller<GoogleAnalyticsConnectorProfileProperties, JsonMarshallerContext> 
     {
         /// <summary>
@@ -49,7 +49,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static GoogleAnalyticsConnectorProfilePropertiesMarshaller Instance = new GoogleAnalyticsConnectorProfilePropertiesMarshaller();
 
     }

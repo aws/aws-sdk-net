@@ -56,7 +56,7 @@ namespace Amazon.IoT1ClickProjects.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.IoT1ClickProjects");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-14";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-14";
             request.HttpMethod = "PUT";
 
             if (!publicRequest.IsSetPlacementName())
@@ -85,7 +85,6 @@ namespace Amazon.IoT1ClickProjects.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

@@ -29,13 +29,15 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// Contains information about the AWS resource associated with the activity that prompted
-    /// GuardDuty to generate a finding.
+    /// Contains information about the Amazon Web Services resource associated with the activity
+    /// that prompted GuardDuty to generate a finding.
     /// </summary>
     public partial class Resource
     {
         private AccessKeyDetails _accessKeyDetails;
+        private EksClusterDetails _eksClusterDetails;
         private InstanceDetails _instanceDetails;
+        private KubernetesDetails _kubernetesDetails;
         private string _resourceType;
         private List<S3BucketDetail> _s3BucketDetails = new List<S3BucketDetail>();
 
@@ -59,6 +61,24 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EksClusterDetails. 
+        /// <para>
+        /// Details about the EKS cluster involved in a Kubernetes finding.
+        /// </para>
+        /// </summary>
+        public EksClusterDetails EksClusterDetails
+        {
+            get { return this._eksClusterDetails; }
+            set { this._eksClusterDetails = value; }
+        }
+
+        // Check to see if EksClusterDetails property is set
+        internal bool IsSetEksClusterDetails()
+        {
+            return this._eksClusterDetails != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property InstanceDetails. 
         /// <para>
         /// The information about the EC2 instance associated with the activity that prompted
@@ -78,9 +98,27 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
+        /// Gets and sets the property KubernetesDetails. 
+        /// <para>
+        /// Details about the Kubernetes user and workload involved in a Kubernetes finding.
+        /// </para>
+        /// </summary>
+        public KubernetesDetails KubernetesDetails
+        {
+            get { return this._kubernetesDetails; }
+            set { this._kubernetesDetails = value; }
+        }
+
+        // Check to see if KubernetesDetails property is set
+        internal bool IsSetKubernetesDetails()
+        {
+            return this._kubernetesDetails != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The type of AWS resource.
+        /// The type of Amazon Web Services resource.
         /// </para>
         /// </summary>
         public string ResourceType

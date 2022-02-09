@@ -34,7 +34,7 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DataLakeSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class DataLakeSettingsMarshaller : IRequestMarshaller<DataLakeSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -141,7 +141,7 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DataLakeSettingsMarshaller Instance = new DataLakeSettingsMarshaller();
 
     }

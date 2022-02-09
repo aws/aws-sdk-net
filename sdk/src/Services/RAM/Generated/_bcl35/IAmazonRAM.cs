@@ -1065,6 +1065,67 @@ namespace Amazon.RAM
 
         #endregion
         
+        #region  ListPermissionVersions
+
+
+        /// <summary>
+        /// Lists the available versions of the specified RAM permission.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPermissionVersions service method.</param>
+        /// 
+        /// <returns>The response from the ListPermissionVersions service method, as returned by RAM.</returns>
+        /// <exception cref="Amazon.RAM.Model.InvalidNextTokenException">
+        /// The specified value for <code>NextToken</code> is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
+        /// A parameter is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.MalformedArnException">
+        /// The format of an Amazon Resource Name (ARN) is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.OperationNotPermittedException">
+        /// The requested operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServerInternalException">
+        /// The service could not respond to the request due to an internal problem.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServiceUnavailableException">
+        /// The service is not available.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.UnknownResourceException">
+        /// A specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListPermissionVersions">REST API Reference for ListPermissionVersions Operation</seealso>
+        ListPermissionVersionsResponse ListPermissionVersions(ListPermissionVersionsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListPermissionVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListPermissionVersions operation on AmazonRAMClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListPermissionVersions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListPermissionVersions">REST API Reference for ListPermissionVersions Operation</seealso>
+        IAsyncResult BeginListPermissionVersions(ListPermissionVersionsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListPermissionVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListPermissionVersions.</param>
+        /// 
+        /// <returns>Returns a  ListPermissionVersionsResult from RAM.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListPermissionVersions">REST API Reference for ListPermissionVersions Operation</seealso>
+        ListPermissionVersionsResponse EndListPermissionVersions(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListPrincipals
 
 

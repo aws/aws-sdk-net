@@ -56,7 +56,7 @@ namespace Amazon.RestJsonTest.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.RestJsonTest");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-05-13";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-05-13";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/payload";
@@ -75,8 +75,10 @@ namespace Amazon.RestJsonTest.Model.Internal.MarshallTransformations
             }
 
         
-            if(publicRequest.IsSetTestId())
+            if (publicRequest.IsSetTestId()) 
+            {
                 request.Headers["x-amz-test-id"] = publicRequest.TestId;
+            }
 
             return request;
         }

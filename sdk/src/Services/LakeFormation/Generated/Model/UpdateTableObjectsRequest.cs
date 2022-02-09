@@ -104,7 +104,7 @@ namespace Amazon.LakeFormation.Model
         /// The transaction at which to do the write.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=255)]
+        [AWSProperty(Min=1, Max=255)]
         public string TransactionId
         {
             get { return this._transactionId; }

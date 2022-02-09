@@ -34,7 +34,7 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SpliceInsertMessage Marshaller
-    /// </summary>       
+    /// </summary>
     public class SpliceInsertMessageMarshaller : IRequestMarshaller<SpliceInsertMessage, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SpliceInsertMessageMarshaller Instance = new SpliceInsertMessageMarshaller();
 
     }

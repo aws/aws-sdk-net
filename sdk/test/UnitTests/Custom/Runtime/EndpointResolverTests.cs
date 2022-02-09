@@ -23,11 +23,11 @@ namespace AWSSDK.UnitTests
         [TestCategory("Runtime")]
         public void TestSuccessfulCall()
         {
-            var endpointResolver = new EndpointResolver();                        
+            var endpointResolver = new EndpointResolver();            
             var executionContext = CreateExecutionContext(SetupConfig());
             Uri endpoint = endpointResolver.DetermineEndpoint(executionContext.RequestContext);
 
-            Assert.AreEqual(@"https://testprefix.test123-s3.amazonaws.com/", endpoint.ToString());            
+            Assert.AreEqual(@"https://testprefix.test123-s3.amazonaws.com/", endpoint.ToString());
         }
 
         [DataTestMethod]
@@ -99,7 +99,7 @@ namespace AWSSDK.UnitTests
                 new ResponseContext()
             );
 
-            executionContext.RequestContext.Request.HostPrefix = "TestPrefix.Test123-";            
+            executionContext.RequestContext.Request.HostPrefix = "TestPrefix.Test123-";
             return executionContext;
         }
 
@@ -118,7 +118,7 @@ namespace AWSSDK.UnitTests
         }
 
         private static AmazonS3Config SetupConfig()
-        {            
+        {        
             var config = new AmazonS3Config();
             config.RegionEndpoint = RegionEndpoint.USEast1;
             return config;

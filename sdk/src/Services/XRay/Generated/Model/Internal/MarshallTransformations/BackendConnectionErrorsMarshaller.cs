@@ -34,7 +34,7 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// BackendConnectionErrors Marshaller
-    /// </summary>       
+    /// </summary>
     public class BackendConnectionErrorsMarshaller : IRequestMarshaller<BackendConnectionErrors, JsonMarshallerContext> 
     {
         /// <summary>
@@ -85,7 +85,7 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static BackendConnectionErrorsMarshaller Instance = new BackendConnectionErrorsMarshaller();
 
     }

@@ -46,7 +46,16 @@ namespace Amazon.S3.Model
         /// </summary>
         public int PercentDone
         {
-            get { return (int)((_transferred * 100) / _total); }
+            get {
+                if (_total == 0)
+                {
+                    return 100;
+                }
+                else
+                {
+                    return (int)((_transferred * 100) / _total);
+                }
+            }
         }
 
         /// <summary>

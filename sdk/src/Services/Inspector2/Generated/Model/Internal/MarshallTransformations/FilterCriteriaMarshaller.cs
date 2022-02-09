@@ -34,7 +34,7 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// FilterCriteria Marshaller
-    /// </summary>       
+    /// </summary>
     public class FilterCriteriaMarshaller : IRequestMarshaller<FilterCriteria, JsonMarshallerContext> 
     {
         /// <summary>
@@ -545,7 +545,7 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static FilterCriteriaMarshaller Instance = new FilterCriteriaMarshaller();
 
     }

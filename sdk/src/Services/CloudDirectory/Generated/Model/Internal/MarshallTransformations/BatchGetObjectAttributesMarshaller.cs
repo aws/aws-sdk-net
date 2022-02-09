@@ -34,7 +34,7 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// BatchGetObjectAttributes Marshaller
-    /// </summary>       
+    /// </summary>
     public class BatchGetObjectAttributesMarshaller : IRequestMarshaller<BatchGetObjectAttributes, JsonMarshallerContext> 
     {
         /// <summary>
@@ -82,7 +82,7 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static BatchGetObjectAttributesMarshaller Instance = new BatchGetObjectAttributesMarshaller();
 
     }

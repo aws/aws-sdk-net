@@ -32,7 +32,7 @@ namespace Amazon.LookoutEquipment
     public partial class AmazonLookoutEquipmentConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.1.49");
+            InternalSDKUtils.BuildUserAgentString("3.7.1.58");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.LookoutEquipment
         /// Default constructor
         /// </summary>
         public AmazonLookoutEquipmentConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonLookoutEquipmentDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "lookoutequipment";
         }

@@ -34,7 +34,7 @@ namespace Amazon.FIS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// UpdateExperimentTemplateStopConditionInput Marshaller
-    /// </summary>       
+    /// </summary>
     public class UpdateExperimentTemplateStopConditionInputMarshaller : IRequestMarshaller<UpdateExperimentTemplateStopConditionInput, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.FIS.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static UpdateExperimentTemplateStopConditionInputMarshaller Instance = new UpdateExperimentTemplateStopConditionInputMarshaller();
 
     }

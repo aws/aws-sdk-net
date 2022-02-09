@@ -1185,6 +1185,10 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly AutoMLJobSecondaryStatus GeneratingExplainabilityReport = new AutoMLJobSecondaryStatus("GeneratingExplainabilityReport");
         /// <summary>
+        /// Constant GeneratingModelInsightsReport for AutoMLJobSecondaryStatus
+        /// </summary>
+        public static readonly AutoMLJobSecondaryStatus GeneratingModelInsightsReport = new AutoMLJobSecondaryStatus("GeneratingModelInsightsReport");
+        /// <summary>
         /// Constant MaxAutoMLJobRuntimeReached for AutoMLJobSecondaryStatus
         /// </summary>
         public static readonly AutoMLJobSecondaryStatus MaxAutoMLJobRuntimeReached = new AutoMLJobSecondaryStatus("MaxAutoMLJobRuntimeReached");
@@ -1196,6 +1200,10 @@ namespace Amazon.SageMaker
         /// Constant ModelDeploymentError for AutoMLJobSecondaryStatus
         /// </summary>
         public static readonly AutoMLJobSecondaryStatus ModelDeploymentError = new AutoMLJobSecondaryStatus("ModelDeploymentError");
+        /// <summary>
+        /// Constant ModelInsightsError for AutoMLJobSecondaryStatus
+        /// </summary>
+        public static readonly AutoMLJobSecondaryStatus ModelInsightsError = new AutoMLJobSecondaryStatus("ModelInsightsError");
         /// <summary>
         /// Constant ModelTuning for AutoMLJobSecondaryStatus
         /// </summary>
@@ -10098,6 +10106,10 @@ namespace Amazon.SageMaker
         /// Constant MALI for TargetPlatformAccelerator
         /// </summary>
         public static readonly TargetPlatformAccelerator MALI = new TargetPlatformAccelerator("MALI");
+        /// <summary>
+        /// Constant NNA for TargetPlatformAccelerator
+        /// </summary>
+        public static readonly TargetPlatformAccelerator NNA = new TargetPlatformAccelerator("NNA");
         /// <summary>
         /// Constant NVIDIA for TargetPlatformAccelerator
         /// </summary>

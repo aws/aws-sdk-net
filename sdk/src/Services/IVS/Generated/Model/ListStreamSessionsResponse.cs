@@ -57,7 +57,10 @@ namespace Amazon.IVS.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StreamSessions.
+        /// Gets and sets the property StreamSessions. 
+        /// <para>
+        /// List of stream sessions.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public List<StreamSessionSummary> StreamSessions

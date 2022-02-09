@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AwsCertificateManagerCertificateOptions Marshaller
-    /// </summary>       
+    /// </summary>
     public class AwsCertificateManagerCertificateOptionsMarshaller : IRequestMarshaller<AwsCertificateManagerCertificateOptions, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AwsCertificateManagerCertificateOptionsMarshaller Instance = new AwsCertificateManagerCertificateOptionsMarshaller();
 
     }

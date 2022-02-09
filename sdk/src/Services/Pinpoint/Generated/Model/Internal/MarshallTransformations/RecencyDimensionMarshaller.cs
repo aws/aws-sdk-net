@@ -34,7 +34,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RecencyDimension Marshaller
-    /// </summary>       
+    /// </summary>
     public class RecencyDimensionMarshaller : IRequestMarshaller<RecencyDimension, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RecencyDimensionMarshaller Instance = new RecencyDimensionMarshaller();
 
     }

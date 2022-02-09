@@ -1122,6 +1122,12 @@
     <max>63</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GlueDataBrew.Model.S3Location.BucketOwner</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GlueDataBrew.Model.S3Location.Key</property>
     <min>1</min>
     <max>1280</max>

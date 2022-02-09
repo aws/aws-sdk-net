@@ -34,7 +34,7 @@ namespace Amazon.Route53RecoveryControlConfig.Model.Internal.MarshallTransformat
 {
     /// <summary>
     /// NewAssertionRule Marshaller
-    /// </summary>       
+    /// </summary>
     public class NewAssertionRuleMarshaller : IRequestMarshaller<NewAssertionRule, JsonMarshallerContext> 
     {
         /// <summary>
@@ -89,7 +89,7 @@ namespace Amazon.Route53RecoveryControlConfig.Model.Internal.MarshallTransformat
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static NewAssertionRuleMarshaller Instance = new NewAssertionRuleMarshaller();
 
     }

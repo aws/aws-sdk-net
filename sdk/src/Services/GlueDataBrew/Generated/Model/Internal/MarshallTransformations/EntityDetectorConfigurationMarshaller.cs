@@ -34,7 +34,7 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// EntityDetectorConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class EntityDetectorConfigurationMarshaller : IRequestMarshaller<EntityDetectorConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -76,7 +76,7 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static EntityDetectorConfigurationMarshaller Instance = new EntityDetectorConfigurationMarshaller();
 
     }

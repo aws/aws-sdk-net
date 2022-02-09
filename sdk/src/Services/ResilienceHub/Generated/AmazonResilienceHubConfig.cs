@@ -32,7 +32,7 @@ namespace Amazon.ResilienceHub
     public partial class AmazonResilienceHubConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.18");
+            InternalSDKUtils.BuildUserAgentString("3.7.0.27");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.ResilienceHub
         /// Default constructor
         /// </summary>
         public AmazonResilienceHubConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonResilienceHubDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "resiliencehub";
         }

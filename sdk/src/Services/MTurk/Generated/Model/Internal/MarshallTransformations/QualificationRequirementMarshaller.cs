@@ -34,7 +34,7 @@ namespace Amazon.MTurk.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// QualificationRequirement Marshaller
-    /// </summary>       
+    /// </summary>
     public class QualificationRequirementMarshaller : IRequestMarshaller<QualificationRequirement, JsonMarshallerContext> 
     {
         /// <summary>
@@ -100,7 +100,7 @@ namespace Amazon.MTurk.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static QualificationRequirementMarshaller Instance = new QualificationRequirementMarshaller();
 
     }

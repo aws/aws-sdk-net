@@ -82,15 +82,10 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property PricingPlan. 
         /// <para>
-        /// The pricing plan for the specified tracker resource.
-        /// </para>
-        ///  
-        /// <para>
-        /// For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon
-        /// Location Service pricing</a>.
+        /// Always returns <code>RequestBasedUsage</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [Obsolete("Deprecated. Always returns RequestBasedUsage.")]
         public PricingPlan PricingPlan
         {
             get { return this._pricingPlan; }
@@ -106,9 +101,10 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property PricingPlanDataSource. 
         /// <para>
-        /// The specified data provider for the tracker resource.
+        /// No longer used. Always returns an empty string.
         /// </para>
         /// </summary>
+        [Obsolete("Deprecated. Unused.")]
         public string PricingPlanDataSource
         {
             get { return this._pricingPlanDataSource; }

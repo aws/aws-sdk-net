@@ -167,13 +167,10 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property PricingPlan. 
         /// <para>
-        /// The pricing plan selected for the specified map resource.
+        /// No longer used. Always returns <code>RequestBasedUsage</code>.
         /// </para>
-        ///  <pre><code> &lt;p&gt;For additional details and restrictions on each pricing plan
-        /// option, see &lt;a href=&quot;https://aws.amazon.com/location/pricing/&quot;&gt;Amazon
-        /// Location Service pricing&lt;/a&gt;.&lt;/p&gt; </code></pre>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [Obsolete("Deprecated. Always returns RequestBasedUsage.")]
         public PricingPlan PricingPlan
         {
             get { return this._pricingPlan; }

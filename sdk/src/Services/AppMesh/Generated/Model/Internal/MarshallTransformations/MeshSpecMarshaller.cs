@@ -34,7 +34,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// MeshSpec Marshaller
-    /// </summary>       
+    /// </summary>
     public class MeshSpecMarshaller : IRequestMarshaller<MeshSpec, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static MeshSpecMarshaller Instance = new MeshSpecMarshaller();
 
     }

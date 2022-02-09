@@ -58,7 +58,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             string target = "AWSGlue.CreateScript";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-03-31";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-03-31";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -105,7 +105,6 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Language);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

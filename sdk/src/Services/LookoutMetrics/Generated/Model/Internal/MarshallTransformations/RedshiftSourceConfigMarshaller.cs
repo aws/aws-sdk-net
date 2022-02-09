@@ -34,7 +34,7 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RedshiftSourceConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class RedshiftSourceConfigMarshaller : IRequestMarshaller<RedshiftSourceConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -102,7 +102,7 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RedshiftSourceConfigMarshaller Instance = new RedshiftSourceConfigMarshaller();
 
     }

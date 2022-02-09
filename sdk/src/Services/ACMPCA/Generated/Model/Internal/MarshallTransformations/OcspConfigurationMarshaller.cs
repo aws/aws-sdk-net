@@ -34,7 +34,7 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// OcspConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class OcspConfigurationMarshaller : IRequestMarshaller<OcspConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static OcspConfigurationMarshaller Instance = new OcspConfigurationMarshaller();
 
     }

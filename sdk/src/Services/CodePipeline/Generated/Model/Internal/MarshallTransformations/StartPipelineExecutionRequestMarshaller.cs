@@ -58,7 +58,7 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
             string target = "CodePipeline_20150709.StartPipelineExecution";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-07-09";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-07-09";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -76,7 +76,7 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
                 else if(!(publicRequest.IsSetClientRequestToken()))
                 {
                     context.Writer.WritePropertyName("clientRequestToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());                                                
+                    context.Writer.Write(Guid.NewGuid().ToString());
                 }
                 if(publicRequest.IsSetName())
                 {
@@ -84,7 +84,6 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Name);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

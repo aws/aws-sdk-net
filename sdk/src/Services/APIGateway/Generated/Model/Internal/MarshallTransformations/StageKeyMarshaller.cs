@@ -34,7 +34,7 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// StageKey Marshaller
-    /// </summary>       
+    /// </summary>
     public class StageKeyMarshaller : IRequestMarshaller<StageKey, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static StageKeyMarshaller Instance = new StageKeyMarshaller();
 
     }

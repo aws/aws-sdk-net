@@ -34,7 +34,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CloudwatchLogsAction Marshaller
-    /// </summary>       
+    /// </summary>
     public class CloudwatchLogsActionMarshaller : IRequestMarshaller<CloudwatchLogsAction, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CloudwatchLogsActionMarshaller Instance = new CloudwatchLogsActionMarshaller();
 
     }

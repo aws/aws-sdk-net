@@ -62,7 +62,7 @@ namespace Amazon.RecycleBin.Model
         /// <summary>
         /// Gets and sets the property Identifier. 
         /// <para>
-        /// The unique identifier of the retention rule.
+        /// The unique ID of the retention rule.
         /// </para>
         /// </summary>
         public string Identifier
@@ -134,7 +134,7 @@ namespace Amazon.RecycleBin.Model
         /// Gets and sets the property Status. 
         /// <para>
         /// The state of the retention rule. Only retention rules that are in the <code>available</code>
-        /// state retain snapshots.
+        /// state retain resources.
         /// </para>
         /// </summary>
         public RuleStatus Status
@@ -152,7 +152,7 @@ namespace Amazon.RecycleBin.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags assigned to the retention rule.
+        /// Information about the tags assigned to the retention rule.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=200)]

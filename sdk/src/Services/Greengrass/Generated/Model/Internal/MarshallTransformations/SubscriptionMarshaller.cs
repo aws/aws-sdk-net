@@ -34,7 +34,7 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Subscription Marshaller
-    /// </summary>       
+    /// </summary>
     public class SubscriptionMarshaller : IRequestMarshaller<Subscription, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SubscriptionMarshaller Instance = new SubscriptionMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CaptureOption Marshaller
-    /// </summary>       
+    /// </summary>
     public class CaptureOptionMarshaller : IRequestMarshaller<CaptureOption, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CaptureOptionMarshaller Instance = new CaptureOptionMarshaller();
 
     }

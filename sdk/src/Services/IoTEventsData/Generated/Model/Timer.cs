@@ -58,7 +58,7 @@ namespace Amazon.IoTEventsData.Model
         /// <summary>
         /// Gets and sets the property Timestamp. 
         /// <para>
-        /// The number of seconds which have elapsed on the timer.
+        /// The expiration time for the timer.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

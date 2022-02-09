@@ -34,7 +34,7 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// HealthCheckCustomConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class HealthCheckCustomConfigMarshaller : IRequestMarshaller<HealthCheckCustomConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static HealthCheckCustomConfigMarshaller Instance = new HealthCheckCustomConfigMarshaller();
 
     }

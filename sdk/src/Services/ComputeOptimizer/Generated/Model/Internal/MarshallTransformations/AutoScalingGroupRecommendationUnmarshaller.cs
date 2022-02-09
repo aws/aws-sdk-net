@@ -106,6 +106,12 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
                     unmarshalledObject.Finding = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("inferredWorkloadTypes", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.InferredWorkloadTypes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("lastRefreshTimestamp", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

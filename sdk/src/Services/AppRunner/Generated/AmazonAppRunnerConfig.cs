@@ -32,7 +32,7 @@ namespace Amazon.AppRunner
     public partial class AmazonAppRunnerConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.1.37");
+            InternalSDKUtils.BuildUserAgentString("3.7.2.0");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.AppRunner
         /// Default constructor
         /// </summary>
         public AmazonAppRunnerConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonAppRunnerDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "apprunner";
         }

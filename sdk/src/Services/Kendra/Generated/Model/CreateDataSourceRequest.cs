@@ -67,8 +67,8 @@ namespace Amazon.Kendra.Model
         /// Gets and sets the property ClientToken. 
         /// <para>
         /// A token that you provide to identify the request to create a data source. Multiple
-        /// calls to the <code>CreateDataSource</code> operation with the same client token will
-        /// create only one data source.
+        /// calls to the <code>CreateDataSource</code> API with the same client token will create
+        /// only one data source.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -251,10 +251,10 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Schedule. 
         /// <para>
-        /// Sets the frequency that Amazon Kendra will check the documents in your repository
-        /// and update the index. If you don't set a schedule Amazon Kendra will not periodically
-        /// update the index. You can call the <code>StartDataSourceSyncJob</code> operation to
-        /// update the index.
+        /// Sets the frequency for Amazon Kendra to check the documents in your repository and
+        /// update the index. If you don't set a schedule Amazon Kendra will not periodically
+        /// update the index. You can call the <code>StartDataSourceSyncJob</code> API to update
+        /// the index.
         /// </para>
         ///  
         /// <para>

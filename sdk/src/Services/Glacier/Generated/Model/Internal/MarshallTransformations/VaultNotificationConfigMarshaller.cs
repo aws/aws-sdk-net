@@ -34,7 +34,7 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// VaultNotificationConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class VaultNotificationConfigMarshaller : IRequestMarshaller<VaultNotificationConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static VaultNotificationConfigMarshaller Instance = new VaultNotificationConfigMarshaller();
 
     }

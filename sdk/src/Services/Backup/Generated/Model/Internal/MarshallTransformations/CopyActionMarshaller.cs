@@ -34,7 +34,7 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CopyAction Marshaller
-    /// </summary>       
+    /// </summary>
     public class CopyActionMarshaller : IRequestMarshaller<CopyAction, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CopyActionMarshaller Instance = new CopyActionMarshaller();
 
     }

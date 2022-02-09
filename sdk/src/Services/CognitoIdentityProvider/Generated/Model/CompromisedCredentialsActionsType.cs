@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// The compromised credentials actions type
+    /// The compromised credentials actions type.
     /// </summary>
     public partial class CompromisedCredentialsActionsType
     {

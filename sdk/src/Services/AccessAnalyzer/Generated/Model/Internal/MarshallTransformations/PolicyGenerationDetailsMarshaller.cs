@@ -34,7 +34,7 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// PolicyGenerationDetails Marshaller
-    /// </summary>       
+    /// </summary>
     public class PolicyGenerationDetailsMarshaller : IRequestMarshaller<PolicyGenerationDetails, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static PolicyGenerationDetailsMarshaller Instance = new PolicyGenerationDetailsMarshaller();
 
     }

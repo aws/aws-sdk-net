@@ -32,7 +32,7 @@ namespace Amazon.SimpleSystemsManagement
     public partial class AmazonSimpleSystemsManagementConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.11.9");
+            InternalSDKUtils.BuildUserAgentString("3.7.12.6");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.SimpleSystemsManagement
         /// Default constructor
         /// </summary>
         public AmazonSimpleSystemsManagementConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonSimpleSystemsManagementDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "ssm";
         }

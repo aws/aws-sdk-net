@@ -34,7 +34,7 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Get Marshaller
-    /// </summary>       
+    /// </summary>
     public class GetMarshaller : IRequestMarshaller<Get, JsonMarshallerContext> 
     {
         /// <summary>
@@ -94,7 +94,7 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static GetMarshaller Instance = new GetMarshaller();
 
     }

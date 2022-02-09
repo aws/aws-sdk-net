@@ -32,7 +32,7 @@ namespace Amazon.WAFRegional
     public partial class AmazonWAFRegionalConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.112");
+            InternalSDKUtils.BuildUserAgentString("3.7.0.121");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.WAFRegional
         /// Default constructor
         /// </summary>
         public AmazonWAFRegionalConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonWAFRegionalDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "waf-regional";
         }

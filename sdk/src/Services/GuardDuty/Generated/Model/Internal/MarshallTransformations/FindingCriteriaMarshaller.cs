@@ -34,7 +34,7 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// FindingCriteria Marshaller
-    /// </summary>       
+    /// </summary>
     public class FindingCriteriaMarshaller : IRequestMarshaller<FindingCriteria, JsonMarshallerContext> 
     {
         /// <summary>
@@ -68,7 +68,7 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static FindingCriteriaMarshaller Instance = new FindingCriteriaMarshaller();
 
     }

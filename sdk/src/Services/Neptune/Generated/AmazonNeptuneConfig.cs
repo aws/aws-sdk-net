@@ -32,7 +32,7 @@ namespace Amazon.Neptune
     public partial class AmazonNeptuneConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.2.23");
+            InternalSDKUtils.BuildUserAgentString("3.7.2.32");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.Neptune
         /// Default constructor
         /// </summary>
         public AmazonNeptuneConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonNeptuneDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "rds";
         }

@@ -39,7 +39,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Gets and sets the property CaseSensitive. 
         /// <para>
         /// Specifies whether username case sensitivity will be applied for all users in the user
-        /// pool through Cognito APIs.
+        /// pool through Amazon Cognito APIs.
         /// </para>
         ///  
         /// <para>
@@ -49,13 +49,13 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <para>
         ///  <b> <code>True</code> </b>: Enables case sensitivity for all username input. When
         /// this option is set to <code>True</code>, users must sign in using the exact capitalization
-        /// of their given username. For example, “UserName”. This is the default value.
+        /// of their given username, such as “UserName”. This is the default value.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <b> <code>False</code> </b>: Enables case insensitivity for all username input. For
-        /// example, when this option is set to <code>False</code>, users will be able to sign
-        /// in using either "username" or "Username". This option also enables both <code>preferred_username</code>
+        /// example, when this option is set to <code>False</code>, users can sign in using either
+        /// "username" or "Username". This option also enables both <code>preferred_username</code>
         /// and <code>email</code> alias to be case insensitive, in addition to the <code>username</code>
         /// attribute.
         /// </para>

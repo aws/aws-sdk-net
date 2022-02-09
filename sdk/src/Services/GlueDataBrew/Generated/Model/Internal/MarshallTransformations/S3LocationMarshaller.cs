@@ -34,7 +34,7 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// S3Location Marshaller
-    /// </summary>       
+    /// </summary>
     public class S3LocationMarshaller : IRequestMarshaller<S3Location, JsonMarshallerContext> 
     {
         /// <summary>
@@ -51,6 +51,12 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Bucket);
             }
 
+            if(requestObject.IsSetBucketOwner())
+            {
+                context.Writer.WritePropertyName("BucketOwner");
+                context.Writer.Write(requestObject.BucketOwner);
+            }
+
             if(requestObject.IsSetKey())
             {
                 context.Writer.WritePropertyName("Key");
@@ -61,7 +67,7 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static S3LocationMarshaller Instance = new S3LocationMarshaller();
 
     }

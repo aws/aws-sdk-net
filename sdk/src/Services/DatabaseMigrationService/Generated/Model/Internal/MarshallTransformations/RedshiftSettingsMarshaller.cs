@@ -34,7 +34,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RedshiftSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class RedshiftSettingsMarshaller : IRequestMarshaller<RedshiftSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -229,7 +229,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RedshiftSettingsMarshaller Instance = new RedshiftSettingsMarshaller();
 
     }

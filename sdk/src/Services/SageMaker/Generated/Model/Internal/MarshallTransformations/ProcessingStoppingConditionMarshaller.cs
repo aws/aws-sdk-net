@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ProcessingStoppingCondition Marshaller
-    /// </summary>       
+    /// </summary>
     public class ProcessingStoppingConditionMarshaller : IRequestMarshaller<ProcessingStoppingCondition, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ProcessingStoppingConditionMarshaller Instance = new ProcessingStoppingConditionMarshaller();
 
     }

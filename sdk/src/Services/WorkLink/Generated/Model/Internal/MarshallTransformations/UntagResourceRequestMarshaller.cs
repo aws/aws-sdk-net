@@ -55,7 +55,7 @@ namespace Amazon.WorkLink.Model.Internal.MarshallTransformations
         public IRequest Marshall(UntagResourceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.WorkLink");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-09-25";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-09-25";
             request.HttpMethod = "DELETE";
 
             if (!publicRequest.IsSetResourceArn())

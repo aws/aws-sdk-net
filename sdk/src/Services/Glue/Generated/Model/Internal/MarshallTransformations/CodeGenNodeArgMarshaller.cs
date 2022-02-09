@@ -34,7 +34,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CodeGenNodeArg Marshaller
-    /// </summary>       
+    /// </summary>
     public class CodeGenNodeArgMarshaller : IRequestMarshaller<CodeGenNodeArg, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CodeGenNodeArgMarshaller Instance = new CodeGenNodeArgMarshaller();
 
     }

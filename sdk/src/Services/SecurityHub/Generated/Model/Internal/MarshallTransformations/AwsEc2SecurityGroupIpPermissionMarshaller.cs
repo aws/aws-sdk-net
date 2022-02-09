@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AwsEc2SecurityGroupIpPermission Marshaller
-    /// </summary>       
+    /// </summary>
     public class AwsEc2SecurityGroupIpPermissionMarshaller : IRequestMarshaller<AwsEc2SecurityGroupIpPermission, JsonMarshallerContext> 
     {
         /// <summary>
@@ -131,7 +131,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AwsEc2SecurityGroupIpPermissionMarshaller Instance = new AwsEc2SecurityGroupIpPermissionMarshaller();
 
     }

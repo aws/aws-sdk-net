@@ -34,7 +34,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ManifestFileLocation Marshaller
-    /// </summary>       
+    /// </summary>
     public class ManifestFileLocationMarshaller : IRequestMarshaller<ManifestFileLocation, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ManifestFileLocationMarshaller Instance = new ManifestFileLocationMarshaller();
 
     }

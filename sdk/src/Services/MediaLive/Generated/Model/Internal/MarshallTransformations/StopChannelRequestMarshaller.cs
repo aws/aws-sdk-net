@@ -56,7 +56,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.MediaLive");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-10-14";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-10-14";
             request.HttpMethod = "POST";
 
             if (!publicRequest.IsSetChannelId())

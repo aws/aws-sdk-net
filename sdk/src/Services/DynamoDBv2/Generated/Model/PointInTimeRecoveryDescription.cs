@@ -82,10 +82,6 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ENABLING</code> - Point in time recovery is being enabled.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         ///  <code>ENABLED</code> - Point in time recovery is enabled.
         /// </para>
         ///  </li> <li> 

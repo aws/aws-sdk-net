@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// WafOverrideAction Marshaller
-    /// </summary>       
+    /// </summary>
     public class WafOverrideActionMarshaller : IRequestMarshaller<WafOverrideAction, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static WafOverrideActionMarshaller Instance = new WafOverrideActionMarshaller();
 
     }

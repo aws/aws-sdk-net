@@ -32,7 +32,7 @@ namespace Amazon.ConnectParticipant
     public partial class AmazonConnectParticipantConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.2.21");
+            InternalSDKUtils.BuildUserAgentString("3.7.2.30");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.ConnectParticipant
         /// Default constructor
         /// </summary>
         public AmazonConnectParticipantConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonConnectParticipantDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "execute-api";
         }

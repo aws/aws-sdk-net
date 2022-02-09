@@ -37,7 +37,11 @@ namespace Amazon.EventBridge.Model
     /// <para>
     /// Targets are the resources that are invoked when a rule is triggered.
     /// </para>
-    ///  
+    ///  <note> 
+    /// <para>
+    /// Each rule can have up to five (5) targets associated with it at one time.
+    /// </para>
+    ///  </note> 
     /// <para>
     /// You can configure the following as targets for Events:
     /// </para>
@@ -73,6 +77,10 @@ namespace Amazon.EventBridge.Model
     ///  </li> <li> 
     /// <para>
     /// Amazon EC2 <code>CreateSnapshot</code> API call
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// EC2 Image Builder
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -125,7 +133,7 @@ namespace Amazon.EventBridge.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Amazon SQS queues (includes FIFO queues
+    /// Amazon SQS queues (includes FIFO queues)
     /// </para>
     ///  </li> <li> 
     /// <para>

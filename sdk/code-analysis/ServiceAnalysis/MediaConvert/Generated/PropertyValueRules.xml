@@ -911,6 +911,11 @@
     <pattern>^([01][0-9]|2[0-4]):[0-5][0-9]:[0-5][0-9][:;][0-9]{2}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaConvert.Model.Input.DolbyVisionMetadataXml</property>
+    <min>14</min>
+    <pattern>^((s3://(.*?)\.(xml|XML))|(https?://(.*?)\.(xml|XML)(\?([^&amp;=]+=[^&amp;]+&amp;)*[^&amp;=]+=[^&amp;]+)?))$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaConvert.Model.Input.FileInput</property>
     <pattern>^((s3://([^\/]+\/+)+([^\/\.]+|(([^\/]*)\.([mM]2[pP]|[mM]2[vV]|[mM][pP][eE][gG]|[mM][pP]3|[aA][vV][iI]|[mM][pP]4|[fF][lL][vV]|[mM][pP][tT]|[mM][pP][gG]|[mM]4[vV]|[tT][rR][pP]|[fF]4[vV]|[mM]2[tT][sS]|[tT][sS]|264|[hH]264|[mM][kK][vV]|[mM][kK][aA]|[mM][oO][vV]|[mM][tT][sS]|[mM]2[tT]|[wW][mM][vVaA]|[aA][sS][fF]|[vV][oO][bB]|3[gG][pP]|3[gG][pP][pP]|[mM][xX][fF]|[dD][iI][vV][xX]|[xX][vV][iI][dD]|[rR][aA][wW]|[dD][vV]|[gG][xX][fF]|[mM]1[vV]|3[gG]2|[vV][mM][fF]|[mM]3[uU]8|[wW][eE][bB][mM]|[lL][cC][hH]|[gG][xX][fF]_[mM][pP][eE][gG]2|[mM][xX][fF]_[mM][pP][eE][gG]2|[mM][xX][fF][hH][dD]|[wW][aA][vV]|[yY]4[mM]|[xX][mM][lL]|[oO][gG][gGaA]|[aA][tT][mM][oO][sS]))))|(https?://([^\/]+\/+)+([^\/\.]+|(([^\/]*)\.([mM]2[vV]|[mM][pP][eE][gG]|[mM][pP]3|[aA][vV][iI]|[mM][pP]4|[fF][lL][vV]|[mM][pP][tT]|[mM][pP][gG]|[mM]4[vV]|[tT][rR][pP]|[fF]4[vV]|[mM]2[tT][sS]|[tT][sS]|264|[hH]264|[mM][kK][vV]|[mM][kK][aA]|[mM][oO][vV]|[mM][tT][sS]|[mM]2[tT]|[wW][mM][vVaA]|[aA][sS][fF]|[vV][oO][bB]|3[gG][pP]|3[gG][pP][pP]|[mM][xX][fF]|[dD][iI][vV][xX]|[xX][vV][iI][dD]|[rR][aA][wW]|[dD][vV]|[gG][xX][fF]|[mM]1[vV]|3[gG]2|[vV][mM][fF]|[mM]3[uU]8|[wW][eE][bB][mM]|[lL][cC][hH]|[gG][xX][fF]_[mM][pP][eE][gG]2|[mM][xX][fF]_[mM][pP][eE][gG]2|[mM][xX][fF][hH][dD]|[wW][aA][vV]|[yY]4[mM]|[xX][mM][lL]|[oO][gG][gGaA]|[aA][tT][mM][oO][sS])))(\?([^&amp;=]+=[^&amp;]+&amp;)*[^&amp;=]+=[^&amp;]+)?))$</pattern>
   </property-value-rule>
@@ -955,6 +960,11 @@
     <min>9</min>
     <max>19</max>
     <pattern>^[a-z-]{2,6}-(east|west|central|((north|south)(east|west)?))-[1-9]{1,2}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.InputTemplate.DolbyVisionMetadataXml</property>
+    <min>14</min>
+    <pattern>^((s3://(.*?)\.(xml|XML))|(https?://(.*?)\.(xml|XML)(\?([^&amp;=]+=[^&amp;]+&amp;)*[^&amp;=]+=[^&amp;]+)?))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.InputTemplate.FilterStrength</property>
@@ -1565,7 +1575,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.S3EncryptionSettings.KmsKeyArn</property>
-    <pattern>^arn:aws(-us-gov|-cn)?:kms:[a-z-]{2,6}-(east|west|central|((north|south)(east|west)?))-[1-9]{1,2}:\d{12}:key/[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$</pattern>
+    <pattern>^arn:aws(-us-gov|-cn)?:kms:[a-z-]{2,6}-(east|west|central|((north|south)(east|west)?))-[1-9]{1,2}:\d{12}:key/([a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}|mrk-[a-fA-F0-9]{32})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.SpekeKeyProvider.CertificateArn</property>

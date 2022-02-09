@@ -34,7 +34,7 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SoftwareTokenMfaSettingsType Marshaller
-    /// </summary>       
+    /// </summary>
     public class SoftwareTokenMfaSettingsTypeMarshaller : IRequestMarshaller<SoftwareTokenMfaSettingsType, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SoftwareTokenMfaSettingsTypeMarshaller Instance = new SoftwareTokenMfaSettingsTypeMarshaller();
 
     }

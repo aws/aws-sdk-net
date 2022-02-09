@@ -30,7 +30,7 @@ namespace Amazon.RecycleBin.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTagsForResource operation.
-    /// Lists the tags assigned a specific resource.
+    /// Lists the tags assigned to a retention rule.
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonRecycleBinRequest
     {
@@ -39,7 +39,7 @@ namespace Amazon.RecycleBin.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the resource for which to list the tags.
+        /// The Amazon Resource Name (ARN) of the retention rule.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1011)]

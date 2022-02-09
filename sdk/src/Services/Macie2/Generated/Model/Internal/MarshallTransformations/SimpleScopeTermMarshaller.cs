@@ -34,7 +34,7 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SimpleScopeTerm Marshaller
-    /// </summary>       
+    /// </summary>
     public class SimpleScopeTermMarshaller : IRequestMarshaller<SimpleScopeTerm, JsonMarshallerContext> 
     {
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SimpleScopeTermMarshaller Instance = new SimpleScopeTermMarshaller();
 
     }

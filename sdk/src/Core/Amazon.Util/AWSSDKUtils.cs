@@ -1027,7 +1027,7 @@ namespace Amazon.Util
                 return data;
             }
 
-            var index = 0;                                    
+            var index = 0;
             var sb = new StringBuilder();
             var findIndex = data.IndexOf(EncodedSlash, index, StringComparison.OrdinalIgnoreCase);
             while (findIndex != -1)
@@ -1220,7 +1220,7 @@ namespace Amazon.Util
                 return AsyncHelpers.RunSync<string>(() =>
                 {
                     return client.GetStringAsync(uri);
-                });             
+                }); 
             }
 #else
             var request = CreateClient(uri, timeout, proxy, null);
@@ -1250,16 +1250,16 @@ namespace Amazon.Util
         {
 #if NETSTANDARD
             using (var client = CreateClient(uri, timeout, proxy, headers))
-            {                   
+            {           
                 var response = AsyncHelpers.RunSync<HttpResponseMessage>(() =>
                 {
                     var requestMessage = new HttpRequestMessage(new HttpMethod(requestType), uri);
                     if(!string.IsNullOrEmpty(content))
                     {
-                        requestMessage.Content = new StringContent(content);                     
+                        requestMessage.Content = new StringContent(content);         
                     }
                                 
-                    return client.SendAsync(requestMessage);                    
+                    return client.SendAsync(requestMessage);        
                 });
 
                 try
@@ -1278,8 +1278,8 @@ namespace Amazon.Util
                 try
                 {
                     return AsyncHelpers.RunSync<string>(() =>
-                    {                    
-                        return response.Content.ReadAsStringAsync();                    
+                    {
+                        return response.Content.ReadAsStringAsync();        
                     });
                 }
                 finally 
@@ -1333,7 +1333,7 @@ namespace Amazon.Util
                 }
             }
                                 
-            return client;            
+            return client;
         }
 #else
         private static HttpWebRequest CreateClient(Uri uri, TimeSpan timeout, IWebProxy proxy, IDictionary<string, string> headers)
@@ -1434,14 +1434,14 @@ namespace Amazon.Util
                 thread.Start();
                 var standardError = process.StandardError.ReadToEnd();
                 thread.Join();
-                process.WaitForExit();                
+                process.WaitForExit();    
 
                 return new ProcessExecutionResult
                 {
                     ExitCode = process.ExitCode,
                     StandardError = standardError,
                     StandardOutput = standardOutput
-                };                
+                };    
             }
         }
 #if AWS_ASYNC_API
@@ -1458,7 +1458,7 @@ namespace Amazon.Util
                 var tcs = new TaskCompletionSource<object>();
                 process.Exited += (s, ea) => tcs.SetResult(null);
                 logger.InfoFormat("Starting a process with the following ProcessInfo: UseShellExecute - {0} RedirectStandardError - {1}, RedirectStandardOutput - {2}, CreateNoWindow - {3}",  
-                    processStartInfo.UseShellExecute, processStartInfo.RedirectStandardError, processStartInfo.RedirectStandardOutput, processStartInfo.CreateNoWindow);                
+                    processStartInfo.UseShellExecute, processStartInfo.RedirectStandardError, processStartInfo.RedirectStandardOutput, processStartInfo.CreateNoWindow);    
                 process.Start();
                 logger.InfoFormat("Process started");
 

@@ -34,7 +34,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// GrpcGatewayRouteMatch Marshaller
-    /// </summary>       
+    /// </summary>
     public class GrpcGatewayRouteMatchMarshaller : IRequestMarshaller<GrpcGatewayRouteMatch, JsonMarshallerContext> 
     {
         /// <summary>
@@ -82,7 +82,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static GrpcGatewayRouteMatchMarshaller Instance = new GrpcGatewayRouteMatchMarshaller();
 
     }

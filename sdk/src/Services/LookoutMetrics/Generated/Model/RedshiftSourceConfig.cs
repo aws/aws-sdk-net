@@ -48,7 +48,7 @@ namespace Amazon.LookoutMetrics.Model
         /// A string identifying the Redshift cluster.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=63)]
+        [AWSProperty(Min=1, Max=63)]
         public string ClusterIdentifier
         {
             get { return this._clusterIdentifier; }
@@ -67,7 +67,7 @@ namespace Amazon.LookoutMetrics.Model
         /// The name of the database host.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=253)]
+        [AWSProperty(Min=1, Max=253)]
         public string DatabaseHost
         {
             get { return this._databaseHost; }
@@ -86,7 +86,7 @@ namespace Amazon.LookoutMetrics.Model
         /// The Redshift database name.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=100)]
+        [AWSProperty(Min=1, Max=100)]
         public string DatabaseName
         {
             get { return this._databaseName; }
@@ -105,7 +105,7 @@ namespace Amazon.LookoutMetrics.Model
         /// The port number where the database can be accessed.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=65535)]
+        [AWSProperty(Min=1, Max=65535)]
         public int DatabasePort
         {
             get { return this._databasePort.GetValueOrDefault(); }
@@ -124,7 +124,7 @@ namespace Amazon.LookoutMetrics.Model
         /// The Amazon Resource Name (ARN) of the role providing access to the database.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=256)]
+        [AWSProperty(Max=256)]
         public string RoleArn
         {
             get { return this._roleArn; }
@@ -143,7 +143,7 @@ namespace Amazon.LookoutMetrics.Model
         /// The Amazon Resource Name (ARN) of the AWS Secrets Manager role.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=256)]
+        [AWSProperty(Max=256)]
         public string SecretManagerArn
         {
             get { return this._secretManagerArn; }
@@ -162,7 +162,7 @@ namespace Amazon.LookoutMetrics.Model
         /// The table name of the Redshift database.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=100)]
+        [AWSProperty(Min=1, Max=100)]
         public string TableName
         {
             get { return this._tableName; }
@@ -181,7 +181,6 @@ namespace Amazon.LookoutMetrics.Model
         /// Contains information about the Amazon Virtual Private Cloud (VPC) configuration.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public VpcConfiguration VpcConfiguration
         {
             get { return this._vpcConfiguration; }

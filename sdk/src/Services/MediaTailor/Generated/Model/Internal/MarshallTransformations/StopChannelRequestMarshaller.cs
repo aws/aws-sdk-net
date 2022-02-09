@@ -56,7 +56,7 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.MediaTailor");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-04-23";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-04-23";
             request.HttpMethod = "PUT";
 
             if (!publicRequest.IsSetChannelName())

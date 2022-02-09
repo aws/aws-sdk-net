@@ -34,7 +34,7 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// HiveJsonSerDe Marshaller
-    /// </summary>       
+    /// </summary>
     public class HiveJsonSerDeMarshaller : IRequestMarshaller<HiveJsonSerDe, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static HiveJsonSerDeMarshaller Instance = new HiveJsonSerDeMarshaller();
 
     }

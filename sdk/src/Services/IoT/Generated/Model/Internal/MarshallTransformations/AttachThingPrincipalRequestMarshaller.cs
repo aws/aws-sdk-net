@@ -56,7 +56,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.IoT");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-05-28";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-05-28";
             request.HttpMethod = "PUT";
 
             if (!publicRequest.IsSetThingName())
@@ -64,8 +64,10 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             request.AddPathResource("{thingName}", StringUtils.FromString(publicRequest.ThingName));
             request.ResourcePath = "/things/{thingName}/principals";
         
-            if(publicRequest.IsSetPrincipal())
+            if (publicRequest.IsSetPrincipal()) 
+            {
                 request.Headers["x-amzn-principal"] = publicRequest.Principal;
+            }
 
             return request;
         }

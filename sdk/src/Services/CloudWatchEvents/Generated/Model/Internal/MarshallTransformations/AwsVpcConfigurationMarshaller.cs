@@ -34,7 +34,7 @@ namespace Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AwsVpcConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class AwsVpcConfigurationMarshaller : IRequestMarshaller<AwsVpcConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -77,7 +77,7 @@ namespace Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AwsVpcConfigurationMarshaller Instance = new AwsVpcConfigurationMarshaller();
 
     }

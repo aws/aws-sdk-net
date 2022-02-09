@@ -34,7 +34,7 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RiskExceptionConfigurationType Marshaller
-    /// </summary>       
+    /// </summary>
     public class RiskExceptionConfigurationTypeMarshaller : IRequestMarshaller<RiskExceptionConfigurationType, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RiskExceptionConfigurationTypeMarshaller Instance = new RiskExceptionConfigurationTypeMarshaller();
 
     }

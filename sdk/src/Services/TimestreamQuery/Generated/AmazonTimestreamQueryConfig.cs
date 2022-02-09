@@ -32,7 +32,7 @@ namespace Amazon.TimestreamQuery
     public partial class AmazonTimestreamQueryConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.1.9");
+            InternalSDKUtils.BuildUserAgentString("3.7.1.18");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.TimestreamQuery
         /// Default constructor
         /// </summary>
         public AmazonTimestreamQueryConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonTimestreamQueryDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "timestream";
         }

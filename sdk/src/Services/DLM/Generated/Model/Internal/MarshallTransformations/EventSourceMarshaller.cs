@@ -34,7 +34,7 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// EventSource Marshaller
-    /// </summary>       
+    /// </summary>
     public class EventSourceMarshaller : IRequestMarshaller<EventSource, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static EventSourceMarshaller Instance = new EventSourceMarshaller();
 
     }

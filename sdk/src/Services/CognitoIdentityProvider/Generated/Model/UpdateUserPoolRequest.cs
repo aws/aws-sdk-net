@@ -36,23 +36,24 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// 
     ///  <note> 
     /// <para>
-    /// This action might generate an SMS text message. Starting June 1, 2021, U.S. telecom
-    /// carriers require that you register an origination phone number before you can send
-    /// SMS messages to U.S. phone numbers. If you use SMS text messages in Amazon Cognito,
-    /// you must register a phone number with <a href="https://console.aws.amazon.com/pinpoint/home/">Amazon
-    /// Pinpoint</a>. Cognito will use the the registered number automatically. Otherwise,
-    /// Cognito users that must receive SMS messages might be unable to sign up, activate
+    /// This action might generate an SMS text message. Starting June 1, 2021, US telecom
+    /// carriers require you to register an origination phone number before you can send SMS
+    /// messages to U.S. phone numbers. If you use SMS text messages in Amazon Cognito, you
+    /// must register a phone number with <a href="https://console.aws.amazon.com/pinpoint/home/">Amazon
+    /// Pinpoint</a>. Amazon Cognito will use the registered number automatically. Otherwise,
+    /// Amazon Cognito users that must receive SMS messages might be unable to sign up, activate
     /// their accounts, or sign in.
     /// </para>
     ///  
     /// <para>
     /// If you have never used SMS text messages with Amazon Cognito or any other Amazon Web
-    /// Service, Amazon SNS might place your account in SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
-    /// mode</a> </i>, you’ll have limitations, such as sending messages to only verified
+    /// Service, Amazon Simple Notification Service might place your account in SMS sandbox.
+    /// In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
+    /// mode</a> </i>, you will have limitations, such as sending messages only to verified
     /// phone numbers. After testing in the sandbox environment, you can move out of the SMS
     /// sandbox and into production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html">
-    /// SMS message settings for Cognito User Pools</a> in the <i>Amazon Cognito Developer
-    /// Guide</i>. 
+    /// SMS message settings for Amazon Cognito User Pools</a> in the <i>Amazon Cognito Developer
+    /// Guide</i>.
     /// </para>
     ///  </note>
     /// </summary>
@@ -79,12 +80,12 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AccountRecoverySetting. 
         /// <para>
-        /// Use this setting to define which verified available method a user can use to recover
-        /// their password when they call <code>ForgotPassword</code>. It allows you to define
-        /// a preferred method when a user has more than one method available. With this setting,
-        /// SMS does not qualify for a valid password recovery mechanism if the user also has
-        /// SMS MFA enabled. In the absence of this setting, Cognito uses the legacy behavior
-        /// to determine the recovery method where SMS is preferred over email.
+        /// The available verified method a user can use to recover their password when they call
+        /// <code>ForgotPassword</code>. You can use this setting to define a preferred method
+        /// when a user has more than one method available. With this setting, SMS doesn't qualify
+        /// for a valid password recovery mechanism if the user also has SMS multi-factor authentication
+        /// (MFA) activated. In the absence of this setting, Amazon Cognito uses the legacy behavior
+        /// to determine the recovery method where SMS is preferred through email.
         /// </para>
         /// </summary>
         public AccountRecoverySettingType AccountRecoverySetting
@@ -120,8 +121,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AutoVerifiedAttributes. 
         /// <para>
-        /// The attributes that are automatically verified when the Amazon Cognito service makes
-        /// a request to update user pools.
+        /// The attributes that are automatically verified when Amazon Cognito requests to update
+        /// user pools.
         /// </para>
         /// </summary>
         public List<string> AutoVerifiedAttributes
@@ -235,13 +236,13 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>OFF</code> - MFA tokens are not required and cannot be specified during user
+        ///  <code>OFF</code> - MFA tokens aren't required and can't be specified during user
         /// registration.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>ON</code> - MFA tokens are required for all user registrations. You can only
-        /// specify ON when you are initially creating a user pool. You can use the <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserPoolMfaConfig.html">SetUserPoolMfaConfig</a>
+        /// specify ON when you're initially creating a user pool. You can use the <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserPoolMfaConfig.html">SetUserPoolMfaConfig</a>
         /// API operation to turn MFA "ON" for existing user pools. 
         /// </para>
         ///  </li> <li> 
@@ -265,7 +266,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Policies. 
         /// <para>
-        /// A container with the policies you wish to update in a user pool.
+        /// A container with the policies you want to update in a user pool.
         /// </para>
         /// </summary>
         public UserPoolPolicyType Policies
@@ -339,7 +340,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UserPoolAddOns. 
         /// <para>
-        /// Used to enable advanced security risk detection. Set the key <code>AdvancedSecurityMode</code>
+        /// Enables advanced security risk detection. Set the key <code>AdvancedSecurityMode</code>
         /// to the value "AUDIT".
         /// </para>
         /// </summary>

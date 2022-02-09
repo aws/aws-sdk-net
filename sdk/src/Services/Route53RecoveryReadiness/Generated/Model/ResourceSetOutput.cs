@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53RecoveryReadiness.Model
 {
     /// <summary>
-    /// A collection of resources of the same type
+    /// A collection of resources of the same type.
     /// </summary>
     public partial class ResourceSetOutput
     {
@@ -40,7 +40,10 @@ namespace Amazon.Route53RecoveryReadiness.Model
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
-        /// Gets and sets the property Resources. A list of Resource objects
+        /// Gets and sets the property Resources. 
+        /// <para>
+        /// A list of resource objects.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public List<Resource> Resources
@@ -56,7 +59,10 @@ namespace Amazon.Route53RecoveryReadiness.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ResourceSetArn. The arn for the ResourceSet
+        /// Gets and sets the property ResourceSetArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) for the resource set.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=256)]
         public string ResourceSetArn
@@ -72,7 +78,10 @@ namespace Amazon.Route53RecoveryReadiness.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ResourceSetName. The name of the ResourceSet
+        /// Gets and sets the property ResourceSetName. 
+        /// <para>
+        /// The name of the resource set.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=64)]
         public string ResourceSetName
@@ -88,8 +97,20 @@ namespace Amazon.Route53RecoveryReadiness.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ResourceSetType. AWS Resource Type of the resources in
-        /// the ResourceSet
+        /// Gets and sets the property ResourceSetType. 
+        /// <para>
+        /// The resource type of the resources in the resource set. Enter one of the following
+        /// values for resource type:
+        /// </para>
+        ///  
+        /// <para>
+        /// AWS::ApiGateway::Stage, AWS::ApiGatewayV2::Stage, AWS::AutoScaling::AutoScalingGroup,
+        /// AWS::CloudWatch::Alarm, AWS::EC2::CustomerGateway, AWS::DynamoDB::Table, AWS::EC2::Volume,
+        /// AWS::ElasticLoadBalancing::LoadBalancer, AWS::ElasticLoadBalancingV2::LoadBalancer,
+        /// AWS::Lambda::Function, AWS::MSK::Cluster, AWS::RDS::DBCluster, AWS::Route53::HealthCheck,
+        /// AWS::SQS::Queue, AWS::SNS::Topic, AWS::SNS::Subscription, AWS::EC2::VPC, AWS::EC2::VPNConnection,
+        /// AWS::EC2::VPNGateway, AWS::Route53RecoveryReadiness::DNSTargetResource
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string ResourceSetType

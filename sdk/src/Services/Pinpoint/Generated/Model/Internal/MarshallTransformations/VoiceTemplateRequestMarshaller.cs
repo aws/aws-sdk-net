@@ -34,7 +34,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// VoiceTemplateRequest Marshaller
-    /// </summary>       
+    /// </summary>
     public class VoiceTemplateRequestMarshaller : IRequestMarshaller<VoiceTemplateRequest, JsonMarshallerContext> 
     {
         /// <summary>
@@ -93,7 +93,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static VoiceTemplateRequestMarshaller Instance = new VoiceTemplateRequestMarshaller();
 
     }

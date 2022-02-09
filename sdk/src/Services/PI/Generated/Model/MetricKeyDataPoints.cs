@@ -58,7 +58,7 @@ namespace Amazon.PI.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// The dimension(s) to which the data points apply.
+        /// The dimensions to which the data points apply.
         /// </para>
         /// </summary>
         public ResponseResourceMetricKey Key

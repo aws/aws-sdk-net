@@ -32,7 +32,7 @@ namespace Amazon.APIGateway
     public partial class AmazonAPIGatewayConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.2.59");
+            InternalSDKUtils.BuildUserAgentString("3.7.2.68");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.APIGateway
         /// Default constructor
         /// </summary>
         public AmazonAPIGatewayConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonAPIGatewayDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "apigateway";
         }

@@ -32,7 +32,7 @@ namespace Amazon.Lightsail
     public partial class AmazonLightsailConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.4.23");
+            InternalSDKUtils.BuildUserAgentString("3.7.4.32");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.Lightsail
         /// Default constructor
         /// </summary>
         public AmazonLightsailConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonLightsailDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "lightsail";
         }

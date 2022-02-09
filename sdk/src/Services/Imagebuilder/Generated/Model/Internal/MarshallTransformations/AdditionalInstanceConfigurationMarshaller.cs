@@ -34,7 +34,7 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AdditionalInstanceConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class AdditionalInstanceConfigurationMarshaller : IRequestMarshaller<AdditionalInstanceConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AdditionalInstanceConfigurationMarshaller Instance = new AdditionalInstanceConfigurationMarshaller();
 
     }

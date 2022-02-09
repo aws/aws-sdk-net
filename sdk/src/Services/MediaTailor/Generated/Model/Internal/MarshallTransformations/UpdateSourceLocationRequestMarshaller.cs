@@ -56,7 +56,7 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.MediaTailor");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-04-23";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-04-23";
             request.HttpMethod = "PUT";
 
             if (!publicRequest.IsSetSourceLocationName())
@@ -101,7 +101,22 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
-        
+                if(publicRequest.IsSetSegmentDeliveryConfigurations())
+                {
+                    context.Writer.WritePropertyName("SegmentDeliveryConfigurations");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestSegmentDeliveryConfigurationsListValue in publicRequest.SegmentDeliveryConfigurations)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = SegmentDeliveryConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequestSegmentDeliveryConfigurationsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

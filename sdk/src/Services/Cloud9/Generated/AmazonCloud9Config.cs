@@ -32,7 +32,7 @@ namespace Amazon.Cloud9
     public partial class AmazonCloud9Config : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.2.60");
+            InternalSDKUtils.BuildUserAgentString("3.7.2.69");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.Cloud9
         /// Default constructor
         /// </summary>
         public AmazonCloud9Config()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonCloud9DefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "cloud9";
         }

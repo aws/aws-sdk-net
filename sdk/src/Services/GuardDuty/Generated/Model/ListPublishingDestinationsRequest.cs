@@ -30,7 +30,7 @@ namespace Amazon.GuardDuty.Model
 {
     /// <summary>
     /// Container for the parameters to the ListPublishingDestinations operation.
-    /// Returns a list of publishing destinations associated with the specified <code>dectectorId</code>.
+    /// Returns a list of publishing destinations associated with the specified <code>detectorId</code>.
     /// </summary>
     public partial class ListPublishingDestinationsRequest : AmazonGuardDutyRequest
     {

@@ -909,7 +909,11 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// If there is no DB subnet group, then it is a non-VPC DB instance.
+        /// Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.
+        /// </para>
+        ///  
+        /// <para>
+        /// Example: <code>mydbsubnetgroup</code> 
         /// </para>
         /// </summary>
         public string DBSubnetGroupName

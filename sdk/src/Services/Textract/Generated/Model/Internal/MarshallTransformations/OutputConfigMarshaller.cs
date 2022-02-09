@@ -34,7 +34,7 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// OutputConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class OutputConfigMarshaller : IRequestMarshaller<OutputConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static OutputConfigMarshaller Instance = new OutputConfigMarshaller();
 
     }

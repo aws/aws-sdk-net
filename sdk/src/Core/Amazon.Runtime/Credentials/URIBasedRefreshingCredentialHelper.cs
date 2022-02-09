@@ -43,7 +43,7 @@ namespace Amazon.Runtime
                 return AWSSDKUtils.ExecuteHttpRequest(uri, "GET", null, TimeSpan.Zero, proxy, headers);
             }
             catch (Exception e)
-            {                
+            {        
                 throw new AmazonServiceException("Unable to reach credentials server", e);
             }
         }

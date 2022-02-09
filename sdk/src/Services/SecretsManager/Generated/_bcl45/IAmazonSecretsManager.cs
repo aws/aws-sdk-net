@@ -51,32 +51,6 @@ namespace Amazon.SecretsManager
     /// This version of the Secrets Manager API Reference documents the Secrets Manager API
     /// version 2017-10-17.
     /// </para>
-    ///  <note> 
-    /// <para>
-    /// As an alternative to using the API, you can use one of the Amazon Web Services SDKs,
-    /// which consist of libraries and sample code for various programming languages and platforms
-    /// such as Java, Ruby, .NET, iOS, and Android. The SDKs provide a convenient way to create
-    /// programmatic access to Amazon Web Services Secrets Manager. For example, the SDKs
-    /// provide cryptographically signing requests, managing errors, and retrying requests
-    /// automatically. For more information about the Amazon Web Services SDKs, including
-    /// downloading and installing them, see <a href="http://aws.amazon.com/tools/">Tools
-    /// for Amazon Web Services</a>.
-    /// </para>
-    ///  </note> 
-    /// <para>
-    /// We recommend you use the Amazon Web Services SDKs to make programmatic API calls to
-    /// Secrets Manager. However, you also can use the Secrets Manager HTTP Query API to make
-    /// direct calls to the Secrets Manager web service. To learn more about the Secrets Manager
-    /// HTTP Query API, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/query-requests.html">Making
-    /// Query Requests</a> in the <i>Amazon Web Services Secrets Manager User Guide</i>. 
-    /// </para>
-    ///  
-    /// <para>
-    /// Secrets Manager API supports GET and POST requests for all actions, and doesn't require
-    /// you to use GET for some actions and POST for others. However, GET requests are subject
-    /// to the limitation size of a URL. Therefore, for operations that require larger sizes,
-    /// use a POST request.
-    /// </para>
     ///  
     /// <para>
     ///  <b>Support and Feedback for Amazon Web Services Secrets Manager</b> 
@@ -88,20 +62,6 @@ namespace Amazon.SecretsManager
     /// Web Services Secrets Manager Discussion Forum</a>. For more information about the
     /// Amazon Web Services Discussion Forums, see <a href="http://forums.aws.amazon.com/help.jspa">Forums
     /// Help</a>.
-    /// </para>
-    ///  
-    /// <para>
-    ///  <b>How examples are presented</b> 
-    /// </para>
-    ///  
-    /// <para>
-    /// The JSON that Amazon Web Services Secrets Manager expects as your request parameters
-    /// and the service returns as a response to HTTP query requests contain single, long
-    /// strings without line breaks or white space formatting. The JSON shown in the examples
-    /// displays the code formatted with both line breaks and white space to improve readability.
-    /// When example input parameters can also cause long strings extending beyond the screen,
-    /// you can insert line breaks to enhance readability. You should always submit the input
-    /// as a single JSON text string.
     /// </para>
     ///  
     /// <para>
@@ -151,7 +111,13 @@ namespace Amazon.SecretsManager
         /// also evaluate the partially rotated new version to see if it should be deleted. You
         /// can delete a version by removing all staging labels from it.
         /// </para>
-        ///  </note>
+        ///  </note> 
+        /// <para>
+        ///  <b>Required permissions: </b> <code>secretsmanager:CancelRotateSecret</code>. For
+        /// more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+        /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+        /// and access control in Secrets Manager</a>. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelRotateSecret service method.</param>
         /// 
@@ -160,7 +126,7 @@ namespace Amazon.SecretsManager
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
-        /// The parameter name is invalid value.
+        /// The parameter name or value is invalid.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
         /// A parameter value is not valid for the current state of the resource.
@@ -205,7 +171,13 @@ namespace Amazon.SecretsManager
         /// also evaluate the partially rotated new version to see if it should be deleted. You
         /// can delete a version by removing all staging labels from it.
         /// </para>
-        ///  </note>
+        ///  </note> 
+        /// <para>
+        ///  <b>Required permissions: </b> <code>secretsmanager:CancelRotateSecret</code>. For
+        /// more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+        /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+        /// and access control in Secrets Manager</a>. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelRotateSecret service method.</param>
         /// <param name="cancellationToken">
@@ -217,7 +189,7 @@ namespace Amazon.SecretsManager
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
-        /// The parameter name is invalid value.
+        /// The parameter name or value is invalid.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
         /// A parameter value is not valid for the current state of the resource.
@@ -283,10 +255,20 @@ namespace Amazon.SecretsManager
         /// the API, then you can't use <code>aws/secretsmanager</code> to encrypt the secret,
         /// and you must create and use a customer managed KMS key. 
         /// </para>
+        ///  
+        /// <para>
+        ///  <b>Required permissions: </b> <code>secretsmanager:CreateSecret</code>. For more
+        /// information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+        /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+        /// and access control in Secrets Manager</a>. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSecret service method.</param>
         /// 
         /// <returns>The response from the CreateSecret service method, as returned by SecretsManager.</returns>
+        /// <exception cref="Amazon.SecretsManager.Model.DecryptionFailureException">
+        /// Secrets Manager can't decrypt the protected secret text using the provided KMS key.
+        /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.EncryptionFailureException">
         /// Secrets Manager can't encrypt the protected secret text using the provided KMS key.
         /// Check that the KMS key is available, enabled, and not in an invalid state. For more
@@ -297,7 +279,7 @@ namespace Amazon.SecretsManager
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
-        /// The parameter name is invalid value.
+        /// The parameter name or value is invalid.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
         /// A parameter value is not valid for the current state of the resource.
@@ -372,6 +354,13 @@ namespace Amazon.SecretsManager
         /// the API, then you can't use <code>aws/secretsmanager</code> to encrypt the secret,
         /// and you must create and use a customer managed KMS key. 
         /// </para>
+        ///  
+        /// <para>
+        ///  <b>Required permissions: </b> <code>secretsmanager:CreateSecret</code>. For more
+        /// information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+        /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+        /// and access control in Secrets Manager</a>. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSecret service method.</param>
         /// <param name="cancellationToken">
@@ -379,6 +368,9 @@ namespace Amazon.SecretsManager
         /// </param>
         /// 
         /// <returns>The response from the CreateSecret service method, as returned by SecretsManager.</returns>
+        /// <exception cref="Amazon.SecretsManager.Model.DecryptionFailureException">
+        /// Secrets Manager can't decrypt the protected secret text using the provided KMS key.
+        /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.EncryptionFailureException">
         /// Secrets Manager can't encrypt the protected secret text using the provided KMS key.
         /// Check that the KMS key is available, enabled, and not in an invalid state. For more
@@ -389,7 +381,7 @@ namespace Amazon.SecretsManager
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
-        /// The parameter name is invalid value.
+        /// The parameter name or value is invalid.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
         /// A parameter value is not valid for the current state of the resource.
@@ -435,6 +427,14 @@ namespace Amazon.SecretsManager
         /// <summary>
         /// Deletes the resource-based permission policy attached to the secret. To attach a policy
         /// to a secret, use <a>PutResourcePolicy</a>.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Required permissions: </b> <code>secretsmanager:DeleteResourcePolicy</code>. For
+        /// more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+        /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+        /// and access control in Secrets Manager</a>. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteResourcePolicy service method.</param>
         /// 
@@ -443,7 +443,7 @@ namespace Amazon.SecretsManager
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
-        /// The parameter name is invalid value.
+        /// The parameter name or value is invalid.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
         /// A parameter value is not valid for the current state of the resource.
@@ -474,6 +474,14 @@ namespace Amazon.SecretsManager
         /// <summary>
         /// Deletes the resource-based permission policy attached to the secret. To attach a policy
         /// to a secret, use <a>PutResourcePolicy</a>.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Required permissions: </b> <code>secretsmanager:DeleteResourcePolicy</code>. For
+        /// more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+        /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+        /// and access control in Secrets Manager</a>. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteResourcePolicy service method.</param>
         /// <param name="cancellationToken">
@@ -485,7 +493,7 @@ namespace Amazon.SecretsManager
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
-        /// The parameter name is invalid value.
+        /// The parameter name or value is invalid.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
         /// A parameter value is not valid for the current state of the resource.
@@ -545,6 +553,13 @@ namespace Amazon.SecretsManager
         /// To access that information, first cancel the deletion with <a>RestoreSecret</a> and
         /// then retrieve the information.
         /// </para>
+        ///  
+        /// <para>
+        ///  <b>Required permissions: </b> <code>secretsmanager:DeleteSecret</code>. For more
+        /// information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+        /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+        /// and access control in Secrets Manager</a>. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteSecret service method.</param>
         /// 
@@ -553,7 +568,7 @@ namespace Amazon.SecretsManager
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
-        /// The parameter name is invalid value.
+        /// The parameter name or value is invalid.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
         /// A parameter value is not valid for the current state of the resource.
@@ -610,6 +625,13 @@ namespace Amazon.SecretsManager
         /// To access that information, first cancel the deletion with <a>RestoreSecret</a> and
         /// then retrieve the information.
         /// </para>
+        ///  
+        /// <para>
+        ///  <b>Required permissions: </b> <code>secretsmanager:DeleteSecret</code>. For more
+        /// information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+        /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+        /// and access control in Secrets Manager</a>. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteSecret service method.</param>
         /// <param name="cancellationToken">
@@ -621,7 +643,7 @@ namespace Amazon.SecretsManager
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
-        /// The parameter name is invalid value.
+        /// The parameter name or value is invalid.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
         /// A parameter value is not valid for the current state of the resource.
@@ -654,7 +676,15 @@ namespace Amazon.SecretsManager
 
         /// <summary>
         /// Retrieves the details of a secret. It does not include the encrypted secret value.
-        /// Secrets Manager only returns fields that have a value in the response.
+        /// Secrets Manager only returns fields that have a value in the response. 
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Required permissions: </b> <code>secretsmanager:DescribeSecret</code>. For more
+        /// information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+        /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+        /// and access control in Secrets Manager</a>. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSecret service method.</param>
         /// 
@@ -663,7 +693,7 @@ namespace Amazon.SecretsManager
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
-        /// The parameter name is invalid value.
+        /// The parameter name or value is invalid.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.ResourceNotFoundException">
         /// Secrets Manager can't find the resource that you asked for.
@@ -675,7 +705,15 @@ namespace Amazon.SecretsManager
 
         /// <summary>
         /// Retrieves the details of a secret. It does not include the encrypted secret value.
-        /// Secrets Manager only returns fields that have a value in the response.
+        /// Secrets Manager only returns fields that have a value in the response. 
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Required permissions: </b> <code>secretsmanager:DescribeSecret</code>. For more
+        /// information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+        /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+        /// and access control in Secrets Manager</a>. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSecret service method.</param>
         /// <param name="cancellationToken">
@@ -687,7 +725,7 @@ namespace Amazon.SecretsManager
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
-        /// The parameter name is invalid value.
+        /// The parameter name or value is invalid.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.ResourceNotFoundException">
         /// Secrets Manager can't find the resource that you asked for.
@@ -704,6 +742,14 @@ namespace Amazon.SecretsManager
         /// Generates a random password. We recommend that you specify the maximum length and
         /// include every character type that the system you are generating a password for can
         /// support.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Required permissions: </b> <code>secretsmanager:GetRandomPassword</code>. For
+        /// more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+        /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+        /// and access control in Secrets Manager</a>. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetRandomPassword service method.</param>
         /// 
@@ -712,7 +758,7 @@ namespace Amazon.SecretsManager
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
-        /// The parameter name is invalid value.
+        /// The parameter name or value is invalid.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
         /// A parameter value is not valid for the current state of the resource.
@@ -741,6 +787,14 @@ namespace Amazon.SecretsManager
         /// Generates a random password. We recommend that you specify the maximum length and
         /// include every character type that the system you are generating a password for can
         /// support.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Required permissions: </b> <code>secretsmanager:GetRandomPassword</code>. For
+        /// more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+        /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+        /// and access control in Secrets Manager</a>. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetRandomPassword service method.</param>
         /// <param name="cancellationToken">
@@ -752,7 +806,7 @@ namespace Amazon.SecretsManager
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
-        /// The parameter name is invalid value.
+        /// The parameter name or value is invalid.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
         /// A parameter value is not valid for the current state of the resource.
@@ -784,6 +838,14 @@ namespace Amazon.SecretsManager
         /// Retrieves the JSON text of the resource-based policy document attached to the secret.
         /// For more information about permissions policies attached to a secret, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_resource-policies.html">Permissions
         /// policies attached to a secret</a>.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Required permissions: </b> <code>secretsmanager:GetResourcePolicy</code>. For
+        /// more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+        /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+        /// and access control in Secrets Manager</a>. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetResourcePolicy service method.</param>
         /// 
@@ -792,7 +854,7 @@ namespace Amazon.SecretsManager
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
-        /// The parameter name is invalid value.
+        /// The parameter name or value is invalid.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
         /// A parameter value is not valid for the current state of the resource.
@@ -824,6 +886,14 @@ namespace Amazon.SecretsManager
         /// Retrieves the JSON text of the resource-based policy document attached to the secret.
         /// For more information about permissions policies attached to a secret, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_resource-policies.html">Permissions
         /// policies attached to a secret</a>.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Required permissions: </b> <code>secretsmanager:GetResourcePolicy</code>. For
+        /// more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+        /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+        /// and access control in Secrets Manager</a>. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetResourcePolicy service method.</param>
         /// <param name="cancellationToken">
@@ -835,7 +905,7 @@ namespace Amazon.SecretsManager
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
-        /// The parameter name is invalid value.
+        /// The parameter name or value is invalid.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
         /// A parameter value is not valid for the current state of the resource.
@@ -872,15 +942,18 @@ namespace Amazon.SecretsManager
         /// 
         ///  
         /// <para>
-        /// For information about retrieving the secret value in the console, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieving-secrets.html">Retrieve
-        /// secrets</a>. 
+        /// We recommend that you cache your secret values by using client-side caching. Caching
+        /// secrets improves speed and reduces your costs. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieving-secrets.html">Cache
+        /// secrets for your applications</a>.
         /// </para>
         ///  
         /// <para>
-        /// To run this command, you must have <code>secretsmanager:GetSecretValue</code> permissions.
-        /// If the secret is encrypted using a customer-managed key instead of the Amazon Web
-        /// Services managed key <code>aws/secretsmanager</code>, then you also need <code>kms:Decrypt</code>
-        /// permissions for that key.
+        ///  <b>Required permissions: </b> <code>secretsmanager:GetSecretValue</code>. If the
+        /// secret is encrypted using a customer-managed key instead of the Amazon Web Services
+        /// managed key <code>aws/secretsmanager</code>, then you also need <code>kms:Decrypt</code>
+        /// permissions for that key. For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+        /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+        /// and access control in Secrets Manager</a>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetSecretValue service method.</param>
@@ -893,7 +966,7 @@ namespace Amazon.SecretsManager
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
-        /// The parameter name is invalid value.
+        /// The parameter name or value is invalid.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
         /// A parameter value is not valid for the current state of the resource.
@@ -927,15 +1000,18 @@ namespace Amazon.SecretsManager
         /// 
         ///  
         /// <para>
-        /// For information about retrieving the secret value in the console, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieving-secrets.html">Retrieve
-        /// secrets</a>. 
+        /// We recommend that you cache your secret values by using client-side caching. Caching
+        /// secrets improves speed and reduces your costs. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieving-secrets.html">Cache
+        /// secrets for your applications</a>.
         /// </para>
         ///  
         /// <para>
-        /// To run this command, you must have <code>secretsmanager:GetSecretValue</code> permissions.
-        /// If the secret is encrypted using a customer-managed key instead of the Amazon Web
-        /// Services managed key <code>aws/secretsmanager</code>, then you also need <code>kms:Decrypt</code>
-        /// permissions for that key.
+        ///  <b>Required permissions: </b> <code>secretsmanager:GetSecretValue</code>. If the
+        /// secret is encrypted using a customer-managed key instead of the Amazon Web Services
+        /// managed key <code>aws/secretsmanager</code>, then you also need <code>kms:Decrypt</code>
+        /// permissions for that key. For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+        /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+        /// and access control in Secrets Manager</a>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetSecretValue service method.</param>
@@ -951,7 +1027,7 @@ namespace Amazon.SecretsManager
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
-        /// The parameter name is invalid value.
+        /// The parameter name or value is invalid.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
         /// A parameter value is not valid for the current state of the resource.
@@ -1002,11 +1078,10 @@ namespace Amazon.SecretsManager
         /// </para>
         ///  
         /// <para>
-        ///  <b>Minimum permissions</b> 
-        /// </para>
-        ///  
-        /// <para>
-        /// To run this command, you must have <code>secretsmanager:ListSecrets</code> permissions.
+        ///  <b>Required permissions: </b> <code>secretsmanager:ListSecrets</code>. For more information,
+        /// see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+        /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+        /// and access control in Secrets Manager</a>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListSecrets service method.</param>
@@ -1019,7 +1094,7 @@ namespace Amazon.SecretsManager
         /// The <code>NextToken</code> value is invalid.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
-        /// The parameter name is invalid value.
+        /// The parameter name or value is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/ListSecrets">REST API Reference for ListSecrets Operation</seealso>
         ListSecretsResponse ListSecrets(ListSecretsRequest request);
@@ -1046,11 +1121,10 @@ namespace Amazon.SecretsManager
         /// </para>
         ///  
         /// <para>
-        ///  <b>Minimum permissions</b> 
-        /// </para>
-        ///  
-        /// <para>
-        /// To run this command, you must have <code>secretsmanager:ListSecrets</code> permissions.
+        ///  <b>Required permissions: </b> <code>secretsmanager:ListSecrets</code>. For more information,
+        /// see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+        /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+        /// and access control in Secrets Manager</a>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListSecrets service method.</param>
@@ -1066,7 +1140,7 @@ namespace Amazon.SecretsManager
         /// The <code>NextToken</code> value is invalid.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
-        /// The parameter name is invalid value.
+        /// The parameter name or value is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/ListSecrets">REST API Reference for ListSecrets Operation</seealso>
         Task<ListSecretsResponse> ListSecretsAsync(ListSecretsRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1090,12 +1164,10 @@ namespace Amazon.SecretsManager
         /// </para>
         ///  
         /// <para>
-        ///  <b>Minimum permissions</b> 
-        /// </para>
-        ///  
-        /// <para>
-        /// To run this command, you must have <code>secretsmanager:ListSecretVersionIds</code>
-        /// permissions.
+        ///  <b>Required permissions: </b> <code>secretsmanager:ListSecretVersionIds</code>. For
+        /// more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+        /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+        /// and access control in Secrets Manager</a>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListSecretVersionIds service method.</param>
@@ -1108,7 +1180,7 @@ namespace Amazon.SecretsManager
         /// The <code>NextToken</code> value is invalid.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
-        /// The parameter name is invalid value.
+        /// The parameter name or value is invalid.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.ResourceNotFoundException">
         /// Secrets Manager can't find the resource that you asked for.
@@ -1132,12 +1204,10 @@ namespace Amazon.SecretsManager
         /// </para>
         ///  
         /// <para>
-        ///  <b>Minimum permissions</b> 
-        /// </para>
-        ///  
-        /// <para>
-        /// To run this command, you must have <code>secretsmanager:ListSecretVersionIds</code>
-        /// permissions.
+        ///  <b>Required permissions: </b> <code>secretsmanager:ListSecretVersionIds</code>. For
+        /// more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+        /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+        /// and access control in Secrets Manager</a>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListSecretVersionIds service method.</param>
@@ -1153,7 +1223,7 @@ namespace Amazon.SecretsManager
         /// The <code>NextToken</code> value is invalid.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
-        /// The parameter name is invalid value.
+        /// The parameter name or value is invalid.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.ResourceNotFoundException">
         /// Secrets Manager can't find the resource that you asked for.
@@ -1176,6 +1246,13 @@ namespace Amazon.SecretsManager
         /// For information about attaching a policy in the console, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_resource-based-policies.html">Attach
         /// a permissions policy to a secret</a>.
         /// </para>
+        ///  
+        /// <para>
+        ///  <b>Required permissions: </b> <code>secretsmanager:PutResourcePolicy</code>. For
+        /// more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+        /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+        /// and access control in Secrets Manager</a>. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutResourcePolicy service method.</param>
         /// 
@@ -1184,7 +1261,7 @@ namespace Amazon.SecretsManager
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
-        /// The parameter name is invalid value.
+        /// The parameter name or value is invalid.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
         /// A parameter value is not valid for the current state of the resource.
@@ -1229,6 +1306,13 @@ namespace Amazon.SecretsManager
         /// For information about attaching a policy in the console, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_resource-based-policies.html">Attach
         /// a permissions policy to a secret</a>.
         /// </para>
+        ///  
+        /// <para>
+        ///  <b>Required permissions: </b> <code>secretsmanager:PutResourcePolicy</code>. For
+        /// more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+        /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+        /// and access control in Secrets Manager</a>. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutResourcePolicy service method.</param>
         /// <param name="cancellationToken">
@@ -1240,7 +1324,7 @@ namespace Amazon.SecretsManager
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
-        /// The parameter name is invalid value.
+        /// The parameter name or value is invalid.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
         /// A parameter value is not valid for the current state of the resource.
@@ -1315,10 +1399,20 @@ namespace Amazon.SecretsManager
         /// the secret data is different, then the operation fails because you can't modify an
         /// existing version; you can only create new ones.
         /// </para>
+        ///  
+        /// <para>
+        ///  <b>Required permissions: </b> <code>secretsmanager:PutSecretValue</code>. For more
+        /// information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+        /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+        /// and access control in Secrets Manager</a>. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutSecretValue service method.</param>
         /// 
         /// <returns>The response from the PutSecretValue service method, as returned by SecretsManager.</returns>
+        /// <exception cref="Amazon.SecretsManager.Model.DecryptionFailureException">
+        /// Secrets Manager can't decrypt the protected secret text using the provided KMS key.
+        /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.EncryptionFailureException">
         /// Secrets Manager can't encrypt the protected secret text using the provided KMS key.
         /// Check that the KMS key is available, enabled, and not in an invalid state. For more
@@ -1329,7 +1423,7 @@ namespace Amazon.SecretsManager
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
-        /// The parameter name is invalid value.
+        /// The parameter name or value is invalid.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
         /// A parameter value is not valid for the current state of the resource.
@@ -1400,6 +1494,13 @@ namespace Amazon.SecretsManager
         /// the secret data is different, then the operation fails because you can't modify an
         /// existing version; you can only create new ones.
         /// </para>
+        ///  
+        /// <para>
+        ///  <b>Required permissions: </b> <code>secretsmanager:PutSecretValue</code>. For more
+        /// information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+        /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+        /// and access control in Secrets Manager</a>. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutSecretValue service method.</param>
         /// <param name="cancellationToken">
@@ -1407,6 +1508,9 @@ namespace Amazon.SecretsManager
         /// </param>
         /// 
         /// <returns>The response from the PutSecretValue service method, as returned by SecretsManager.</returns>
+        /// <exception cref="Amazon.SecretsManager.Model.DecryptionFailureException">
+        /// Secrets Manager can't decrypt the protected secret text using the provided KMS key.
+        /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.EncryptionFailureException">
         /// Secrets Manager can't encrypt the protected secret text using the provided KMS key.
         /// Check that the KMS key is available, enabled, and not in an invalid state. For more
@@ -1417,7 +1521,7 @@ namespace Amazon.SecretsManager
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
-        /// The parameter name is invalid value.
+        /// The parameter name or value is invalid.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
         /// A parameter value is not valid for the current state of the resource.
@@ -1457,6 +1561,14 @@ namespace Amazon.SecretsManager
         /// <summary>
         /// For a secret that is replicated to other Regions, deletes the secret replicas from
         /// the Regions you specify.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Required permissions: </b> <code>secretsmanager:RemoveRegionsFromReplication</code>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+        /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+        /// and access control in Secrets Manager</a>. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RemoveRegionsFromReplication service method.</param>
         /// 
@@ -1465,7 +1577,7 @@ namespace Amazon.SecretsManager
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
-        /// The parameter name is invalid value.
+        /// The parameter name or value is invalid.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
         /// A parameter value is not valid for the current state of the resource.
@@ -1496,6 +1608,14 @@ namespace Amazon.SecretsManager
         /// <summary>
         /// For a secret that is replicated to other Regions, deletes the secret replicas from
         /// the Regions you specify.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Required permissions: </b> <code>secretsmanager:RemoveRegionsFromReplication</code>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+        /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+        /// and access control in Secrets Manager</a>. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RemoveRegionsFromReplication service method.</param>
         /// <param name="cancellationToken">
@@ -1507,7 +1627,7 @@ namespace Amazon.SecretsManager
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
-        /// The parameter name is invalid value.
+        /// The parameter name or value is invalid.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
         /// A parameter value is not valid for the current state of the resource.
@@ -1541,6 +1661,14 @@ namespace Amazon.SecretsManager
         /// <summary>
         /// Replicates the secret to a new Regions. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create-manage-multi-region-secrets.html">Multi-Region
         /// secrets</a>.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Required permissions: </b> <code>secretsmanager:ReplicateSecretToRegions</code>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+        /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+        /// and access control in Secrets Manager</a>. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ReplicateSecretToRegions service method.</param>
         /// 
@@ -1549,7 +1677,7 @@ namespace Amazon.SecretsManager
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
-        /// The parameter name is invalid value.
+        /// The parameter name or value is invalid.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
         /// A parameter value is not valid for the current state of the resource.
@@ -1580,6 +1708,14 @@ namespace Amazon.SecretsManager
         /// <summary>
         /// Replicates the secret to a new Regions. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create-manage-multi-region-secrets.html">Multi-Region
         /// secrets</a>.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Required permissions: </b> <code>secretsmanager:ReplicateSecretToRegions</code>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+        /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+        /// and access control in Secrets Manager</a>. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ReplicateSecretToRegions service method.</param>
         /// <param name="cancellationToken">
@@ -1591,7 +1727,7 @@ namespace Amazon.SecretsManager
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
-        /// The parameter name is invalid value.
+        /// The parameter name or value is invalid.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
         /// A parameter value is not valid for the current state of the resource.
@@ -1625,6 +1761,14 @@ namespace Amazon.SecretsManager
         /// <summary>
         /// Cancels the scheduled deletion of a secret by removing the <code>DeletedDate</code>
         /// time stamp. You can access a secret again after it has been restored.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Required permissions: </b> <code>secretsmanager:RestoreSecret</code>. For more
+        /// information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+        /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+        /// and access control in Secrets Manager</a>. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RestoreSecret service method.</param>
         /// 
@@ -1633,7 +1777,7 @@ namespace Amazon.SecretsManager
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
-        /// The parameter name is invalid value.
+        /// The parameter name or value is invalid.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
         /// A parameter value is not valid for the current state of the resource.
@@ -1664,6 +1808,14 @@ namespace Amazon.SecretsManager
         /// <summary>
         /// Cancels the scheduled deletion of a secret by removing the <code>DeletedDate</code>
         /// time stamp. You can access a secret again after it has been restored.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Required permissions: </b> <code>secretsmanager:RestoreSecret</code>. For more
+        /// information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+        /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+        /// and access control in Secrets Manager</a>. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RestoreSecret service method.</param>
         /// <param name="cancellationToken">
@@ -1675,7 +1827,7 @@ namespace Amazon.SecretsManager
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
-        /// The parameter name is invalid value.
+        /// The parameter name or value is invalid.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
         /// A parameter value is not valid for the current state of the resource.
@@ -1741,9 +1893,12 @@ namespace Amazon.SecretsManager
         /// </para>
         ///  
         /// <para>
-        /// To run this command, you must have <code>secretsmanager:RotateSecret</code> permissions
-        /// and <code>lambda:InvokeFunction</code> permissions on the function specified in the
-        /// secret's metadata.
+        ///  <b>Required permissions: </b> <code>secretsmanager:RotateSecret</code>. For more
+        /// information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+        /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+        /// and access control in Secrets Manager</a>. You also need <code>lambda:InvokeFunction</code>
+        /// permissions on the rotation function. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotating-secrets-required-permissions-function.html">
+        /// Permissions for rotation</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RotateSecret service method.</param>
@@ -1753,7 +1908,7 @@ namespace Amazon.SecretsManager
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
-        /// The parameter name is invalid value.
+        /// The parameter name or value is invalid.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
         /// A parameter value is not valid for the current state of the resource.
@@ -1816,9 +1971,12 @@ namespace Amazon.SecretsManager
         /// </para>
         ///  
         /// <para>
-        /// To run this command, you must have <code>secretsmanager:RotateSecret</code> permissions
-        /// and <code>lambda:InvokeFunction</code> permissions on the function specified in the
-        /// secret's metadata.
+        ///  <b>Required permissions: </b> <code>secretsmanager:RotateSecret</code>. For more
+        /// information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+        /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+        /// and access control in Secrets Manager</a>. You also need <code>lambda:InvokeFunction</code>
+        /// permissions on the rotation function. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotating-secrets-required-permissions-function.html">
+        /// Permissions for rotation</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RotateSecret service method.</param>
@@ -1831,7 +1989,7 @@ namespace Amazon.SecretsManager
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
-        /// The parameter name is invalid value.
+        /// The parameter name or value is invalid.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
         /// A parameter value is not valid for the current state of the resource.
@@ -1871,6 +2029,13 @@ namespace Amazon.SecretsManager
         /// You must call this operation from the Region in which you want to promote the replica
         /// to a primary secret.
         /// </para>
+        ///  
+        /// <para>
+        ///  <b>Required permissions: </b> <code>secretsmanager:StopReplicationToReplica</code>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+        /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+        /// and access control in Secrets Manager</a>. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopReplicationToReplica service method.</param>
         /// 
@@ -1879,7 +2044,7 @@ namespace Amazon.SecretsManager
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
-        /// The parameter name is invalid value.
+        /// The parameter name or value is invalid.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
         /// A parameter value is not valid for the current state of the resource.
@@ -1916,6 +2081,13 @@ namespace Amazon.SecretsManager
         /// You must call this operation from the Region in which you want to promote the replica
         /// to a primary secret.
         /// </para>
+        ///  
+        /// <para>
+        ///  <b>Required permissions: </b> <code>secretsmanager:StopReplicationToReplica</code>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+        /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+        /// and access control in Secrets Manager</a>. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopReplicationToReplica service method.</param>
         /// <param name="cancellationToken">
@@ -1927,7 +2099,7 @@ namespace Amazon.SecretsManager
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
-        /// The parameter name is invalid value.
+        /// The parameter name or value is invalid.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
         /// A parameter value is not valid for the current state of the resource.
@@ -2004,7 +2176,13 @@ namespace Amazon.SecretsManager
         /// losing your permissions for this secret, then the operation is blocked and returns
         /// an Access Denied error.
         /// </para>
-        ///  </important>
+        ///  </important> 
+        /// <para>
+        ///  <b>Required permissions: </b> <code>secretsmanager:TagResource</code>. For more information,
+        /// see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+        /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+        /// and access control in Secrets Manager</a>. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
@@ -2013,7 +2191,7 @@ namespace Amazon.SecretsManager
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
-        /// The parameter name is invalid value.
+        /// The parameter name or value is invalid.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
         /// A parameter value is not valid for the current state of the resource.
@@ -2087,7 +2265,13 @@ namespace Amazon.SecretsManager
         /// losing your permissions for this secret, then the operation is blocked and returns
         /// an Access Denied error.
         /// </para>
-        ///  </important>
+        ///  </important> 
+        /// <para>
+        ///  <b>Required permissions: </b> <code>secretsmanager:TagResource</code>. For more information,
+        /// see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+        /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+        /// and access control in Secrets Manager</a>. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// <param name="cancellationToken">
@@ -2099,7 +2283,7 @@ namespace Amazon.SecretsManager
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
-        /// The parameter name is invalid value.
+        /// The parameter name or value is invalid.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
         /// A parameter value is not valid for the current state of the resource.
@@ -2145,7 +2329,13 @@ namespace Amazon.SecretsManager
         /// your permissions for this secret, then the operation is blocked and returns an Access
         /// Denied error.
         /// </para>
-        ///  </important>
+        ///  </important> 
+        /// <para>
+        ///  <b>Required permissions: </b> <code>secretsmanager:UntagResource</code>. For more
+        /// information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+        /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+        /// and access control in Secrets Manager</a>. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 
@@ -2154,7 +2344,7 @@ namespace Amazon.SecretsManager
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
-        /// The parameter name is invalid value.
+        /// The parameter name or value is invalid.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
         /// A parameter value is not valid for the current state of the resource.
@@ -2197,7 +2387,13 @@ namespace Amazon.SecretsManager
         /// your permissions for this secret, then the operation is blocked and returns an Access
         /// Denied error.
         /// </para>
-        ///  </important>
+        ///  </important> 
+        /// <para>
+        ///  <b>Required permissions: </b> <code>secretsmanager:UntagResource</code>. For more
+        /// information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+        /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+        /// and access control in Secrets Manager</a>. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// <param name="cancellationToken">
@@ -2209,7 +2405,7 @@ namespace Amazon.SecretsManager
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
-        /// The parameter name is invalid value.
+        /// The parameter name or value is invalid.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
         /// A parameter value is not valid for the current state of the resource.
@@ -2288,14 +2484,21 @@ namespace Amazon.SecretsManager
         /// </para>
         ///  
         /// <para>
-        /// To run this command, you must have <code>secretsmanager:UpdateSecret</code> permissions.
-        /// If you use a customer managed key, you must also have <code>kms:GenerateDataKey</code>
-        /// and <code>kms:Decrypt</code> permissions .
+        ///  <b>Required permissions: </b> <code>secretsmanager:UpdateSecret</code>. For more
+        /// information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+        /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+        /// and access control in Secrets Manager</a>. If you use a customer managed key, you
+        /// must also have <code>kms:GenerateDataKey</code> and <code>kms:Decrypt</code> permissions
+        /// on the key. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/security-encryption.html">
+        /// Secret encryption and decryption</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateSecret service method.</param>
         /// 
         /// <returns>The response from the UpdateSecret service method, as returned by SecretsManager.</returns>
+        /// <exception cref="Amazon.SecretsManager.Model.DecryptionFailureException">
+        /// Secrets Manager can't decrypt the protected secret text using the provided KMS key.
+        /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.EncryptionFailureException">
         /// Secrets Manager can't encrypt the protected secret text using the provided KMS key.
         /// Check that the KMS key is available, enabled, and not in an invalid state. For more
@@ -2306,7 +2509,7 @@ namespace Amazon.SecretsManager
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
-        /// The parameter name is invalid value.
+        /// The parameter name or value is invalid.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
         /// A parameter value is not valid for the current state of the resource.
@@ -2394,9 +2597,13 @@ namespace Amazon.SecretsManager
         /// </para>
         ///  
         /// <para>
-        /// To run this command, you must have <code>secretsmanager:UpdateSecret</code> permissions.
-        /// If you use a customer managed key, you must also have <code>kms:GenerateDataKey</code>
-        /// and <code>kms:Decrypt</code> permissions .
+        ///  <b>Required permissions: </b> <code>secretsmanager:UpdateSecret</code>. For more
+        /// information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+        /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+        /// and access control in Secrets Manager</a>. If you use a customer managed key, you
+        /// must also have <code>kms:GenerateDataKey</code> and <code>kms:Decrypt</code> permissions
+        /// on the key. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/security-encryption.html">
+        /// Secret encryption and decryption</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateSecret service method.</param>
@@ -2405,6 +2612,9 @@ namespace Amazon.SecretsManager
         /// </param>
         /// 
         /// <returns>The response from the UpdateSecret service method, as returned by SecretsManager.</returns>
+        /// <exception cref="Amazon.SecretsManager.Model.DecryptionFailureException">
+        /// Secrets Manager can't decrypt the protected secret text using the provided KMS key.
+        /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.EncryptionFailureException">
         /// Secrets Manager can't encrypt the protected secret text using the provided KMS key.
         /// Check that the KMS key is available, enabled, and not in an invalid state. For more
@@ -2415,7 +2625,7 @@ namespace Amazon.SecretsManager
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
-        /// The parameter name is invalid value.
+        /// The parameter name or value is invalid.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
         /// A parameter value is not valid for the current state of the resource.
@@ -2488,6 +2698,13 @@ namespace Amazon.SecretsManager
         /// If this action results in the last label being removed from a version, then the version
         /// is considered to be 'deprecated' and can be deleted by Secrets Manager.
         /// </para>
+        ///  
+        /// <para>
+        ///  <b>Required permissions: </b> <code>secretsmanager:UpdateSecretVersionStage</code>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+        /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+        /// and access control in Secrets Manager</a>. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateSecretVersionStage service method.</param>
         /// 
@@ -2496,7 +2713,7 @@ namespace Amazon.SecretsManager
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
-        /// The parameter name is invalid value.
+        /// The parameter name or value is invalid.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
         /// A parameter value is not valid for the current state of the resource.
@@ -2557,6 +2774,13 @@ namespace Amazon.SecretsManager
         /// If this action results in the last label being removed from a version, then the version
         /// is considered to be 'deprecated' and can be deleted by Secrets Manager.
         /// </para>
+        ///  
+        /// <para>
+        ///  <b>Required permissions: </b> <code>secretsmanager:UpdateSecretVersionStage</code>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+        /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+        /// and access control in Secrets Manager</a>. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateSecretVersionStage service method.</param>
         /// <param name="cancellationToken">
@@ -2568,7 +2792,7 @@ namespace Amazon.SecretsManager
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
-        /// The parameter name is invalid value.
+        /// The parameter name or value is invalid.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
         /// A parameter value is not valid for the current state of the resource.
@@ -2624,7 +2848,13 @@ namespace Amazon.SecretsManager
         /// <para>
         /// Verifies the policy does not lock out a caller.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Required permissions: </b> <code>secretsmanager:ValidateResourcePolicy</code>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+        /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+        /// and access control in Secrets Manager</a>. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ValidateResourcePolicy service method.</param>
         /// 
@@ -2633,7 +2863,7 @@ namespace Amazon.SecretsManager
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
-        /// The parameter name is invalid value.
+        /// The parameter name or value is invalid.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
         /// A parameter value is not valid for the current state of the resource.
@@ -2686,7 +2916,13 @@ namespace Amazon.SecretsManager
         /// <para>
         /// Verifies the policy does not lock out a caller.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Required permissions: </b> <code>secretsmanager:ValidateResourcePolicy</code>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions">
+        /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+        /// and access control in Secrets Manager</a>. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ValidateResourcePolicy service method.</param>
         /// <param name="cancellationToken">
@@ -2698,7 +2934,7 @@ namespace Amazon.SecretsManager
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
-        /// The parameter name is invalid value.
+        /// The parameter name or value is invalid.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
         /// A parameter value is not valid for the current state of the resource.

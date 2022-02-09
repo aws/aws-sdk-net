@@ -75,6 +75,12 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                     response.TotalNumberOfResults = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Warnings", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<Warning, WarningUnmarshaller>(WarningUnmarshaller.Instance);
+                    response.Warnings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

@@ -34,6 +34,7 @@ namespace Amazon.SageMaker.Model
     public partial class CandidateArtifactLocations
     {
         private string _explainability;
+        private string _modelInsights;
 
         /// <summary>
         /// Gets and sets the property Explainability. 
@@ -52,6 +53,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetExplainability()
         {
             return this._explainability != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ModelInsights. 
+        /// <para>
+        /// The Amazon S3 prefix to the model insight artifacts generated for the AutoML candidate.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public string ModelInsights
+        {
+            get { return this._modelInsights; }
+            set { this._modelInsights = value; }
+        }
+
+        // Check to see if ModelInsights property is set
+        internal bool IsSetModelInsights()
+        {
+            return this._modelInsights != null;
         }
 
     }

@@ -32,7 +32,7 @@ namespace Amazon.DLM
     public partial class AmazonDLMConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.1.58");
+            InternalSDKUtils.BuildUserAgentString("3.7.1.67");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.DLM
         /// Default constructor
         /// </summary>
         public AmazonDLMConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonDLMDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "dlm";
         }

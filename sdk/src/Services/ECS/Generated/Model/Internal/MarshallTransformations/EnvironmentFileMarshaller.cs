@@ -34,7 +34,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// EnvironmentFile Marshaller
-    /// </summary>       
+    /// </summary>
     public class EnvironmentFileMarshaller : IRequestMarshaller<EnvironmentFile, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static EnvironmentFileMarshaller Instance = new EnvironmentFileMarshaller();
 
     }

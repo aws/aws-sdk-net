@@ -47,8 +47,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property AttemptCount. 
         /// <para>
-        /// The current attempt of the execution step. For more information, see <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/sagemaker/latest/dg/pipelines-retry-policy.html">Retry
-        /// Policy for Amazon SageMaker Pipelines steps</a>.
+        /// The current attempt of the execution step. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-retry-policy.html">Retry
+        /// Policy for SageMaker Pipelines steps</a>.
         /// </para>
         /// </summary>
         public int AttemptCount

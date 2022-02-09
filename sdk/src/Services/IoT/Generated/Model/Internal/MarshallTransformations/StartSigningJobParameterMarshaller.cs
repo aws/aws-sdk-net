@@ -34,7 +34,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// StartSigningJobParameter Marshaller
-    /// </summary>       
+    /// </summary>
     public class StartSigningJobParameterMarshaller : IRequestMarshaller<StartSigningJobParameter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -77,7 +77,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static StartSigningJobParameterMarshaller Instance = new StartSigningJobParameterMarshaller();
 
     }

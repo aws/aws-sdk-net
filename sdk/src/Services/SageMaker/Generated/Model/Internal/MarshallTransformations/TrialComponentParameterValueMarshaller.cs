@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TrialComponentParameterValue Marshaller
-    /// </summary>       
+    /// </summary>
     public class TrialComponentParameterValueMarshaller : IRequestMarshaller<TrialComponentParameterValue, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TrialComponentParameterValueMarshaller Instance = new TrialComponentParameterValueMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RouteTableIdentifier Marshaller
-    /// </summary>       
+    /// </summary>
     public class RouteTableIdentifierMarshaller : IRequestMarshaller<RouteTableIdentifier, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RouteTableIdentifierMarshaller Instance = new RouteTableIdentifierMarshaller();
 
     }

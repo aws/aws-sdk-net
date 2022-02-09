@@ -34,7 +34,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// BotLocaleFilter Marshaller
-    /// </summary>       
+    /// </summary>
     public class BotLocaleFilterMarshaller : IRequestMarshaller<BotLocaleFilter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static BotLocaleFilterMarshaller Instance = new BotLocaleFilterMarshaller();
 
     }

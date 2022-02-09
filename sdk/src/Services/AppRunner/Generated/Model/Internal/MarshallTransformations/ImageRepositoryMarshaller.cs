@@ -34,7 +34,7 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ImageRepository Marshaller
-    /// </summary>       
+    /// </summary>
     public class ImageRepositoryMarshaller : IRequestMarshaller<ImageRepository, JsonMarshallerContext> 
     {
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ImageRepositoryMarshaller Instance = new ImageRepositoryMarshaller();
 
     }

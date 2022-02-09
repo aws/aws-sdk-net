@@ -34,7 +34,7 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// BatchInferenceJobInput Marshaller
-    /// </summary>       
+    /// </summary>
     public class BatchInferenceJobInputMarshaller : IRequestMarshaller<BatchInferenceJobInput, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static BatchInferenceJobInputMarshaller Instance = new BatchInferenceJobInputMarshaller();
 
     }

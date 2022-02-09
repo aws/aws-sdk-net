@@ -32,7 +32,7 @@ namespace Amazon.RDS
     public partial class AmazonRDSConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.8.9");
+            InternalSDKUtils.BuildUserAgentString("3.7.9.7");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.RDS
         /// Default constructor
         /// </summary>
         public AmazonRDSConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonRDSDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "rds";
         }

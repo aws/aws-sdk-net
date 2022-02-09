@@ -34,7 +34,7 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ForwardingConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class ForwardingConfigMarshaller : IRequestMarshaller<ForwardingConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ForwardingConfigMarshaller Instance = new ForwardingConfigMarshaller();
 
     }

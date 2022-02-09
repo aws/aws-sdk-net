@@ -39,7 +39,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property LambdaArn. 
         /// <para>
-        /// The Lambda Amazon Resource Name of the Lambda function that Amazon Cognito triggers
+        /// The Amazon Resource Name (ARN) of the Lambda function that Amazon Cognito activates
         /// to send SMS notifications to users.
         /// </para>
         /// </summary>
@@ -59,9 +59,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property LambdaVersion. 
         /// <para>
-        /// The Lambda version represents the signature of the "request" attribute in the "event"
-        /// information Amazon Cognito passes to your custom SMS Lambda function. The only supported
-        /// value is <code>V1_0</code>.
+        /// Signature of the "request" attribute in the "event" information that Amazon Cognito
+        /// passes to your custom SMS Lambda function. The only supported value is <code>V1_0</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

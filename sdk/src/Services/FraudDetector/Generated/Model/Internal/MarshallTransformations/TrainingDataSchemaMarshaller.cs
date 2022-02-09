@@ -34,7 +34,7 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TrainingDataSchema Marshaller
-    /// </summary>       
+    /// </summary>
     public class TrainingDataSchemaMarshaller : IRequestMarshaller<TrainingDataSchema, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TrainingDataSchemaMarshaller Instance = new TrainingDataSchemaMarshaller();
 
     }

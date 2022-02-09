@@ -34,7 +34,7 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CertificateConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class CertificateConfigurationMarshaller : IRequestMarshaller<CertificateConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CertificateConfigurationMarshaller Instance = new CertificateConfigurationMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CaptionDescriptionPreset Marshaller
-    /// </summary>       
+    /// </summary>
     public class CaptionDescriptionPresetMarshaller : IRequestMarshaller<CaptionDescriptionPreset, JsonMarshallerContext> 
     {
         /// <summary>
@@ -78,7 +78,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CaptionDescriptionPresetMarshaller Instance = new CaptionDescriptionPresetMarshaller();
 
     }

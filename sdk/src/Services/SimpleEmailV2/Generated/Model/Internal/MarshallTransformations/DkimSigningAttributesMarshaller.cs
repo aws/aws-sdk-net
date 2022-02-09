@@ -34,7 +34,7 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DkimSigningAttributes Marshaller
-    /// </summary>       
+    /// </summary>
     public class DkimSigningAttributesMarshaller : IRequestMarshaller<DkimSigningAttributes, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DkimSigningAttributesMarshaller Instance = new DkimSigningAttributesMarshaller();
 
     }

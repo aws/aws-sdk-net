@@ -34,7 +34,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// JobDependency Marshaller
-    /// </summary>       
+    /// </summary>
     public class JobDependencyMarshaller : IRequestMarshaller<JobDependency, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static JobDependencyMarshaller Instance = new JobDependencyMarshaller();
 
     }

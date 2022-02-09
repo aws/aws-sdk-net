@@ -548,6 +548,11 @@
     <max>12</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GuardDuty.Model.KubernetesAuditLogsConfigurationResult.Status</property>
+    <min>1</min>
+    <max>300</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GuardDuty.Model.Master.AccountId</property>
     <min>12</min>
     <max>12</max>

@@ -55,7 +55,7 @@ namespace Amazon.LookoutforVision.Model.Internal.MarshallTransformations
         public IRequest Marshall(DeleteDatasetRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.LookoutforVision");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-11-20";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-11-20";
             request.HttpMethod = "DELETE";
 
             if (!publicRequest.IsSetDatasetType())
@@ -66,8 +66,10 @@ namespace Amazon.LookoutforVision.Model.Internal.MarshallTransformations
             request.AddPathResource("{projectName}", StringUtils.FromString(publicRequest.ProjectName));
             request.ResourcePath = "/2020-11-20/projects/{projectName}/datasets/{datasetType}";
         
-            if(publicRequest.IsSetClientToken())
+            if (publicRequest.IsSetClientToken()) 
+            {
                 request.Headers["X-Amzn-Client-Token"] = publicRequest.ClientToken;
+            }
 
             return request;
         }

@@ -32,7 +32,7 @@ namespace Amazon.SecurityHub
     public partial class AmazonSecurityHubConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.8.4");
+            InternalSDKUtils.BuildUserAgentString("3.7.9.3");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.SecurityHub
         /// Default constructor
         /// </summary>
         public AmazonSecurityHubConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonSecurityHubDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "securityhub";
         }

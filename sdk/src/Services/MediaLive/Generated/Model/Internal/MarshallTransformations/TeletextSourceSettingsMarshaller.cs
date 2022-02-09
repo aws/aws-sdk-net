@@ -34,7 +34,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TeletextSourceSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class TeletextSourceSettingsMarshaller : IRequestMarshaller<TeletextSourceSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TeletextSourceSettingsMarshaller Instance = new TeletextSourceSettingsMarshaller();
 
     }

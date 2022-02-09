@@ -34,7 +34,7 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DefaultSegmentDeliveryConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class DefaultSegmentDeliveryConfigurationMarshaller : IRequestMarshaller<DefaultSegmentDeliveryConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DefaultSegmentDeliveryConfigurationMarshaller Instance = new DefaultSegmentDeliveryConfigurationMarshaller();
 
     }

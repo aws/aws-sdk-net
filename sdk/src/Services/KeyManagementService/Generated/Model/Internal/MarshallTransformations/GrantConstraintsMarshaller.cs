@@ -34,7 +34,7 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// GrantConstraints Marshaller
-    /// </summary>       
+    /// </summary>
     public class GrantConstraintsMarshaller : IRequestMarshaller<GrantConstraints, JsonMarshallerContext> 
     {
         /// <summary>
@@ -77,7 +77,7 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static GrantConstraintsMarshaller Instance = new GrantConstraintsMarshaller();
 
     }

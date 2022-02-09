@@ -69,8 +69,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property DataFormat. 
         /// <para>
-        /// The data format of the schema definition. Currently <code>AVRO</code> and <code>JSON</code>
-        /// are supported.
+        /// The data format of the schema definition. Currently <code>AVRO</code>, <code>JSON</code>
+        /// and <code>PROTOBUF</code> are supported.
         /// </para>
         /// </summary>
         public DataFormat DataFormat

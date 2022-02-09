@@ -34,7 +34,7 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// FunctionRunAsConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class FunctionRunAsConfigMarshaller : IRequestMarshaller<FunctionRunAsConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static FunctionRunAsConfigMarshaller Instance = new FunctionRunAsConfigMarshaller();
 
     }

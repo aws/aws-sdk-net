@@ -34,7 +34,7 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// GeofenceGeometry Marshaller
-    /// </summary>       
+    /// </summary>
     public class GeofenceGeometryMarshaller : IRequestMarshaller<GeofenceGeometry, JsonMarshallerContext> 
     {
         /// <summary>
@@ -70,7 +70,7 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static GeofenceGeometryMarshaller Instance = new GeofenceGeometryMarshaller();
 
     }

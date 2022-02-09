@@ -34,7 +34,7 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// MetricSource Marshaller
-    /// </summary>       
+    /// </summary>
     public class MetricSourceMarshaller : IRequestMarshaller<MetricSource, JsonMarshallerContext> 
     {
         /// <summary>
@@ -104,7 +104,7 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static MetricSourceMarshaller Instance = new MetricSourceMarshaller();
 
     }

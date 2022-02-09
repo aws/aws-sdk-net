@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Cvss Marshaller
-    /// </summary>       
+    /// </summary>
     public class CvssMarshaller : IRequestMarshaller<Cvss, JsonMarshallerContext> 
     {
         /// <summary>
@@ -89,7 +89,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CvssMarshaller Instance = new CvssMarshaller();
 
     }

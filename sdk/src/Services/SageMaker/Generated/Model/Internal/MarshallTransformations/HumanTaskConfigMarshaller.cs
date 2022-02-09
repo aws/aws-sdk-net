@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// HumanTaskConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class HumanTaskConfigMarshaller : IRequestMarshaller<HumanTaskConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -141,7 +141,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static HumanTaskConfigMarshaller Instance = new HumanTaskConfigMarshaller();
 
     }

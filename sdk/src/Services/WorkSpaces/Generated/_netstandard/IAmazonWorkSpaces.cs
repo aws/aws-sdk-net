@@ -227,6 +227,45 @@ namespace Amazon.WorkSpaces
 
         #endregion
                 
+        #region  CreateConnectClientAddIn
+
+
+
+        /// <summary>
+        /// Creates a client-add-in for Amazon Connect within a directory. You can create only
+        /// one Amazon Connect client add-in within a directory.
+        /// 
+        ///  
+        /// <para>
+        /// This client add-in allows WorkSpaces users to seamlessly connect to Amazon Connect.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateConnectClientAddIn service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateConnectClientAddIn service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceAlreadyExistsException">
+        /// The specified resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceCreationFailedException">
+        /// The resource could not be created.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateConnectClientAddIn">REST API Reference for CreateConnectClientAddIn Operation</seealso>
+        Task<CreateConnectClientAddInResponse> CreateConnectClientAddInAsync(CreateConnectClientAddInRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateConnectionAlias
 
 
@@ -469,6 +508,33 @@ namespace Amazon.WorkSpaces
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateWorkspaces">REST API Reference for CreateWorkspaces Operation</seealso>
         Task<CreateWorkspacesResponse> CreateWorkspacesAsync(CreateWorkspacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteConnectClientAddIn
+
+
+
+        /// <summary>
+        /// Deletes a client-add-in for Amazon Connect that is configured within a directory.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConnectClientAddIn service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteConnectClientAddIn service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeleteConnectClientAddIn">REST API Reference for DeleteConnectClientAddIn Operation</seealso>
+        Task<DeleteConnectClientAddInResponse> DeleteConnectClientAddInAsync(DeleteConnectClientAddInRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -766,6 +832,33 @@ namespace Amazon.WorkSpaces
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeClientProperties">REST API Reference for DescribeClientProperties Operation</seealso>
         Task<DescribeClientPropertiesResponse> DescribeClientPropertiesAsync(DescribeClientPropertiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeConnectClientAddIns
+
+
+
+        /// <summary>
+        /// Retrieves a list of Amazon Connect client add-ins that have been created.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeConnectClientAddIns service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeConnectClientAddIns service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeConnectClientAddIns">REST API Reference for DescribeConnectClientAddIns Operation</seealso>
+        Task<DescribeConnectClientAddInsResponse> DescribeConnectClientAddInsAsync(DescribeConnectClientAddInsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -1824,6 +1917,34 @@ namespace Amazon.WorkSpaces
         /// <returns>The response from the TerminateWorkspaces service method, as returned by WorkSpaces.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/TerminateWorkspaces">REST API Reference for TerminateWorkspaces Operation</seealso>
         Task<TerminateWorkspacesResponse> TerminateWorkspacesAsync(TerminateWorkspacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateConnectClientAddIn
+
+
+
+        /// <summary>
+        /// Updates a Amazon Connect client add-in. Use this action to update the name and endpoint
+        /// URL of a Amazon Connect client add-in.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConnectClientAddIn service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateConnectClientAddIn service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/UpdateConnectClientAddIn">REST API Reference for UpdateConnectClientAddIn Operation</seealso>
+        Task<UpdateConnectClientAddInResponse> UpdateConnectClientAddInAsync(UpdateConnectClientAddInRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

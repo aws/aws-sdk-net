@@ -34,7 +34,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CompletionReport Marshaller
-    /// </summary>       
+    /// </summary>
     public class CompletionReportMarshaller : IRequestMarshaller<CompletionReport, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CompletionReportMarshaller Instance = new CompletionReportMarshaller();
 
     }

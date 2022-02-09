@@ -34,7 +34,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// HttpRetryPolicy Marshaller
-    /// </summary>       
+    /// </summary>
     public class HttpRetryPolicyMarshaller : IRequestMarshaller<HttpRetryPolicy, JsonMarshallerContext> 
     {
         /// <summary>
@@ -88,7 +88,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static HttpRetryPolicyMarshaller Instance = new HttpRetryPolicyMarshaller();
 
     }

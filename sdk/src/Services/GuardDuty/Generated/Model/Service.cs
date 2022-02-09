@@ -193,7 +193,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property ServiceName. 
         /// <para>
-        /// The name of the AWS service (GuardDuty) that generated a finding.
+        /// The name of the Amazon Web Services service (GuardDuty) that generated a finding.
         /// </para>
         /// </summary>
         public string ServiceName

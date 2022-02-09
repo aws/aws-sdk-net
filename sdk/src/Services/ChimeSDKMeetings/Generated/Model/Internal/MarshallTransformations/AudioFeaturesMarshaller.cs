@@ -34,7 +34,7 @@ namespace Amazon.ChimeSDKMeetings.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AudioFeatures Marshaller
-    /// </summary>       
+    /// </summary>
     public class AudioFeaturesMarshaller : IRequestMarshaller<AudioFeatures, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.ChimeSDKMeetings.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AudioFeaturesMarshaller Instance = new AudioFeaturesMarshaller();
 
     }

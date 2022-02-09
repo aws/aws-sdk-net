@@ -34,7 +34,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Rectangle Marshaller
-    /// </summary>       
+    /// </summary>
     public class RectangleMarshaller : IRequestMarshaller<Rectangle, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RectangleMarshaller Instance = new RectangleMarshaller();
 
     }

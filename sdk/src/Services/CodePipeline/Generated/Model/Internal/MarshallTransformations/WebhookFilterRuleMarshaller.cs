@@ -34,7 +34,7 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// WebhookFilterRule Marshaller
-    /// </summary>       
+    /// </summary>
     public class WebhookFilterRuleMarshaller : IRequestMarshaller<WebhookFilterRule, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static WebhookFilterRuleMarshaller Instance = new WebhookFilterRuleMarshaller();
 
     }

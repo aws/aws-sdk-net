@@ -1022,7 +1022,7 @@
   <property-value-rule>
     <property>Amazon.FMS.Model.SecurityServicePolicyData.ManagedServiceData</property>
     <min>1</min>
-    <max>4096</max>
+    <max>8192</max>
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>

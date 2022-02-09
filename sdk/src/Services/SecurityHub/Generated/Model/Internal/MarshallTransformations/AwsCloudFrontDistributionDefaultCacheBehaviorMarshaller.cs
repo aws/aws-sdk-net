@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AwsCloudFrontDistributionDefaultCacheBehavior Marshaller
-    /// </summary>       
+    /// </summary>
     public class AwsCloudFrontDistributionDefaultCacheBehaviorMarshaller : IRequestMarshaller<AwsCloudFrontDistributionDefaultCacheBehavior, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AwsCloudFrontDistributionDefaultCacheBehaviorMarshaller Instance = new AwsCloudFrontDistributionDefaultCacheBehaviorMarshaller();
 
     }

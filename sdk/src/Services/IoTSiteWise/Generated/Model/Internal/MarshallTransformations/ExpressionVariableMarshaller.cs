@@ -34,7 +34,7 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ExpressionVariable Marshaller
-    /// </summary>       
+    /// </summary>
     public class ExpressionVariableMarshaller : IRequestMarshaller<ExpressionVariable, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ExpressionVariableMarshaller Instance = new ExpressionVariableMarshaller();
 
     }

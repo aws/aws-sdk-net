@@ -87,7 +87,7 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        ///  <b>T4g node types</b> (available only for Redis engine version 5.0.6 onward and Memcached
+        ///  <b>T4g node types</b> (available only for Redis engine version 6.0 onward and Memcached
         /// engine version 1.5.16 onward): <code>cache.t4g.micro</code>, <code>cache.t4g.small</code>,
         /// <code>cache.t4g.medium</code> 
         /// </para>

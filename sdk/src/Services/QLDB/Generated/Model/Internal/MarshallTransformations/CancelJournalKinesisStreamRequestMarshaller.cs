@@ -55,7 +55,7 @@ namespace Amazon.QLDB.Model.Internal.MarshallTransformations
         public IRequest Marshall(CancelJournalKinesisStreamRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.QLDB");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-01-02";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-01-02";
             request.HttpMethod = "DELETE";
 
             if (!publicRequest.IsSetLedgerName())

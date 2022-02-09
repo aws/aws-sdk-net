@@ -34,7 +34,7 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// OrganizationDataSourceConfigurations Marshaller
-    /// </summary>       
+    /// </summary>
     public class OrganizationDataSourceConfigurationsMarshaller : IRequestMarshaller<OrganizationDataSourceConfigurations, JsonMarshallerContext> 
     {
         /// <summary>
@@ -45,6 +45,17 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(OrganizationDataSourceConfigurations requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetKubernetes())
+            {
+                context.Writer.WritePropertyName("kubernetes");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = OrganizationKubernetesConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.Kubernetes, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetS3Logs())
             {
                 context.Writer.WritePropertyName("s3Logs");
@@ -60,7 +71,7 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static OrganizationDataSourceConfigurationsMarshaller Instance = new OrganizationDataSourceConfigurationsMarshaller();
 
     }

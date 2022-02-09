@@ -32,7 +32,7 @@ namespace Amazon.AppRegistry
     public partial class AmazonAppRegistryConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.1.54");
+            InternalSDKUtils.BuildUserAgentString("3.7.1.63");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.AppRegistry
         /// Default constructor
         /// </summary>
         public AmazonAppRegistryConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonAppRegistryDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "servicecatalog";
         }

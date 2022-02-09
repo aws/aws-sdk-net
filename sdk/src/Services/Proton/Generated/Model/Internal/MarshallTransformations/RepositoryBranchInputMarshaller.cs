@@ -34,7 +34,7 @@ namespace Amazon.Proton.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RepositoryBranchInput Marshaller
-    /// </summary>       
+    /// </summary>
     public class RepositoryBranchInputMarshaller : IRequestMarshaller<RepositoryBranchInput, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.Proton.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RepositoryBranchInputMarshaller Instance = new RepositoryBranchInputMarshaller();
 
     }

@@ -238,6 +238,12 @@
     <pattern>^(?!\s*$).+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Honeycode.Model.ListTagsForResourceRequest.ResourceArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^arn:aws:honeycode:.+:[0-9]{12}:.+:.+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Honeycode.Model.QueryTableRowsRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
@@ -289,6 +295,18 @@
     <min>1</min>
     <max>100</max>
     <pattern>^[^\n\r\x00\x08\x0B\x0C\x0E\x1F]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Honeycode.Model.TagResourceRequest.ResourceArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^arn:aws:honeycode:.+:[0-9]{12}:.+:.+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Honeycode.Model.UntagResourceRequest.ResourceArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^arn:aws:honeycode:.+:[0-9]{12}:.+:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Honeycode.Model.Cell.FormattedValue</property>

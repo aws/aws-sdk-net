@@ -34,7 +34,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// PrefixConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class PrefixConfigMarshaller : IRequestMarshaller<PrefixConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static PrefixConfigMarshaller Instance = new PrefixConfigMarshaller();
 
     }

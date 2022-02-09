@@ -55,13 +55,15 @@ namespace Amazon.RestJsonTest.Model.Internal.MarshallTransformations
         public IRequest Marshall(NoPayloadRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.RestJsonTest");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-05-13";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-05-13";
             request.HttpMethod = "GET";
 
             request.ResourcePath = "/no-payload";
         
-            if(publicRequest.IsSetTestId())
+            if (publicRequest.IsSetTestId()) 
+            {
                 request.Headers["x-amz-test-id"] = publicRequest.TestId;
+            }
 
             return request;
         }

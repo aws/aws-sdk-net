@@ -147,7 +147,7 @@ namespace Amazon.TranscribeService.Model
         ///  <code>Invalid file size: file size too large</code>- The size of your audio file
         /// is larger than what Amazon Transcribe Medical can process. For more information, see
         /// <a href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines
-        /// and Quotas</a> in the <i>Amazon Transcribe Medical Guide</i> 
+        /// and Quotas</a> in the <i>Amazon Transcribe Medical Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -155,7 +155,7 @@ namespace Amazon.TranscribeService.Model
         /// contains more channels than Amazon Transcribe Medical is configured to process. To
         /// request additional channels, see <a href="https://docs.aws.amazon.com/general/latest/gr/transcribe-medical.html">Amazon
         /// Transcribe Medical Endpoints and Quotas</a> in the <i>Amazon Web Services General
-        /// Reference</i> 
+        /// Reference</i>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -233,8 +233,7 @@ namespace Amazon.TranscribeService.Model
         /// <para>
         /// If you don't specify the sample rate, Amazon Transcribe Medical determines it for
         /// you. If you choose to specify the sample rate, it must match the rate detected by
-        /// Amazon Transcribe Medical. In most cases, you should leave the <code>MedicalMediaSampleHertz</code>
-        /// blank and let Amazon Transcribe Medical determine the sample rate.
+        /// Amazon Transcribe Medical.
         /// </para>
         /// </summary>
         [AWSProperty(Min=8000, Max=48000)]

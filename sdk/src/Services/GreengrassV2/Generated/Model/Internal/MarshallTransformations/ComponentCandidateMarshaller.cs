@@ -34,7 +34,7 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ComponentCandidate Marshaller
-    /// </summary>       
+    /// </summary>
     public class ComponentCandidateMarshaller : IRequestMarshaller<ComponentCandidate, JsonMarshallerContext> 
     {
         /// <summary>
@@ -75,7 +75,7 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ComponentCandidateMarshaller Instance = new ComponentCandidateMarshaller();
 
     }

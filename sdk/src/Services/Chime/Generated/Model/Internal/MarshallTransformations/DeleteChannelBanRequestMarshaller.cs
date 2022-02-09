@@ -55,7 +55,7 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
         public IRequest Marshall(DeleteChannelBanRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Chime");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-01";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-01";
             request.HttpMethod = "DELETE";
 
             if (!publicRequest.IsSetChannelArn())
@@ -66,8 +66,10 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
             request.AddPathResource("{memberArn}", StringUtils.FromString(publicRequest.MemberArn));
             request.ResourcePath = "/channels/{channelArn}/bans/{memberArn}";
         
-            if(publicRequest.IsSetChimeBearer())
+            if (publicRequest.IsSetChimeBearer()) 
+            {
                 request.Headers["x-amz-chime-bearer"] = publicRequest.ChimeBearer;
+            }
             
             request.HostPrefix = $"messaging-";
 

@@ -233,7 +233,7 @@ namespace Amazon.TranscribeService.Model
         /// A value between zero and one that Amazon Transcribe assigned to the language that
         /// it identified in the source audio. This value appears only when you don't provide
         /// a single language code. Larger values indicate that Amazon Transcribe has higher confidence
-        /// in the language that it identified
+        /// in the language that it identified.
         /// </para>
         /// </summary>
         public float IdentifiedLanguageScore
@@ -259,8 +259,8 @@ namespace Amazon.TranscribeService.Model
         /// If you don't know the language, you can leave this field blank, and Amazon Transcribe
         /// will use machine learning to automatically identify the language. To improve the accuracy
         /// of language identification, you can provide an array containing the possible language
-        /// codes for the language spoken in your audio. Refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html">Supported
-        /// languages and language-specific features</a> for additional information.
+        /// codes for the language spoken in your audio. Refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported
+        /// languages</a> for additional information.
         /// </para>
         /// </summary>
         public LanguageCode LanguageCode
@@ -294,7 +294,7 @@ namespace Amazon.TranscribeService.Model
         /// Gets and sets the property MediaFormat. 
         /// <para>
         /// The format of the input audio file. Note: for call analytics jobs, only the following
-        /// media formats are supported: MP3, MP4, WAV, FLAC, OGG, and WebM. 
+        /// media formats are supported: MP3, MP4, WAV, FLAC, OGG, and WebM.
         /// </para>
         /// </summary>
         public MediaFormat MediaFormat

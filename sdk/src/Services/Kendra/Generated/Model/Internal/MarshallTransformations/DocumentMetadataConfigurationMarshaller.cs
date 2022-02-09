@@ -34,7 +34,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DocumentMetadataConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class DocumentMetadataConfigurationMarshaller : IRequestMarshaller<DocumentMetadataConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -83,7 +83,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DocumentMetadataConfigurationMarshaller Instance = new DocumentMetadataConfigurationMarshaller();
 
     }

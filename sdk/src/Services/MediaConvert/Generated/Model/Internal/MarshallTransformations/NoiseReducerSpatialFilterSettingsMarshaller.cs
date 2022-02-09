@@ -34,7 +34,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// NoiseReducerSpatialFilterSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class NoiseReducerSpatialFilterSettingsMarshaller : IRequestMarshaller<NoiseReducerSpatialFilterSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static NoiseReducerSpatialFilterSettingsMarshaller Instance = new NoiseReducerSpatialFilterSettingsMarshaller();
 
     }

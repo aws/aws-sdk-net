@@ -34,7 +34,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// H264Settings Marshaller
-    /// </summary>       
+    /// </summary>
     public class H264SettingsMarshaller : IRequestMarshaller<H264Settings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -294,7 +294,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static H264SettingsMarshaller Instance = new H264SettingsMarshaller();
 
     }

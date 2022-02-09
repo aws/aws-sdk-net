@@ -34,7 +34,7 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AttributeKey Marshaller
-    /// </summary>       
+    /// </summary>
     public class AttributeKeyMarshaller : IRequestMarshaller<AttributeKey, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AttributeKeyMarshaller Instance = new AttributeKeyMarshaller();
 
     }

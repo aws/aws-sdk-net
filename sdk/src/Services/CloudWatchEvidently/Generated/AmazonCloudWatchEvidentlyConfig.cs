@@ -32,7 +32,7 @@ namespace Amazon.CloudWatchEvidently
     public partial class AmazonCloudWatchEvidentlyConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.9");
+            InternalSDKUtils.BuildUserAgentString("3.7.0.18");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.CloudWatchEvidently
         /// Default constructor
         /// </summary>
         public AmazonCloudWatchEvidentlyConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonCloudWatchEvidentlyDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "evidently";
         }

@@ -34,7 +34,7 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AttributeConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class AttributeConfigMarshaller : IRequestMarshaller<AttributeConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -69,7 +69,7 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AttributeConfigMarshaller Instance = new AttributeConfigMarshaller();
 
     }

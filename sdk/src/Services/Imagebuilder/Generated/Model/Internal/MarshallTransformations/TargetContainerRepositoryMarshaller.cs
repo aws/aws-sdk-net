@@ -34,7 +34,7 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TargetContainerRepository Marshaller
-    /// </summary>       
+    /// </summary>
     public class TargetContainerRepositoryMarshaller : IRequestMarshaller<TargetContainerRepository, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TargetContainerRepositoryMarshaller Instance = new TargetContainerRepositoryMarshaller();
 
     }

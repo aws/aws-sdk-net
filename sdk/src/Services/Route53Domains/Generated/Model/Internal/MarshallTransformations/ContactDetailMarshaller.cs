@@ -34,7 +34,7 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ContactDetail Marshaller
-    /// </summary>       
+    /// </summary>
     public class ContactDetailMarshaller : IRequestMarshaller<ContactDetail, JsonMarshallerContext> 
     {
         /// <summary>
@@ -143,7 +143,7 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ContactDetailMarshaller Instance = new ContactDetailMarshaller();
 
     }

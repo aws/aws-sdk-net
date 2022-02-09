@@ -58,7 +58,7 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
             string target = "AmazonEC2ContainerRegistry_V20150921.GetAuthorizationToken";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-09-21";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-09-21";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -78,7 +78,6 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

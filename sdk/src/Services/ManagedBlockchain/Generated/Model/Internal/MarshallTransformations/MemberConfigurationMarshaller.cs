@@ -34,7 +34,7 @@ namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// MemberConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class MemberConfigurationMarshaller : IRequestMarshaller<MemberConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -103,7 +103,7 @@ namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static MemberConfigurationMarshaller Instance = new MemberConfigurationMarshaller();
 
     }

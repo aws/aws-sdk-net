@@ -34,7 +34,7 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SageMakerMachineLearningModelResourceData Marshaller
-    /// </summary>       
+    /// </summary>
     public class SageMakerMachineLearningModelResourceDataMarshaller : IRequestMarshaller<SageMakerMachineLearningModelResourceData, JsonMarshallerContext> 
     {
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SageMakerMachineLearningModelResourceDataMarshaller Instance = new SageMakerMachineLearningModelResourceDataMarshaller();
 
     }

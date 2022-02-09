@@ -34,7 +34,7 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SecretsManagerAccessTokenConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class SecretsManagerAccessTokenConfigurationMarshaller : IRequestMarshaller<SecretsManagerAccessTokenConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SecretsManagerAccessTokenConfigurationMarshaller Instance = new SecretsManagerAccessTokenConfigurationMarshaller();
 
     }

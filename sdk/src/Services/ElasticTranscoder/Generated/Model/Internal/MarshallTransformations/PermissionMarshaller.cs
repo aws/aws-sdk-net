@@ -34,7 +34,7 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Permission Marshaller
-    /// </summary>       
+    /// </summary>
     public class PermissionMarshaller : IRequestMarshaller<Permission, JsonMarshallerContext> 
     {
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static PermissionMarshaller Instance = new PermissionMarshaller();
 
     }

@@ -1282,6 +1282,76 @@ namespace Amazon.RAM
 
         #endregion
         
+        #region  ListPermissionVersions
+
+
+        /// <summary>
+        /// Lists the available versions of the specified RAM permission.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPermissionVersions service method.</param>
+        /// 
+        /// <returns>The response from the ListPermissionVersions service method, as returned by RAM.</returns>
+        /// <exception cref="Amazon.RAM.Model.InvalidNextTokenException">
+        /// The specified value for <code>NextToken</code> is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
+        /// A parameter is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.MalformedArnException">
+        /// The format of an Amazon Resource Name (ARN) is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.OperationNotPermittedException">
+        /// The requested operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServerInternalException">
+        /// The service could not respond to the request due to an internal problem.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServiceUnavailableException">
+        /// The service is not available.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.UnknownResourceException">
+        /// A specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListPermissionVersions">REST API Reference for ListPermissionVersions Operation</seealso>
+        ListPermissionVersionsResponse ListPermissionVersions(ListPermissionVersionsRequest request);
+
+
+
+        /// <summary>
+        /// Lists the available versions of the specified RAM permission.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPermissionVersions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListPermissionVersions service method, as returned by RAM.</returns>
+        /// <exception cref="Amazon.RAM.Model.InvalidNextTokenException">
+        /// The specified value for <code>NextToken</code> is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
+        /// A parameter is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.MalformedArnException">
+        /// The format of an Amazon Resource Name (ARN) is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.OperationNotPermittedException">
+        /// The requested operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServerInternalException">
+        /// The service could not respond to the request due to an internal problem.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServiceUnavailableException">
+        /// The service is not available.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.UnknownResourceException">
+        /// A specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListPermissionVersions">REST API Reference for ListPermissionVersions Operation</seealso>
+        Task<ListPermissionVersionsResponse> ListPermissionVersionsAsync(ListPermissionVersionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListPrincipals
 
 

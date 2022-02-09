@@ -32,7 +32,7 @@ namespace Amazon.Translate
     public partial class AmazonTranslateConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.3.9");
+            InternalSDKUtils.BuildUserAgentString("3.7.3.18");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.Translate
         /// Default constructor
         /// </summary>
         public AmazonTranslateConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonTranslateDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "translate";
         }

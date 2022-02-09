@@ -343,6 +343,14 @@ namespace Amazon.RDS.Model
         /// <para>
         /// A DB subnet group to associate with this DB instance.
         /// </para>
+        ///  
+        /// <para>
+        /// Constraints: If supplied, must match the name of an existing DBSubnetGroup.
+        /// </para>
+        ///  
+        /// <para>
+        /// Example: <code>mydbsubnetgroup</code> 
+        /// </para>
         /// </summary>
         public string DBSubnetGroupName
         {

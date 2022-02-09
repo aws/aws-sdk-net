@@ -32,7 +32,7 @@ namespace Amazon.KinesisFirehose
     public partial class AmazonKinesisFirehoseConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.2.34");
+            InternalSDKUtils.BuildUserAgentString("3.7.2.43");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.KinesisFirehose
         /// Default constructor
         /// </summary>
         public AmazonKinesisFirehoseConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonKinesisFirehoseDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "firehose";
         }

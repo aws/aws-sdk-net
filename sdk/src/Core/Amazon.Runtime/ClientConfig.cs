@@ -17,6 +17,7 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Net;
 using System.Text;
+using System.Threading;
 
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Util;
@@ -44,6 +45,9 @@ namespace Amazon.Runtime
         // Represents max timeout.
         public static readonly TimeSpan MaxTimeout = TimeSpan.FromMilliseconds(int.MaxValue);
 
+        private IDefaultConfigurationProvider _defaultConfigurationProvider;
+
+        private DefaultConfigurationMode? defaultConfigurationMode;
         private RegionEndpoint regionEndpoint = null;
         private bool probeForRegionEndpoint = true;
         private bool throttleRetries = true;
@@ -53,7 +57,7 @@ namespace Amazon.Runtime
         private string authRegion = null;
         private string authServiceName = null;
         private string signatureVersion = "4";
-        private SigningAlgorithm signatureMethod = SigningAlgorithm.HmacSHA256;        
+        private SigningAlgorithm signatureMethod = SigningAlgorithm.HmacSHA256;
         private bool readEntireResponse = false;
         private bool logResponse = false;
         private int bufferSize = AWSSDKUtils.DefaultBufferSize;
@@ -154,6 +158,7 @@ namespace Amazon.Runtime
             }
             set
             {
+                this.defaultConfigurationBackingField = null;
                 this.serviceURL = null;
                 this.regionEndpoint = value;
                 this.probeForRegionEndpoint = this.regionEndpoint == null;
@@ -280,7 +285,7 @@ namespace Amazon.Runtime
         /// make for a single SDK operation invocation before giving up. This flag will 
         /// return 4 when the RetryMode is set to "Legacy" which is the default. For
         /// RetryMode values of "Standard" or "Adaptive" this flag will return 2. In 
-        /// addition to the values returned that are dependant on the RetryMode, the
+        /// addition to the values returned that are dependent on the RetryMode, the
         /// value can be set to a specific value by using the AWS_MAX_ATTEMPTS environment
         /// variable, max_attempts in the shared configuration file, or by setting a
         /// value directly on this property. When using AWS_MAX_ATTEMPTS or max_attempts
@@ -297,7 +302,7 @@ namespace Amazon.Runtime
                 {
                     //For legacy mode there was no MaxAttempts shared config or 
                     //environment variables so use the legacy default value.
-                    if(RetryMode == RequestRetryMode.Legacy)
+                    if (RetryMode == RequestRetryMode.Legacy)
                     {
                         return MaxRetriesLegacyDefault;
                     }
@@ -435,6 +440,43 @@ namespace Amazon.Runtime
         }
 
         /// <summary>
+        /// Specify a <see cref="Amazon.Runtime.DefaultConfigurationMode"/> to use.
+        /// <para />
+        /// Returns the <see cref="Amazon.Runtime.DefaultConfigurationMode"/> that will be used. If none is specified,
+        /// than the correct one is computed by <see cref="IDefaultConfigurationProvider"/>.
+        /// </summary>
+        public DefaultConfigurationMode DefaultConfigurationMode
+        {
+            get
+            {
+                if (this.defaultConfigurationMode.HasValue)
+                    return this.defaultConfigurationMode.Value;
+
+                return DefaultConfiguration.Name;
+            }
+            set
+            {
+                this.defaultConfigurationMode = value;
+                defaultConfigurationBackingField = null;
+            }
+        }
+
+        private IDefaultConfiguration defaultConfigurationBackingField;
+        protected IDefaultConfiguration DefaultConfiguration
+        {
+            get
+            {
+                if (defaultConfigurationBackingField != null)
+                    return defaultConfigurationBackingField;
+
+                defaultConfigurationBackingField =
+                    _defaultConfigurationProvider.GetDefaultConfiguration(RegionEndpoint, defaultConfigurationMode);
+
+                return defaultConfigurationBackingField;
+            }
+        }
+
+        /// <summary>
         /// Credentials to use with a proxy.
         /// </summary>
         public ICredentials ProxyCredentials
@@ -447,7 +489,7 @@ namespace Amazon.Runtime
                 {
                     return new NetworkCredential(AWSConfigs.ProxyConfig.Username, AWSConfigs.ProxyConfig.Password ?? string.Empty);
                 }
-                return this.proxyCredentials; 
+                return this.proxyCredentials;
             }
             set { this.proxyCredentials = value; }
         }
@@ -458,14 +500,44 @@ namespace Amazon.Runtime
         /// </summary>
         public TcpKeepAlive TcpKeepAlive
         {
-            get { return this.tcpKeepAlive; }            
-        }                
+            get { return this.tcpKeepAlive; }
+        }
 #endif
 
         #region Constructor 
-        public ClientConfig()
+        protected ClientConfig(IDefaultConfigurationProvider defaultConfigurationProvider)
         {
+            _defaultConfigurationProvider = defaultConfigurationProvider;
+
             Initialize();
+        }
+
+        public ClientConfig() : this(new LegacyOnlyDefaultConfigurationProvider())
+        {
+            this.defaultConfigurationBackingField = _defaultConfigurationProvider.GetDefaultConfiguration(null, null);
+            this.defaultConfigurationMode = this.defaultConfigurationBackingField.Name;
+        }
+
+        /// <summary>
+        /// Specialized <see cref="IDefaultConfigurationProvider"/> that is only meant to provide backwards
+        /// compatibility for the obsolete <see cref="ClientConfig"/> constructor.
+        /// </summary>
+        private class LegacyOnlyDefaultConfigurationProvider : IDefaultConfigurationProvider
+        {
+            public IDefaultConfiguration GetDefaultConfiguration(RegionEndpoint clientRegion, DefaultConfigurationMode? requestedConfigurationMode = null)
+            {
+                if (requestedConfigurationMode.HasValue &&
+                    requestedConfigurationMode.Value != Runtime.DefaultConfigurationMode.Legacy)
+                    throw new AmazonClientException($"This ClientConfig only supports {Runtime.DefaultConfigurationMode.Legacy}");
+
+                return new DefaultConfiguration
+                {
+                    Name = Runtime.DefaultConfigurationMode.Legacy,
+                    RetryMode = RequestRetryMode.Legacy,
+                    S3UsEast1RegionalEndpoint = S3UsEast1RegionalEndpointValue.Legacy,
+                    StsRegionalEndpoints = StsRegionalEndpointsValue.Legacy
+                };
+            }
         }
         #endregion
 
@@ -500,13 +572,47 @@ namespace Amazon.Runtime
         /// <seealso cref="P:System.Net.Http.HttpClient.Timeout"/>
         public TimeSpan? Timeout
         {
-            get { return this.timeout; }
+            get
+            {
+                if (this.timeout.HasValue)
+                    return this.timeout;
+
+                // TimeToFirstByteTimeout is not a perfect match with HttpWebRequest/HttpClient.Timeout.  However, given
+                // that both are configured to only use Timeout until the Response Headers are downloaded, this value
+                // provides a reasonable default value.
+                return DefaultConfiguration.TimeToFirstByteTimeout;
+            }
             set
             {
                 ValidateTimeout(value);
                 this.timeout = value;
             }
         }
+
+#if AWS_ASYNC_API
+        /// <summary>
+        /// Generates a <see cref="CancellationToken"/> based on the value
+        /// for <see cref="DefaultConfiguration.TimeToFirstByteTimeout"/>.
+        /// <para />
+        /// NOTE: <see cref="Amazon.Runtime.HttpWebRequestMessage.GetResponseAsync"/> uses 
+        /// </summary>
+        internal CancellationToken BuildDefaultCancellationToken()
+        {
+            // legacy mode never had a working cancellation token, so keep it to default()
+            if (DefaultConfiguration.Name == Runtime.DefaultConfigurationMode.Legacy)
+                return default(CancellationToken);
+
+            // TimeToFirstByteTimeout is not a perfect match with HttpWebRequest/HttpClient.Timeout.  However, given
+            // that both are configured to only use Timeout until the Response Headers are downloaded, this value
+            // provides a reasonable default value.
+            var cancelTimeout = DefaultConfiguration.TimeToFirstByteTimeout;
+
+            return cancelTimeout.HasValue
+                ? new CancellationTokenSource(cancelTimeout.Value).Token
+                : default(CancellationToken);
+        }
+#endif
+
 
         /// <summary>
         /// Configures the endpoint calculation for a service to go to a dual stack (ipv6 enabled) endpoint
@@ -550,12 +656,12 @@ namespace Amazon.Runtime
         }
 
         /// <summary>
-        /// Enable or disable the Retry Throttling feature by setting the ThrottleRetries flag to True/False resepctively.
-        /// Retry Throttling is a feature that intelligently throttles retry attempts when a large precentage of requests 
+        /// Enable or disable the Retry Throttling feature by setting the ThrottleRetries flag to True/False respectively.
+        /// Retry Throttling is a feature that intelligently throttles retry attempts when a large percentage of requests 
         /// are failing and retries are unsuccessful as well. In such situations the allotted retry capacity for the service URL
         /// will be drained until requests start to succeed again. Once the requisite capacity is available, retries would 
         /// be permitted again. When retries are throttled, the service enters a fail-fast behaviour as the traditional retry attempt
-        /// for the request would be circumvented. Hence, errors will resurface quickly. This will result in a greated number of exceptions
+        /// for the request would be circumvented. Hence, errors will resurface quickly. This will result in a greater number of exceptions
         /// but prevents requests being tied up in unsuccessful retry attempts.
         /// Note: Retry Throttling is enabled by default. Set the ThrottleRetries flag to false to switch off this feature.
         /// </summary>
@@ -575,7 +681,7 @@ namespace Amazon.Runtime
         public void SetUseNagleIfAvailable(bool useNagle)
         {
 #if BCL
-            this.UseNagleAlgorithm = useNagle;                
+            this.UseNagleAlgorithm = useNagle;
 #endif
         }
 
@@ -592,7 +698,7 @@ namespace Amazon.Runtime
             {
                 ValidateTcpKeepAliveTimeSpan(TcpKeepAlive.Timeout, "TcpKeepAlive.Timeout");
                 ValidateTcpKeepAliveTimeSpan(TcpKeepAlive.Interval, "TcpKeepAlive.Interval");
-            }            
+            }
 #endif
         }
 
@@ -657,7 +763,7 @@ namespace Amazon.Runtime
             {
                 if (!this.endpointDiscoveryEnabled.HasValue)
                 {
-                    return FallbackInternalConfigurationFactory.EndpointDiscoveryEnabled ?? false;                    
+                    return FallbackInternalConfigurationFactory.EndpointDiscoveryEnabled ?? false;
                 }
 
                 return this.endpointDiscoveryEnabled.Value;
@@ -687,7 +793,7 @@ namespace Amazon.Runtime
             {
                 if (!this.retryMode.HasValue)
                 {
-                    return FallbackInternalConfigurationFactory.RetryMode ?? RequestRetryMode.Legacy;
+                    return FallbackInternalConfigurationFactory.RetryMode ?? DefaultConfiguration.RetryMode;
                 }
 
                 return this.retryMode.Value;
@@ -736,7 +842,7 @@ namespace Amazon.Runtime
         /// <summary>
         /// Returns the request timeout value if its value is set, 
         /// else returns client timeout value.
-        /// </summary>        
+        /// </summary>
         public static TimeSpan? GetTimeoutValue(TimeSpan? clientTimeout, TimeSpan? requestTimeout)
         {
             return requestTimeout.HasValue ? requestTimeout
@@ -759,8 +865,6 @@ namespace Amazon.Runtime
         /// </para>
         /// </summary>
         public bool CacheHttpClient {get; set;} = true;
-
-
 
         private int? _httpClientCacheSize;
         /// <summary>

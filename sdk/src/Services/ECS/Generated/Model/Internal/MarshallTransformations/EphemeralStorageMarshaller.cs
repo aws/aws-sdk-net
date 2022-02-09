@@ -34,7 +34,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// EphemeralStorage Marshaller
-    /// </summary>       
+    /// </summary>
     public class EphemeralStorageMarshaller : IRequestMarshaller<EphemeralStorage, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static EphemeralStorageMarshaller Instance = new EphemeralStorageMarshaller();
 
     }

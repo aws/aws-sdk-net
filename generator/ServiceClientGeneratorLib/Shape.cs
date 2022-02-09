@@ -516,7 +516,7 @@ namespace ServiceClientGenerator
         public bool RequiresLength
         {
             get
-            {                
+            {
                 return (bool)(this.data[RequiresLengthKey] ?? false);
             }
         }
@@ -557,7 +557,7 @@ namespace ServiceClientGenerator
 
                 return bool.Parse(streamingNode.ToString());
             }
-        }        
+        }
 
         public long? Min
         {

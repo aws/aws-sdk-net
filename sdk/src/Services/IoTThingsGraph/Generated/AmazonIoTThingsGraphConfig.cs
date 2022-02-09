@@ -32,7 +32,7 @@ namespace Amazon.IoTThingsGraph
     public partial class AmazonIoTThingsGraphConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.112");
+            InternalSDKUtils.BuildUserAgentString("3.7.0.121");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.IoTThingsGraph
         /// Default constructor
         /// </summary>
         public AmazonIoTThingsGraphConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonIoTThingsGraphDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "iotthingsgraph";
         }

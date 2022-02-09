@@ -53,7 +53,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DeleteThingShadowRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("DeleteThingShadow", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DeleteThingShadow", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -67,9 +67,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = DeleteThingShadowResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as DeleteThingShadowResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as DeleteThingShadowResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -340,7 +339,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetRetainedMessageRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("GetRetainedMessage", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetRetainedMessage", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -354,9 +353,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = GetRetainedMessageResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as GetRetainedMessageResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as GetRetainedMessageResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -595,7 +593,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetThingShadowRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("GetThingShadow", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetThingShadow", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -609,9 +607,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = GetThingShadowResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as GetThingShadowResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as GetThingShadowResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -882,7 +879,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListNamedShadowsForThingRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("ListNamedShadowsForThing", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("ListNamedShadowsForThing", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -896,9 +893,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = ListNamedShadowsForThingResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as ListNamedShadowsForThingResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as ListNamedShadowsForThingResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -1137,7 +1133,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListRetainedMessagesRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("ListRetainedMessages", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("ListRetainedMessages", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -1151,9 +1147,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = ListRetainedMessagesResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as ListRetainedMessagesResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as ListRetainedMessagesResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -1360,7 +1355,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new PublishRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("Publish", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("Publish", request, internalRequest, service_model);
 
         }
 
@@ -1504,7 +1499,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new UpdateThingShadowRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("UpdateThingShadow", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("UpdateThingShadow", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -1518,9 +1513,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = UpdateThingShadowResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as UpdateThingShadowResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+            var response = unmarshaller.Unmarshall(context) as UpdateThingShadowResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]

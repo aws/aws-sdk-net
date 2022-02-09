@@ -55,7 +55,7 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
         public IRequest Marshall(AbortVaultLockRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Glacier");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2012-06-01";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2012-06-01";
             request.HttpMethod = "DELETE";
 
             request.AddPathResource("{accountId}", publicRequest.IsSetAccountId() ? StringUtils.FromString(publicRequest.AccountId) : string.Empty);

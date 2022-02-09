@@ -34,7 +34,7 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DestinationConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class DestinationConfigurationMarshaller : IRequestMarshaller<DestinationConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DestinationConfigurationMarshaller Instance = new DestinationConfigurationMarshaller();
 
     }

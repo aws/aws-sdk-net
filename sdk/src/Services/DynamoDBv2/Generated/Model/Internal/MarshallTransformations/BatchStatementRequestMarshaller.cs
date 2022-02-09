@@ -34,7 +34,7 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// BatchStatementRequest Marshaller
-    /// </summary>       
+    /// </summary>
     public class BatchStatementRequestMarshaller : IRequestMarshaller<BatchStatementRequest, JsonMarshallerContext> 
     {
         /// <summary>
@@ -77,7 +77,7 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static BatchStatementRequestMarshaller Instance = new BatchStatementRequestMarshaller();
 
     }

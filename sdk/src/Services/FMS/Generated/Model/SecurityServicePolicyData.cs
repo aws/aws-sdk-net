@@ -39,8 +39,7 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property ManagedServiceData. 
         /// <para>
-        /// Details about the service that are specific to the service type, in JSON format. For
-        /// service type <code>SHIELD_ADVANCED</code>, this is an empty string.
+        /// Details about the service that are specific to the service type, in JSON format. 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -64,6 +63,35 @@ namespace Amazon.FMS.Model
         /// <para>
         ///  <code>"{\"type\":\"NETWORK_FIREWALL\",\"networkFirewallStatelessRuleGroupReferences\":[{\"resourceARN\":\"arn:aws:network-firewall:us-west-1:1234567891011:stateless-rulegroup/rulegroup2\",\"priority\":10}],\"networkFirewallStatelessDefaultActions\":[\"aws:pass\",\"custom1\"],\"networkFirewallStatelessFragmentDefaultActions\":[\"custom2\",\"aws:pass\"],\"networkFirewallStatelessCustomActions\":[{\"actionName\":\"custom1\",\"actionDefinition\":{\"publishMetricAction\":{\"dimensions\":[{\"value\":\"dimension1\"}]}}},{\"actionName\":\"custom2\",\"actionDefinition\":{\"publishMetricAction\":{\"dimensions\":[{\"value\":\"dimension2\"}]}}}],\"networkFirewallStatefulRuleGroupReferences\":[{\"resourceARN\":\"arn:aws:network-firewall:us-west-1:1234567891011:stateful-rulegroup/rulegroup1\"}],\"networkFirewallOrchestrationConfig\":{\"singleFirewallEndpointPerVPC\":true,\"allowedIPV4CidrList\":[\"10.24.34.0/28\"]}
         /// }"</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Specification for <code>SHIELD_ADVANCED</code> for Amazon CloudFront distributions
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>"{\"type\":\"SHIELD_ADVANCED\",\"automaticResponseConfiguration\": {\"automaticResponseStatus\":\"ENABLED|IGNORED|DISABLED\",
+        /// \"automaticResponseAction\":\"BLOCK|COUNT\"}, \"overrideCustomerWebaclClassic\":true|false}"</code>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// For example: <code>"{\"type\":\"SHIELD_ADVANCED\",\"automaticResponseConfiguration\":
+        /// {\"automaticResponseStatus\":\"ENABLED\", \"automaticResponseAction\":\"COUNT\"}}"</code>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// The default value for <code>automaticResponseStatus</code> is <code>IGNORED</code>.
+        /// The value for <code>automaticResponseAction</code> is only required when <code>automaticResponseStatus</code>
+        /// is set to <code>ENABLED</code>. The default value for <code>overrideCustomerWebaclClassic</code>
+        /// is <code>false</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For other resource types that you can protect with a Shield Advanced policy, this
+        /// <code>ManagedServiceData</code> configuration is an empty string.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -140,7 +168,7 @@ namespace Amazon.FMS.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Min=1, Max=4096)]
+        [AWSProperty(Min=1, Max=8192)]
         public string ManagedServiceData
         {
             get { return this._managedServiceData; }

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// This exception is thrown when a user is not confirmed successfully.
+    /// This exception is thrown when a user isn't confirmed successfully.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

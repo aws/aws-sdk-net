@@ -57,8 +57,10 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             var request = new DefaultRequest(publicRequest, "Amazon.S3Control");
             request.HttpMethod = "POST";
         
-            if(publicRequest.IsSetAccountId())
+            if (publicRequest.IsSetAccountId()) 
+            {
                 request.Headers["x-amz-account-id"] = publicRequest.AccountId;
+            }
             request.ResourcePath = "/v20180820/jobs";
 
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
@@ -113,6 +115,93 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         }
                         if(publicRequest.Manifest.Spec.IsSetFormat())
                             xmlWriter.WriteElementString("Format", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.Manifest.Spec.Format));                 
+        
+                        xmlWriter.WriteEndElement();
+                    }
+                    xmlWriter.WriteEndElement();
+                }
+                
+                if (publicRequest.ManifestGenerator != null) 
+                {
+                    xmlWriter.WriteStartElement("ManifestGenerator", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
+                    
+                    if (publicRequest.ManifestGenerator.S3JobManifestGenerator != null) 
+                    {
+                        xmlWriter.WriteStartElement("S3JobManifestGenerator", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
+                        if(publicRequest.ManifestGenerator.S3JobManifestGenerator.IsSetEnableManifestOutput())
+                            xmlWriter.WriteElementString("EnableManifestOutput", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromBool(publicRequest.ManifestGenerator.S3JobManifestGenerator.EnableManifestOutput));                 
+        
+                        if(publicRequest.ManifestGenerator.S3JobManifestGenerator.IsSetExpectedBucketOwner())
+                            xmlWriter.WriteElementString("ExpectedBucketOwner", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.ManifestGenerator.S3JobManifestGenerator.ExpectedBucketOwner));                 
+        
+                        
+                        if (publicRequest.ManifestGenerator.S3JobManifestGenerator.Filter != null) 
+                        {
+                            xmlWriter.WriteStartElement("Filter", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
+                            if(publicRequest.ManifestGenerator.S3JobManifestGenerator.Filter.IsSetCreatedAfter())
+                                xmlWriter.WriteElementString("CreatedAfter", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromDateTimeToISO8601(publicRequest.ManifestGenerator.S3JobManifestGenerator.Filter.CreatedAfter));                 
+            
+                            if(publicRequest.ManifestGenerator.S3JobManifestGenerator.Filter.IsSetCreatedBefore())
+                                xmlWriter.WriteElementString("CreatedBefore", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromDateTimeToISO8601(publicRequest.ManifestGenerator.S3JobManifestGenerator.Filter.CreatedBefore));                 
+            
+                            if(publicRequest.ManifestGenerator.S3JobManifestGenerator.Filter.IsSetEligibleForReplication())
+                                xmlWriter.WriteElementString("EligibleForReplication", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromBool(publicRequest.ManifestGenerator.S3JobManifestGenerator.Filter.EligibleForReplication));                 
+            
+                            var publicRequestManifestGeneratorS3JobManifestGeneratorFilterObjectReplicationStatuses = publicRequest.ManifestGenerator.S3JobManifestGenerator.Filter.ObjectReplicationStatuses;
+                            if (publicRequestManifestGeneratorS3JobManifestGeneratorFilterObjectReplicationStatuses != null && publicRequestManifestGeneratorS3JobManifestGeneratorFilterObjectReplicationStatuses.Count > 0) 
+                            {                        
+                                xmlWriter.WriteStartElement("ObjectReplicationStatuses", "http://awss3control.amazonaws.com/doc/2018-08-20/");
+                                foreach (var publicRequestManifestGeneratorS3JobManifestGeneratorFilterObjectReplicationStatusesValue in publicRequestManifestGeneratorS3JobManifestGeneratorFilterObjectReplicationStatuses) 
+                                {
+                                    xmlWriter.WriteStartElement("member", "http://awss3control.amazonaws.com/doc/2018-08-20/");
+                                    xmlWriter.WriteValue(publicRequestManifestGeneratorS3JobManifestGeneratorFilterObjectReplicationStatusesValue);
+                                    xmlWriter.WriteEndElement();
+                                }            
+                                xmlWriter.WriteEndElement();            
+                            }
+                            xmlWriter.WriteEndElement();
+                        }
+                        
+                        if (publicRequest.ManifestGenerator.S3JobManifestGenerator.ManifestOutputLocation != null) 
+                        {
+                            xmlWriter.WriteStartElement("ManifestOutputLocation", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
+                            if(publicRequest.ManifestGenerator.S3JobManifestGenerator.ManifestOutputLocation.IsSetBucket())
+                                xmlWriter.WriteElementString("Bucket", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.ManifestGenerator.S3JobManifestGenerator.ManifestOutputLocation.Bucket));                 
+            
+                            if(publicRequest.ManifestGenerator.S3JobManifestGenerator.ManifestOutputLocation.IsSetExpectedManifestBucketOwner())
+                                xmlWriter.WriteElementString("ExpectedManifestBucketOwner", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.ManifestGenerator.S3JobManifestGenerator.ManifestOutputLocation.ExpectedManifestBucketOwner));                 
+            
+                            
+                            if (publicRequest.ManifestGenerator.S3JobManifestGenerator.ManifestOutputLocation.ManifestEncryption != null) 
+                            {
+                                xmlWriter.WriteStartElement("ManifestEncryption", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
+                                
+                                if (publicRequest.ManifestGenerator.S3JobManifestGenerator.ManifestOutputLocation.ManifestEncryption.SSEKMS != null) 
+                                {
+                                    xmlWriter.WriteStartElement("SSE-KMS", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
+                                    if(publicRequest.ManifestGenerator.S3JobManifestGenerator.ManifestOutputLocation.ManifestEncryption.SSEKMS.IsSetKeyId())
+                                        xmlWriter.WriteElementString("KeyId", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.ManifestGenerator.S3JobManifestGenerator.ManifestOutputLocation.ManifestEncryption.SSEKMS.KeyId));                 
+                    
+                                    xmlWriter.WriteEndElement();
+                                }
+                                
+                                if (publicRequest.ManifestGenerator.S3JobManifestGenerator.ManifestOutputLocation.ManifestEncryption.SSES3 != null) 
+                                {
+                                    xmlWriter.WriteStartElement("SSE-S3", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
+                                    xmlWriter.WriteEndElement();
+                                }
+                                xmlWriter.WriteEndElement();
+                            }
+                            if(publicRequest.ManifestGenerator.S3JobManifestGenerator.ManifestOutputLocation.IsSetManifestFormat())
+                                xmlWriter.WriteElementString("ManifestFormat", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.ManifestGenerator.S3JobManifestGenerator.ManifestOutputLocation.ManifestFormat));                 
+            
+                            if(publicRequest.ManifestGenerator.S3JobManifestGenerator.ManifestOutputLocation.IsSetManifestPrefix())
+                                xmlWriter.WriteElementString("ManifestPrefix", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.ManifestGenerator.S3JobManifestGenerator.ManifestOutputLocation.ManifestPrefix));                 
+            
+                            xmlWriter.WriteEndElement();
+                        }
+                        if(publicRequest.ManifestGenerator.S3JobManifestGenerator.IsSetSourceBucket())
+                            xmlWriter.WriteElementString("SourceBucket", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.ManifestGenerator.S3JobManifestGenerator.SourceBucket));                 
         
                         xmlWriter.WriteEndElement();
                     }
@@ -423,6 +512,12 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                             }            
                             xmlWriter.WriteEndElement();            
                         }
+                        xmlWriter.WriteEndElement();
+                    }
+                    
+                    if (publicRequest.Operation.S3ReplicateObject != null) 
+                    {
+                        xmlWriter.WriteStartElement("S3ReplicateObject", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
                         xmlWriter.WriteEndElement();
                     }
                     xmlWriter.WriteEndElement();

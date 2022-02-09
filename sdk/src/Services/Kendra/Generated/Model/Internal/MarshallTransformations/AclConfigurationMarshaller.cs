@@ -34,7 +34,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AclConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class AclConfigurationMarshaller : IRequestMarshaller<AclConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AclConfigurationMarshaller Instance = new AclConfigurationMarshaller();
 
     }

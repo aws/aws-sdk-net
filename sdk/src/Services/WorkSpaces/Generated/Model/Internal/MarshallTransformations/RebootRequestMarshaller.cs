@@ -34,7 +34,7 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RebootRequest Marshaller
-    /// </summary>       
+    /// </summary>
     public class RebootRequestMarshaller : IRequestMarshaller<RebootRequest, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RebootRequestMarshaller Instance = new RebootRequestMarshaller();
 
     }

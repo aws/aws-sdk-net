@@ -34,7 +34,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ResourceDataSyncDestinationDataSharing Marshaller
-    /// </summary>       
+    /// </summary>
     public class ResourceDataSyncDestinationDataSharingMarshaller : IRequestMarshaller<ResourceDataSyncDestinationDataSharing, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ResourceDataSyncDestinationDataSharingMarshaller Instance = new ResourceDataSyncDestinationDataSharingMarshaller();
 
     }

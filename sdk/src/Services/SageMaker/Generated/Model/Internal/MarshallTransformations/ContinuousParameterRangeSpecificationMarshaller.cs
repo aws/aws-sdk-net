@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ContinuousParameterRangeSpecification Marshaller
-    /// </summary>       
+    /// </summary>
     public class ContinuousParameterRangeSpecificationMarshaller : IRequestMarshaller<ContinuousParameterRangeSpecification, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ContinuousParameterRangeSpecificationMarshaller Instance = new ContinuousParameterRangeSpecificationMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DashAdditionalManifest Marshaller
-    /// </summary>       
+    /// </summary>
     public class DashAdditionalManifestMarshaller : IRequestMarshaller<DashAdditionalManifest, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DashAdditionalManifestMarshaller Instance = new DashAdditionalManifestMarshaller();
 
     }

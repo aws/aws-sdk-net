@@ -34,7 +34,7 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ManualEvidence Marshaller
-    /// </summary>       
+    /// </summary>
     public class ManualEvidenceMarshaller : IRequestMarshaller<ManualEvidence, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ManualEvidenceMarshaller Instance = new ManualEvidenceMarshaller();
 
     }

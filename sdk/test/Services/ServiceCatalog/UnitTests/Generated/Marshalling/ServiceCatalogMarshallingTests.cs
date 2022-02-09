@@ -50,7 +50,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new AcceptPortfolioShareRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<AcceptPortfolioShareRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -63,8 +63,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("AcceptPortfolioShare").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = AcceptPortfolioShareResponseUnmarshaller.Instance.Unmarshall(context)
-                as AcceptPortfolioShareResponse;
+            var response = AcceptPortfolioShareResponseUnmarshaller.Instance.Unmarshall(context) as AcceptPortfolioShareResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -174,7 +173,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new AssociateBudgetWithResourceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<AssociateBudgetWithResourceRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -187,8 +186,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("AssociateBudgetWithResource").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = AssociateBudgetWithResourceResponseUnmarshaller.Instance.Unmarshall(context)
-                as AssociateBudgetWithResourceResponse;
+            var response = AssociateBudgetWithResourceResponseUnmarshaller.Instance.Unmarshall(context) as AssociateBudgetWithResourceResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -330,7 +328,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new AssociatePrincipalWithPortfolioRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<AssociatePrincipalWithPortfolioRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -343,8 +341,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("AssociatePrincipalWithPortfolio").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = AssociatePrincipalWithPortfolioResponseUnmarshaller.Instance.Unmarshall(context)
-                as AssociatePrincipalWithPortfolioResponse;
+            var response = AssociatePrincipalWithPortfolioResponseUnmarshaller.Instance.Unmarshall(context) as AssociatePrincipalWithPortfolioResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -454,7 +451,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new AssociateProductWithPortfolioRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<AssociateProductWithPortfolioRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -467,8 +464,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("AssociateProductWithPortfolio").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = AssociateProductWithPortfolioResponseUnmarshaller.Instance.Unmarshall(context)
-                as AssociateProductWithPortfolioResponse;
+            var response = AssociateProductWithPortfolioResponseUnmarshaller.Instance.Unmarshall(context) as AssociateProductWithPortfolioResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -578,7 +574,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new AssociateServiceActionWithProvisioningArtifactRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<AssociateServiceActionWithProvisioningArtifactRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -591,8 +587,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("AssociateServiceActionWithProvisioningArtifact").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = AssociateServiceActionWithProvisioningArtifactResponseUnmarshaller.Instance.Unmarshall(context)
-                as AssociateServiceActionWithProvisioningArtifactResponse;
+            var response = AssociateServiceActionWithProvisioningArtifactResponseUnmarshaller.Instance.Unmarshall(context) as AssociateServiceActionWithProvisioningArtifactResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -702,7 +697,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new AssociateTagOptionWithResourceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<AssociateTagOptionWithResourceRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -715,8 +710,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("AssociateTagOptionWithResource").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = AssociateTagOptionWithResourceResponseUnmarshaller.Instance.Unmarshall(context)
-                as AssociateTagOptionWithResourceResponse;
+            var response = AssociateTagOptionWithResourceResponseUnmarshaller.Instance.Unmarshall(context) as AssociateTagOptionWithResourceResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -922,7 +916,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new BatchAssociateServiceActionWithProvisioningArtifactRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<BatchAssociateServiceActionWithProvisioningArtifactRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -935,8 +929,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("BatchAssociateServiceActionWithProvisioningArtifact").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = BatchAssociateServiceActionWithProvisioningArtifactResponseUnmarshaller.Instance.Unmarshall(context)
-                as BatchAssociateServiceActionWithProvisioningArtifactResponse;
+            var response = BatchAssociateServiceActionWithProvisioningArtifactResponseUnmarshaller.Instance.Unmarshall(context) as BatchAssociateServiceActionWithProvisioningArtifactResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -982,7 +975,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new BatchDisassociateServiceActionFromProvisioningArtifactRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<BatchDisassociateServiceActionFromProvisioningArtifactRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -995,8 +988,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("BatchDisassociateServiceActionFromProvisioningArtifact").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = BatchDisassociateServiceActionFromProvisioningArtifactResponseUnmarshaller.Instance.Unmarshall(context)
-                as BatchDisassociateServiceActionFromProvisioningArtifactResponse;
+            var response = BatchDisassociateServiceActionFromProvisioningArtifactResponseUnmarshaller.Instance.Unmarshall(context) as BatchDisassociateServiceActionFromProvisioningArtifactResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -1042,7 +1034,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new CopyProductRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<CopyProductRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -1055,8 +1047,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("CopyProduct").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = CopyProductResponseUnmarshaller.Instance.Unmarshall(context)
-                as CopyProductResponse;
+            var response = CopyProductResponseUnmarshaller.Instance.Unmarshall(context) as CopyProductResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -1134,7 +1125,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new CreateConstraintRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<CreateConstraintRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -1147,8 +1138,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("CreateConstraint").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = CreateConstraintResponseUnmarshaller.Instance.Unmarshall(context)
-                as CreateConstraintResponse;
+            var response = CreateConstraintResponseUnmarshaller.Instance.Unmarshall(context) as CreateConstraintResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -1290,7 +1280,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new CreatePortfolioRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<CreatePortfolioRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -1303,8 +1293,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("CreatePortfolio").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = CreatePortfolioResponseUnmarshaller.Instance.Unmarshall(context)
-                as CreatePortfolioResponse;
+            var response = CreatePortfolioResponseUnmarshaller.Instance.Unmarshall(context) as CreatePortfolioResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -1414,7 +1403,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new CreatePortfolioShareRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<CreatePortfolioShareRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -1427,8 +1416,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("CreatePortfolioShare").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = CreatePortfolioShareResponseUnmarshaller.Instance.Unmarshall(context)
-                as CreatePortfolioShareResponse;
+            var response = CreatePortfolioShareResponseUnmarshaller.Instance.Unmarshall(context) as CreatePortfolioShareResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -1602,7 +1590,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new CreateProductRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<CreateProductRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -1615,8 +1603,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("CreateProduct").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = CreateProductResponseUnmarshaller.Instance.Unmarshall(context)
-                as CreateProductResponse;
+            var response = CreateProductResponseUnmarshaller.Instance.Unmarshall(context) as CreateProductResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -1726,7 +1713,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new CreateProvisionedProductPlanRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<CreateProvisionedProductPlanRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -1739,8 +1726,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("CreateProvisionedProductPlan").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = CreateProvisionedProductPlanResponseUnmarshaller.Instance.Unmarshall(context)
-                as CreateProvisionedProductPlanResponse;
+            var response = CreateProvisionedProductPlanResponseUnmarshaller.Instance.Unmarshall(context) as CreateProvisionedProductPlanResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -1850,7 +1836,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new CreateProvisioningArtifactRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<CreateProvisioningArtifactRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -1863,8 +1849,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("CreateProvisioningArtifact").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = CreateProvisioningArtifactResponseUnmarshaller.Instance.Unmarshall(context)
-                as CreateProvisioningArtifactResponse;
+            var response = CreateProvisioningArtifactResponseUnmarshaller.Instance.Unmarshall(context) as CreateProvisioningArtifactResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -1974,7 +1959,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new CreateServiceActionRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<CreateServiceActionRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -1987,8 +1972,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("CreateServiceAction").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = CreateServiceActionResponseUnmarshaller.Instance.Unmarshall(context)
-                as CreateServiceActionResponse;
+            var response = CreateServiceActionResponseUnmarshaller.Instance.Unmarshall(context) as CreateServiceActionResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -2066,7 +2050,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new CreateTagOptionRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<CreateTagOptionRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -2079,8 +2063,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("CreateTagOption").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = CreateTagOptionResponseUnmarshaller.Instance.Unmarshall(context)
-                as CreateTagOptionResponse;
+            var response = CreateTagOptionResponseUnmarshaller.Instance.Unmarshall(context) as CreateTagOptionResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -2190,7 +2173,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DeleteConstraintRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<DeleteConstraintRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -2203,8 +2186,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DeleteConstraint").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = DeleteConstraintResponseUnmarshaller.Instance.Unmarshall(context)
-                as DeleteConstraintResponse;
+            var response = DeleteConstraintResponseUnmarshaller.Instance.Unmarshall(context) as DeleteConstraintResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -2282,7 +2264,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DeletePortfolioRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<DeletePortfolioRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -2295,8 +2277,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DeletePortfolio").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = DeletePortfolioResponseUnmarshaller.Instance.Unmarshall(context)
-                as DeletePortfolioResponse;
+            var response = DeletePortfolioResponseUnmarshaller.Instance.Unmarshall(context) as DeletePortfolioResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -2438,7 +2419,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DeletePortfolioShareRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<DeletePortfolioShareRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -2451,8 +2432,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DeletePortfolioShare").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = DeletePortfolioShareResponseUnmarshaller.Instance.Unmarshall(context)
-                as DeletePortfolioShareResponse;
+            var response = DeletePortfolioShareResponseUnmarshaller.Instance.Unmarshall(context) as DeletePortfolioShareResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -2594,7 +2574,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DeleteProductRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<DeleteProductRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -2607,8 +2587,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DeleteProduct").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = DeleteProductResponseUnmarshaller.Instance.Unmarshall(context)
-                as DeleteProductResponse;
+            var response = DeleteProductResponseUnmarshaller.Instance.Unmarshall(context) as DeleteProductResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -2750,7 +2729,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DeleteProvisionedProductPlanRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<DeleteProvisionedProductPlanRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -2763,8 +2742,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DeleteProvisionedProductPlan").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = DeleteProvisionedProductPlanResponseUnmarshaller.Instance.Unmarshall(context)
-                as DeleteProvisionedProductPlanResponse;
+            var response = DeleteProvisionedProductPlanResponseUnmarshaller.Instance.Unmarshall(context) as DeleteProvisionedProductPlanResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -2842,7 +2820,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DeleteProvisioningArtifactRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<DeleteProvisioningArtifactRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -2855,8 +2833,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DeleteProvisioningArtifact").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = DeleteProvisioningArtifactResponseUnmarshaller.Instance.Unmarshall(context)
-                as DeleteProvisioningArtifactResponse;
+            var response = DeleteProvisioningArtifactResponseUnmarshaller.Instance.Unmarshall(context) as DeleteProvisioningArtifactResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -2966,7 +2943,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DeleteServiceActionRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<DeleteServiceActionRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -2979,8 +2956,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DeleteServiceAction").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = DeleteServiceActionResponseUnmarshaller.Instance.Unmarshall(context)
-                as DeleteServiceActionResponse;
+            var response = DeleteServiceActionResponseUnmarshaller.Instance.Unmarshall(context) as DeleteServiceActionResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -3058,7 +3034,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DeleteTagOptionRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<DeleteTagOptionRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -3071,8 +3047,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DeleteTagOption").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = DeleteTagOptionResponseUnmarshaller.Instance.Unmarshall(context)
-                as DeleteTagOptionResponse;
+            var response = DeleteTagOptionResponseUnmarshaller.Instance.Unmarshall(context) as DeleteTagOptionResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -3182,7 +3157,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DescribeConstraintRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<DescribeConstraintRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -3195,8 +3170,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeConstraint").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = DescribeConstraintResponseUnmarshaller.Instance.Unmarshall(context)
-                as DescribeConstraintResponse;
+            var response = DescribeConstraintResponseUnmarshaller.Instance.Unmarshall(context) as DescribeConstraintResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -3242,7 +3216,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DescribeCopyProductStatusRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<DescribeCopyProductStatusRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -3255,8 +3229,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeCopyProductStatus").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = DescribeCopyProductStatusResponseUnmarshaller.Instance.Unmarshall(context)
-                as DescribeCopyProductStatusResponse;
+            var response = DescribeCopyProductStatusResponseUnmarshaller.Instance.Unmarshall(context) as DescribeCopyProductStatusResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -3302,7 +3275,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DescribePortfolioRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<DescribePortfolioRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -3315,8 +3288,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribePortfolio").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = DescribePortfolioResponseUnmarshaller.Instance.Unmarshall(context)
-                as DescribePortfolioResponse;
+            var response = DescribePortfolioResponseUnmarshaller.Instance.Unmarshall(context) as DescribePortfolioResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -3362,7 +3334,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DescribePortfolioSharesRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<DescribePortfolioSharesRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -3375,8 +3347,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribePortfolioShares").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = DescribePortfolioSharesResponseUnmarshaller.Instance.Unmarshall(context)
-                as DescribePortfolioSharesResponse;
+            var response = DescribePortfolioSharesResponseUnmarshaller.Instance.Unmarshall(context) as DescribePortfolioSharesResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -3454,7 +3425,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DescribePortfolioShareStatusRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<DescribePortfolioShareStatusRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -3467,8 +3438,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribePortfolioShareStatus").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = DescribePortfolioShareStatusResponseUnmarshaller.Instance.Unmarshall(context)
-                as DescribePortfolioShareStatusResponse;
+            var response = DescribePortfolioShareStatusResponseUnmarshaller.Instance.Unmarshall(context) as DescribePortfolioShareStatusResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -3578,7 +3548,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DescribeProductRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<DescribeProductRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -3591,8 +3561,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeProduct").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = DescribeProductResponseUnmarshaller.Instance.Unmarshall(context)
-                as DescribeProductResponse;
+            var response = DescribeProductResponseUnmarshaller.Instance.Unmarshall(context) as DescribeProductResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -3670,7 +3639,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DescribeProductAsAdminRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<DescribeProductAsAdminRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -3683,8 +3652,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeProductAsAdmin").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = DescribeProductAsAdminResponseUnmarshaller.Instance.Unmarshall(context)
-                as DescribeProductAsAdminResponse;
+            var response = DescribeProductAsAdminResponseUnmarshaller.Instance.Unmarshall(context) as DescribeProductAsAdminResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -3762,7 +3730,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DescribeProductViewRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<DescribeProductViewRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -3775,8 +3743,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeProductView").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = DescribeProductViewResponseUnmarshaller.Instance.Unmarshall(context)
-                as DescribeProductViewResponse;
+            var response = DescribeProductViewResponseUnmarshaller.Instance.Unmarshall(context) as DescribeProductViewResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -3854,7 +3821,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DescribeProvisionedProductRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<DescribeProvisionedProductRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -3867,8 +3834,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeProvisionedProduct").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = DescribeProvisionedProductResponseUnmarshaller.Instance.Unmarshall(context)
-                as DescribeProvisionedProductResponse;
+            var response = DescribeProvisionedProductResponseUnmarshaller.Instance.Unmarshall(context) as DescribeProvisionedProductResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -3946,7 +3912,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DescribeProvisionedProductPlanRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<DescribeProvisionedProductPlanRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -3959,8 +3925,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeProvisionedProductPlan").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = DescribeProvisionedProductPlanResponseUnmarshaller.Instance.Unmarshall(context)
-                as DescribeProvisionedProductPlanResponse;
+            var response = DescribeProvisionedProductPlanResponseUnmarshaller.Instance.Unmarshall(context) as DescribeProvisionedProductPlanResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -4038,7 +4003,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DescribeProvisioningArtifactRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<DescribeProvisioningArtifactRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -4051,8 +4016,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeProvisioningArtifact").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = DescribeProvisioningArtifactResponseUnmarshaller.Instance.Unmarshall(context)
-                as DescribeProvisioningArtifactResponse;
+            var response = DescribeProvisioningArtifactResponseUnmarshaller.Instance.Unmarshall(context) as DescribeProvisioningArtifactResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -4130,7 +4094,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DescribeProvisioningParametersRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<DescribeProvisioningParametersRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -4143,8 +4107,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeProvisioningParameters").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = DescribeProvisioningParametersResponseUnmarshaller.Instance.Unmarshall(context)
-                as DescribeProvisioningParametersResponse;
+            var response = DescribeProvisioningParametersResponseUnmarshaller.Instance.Unmarshall(context) as DescribeProvisioningParametersResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -4222,7 +4185,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DescribeRecordRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<DescribeRecordRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -4235,8 +4198,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeRecord").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = DescribeRecordResponseUnmarshaller.Instance.Unmarshall(context)
-                as DescribeRecordResponse;
+            var response = DescribeRecordResponseUnmarshaller.Instance.Unmarshall(context) as DescribeRecordResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -4282,7 +4244,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DescribeServiceActionRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<DescribeServiceActionRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -4295,8 +4257,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeServiceAction").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = DescribeServiceActionResponseUnmarshaller.Instance.Unmarshall(context)
-                as DescribeServiceActionResponse;
+            var response = DescribeServiceActionResponseUnmarshaller.Instance.Unmarshall(context) as DescribeServiceActionResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -4342,7 +4303,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DescribeServiceActionExecutionParametersRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<DescribeServiceActionExecutionParametersRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -4355,8 +4316,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeServiceActionExecutionParameters").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = DescribeServiceActionExecutionParametersResponseUnmarshaller.Instance.Unmarshall(context)
-                as DescribeServiceActionExecutionParametersResponse;
+            var response = DescribeServiceActionExecutionParametersResponseUnmarshaller.Instance.Unmarshall(context) as DescribeServiceActionExecutionParametersResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -4434,7 +4394,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DescribeTagOptionRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<DescribeTagOptionRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -4447,8 +4407,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeTagOption").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = DescribeTagOptionResponseUnmarshaller.Instance.Unmarshall(context)
-                as DescribeTagOptionResponse;
+            var response = DescribeTagOptionResponseUnmarshaller.Instance.Unmarshall(context) as DescribeTagOptionResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -4526,7 +4485,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DisableAWSOrganizationsAccessRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<DisableAWSOrganizationsAccessRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -4539,8 +4498,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DisableAWSOrganizationsAccess").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = DisableAWSOrganizationsAccessResponseUnmarshaller.Instance.Unmarshall(context)
-                as DisableAWSOrganizationsAccessResponse;
+            var response = DisableAWSOrganizationsAccessResponseUnmarshaller.Instance.Unmarshall(context) as DisableAWSOrganizationsAccessResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -4650,7 +4608,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DisassociateBudgetFromResourceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<DisassociateBudgetFromResourceRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -4663,8 +4621,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DisassociateBudgetFromResource").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = DisassociateBudgetFromResourceResponseUnmarshaller.Instance.Unmarshall(context)
-                as DisassociateBudgetFromResourceResponse;
+            var response = DisassociateBudgetFromResourceResponseUnmarshaller.Instance.Unmarshall(context) as DisassociateBudgetFromResourceResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -4710,7 +4667,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DisassociatePrincipalFromPortfolioRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<DisassociatePrincipalFromPortfolioRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -4723,8 +4680,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DisassociatePrincipalFromPortfolio").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = DisassociatePrincipalFromPortfolioResponseUnmarshaller.Instance.Unmarshall(context)
-                as DisassociatePrincipalFromPortfolioResponse;
+            var response = DisassociatePrincipalFromPortfolioResponseUnmarshaller.Instance.Unmarshall(context) as DisassociatePrincipalFromPortfolioResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -4802,7 +4758,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DisassociateProductFromPortfolioRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<DisassociateProductFromPortfolioRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -4815,8 +4771,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DisassociateProductFromPortfolio").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = DisassociateProductFromPortfolioResponseUnmarshaller.Instance.Unmarshall(context)
-                as DisassociateProductFromPortfolioResponse;
+            var response = DisassociateProductFromPortfolioResponseUnmarshaller.Instance.Unmarshall(context) as DisassociateProductFromPortfolioResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -4926,7 +4881,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DisassociateServiceActionFromProvisioningArtifactRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<DisassociateServiceActionFromProvisioningArtifactRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -4939,8 +4894,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DisassociateServiceActionFromProvisioningArtifact").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = DisassociateServiceActionFromProvisioningArtifactResponseUnmarshaller.Instance.Unmarshall(context)
-                as DisassociateServiceActionFromProvisioningArtifactResponse;
+            var response = DisassociateServiceActionFromProvisioningArtifactResponseUnmarshaller.Instance.Unmarshall(context) as DisassociateServiceActionFromProvisioningArtifactResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -4986,7 +4940,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DisassociateTagOptionFromResourceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<DisassociateTagOptionFromResourceRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -4999,8 +4953,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DisassociateTagOptionFromResource").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = DisassociateTagOptionFromResourceResponseUnmarshaller.Instance.Unmarshall(context)
-                as DisassociateTagOptionFromResourceResponse;
+            var response = DisassociateTagOptionFromResourceResponseUnmarshaller.Instance.Unmarshall(context) as DisassociateTagOptionFromResourceResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -5078,7 +5031,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new EnableAWSOrganizationsAccessRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<EnableAWSOrganizationsAccessRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -5091,8 +5044,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("EnableAWSOrganizationsAccess").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = EnableAWSOrganizationsAccessResponseUnmarshaller.Instance.Unmarshall(context)
-                as EnableAWSOrganizationsAccessResponse;
+            var response = EnableAWSOrganizationsAccessResponseUnmarshaller.Instance.Unmarshall(context) as EnableAWSOrganizationsAccessResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -5202,7 +5154,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ExecuteProvisionedProductPlanRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<ExecuteProvisionedProductPlanRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -5215,8 +5167,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ExecuteProvisionedProductPlan").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = ExecuteProvisionedProductPlanResponseUnmarshaller.Instance.Unmarshall(context)
-                as ExecuteProvisionedProductPlanResponse;
+            var response = ExecuteProvisionedProductPlanResponseUnmarshaller.Instance.Unmarshall(context) as ExecuteProvisionedProductPlanResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -5326,7 +5277,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ExecuteProvisionedProductServiceActionRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<ExecuteProvisionedProductServiceActionRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -5339,8 +5290,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ExecuteProvisionedProductServiceAction").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = ExecuteProvisionedProductServiceActionResponseUnmarshaller.Instance.Unmarshall(context)
-                as ExecuteProvisionedProductServiceActionResponse;
+            var response = ExecuteProvisionedProductServiceActionResponseUnmarshaller.Instance.Unmarshall(context) as ExecuteProvisionedProductServiceActionResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -5450,7 +5400,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetAWSOrganizationsAccessStatusRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<GetAWSOrganizationsAccessStatusRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -5463,8 +5413,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GetAWSOrganizationsAccessStatus").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = GetAWSOrganizationsAccessStatusResponseUnmarshaller.Instance.Unmarshall(context)
-                as GetAWSOrganizationsAccessStatusResponse;
+            var response = GetAWSOrganizationsAccessStatusResponseUnmarshaller.Instance.Unmarshall(context) as GetAWSOrganizationsAccessStatusResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -5542,7 +5491,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetProvisionedProductOutputsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<GetProvisionedProductOutputsRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -5555,8 +5504,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GetProvisionedProductOutputs").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = GetProvisionedProductOutputsResponseUnmarshaller.Instance.Unmarshall(context)
-                as GetProvisionedProductOutputsResponse;
+            var response = GetProvisionedProductOutputsResponseUnmarshaller.Instance.Unmarshall(context) as GetProvisionedProductOutputsResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -5634,7 +5582,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ImportAsProvisionedProductRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<ImportAsProvisionedProductRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -5647,8 +5595,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ImportAsProvisionedProduct").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = ImportAsProvisionedProductResponseUnmarshaller.Instance.Unmarshall(context)
-                as ImportAsProvisionedProductResponse;
+            var response = ImportAsProvisionedProductResponseUnmarshaller.Instance.Unmarshall(context) as ImportAsProvisionedProductResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -5790,7 +5737,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListAcceptedPortfolioSharesRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<ListAcceptedPortfolioSharesRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -5803,8 +5750,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListAcceptedPortfolioShares").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = ListAcceptedPortfolioSharesResponseUnmarshaller.Instance.Unmarshall(context)
-                as ListAcceptedPortfolioSharesResponse;
+            var response = ListAcceptedPortfolioSharesResponseUnmarshaller.Instance.Unmarshall(context) as ListAcceptedPortfolioSharesResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -5882,7 +5828,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListBudgetsForResourceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<ListBudgetsForResourceRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -5895,8 +5841,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListBudgetsForResource").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = ListBudgetsForResourceResponseUnmarshaller.Instance.Unmarshall(context)
-                as ListBudgetsForResourceResponse;
+            var response = ListBudgetsForResourceResponseUnmarshaller.Instance.Unmarshall(context) as ListBudgetsForResourceResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -5974,7 +5919,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListConstraintsForPortfolioRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<ListConstraintsForPortfolioRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -5987,8 +5932,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListConstraintsForPortfolio").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = ListConstraintsForPortfolioResponseUnmarshaller.Instance.Unmarshall(context)
-                as ListConstraintsForPortfolioResponse;
+            var response = ListConstraintsForPortfolioResponseUnmarshaller.Instance.Unmarshall(context) as ListConstraintsForPortfolioResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -6066,7 +6010,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListLaunchPathsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<ListLaunchPathsRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -6079,8 +6023,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListLaunchPaths").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = ListLaunchPathsResponseUnmarshaller.Instance.Unmarshall(context)
-                as ListLaunchPathsResponse;
+            var response = ListLaunchPathsResponseUnmarshaller.Instance.Unmarshall(context) as ListLaunchPathsResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -6158,7 +6101,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListOrganizationPortfolioAccessRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<ListOrganizationPortfolioAccessRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -6171,8 +6114,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListOrganizationPortfolioAccess").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = ListOrganizationPortfolioAccessResponseUnmarshaller.Instance.Unmarshall(context)
-                as ListOrganizationPortfolioAccessResponse;
+            var response = ListOrganizationPortfolioAccessResponseUnmarshaller.Instance.Unmarshall(context) as ListOrganizationPortfolioAccessResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -6282,7 +6224,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListPortfolioAccessRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<ListPortfolioAccessRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -6295,8 +6237,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListPortfolioAccess").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = ListPortfolioAccessResponseUnmarshaller.Instance.Unmarshall(context)
-                as ListPortfolioAccessResponse;
+            var response = ListPortfolioAccessResponseUnmarshaller.Instance.Unmarshall(context) as ListPortfolioAccessResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -6374,7 +6315,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListPortfoliosRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<ListPortfoliosRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -6387,8 +6328,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListPortfolios").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = ListPortfoliosResponseUnmarshaller.Instance.Unmarshall(context)
-                as ListPortfoliosResponse;
+            var response = ListPortfoliosResponseUnmarshaller.Instance.Unmarshall(context) as ListPortfoliosResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -6434,7 +6374,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListPortfoliosForProductRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<ListPortfoliosForProductRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -6447,8 +6387,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListPortfoliosForProduct").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = ListPortfoliosForProductResponseUnmarshaller.Instance.Unmarshall(context)
-                as ListPortfoliosForProductResponse;
+            var response = ListPortfoliosForProductResponseUnmarshaller.Instance.Unmarshall(context) as ListPortfoliosForProductResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -6526,7 +6465,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListPrincipalsForPortfolioRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<ListPrincipalsForPortfolioRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -6539,8 +6478,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListPrincipalsForPortfolio").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = ListPrincipalsForPortfolioResponseUnmarshaller.Instance.Unmarshall(context)
-                as ListPrincipalsForPortfolioResponse;
+            var response = ListPrincipalsForPortfolioResponseUnmarshaller.Instance.Unmarshall(context) as ListPrincipalsForPortfolioResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -6618,7 +6556,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListProvisionedProductPlansRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<ListProvisionedProductPlansRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -6631,8 +6569,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListProvisionedProductPlans").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = ListProvisionedProductPlansResponseUnmarshaller.Instance.Unmarshall(context)
-                as ListProvisionedProductPlansResponse;
+            var response = ListProvisionedProductPlansResponseUnmarshaller.Instance.Unmarshall(context) as ListProvisionedProductPlansResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -6710,7 +6647,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListProvisioningArtifactsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<ListProvisioningArtifactsRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -6723,8 +6660,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListProvisioningArtifacts").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = ListProvisioningArtifactsResponseUnmarshaller.Instance.Unmarshall(context)
-                as ListProvisioningArtifactsResponse;
+            var response = ListProvisioningArtifactsResponseUnmarshaller.Instance.Unmarshall(context) as ListProvisioningArtifactsResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -6802,7 +6738,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListProvisioningArtifactsForServiceActionRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<ListProvisioningArtifactsForServiceActionRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -6815,8 +6751,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListProvisioningArtifactsForServiceAction").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = ListProvisioningArtifactsForServiceActionResponseUnmarshaller.Instance.Unmarshall(context)
-                as ListProvisioningArtifactsForServiceActionResponse;
+            var response = ListProvisioningArtifactsForServiceActionResponseUnmarshaller.Instance.Unmarshall(context) as ListProvisioningArtifactsForServiceActionResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -6894,7 +6829,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListRecordHistoryRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<ListRecordHistoryRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -6907,8 +6842,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListRecordHistory").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = ListRecordHistoryResponseUnmarshaller.Instance.Unmarshall(context)
-                as ListRecordHistoryResponse;
+            var response = ListRecordHistoryResponseUnmarshaller.Instance.Unmarshall(context) as ListRecordHistoryResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -6954,7 +6888,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListResourcesForTagOptionRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<ListResourcesForTagOptionRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -6967,8 +6901,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListResourcesForTagOption").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = ListResourcesForTagOptionResponseUnmarshaller.Instance.Unmarshall(context)
-                as ListResourcesForTagOptionResponse;
+            var response = ListResourcesForTagOptionResponseUnmarshaller.Instance.Unmarshall(context) as ListResourcesForTagOptionResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -7078,7 +7011,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListServiceActionsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<ListServiceActionsRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -7091,8 +7024,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListServiceActions").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = ListServiceActionsResponseUnmarshaller.Instance.Unmarshall(context)
-                as ListServiceActionsResponse;
+            var response = ListServiceActionsResponseUnmarshaller.Instance.Unmarshall(context) as ListServiceActionsResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -7138,7 +7070,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListServiceActionsForProvisioningArtifactRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<ListServiceActionsForProvisioningArtifactRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -7151,8 +7083,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListServiceActionsForProvisioningArtifact").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = ListServiceActionsForProvisioningArtifactResponseUnmarshaller.Instance.Unmarshall(context)
-                as ListServiceActionsForProvisioningArtifactResponse;
+            var response = ListServiceActionsForProvisioningArtifactResponseUnmarshaller.Instance.Unmarshall(context) as ListServiceActionsForProvisioningArtifactResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -7230,7 +7161,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListStackInstancesForProvisionedProductRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<ListStackInstancesForProvisionedProductRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -7243,8 +7174,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListStackInstancesForProvisionedProduct").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = ListStackInstancesForProvisionedProductResponseUnmarshaller.Instance.Unmarshall(context)
-                as ListStackInstancesForProvisionedProductResponse;
+            var response = ListStackInstancesForProvisionedProductResponseUnmarshaller.Instance.Unmarshall(context) as ListStackInstancesForProvisionedProductResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -7322,7 +7252,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListTagOptionsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<ListTagOptionsRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -7335,8 +7265,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListTagOptions").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = ListTagOptionsResponseUnmarshaller.Instance.Unmarshall(context)
-                as ListTagOptionsResponse;
+            var response = ListTagOptionsResponseUnmarshaller.Instance.Unmarshall(context) as ListTagOptionsResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -7414,7 +7343,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ProvisionProductRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<ProvisionProductRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -7427,8 +7356,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ProvisionProduct").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = ProvisionProductResponseUnmarshaller.Instance.Unmarshall(context)
-                as ProvisionProductResponse;
+            var response = ProvisionProductResponseUnmarshaller.Instance.Unmarshall(context) as ProvisionProductResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -7538,7 +7466,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new RejectPortfolioShareRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<RejectPortfolioShareRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -7551,8 +7479,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("RejectPortfolioShare").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = RejectPortfolioShareResponseUnmarshaller.Instance.Unmarshall(context)
-                as RejectPortfolioShareResponse;
+            var response = RejectPortfolioShareResponseUnmarshaller.Instance.Unmarshall(context) as RejectPortfolioShareResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -7598,7 +7525,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ScanProvisionedProductsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<ScanProvisionedProductsRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -7611,8 +7538,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ScanProvisionedProducts").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = ScanProvisionedProductsResponseUnmarshaller.Instance.Unmarshall(context)
-                as ScanProvisionedProductsResponse;
+            var response = ScanProvisionedProductsResponseUnmarshaller.Instance.Unmarshall(context) as ScanProvisionedProductsResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -7658,7 +7584,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new SearchProductsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<SearchProductsRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -7671,8 +7597,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("SearchProducts").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = SearchProductsResponseUnmarshaller.Instance.Unmarshall(context)
-                as SearchProductsResponse;
+            var response = SearchProductsResponseUnmarshaller.Instance.Unmarshall(context) as SearchProductsResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -7718,7 +7643,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new SearchProductsAsAdminRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<SearchProductsAsAdminRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -7731,8 +7656,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("SearchProductsAsAdmin").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = SearchProductsAsAdminResponseUnmarshaller.Instance.Unmarshall(context)
-                as SearchProductsAsAdminResponse;
+            var response = SearchProductsAsAdminResponseUnmarshaller.Instance.Unmarshall(context) as SearchProductsAsAdminResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -7810,7 +7734,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new SearchProvisionedProductsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<SearchProvisionedProductsRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -7823,8 +7747,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("SearchProvisionedProducts").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = SearchProvisionedProductsResponseUnmarshaller.Instance.Unmarshall(context)
-                as SearchProvisionedProductsResponse;
+            var response = SearchProvisionedProductsResponseUnmarshaller.Instance.Unmarshall(context) as SearchProvisionedProductsResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -7870,7 +7793,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new TerminateProvisionedProductRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<TerminateProvisionedProductRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -7883,8 +7806,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("TerminateProvisionedProduct").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = TerminateProvisionedProductResponseUnmarshaller.Instance.Unmarshall(context)
-                as TerminateProvisionedProductResponse;
+            var response = TerminateProvisionedProductResponseUnmarshaller.Instance.Unmarshall(context) as TerminateProvisionedProductResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -7930,7 +7852,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new UpdateConstraintRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<UpdateConstraintRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -7943,8 +7865,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("UpdateConstraint").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = UpdateConstraintResponseUnmarshaller.Instance.Unmarshall(context)
-                as UpdateConstraintResponse;
+            var response = UpdateConstraintResponseUnmarshaller.Instance.Unmarshall(context) as UpdateConstraintResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -8022,7 +7943,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new UpdatePortfolioRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<UpdatePortfolioRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -8035,8 +7956,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("UpdatePortfolio").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = UpdatePortfolioResponseUnmarshaller.Instance.Unmarshall(context)
-                as UpdatePortfolioResponse;
+            var response = UpdatePortfolioResponseUnmarshaller.Instance.Unmarshall(context) as UpdatePortfolioResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -8178,7 +8098,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new UpdatePortfolioShareRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<UpdatePortfolioShareRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -8191,8 +8111,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("UpdatePortfolioShare").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = UpdatePortfolioShareResponseUnmarshaller.Instance.Unmarshall(context)
-                as UpdatePortfolioShareResponse;
+            var response = UpdatePortfolioShareResponseUnmarshaller.Instance.Unmarshall(context) as UpdatePortfolioShareResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -8334,7 +8253,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new UpdateProductRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<UpdateProductRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -8347,8 +8266,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("UpdateProduct").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = UpdateProductResponseUnmarshaller.Instance.Unmarshall(context)
-                as UpdateProductResponse;
+            var response = UpdateProductResponseUnmarshaller.Instance.Unmarshall(context) as UpdateProductResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -8458,7 +8376,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new UpdateProvisionedProductRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<UpdateProvisionedProductRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -8471,8 +8389,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("UpdateProvisionedProduct").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = UpdateProvisionedProductResponseUnmarshaller.Instance.Unmarshall(context)
-                as UpdateProvisionedProductResponse;
+            var response = UpdateProvisionedProductResponseUnmarshaller.Instance.Unmarshall(context) as UpdateProvisionedProductResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -8550,7 +8467,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new UpdateProvisionedProductPropertiesRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<UpdateProvisionedProductPropertiesRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -8563,8 +8480,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("UpdateProvisionedProductProperties").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = UpdateProvisionedProductPropertiesResponseUnmarshaller.Instance.Unmarshall(context)
-                as UpdateProvisionedProductPropertiesResponse;
+            var response = UpdateProvisionedProductPropertiesResponseUnmarshaller.Instance.Unmarshall(context) as UpdateProvisionedProductPropertiesResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -8674,7 +8590,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new UpdateProvisioningArtifactRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<UpdateProvisioningArtifactRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -8687,8 +8603,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("UpdateProvisioningArtifact").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = UpdateProvisioningArtifactResponseUnmarshaller.Instance.Unmarshall(context)
-                as UpdateProvisioningArtifactResponse;
+            var response = UpdateProvisioningArtifactResponseUnmarshaller.Instance.Unmarshall(context) as UpdateProvisioningArtifactResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -8766,7 +8681,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new UpdateServiceActionRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<UpdateServiceActionRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -8779,8 +8694,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("UpdateServiceAction").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = UpdateServiceActionResponseUnmarshaller.Instance.Unmarshall(context)
-                as UpdateServiceActionResponse;
+            var response = UpdateServiceActionResponseUnmarshaller.Instance.Unmarshall(context) as UpdateServiceActionResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -8858,7 +8772,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new UpdateTagOptionRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
             Comparer.CompareObjectToJson<UpdateTagOptionRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
@@ -8871,8 +8785,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("UpdateTagOption").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = UpdateTagOptionResponseUnmarshaller.Instance.Unmarshall(context)
-                as UpdateTagOptionResponse;
+            var response = UpdateTagOptionResponseUnmarshaller.Instance.Unmarshall(context) as UpdateTagOptionResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 

@@ -34,7 +34,7 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SageMakerPipelineParameter Marshaller
-    /// </summary>       
+    /// </summary>
     public class SageMakerPipelineParameterMarshaller : IRequestMarshaller<SageMakerPipelineParameter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SageMakerPipelineParameterMarshaller Instance = new SageMakerPipelineParameterMarshaller();
 
     }

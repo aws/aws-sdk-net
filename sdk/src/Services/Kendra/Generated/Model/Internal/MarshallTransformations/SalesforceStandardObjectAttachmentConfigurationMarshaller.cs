@@ -34,7 +34,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SalesforceStandardObjectAttachmentConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class SalesforceStandardObjectAttachmentConfigurationMarshaller : IRequestMarshaller<SalesforceStandardObjectAttachmentConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SalesforceStandardObjectAttachmentConfigurationMarshaller Instance = new SalesforceStandardObjectAttachmentConfigurationMarshaller();
 
     }

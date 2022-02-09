@@ -34,7 +34,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// HttpQueryParameter Marshaller
-    /// </summary>       
+    /// </summary>
     public class HttpQueryParameterMarshaller : IRequestMarshaller<HttpQueryParameter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static HttpQueryParameterMarshaller Instance = new HttpQueryParameterMarshaller();
 
     }

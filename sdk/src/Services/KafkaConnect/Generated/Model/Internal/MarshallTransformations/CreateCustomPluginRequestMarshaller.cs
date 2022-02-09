@@ -56,7 +56,7 @@ namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.KafkaConnect");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-09-14";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-09-14";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/v1/custom-plugins";
@@ -94,7 +94,6 @@ namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Name);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

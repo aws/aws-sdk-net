@@ -34,7 +34,7 @@ namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CodeCommitRepository Marshaller
-    /// </summary>       
+    /// </summary>
     public class CodeCommitRepositoryMarshaller : IRequestMarshaller<CodeCommitRepository, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CodeCommitRepositoryMarshaller Instance = new CodeCommitRepositoryMarshaller();
 
     }

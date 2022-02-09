@@ -34,7 +34,7 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ResourceCollection Marshaller
-    /// </summary>       
+    /// </summary>
     public class ResourceCollectionMarshaller : IRequestMarshaller<ResourceCollection, JsonMarshallerContext> 
     {
         /// <summary>
@@ -76,7 +76,7 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ResourceCollectionMarshaller Instance = new ResourceCollectionMarshaller();
 
     }

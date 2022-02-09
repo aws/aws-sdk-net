@@ -32,7 +32,7 @@ namespace Amazon.Comprehend
     public partial class AmazonComprehendConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.4.44");
+            InternalSDKUtils.BuildUserAgentString("3.7.5.2");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.Comprehend
         /// Default constructor
         /// </summary>
         public AmazonComprehendConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonComprehendDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "comprehend";
         }

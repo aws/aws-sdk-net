@@ -34,7 +34,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DocDbSettings Marshaller
-    /// </summary>       
+    /// </summary>
     public class DocDbSettingsMarshaller : IRequestMarshaller<DocDbSettings, JsonMarshallerContext> 
     {
         /// <summary>
@@ -115,7 +115,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DocDbSettingsMarshaller Instance = new DocDbSettingsMarshaller();
 
     }

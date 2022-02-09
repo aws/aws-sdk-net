@@ -29,7 +29,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FIS.Model
 {
     /// <summary>
-    /// Describes a filter used for the target resource input in an experiment template.
+    /// Specifies a filter used for the target resource input in an experiment template.
+    /// 
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/fis/latest/userguide/targets.html#target-filters">Resource
+    /// filters</a> in the <i>Fault Injection Simulator User Guide</i>.
+    /// </para>
     /// </summary>
     public partial class ExperimentTemplateTargetInputFilter
     {

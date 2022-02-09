@@ -32,7 +32,7 @@ namespace Amazon.ApplicationCostProfiler
     public partial class AmazonApplicationCostProfilerConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.91");
+            InternalSDKUtils.BuildUserAgentString("3.7.0.100");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.ApplicationCostProfiler
         /// Default constructor
         /// </summary>
         public AmazonApplicationCostProfilerConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonApplicationCostProfilerDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "application-cost-profiler";
         }

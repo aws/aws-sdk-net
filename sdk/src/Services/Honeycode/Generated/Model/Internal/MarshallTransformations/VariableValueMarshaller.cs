@@ -34,7 +34,7 @@ namespace Amazon.Honeycode.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// VariableValue Marshaller
-    /// </summary>       
+    /// </summary>
     public class VariableValueMarshaller : IRequestMarshaller<VariableValue, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.Honeycode.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static VariableValueMarshaller Instance = new VariableValueMarshaller();
 
     }

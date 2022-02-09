@@ -34,7 +34,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ConfluencePageConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class ConfluencePageConfigurationMarshaller : IRequestMarshaller<ConfluencePageConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -65,7 +65,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ConfluencePageConfigurationMarshaller Instance = new ConfluencePageConfigurationMarshaller();
 
     }

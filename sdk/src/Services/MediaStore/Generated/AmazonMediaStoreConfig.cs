@@ -32,7 +32,7 @@ namespace Amazon.MediaStore
     public partial class AmazonMediaStoreConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.112");
+            InternalSDKUtils.BuildUserAgentString("3.7.0.121");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.MediaStore
         /// Default constructor
         /// </summary>
         public AmazonMediaStoreConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonMediaStoreDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "mediastore";
         }

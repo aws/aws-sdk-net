@@ -34,7 +34,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// PutItemInput Marshaller
-    /// </summary>       
+    /// </summary>
     public class PutItemInputMarshaller : IRequestMarshaller<PutItemInput, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static PutItemInputMarshaller Instance = new PutItemInputMarshaller();
 
     }

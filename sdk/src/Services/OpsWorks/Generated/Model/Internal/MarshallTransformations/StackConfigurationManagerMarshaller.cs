@@ -34,7 +34,7 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// StackConfigurationManager Marshaller
-    /// </summary>       
+    /// </summary>
     public class StackConfigurationManagerMarshaller : IRequestMarshaller<StackConfigurationManager, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static StackConfigurationManagerMarshaller Instance = new StackConfigurationManagerMarshaller();
 
     }

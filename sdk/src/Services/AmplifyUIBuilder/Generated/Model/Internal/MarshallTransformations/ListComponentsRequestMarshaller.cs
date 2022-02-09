@@ -55,7 +55,7 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListComponentsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.AmplifyUIBuilder");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-08-11";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-08-11";
             request.HttpMethod = "GET";
 
             if (!publicRequest.IsSetAppId())

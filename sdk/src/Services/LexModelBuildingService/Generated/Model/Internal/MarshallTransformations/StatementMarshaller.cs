@@ -34,7 +34,7 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Statement Marshaller
-    /// </summary>       
+    /// </summary>
     public class StatementMarshaller : IRequestMarshaller<Statement, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static StatementMarshaller Instance = new StatementMarshaller();
 
     }

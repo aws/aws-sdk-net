@@ -34,7 +34,7 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// GroupDefinition Marshaller
-    /// </summary>       
+    /// </summary>
     public class GroupDefinitionMarshaller : IRequestMarshaller<GroupDefinition, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static GroupDefinitionMarshaller Instance = new GroupDefinitionMarshaller();
 
     }

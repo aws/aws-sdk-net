@@ -32,7 +32,7 @@ namespace Amazon.AlexaForBusiness
     public partial class AmazonAlexaForBusinessConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.112");
+            InternalSDKUtils.BuildUserAgentString("3.7.0.121");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.AlexaForBusiness
         /// Default constructor
         /// </summary>
         public AmazonAlexaForBusinessConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonAlexaForBusinessDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "a4b";
         }

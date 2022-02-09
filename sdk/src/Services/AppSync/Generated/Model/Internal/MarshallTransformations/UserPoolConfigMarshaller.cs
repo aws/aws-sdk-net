@@ -34,7 +34,7 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// UserPoolConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class UserPoolConfigMarshaller : IRequestMarshaller<UserPoolConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -73,7 +73,7 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static UserPoolConfigMarshaller Instance = new UserPoolConfigMarshaller();
 
     }

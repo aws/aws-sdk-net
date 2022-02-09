@@ -55,7 +55,7 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
         public IRequest Marshall(DescribeOriginEndpointRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.MediaPackage");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-10-12";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-10-12";
             request.HttpMethod = "GET";
 
             if (!publicRequest.IsSetId())

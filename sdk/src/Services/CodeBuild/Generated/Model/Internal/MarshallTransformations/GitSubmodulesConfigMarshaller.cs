@@ -34,7 +34,7 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// GitSubmodulesConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class GitSubmodulesConfigMarshaller : IRequestMarshaller<GitSubmodulesConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static GitSubmodulesConfigMarshaller Instance = new GitSubmodulesConfigMarshaller();
 
     }

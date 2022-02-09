@@ -56,7 +56,7 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.APIGateway");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-07-09";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-07-09";
             request.HttpMethod = "POST";
 
             request.AddSubResource("mode", "import");
@@ -68,7 +68,7 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                 request.Parameters.Add("format", StringUtils.FromString(publicRequest.Format));
             request.ResourcePath = "/apikeys";
             request.ContentStream =  publicRequest.Body ?? new MemoryStream();
-            request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] =  
+            request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] =
                 request.ContentStream.Length.ToString(CultureInfo.InvariantCulture);
             request.Headers[Amazon.Util.HeaderKeys.ContentTypeHeader] = "binary/octet-stream"; 
             if (request.ContentStream != null && request.ContentStream.Length == 0)

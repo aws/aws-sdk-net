@@ -32,7 +32,7 @@ namespace Amazon.SimpleDB
     public partial class AmazonSimpleDBConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.112");
+            InternalSDKUtils.BuildUserAgentString("3.7.0.121");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.SimpleDB
         /// Default constructor
         /// </summary>
         public AmazonSimpleDBConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonSimpleDBDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "sdb";
         }

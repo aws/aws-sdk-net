@@ -117,6 +117,7 @@ namespace Amazon.SecurityHub.Model
         private List<StringFilter> _resourceRegion = new List<StringFilter>();
         private List<MapFilter> _resourceTags = new List<MapFilter>();
         private List<StringFilter> _resourceType = new List<StringFilter>();
+        private List<BooleanFilter> _sample = new List<BooleanFilter>();
         private List<StringFilter> _severityLabel = new List<StringFilter>();
         private List<NumberFilter> _severityNormalized = new List<NumberFilter>();
         private List<NumberFilter> _severityProduct = new List<NumberFilter>();
@@ -1578,6 +1579,24 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetResourceType()
         {
             return this._resourceType != null && this._resourceType.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Sample. 
+        /// <para>
+        /// Indicates whether or not sample findings are included in the filter results.
+        /// </para>
+        /// </summary>
+        public List<BooleanFilter> Sample
+        {
+            get { return this._sample; }
+            set { this._sample = value; }
+        }
+
+        // Check to see if Sample property is set
+        internal bool IsSetSample()
+        {
+            return this._sample != null && this._sample.Count > 0; 
         }
 
         /// <summary>

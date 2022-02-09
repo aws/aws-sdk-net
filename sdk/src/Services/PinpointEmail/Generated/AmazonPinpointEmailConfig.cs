@@ -32,7 +32,7 @@ namespace Amazon.PinpointEmail
     public partial class AmazonPinpointEmailConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.112");
+            InternalSDKUtils.BuildUserAgentString("3.7.0.121");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.PinpointEmail
         /// Default constructor
         /// </summary>
         public AmazonPinpointEmailConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonPinpointEmailDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "ses";
         }

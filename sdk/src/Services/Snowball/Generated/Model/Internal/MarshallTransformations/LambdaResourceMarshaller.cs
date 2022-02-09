@@ -34,7 +34,7 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// LambdaResource Marshaller
-    /// </summary>       
+    /// </summary>
     public class LambdaResourceMarshaller : IRequestMarshaller<LambdaResource, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static LambdaResourceMarshaller Instance = new LambdaResourceMarshaller();
 
     }

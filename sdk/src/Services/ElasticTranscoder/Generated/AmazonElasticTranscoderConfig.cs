@@ -32,7 +32,7 @@ namespace Amazon.ElasticTranscoder
     public partial class AmazonElasticTranscoderConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.112");
+            InternalSDKUtils.BuildUserAgentString("3.7.0.121");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.ElasticTranscoder
         /// Default constructor
         /// </summary>
         public AmazonElasticTranscoderConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonElasticTranscoderDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "elastictranscoder";
         }

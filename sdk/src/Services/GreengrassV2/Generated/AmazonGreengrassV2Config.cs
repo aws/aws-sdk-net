@@ -32,7 +32,7 @@ namespace Amazon.GreengrassV2
     public partial class AmazonGreengrassV2Config : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.4.2");
+            InternalSDKUtils.BuildUserAgentString("3.7.4.11");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.GreengrassV2
         /// Default constructor
         /// </summary>
         public AmazonGreengrassV2Config()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonGreengrassV2DefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "greengrass";
         }

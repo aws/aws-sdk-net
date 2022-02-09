@@ -34,7 +34,7 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// MediaStreamOutputConfigurationRequest Marshaller
-    /// </summary>       
+    /// </summary>
     public class MediaStreamOutputConfigurationRequestMarshaller : IRequestMarshaller<MediaStreamOutputConfigurationRequest, JsonMarshallerContext> 
     {
         /// <summary>
@@ -88,7 +88,7 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static MediaStreamOutputConfigurationRequestMarshaller Instance = new MediaStreamOutputConfigurationRequestMarshaller();
 
     }

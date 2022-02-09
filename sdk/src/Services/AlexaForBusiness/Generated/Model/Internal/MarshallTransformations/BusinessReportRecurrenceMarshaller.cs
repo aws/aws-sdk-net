@@ -34,7 +34,7 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// BusinessReportRecurrence Marshaller
-    /// </summary>       
+    /// </summary>
     public class BusinessReportRecurrenceMarshaller : IRequestMarshaller<BusinessReportRecurrence, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static BusinessReportRecurrenceMarshaller Instance = new BusinessReportRecurrenceMarshaller();
 
     }

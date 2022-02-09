@@ -34,7 +34,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// MessageConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class MessageConfigurationMarshaller : IRequestMarshaller<MessageConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -148,7 +148,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static MessageConfigurationMarshaller Instance = new MessageConfigurationMarshaller();
 
     }

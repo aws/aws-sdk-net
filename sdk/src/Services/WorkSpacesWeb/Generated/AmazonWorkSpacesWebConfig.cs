@@ -32,7 +32,7 @@ namespace Amazon.WorkSpacesWeb
     public partial class AmazonWorkSpacesWebConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.8");
+            InternalSDKUtils.BuildUserAgentString("3.7.0.17");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.WorkSpacesWeb
         /// Default constructor
         /// </summary>
         public AmazonWorkSpacesWebConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonWorkSpacesWebDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "workspaces-web";
         }

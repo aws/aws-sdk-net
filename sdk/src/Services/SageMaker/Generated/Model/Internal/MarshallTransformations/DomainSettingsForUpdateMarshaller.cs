@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DomainSettingsForUpdate Marshaller
-    /// </summary>       
+    /// </summary>
     public class DomainSettingsForUpdateMarshaller : IRequestMarshaller<DomainSettingsForUpdate, JsonMarshallerContext> 
     {
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DomainSettingsForUpdateMarshaller Instance = new DomainSettingsForUpdateMarshaller();
 
     }

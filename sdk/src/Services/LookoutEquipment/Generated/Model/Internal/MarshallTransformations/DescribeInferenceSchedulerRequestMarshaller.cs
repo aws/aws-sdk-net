@@ -58,7 +58,7 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
             string target = "AWSLookoutEquipmentFrontendService.DescribeInferenceScheduler";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.0";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-12-15";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-12-15";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -73,7 +73,6 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.InferenceSchedulerName);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

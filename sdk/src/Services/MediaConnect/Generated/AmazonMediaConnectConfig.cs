@@ -32,7 +32,7 @@ namespace Amazon.MediaConnect
     public partial class AmazonMediaConnectConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.4.3");
+            InternalSDKUtils.BuildUserAgentString("3.7.4.12");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.MediaConnect
         /// Default constructor
         /// </summary>
         public AmazonMediaConnectConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonMediaConnectDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "mediaconnect";
         }

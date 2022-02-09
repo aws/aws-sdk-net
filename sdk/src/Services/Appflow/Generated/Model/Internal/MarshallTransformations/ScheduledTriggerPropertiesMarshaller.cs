@@ -34,7 +34,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ScheduledTriggerProperties Marshaller
-    /// </summary>       
+    /// </summary>
     public class ScheduledTriggerPropertiesMarshaller : IRequestMarshaller<ScheduledTriggerProperties, JsonMarshallerContext> 
     {
         /// <summary>
@@ -91,7 +91,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ScheduledTriggerPropertiesMarshaller Instance = new ScheduledTriggerPropertiesMarshaller();
 
     }

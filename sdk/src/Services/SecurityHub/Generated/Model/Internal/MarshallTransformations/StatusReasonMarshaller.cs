@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// StatusReason Marshaller
-    /// </summary>       
+    /// </summary>
     public class StatusReasonMarshaller : IRequestMarshaller<StatusReason, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static StatusReasonMarshaller Instance = new StatusReasonMarshaller();
 
     }

@@ -56,7 +56,7 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.IoTWireless");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-11-22";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-11-22";
             request.HttpMethod = "POST";
 
             
@@ -84,7 +84,6 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

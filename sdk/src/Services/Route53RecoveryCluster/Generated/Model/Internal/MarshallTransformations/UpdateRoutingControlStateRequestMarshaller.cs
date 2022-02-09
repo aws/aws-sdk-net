@@ -58,7 +58,7 @@ namespace Amazon.Route53RecoveryCluster.Model.Internal.MarshallTransformations
             string target = "ToggleCustomerAPI.UpdateRoutingControlState";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.0";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-12-02";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-12-02";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -79,7 +79,6 @@ namespace Amazon.Route53RecoveryCluster.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.RoutingControlState);
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

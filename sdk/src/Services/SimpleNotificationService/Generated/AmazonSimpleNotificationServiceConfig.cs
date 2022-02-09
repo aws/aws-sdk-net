@@ -32,7 +32,7 @@ namespace Amazon.SimpleNotificationService
     public partial class AmazonSimpleNotificationServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.3.12");
+            InternalSDKUtils.BuildUserAgentString("3.7.3.21");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.SimpleNotificationService
         /// Default constructor
         /// </summary>
         public AmazonSimpleNotificationServiceConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonSimpleNotificationServiceDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "sns";
         }

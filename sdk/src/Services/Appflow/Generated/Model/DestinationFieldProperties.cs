@@ -34,6 +34,7 @@ namespace Amazon.Appflow.Model
     public partial class DestinationFieldProperties
     {
         private bool? _isCreatable;
+        private bool? _isDefaultedOnCreate;
         private bool? _isNullable;
         private bool? _isUpdatable;
         private bool? _isUpsertable;
@@ -55,6 +56,24 @@ namespace Amazon.Appflow.Model
         internal bool IsSetIsCreatable()
         {
             return this._isCreatable.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsDefaultedOnCreate. 
+        /// <para>
+        /// Specifies whether the field can use the default value during a Create operation.
+        /// </para>
+        /// </summary>
+        public bool IsDefaultedOnCreate
+        {
+            get { return this._isDefaultedOnCreate.GetValueOrDefault(); }
+            set { this._isDefaultedOnCreate = value; }
+        }
+
+        // Check to see if IsDefaultedOnCreate property is set
+        internal bool IsSetIsDefaultedOnCreate()
+        {
+            return this._isDefaultedOnCreate.HasValue; 
         }
 
         /// <summary>

@@ -34,7 +34,7 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AnomalyDetectorConfig Marshaller
-    /// </summary>       
+    /// </summary>
     public class AnomalyDetectorConfigMarshaller : IRequestMarshaller<AnomalyDetectorConfig, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AnomalyDetectorConfigMarshaller Instance = new AnomalyDetectorConfigMarshaller();
 
     }

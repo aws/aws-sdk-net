@@ -34,7 +34,7 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RecordingGroup Marshaller
-    /// </summary>       
+    /// </summary>
     public class RecordingGroupMarshaller : IRequestMarshaller<RecordingGroup, JsonMarshallerContext> 
     {
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static RecordingGroupMarshaller Instance = new RecordingGroupMarshaller();
 
     }

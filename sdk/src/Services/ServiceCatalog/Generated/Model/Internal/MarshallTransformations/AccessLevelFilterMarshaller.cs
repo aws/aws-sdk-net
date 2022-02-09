@@ -34,7 +34,7 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AccessLevelFilter Marshaller
-    /// </summary>       
+    /// </summary>
     public class AccessLevelFilterMarshaller : IRequestMarshaller<AccessLevelFilter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AccessLevelFilterMarshaller Instance = new AccessLevelFilterMarshaller();
 
     }

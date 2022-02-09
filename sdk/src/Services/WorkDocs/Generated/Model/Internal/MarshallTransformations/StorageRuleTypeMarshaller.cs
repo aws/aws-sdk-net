@@ -34,7 +34,7 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// StorageRuleType Marshaller
-    /// </summary>       
+    /// </summary>
     public class StorageRuleTypeMarshaller : IRequestMarshaller<StorageRuleType, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static StorageRuleTypeMarshaller Instance = new StorageRuleTypeMarshaller();
 
     }

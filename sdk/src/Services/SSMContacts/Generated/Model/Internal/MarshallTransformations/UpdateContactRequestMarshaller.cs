@@ -58,7 +58,7 @@ namespace Amazon.SSMContacts.Model.Internal.MarshallTransformations
             string target = "SSMContacts.UpdateContact";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-05-03";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-05-03";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
@@ -90,7 +90,6 @@ namespace Amazon.SSMContacts.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

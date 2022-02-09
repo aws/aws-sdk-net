@@ -34,7 +34,7 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// InsightFeedback Marshaller
-    /// </summary>       
+    /// </summary>
     public class InsightFeedbackMarshaller : IRequestMarshaller<InsightFeedback, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static InsightFeedbackMarshaller Instance = new InsightFeedbackMarshaller();
 
     }

@@ -32,7 +32,7 @@ namespace Amazon.DataSync
     public partial class AmazonDataSyncConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.4.4");
+            InternalSDKUtils.BuildUserAgentString("3.7.4.13");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.DataSync
         /// Default constructor
         /// </summary>
         public AmazonDataSyncConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonDataSyncDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "datasync";
         }

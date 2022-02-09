@@ -32,7 +32,7 @@ namespace Amazon.SecretsManager
     public partial class AmazonSecretsManagerConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.1.65");
+            InternalSDKUtils.BuildUserAgentString("3.7.2.2");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.SecretsManager
         /// Default constructor
         /// </summary>
         public AmazonSecretsManagerConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonSecretsManagerDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "secretsmanager";
         }

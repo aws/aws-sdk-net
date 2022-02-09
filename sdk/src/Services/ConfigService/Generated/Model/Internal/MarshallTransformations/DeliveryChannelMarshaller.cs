@@ -34,7 +34,7 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DeliveryChannel Marshaller
-    /// </summary>       
+    /// </summary>
     public class DeliveryChannelMarshaller : IRequestMarshaller<DeliveryChannel, JsonMarshallerContext> 
     {
         /// <summary>
@@ -90,7 +90,7 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DeliveryChannelMarshaller Instance = new DeliveryChannelMarshaller();
 
     }

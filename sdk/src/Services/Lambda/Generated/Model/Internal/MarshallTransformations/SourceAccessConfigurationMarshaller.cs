@@ -34,7 +34,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SourceAccessConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class SourceAccessConfigurationMarshaller : IRequestMarshaller<SourceAccessConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SourceAccessConfigurationMarshaller Instance = new SourceAccessConfigurationMarshaller();
 
     }

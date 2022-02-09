@@ -1342,7 +1342,7 @@ namespace Amazon.StorageGateway
         /// download bandwidth rate limit, or you can delete both. If you delete only one of the
         /// limits, the other limit remains unchanged. To specify which gateway to work with,
         /// use the Amazon Resource Name (ARN) of the gateway in your request. This operation
-        /// is supported for the stored volume, cached volume and tape gateway types.
+        /// is supported only for the stored volume, cached volume, and tape gateway types.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteBandwidthRateLimit service method.</param>
         /// 
@@ -1888,13 +1888,14 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Returns the bandwidth rate limits of a gateway. By default, these limits are not set,
-        /// which means no bandwidth rate limiting is in effect. This operation is supported for
-        /// the stored volume, cached volume, and tape gateway types.
+        /// which means no bandwidth rate limiting is in effect. This operation is supported only
+        /// for the stored volume, cached volume, and tape gateway types. To describe bandwidth
+        /// rate limits for S3 file gateways, use <a>DescribeBandwidthRateLimitSchedule</a>.
         /// 
         ///  
         /// <para>
-        /// This operation only returns a value for a bandwidth rate limit only if the limit is
-        /// set. If no limits are set for the gateway, then this operation returns only the gateway
+        /// This operation returns a value for a bandwidth rate limit only if the limit is set.
+        /// If no limits are set for the gateway, then this operation returns only the gateway
         /// ARN in the response body. To specify which gateway to describe, use the Amazon Resource
         /// Name (ARN) of the gateway in your request.
         /// </para>
@@ -1947,8 +1948,8 @@ namespace Amazon.StorageGateway
         /// <summary>
         /// Returns information about the bandwidth rate limit schedule of a gateway. By default,
         /// gateways do not have bandwidth rate limit schedules, which means no bandwidth rate
-        /// limiting is in effect. This operation is supported only in the volume and tape gateway
-        /// types. 
+        /// limiting is in effect. This operation is supported only for volume, tape and S3 file
+        /// gateways. FSx file gateways do not support bandwidth rate limits.
         /// 
         ///  
         /// <para>
@@ -4567,8 +4568,9 @@ namespace Amazon.StorageGateway
         /// <summary>
         /// Updates the bandwidth rate limits of a gateway. You can update both the upload and
         /// download bandwidth rate limit or specify only one of the two. If you don't set a bandwidth
-        /// rate limit, the existing rate limit remains. This operation is supported for the stored
-        /// volume, cached volume, and tape gateway types.
+        /// rate limit, the existing rate limit remains. This operation is supported only for
+        /// the stored volume, cached volume, and tape gateway types. To update bandwidth rate
+        /// limits for S3 file gateways, use <a>UpdateBandwidthRateLimitSchedule</a>.
         /// 
         ///  
         /// <para>
@@ -4631,7 +4633,8 @@ namespace Amazon.StorageGateway
         /// Updates the bandwidth rate limit schedule for a specified gateway. By default, gateways
         /// do not have bandwidth rate limit schedules, which means no bandwidth rate limiting
         /// is in effect. Use this to initiate or update a gateway's bandwidth rate limit schedule.
-        /// This operation is supported in the volume and tape gateway types.
+        /// This operation is supported only for volume, tape and S3 file gateways. FSx file gateways
+        /// do not support bandwidth rate limits.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateBandwidthRateLimitSchedule service method.</param>
         /// 

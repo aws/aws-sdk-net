@@ -90,7 +90,7 @@ this.Write(".Model;\r\nusing Amazon.Runtime;\r\nusing Amazon.Runtime.Internal;\r
         #line hidden
         
         #line 38 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write("\t\t\r\n\t\t\tif(");
+this.Write("\t\t\r\n            if (");
 
         
         #line default
@@ -118,13 +118,13 @@ this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
         #line hidden
         
         #line 39 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write("())\r\n");
+this.Write("()) \r\n            {\r\n");
 
         
         #line default
         #line hidden
         
-        #line 40 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 41 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
             if (member.CustomMarshallerTransformation != null)
             {
@@ -133,70 +133,70 @@ this.Write("())\r\n");
         #line default
         #line hidden
         
-        #line 43 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 44 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\t\t\t\trequest.Headers[\"");
 
         
         #line default
         #line hidden
         
-        #line 44 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 45 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
 
         
         #line default
         #line hidden
         
-        #line 44 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 45 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\"] = ");
 
         
         #line default
         #line hidden
         
-        #line 44 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 45 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.CustomMarshallerTransformation));
 
         
         #line default
         #line hidden
         
-        #line 44 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 45 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("(");
 
         
         #line default
         #line hidden
         
-        #line 44 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 45 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 44 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 45 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".");
 
         
         #line default
         #line hidden
         
-        #line 44 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 45 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 44 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 45 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(");\r\n");
 
         
         #line default
         #line hidden
         
-        #line 45 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 46 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
         
             }
             else if (member.IsJsonValue)
@@ -206,56 +206,56 @@ this.Write(");\r\n");
         #line default
         #line hidden
         
-        #line 49 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 50 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\t\t\t\trequest.Headers[\"");
 
         
         #line default
         #line hidden
         
-        #line 50 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 51 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
 
         
         #line default
         #line hidden
         
-        #line 50 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 51 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\"] = Convert.ToBase64String(Encoding.UTF8.GetBytes(");
 
         
         #line default
         #line hidden
         
-        #line 50 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 51 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 50 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 51 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".");
 
         
         #line default
         #line hidden
         
-        #line 50 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 51 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 50 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 51 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("));\r\n");
 
         
         #line default
         #line hidden
         
-        #line 51 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 52 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
             }
             else
@@ -272,70 +272,70 @@ this.Write("));\r\n");
         #line default
         #line hidden
         
-        #line 62 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 63 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("                //Map of headers with prefix \"");
 
         
         #line default
         #line hidden
         
-        #line 63 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 64 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
 
         
         #line default
         #line hidden
         
-        #line 63 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 64 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\".\r\n                foreach (var kvp");
 
         
         #line default
         #line hidden
         
-        #line 64 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 65 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 64 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 65 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(" in ");
 
         
         #line default
         #line hidden
         
-        #line 64 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 65 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 64 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 65 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".");
 
         
         #line default
         #line hidden
         
-        #line 64 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 65 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 64 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 65 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(")\r\n                {\r\n");
 
         
         #line default
         #line hidden
         
-        #line 66 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 67 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
  
                     // Dictionary<string, string>
                     if (member.ModelShape.ValueShape.IsString)
@@ -345,56 +345,56 @@ this.Write(")\r\n                {\r\n");
         #line default
         #line hidden
         
-        #line 70 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 71 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("                     request.Headers[$\"");
 
         
         #line default
         #line hidden
         
-        #line 71 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 72 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
 
         
         #line default
         #line hidden
         
-        #line 71 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 72 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("{kvp");
 
         
         #line default
         #line hidden
         
-        #line 71 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 72 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
-
-        
-        #line default
-        #line hidden
-        
-        #line 71 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write(".Key}\"] = kvp");
-
-        
-        #line default
-        #line hidden
-        
-        #line 71 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
-
-        
-        #line default
-        #line hidden
-        
-        #line 71 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write(".Value;\r\n");
 
         
         #line default
         #line hidden
         
         #line 72 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write(".Key}\"] = kvp");
+
+        
+        #line default
+        #line hidden
+        
+        #line 72 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
+
+        
+        #line default
+        #line hidden
+        
+        #line 72 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write(".Value;\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 73 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
                     }
                     // Dictionary<string, List<string>>
@@ -405,56 +405,56 @@ this.Write(".Value;\r\n");
         #line default
         #line hidden
         
-        #line 77 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 78 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("                    request.Headers[$\"");
 
         
         #line default
         #line hidden
         
-        #line 78 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 79 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
 
         
         #line default
         #line hidden
         
-        #line 78 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 79 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("{kvp");
 
         
         #line default
         #line hidden
         
-        #line 78 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 79 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
-
-        
-        #line default
-        #line hidden
-        
-        #line 78 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write(".Key}\"] = string.Join(\",\", kvp");
-
-        
-        #line default
-        #line hidden
-        
-        #line 78 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
-
-        
-        #line default
-        #line hidden
-        
-        #line 78 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write(".Value.ToArray());\r\n");
 
         
         #line default
         #line hidden
         
         #line 79 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write(".Key}\"] = string.Join(\",\", kvp");
+
+        
+        #line default
+        #line hidden
+        
+        #line 79 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
+
+        
+        #line default
+        #line hidden
+        
+        #line 79 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write(".Value.ToArray());\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 80 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
                     }
                     else
@@ -466,14 +466,14 @@ this.Write(".Value.ToArray());\r\n");
         #line default
         #line hidden
         
-        #line 85 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 86 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("                }\r\n");
 
         
         #line default
         #line hidden
         
-        #line 87 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 88 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
 				}
 				else if(member.Shape.IsString)
@@ -483,56 +483,56 @@ this.Write("                }\r\n");
         #line default
         #line hidden
         
-        #line 91 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 92 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\t\t\t\trequest.Headers[\"");
 
         
         #line default
         #line hidden
         
-        #line 92 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 93 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
 
         
         #line default
         #line hidden
         
-        #line 92 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 93 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\"] = ");
 
         
         #line default
         #line hidden
         
-        #line 92 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 93 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 92 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 93 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".");
 
         
         #line default
         #line hidden
         
-        #line 92 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 93 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 92 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 93 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(";\r\n");
 
         
         #line default
         #line hidden
         
-        #line 93 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 94 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 					
 				}
                 else
@@ -542,73 +542,87 @@ this.Write(";\r\n");
         #line default
         #line hidden
         
-        #line 97 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 98 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\t\t\t\trequest.Headers[\"");
 
         
         #line default
         #line hidden
         
-        #line 98 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 99 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
 
         
         #line default
         #line hidden
         
-        #line 98 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 99 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\"] = ");
 
         
         #line default
         #line hidden
         
-        #line 98 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 99 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PrimitiveMarshaller));
 
         
         #line default
         #line hidden
         
-        #line 98 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 99 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("(");
 
         
         #line default
         #line hidden
         
-        #line 98 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 99 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 98 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 99 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".");
 
         
         #line default
         #line hidden
         
-        #line 98 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 99 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 98 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 99 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(");\r\n");
 
         
         #line default
         #line hidden
         
-        #line 99 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 100 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
                 }
             }
+            
+        
+        #line default
+        #line hidden
+        
+        #line 103 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write("            }\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 105 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+
         }
 	}
 
@@ -630,98 +644,98 @@ this.Write(");\r\n");
         #line default
         #line hidden
         
-        #line 118 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 122 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\t\t\trequest.AddPathResource(\"");
 
         
         #line default
         #line hidden
         
-        #line 119 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 123 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(marshallLocationName));
 
         
         #line default
         #line hidden
         
-        #line 119 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 123 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\", ");
 
         
         #line default
         #line hidden
         
-        #line 119 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 123 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 119 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 123 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".IsSet");
 
         
         #line default
         #line hidden
         
-        #line 119 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 123 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 119 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 123 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("() ? ");
 
         
         #line default
         #line hidden
         
-        #line 119 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 123 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PrimitiveMarshaller));
 
         
         #line default
         #line hidden
         
-        #line 119 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 123 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("(");
 
         
         #line default
         #line hidden
         
-        #line 119 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 123 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 119 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 123 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".");
 
         
         #line default
         #line hidden
         
-        #line 119 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 123 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 119 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 123 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".TrimStart(\'/\')) : string.Empty);\r\n");
 
         
         #line default
         #line hidden
         
-        #line 120 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 124 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
 				}
 				else
@@ -731,98 +745,98 @@ this.Write(".TrimStart(\'/\')) : string.Empty);\r\n");
         #line default
         #line hidden
         
-        #line 124 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 128 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\t\t\trequest.AddPathResource(\"");
 
         
         #line default
         #line hidden
         
-        #line 125 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 129 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(marshallLocationName));
 
         
         #line default
         #line hidden
         
-        #line 125 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 129 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\", ");
 
         
         #line default
         #line hidden
         
-        #line 125 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 129 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 125 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 129 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".IsSet");
 
         
         #line default
         #line hidden
         
-        #line 125 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 129 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 125 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 129 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("() ? ");
 
         
         #line default
         #line hidden
         
-        #line 125 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 129 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PrimitiveMarshaller));
 
         
         #line default
         #line hidden
         
-        #line 125 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 129 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("(");
 
         
         #line default
         #line hidden
         
-        #line 125 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 129 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 125 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 129 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".");
 
         
         #line default
         #line hidden
         
-        #line 125 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 129 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 125 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 129 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(") : string.Empty);\r\n");
 
         
         #line default
         #line hidden
         
-        #line 126 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 130 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
 				}
 
@@ -834,70 +848,70 @@ this.Write(") : string.Empty);\r\n");
         #line default
         #line hidden
         
-        #line 132 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 136 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("            if (!");
 
         
         #line default
         #line hidden
         
-        #line 133 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 137 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 133 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 137 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".IsSet");
 
         
         #line default
         #line hidden
         
-        #line 133 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 137 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 133 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 137 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("())\r\n                throw new ");
 
         
         #line default
         #line hidden
         
-        #line 134 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 138 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseException));
 
         
         #line default
         #line hidden
         
-        #line 134 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 138 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("(\"Request object does not have required field ");
 
         
         #line default
         #line hidden
         
-        #line 134 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 138 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 134 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 138 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(" set\");\r\n");
 
         
         #line default
         #line hidden
         
-        #line 135 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 139 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
 			if(isGreedy)
 				{
@@ -906,70 +920,70 @@ this.Write(" set\");\r\n");
         #line default
         #line hidden
         
-        #line 138 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 142 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\t\t\trequest.AddPathResource(\"");
 
         
         #line default
         #line hidden
         
-        #line 139 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 143 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(marshallLocationName));
 
         
         #line default
         #line hidden
         
-        #line 139 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 143 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\", ");
 
         
         #line default
         #line hidden
         
-        #line 139 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 143 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PrimitiveMarshaller));
 
         
         #line default
         #line hidden
         
-        #line 139 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 143 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("(");
 
         
         #line default
         #line hidden
         
-        #line 139 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 143 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 139 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 143 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".");
 
         
         #line default
         #line hidden
         
-        #line 139 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 143 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 139 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 143 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".TrimStart(\'/\')));\r\n");
 
         
         #line default
         #line hidden
         
-        #line 140 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 144 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
 				}
 				else
@@ -979,70 +993,70 @@ this.Write(".TrimStart(\'/\')));\r\n");
         #line default
         #line hidden
         
-        #line 144 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 148 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\t\t\trequest.AddPathResource(\"");
 
         
         #line default
         #line hidden
         
-        #line 145 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 149 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(marshallLocationName));
 
         
         #line default
         #line hidden
         
-        #line 145 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 149 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\", ");
 
         
         #line default
         #line hidden
         
-        #line 145 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 149 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PrimitiveMarshaller));
 
         
         #line default
         #line hidden
         
-        #line 145 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 149 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("(");
 
         
         #line default
         #line hidden
         
-        #line 145 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 149 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 145 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 149 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".");
 
         
         #line default
         #line hidden
         
-        #line 145 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 149 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 145 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 149 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("));\r\n");
 
         
         #line default
         #line hidden
         
-        #line 146 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 150 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
 				}
             }
@@ -1060,42 +1074,42 @@ this.Write("));\r\n");
         #line default
         #line hidden
         
-        #line 158 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 162 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\t\t\trequest.AddSubResource(\"");
 
         
         #line default
         #line hidden
         
-        #line 159 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 163 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(staticQueryParam.Key));
 
         
         #line default
         #line hidden
         
-        #line 159 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 163 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\", \"");
 
         
         #line default
         #line hidden
         
-        #line 159 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 163 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(staticQueryParam.Value));
 
         
         #line default
         #line hidden
         
-        #line 159 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 163 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\");\r\n");
 
         
         #line default
         #line hidden
         
-        #line 160 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 164 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 			
 			}
 			else
@@ -1105,28 +1119,28 @@ this.Write("\");\r\n");
         #line default
         #line hidden
         
-        #line 164 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 168 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\t\t\trequest.AddSubResource(\"");
 
         
         #line default
         #line hidden
         
-        #line 165 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 169 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(staticQueryParam.Key));
 
         
         #line default
         #line hidden
         
-        #line 165 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 169 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\");\r\n");
 
         
         #line default
         #line hidden
         
-        #line 166 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 170 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 						
 			}
 		}
@@ -1146,42 +1160,42 @@ this.Write("\");\r\n");
         #line default
         #line hidden
         
-        #line 180 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 184 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\t\t\t\r\n\t\t\tif (");
 
         
         #line default
         #line hidden
         
-        #line 181 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 185 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 181 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 185 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".IsSet");
 
         
         #line default
         #line hidden
         
-        #line 181 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 185 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 181 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 185 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("())\r\n");
 
         
         #line default
         #line hidden
         
-        #line 182 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 186 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
                 if (member.CustomMarshallerTransformation != null)
                 {
@@ -1190,70 +1204,70 @@ this.Write("())\r\n");
         #line default
         #line hidden
         
-        #line 185 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 189 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\t\t\t\trequest.Parameters.Add(\"");
 
         
         #line default
         #line hidden
         
-        #line 186 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 190 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
 
         
         #line default
         #line hidden
         
-        #line 186 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 190 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\", ");
 
         
         #line default
         #line hidden
         
-        #line 186 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 190 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.CustomMarshallerTransformation));
 
         
         #line default
         #line hidden
         
-        #line 186 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 190 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("(");
 
         
         #line default
         #line hidden
         
-        #line 186 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 190 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 186 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 190 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".");
 
         
         #line default
         #line hidden
         
-        #line 186 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 190 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 186 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 190 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("));\r\n");
 
         
         #line default
         #line hidden
         
-        #line 187 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 191 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
         
                 }
                 else if (member.IsMap)
@@ -1269,35 +1283,35 @@ this.Write("));\r\n");
         #line default
         #line hidden
         
-        #line 197 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 201 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("            {\r\n                foreach(var kvp in ");
 
         
         #line default
         #line hidden
         
-        #line 199 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 203 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 199 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 203 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".");
 
         
         #line default
         #line hidden
         
-        #line 199 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 203 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 199 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 203 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(")\r\n                {\r\n                    request.Parameters.Add(kvp.Key, kvp.Val" +
         "ue);\r\n                }\r\n            }\r\n");
 
@@ -1305,7 +1319,7 @@ this.Write(")\r\n                {\r\n                    request.Parameters.Add
         #line default
         #line hidden
         
-        #line 204 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 208 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
                 }
                 else if (member.IsList)
@@ -1321,56 +1335,56 @@ this.Write(")\r\n                {\r\n                    request.Parameters.Add
         #line default
         #line hidden
         
-        #line 214 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 218 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("                request.ParameterCollection.Add(\"");
 
         
         #line default
         #line hidden
         
-        #line 215 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 219 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
 
         
         #line default
         #line hidden
         
-        #line 215 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 219 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\", ");
 
         
         #line default
         #line hidden
         
-        #line 215 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 219 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 215 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 219 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".");
 
         
         #line default
         #line hidden
         
-        #line 215 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 219 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 215 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 219 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(");\r\n");
 
         
         #line default
         #line hidden
         
-        #line 216 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 220 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
                 }
                 else
@@ -1380,70 +1394,70 @@ this.Write(");\r\n");
         #line default
         #line hidden
         
-        #line 220 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 224 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\t\t\t\trequest.Parameters.Add(\"");
 
         
         #line default
         #line hidden
         
-        #line 221 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 225 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
 
         
         #line default
         #line hidden
         
-        #line 221 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 225 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\", ");
 
         
         #line default
         #line hidden
         
-        #line 221 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 225 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PrimitiveMarshaller));
 
         
         #line default
         #line hidden
         
-        #line 221 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 225 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("(");
 
         
         #line default
         #line hidden
         
-        #line 221 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 225 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 221 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 225 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".");
 
         
         #line default
         #line hidden
         
-        #line 221 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 225 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 221 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 225 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("));\r\n");
 
         
         #line default
         #line hidden
         
-        #line 222 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 226 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 			
 				}
                 if(member.IsIdempotent)
@@ -1453,28 +1467,28 @@ this.Write("));\r\n");
         #line default
         #line hidden
         
-        #line 226 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 230 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("            else            \r\n                request.Parameters.Add(\"");
 
         
         #line default
         #line hidden
         
-        #line 228 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 232 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
 
         
         #line default
         #line hidden
         
-        #line 228 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 232 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\", System.Guid.NewGuid().ToString());\r\n                \r\n");
 
         
         #line default
         #line hidden
         
-        #line 230 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 234 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
  
 	            }
 			}
@@ -1492,14 +1506,14 @@ this.Write("\", System.Guid.NewGuid().ToString());\r\n                \r\n");
         #line default
         #line hidden
         
-        #line 242 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 246 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\r\n            var hostPrefixLabels = new\r\n            {\r\n");
 
         
         #line default
         #line hidden
         
-        #line 246 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 250 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
             foreach(var member in operation.RequestHostPrefixMembers)
             {
@@ -1509,70 +1523,70 @@ this.Write("\r\n            var hostPrefixLabels = new\r\n            {\r\n");
         #line default
         #line hidden
         
-        #line 250 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 254 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("                ");
 
         
         #line default
         #line hidden
         
-        #line 250 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 254 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 250 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 254 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(" = ");
 
         
         #line default
         #line hidden
         
-        #line 250 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 254 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PrimitiveMarshaller));
 
         
         #line default
         #line hidden
         
-        #line 250 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 254 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("(");
 
         
         #line default
         #line hidden
         
-        #line 250 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 254 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 250 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 254 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".");
 
         
         #line default
         #line hidden
         
-        #line 250 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 254 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 250 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 254 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("),\r\n");
 
         
         #line default
         #line hidden
         
-        #line 251 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 255 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
             }     
 
@@ -1580,14 +1594,14 @@ this.Write("),\r\n");
         #line default
         #line hidden
         
-        #line 253 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 257 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("            };\r\n\r\n");
 
         
         #line default
         #line hidden
         
-        #line 256 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 260 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
             foreach(var member in operation.RequestHostPrefixMembers)
             {
@@ -1596,49 +1610,49 @@ this.Write("            };\r\n\r\n");
         #line default
         #line hidden
         
-        #line 259 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 263 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("            if (!HostPrefixUtils.IsValidLabelValue(hostPrefixLabels.");
 
         
         #line default
         #line hidden
         
-        #line 260 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 264 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 260 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 264 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("))\r\n                throw new ");
 
         
         #line default
         #line hidden
         
-        #line 261 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 265 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseException));
 
         
         #line default
         #line hidden
         
-        #line 261 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 265 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("(\"");
 
         
         #line default
         #line hidden
         
-        #line 261 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 265 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 261 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 265 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(" can only contain alphanumeric characters and dashes and must be between 1 and 63" +
         " characters long.\");\t\t\r\n");
 
@@ -1646,7 +1660,7 @@ this.Write(" can only contain alphanumeric characters and dashes and must be bet
         #line default
         #line hidden
         
-        #line 262 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 266 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
             }     
         }
@@ -1655,28 +1669,28 @@ this.Write(" can only contain alphanumeric characters and dashes and must be bet
         #line default
         #line hidden
         
-        #line 265 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 269 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("            \r\n            request.HostPrefix = $\"");
 
         
         #line default
         #line hidden
         
-        #line 266 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 270 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.EndpointHostPrefix.Replace("{", "{hostPrefixLabels.")));
 
         
         #line default
         #line hidden
         
-        #line 266 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 270 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\";\r\n");
 
         
         #line default
         #line hidden
         
-        #line 267 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 271 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
 	}
 
@@ -1697,21 +1711,21 @@ this.Write("\";\r\n");
         #line default
         #line hidden
         
-        #line 282 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 286 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("            if (Arn.IsArn(publicRequest.");
 
         
         #line default
         #line hidden
         
-        #line 283 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 287 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(arnFieldItem));
 
         
         #line default
         #line hidden
         
-        #line 283 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 287 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("))\r\n            {\r\n                publicRequest.AccountId = Amazon.S3Control.Int" +
         "ernal.S3ArnUtils.GetAccountIdBasedOnArn(\r\n                    publicRequest.Acco" +
         "untId,\r\n                    Arn.Parse(publicRequest.");
@@ -1720,21 +1734,21 @@ this.Write("))\r\n            {\r\n                publicRequest.AccountId = Ama
         #line default
         #line hidden
         
-        #line 287 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 291 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(arnFieldItem));
 
         
         #line default
         #line hidden
         
-        #line 287 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 291 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(").AccountId\r\n                );\r\n            }\r\n");
 
         
         #line default
         #line hidden
         
-        #line 290 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 294 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
             }
         }
@@ -1748,7 +1762,7 @@ this.Write(").AccountId\r\n                );\r\n            }\r\n");
         #line default
         #line hidden
         
-        #line 298 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 302 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("                var checksum = Amazon.Util.AWSSDKUtils.GenerateChecksumForContent" +
         "(");
 
@@ -1756,21 +1770,21 @@ this.Write("                var checksum = Amazon.Util.AWSSDKUtils.GenerateCheck
         #line default
         #line hidden
         
-        #line 299 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 303 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(requestContent));
 
         
         #line default
         #line hidden
         
-        #line 299 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 303 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(", true);\r\n");
 
         
         #line default
         #line hidden
         
-        #line 300 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 304 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
         var member = operation.RequestStructure.Members.FirstOrDefault(m => string.Equals(m.LocationName, "Content-MD5"));
         if (member != default(Member)) 
@@ -1780,42 +1794,42 @@ this.Write(", true);\r\n");
         #line default
         #line hidden
         
-        #line 304 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 308 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("                if (publicRequest.IsSet");
 
         
         #line default
         #line hidden
         
-        #line 305 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 309 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 305 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 309 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("())\r\n                    checksum = publicRequest.");
 
         
         #line default
         #line hidden
         
-        #line 306 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 310 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 306 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 310 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(";\r\n");
 
         
         #line default
         #line hidden
         
-        #line 307 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 311 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
         }
 
@@ -1823,7 +1837,7 @@ this.Write(";\r\n");
         #line default
         #line hidden
         
-        #line 309 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 313 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("                request.Headers[Amazon.Util.HeaderKeys.ContentMD5Header] = checks" +
         "um;\r\n");
 
@@ -1831,7 +1845,7 @@ this.Write("                request.Headers[Amazon.Util.HeaderKeys.ContentMD5Hea
         #line default
         #line hidden
         
-        #line 311 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 315 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
         }
 	}

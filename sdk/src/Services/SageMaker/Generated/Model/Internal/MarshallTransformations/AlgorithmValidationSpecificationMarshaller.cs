@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AlgorithmValidationSpecification Marshaller
-    /// </summary>       
+    /// </summary>
     public class AlgorithmValidationSpecificationMarshaller : IRequestMarshaller<AlgorithmValidationSpecification, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AlgorithmValidationSpecificationMarshaller Instance = new AlgorithmValidationSpecificationMarshaller();
 
     }

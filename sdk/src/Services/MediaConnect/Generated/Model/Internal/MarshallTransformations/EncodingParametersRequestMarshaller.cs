@@ -34,7 +34,7 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// EncodingParametersRequest Marshaller
-    /// </summary>       
+    /// </summary>
     public class EncodingParametersRequestMarshaller : IRequestMarshaller<EncodingParametersRequest, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static EncodingParametersRequestMarshaller Instance = new EncodingParametersRequestMarshaller();
 
     }

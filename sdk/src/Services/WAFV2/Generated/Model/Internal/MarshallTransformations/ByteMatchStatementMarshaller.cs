@@ -34,7 +34,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ByteMatchStatement Marshaller
-    /// </summary>       
+    /// </summary>
     public class ByteMatchStatementMarshaller : IRequestMarshaller<ByteMatchStatement, JsonMarshallerContext> 
     {
         /// <summary>
@@ -88,7 +88,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ByteMatchStatementMarshaller Instance = new ByteMatchStatementMarshaller();
 
     }

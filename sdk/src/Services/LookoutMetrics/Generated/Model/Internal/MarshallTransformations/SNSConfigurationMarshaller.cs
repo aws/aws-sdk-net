@@ -34,7 +34,7 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SNSConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class SNSConfigurationMarshaller : IRequestMarshaller<SNSConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SNSConfigurationMarshaller Instance = new SNSConfigurationMarshaller();
 
     }

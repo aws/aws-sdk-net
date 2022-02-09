@@ -34,7 +34,7 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// PutPartnerEventsRequestEntry Marshaller
-    /// </summary>       
+    /// </summary>
     public class PutPartnerEventsRequestEntryMarshaller : IRequestMarshaller<PutPartnerEventsRequestEntry, JsonMarshallerContext> 
     {
         /// <summary>
@@ -84,7 +84,7 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static PutPartnerEventsRequestEntryMarshaller Instance = new PutPartnerEventsRequestEntryMarshaller();
 
     }

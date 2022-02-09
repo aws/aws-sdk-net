@@ -34,7 +34,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// LogicalTableSource Marshaller
-    /// </summary>       
+    /// </summary>
     public class LogicalTableSourceMarshaller : IRequestMarshaller<LogicalTableSource, JsonMarshallerContext> 
     {
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static LogicalTableSourceMarshaller Instance = new LogicalTableSourceMarshaller();
 
     }

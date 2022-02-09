@@ -34,7 +34,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CreateOntapVolumeConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class CreateOntapVolumeConfigurationMarshaller : IRequestMarshaller<CreateOntapVolumeConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -90,7 +90,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static CreateOntapVolumeConfigurationMarshaller Instance = new CreateOntapVolumeConfigurationMarshaller();
 
     }

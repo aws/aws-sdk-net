@@ -34,7 +34,7 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ListTagOptionsFilters Marshaller
-    /// </summary>       
+    /// </summary>
     public class ListTagOptionsFiltersMarshaller : IRequestMarshaller<ListTagOptionsFilters, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ListTagOptionsFiltersMarshaller Instance = new ListTagOptionsFiltersMarshaller();
 
     }

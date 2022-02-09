@@ -34,7 +34,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TeradataParameters Marshaller
-    /// </summary>       
+    /// </summary>
     public class TeradataParametersMarshaller : IRequestMarshaller<TeradataParameters, JsonMarshallerContext> 
     {
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static TeradataParametersMarshaller Instance = new TeradataParametersMarshaller();
 
     }

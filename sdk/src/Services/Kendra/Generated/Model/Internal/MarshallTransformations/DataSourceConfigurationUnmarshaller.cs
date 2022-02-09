@@ -76,6 +76,12 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                     unmarshalledObject.DatabaseConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("FsxConfiguration", targetDepth))
+                {
+                    var unmarshaller = FsxConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.FsxConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("GoogleDriveConfiguration", targetDepth))
                 {
                     var unmarshaller = GoogleDriveConfigurationUnmarshaller.Instance;

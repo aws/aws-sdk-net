@@ -34,7 +34,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// StepExecutionFilter Marshaller
-    /// </summary>       
+    /// </summary>
     public class StepExecutionFilterMarshaller : IRequestMarshaller<StepExecutionFilter, JsonMarshallerContext> 
     {
         /// <summary>
@@ -66,7 +66,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static StepExecutionFilterMarshaller Instance = new StepExecutionFilterMarshaller();
 
     }

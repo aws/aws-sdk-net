@@ -34,7 +34,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DeleteVolumeOntapConfiguration Marshaller
-    /// </summary>       
+    /// </summary>
     public class DeleteVolumeOntapConfigurationMarshaller : IRequestMarshaller<DeleteVolumeOntapConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
@@ -71,7 +71,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static DeleteVolumeOntapConfigurationMarshaller Instance = new DeleteVolumeOntapConfigurationMarshaller();
 
     }

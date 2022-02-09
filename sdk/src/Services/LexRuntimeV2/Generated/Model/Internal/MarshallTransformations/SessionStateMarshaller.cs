@@ -34,7 +34,7 @@ namespace Amazon.LexRuntimeV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SessionState Marshaller
-    /// </summary>       
+    /// </summary>
     public class SessionStateMarshaller : IRequestMarshaller<SessionState, JsonMarshallerContext> 
     {
         /// <summary>
@@ -89,6 +89,17 @@ namespace Amazon.LexRuntimeV2.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.OriginatingRequestId);
             }
 
+            if(requestObject.IsSetRuntimeHints())
+            {
+                context.Writer.WritePropertyName("runtimeHints");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = RuntimeHintsMarshaller.Instance;
+                marshaller.Marshall(requestObject.RuntimeHints, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetSessionAttributes())
             {
                 context.Writer.WritePropertyName("sessionAttributes");
@@ -107,7 +118,7 @@ namespace Amazon.LexRuntimeV2.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static SessionStateMarshaller Instance = new SessionStateMarshaller();
 
     }

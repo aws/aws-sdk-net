@@ -34,7 +34,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AmazonElasticsearchParameters Marshaller
-    /// </summary>       
+    /// </summary>
     public class AmazonElasticsearchParametersMarshaller : IRequestMarshaller<AmazonElasticsearchParameters, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AmazonElasticsearchParametersMarshaller Instance = new AmazonElasticsearchParametersMarshaller();
 
     }

@@ -34,7 +34,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ElasticsearchAction Marshaller
-    /// </summary>       
+    /// </summary>
     public class ElasticsearchActionMarshaller : IRequestMarshaller<ElasticsearchAction, JsonMarshallerContext> 
     {
         /// <summary>
@@ -79,7 +79,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ElasticsearchActionMarshaller Instance = new ElasticsearchActionMarshaller();
 
     }

@@ -125,6 +125,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CoreAssemblyInfo.tt</DependentUpon>
     </Compile>
+    <Compile Update="Generators\SourceFiles\DefaultConfiguration.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DefaultConfiguration.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Generators\SourceFiles\DefaultConfigurationModeGenerator.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DefaultConfigurationModeGenerator.tt</DependentUpon>
+    </Compile>
     <Compile Update="Generators\SourceFiles\EndpointsGenerator.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -422,6 +432,14 @@
     <None Update="Generators\SourceFiles\CoreAssemblyInfo.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>CoreAssemblyInfo.cs</LastGenOutput>
+    </None>
+    <None Update="Generators\SourceFiles\DefaultConfiguration.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>DefaultConfiguration.cs</LastGenOutput>
+    </None>
+    <None Update="Generators\SourceFiles\DefaultConfigurationModeGenerator.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>DefaultConfigurationModeGenerator.cs</LastGenOutput>
     </None>
     <None Update="Generators\SourceFiles\InternalSDKUtils.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>

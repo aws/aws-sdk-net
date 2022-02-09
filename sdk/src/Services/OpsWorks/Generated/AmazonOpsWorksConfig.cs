@@ -32,7 +32,7 @@ namespace Amazon.OpsWorks
     public partial class AmazonOpsWorksConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.112");
+            InternalSDKUtils.BuildUserAgentString("3.7.0.121");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.OpsWorks
         /// Default constructor
         /// </summary>
         public AmazonOpsWorksConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonOpsWorksDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "opsworks";
         }

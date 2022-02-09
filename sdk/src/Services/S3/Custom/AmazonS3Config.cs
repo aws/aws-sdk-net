@@ -17,6 +17,7 @@ using System;
 using System.Globalization;
 using Amazon.Internal;
 using Amazon.Runtime.CredentialManagement;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.S3
 {
@@ -143,7 +144,10 @@ namespace Amazon.S3
             {
                 if (s3UsEast1RegionalEndpointValue == null)
                 {
-                    s3UsEast1RegionalEndpointValue = CheckS3EnvironmentVariable() ?? CheckCredentialsFile() ?? S3UsEast1RegionalEndpointValue.Legacy;
+                    s3UsEast1RegionalEndpointValue =
+                        CheckS3EnvironmentVariable() ??
+                        CheckCredentialsFile() ??
+                        DefaultConfiguration.S3UsEast1RegionalEndpoint;
                 }
                 return s3UsEast1RegionalEndpointValue;
             }

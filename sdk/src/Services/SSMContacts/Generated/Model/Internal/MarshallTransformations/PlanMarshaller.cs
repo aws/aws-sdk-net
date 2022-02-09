@@ -34,7 +34,7 @@ namespace Amazon.SSMContacts.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Plan Marshaller
-    /// </summary>       
+    /// </summary>
     public class PlanMarshaller : IRequestMarshaller<Plan, JsonMarshallerContext> 
     {
         /// <summary>
@@ -65,7 +65,7 @@ namespace Amazon.SSMContacts.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static PlanMarshaller Instance = new PlanMarshaller();
 
     }

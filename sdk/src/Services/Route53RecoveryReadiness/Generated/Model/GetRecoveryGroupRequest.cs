@@ -30,14 +30,18 @@ namespace Amazon.Route53RecoveryReadiness.Model
 {
     /// <summary>
     /// Container for the parameters to the GetRecoveryGroup operation.
-    /// Returns information about a Recovery Group.
+    /// Gets details about a recovery group, including a list of the cells that are included
+    /// in it.
     /// </summary>
     public partial class GetRecoveryGroupRequest : AmazonRoute53RecoveryReadinessRequest
     {
         private string _recoveryGroupName;
 
         /// <summary>
-        /// Gets and sets the property RecoveryGroupName. The RecoveryGroup to get
+        /// Gets and sets the property RecoveryGroupName. 
+        /// <para>
+        /// The name of a recovery group.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string RecoveryGroupName

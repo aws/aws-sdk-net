@@ -1,3 +1,274 @@
+### 3.7.205.0 (2022-02-08 19:13 UTC)
+* AppRunner (3.7.2.0)
+	* This release adds support for App Runner to route outbound network traffic of a service through an Amazon VPC. New API: CreateVpcConnector, DescribeVpcConnector, ListVpcConnectors, and DeleteVpcConnector. Updated API: CreateService, DescribeService, and UpdateService.
+* Kendra (3.7.13.0)
+	* Amazon Kendra now provides a data source connector for Amazon FSx. For more information, see https://docs.aws.amazon.com/kendra/latest/dg/data-source-fsx.html
+* S3Control (3.7.5.0)
+	* This release adds support for S3 Batch Replication. Batch Replication lets you replicate existing objects, already replicated objects to new destinations, and objects that previously failed to replicate. Customers will receive object-level visibility of progress and a detailed completion report.
+* SageMaker (3.7.29.0)
+	* Autopilot now generates an additional report with information on the performance of the best model, such as a Confusion matrix and  Area under the receiver operating characteristic (AUC-ROC). The path to the report can be found in CandidateArtifactLocations.
+
+### 3.7.204.0 (2022-02-07 19:16 UTC)
+* AuditManager (3.7.8.0)
+	* This release updates 3 API parameters. UpdateAssessmentFrameworkControlSet now requires the controls attribute, and CreateAssessmentFrameworkControl requires the id attribute. Additionally, UpdateAssessmentFramework now has a minimum length constraint for the controlSets attribute.
+* EventBridge (3.7.4.67)
+	* Documentation updates for EventBridge
+* SSMIncidents (3.7.3.0)
+	* Update RelatedItem enum to support SSM Automation
+* Synthetics (3.7.3.0)
+	* Adding names parameters to the Describe APIs.
+
+### 3.7.203.0 (2022-02-04 19:55 UTC)
+* Athena (3.7.2.0)
+	* You can now optionally specify the account ID that you expect to be the owner of your query results output location bucket in Athena. If the account ID of the query results bucket owner does not match the specified account ID, attempts to output to the bucket will fail with an S3 permissions error.
+* LakeFormation (3.7.4.0)
+	* Add support for calling Update Table Objects without a TransactionId.
+* RDS (3.7.9.7)
+	* updates for RDS Custom for Oracle 12.1 support
+* Core 3.7.6.4
+	* Updating endpoints.json file.
+
+
+	* All services packages updated to require new Core
+
+### 3.7.202.0 (2022-02-03 21:14 UTC)
+* AWSMarketplaceMetering (3.7.1.0)
+	* Add CustomerAWSAccountId to ResolveCustomer API response and increase UsageAllocation limit to 2500.
+* EC2 (3.7.59.0)
+	* adds support for AMIs in Recycle Bin
+* RecycleBin (3.7.1.0)
+	* Add EC2 Image recycle bin support.
+* RoboMaker (3.7.6.0)
+	* The release deprecates the use various APIs of RoboMaker Deployment Service in favor of AWS IoT GreenGrass v2.0.
+* Core 3.7.6.3
+	* Updating endpoints.json file.
+
+
+	* All services packages updated to require new Core
+
+### 3.7.201.0 (2022-02-02 19:22 UTC)
+* Appflow (3.7.5.0)
+	* Launching Amazon AppFlow Custom Connector SDK.
+* Comprehend (3.7.5.0)
+	* Amazon Comprehend now supports sharing and importing custom trained models from one AWS account to another within the same region.
+* CostExplorer (3.7.3.68)
+	* Doc-only update for Cost Explorer API that adds INVOICING_ENTITY dimensions
+* DynamoDBv2 (3.7.2.15)
+	* Documentation update for DynamoDB Java SDK.
+* ElastiCache (3.7.5.5)
+	* Documentation update for AWS ElastiCache
+* ElasticMapReduce (3.7.4.57)
+	* Documentation updates for Amazon EMR.
+* Elasticsearch (3.7.5.0)
+	* Allows customers to get progress updates for blue/green deployments
+* FIS (3.7.2.0)
+	* Added GetTargetResourceType and ListTargetResourceTypesAPI actions. These actions return additional details about resource types and parameters that can be targeted by FIS actions. Added a parameters field for the targets that can be specified in experiment templates.
+* Glue (3.7.13.0)
+	* Launch Protobuf support for AWS Glue Schema Registry
+* IoT (3.7.11.0)
+	* This release adds support for configuring AWS IoT logging level per client ID, source IP, or principal ID.
+* Personalize (3.7.7.0)
+	* Adding minRecommendationRequestsPerSecond attribute to recommender APIs.
+
+### 3.7.200.0 (2022-01-28 19:16 UTC)
+* AppConfig (3.7.1.19)
+	* Documentation updates for AWS AppConfig
+* AppConfigData (3.7.0.19)
+	* Documentation updates for AWS AppConfig Data.
+* Athena (3.7.1.0)
+	* This release adds a field, AthenaError, to the GetQueryExecution response object when a query fails.
+* CognitoIdentityProvider (3.7.1.91)
+	* Doc updates for Cognito user pools API Reference.
+* SageMaker (3.7.28.0)
+	* This release added a new NNA accelerator compilation support for Sagemaker Neo.
+* SecretsManager (3.7.2.0)
+	* Feature are ready to release on Jan 28th
+* Core 3.7.6.2
+	* Updating endpoints.json file.
+
+
+	* All services packages updated to require new Core
+
+### 3.7.199.0 (2022-01-27 21:44 UTC)
+* Amplify (3.7.0.119)
+	* Doc only update to the description of basicauthcredentials to describe the required encoding and format.
+* Connect (3.7.13.0)
+	* This release adds support for configuring a custom chat duration when starting a new chat session via the StartChatContact API. The default value for chat duration is 25 hours, minimum configurable value is 1 hour (60 minutes) and maximum configurable value is 7 days (10,080 minutes).
+* EC2 (3.7.58.0)
+	* X2ezn instances are powered by Intel Cascade Lake CPUs that deliver turbo all core frequency of up to 4.5 GHz and up to 100 Gbps of networking bandwidth
+* Kafka (3.7.6.0)
+	* Amazon MSK has updated the CreateCluster and UpdateBrokerStorage API that allows you to specify volume throughput during cluster creation and broker volume updates.
+* OpenSearchService (3.7.4.0)
+	* Allows customers to get progress updates for blue/green deployments
+
+### 3.7.198.0 (2022-01-26 19:13 UTC)
+* CodeGuruReviewer (3.7.5.0)
+	* Added failure state and adjusted timeout in waiter
+* EBS (3.7.0.121)
+	* Documentation updates for Amazon EBS Direct APIs.
+* FraudDetector (3.7.6.0)
+	* Added new APIs for viewing past predictions and obtaining prediction metadata including prediction explanations: ListEventPredictions and GetEventPredictionMetadata
+* SageMaker (3.7.27.0)
+	* API changes relating to Fail steps in model building pipeline and add PipelineExecutionFailureReason in PipelineExecutionSummary.
+* SecurityHub (3.7.9.0)
+	* Adding top level Sample boolean field
+
+### 3.7.197.0 (2022-01-25 19:17 UTC)
+* Connect (3.7.12.0)
+	* This release adds support for custom vocabularies to be used with Contact Lens. Custom vocabularies improve transcription accuracy for one or more specific words.
+* ElasticFileSystem (3.7.4.0)
+	* Use Amazon EFS Replication to replicate your Amazon EFS file system in the AWS Region of your preference.
+* FSx (3.7.7.0)
+	* This release adds support for growing SSD storage capacity and growing/shrinking SSD IOPS for FSx for ONTAP file systems.
+* GuardDuty (3.7.2.0)
+	* Amazon GuardDuty expands threat detection coverage to protect Amazon Elastic Kubernetes Service (EKS) workloads.
+* Core 3.7.6.1
+	* Updating endpoints.json file.
+
+
+	* All services packages updated to require new Core
+
+### 3.7.196.2 (2022-01-24 19:12 UTC)
+* Route53RecoveryReadiness (3.7.0.73)
+	* Updated documentation for Route53 Recovery Readiness APIs.
+
+### 3.7.196.1 (2022-01-21 22:42 UTC)
+* S3 (3.7.7.15)
+	* Fixed handling of Outposts ARNs causing incorrect append to endpoint. Fixed an issue where TransferProgressArgs.PercentDone was throwing DivideByZeroException for zero length downloads.
+
+### 3.7.196.0 (2022-01-21 19:16 UTC)
+* MediaConvert (3.7.12.0)
+	* AWS Elemental MediaConvert SDK has added support for 4K AV1 output resolutions & 10-bit AV1 color, the ability to ingest sidecar Dolby Vision XML metadata files, and the ability to flag WebVTT and IMSC tracks for accessibility in HLS.
+* TranscribeService (3.7.10.0)
+	* Add support for granular PIIEntityTypes when using Batch ContentRedaction.
+
+### 3.7.195.0 (2022-01-20 19:17 UTC)
+* Connect (3.7.11.0)
+	* This release adds tagging support for UserHierarchyGroups resource.
+* EC2 (3.7.57.0)
+	* C6i, M6i and R6i instances are powered by a third-generation Intel Xeon Scalable processor (Ice Lake) delivering all-core turbo frequency of 3.5 GHz
+* FIS (3.7.1.0)
+	* Added action startTime and action endTime timestamp fields to the ExperimentAction object
+* GuardDuty (3.7.1.0)
+	* Amazon GuardDuty findings now include remoteAccountDetails under AwsApiCallAction section if instance credential is exfiltrated.
+* MediaTailor (3.7.8.0)
+	* This release adds support for multiple Segment Delivery Configurations. Users can provide a list of names and URLs when creating or editing a source location. When retrieving content, users can send a header to choose which URL should be used to serve content.
+
+### 3.7.194.0 (2022-01-19 19:16 UTC)
+* EC2InstanceConnect (3.7.2.0)
+	* Adds support for ED25519 keys. PushSSHPublicKey Availability Zone parameter is now optional. Adds EC2InstanceStateInvalidException for instances that are not running. This was previously a service exception, so this may require updating your code to handle this new exception.
+* Macie2 (3.7.7.0)
+	* This release of the Amazon Macie API introduces stricter validation of requests to create custom data identifiers.
+
+### 3.7.193.0 (2022-01-18 19:15 UTC)
+* CloudTrail (3.7.2.7)
+	* This release fixes a documentation bug in the description for the readOnly field selector in advanced event selectors. The description now clarifies that users omit the readOnly field selector to select both Read and Write management events.
+* EC2 (3.7.56.0)
+	* Add support for AWS Client VPN client login banner and session timeout.
+* IVS (3.7.4.0)
+	* This release adds support for the new Thumbnail Configuration property for Recording Configurations. For more information see https://docs.aws.amazon.com/ivs/latest/userguide/record-to-s3.html
+* LocationService (3.7.8.0)
+	* This release adds the CalculateRouteMatrix API which calculates routes for the provided departure and destination positions. The release also deprecates the use of pricing plan across all verticals.
+* StorageGateway (3.7.4.14)
+	* Documentation update for adding bandwidth throttling support for S3 File Gateways.
+
+### 3.7.192.0 (2022-01-15 10:19 UTC)
+* Core 3.7.6.0
+	* Add support for Default Configuration Modes.
+	* All services packages updated to require new Core
+
+### 3.7.191.0 (2022-01-14 19:31 UTC)
+* ApplicationInsights (3.7.2.14)
+	* Application Insights support for Active Directory and SharePoint
+* ConfigService (3.7.6.0)
+	* Update ResourceType enum with values for CodeDeploy, EC2 and Kinesis resources
+* Honeycode (3.7.2.0)
+	* Added read and write api support for multi-select picklist. And added errorcode field to DescribeTableDataImportJob API output, when import job fails.
+* LookoutMetrics (3.7.7.0)
+	* This release adds a new DeactivateAnomalyDetector API operation.
+* RAM (3.7.3.0)
+	* This release adds the ListPermissionVersions API which lists the versions for a given permission.
+* Core 3.7.5.15
+	* Updating endpoints.json file.
+
+
+	* All services packages updated to require new Core
+
+### 3.7.190.0 (2022-01-13 19:24 UTC)
+* ElastiCache (3.7.5.0)
+	* AWS ElastiCache for Redis has added a new Engine Log LogType in LogDelivery feature. You can now publish the Engine Log from your Amazon ElastiCache for Redis clusters to Amazon CloudWatch Logs and Amazon Kinesis Data Firehose.
+* Glue (3.7.12.0)
+	* This SDK release adds support to pass run properties when starting a workflow run
+* LexRuntimeV2 (3.7.4.0)
+	* This release adds support for sending hints to Amazon Lex V2 runtime APIs. Bot developers can provide runtime hints to help improve the recognition of slot values.
+* NimbleStudio (3.7.4.0)
+	* Amazon Nimble Studio now supports validation for Launch Profiles. Launch Profiles now report static validation results after create/update to detect errors in network or active directory configuration.
+* Pinpoint (3.7.5.0)
+	* Adds JourneyChannelSettings to WriteJourneyRequest
+* SimpleSystemsManagement (3.7.12.0)
+	* AWS Systems Manager adds category support for DescribeDocument API
+* Core 3.7.5.14
+	* Updating endpoints.json file.
+
+
+	* All services packages updated to require new Core
+
+### 3.7.189.0 (2022-01-12 19:15 UTC)
+* EC2 (3.7.55.0)
+	* Hpc6a instances are powered by a third-generation AMD EPYC processors (Milan) delivering all-core turbo frequency of 3.4 GHz
+* ElastiCache (3.7.4.13)
+	* Doc only update for ElastiCache
+* FMS (3.7.4.0)
+	* Shield Advanced policies for Amazon CloudFront resources now support automatic application layer DDoS mitigation. The max length for SecurityServicePolicyData ManagedServiceData is now 8192 characters, instead of 4096.
+* Honeycode (3.7.1.0)
+	* Honeycode is releasing new APIs to allow user to create, delete and list tags on resources.
+* LexModelsV2 (3.7.11.0)
+	* This release adds support for Custom vocabulary in Amazon Lex V2 APIs for model building. Customers can give Amazon Lex V2 more information about how to process audio conversations with a bot by creating a custom vocabulary in a specific language.
+* PI (3.7.2.0)
+	* This release adds three Performance Insights APIs. Use ListAvailableResourceMetrics to get available metrics, GetResourceMetadata to get feature metadata, and ListAvailableResourceDimensions to list available dimensions. The AdditionalMetrics field in DescribeDimensionKeys retrieves per-SQL metrics.
+
+### 3.7.188.0 (2022-01-11 19:45 UTC)
+* CostExplorer (3.7.3.62)
+	* Doc only update for Cost Explorer API that fixes missing clarifications for MatchOptions definitions
+* EC2 (3.7.54.0)
+	* EC2 Capacity Reservations now supports RHEL instance platforms (RHEL with SQL Server Standard, RHEL with SQL Server Enterprise, RHEL with SQL Server Web, RHEL with HA, RHEL with HA and SQL Server Standard, RHEL with HA and SQL Server Enterprise)
+* FinSpaceData (3.7.2.6)
+	* Documentation updates for FinSpace.
+* IoTEventsData (3.7.1.86)
+	* This release provides documentation updates for Timer.timestamp in the IoT Events API Reference Guide.
+* Kendra (3.7.12.0)
+	* Amazon Kendra now supports advanced query language and query-less search.
+* RDS (3.7.9.0)
+	* This release adds the db-proxy event type to support subscribing to RDS Proxy events.
+* WorkSpaces (3.7.3.0)
+	* Introducing new APIs for Workspaces audio optimization with Amazon Connect: CreateConnectClientAddIn, DescribeConnectClientAddIns, UpdateConnectClientAddIn and DeleteConnectClientAddIn.
+* Core 3.7.5.13
+	* Updating sdk-default-configuration.json file.
+
+
+	* All services packages updated to require new Core
+
+### 3.7.187.0 (2022-01-10 19:15 UTC)
+* ComputeOptimizer (3.7.5.0)
+	* Adds support for new Compute Optimizer capability that makes it easier for customers to optimize their EC2 instances by leveraging multiple CPU architectures.
+* EC2 (3.7.53.0)
+	* New feature: Updated EC2 API to support faster launching for Windows images. Optimized images are pre-provisioned, using snapshots to launch instances up to 65% faster.
+* GlueDataBrew (3.7.6.0)
+	* This SDK release adds support for specifying a Bucket Owner for an S3 location.
+* LookoutMetrics (3.7.6.0)
+	* This release adds FailureType in the response of DescribeAnomalyDetector.
+* TranscribeService (3.7.9.26)
+	* Documentation updates for Amazon Transcribe.
+
+### 3.7.186.0 (2022-01-07 19:12 UTC)
+* MediaLive (3.7.8.0)
+	* This release adds support for selecting the Program Date Time (PDT) Clock source algorithm for HLS outputs.
+* Core 3.7.5.12
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.185.0 (2022-01-06 19:15 UTC)
 * AppSync (3.7.4.0)
 	* AppSync: AWS AppSync now supports configurable batching sizes for AWS Lambda resolvers, Direct AWS Lambda resolvers and pipeline functions

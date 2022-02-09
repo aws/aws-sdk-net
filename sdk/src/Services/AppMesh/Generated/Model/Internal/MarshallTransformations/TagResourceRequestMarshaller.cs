@@ -56,7 +56,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.AppMesh");
             request.Headers["Content-Type"] = "application/json";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-01-25";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-01-25";
             request.HttpMethod = "PUT";
 
             
@@ -84,7 +84,6 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
-        
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

@@ -32,7 +32,7 @@ namespace Amazon.BackupGateway
     public partial class AmazonBackupGatewayConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.8");
+            InternalSDKUtils.BuildUserAgentString("3.7.0.17");
 
         private string _userAgent = UserAgentString;
 
@@ -40,6 +40,7 @@ namespace Amazon.BackupGateway
         /// Default constructor
         /// </summary>
         public AmazonBackupGatewayConfig()
+            : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonBackupGatewayDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "backup-gateway";
         }

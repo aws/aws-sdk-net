@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetails Marshaller
-    /// </summary>       
+    /// </summary>
     public class AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetailsMarshaller : IRequestMarshaller<AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetails, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetailsMarshaller Instance = new AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetailsMarshaller();
 
     }

@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AWSMarketplaceMetering.Model
 {
     /// <summary>
-    /// RegisterUsage must be called in the same AWS Region the ECS task was launched in.
-    /// This prevents a container from hardcoding a Region (e.g. withRegion(“us-east-1”) when
-    /// calling RegisterUsage.
+    /// <code>RegisterUsage</code> must be called in the same AWS Region the ECS task was
+    /// launched in. This prevents a container from hardcoding a Region (e.g. withRegion(“us-east-1”)
+    /// when calling <code>RegisterUsage</code>.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

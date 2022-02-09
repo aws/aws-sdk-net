@@ -34,7 +34,7 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ExportServerSideEncryption Marshaller
-    /// </summary>       
+    /// </summary>
     public class ExportServerSideEncryptionMarshaller : IRequestMarshaller<ExportServerSideEncryption, JsonMarshallerContext> 
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static ExportServerSideEncryptionMarshaller Instance = new ExportServerSideEncryptionMarshaller();
 
     }

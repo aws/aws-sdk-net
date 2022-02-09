@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// FirewallPolicyStatefulRuleGroupReferencesDetails Marshaller
-    /// </summary>       
+    /// </summary>
     public class FirewallPolicyStatefulRuleGroupReferencesDetailsMarshaller : IRequestMarshaller<FirewallPolicyStatefulRuleGroupReferencesDetails, JsonMarshallerContext> 
     {
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
         /// <summary>
         /// Singleton Marshaller.
-        /// </summary>  
+        /// </summary>
         public readonly static FirewallPolicyStatefulRuleGroupReferencesDetailsMarshaller Instance = new FirewallPolicyStatefulRuleGroupReferencesDetailsMarshaller();
 
     }

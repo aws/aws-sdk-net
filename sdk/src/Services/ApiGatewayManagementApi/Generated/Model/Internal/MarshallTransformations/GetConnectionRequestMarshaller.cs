@@ -55,7 +55,7 @@ namespace Amazon.ApiGatewayManagementApi.Model.Internal.MarshallTransformations
         public IRequest Marshall(GetConnectionRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ApiGatewayManagementApi");
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-11-29";            
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-11-29";
             request.HttpMethod = "GET";
 
             if (!publicRequest.IsSetConnectionId())

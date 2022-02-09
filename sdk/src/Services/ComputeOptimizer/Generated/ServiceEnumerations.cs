@@ -507,9 +507,17 @@ namespace Amazon.ComputeOptimizer
         /// </summary>
         public static readonly ExportableAutoScalingGroupField EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics = new ExportableAutoScalingGroupField("EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics");
         /// <summary>
+        /// Constant EffectiveRecommendationPreferencesInferredWorkloadTypes for ExportableAutoScalingGroupField
+        /// </summary>
+        public static readonly ExportableAutoScalingGroupField EffectiveRecommendationPreferencesInferredWorkloadTypes = new ExportableAutoScalingGroupField("EffectiveRecommendationPreferencesInferredWorkloadTypes");
+        /// <summary>
         /// Constant Finding for ExportableAutoScalingGroupField
         /// </summary>
         public static readonly ExportableAutoScalingGroupField Finding = new ExportableAutoScalingGroupField("Finding");
+        /// <summary>
+        /// Constant InferredWorkloadTypes for ExportableAutoScalingGroupField
+        /// </summary>
+        public static readonly ExportableAutoScalingGroupField InferredWorkloadTypes = new ExportableAutoScalingGroupField("InferredWorkloadTypes");
         /// <summary>
         /// Constant LastRefreshTimestamp for ExportableAutoScalingGroupField
         /// </summary>
@@ -546,6 +554,10 @@ namespace Amazon.ComputeOptimizer
         /// Constant RecommendationOptionsMemory for ExportableAutoScalingGroupField
         /// </summary>
         public static readonly ExportableAutoScalingGroupField RecommendationOptionsMemory = new ExportableAutoScalingGroupField("RecommendationOptionsMemory");
+        /// <summary>
+        /// Constant RecommendationOptionsMigrationEffort for ExportableAutoScalingGroupField
+        /// </summary>
+        public static readonly ExportableAutoScalingGroupField RecommendationOptionsMigrationEffort = new ExportableAutoScalingGroupField("RecommendationOptionsMigrationEffort");
         /// <summary>
         /// Constant RecommendationOptionsNetwork for ExportableAutoScalingGroupField
         /// </summary>
@@ -733,6 +745,10 @@ namespace Amazon.ComputeOptimizer
         /// </summary>
         public static readonly ExportableInstanceField EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics = new ExportableInstanceField("EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics");
         /// <summary>
+        /// Constant EffectiveRecommendationPreferencesInferredWorkloadTypes for ExportableInstanceField
+        /// </summary>
+        public static readonly ExportableInstanceField EffectiveRecommendationPreferencesInferredWorkloadTypes = new ExportableInstanceField("EffectiveRecommendationPreferencesInferredWorkloadTypes");
+        /// <summary>
         /// Constant Finding for ExportableInstanceField
         /// </summary>
         public static readonly ExportableInstanceField Finding = new ExportableInstanceField("Finding");
@@ -740,6 +756,10 @@ namespace Amazon.ComputeOptimizer
         /// Constant FindingReasonCodes for ExportableInstanceField
         /// </summary>
         public static readonly ExportableInstanceField FindingReasonCodes = new ExportableInstanceField("FindingReasonCodes");
+        /// <summary>
+        /// Constant InferredWorkloadTypes for ExportableInstanceField
+        /// </summary>
+        public static readonly ExportableInstanceField InferredWorkloadTypes = new ExportableInstanceField("InferredWorkloadTypes");
         /// <summary>
         /// Constant InstanceArn for ExportableInstanceField
         /// </summary>
@@ -772,6 +792,10 @@ namespace Amazon.ComputeOptimizer
         /// Constant RecommendationOptionsMemory for ExportableInstanceField
         /// </summary>
         public static readonly ExportableInstanceField RecommendationOptionsMemory = new ExportableInstanceField("RecommendationOptionsMemory");
+        /// <summary>
+        /// Constant RecommendationOptionsMigrationEffort for ExportableInstanceField
+        /// </summary>
+        public static readonly ExportableInstanceField RecommendationOptionsMigrationEffort = new ExportableInstanceField("RecommendationOptionsMigrationEffort");
         /// <summary>
         /// Constant RecommendationOptionsNetwork for ExportableInstanceField
         /// </summary>
@@ -1418,6 +1442,126 @@ namespace Amazon.ComputeOptimizer
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator FindingReasonCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type InferredWorkloadType.
+    /// </summary>
+    public class InferredWorkloadType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AmazonEmr for InferredWorkloadType
+        /// </summary>
+        public static readonly InferredWorkloadType AmazonEmr = new InferredWorkloadType("AmazonEmr");
+        /// <summary>
+        /// Constant ApacheCassandra for InferredWorkloadType
+        /// </summary>
+        public static readonly InferredWorkloadType ApacheCassandra = new InferredWorkloadType("ApacheCassandra");
+        /// <summary>
+        /// Constant ApacheHadoop for InferredWorkloadType
+        /// </summary>
+        public static readonly InferredWorkloadType ApacheHadoop = new InferredWorkloadType("ApacheHadoop");
+        /// <summary>
+        /// Constant Memcached for InferredWorkloadType
+        /// </summary>
+        public static readonly InferredWorkloadType Memcached = new InferredWorkloadType("Memcached");
+        /// <summary>
+        /// Constant Nginx for InferredWorkloadType
+        /// </summary>
+        public static readonly InferredWorkloadType Nginx = new InferredWorkloadType("Nginx");
+        /// <summary>
+        /// Constant PostgreSql for InferredWorkloadType
+        /// </summary>
+        public static readonly InferredWorkloadType PostgreSql = new InferredWorkloadType("PostgreSql");
+        /// <summary>
+        /// Constant Redis for InferredWorkloadType
+        /// </summary>
+        public static readonly InferredWorkloadType Redis = new InferredWorkloadType("Redis");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InferredWorkloadType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InferredWorkloadType FindValue(string value)
+        {
+            return FindValue<InferredWorkloadType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InferredWorkloadType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type InferredWorkloadTypesPreference.
+    /// </summary>
+    public class InferredWorkloadTypesPreference : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Active for InferredWorkloadTypesPreference
+        /// </summary>
+        public static readonly InferredWorkloadTypesPreference Active = new InferredWorkloadTypesPreference("Active");
+        /// <summary>
+        /// Constant Inactive for InferredWorkloadTypesPreference
+        /// </summary>
+        public static readonly InferredWorkloadTypesPreference Inactive = new InferredWorkloadTypesPreference("Inactive");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InferredWorkloadTypesPreference(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InferredWorkloadTypesPreference FindValue(string value)
+        {
+            return FindValue<InferredWorkloadTypesPreference>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InferredWorkloadTypesPreference(string value)
         {
             return FindValue(value);
         }
@@ -2149,6 +2293,64 @@ namespace Amazon.ComputeOptimizer
 
 
     /// <summary>
+    /// Constants used for properties of type MigrationEffort.
+    /// </summary>
+    public class MigrationEffort : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant High for MigrationEffort
+        /// </summary>
+        public static readonly MigrationEffort High = new MigrationEffort("High");
+        /// <summary>
+        /// Constant Low for MigrationEffort
+        /// </summary>
+        public static readonly MigrationEffort Low = new MigrationEffort("Low");
+        /// <summary>
+        /// Constant Medium for MigrationEffort
+        /// </summary>
+        public static readonly MigrationEffort Medium = new MigrationEffort("Medium");
+        /// <summary>
+        /// Constant VeryLow for MigrationEffort
+        /// </summary>
+        public static readonly MigrationEffort VeryLow = new MigrationEffort("VeryLow");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MigrationEffort(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MigrationEffort FindValue(string value)
+        {
+            return FindValue<MigrationEffort>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MigrationEffort(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type PlatformDifference.
     /// </summary>
     public class PlatformDifference : ConstantClass
@@ -2224,6 +2426,10 @@ namespace Amazon.ComputeOptimizer
         /// Constant EnhancedInfrastructureMetrics for RecommendationPreferenceName
         /// </summary>
         public static readonly RecommendationPreferenceName EnhancedInfrastructureMetrics = new RecommendationPreferenceName("EnhancedInfrastructureMetrics");
+        /// <summary>
+        /// Constant InferredWorkloadTypes for RecommendationPreferenceName
+        /// </summary>
+        public static readonly RecommendationPreferenceName InferredWorkloadTypes = new RecommendationPreferenceName("InferredWorkloadTypes");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -2340,6 +2546,10 @@ namespace Amazon.ComputeOptimizer
         /// Constant LambdaFunction for ResourceType
         /// </summary>
         public static readonly ResourceType LambdaFunction = new ResourceType("LambdaFunction");
+        /// <summary>
+        /// Constant NotApplicable for ResourceType
+        /// </summary>
+        public static readonly ResourceType NotApplicable = new ResourceType("NotApplicable");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

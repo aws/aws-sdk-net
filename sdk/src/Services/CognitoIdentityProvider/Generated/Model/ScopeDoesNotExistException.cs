@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// This exception is thrown when the specified scope does not exist.
+    /// This exception is thrown when the specified scope doesn't exist.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
