@@ -285,8 +285,7 @@ namespace Amazon.Runtime
             if (request.OriginalRequest != null)
                 request.OriginalRequest.FireBeforeRequestEvent(this, args);
 
-            if (BeforeRequestEvent != null)
-                BeforeRequestEvent(this, args);
+            BeforeRequestEvent?.Invoke(this, args);
         }
 
         protected void ProcessResponseHandlers(IExecutionContext executionContext)
