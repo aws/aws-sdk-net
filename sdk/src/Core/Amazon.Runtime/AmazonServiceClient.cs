@@ -31,7 +31,7 @@ namespace Amazon.Runtime
 {
     public abstract class AmazonServiceClient : IDisposable
     {
-        private object _lock = new object();
+        private readonly object _lock = new object();
         private bool _disposed;
         private Logger _logger;
         protected EndpointDiscoveryResolverBase EndpointDiscoveryResolver { get; private set; }
