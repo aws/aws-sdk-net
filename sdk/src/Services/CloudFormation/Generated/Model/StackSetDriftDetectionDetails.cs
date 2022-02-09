@@ -34,8 +34,7 @@ namespace Amazon.CloudFormation.Model
     ///  
     /// <para>
     /// For stack sets, contains information about the last <i>completed</i> drift operation
-    /// performed on the stack set. Information about drift operations in-progress is not
-    /// included. 
+    /// performed on the stack set. Information about drift operations in-progress isn't included.
     /// </para>
     ///  
     /// <para>
@@ -45,7 +44,7 @@ namespace Amazon.CloudFormation.Model
     ///  
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting
-    /// Unmanaged Changes in Stack Sets</a> in the <i>CloudFormation User Guide</i>.
+    /// unmanaged changes in stack sets</a> in the <i>CloudFormation User Guide</i>.
     /// </para>
     /// </summary>
     public partial class StackSetDriftDetectionDetails
@@ -72,7 +71,7 @@ namespace Amazon.CloudFormation.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>FAILED</code>: The drift detection operation exceeded the specified failure
-        /// tolerance. 
+        /// tolerance.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -85,7 +84,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>STOPPED</code>: The user has cancelled the drift detection operation.
+        ///  <code>STOPPED</code>: The user has canceled the drift detection operation.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -106,7 +105,7 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// The number of stack instances that have drifted from the expected template and parameter
         /// configuration of the stack set. A stack instance is considered to have drifted if
-        /// one or more of the resources in the associated stack do not match their expected configuration.
+        /// one or more of the resources in the associated stack don't match their expected configuration.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -138,7 +137,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NOT_CHECKED</code>: CloudFormation has not checked the stack set for drift.
+        ///  <code>NOT_CHECKED</code>: CloudFormation hasn't checked the stack set for drift.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -222,7 +221,7 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// Most recent time when CloudFormation performed a drift detection operation on the
         /// stack set. This value will be <code>NULL</code> for any stack set on which drift detection
-        /// has not yet been performed.
+        /// hasn't yet been performed.
         /// </para>
         /// </summary>
         public DateTime LastDriftCheckTimestamp
@@ -240,7 +239,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property TotalStackInstancesCount. 
         /// <para>
-        /// The total number of stack instances belonging to this stack set. 
+        /// The total number of stack instances belonging to this stack set.
         /// </para>
         ///  
         /// <para>
@@ -248,11 +247,11 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Stack instances that match the stack set configuration. 
+        /// Stack instances that match the stack set configuration.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Stack instances that have drifted from the stack set configuration. 
+        /// Stack instances that have drifted from the stack set configuration.
         /// </para>
         ///  </li> <li> 
         /// <para>

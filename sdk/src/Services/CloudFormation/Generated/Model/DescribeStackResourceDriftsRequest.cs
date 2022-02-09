@@ -38,8 +38,8 @@ namespace Amazon.CloudFormation.Model
     /// <para>
     /// For a given stack, there will be one <code>StackResourceDrift</code> for each stack
     /// resource that has been checked for drift. Resources that haven't yet been checked
-    /// for drift are not included. Resources that do not currently support drift detection
-    /// are not checked, and so not included. For a list of resources that support drift detection,
+    /// for drift aren't included. Resources that don't currently support drift detection
+    /// aren't checked, and so not included. For a list of resources that support drift detection,
     /// see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources
     /// that Support Drift Detection</a>.
     /// </para>
@@ -134,12 +134,12 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>IN_SYNC</code>: The resources's actual configuration matches its expected template
+        ///  <code>IN_SYNC</code>: The resource's actual configuration matches its expected template
         /// configuration.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NOT_CHECKED</code>: CloudFormation does not currently return this value.
+        ///  <code>NOT_CHECKED</code>: CloudFormation doesn't currently return this value.
         /// </para>
         ///  </li> </ul>
         /// </summary>

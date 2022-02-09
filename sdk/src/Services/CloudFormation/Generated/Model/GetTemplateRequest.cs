@@ -35,12 +35,12 @@ namespace Amazon.CloudFormation.Model
     /// 
     ///  
     /// <para>
-    /// For deleted stacks, GetTemplate returns the template for up to 90 days after the stack
-    /// has been deleted.
+    /// For deleted stacks, <code>GetTemplate</code> returns the template for up to 90 days
+    /// after the stack has been deleted.
     /// </para>
     ///  <note> 
     /// <para>
-    /// If the template does not exist, a <code>ValidationError</code> is returned.
+    /// If the template doesn't exist, a <code>ValidationError</code> is returned.
     /// </para>
     ///  </note>
     /// </summary>
@@ -73,7 +73,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property StackName. 
         /// <para>
-        /// The name or the unique stack ID that is associated with the stack, which are not always
+        /// The name or the unique stack ID that's associated with the stack, which aren't always
         /// interchangeable:
         /// </para>
         ///  <ul> <li> 

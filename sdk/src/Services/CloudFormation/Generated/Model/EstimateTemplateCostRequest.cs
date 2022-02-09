@@ -87,8 +87,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property TemplateURL. 
         /// <para>
-        /// Location of file containing the template body. The URL must point to a template that
-        /// is located in an Amazon S3 bucket or a Systems Manager document. For more information,
+        /// Location of file containing the template body. The URL must point to a template that's
+        /// located in an Amazon S3 bucket or a Systems Manager document. For more information,
         /// go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
         /// Anatomy</a> in the CloudFormation User Guide.
         /// </para>

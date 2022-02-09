@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// The specified extension does not exist in the CloudFormation registry.
+    /// The specified extension doesn't exist in the CloudFormation registry.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

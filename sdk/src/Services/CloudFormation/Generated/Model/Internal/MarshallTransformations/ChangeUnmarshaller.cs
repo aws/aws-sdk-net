@@ -54,6 +54,12 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("HookInvocationCount", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.HookInvocationCount = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("ResourceChange", targetDepth))
                     {
                         var unmarshaller = ResourceChangeUnmarshaller.Instance;

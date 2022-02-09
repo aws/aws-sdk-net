@@ -43,7 +43,7 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property CausingEntity. 
         /// <para>
         /// The identity of the entity that triggered this change. This entity is a member of
-        /// the group that is specified by the <code>ChangeSource</code> field. For example, if
+        /// the group that's specified by the <code>ChangeSource</code> field. For example, if
         /// you modified the value of the <code>KeyPairName</code> parameter, the <code>CausingEntity</code>
         /// is the name of the parameter (<code>KeyPairName</code>).
         /// </para>
@@ -131,10 +131,10 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// For <code>Dynamic</code> evaluations, cannot determine the target value because it
+        /// For <code>Dynamic</code> evaluations, can't determine the target value because it
         /// depends on the result of an intrinsic function, such as a <code>Ref</code> or <code>Fn::GetAtt</code>
         /// intrinsic function, when the stack is updated. For example, if your template includes
-        /// a reference to a resource that is conditionally recreated, the value of the reference
+        /// a reference to a resource that's conditionally recreated, the value of the reference
         /// (the physical ID of the resource) might change, depending on if the resource is recreated.
         /// If the resource is recreated, it will have a new physical ID, so all references to
         /// that resource will also be updated.

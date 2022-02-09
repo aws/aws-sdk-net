@@ -47,13 +47,13 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property LogicalIdHierarchy. 
         /// <para>
-        /// A concantenated list of the logical IDs of the module or modules containing the resource.
+        /// A concatenated list of the logical IDs of the module or modules containing the resource.
         /// Modules are listed starting with the inner-most nested module, and separated by <code>/</code>.
         /// </para>
         ///  
         /// <para>
         /// In the following example, the resource was created from a module, <code>moduleA</code>,
-        /// that is nested inside a parent module, <code>moduleB</code>.
+        /// that's nested inside a parent module, <code>moduleB</code>.
         /// </para>
         ///  
         /// <para>
@@ -80,13 +80,13 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property TypeHierarchy. 
         /// <para>
-        /// A concantenated list of the the module type or types containing the resource. Module
-        /// types are listed starting with the inner-most nested module, and separated by <code>/</code>.
+        /// A concatenated list of the module type or types containing the resource. Module types
+        /// are listed starting with the inner-most nested module, and separated by <code>/</code>.
         /// </para>
         ///  
         /// <para>
         /// In the following example, the resource was created from a module of type <code>AWS::First::Example::MODULE</code>,
-        /// that is nested inside a parent module of type <code>AWS::Second::Example::MODULE</code>.
+        /// that's nested inside a parent module of type <code>AWS::Second::Example::MODULE</code>.
         /// </para>
         ///  
         /// <para>

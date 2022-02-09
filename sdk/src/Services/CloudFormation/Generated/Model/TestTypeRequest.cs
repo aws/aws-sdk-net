@@ -48,7 +48,7 @@ namespace Amazon.CloudFormation.Model
     /// </para>
     ///  
     /// <para>
-    /// If you do not specify a version, CloudFormation uses the default version of the extension
+    /// If you don't specify a version, CloudFormation uses the default version of the extension
     /// in your account and region for testing.
     /// </para>
     ///  
@@ -81,7 +81,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Number (ARN) of the extension.
+        /// The Amazon Resource Name (ARN) of the extension.
         /// </para>
         ///  
         /// <para>
@@ -118,11 +118,11 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// GetObject
+        ///  <code>GetObject</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// PutObject
+        ///  <code>PutObject</code> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -201,7 +201,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// If you do not specify a version, CloudFormation uses the default version of the extension
+        /// If you don't specify a version, CloudFormation uses the default version of the extension
         /// in this account and region for testing.
         /// </para>
         /// </summary>

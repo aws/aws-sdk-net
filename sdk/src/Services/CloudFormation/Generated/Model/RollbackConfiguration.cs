@@ -59,7 +59,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// If you specify a monitoring period but do not specify any rollback triggers, CloudFormation
+        /// If you specify a monitoring period but don't specify any rollback triggers, CloudFormation
         /// still waits the specified period of time before cleaning up old resources after update
         /// operations. You can use this monitoring period to perform any manual stack validation
         /// desired, and manually cancel the stack creation or update (using <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CancelUpdateStack.html">CancelUpdateStack</a>,
@@ -88,7 +88,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property RollbackTriggers. 
         /// <para>
-        /// The triggers to monitor during stack creation or update actions. 
+        /// The triggers to monitor during stack creation or update actions.
         /// </para>
         ///  
         /// <para>
@@ -105,7 +105,7 @@ namespace Amazon.CloudFormation.Model
         ///  </li> <li> 
         /// <para>
         /// To specify new or updated rollback triggers, you must specify <i>all</i> the triggers
-        /// that you want used for this stack, even triggers you've specifed before (for example,
+        /// that you want used for this stack, even triggers you've specified before (for example,
         /// when creating the stack or during a previous stack update). Any triggers that you
         /// don't include in the updated list of triggers are no longer applied to the stack.
         /// </para>
@@ -116,7 +116,7 @@ namespace Amazon.CloudFormation.Model
         ///  </li> </ul> 
         /// <para>
         /// If a specified trigger is missing, the entire stack operation fails and is rolled
-        /// back. 
+        /// back.
         /// </para>
         /// </summary>
         [AWSProperty(Max=5)]

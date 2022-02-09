@@ -40,7 +40,7 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// If the output exceeds 1 MB, a string that identifies the next page of change sets.
-        /// If there is no additional page, this value is null.
+        /// If there is no additional page, this value is <code>null</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

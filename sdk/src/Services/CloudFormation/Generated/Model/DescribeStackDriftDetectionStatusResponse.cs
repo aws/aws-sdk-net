@@ -50,7 +50,7 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         ///  <code>DETECTION_COMPLETE</code>: The stack drift detection operation has successfully
         /// completed for all resources in the stack that support drift detection. (Resources
-        /// that do not currently support stack detection remain unchecked.)
+        /// that don't currently support stack detection remain unchecked.)
         /// </para>
         ///  
         /// <para>
@@ -159,7 +159,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NOT_CHECKED</code>: CloudFormation has not checked if the stack differs from
+        ///  <code>NOT_CHECKED</code>: CloudFormation hasn't checked if the stack differs from
         /// its expected template configuration.
         /// </para>
         ///  </li> <li> 

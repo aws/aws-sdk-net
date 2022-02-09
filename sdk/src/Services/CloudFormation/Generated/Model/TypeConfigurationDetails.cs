@@ -91,11 +91,11 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property Configuration. 
         /// <para>
         /// A JSON string specifying the configuration data for the extension, in this account
-        /// and region. 
+        /// and region.
         /// </para>
         ///  
         /// <para>
-        /// If a configuration has not been set for a specified extension, CloudFormation returns
+        /// If a configuration hasn't been set for a specified extension, CloudFormation returns
         /// <code>{}</code>.
         /// </para>
         /// </summary>
@@ -137,7 +137,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// If a configuration has not been set for a specified extension, CloudFormation returns
+        /// If a configuration hasn't been set for a specified extension, CloudFormation returns
         /// <code>null</code>.
         /// </para>
         /// </summary>
@@ -163,7 +163,7 @@ namespace Amazon.CloudFormation.Model
         /// For public extensions, this will be the ARN assigned when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate
         /// the type</a> in this account and region. For private extensions, this will be the
         /// ARN assigned when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">register
-        /// the type</a> in this account and region. 
+        /// the type</a> in this account and region.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]

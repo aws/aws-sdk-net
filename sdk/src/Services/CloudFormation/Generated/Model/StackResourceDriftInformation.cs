@@ -78,11 +78,11 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// Any resources that do not currently support drift detection have a status of <code>NOT_CHECKED</code>.
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources
-        /// that Support Drift Detection</a>. 
+        /// that Support Drift Detection</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>IN_SYNC</code>: The resources's actual configuration matches its expected configuration.
+        ///  <code>IN_SYNC</code>: The resource's actual configuration matches its expected configuration.
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -61,7 +61,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property RegistrationTokenList. 
         /// <para>
-        ///  A list of extension registration tokens.
+        /// A list of extension registration tokens.
         /// </para>
         ///  
         /// <para>

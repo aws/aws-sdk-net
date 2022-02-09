@@ -50,7 +50,7 @@ namespace Amazon.CloudFormation.Model
         /// The action that CloudFormation takes on the resource, such as <code>Add</code> (adds
         /// a new resource), <code>Modify</code> (changes a resource), <code>Remove</code> (deletes
         /// a resource), <code>Import</code> (imports a resource), or <code>Dynamic</code> (exact
-        /// action for the resource cannot be determined).
+        /// action for the resource can't be determined).
         /// </para>
         /// </summary>
         public ChangeAction Action
@@ -88,7 +88,7 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property Details. 
         /// <para>
         /// For the <code>Modify</code> action, a list of <code>ResourceChangeDetail</code> structures
-        /// that describes the changes that CloudFormation will make to the resource. 
+        /// that describes the changes that CloudFormation will make to the resource.
         /// </para>
         /// </summary>
         public List<ResourceChangeDetail> Details

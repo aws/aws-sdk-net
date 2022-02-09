@@ -32,7 +32,7 @@ namespace Amazon.CloudFormation.Model
     /// Container for the parameters to the RollbackStack operation.
     /// When specifying <code>RollbackStack</code>, you preserve the state of previously provisioned
     /// resources when an operation fails. You can check the status of the stack through the
-    /// <a>DescribeStacks</a> API.
+    /// <a>DescribeStacks</a> operation.
     /// 
     ///  
     /// <para>
@@ -115,7 +115,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property StackName. 
         /// <para>
-        /// The name that is associated with the stack.
+        /// The name that's associated with the stack.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]

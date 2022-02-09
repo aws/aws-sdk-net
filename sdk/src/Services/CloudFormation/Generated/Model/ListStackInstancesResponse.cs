@@ -39,8 +39,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If the request doesn't return all of the remaining results, <code>NextToken</code>
-        /// is set to a token. To retrieve the next set of results, call <code>ListStackInstances</code>
+        /// If the request doesn't return all the remaining results, <code>NextToken</code> is
+        /// set to a token. To retrieve the next set of results, call <code>ListStackInstances</code>
         /// again and assign that token to the request object's <code>NextToken</code> parameter.
         /// If the request returns all results, <code>NextToken</code> is set to <code>null</code>.
         /// </para>

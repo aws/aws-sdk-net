@@ -61,7 +61,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description that is associate with the parameter.
+        /// The description that's associate with the parameter.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -117,7 +117,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property ParameterKey. 
         /// <para>
-        /// The name that is associated with the parameter.
+        /// The name that's associated with the parameter.
         /// </para>
         /// </summary>
         public string ParameterKey

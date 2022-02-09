@@ -34,8 +34,29 @@ namespace Amazon.CloudFormation.Model
     /// </summary>
     public partial class Change
     {
+        private int? _hookInvocationCount;
         private ResourceChange _resourceChange;
         private ChangeType _type;
+
+        /// <summary>
+        /// Gets and sets the property HookInvocationCount. 
+        /// <para>
+        /// Is either <code>null</code>, if no hooks invoke for the resource, or contains the
+        /// number of hooks that will invoke for the resource.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=100)]
+        public int HookInvocationCount
+        {
+            get { return this._hookInvocationCount.GetValueOrDefault(); }
+            set { this._hookInvocationCount = value; }
+        }
+
+        // Check to see if HookInvocationCount property is set
+        internal bool IsSetHookInvocationCount()
+        {
+            return this._hookInvocationCount.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property ResourceChange. 

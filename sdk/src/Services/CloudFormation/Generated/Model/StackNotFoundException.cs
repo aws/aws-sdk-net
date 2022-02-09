@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// The specified stack ARN doesn’t exist or stack doesn’t exist corresponding to the
+    /// The specified stack ARN doesn't exist or stack doesn't exist corresponding to the
     /// ARN in input.
     /// </summary>
     #if !NETSTANDARD

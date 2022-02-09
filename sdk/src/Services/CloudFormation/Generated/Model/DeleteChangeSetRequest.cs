@@ -73,8 +73,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property StackName. 
         /// <para>
-        /// If you specified the name of a change set to delete, specify the stack name or ID
-        /// (ARN) that is associated with it.
+        /// If you specified the name of a change set to delete, specify the stack name or Amazon
+        /// Resource Name (ARN) that's associated with it.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

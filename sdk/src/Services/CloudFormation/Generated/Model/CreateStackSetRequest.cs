@@ -54,7 +54,6 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property AdministrationRoleARN. 
         /// <para>
         /// The Amazon Resource Number (ARN) of the IAM role to use to create this stack set.
-        /// 
         /// </para>
         ///  
         /// <para>
@@ -196,8 +195,8 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
-        /// AWS::IAM::InstanceProfile</a> 
+        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS::IAM::InstanceProfile</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -216,8 +215,8 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
-        /// AWS::IAM::UserToGroupAddition</a> 
+        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>
+        /// 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -238,7 +237,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  <important> 
         /// <para>
-        /// Stack sets with service-managed permissions do not currently support the use of macros
+        /// Stack sets with service-managed permissions don't currently support the use of macros
         /// in templates. (This includes the <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
         /// and <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
         /// transforms, which are macros hosted by CloudFormation.) Even if you specify this capability
@@ -315,7 +314,7 @@ namespace Amazon.CloudFormation.Model
         ///  
         /// <para>
         /// Specify an IAM role only if you are using customized execution roles to control which
-        /// stack resources users and groups can include in their stack sets. 
+        /// stack resources users and groups can include in their stack sets.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

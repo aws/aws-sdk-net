@@ -117,7 +117,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The kind of extension. 
+        /// The kind of extension.
         /// </para>
         ///  
         /// <para>

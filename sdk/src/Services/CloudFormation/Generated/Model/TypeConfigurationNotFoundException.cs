@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// The specified extension configuration cannot be found.
+    /// The specified extension configuration can't be found.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -66,6 +66,36 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         unmarshalledObject.EventId = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("HookFailureMode", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.HookFailureMode = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("HookInvocationPoint", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.HookInvocationPoint = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("HookStatus", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.HookStatus = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("HookStatusReason", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.HookStatusReason = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("HookType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.HookType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("LogicalResourceId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

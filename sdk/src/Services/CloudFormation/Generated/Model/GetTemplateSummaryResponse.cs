@@ -110,7 +110,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The value that is defined in the <code>Description</code> property of the template.
+        /// The value that's defined in the <code>Description</code> property of the template.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -129,7 +129,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Metadata. 
         /// <para>
-        /// The value that is defined for the <code>Metadata</code> property of the template.
+        /// The value that's defined for the <code>Metadata</code> property of the template.
         /// </para>
         /// </summary>
         public string Metadata

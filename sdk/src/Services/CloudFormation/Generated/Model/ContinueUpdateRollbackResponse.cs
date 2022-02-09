@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// The output for a <a>ContinueUpdateRollback</a> action.
+    /// The output for a <a>ContinueUpdateRollback</a> operation.
     /// </summary>
     public partial class ContinueUpdateRollbackResponse : AmazonWebServiceResponse
     {

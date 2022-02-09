@@ -97,12 +97,12 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NOT_CHECKED</code>: CloudFormation has not checked the stack set for drift.
+        ///  <code>NOT_CHECKED</code>: CloudFormation hasn't checked the stack set for drift.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>IN_SYNC</code>: All of the stack instances belonging to the stack set stack
-        /// match from the expected template and parameter configuration.
+        ///  <code>IN_SYNC</code>: All the stack instances belonging to the stack set stack match
+        /// from the expected template and parameter configuration.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -127,7 +127,7 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// Most recent time when CloudFormation performed a drift detection operation on the
         /// stack set. This value will be <code>NULL</code> for any stack set on which drift detection
-        /// has not yet been performed.
+        /// hasn't yet been performed.
         /// </para>
         /// </summary>
         public DateTime LastDriftCheckTimestamp

@@ -37,7 +37,7 @@ namespace Amazon.CloudFormation.Model
     /// 
     ///  
     /// <para>
-    /// Resources that do not currently support drift detection cannot be checked. For a list
+    /// Resources that don't currently support drift detection can't be checked. For a list
     /// of resources that support drift detection, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources
     /// that Support Drift Detection</a>.
     /// </para>
@@ -69,7 +69,7 @@ namespace Amazon.CloudFormation.Model
         ///  
         /// <para>
         /// For resources whose <code>StackResourceDriftStatus</code> is <code>DELETED</code>,
-        /// this structure will not be present. 
+        /// this structure will not be present.
         /// </para>
         /// </summary>
         public string ActualProperties
@@ -88,12 +88,12 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property ExpectedProperties. 
         /// <para>
         /// A JSON structure containing the expected property values of the stack resource, as
-        /// defined in the stack template and any values specified as template parameters. 
+        /// defined in the stack template and any values specified as template parameters.
         /// </para>
         ///  
         /// <para>
         /// For resources whose <code>StackResourceDriftStatus</code> is <code>DELETED</code>,
-        /// this structure will not be present. 
+        /// this structure will not be present.
         /// </para>
         /// </summary>
         public string ExpectedProperties
@@ -150,7 +150,7 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property PhysicalResourceId. 
         /// <para>
         /// The name or unique identifier that corresponds to a physical instance ID of a resource
-        /// supported by CloudFormation. 
+        /// supported by CloudFormation.
         /// </para>
         /// </summary>
         public string PhysicalResourceId
@@ -170,7 +170,7 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// Context information that enables CloudFormation to uniquely identify a resource. CloudFormation
         /// uses context key-value pairs in cases where a resource's logical and physical IDs
-        /// are not enough to uniquely identify that resource. Each context key-value pair specifies
+        /// aren't enough to uniquely identify that resource. Each context key-value pair specifies
         /// a unique resource that contains the targeted resource.
         /// </para>
         /// </summary>
@@ -192,7 +192,7 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// A collection of the resource properties whose actual values differ from their expected
         /// values. These will be present only for resources whose <code>StackResourceDriftStatus</code>
-        /// is <code>MODIFIED</code>. 
+        /// is <code>MODIFIED</code>.
         /// </para>
         /// </summary>
         public List<PropertyDifference> PropertyDifferences
@@ -248,7 +248,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property StackResourceDriftStatus. 
         /// <para>
-        /// Status of the resource's actual configuration compared to its expected configuration
+        /// Status of the resource's actual configuration compared to its expected configuration.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -262,7 +262,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>IN_SYNC</code>: The resources's actual configuration matches its expected template
+        ///  <code>IN_SYNC</code>: The resource's actual configuration matches its expected template
         /// configuration.
         /// </para>
         ///  </li> <li> 

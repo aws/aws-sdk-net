@@ -170,7 +170,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property StackInstanceRegion. 
         /// <para>
-        /// The name of the Region where you want to list stack instances. 
+        /// The name of the Region where you want to list stack instances.
         /// </para>
         /// </summary>
         public string StackInstanceRegion

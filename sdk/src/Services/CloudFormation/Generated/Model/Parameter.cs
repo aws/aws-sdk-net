@@ -42,7 +42,7 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property ParameterKey. 
         /// <para>
         /// The key associated with the parameter. If you don't specify a key and value for a
-        /// particular parameter, CloudFormation uses the default value that is specified in your
+        /// particular parameter, CloudFormation uses the default value that's specified in your
         /// template.
         /// </para>
         /// </summary>
@@ -79,8 +79,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property ResolvedValue. 
         /// <para>
-        /// Read-only. Read-only. The value that corresponds to a SSM parameter key. This field
-        /// is returned only for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html#aws-ssm-parameter-types">
+        /// Read-only. The value that corresponds to a SSM parameter key. This field is returned
+        /// only for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html#aws-ssm-parameter-types">
         /// <code>SSM</code> </a> parameter types in the template.
         /// </para>
         /// </summary>

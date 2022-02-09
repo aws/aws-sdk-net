@@ -31,18 +31,17 @@ namespace Amazon.CloudFormation.Model
     /// <summary>
     /// Container for the parameters to the UpdateStackInstances operation.
     /// Updates the parameter values for stack instances for the specified accounts, within
-    /// the specified Regions. A stack instance refers to a stack in a specific account and
-    /// Region. 
+    /// the specified Amazon Web Services Regions. A stack instance refers to a stack in a
+    /// specific account and Region.
     /// 
     ///  
     /// <para>
-    /// You can only update stack instances in Regions and accounts where they already exist;
-    /// to create additional stack instances, use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateStackInstances.html">CreateStackInstances</a>.
-    /// 
+    /// You can only update stack instances in Amazon Web Services Regions and accounts where
+    /// they already exist; to create additional stack instances, use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateStackInstances.html">CreateStackInstances</a>.
     /// </para>
     ///  
     /// <para>
-    /// During stack set updates, any parameters overridden for a stack instance are not updated,
+    /// During stack set updates, any parameters overridden for a stack instance aren't updated,
     /// but retain their overridden value.
     /// </para>
     ///  
@@ -73,7 +72,8 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// [Self-managed permissions] The names of one or more Amazon Web Services accounts for
         /// which you want to update parameter values for stack instances. The overridden parameter
-        /// values will be applied to all stack instances in the specified accounts and Regions.
+        /// values will be applied to all stack instances in the specified accounts and Amazon
+        /// Web Services Regions.
         /// </para>
         ///  
         /// <para>
@@ -161,7 +161,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property OperationId. 
         /// <para>
-        /// The unique identifier for this stack set operation. 
+        /// The unique identifier for this stack set operation.
         /// </para>
         ///  
         /// <para>
@@ -172,7 +172,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// If you don't specify an operation ID, the SDK generates one automatically. 
+        /// If you don't specify an operation ID, the SDK generates one automatically.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -209,14 +209,15 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property ParameterOverrides. 
         /// <para>
-        ///  A list of input parameters whose values you want to update for the specified stack
-        /// instances. 
+        /// A list of input parameters whose values you want to update for the specified stack
+        /// instances.
         /// </para>
         ///  
         /// <para>
         /// Any overridden parameter values will be applied to all stack instances in the specified
-        /// accounts and Regions. When specifying parameters and their values, be aware of how
-        /// CloudFormation sets parameter values during stack instance update operations:
+        /// accounts and Amazon Web Services Regions. When specifying parameters and their values,
+        /// be aware of how CloudFormation sets parameter values during stack instance update
+        /// operations:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -226,23 +227,23 @@ namespace Amazon.CloudFormation.Model
         ///  </li> <li> 
         /// <para>
         /// To leave an overridden parameter set to its present value, include the parameter and
-        /// specify <code>UsePreviousValue</code> as <code>true</code>. (You cannot specify both
+        /// specify <code>UsePreviousValue</code> as <code>true</code>. (You can't specify both
         /// a value and set <code>UsePreviousValue</code> to <code>true</code>.)
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// To set an overridden parameter back to the value specified in the stack set, specify
-        /// a parameter list but do not include the parameter in the list.
+        /// a parameter list but don't include the parameter in the list.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// To leave all parameters set to their present values, do not specify this property
-        /// at all.
+        /// To leave all parameters set to their present values, don't specify this property at
+        /// all.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// During stack set updates, any parameter values overridden for a stack instance are
-        /// not updated, but retain their overridden value.
+        /// During stack set updates, any parameter values overridden for a stack instance aren't
+        /// updated, but retain their overridden value.
         /// </para>
         ///  
         /// <para>
@@ -270,9 +271,9 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Regions. 
         /// <para>
-        /// The names of one or more Regions in which you want to update parameter values for
-        /// stack instances. The overridden parameter values will be applied to all stack instances
-        /// in the specified accounts and Regions.
+        /// The names of one or more Amazon Web Services Regions in which you want to update parameter
+        /// values for stack instances. The overridden parameter values will be applied to all
+        /// stack instances in the specified accounts and Amazon Web Services Regions.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

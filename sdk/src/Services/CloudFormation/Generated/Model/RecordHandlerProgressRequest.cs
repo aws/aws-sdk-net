@@ -35,7 +35,7 @@ namespace Amazon.CloudFormation.Model
     ///  
     /// <para>
     /// Reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation
-    /// CLI</a>. Do not use this API in your code.
+    /// CLI</a>. Don't use this API in your code.
     /// </para>
     /// </summary>
     public partial class RecordHandlerProgressRequest : AmazonCloudFormationRequest

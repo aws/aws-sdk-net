@@ -39,7 +39,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property LogGroupName. 
         /// <para>
-        /// The Amazon CloudWatch log group to which CloudFormation sends error logging information
+        /// The Amazon CloudWatch Logs group to which CloudFormation sends error logging information
         /// when invoking the extension's handlers.
         /// </para>
         /// </summary>
@@ -59,8 +59,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property LogRoleArn. 
         /// <para>
-        /// The ARN of the role that CloudFormation should assume when sending log entries to
-        /// CloudWatch logs.
+        /// The Amazon Resource Name (ARN) of the role that CloudFormation should assume when
+        /// sending log entries to CloudWatch Logs.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]

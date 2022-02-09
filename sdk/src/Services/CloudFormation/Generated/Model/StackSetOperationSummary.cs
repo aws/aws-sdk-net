@@ -44,8 +44,8 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// The type of operation: <code>CREATE</code>, <code>UPDATE</code>, or <code>DELETE</code>.
         /// Create and delete operations affect only the specified stack instances that are associated
-        /// with the specified stack set. Update operations affect both the stack set itself as
-        /// well as <i>all</i> associated stack set instances.
+        /// with the specified stack set. Update operations affect both the stack set itself and
+        /// <i>all</i> associated stack set instances.
         /// </para>
         /// </summary>
         public StackSetOperationAction Action
@@ -149,12 +149,11 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>STOPPED</code>: The user has cancelled the operation.
+        ///  <code>STOPPED</code>: The user has canceled the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>STOPPING</code>: The operation is in the process of stopping, at user request.
-        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>

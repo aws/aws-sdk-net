@@ -64,7 +64,7 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property AccountGateResult. 
         /// <para>
         /// The results of the account gate function CloudFormation invokes, if present, before
-        /// proceeding with stack set operations in an account
+        /// proceeding with stack set operations in an account.
         /// </para>
         /// </summary>
         public AccountGateResult AccountGateResult
@@ -124,17 +124,17 @@ namespace Amazon.CloudFormation.Model
         ///  <ul> <li> 
         /// <para>
         ///  <code>CANCELLED</code>: The operation in the specified account and Region has been
-        /// cancelled. This is either because a user has stopped the stack set operation, or because
+        /// canceled. This is either because a user has stopped the stack set operation, or because
         /// the failure tolerance of the stack set operation has been exceeded.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FAILED</code>: The operation in the specified account and Region failed. 
+        ///  <code>FAILED</code>: The operation in the specified account and Region failed.
         /// </para>
         ///  
         /// <para>
         /// If the stack set operation fails in enough accounts within a Region, the failure tolerance
-        /// for the stack set operation as a whole might be exceeded. 
+        /// for the stack set operation as a whole might be exceeded.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -144,7 +144,7 @@ namespace Amazon.CloudFormation.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>PENDING</code>: The operation in the specified account and Region has yet to
-        /// start. 
+        /// start.
         /// </para>
         ///  </li> <li> 
         /// <para>

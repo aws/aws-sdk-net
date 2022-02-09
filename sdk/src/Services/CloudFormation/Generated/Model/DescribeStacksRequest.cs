@@ -35,7 +35,7 @@ namespace Amazon.CloudFormation.Model
     /// 
     ///  <note> 
     /// <para>
-    /// If the stack does not exist, an <code>ValidationError</code> is returned.
+    /// If the stack doesn't exist, an <code>ValidationError</code> is returned.
     /// </para>
     ///  </note>
     /// </summary>
@@ -66,7 +66,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property StackName. 
         /// <para>
-        /// The name or the unique stack ID that is associated with the stack, which are not always
+        /// The name or the unique stack ID that's associated with the stack, which aren't always
         /// interchangeable:
         /// </para>
         ///  <ul> <li> 
