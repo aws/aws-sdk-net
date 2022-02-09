@@ -26,7 +26,7 @@ namespace Amazon.Runtime.Internal.Auth
 
     public abstract class AbstractAWSSigner
     {
-        private object _lock = new object();
+        private readonly object _lock = new object();
         private AWS4Signer _aws4Signer;
         private AWS4Signer AWS4SignerInstance
         {
