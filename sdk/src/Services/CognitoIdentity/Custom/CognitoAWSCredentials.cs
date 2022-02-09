@@ -31,7 +31,7 @@ namespace Amazon.CognitoIdentity
     public partial class CognitoAWSCredentials : RefreshingAWSCredentials
     {
         #region Private members
-        private object _lock = new object();
+        private readonly object _lock = new object();
         private static object refreshIdLock = new object();
         private string identityId;
         private static int DefaultDurationSeconds = (int)TimeSpan.FromHours(1).TotalSeconds;
