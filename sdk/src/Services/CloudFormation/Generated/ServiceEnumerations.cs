@@ -831,6 +831,10 @@ namespace Amazon.CloudFormation
         /// </summary>
         public static readonly HandlerErrorCode GeneralServiceException = new HandlerErrorCode("GeneralServiceException");
         /// <summary>
+        /// Constant HandlerInternalFailure for HandlerErrorCode
+        /// </summary>
+        public static readonly HandlerErrorCode HandlerInternalFailure = new HandlerErrorCode("HandlerInternalFailure");
+        /// <summary>
         /// Constant InternalFailure for HandlerErrorCode
         /// </summary>
         public static readonly HandlerErrorCode InternalFailure = new HandlerErrorCode("InternalFailure");
@@ -850,6 +854,10 @@ namespace Amazon.CloudFormation
         /// Constant NetworkFailure for HandlerErrorCode
         /// </summary>
         public static readonly HandlerErrorCode NetworkFailure = new HandlerErrorCode("NetworkFailure");
+        /// <summary>
+        /// Constant NonCompliant for HandlerErrorCode
+        /// </summary>
+        public static readonly HandlerErrorCode NonCompliant = new HandlerErrorCode("NonCompliant");
         /// <summary>
         /// Constant NotFound for HandlerErrorCode
         /// </summary>
@@ -878,6 +886,10 @@ namespace Amazon.CloudFormation
         /// Constant Throttling for HandlerErrorCode
         /// </summary>
         public static readonly HandlerErrorCode Throttling = new HandlerErrorCode("Throttling");
+        /// <summary>
+        /// Constant Unknown for HandlerErrorCode
+        /// </summary>
+        public static readonly HandlerErrorCode Unknown = new HandlerErrorCode("Unknown");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
