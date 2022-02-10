@@ -2855,7 +2855,7 @@ namespace Amazon.SimpleNotificationService
         ///  
         /// <para>
         /// When a <code>messageId</code> is returned, the message is saved and Amazon SNS immediately
-        /// deliverers it to subscribers.
+        /// delivers it to subscribers.
         /// </para>
         ///  
         /// <para>
@@ -2951,7 +2951,7 @@ namespace Amazon.SimpleNotificationService
         ///  
         /// <para>
         /// When a <code>messageId</code> is returned, the message is saved and Amazon SNS immediately
-        /// deliverers it to subscribers.
+        /// delivers it to subscribers.
         /// </para>
         ///  
         /// <para>
@@ -3049,7 +3049,7 @@ namespace Amazon.SimpleNotificationService
         ///  
         /// <para>
         /// When a <code>messageId</code> is returned, the message is saved and Amazon SNS immediately
-        /// deliverers it to subscribers.
+        /// delivers it to subscribers.
         /// </para>
         ///  
         /// <para>
