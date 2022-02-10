@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetWebACL operation
+    /// Response Unmarshaller for GenerateMobileSdkReleaseUrl operation
     /// </summary>  
-    public class GetWebACLResponseUnmarshaller : JsonResponseUnmarshaller
+    public class GenerateMobileSdkReleaseUrlResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,28 +45,16 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetWebACLResponse response = new GetWebACLResponse();
+            GenerateMobileSdkReleaseUrlResponse response = new GenerateMobileSdkReleaseUrlResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ApplicationIntegrationURL", targetDepth))
+                if (context.TestExpression("Url", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.ApplicationIntegrationURL = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("LockToken", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.LockToken = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("WebACL", targetDepth))
-                {
-                    var unmarshaller = WebACLUnmarshaller.Instance;
-                    response.WebACL = unmarshaller.Unmarshall(context);
+                    response.Url = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -112,9 +100,9 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             return new AmazonWAFV2Exception(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static GetWebACLResponseUnmarshaller _instance = new GetWebACLResponseUnmarshaller();        
+        private static GenerateMobileSdkReleaseUrlResponseUnmarshaller _instance = new GenerateMobileSdkReleaseUrlResponseUnmarshaller();        
 
-        internal static GetWebACLResponseUnmarshaller GetInstance()
+        internal static GenerateMobileSdkReleaseUrlResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -122,7 +110,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetWebACLResponseUnmarshaller Instance
+        public static GenerateMobileSdkReleaseUrlResponseUnmarshaller Instance
         {
             get
             {

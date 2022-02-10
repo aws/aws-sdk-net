@@ -2543,6 +2543,131 @@ namespace Amazon.WAFV2
 
         #endregion
         
+        #region  GenerateMobileSdkReleaseUrl
+
+
+        /// <summary>
+        /// Generates a presigned download URL for the specified release of the mobile SDK.
+        /// 
+        ///  
+        /// <para>
+        /// The mobile SDK is not generally available. Customers who have access to the mobile
+        /// SDK can use it to establish and manage Security Token Service (STS) security tokens
+        /// for use in HTTP(S) requests from a mobile device to WAF. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GenerateMobileSdkReleaseUrl service method.</param>
+        /// 
+        /// <returns>The response from the GenerateMobileSdkReleaseUrl service method, as returned by WAFV2.</returns>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
+        /// problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
+        /// The operation isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified a parameter name or value that isn't valid.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your nested statement isn't valid. You might have tried to nest a statement that can’t
+        /// be nested. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't
+        /// among the types available at <a>DefaultAction</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource with
+        /// which a web ACL can't be associated.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
+        /// WAF couldn’t perform the operation because your resource doesn’t exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GenerateMobileSdkReleaseUrl">REST API Reference for GenerateMobileSdkReleaseUrl Operation</seealso>
+        public virtual GenerateMobileSdkReleaseUrlResponse GenerateMobileSdkReleaseUrl(GenerateMobileSdkReleaseUrlRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GenerateMobileSdkReleaseUrlRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GenerateMobileSdkReleaseUrlResponseUnmarshaller.Instance;
+
+            return Invoke<GenerateMobileSdkReleaseUrlResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Generates a presigned download URL for the specified release of the mobile SDK.
+        /// 
+        ///  
+        /// <para>
+        /// The mobile SDK is not generally available. Customers who have access to the mobile
+        /// SDK can use it to establish and manage Security Token Service (STS) security tokens
+        /// for use in HTTP(S) requests from a mobile device to WAF. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GenerateMobileSdkReleaseUrl service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GenerateMobileSdkReleaseUrl service method, as returned by WAFV2.</returns>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
+        /// problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
+        /// The operation isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified a parameter name or value that isn't valid.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your nested statement isn't valid. You might have tried to nest a statement that can’t
+        /// be nested. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't
+        /// among the types available at <a>DefaultAction</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource with
+        /// which a web ACL can't be associated.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
+        /// WAF couldn’t perform the operation because your resource doesn’t exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GenerateMobileSdkReleaseUrl">REST API Reference for GenerateMobileSdkReleaseUrl Operation</seealso>
+        public virtual Task<GenerateMobileSdkReleaseUrlResponse> GenerateMobileSdkReleaseUrlAsync(GenerateMobileSdkReleaseUrlRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GenerateMobileSdkReleaseUrlRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GenerateMobileSdkReleaseUrlResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GenerateMobileSdkReleaseUrlResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetIPSet
 
 
@@ -2898,6 +3023,133 @@ namespace Amazon.WAFV2
             options.ResponseUnmarshaller = GetManagedRuleSetResponseUnmarshaller.Instance;
             
             return InvokeAsync<GetManagedRuleSetResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetMobileSdkRelease
+
+
+        /// <summary>
+        /// Retrieves information for the specified mobile SDK release, including release notes
+        /// and tags.
+        /// 
+        ///  
+        /// <para>
+        /// The mobile SDK is not generally available. Customers who have access to the mobile
+        /// SDK can use it to establish and manage Security Token Service (STS) security tokens
+        /// for use in HTTP(S) requests from a mobile device to WAF. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMobileSdkRelease service method.</param>
+        /// 
+        /// <returns>The response from the GetMobileSdkRelease service method, as returned by WAFV2.</returns>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
+        /// problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
+        /// The operation isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified a parameter name or value that isn't valid.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your nested statement isn't valid. You might have tried to nest a statement that can’t
+        /// be nested. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't
+        /// among the types available at <a>DefaultAction</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource with
+        /// which a web ACL can't be associated.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
+        /// WAF couldn’t perform the operation because your resource doesn’t exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetMobileSdkRelease">REST API Reference for GetMobileSdkRelease Operation</seealso>
+        public virtual GetMobileSdkReleaseResponse GetMobileSdkRelease(GetMobileSdkReleaseRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMobileSdkReleaseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMobileSdkReleaseResponseUnmarshaller.Instance;
+
+            return Invoke<GetMobileSdkReleaseResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves information for the specified mobile SDK release, including release notes
+        /// and tags.
+        /// 
+        ///  
+        /// <para>
+        /// The mobile SDK is not generally available. Customers who have access to the mobile
+        /// SDK can use it to establish and manage Security Token Service (STS) security tokens
+        /// for use in HTTP(S) requests from a mobile device to WAF. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMobileSdkRelease service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetMobileSdkRelease service method, as returned by WAFV2.</returns>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
+        /// problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
+        /// The operation isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified a parameter name or value that isn't valid.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your nested statement isn't valid. You might have tried to nest a statement that can’t
+        /// be nested. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't
+        /// among the types available at <a>DefaultAction</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource with
+        /// which a web ACL can't be associated.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
+        /// WAF couldn’t perform the operation because your resource doesn’t exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetMobileSdkRelease">REST API Reference for GetMobileSdkRelease Operation</seealso>
+        public virtual Task<GetMobileSdkReleaseResponse> GetMobileSdkReleaseAsync(GetMobileSdkReleaseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMobileSdkReleaseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMobileSdkReleaseResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetMobileSdkReleaseResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4298,6 +4550,127 @@ namespace Amazon.WAFV2
             options.ResponseUnmarshaller = ListManagedRuleSetsResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListManagedRuleSetsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListMobileSdkReleases
+
+
+        /// <summary>
+        /// Retrieves a list of the available releases for the mobile SDK and the specified device
+        /// platform. 
+        /// 
+        ///  
+        /// <para>
+        /// The mobile SDK is not generally available. Customers who have access to the mobile
+        /// SDK can use it to establish and manage Security Token Service (STS) security tokens
+        /// for use in HTTP(S) requests from a mobile device to WAF. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMobileSdkReleases service method.</param>
+        /// 
+        /// <returns>The response from the ListMobileSdkReleases service method, as returned by WAFV2.</returns>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
+        /// problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
+        /// The operation isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified a parameter name or value that isn't valid.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your nested statement isn't valid. You might have tried to nest a statement that can’t
+        /// be nested. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't
+        /// among the types available at <a>DefaultAction</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource with
+        /// which a web ACL can't be associated.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListMobileSdkReleases">REST API Reference for ListMobileSdkReleases Operation</seealso>
+        public virtual ListMobileSdkReleasesResponse ListMobileSdkReleases(ListMobileSdkReleasesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMobileSdkReleasesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMobileSdkReleasesResponseUnmarshaller.Instance;
+
+            return Invoke<ListMobileSdkReleasesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves a list of the available releases for the mobile SDK and the specified device
+        /// platform. 
+        /// 
+        ///  
+        /// <para>
+        /// The mobile SDK is not generally available. Customers who have access to the mobile
+        /// SDK can use it to establish and manage Security Token Service (STS) security tokens
+        /// for use in HTTP(S) requests from a mobile device to WAF. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMobileSdkReleases service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListMobileSdkReleases service method, as returned by WAFV2.</returns>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
+        /// problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
+        /// The operation isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified a parameter name or value that isn't valid.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your nested statement isn't valid. You might have tried to nest a statement that can’t
+        /// be nested. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't
+        /// among the types available at <a>DefaultAction</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource with
+        /// which a web ACL can't be associated.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListMobileSdkReleases">REST API Reference for ListMobileSdkReleases Operation</seealso>
+        public virtual Task<ListMobileSdkReleasesResponse> ListMobileSdkReleasesAsync(ListMobileSdkReleasesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMobileSdkReleasesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMobileSdkReleasesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListMobileSdkReleasesResponse>(request, options, cancellationToken);
         }
 
         #endregion

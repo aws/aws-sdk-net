@@ -43,6 +43,7 @@ namespace Amazon.WAFV2.Model
     public partial class ManagedRuleGroupStatement
     {
         private List<ExcludedRule> _excludedRules = new List<ExcludedRule>();
+        private List<ManagedRuleGroupConfig> _managedRuleGroupConfigs = new List<ManagedRuleGroupConfig>();
         private string _name;
         private Statement _scopeDownStatement;
         private string _vendorName;
@@ -67,6 +68,31 @@ namespace Amazon.WAFV2.Model
         internal bool IsSetExcludedRules()
         {
             return this._excludedRules != null && this._excludedRules.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ManagedRuleGroupConfigs. 
+        /// <para>
+        /// Additional information that's used by a managed rule group. Most managed rule groups
+        /// don't require this.
+        /// </para>
+        ///  
+        /// <para>
+        /// Use this for the account takeover prevention managed rule group <code>AWSManagedRulesATPRuleSet</code>,
+        /// to provide information about the sign-in page of your application. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public List<ManagedRuleGroupConfig> ManagedRuleGroupConfigs
+        {
+            get { return this._managedRuleGroupConfigs; }
+            set { this._managedRuleGroupConfigs = value; }
+        }
+
+        // Check to see if ManagedRuleGroupConfigs property is set
+        internal bool IsSetManagedRuleGroupConfigs()
+        {
+            return this._managedRuleGroupConfigs != null && this._managedRuleGroupConfigs.Count > 0; 
         }
 
         /// <summary>

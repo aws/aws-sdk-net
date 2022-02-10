@@ -61,6 +61,22 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetManagedRuleGroupConfigs())
+            {
+                context.Writer.WritePropertyName("ManagedRuleGroupConfigs");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectManagedRuleGroupConfigsListValue in requestObject.ManagedRuleGroupConfigs)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ManagedRuleGroupConfigMarshaller.Instance;
+                    marshaller.Marshall(requestObjectManagedRuleGroupConfigsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");
