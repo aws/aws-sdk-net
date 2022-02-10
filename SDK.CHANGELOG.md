@@ -1,3 +1,20 @@
+### 3.7.207.0 (2022-02-10 19:14 UTC)
+* CloudFormation (3.7.9.0)
+	* This SDK release adds AWS CloudFormation Hooks HandlerErrorCodes
+* LookoutforVision (3.7.2.0)
+	* This release makes CompilerOptions in Lookout for Vision's StartModelPackagingJob's Configuration object optional.
+* Pinpoint (3.7.6.0)
+	* This SDK release adds a new paramater creation date for GetApp and GetApps Api call
+* SimpleNotificationService (3.7.3.22)
+	* Customer requested typo fix in API documentation.
+* WAFV2 (3.7.9.0)
+	* Adds support for AWS WAF Fraud Control account takeover prevention (ATP), with configuration options for the new managed rule group AWSManagedRulesATPRuleSet and support for application integration SDKs for Android and iOS mobile apps.
+* Core 3.7.6.5
+	* Updating endpoints.json file.
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.206.0 (2022-02-09 19:13 UTC)
 * CloudFormation (3.7.8.0)
 	* This SDK release is for the feature launch of AWS CloudFormation Hooks.
