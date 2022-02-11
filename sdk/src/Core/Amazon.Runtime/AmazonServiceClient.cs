@@ -522,7 +522,11 @@ namespace Amazon.Runtime
                 if (resourcePath.StartsWith("/", StringComparison.Ordinal))
                     resourcePath = resourcePath.Substring(1);
 
-                if (AWSSDKUtils.HasBidiControlCharacters(resourcePath) || 
+                // Microsoft added support for unicode bidi control characters to the Uri class in .NET 4.7.2
+                // https://github.com/microsoft/dotnet/blob/master/Documentation/compatibility/uri-unicode-bidirectional-characters.md
+                // However, we only want to support it on .NET Core 3.1 and higher due to not having to deal with .NET Standard support matrix.
+#if BCL || NETSTANDARD20
+                if (AWSSDKUtils.HasBidiControlCharacters(resourcePath) ||
                     (internalRequest.PathResources?.Any(v => AWSSDKUtils.HasBidiControlCharacters(v.Value)) == true))
                 {
                     resourcePath = string.Join("/", AWSSDKUtils.SplitResourcePathIntoSegments(resourcePath, internalRequest.PathResources).ToArray());
@@ -530,6 +534,7 @@ namespace Amazon.Runtime
                         "Target resource path [{0}] has bidirectional characters, which are not supported" +
                         "by System.Uri and thus cannot be handled by the .NET SDK.", resourcePath));
                 }
+#endif
 
                 resourcePath = AWSSDKUtils.ResolveResourcePath(resourcePath, internalRequest.PathResources, skipEncodingValidPathChars);
             }
