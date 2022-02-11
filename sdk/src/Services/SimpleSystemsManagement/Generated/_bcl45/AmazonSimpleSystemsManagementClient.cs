@@ -12080,17 +12080,6 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="request">Container for the necessary parameters to execute the TerminateSession service method.</param>
         /// 
         /// <returns>The response from the TerminateSession service method, as returned by SimpleSystemsManagement.</returns>
-        /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
-        /// Error returned when the ID specified for a resource, such as a maintenance window
-        /// or patch baseline, doesn't exist.
-        /// 
-        ///  
-        /// <para>
-        /// For information about resource quotas in Amazon Web Services Systems Manager, see
-        /// <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
-        /// Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.
-        /// </para>
-        /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
@@ -12115,17 +12104,6 @@ namespace Amazon.SimpleSystemsManagement
         /// </param>
         /// 
         /// <returns>The response from the TerminateSession service method, as returned by SimpleSystemsManagement.</returns>
-        /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
-        /// Error returned when the ID specified for a resource, such as a maintenance window
-        /// or patch baseline, doesn't exist.
-        /// 
-        ///  
-        /// <para>
-        /// For information about resource quotas in Amazon Web Services Systems Manager, see
-        /// <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
-        /// Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.
-        /// </para>
-        /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
