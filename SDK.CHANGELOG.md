@@ -1,3 +1,8 @@
+### 3.7.208.0 (2022-02-11 04:47 UTC)
+* Core 3.7.7.0
+	* Attempting credential expiration extension due to a credential service availability issue.  A refresh of these credentials will be attempted again in 5-15 minutes. Added support for using bidi characters in resource path for .NET Core 3.1 and newer platforms.
+	* All services packages updated to require new Core
+
 ### 3.7.207.0 (2022-02-10 19:14 UTC)
 * CloudFormation (3.7.9.0)
 	* This SDK release adds AWS CloudFormation Hooks HandlerErrorCodes
