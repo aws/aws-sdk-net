@@ -59,7 +59,6 @@ namespace Amazon.Runtime.Internal
 
             if (disposing)
             {
-                _rwlock.Dispose();
                 _disposed = true;
             }
         }
@@ -167,7 +166,7 @@ namespace Amazon.Runtime.Internal
         private static Dictionary<string, RetryCapacity> _serviceUrlToCapacityMap = new Dictionary<string, RetryCapacity>();
 
         //Read write slim lock for performing said operations on CapacityManager._serviceUrlToCapacityMap.
-        private ReaderWriterLockSlim _rwlock = new ReaderWriterLockSlim();
+        private static ReaderWriterLockSlim _rwlock = new ReaderWriterLockSlim();
 
         // This parameter sets the cost of making a retry call on a request.The default value is set at 5.
         private readonly int retryCost;
@@ -184,7 +183,7 @@ namespace Amazon.Runtime.Internal
         // were to deplete the entire capacity.The default value is set at 1.
         private readonly int noRetryIncrement;
 
-        private bool TryGetRetryCapacity(string key, out RetryCapacity value)
+        private static bool TryGetRetryCapacity(string key, out RetryCapacity value)
         {
             _rwlock.EnterReadLock();
             try
