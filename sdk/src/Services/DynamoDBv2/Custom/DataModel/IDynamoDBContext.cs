@@ -143,7 +143,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </summary>
         /// <typeparam name="T">Type of objects to write</typeparam>
         /// <returns>Empty strongly-typed BatchWrite object</returns>
-        BatchWrite<T> CreateBatchWrite<T>();
+        IBatchWrite<T> CreateBatchWrite<T>();
 
         /// <summary>
         /// Creates a strongly-typed BatchWrite object, allowing
@@ -152,7 +152,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <typeparam name="T">Type of objects to write</typeparam>
         /// <param name="operationConfig">Config object which can be used to override that table used.</param>
         /// <returns>Empty strongly-typed BatchWrite object</returns>
-        BatchWrite<T> CreateBatchWrite<T>(DynamoDBOperationConfig operationConfig);
+        IBatchWrite<T> CreateBatchWrite<T>(DynamoDBOperationConfig operationConfig);
 #else
         /// <summary>
         /// Creates a strongly-typed BatchWrite object, allowing
@@ -161,7 +161,8 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <typeparam name="T">Type of objects to write</typeparam>
         /// <param name="operationConfig">Config object which can be used to override that table used.</param>
         /// <returns>Empty strongly-typed BatchWrite object</returns>
-        BatchWrite<T> CreateBatchWrite<T>(DynamoDBOperationConfig operationConfig = null);
+        IBatchWrite<T> CreateBatchWrite<T>(DynamoDBOperationConfig operationConfig = null);
+
 #endif
 
         /// <summary>

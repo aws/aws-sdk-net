@@ -30,7 +30,7 @@ namespace Amazon.DynamoDBv2.DataModel
     /// Represents a non-generic object for writing/deleting a batch of items
     /// in a single DynamoDB table
     /// </summary>
-    public abstract partial class BatchWrite
+    public abstract partial class BatchWrite : IBatchWrite
     {
         #region Public methods
 
@@ -47,6 +47,21 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 
         #endregion
+    }
+
+    /// <summary>
+    /// Interface for writing/deleting a batch of items in a single DynamoDB table
+    /// </summary>
+    public partial interface IBatchWrite
+    {
+        /// <summary>
+        /// Initiates the asynchronous execution of the Execute operation.
+        /// <seealso cref="Amazon.DynamoDBv2.DataModel.BatchWrite.Execute"/>
+        /// </summary>
+        /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
+        /// 
+        /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
+        public Task ExecuteAsync(CancellationToken cancellationToken = default(CancellationToken));
     }
 
     /// <summary>

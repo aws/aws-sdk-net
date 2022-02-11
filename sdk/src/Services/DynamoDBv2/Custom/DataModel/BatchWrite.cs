@@ -74,7 +74,7 @@ namespace Amazon.DynamoDBv2.DataModel
     /// Represents a strongly-typed object for writing/deleting a batch of items
     /// in a single DynamoDB table
     /// </summary>
-    public class BatchWrite<T> : BatchWrite
+    public class BatchWrite<T> : BatchWrite, IBatchWrite<T>
     {
         #region Public combine methods
 
@@ -226,6 +226,46 @@ namespace Amazon.DynamoDBv2.DataModel
 #endif
 
         #endregion
+    }
+
+    /// <summary>
+    /// Interface for writing/deleting a batch of items in a single DynamoDB table
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    public partial interface IBatchWrite<in T> : IBatchWrite
+    {
+        /// <summary>
+        /// Add a number of items to be put in the current batch operation
+        /// </summary>
+        /// <param name="values">Items to put</param>
+        void AddPutItems(IEnumerable<T> values);
+
+        /// <summary>
+        /// Add a single item to be put in the current batch operation
+        /// </summary>
+        /// <param name="item"></param>
+        void AddPutItem(T item);
+
+        /// <summary>
+        /// Add a number of items to be deleted in the current batch operation
+        /// </summary>
+        /// <param name="values">Items to be deleted</param>
+        void AddDeleteItems(IEnumerable<T> values);
+
+        /// <summary>
+        /// Add a single item to be deleted in the current batch operation.
+        /// Item is identified by its hash primary key.
+        /// </summary>
+        /// <param name="hashKey">Hash key of the item to delete</param>
+        void AddDeleteKey(object hashKey);
+
+        /// <summary>
+        /// Add a single item to be deleted in the current batch operation.
+        /// Item is identified by its hash-and-range primary key.
+        /// </summary>
+        /// <param name="hashKey">Hash key of the item to delete</param>
+        /// <param name="rangeKey">Range key of the item to delete</param>
+        void AddDeleteKey(object hashKey, object rangeKey);
     }
 
     /// <summary>
