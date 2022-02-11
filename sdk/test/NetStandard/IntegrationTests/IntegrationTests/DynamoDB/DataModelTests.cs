@@ -351,8 +351,8 @@ namespace Amazon.DNXCore.IntegrationTests.DynamoDB
                 };
 
                 product.FullProductDescription = S3Link.Create(SharedTestFixture.Context, bucketName, "my-product", Amazon.RegionEndpoint.USEast1);
-
-                // await product.FullProductDescription.UploadStreamAsync(new MemoryStream(UTF8Encoding.UTF8.GetBytes("Lots of data")));
+                await product.FullProductDescription.UploadStreamAsync(new MemoryStream(UTF8Encoding.UTF8.GetBytes("Lots of data")));
+                
                 await SharedTestFixture.Context.SaveAsync(product);
 
                 // Test conversion
