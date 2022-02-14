@@ -2593,6 +2593,10 @@ namespace Amazon.Appflow
         /// </summary>
         public static readonly TaskType Merge = new TaskType("Merge");
         /// <summary>
+        /// Constant Passthrough for TaskType
+        /// </summary>
+        public static readonly TaskType Passthrough = new TaskType("Passthrough");
+        /// <summary>
         /// Constant Truncate for TaskType
         /// </summary>
         public static readonly TaskType Truncate = new TaskType("Truncate");
