@@ -258,7 +258,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid for: Aurora DB clusters and Multi-AZ DB clusters
+        /// Valid for: Multi-AZ DB clusters only
         /// </para>
         /// </summary>
         public string DBClusterInstanceClass

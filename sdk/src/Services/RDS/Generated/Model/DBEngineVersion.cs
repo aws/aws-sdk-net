@@ -52,6 +52,7 @@ namespace Amazon.RDS.Model
         private List<string> _supportedFeatureNames = new List<string>();
         private List<CharacterSet> _supportedNcharCharacterSets = new List<CharacterSet>();
         private List<Timezone> _supportedTimezones = new List<Timezone>();
+        private bool? _supportsBabelfish;
         private bool? _supportsGlobalDatabases;
         private bool? _supportsLogExportsToCloudwatchLogs;
         private bool? _supportsParallelQuery;
@@ -440,6 +441,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetSupportedTimezones()
         {
             return this._supportedTimezones != null && this._supportedTimezones.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportsBabelfish. 
+        /// <para>
+        /// A value that indicates whether the engine version supports Babelfish for Aurora PostgreSQL.
+        /// </para>
+        /// </summary>
+        public bool SupportsBabelfish
+        {
+            get { return this._supportsBabelfish.GetValueOrDefault(); }
+            set { this._supportsBabelfish = value; }
+        }
+
+        // Check to see if SupportsBabelfish property is set
+        internal bool IsSetSupportsBabelfish()
+        {
+            return this._supportsBabelfish.HasValue; 
         }
 
         /// <summary>

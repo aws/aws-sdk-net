@@ -39,6 +39,7 @@ namespace Amazon.RDS.Model
         private string _engineVersion;
         private bool? _isMajorVersionUpgrade;
         private List<string> _supportedEngineModes = new List<string>();
+        private bool? _supportsBabelfish;
         private bool? _supportsGlobalDatabases;
         private bool? _supportsParallelQuery;
 
@@ -150,6 +151,25 @@ namespace Amazon.RDS.Model
         internal bool IsSetSupportedEngineModes()
         {
             return this._supportedEngineModes != null && this._supportedEngineModes.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportsBabelfish. 
+        /// <para>
+        /// A value that indicates whether you can use Babelfish for Aurora PostgreSQL with the
+        /// target engine version.
+        /// </para>
+        /// </summary>
+        public bool SupportsBabelfish
+        {
+            get { return this._supportsBabelfish.GetValueOrDefault(); }
+            set { this._supportsBabelfish = value; }
+        }
+
+        // Check to see if SupportsBabelfish property is set
+        internal bool IsSetSupportsBabelfish()
+        {
+            return this._supportsBabelfish.HasValue; 
         }
 
         /// <summary>
