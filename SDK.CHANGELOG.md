@@ -1,3 +1,11 @@
+### 3.7.209.0 (2022-02-14 21:44 UTC)
+* Appflow (3.7.6.0)
+	* Launching Amazon AppFlow SAP as a destination connector SDK.
+* Athena (3.7.3.0)
+	* This release adds a subfield, ErrorType, to the AthenaError response object in the GetQueryExecution API when a query fails.
+* RDS (3.7.10.0)
+	* Adds support for determining which Aurora PostgreSQL versions support Babelfish.
+
 ### 3.7.208.1 (2022-02-11 19:11 UTC)
 * SimpleSystemsManagement (3.7.12.9)
 	* Documentation updates for AWS Systems Manager.
