@@ -102,6 +102,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.TransactionId);
                 }
 
+                if(publicRequest.IsSetVersionId())
+                {
+                    context.Writer.WritePropertyName("VersionId");
+                    context.Writer.Write(publicRequest.VersionId);
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

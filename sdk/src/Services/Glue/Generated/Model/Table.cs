@@ -50,6 +50,7 @@ namespace Amazon.Glue.Model
         private string _tableType;
         private TableIdentifier _targetTable;
         private DateTime? _updateTime;
+        private string _versionId;
         private string _viewExpandedText;
         private string _viewOriginalText;
 
@@ -379,6 +380,22 @@ namespace Amazon.Glue.Model
         internal bool IsSetUpdateTime()
         {
             return this._updateTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VersionId.
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string VersionId
+        {
+            get { return this._versionId; }
+            set { this._versionId = value; }
+        }
+
+        // Check to see if VersionId property is set
+        internal bool IsSetVersionId()
+        {
+            return this._versionId != null;
         }
 
         /// <summary>
