@@ -75,20 +75,21 @@ namespace DependencyInjectionTests
         }
 
         [Fact]
-        public void CreateAWSOptionsByDIObjects()
+        public void CreateAWSOptionsWithFunction()
         {
-            RegionEndpoint expectRegion = RegionEndpoint.APSouth1;
-            string expectProfile = "MockProfile";
+            var expectRegion = RegionEndpoint.APSouth1;
+            var expectProfile = "MockProfile";
 
-            ServiceCollection services = new ServiceCollection();
-            services.AddSingleton(new AWSSetting() {
+            var services = new ServiceCollection();
+            services.AddSingleton(new AWSSetting
+            {
                 Region = expectRegion,
                 Profile = expectProfile
             });
 
             services.AddDefaultAWSOptions(sp=> {
                 var setting = sp.GetRequiredService<AWSSetting>();
-                return new AWSOptions()
+                return new AWSOptions
                 {
                     Region = setting.Region,
                     Profile = setting.Profile
@@ -104,13 +105,13 @@ namespace DependencyInjectionTests
         }
 
         [Fact]
-        public void InjectS3ClientByDIConfigs()
+        public void InjectS3ClientWithFactoryBuiltConfig()
         {
-            RegionEndpoint expectRegion = RegionEndpoint.APSouth1;
-            string expectProfile = "MockProfile";
+            var expectRegion = RegionEndpoint.APSouth1;
+            var expectProfile = "MockProfile";
 
-            ServiceCollection services = new ServiceCollection();
-            services.AddSingleton(new AWSSetting()
+            var services = new ServiceCollection();
+            services.AddSingleton(new AWSSetting
             {
                 Region = expectRegion,
                 Profile = expectProfile
@@ -118,7 +119,7 @@ namespace DependencyInjectionTests
 
             services.AddDefaultAWSOptions(sp => {
                 var setting = sp.GetRequiredService<AWSSetting>();
-                return new AWSOptions()
+                return new AWSOptions
                 {
                     Region = setting.Region,
                     Profile = setting.Profile
