@@ -1,3 +1,15 @@
+### 3.7.210.0 (2022-02-16 19:18 UTC)
+* Budgets (3.7.1.0)
+	* Adds support for auto-adjusting budgets, a new budget method alongside fixed and planned. Auto-adjusting budgets introduces new metadata to configure a budget limit baseline using a historical lookback average or current period forecast.
+* CostExplorer (3.7.4.0)
+	* AWS Cost Anomaly Detection now supports SNS FIFO topic subscribers.
+* EC2 (3.7.59.4)
+	* Documentation updates for EC2.
+* Glue (3.7.14.0)
+	* Support for optimistic locking in UpdateTable
+* SimpleSystemsManagement (3.7.12.10)
+	* Assorted ticket fixes and updates for AWS Systems Manager.
+
 ### 3.7.209.0 (2022-02-14 21:44 UTC)
 * Appflow (3.7.6.0)
 	* Launching Amazon AppFlow SAP as a destination connector SDK.
