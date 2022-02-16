@@ -11177,21 +11177,73 @@ namespace Amazon.EC2
     {
 
         /// <summary>
+        /// Constant Api_gateway_managed for NetworkInterfaceType
+        /// </summary>
+        public static readonly NetworkInterfaceType Api_gateway_managed = new NetworkInterfaceType("api_gateway_managed");
+        /// <summary>
+        /// Constant Aws_codestar_connections_managed for NetworkInterfaceType
+        /// </summary>
+        public static readonly NetworkInterfaceType Aws_codestar_connections_managed = new NetworkInterfaceType("aws_codestar_connections_managed");
+        /// <summary>
+        /// Constant Branch for NetworkInterfaceType
+        /// </summary>
+        public static readonly NetworkInterfaceType Branch = new NetworkInterfaceType("branch");
+        /// <summary>
         /// Constant Efa for NetworkInterfaceType
         /// </summary>
         public static readonly NetworkInterfaceType Efa = new NetworkInterfaceType("efa");
+        /// <summary>
+        /// Constant Gateway_load_balancer for NetworkInterfaceType
+        /// </summary>
+        public static readonly NetworkInterfaceType Gateway_load_balancer = new NetworkInterfaceType("gateway_load_balancer");
+        /// <summary>
+        /// Constant Gateway_load_balancer_endpoint for NetworkInterfaceType
+        /// </summary>
+        public static readonly NetworkInterfaceType Gateway_load_balancer_endpoint = new NetworkInterfaceType("gateway_load_balancer_endpoint");
+        /// <summary>
+        /// Constant Global_accelerator_managed for NetworkInterfaceType
+        /// </summary>
+        public static readonly NetworkInterfaceType Global_accelerator_managed = new NetworkInterfaceType("global_accelerator_managed");
         /// <summary>
         /// Constant Interface for NetworkInterfaceType
         /// </summary>
         public static readonly NetworkInterfaceType Interface = new NetworkInterfaceType("interface");
         /// <summary>
+        /// Constant Iot_rules_managed for NetworkInterfaceType
+        /// </summary>
+        public static readonly NetworkInterfaceType Iot_rules_managed = new NetworkInterfaceType("iot_rules_managed");
+        /// <summary>
+        /// Constant Lambda for NetworkInterfaceType
+        /// </summary>
+        public static readonly NetworkInterfaceType Lambda = new NetworkInterfaceType("lambda");
+        /// <summary>
+        /// Constant Load_balancer for NetworkInterfaceType
+        /// </summary>
+        public static readonly NetworkInterfaceType Load_balancer = new NetworkInterfaceType("load_balancer");
+        /// <summary>
         /// Constant NatGateway for NetworkInterfaceType
         /// </summary>
         public static readonly NetworkInterfaceType NatGateway = new NetworkInterfaceType("natGateway");
         /// <summary>
+        /// Constant Network_load_balancer for NetworkInterfaceType
+        /// </summary>
+        public static readonly NetworkInterfaceType Network_load_balancer = new NetworkInterfaceType("network_load_balancer");
+        /// <summary>
+        /// Constant Quicksight for NetworkInterfaceType
+        /// </summary>
+        public static readonly NetworkInterfaceType Quicksight = new NetworkInterfaceType("quicksight");
+        /// <summary>
+        /// Constant Transit_gateway for NetworkInterfaceType
+        /// </summary>
+        public static readonly NetworkInterfaceType Transit_gateway = new NetworkInterfaceType("transit_gateway");
+        /// <summary>
         /// Constant Trunk for NetworkInterfaceType
         /// </summary>
         public static readonly NetworkInterfaceType Trunk = new NetworkInterfaceType("trunk");
+        /// <summary>
+        /// Constant Vpc_endpoint for NetworkInterfaceType
+        /// </summary>
+        public static readonly NetworkInterfaceType Vpc_endpoint = new NetworkInterfaceType("vpc_endpoint");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

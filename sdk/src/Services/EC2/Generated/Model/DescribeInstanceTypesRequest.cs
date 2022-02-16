@@ -141,8 +141,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>instance-storage-info.encryption-supported</code> - Indicates whether data
-        /// is encrypted at rest (<code>required</code> | <code>unsupported</code>).
+        ///  <code>instance-storage-info.encryption-support</code> - Indicates whether data is
+        /// encrypted at rest (<code>required</code> | <code>supported</code> | <code>unsupported</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -204,6 +204,11 @@ namespace Amazon.EC2.Model
         /// <para>
         ///  <code>network-info.ipv6-supported</code> - Indicates whether the instance type supports
         /// IPv6 (<code>true</code> | <code>false</code>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>network-info.maximum-network-cards</code> - The maximum number of network cards
+        /// per instance.
         /// </para>
         ///  </li> <li> 
         /// <para>

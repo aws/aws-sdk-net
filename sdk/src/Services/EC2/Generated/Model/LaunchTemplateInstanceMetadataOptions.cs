@@ -151,7 +151,14 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property InstanceMetadataTags. 
         /// <para>
+        /// Set to <code>enabled</code> to allow access to instance tags from the instance metadata.
+        /// Set to <code>disabled</code> to turn off access to instance tags from the instance
+        /// metadata. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#work-with-tags-in-IMDS">Work
+        /// with instance tags using the instance metadata</a>.
+        /// </para>
         ///  
+        /// <para>
+        /// Default: <code>disabled</code> 
         /// </para>
         /// </summary>
         public LaunchTemplateInstanceMetadataTagsState InstanceMetadataTags

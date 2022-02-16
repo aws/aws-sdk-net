@@ -36,7 +36,7 @@ namespace Amazon.EC2.Model
     /// 
     ///  
     /// <para>
-    /// To disable detailed monitoring, see .
+    /// To disable detailed monitoring, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_UnmonitorInstances.html">UnmonitorInstances</a>.
     /// </para>
     /// </summary>
     public partial class MonitorInstancesRequest : AmazonEC2Request

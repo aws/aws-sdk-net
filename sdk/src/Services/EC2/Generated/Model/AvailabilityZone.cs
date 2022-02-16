@@ -189,7 +189,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The state of the Availability Zone, Local Zone, or Wavelength Zone.
+        /// The state of the Availability Zone, Local Zone, or Wavelength Zone. This value is
+        /// always <code>available</code>.
         /// </para>
         /// </summary>
         public AvailabilityZoneState State

@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// Instantiates Tag with the parameterized properties
         /// </summary>
         /// <param name="key">The key of the tag. Constraints: Tag keys are case-sensitive and accept a maximum of 127 Unicode characters. May not begin with <code>aws:</code>.</param>
-        /// <param name="value">The value of the tag. Constraints: Tag values are case-sensitive and accept a maximum of 255 Unicode characters.</param>
+        /// <param name="value">The value of the tag. Constraints: Tag values are case-sensitive and accept a maximum of 256 Unicode characters.</param>
         public Tag(string key, string value)
         {
             _key = key;
@@ -91,7 +91,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraints: Tag values are case-sensitive and accept a maximum of 255 Unicode characters.
+        /// Constraints: Tag values are case-sensitive and accept a maximum of 256 Unicode characters.
         /// </para>
         /// </summary>
         public string Value

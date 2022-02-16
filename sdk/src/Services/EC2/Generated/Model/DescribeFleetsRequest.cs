@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model
     /// 
     ///  
     /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet.html#monitor-ec2-fleet">Monitoring
+    /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-ec2-fleet.html#monitor-ec2-fleet">Monitor
     /// your EC2 Fleet</a> in the <i>Amazon EC2 User Guide</i>.
     /// </para>
     /// </summary>
@@ -94,8 +94,14 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property FleetIds. 
         /// <para>
-        /// The ID of the EC2 Fleets.
+        /// The IDs of the EC2 Fleets.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If a fleet is of type <code>instant</code>, you must specify the fleet ID, otherwise
+        /// it does not appear in the response.
+        /// </para>
+        ///  </note>
         /// </summary>
         public List<string> FleetIds
         {
