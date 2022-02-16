@@ -77,7 +77,7 @@ namespace Amazon.Budgets.Model
         /// <summary>
         /// Gets and sets the property TimePeriod. 
         /// <para>
-        /// The time period covered by this budget comparison.
+        /// The time period that's covered by this budget comparison.
         /// </para>
         /// </summary>
         public TimePeriod TimePeriod

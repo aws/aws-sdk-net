@@ -63,8 +63,8 @@ namespace Amazon.Budgets.Model
         /// <summary>
         /// Gets and sets the property BudgetName. 
         /// <para>
-        /// The name of the budget that you want AWS to notify you about. Budget names must be
-        /// unique within an account.
+        /// The name of the budget that you want Amazon Web Services to notify you about. Budget
+        /// names must be unique within an account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

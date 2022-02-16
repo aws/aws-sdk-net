@@ -41,7 +41,7 @@ namespace Amazon.Budgets.Model
         /// <summary>
         /// Gets and sets the property ActionHistoryDetails. 
         /// <para>
-        ///  The description of details of the event. 
+        /// The description of the details for the event. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -60,7 +60,7 @@ namespace Amazon.Budgets.Model
         /// <summary>
         /// Gets and sets the property EventType. 
         /// <para>
-        ///  This distinguishes between whether the events are triggered by the user or generated
+        /// This distinguishes between whether the events are triggered by the user or are generated
         /// by the system. 
         /// </para>
         /// </summary>
@@ -80,7 +80,7 @@ namespace Amazon.Budgets.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        ///  The status of action at the time of the event. 
+        /// The status of action at the time of the event. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

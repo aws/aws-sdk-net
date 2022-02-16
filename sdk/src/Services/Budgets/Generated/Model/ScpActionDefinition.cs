@@ -39,7 +39,7 @@ namespace Amazon.Budgets.Model
         /// <summary>
         /// Gets and sets the property PolicyId. 
         /// <para>
-        ///  The policy ID attached. 
+        /// The policy ID attached. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=10, Max=130)]
@@ -58,7 +58,7 @@ namespace Amazon.Budgets.Model
         /// <summary>
         /// Gets and sets the property TargetIds. 
         /// <para>
-        ///  A list of target IDs. 
+        /// A list of target IDs. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

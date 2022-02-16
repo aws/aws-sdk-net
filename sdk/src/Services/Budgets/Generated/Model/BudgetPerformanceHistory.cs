@@ -43,8 +43,8 @@ namespace Amazon.Budgets.Model
         /// <summary>
         /// Gets and sets the property BudgetedAndActualAmountsList. 
         /// <para>
-        /// A list of amounts of cost or usage that you created budgets for, compared to your
-        /// actual costs or usage.
+        /// A list of amounts of cost or usage that you created budgets for, which are compared
+        /// to your actual costs or usage.
         /// </para>
         /// </summary>
         public List<BudgetedAndActualAmounts> BudgetedAndActualAmountsList

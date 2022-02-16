@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Budgets.Model
 {
     /// <summary>
-    /// The AWS Identity and Access Management (IAM) action definition details.
+    /// The Identity and Access Management (IAM) action definition details.
     /// </summary>
     public partial class IamActionDefinition
     {
@@ -41,7 +41,7 @@ namespace Amazon.Budgets.Model
         /// <summary>
         /// Gets and sets the property Groups. 
         /// <para>
-        ///  A list of groups to be attached. There must be at least one group. 
+        /// A list of groups to be attached. There must be at least one group. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -60,7 +60,7 @@ namespace Amazon.Budgets.Model
         /// <summary>
         /// Gets and sets the property PolicyArn. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) of the policy to be attached. 
+        /// The Amazon Resource Name (ARN) of the policy to be attached. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=25, Max=684)]
@@ -79,7 +79,7 @@ namespace Amazon.Budgets.Model
         /// <summary>
         /// Gets and sets the property Roles. 
         /// <para>
-        ///  A list of roles to be attached. There must be at least one role. 
+        /// A list of roles to be attached. There must be at least one role. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -98,7 +98,7 @@ namespace Amazon.Budgets.Model
         /// <summary>
         /// Gets and sets the property Users. 
         /// <para>
-        ///  A list of users to be attached. There must be at least one user. 
+        /// A list of users to be attached. There must be at least one user. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

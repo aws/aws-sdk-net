@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Budgets.Model
 {
     /// <summary>
-    /// The AWS Systems Manager (SSM) action definition details.
+    /// The Amazon Web Services Systems Manager (SSM) action definition details.
     /// </summary>
     public partial class SsmActionDefinition
     {
@@ -40,7 +40,7 @@ namespace Amazon.Budgets.Model
         /// <summary>
         /// Gets and sets the property ActionSubType. 
         /// <para>
-        ///  The action subType. 
+        /// The action subType. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -59,7 +59,7 @@ namespace Amazon.Budgets.Model
         /// <summary>
         /// Gets and sets the property InstanceIds. 
         /// <para>
-        ///  The EC2 and RDS instance IDs. 
+        /// The EC2 and RDS instance IDs. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
@@ -78,7 +78,7 @@ namespace Amazon.Budgets.Model
         /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
-        ///  The Region to run the SSM document. 
+        /// The Region to run the SSM document. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=9, Max=20)]

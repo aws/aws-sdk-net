@@ -47,7 +47,7 @@ namespace Amazon.Budgets.Model
         /// <summary>
         /// Gets and sets the property ActionId. 
         /// <para>
-        ///  A system-generated universally unique identifier (UUID) for the action. 
+        /// A system-generated universally unique identifier (UUID) for the action. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]
@@ -66,7 +66,7 @@ namespace Amazon.Budgets.Model
         /// <summary>
         /// Gets and sets the property ActionThreshold. 
         /// <para>
-        ///  The trigger threshold of the action. 
+        /// The trigger threshold of the action. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -85,7 +85,7 @@ namespace Amazon.Budgets.Model
         /// <summary>
         /// Gets and sets the property ActionType. 
         /// <para>
-        ///  The type of action. This defines the type of tasks that can be carried out by this
+        /// The type of action. This defines the type of tasks that can be carried out by this
         /// action. This field also determines the format for definition. 
         /// </para>
         /// </summary>
@@ -105,7 +105,7 @@ namespace Amazon.Budgets.Model
         /// <summary>
         /// Gets and sets the property ApprovalModel. 
         /// <para>
-        ///  This specifies if the action needs manual or automatic approval. 
+        /// This specifies if the action needs manual or automatic approval. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -140,7 +140,7 @@ namespace Amazon.Budgets.Model
         /// <summary>
         /// Gets and sets the property Definition. 
         /// <para>
-        ///  Where you specify all of the type-specific parameters. 
+        /// Where you specify all of the type-specific parameters. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -159,8 +159,8 @@ namespace Amazon.Budgets.Model
         /// <summary>
         /// Gets and sets the property ExecutionRoleArn. 
         /// <para>
-        ///  The role passed for action execution and reversion. Roles and actions must be in
-        /// the same account. 
+        /// The role passed for action execution and reversion. Roles and actions must be in the
+        /// same account. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=32, Max=618)]
@@ -195,7 +195,7 @@ namespace Amazon.Budgets.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        ///  The status of action. 
+        /// The status of the action. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
