@@ -171,6 +171,12 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The type of parameter. Valid values include the following: <code>String</code>, <code>StringList</code>,
         /// and <code>SecureString</code>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If type is <code>StringList</code>, the system returns a comma-separated string with
+        /// no spaces between commas in the <code>Value</code> field.
+        /// </para>
+        ///  </note>
         /// </summary>
         public ParameterType Type
         {
@@ -189,6 +195,12 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// The parameter value.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If type is <code>StringList</code>, the system returns a comma-separated string with
+        /// no spaces between commas in the <code>Value</code> field.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string Value
         {

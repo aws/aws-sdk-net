@@ -8188,7 +8188,7 @@ namespace Amazon.SimpleSystemsManagement
 
         /// <summary>
         /// Permanently ends a session and closes the data connection between the Session Manager
-        /// client and SSM Agent on the managed node. A terminated session isn't be resumed.
+        /// client and SSM Agent on the managed node. A terminated session can't be resumed.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TerminateSession service method.</param>
         /// 
@@ -8286,7 +8286,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <summary>
         /// Updates an association. You can update the association name and version, the document
         /// version, schedule, parameters, and Amazon Simple Storage Service (Amazon S3) output.
-        /// When you call <code>UpdateAssociation</code>, the system drops all optional parameters
+        /// When you call <code>UpdateAssociation</code>, the system removes all optional parameters
         /// from the request and overwrites the association with null values for those parameters.
         /// This is by design. You must specify all optional parameters in the call, even if you
         /// are not changing the parameters. This includes the <code>Name</code> parameter. Before

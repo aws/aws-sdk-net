@@ -118,6 +118,19 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// The maximum number of targets this task can be run for, in parallel.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Although this element is listed as "Required: No", a value can be omitted only when
+        /// you are registering or updating a <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">targetless
+        /// task</a> You must provide a value in all other cases.
+        /// </para>
+        ///  
+        /// <para>
+        /// For maintenance window tasks without a target specified, you can't supply a value
+        /// for this option. Instead, the system inserts a placeholder value of <code>1</code>.
+        /// This value doesn't affect the running of your task.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=1, Max=7)]
         public string MaxConcurrency
@@ -137,6 +150,19 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// The maximum number of errors allowed before this task stops being scheduled.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Although this element is listed as "Required: No", a value can be omitted only when
+        /// you are registering or updating a <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">targetless
+        /// task</a> You must provide a value in all other cases.
+        /// </para>
+        ///  
+        /// <para>
+        /// For maintenance window tasks without a target specified, you can't supply a value
+        /// for this option. Instead, the system inserts a placeholder value of <code>1</code>.
+        /// This value doesn't affect the running of your task.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=1, Max=7)]
         public string MaxErrors

@@ -172,6 +172,12 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// The type of document to create.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <code>DeploymentStrategy</code> document type is an internal-use-only document
+        /// type reserved for AppConfig.
+        /// </para>
+        ///  </note>
         /// </summary>
         public DocumentType DocumentType
         {
