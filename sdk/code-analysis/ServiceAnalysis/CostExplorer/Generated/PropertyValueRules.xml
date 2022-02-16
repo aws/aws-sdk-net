@@ -1515,7 +1515,7 @@
     <property>Amazon.CostExplorer.Model.Subscriber.Address</property>
     <min>6</min>
     <max>302</max>
-    <pattern>(^[a-zA-Z0-9.!#$%&amp;'*+=?^_‘{|}~-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$)|(^arn:(aws[a-zA-Z-]*):sns:[a-zA-Z0-9-]+:[0-9]{12}:[a-zA-Z0-9_-]+$)</pattern>
+    <pattern>(^[a-zA-Z0-9.!#$%&amp;'*+=?^_‘{|}~-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$)|(^arn:(aws[a-zA-Z-]*):sns:[a-zA-Z0-9-]+:[0-9]{12}:[a-zA-Z0-9_-]+(\.fifo)?$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CostExplorer.Model.TagValues.Key</property>
