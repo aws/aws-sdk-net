@@ -62,6 +62,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ConsumerArn", StringUtils.FromString(publicRequest.ConsumerArn));
                 }
+                if(publicRequest.IsSetConsumerRegion())
+                {
+                    request.Parameters.Add("ConsumerRegion", StringUtils.FromString(publicRequest.ConsumerRegion));
+                }
                 if(publicRequest.IsSetDataShareArn())
                 {
                     request.Parameters.Add("DataShareArn", StringUtils.FromString(publicRequest.DataShareArn));

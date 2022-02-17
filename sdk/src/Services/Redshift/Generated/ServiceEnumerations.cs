@@ -1367,6 +1367,10 @@ namespace Amazon.Redshift
         /// </summary>
         public static readonly UsageLimitFeatureType ConcurrencyScaling = new UsageLimitFeatureType("concurrency-scaling");
         /// <summary>
+        /// Constant CrossRegionDatasharing for UsageLimitFeatureType
+        /// </summary>
+        public static readonly UsageLimitFeatureType CrossRegionDatasharing = new UsageLimitFeatureType("cross-region-datasharing");
+        /// <summary>
         /// Constant Spectrum for UsageLimitFeatureType
         /// </summary>
         public static readonly UsageLimitFeatureType Spectrum = new UsageLimitFeatureType("spectrum");

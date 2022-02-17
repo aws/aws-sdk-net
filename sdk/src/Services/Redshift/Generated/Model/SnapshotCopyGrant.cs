@@ -30,7 +30,7 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// The snapshot copy grant that grants Amazon Redshift permission to encrypt copied snapshots
-    /// with the specified customer master key (CMK) from Amazon Web Services KMS in the destination
+    /// with the specified encrypted symmetric key from Amazon Web Services KMS in the destination
     /// region.
     /// 
     ///  
@@ -49,8 +49,8 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The unique identifier of the customer master key (CMK) in Amazon Web Services KMS
-        /// to which Amazon Redshift is granted permission.
+        /// The unique identifier of the encrypted symmetric key in Amazon Web Services KMS to
+        /// which Amazon Redshift is granted permission.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2147483647)]

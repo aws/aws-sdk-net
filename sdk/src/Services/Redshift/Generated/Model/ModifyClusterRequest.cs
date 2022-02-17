@@ -563,8 +563,8 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Can be any printable ASCII character (ASCII code 33 to 126) except ' (single quote),
-        /// " (double quote), \, /, @, or space.
+        /// Can be any printable ASCII character (ASCII code 33-126) except ' (single quote),
+        /// " (double quote), \, /, or @.
         /// </para>
         ///  </li> </ul>
         /// </summary>

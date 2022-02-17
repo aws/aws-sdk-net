@@ -35,6 +35,7 @@ namespace Amazon.Redshift.Model
     public partial class DisassociateDataShareConsumerRequest : AmazonRedshiftRequest
     {
         private string _consumerArn;
+        private string _consumerRegion;
         private string _dataShareArn;
         private bool? _disassociateEntireAccount;
 
@@ -56,6 +57,26 @@ namespace Amazon.Redshift.Model
         internal bool IsSetConsumerArn()
         {
             return this._consumerArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConsumerRegion. 
+        /// <para>
+        /// From a datashare consumer account, removes association of a datashare from all the
+        /// existing and future namespaces in the specified Amazon Web Services Region.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=2147483647)]
+        public string ConsumerRegion
+        {
+            get { return this._consumerRegion; }
+            set { this._consumerRegion = value; }
+        }
+
+        // Check to see if ConsumerRegion property is set
+        internal bool IsSetConsumerRegion()
+        {
+            return this._consumerRegion != null;
         }
 
         /// <summary>
