@@ -164,6 +164,14 @@ namespace Amazon.Backup
         /// Constant RESTORE_JOB_SUCCESSFUL for BackupVaultEvent
         /// </summary>
         public static readonly BackupVaultEvent RESTORE_JOB_SUCCESSFUL = new BackupVaultEvent("RESTORE_JOB_SUCCESSFUL");
+        /// <summary>
+        /// Constant S3_BACKUP_OBJECT_FAILED for BackupVaultEvent
+        /// </summary>
+        public static readonly BackupVaultEvent S3_BACKUP_OBJECT_FAILED = new BackupVaultEvent("S3_BACKUP_OBJECT_FAILED");
+        /// <summary>
+        /// Constant S3_RESTORE_OBJECT_FAILED for BackupVaultEvent
+        /// </summary>
+        public static readonly BackupVaultEvent S3_RESTORE_OBJECT_FAILED = new BackupVaultEvent("S3_RESTORE_OBJECT_FAILED");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

@@ -33,11 +33,13 @@ namespace Amazon.Backup.Model
     /// Returns a list of key-value pairs assigned to a target recovery point, backup plan,
     /// or backup vault.
     /// 
-    ///  <note> 
+    ///  
     /// <para>
-    ///  <code>ListTags</code> are currently only supported with Amazon EFS backups.
+    ///  <code>ListTags</code> only works for resource types that support full Backup management
+    /// of their backups. Those resource types are listed in the "Full Backup management"
+    /// section of the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource">
+    /// Feature availability by resource</a> table.
     /// </para>
-    ///  </note>
     /// </summary>
     public partial class ListTagsRequest : AmazonBackupRequest
     {

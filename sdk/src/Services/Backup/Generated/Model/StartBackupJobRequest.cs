@@ -94,8 +94,8 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property CompleteWindowMinutes. 
         /// <para>
         /// A value in minutes during which a successfully started backup must complete, or else
-        /// AWS Backup will cancel the job. This value is optional. This value begins counting
-        /// down from when the backup was scheduled. It does not add additional time for <code>StartWindowMinutes</code>,
+        /// Backup will cancel the job. This value is optional. This value begins counting down
+        /// from when the backup was scheduled. It does not add additional time for <code>StartWindowMinutes</code>,
         /// or if the backup started later than scheduled.
         /// </para>
         /// </summary>
@@ -161,13 +161,17 @@ namespace Amazon.Backup.Model
         ///  
         /// <para>
         /// Backups transitioned to cold storage must be stored in cold storage for a minimum
-        /// of 90 days. Therefore, the “expire after days” setting must be 90 days greater than
-        /// the “transition to cold after days” setting. The “transition to cold after days” setting
-        /// cannot be changed after a backup has been transitioned to cold. 
+        /// of 90 days. Therefore, the “retention” setting must be 90 days greater than the “transition
+        /// to cold after days” setting. The “transition to cold after days” setting cannot be
+        /// changed after a backup has been transitioned to cold. 
         /// </para>
         ///  
         /// <para>
-        /// Only Amazon EFS file system backups can be transitioned to cold storage.
+        /// Only resource types that support full Backup management can transition their backups
+        /// to cold storage. Those resource types are listed in the "Full Backup management" section
+        /// of the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource">
+        /// Feature availability by resource</a> table. Backup ignores this expression for other
+        /// resource types.
         /// </para>
         /// </summary>
         public Lifecycle Lifecycle

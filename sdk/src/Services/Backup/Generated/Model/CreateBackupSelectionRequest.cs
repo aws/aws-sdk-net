@@ -31,7 +31,7 @@ namespace Amazon.Backup.Model
     /// <summary>
     /// Container for the parameters to the CreateBackupSelection operation.
     /// Creates a JSON document that specifies a set of resources to assign to a backup plan.
-    /// For examples, see <a href="https://docs.aws.amazon.com/assigning-resources.html#assigning-resources-json">Assigning
+    /// For examples, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/assigning-resources.html#assigning-resources-json">Assigning
     /// resources programmatically</a>.
     /// </summary>
     public partial class CreateBackupSelectionRequest : AmazonBackupRequest

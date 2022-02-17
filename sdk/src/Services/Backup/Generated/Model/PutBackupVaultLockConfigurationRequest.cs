@@ -128,8 +128,9 @@ namespace Amazon.Backup.Model
         /// policy with a retention period equal to or shorter than the maximum retention period.
         /// If the job's retention period is longer than that maximum retention period, then the
         /// vault fails the backup or copy job, and you should either modify your lifecycle settings
-        /// or use a different vault. Recovery points already saved in the vault prior to Vault
-        /// Lock are not affected.
+        /// or use a different vault. The longest maximum retention period you can specify is
+        /// 36500 days (approximately 100 years). Recovery points already saved in the vault prior
+        /// to Vault Lock are not affected.
         /// </para>
         /// </summary>
         public long MaxRetentionDays
@@ -163,8 +164,8 @@ namespace Amazon.Backup.Model
         /// policy with a retention period equal to or longer than the minimum retention period.
         /// If the job's retention period is shorter than that minimum retention period, then
         /// the vault fails that backup or copy job, and you should either modify your lifecycle
-        /// settings or use a different vault. Recovery points already saved in the vault prior
-        /// to Vault Lock are not affected.
+        /// settings or use a different vault. The shortest minimum retention period you can specify
+        /// is 1 day. Recovery points already saved in the vault prior to Vault Lock are not affected.
         /// </para>
         /// </summary>
         public long MinRetentionDays

@@ -96,7 +96,7 @@ namespace Amazon.Backup
 
         /// <summary>
         /// Creates a JSON document that specifies a set of resources to assign to a backup plan.
-        /// For examples, see <a href="https://docs.aws.amazon.com/assigning-resources.html#assigning-resources-json">Assigning
+        /// For examples, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/assigning-resources.html#assigning-resources-json">Assigning
         /// resources programmatically</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateBackupSelection service method.</param>
@@ -1661,11 +1661,13 @@ namespace Amazon.Backup
         /// Returns a list of key-value pairs assigned to a target recovery point, backup plan,
         /// or backup vault.
         /// 
-        ///  <note> 
+        ///  
         /// <para>
-        ///  <code>ListTags</code> are currently only supported with Amazon EFS backups.
+        ///  <code>ListTags</code> only works for resource types that support full Backup management
+        /// of their backups. Those resource types are listed in the "Full Backup management"
+        /// section of the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource">
+        /// Feature availability by resource</a> table.
         /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTags service method.</param>
         /// <param name="cancellationToken">
@@ -2173,17 +2175,21 @@ namespace Amazon.Backup
         ///  
         /// <para>
         /// Backups transitioned to cold storage must be stored in cold storage for a minimum
-        /// of 90 days. Therefore, the “expire after days” setting must be 90 days greater than
-        /// the “transition to cold after days” setting. The “transition to cold after days” setting
-        /// cannot be changed after a backup has been transitioned to cold.
+        /// of 90 days. Therefore, the “retention” setting must be 90 days greater than the “transition
+        /// to cold after days” setting. The “transition to cold after days” setting cannot be
+        /// changed after a backup has been transitioned to cold.
         /// </para>
         ///  
         /// <para>
-        /// Only Amazon EFS file system backups can be transitioned to cold storage.
+        /// Only resource types that support full Backup management can transition their backups
+        /// to cold storage. Those resource types are listed in the "Full Backup management" section
+        /// of the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource">
+        /// Feature availability by resource</a> table. Backup ignores this expression for other
+        /// resource types.
         /// </para>
         ///  
         /// <para>
-        /// Does not support continuous backups.
+        /// This operation does not support continuous backups.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateRecoveryPointLifecycle service method.</param>

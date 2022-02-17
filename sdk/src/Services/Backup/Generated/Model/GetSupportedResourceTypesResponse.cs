@@ -72,6 +72,14 @@ namespace Amazon.Backup.Model
         /// <para>
         ///  <code>Storage Gateway</code> for Storage Gateway
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DocDB</code> for Amazon DocumentDB (with MongoDB compatibility)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Neptune</code> for Amazon Neptune
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public List<string> ResourceTypes
