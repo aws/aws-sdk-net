@@ -16,7 +16,7 @@
     <property>Amazon.CloudWatchEvidently.Model.CreateExperimentRequest.Name</property>
     <min>1</min>
     <max>127</max>
-    <pattern>[-a-zA-Z0-9._]*</pattern>
+    <pattern>^[-a-zA-Z0-9._]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchEvidently.Model.CreateExperimentRequest.Project</property>
@@ -39,7 +39,7 @@
     <property>Amazon.CloudWatchEvidently.Model.CreateFeatureRequest.DefaultVariation</property>
     <min>1</min>
     <max>127</max>
-    <pattern>[-a-zA-Z0-9._]*</pattern>
+    <pattern>^[-a-zA-Z0-9._]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchEvidently.Model.CreateFeatureRequest.Description</property>
@@ -51,7 +51,7 @@
     <property>Amazon.CloudWatchEvidently.Model.CreateFeatureRequest.Name</property>
     <min>1</min>
     <max>127</max>
-    <pattern>[-a-zA-Z0-9._]*</pattern>
+    <pattern>^[-a-zA-Z0-9._]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchEvidently.Model.CreateFeatureRequest.Project</property>
@@ -69,7 +69,7 @@
     <property>Amazon.CloudWatchEvidently.Model.CreateLaunchRequest.Name</property>
     <min>1</min>
     <max>127</max>
-    <pattern>[-a-zA-Z0-9._]*</pattern>
+    <pattern>^[-a-zA-Z0-9._]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchEvidently.Model.CreateLaunchRequest.Project</property>
@@ -93,13 +93,13 @@
     <property>Amazon.CloudWatchEvidently.Model.CreateProjectRequest.Name</property>
     <min>1</min>
     <max>127</max>
-    <pattern>[-a-zA-Z0-9._]*</pattern>
+    <pattern>^[-a-zA-Z0-9._]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchEvidently.Model.DeleteExperimentRequest.Experiment</property>
     <min>1</min>
     <max>127</max>
-    <pattern>[-a-zA-Z0-9._]*</pattern>
+    <pattern>^[-a-zA-Z0-9._]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchEvidently.Model.DeleteExperimentRequest.Project</property>
@@ -111,7 +111,7 @@
     <property>Amazon.CloudWatchEvidently.Model.DeleteFeatureRequest.Feature</property>
     <min>1</min>
     <max>127</max>
-    <pattern>[-a-zA-Z0-9._]*</pattern>
+    <pattern>^[-a-zA-Z0-9._]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchEvidently.Model.DeleteFeatureRequest.Project</property>
@@ -123,7 +123,7 @@
     <property>Amazon.CloudWatchEvidently.Model.DeleteLaunchRequest.Launch</property>
     <min>1</min>
     <max>127</max>
-    <pattern>[-a-zA-Z0-9._]*</pattern>
+    <pattern>^[-a-zA-Z0-9._]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchEvidently.Model.DeleteLaunchRequest.Project</property>
@@ -147,7 +147,7 @@
     <property>Amazon.CloudWatchEvidently.Model.EvaluateFeatureRequest.Feature</property>
     <min>1</min>
     <max>127</max>
-    <pattern>[-a-zA-Z0-9._]*</pattern>
+    <pattern>^[-a-zA-Z0-9._]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchEvidently.Model.EvaluateFeatureRequest.Project</property>
@@ -159,7 +159,7 @@
     <property>Amazon.CloudWatchEvidently.Model.GetExperimentRequest.Experiment</property>
     <min>1</min>
     <max>127</max>
-    <pattern>[-a-zA-Z0-9._]*</pattern>
+    <pattern>^[-a-zA-Z0-9._]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchEvidently.Model.GetExperimentRequest.Project</property>
@@ -171,7 +171,7 @@
     <property>Amazon.CloudWatchEvidently.Model.GetExperimentResultsRequest.Experiment</property>
     <min>1</min>
     <max>127</max>
-    <pattern>[-a-zA-Z0-9._]*</pattern>
+    <pattern>^[-a-zA-Z0-9._]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchEvidently.Model.GetExperimentResultsRequest.Period</property>
@@ -188,7 +188,7 @@
     <property>Amazon.CloudWatchEvidently.Model.GetFeatureRequest.Feature</property>
     <min>1</min>
     <max>127</max>
-    <pattern>[-a-zA-Z0-9._]*</pattern>
+    <pattern>^[-a-zA-Z0-9._]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchEvidently.Model.GetFeatureRequest.Project</property>
@@ -200,7 +200,7 @@
     <property>Amazon.CloudWatchEvidently.Model.GetLaunchRequest.Launch</property>
     <min>1</min>
     <max>127</max>
-    <pattern>[-a-zA-Z0-9._]*</pattern>
+    <pattern>^[-a-zA-Z0-9._]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchEvidently.Model.GetLaunchRequest.Project</property>
@@ -316,7 +316,7 @@
     <property>Amazon.CloudWatchEvidently.Model.StartExperimentRequest.Experiment</property>
     <min>1</min>
     <max>127</max>
-    <pattern>[-a-zA-Z0-9._]*</pattern>
+    <pattern>^[-a-zA-Z0-9._]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchEvidently.Model.StartExperimentRequest.Project</property>
@@ -328,7 +328,7 @@
     <property>Amazon.CloudWatchEvidently.Model.StartLaunchRequest.Launch</property>
     <min>1</min>
     <max>127</max>
-    <pattern>[-a-zA-Z0-9._]*</pattern>
+    <pattern>^[-a-zA-Z0-9._]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchEvidently.Model.StartLaunchRequest.Project</property>
@@ -340,7 +340,7 @@
     <property>Amazon.CloudWatchEvidently.Model.StopExperimentRequest.Experiment</property>
     <min>1</min>
     <max>127</max>
-    <pattern>[-a-zA-Z0-9._]*</pattern>
+    <pattern>^[-a-zA-Z0-9._]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchEvidently.Model.StopExperimentRequest.Project</property>
@@ -358,7 +358,7 @@
     <property>Amazon.CloudWatchEvidently.Model.StopLaunchRequest.Launch</property>
     <min>1</min>
     <max>127</max>
-    <pattern>[-a-zA-Z0-9._]*</pattern>
+    <pattern>^[-a-zA-Z0-9._]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchEvidently.Model.StopLaunchRequest.Project</property>
@@ -394,7 +394,7 @@
     <property>Amazon.CloudWatchEvidently.Model.UpdateExperimentRequest.Experiment</property>
     <min>1</min>
     <max>127</max>
-    <pattern>[-a-zA-Z0-9._]*</pattern>
+    <pattern>^[-a-zA-Z0-9._]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchEvidently.Model.UpdateExperimentRequest.Project</property>
@@ -417,7 +417,7 @@
     <property>Amazon.CloudWatchEvidently.Model.UpdateFeatureRequest.DefaultVariation</property>
     <min>1</min>
     <max>127</max>
-    <pattern>[-a-zA-Z0-9._]*</pattern>
+    <pattern>^[-a-zA-Z0-9._]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchEvidently.Model.UpdateFeatureRequest.Description</property>
@@ -429,7 +429,7 @@
     <property>Amazon.CloudWatchEvidently.Model.UpdateFeatureRequest.Feature</property>
     <min>1</min>
     <max>127</max>
-    <pattern>[-a-zA-Z0-9._]*</pattern>
+    <pattern>^[-a-zA-Z0-9._]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchEvidently.Model.UpdateFeatureRequest.Project</property>
@@ -447,7 +447,7 @@
     <property>Amazon.CloudWatchEvidently.Model.UpdateLaunchRequest.Launch</property>
     <min>1</min>
     <max>127</max>
-    <pattern>[-a-zA-Z0-9._]*</pattern>
+    <pattern>^[-a-zA-Z0-9._]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchEvidently.Model.UpdateLaunchRequest.Project</property>
@@ -501,7 +501,7 @@
     <property>Amazon.CloudWatchEvidently.Model.EvaluationRequest.Feature</property>
     <min>1</min>
     <max>127</max>
-    <pattern>[-a-zA-Z0-9._]*</pattern>
+    <pattern>^[-a-zA-Z0-9._]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchEvidently.Model.EvaluationResult.EntityId</property>
@@ -513,7 +513,7 @@
     <property>Amazon.CloudWatchEvidently.Model.EvaluationResult.Feature</property>
     <min>1</min>
     <max>127</max>
-    <pattern>[-a-zA-Z0-9._]*</pattern>
+    <pattern>^[-a-zA-Z0-9._]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchEvidently.Model.EvaluationResult.Project</property>
@@ -547,7 +547,7 @@
     <property>Amazon.CloudWatchEvidently.Model.Experiment.Name</property>
     <min>1</min>
     <max>127</max>
-    <pattern>[-a-zA-Z0-9._]*</pattern>
+    <pattern>^[-a-zA-Z0-9._]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchEvidently.Model.Experiment.Project</property>
@@ -582,7 +582,7 @@
     <property>Amazon.CloudWatchEvidently.Model.ExperimentReport.TreatmentName</property>
     <min>1</min>
     <max>127</max>
-    <pattern>[-a-zA-Z0-9._]*</pattern>
+    <pattern>^[-a-zA-Z0-9._]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchEvidently.Model.ExperimentResultsData.MetricName</property>
@@ -594,7 +594,7 @@
     <property>Amazon.CloudWatchEvidently.Model.ExperimentResultsData.TreatmentName</property>
     <min>1</min>
     <max>127</max>
-    <pattern>[-a-zA-Z0-9._]*</pattern>
+    <pattern>^[-a-zA-Z0-9._]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchEvidently.Model.Feature.Arn</property>
@@ -606,7 +606,7 @@
     <property>Amazon.CloudWatchEvidently.Model.Feature.DefaultVariation</property>
     <min>1</min>
     <max>127</max>
-    <pattern>[-a-zA-Z0-9._]*</pattern>
+    <pattern>^[-a-zA-Z0-9._]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchEvidently.Model.Feature.Description</property>
@@ -618,7 +618,7 @@
     <property>Amazon.CloudWatchEvidently.Model.Feature.Name</property>
     <min>1</min>
     <max>127</max>
-    <pattern>[-a-zA-Z0-9._]*</pattern>
+    <pattern>^[-a-zA-Z0-9._]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchEvidently.Model.Feature.Project</property>
@@ -636,13 +636,13 @@
     <property>Amazon.CloudWatchEvidently.Model.FeatureSummary.DefaultVariation</property>
     <min>1</min>
     <max>127</max>
-    <pattern>[-a-zA-Z0-9._]*</pattern>
+    <pattern>^[-a-zA-Z0-9._]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchEvidently.Model.FeatureSummary.Name</property>
     <min>1</min>
     <max>127</max>
-    <pattern>[-a-zA-Z0-9._]*</pattern>
+    <pattern>^[-a-zA-Z0-9._]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchEvidently.Model.FeatureSummary.Project</property>
@@ -666,7 +666,7 @@
     <property>Amazon.CloudWatchEvidently.Model.Launch.Name</property>
     <min>1</min>
     <max>127</max>
-    <pattern>[-a-zA-Z0-9._]*</pattern>
+    <pattern>^[-a-zA-Z0-9._]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchEvidently.Model.Launch.Project</property>
@@ -696,7 +696,7 @@
     <property>Amazon.CloudWatchEvidently.Model.LaunchGroup.Name</property>
     <min>1</min>
     <max>127</max>
-    <pattern>[-a-zA-Z0-9._]*</pattern>
+    <pattern>^[-a-zA-Z0-9._]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchEvidently.Model.LaunchGroupConfig.Description</property>
@@ -708,19 +708,19 @@
     <property>Amazon.CloudWatchEvidently.Model.LaunchGroupConfig.Feature</property>
     <min>1</min>
     <max>127</max>
-    <pattern>[-a-zA-Z0-9._]*</pattern>
+    <pattern>^[-a-zA-Z0-9._]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchEvidently.Model.LaunchGroupConfig.Name</property>
     <min>1</min>
     <max>127</max>
-    <pattern>[-a-zA-Z0-9._]*</pattern>
+    <pattern>^[-a-zA-Z0-9._]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchEvidently.Model.LaunchGroupConfig.Variation</property>
     <min>1</min>
     <max>127</max>
-    <pattern>[-a-zA-Z0-9._]*</pattern>
+    <pattern>^[-a-zA-Z0-9._]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchEvidently.Model.MetricDefinition.EntityIdKey</property>
@@ -779,13 +779,13 @@
     <property>Amazon.CloudWatchEvidently.Model.OnlineAbConfig.ControlTreatmentName</property>
     <min>1</min>
     <max>127</max>
-    <pattern>[-a-zA-Z0-9._]*</pattern>
+    <pattern>^[-a-zA-Z0-9._]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchEvidently.Model.OnlineAbDefinition.ControlTreatmentName</property>
     <min>1</min>
     <max>127</max>
-    <pattern>[-a-zA-Z0-9._]*</pattern>
+    <pattern>^[-a-zA-Z0-9._]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchEvidently.Model.Project.Arn</property>
@@ -803,7 +803,7 @@
     <property>Amazon.CloudWatchEvidently.Model.Project.Name</property>
     <min>1</min>
     <max>127</max>
-    <pattern>[-a-zA-Z0-9._]*</pattern>
+    <pattern>^[-a-zA-Z0-9._]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchEvidently.Model.ProjectSummary.Arn</property>
@@ -821,7 +821,7 @@
     <property>Amazon.CloudWatchEvidently.Model.ProjectSummary.Name</property>
     <min>1</min>
     <max>127</max>
-    <pattern>[-a-zA-Z0-9._]*</pattern>
+    <pattern>^[-a-zA-Z0-9._]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchEvidently.Model.PutProjectEventsResultEntry.ErrorCode</property>
@@ -874,7 +874,7 @@
     <property>Amazon.CloudWatchEvidently.Model.Treatment.Name</property>
     <min>1</min>
     <max>127</max>
-    <pattern>[-a-zA-Z0-9._]*</pattern>
+    <pattern>^[-a-zA-Z0-9._]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchEvidently.Model.TreatmentConfig.Description</property>
@@ -886,19 +886,19 @@
     <property>Amazon.CloudWatchEvidently.Model.TreatmentConfig.Feature</property>
     <min>1</min>
     <max>127</max>
-    <pattern>[-a-zA-Z0-9._]*</pattern>
+    <pattern>^[-a-zA-Z0-9._]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchEvidently.Model.TreatmentConfig.Name</property>
     <min>1</min>
     <max>127</max>
-    <pattern>[-a-zA-Z0-9._]*</pattern>
+    <pattern>^[-a-zA-Z0-9._]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchEvidently.Model.TreatmentConfig.Variation</property>
     <min>1</min>
     <max>127</max>
-    <pattern>[-a-zA-Z0-9._]*</pattern>
+    <pattern>^[-a-zA-Z0-9._]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchEvidently.Model.VariableValue.LongValue</property>
@@ -914,12 +914,12 @@
     <property>Amazon.CloudWatchEvidently.Model.Variation.Name</property>
     <min>1</min>
     <max>127</max>
-    <pattern>[-a-zA-Z0-9._]*</pattern>
+    <pattern>^[-a-zA-Z0-9._]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchEvidently.Model.VariationConfig.Name</property>
     <min>1</min>
     <max>127</max>
-    <pattern>[-a-zA-Z0-9._]*</pattern>
+    <pattern>^[-a-zA-Z0-9._]*$</pattern>
   </property-value-rule>
 </property-value-rules>

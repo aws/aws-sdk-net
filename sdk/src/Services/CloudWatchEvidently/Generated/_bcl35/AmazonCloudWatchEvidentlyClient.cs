@@ -708,6 +708,9 @@ namespace Amazon.CloudWatchEvidently
         /// <exception cref="Amazon.CloudWatchEvidently.Model.ServiceUnavailableException">
         /// The service was unavailable. Retry the request.
         /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ValidationException">
+        /// The value of a parameter in the request caused an error.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/DeleteExperiment">REST API Reference for DeleteExperiment Operation</seealso>
         public virtual DeleteExperimentResponse DeleteExperiment(DeleteExperimentRequest request)
         {
@@ -1080,6 +1083,9 @@ namespace Amazon.CloudWatchEvidently
         /// <exception cref="Amazon.CloudWatchEvidently.Model.ThrottlingException">
         /// The request was denied because of request throttling. Retry the request.
         /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ValidationException">
+        /// The value of a parameter in the request caused an error.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/GetExperiment">REST API Reference for GetExperiment Operation</seealso>
         public virtual GetExperimentResponse GetExperiment(GetExperimentRequest request)
         {
@@ -1280,6 +1286,9 @@ namespace Amazon.CloudWatchEvidently
         /// <exception cref="Amazon.CloudWatchEvidently.Model.ThrottlingException">
         /// The request was denied because of request throttling. Retry the request.
         /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ValidationException">
+        /// The value of a parameter in the request caused an error.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/GetLaunch">REST API Reference for GetLaunch Operation</seealso>
         public virtual GetLaunchResponse GetLaunch(GetLaunchRequest request)
         {
@@ -1401,6 +1410,9 @@ namespace Amazon.CloudWatchEvidently
         /// <param name="request">Container for the necessary parameters to execute the ListExperiments service method.</param>
         /// 
         /// <returns>The response from the ListExperiments service method, as returned by CloudWatchEvidently.</returns>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
         /// <exception cref="Amazon.CloudWatchEvidently.Model.ResourceNotFoundException">
         /// The request references a resource that does not exist.
         /// </exception>
@@ -1858,6 +1870,9 @@ namespace Amazon.CloudWatchEvidently
         /// <returns>The response from the StartLaunch service method, as returned by CloudWatchEvidently.</returns>
         /// <exception cref="Amazon.CloudWatchEvidently.Model.AccessDeniedException">
         /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ConflictException">
+        /// A resource was in an inconsistent state during an update or a deletion.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchEvidently.Model.ResourceNotFoundException">
         /// The request references a resource that does not exist.

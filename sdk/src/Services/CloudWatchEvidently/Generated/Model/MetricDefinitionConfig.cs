@@ -47,7 +47,7 @@ namespace Amazon.CloudWatchEvidently.Model
         /// to be recorded. An example is <code>userDetails.userID</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=256)]
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string EntityIdKey
         {
             get { return this._entityIdKey; }
@@ -90,7 +90,7 @@ namespace Amazon.CloudWatchEvidently.Model
         /// A name for the metric.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=255)]
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string Name
         {
             get { return this._name; }
@@ -128,7 +128,7 @@ namespace Amazon.CloudWatchEvidently.Model
         /// The value that is tracked to produce the metric.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=256)]
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string ValueKey
         {
             get { return this._valueKey; }

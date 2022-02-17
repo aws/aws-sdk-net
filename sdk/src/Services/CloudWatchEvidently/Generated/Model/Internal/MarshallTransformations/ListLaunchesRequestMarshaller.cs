@@ -67,6 +67,9 @@ namespace Amazon.CloudWatchEvidently.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
+            
+            if (publicRequest.IsSetStatus())
+                request.Parameters.Add("status", StringUtils.FromString(publicRequest.Status));
             request.ResourcePath = "/projects/{project}/launches";
             request.UseQueryString = true;
 
