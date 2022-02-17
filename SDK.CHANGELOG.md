@@ -1,3 +1,17 @@
+### 3.7.211.0 (2022-02-17 19:16 UTC)
+* Backup (3.7.6.0)
+	* AWS Backup add new S3_BACKUP_OBJECT_FAILED and S3_RESTORE_OBJECT_FAILED event types in BackupVaultNotifications events list.
+* CloudWatchEvidently (3.7.1.0)
+	* Add support for filtering list of experiments and launches by status
+* IdentityManagement (3.7.2.104)
+	* Documentation updates for AWS Identity and Access Management (IAM).
+* Redshift (3.7.12.0)
+	* SDK release for Cross region datasharing and cost-control for cross region datasharing
+* Core 3.7.7.1
+	* Updating endpoints.json file.
+
+	* All services packages updated to require new Core
+
 ### 3.7.210.0 (2022-02-16 19:18 UTC)
 * Budgets (3.7.1.0)
 	* Adds support for auto-adjusting budgets, a new budget method alongside fixed and planned. Auto-adjusting budgets introduces new metadata to configure a budget limit baseline using a historical lookback average or current period forecast.
