@@ -2611,9 +2611,9 @@ namespace Amazon.IdentityManagement
         /// <summary>
         /// Generates a report that includes details about when an IAM resource (user, group,
         /// role, or policy) was last used in an attempt to access Amazon Web Services services.
-        /// Recent activity usually appears within four hours. IAM reports activity for the last
-        /// 365 days, or less if your Region began supporting this feature within the last year.
-        /// For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period">Regions
+        /// Recent activity usually appears within four hours. IAM reports activity for at least
+        /// the last 400 days, or less if your Region began supporting this feature within the
+        /// last year. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period">Regions
         /// where data is tracked</a>.
         /// 
         ///  <important> 
@@ -5499,8 +5499,8 @@ namespace Amazon.IdentityManagement
         /// <para>
         /// IAM resource-listing operations return a subset of the available attributes for the
         /// resource. For example, this operation does not return tags, even though they are an
-        /// attribute of the returned object. To view all of the information for a virtual MFA
-        /// device, see <a>ListVirtualMFADevices</a>.
+        /// attribute of the returned object. To view tag information for a virtual MFA device,
+        /// see <a>ListMFADeviceTags</a>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -5528,8 +5528,8 @@ namespace Amazon.IdentityManagement
         /// <para>
         /// IAM resource-listing operations return a subset of the available attributes for the
         /// resource. For example, this operation does not return tags, even though they are an
-        /// attribute of the returned object. To view all of the information for a virtual MFA
-        /// device, see <a>ListVirtualMFADevices</a>.
+        /// attribute of the returned object. To view tag information for a virtual MFA device,
+        /// see <a>ListMFADeviceTags</a>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -7188,7 +7188,7 @@ namespace Amazon.IdentityManagement
         /// <summary>
         /// Updates the password policy settings for the Amazon Web Services account.
         /// 
-        ///  <note> <ul> <li> 
+        ///  <note> 
         /// <para>
         /// This operation does not support partial updates. No parameters are required, but if
         /// you do not specify a parameter, that parameter's value reverts to its default value.
@@ -7197,7 +7197,7 @@ namespace Amazon.IdentityManagement
         /// Instead, to invoke the default value, do not include that parameter when you invoke
         /// the operation.
         /// </para>
-        ///  </li> </ul> </note> 
+        ///  </note> 
         /// <para>
         ///  For more information about using a password policy, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html">Managing
         /// an IAM password policy</a> in the <i>IAM User Guide</i>.
@@ -7231,7 +7231,7 @@ namespace Amazon.IdentityManagement
         /// <summary>
         /// Updates the password policy settings for the Amazon Web Services account.
         /// 
-        ///  <note> <ul> <li> 
+        ///  <note> 
         /// <para>
         /// This operation does not support partial updates. No parameters are required, but if
         /// you do not specify a parameter, that parameter's value reverts to its default value.
@@ -7240,7 +7240,7 @@ namespace Amazon.IdentityManagement
         /// Instead, to invoke the default value, do not include that parameter when you invoke
         /// the operation.
         /// </para>
-        ///  </li> </ul> </note> 
+        ///  </note> 
         /// <para>
         ///  For more information about using a password policy, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html">Managing
         /// an IAM password policy</a> in the <i>IAM User Guide</i>.

@@ -53,7 +53,10 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property AllowUsersToChangePassword. 
         /// <para>
-        /// Specifies whether IAM users are allowed to change their own password.
+        /// Specifies whether IAM users are allowed to change their own password. Gives IAM users
+        /// permissions to <code>iam:ChangePassword</code> for only their user and to the <code>iam:GetAccountPasswordPolicy</code>
+        /// action. This option does not attach a permissions policy to each user, rather the
+        /// permissions are applied at the account-level for all users by IAM.
         /// </para>
         /// </summary>
         public bool AllowUsersToChangePassword
@@ -90,8 +93,11 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property HardExpiry. 
         /// <para>
-        /// Specifies whether IAM users are prevented from setting a new password after their
-        /// password has expired.
+        /// Specifies whether IAM users are prevented from setting a new password via the Amazon
+        /// Web Services Management Console after their password has expired. The IAM user cannot
+        /// access the console until an administrator resets the password. IAM users with <code>iam:ChangePassword</code>
+        /// permission and active access keys can reset their own expired console password using
+        /// the CLI or API.
         /// </para>
         /// </summary>
         public bool HardExpiry
