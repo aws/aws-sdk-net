@@ -134,7 +134,7 @@ namespace Amazon.Budgets.Model
         /// The maximum limit for your threshold is 1,000,000% above the budgeted amount.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=40000000000)]
+        [AWSProperty(Required=true, Min=0, Max=15000000000000)]
         public double Threshold
         {
             get { return this._threshold.GetValueOrDefault(); }

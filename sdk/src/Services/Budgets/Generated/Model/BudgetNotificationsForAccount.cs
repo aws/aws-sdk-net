@@ -29,43 +29,42 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Budgets.Model
 {
     /// <summary>
-    /// The trigger threshold of the action.
+    /// The budget name and associated notifications for an account.
     /// </summary>
-    public partial class ActionThreshold
+    public partial class BudgetNotificationsForAccount
     {
-        private ThresholdType _actionThresholdType;
-        private double? _actionThresholdValue;
+        private string _budgetName;
+        private List<Notification> _notifications = new List<Notification>();
 
         /// <summary>
-        /// Gets and sets the property ActionThresholdType.
+        /// Gets and sets the property BudgetName.
         /// </summary>
-        [AWSProperty(Required=true)]
-        public ThresholdType ActionThresholdType
+        [AWSProperty(Min=1, Max=100)]
+        public string BudgetName
         {
-            get { return this._actionThresholdType; }
-            set { this._actionThresholdType = value; }
+            get { return this._budgetName; }
+            set { this._budgetName = value; }
         }
 
-        // Check to see if ActionThresholdType property is set
-        internal bool IsSetActionThresholdType()
+        // Check to see if BudgetName property is set
+        internal bool IsSetBudgetName()
         {
-            return this._actionThresholdType != null;
+            return this._budgetName != null;
         }
 
         /// <summary>
-        /// Gets and sets the property ActionThresholdValue.
+        /// Gets and sets the property Notifications.
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=15000000000000)]
-        public double ActionThresholdValue
+        public List<Notification> Notifications
         {
-            get { return this._actionThresholdValue.GetValueOrDefault(); }
-            set { this._actionThresholdValue = value; }
+            get { return this._notifications; }
+            set { this._notifications = value; }
         }
 
-        // Check to see if ActionThresholdValue property is set
-        internal bool IsSetActionThresholdValue()
+        // Check to see if Notifications property is set
+        internal bool IsSetNotifications()
         {
-            return this._actionThresholdValue.HasValue; 
+            return this._notifications != null && this._notifications.Count > 0; 
         }
 
     }

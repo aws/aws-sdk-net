@@ -41,6 +41,11 @@ namespace Amazon.Budgets.Model
         IDescribeBudgetActionsForBudgetPaginator DescribeBudgetActionsForBudget(DescribeBudgetActionsForBudgetRequest request);
 
         /// <summary>
+        /// Paginator for DescribeBudgetNotificationsForAccount operation
+        ///</summary>
+        IDescribeBudgetNotificationsForAccountPaginator DescribeBudgetNotificationsForAccount(DescribeBudgetNotificationsForAccountRequest request);
+
+        /// <summary>
         /// Paginator for DescribeBudgetPerformanceHistory operation
         ///</summary>
         IDescribeBudgetPerformanceHistoryPaginator DescribeBudgetPerformanceHistory(DescribeBudgetPerformanceHistoryRequest request);
