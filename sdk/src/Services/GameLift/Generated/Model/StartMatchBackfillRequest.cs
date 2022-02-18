@@ -65,6 +65,10 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  
     /// <para>
+    /// Only game sessions created by FlexMatch are supported for match backfill.
+    /// </para>
+    ///  
+    /// <para>
     ///  <b>Learn more</b> 
     /// </para>
     ///  
@@ -156,6 +160,11 @@ namespace Amazon.GameLift.Model
         /// For more details, see <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">
         /// Match Data</a>. 
         /// </para>
+        ///  
+        /// <para>
+        /// The backfill request must specify the team membership for every player. Do not specify
+        /// team if you are not using backfill.
+        /// </para>
         ///  </li> <li> 
         /// <para>
         /// LatencyInMs -- If the matchmaker uses player latency, include a latency value, in
@@ -181,8 +190,8 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property TicketId. 
         /// <para>
         /// A unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon
-        /// GameLift will generate one in the form of a UUID. Use this identifier to track the
-        /// match backfill ticket status and retrieve match results.
+        /// Web Services will generate one in the form of a UUID. Use this identifier to track
+        /// the match backfill ticket status and retrieve match results.
         /// </para>
         /// </summary>
         [AWSProperty(Max=128)]

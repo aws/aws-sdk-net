@@ -38,7 +38,8 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  
     /// <para>
-    ///  <a>CreateFleet</a> 
+    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateFleet.html">CreateFleet</a>
+    /// 
     /// </para>
     /// </summary>
     public partial class LocationConfiguration
@@ -48,7 +49,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Location. 
         /// <para>
-        /// An AWS Region code, such as <code>us-west-2</code>. 
+        /// An Amazon Web Services Region code, such as <code>us-west-2</code>. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

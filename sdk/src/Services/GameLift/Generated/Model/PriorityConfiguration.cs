@@ -68,8 +68,9 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property LocationOrder. 
         /// <para>
         /// The prioritization order to use for fleet locations, when the <code>PriorityOrder</code>
-        /// property includes <code>LOCATION</code>. Locations are identified by AWS Region codes
-        /// such as <code>us-west-2</code>. Each location can only be listed once. 
+        /// property includes <code>LOCATION</code>. Locations are identified by Amazon Web Services
+        /// Region codes such as <code>us-west-2</code>. Each location can only be listed once.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

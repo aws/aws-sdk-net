@@ -30,8 +30,8 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// The location in Amazon S3 where build or script files are stored for access by Amazon
-    /// GameLift. This location is specified in <a>CreateBuild</a>, <a>CreateScript</a>, and
-    /// <a>UpdateScript</a> requests.
+    /// Web Services. This location is specified in <a>CreateBuild</a>, <a>CreateScript</a>,
+    /// and <a>UpdateScript</a> requests.
     /// </summary>
     public partial class S3Location
     {
@@ -88,9 +88,9 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property ObjectVersion. 
         /// <para>
         /// The version of the file, if object versioning is turned on for the bucket. Amazon
-        /// GameLift uses this information when retrieving files from an S3 bucket that you own.
-        /// Use this parameter to specify a specific version of the file. If not set, the latest
-        /// version of the file is retrieved. 
+        /// Web Services uses this information when retrieving files from an S3 bucket that you
+        /// own. Use this parameter to specify a specific version of the file. If not set, the
+        /// latest version of the file is retrieved. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -110,7 +110,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property RoleArn. 
         /// <para>
         /// The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-        /// for an IAM role that allows Amazon GameLift to access the S3 bucket.
+        /// for an IAM role that allows Amazon Web Services to access the S3 bucket.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

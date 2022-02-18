@@ -31,8 +31,9 @@ namespace Amazon.GameLift.Model
     /// <summary>
     /// Container for the parameters to the ListTagsForResource operation.
     /// Retrieves all tags that are assigned to a GameLift resource. Resource tags are used
-    /// to organize AWS resources for a range of purposes. This operation handles the permissions
-    /// necessary to manage tags for the following GameLift resource types:
+    /// to organize Amazon Web Services resources for a range of purposes. This operation
+    /// handles the permissions necessary to manage tags for the following GameLift resource
+    /// types:
     /// 
     ///  <ul> <li> 
     /// <para>
@@ -73,12 +74,13 @@ namespace Amazon.GameLift.Model
     ///  
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-    /// AWS Resources</a> in the <i>AWS General Reference</i> 
+    /// Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>
+    /// 
     /// </para>
     ///  
     /// <para>
     ///  <a href="http://aws.amazon.com/answers/account-management/aws-tagging-strategies/">
-    /// AWS Tagging Strategies</a> 
+    /// Amazon Web Services Tagging Strategies</a> 
     /// </para>
     ///  
     /// <para>

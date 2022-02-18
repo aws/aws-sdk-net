@@ -30,11 +30,11 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the TagResource operation.
-    /// Assigns a tag to a GameLift resource. AWS resource tags provide an additional management
-    /// tool set. You can use tags to organize resources, create IAM permissions policies
-    /// to manage access to groups of resources, customize AWS cost breakdowns, etc. This
-    /// operation handles the permissions necessary to manage tags for the following GameLift
-    /// resource types:
+    /// Assigns a tag to a GameLift resource. Amazon Web Services resource tags provide an
+    /// additional management tool set. You can use tags to organize resources, create IAM
+    /// permissions policies to manage access to groups of resources, customize Amazon Web
+    /// Services cost breakdowns, etc. This operation handles the permissions necessary to
+    /// manage tags for the following GameLift resource types:
     /// 
     ///  <ul> <li> 
     /// <para>
@@ -77,12 +77,13 @@ namespace Amazon.GameLift.Model
     ///  
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-    /// AWS Resources</a> in the <i>AWS General Reference</i> 
+    /// Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>
+    /// 
     /// </para>
     ///  
     /// <para>
     ///  <a href="http://aws.amazon.com/answers/account-management/aws-tagging-strategies/">
-    /// AWS Tagging Strategies</a> 
+    /// Amazon Web Services Tagging Strategies</a> 
     /// </para>
     ///  
     /// <para>
@@ -128,7 +129,7 @@ namespace Amazon.GameLift.Model
         /// A list of one or more tags to assign to the specified GameLift resource. Tags are
         /// developer-defined and structured as key-value pairs. The maximum tag limit may be
         /// lower than stated. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">
-        /// Tagging AWS Resources</a> for actual tagging limits.
+        /// Tagging Amazon Web Services Resources</a> for actual tagging limits.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=200)]

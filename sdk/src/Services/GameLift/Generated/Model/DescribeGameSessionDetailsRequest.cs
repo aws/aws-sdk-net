@@ -56,8 +56,8 @@ namespace Amazon.GameLift.Model
     ///  </li> <li> 
     /// <para>
     /// To retrieve details for a specific game session, provide the game session ID. This
-    /// approach looks for the game session ID in all fleets that reside in the AWS Region
-    /// defined in the request.
+    /// approach looks for the game session ID in all fleets that reside in the Amazon Web
+    /// Services Region defined in the request.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -181,7 +181,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property Location. 
         /// <para>
         /// A fleet location to get game sessions for. You can specify a fleet's home Region or
-        /// a remote location. Use the AWS Region code format, such as <code>us-west-2</code>.
+        /// a remote location. Use the Amazon Web Services Region code format, such as <code>us-west-2</code>.
         /// 
         /// </para>
         /// </summary>

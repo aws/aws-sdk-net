@@ -107,9 +107,9 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property InstanceIds. 
         /// <para>
-        /// The EC2 instance IDs that you want to retrieve status on. EC2 instance IDs use a 17-character
-        /// format, for example: <code>i-1234567890abcdef0</code>. To retrieve all instances in
-        /// the game server group, leave this parameter empty. 
+        /// The Amazon EC2 instance IDs that you want to retrieve status on. Amazon EC2 instance
+        /// IDs use a 17-character format, for example: <code>i-1234567890abcdef0</code>. To retrieve
+        /// all instances in the game server group, leave this parameter empty. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=20)]

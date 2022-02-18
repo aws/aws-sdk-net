@@ -36,9 +36,9 @@ namespace Amazon.GameLift.Model
     /// 
     ///  <note> 
     /// <para>
-    /// See the <a href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_gamelift">AWS
-    /// Service Limits</a> page for maximum log file sizes. Log files that exceed this limit
-    /// are not saved.
+    /// See the <a href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_gamelift">Amazon
+    /// Web Services Service Limits</a> page for maximum log file sizes. Log files that exceed
+    /// this limit are not saved.
     /// </para>
     ///  </note> 
     /// <para>

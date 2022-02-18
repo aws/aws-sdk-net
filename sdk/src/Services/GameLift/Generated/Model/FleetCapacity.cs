@@ -38,7 +38,9 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  
     /// <para>
-    ///  <a>DescribeFleetCapacity</a> | <a>DescribeFleetLocationCapacity</a> | <a>UpdateFleetCapacity</a>
+    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetCapacity.html">DescribeFleetCapacity</a>
+    /// | <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetLocationCapacity.html">DescribeFleetLocationCapacity</a>
+    /// | <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateFleetCapacity.html">UpdateFleetCapacity</a>
     /// 
     /// </para>
     /// </summary>
@@ -109,10 +111,10 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
-        /// The EC2 instance type that is used for all instances in a fleet. The instance type
-        /// determines the computing resources in use, including CPU, memory, storage, and networking
-        /// capacity. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance
-        /// Types</a> for detailed descriptions.
+        /// The Amazon EC2 instance type that is used for all instances in a fleet. The instance
+        /// type determines the computing resources in use, including CPU, memory, storage, and
+        /// networking capacity. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon
+        /// Elastic Compute Cloud Instance Types</a> for detailed descriptions.
         /// </para>
         /// </summary>
         public EC2InstanceType InstanceType
@@ -130,8 +132,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Location. 
         /// <para>
-        /// The fleet location for the instance count information, expressed as an AWS Region
-        /// code, such as <code>us-west-2</code>. 
+        /// The fleet location for the instance count information, expressed as an Amazon Web
+        /// Services Region code, such as <code>us-west-2</code>. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

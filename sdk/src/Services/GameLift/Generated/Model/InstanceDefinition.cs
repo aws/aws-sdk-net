@@ -47,7 +47,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
-        /// An EC2 instance type designation.
+        /// An Amazon EC2 instance type designation.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -70,7 +70,8 @@ namespace Amazon.GameLift.Model
         /// capacity of a game server group. Instance weights are used by GameLift FleetIQ to
         /// calculate the instance type's cost per unit hour and better identify the most cost-effective
         /// options. For detailed information on weighting instance capacity, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html">Instance
-        /// Weighting</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. Default value is "1".
+        /// Weighting</a> in the <i>Amazon Elastic Compute Cloud Auto Scaling User Guide</i>.
+        /// Default value is "1".
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=3)]

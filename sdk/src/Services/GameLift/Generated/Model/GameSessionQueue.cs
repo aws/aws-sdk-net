@@ -38,7 +38,9 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  
     /// <para>
-    ///  <a>CreateGameSessionQueue</a> | <a>DescribeGameSessionQueues</a> | <a>UpdateGameSessionQueue</a>
+    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateGameSessionQueue.html">CreateGameSessionQueue</a>
+    /// | <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeGameSessionQueues.html">DescribeGameSessionQueues</a>
+    /// | <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateGameSessionQueue.html">UpdateGameSessionQueue</a>
     /// 
     /// </para>
     /// </summary>
@@ -98,8 +100,8 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property FilterConfiguration. 
         /// <para>
         /// A list of locations where a queue is allowed to place new game sessions. Locations
-        /// are specified in the form of AWS Region codes, such as <code>us-west-2</code>. If
-        /// this parameter is not set, game sessions can be placed in any queue location. 
+        /// are specified in the form of Amazon Web Services Region codes, such as <code>us-west-2</code>.
+        /// If this parameter is not set, game sessions can be placed in any queue location. 
         /// </para>
         /// </summary>
         public FilterConfiguration FilterConfiguration

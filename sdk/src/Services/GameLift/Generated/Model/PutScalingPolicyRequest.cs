@@ -32,7 +32,7 @@ namespace Amazon.GameLift.Model
     /// Container for the parameters to the PutScalingPolicy operation.
     /// Creates or updates a scaling policy for a fleet. Scaling policies are used to automatically
     /// scale a fleet's hosting capacity to meet player demand. An active scaling policy instructs
-    /// Amazon GameLift to track a fleet metric and automatically change the fleet's capacity
+    /// Amazon Web Services to track a fleet metric and automatically change the fleet's capacity
     /// when a certain threshold is reached. There are two types of scaling policies: target-based
     /// and rule-based. Use a target-based policy to quickly and efficiently manage fleet
     /// scaling; this option is the most commonly used. Use rule-based policies when you need
@@ -67,16 +67,16 @@ namespace Amazon.GameLift.Model
     /// tells us how much of a fleet's hosting capacity is ready to host game sessions but
     /// is not currently in use. This is the fleet's buffer; it measures the additional player
     /// demand that the fleet could handle at current capacity. With a target-based policy,
-    /// you set your ideal buffer size and leave it to Amazon GameLift to take whatever action
-    /// is needed to maintain that target. 
+    /// you set your ideal buffer size and leave it to Amazon Web Services to take whatever
+    /// action is needed to maintain that target. 
     /// </para>
     ///  
     /// <para>
     /// For example, you might choose to maintain a 10% buffer for a fleet that has the capacity
-    /// to host 100 simultaneous game sessions. This policy tells Amazon GameLift to take
+    /// to host 100 simultaneous game sessions. This policy tells Amazon Web Services to take
     /// action whenever the fleet's available capacity falls below or rises above 10 game
-    /// sessions. Amazon GameLift will start new instances or stop unused instances in order
-    /// to return to the 10% buffer. 
+    /// sessions. Amazon Web Services will start new instances or stop unused instances in
+    /// order to return to the 10% buffer. 
     /// </para>
     ///  
     /// <para>
@@ -220,9 +220,9 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property MetricName. 
         /// <para>
-        /// Name of the Amazon GameLift-defined metric that is used to trigger a scaling adjustment.
+        /// Name of the Amazon Web Services-defined metric that is used to trigger a scaling adjustment.
         /// For detailed descriptions of fleet metrics, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor
-        /// Amazon GameLift with Amazon CloudWatch</a>. 
+        /// Amazon Web Services with Amazon CloudWatch</a>. 
         /// </para>
         ///  <ul> <li> 
         /// <para>

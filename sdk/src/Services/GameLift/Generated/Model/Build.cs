@@ -153,7 +153,8 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property SizeOnDisk. 
         /// <para>
         /// File size of the uploaded game build, expressed in bytes. When the build status is
-        /// <code>INITIALIZED</code>, this value is 0.
+        /// <code>INITIALIZED</code> or when using a custom Amazon S3 storage location, this value
+        /// is 0.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

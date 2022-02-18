@@ -145,8 +145,8 @@ namespace Amazon.GameLift.Model
         /// be terminated during a scale-down event, causing players to be dropped from the game.
         /// Protected instances cannot be terminated while there are active game servers running
         /// except in the event of a forced game server group deletion (see ). An exception to
-        /// this is with Spot Instances, which can be terminated by AWS regardless of protection
-        /// status. This property is set to <code>NO_PROTECTION</code> by default.
+        /// this is with Spot Instances, which can be terminated by Amazon Web Services regardless
+        /// of protection status. This property is set to <code>NO_PROTECTION</code> by default.
         /// </para>
         /// </summary>
         public GameServerProtectionPolicy GameServerProtectionPolicy
@@ -164,8 +164,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property InstanceDefinitions. 
         /// <para>
-        /// An updated list of EC2 instance types to use in the Auto Scaling group. The instance
-        /// definitions must specify at least two different instance types that are supported
+        /// An updated list of Amazon EC2 instance types to use in the Auto Scaling group. The
+        /// instance definitions must specify at least two different instance types that are supported
         /// by GameLift FleetIQ. This updated list replaces the entire current list of instance
         /// definitions for the game server group. For more information on instance types, see
         /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2
@@ -194,7 +194,8 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property RoleArn. 
         /// <para>
         /// The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-        /// for an IAM role that allows Amazon GameLift to access your EC2 Auto Scaling groups.
+        /// for an IAM role that allows Amazon Web Services to access your Amazon EC2 Auto Scaling
+        /// groups.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

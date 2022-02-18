@@ -30,13 +30,14 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateBuild operation.
-    /// Creates a new Amazon GameLift build resource for your game server binary files. Game
-    /// server binaries must be combined into a zip file for use with Amazon GameLift. 
+    /// Creates a new Amazon Web Services build resource for your game server binary files.
+    /// Game server binaries must be combined into a zip file for use with Amazon Web Services.
+    /// 
     /// 
     ///  <important> 
     /// <para>
-    /// When setting up a new game build for GameLift, we recommend using the AWS CLI command
-    /// <b> <a href="https://docs.aws.amazon.com/cli/latest/reference/gamelift/upload-build.html">upload-build</a>
+    /// When setting up a new game build for GameLift, we recommend using the Amazon Web Services
+    /// CLI command <b> <a href="https://docs.aws.amazon.com/cli/latest/reference/gamelift/upload-build.html">upload-build</a>
     /// </b>. This helper command combines two tasks: (1) it uploads your build files from
     /// a file directory to a GameLift Amazon S3 location, and (2) it creates a new build
     /// resource. 
@@ -48,10 +49,10 @@ namespace Amazon.GameLift.Model
     ///  <ul> <li> 
     /// <para>
     /// To create a new game build with build files that are in an Amazon S3 location under
-    /// an AWS account that you control. To use this option, you must first give Amazon GameLift
-    /// access to the Amazon S3 bucket. With permissions in place, call <code>CreateBuild</code>
-    /// and specify a build name, operating system, and the Amazon S3 storage location of
-    /// your game build.
+    /// an Amazon Web Services account that you control. To use this option, you must first
+    /// give Amazon Web Services access to the Amazon S3 bucket. With permissions in place,
+    /// call <code>CreateBuild</code> and specify a build name, operating system, and the
+    /// Amazon S3 storage location of your game build.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -151,8 +152,14 @@ namespace Amazon.GameLift.Model
         /// Information indicating where your game build files are stored. Use this parameter
         /// only when creating a build with files stored in an Amazon S3 bucket that you own.
         /// The storage location must specify an Amazon S3 bucket name and key. The location must
-        /// also specify a role ARN that you set up to allow Amazon GameLift to access your Amazon
-        /// S3 bucket. The S3 bucket and your new build must be in the same Region.
+        /// also specify a role ARN that you set up to allow Amazon Web Services to access your
+        /// Amazon S3 bucket. The S3 bucket and your new build must be in the same Region.
+        /// </para>
+        ///  
+        /// <para>
+        /// If a <code>StorageLocation</code> is specified, the size of your file can be found
+        /// in your Amazon S3 bucket. Amazon Web Services will report a <code>SizeOnDisk</code>
+        /// of 0. 
         /// </para>
         /// </summary>
         public S3Location StorageLocation
@@ -171,12 +178,13 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property Tags. 
         /// <para>
         /// A list of labels to assign to the new build resource. Tags are developer-defined key-value
-        /// pairs. Tagging AWS resources are useful for resource management, access management
-        /// and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">
-        /// Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is
-        /// created, you can use <a>TagResource</a>, <a>UntagResource</a>, and <a>ListTagsForResource</a>
-        /// to add, remove, and view tags. The maximum tag limit may be lower than stated. See
-        /// the AWS General Reference for actual tagging limits.
+        /// pairs. Tagging Amazon Web Services resources are useful for resource management, access
+        /// management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">
+        /// Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>.
+        /// Once the resource is created, you can use <a>TagResource</a>, <a>UntagResource</a>,
+        /// and <a>ListTagsForResource</a> to add, remove, and view tags. The maximum tag limit
+        /// may be lower than stated. See the Amazon Web Services General Reference for actual
+        /// tagging limits.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=200)]

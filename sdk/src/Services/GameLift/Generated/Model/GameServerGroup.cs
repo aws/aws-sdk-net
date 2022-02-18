@@ -34,7 +34,7 @@ namespace Amazon.GameLift.Model
     ///  
     /// <para>
     /// Properties that describe a game server group resource. A game server group manages
-    /// certain properties related to a corresponding EC2 Auto Scaling group. 
+    /// certain properties related to a corresponding Amazon EC2 Auto Scaling group. 
     /// </para>
     ///  
     /// <para>
@@ -73,8 +73,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property AutoScalingGroupArn. 
         /// <para>
-        /// A generated unique ID for the EC2 Auto Scaling group that is associated with this
-        /// game server group.
+        /// A generated unique ID for the Amazon EC2 Auto Scaling group that is associated with
+        /// this game server group.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=256)]
@@ -174,7 +174,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property GameServerGroupName. 
         /// <para>
         /// A developer-defined identifier for the game server group. The name is unique for each
-        /// Region in each AWS account.
+        /// Region in each Amazon Web Services account.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -198,8 +198,8 @@ namespace Amazon.GameLift.Model
         /// be terminated during a scale-down event, causing players to be dropped from the game.
         /// Protected instances cannot be terminated while there are active game servers running
         /// except in the event of a forced game server group deletion (see ). An exception to
-        /// this is with Spot Instances, which can be terminated by AWS regardless of protection
-        /// status. 
+        /// this is with Spot Instances, which can be terminated by Amazon Web Services regardless
+        /// of protection status. 
         /// </para>
         /// </summary>
         public GameServerProtectionPolicy GameServerProtectionPolicy
@@ -217,8 +217,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property InstanceDefinitions. 
         /// <para>
-        /// The set of EC2 instance types that GameLift FleetIQ can use when balancing and automatically
-        /// scaling instances in the corresponding Auto Scaling group. 
+        /// The set of Amazon EC2 instance types that GameLift FleetIQ can use when balancing
+        /// and automatically scaling instances in the corresponding Auto Scaling group. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=20)]
@@ -256,7 +256,8 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property RoleArn. 
         /// <para>
         /// The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-        /// for an IAM role that allows Amazon GameLift to access your EC2 Auto Scaling groups.
+        /// for an IAM role that allows Amazon Web Services to access your Amazon EC2 Auto Scaling
+        /// groups.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -285,7 +286,7 @@ namespace Amazon.GameLift.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>ACTIVATING</code> - GameLift FleetIQ is setting up a game server group, which
-        /// includes creating an Auto Scaling group in your AWS account. 
+        /// includes creating an Auto Scaling group in your Amazon Web Services account. 
         /// </para>
         ///  </li> <li> 
         /// <para>

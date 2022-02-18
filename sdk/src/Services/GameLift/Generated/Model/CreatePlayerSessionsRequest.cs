@@ -50,7 +50,11 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  
     /// <para>
-    ///  <i>Available in Amazon GameLift Local.</i> 
+    /// The maximum number of players per game session is 200. It is not adjustable. 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <i>Available in Amazon Web Services Local.</i> 
     /// </para>
     ///  
     /// <para>
@@ -92,7 +96,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property PlayerDataMap. 
         /// <para>
         /// Map of string pairs, each specifying a player ID and a set of developer-defined information
-        /// related to the player. Amazon GameLift does not use this data, so it can be formatted
+        /// related to the player. Amazon Web Services does not use this data, so it can be formatted
         /// as needed for use in the game. Any player data strings for player IDs that are not
         /// included in the <code>PlayerIds</code> parameter are ignored. 
         /// </para>

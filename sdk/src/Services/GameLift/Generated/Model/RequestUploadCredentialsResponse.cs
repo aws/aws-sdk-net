@@ -57,9 +57,9 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property UploadCredentials. 
         /// <para>
-        /// AWS credentials required when uploading a game build to the storage location. These
-        /// credentials have a limited lifespan and are valid only for the build they were issued
-        /// for.
+        /// Amazon Web Services credentials required when uploading a game build to the storage
+        /// location. These credentials have a limited lifespan and are valid only for the build
+        /// they were issued for.
         /// </para>
         /// </summary>
         public Credentials UploadCredentials

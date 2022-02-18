@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// Temporary access credentials used for uploading game build files to Amazon GameLift.
+    /// Temporary access credentials used for uploading game build files to Amazon Web Services.
     /// They are valid for a limited time. If they expire before you upload your game build,
     /// get a new set by calling <a>RequestUploadCredentials</a>.
     /// </summary>
@@ -42,7 +42,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property AccessKeyId. 
         /// <para>
-        /// Temporary key allowing access to the Amazon GameLift S3 account.
+        /// Temporary key allowing access to the Amazon Web Services S3 account.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -61,7 +61,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property SecretAccessKey. 
         /// <para>
-        /// Temporary secret key allowing access to the Amazon GameLift S3 account.
+        /// Temporary secret key allowing access to the Amazon Web Services S3 account.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

@@ -38,12 +38,13 @@ namespace Amazon.GameLift.Model
     ///  
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-    /// AWS Resources</a> in the <i>AWS General Reference</i> 
+    /// Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>
+    /// 
     /// </para>
     ///  
     /// <para>
     ///  <a href="http://aws.amazon.com/answers/account-management/aws-tagging-strategies/">
-    /// AWS Tagging Strategies</a> 
+    /// Amazon Web Services Tagging Strategies</a> 
     /// </para>
     ///  
     /// <para>
@@ -63,7 +64,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        ///  The key for a developer-defined key:value pair for tagging an AWS resource. 
+        ///  The key for a developer-defined key:value pair for tagging an Amazon Web Services
+        /// resource. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -82,7 +84,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        ///  The value for a developer-defined key:value pair for tagging an AWS resource. 
+        ///  The value for a developer-defined key:value pair for tagging an Amazon Web Services
+        /// resource. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=256)]

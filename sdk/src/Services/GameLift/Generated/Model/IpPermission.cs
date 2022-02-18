@@ -56,6 +56,11 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// A starting value for a range of allowed port numbers.
         /// </para>
+        ///  
+        /// <para>
+        /// For fleets using Linux builds, only port 22, 443, 1026-60000 are valid. For fleets
+        /// using Windows builds, only port 443, 1026-60000 are valid.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=60000)]
         public int FromPort
@@ -115,6 +120,11 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// An ending value for a range of allowed port numbers. Port numbers are end-inclusive.
         /// This value must be higher than <code>FromPort</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For fleets using Linux builds, only port 22, 443, 1026-60000 are valid. For fleets
+        /// using Windows builds, only port 443, 1026-60000 are valid.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=60000)]

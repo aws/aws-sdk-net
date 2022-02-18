@@ -35,11 +35,11 @@ namespace Amazon.GameLift.Model
     /// 
     ///  
     /// <para>
-    /// To retrieve connection information, call this operation from the AWS account that
-    /// is used to manage the Amazon GameLift fleets. Specify a fleet ID or leave the parameter
-    /// empty to retrieve all connection records. If successful, the retrieved information
-    /// includes both active and pending connections. Active connections identify the IpV4
-    /// CIDR block that the VPC uses to connect. 
+    /// To retrieve connection information, call this operation from the Amazon Web Services
+    /// account that is used to manage the Amazon Web Services fleets. Specify a fleet ID
+    /// or leave the parameter empty to retrieve all connection records. If successful, the
+    /// retrieved information includes both active and pending connections. Active connections
+    /// identify the IpV4 CIDR block that the VPC uses to connect. 
     /// </para>
     ///  
     /// <para>

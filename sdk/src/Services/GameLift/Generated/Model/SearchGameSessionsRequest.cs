@@ -35,6 +35,15 @@ namespace Amazon.GameLift.Model
     /// 
     ///  
     /// <para>
+    /// This operation is not designed to be continually called to track game session status.
+    /// This practice can cause you to exceed your API limit, which results in errors. Instead,
+    /// you must configure configure an Amazon Simple Notification Service (SNS) topic to
+    /// receive notifications from FlexMatch or queues. Continuously polling game session
+    /// status with <code>DescribeGameSessions</code> should only be used for games in development
+    /// with low game session usage. 
+    /// </para>
+    ///  
+    /// <para>
     /// When searching for game sessions, you specify exactly where you want to search and
     /// provide a search filter expression, a sort expression, or both. A search request can
     /// search only one fleet, but it can search all of a fleet's locations. 
@@ -291,7 +300,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property Location. 
         /// <para>
         /// A fleet location to search for game sessions. You can specify a fleet's home Region
-        /// or a remote location. Use the AWS Region code format, such as <code>us-west-2</code>.
+        /// or a remote location. Use the Amazon Web Services Region code format, such as <code>us-west-2</code>.
         /// 
         /// </para>
         ///  

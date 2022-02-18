@@ -33,9 +33,10 @@ namespace Amazon.GameLift.Model
     /// 
     ///  
     /// <para>
-    /// An EC2 launch template that contains configuration settings and game server code to
-    /// be deployed to all instances in a game server group. The launch template is specified
-    /// when creating a new game server group with <a>CreateGameServerGroup</a>. 
+    /// An Amazon EC2 launch template that contains configuration settings and game server
+    /// code to be deployed to all instances in a game server group. The launch template is
+    /// specified when creating a new game server group with <a>CreateGameServerGroup</a>.
+    /// 
     /// </para>
     /// </summary>
     public partial class LaunchTemplateSpecification
@@ -47,7 +48,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property LaunchTemplateId. 
         /// <para>
-        /// A unique identifier for an existing EC2 launch template.
+        /// A unique identifier for an existing Amazon EC2 launch template.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -66,7 +67,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property LaunchTemplateName. 
         /// <para>
-        /// A readable identifier for an existing EC2 launch template. 
+        /// A readable identifier for an existing Amazon EC2 launch template. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=128)]
@@ -85,9 +86,10 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Version. 
         /// <para>
-        /// The version of the EC2 launch template to use. If no version is specified, the default
-        /// version will be used. With Amazon EC2, you can specify a default version for a launch
-        /// template. If none is set, the default is the first version created.
+        /// The version of the Amazon EC2 launch template to use. If no version is specified,
+        /// the default version will be used. With Amazon Elastic Compute Cloud, you can specify
+        /// a default version for a launch template. If none is set, the default is the first
+        /// version created.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

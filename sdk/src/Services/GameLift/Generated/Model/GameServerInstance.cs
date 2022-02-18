@@ -86,7 +86,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property GameServerGroupName. 
         /// <para>
         /// A developer-defined identifier for the game server group that includes the game server
-        /// instance. The name is unique for each Region in each AWS account.
+        /// instance. The name is unique for each Region in each Amazon Web Services account.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

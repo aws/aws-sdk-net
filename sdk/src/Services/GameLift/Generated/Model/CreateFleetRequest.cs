@@ -30,17 +30,17 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateFleet operation.
-    /// Creates a fleet of Amazon Elastic Compute Cloud (Amazon EC2) instances to host your
-    /// custom game server or Realtime Servers. Use this operation to configure the computing
-    /// resources for your fleet and provide instructions for running game servers on each
-    /// instance.
+    /// Creates a fleet of Amazon Elastic Compute Cloud (Amazon Elastic Compute Cloud) instances
+    /// to host your custom game server or Realtime Servers. Use this operation to configure
+    /// the computing resources for your fleet and provide instructions for running game servers
+    /// on each instance.
     /// 
     ///  
     /// <para>
     /// Most GameLift fleets can deploy instances to multiple locations, including the home
     /// Region (where the fleet is created) and an optional set of remote locations. Fleets
-    /// that are created in the following AWS Regions support multiple locations: us-east-1
-    /// (N. Virginia), us-west-2 (Oregon), eu-central-1 (Frankfurt), eu-west-1 (Ireland),
+    /// that are created in the following Amazon Web Services Regions support multiple locations:
+    /// us-east-1 (N. Virginia), us-west-2 (Oregon), eu-central-1 (Frankfurt), eu-west-1 (Ireland),
     /// ap-southeast-2 (Sydney), ap-northeast-1 (Tokyo), and ap-northeast-2 (Seoul). Fleets
     /// that are created in other GameLift Regions can deploy instances in the fleet's home
     /// Region only. All fleet instances use the same configuration regardless of location;
@@ -53,6 +53,13 @@ namespace Amazon.GameLift.Model
     /// how to start and run game servers on each instance in the fleet. Set permissions for
     /// inbound traffic to your game servers, and enable optional features as needed. When
     /// creating a multi-location fleet, provide a list of additional remote locations.
+    /// </para>
+    ///  
+    /// <para>
+    /// If you need to debug your fleet, fetch logs, view performance metrics or other actions
+    /// on the fleet, create the development fleet with port 22/3389 open. As a best practice,
+    /// we recommend opening ports for remote access only when you need them and closing them
+    /// when you're finished. 
     /// </para>
     ///  
     /// <para>
@@ -146,15 +153,15 @@ namespace Amazon.GameLift.Model
         /// Prompts GameLift to generate a TLS/SSL certificate for the fleet. TLS certificates
         /// are used for encrypting traffic between game clients and the game servers that are
         /// running on GameLift. By default, the <code>CertificateConfiguration</code> is set
-        /// to <code>DISABLED</code>. Learn more at <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-howitworks.html#gamelift-howitworks-security">Securing
-        /// Client/Server Communication</a>. This property cannot be changed after the fleet is
-        /// created. 
+        /// to <code>DISABLED</code>. This property cannot be changed after the fleet is created.
+        /// 
         /// </para>
         ///  
         /// <para>
-        /// Note: This feature requires the AWS Certificate Manager (ACM) service, which is not
-        /// available in all AWS regions. When working in a region that does not support this
-        /// feature, a fleet creation request with certificate generation fails with a 4xx error.
+        /// Note: This feature requires the Amazon Web Services Certificate Manager (ACM) service,
+        /// which is not available in all Amazon Web Services regions. When working in a region
+        /// that does not support this feature, a fleet creation request with certificate generation
+        /// fails with a 4xx error.
         /// </para>
         /// </summary>
         public CertificateConfiguration CertificateConfiguration
@@ -213,10 +220,11 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property EC2InstanceType. 
         /// <para>
-        /// The GameLift-supported EC2 instance type to use for all fleet instances. Instance
+        /// The GameLift-supported Amazon EC2 instance type to use for all fleet instances. Instance
         /// type determines the computing resources that will be used to host your game servers,
         /// including CPU, memory, storage, and networking capacity. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon
-        /// EC2 Instance Types</a> for detailed descriptions of EC2 instance types.
+        /// Elastic Compute Cloud Instance Types</a> for detailed descriptions of Amazon EC2 instance
+        /// types.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -256,12 +264,13 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property InstanceRoleArn. 
         /// <para>
-        /// A unique identifier for an AWS IAM role that manages access to your AWS services.
-        /// With an instance role ARN set, any application that runs on an instance in this fleet
-        /// can assume the role, including install scripts, server processes, and daemons (background
-        /// processes). Create a role or look up a role's ARN by using the <a href="https://console.aws.amazon.com/iam/">IAM
-        /// dashboard</a> in the AWS Management Console. Learn more about using on-box credentials
-        /// for your game servers at <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
+        /// A unique identifier for an IAM role that manages access to your Amazon Web Services
+        /// services. With an instance role ARN set, any application that runs on an instance
+        /// in this fleet can assume the role, including install scripts, server processes, and
+        /// daemons (background processes). Create a role or look up a role's ARN by using the
+        /// <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the Amazon Web
+        /// Services Management Console. Learn more about using on-box credentials for your game
+        /// servers at <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
         /// Access external resources from a game server</a>. This property cannot be changed
         /// after the fleet is created.
         /// </para>
@@ -283,10 +292,11 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property Locations. 
         /// <para>
         /// A set of remote locations to deploy additional instances to and manage as part of
-        /// the fleet. This parameter can only be used when creating fleets in AWS Regions that
-        /// support multiple locations. You can add any GameLift-supported AWS Region as a remote
-        /// location, in the form of an AWS Region code such as <code>us-west-2</code>. To create
-        /// a fleet with instances in the home Region only, omit this parameter. 
+        /// the fleet. This parameter can only be used when creating fleets in Amazon Web Services
+        /// Regions that support multiple locations. You can add any GameLift-supported Amazon
+        /// Web Services Region as a remote location, in the form of an Amazon Web Services Region
+        /// code such as <code>us-west-2</code>. To create a fleet with instances in the home
+        /// Region only, omit this parameter. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -327,10 +337,10 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property MetricGroups. 
         /// <para>
-        /// The name of an AWS CloudWatch metric group to add this fleet to. A metric group is
-        /// used to aggregate the metrics for multiple fleets. You can specify an existing metric
-        /// group name or set a new name to create a new metric group. A fleet can be included
-        /// in only one metric group at a time. 
+        /// The name of an Amazon Web Services CloudWatch metric group to add this fleet to. A
+        /// metric group is used to aggregate the metrics for multiple fleets. You can specify
+        /// an existing metric group name or set a new name to create a new metric group. A fleet
+        /// can be included in only one metric group at a time. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=1)]
@@ -400,9 +410,9 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property PeerVpcAwsAccountId. 
         /// <para>
-        /// Used when peering your GameLift fleet with a VPC, the unique identifier for the AWS
-        /// account that owns the VPC. You can find your account ID in the AWS Management Console
-        /// under account settings. 
+        /// Used when peering your GameLift fleet with a VPC, the unique identifier for the Amazon
+        /// Web Services account that owns the VPC. You can find your account ID in the Amazon
+        /// Web Services Management Console under account settings. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -423,8 +433,8 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// A unique identifier for a VPC with resources to be accessed by your GameLift fleet.
         /// The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a
-        /// href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management
-        /// Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
+        /// href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the Amazon Web Services
+        /// Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
         /// Peering with GameLift Fleets</a>. 
         /// </para>
         /// </summary>
@@ -553,12 +563,13 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property Tags. 
         /// <para>
         /// A list of labels to assign to the new fleet resource. Tags are developer-defined key-value
-        /// pairs. Tagging AWS resources are useful for resource management, access management
-        /// and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">
-        /// Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the fleet is created,
-        /// you can use <a>TagResource</a>, <a>UntagResource</a>, and <a>ListTagsForResource</a>
-        /// to add, remove, and view tags. The maximum tag limit may be lower than stated. See
-        /// the <i>AWS General Reference</i> for actual tagging limits.
+        /// pairs. Tagging Amazon Web Services resources are useful for resource management, access
+        /// management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">
+        /// Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>.
+        /// Once the fleet is created, you can use <a>TagResource</a>, <a>UntagResource</a>, and
+        /// <a>ListTagsForResource</a> to add, remove, and view tags. The maximum tag limit may
+        /// be lower than stated. See the <i>Amazon Web Services General Reference</i> for actual
+        /// tagging limits.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=200)]
