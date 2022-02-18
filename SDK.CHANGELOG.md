@@ -1,3 +1,11 @@
+### 3.7.212.0 (2022-02-18 19:17 UTC)
+* Budgets (3.7.2.0)
+	* This change introduces DescribeBudgetNotificationsForAccount API which returns budget notifications for the specified account
+* GameLift (3.7.1.38)
+	* Increase string list limit from 10 to 100.
+* Transfer (3.7.6.0)
+	* Properties for Transfer Family used with SFTP, FTP, and FTPS protocols. Display Banners are bodies of text that can be displayed before and/or after a user authenticates onto a server using one of the previously mentioned protocols.
+
 ### 3.7.211.0 (2022-02-17 19:16 UTC)
 * Backup (3.7.6.0)
 	* AWS Backup add new S3_BACKUP_OBJECT_FAILED and S3_RESTORE_OBJECT_FAILED event types in BackupVaultNotifications events list.
