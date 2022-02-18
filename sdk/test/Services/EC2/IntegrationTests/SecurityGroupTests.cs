@@ -13,7 +13,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.EC2
     {
         private static readonly string SECURITY_GROUP_NAME = "test-sg";
         private static string SECURITY_GROUP_ID;
-        private static string VPC_ID;
 
         private static readonly Tag DotNetTag = new Tag("purpose", ".NET SDK integ test");
 
@@ -21,75 +20,85 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.EC2
         {
             var createVpcResponse = Client.CreateVpc(new CreateVpcRequest
             {
-                CidrBlock = "10.0.0.0/16"
+                CidrBlock = "10.0.0.0/16",
+                TagSpecifications = new List<TagSpecification>
+                {
+                    new TagSpecification
+                    {
+                        Tags = new List<Tag> { DotNetTag },
+                        ResourceType = ResourceType.Vpc
+                    }
+                }
             });
-            // tag so we can identify later
-            Client.CreateTags(new CreateTagsRequest
+
+            UtilityMethods.WaitUntilSuccess(() =>
             {
-                Resources = { createVpcResponse.Vpc.VpcId },
-                Tags = { DotNetTag }
+                var describVpcsResponse = DescribeVpcsByTag();
+                if (describVpcsResponse.Vpcs.Count > 0)
+                {
+                    return;
+                }
+
+                throw new Exception("VPC not ready yet, will continue waiting.");
             });
 
             var createSecurityGroup = Client.CreateSecurityGroup(new CreateSecurityGroupRequest
             {
                 GroupName = SECURITY_GROUP_NAME,
                 Description = "Test security Group",
-                VpcId = createVpcResponse.Vpc.VpcId
+                VpcId = createVpcResponse.Vpc.VpcId,
+                TagSpecifications = new List<TagSpecification>
+                {
+                    new TagSpecification
+                    {
+                        Tags = new List<Tag> { DotNetTag },
+                        ResourceType = ResourceType.SecurityGroup
+                    }
+                }
             });
-            // tag so we can identify later
-            Client.CreateTags(new CreateTagsRequest
+
+            UtilityMethods.WaitUntilSuccess(() =>
             {
-                Resources = { createSecurityGroup.GroupId },
-                Tags = { DotNetTag }
+                var describeSecurityGroupsResponse = DescribeSecurityGroupsByTag();
+                if (describeSecurityGroupsResponse.SecurityGroups.Count > 0)
+                {
+                    return;
+                }
+
+                throw new Exception("Security Group not ready yet, will continue waiting.");
             });
 
-            SetGroupId(createSecurityGroup.GroupId, createVpcResponse.Vpc.VpcId);
-        }
-
-        private static void SetGroupId(string groupId, string vpcId)
-        {
-            SECURITY_GROUP_ID = groupId;
-            VPC_ID = vpcId;
+            SECURITY_GROUP_ID = createSecurityGroup.GroupId;
         }
 
         [ClassCleanup]
         public static void Cleanup()
         {
-            // clean up all .net tagged security groups
-            var describeSecurityGroupsResponse = Client.DescribeSecurityGroups(new DescribeSecurityGroupsRequest
+            UtilityMethods.WaitUntilSuccess(() =>
             {
-                Filters = new List<Filter>
+                // clean up all .net tagged security groups
+                var describeSecurityGroupsResponse = DescribeSecurityGroupsByTag();
+                foreach (var group in describeSecurityGroupsResponse.SecurityGroups)
                 {
-                    new Filter("tag-value", new List<string> { DotNetTag.Value }),
+                    Client.DeleteSecurityGroup(new DeleteSecurityGroupRequest
+                    {
+                        GroupId = group.GroupId
+                    });
                 }
-            });
-            foreach (var group in describeSecurityGroupsResponse.SecurityGroups)
-            {
-                Client.DeleteSecurityGroup(new DeleteSecurityGroupRequest
-                {
-                    GroupId = group.GroupId
-                });
-            }
 
-            // clean up all .net tagged vpcs
-            var describVpcsResponse = Client.DescribeVpcs(new DescribeVpcsRequest
-            {
-                Filters = new List<Filter>
+                // clean up all .net tagged vpcs
+                var describVpcsResponse = DescribeVpcsByTag();
+                foreach (var vpc in describVpcsResponse.Vpcs)
                 {
-                    new Filter("tag:" +  DotNetTag.Key, new List<string> {  DotNetTag.Value })
+                    Client.DeleteVpc(new DeleteVpcRequest
+                    {
+                        VpcId = vpc.VpcId
+                    });
                 }
             });
 
-            foreach (var vpc in describVpcsResponse.Vpcs)
-            {
-                Client.DeleteVpc(new DeleteVpcRequest
-                {
-                    VpcId = vpc.VpcId
-                });
-            }
             BaseClean();
         }
-
 
         /// <summary>
         /// Perform a lifecycle of SecurityGroupEgress requests to test the properties of IpRanges and Ipv4Ranges.
@@ -108,7 +117,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.EC2
         [TestCategory("EC2")]
         public void IpRangeRoundTripTest()
         {
-            var describeSecurityGroupsResponse = DescribeSecurityGroups();
+            var describeSecurityGroupsResponse = DescribeSecurityGroupById();
 
             var testCollection = new List<string>();
             var authorizeSecurityGroupEgressRequest = new AuthorizeSecurityGroupEgressRequest();
@@ -126,7 +135,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.EC2
             Assert.IsFalse(authorizeSecurityGroupEgressRequest.IpPermissions[0].Ipv4Ranges.Any());
             UtilityMethods.WaitUntilSuccess(() =>
             {
-                describeSecurityGroupsResponse = DescribeSecurityGroups();
+                describeSecurityGroupsResponse = DescribeSecurityGroupById();
                 CollectionAssert.AreEqual(describeSecurityGroupsResponse.SecurityGroups[0].IpPermissionsEgress[1].IpRanges, testCollection);
                 CollectionAssert.AreEqual(describeSecurityGroupsResponse.SecurityGroups[0].IpPermissionsEgress[1].Ipv4Ranges.Select(p => p.CidrIp).ToList(), testCollection);
             });
@@ -141,7 +150,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.EC2
             var validationResult = new List<string>();
             UtilityMethods.WaitUntilSuccess(() =>
             {
-                describeSecurityGroupsResponse = DescribeSecurityGroups();
+                describeSecurityGroupsResponse = DescribeSecurityGroupById();
                 validationResult = describeSecurityGroupsResponse.SecurityGroups[0].IpPermissionsEgress[1].Ipv4Ranges.Select(p => p.CidrIp).ToList();
                 CollectionAssert.AreEqual(describeSecurityGroupsResponse.SecurityGroups[0].IpPermissionsEgress[1].IpRanges, testCollection);
                 CollectionAssert.AreEqual(describeSecurityGroupsResponse.SecurityGroups[0].IpPermissionsEgress[1].IpRanges, validationResult);
@@ -166,7 +175,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.EC2
 
             UtilityMethods.WaitUntilSuccess(() =>
             {
-                describeSecurityGroupsResponse = DescribeSecurityGroups();
+                describeSecurityGroupsResponse = DescribeSecurityGroupById();
                 validationResult = describeSecurityGroupsResponse.SecurityGroups[0].IpPermissionsEgress[1].Ipv4Ranges.Select(p => p.CidrIp).ToList();
                 CollectionAssert.AreEqual(describeSecurityGroupsResponse.SecurityGroups[0].IpPermissionsEgress[1].IpRanges, testCollection);
                 CollectionAssert.AreEqual(describeSecurityGroupsResponse.SecurityGroups[0].IpPermissionsEgress[1].IpRanges, validationResult);
@@ -180,7 +189,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.EC2
 
             UtilityMethods.WaitUntilSuccess(() =>
             {
-                describeSecurityGroupsResponse = DescribeSecurityGroups();
+                describeSecurityGroupsResponse = DescribeSecurityGroupById();
                 validationResult = describeSecurityGroupsResponse.SecurityGroups[0].IpPermissionsEgress[1].Ipv4Ranges.Select(p => p.CidrIp).ToList();
                 CollectionAssert.AreEqual(describeSecurityGroupsResponse.SecurityGroups[0].IpPermissionsEgress[1].IpRanges, testCollection);
                 CollectionAssert.AreEqual(describeSecurityGroupsResponse.SecurityGroups[0].IpPermissionsEgress[1].IpRanges, validationResult);
@@ -196,7 +205,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.EC2
 
             UtilityMethods.WaitUntilSuccess(() =>
             {
-                describeSecurityGroupsResponse = DescribeSecurityGroups();
+                describeSecurityGroupsResponse = DescribeSecurityGroupById();
                 validationResult = describeSecurityGroupsResponse.SecurityGroups[0].IpPermissionsEgress[1].Ipv4Ranges.Select(p => p.CidrIp).ToList();
                 CollectionAssert.AreEqual(describeSecurityGroupsResponse.SecurityGroups[0].IpPermissionsEgress[1].IpRanges, validationResult);
 
@@ -213,21 +222,46 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.EC2
 
             UtilityMethods.WaitUntilSuccess(() =>
             {
-                describeSecurityGroupsResponse = DescribeSecurityGroups();
+                describeSecurityGroupsResponse = DescribeSecurityGroupById();
                 Assert.IsFalse(describeSecurityGroupsResponse.SecurityGroups[0].IpPermissionsEgress
                     .Where(p => p.Ipv4Ranges.Contains(new IpRange { CidrIp = "0.0.0.0/8", Description = "TestDescription" }) || p.Ipv4Ranges.Contains(new IpRange { CidrIp = "0.0.0.0/7" }) || p.IpRanges.Contains("0.0.0.0/7") || p.IpRanges.Contains("0.0.0.0/8")).ToList().Any());
             });
-
         }
 
-        private static DescribeSecurityGroupsResponse DescribeSecurityGroups()
+        private static DescribeSecurityGroupsResponse DescribeSecurityGroupById()
         {
-            var describeSecurityGroupRequest = new DescribeSecurityGroupsRequest();
-            describeSecurityGroupRequest.GroupIds = new List<string> { SECURITY_GROUP_ID };
-            var describeSecurityGroupsResponse = Client.DescribeSecurityGroups(describeSecurityGroupRequest);
-            return describeSecurityGroupsResponse;
+            var describeSecurityGroupRequest = new DescribeSecurityGroupsRequest
+            {
+                GroupIds = new List<string> { SECURITY_GROUP_ID }
+            };
+
+            return Client.DescribeSecurityGroups(describeSecurityGroupRequest);
         }
 
+        private static DescribeSecurityGroupsResponse DescribeSecurityGroupsByTag()
+        {
+            var describeSecurityGroupRequest = new DescribeSecurityGroupsRequest
+            {
+                Filters = new List<Filter>
+                {
+                    new Filter("tag-value", new List<string> { DotNetTag.Value }),
+                }
+            };
 
+            return Client.DescribeSecurityGroups(describeSecurityGroupRequest);
+        }
+
+        private static DescribeVpcsResponse DescribeVpcsByTag()
+        {
+            var describeVpcsRequest = new DescribeVpcsRequest
+            {
+                Filters = new List<Filter>
+                {
+                    new Filter("tag:" +  DotNetTag.Key, new List<string> { DotNetTag.Value })
+                }
+            };
+
+            return Client.DescribeVpcs(describeVpcsRequest);
+        }
     }
 }
