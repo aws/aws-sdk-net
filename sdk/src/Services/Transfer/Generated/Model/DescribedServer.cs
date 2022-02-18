@@ -42,6 +42,8 @@ namespace Amazon.Transfer.Model
         private IdentityProviderDetails _identityProviderDetails;
         private IdentityProviderType _identityProviderType;
         private string _loggingRole;
+        private string _postAuthenticationLoginBanner;
+        private string _preAuthenticationLoginBanner;
         private ProtocolDetails _protocolDetails;
         private List<string> _protocols = new List<string>();
         private string _securityPolicyName;
@@ -251,6 +253,38 @@ namespace Amazon.Transfer.Model
         internal bool IsSetLoggingRole()
         {
             return this._loggingRole != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PostAuthenticationLoginBanner.
+        /// </summary>
+        [AWSProperty(Max=512)]
+        public string PostAuthenticationLoginBanner
+        {
+            get { return this._postAuthenticationLoginBanner; }
+            set { this._postAuthenticationLoginBanner = value; }
+        }
+
+        // Check to see if PostAuthenticationLoginBanner property is set
+        internal bool IsSetPostAuthenticationLoginBanner()
+        {
+            return this._postAuthenticationLoginBanner != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PreAuthenticationLoginBanner.
+        /// </summary>
+        [AWSProperty(Max=512)]
+        public string PreAuthenticationLoginBanner
+        {
+            get { return this._preAuthenticationLoginBanner; }
+            set { this._preAuthenticationLoginBanner = value; }
+        }
+
+        // Check to see if PreAuthenticationLoginBanner property is set
+        internal bool IsSetPreAuthenticationLoginBanner()
+        {
+            return this._preAuthenticationLoginBanner != null;
         }
 
         /// <summary>
