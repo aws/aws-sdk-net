@@ -1,3 +1,15 @@
+### 3.7.213.0 (2022-02-21 19:15 UTC)
+* CustomerProfiles (3.7.6.0)
+	* This release introduces apis CreateIntegrationWorkflow, DeleteWorkflow, ListWorkflows, GetWorkflow and GetWorkflowSteps. These apis are used to manage and view integration workflows.
+* DynamoDBv2 (3.7.3.0)
+	* DynamoDB ExecuteStatement API now supports Limit as a request parameter to specify the maximum number of items to evaluate. If specified, the service will process up to the Limit and the results will include a LastEvaluatedKey value to continue the read in a subsequent operation.
+* Imagebuilder (3.7.6.0)
+	* This release adds support to enable faster launching for Windows AMIs created by EC2 Image Builder.
+* Core 3.7.7.2
+	* Updating endpoints.json file.
+
+	* All services packages updated to require new Core
+
 ### 3.7.212.0 (2022-02-18 19:17 UTC)
 * Budgets (3.7.2.0)
 	* This change introduces DescribeBudgetNotificationsForAccount API which returns budget notifications for the specified account
