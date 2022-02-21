@@ -362,5 +362,16 @@ namespace Amazon.Runtime.Internal
         /// </summary>
         /// <returns>Returns true if the request has a body, else false.</returns>
         bool HasRequestBody();
+
+        /// <summary>
+        /// The checksum algorithm that was selected to validate this request's integrity
+        /// </summary>
+        CoreChecksumAlgorithm SelectedChecksum { get; set; }
+
+        /// <summary>
+        /// Returns a dictionary of the trailing headers included
+        /// after this request's content.
+        /// </summary>
+        IDictionary<string, string> TrailingHeaders { get; }
     }
 }

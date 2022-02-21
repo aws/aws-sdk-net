@@ -46,10 +46,13 @@ namespace Amazon.Runtime.Internal.Auth
 
         public const string EmptyBodySha256 = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855";
         public const string StreamingBodySha256 = "STREAMING-AWS4-HMAC-SHA256-PAYLOAD";
+        public const string StreamingBodySha256WithTrailer = "STREAMING-AWS4-HMAC-SHA256-PAYLOAD-TRAILER";
         public const string V4aStreamingBodySha256 = "STREAMING-AWS4-ECDSA-P256-SHA256-PAYLOAD";
+        public const string V4aStreamingBodySha256WithTrailer = "STREAMING-AWS4-ECDSA-P256-SHA256-PAYLOAD-TRAILER";
         public const string AWSChunkedEncoding = "aws-chunked";
 
         public const string UnsignedPayload = "UNSIGNED-PAYLOAD";
+        public const string UnsignedPayloadWithTrailer = "STREAMING-UNSIGNED-PAYLOAD-TRAILER";
 
         const SigningAlgorithm SignerAlgorithm = SigningAlgorithm.HmacSHA256;
 
@@ -190,10 +193,17 @@ namespace Amazon.Runtime.Internal.Auth
             var signedAt = InitializeHeaders(request.Headers, request.Endpoint);
             var serviceSigningName = !string.IsNullOrEmpty(request.OverrideSigningServiceName) ? request.OverrideSigningServiceName : DetermineService(clientConfig);
             request.DeterminedSigningRegion = DetermineSigningRegion(clientConfig, clientConfig.RegionEndpointServiceName, request.AlternateEndpoint, request);
+            SetXAmzTrailerHeader(request.Headers, request.TrailingHeaders);
 
             var parametersToCanonicalize = GetParametersToCanonicalize(request);
             var canonicalParameters = CanonicalizeQueryParameters(parametersToCanonicalize);
-            var bodyHash = SetRequestBodyHash(request, SignPayload, StreamingBodySha256, ChunkedUploadWrapperStream.V4_SIGNATURE_LENGTH);
+
+            // If the request should use a fixed x-amz-content-sha256 header value, determine the appropriate one
+            var bodySha = request.TrailingHeaders?.Count > 0
+                ? StreamingBodySha256WithTrailer
+                : StreamingBodySha256;
+
+            var bodyHash = SetRequestBodyHash(request, SignPayload, bodySha, ChunkedUploadWrapperStream.V4_SIGNATURE_LENGTH);
             var sortedHeaders = SortAndPruneHeaders(request.Headers);
 
             var canonicalRequest = CanonicalizeRequest(request.Endpoint,
@@ -257,6 +267,23 @@ namespace Amazon.Runtime.Internal.Auth
             headers[HeaderKeys.XAmzDateHeader] = dt.ToUniversalTime().ToString(AWSSDKUtils.ISO8601BasicDateTimeFormat, CultureInfo.InvariantCulture);
 
             return dt;
+        }
+
+        /// <summary>
+        /// Sets the x-amz-trailer header for the given set of trailing headers
+        /// </summary>
+        /// <param name="headers">request's headers</param>
+        /// <param name="trailingHeaders">request's trailing headers</param>
+        public static void SetXAmzTrailerHeader(IDictionary<string, string> headers, IDictionary<string, string> trailingHeaders)
+        {
+            if (trailingHeaders == null || trailingHeaders.Count == 0)
+            {
+                return;
+            }
+
+            // The x-amz-trailer HTTP header MUST be set with the value as comma-separated
+            // string consisting of trailing header names in the order they are written on the HTTP request.
+            headers[HeaderKeys.XAmzTrailerHeader] = string.Join(",", trailingHeaders.Keys.OrderBy(key => key).ToArray());
         }
 
         private static void CleanHeaders(IDictionary<string, string> headers)
@@ -457,12 +484,31 @@ namespace Amazon.Runtime.Internal.Auth
         /// </returns>
         public static string SetRequestBodyHash(IRequest request, bool signPayload, string chunkedBodyHash, int signatureLength)
         {
-            // if unsigned payload, set the magic string in the header and return it
+            // If unsigned payload, set the appropriate magic string in the header and return it
             if (request.DisablePayloadSigning != null ? request.DisablePayloadSigning.Value : !signPayload)
-                return SetPayloadSignatureHeader(request, UnsignedPayload);
+            {
+                if (request.TrailingHeaders?.Count > 0)
+                {
+                    // Set X-Amz-Decoded-Content-Length with the true size of the data
+                    request.Headers[HeaderKeys.XAmzDecodedContentLengthHeader] = request.Headers[HeaderKeys.ContentLengthHeader];
+
+                    // Substitute the originally declared content length with the inflated length due to trailing headers
+                    var originalContentLength = long.Parse(request.Headers[HeaderKeys.ContentLengthHeader], CultureInfo.InvariantCulture);
+                    request.Headers[HeaderKeys.ContentLengthHeader]
+                        = TrailingHeadersWrapperStream.CalculateLength(request.TrailingHeaders, request.SelectedChecksum, originalContentLength).ToString(CultureInfo.InvariantCulture);
+
+                    SetContentEncodingHeader(request);
+
+                    return SetPayloadSignatureHeader(request, UnsignedPayloadWithTrailer);
+                }
+                else // request does not have trailing headers (and is still unsigned payload)
+                {
+                    return SetPayloadSignatureHeader(request, UnsignedPayload);
+                }
+            }
 
             // if the body hash has been precomputed and already placed in the header, just extract and return it
-            string computedContentHash = null;
+            string computedContentHash;
             var shaHeaderPresent = request.Headers.TryGetValue(HeaderKeys.XAmzContentSha256Header, out computedContentHash);
             if (shaHeaderPresent && !request.UseChunkEncoding)
                 return computedContentHash;
@@ -474,23 +520,16 @@ namespace Amazon.Runtime.Internal.Auth
 
                 if (request.Headers.ContainsKey(HeaderKeys.ContentLengthHeader))
                 {
-                    // substitute the originally declared content length with the true size of
-                    // the data we'll upload, which is inflated with chunk metadata
+                    // Set X-Amz-Decoded-Content-Length with the true size of the data
                     request.Headers[HeaderKeys.XAmzDecodedContentLengthHeader] = request.Headers[HeaderKeys.ContentLengthHeader];
+
+                    // Substitute the originally declared content length with the inflated length due to chunking metadata and/or trailing headers
                     var originalContentLength = long.Parse(request.Headers[HeaderKeys.ContentLengthHeader], CultureInfo.InvariantCulture);
                     request.Headers[HeaderKeys.ContentLengthHeader]
-                        = ChunkedUploadWrapperStream.ComputeChunkedContentLength(originalContentLength, signatureLength).ToString(CultureInfo.InvariantCulture);
+                        = ChunkedUploadWrapperStream.ComputeChunkedContentLength(originalContentLength, signatureLength, request.TrailingHeaders, request.SelectedChecksum).ToString(CultureInfo.InvariantCulture);
                 }
 
-                if (request.Headers.ContainsKey(HeaderKeys.ContentEncodingHeader))
-                {
-                    var originalEncoding = request.Headers[HeaderKeys.ContentEncodingHeader];
-                    if (!originalEncoding.Contains(AWSChunkedEncoding))
-                    {
-                        request.Headers[HeaderKeys.ContentEncodingHeader]
-                        = string.Concat(originalEncoding, ", ", AWSChunkedEncoding);
-                    }
-                }
+                SetContentEncodingHeader(request);
             }
             else
             {
@@ -507,6 +546,19 @@ namespace Amazon.Runtime.Internal.Auth
 
             // set the header if needed and return it
             return SetPayloadSignatureHeader(request, computedContentHash ?? UnsignedPayload);
+        }
+
+        /// <summary>
+        /// Appends "aws-chunked" to the Content-Encoding header if it's already set
+        /// </summary>
+        /// <param name="request">Request to modify</param>
+        private static void SetContentEncodingHeader(IRequest request)
+        {
+            if (request.Headers.TryGetValue(HeaderKeys.ContentEncodingHeader, out var originalEncoding) &&
+                !originalEncoding.Contains(AWSChunkedEncoding))
+            {
+                request.Headers[HeaderKeys.ContentEncodingHeader] = $"{originalEncoding}, {AWSChunkedEncoding}";
+            }
         }
 
         /// <summary>
@@ -776,7 +828,7 @@ namespace Amazon.Runtime.Internal.Auth
         /// <param name="requestHeaders">The set of proposed headers for the request</param>
         /// <returns>List of headers that must be included in the signature</returns>
         /// <remarks>For AWS4 signing, all headers are considered viable for inclusion</remarks>
-        protected static IDictionary<string, string> SortAndPruneHeaders(IEnumerable<KeyValuePair<string, string>> requestHeaders)
+        protected internal static IDictionary<string, string> SortAndPruneHeaders(IEnumerable<KeyValuePair<string, string>> requestHeaders)
         {
             // Refer https://docs.aws.amazon.com/general/latest/gr/sigv4-create-canonical-request.html. (Step #4: "Build the canonical headers list by sorting the (lowercase) headers by character code"). StringComparer.OrdinalIgnoreCase incorrectly places '_' after lowercase chracters.
             var sortedHeaders = new SortedDictionary<string, string>(StringComparer.Ordinal);
@@ -798,7 +850,7 @@ namespace Amazon.Runtime.Internal.Auth
         /// </summary>
         /// <param name="sortedHeaders">All request headers, sorted into canonical order</param>
         /// <returns>Canonicalized string of headers, with the header names in lower case.</returns>
-        protected static string CanonicalizeHeaders(IEnumerable<KeyValuePair<string, string>> sortedHeaders)
+        protected internal static string CanonicalizeHeaders(IEnumerable<KeyValuePair<string, string>> sortedHeaders)
         {
             if (sortedHeaders == null || sortedHeaders.Count() == 0)
                 return string.Empty;

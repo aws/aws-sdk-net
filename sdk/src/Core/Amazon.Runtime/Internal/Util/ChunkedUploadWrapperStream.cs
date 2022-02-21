@@ -12,13 +12,15 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-
 using System;
 using System.Globalization;
 using System.IO;
 using System.Text;
 using Amazon.Util;
 using Amazon.Runtime.Internal.Auth;
+using System.Security.Cryptography;
+using System.Collections.Generic;
+using System.Linq;
 #if AWS_ASYNC_API
 using System.Threading;
 using System.Threading.Tasks;
@@ -35,20 +37,33 @@ namespace Amazon.Runtime.Internal.Util
     {
         public static readonly int DefaultChunkSize = 81920;
 
-        private const string CLRF = "\r\n";
+        private const string STREAM_NEWLINE = "\r\n";
+        private const int NEWLINE_LENGTH = 2;
+        private const int HEADER_ROW_PADDING_LENGTH = 3; // additional length for each row of a trailing header, 1 for ':' between the key and value, plus 2 for CRLF
+
         private const string CHUNK_STRING_TO_SIGN_PREFIX = "AWS4-HMAC-SHA256-PAYLOAD";
         private const string CHUNK_SIGNATURE_HEADER = ";chunk-signature=";
         public const int V4_SIGNATURE_LENGTH = 64;
         public const int V4A_SIGNATURE_LENGTH = 144;
+        private const string TRAILING_HEADER_SIGNATURE_KEY = "x-amz-trailer-signature";
+        private const string TRAILING_HEADER_STRING_TO_SIGN_PREFIX = "AWS4-HMAC-SHA256-TRAILER";
 
         private byte[] _inputBuffer;
-        
+
         private readonly byte[] _outputBuffer;
         private int _outputBufferPos = -1;
         private int _outputBufferDataLen = -1;
 
         private readonly int _wrappedStreamBufferSize;
         private bool _wrappedStreamConsumed;
+
+        private CoreChecksumAlgorithm _trailingChecksum;
+        private HashAlgorithm _hashAlgorithm;
+
+        private IDictionary<string, string> _trailingHeaders;
+        private string _trailingHeaderChunk;
+        private int _trailingHeaderPos = 0;
+        private bool _trailingHeadersConsumed = true;
 
         // if this is set, we've exhausted the input stream and are now sending
         // back to the client the final termination chunk, after which all Read
@@ -75,7 +90,7 @@ namespace Amazon.Runtime.Internal.Util
         /// <param name="headerSigningResult">SigV4 or SigV4a signing result for the request's headers</param>
         internal ChunkedUploadWrapperStream(Stream stream, int wrappedStreamBufferSize, AWSSigningResultBase headerSigningResult) : base(stream)
         {
-            if (!(headerSigningResult is AWS4aSigningResult || headerSigningResult is AWS4SigningResult ))
+            if (!(headerSigningResult is AWS4aSigningResult || headerSigningResult is AWS4SigningResult))
             {
                 throw new AmazonClientException($"{nameof(ChunkedUploadWrapperStream)} was initialized without a SigV4 or SigV4a signing result.");
             }
@@ -108,6 +123,32 @@ namespace Amazon.Runtime.Internal.Util
         }
 
         /// <summary>
+        /// Initializes a chunked upload stream with one or more trailing headers,
+        /// which may include a trailing checksum header
+        /// </summary>
+        /// <param name="stream">Stream to wrap</param>
+        /// <param name="wrappedStreamBufferSize">Size of buffer used for reading from stream</param>
+        /// <param name="headerSigningResult">SigV4 or SigV4a signing result for the request's headers</param>
+        /// <param name="trailingChecksum">Algorithm to use to calculate the stream's checksum</param>
+        /// <param name="trailingHeaders">Trailing headers to append after the wrapped stream</param>
+        public ChunkedUploadWrapperStream(Stream stream,
+            int wrappedStreamBufferSize,
+            AWSSigningResultBase headerSigningResult,
+            CoreChecksumAlgorithm trailingChecksum,
+            IDictionary<string, string> trailingHeaders)
+            : this(stream, wrappedStreamBufferSize, headerSigningResult)
+        {
+            if (trailingChecksum != CoreChecksumAlgorithm.NONE)
+            {
+                _trailingChecksum = trailingChecksum;
+                _hashAlgorithm = CryptoUtilFactory.GetChecksumInstance(trailingChecksum);
+            }
+
+            _trailingHeadersConsumed = false;
+            _trailingHeaders = trailingHeaders;
+        }
+
+        /// <summary>
         /// Reads some or all of the processed chunk to the consumer, constructing
         /// and streaming a new chunk if more input data is available.
         /// </summary>
@@ -119,14 +160,25 @@ namespace Amazon.Runtime.Internal.Util
         {
             int bytesRead = 0;
 
-            // if we've no output and it was the special termination chunk,
-            // we're done otherwise fill the input buffer with enough data
+            // If we have more no output and it was the special termination chunk,
+            // write the trailing headers if they're set, then we're done
+            //
+            // Otherwise fill the input buffer with enough data
             // for the next chunk (or with whatever is left) and construct
             // the chunk in the output buffer ready for streaming
             if (_outputBufferPos == -1)
             {
                 if (_wrappedStreamConsumed && _outputBufferIsTerminatingChunk)
-                    return 0;
+                {
+                    if (_trailingHeadersConsumed)
+                    {
+                        return 0;
+                    }
+                    else
+                    {
+                        return WriteTrailingHeaders(buffer, offset, count);
+                    }
+                }
 
                 bytesRead = FillInputBuffer();
             }
@@ -159,14 +211,25 @@ namespace Amazon.Runtime.Internal.Util
         {
             int bytesRead = 0;
 
-            // if we've no output and it was the special termination chunk,
-            // we're done otherwise fill the input buffer with enough data
+            // If we have more no output and it was the special termination chunk,
+            // write the trailing headers if they're set, then we're done
+            //
+            // Otherwise fill the input buffer with enough data
             // for the next chunk (or with whatever is left) and construct
             // the chunk in the output buffer ready for streaming
             if (_outputBufferPos == -1)
             {
                 if (_wrappedStreamConsumed && _outputBufferIsTerminatingChunk)
-                    return 0;
+                {
+                    if (_trailingHeadersConsumed)
+                    {
+                        return 0;
+                    }
+                    else
+                    {
+                        return WriteTrailingHeaders(buffer, offset, count);
+                    }
+                }
 
                 bytesRead = await FillInputBufferAsync(cancellationToken).ConfigureAwait(false);
             }
@@ -255,6 +318,7 @@ namespace Amazon.Runtime.Internal.Util
                 _inputBuffer = temp;
             }
 
+            var isFinalDataChunk = dataLen == 0;
             var chunkHeader = new StringBuilder();
 
             // variable-length size of the embedded chunk data in hex
@@ -263,7 +327,7 @@ namespace Amazon.Runtime.Internal.Util
             string chunkSignature = "";
             if (HeaderSigningResult is AWS4aSigningResult v4aHeaderSigningResult)
             {
-                if (dataLen == 0)   // _inputBuffer still contains previous chunk, but this is the final 0 content chunk so sign null
+                if (isFinalDataChunk)  // _inputBuffer still contains previous chunk, but this is the final 0 content chunk so sign null
                 {
                     chunkSignature = Sigv4aSigner.SignChunk(null, PreviousChunkSignature, v4aHeaderSigningResult);
                 }
@@ -275,7 +339,7 @@ namespace Amazon.Runtime.Internal.Util
             else if (HeaderSigningResult is AWS4SigningResult v4HeaderSingingResult) // SigV4
             {
                 var chunkStringToSign = BuildChunkedStringToSign(CHUNK_STRING_TO_SIGN_PREFIX, v4HeaderSingingResult.ISO8601DateTime,
-                                                                    v4HeaderSingingResult.Scope,  PreviousChunkSignature, dataLen, _inputBuffer);
+                                                                    v4HeaderSingingResult.Scope, PreviousChunkSignature, dataLen, _inputBuffer);
 
                 chunkSignature = AWSSDKUtils.ToHex(AWS4Signer.SignBlob(v4HeaderSingingResult.GetSigningKey(), chunkStringToSign), true);
             }
@@ -291,12 +355,24 @@ namespace Amazon.Runtime.Internal.Util
             {
                 chunkHeader.Append(CHUNK_SIGNATURE_HEADER + chunkSignature);
             }
-            chunkHeader.Append(CLRF);
+            // If we're sending a trailing checksum, update the rolling checksum with this chunk's raw data
+            if (_hashAlgorithm != null)
+            {
+                _hashAlgorithm.TransformBlock(_inputBuffer, 0, dataLen, _inputBuffer, 0);
+            }
+
+            chunkHeader.Append(STREAM_NEWLINE);
 
             try
             {
                 var header = Encoding.UTF8.GetBytes(chunkHeader.ToString());
-                var trailer = Encoding.UTF8.GetBytes(CLRF);
+                var trailer = new byte[0];
+
+                // Append a trailing CRLF unless this is the final data chunk and there are trailing headers 
+                if (!(isFinalDataChunk && _trailingHeaders?.Count > 0))
+                {
+                    trailer = Encoding.UTF8.GetBytes(STREAM_NEWLINE);
+                }
 
                 var writePos = 0;
                 Buffer.BlockCopy(header, 0, _outputBuffer, writePos, header.Length);
@@ -318,6 +394,91 @@ namespace Amazon.Runtime.Internal.Util
         }
 
         /// <summary>
+        /// Constructs the signed trailing headers, optionally including
+        /// the selected checksum for this stream's data. For example:
+        /// trailing-header-A:value CRLF
+        /// trailing-header-B:value CRLF
+        /// x-amz-trailer-signature:signature_value CRLF
+        /// CRLF
+        /// </summary>
+        /// <returns>Stream chunk containing the trailing headers and their signature</returns>
+        private string ConstructSignedTrailersChunk()
+        {
+            // If the trailing headers included a trailing checksum, set the hash value
+            if (_hashAlgorithm != null)
+            {
+                _hashAlgorithm.TransformFinalBlock(new byte[0], 0, 0);
+                _trailingHeaders[ChecksumUtils.GetChecksumHeaderKey(_trailingChecksum)] = Convert.ToBase64String(_hashAlgorithm.Hash);
+            }
+
+            string chunkSignature;
+            if (HeaderSigningResult is AWS4SigningResult)
+            {
+                var sortedTrailingHeaders = AWS4Signer.SortAndPruneHeaders(_trailingHeaders);
+                var canonicalizedTrailingHeaders = AWS4Signer.CanonicalizeHeaders(sortedTrailingHeaders);
+
+                var chunkStringToSign =
+                    TRAILING_HEADER_STRING_TO_SIGN_PREFIX + "\n" +
+                    HeaderSigningResult.ISO8601DateTime + "\n" +
+                    HeaderSigningResult.Scope + "\n" +
+                    PreviousChunkSignature + "\n" +
+                    AWSSDKUtils.ToHex(AWS4Signer.ComputeHash(canonicalizedTrailingHeaders), true);
+
+                chunkSignature = AWSSDKUtils.ToHex(AWS4Signer.SignBlob(((AWS4SigningResult)HeaderSigningResult).GetSigningKey(), chunkStringToSign), true);
+            }
+            else // SigV4a
+            {
+                chunkSignature = Sigv4aSigner.SignTrailingHeaderChunk(_trailingHeaders, PreviousChunkSignature, (AWS4aSigningResult)HeaderSigningResult).PadRight(V4A_SIGNATURE_LENGTH, '*');
+            }
+
+            var chunk = new StringBuilder();
+            // The order here must match the order of keys sent already in the X-Amz-Trailer header.
+            foreach (var kvp in _trailingHeaders.OrderBy(kvp => kvp.Key))
+            {
+                chunk.Append($"{kvp.Key}:{kvp.Value}{STREAM_NEWLINE}");
+            }
+            chunk.Append($"{TRAILING_HEADER_SIGNATURE_KEY}:{chunkSignature}{STREAM_NEWLINE}");
+            chunk.Append(STREAM_NEWLINE);
+            return chunk.ToString();
+        }
+
+        /// <summary>
+        /// Copies the signed trailing headers to the output buffer
+        /// </summary>
+        /// <param name="buffer">The buffer to write the data into</param>
+        /// <param name="offset">The byte offset in buffer at which to begin copying data</param>
+        /// <param name="count">The maximum number of bytes to copy</param>
+        /// <returns>Number of bytes copied</returns>
+        private int WriteTrailingHeaders(byte[] buffer, int offset, int count)
+        {
+            if (string.IsNullOrEmpty(_trailingHeaderChunk))
+            {
+                _trailingHeaderChunk = ConstructSignedTrailersChunk();
+            }
+
+            var lengthRemaining = _trailingHeaderChunk.Length - _trailingHeaderPos;
+
+            if (lengthRemaining == 0)
+            {
+                _trailingHeadersConsumed = true;
+                return 0;
+            }
+
+            if (lengthRemaining <= count)
+            {
+                Buffer.BlockCopy(Encoding.Default.GetBytes(_trailingHeaderChunk), _trailingHeaderPos, buffer, offset, lengthRemaining);
+                _trailingHeadersConsumed = true;
+                return lengthRemaining;
+            }
+            else // the trailing headers don't entirely fit in the buffer for the current read, so use the remaining count
+            {
+                Buffer.BlockCopy(Encoding.Default.GetBytes(_trailingHeaderChunk), _trailingHeaderPos, buffer, offset, count);
+                _trailingHeaderPos += count;
+                return count;
+            }
+        }
+
+        /// <summary>
         /// Length override to return the true length of the payload plus the metainfo
         /// supplied with each chunk
         /// </summary>
@@ -329,7 +490,7 @@ namespace Amazon.Runtime.Internal.Util
                 {
                     return 0;
                 }
-                return ComputeChunkedContentLength(BaseStream.Length, HeaderSigningResult is AWS4aSigningResult ? V4A_SIGNATURE_LENGTH : V4_SIGNATURE_LENGTH);
+                return ComputeChunkedContentLength(BaseStream.Length, HeaderSigningResult is AWS4aSigningResult ? V4A_SIGNATURE_LENGTH : V4_SIGNATURE_LENGTH, _trailingHeaders, _trailingChecksum);
             }
         }
 
@@ -346,22 +507,70 @@ namespace Amazon.Runtime.Internal.Util
         /// Called externally so as to be able to set the correct Content-Length header
         /// value.
         /// </summary>
-        /// <param name="originalLength"></param>
+        /// <param name="originalLength">Length of the wrapped stream</param>
         /// <param name="signatureLength">Length of the signature for each chunk, in bytes</param>
-        /// <returns></returns>
+        /// <returns>Total size of the wrapped payload, in bytes</returns>
         public static long ComputeChunkedContentLength(long originalLength, int signatureLength)
         {
+            return ComputeChunkedContentLength(originalLength, signatureLength, null, CoreChecksumAlgorithm.NONE);
+        }
+
+        /// <summary>
+        /// Computes the total size of the data payload, including the chunk metadata 
+        /// and optional trailing headers. Called externally so as to be able to set 
+        /// the correct Content-Length header value.
+        /// </summary>
+        /// <param name="originalLength">Length of the wrapped stream</param>
+        /// <param name="signatureLength">Length of the signature for each chunk, in bytes</param>
+        /// <param name="trailingHeaders">Optional trailing headers</param>
+        /// <param name="trailingChecksum">Optional checksum algorithm for a trailing header</param>
+        /// <returns>Total size of the wrapped payload, in bytes</returns>
+        public static long ComputeChunkedContentLength(long originalLength, int signatureLength, IDictionary<string, string> trailingHeaders, CoreChecksumAlgorithm trailingChecksum)
+        {
             if (originalLength < 0)
+            {
                 throw new ArgumentOutOfRangeException("originalLength", "Expected 0 or greater value for originalLength.");
+            }
 
+            int trailingHeaderLength = 0;
+            long chunkedContentLength;
+
+            // Calculate the size of the chunked content, before trailing headers/checksum
             if (originalLength == 0)
-                return CalculateChunkHeaderLength(0, signatureLength);
+            {
+                chunkedContentLength = CalculateChunkHeaderLength(0, signatureLength);
+            }
+            else
+            {
+                var maxSizeChunks = originalLength / DefaultChunkSize;
+                var remainingBytes = originalLength % DefaultChunkSize;
 
-            var maxSizeChunks = originalLength / DefaultChunkSize;
-            var remainingBytes = originalLength % DefaultChunkSize;
-            return maxSizeChunks * CalculateChunkHeaderLength(DefaultChunkSize, signatureLength)
-                   + (remainingBytes > 0 ? CalculateChunkHeaderLength(remainingBytes, signatureLength) : 0)
-                   + CalculateChunkHeaderLength(0, signatureLength);
+                chunkedContentLength = maxSizeChunks * CalculateChunkHeaderLength(DefaultChunkSize, signatureLength)
+                       + (remainingBytes > 0 ? CalculateChunkHeaderLength(remainingBytes, signatureLength) : 0)
+                       + CalculateChunkHeaderLength(0, signatureLength);
+            }
+
+            if (trailingHeaders?.Count > 0)
+            {
+                foreach (var key in trailingHeaders.Keys)
+                {
+                    // If the trailing checksum key is already in dictionary, use the
+                    // expected length since the checksum value may not be set yet.
+                    if (trailingChecksum != CoreChecksumAlgorithm.NONE && ChecksumUtils.GetChecksumHeaderKey(trailingChecksum) == key)
+                    {
+                        trailingHeaderLength += key.Length +
+                            CryptoUtilFactory.GetChecksumBase64Length(trailingChecksum) + HEADER_ROW_PADDING_LENGTH;
+                    }
+                    else
+                    {
+                        trailingHeaderLength += key.Length + trailingHeaders[key].Length + HEADER_ROW_PADDING_LENGTH;
+                    }
+                }
+
+                trailingHeaderLength += TRAILING_HEADER_SIGNATURE_KEY.Length + signatureLength + HEADER_ROW_PADDING_LENGTH;
+            }
+
+            return chunkedContentLength + trailingHeaderLength;
         }
 
         /// <summary>
@@ -397,9 +606,9 @@ namespace Amazon.Runtime.Internal.Util
             return chunkDataSize.ToString("X", CultureInfo.InvariantCulture).Length
                    + CHUNK_SIGNATURE_HEADER.Length
                    + signatureLength
-                   + CLRF.Length
+                   + NEWLINE_LENGTH
                    + chunkDataSize
-                   + CLRF.Length;
+                   + NEWLINE_LENGTH;
         }
 
         /// <summary>

@@ -40,6 +40,11 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
 
         private static void InstantiateProperties(TypeCircularReference<Type> tcr, object owningObject)
         {
+            if (owningObject == null)
+            {
+                return;
+            }
+
             foreach (var info in owningObject.GetType().GetProperties())
             {
                 if (info.SetMethod == null)

@@ -583,9 +583,13 @@ namespace Amazon.Runtime
         {
             var wrapperStream = new Amazon.Runtime.Internal.Util.NonDisposingWrapperStream(contentStream);
             _request.Content = new StreamContent(wrapperStream, requestContext.ClientConfig.BufferSize);
-            
+
             var chunkedUploadWrapperStream = (contentStream as ChunkedUploadWrapperStream);
-            if(chunkedUploadWrapperStream == null || chunkedUploadWrapperStream.HasLength)
+            var trailingHeadersWrapperStream = (contentStream as TrailingHeadersWrapperStream);
+
+            if ((chunkedUploadWrapperStream == null && trailingHeadersWrapperStream == null) ||
+                (chunkedUploadWrapperStream != null && chunkedUploadWrapperStream.HasLength) ||
+                (trailingHeadersWrapperStream != null && trailingHeadersWrapperStream.HasLength))
             {
                 _request.Content.Headers.ContentLength = contentStream.Length;
             }

@@ -19,6 +19,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Util;
 using Aws.Crt.Auth;
 using Moq;
 using System;
@@ -260,7 +261,9 @@ namespace CrtIntegrationTests
                 { "Content-Encoding", "aws-chunked" },
                 { "Content-Length", (Chunk1Size + Chunk2Size).ToString() }  // The SDK will adjust this and set x-amz-decoded-content-length as needed prior to CRT
             };
+
             mock.SetupGet(x => x.Headers).Returns(headers);
+            mock.Setup(x => x.TrailingHeaders).Returns(new Dictionary<string, string>());
             mock.SetupGet(x => x.SubResources).Returns(new Dictionary<string, string>());
 
             var request = mock.Object;
@@ -284,7 +287,7 @@ namespace CrtIntegrationTests
 
         internal string GetExpectedCanonicalRequestForChunkedSigningTest()
         {
-            return String.Join('\n',
+            return string.Join('\n',
                             "PUT",
                             "/examplebucket/chunkObject.txt",
                             "",
@@ -301,6 +304,34 @@ namespace CrtIntegrationTests
                             "STREAMING-AWS4-ECDSA-P256-SHA256-PAYLOAD");
         }
 
+        internal string GetExpectedCanonicalRequestForChunkedTrailersSigningTest()
+        {
+            var trailingHeaders = new Dictionary<string, string>
+            {
+                { "x-amz-foo", "bar" }
+            };
+
+            return string.Join('\n',
+                            "PUT",
+                            "/examplebucket/chunkObject.txt",
+                            "",
+                            "content-encoding:aws-chunked",
+                            "content-length:" + ChunkedUploadWrapperStream.ComputeChunkedContentLength(Chunk1Size + Chunk2Size,
+                                                    ChunkedUploadWrapperStream.V4A_SIGNATURE_LENGTH, 
+                                                    trailingHeaders, 
+                                                    CoreChecksumAlgorithm.NONE).ToString(),
+                            "host:s3.amazonaws.com",
+                            "x-amz-content-sha256:STREAMING-AWS4-ECDSA-P256-SHA256-PAYLOAD-TRAILER",
+                            "x-amz-date:20150830T123600Z",
+                            "x-amz-decoded-content-length:" + (Chunk1Size + Chunk2Size).ToString(),
+                            "x-amz-region-set:us-east-1",
+                            "x-amz-storage-class:REDUCED_REDUNDANCY",
+                            "x-amz-trailer:x-amz-foo",
+                            "",
+                            "content-encoding;content-length;host;x-amz-content-sha256;x-amz-date;x-amz-decoded-content-length;x-amz-region-set;x-amz-storage-class;x-amz-trailer",
+                            "STREAMING-AWS4-ECDSA-P256-SHA256-PAYLOAD-TRAILER");
+        }
+
         private string BuildV4aChunkedStringToSignHelper(AWS4aSigningResult headerResult, string previousSignature, int chunkSize)
         {
             return ChunkedUploadWrapperStream.BuildChunkedStringToSign(
@@ -312,6 +343,20 @@ namespace CrtIntegrationTests
                 CreateChunkStream(chunkSize).ToArray());
         }
 
+        private string BuildV4aTrailerChunkHelper(AWS4aSigningResult headerResult, string previousSignature, IDictionary<string, string> trailingHeaders)
+        {
+            return string.Join('\n',
+                    "AWS4-ECDSA-P256-SHA256-TRAILER",
+                    headerResult.ISO8601DateTime,
+                    headerResult.Scope,
+                    previousSignature.TrimEnd('*'),
+                    AWSSDKUtils.ToHex(AWS4Signer.ComputeHash("x-amz-foo:bar\n"), true));
+        }
+
+        /// <summary>
+        ///  Tests that the SigV4a signature is valid for each chunk of a request,
+        ///  by comparing against the signature of a handwritten canonical chunk.
+        /// </summary>
         [Fact]
         public void TestChunkedRequest()
         {
@@ -340,6 +385,48 @@ namespace CrtIntegrationTests
             var chunk3Result = signer.SignChunk(null, chunk2Result, headerResult);
             Assert.True(AwsSigner.VerifyV4aSignature(BuildV4aChunkedStringToSignHelper(headerResult, chunk2Result, 0), 
                                                      Encoding.ASCII.GetBytes(chunk3Result), SigningTestEccPubX, SigningTestEccPubY));
+        }
+
+        /// <summary>
+        ///  Tests that the SigV4a signature is valid for each chunk of a request with 
+        ///  trailing headers, by comparing against the signature of a handwritten
+        ///  canonical chunk.
+        /// </summary>
+        [Fact]
+        public void TestChunkedRequestWithTrailingHeaders()
+        {
+            var signer = new CrtAWS4aSigner();
+
+            var request = BuildMockChunkedRequest();
+            request.TrailingHeaders.Add("x-amz-foo", "bar");
+
+            var clientConfig = BuildSigningClientConfig(SigningTestService);
+
+            var headerResult = signer.SignRequest(request, clientConfig, null, SigningTestCredentials);
+
+            var config = BuildDefaultSigningConfig(SigningTestService);
+
+            config.SignatureType = AwsSignatureType.CANONICAL_REQUEST_VIA_HEADERS;
+            config.SignedBodyValue = AWS4Signer.V4aStreamingBodySha256WithTrailer;
+
+            Assert.True(AwsSigner.VerifyV4aCanonicalSigning(GetExpectedCanonicalRequestForChunkedTrailersSigningTest(),
+                                                            config, headerResult.Signature, SigningTestEccPubX, SigningTestEccPubY));
+
+            var chunk1Result = signer.SignChunk(CreateChunkStream(Chunk1Size), headerResult.Signature, headerResult);
+            Assert.True(AwsSigner.VerifyV4aSignature(BuildV4aChunkedStringToSignHelper(headerResult, headerResult.Signature, Chunk1Size),
+                                                     Encoding.ASCII.GetBytes(chunk1Result), SigningTestEccPubX, SigningTestEccPubY));
+
+            var chunk2Result = signer.SignChunk(CreateChunkStream(Chunk2Size), chunk1Result, headerResult);
+            Assert.True(AwsSigner.VerifyV4aSignature(BuildV4aChunkedStringToSignHelper(headerResult, chunk1Result, Chunk2Size),
+                                                     Encoding.ASCII.GetBytes(chunk2Result), SigningTestEccPubX, SigningTestEccPubY));
+
+            var chunk3Result = signer.SignChunk(null, chunk2Result, headerResult);
+            Assert.True(AwsSigner.VerifyV4aSignature(BuildV4aChunkedStringToSignHelper(headerResult, chunk2Result, 0),
+                                                     Encoding.ASCII.GetBytes(chunk3Result), SigningTestEccPubX, SigningTestEccPubY));
+
+            var trailerChunkResult = signer.SignTrailingHeaderChunk(request.TrailingHeaders, chunk3Result, headerResult);
+            Assert.True(AwsSigner.VerifyV4aSignature(BuildV4aTrailerChunkHelper(headerResult, chunk3Result, request.TrailingHeaders), 
+                                                     Encoding.ASCII.GetBytes(trailerChunkResult), SigningTestEccPubX, SigningTestEccPubY));
         }
         #endregion
     }

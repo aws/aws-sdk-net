@@ -76,6 +76,7 @@ namespace Amazon.Util
         public const string XAmzSignature = "X-Amz-Signature";
         public const string XAmzAlgorithm = "X-Amz-Algorithm";
         public const string XAmzCredential = "X-Amz-Credential";
+        public const string XAmzTrailerHeader = "X-Amz-Trailer";
 
         public const string XAmzSSECustomerAlgorithmHeader = "x-amz-server-side-encryption-customer-algorithm";
         public const string XAmzSSECustomerKeyHeader = "x-amz-server-side-encryption-customer-key";

@@ -1,15 +1,15 @@
-﻿using System;
+﻿using Amazon;
 using Amazon.DocDB;
-using Amazon.DocDB.Model;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Amazon.DocDB.Internal;
+using Amazon.DocDB.Model;
+using Amazon.DocDB.Model.Internal.MarshallTransformations;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
-using AWSSDK_DotNet.CommonTest.Utils;
-using Amazon;
 using Amazon.Runtime.Internal.Auth;
-using Amazon.DocDB.Model.Internal.MarshallTransformations;
-using System.Reflection;
+using AWSSDK_DotNet.CommonTest.Utils;
+using AWSSDK_DotNet35.UnitTests.TestTools;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 
 namespace AWSSDK.UnitTests
 {
@@ -33,76 +33,73 @@ namespace AWSSDK.UnitTests
         private static readonly bool storageEncrypted = true;
         private static readonly string masterUsername = "username";
         private static readonly string masterPassword = "password";
-
-        [ClassInitialize]
-        public static void SetFixedSigningDate(TestContext context)
-        {
-            SetUtcNowSource(ReturnFixedDate);
-        }
-
-        [ClassCleanup]
-        public static void ResetFixedSigningDate()
-        {
-            SetUtcNowSource((Func<DateTime>)Delegate.CreateDelegate(typeof(Func<DateTime>),
-                typeof(AWSConfigs).GetMethod("GetUtcNow", BindingFlags.Static | BindingFlags.NonPublic)));
-        }
+        private static readonly DateTime fixedSigningDate = new DateTime(2020, 8, 27, 0, 0, 0, DateTimeKind.Utc);
 
         [TestMethod]
         [TestCategory("DocDB")]
         public void HandleNonPreSignedUrlRequest()
         {
-            var request = new CreateDBClusterRequest
+            DateFaker.Run(fixedSigningDate, () =>
             {
-                KmsKeyId = kmsKeyId,
-                DBClusterIdentifier = dBClusterIdentifier,
-                Engine = engine,
-                StorageEncrypted = storageEncrypted,
-                MasterUsername = masterUsername,
-                MasterUserPassword = masterPassword
-            };
+                var request = new CreateDBClusterRequest
+                {
+                    KmsKeyId = kmsKeyId,
+                    DBClusterIdentifier = dBClusterIdentifier,
+                    Engine = engine,
+                    StorageEncrypted = storageEncrypted,
+                    MasterUsername = masterUsername,
+                    MasterUserPassword = masterPassword
+                };
 
-            RunPreInvoke(request);
-            Assert.IsNull(request.PreSignedUrl);
+                RunPreInvoke(request);
+                Assert.IsNull(request.PreSignedUrl);
+            });
         }
 
         [TestMethod]
         [TestCategory("DocDB")]
         public void HandlePreSignedUrlRequestNoSourceRegion()
         {
-            var request = new CreateDBClusterRequest
+            DateFaker.Run(fixedSigningDate, () =>
             {
-                KmsKeyId = kmsKeyId,
-                DBClusterIdentifier = dBClusterIdentifier,
-                Engine = engine,
-                StorageEncrypted = storageEncrypted,
-                MasterUsername = masterUsername,
-                MasterUserPassword = masterPassword,
-                PreSignedUrl = "https://aws.com"
-            };
+                var request = new CreateDBClusterRequest
+                {
+                    KmsKeyId = kmsKeyId,
+                    DBClusterIdentifier = dBClusterIdentifier,
+                    Engine = engine,
+                    StorageEncrypted = storageEncrypted,
+                    MasterUsername = masterUsername,
+                    MasterUserPassword = masterPassword,
+                    PreSignedUrl = "https://aws.com"
+                };
 
-            RunPreInvoke(request);
-            Assert.AreEqual("https://aws.com", request.PreSignedUrl);
+                RunPreInvoke(request);
+                Assert.AreEqual("https://aws.com", request.PreSignedUrl);
+            });
         }
 
         [TestMethod]
         [TestCategory("DocDB")]
         public void HandlePreSignedUrlRequest()
         {
-            var request = new CreateDBClusterRequest
+            DateFaker.Run(fixedSigningDate, () =>
             {
-                KmsKeyId = kmsKeyId,
-                DBClusterIdentifier = dBClusterIdentifier,
-                Engine = engine,
-                StorageEncrypted = storageEncrypted,
-                MasterUsername = masterUsername,
-                MasterUserPassword = masterPassword,
-                SourceRegion = sourceRegion
-            };
+                var request = new CreateDBClusterRequest
+                {
+                    KmsKeyId = kmsKeyId,
+                    DBClusterIdentifier = dBClusterIdentifier,
+                    Engine = engine,
+                    StorageEncrypted = storageEncrypted,
+                    MasterUsername = masterUsername,
+                    MasterUserPassword = masterPassword,
+                    SourceRegion = sourceRegion
+                };
 
-            RunPreInvoke(request);
+                RunPreInvoke(request);
 
-            Assert.IsNotNull(request.PreSignedUrl);
-            Assert.IsTrue(request.PreSignedUrl.Contains("Signature=015e49149a19b1f97a40e472ac8f6da55fb559c86834a3664a279fab99063e44"));
+                Assert.IsNotNull(request.PreSignedUrl);
+                Assert.IsTrue(request.PreSignedUrl.Contains("Signature=015e49149a19b1f97a40e472ac8f6da55fb559c86834a3664a279fab99063e44"));
+            });
         }
 
         private void RunPreInvoke(AmazonWebServiceRequest request)
@@ -121,17 +118,6 @@ namespace AWSSDK.UnitTests
             requestContext.ClientConfig = clientConfig;
 
             ReflectionHelpers.Invoke(handler, "PreInvoke", executionContext);
-        }
-
-        private static DateTime ReturnFixedDate()
-        {
-            return new DateTime(2020, 8, 27, 0, 0, 0, DateTimeKind.Utc);
-        }
-
-        private static void SetUtcNowSource(Func<DateTime> source)
-        {
-            var field = typeof(AWSConfigs).GetField("utcNowSource", BindingFlags.Static | BindingFlags.NonPublic);
-            field.SetValue(null, source);
         }
     }
 }

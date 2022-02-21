@@ -14,6 +14,7 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 
 using Amazon.Runtime.Internal;
@@ -60,7 +61,7 @@ namespace Amazon.Runtime
         /// </summary>
         protected virtual bool Expect100Continue
         {
-            get { return false; }            
+            get { return false; }
         }
 
         internal bool GetExpect100Continue()
@@ -94,5 +95,14 @@ namespace Amazon.Runtime
             return CreateSigner();
         }
 
+        /// <summary>
+        /// Checksum validation behavior for validating the integrity of this request's response
+        /// </summary>
+        protected internal virtual CoreChecksumResponseBehavior CoreChecksumMode => CoreChecksumResponseBehavior.DISABLED;
+
+        /// <summary>
+        /// Checksum algorithms that are supported for validating the integrity of this request's response
+        /// </summary>
+        protected internal virtual ReadOnlyCollection<CoreChecksumAlgorithm> ChecksumResponseAlgorithms => new List<CoreChecksumAlgorithm>(0).AsReadOnly();
     }
 }

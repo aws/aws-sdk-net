@@ -835,7 +835,7 @@ namespace ServiceClientGenerator
                         continue;
                     }
 
-                    if (projectName.Contains("Integration"))
+                    if (projectName.Contains("Integration") || projectName.Contains("UnitTests"))
                     {
                         dependentProjects.AddRange(AddProjectDependencies
                             (projectFile, serviceDirectory.Name, new List<string>()));

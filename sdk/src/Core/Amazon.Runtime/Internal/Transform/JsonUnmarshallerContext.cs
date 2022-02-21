@@ -66,7 +66,28 @@ namespace Amazon.Runtime.Internal.Transform
         /// <param name="maintainResponseBody"> If set to true, maintains a copy of the complete response body constraint to log response size as the stream is being read.</param>
         /// <param name="responseData">Response data coming back from the request</param>
         /// <param name="isException">If set to true, maintains a copy of the complete response body as the stream is being read.</param>
-        public JsonUnmarshallerContext(Stream responseStream, bool maintainResponseBody, IWebResponseData responseData, bool isException = false)
+        public JsonUnmarshallerContext(
+            Stream responseStream,
+            bool maintainResponseBody,
+            IWebResponseData responseData,
+            bool isException = false)
+            : this(responseStream, maintainResponseBody, responseData, isException, null)
+        { }
+
+        /// <summary>
+        /// Wrap the jsonstring for unmarshalling.
+        /// </summary>
+        /// <param name="responseStream">Stream that contains the JSON for unmarshalling</param>
+        /// <param name="maintainResponseBody"> If set to true, maintains a copy of the complete response body constraint to log response size as the stream is being read.</param>
+        /// <param name="responseData">Response data coming back from the request</param>
+        /// <param name="isException">If set to true, maintains a copy of the complete response body as the stream is being read.</param>
+        /// <param name="requestContext">Context for the request that produced this response</param>
+        public JsonUnmarshallerContext(
+            Stream responseStream,
+            bool maintainResponseBody,
+            IWebResponseData responseData,
+            bool isException,
+            IRequestContext requestContext)
         {
             if (isException)
             {
@@ -85,12 +106,10 @@ namespace Amazon.Runtime.Internal.Transform
             this.WebResponseData = responseData;
             this.MaintainResponseBody = maintainResponseBody;
             this.IsException = isException;
-			
 
-            //if the json unmarshaller context is being called internally without their being a http response then the response data would be null
+            //if the json unmarshaller context is being called internally without there being a http response then the response data would be null
             if(responseData != null)
             {
-
                 long contentLength;
                 
                 bool parsedContentLengthHeader = long.TryParse(responseData.GetHeaderValue("Content-Length"), out contentLength);
@@ -104,10 +123,13 @@ namespace Amazon.Runtime.Internal.Transform
                     string.IsNullOrEmpty(responseData.GetHeaderValue("Content-Encoding")))
                 {
                     base.SetupCRCStream(responseData, responseStream, contentLength);
+                    base.SetupFlexibleChecksumStream(responseData, CrcStream ?? responseStream, contentLength, requestContext);
                 }
             }
-			
-            if (this.CrcStream != null)
+
+            if (this.FlexibleChecksumStream != null) // either just flexible checksum, or flexible checksum wrapping the older CRC stream
+                streamReader = new StreamReader(this.FlexibleChecksumStream);
+            else if (this.CrcStream != null)
                 streamReader = new StreamReader(this.CrcStream);
             else
                 streamReader = new StreamReader(responseStream);

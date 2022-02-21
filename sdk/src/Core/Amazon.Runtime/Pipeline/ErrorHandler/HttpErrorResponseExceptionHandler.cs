@@ -119,7 +119,8 @@ namespace Amazon.Runtime.Internal
                     readEntireResponse,
                     responseStream,
                     requestContext.Metrics,
-                    true);
+                    true,
+                    requestContext);
 
                 try
                 {
@@ -196,7 +197,8 @@ namespace Amazon.Runtime.Internal
                         readEntireResponse,
                         httpErrorResponse.ResponseBody.OpenResponse(),
                         requestContext.Metrics,
-                        true);
+                        true,
+                        requestContext);
                     try
                     {
                         responseContext.Response = unmarshaller.Unmarshall(errorContext);

@@ -49,6 +49,11 @@ namespace ServiceClientGenerator
         public const string EndpointDiscoveryKey = "endpointdiscovery";
         public const string RequiredKey = "required";
         public const string HttpChecksumRequiredKey = "httpChecksumRequired";
+        public const string HttpChecksumKey = "httpChecksum";
+        public const string RequestChecksumRequiredKey = "requestChecksumRequired";
+        public const string RequestAlgorithmMemberKey = "requestAlgorithmMember";
+        public const string RequestValidationModeMemberKey = "requestValidationModeMember";
+        public const string ResponseAlgorithmsKey = "responseAlgorithms";
 
         // shapes
         public const string ShapesKey = "shapes";

@@ -1,15 +1,15 @@
-﻿using System;
+﻿using Amazon;
 using Amazon.Neptune;
+using Amazon.Neptune.Internal;
 using Amazon.Neptune.Model;
 using Amazon.Neptune.Model.Internal.MarshallTransformations;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Amazon.Neptune.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
-using AWSSDK_DotNet.CommonTest.Utils;
-using Amazon;
 using Amazon.Runtime.Internal.Auth;
-using System.Reflection;
+using AWSSDK_DotNet.CommonTest.Utils;
+using AWSSDK_DotNet35.UnitTests.TestTools;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 
 namespace AWSSDK.UnitTests
 {
@@ -25,73 +25,70 @@ namespace AWSSDK.UnitTests
         private static readonly string engine = "aurora";
         private static readonly bool storageEncrypted = true;
         private static readonly string replicationSourceIdentifier = "arn:aws:rds:us-east-1:123456789012:cluster:source-db-cluster";
-
-        [ClassInitialize]
-        public static void SetFixedSigningDate(TestContext context)
-        {
-            SetUtcNowSource(ReturnFixedDate);
-        }
-
-        [ClassCleanup]
-        public static void ResetFixedSigningDate()
-        {
-            SetUtcNowSource((Func<DateTime>)Delegate.CreateDelegate(typeof(Func<DateTime>),
-                typeof(AWSConfigs).GetMethod("GetUtcNow", BindingFlags.Static | BindingFlags.NonPublic)));
-        }
+        private static readonly DateTime fixedSigningDate = new DateTime(2020, 8, 27, 0, 0, 0, DateTimeKind.Utc);
 
         [TestMethod]
         [TestCategory("Neptune")]
         public void HandleNonPreSignedUrlRequest()
         {
-            var request = new CreateDBClusterRequest
+            DateFaker.Run(fixedSigningDate, () =>
             {
-                KmsKeyId = kmsKeyId,
-                DBClusterIdentifier = dBClusterIdentifier,
-                Engine = engine,
-                StorageEncrypted = storageEncrypted,
-                ReplicationSourceIdentifier = replicationSourceIdentifier
-            };
+                var request = new CreateDBClusterRequest
+                {
+                    KmsKeyId = kmsKeyId,
+                    DBClusterIdentifier = dBClusterIdentifier,
+                    Engine = engine,
+                    StorageEncrypted = storageEncrypted,
+                    ReplicationSourceIdentifier = replicationSourceIdentifier
+                };
 
-            RunPreInvoke(request);
-            Assert.IsNull(request.PreSignedUrl);
+                RunPreInvoke(request);
+                Assert.IsNull(request.PreSignedUrl);
+            });
         }
 
         [TestMethod]
         [TestCategory("Neptune")]
         public void HandlePreSignedUrlRequestNoSourceRegion()
         {
-            var request = new CreateDBClusterRequest
+            DateFaker.Run(fixedSigningDate, () =>
             {
-                KmsKeyId = kmsKeyId,
-                DBClusterIdentifier = dBClusterIdentifier,
-                Engine = engine,
-                StorageEncrypted = storageEncrypted,
-                ReplicationSourceIdentifier = replicationSourceIdentifier,
-                PreSignedUrl = "https://aws.com"
-            };
+                var request = new CreateDBClusterRequest
+                {
+                    KmsKeyId = kmsKeyId,
+                    DBClusterIdentifier = dBClusterIdentifier,
+                    Engine = engine,
+                    StorageEncrypted = storageEncrypted,
+                    ReplicationSourceIdentifier = replicationSourceIdentifier,
+                    PreSignedUrl = "https://aws.com"
+                };
 
-            RunPreInvoke(request);
-            Assert.AreEqual("https://aws.com", request.PreSignedUrl);
+                RunPreInvoke(request);
+                Assert.AreEqual("https://aws.com", request.PreSignedUrl);
+            });
         }
 
         [TestMethod]
         [TestCategory("Neptune")]
         public void HandlePreSignedUrlRequest()
         {
-            var request = new CreateDBClusterRequest
+            DateFaker.Run(fixedSigningDate, () =>
             {
-                KmsKeyId = kmsKeyId,
-                DBClusterIdentifier = dBClusterIdentifier,
-                Engine = engine,
-                StorageEncrypted = storageEncrypted,
-                ReplicationSourceIdentifier = replicationSourceIdentifier,
-                SourceRegion = sourceRegion
-            };
+                var request = new CreateDBClusterRequest
+                {
+                    KmsKeyId = kmsKeyId,
+                    DBClusterIdentifier = dBClusterIdentifier,
+                    Engine = engine,
+                    StorageEncrypted = storageEncrypted,
+                    ReplicationSourceIdentifier = replicationSourceIdentifier,
+                    SourceRegion = sourceRegion
+                };
 
-            RunPreInvoke(request);
+                RunPreInvoke(request);
 
-            Assert.IsNotNull(request.PreSignedUrl);
-            Assert.IsTrue(request.PreSignedUrl.Contains("Signature=1f654a3049149ef925f2ad58d4fd71fdf94791eb65848f866a6f451f9be655f7"));
+                Assert.IsNotNull(request.PreSignedUrl);
+                Assert.IsTrue(request.PreSignedUrl.Contains("Signature=1f654a3049149ef925f2ad58d4fd71fdf94791eb65848f866a6f451f9be655f7"));
+            });
         }
 
         private void RunPreInvoke(AmazonWebServiceRequest request)
@@ -111,16 +108,5 @@ namespace AWSSDK.UnitTests
 
             ReflectionHelpers.Invoke(handler, "PreInvoke", executionContext);
         }
-
-        private static DateTime ReturnFixedDate()
-        {
-            return new DateTime(2020, 8, 27, 0, 0, 0, DateTimeKind.Utc);
-        }
-
-        private static void SetUtcNowSource(Func<DateTime> source)
-        {
-            var field = typeof(AWSConfigs).GetField("utcNowSource", BindingFlags.Static | BindingFlags.NonPublic);
-            field.SetValue(null, source);
-        }
-    }     
+    }
 }

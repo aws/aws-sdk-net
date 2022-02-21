@@ -16,6 +16,7 @@
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Util;
+using System.Collections.Generic;
 using System.IO;
 
 namespace Amazon.Runtime.SharedInterfaces
@@ -113,5 +114,14 @@ namespace Amazon.Runtime.SharedInterfaces
         /// <param name="headerSigningResult">Signing result of the request's header</param>
         /// <returns>Unpadded SigV4a signature of the given chunk</returns>
         string SignChunk(Stream chunkBody, string previousSignature, AWS4aSigningResult headerSigningResult);
+
+        /// <summary>
+        /// Signs the final chunk containing trailing headers
+        /// </summary>
+        /// <param name="trailingHeaders">Trailing header keys and values</param>
+        /// <param name="previousSignature">Signature of the previous chunk</param>
+        /// <param name="headerSigningResult">Signing result of the request's header</param>
+        /// <returns>Signature of the trailing header chunk</returns>
+        string SignTrailingHeaderChunk(IDictionary<string, string> trailingHeaders, string previousSignature, AWS4aSigningResult headerSigningResult);
     }
 }

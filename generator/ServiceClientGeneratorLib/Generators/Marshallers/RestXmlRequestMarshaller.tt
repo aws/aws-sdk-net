@@ -162,7 +162,7 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 				request.Content = System.Text.Encoding.UTF8.GetBytes(content);
 				request.Headers["Content-Type"] = "application/xml";
 <#+
-					CheckContentMd5Header(operation, "content");
+					GenerateRequestChecksumHandling(operation, "content");
 #>
 	            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "<#=this.Config.ServiceModel.APIVersion#>";            
 			} 
