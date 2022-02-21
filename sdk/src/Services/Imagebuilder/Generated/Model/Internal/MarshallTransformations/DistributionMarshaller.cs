@@ -67,6 +67,22 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetFastLaunchConfigurations())
+            {
+                context.Writer.WritePropertyName("fastLaunchConfigurations");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectFastLaunchConfigurationsListValue in requestObject.FastLaunchConfigurations)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = FastLaunchConfigurationMarshaller.Instance;
+                    marshaller.Marshall(requestObjectFastLaunchConfigurationsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetLaunchTemplateConfigurations())
             {
                 context.Writer.WritePropertyName("launchTemplateConfigurations");

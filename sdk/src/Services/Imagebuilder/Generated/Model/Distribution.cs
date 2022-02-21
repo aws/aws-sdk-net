@@ -35,6 +35,7 @@ namespace Amazon.Imagebuilder.Model
     {
         private AmiDistributionConfiguration _amiDistributionConfiguration;
         private ContainerDistributionConfiguration _containerDistributionConfiguration;
+        private List<FastLaunchConfiguration> _fastLaunchConfigurations = new List<FastLaunchConfiguration>();
         private List<LaunchTemplateConfiguration> _launchTemplateConfigurations = new List<LaunchTemplateConfiguration>();
         private List<string> _licenseConfigurationArns = new List<string>();
         private string _region;
@@ -75,6 +76,25 @@ namespace Amazon.Imagebuilder.Model
         internal bool IsSetContainerDistributionConfiguration()
         {
             return this._containerDistributionConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FastLaunchConfigurations. 
+        /// <para>
+        /// The Windows faster-launching configurations to use for AMI distribution.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1000)]
+        public List<FastLaunchConfiguration> FastLaunchConfigurations
+        {
+            get { return this._fastLaunchConfigurations; }
+            set { this._fastLaunchConfigurations = value; }
+        }
+
+        // Check to see if FastLaunchConfigurations property is set
+        internal bool IsSetFastLaunchConfigurations()
+        {
+            return this._fastLaunchConfigurations != null && this._fastLaunchConfigurations.Count > 0; 
         }
 
         /// <summary>

@@ -1372,6 +1372,34 @@
     <max>16000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.FastLaunchConfiguration.AccountId</property>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.FastLaunchConfiguration.MaxParallelLaunches</property>
+    <min>1</min>
+    <max>10000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.FastLaunchLaunchTemplateSpecification.LaunchTemplateId</property>
+    <pattern>^lt-[a-z0-9-_]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.FastLaunchLaunchTemplateSpecification.LaunchTemplateName</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.FastLaunchLaunchTemplateSpecification.LaunchTemplateVersion</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.FastLaunchSnapshotConfiguration.TargetResourceCount</property>
+    <min>1</min>
+    <max>10000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Imagebuilder.Model.Filter.Name</property>
     <pattern>^[a-zA-Z]{1,1024}$</pattern>
   </property-value-rule>

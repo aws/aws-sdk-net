@@ -90,7 +90,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Data. 
         /// <para>
-        /// The data of the component.
+        /// Component data contains the YAML document content for the component.
         /// </para>
         /// </summary>
         public string Data
