@@ -63,6 +63,12 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                     response.Items = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("LastEvaluatedKey", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, AttributeValue, StringUnmarshaller, AttributeValueUnmarshaller>(StringUnmarshaller.Instance, AttributeValueUnmarshaller.Instance);
+                    response.LastEvaluatedKey = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("NextToken", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
