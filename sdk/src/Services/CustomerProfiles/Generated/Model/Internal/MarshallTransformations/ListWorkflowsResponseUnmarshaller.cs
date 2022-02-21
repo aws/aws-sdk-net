@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for PutIntegration operation
+    /// Response Unmarshaller for ListWorkflows operation
     /// </summary>  
-    public class PutIntegrationResponseUnmarshaller : JsonResponseUnmarshaller
+    public class ListWorkflowsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,58 +45,22 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            PutIntegrationResponse response = new PutIntegrationResponse();
+            ListWorkflowsResponse response = new ListWorkflowsResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("CreatedAt", targetDepth))
+                if (context.TestExpression("Items", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.CreatedAt = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<ListWorkflowsItem, ListWorkflowsItemUnmarshaller>(ListWorkflowsItemUnmarshaller.Instance);
+                    response.Items = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("DomainName", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.DomainName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("LastUpdatedAt", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.LastUpdatedAt = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ObjectTypeName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.ObjectTypeName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ObjectTypeNames", targetDepth))
-                {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    response.ObjectTypeNames = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Tags", targetDepth))
-                {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    response.Tags = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Uri", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Uri = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("WorkflowId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.WorkflowId = unmarshaller.Unmarshall(context);
+                    response.NextToken = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -146,9 +110,9 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
             return new AmazonCustomerProfilesException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static PutIntegrationResponseUnmarshaller _instance = new PutIntegrationResponseUnmarshaller();        
+        private static ListWorkflowsResponseUnmarshaller _instance = new ListWorkflowsResponseUnmarshaller();        
 
-        internal static PutIntegrationResponseUnmarshaller GetInstance()
+        internal static ListWorkflowsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -156,7 +120,7 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PutIntegrationResponseUnmarshaller Instance
+        public static ListWorkflowsResponseUnmarshaller Instance
         {
             get
             {

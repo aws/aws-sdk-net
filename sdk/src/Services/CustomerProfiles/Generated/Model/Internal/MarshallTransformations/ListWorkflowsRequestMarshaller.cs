@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ListAccountIntegrations Request Marshaller
+    /// ListWorkflows Request Marshaller
     /// </summary>       
-    public class ListAccountIntegrationsRequestMarshaller : IMarshaller<IRequest, ListAccountIntegrationsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class ListWorkflowsRequestMarshaller : IMarshaller<IRequest, ListWorkflowsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((ListAccountIntegrationsRequest)input);
+            return this.Marshall((ListWorkflowsRequest)input);
         }
 
         /// <summary>
@@ -52,32 +52,50 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(ListAccountIntegrationsRequest publicRequest)
+        public IRequest Marshall(ListWorkflowsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CustomerProfiles");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-08-15";
             request.HttpMethod = "POST";
 
-            
-            if (publicRequest.IsSetIncludeHidden())
-                request.Parameters.Add("include-hidden", StringUtils.FromBool(publicRequest.IncludeHidden));
+            if (!publicRequest.IsSetDomainName())
+                throw new AmazonCustomerProfilesException("Request object does not have required field DomainName set");
+            request.AddPathResource("{DomainName}", StringUtils.FromString(publicRequest.DomainName));
             
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("max-results", StringUtils.FromInt(publicRequest.MaxResults));
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("next-token", StringUtils.FromString(publicRequest.NextToken));
-            request.ResourcePath = "/integrations";
+            request.ResourcePath = "/domains/{DomainName}/workflows";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetUri())
+                if(publicRequest.IsSetQueryEndDate())
                 {
-                    context.Writer.WritePropertyName("Uri");
-                    context.Writer.Write(publicRequest.Uri);
+                    context.Writer.WritePropertyName("QueryEndDate");
+                    context.Writer.Write(publicRequest.QueryEndDate);
+                }
+
+                if(publicRequest.IsSetQueryStartDate())
+                {
+                    context.Writer.WritePropertyName("QueryStartDate");
+                    context.Writer.Write(publicRequest.QueryStartDate);
+                }
+
+                if(publicRequest.IsSetStatus())
+                {
+                    context.Writer.WritePropertyName("Status");
+                    context.Writer.Write(publicRequest.Status);
+                }
+
+                if(publicRequest.IsSetWorkflowType())
+                {
+                    context.Writer.WritePropertyName("WorkflowType");
+                    context.Writer.Write(publicRequest.WorkflowType);
                 }
 
                 writer.WriteObjectEnd();
@@ -89,9 +107,9 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static ListAccountIntegrationsRequestMarshaller _instance = new ListAccountIntegrationsRequestMarshaller();        
+        private static ListWorkflowsRequestMarshaller _instance = new ListWorkflowsRequestMarshaller();        
 
-        internal static ListAccountIntegrationsRequestMarshaller GetInstance()
+        internal static ListWorkflowsRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -99,7 +117,7 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ListAccountIntegrationsRequestMarshaller Instance
+        public static ListWorkflowsRequestMarshaller Instance
         {
             get
             {

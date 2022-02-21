@@ -29,80 +29,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CustomerProfiles.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetMatches operation.
-    /// Before calling this API, use <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_CreateDomain.html">CreateDomain</a>
-    /// or <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_UpdateDomain.html">UpdateDomain</a>
-    /// to enable identity resolution: set <code>Matching</code> to true.
-    /// 
-    ///  
-    /// <para>
-    /// GetMatches returns potentially matching profiles, based on the results of the latest
-    /// run of a machine learning process. 
-    /// </para>
-    ///  <important> 
-    /// <para>
-    /// The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>,
-    /// Amazon Connect Customer Profiles starts a weekly batch process called Identity Resolution
-    /// Job. If you do not specify a date and time for Identity Resolution Job to run, by
-    /// default it runs every Saturday at 12AM UTC to detect duplicate profiles in your domains.
-    /// 
-    /// </para>
-    ///  
-    /// <para>
-    /// After the Identity Resolution Job completes, use the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
-    /// API to return and review the results. Or, if you have configured <code>ExportingConfig</code>
-    /// in the <code>MatchingRequest</code>, you can download the results from S3.
-    /// </para>
-    ///  </important> 
-    /// <para>
-    /// Amazon Connect uses the following profile attributes to identify matches:
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    /// PhoneNumber
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// HomePhoneNumber
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// BusinessPhoneNumber
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// MobilePhoneNumber
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// EmailAddress
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// PersonalEmailAddress
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// BusinessEmailAddress
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// FullName
-    /// </para>
-    ///  </li> </ul> 
-    /// <para>
-    /// For example, two or more profiles—with spelling mistakes such as <b>John Doe</b> and
-    /// <b>Jhn Doe</b>, or different casing email addresses such as <b>JOHN_DOE@ANYCOMPANY.COM</b>
-    /// and <b>johndoe@anycompany.com</b>, or different phone number formats such as <b>555-010-0000</b>
-    /// and <b>+1-555-010-0000</b>—can be detected as belonging to the same customer <b>John
-    /// Doe</b> and merged into a unified profile.
-    /// </para>
+    /// Container for the parameters to the ListWorkflows operation.
+    /// Query to list all workflows.
     /// </summary>
-    public partial class GetMatchesRequest : AmazonCustomerProfilesRequest
+    public partial class ListWorkflowsRequest : AmazonCustomerProfilesRequest
     {
         private string _domainName;
         private int? _maxResults;
         private string _nextToken;
+        private DateTime? _queryEndDate;
+        private DateTime? _queryStartDate;
+        private Status _status;
+        private WorkflowType _workflowType;
 
         /// <summary>
         /// Gets and sets the property DomainName. 
@@ -160,6 +98,78 @@ namespace Amazon.CustomerProfiles.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property QueryEndDate. 
+        /// <para>
+        /// Retrieve workflows ended after timestamp.
+        /// </para>
+        /// </summary>
+        public DateTime QueryEndDate
+        {
+            get { return this._queryEndDate.GetValueOrDefault(); }
+            set { this._queryEndDate = value; }
+        }
+
+        // Check to see if QueryEndDate property is set
+        internal bool IsSetQueryEndDate()
+        {
+            return this._queryEndDate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property QueryStartDate. 
+        /// <para>
+        /// Retrieve workflows started after timestamp.
+        /// </para>
+        /// </summary>
+        public DateTime QueryStartDate
+        {
+            get { return this._queryStartDate.GetValueOrDefault(); }
+            set { this._queryStartDate = value; }
+        }
+
+        // Check to see if QueryStartDate property is set
+        internal bool IsSetQueryStartDate()
+        {
+            return this._queryStartDate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// Status of workflow execution.
+        /// </para>
+        /// </summary>
+        public Status Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorkflowType. 
+        /// <para>
+        /// The type of workflow. The only supported value is APPFLOW_INTEGRATION.
+        /// </para>
+        /// </summary>
+        public WorkflowType WorkflowType
+        {
+            get { return this._workflowType; }
+            set { this._workflowType = value; }
+        }
+
+        // Check to see if WorkflowType property is set
+        internal bool IsSetWorkflowType()
+        {
+            return this._workflowType != null;
         }
 
     }

@@ -29,38 +29,39 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CustomerProfiles.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListAccountIntegrations operation.
-    /// Lists all of the integrations associated to a specific URI in the AWS account.
+    /// Container for the parameters to the GetWorkflowSteps operation.
+    /// Get granular list of steps in workflow.
     /// </summary>
-    public partial class ListAccountIntegrationsRequest : AmazonCustomerProfilesRequest
+    public partial class GetWorkflowStepsRequest : AmazonCustomerProfilesRequest
     {
-        private bool? _includeHidden;
+        private string _domainName;
         private int? _maxResults;
         private string _nextToken;
-        private string _uri;
+        private string _workflowId;
 
         /// <summary>
-        /// Gets and sets the property IncludeHidden. 
+        /// Gets and sets the property DomainName. 
         /// <para>
-        /// Boolean to indicate if hidden integration should be returned. Defaults to <code>False</code>.
+        /// The unique name of the domain.
         /// </para>
         /// </summary>
-        public bool IncludeHidden
+        [AWSProperty(Required=true, Min=1, Max=64)]
+        public string DomainName
         {
-            get { return this._includeHidden.GetValueOrDefault(); }
-            set { this._includeHidden = value; }
+            get { return this._domainName; }
+            set { this._domainName = value; }
         }
 
-        // Check to see if IncludeHidden property is set
-        internal bool IsSetIncludeHidden()
+        // Check to see if DomainName property is set
+        internal bool IsSetDomainName()
         {
-            return this._includeHidden.HasValue; 
+            return this._domainName != null;
         }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of objects returned per page.
+        /// The maximum number of results to return per page.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -79,7 +80,8 @@ namespace Amazon.CustomerProfiles.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The pagination token from the previous ListAccountIntegrations API call.
+        /// The token for the next set of results. Use the value returned in the previous response
+        /// in the next request to retrieve the next set of results.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -96,22 +98,22 @@ namespace Amazon.CustomerProfiles.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Uri. 
+        /// Gets and sets the property WorkflowId. 
         /// <para>
-        /// The URI of the S3 bucket or any other type of data source.
+        /// Unique identifier for the workflow.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=255)]
-        public string Uri
+        [AWSProperty(Required=true)]
+        public string WorkflowId
         {
-            get { return this._uri; }
-            set { this._uri = value; }
+            get { return this._workflowId; }
+            set { this._workflowId = value; }
         }
 
-        // Check to see if Uri property is set
-        internal bool IsSetUri()
+        // Check to see if WorkflowId property is set
+        internal bool IsSetWorkflowId()
         {
-            return this._uri != null;
+            return this._workflowId != null;
         }
 
     }

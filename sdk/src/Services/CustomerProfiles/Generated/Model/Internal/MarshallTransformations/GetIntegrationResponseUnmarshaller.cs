@@ -93,6 +93,12 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                     response.Uri = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("WorkflowId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.WorkflowId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ListIntegrationItem Object
+    /// Response Unmarshaller for AppflowIntegrationWorkflowStep Object
     /// </summary>  
-    public class ListIntegrationItemUnmarshaller : IUnmarshaller<ListIntegrationItem, XmlUnmarshallerContext>, IUnmarshaller<ListIntegrationItem, JsonUnmarshallerContext>
+    public class AppflowIntegrationWorkflowStepUnmarshaller : IUnmarshaller<AppflowIntegrationWorkflowStep, XmlUnmarshallerContext>, IUnmarshaller<AppflowIntegrationWorkflowStep, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ListIntegrationItem IUnmarshaller<ListIntegrationItem, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AppflowIntegrationWorkflowStep IUnmarshaller<AppflowIntegrationWorkflowStep, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,45 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ListIntegrationItem Unmarshall(JsonUnmarshallerContext context)
+        public AppflowIntegrationWorkflowStep Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ListIntegrationItem unmarshalledObject = new ListIntegrationItem();
+            AppflowIntegrationWorkflowStep unmarshalledObject = new AppflowIntegrationWorkflowStep();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("BatchRecordsEndTime", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.BatchRecordsEndTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("BatchRecordsStartTime", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.BatchRecordsStartTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CreatedAt", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("DomainName", targetDepth))
+                if (context.TestExpression("ExecutionMessage", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DomainName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ExecutionMessage = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("FlowName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FlowName = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("LastUpdatedAt", targetDepth))
@@ -82,34 +100,16 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                     unmarshalledObject.LastUpdatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ObjectTypeName", targetDepth))
+                if (context.TestExpression("RecordsProcessed", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.RecordsProcessed = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ObjectTypeName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ObjectTypeNames", targetDepth))
-                {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    unmarshalledObject.ObjectTypeNames = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Tags", targetDepth))
-                {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    unmarshalledObject.Tags = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Uri", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Uri = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("WorkflowId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.WorkflowId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -118,12 +118,12 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
         }
 
 
-        private static ListIntegrationItemUnmarshaller _instance = new ListIntegrationItemUnmarshaller();        
+        private static AppflowIntegrationWorkflowStepUnmarshaller _instance = new AppflowIntegrationWorkflowStepUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ListIntegrationItemUnmarshaller Instance
+        public static AppflowIntegrationWorkflowStepUnmarshaller Instance
         {
             get
             {

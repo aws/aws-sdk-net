@@ -62,6 +62,9 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                 throw new AmazonCustomerProfilesException("Request object does not have required field DomainName set");
             request.AddPathResource("{DomainName}", StringUtils.FromString(publicRequest.DomainName));
             
+            if (publicRequest.IsSetIncludeHidden())
+                request.Parameters.Add("include-hidden", StringUtils.FromBool(publicRequest.IncludeHidden));
+            
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("max-results", StringUtils.FromInt(publicRequest.MaxResults));
             

@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ListAccountIntegrations Request Marshaller
+    /// GetWorkflowSteps Request Marshaller
     /// </summary>       
-    public class ListAccountIntegrationsRequestMarshaller : IMarshaller<IRequest, ListAccountIntegrationsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class GetWorkflowStepsRequestMarshaller : IMarshaller<IRequest, GetWorkflowStepsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((ListAccountIntegrationsRequest)input);
+            return this.Marshall((GetWorkflowStepsRequest)input);
         }
 
         /// <summary>
@@ -52,46 +52,32 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(ListAccountIntegrationsRequest publicRequest)
+        public IRequest Marshall(GetWorkflowStepsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CustomerProfiles");
-            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-08-15";
-            request.HttpMethod = "POST";
+            request.HttpMethod = "GET";
 
-            
-            if (publicRequest.IsSetIncludeHidden())
-                request.Parameters.Add("include-hidden", StringUtils.FromBool(publicRequest.IncludeHidden));
+            if (!publicRequest.IsSetDomainName())
+                throw new AmazonCustomerProfilesException("Request object does not have required field DomainName set");
+            request.AddPathResource("{DomainName}", StringUtils.FromString(publicRequest.DomainName));
+            if (!publicRequest.IsSetWorkflowId())
+                throw new AmazonCustomerProfilesException("Request object does not have required field WorkflowId set");
+            request.AddPathResource("{WorkflowId}", StringUtils.FromString(publicRequest.WorkflowId));
             
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("max-results", StringUtils.FromInt(publicRequest.MaxResults));
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("next-token", StringUtils.FromString(publicRequest.NextToken));
-            request.ResourcePath = "/integrations";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
-            {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetUri())
-                {
-                    context.Writer.WritePropertyName("Uri");
-                    context.Writer.Write(publicRequest.Uri);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
-            }
-
+            request.ResourcePath = "/domains/{DomainName}/workflows/{WorkflowId}/steps";
             request.UseQueryString = true;
 
             return request;
         }
-        private static ListAccountIntegrationsRequestMarshaller _instance = new ListAccountIntegrationsRequestMarshaller();        
+        private static GetWorkflowStepsRequestMarshaller _instance = new GetWorkflowStepsRequestMarshaller();        
 
-        internal static ListAccountIntegrationsRequestMarshaller GetInstance()
+        internal static GetWorkflowStepsRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -99,7 +85,7 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ListAccountIntegrationsRequestMarshaller Instance
+        public static GetWorkflowStepsRequestMarshaller Instance
         {
             get
             {
