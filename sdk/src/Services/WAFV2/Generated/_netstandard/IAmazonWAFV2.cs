@@ -1205,7 +1205,9 @@ namespace Amazon.WAFV2
         /// <para>
         /// The mobile SDK is not generally available. Customers who have access to the mobile
         /// SDK can use it to establish and manage Security Token Service (STS) security tokens
-        /// for use in HTTP(S) requests from a mobile device to WAF. 
+        /// for use in HTTP(S) requests from a mobile device to WAF. For more information, see
+        /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF
+        /// client application integration</a> in the <i>WAF Developer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GenerateMobileSdkReleaseUrl service method.</param>
@@ -1438,7 +1440,9 @@ namespace Amazon.WAFV2
         /// <para>
         /// The mobile SDK is not generally available. Customers who have access to the mobile
         /// SDK can use it to establish and manage Security Token Service (STS) security tokens
-        /// for use in HTTP(S) requests from a mobile device to WAF. 
+        /// for use in HTTP(S) requests from a mobile device to WAF. For more information, see
+        /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF
+        /// client application integration</a> in the <i>WAF Developer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMobileSdkRelease service method.</param>
@@ -2169,7 +2173,9 @@ namespace Amazon.WAFV2
         /// <para>
         /// The mobile SDK is not generally available. Customers who have access to the mobile
         /// SDK can use it to establish and manage Security Token Service (STS) security tokens
-        /// for use in HTTP(S) requests from a mobile device to WAF. 
+        /// for use in HTTP(S) requests from a mobile device to WAF. For more information, see
+        /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF
+        /// client application integration</a> in the <i>WAF Developer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListMobileSdkReleases service method.</param>
@@ -2499,11 +2505,15 @@ namespace Amazon.WAFV2
 
         /// <summary>
         /// Enables the specified <a>LoggingConfiguration</a>, to start logging from a web ACL,
-        /// according to the configuration provided.
+        /// according to the configuration provided. 
         /// 
-        ///  
+        ///  <note> 
         /// <para>
-        /// You can access information about all traffic that WAF inspects using the following
+        /// You can define one logging destination per web ACL.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// You can access information about the traffic that WAF inspects using the following
         /// steps:
         /// </para>
         ///  <ol> <li> 
@@ -2526,6 +2536,11 @@ namespace Amazon.WAFV2
         /// the logging destination. For an Amazon CloudWatch Logs log group, WAF creates a resource
         /// policy on the log group. For an Amazon S3 bucket, WAF creates a bucket policy. For
         /// an Amazon Kinesis Data Firehose, WAF creates a service-linked role.
+        /// </para>
+        ///  
+        /// <para>
+        /// For additional information about web ACL logging, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging
+        /// web ACL traffic information</a> in the <i>WAF Developer Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>

@@ -31,11 +31,15 @@ namespace Amazon.WAFV2.Model
     /// <summary>
     /// Container for the parameters to the PutLoggingConfiguration operation.
     /// Enables the specified <a>LoggingConfiguration</a>, to start logging from a web ACL,
-    /// according to the configuration provided.
+    /// according to the configuration provided. 
     /// 
-    ///  
+    ///  <note> 
     /// <para>
-    /// You can access information about all traffic that WAF inspects using the following
+    /// You can define one logging destination per web ACL.
+    /// </para>
+    ///  </note> 
+    /// <para>
+    /// You can access information about the traffic that WAF inspects using the following
     /// steps:
     /// </para>
     ///  <ol> <li> 
@@ -58,6 +62,11 @@ namespace Amazon.WAFV2.Model
     /// the logging destination. For an Amazon CloudWatch Logs log group, WAF creates a resource
     /// policy on the log group. For an Amazon S3 bucket, WAF creates a bucket policy. For
     /// an Amazon Kinesis Data Firehose, WAF creates a service-linked role.
+    /// </para>
+    ///  
+    /// <para>
+    /// For additional information about web ACL logging, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging
+    /// web ACL traffic information</a> in the <i>WAF Developer Guide</i>.
     /// </para>
     ///  <note> 
     /// <para>

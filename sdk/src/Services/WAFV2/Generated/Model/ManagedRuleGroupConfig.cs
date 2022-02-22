@@ -48,7 +48,8 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property LoginPath. 
         /// <para>
-        /// The login endpoint for your application. For example <code>https://example.com/web/login</code>.
+        /// The path of the login endpoint for your application. For example, for the URL <code>https://example.com/web/login</code>,
+        /// you would provide the path <code>/web/login</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
