@@ -45,6 +45,12 @@ namespace Amazon.Translate.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TranslationSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetFormality())
+            {
+                context.Writer.WritePropertyName("Formality");
+                context.Writer.Write(requestObject.Formality);
+            }
+
             if(requestObject.IsSetProfanity())
             {
                 context.Writer.WritePropertyName("Profanity");

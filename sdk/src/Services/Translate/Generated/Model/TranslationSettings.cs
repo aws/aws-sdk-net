@@ -33,7 +33,23 @@ namespace Amazon.Translate.Model
     /// </summary>
     public partial class TranslationSettings
     {
+        private Formality _formality;
         private Profanity _profanity;
+
+        /// <summary>
+        /// Gets and sets the property Formality.
+        /// </summary>
+        public Formality Formality
+        {
+            get { return this._formality; }
+            set { this._formality = value; }
+        }
+
+        // Check to see if Formality property is set
+        internal bool IsSetFormality()
+        {
+            return this._formality != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Profanity. 
