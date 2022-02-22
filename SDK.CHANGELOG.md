@@ -1,3 +1,12 @@
+### 3.7.214.0 (2022-02-22 14:38 UTC)
+* DynamoDBv2 (3.7.3.1)
+	* Add Dynamo S3Link implementation to .NET Standard
+* S3Control (3.7.5.5)
+	* Refactor MD5 handling to support flexible checkums for validating end-to-end data integrity
+* Core 3.7.8.0
+	* Add support for flexible checkums for validating end-to-end data integrity on supported service operations
+	* All services packages updated to require new Core
+
 ### 3.7.213.0 (2022-02-21 19:15 UTC)
 * CustomerProfiles (3.7.6.0)
 	* This release introduces apis CreateIntegrationWorkflow, DeleteWorkflow, ListWorkflows, GetWorkflow and GetWorkflowSteps. These apis are used to manage and view integration workflows.
