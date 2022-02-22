@@ -1,3 +1,15 @@
+### 3.7.215.0 (2022-02-22 19:14 UTC)
+* AppRunner (3.7.3.0)
+	* AWS App Runner adds a Java platform (Corretto 8, Corretto 11 runtimes) and a Node.js 14 runtime.
+* Translate (3.7.4.0)
+	* This release enables customers to use translation settings for formality customization in their synchronous translation output.
+* WAFV2 (3.7.9.5)
+	* Updated descriptions for logging configuration.
+* Core 3.7.8.1
+	* Updating endpoints.json file.
+
+	* All services packages updated to require new Core
+
 ### 3.7.214.0 (2022-02-22 14:38 UTC)
 * DynamoDBv2 (3.7.3.1)
 	* Add Dynamo S3Link implementation to .NET Standard
