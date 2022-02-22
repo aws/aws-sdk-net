@@ -9,7 +9,7 @@ using Amazon.Auth.AccessControlPolicy;
 using Amazon.Auth.AccessControlPolicy.ActionIdentifiers;
 using Amazon.DynamoDBv2.DocumentModel;
 using Amazon.DynamoDBv2.DataModel;
-
+using Amazon.DynamoDBv2.Model;
 using ThirdParty.Json.LitJson;
 
 namespace AWSSDK_DotNet35.UnitTests
@@ -44,6 +44,49 @@ namespace AWSSDK_DotNet35.UnitTests
             };
 
             Assert.AreEqual("Test", config.TableNamePrefix);
+        }
+
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public void TestConvertingListIfNullSet()
+        {
+            var initialAttributeMap = new Dictionary<string, AttributeValue>
+            {
+                {
+                    "testlist", new AttributeValue
+                    {
+                        L = new List<AttributeValue>
+                        {
+                            new AttributeValue("test")
+                        },
+                        NULL = false
+                    }
+                }
+            };
+
+            var dynamoDocument = Document.FromAttributeMap(initialAttributeMap);
+
+            Assert.AreEqual("test", dynamoDocument["testlist"].AsDynamoDBList().Entries[0].AsString());
+        }
+
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public void TestConvertingMapIfNullSet()
+        {
+            var initialAttributeMap = new Dictionary<string, AttributeValue>
+            {
+                {
+                    "testmap", new AttributeValue
+                    {
+                        M = new Dictionary<string, AttributeValue>(){{"test", new AttributeValue("testvalue")}},
+                        NULL = false
+                    }
+                }
+            };
+
+            var dynamoDocument = Document.FromAttributeMap(initialAttributeMap);
+
+            Assert.AreEqual("testvalue", dynamoDocument["testmap"].AsDocument()["test"].AsString());
         }
 
         private static List<Type> GetSubTypes(Type baseType)

@@ -578,10 +578,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
             if (TryToDynamoDBBool(attributeValue, out ddbBool))
                 return ddbBool;
 
-            DynamoDBNull ddbNull;
-            if (TryToDynamoDBNull(attributeValue, out ddbNull))
-                return ddbNull;
-
             DynamoDBList ddbList;
             if (TryToDynamoDBList(attributeValue, out ddbList))
                 return ddbList;
@@ -589,6 +585,10 @@ namespace Amazon.DynamoDBv2.DocumentModel
             Document document;
             if (TryToDocument(attributeValue, out document))
                 return document;
+
+            DynamoDBNull ddbNull;
+            if (TryToDynamoDBNull(attributeValue, out ddbNull))
+                return ddbNull;
 
             return null;
         }
