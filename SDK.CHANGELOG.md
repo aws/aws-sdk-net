@@ -1,3 +1,15 @@
+### 3.7.216.0 (2022-02-23 19:14 UTC)
+* Lambda (3.7.9.0)
+	* Lambda releases .NET 6 managed runtime to be available in all commercial regions.
+* Textract (3.7.4.0)
+	* Added support for merged cells and column header for table response.
+* Transfer (3.7.7.0)
+	* The file input selection feature provides the ability to use either the originally uploaded file or the output file from the previous workflow step, enabling customers to make multiple copies of the original file while keeping the source file intact for file archival.
+* Core 3.7.8.2
+	* Updating endpoints.json file.
+
+	* All services packages updated to require new Core
+
 ### 3.7.215.0 (2022-02-22 19:14 UTC)
 * AppRunner (3.7.3.0)
 	* AWS App Runner adds a Java platform (Corretto 8, Corretto 11 runtimes) and a Node.js 14 runtime.
