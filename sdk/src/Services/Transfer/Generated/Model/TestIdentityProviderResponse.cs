@@ -43,6 +43,12 @@ namespace Amazon.Transfer.Model
         /// <para>
         /// A message that indicates whether the test was successful or not.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If an empty string is returned, the most likely cause is that the authentication failed
+        /// due to an incorrect username or password.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string Message
         {

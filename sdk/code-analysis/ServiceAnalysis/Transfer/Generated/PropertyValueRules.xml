@@ -633,9 +633,19 @@
     <pattern>^[\w-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Transfer.Model.CopyStepDetails.SourceFileLocation</property>
+    <max>256</max>
+    <pattern>^\$\{(\w+.)+\w+\}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Transfer.Model.CustomStepDetails.Name</property>
     <max>30</max>
     <pattern>^[\w-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.CustomStepDetails.SourceFileLocation</property>
+    <max>256</max>
+    <pattern>^\$\{(\w+.)+\w+\}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.CustomStepDetails.Target</property>
@@ -651,6 +661,11 @@
     <property>Amazon.Transfer.Model.DeleteStepDetails.Name</property>
     <max>30</max>
     <pattern>^[\w-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.DeleteStepDetails.SourceFileLocation</property>
+    <max>256</max>
+    <pattern>^\$\{(\w+.)+\w+\}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.DescribedAccess.ExternalId</property>
@@ -779,8 +794,8 @@
   <property-value-rule>
     <property>Amazon.Transfer.Model.EfsFileLocation.Path</property>
     <min>1</min>
-    <max>100</max>
-    <pattern>^(\/|(\/(?!\.)+[^$#&lt;&gt;;`|&amp;?{}^*/\n]+){1,4})$</pattern>
+    <max>65536</max>
+    <pattern>^[^\x00]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.EndpointDetails.VpcEndpointId</property>
@@ -999,6 +1014,11 @@
     <property>Amazon.Transfer.Model.TagStepDetails.Name</property>
     <max>30</max>
     <pattern>^[\w-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.TagStepDetails.SourceFileLocation</property>
+    <max>256</max>
+    <pattern>^\$\{(\w+.)+\w+\}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.UserDetails.ServerId</property>

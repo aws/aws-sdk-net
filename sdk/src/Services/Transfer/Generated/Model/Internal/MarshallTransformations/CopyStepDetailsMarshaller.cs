@@ -68,6 +68,12 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.OverwriteExisting);
             }
 
+            if(requestObject.IsSetSourceFileLocation())
+            {
+                context.Writer.WritePropertyName("SourceFileLocation");
+                context.Writer.Write(requestObject.SourceFileLocation);
+            }
+
         }
 
         /// <summary>
