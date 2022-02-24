@@ -39,7 +39,8 @@ namespace Amazon.Lightsail.Model
     /// </para>
     ///  
     /// <para>
-    /// Use the <a>UpdateBucketBundle</a> action to update the bundle for a bucket.
+    /// Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateBucketBundle.html">UpdateBucketBundle</a>
+    /// action to update the bundle for a bucket.
     /// </para>
     /// </summary>
     public partial class GetBucketBundlesRequest : AmazonLightsailRequest

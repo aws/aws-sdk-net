@@ -33,7 +33,7 @@ namespace Amazon.Lightsail.Model
     /// 
     ///  <note> 
     /// <para>
-    /// This object does not include data in the response of a <a>CreateBucketAccessKey</a>
+    /// This object does not include data in the response of a <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateBucketAccessKey.html">CreateBucketAccessKey</a>
     /// action.
     /// </para>
     ///  </note>

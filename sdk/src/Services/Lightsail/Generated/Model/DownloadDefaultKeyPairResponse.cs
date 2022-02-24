@@ -33,8 +33,27 @@ namespace Amazon.Lightsail.Model
     /// </summary>
     public partial class DownloadDefaultKeyPairResponse : AmazonWebServiceResponse
     {
+        private DateTime? _createdAt;
         private string _privateKeyBase64;
         private string _publicKeyBase64;
+
+        /// <summary>
+        /// Gets and sets the property CreatedAt. 
+        /// <para>
+        /// The timestamp when the default key pair was created.
+        /// </para>
+        /// </summary>
+        public DateTime CreatedAt
+        {
+            get { return this._createdAt.GetValueOrDefault(); }
+            set { this._createdAt = value; }
+        }
+
+        // Check to see if CreatedAt property is set
+        internal bool IsSetCreatedAt()
+        {
+            return this._createdAt.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property PrivateKeyBase64. 

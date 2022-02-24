@@ -30,8 +30,17 @@ namespace Amazon.Lightsail.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteKeyPair operation.
-    /// Deletes a specific SSH key pair.
+    /// Deletes the specified key pair by removing the public key from Amazon Lightsail.
     /// 
+    ///  
+    /// <para>
+    /// You can delete key pairs that were created using the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_ImportKeyPair.html">ImportKeyPair</a>
+    /// and <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateKeyPair.html">CreateKeyPair</a>
+    /// actions, as well as the Lightsail default key pair. A new default key pair will not
+    /// be created unless you launch an instance without specifying a custom key pair, or
+    /// you call the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DownloadDefaultKeyPair.html">DownloadDefaultKeyPair</a>
+    /// API. 
+    /// </para>
     ///  
     /// <para>
     /// The <code>delete key pair</code> operation supports tag-based access control via resource
@@ -42,7 +51,32 @@ namespace Amazon.Lightsail.Model
     /// </summary>
     public partial class DeleteKeyPairRequest : AmazonLightsailRequest
     {
+        private string _expectedFingerprint;
         private string _keyPairName;
+
+        /// <summary>
+        /// Gets and sets the property ExpectedFingerprint. 
+        /// <para>
+        /// The RSA fingerprint of the Lightsail default key pair to delete.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <code>expectedFingerprint</code> parameter is required only when specifying to
+        /// delete a Lightsail default key pair.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public string ExpectedFingerprint
+        {
+            get { return this._expectedFingerprint; }
+            set { this._expectedFingerprint = value; }
+        }
+
+        // Check to see if ExpectedFingerprint property is set
+        internal bool IsSetExpectedFingerprint()
+        {
+            return this._expectedFingerprint != null;
+        }
 
         /// <summary>
         /// Gets and sets the property KeyPairName. 

@@ -67,6 +67,12 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetIncludeDefaultKeyPair())
+                {
+                    context.Writer.WritePropertyName("includeDefaultKeyPair");
+                    context.Writer.Write(publicRequest.IncludeDefaultKeyPair);
+                }
+
                 if(publicRequest.IsSetPageToken())
                 {
                     context.Writer.WritePropertyName("pageToken");
