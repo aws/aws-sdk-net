@@ -1181,6 +1181,64 @@ namespace Amazon.S3Control
 
 
     /// <summary>
+    /// Constants used for properties of type S3ChecksumAlgorithm.
+    /// </summary>
+    public class S3ChecksumAlgorithm : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CRC32 for S3ChecksumAlgorithm
+        /// </summary>
+        public static readonly S3ChecksumAlgorithm CRC32 = new S3ChecksumAlgorithm("CRC32");
+        /// <summary>
+        /// Constant CRC32C for S3ChecksumAlgorithm
+        /// </summary>
+        public static readonly S3ChecksumAlgorithm CRC32C = new S3ChecksumAlgorithm("CRC32C");
+        /// <summary>
+        /// Constant SHA1 for S3ChecksumAlgorithm
+        /// </summary>
+        public static readonly S3ChecksumAlgorithm SHA1 = new S3ChecksumAlgorithm("SHA1");
+        /// <summary>
+        /// Constant SHA256 for S3ChecksumAlgorithm
+        /// </summary>
+        public static readonly S3ChecksumAlgorithm SHA256 = new S3ChecksumAlgorithm("SHA256");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public S3ChecksumAlgorithm(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static S3ChecksumAlgorithm FindValue(string value)
+        {
+            return FindValue<S3ChecksumAlgorithm>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator S3ChecksumAlgorithm(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type S3GlacierJobTier.
     /// </summary>
     public class S3GlacierJobTier : ConstantClass

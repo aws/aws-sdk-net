@@ -347,6 +347,9 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         if(publicRequest.Operation.S3PutObjectCopy.IsSetCannedAccessControlList())
                             xmlWriter.WriteElementString("CannedAccessControlList", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.Operation.S3PutObjectCopy.CannedAccessControlList));                 
         
+                        if(publicRequest.Operation.S3PutObjectCopy.IsSetChecksumAlgorithm())
+                            xmlWriter.WriteElementString("ChecksumAlgorithm", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.Operation.S3PutObjectCopy.ChecksumAlgorithm));                 
+        
                         if(publicRequest.Operation.S3PutObjectCopy.IsSetMetadataDirective())
                             xmlWriter.WriteElementString("MetadataDirective", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.Operation.S3PutObjectCopy.MetadataDirective));                 
         
