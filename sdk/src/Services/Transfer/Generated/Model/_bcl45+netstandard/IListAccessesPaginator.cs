@@ -29,5 +29,10 @@ namespace Amazon.Transfer.Model
         /// Enumerable containing all full responses for the operation
         /// </summary>
         IPaginatedEnumerable<ListAccessesResponse> Responses { get; }
+
+        /// <summary>
+        /// Enumerable containing all of the Accesses
+        /// </summary>
+        IPaginatedEnumerable<ListedAccess> Accesses { get; }
     }
 }

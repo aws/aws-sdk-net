@@ -41,6 +41,12 @@ namespace Amazon.Transfer.Model
         /// </summary>
         public IPaginatedEnumerable<ListTagsForResourceResponse> Responses => new PaginatedResponse<ListTagsForResourceResponse>(this);
 
+        /// <summary>
+        /// Enumerable containing all of the Tags
+        /// </summary>
+        public IPaginatedEnumerable<Tag> Tags => 
+            new PaginatedResultKeyResponse<ListTagsForResourceResponse, Tag>(this, (i) => i.Tags);
+
         internal ListTagsForResourcePaginator(IAmazonTransfer client, ListTagsForResourceRequest request)
         {
             this._client = client;
