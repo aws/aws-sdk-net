@@ -1,3 +1,21 @@
+### 3.7.217.0 (2022-02-24 19:20 UTC)
+* AutoScaling (3.7.9.0)
+	* You can now hibernate instances in a warm pool to stop instances without deleting their RAM contents. You can now also return instances to the warm pool on scale in, instead of always terminating capacity that you will need later.
+* FMS (3.7.5.0)
+	* AWS Firewall Manager now supports the configuration of AWS Network Firewall policies with either centralized or distributed deployment models. This release also adds support for custom endpoint configuration, where you can choose which Availability Zones to create firewall endpoints in.
+* GlueDataBrew (3.7.7.0)
+	* This AWS Glue Databrew release adds feature to merge job outputs into a max number of files for S3 File output type.
+* Lightsail (3.7.5.0)
+	* This release adds support to delete and create Lightsail default key pairs that you can use with Lightsail instances.
+* Route53 (3.7.2.24)
+	* SDK doc update for Route 53 to update some parameters with new information.
+* S3 (3.7.8.0)
+	* This release adds support for new integrity checking capabilities in Amazon S3. You can choose from four supported checksum algorithms for data integrity checking on your upload and download requests. In addition, AWS SDK can automatically calculate a checksum as it streams data into S3
+* S3Control (3.7.6.0)
+	* Amazon S3 Batch Operations adds support for new integrity checking capabilities in Amazon S3.
+* Transfer (3.7.8.0)
+	* Support automatic pagination when listing AWS Transfer Family resources.
+
 ### 3.7.216.0 (2022-02-23 19:14 UTC)
 * Lambda (3.7.9.0)
 	* Lambda releases .NET 6 managed runtime to be available in all commercial regions.
