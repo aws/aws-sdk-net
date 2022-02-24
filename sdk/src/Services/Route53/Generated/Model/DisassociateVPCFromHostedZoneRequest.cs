@@ -59,7 +59,34 @@ namespace Amazon.Route53.Model
     /// if the hosted zone has a value for <code>OwningAccount</code>, you can use <code>DisassociateVPCFromHostedZone</code>.
     /// If the hosted zone has a value for <code>OwningService</code>, you can't use <code>DisassociateVPCFromHostedZone</code>.
     /// </para>
-    ///  </li> </ul>
+    ///  </li> </ul> <note> 
+    /// <para>
+    /// When revoking access, the hosted zone and the Amazon VPC must belong to the same partition.
+    /// A partition is a group of Amazon Web Services Regions. Each Amazon Web Services account
+    /// is scoped to one partition.
+    /// </para>
+    ///  
+    /// <para>
+    /// The following are the supported partitions:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <code>aws</code> - Amazon Web Services Regions
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>aws-cn</code> - China Regions
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>aws-us-gov</code> - Amazon Web Services GovCloud (US) Region
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Access
+    /// Management</a> in the <i>Amazon Web Services General Reference</i>.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DisassociateVPCFromHostedZoneRequest : AmazonRoute53Request
     {
