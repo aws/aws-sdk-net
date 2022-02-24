@@ -79,6 +79,12 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetMaxOutputFiles())
+            {
+                context.Writer.WritePropertyName("MaxOutputFiles");
+                context.Writer.Write(requestObject.MaxOutputFiles);
+            }
+
             if(requestObject.IsSetOverwrite())
             {
                 context.Writer.WritePropertyName("Overwrite");
