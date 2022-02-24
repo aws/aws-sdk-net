@@ -112,6 +112,12 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
                     unmarshalledObject.EC2ReplaceRouteTableAssociationAction = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("FMSPolicyUpdateFirewallCreationConfigAction", targetDepth))
+                {
+                    var unmarshaller = FMSPolicyUpdateFirewallCreationConfigActionUnmarshaller.Instance;
+                    unmarshalledObject.FMSPolicyUpdateFirewallCreationConfigAction = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

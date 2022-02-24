@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.FMS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for SecurityServicePolicyData Object
+    /// Response Unmarshaller for FirewallSubnetIsOutOfScopeViolation Object
     /// </summary>  
-    public class SecurityServicePolicyDataUnmarshaller : IUnmarshaller<SecurityServicePolicyData, XmlUnmarshallerContext>, IUnmarshaller<SecurityServicePolicyData, JsonUnmarshallerContext>
+    public class FirewallSubnetIsOutOfScopeViolationUnmarshaller : IUnmarshaller<FirewallSubnetIsOutOfScopeViolation, XmlUnmarshallerContext>, IUnmarshaller<FirewallSubnetIsOutOfScopeViolation, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        SecurityServicePolicyData IUnmarshaller<SecurityServicePolicyData, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        FirewallSubnetIsOutOfScopeViolation IUnmarshaller<FirewallSubnetIsOutOfScopeViolation, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,45 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public SecurityServicePolicyData Unmarshall(JsonUnmarshallerContext context)
+        public FirewallSubnetIsOutOfScopeViolation Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            SecurityServicePolicyData unmarshalledObject = new SecurityServicePolicyData();
+            FirewallSubnetIsOutOfScopeViolation unmarshalledObject = new FirewallSubnetIsOutOfScopeViolation();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ManagedServiceData", targetDepth))
+                if (context.TestExpression("FirewallSubnetId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ManagedServiceData = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FirewallSubnetId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("PolicyOption", targetDepth))
-                {
-                    var unmarshaller = PolicyOptionUnmarshaller.Instance;
-                    unmarshalledObject.PolicyOption = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Type", targetDepth))
+                if (context.TestExpression("SubnetAvailabilityZone", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SubnetAvailabilityZone = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SubnetAvailabilityZoneId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SubnetAvailabilityZoneId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("VpcEndpointId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.VpcEndpointId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("VpcId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.VpcId = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +100,12 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         }
 
 
-        private static SecurityServicePolicyDataUnmarshaller _instance = new SecurityServicePolicyDataUnmarshaller();        
+        private static FirewallSubnetIsOutOfScopeViolationUnmarshaller _instance = new FirewallSubnetIsOutOfScopeViolationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SecurityServicePolicyDataUnmarshaller Instance
+        public static FirewallSubnetIsOutOfScopeViolationUnmarshaller Instance
         {
             get
             {

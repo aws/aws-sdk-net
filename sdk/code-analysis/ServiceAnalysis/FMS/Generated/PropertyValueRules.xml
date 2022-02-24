@@ -554,6 +554,45 @@
     <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.FMS.Model.FirewallSubnetIsOutOfScopeViolation.FirewallSubnetId</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FMS.Model.FirewallSubnetIsOutOfScopeViolation.SubnetAvailabilityZone</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FMS.Model.FirewallSubnetIsOutOfScopeViolation.SubnetAvailabilityZoneId</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FMS.Model.FirewallSubnetIsOutOfScopeViolation.VpcEndpointId</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FMS.Model.FirewallSubnetIsOutOfScopeViolation.VpcId</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FMS.Model.FMSPolicyUpdateFirewallCreationConfigAction.Description</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FMS.Model.FMSPolicyUpdateFirewallCreationConfigAction.FirewallCreationConfig</property>
+    <min>1</min>
+    <max>8192</max>
+    <pattern>^((?!\\[nr]).)+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.FMS.Model.NetworkFirewallBlackHoleRouteDetectedViolation.RouteTableId</property>
     <min>1</min>
     <max>1024</max>
@@ -981,6 +1020,58 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.FMS.Model.RouteHasOutOfScopeEndpointViolation.CurrentFirewallSubnetRouteTable</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FMS.Model.RouteHasOutOfScopeEndpointViolation.CurrentInternetGatewayRouteTable</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FMS.Model.RouteHasOutOfScopeEndpointViolation.FirewallSubnetId</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FMS.Model.RouteHasOutOfScopeEndpointViolation.InternetGatewayId</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FMS.Model.RouteHasOutOfScopeEndpointViolation.RouteTableId</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FMS.Model.RouteHasOutOfScopeEndpointViolation.SubnetAvailabilityZone</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FMS.Model.RouteHasOutOfScopeEndpointViolation.SubnetAvailabilityZoneId</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FMS.Model.RouteHasOutOfScopeEndpointViolation.SubnetId</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FMS.Model.RouteHasOutOfScopeEndpointViolation.VpcId</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.FMS.Model.SecurityGroupRemediationAction.Description</property>
     <min>0</min>
     <max>1024</max>
@@ -1023,7 +1114,7 @@
     <property>Amazon.FMS.Model.SecurityServicePolicyData.ManagedServiceData</property>
     <min>1</min>
     <max>8192</max>
-    <pattern>.*</pattern>
+    <pattern>^((?!\\[nr]).)+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FMS.Model.StatefulRuleGroup.ResourceId</property>

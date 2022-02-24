@@ -41,6 +41,7 @@ namespace Amazon.FMS.Model
         private EC2DeleteRouteAction _ec2DeleteRouteAction;
         private EC2ReplaceRouteAction _ec2ReplaceRouteAction;
         private EC2ReplaceRouteTableAssociationAction _ec2ReplaceRouteTableAssociationAction;
+        private FMSPolicyUpdateFirewallCreationConfigAction _fmsPolicyUpdateFirewallCreationConfigAction;
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -185,6 +186,24 @@ namespace Amazon.FMS.Model
         internal bool IsSetEC2ReplaceRouteTableAssociationAction()
         {
             return this._ec2ReplaceRouteTableAssociationAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FMSPolicyUpdateFirewallCreationConfigAction. 
+        /// <para>
+        /// The remedial action to take when updating a firewall configuration.
+        /// </para>
+        /// </summary>
+        public FMSPolicyUpdateFirewallCreationConfigAction FMSPolicyUpdateFirewallCreationConfigAction
+        {
+            get { return this._fmsPolicyUpdateFirewallCreationConfigAction; }
+            set { this._fmsPolicyUpdateFirewallCreationConfigAction = value; }
+        }
+
+        // Check to see if FMSPolicyUpdateFirewallCreationConfigAction property is set
+        internal bool IsSetFMSPolicyUpdateFirewallCreationConfigAction()
+        {
+            return this._fmsPolicyUpdateFirewallCreationConfigAction != null;
         }
 
     }

@@ -39,6 +39,7 @@ namespace Amazon.FMS.Model
         private DnsDuplicateRuleGroupViolation _dnsDuplicateRuleGroupViolation;
         private DnsRuleGroupLimitExceededViolation _dnsRuleGroupLimitExceededViolation;
         private DnsRuleGroupPriorityConflictViolation _dnsRuleGroupPriorityConflictViolation;
+        private FirewallSubnetIsOutOfScopeViolation _firewallSubnetIsOutOfScopeViolation;
         private NetworkFirewallBlackHoleRouteDetectedViolation _networkFirewallBlackHoleRouteDetectedViolation;
         private NetworkFirewallInternetTrafficNotInspectedViolation _networkFirewallInternetTrafficNotInspectedViolation;
         private NetworkFirewallInvalidRouteConfigurationViolation _networkFirewallInvalidRouteConfigurationViolation;
@@ -50,6 +51,7 @@ namespace Amazon.FMS.Model
         private NetworkFirewallUnexpectedFirewallRoutesViolation _networkFirewallUnexpectedFirewallRoutesViolation;
         private NetworkFirewallUnexpectedGatewayRoutesViolation _networkFirewallUnexpectedGatewayRoutesViolation;
         private PossibleRemediationActions _possibleRemediationActions;
+        private RouteHasOutOfScopeEndpointViolation _routeHasOutOfScopeEndpointViolation;
 
         /// <summary>
         /// Gets and sets the property AwsEc2InstanceViolation. 
@@ -163,6 +165,24 @@ namespace Amazon.FMS.Model
         internal bool IsSetDnsRuleGroupPriorityConflictViolation()
         {
             return this._dnsRuleGroupPriorityConflictViolation != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FirewallSubnetIsOutOfScopeViolation. 
+        /// <para>
+        /// Contains details about the firewall subnet that violates the policy scope.
+        /// </para>
+        /// </summary>
+        public FirewallSubnetIsOutOfScopeViolation FirewallSubnetIsOutOfScopeViolation
+        {
+            get { return this._firewallSubnetIsOutOfScopeViolation; }
+            set { this._firewallSubnetIsOutOfScopeViolation = value; }
+        }
+
+        // Check to see if FirewallSubnetIsOutOfScopeViolation property is set
+        internal bool IsSetFirewallSubnetIsOutOfScopeViolation()
+        {
+            return this._firewallSubnetIsOutOfScopeViolation != null;
         }
 
         /// <summary>
@@ -365,6 +385,24 @@ namespace Amazon.FMS.Model
         internal bool IsSetPossibleRemediationActions()
         {
             return this._possibleRemediationActions != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RouteHasOutOfScopeEndpointViolation. 
+        /// <para>
+        /// Contains details about the route endpoint that violates the policy scope.
+        /// </para>
+        /// </summary>
+        public RouteHasOutOfScopeEndpointViolation RouteHasOutOfScopeEndpointViolation
+        {
+            get { return this._routeHasOutOfScopeEndpointViolation; }
+            set { this._routeHasOutOfScopeEndpointViolation = value; }
+        }
+
+        // Check to see if RouteHasOutOfScopeEndpointViolation property is set
+        internal bool IsSetRouteHasOutOfScopeEndpointViolation()
+        {
+            return this._routeHasOutOfScopeEndpointViolation != null;
         }
 
     }

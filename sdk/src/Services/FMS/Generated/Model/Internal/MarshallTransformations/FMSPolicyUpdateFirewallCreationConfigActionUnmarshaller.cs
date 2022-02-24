@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.FMS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for SecurityServicePolicyData Object
+    /// Response Unmarshaller for FMSPolicyUpdateFirewallCreationConfigAction Object
     /// </summary>  
-    public class SecurityServicePolicyDataUnmarshaller : IUnmarshaller<SecurityServicePolicyData, XmlUnmarshallerContext>, IUnmarshaller<SecurityServicePolicyData, JsonUnmarshallerContext>
+    public class FMSPolicyUpdateFirewallCreationConfigActionUnmarshaller : IUnmarshaller<FMSPolicyUpdateFirewallCreationConfigAction, XmlUnmarshallerContext>, IUnmarshaller<FMSPolicyUpdateFirewallCreationConfigAction, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        SecurityServicePolicyData IUnmarshaller<SecurityServicePolicyData, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        FMSPolicyUpdateFirewallCreationConfigAction IUnmarshaller<FMSPolicyUpdateFirewallCreationConfigAction, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,27 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public SecurityServicePolicyData Unmarshall(JsonUnmarshallerContext context)
+        public FMSPolicyUpdateFirewallCreationConfigAction Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            SecurityServicePolicyData unmarshalledObject = new SecurityServicePolicyData();
+            FMSPolicyUpdateFirewallCreationConfigAction unmarshalledObject = new FMSPolicyUpdateFirewallCreationConfigAction();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ManagedServiceData", targetDepth))
+                if (context.TestExpression("Description", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ManagedServiceData = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("PolicyOption", targetDepth))
-                {
-                    var unmarshaller = PolicyOptionUnmarshaller.Instance;
-                    unmarshalledObject.PolicyOption = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Type", targetDepth))
+                if (context.TestExpression("FirewallCreationConfig", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FirewallCreationConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +82,12 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         }
 
 
-        private static SecurityServicePolicyDataUnmarshaller _instance = new SecurityServicePolicyDataUnmarshaller();        
+        private static FMSPolicyUpdateFirewallCreationConfigActionUnmarshaller _instance = new FMSPolicyUpdateFirewallCreationConfigActionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SecurityServicePolicyDataUnmarshaller Instance
+        public static FMSPolicyUpdateFirewallCreationConfigActionUnmarshaller Instance
         {
             get
             {

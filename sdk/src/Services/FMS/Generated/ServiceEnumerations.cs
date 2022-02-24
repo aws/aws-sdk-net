@@ -249,6 +249,52 @@ namespace Amazon.FMS
 
 
     /// <summary>
+    /// Constants used for properties of type FirewallDeploymentModel.
+    /// </summary>
+    public class FirewallDeploymentModel : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CENTRALIZED for FirewallDeploymentModel
+        /// </summary>
+        public static readonly FirewallDeploymentModel CENTRALIZED = new FirewallDeploymentModel("CENTRALIZED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FirewallDeploymentModel(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FirewallDeploymentModel FindValue(string value)
+        {
+            return FindValue<FirewallDeploymentModel>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FirewallDeploymentModel(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type PolicyComplianceStatusType.
     /// </summary>
     public class PolicyComplianceStatusType : ConstantClass
@@ -519,6 +565,10 @@ namespace Amazon.FMS
         /// </summary>
         public static readonly ViolationReason BLACK_HOLE_ROUTE_DETECTED_IN_FIREWALL_SUBNET = new ViolationReason("BLACK_HOLE_ROUTE_DETECTED_IN_FIREWALL_SUBNET");
         /// <summary>
+        /// Constant FIREWALL_SUBNET_IS_OUT_OF_SCOPE for ViolationReason
+        /// </summary>
+        public static readonly ViolationReason FIREWALL_SUBNET_IS_OUT_OF_SCOPE = new ViolationReason("FIREWALL_SUBNET_IS_OUT_OF_SCOPE");
+        /// <summary>
         /// Constant FIREWALL_SUBNET_MISSING_EXPECTED_ROUTE for ViolationReason
         /// </summary>
         public static readonly ViolationReason FIREWALL_SUBNET_MISSING_EXPECTED_ROUTE = new ViolationReason("FIREWALL_SUBNET_MISSING_EXPECTED_ROUTE");
@@ -586,6 +636,10 @@ namespace Amazon.FMS
         /// Constant RESOURCE_VIOLATES_AUDIT_SECURITY_GROUP for ViolationReason
         /// </summary>
         public static readonly ViolationReason RESOURCE_VIOLATES_AUDIT_SECURITY_GROUP = new ViolationReason("RESOURCE_VIOLATES_AUDIT_SECURITY_GROUP");
+        /// <summary>
+        /// Constant ROUTE_HAS_OUT_OF_SCOPE_ENDPOINT for ViolationReason
+        /// </summary>
+        public static readonly ViolationReason ROUTE_HAS_OUT_OF_SCOPE_ENDPOINT = new ViolationReason("ROUTE_HAS_OUT_OF_SCOPE_ENDPOINT");
         /// <summary>
         /// Constant SECURITY_GROUP_REDUNDANT for ViolationReason
         /// </summary>
