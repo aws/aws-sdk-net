@@ -112,6 +112,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
                 if (response.AccessPoint.Status == MultiRegionAccessPointStatus.READY)
                 {
+                    // Wait for SSL provisioning to finish
+                    Thread.Sleep(TimeSpan.FromMinutes(1));
+
                     return response.AccessPoint.Alias;
                 }
                 else

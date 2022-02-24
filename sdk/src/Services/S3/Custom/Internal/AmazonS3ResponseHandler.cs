@@ -126,8 +126,8 @@ namespace Amazon.S3.Internal
             var putObjectRequest = request.OriginalRequest as PutObjectRequest;
             if (putObjectRequest != null)
             {
-                // If InputStream was a HashStream, compare calculated hash to returned etag
-                HashStream hashStream = putObjectRequest.InputStream as HashStream;
+                // If InputStream was a MD5Stream, compare calculated hash to returned etag
+                MD5Stream hashStream = putObjectRequest.InputStream as MD5Stream;
                 if (hashStream != null)
                 {
                     if (putObjectResponse != null && !isSse)
@@ -160,8 +160,8 @@ namespace Amazon.S3.Internal
                 if (uploadPartResponse != null)
                     uploadPartResponse.PartNumber = uploadPartRequest.PartNumber;
 
-                // If InputStream was a HashStream, compare calculated hash to returned etag
-                HashStream hashStream = uploadPartRequest.InputStream as HashStream;
+                // If InputStream was a MD5Stream, compare calculated hash to returned etag
+                MD5Stream hashStream = uploadPartRequest.InputStream as MD5Stream;
                 if (hashStream != null)
                 {
                     if (uploadPartResponse != null && !isSse)
@@ -198,7 +198,7 @@ namespace Amazon.S3.Internal
         // If ETag doesn't match the hash, an exception is thrown
         private static void CompareHashes(string etag, byte[] hash)
         {
-            if (string.IsNullOrEmpty(etag))
+            if (string.IsNullOrEmpty(etag) || hash ==  null || hash.Length == 0)
                 return;
 
             // if etag contains '-' character, the file was a multi-upload and we can't

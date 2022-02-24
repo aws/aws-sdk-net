@@ -112,6 +112,14 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 response.TagCount = S3Transforms.ToInt(responseData.GetHeaderValue(S3Constants.AmzHeaderTaggingCount));
             if (responseData.IsHeaderPresent(S3Constants.AmzHeaderBucketKeyEnabled))
                 response.BucketKeyEnabled = S3Transforms.ToBool(responseData.GetHeaderValue(S3Constants.AmzHeaderBucketKeyEnabled));
+            if (context.ResponseData.IsHeaderPresent("x-amz-checksum-crc32"))
+                response.ChecksumCRC32 = S3Transforms.ToString(context.ResponseData.GetHeaderValue("x-amz-checksum-crc32"));
+            if (context.ResponseData.IsHeaderPresent("x-amz-checksum-crc32c"))
+                response.ChecksumCRC32C = S3Transforms.ToString(context.ResponseData.GetHeaderValue("x-amz-checksum-crc32c"));
+            if (context.ResponseData.IsHeaderPresent("x-amz-checksum-sha1"))
+                response.ChecksumSHA1 = S3Transforms.ToString(context.ResponseData.GetHeaderValue("x-amz-checksum-sha1"));
+            if (context.ResponseData.IsHeaderPresent("x-amz-checksum-sha256"))
+                response.ChecksumSHA256 = S3Transforms.ToString(context.ResponseData.GetHeaderValue("x-amz-checksum-sha256"));
 
             foreach (var name in responseData.GetHeaderNames())
             {

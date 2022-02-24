@@ -43,7 +43,7 @@ namespace Amazon.S3.Model
         private int? missingMeta;
         private string versionId;
         private DateTime? expires;
-		private ObjectLockLegalHoldStatus objectLockLegalHoldStatus;
+        private ObjectLockLegalHoldStatus objectLockLegalHoldStatus;
         private ObjectLockMode objectLockMode;
         private DateTime? objectLockRetainUntilDate;
         private string websiteRedirectLocation;
@@ -61,7 +61,11 @@ namespace Amazon.S3.Model
         private string bucketName;
         private string key;
         private bool? bucketKeyEnabled;
-                
+        private string _checksumCRC32;
+        private string _checksumCRC32C;
+        private string _checksumSHA1;
+        private string _checksumSHA256;
+
         /// <summary>
         /// Flag which returns true if the Expires property has been unmarshalled
         /// from the raw value or set by user code.
@@ -511,6 +515,78 @@ namespace Amazon.S3.Model
         internal bool IsSetBucketKeyEnabled()
         {
             return bucketKeyEnabled.HasValue;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChecksumCRC32. 
+        /// <para>
+        /// The base64-encoded, 32-bit CRC32 checksum of the object.
+        /// </para>
+        /// </summary>
+        public string ChecksumCRC32
+        {
+            get { return this._checksumCRC32; }
+            set { this._checksumCRC32 = value; }
+        }
+
+        // Check to see if ChecksumCRC32 property is set
+        internal bool IsSetChecksumCRC32()
+        {
+            return this._checksumCRC32 != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChecksumCRC32C. 
+        /// <para>
+        /// The base64-encoded, 32-bit CRC32C checksum of the object.
+        /// </para>
+        /// </summary>
+        public string ChecksumCRC32C
+        {
+            get { return this._checksumCRC32C; }
+            set { this._checksumCRC32C = value; }
+        }
+
+        // Check to see if ChecksumCRC32C property is set
+        internal bool IsSetChecksumCRC32C()
+        {
+            return this._checksumCRC32C != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChecksumSHA1. 
+        /// <para>
+        /// The base64-encoded, 160-bit SHA-1 digest of the object.
+        /// </para>
+        /// </summary>
+        public string ChecksumSHA1
+        {
+            get { return this._checksumSHA1; }
+            set { this._checksumSHA1 = value; }
+        }
+
+        // Check to see if ChecksumSHA1 property is set
+        internal bool IsSetChecksumSHA1()
+        {
+            return this._checksumSHA1 != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChecksumSHA256. 
+        /// <para>
+        /// The base64-encoded, 256-bit SHA-256 digest of the object.
+        /// </para>
+        /// </summary>
+        public string ChecksumSHA256
+        {
+            get { return this._checksumSHA256; }
+            set { this._checksumSHA256 = value; }
+        }
+
+        // Check to see if ChecksumSHA256 property is set
+        internal bool IsSetChecksumSHA256()
+        {
+            return this._checksumSHA256 != null;
         }
 
 #if BCL

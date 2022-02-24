@@ -83,6 +83,26 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                             
                         continue;
                     }
+                    if (context.TestExpression("ChecksumCRC32", targetDepth))
+                    {
+                        response.ChecksumCRC32 = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ChecksumCRC32C", targetDepth))
+                    {
+                        response.ChecksumCRC32C = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ChecksumSHA1", targetDepth))
+                    {
+                        response.ChecksumSHA1 = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ChecksumSHA256", targetDepth))
+                    {
+                        response.ChecksumSHA256 = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {

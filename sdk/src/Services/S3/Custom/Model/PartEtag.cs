@@ -26,10 +26,14 @@ using System.Text;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// A container holding the part number and etag used when completing a multipart upload.
+    /// A container holding the part number, etag, and optional checksum used when completing a multipart upload.
     /// </summary>
     public class PartETag : IComparable<PartETag>
     {
+        private string _checksumCRC32;
+        private string _checksumCRC32C;
+        private string _checksumSHA1;
+        private string _checksumSHA256;
         private int? partNumber;
         private string eTag;
 
@@ -50,6 +54,20 @@ namespace Amazon.S3.Model
         {
             this.partNumber = partNumber;
             this.eTag = eTag;
+        }
+
+        /// <summary>
+        /// Constructs an instance of PartETag from an UploadPart response
+        /// </summary>
+        /// <param name="uploadPartResponse">UploadPart response</param>
+        public PartETag(UploadPartResponse uploadPartResponse)
+        {
+            partNumber = uploadPartResponse.PartNumber;
+            eTag = uploadPartResponse.ETag;
+            ChecksumCRC32C = uploadPartResponse.ChecksumCRC32C;
+            ChecksumCRC32 = uploadPartResponse.ChecksumCRC32;
+            ChecksumSHA1 = uploadPartResponse.ChecksumSHA1;
+            ChecksumSHA256 = uploadPartResponse.ChecksumSHA256;
         }
 
         /// <summary>
@@ -109,5 +127,77 @@ namespace Amazon.S3.Model
         }
 
         #endregion
+
+        /// <summary>
+        /// Gets and sets the property ChecksumCRC32. 
+        /// <para>
+        /// The base64-encoded, 32-bit CRC32 checksum of the object.
+        /// </para>
+        /// </summary>
+        public string ChecksumCRC32
+        {
+            get { return this._checksumCRC32; }
+            set { this._checksumCRC32 = value; }
+        }
+
+        // Check to see if ChecksumCRC32 property is set
+        internal bool IsSetChecksumCRC32()
+        {
+            return this._checksumCRC32 != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChecksumCRC32C. 
+        /// <para>
+        /// The base64-encoded, 32-bit CRC32C checksum of the object.
+        /// </para>
+        /// </summary>
+        public string ChecksumCRC32C
+        {
+            get { return this._checksumCRC32C; }
+            set { this._checksumCRC32C = value; }
+        }
+
+        // Check to see if ChecksumCRC32C property is set
+        internal bool IsSetChecksumCRC32C()
+        {
+            return this._checksumCRC32C != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChecksumSHA1. 
+        /// <para>
+        /// The base64-encoded, 160-bit SHA-1 digest of the object.
+        /// </para>
+        /// </summary>
+        public string ChecksumSHA1
+        {
+            get { return this._checksumSHA1; }
+            set { this._checksumSHA1 = value; }
+        }
+
+        // Check to see if ChecksumSHA1 property is set
+        internal bool IsSetChecksumSHA1()
+        {
+            return this._checksumSHA1 != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChecksumSHA256. 
+        /// <para>
+        /// The base64-encoded, 256-bit SHA-256 digest of the object.
+        /// </para>
+        /// </summary>
+        public string ChecksumSHA256
+        {
+            get { return this._checksumSHA256; }
+            set { this._checksumSHA256 = value; }
+        }
+
+        // Check to see if ChecksumSHA256 property is set
+        internal bool IsSetChecksumSHA256()
+        {
+            return this._checksumSHA256 != null;
+        }
     }
 }

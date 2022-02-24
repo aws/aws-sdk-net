@@ -132,6 +132,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (copyObjectRequest.IsSetBucketKeyEnabled())
                 request.Headers.Add(S3Constants.AmzHeaderBucketKeyEnabled, S3Transforms.ToStringValue(copyObjectRequest.BucketKeyEnabled));
 
+            if (copyObjectRequest.IsSetChecksumAlgorithm())
+                request.Headers.Add(S3Constants.AmzHeaderChecksumAlgorithm ,S3Transforms.ToStringValue(copyObjectRequest.ChecksumAlgorithm));
 
             AmazonS3Util.SetMetadataHeaders(request, copyObjectRequest.Metadata);
 

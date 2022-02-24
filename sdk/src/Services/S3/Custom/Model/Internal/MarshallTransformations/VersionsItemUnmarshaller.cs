@@ -37,6 +37,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("ChecksumAlgorithm/member", targetDepth))
+                    {
+                        versionsItem.ChecksumAlgorithm.Add(StringUnmarshaller.GetInstance().Unmarshall(context));
+                        continue;
+                    }
                     if (context.TestExpression("ETag", targetDepth))
                     {
                         versionsItem.ETag = StringUnmarshaller.GetInstance().Unmarshall(context);

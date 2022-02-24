@@ -20,6 +20,7 @@ using System.IO;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
+using System.Collections.ObjectModel;
 
 namespace Amazon.S3.Model
 {
@@ -66,10 +67,9 @@ namespace Amazon.S3.Model
     ///  
     /// <para>
     /// Encryption request headers, like <code>x-amz-server-side-encryption</code>, should
-    /// not be sent for GET requests if your object uses server-side encryption with CMKs
-    /// stored in Amazon Web Services KMS (SSE-KMS) or server-side encryption with Amazon
-    /// S3–managed encryption keys (SSE-S3). If your object does use these types of keys,
-    /// you’ll get an HTTP 400 BadRequest error.
+    /// not be sent for GET requests if your object uses server-side encryption with KMS keys
+    /// (SSE-KMS) or server-side encryption with Amazon S3 managed encryption keys (SSE-S3).
+    /// If your object does use these types of keys, you'll get an HTTP 400 BadRequest error.
     /// </para>
     ///  
     /// <para>
@@ -256,6 +256,7 @@ namespace Amazon.S3.Model
         private string serverSideEncryptionCustomerProvidedKey;
         private string serverSideEncryptionCustomerProvidedKeyMD5;
         private string versionId;
+        private ChecksumMode _checksumMode;
 
         /// <summary>
         /// Gets and sets the property BucketName. 
@@ -673,6 +674,52 @@ namespace Amazon.S3.Model
                 this.responseHeaders = value;
             }
         }
+
+        /// <summary>
+        /// Gets and sets the property ChecksumMode. 
+        /// <para>
+        /// This must be enabled to retrieve the checksum.
+        /// </para>
+        /// </summary>
+        public ChecksumMode ChecksumMode
+        {
+            get { return this._checksumMode; }
+            set { this._checksumMode = value; }
+        }
+
+        // Check to see if ChecksumMode property is set
+        internal bool IsSetChecksumMode()
+        {
+            return this._checksumMode != null;
+        }
+
+        /// <summary>
+        /// This must be enabled to retrieve the checksum
+        /// </summary>
+        protected override CoreChecksumResponseBehavior CoreChecksumMode
+        {
+            get
+            {
+                if (IsSetChecksumMode())
+                {
+                    return (CoreChecksumResponseBehavior)Enum.Parse(typeof(CoreChecksumResponseBehavior), this.ChecksumMode);
+                }
+
+                return CoreChecksumResponseBehavior.DISABLED;
+            }
+        }
+
+        private static List<CoreChecksumAlgorithm> _supportedChecksumAlgorithms = new List<CoreChecksumAlgorithm>
+        {
+            CoreChecksumAlgorithm.CRC32C,
+            CoreChecksumAlgorithm.CRC32,
+            CoreChecksumAlgorithm.SHA256,
+            CoreChecksumAlgorithm.SHA1
+        };
+
+        /// <summary>
+        /// Checksum algorithms supported by this operation for response validation
+        /// </summary>
+        protected override ReadOnlyCollection<CoreChecksumAlgorithm> ChecksumResponseAlgorithms => _supportedChecksumAlgorithms.AsReadOnly();
     }
 }
-    

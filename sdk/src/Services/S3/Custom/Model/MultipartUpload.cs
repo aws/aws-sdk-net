@@ -25,12 +25,31 @@ namespace Amazon.S3.Model
     /// </summary>
     public class MultipartUpload
     {
+        private ChecksumAlgorithm _checksumAlgorithm;
         private string key;
         private string uploadId;
         private Owner owner;
         private Initiator initiator;
         private DateTime? initiated;
         private S3StorageClass storageClass;
+
+        /// <summary>
+        /// Gets and sets the property ChecksumAlgorithm. 
+        /// <para>
+        /// The algorithm that was used to create a checksum of the object.
+        /// </para>
+        /// </summary>
+        public ChecksumAlgorithm ChecksumAlgorithm
+        {
+            get { return this._checksumAlgorithm; }
+            set { this._checksumAlgorithm = value; }
+        }
+
+        // Check to see if ChecksumAlgorithm property is set
+        internal bool IsSetChecksumAlgorithm()
+        {
+            return this._checksumAlgorithm != null;
+        }
 
         /// <summary>
         /// Date and time at which the multipart upload was initiated.

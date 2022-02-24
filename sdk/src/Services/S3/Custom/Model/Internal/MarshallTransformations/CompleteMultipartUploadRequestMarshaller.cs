@@ -50,6 +50,27 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (completeMultipartUploadRequest.IsSetExpectedBucketOwner())
                 request.Headers.Add(S3Constants.AmzHeaderExpectedBucketOwner, S3Transforms.ToStringValue(completeMultipartUploadRequest.ExpectedBucketOwner));
 
+            if (completeMultipartUploadRequest.IsSetChecksumCRC32())
+                request.Headers["x-amz-checksum-crc32"] = completeMultipartUploadRequest.ChecksumCRC32;
+
+            if (completeMultipartUploadRequest.IsSetChecksumCRC32C())
+                request.Headers["x-amz-checksum-crc32c"] = completeMultipartUploadRequest.ChecksumCRC32C;
+
+            if (completeMultipartUploadRequest.IsSetChecksumSHA1())
+                request.Headers["x-amz-checksum-sha1"] = completeMultipartUploadRequest.ChecksumSHA1;
+
+            if (completeMultipartUploadRequest.IsSetChecksumSHA256())
+                request.Headers["x-amz-checksum-sha256"] = completeMultipartUploadRequest.ChecksumSHA256;
+
+            if (completeMultipartUploadRequest.IsSetSSECustomerAlgorithm())
+                request.Headers["x-amz-server-side-encryption-customer-algorithm"] = completeMultipartUploadRequest.SSECustomerAlgorithm;
+
+            if (completeMultipartUploadRequest.IsSetSSECustomerKey())
+                request.Headers["x-amz-server-side-encryption-customer-key"] = completeMultipartUploadRequest.SSECustomerKey;
+
+            if (completeMultipartUploadRequest.IsSetSSECustomerKeyMD5())
+                request.Headers["x-amz-server-side-encryption-customer-key-MD5"] = completeMultipartUploadRequest.SSECustomerKeyMD5;
+
             if (string.IsNullOrEmpty(completeMultipartUploadRequest.BucketName))
                 throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "CompleteMultipartUploadRequest.BucketName");
             if (string.IsNullOrEmpty(completeMultipartUploadRequest.Key))
@@ -82,6 +103,28 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                         {
                             xmlWriter.WriteElementString("PartNumber", "",
                                                          S3Transforms.ToXmlStringValue(multipartUploadMultipartUploadpartsListValue.PartNumber));
+                        }
+                        if (multipartUploadMultipartUploadpartsListValue.IsSetChecksumCRC32())
+                        {
+                            xmlWriter.WriteElementString("ChecksumCRC32", "",
+                                S3Transforms.ToXmlStringValue(multipartUploadMultipartUploadpartsListValue.ChecksumCRC32));
+                        }
+                        if (multipartUploadMultipartUploadpartsListValue.IsSetChecksumCRC32C())
+                        {
+                            xmlWriter.WriteElementString("ChecksumCRC32C", "",
+                                S3Transforms.ToXmlStringValue(multipartUploadMultipartUploadpartsListValue.ChecksumCRC32C));
+                        }
+
+                        if (multipartUploadMultipartUploadpartsListValue.IsSetChecksumSHA1())
+                        {
+                            xmlWriter.WriteElementString("ChecksumSHA1", "",
+                                S3Transforms.ToXmlStringValue(multipartUploadMultipartUploadpartsListValue.ChecksumSHA1));
+                        }
+
+                        if (multipartUploadMultipartUploadpartsListValue.IsSetChecksumSHA256())
+                        {
+                            xmlWriter.WriteElementString("ChecksumSHA256", "",
+                                S3Transforms.ToXmlStringValue(multipartUploadMultipartUploadpartsListValue.ChecksumSHA256));
                         }
                         xmlWriter.WriteEndElement();
                     }

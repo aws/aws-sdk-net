@@ -36,6 +36,16 @@ namespace Amazon.S3.Model
     /// <para>
     /// This action is not supported by Amazon S3 on Outposts.
     /// </para>
+    ///  
+    /// <para>
+    /// The following action is related to <code>GetObjectRetention</code>:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAttributes.html">GetObjectAttributes</a>
+    /// 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class GetObjectRetentionRequest : AmazonWebServiceRequest
     {

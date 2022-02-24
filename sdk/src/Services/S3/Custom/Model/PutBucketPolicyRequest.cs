@@ -66,8 +66,10 @@ namespace Amazon.S3.Model
     /// </summary>
     public partial class PutBucketPolicyRequest : AmazonWebServiceRequest
     {
+        private ChecksumAlgorithm _checksumAlgorithm;
         private bool? confirmRemoveSelfBucketAccess;
         private string expectedBucketOwner;
+
         /// <summary>
         /// The name of the bucket.
         /// </summary>
@@ -77,6 +79,27 @@ namespace Amazon.S3.Model
         internal bool IsSetBucket()
         {
             return this.BucketName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChecksumAlgorithm. 
+        /// <para>
+        /// Indicates the algorithm used to create the checksum for the object. Amazon S3 will
+        /// fail the request with a 400 error if there is no checksum associated with the object.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">
+        /// Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        /// </summary>
+        public ChecksumAlgorithm ChecksumAlgorithm
+        {
+            get { return this._checksumAlgorithm; }
+            set { this._checksumAlgorithm = value; }
+        }
+
+        // Check to see if ChecksumAlgorithm property is set
+        internal bool IsSetChecksumAlgorithm()
+        {
+            return this._checksumAlgorithm != null;
         }
 
         /// <summary>

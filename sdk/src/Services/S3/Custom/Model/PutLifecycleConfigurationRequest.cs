@@ -129,6 +129,7 @@ namespace Amazon.S3.Model
     public partial class PutLifecycleConfigurationRequest : AmazonWebServiceRequest
     {
         private string bucketName;
+        private ChecksumAlgorithm _checksumAlgorithm;
         private LifecycleConfiguration lifecycleConfiguration;
         private string expectedBucketOwner;
 
@@ -148,6 +149,21 @@ namespace Amazon.S3.Model
         internal bool IsSetBucketName()
         {
             return this.bucketName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChecksumAlgorithm.
+        /// </summary>
+        public ChecksumAlgorithm ChecksumAlgorithm
+        {
+            get { return this._checksumAlgorithm; }
+            set { this._checksumAlgorithm = value; }
+        }
+
+        // Check to see if ChecksumAlgorithm property is set
+        internal bool IsSetChecksumAlgorithm()
+        {
+            return this._checksumAlgorithm != null;
         }
 
         /// <summary>

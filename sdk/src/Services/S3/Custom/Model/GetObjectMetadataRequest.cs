@@ -155,6 +155,7 @@ namespace Amazon.S3.Model
     public partial class GetObjectMetadataRequest : AmazonWebServiceRequest
     {
         private string bucketName;
+        private ChecksumMode _checksumMode;
         DateTime? modifiedSinceDate;
         DateTime? unmodifiedSinceDate;
         DateTime? modifiedSinceDateUtc;
@@ -205,6 +206,30 @@ namespace Amazon.S3.Model
         internal bool IsSetBucketName()
         {
             return this.bucketName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChecksumMode. 
+        /// <para>
+        /// This must be enabled to retrieve the checksum.
+        /// </para>
+        ///  
+        /// <para>
+        /// In addition, if you enable <code>ChecksumMode</code> and the object is KMS encrypted,
+        /// you must have permission to the <code>kms:Decrypt</code> action for the request to
+        /// succeed.
+        /// </para>
+        /// </summary>
+        public ChecksumMode ChecksumMode
+        {
+            get { return this._checksumMode; }
+            set { this._checksumMode = value; }
+        }
+
+        // Check to see if ChecksumMode property is set
+        internal bool IsSetChecksumMode()
+        {
+            return this._checksumMode != null;
         }
 
         /// <summary>

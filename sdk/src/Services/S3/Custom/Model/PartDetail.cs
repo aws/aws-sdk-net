@@ -34,7 +34,6 @@ namespace Amazon.S3.Model
         private DateTime? lastModified;
         private long? size;
 
-
         /// <summary>
         /// The date and time at which the part was uploaded.
         /// </summary>
