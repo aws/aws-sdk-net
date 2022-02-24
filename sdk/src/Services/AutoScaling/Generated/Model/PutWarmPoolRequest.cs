@@ -53,6 +53,7 @@ namespace Amazon.AutoScaling.Model
     public partial class PutWarmPoolRequest : AmazonAutoScalingRequest
     {
         private string _autoScalingGroupName;
+        private InstanceReusePolicy _instanceReusePolicy;
         private int? _maxGroupPreparedCapacity;
         private int? _minSize;
         private WarmPoolState _poolState;
@@ -74,6 +75,26 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetAutoScalingGroupName()
         {
             return this._autoScalingGroupName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceReusePolicy. 
+        /// <para>
+        /// Indicates whether instances in the Auto Scaling group can be returned to the warm
+        /// pool on scale in. The default is to terminate instances in the Auto Scaling group
+        /// when the group scales in.
+        /// </para>
+        /// </summary>
+        public InstanceReusePolicy InstanceReusePolicy
+        {
+            get { return this._instanceReusePolicy; }
+            set { this._instanceReusePolicy = value; }
+        }
+
+        // Check to see if InstanceReusePolicy property is set
+        internal bool IsSetInstanceReusePolicy()
+        {
+            return this._instanceReusePolicy != null;
         }
 
         /// <summary>

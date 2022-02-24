@@ -103,7 +103,7 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
             {
                 AutoScalingGroupName = "my-auto-scaling-group",
                 LaunchTemplate = new LaunchTemplateSpecification {
-                    LaunchTemplateId = "lt-0a20c965061f64abc",
+                    LaunchTemplateName = "my-template-for-auto-scaling",
                     Version = "$Latest"
                 },
                 MaxInstanceLifetime = 2592000,
@@ -127,8 +127,8 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
                 HealthCheckGracePeriod = 300,
                 HealthCheckType = "ELB",
                 LaunchTemplate = new LaunchTemplateSpecification {
-                    LaunchTemplateId = "lt-0a20c965061f64abc",
-                    Version = "$Default"
+                    LaunchTemplateName = "my-template-for-auto-scaling",
+                    Version = "$Latest"
                 },
                 MaxSize = 3,
                 MinSize = 1,
@@ -801,10 +801,10 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
             var response = client.PutLifecycleHook(new PutLifecycleHookRequest 
             {
                 AutoScalingGroupName = "my-auto-scaling-group",
-                LifecycleHookName = "my-lifecycle-hook",
-                LifecycleTransition = "autoscaling:EC2_INSTANCE_LAUNCHING",
-                NotificationTargetARN = "arn:aws:sns:us-west-2:123456789012:my-sns-topic --role-arn",
-                RoleARN = "arn:aws:iam::123456789012:role/my-auto-scaling-role"
+                DefaultResult = "CONTINUE",
+                HeartbeatTimeout = 300,
+                LifecycleHookName = "my-launch-lifecycle-hook",
+                LifecycleTransition = "autoscaling:EC2_INSTANCE_LAUNCHING"
             });
 
 
@@ -882,8 +882,9 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
             var response = client.PutWarmPool(new PutWarmPoolRequest 
             {
                 AutoScalingGroupName = "my-auto-scaling-group",
+                InstanceReusePolicy = new InstanceReusePolicy { ReuseOnScaleIn = true },
                 MinSize = 30,
-                PoolState = "Stopped"
+                PoolState = "Hibernated"
             });
 
 
@@ -998,9 +999,14 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
             var response = client.StartInstanceRefresh(new StartInstanceRefreshRequest 
             {
                 AutoScalingGroupName = "my-auto-scaling-group",
+                DesiredConfiguration = new DesiredConfiguration { LaunchTemplate = new LaunchTemplateSpecification {
+                    LaunchTemplateName = "my-template-for-auto-scaling",
+                    Version = "$Latest"
+                } },
                 Preferences = new RefreshPreferences {
                     InstanceWarmup = 400,
-                    MinHealthyPercentage = 50
+                    MinHealthyPercentage = 90,
+                    SkipMatching = true
                 }
             });
 
@@ -1049,37 +1055,12 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
             var response = client.UpdateAutoScalingGroup(new UpdateAutoScalingGroupRequest 
             {
                 AutoScalingGroupName = "my-auto-scaling-group",
-                LaunchConfigurationName = "new-launch-config"
-            });
-
-
-            #endregion
-        }
-
-        public void AutoScalingUpdateAutoScalingGroup()
-        {
-            #region autoscaling-update-auto-scaling-group-2
-
-            var client = new AmazonAutoScalingClient();
-            var response = client.UpdateAutoScalingGroup(new UpdateAutoScalingGroupRequest 
-            {
-                AutoScalingGroupName = "my-auto-scaling-group",
-                MaxSize = 3,
-                MinSize = 1
-            });
-
-
-            #endregion
-        }
-
-        public void AutoScalingUpdateAutoScalingGroup()
-        {
-            #region autoscaling-update-auto-scaling-group-3
-
-            var client = new AmazonAutoScalingClient();
-            var response = client.UpdateAutoScalingGroup(new UpdateAutoScalingGroupRequest 
-            {
-                AutoScalingGroupName = "my-auto-scaling-group",
+                LaunchTemplate = new LaunchTemplateSpecification {
+                    LaunchTemplateName = "my-template-for-auto-scaling",
+                    Version = "2"
+                },
+                MaxSize = 5,
+                MinSize = 1,
                 NewInstancesProtectedFromScaleIn = true
             });
 

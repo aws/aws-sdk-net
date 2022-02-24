@@ -184,7 +184,12 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property RoleARN. 
         /// <para>
         /// The ARN of the IAM role that allows the Auto Scaling group to publish to the specified
-        /// notification target, for example, an Amazon SNS topic or an Amazon SQS queue.
+        /// notification target.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid only if the notification target is an Amazon SNS topic or an Amazon SQS queue.
+        /// Required for new lifecycle hooks, but optional when updating existing hooks.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

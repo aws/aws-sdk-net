@@ -643,6 +643,10 @@ namespace Amazon.AutoScaling
         /// </summary>
         public static readonly LifecycleState TerminatingWait = new LifecycleState("Terminating:Wait");
         /// <summary>
+        /// Constant WarmedHibernated for LifecycleState
+        /// </summary>
+        public static readonly LifecycleState WarmedHibernated = new LifecycleState("Warmed:Hibernated");
+        /// <summary>
         /// Constant WarmedPending for LifecycleState
         /// </summary>
         public static readonly LifecycleState WarmedPending = new LifecycleState("Warmed:Pending");
@@ -1354,6 +1358,10 @@ namespace Amazon.AutoScaling
     public class WarmPoolState : ConstantClass
     {
 
+        /// <summary>
+        /// Constant Hibernated for WarmPoolState
+        /// </summary>
+        public static readonly WarmPoolState Hibernated = new WarmPoolState("Hibernated");
         /// <summary>
         /// Constant Running for WarmPoolState
         /// </summary>

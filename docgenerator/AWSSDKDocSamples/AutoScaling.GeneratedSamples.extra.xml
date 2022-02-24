@@ -865,10 +865,10 @@
         <value>
             <example>
                 <para>
-                    This example creates a lifecycle hook.
+                    This example creates a lifecycle hook for instance launch.
                 </para>
                 <code
-                    title="To create a lifecycle hook"
+                    title="To create a launch lifecycle hook"
                     source=".\AWSSDKDocSamples\AutoScaling\AutoScaling.GeneratedSamples.cs"
                     region="autoscaling-put-lifecycle-hook-1" />
             </example>
@@ -941,10 +941,10 @@
         <value>
             <example>
                 <para>
-                    This example adds a warm pool to the specified Auto Scaling group.
+                    This example creates a warm pool for the specified Auto Scaling group.
                 </para>
                 <code
-                    title="To add a warm pool to an Auto Scaling group"
+                    title="To create a warm pool for an Auto Scaling group"
                     source=".\AWSSDKDocSamples\AutoScaling\AutoScaling.GeneratedSamples.cs"
                     region="to-add-a-warm-pool-to-an-auto-scaling-group-1617818810383" />
             </example>
@@ -1131,50 +1131,12 @@
         <value>
             <example>
                 <para>
-                    This example updates the launch configuration of the specified Auto Scaling group.
+                    This example updates multiple properties at the same time.
                 </para>
                 <code
-                    title="To update the launch configuration"
+                    title="To update an Auto Scaling group"
                     source=".\AWSSDKDocSamples\AutoScaling\AutoScaling.GeneratedSamples.cs"
                     region="autoscaling-update-auto-scaling-group-1" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.AutoScaling.IAmazonAutoScaling.UpdateAutoScalingGroup(Amazon.AutoScaling.Model.UpdateAutoScalingGroupRequest)" />
-            <member name="M:Amazon.AutoScaling.AmazonAutoScalingClient.UpdateAutoScalingGroup(Amazon.AutoScaling.Model.UpdateAutoScalingGroupRequest)" />
-            <member name="T:Amazon.AutoScaling.Model.UpdateAutoScalingGroupRequest" />
-            <member name="T:Amazon.AutoScaling.Model.UpdateAutoScalingGroupResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    This example updates the minimum size and maximum size of the specified Auto Scaling group.
-                </para>
-                <code
-                    title="To update the minimum and maximum size"
-                    source=".\AWSSDKDocSamples\AutoScaling\AutoScaling.GeneratedSamples.cs"
-                    region="autoscaling-update-auto-scaling-group-2" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.AutoScaling.IAmazonAutoScaling.UpdateAutoScalingGroup(Amazon.AutoScaling.Model.UpdateAutoScalingGroupRequest)" />
-            <member name="M:Amazon.AutoScaling.AmazonAutoScalingClient.UpdateAutoScalingGroup(Amazon.AutoScaling.Model.UpdateAutoScalingGroupRequest)" />
-            <member name="T:Amazon.AutoScaling.Model.UpdateAutoScalingGroupRequest" />
-            <member name="T:Amazon.AutoScaling.Model.UpdateAutoScalingGroupResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    This example enables instance protection for the specified Auto Scaling group.
-                </para>
-                <code
-                    title="To enable instance protection"
-                    source=".\AWSSDKDocSamples\AutoScaling\AutoScaling.GeneratedSamples.cs"
-                    region="autoscaling-update-auto-scaling-group-3" />
             </example>
         </value>
     </doc>

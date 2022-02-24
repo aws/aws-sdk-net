@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Describes a lifecycle hook, which enables an Auto Scaling group to be aware of events
-    /// in the Auto Scaling instance lifecycle, and then perform a custom action when the
-    /// corresponding lifecycle event occurs.
+    /// Describes a lifecycle hook. A lifecycle hook lets you create solutions that are aware
+    /// of events in the Auto Scaling instance lifecycle, and then perform a custom action
+    /// on instances when the corresponding lifecycle event occurs.
     /// </summary>
     public partial class LifecycleHook
     {
@@ -216,7 +216,7 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property RoleARN. 
         /// <para>
         /// The ARN of the IAM role that allows the Auto Scaling group to publish to the specified
-        /// notification target.
+        /// notification target (an Amazon SNS topic or an Amazon SQS queue).
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

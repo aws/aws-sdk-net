@@ -261,7 +261,7 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// Conditional: Required if you are adding an <code>ELB</code> health check.
+        /// Required if you are adding an <code>ELB</code> health check.
         /// </para>
         /// </summary>
         public int HealthCheckGracePeriod

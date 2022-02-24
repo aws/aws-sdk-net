@@ -543,6 +543,12 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
+        /// If you set <code>DesiredCapacityType</code> to <code>vcpu</code> or <code>memory-mib</code>,
+        /// the price protection threshold is applied based on the per vCPU or per memory price
+        /// instead of the per instance price. 
+        /// </para>
+        ///  
+        /// <para>
         /// Default: <code>20</code> 
         /// </para>
         /// </summary>
@@ -591,6 +597,12 @@ namespace Amazon.AutoScaling.Model
         /// higher than your threshold. The parameter accepts an integer, which Amazon EC2 Auto
         /// Scaling interprets as a percentage. To turn off price protection, specify a high value,
         /// such as <code>999999</code>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you set <code>DesiredCapacityType</code> to <code>vcpu</code> or <code>memory-mib</code>,
+        /// the price protection threshold is applied based on the per vCPU or per memory price
+        /// instead of the per instance price. 
         /// </para>
         ///  
         /// <para>

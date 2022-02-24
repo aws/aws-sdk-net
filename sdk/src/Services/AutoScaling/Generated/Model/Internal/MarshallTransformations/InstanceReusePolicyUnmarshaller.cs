@@ -32,18 +32,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for WarmPoolConfiguration Object
+    /// Response Unmarshaller for InstanceReusePolicy Object
     /// </summary>  
-    public class WarmPoolConfigurationUnmarshaller : IUnmarshaller<WarmPoolConfiguration, XmlUnmarshallerContext>, IUnmarshaller<WarmPoolConfiguration, JsonUnmarshallerContext>
+    public class InstanceReusePolicyUnmarshaller : IUnmarshaller<InstanceReusePolicy, XmlUnmarshallerContext>, IUnmarshaller<InstanceReusePolicy, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public WarmPoolConfiguration Unmarshall(XmlUnmarshallerContext context)
+        public InstanceReusePolicy Unmarshall(XmlUnmarshallerContext context)
         {
-            WarmPoolConfiguration unmarshalledObject = new WarmPoolConfiguration();
+            InstanceReusePolicy unmarshalledObject = new InstanceReusePolicy();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -54,34 +54,10 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("InstanceReusePolicy", targetDepth))
+                    if (context.TestExpression("ReuseOnScaleIn", targetDepth))
                     {
-                        var unmarshaller = InstanceReusePolicyUnmarshaller.Instance;
-                        unmarshalledObject.InstanceReusePolicy = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("MaxGroupPreparedCapacity", targetDepth))
-                    {
-                        var unmarshaller = IntUnmarshaller.Instance;
-                        unmarshalledObject.MaxGroupPreparedCapacity = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("MinSize", targetDepth))
-                    {
-                        var unmarshaller = IntUnmarshaller.Instance;
-                        unmarshalledObject.MinSize = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("PoolState", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.PoolState = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("Status", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.ReuseOnScaleIn = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -99,18 +75,18 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public WarmPoolConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public InstanceReusePolicy Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
 
-        private static WarmPoolConfigurationUnmarshaller _instance = new WarmPoolConfigurationUnmarshaller();        
+        private static InstanceReusePolicyUnmarshaller _instance = new InstanceReusePolicyUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static WarmPoolConfigurationUnmarshaller Instance
+        public static InstanceReusePolicyUnmarshaller Instance
         {
             get
             {
