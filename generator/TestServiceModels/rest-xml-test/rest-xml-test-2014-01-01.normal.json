@@ -1,0 +1,68 @@
+{
+  "version": "2.0",
+  "metadata": {
+    "apiVersion": "2014-01-01",
+    "endpointPrefix": "rest-xml-test",
+    "jsonVersion": "1.1",
+    "protocol": "rest-xml",
+    "serviceAbbreviation": "Rest-XML-Test",
+    "serviceFullName": "Rest XML Test",
+    "serviceId": "Rest-XML-Test",
+    "signatureVersion": "v4",
+    "signingName": "Rest-XML-Test",
+    "uid": "test-2014-01-01"
+  },
+  "operations": {
+    "TestOperation": {
+      "name": "TestOperation",
+      "http": {
+        "method": "POST",
+        "requestUri": "/"
+      },
+      "input": {
+        "shape": "InputShape"
+      },
+      "errors": []
+    }
+  },
+  "shapes": {
+    "InputShape": {
+      "type": "structure",
+      "members": {
+        "ContentLanguage": {
+          "shape": "LanguageList",
+          "location": "header",
+          "locationName": "x-amz-content-language"
+        },
+        "ContentLanguageEnums": {
+          "shape": "LanguageEnumList",
+          "location": "header",
+          "locationName": "x-amz-content-language-as-enums"
+        }
+      }
+    },
+    "LanguageList": {
+      "type": "list",
+      "member": {
+        "shape": "Language"
+      }
+    },
+    "Language": {
+      "type": "string"
+    },
+    "LanguageEnumList": {
+      "type": "list",
+      "member": {
+        "shape": "LanguageEnum"
+      }
+    },
+    "LanguageEnum": {
+      "type": "string",
+      "enum": [
+        "English",
+        "French",
+        "German"
+      ]
+    }
+  }
+}

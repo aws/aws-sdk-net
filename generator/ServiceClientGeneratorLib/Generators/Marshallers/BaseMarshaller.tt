@@ -53,12 +53,20 @@ using Amazon.Runtime.Internal.Util;
             }
             else
             {
-				if (member.IsList)
-				{
-					throw new InvalidDataException("[{member.ModelName}]: Marshalling lists as header value is not allowed.  Header values can be a Map of Strings or a Map of List of Strings");
-				}
-
-                if (member.IsMap)
+                if (member.IsList)
+                {
+                    if (member.ModelShape.ModelListShape.IsString || member.ModelShape.ModelListShape.IsEnum)
+                    {
+#>
+                        request.Headers["<#=member.MarshallLocationName#>"] = StringUtils.FromList(<#=variableName#>.<#=member.PropertyName#>);
+<#+
+                    }
+                    else
+                    {
+                        throw new InvalidDataException("[{member.ModelName}]: Marshalling lists as header values is only support for lists of strings or list of enums.");
+                    }
+                }
+                else if (member.IsMap)
                 {
 #>
                 //Map of headers with prefix "<#=member.MarshallLocationName#>".
