@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Panorama.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// NetworkPayload Marshaller
+    /// NtpPayload Marshaller
     /// </summary>
-    public class NetworkPayloadMarshaller : IRequestMarshaller<NetworkPayload, JsonMarshallerContext> 
+    public class NtpPayloadMarshaller : IRequestMarshaller<NtpPayload, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,39 +43,17 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(NetworkPayload requestObject, JsonMarshallerContext context)
+        public void Marshall(NtpPayload requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetEthernet0())
+            if(requestObject.IsSetNtpServers())
             {
-                context.Writer.WritePropertyName("Ethernet0");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = EthernetPayloadMarshaller.Instance;
-                marshaller.Marshall(requestObject.Ethernet0, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetEthernet1())
-            {
-                context.Writer.WritePropertyName("Ethernet1");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = EthernetPayloadMarshaller.Instance;
-                marshaller.Marshall(requestObject.Ethernet1, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetNtp())
-            {
-                context.Writer.WritePropertyName("Ntp");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = NtpPayloadMarshaller.Instance;
-                marshaller.Marshall(requestObject.Ntp, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("NtpServers");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectNtpServersListValue in requestObject.NtpServers)
+                {
+                        context.Writer.Write(requestObjectNtpServersListValue);
+                }
+                context.Writer.WriteArrayEnd();
             }
 
         }
@@ -83,7 +61,7 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static NetworkPayloadMarshaller Instance = new NetworkPayloadMarshaller();
+        public readonly static NtpPayloadMarshaller Instance = new NtpPayloadMarshaller();
 
     }
 }

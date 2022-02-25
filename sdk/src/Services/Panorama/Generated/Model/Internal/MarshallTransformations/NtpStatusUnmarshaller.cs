@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Panorama.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for NetworkPayload Object
+    /// Response Unmarshaller for NtpStatus Object
     /// </summary>  
-    public class NetworkPayloadUnmarshaller : IUnmarshaller<NetworkPayload, XmlUnmarshallerContext>, IUnmarshaller<NetworkPayload, JsonUnmarshallerContext>
+    public class NtpStatusUnmarshaller : IUnmarshaller<NtpStatus, XmlUnmarshallerContext>, IUnmarshaller<NtpStatus, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        NetworkPayload IUnmarshaller<NetworkPayload, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        NtpStatus IUnmarshaller<NtpStatus, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,33 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public NetworkPayload Unmarshall(JsonUnmarshallerContext context)
+        public NtpStatus Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            NetworkPayload unmarshalledObject = new NetworkPayload();
+            NtpStatus unmarshalledObject = new NtpStatus();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Ethernet0", targetDepth))
+                if (context.TestExpression("ConnectionStatus", targetDepth))
                 {
-                    var unmarshaller = EthernetPayloadUnmarshaller.Instance;
-                    unmarshalledObject.Ethernet0 = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ConnectionStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Ethernet1", targetDepth))
+                if (context.TestExpression("IpAddress", targetDepth))
                 {
-                    var unmarshaller = EthernetPayloadUnmarshaller.Instance;
-                    unmarshalledObject.Ethernet1 = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.IpAddress = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Ntp", targetDepth))
+                if (context.TestExpression("NtpServerName", targetDepth))
                 {
-                    var unmarshaller = NtpPayloadUnmarshaller.Instance;
-                    unmarshalledObject.Ntp = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.NtpServerName = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +88,12 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
         }
 
 
-        private static NetworkPayloadUnmarshaller _instance = new NetworkPayloadUnmarshaller();        
+        private static NtpStatusUnmarshaller _instance = new NtpStatusUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static NetworkPayloadUnmarshaller Instance
+        public static NtpStatusUnmarshaller Instance
         {
             get
             {

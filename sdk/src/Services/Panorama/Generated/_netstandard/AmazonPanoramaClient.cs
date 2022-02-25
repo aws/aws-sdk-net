@@ -41,12 +41,14 @@ namespace Amazon.Panorama
     /// AWS Panorama 
     /// <para>
     ///  <b>Overview</b> 
-    /// </para>
+    /// 
     ///  
     /// <para>
     /// This is the <i>AWS Panorama API Reference</i>. For an introduction to the service,
     /// see <a href="https://docs.aws.amazon.com/panorama/latest/dev/panorama-welcome.html">What
     /// is AWS Panorama?</a> in the <i>AWS Panorama Developer Guide</i>.
+    /// </para>
+    /// 
     /// </para>
     /// </summary>
     public partial class AmazonPanoramaClient : AmazonServiceClient, IAmazonPanorama
@@ -564,6 +566,13 @@ namespace Amazon.Panorama
 
         /// <summary>
         /// Deletes a package.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// To delete a package, you need permission to call <code>s3:DeleteObject</code> in addition
+        /// to permissions for the AWS Panorama API.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeletePackage service method.</param>
         /// <param name="cancellationToken">

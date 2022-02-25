@@ -35,6 +35,8 @@ namespace Amazon.Panorama.Model
     {
         private EthernetStatus _ethernet0Status;
         private EthernetStatus _ethernet1Status;
+        private DateTime? _lastUpdatedTime;
+        private NtpStatus _ntpStatus;
 
         /// <summary>
         /// Gets and sets the property Ethernet0Status. 
@@ -70,6 +72,42 @@ namespace Amazon.Panorama.Model
         internal bool IsSetEthernet1Status()
         {
             return this._ethernet1Status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastUpdatedTime. 
+        /// <para>
+        /// When the network status changed.
+        /// </para>
+        /// </summary>
+        public DateTime LastUpdatedTime
+        {
+            get { return this._lastUpdatedTime.GetValueOrDefault(); }
+            set { this._lastUpdatedTime = value; }
+        }
+
+        // Check to see if LastUpdatedTime property is set
+        internal bool IsSetLastUpdatedTime()
+        {
+            return this._lastUpdatedTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NtpStatus. 
+        /// <para>
+        /// Details about a network time protocol (NTP) server connection.
+        /// </para>
+        /// </summary>
+        public NtpStatus NtpStatus
+        {
+            get { return this._ntpStatus; }
+            set { this._ntpStatus = value; }
+        }
+
+        // Check to see if NtpStatus property is set
+        internal bool IsSetNtpStatus()
+        {
+            return this._ntpStatus != null;
         }
 
     }

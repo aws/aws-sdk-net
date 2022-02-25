@@ -60,14 +60,14 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
 
             if (!publicRequest.IsSetApplicationInstanceId())
                 throw new AmazonPanoramaException("Request object does not have required field ApplicationInstanceId set");
-            request.AddPathResource("{applicationInstanceId}", StringUtils.FromString(publicRequest.ApplicationInstanceId));
+            request.AddPathResource("{ApplicationInstanceId}", StringUtils.FromString(publicRequest.ApplicationInstanceId));
             
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
-            request.ResourcePath = "/application-instances/{applicationInstanceId}/package-dependencies";
+            request.ResourcePath = "/application-instances/{ApplicationInstanceId}/package-dependencies";
             request.UseQueryString = true;
 
             return request;

@@ -31,6 +31,13 @@ namespace Amazon.Panorama.Model
     /// <summary>
     /// Container for the parameters to the DeletePackage operation.
     /// Deletes a package.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// To delete a package, you need permission to call <code>s3:DeleteObject</code> in addition
+    /// to permissions for the AWS Panorama API.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DeletePackageRequest : AmazonPanoramaRequest
     {
