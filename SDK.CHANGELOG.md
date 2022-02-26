@@ -1,3 +1,13 @@
+### 3.7.218.0 (2022-02-25 23:09 UTC)
+* ElastiCache (3.7.5.15)
+	* Doc only update for ElastiCache
+* Panorama (3.7.1.0)
+	* Added NTP server configuration parameter to ProvisionDevice operation. Added alternate software fields to DescribeDevice response
+* Core 3.7.8.3
+	* Updating endpoints.json file.
+
+	* All services packages updated to require new Core
+
 ### 3.7.217.0 (2022-02-24 19:20 UTC)
 * AutoScaling (3.7.9.0)
 	* You can now hibernate instances in a warm pool to stop instances without deleting their RAM contents. You can now also return instances to the warm pool on scale in, instead of always terminating capacity that you will need later.
