@@ -1,3 +1,27 @@
+### 3.7.219.0 (2022-02-28 19:18 UTC)
+* Amplify (3.7.1.0)
+	* Add repositoryCloneMethod field for hosting an Amplify app. This field shows what authorization method is used to clone the repo: SSH, TOKEN, or SIGV4.
+* AmplifyUIBuilder (3.7.1.0)
+	* We are adding the ability to configure workflows and actions for components.
+* AppRegistry (3.7.2.0)
+	* AppRegistry is deprecating Application and Attribute-Group Name update feature. In this release, we are marking the name attributes for Update APIs as deprecated to give a heads up to our customers.
+* Athena (3.7.4.0)
+	* This release adds support for updating an existing named query.
+* EC2 (3.7.60.0)
+	* This release adds support for new AMI property 'lastLaunchedTime'
+* FinSpaceData (3.7.3.0)
+	* Add new APIs for managing Users and Permission Groups.
+* FIS (3.7.3.0)
+	* This release adds logging support for AWS Fault Injection Simulator experiments. Experiment templates can now be configured to send experiment activity logs to Amazon CloudWatch Logs or to an S3 bucket.
+* FSx (3.7.8.0)
+	* This release adds support for the following FSx for OpenZFS features: snapshot lifecycle transition messages, force flag for deleting file systems with child resources, LZ4 data compression, custom record sizes, and unsetting volume quotas and reservations.
+* Route53RecoveryCluster (3.7.1.0)
+	* This release adds a new API option to enable overriding safety rules to allow routing control state updates.
+* Core 3.7.8.4
+	* Updating endpoints.json file.
+
+	* All services packages updated to require new Core
+
 ### 3.7.218.0 (2022-02-25 23:09 UTC)
 * ElastiCache (3.7.5.15)
 	* Doc only update for ElastiCache
