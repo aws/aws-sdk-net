@@ -39,5 +39,15 @@ namespace Amazon.FinSpaceData.Model
         /// Paginator for ListDataViews operation
         ///</summary>
         IListDataViewsPaginator ListDataViews(ListDataViewsRequest request);
+
+        /// <summary>
+        /// Paginator for ListPermissionGroups operation
+        ///</summary>
+        IListPermissionGroupsPaginator ListPermissionGroups(ListPermissionGroupsRequest request);
+
+        /// <summary>
+        /// Paginator for ListUsers operation
+        ///</summary>
+        IListUsersPaginator ListUsers(ListUsersRequest request);
     }
 }

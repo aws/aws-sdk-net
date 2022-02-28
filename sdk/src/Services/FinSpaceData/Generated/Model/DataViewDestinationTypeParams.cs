@@ -44,11 +44,11 @@ namespace Amazon.FinSpaceData.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>GLUE_TABLE</code> - Glue table destination type.
+        ///  <code>GLUE_TABLE</code> – Glue table destination type.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>S3</code> - S3 destination type.
+        ///  <code>S3</code> – S3 destination type.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -72,11 +72,11 @@ namespace Amazon.FinSpaceData.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>PARQUET</code> - Parquet export file format.
+        ///  <code>PARQUET</code> – Parquet export file format.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DELIMITED_TEXT</code> - Delimited text export file format.
+        ///  <code>DELIMITED_TEXT</code> – Delimited text export file format.
         /// </para>
         ///  </li> </ul>
         /// </summary>

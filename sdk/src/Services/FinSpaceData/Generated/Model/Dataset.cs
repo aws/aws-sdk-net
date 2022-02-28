@@ -67,7 +67,7 @@ namespace Amazon.FinSpaceData.Model
         /// Gets and sets the property CreateTime. 
         /// <para>
         /// The timestamp at which the Dataset was created in FinSpace. The value is determined
-        /// as Epoch time in milliseconds. For example, the value for Monday, November 1, 2021
+        /// as epoch time in milliseconds. For example, the value for Monday, November 1, 2021
         /// 12:00:00 PM UTC is specified as 1635768000000.
         /// </para>
         /// </summary>
@@ -165,11 +165,11 @@ namespace Amazon.FinSpaceData.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>TABULAR</code> - Data is structured in a tabular format.
+        ///  <code>TABULAR</code> – Data is structured in a tabular format.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NON_TABULAR</code> - Data is structured in a non-tabular format.
+        ///  <code>NON_TABULAR</code> – Data is structured in a non-tabular format.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -188,7 +188,7 @@ namespace Amazon.FinSpaceData.Model
         /// <summary>
         /// Gets and sets the property LastModifiedTime. 
         /// <para>
-        /// The last time that the Dataset was modified. The value is determined as Epoch time
+        /// The last time that the Dataset was modified. The value is determined as epoch time
         /// in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC
         /// is specified as 1635768000000.
         /// </para>

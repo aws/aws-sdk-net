@@ -44,12 +44,12 @@ namespace Amazon.FinSpaceData.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>SAGEMAKER</code> - Use the Amazon S3 location as a temporary location to store
+        ///  <code>SAGEMAKER</code> – Use the Amazon S3 location as a temporary location to store
         /// data content when working with FinSpace Notebooks that run on SageMaker studio.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>INGESTION</code> - Use the Amazon S3 location as a staging location to copy
+        ///  <code>INGESTION</code> – Use the Amazon S3 location as a staging location to copy
         /// your data content and then use the location with the Changeset creation operation.
         /// </para>
         ///  </li> </ul>

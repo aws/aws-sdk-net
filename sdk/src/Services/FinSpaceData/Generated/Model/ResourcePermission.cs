@@ -63,7 +63,7 @@ namespace Amazon.FinSpaceData.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// For more information on the ataset permissions, see <a href="https://docs.aws.amazon.com/finspace/latest/userguide/managing-user-permissions.html#supported-dataset-permissions">Supported
+    /// For more information on the dataset permissions, see <a href="https://docs.aws.amazon.com/finspace/latest/userguide/managing-user-permissions.html#supported-dataset-permissions">Supported
     /// Dataset Permissions</a> in the FinSpace User Guide.
     /// </para>
     /// </summary>

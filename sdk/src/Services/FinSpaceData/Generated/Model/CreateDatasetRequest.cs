@@ -126,11 +126,11 @@ namespace Amazon.FinSpaceData.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>TABULAR</code> - Data is structured in a tabular format.
+        ///  <code>TABULAR</code> – Data is structured in a tabular format.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NON_TABULAR</code> - Data is structured in a non-tabular format.
+        ///  <code>NON_TABULAR</code> – Data is structured in a non-tabular format.
         /// </para>
         ///  </li> </ul>
         /// </summary>

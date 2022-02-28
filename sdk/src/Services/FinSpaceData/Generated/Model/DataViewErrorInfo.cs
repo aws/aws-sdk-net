@@ -43,37 +43,37 @@ namespace Amazon.FinSpaceData.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>VALIDATION</code> -The inputs to this request are invalid.
+        ///  <code>VALIDATION</code> – The inputs to this request are invalid.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SERVICE_QUOTA_EXCEEDED</code> - Service quotas have been exceeded. Please contact
+        ///  <code>SERVICE_QUOTA_EXCEEDED</code> – Service quotas have been exceeded. Please contact
         /// AWS support to increase quotas.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ACCESS_DENIED</code> - Missing required permission to perform this request.
+        ///  <code>ACCESS_DENIED</code> – Missing required permission to perform this request.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>RESOURCE_NOT_FOUND</code> - One or more inputs to this request were not found.
+        ///  <code>RESOURCE_NOT_FOUND</code> – One or more inputs to this request were not found.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>THROTTLING</code> - The system temporarily lacks sufficient resources to process
+        ///  <code>THROTTLING</code> – The system temporarily lacks sufficient resources to process
         /// the request.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>INTERNAL_SERVICE_EXCEPTION</code> - An internal service error has occurred.
+        ///  <code>INTERNAL_SERVICE_EXCEPTION</code> – An internal service error has occurred.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CANCELLED</code> - Cancelled.
+        ///  <code>CANCELLED</code> – Cancelled.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>USER_RECOVERABLE</code> - A user recoverable error has occurred.
+        ///  <code>USER_RECOVERABLE</code> – A user recoverable error has occurred.
         /// </para>
         ///  </li> </ul>
         /// </summary>

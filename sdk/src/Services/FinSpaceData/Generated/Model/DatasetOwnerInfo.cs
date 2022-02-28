@@ -59,7 +59,7 @@ namespace Amazon.FinSpaceData.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Name of the Dataset owner.
+        /// The name of the Dataset owner.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=250)]
