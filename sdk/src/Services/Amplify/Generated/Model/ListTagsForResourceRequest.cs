@@ -42,7 +42,7 @@ namespace Amazon.Amplify.Model
         ///  The Amazon Resource Name (ARN) to use to list tags. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=0, Max=2048)]
         public string ResourceArn
         {
             get { return this._resourceArn; }

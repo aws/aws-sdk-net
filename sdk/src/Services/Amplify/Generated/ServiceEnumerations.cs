@@ -236,6 +236,10 @@ namespace Amazon.Amplify
         /// Constant WEB for Platform
         /// </summary>
         public static readonly Platform WEB = new Platform("WEB");
+        /// <summary>
+        /// Constant WEB_DYNAMIC for Platform
+        /// </summary>
+        public static readonly Platform WEB_DYNAMIC = new Platform("WEB_DYNAMIC");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -266,6 +270,60 @@ namespace Amazon.Amplify
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Platform(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RepositoryCloneMethod.
+    /// </summary>
+    public class RepositoryCloneMethod : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SIGV4 for RepositoryCloneMethod
+        /// </summary>
+        public static readonly RepositoryCloneMethod SIGV4 = new RepositoryCloneMethod("SIGV4");
+        /// <summary>
+        /// Constant SSH for RepositoryCloneMethod
+        /// </summary>
+        public static readonly RepositoryCloneMethod SSH = new RepositoryCloneMethod("SSH");
+        /// <summary>
+        /// Constant TOKEN for RepositoryCloneMethod
+        /// </summary>
+        public static readonly RepositoryCloneMethod TOKEN = new RepositoryCloneMethod("TOKEN");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RepositoryCloneMethod(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RepositoryCloneMethod FindValue(string value)
+        {
+            return FindValue<RepositoryCloneMethod>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RepositoryCloneMethod(string value)
         {
             return FindValue(value);
         }

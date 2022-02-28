@@ -78,7 +78,7 @@ namespace Amazon.Amplify.Model
         /// app. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1000)]
+        [AWSProperty(Min=0, Max=1000)]
         public string BackendEnvironmentArn
         {
             get { return this._backendEnvironmentArn; }
@@ -363,6 +363,7 @@ namespace Amazon.Amplify.Model
         ///  The content Time to Live (TTL) for the website in seconds. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=32)]
         public string Ttl
         {
             get { return this._ttl; }

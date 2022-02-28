@@ -175,7 +175,7 @@ namespace Amazon.Amplify.Model
         /// The custom HTTP headers for an Amplify app.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=25000)]
+        [AWSProperty(Min=0, Max=25000)]
         public string CustomHeaders
         {
             get { return this._customHeaders; }
@@ -322,7 +322,7 @@ namespace Amazon.Amplify.Model
         ///  The AWS Identity and Access Management (IAM) service role for an Amplify app. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1000)]
+        [AWSProperty(Min=0, Max=1000)]
         public string IamServiceRoleArn
         {
             get { return this._iamServiceRoleArn; }

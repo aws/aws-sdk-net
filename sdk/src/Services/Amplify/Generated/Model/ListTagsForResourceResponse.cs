@@ -41,7 +41,7 @@ namespace Amazon.Amplify.Model
         ///  A list of tags for the specified The Amazon Resource Name (ARN). 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=50)]
+        [AWSProperty(Min=0, Max=50)]
         public Dictionary<string, string> Tags
         {
             get { return this._tags; }
