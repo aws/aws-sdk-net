@@ -136,6 +136,7 @@ namespace NETCore.SetupTests
             var existingValue = Environment.GetEnvironmentVariable("AWS_REGION");
             try
             {
+                FallbackRegionFactory.Reset();
                 Environment.SetEnvironmentVariable("AWS_REGION", RegionEndpoint.APSouth1.SystemName);
 
                 var builder = new ConfigurationBuilder();
@@ -148,7 +149,8 @@ namespace NETCore.SetupTests
             finally
             {
                 Environment.SetEnvironmentVariable("AWS_REGION", existingValue);
+                FallbackRegionFactory.Reset();
             }
-        } 
+        }
     }
 }
