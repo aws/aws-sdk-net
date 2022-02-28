@@ -85,6 +85,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.KernelId = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("lastLaunchedTime/value", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.LastLaunchedTime = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("launchPermission/item", targetDepth))
                     {
                         var unmarshaller = LaunchPermissionUnmarshaller.Instance;

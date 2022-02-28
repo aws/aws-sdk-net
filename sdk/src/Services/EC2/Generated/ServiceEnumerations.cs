@@ -5835,6 +5835,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly ImageAttributeName Kernel = new ImageAttributeName("kernel");
         /// <summary>
+        /// Constant LastLaunchedTime for ImageAttributeName
+        /// </summary>
+        public static readonly ImageAttributeName LastLaunchedTime = new ImageAttributeName("lastLaunchedTime");
+        /// <summary>
         /// Constant LaunchPermission for ImageAttributeName
         /// </summary>
         public static readonly ImageAttributeName LaunchPermission = new ImageAttributeName("launchPermission");
@@ -12930,6 +12934,10 @@ namespace Amazon.EC2
         /// Constant Subnet for ResourceType
         /// </summary>
         public static readonly ResourceType Subnet = new ResourceType("subnet");
+        /// <summary>
+        /// Constant SubnetCidrReservation for ResourceType
+        /// </summary>
+        public static readonly ResourceType SubnetCidrReservation = new ResourceType("subnet-cidr-reservation");
         /// <summary>
         /// Constant TrafficMirrorFilter for ResourceType
         /// </summary>
