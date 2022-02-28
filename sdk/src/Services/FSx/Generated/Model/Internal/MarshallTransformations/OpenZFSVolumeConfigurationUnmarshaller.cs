@@ -100,6 +100,12 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                     unmarshalledObject.ReadOnly = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("RecordSizeKiB", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.RecordSizeKiB = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("StorageCapacityQuotaGiB", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

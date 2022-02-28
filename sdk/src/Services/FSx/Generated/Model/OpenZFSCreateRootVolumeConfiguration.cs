@@ -37,16 +37,17 @@ namespace Amazon.FSx.Model
         private OpenZFSDataCompressionType _dataCompressionType;
         private List<OpenZFSNfsExport> _nfsExports = new List<OpenZFSNfsExport>();
         private bool? _readOnly;
+        private int? _recordSizeKiB;
         private List<OpenZFSUserOrGroupQuota> _userAndGroupQuotas = new List<OpenZFSUserOrGroupQuota>();
 
         /// <summary>
         /// Gets and sets the property CopyTagsToSnapshots. 
         /// <para>
-        /// A Boolean value indicating whether tags for the volume should be copied to snapshots.
-        /// This value defaults to <code>false</code>. If it's set to <code>true</code>, all tags
-        /// for the volume are copied to snapshots where the user doesn't specify tags. If this
-        /// value is <code>true</code> and you specify one or more tags, only the specified tags
-        /// are copied to snapshots. If you specify one or more tags when creating the snapshot,
+        /// A Boolean value indicating whether tags for the volume should be copied to snapshots
+        /// of the volume. This value defaults to <code>false</code>. If it's set to <code>true</code>,
+        /// all tags for the volume are copied to snapshots where the user doesn't specify tags.
+        /// If this value is <code>true</code> and you specify one or more tags, only the specified
+        /// tags are copied to snapshots. If you specify one or more tags when creating the snapshot,
         /// no tags are copied from the volume, regardless of this value. 
         /// </para>
         /// </summary>
@@ -65,19 +66,25 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property DataCompressionType. 
         /// <para>
-        /// Specifies the method used to compress the data on the volume. Unless the compression
-        /// type is specified, volumes inherit the <code>DataCompressionType</code> value of their
-        /// parent volume.
+        /// Specifies the method used to compress the data on the volume. The compression type
+        /// is <code>NONE</code> by default.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>NONE</code> - Doesn't compress the data on the volume.
+        ///  <code>NONE</code> - Doesn't compress the data on the volume. <code>NONE</code> is
+        /// the default.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ZSTD</code> - Compresses the data in the volume using the ZStandard (ZSTD)
-        /// compression algorithm. This algorithm reduces the amount of space used on your volume
-        /// and has very little impact on compute resources.
+        ///  <code>ZSTD</code> - Compresses the data in the volume using the Zstandard (ZSTD)
+        /// compression algorithm. Compared to LZ4, Z-Standard provides a better compression ratio
+        /// to minimize on-disk storage utilization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>LZ4</code> - Compresses the data in the volume using the LZ4 compression algorithm.
+        /// Compared to Z-Standard, LZ4 is less compute-intensive and delivers higher write throughput
+        /// speeds.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -130,6 +137,30 @@ namespace Amazon.FSx.Model
         internal bool IsSetReadOnly()
         {
             return this._readOnly.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RecordSizeKiB. 
+        /// <para>
+        /// Specifies the record size of an OpenZFS root volume, in kibibytes (KiB). Valid values
+        /// are 4, 8, 16, 32, 64, 128, 256, 512, or 1024 KiB. The default is 128 KiB. Most workloads
+        /// should use the default record size. Database workflows can benefit from a smaller
+        /// record size, while streaming workflows can benefit from a larger record size. For
+        /// additional guidance on setting a custom record size, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#performance-tips-zfs">
+        /// Tips for maximizing performance</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=4, Max=1024)]
+        public int RecordSizeKiB
+        {
+            get { return this._recordSizeKiB.GetValueOrDefault(); }
+            set { this._recordSizeKiB = value; }
+        }
+
+        // Check to see if RecordSizeKiB property is set
+        internal bool IsSetRecordSizeKiB()
+        {
+            return this._recordSizeKiB.HasValue; 
         }
 
         /// <summary>

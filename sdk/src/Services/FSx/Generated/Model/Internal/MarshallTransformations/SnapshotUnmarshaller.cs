@@ -82,6 +82,12 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                     unmarshalledObject.Lifecycle = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("LifecycleTransitionReason", targetDepth))
+                {
+                    var unmarshaller = LifecycleTransitionReasonUnmarshaller.Instance;
+                    unmarshalledObject.LifecycleTransitionReason = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

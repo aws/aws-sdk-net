@@ -36,6 +36,7 @@ namespace Amazon.FSx.Model
         private List<AdministrativeAction> _administrativeActions = new List<AdministrativeAction>();
         private DateTime? _creationTime;
         private SnapshotLifecycle _lifecycle;
+        private LifecycleTransitionReason _lifecycleTransitionReason;
         private string _name;
         private string _resourceARN;
         private string _snapshotId;
@@ -110,6 +111,21 @@ namespace Amazon.FSx.Model
         internal bool IsSetLifecycle()
         {
             return this._lifecycle != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LifecycleTransitionReason.
+        /// </summary>
+        public LifecycleTransitionReason LifecycleTransitionReason
+        {
+            get { return this._lifecycleTransitionReason; }
+            set { this._lifecycleTransitionReason = value; }
+        }
+
+        // Check to see if LifecycleTransitionReason property is set
+        internal bool IsSetLifecycleTransitionReason()
+        {
+            return this._lifecycleTransitionReason != null;
         }
 
         /// <summary>

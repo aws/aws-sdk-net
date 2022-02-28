@@ -922,13 +922,18 @@
     <pattern>^(fsvol-[0-9a-f]{17,})$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.FSx.Model.CreateOpenZFSVolumeConfiguration.RecordSizeKiB</property>
+    <min>4</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.FSx.Model.CreateOpenZFSVolumeConfiguration.StorageCapacityQuotaGiB</property>
-    <min>0</min>
+    <min>-1</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FSx.Model.CreateOpenZFSVolumeConfiguration.StorageCapacityReservationGiB</property>
-    <min>0</min>
+    <min>-1</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
@@ -1240,6 +1245,11 @@
     <pattern>^[ -~]{1,128}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.FSx.Model.OpenZFSCreateRootVolumeConfiguration.RecordSizeKiB</property>
+    <min>4</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.FSx.Model.OpenZFSFileSystemConfiguration.AutomaticBackupRetentionDays</property>
     <min>0</min>
     <max>90</max>
@@ -1288,6 +1298,11 @@
     <min>23</min>
     <max>23</max>
     <pattern>^(fsvol-[0-9a-f]{17,})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.OpenZFSVolumeConfiguration.RecordSizeKiB</property>
+    <min>4</min>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FSx.Model.OpenZFSVolumeConfiguration.StorageCapacityQuotaGiB</property>
@@ -1566,13 +1581,18 @@
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.FSx.Model.UpdateOpenZFSVolumeConfiguration.RecordSizeKiB</property>
+    <min>4</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.FSx.Model.UpdateOpenZFSVolumeConfiguration.StorageCapacityQuotaGiB</property>
-    <min>0</min>
+    <min>-1</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FSx.Model.UpdateOpenZFSVolumeConfiguration.StorageCapacityReservationGiB</property>
-    <min>0</min>
+    <min>-1</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>

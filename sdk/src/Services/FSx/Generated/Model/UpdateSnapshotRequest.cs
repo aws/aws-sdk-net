@@ -30,7 +30,7 @@ namespace Amazon.FSx.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateSnapshot operation.
-    /// Updates the name of a snapshot.
+    /// Updates the name of an Amazon FSx for OpenZFS snapshot.
     /// </summary>
     public partial class UpdateSnapshotRequest : AmazonFSxRequest
     {
@@ -57,7 +57,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the snapshot to update. 
+        /// The name of the snapshot to update.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=203)]

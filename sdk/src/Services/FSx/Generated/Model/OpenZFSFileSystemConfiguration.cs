@@ -178,8 +178,8 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property ThroughputCapacity. 
         /// <para>
-        /// The throughput of an Amazon FSx file system, measured in megabytes per second (MBps),
-        /// in 2 to the nth increments, between 2^3 (8) and 2^11 (2048). 
+        /// The throughput of an Amazon FSx file system, measured in megabytes per second (MBps).
+        /// Valid values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s.
         /// </para>
         /// </summary>
         [AWSProperty(Min=8, Max=4096)]

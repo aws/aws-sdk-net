@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FSx.Model
 {
     /// <summary>
-    /// The OpenZFS configuration properties for the file system that you are creating.
+    /// The Amazon FSx for OpenZFS configuration properties for the file system that you are
+    /// creating.
     /// </summary>
     public partial class CreateFileSystemOpenZFSConfiguration
     {

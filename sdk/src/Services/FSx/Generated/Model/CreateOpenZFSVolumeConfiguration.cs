@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FSx.Model
 {
     /// <summary>
-    /// Specifies the configuration of the OpenZFS volume that you are creating.
+    /// Specifies the configuration of the Amazon FSx for OpenZFS volume that you are creating.
     /// </summary>
     public partial class CreateOpenZFSVolumeConfiguration
     {
@@ -39,6 +39,7 @@ namespace Amazon.FSx.Model
         private CreateOpenZFSOriginSnapshotConfiguration _originSnapshot;
         private string _parentVolumeId;
         private bool? _readOnly;
+        private int? _recordSizeKiB;
         private int? _storageCapacityQuotaGiB;
         private int? _storageCapacityReservationGiB;
         private List<OpenZFSUserOrGroupQuota> _userAndGroupQuotas = new List<OpenZFSUserOrGroupQuota>();
@@ -51,7 +52,7 @@ namespace Amazon.FSx.Model
         /// for the volume are copied to snapshots where the user doesn't specify tags. If this
         /// value is <code>true</code>, and you specify one or more tags, only the specified tags
         /// are copied to snapshots. If you specify one or more tags when creating the snapshot,
-        /// no tags are copied from the volume, regardless of this value. 
+        /// no tags are copied from the volume, regardless of this value.
         /// </para>
         /// </summary>
         public bool CopyTagsToSnapshots
@@ -69,19 +70,25 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property DataCompressionType. 
         /// <para>
-        /// Specifies the method used to compress the data on the volume. Unless the compression
-        /// type is specified, volumes inherit the <code>DataCompressionType</code> value of their
-        /// parent volume.
+        /// Specifies the method used to compress the data on the volume. The compression type
+        /// is <code>NONE</code> by default.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>NONE</code> - Doesn't compress the data on the volume.
+        ///  <code>NONE</code> - Doesn't compress the data on the volume. <code>NONE</code> is
+        /// the default.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>ZSTD</code> - Compresses the data in the volume using the Zstandard (ZSTD)
-        /// compression algorithm. This algorithm reduces the amount of space used on your volume
-        /// and has very little impact on compute resources.
+        /// compression algorithm. Compared to LZ4, Z-Standard provides a better compression ratio
+        /// to minimize on-disk storage utilization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>LZ4</code> - Compresses the data in the volume using the LZ4 compression algorithm.
+        /// Compared to Z-Standard, LZ4 is less compute-intensive and delivers higher write throughput
+        /// speeds.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -100,7 +107,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property NfsExports. 
         /// <para>
-        /// The configuration object for mounting a Network File System (NFS) file system. 
+        /// The configuration object for mounting a Network File System (NFS) file system.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1)]
@@ -138,7 +145,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property ParentVolumeId. 
         /// <para>
-        /// The ID of the volume to use as the parent volume. 
+        /// The ID of the volume to use as the parent volume.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=23, Max=23)]
@@ -157,7 +164,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property ReadOnly. 
         /// <para>
-        /// A Boolean value indicating whether the volume is read-only. 
+        /// A Boolean value indicating whether the volume is read-only.
         /// </para>
         /// </summary>
         public bool ReadOnly
@@ -173,13 +180,38 @@ namespace Amazon.FSx.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RecordSizeKiB. 
+        /// <para>
+        /// Specifies the record size of an OpenZFS volume, in kibibytes (KiB). Valid values are
+        /// 4, 8, 16, 32, 64, 128, 256, 512, or 1024 KiB. The default is 128 KiB. Most workloads
+        /// should use the default record size. Database workflows can benefit from a smaller
+        /// record size, while streaming workflows can benefit from a larger record size. For
+        /// additional guidance on when to set a custom record size, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#performance-tips-zfs">
+        /// Tips for maximizing performance</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=4, Max=1024)]
+        public int RecordSizeKiB
+        {
+            get { return this._recordSizeKiB.GetValueOrDefault(); }
+            set { this._recordSizeKiB = value; }
+        }
+
+        // Check to see if RecordSizeKiB property is set
+        internal bool IsSetRecordSizeKiB()
+        {
+            return this._recordSizeKiB.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property StorageCapacityQuotaGiB. 
         /// <para>
         /// The maximum amount of storage in gibibytes (GiB) that the volume can use from its
-        /// parent. You can specify a quota larger than the storage on the parent volume.
+        /// parent. You can't specify a quota larger than the storage on the parent volume. To
+        /// not specify a storage capacity quota, set this to <code>-1</code>. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=2147483647)]
+        [AWSProperty(Min=-1, Max=2147483647)]
         public int StorageCapacityQuotaGiB
         {
             get { return this._storageCapacityQuotaGiB.GetValueOrDefault(); }
@@ -196,10 +228,11 @@ namespace Amazon.FSx.Model
         /// Gets and sets the property StorageCapacityReservationGiB. 
         /// <para>
         /// The amount of storage in gibibytes (GiB) to reserve from the parent volume. You can't
-        /// reserve more storage than the parent volume has reserved.
+        /// reserve more storage than the parent volume has reserved. To not specify a storage
+        /// capacity reservation, set this to <code>-1</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=2147483647)]
+        [AWSProperty(Min=-1, Max=2147483647)]
         public int StorageCapacityReservationGiB
         {
             get { return this._storageCapacityReservationGiB.GetValueOrDefault(); }
@@ -215,7 +248,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property UserAndGroupQuotas. 
         /// <para>
-        /// An object specifying how much storage users or groups can use on the volume. 
+        /// An object specifying how much storage users or groups can use on the volume.
         /// </para>
         /// </summary>
         [AWSProperty(Max=100)]

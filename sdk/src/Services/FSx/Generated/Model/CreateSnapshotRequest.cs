@@ -30,9 +30,9 @@ namespace Amazon.FSx.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateSnapshot operation.
-    /// Creates a snapshot of an existing Amazon FSx for OpenZFS file system. With snapshots,
-    /// you can easily undo file changes and compare file versions by restoring the volume
-    /// to a previous version.
+    /// Creates a snapshot of an existing Amazon FSx for OpenZFS volume. With snapshots, you
+    /// can easily undo file changes and compare file versions by restoring the volume to
+    /// a previous version.
     /// 
     ///  
     /// <para>
@@ -41,7 +41,6 @@ namespace Amazon.FSx.Model
     /// the specified client request token exists, and the parameters don't match, this operation
     /// returns <code>IncompatibleParameterError</code>. If a snapshot with the specified
     /// client request token doesn't exist, <code>CreateSnapshot</code> does the following:
-    /// 
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -65,7 +64,7 @@ namespace Amazon.FSx.Model
     /// The <code>CreateSnapshot</code> operation returns while the snapshot's lifecycle state
     /// is still <code>CREATING</code>. You can check the snapshot creation status by calling
     /// the <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeSnapshots.html">DescribeSnapshots</a>
-    /// operation, which returns the snapshot state along with other information. 
+    /// operation, which returns the snapshot state along with other information.
     /// </para>
     /// </summary>
     public partial class CreateSnapshotRequest : AmazonFSxRequest

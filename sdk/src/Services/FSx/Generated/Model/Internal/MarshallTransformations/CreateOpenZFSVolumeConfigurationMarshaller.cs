@@ -96,6 +96,12 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ReadOnly);
             }
 
+            if(requestObject.IsSetRecordSizeKiB())
+            {
+                context.Writer.WritePropertyName("RecordSizeKiB");
+                context.Writer.Write(requestObject.RecordSizeKiB);
+            }
+
             if(requestObject.IsSetStorageCapacityQuotaGiB())
             {
                 context.Writer.WritePropertyName("StorageCapacityQuotaGiB");
