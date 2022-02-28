@@ -2360,6 +2360,67 @@ namespace Amazon.Athena
 
         #endregion
         
+        #region  UpdateNamedQuery
+
+        /// <summary>
+        /// Updates a <a>NamedQuery</a> object. The database or workgroup cannot be updated.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateNamedQuery service method.</param>
+        /// 
+        /// <returns>The response from the UpdateNamedQuery service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UpdateNamedQuery">REST API Reference for UpdateNamedQuery Operation</seealso>
+        public virtual UpdateNamedQueryResponse UpdateNamedQuery(UpdateNamedQueryRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateNamedQueryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateNamedQueryResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateNamedQueryResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateNamedQuery operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateNamedQuery operation on AmazonAthenaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateNamedQuery
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UpdateNamedQuery">REST API Reference for UpdateNamedQuery Operation</seealso>
+        public virtual IAsyncResult BeginUpdateNamedQuery(UpdateNamedQueryRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateNamedQueryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateNamedQueryResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateNamedQuery operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateNamedQuery.</param>
+        /// 
+        /// <returns>Returns a  UpdateNamedQueryResult from Athena.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UpdateNamedQuery">REST API Reference for UpdateNamedQuery Operation</seealso>
+        public virtual UpdateNamedQueryResponse EndUpdateNamedQuery(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateNamedQueryResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  UpdatePreparedStatement
 
         /// <summary>

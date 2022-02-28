@@ -29,29 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Athena.Model
 {
     /// <summary>
-    /// The rows that make up a query result table.
+    /// This is the response object from the UpdateNamedQuery operation.
     /// </summary>
-    public partial class Row
+    public partial class UpdateNamedQueryResponse : AmazonWebServiceResponse
     {
-        private List<Datum> _data = new List<Datum>();
-
-        /// <summary>
-        /// Gets and sets the property Data. 
-        /// <para>
-        /// The data that populates a row in a query result table.
-        /// </para>
-        /// </summary>
-        public List<Datum> Data
-        {
-            get { return this._data; }
-            set { this._data = value; }
-        }
-
-        // Check to see if Data property is set
-        internal bool IsSetData()
-        {
-            return this._data != null && this._data.Count > 0; 
-        }
 
     }
 }

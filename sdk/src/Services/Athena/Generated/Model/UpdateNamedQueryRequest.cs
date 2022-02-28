@@ -29,36 +29,15 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Athena.Model
 {
     /// <summary>
-    /// A query, where <code>QueryString</code> contains the SQL statements that make up the
-    /// query.
+    /// Container for the parameters to the UpdateNamedQuery operation.
+    /// Updates a <a>NamedQuery</a> object. The database or workgroup cannot be updated.
     /// </summary>
-    public partial class NamedQuery
+    public partial class UpdateNamedQueryRequest : AmazonAthenaRequest
     {
-        private string _database;
         private string _description;
         private string _name;
         private string _namedQueryId;
         private string _queryString;
-        private string _workGroup;
-
-        /// <summary>
-        /// Gets and sets the property Database. 
-        /// <para>
-        /// The database to which the query belongs.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=255)]
-        public string Database
-        {
-            get { return this._database; }
-            set { this._database = value; }
-        }
-
-        // Check to see if Database property is set
-        internal bool IsSetDatabase()
-        {
-            return this._database != null;
-        }
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -66,7 +45,7 @@ namespace Amazon.Athena.Model
         /// The query description.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string Description
         {
             get { return this._description; }
@@ -82,7 +61,7 @@ namespace Amazon.Athena.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The query name.
+        /// The name of the query.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -101,9 +80,10 @@ namespace Amazon.Athena.Model
         /// <summary>
         /// Gets and sets the property NamedQueryId. 
         /// <para>
-        /// The unique identifier of the query.
+        /// The unique identifier (UUID) of the query.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string NamedQueryId
         {
             get { return this._namedQueryId; }
@@ -119,7 +99,7 @@ namespace Amazon.Athena.Model
         /// <summary>
         /// Gets and sets the property QueryString. 
         /// <para>
-        /// The SQL statements that make up the query.
+        /// The contents of the query with all query statements.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=262144)]
@@ -133,24 +113,6 @@ namespace Amazon.Athena.Model
         internal bool IsSetQueryString()
         {
             return this._queryString != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property WorkGroup. 
-        /// <para>
-        /// The name of the workgroup that contains the named query.
-        /// </para>
-        /// </summary>
-        public string WorkGroup
-        {
-            get { return this._workGroup; }
-            set { this._workGroup = value; }
-        }
-
-        // Check to see if WorkGroup property is set
-        internal bool IsSetWorkGroup()
-        {
-            return this._workGroup != null;
         }
 
     }

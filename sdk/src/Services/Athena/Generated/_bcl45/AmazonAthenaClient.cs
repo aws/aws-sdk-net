@@ -2301,6 +2301,61 @@ namespace Amazon.Athena
 
         #endregion
         
+        #region  UpdateNamedQuery
+
+
+        /// <summary>
+        /// Updates a <a>NamedQuery</a> object. The database or workgroup cannot be updated.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateNamedQuery service method.</param>
+        /// 
+        /// <returns>The response from the UpdateNamedQuery service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UpdateNamedQuery">REST API Reference for UpdateNamedQuery Operation</seealso>
+        public virtual UpdateNamedQueryResponse UpdateNamedQuery(UpdateNamedQueryRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateNamedQueryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateNamedQueryResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateNamedQueryResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates a <a>NamedQuery</a> object. The database or workgroup cannot be updated.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateNamedQuery service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateNamedQuery service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UpdateNamedQuery">REST API Reference for UpdateNamedQuery Operation</seealso>
+        public virtual Task<UpdateNamedQueryResponse> UpdateNamedQueryAsync(UpdateNamedQueryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateNamedQueryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateNamedQueryResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateNamedQueryResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UpdatePreparedStatement
 
 

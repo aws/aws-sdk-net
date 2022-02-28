@@ -33,7 +33,7 @@ namespace Amazon.Athena.Model
     /// provides standardized error information to help you understand failed queries and
     /// take steps after a query failure occurs. <code>AthenaError</code> includes an <code>ErrorCategory</code>
     /// field that specifies whether the cause of the failed query is due to system error,
-    /// user error, or unknown error.
+    /// user error, or other error.
     /// </summary>
     public partial class AthenaError
     {
@@ -56,7 +56,7 @@ namespace Amazon.Athena.Model
         /// </para>
         ///  
         /// <para>
-        ///  <b>3</b> - Unknown
+        ///  <b>3</b> - Other
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=3)]
