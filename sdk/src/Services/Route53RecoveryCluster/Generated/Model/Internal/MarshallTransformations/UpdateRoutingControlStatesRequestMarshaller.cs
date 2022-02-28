@@ -67,6 +67,17 @@ namespace Amazon.Route53RecoveryCluster.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetSafetyRulesToOverride())
+                {
+                    context.Writer.WritePropertyName("SafetyRulesToOverride");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestSafetyRulesToOverrideListValue in publicRequest.SafetyRulesToOverride)
+                    {
+                            context.Writer.Write(publicRequestSafetyRulesToOverrideListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetUpdateRoutingControlStateEntries())
                 {
                     context.Writer.WritePropertyName("UpdateRoutingControlStateEntries");
