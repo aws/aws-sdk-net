@@ -38,6 +38,7 @@ namespace Amazon.FIS.Model
         private string _description;
         private string _id;
         private DateTime? _lastUpdateTime;
+        private ExperimentTemplateLogConfiguration _logConfiguration;
         private string _roleArn;
         private List<ExperimentTemplateStopCondition> _stopConditions = new List<ExperimentTemplateStopCondition>();
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
@@ -133,6 +134,24 @@ namespace Amazon.FIS.Model
         internal bool IsSetLastUpdateTime()
         {
             return this._lastUpdateTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LogConfiguration. 
+        /// <para>
+        /// The configuration for experiment logging.
+        /// </para>
+        /// </summary>
+        public ExperimentTemplateLogConfiguration LogConfiguration
+        {
+            get { return this._logConfiguration; }
+            set { this._logConfiguration = value; }
+        }
+
+        // Check to see if LogConfiguration property is set
+        internal bool IsSetLogConfiguration()
+        {
+            return this._logConfiguration != null;
         }
 
         /// <summary>
