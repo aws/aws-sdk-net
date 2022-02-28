@@ -16,33 +16,23 @@
 /*
  * Do not modify this file. This file is generated from the amplifyuibuilder-2021-08-11.normal.json service model.
  */
+using Amazon.Runtime;
 
 namespace Amazon.AmplifyUIBuilder.Model
 {
     /// <summary>
-    /// Paginators for the AmplifyUIBuilder service
+    /// Paginator for the ExportComponents operation
     ///</summary>
-    public interface IAmplifyUIBuilderPaginatorFactory
+    public interface IExportComponentsPaginator
     {
+        /// <summary>
+        /// Enumerable containing all full responses for the operation
+        /// </summary>
+        IPaginatedEnumerable<ExportComponentsResponse> Responses { get; }
 
         /// <summary>
-        /// Paginator for ExportComponents operation
-        ///</summary>
-        IExportComponentsPaginator ExportComponents(ExportComponentsRequest request);
-
-        /// <summary>
-        /// Paginator for ExportThemes operation
-        ///</summary>
-        IExportThemesPaginator ExportThemes(ExportThemesRequest request);
-
-        /// <summary>
-        /// Paginator for ListComponents operation
-        ///</summary>
-        IListComponentsPaginator ListComponents(ListComponentsRequest request);
-
-        /// <summary>
-        /// Paginator for ListThemes operation
-        ///</summary>
-        IListThemesPaginator ListThemes(ListThemesRequest request);
+        /// Enumerable containing all of the Entities
+        /// </summary>
+        IPaginatedEnumerable<Component> Entities { get; }
     }
 }

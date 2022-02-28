@@ -67,6 +67,25 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ComponentType);
             }
 
+            if(requestObject.IsSetEvents())
+            {
+                context.Writer.WritePropertyName("events");
+                context.Writer.WriteObjectStart();
+                foreach (var requestObjectEventsKvp in requestObject.Events)
+                {
+                    context.Writer.WritePropertyName(requestObjectEventsKvp.Key);
+                    var requestObjectEventsValue = requestObjectEventsKvp.Value;
+
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ComponentEventMarshaller.Instance;
+                    marshaller.Marshall(requestObjectEventsValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("name");

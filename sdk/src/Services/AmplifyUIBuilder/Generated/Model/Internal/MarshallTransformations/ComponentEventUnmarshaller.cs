@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ComponentChild Object
+    /// Response Unmarshaller for ComponentEvent Object
     /// </summary>  
-    public class ComponentChildUnmarshaller : IUnmarshaller<ComponentChild, XmlUnmarshallerContext>, IUnmarshaller<ComponentChild, JsonUnmarshallerContext>
+    public class ComponentEventUnmarshaller : IUnmarshaller<ComponentEvent, XmlUnmarshallerContext>, IUnmarshaller<ComponentEvent, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ComponentChild IUnmarshaller<ComponentChild, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ComponentEvent IUnmarshaller<ComponentEvent, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,27 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ComponentChild Unmarshall(JsonUnmarshallerContext context)
+        public ComponentEvent Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ComponentChild unmarshalledObject = new ComponentChild();
+            ComponentEvent unmarshalledObject = new ComponentEvent();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("children", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<ComponentChild, ComponentChildUnmarshaller>(ComponentChildUnmarshaller.Instance);
-                    unmarshalledObject.Children = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("componentType", targetDepth))
+                if (context.TestExpression("action", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ComponentType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Action = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("events", targetDepth))
+                if (context.TestExpression("parameters", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, ComponentEvent, StringUnmarshaller, ComponentEventUnmarshaller>(StringUnmarshaller.Instance, ComponentEventUnmarshaller.Instance);
-                    unmarshalledObject.Events = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("name", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("properties", targetDepth))
-                {
-                    var unmarshaller = new DictionaryUnmarshaller<string, ComponentProperty, StringUnmarshaller, ComponentPropertyUnmarshaller>(StringUnmarshaller.Instance, ComponentPropertyUnmarshaller.Instance);
-                    unmarshalledObject.Properties = unmarshaller.Unmarshall(context);
+                    var unmarshaller = ActionParametersUnmarshaller.Instance;
+                    unmarshalledObject.Parameters = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +82,12 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
         }
 
 
-        private static ComponentChildUnmarshaller _instance = new ComponentChildUnmarshaller();        
+        private static ComponentEventUnmarshaller _instance = new ComponentEventUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ComponentChildUnmarshaller Instance
+        public static ComponentEventUnmarshaller Instance
         {
             get
             {

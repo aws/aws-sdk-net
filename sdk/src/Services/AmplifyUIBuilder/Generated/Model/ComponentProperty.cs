@@ -37,6 +37,7 @@ namespace Amazon.AmplifyUIBuilder.Model
         private ComponentPropertyBindingProperties _bindingProperties;
         private Dictionary<string, FormBindingElement> _bindings = new Dictionary<string, FormBindingElement>();
         private ComponentPropertyBindingProperties _collectionBindingProperties;
+        private string _componentName;
         private List<ComponentProperty> _concat = new List<ComponentProperty>();
         private ComponentConditionProperty _condition;
         private bool? _configured;
@@ -44,6 +45,7 @@ namespace Amazon.AmplifyUIBuilder.Model
         private string _event;
         private string _importedValue;
         private string _model;
+        private string _property;
         private string _type;
         private string _userAttribute;
         private string _value;
@@ -104,6 +106,24 @@ namespace Amazon.AmplifyUIBuilder.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ComponentName. 
+        /// <para>
+        /// The name of the component that is affected by an event.
+        /// </para>
+        /// </summary>
+        public string ComponentName
+        {
+            get { return this._componentName; }
+            set { this._componentName = value; }
+        }
+
+        // Check to see if ComponentName property is set
+        internal bool IsSetComponentName()
+        {
+            return this._componentName != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Concat. 
         /// <para>
         /// A list of component properties to concatenate to create the value to assign to this
@@ -125,7 +145,7 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// <summary>
         /// Gets and sets the property Condition. 
         /// <para>
-        /// The conditional expression to use to assign a value to the component property..
+        /// The conditional expression to use to assign a value to the component property.
         /// </para>
         /// </summary>
         public ComponentConditionProperty Condition
@@ -198,7 +218,8 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// <summary>
         /// Gets and sets the property ImportedValue. 
         /// <para>
-        /// The default value assigned to property when the component is imported into an app.
+        /// The default value assigned to the property when the component is imported into an
+        /// app.
         /// </para>
         /// </summary>
         public string ImportedValue
@@ -229,6 +250,24 @@ namespace Amazon.AmplifyUIBuilder.Model
         internal bool IsSetModel()
         {
             return this._model != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Property. 
+        /// <para>
+        /// The name of the component's property that is affected by an event.
+        /// </para>
+        /// </summary>
+        public string Property
+        {
+            get { return this._property; }
+            set { this._property = value; }
+        }
+
+        // Check to see if Property property is set
+        internal bool IsSetProperty()
+        {
+            return this._property != null;
         }
 
         /// <summary>

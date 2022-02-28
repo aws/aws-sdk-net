@@ -37,6 +37,7 @@ namespace Amazon.AmplifyUIBuilder.Model
     {
         private string _appId;
         private string _environmentName;
+        private string _nextToken;
 
         /// <summary>
         /// Gets and sets the property AppId. 
@@ -74,6 +75,24 @@ namespace Amazon.AmplifyUIBuilder.Model
         internal bool IsSetEnvironmentName()
         {
             return this._environmentName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token to request the next page of results.
+        /// </para>
+        /// </summary>
+        public string NextToken
+        {
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
+        }
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this._nextToken != null;
         }
 
     }

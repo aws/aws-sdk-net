@@ -37,10 +37,12 @@ namespace Amazon.AmplifyUIBuilder.Model
         private List<ComponentChild> _children = new List<ComponentChild>();
         private Dictionary<string, ComponentDataConfiguration> _collectionProperties = new Dictionary<string, ComponentDataConfiguration>();
         private string _componentType;
+        private Dictionary<string, ComponentEvent> _events = new Dictionary<string, ComponentEvent>();
         private string _id;
         private string _name;
         private Dictionary<string, Dictionary<string, string>> _overrides = new Dictionary<string, Dictionary<string, string>>();
         private Dictionary<string, ComponentProperty> _properties = new Dictionary<string, ComponentProperty>();
+        private string _schemaVersion;
         private string _sourceId;
         private List<ComponentVariant> _variants = new List<ComponentVariant>();
 
@@ -120,6 +122,25 @@ namespace Amazon.AmplifyUIBuilder.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Events. 
+        /// <para>
+        /// The event configuration for the component. Use for the workflow feature in Amplify
+        /// Studio that allows you to bind events and actions to components.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, ComponentEvent> Events
+        {
+            get { return this._events; }
+            set { this._events = value; }
+        }
+
+        // Check to see if Events property is set
+        internal bool IsSetEvents()
+        {
+            return this._events != null && this._events.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
         /// The unique ID of the component to update.
@@ -190,6 +211,24 @@ namespace Amazon.AmplifyUIBuilder.Model
         internal bool IsSetProperties()
         {
             return this._properties != null && this._properties.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SchemaVersion. 
+        /// <para>
+        /// The schema version of the component when it was imported.
+        /// </para>
+        /// </summary>
+        public string SchemaVersion
+        {
+            get { return this._schemaVersion; }
+            set { this._schemaVersion = value; }
+        }
+
+        // Check to see if SchemaVersion property is set
+        internal bool IsSetSchemaVersion()
+        {
+            return this._schemaVersion != null;
         }
 
         /// <summary>

@@ -29,48 +29,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AmplifyUIBuilder.Model
 {
     /// <summary>
-    /// This is the response object from the ExportThemes operation.
+    /// Describes the configuration of an event. You can bind an event and a corresponding
+    /// action to a <code>Component</code> or a <code>ComponentChild</code>. A button click
+    /// is an example of an event.
     /// </summary>
-    public partial class ExportThemesResponse : AmazonWebServiceResponse
+    public partial class ComponentEvent
     {
-        private List<Theme> _entities = new List<Theme>();
-        private string _nextToken;
+        private string _action;
+        private ActionParameters _parameters;
 
         /// <summary>
-        /// Gets and sets the property Entities. 
+        /// Gets and sets the property Action. 
         /// <para>
-        /// Represents the configuration of the exported themes.
+        /// The action to perform when a specific event is raised.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public List<Theme> Entities
+        public string Action
         {
-            get { return this._entities; }
-            set { this._entities = value; }
+            get { return this._action; }
+            set { this._action = value; }
         }
 
-        // Check to see if Entities property is set
-        internal bool IsSetEntities()
+        // Check to see if Action property is set
+        internal bool IsSetAction()
         {
-            return this._entities != null && this._entities.Count > 0; 
+            return this._action != null;
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken. 
+        /// Gets and sets the property Parameters. 
         /// <para>
-        /// The pagination token that's included if more results are available.
+        /// Describes information about the action.
         /// </para>
         /// </summary>
-        public string NextToken
+        public ActionParameters Parameters
         {
-            get { return this._nextToken; }
-            set { this._nextToken = value; }
+            get { return this._parameters; }
+            set { this._parameters = value; }
         }
 
-        // Check to see if NextToken property is set
-        internal bool IsSetNextToken()
+        // Check to see if Parameters property is set
+        internal bool IsSetParameters()
         {
-            return this._nextToken != null;
+            return this._parameters != null;
         }
 
     }

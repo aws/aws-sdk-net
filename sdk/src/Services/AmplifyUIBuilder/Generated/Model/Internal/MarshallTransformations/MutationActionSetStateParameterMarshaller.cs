@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ComponentConditionProperty Marshaller
+    /// MutationActionSetStateParameter Marshaller
     /// </summary>
-    public class ComponentConditionPropertyMarshaller : IRequestMarshaller<ComponentConditionProperty, JsonMarshallerContext> 
+    public class MutationActionSetStateParameterMarshaller : IRequestMarshaller<MutationActionSetStateParameter, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,41 +43,12 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ComponentConditionProperty requestObject, JsonMarshallerContext context)
+        public void Marshall(MutationActionSetStateParameter requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetElse())
+            if(requestObject.IsSetComponentName())
             {
-                context.Writer.WritePropertyName("else");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = ComponentPropertyMarshaller.Instance;
-                marshaller.Marshall(requestObject.Else, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetField())
-            {
-                context.Writer.WritePropertyName("field");
-                context.Writer.Write(requestObject.Field);
-            }
-
-            if(requestObject.IsSetOperand())
-            {
-                context.Writer.WritePropertyName("operand");
-                context.Writer.Write(requestObject.Operand);
-            }
-
-            if(requestObject.IsSetOperandType())
-            {
-                context.Writer.WritePropertyName("operandType");
-                context.Writer.Write(requestObject.OperandType);
-            }
-
-            if(requestObject.IsSetOperator())
-            {
-                context.Writer.WritePropertyName("operator");
-                context.Writer.Write(requestObject.Operator);
+                context.Writer.WritePropertyName("componentName");
+                context.Writer.Write(requestObject.ComponentName);
             }
 
             if(requestObject.IsSetProperty())
@@ -86,13 +57,13 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Property);
             }
 
-            if(requestObject.IsSetThen())
+            if(requestObject.IsSetSet())
             {
-                context.Writer.WritePropertyName("then");
+                context.Writer.WritePropertyName("set");
                 context.Writer.WriteObjectStart();
 
                 var marshaller = ComponentPropertyMarshaller.Instance;
-                marshaller.Marshall(requestObject.Then, context);
+                marshaller.Marshall(requestObject.Set, context);
 
                 context.Writer.WriteObjectEnd();
             }
@@ -102,7 +73,7 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static ComponentConditionPropertyMarshaller Instance = new ComponentConditionPropertyMarshaller();
+        public readonly static MutationActionSetStateParameterMarshaller Instance = new MutationActionSetStateParameterMarshaller();
 
     }
 }

@@ -38,6 +38,7 @@ namespace Amazon.AmplifyUIBuilder.Model
         private ComponentProperty _else;
         private string _field;
         private string _operand;
+        private string _operandType;
         private string _operator;
         private string _property;
         private ComponentProperty _then;
@@ -94,6 +95,24 @@ namespace Amazon.AmplifyUIBuilder.Model
         internal bool IsSetOperand()
         {
             return this._operand != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OperandType. 
+        /// <para>
+        /// The type of the property to evaluate.
+        /// </para>
+        /// </summary>
+        public string OperandType
+        {
+            get { return this._operandType; }
+            set { this._operandType = value; }
+        }
+
+        // Check to see if OperandType property is set
+        internal bool IsSetOperandType()
+        {
+            return this._operandType != null;
         }
 
         /// <summary>

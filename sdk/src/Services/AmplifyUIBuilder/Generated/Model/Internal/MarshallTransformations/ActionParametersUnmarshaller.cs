@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ComponentConditionProperty Object
+    /// Response Unmarshaller for ActionParameters Object
     /// </summary>  
-    public class ComponentConditionPropertyUnmarshaller : IUnmarshaller<ComponentConditionProperty, XmlUnmarshallerContext>, IUnmarshaller<ComponentConditionProperty, JsonUnmarshallerContext>
+    public class ActionParametersUnmarshaller : IUnmarshaller<ActionParameters, XmlUnmarshallerContext>, IUnmarshaller<ActionParameters, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ComponentConditionProperty IUnmarshaller<ComponentConditionProperty, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ActionParameters IUnmarshaller<ActionParameters, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,57 +53,69 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ComponentConditionProperty Unmarshall(JsonUnmarshallerContext context)
+        public ActionParameters Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ComponentConditionProperty unmarshalledObject = new ComponentConditionProperty();
+            ActionParameters unmarshalledObject = new ActionParameters();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("else", targetDepth))
+                if (context.TestExpression("anchor", targetDepth))
                 {
                     var unmarshaller = ComponentPropertyUnmarshaller.Instance;
-                    unmarshalledObject.Else = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Anchor = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("field", targetDepth))
+                if (context.TestExpression("fields", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Field = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new DictionaryUnmarshaller<string, ComponentProperty, StringUnmarshaller, ComponentPropertyUnmarshaller>(StringUnmarshaller.Instance, ComponentPropertyUnmarshaller.Instance);
+                    unmarshalledObject.Fields = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("operand", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Operand = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("operandType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OperandType = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("operator", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Operator = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("property", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Property = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("then", targetDepth))
+                if (context.TestExpression("global", targetDepth))
                 {
                     var unmarshaller = ComponentPropertyUnmarshaller.Instance;
-                    unmarshalledObject.Then = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Global = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("id", targetDepth))
+                {
+                    var unmarshaller = ComponentPropertyUnmarshaller.Instance;
+                    unmarshalledObject.Id = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("model", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Model = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("state", targetDepth))
+                {
+                    var unmarshaller = MutationActionSetStateParameterUnmarshaller.Instance;
+                    unmarshalledObject.State = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("target", targetDepth))
+                {
+                    var unmarshaller = ComponentPropertyUnmarshaller.Instance;
+                    unmarshalledObject.Target = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("type", targetDepth))
+                {
+                    var unmarshaller = ComponentPropertyUnmarshaller.Instance;
+                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("url", targetDepth))
+                {
+                    var unmarshaller = ComponentPropertyUnmarshaller.Instance;
+                    unmarshalledObject.Url = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -112,12 +124,12 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
         }
 
 
-        private static ComponentConditionPropertyUnmarshaller _instance = new ComponentConditionPropertyUnmarshaller();        
+        private static ActionParametersUnmarshaller _instance = new ActionParametersUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ComponentConditionPropertyUnmarshaller Instance
+        public static ActionParametersUnmarshaller Instance
         {
             get
             {

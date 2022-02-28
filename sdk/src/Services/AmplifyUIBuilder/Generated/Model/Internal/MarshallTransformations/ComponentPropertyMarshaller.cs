@@ -86,6 +86,12 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetComponentName())
+            {
+                context.Writer.WritePropertyName("componentName");
+                context.Writer.Write(requestObject.ComponentName);
+            }
+
             if(requestObject.IsSetConcat())
             {
                 context.Writer.WritePropertyName("concat");
@@ -141,6 +147,12 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("model");
                 context.Writer.Write(requestObject.Model);
+            }
+
+            if(requestObject.IsSetProperty())
+            {
+                context.Writer.WritePropertyName("property");
+                context.Writer.Write(requestObject.Property);
             }
 
             if(requestObject.IsSetType())
