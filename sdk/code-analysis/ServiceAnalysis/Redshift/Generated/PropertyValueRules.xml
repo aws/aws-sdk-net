@@ -44,6 +44,10 @@
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Redshift.Model.AssociateDataShareConsumerRequest.ConsumerRegion</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Redshift.Model.AssociateDataShareConsumerRequest.DataShareArn</property>
     <max>2147483647</max>
   </property-value-rule>
@@ -1129,6 +1133,10 @@
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Redshift.Model.DisassociateDataShareConsumerRequest.ConsumerRegion</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Redshift.Model.DisassociateDataShareConsumerRequest.DataShareArn</property>
     <max>2147483647</max>
   </property-value-rule>
@@ -1961,6 +1969,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DataShareAssociation.ConsumerIdentifier</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.DataShareAssociation.ConsumerRegion</property>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>

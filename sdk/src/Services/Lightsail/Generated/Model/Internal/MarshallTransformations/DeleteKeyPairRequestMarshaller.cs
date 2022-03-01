@@ -67,6 +67,12 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetExpectedFingerprint())
+                {
+                    context.Writer.WritePropertyName("expectedFingerprint");
+                    context.Writer.Write(publicRequest.ExpectedFingerprint);
+                }
+
                 if(publicRequest.IsSetKeyPairName())
                 {
                     context.Writer.WritePropertyName("keyPairName");

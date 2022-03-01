@@ -41,6 +41,7 @@ namespace Amazon.Appflow.Model
         private RedshiftDestinationProperties _redshift;
         private S3DestinationProperties _s3;
         private SalesforceDestinationProperties _salesforce;
+        private SAPODataDestinationProperties _sapoData;
         private SnowflakeDestinationProperties _snowflake;
         private UpsolverDestinationProperties _upsolver;
         private ZendeskDestinationProperties _zendesk;
@@ -187,6 +188,24 @@ namespace Amazon.Appflow.Model
         internal bool IsSetSalesforce()
         {
             return this._salesforce != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SAPOData. 
+        /// <para>
+        /// The properties required to query SAPOData.
+        /// </para>
+        /// </summary>
+        public SAPODataDestinationProperties SAPOData
+        {
+            get { return this._sapoData; }
+            set { this._sapoData = value; }
+        }
+
+        // Check to see if SAPOData property is set
+        internal bool IsSetSAPOData()
+        {
+            return this._sapoData != null;
         }
 
         /// <summary>

@@ -34,6 +34,7 @@ namespace Amazon.Redshift.Model
     public partial class DataShareAssociation
     {
         private string _consumerIdentifier;
+        private string _consumerRegion;
         private DateTime? _createdDate;
         private DataShareStatus _status;
         private DateTime? _statusChangeDate;
@@ -55,6 +56,26 @@ namespace Amazon.Redshift.Model
         internal bool IsSetConsumerIdentifier()
         {
             return this._consumerIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConsumerRegion. 
+        /// <para>
+        /// The Amazon Web Services Region of the consumer accounts that have an association with
+        /// a producer datashare.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=2147483647)]
+        public string ConsumerRegion
+        {
+            get { return this._consumerRegion; }
+            set { this._consumerRegion = value; }
+        }
+
+        // Check to see if ConsumerRegion property is set
+        internal bool IsSetConsumerRegion()
+        {
+            return this._consumerRegion != null;
         }
 
         /// <summary>

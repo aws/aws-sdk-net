@@ -79,6 +79,17 @@ namespace Amazon.Route53RecoveryCluster.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.RoutingControlState);
                 }
 
+                if(publicRequest.IsSetSafetyRulesToOverride())
+                {
+                    context.Writer.WritePropertyName("SafetyRulesToOverride");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestSafetyRulesToOverrideListValue in publicRequest.SafetyRulesToOverride)
+                    {
+                            context.Writer.Write(publicRequestSafetyRulesToOverrideListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

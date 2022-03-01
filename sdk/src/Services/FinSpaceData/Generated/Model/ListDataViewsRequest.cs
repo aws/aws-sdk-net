@@ -79,7 +79,7 @@ namespace Amazon.FinSpaceData.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A token indicating where a results page should begin.
+        /// A token that indicates where a results page should begin.
         /// </para>
         /// </summary>
         public string NextToken

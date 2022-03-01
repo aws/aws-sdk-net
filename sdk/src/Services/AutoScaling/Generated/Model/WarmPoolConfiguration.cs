@@ -33,10 +33,29 @@ namespace Amazon.AutoScaling.Model
     /// </summary>
     public partial class WarmPoolConfiguration
     {
+        private InstanceReusePolicy _instanceReusePolicy;
         private int? _maxGroupPreparedCapacity;
         private int? _minSize;
         private WarmPoolState _poolState;
         private WarmPoolStatus _status;
+
+        /// <summary>
+        /// Gets and sets the property InstanceReusePolicy. 
+        /// <para>
+        /// The instance reuse policy.
+        /// </para>
+        /// </summary>
+        public InstanceReusePolicy InstanceReusePolicy
+        {
+            get { return this._instanceReusePolicy; }
+            set { this._instanceReusePolicy = value; }
+        }
+
+        // Check to see if InstanceReusePolicy property is set
+        internal bool IsSetInstanceReusePolicy()
+        {
+            return this._instanceReusePolicy != null;
+        }
 
         /// <summary>
         /// Gets and sets the property MaxGroupPreparedCapacity. 

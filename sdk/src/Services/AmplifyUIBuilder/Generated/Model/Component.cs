@@ -43,11 +43,13 @@ namespace Amazon.AmplifyUIBuilder.Model
         private string _componentType;
         private DateTime? _createdAt;
         private string _environmentName;
+        private Dictionary<string, ComponentEvent> _events = new Dictionary<string, ComponentEvent>();
         private string _id;
         private DateTime? _modifiedAt;
         private string _name;
         private Dictionary<string, Dictionary<string, string>> _overrides = new Dictionary<string, Dictionary<string, string>>();
         private Dictionary<string, ComponentProperty> _properties = new Dictionary<string, ComponentProperty>();
+        private string _schemaVersion;
         private string _sourceId;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private List<ComponentVariant> _variants = new List<ComponentVariant>();
@@ -74,7 +76,8 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// <summary>
         /// Gets and sets the property BindingProperties. 
         /// <para>
-        /// The information to connect a component's properties to data at runtime.
+        /// The information to connect a component's properties to data at runtime. You can't
+        /// specify <code>tags</code> as a valid property for <code>bindingProperties</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -112,7 +115,7 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// Gets and sets the property CollectionProperties. 
         /// <para>
         /// The data binding configuration for the component's properties. Use this for a collection
-        /// component.
+        /// component. You can't specify <code>tags</code> as a valid property for <code>collectionProperties</code>.
         /// </para>
         /// </summary>
         public Dictionary<string, ComponentDataConfiguration> CollectionProperties
@@ -186,6 +189,25 @@ namespace Amazon.AmplifyUIBuilder.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Events. 
+        /// <para>
+        /// Describes the events that can be raised on the component. Use for the workflow feature
+        /// in Amplify Studio that allows you to bind events and actions to components.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, ComponentEvent> Events
+        {
+            get { return this._events; }
+            set { this._events = value; }
+        }
+
+        // Check to see if Events property is set
+        internal bool IsSetEvents()
+        {
+            return this._events != null && this._events.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
         /// The unique ID of the component.
@@ -245,7 +267,7 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// Gets and sets the property Overrides. 
         /// <para>
         /// Describes the component's properties that can be overriden in a customized instance
-        /// of the component.
+        /// of the component. You can't specify <code>tags</code> as a valid property for <code>overrides</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -264,7 +286,8 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// <summary>
         /// Gets and sets the property Properties. 
         /// <para>
-        /// Describes the component's properties.
+        /// Describes the component's properties. You can't specify <code>tags</code> as a valid
+        /// property for <code>properties</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -278,6 +301,24 @@ namespace Amazon.AmplifyUIBuilder.Model
         internal bool IsSetProperties()
         {
             return this._properties != null && this._properties.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SchemaVersion. 
+        /// <para>
+        /// The schema version of the component when it was imported.
+        /// </para>
+        /// </summary>
+        public string SchemaVersion
+        {
+            get { return this._schemaVersion; }
+            set { this._schemaVersion = value; }
+        }
+
+        // Check to see if SchemaVersion property is set
+        internal bool IsSetSchemaVersion()
+        {
+            return this._schemaVersion != null;
         }
 
         /// <summary>

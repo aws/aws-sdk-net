@@ -33,11 +33,12 @@ namespace Amazon.Athena.Model
     /// provides standardized error information to help you understand failed queries and
     /// take steps after a query failure occurs. <code>AthenaError</code> includes an <code>ErrorCategory</code>
     /// field that specifies whether the cause of the failed query is due to system error,
-    /// user error, or unknown error.
+    /// user error, or other error.
     /// </summary>
     public partial class AthenaError
     {
         private int? _errorCategory;
+        private int? _errorType;
 
         /// <summary>
         /// Gets and sets the property ErrorCategory. 
@@ -55,7 +56,7 @@ namespace Amazon.Athena.Model
         /// </para>
         ///  
         /// <para>
-        ///  <b>3</b> - Unknown
+        ///  <b>3</b> - Other
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=3)]
@@ -69,6 +70,27 @@ namespace Amazon.Athena.Model
         internal bool IsSetErrorCategory()
         {
             return this._errorCategory.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ErrorType. 
+        /// <para>
+        /// An integer value that provides specific information about an Athena query error. For
+        /// the meaning of specific values, see the <a href="https://docs.aws.amazon.com/athena/latest/ug/error-reference.html#error-reference-error-type-reference">Error
+        /// Type Reference</a> in the <i>Amazon Athena User Guide</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=9999)]
+        public int ErrorType
+        {
+            get { return this._errorType.GetValueOrDefault(); }
+            set { this._errorType = value; }
+        }
+
+        // Check to see if ErrorType property is set
+        internal bool IsSetErrorType()
+        {
+            return this._errorType.HasValue; 
         }
 
     }

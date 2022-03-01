@@ -29,7 +29,23 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// </summary>
     public abstract class S3ReponseUnmarshaller : XmlResponseUnmarshaller
     {
-        public override UnmarshallerContext CreateContext(IWebResponseData response, bool readEntireResponse, Stream stream, RequestMetrics metrics, bool isException)
+        public override UnmarshallerContext CreateContext(
+            IWebResponseData response,
+            bool readEntireResponse,
+            Stream stream,
+            RequestMetrics metrics,
+            bool isException)
+        {
+            return CreateContext(response, readEntireResponse, stream, metrics, isException, null);
+        }
+
+        public override UnmarshallerContext CreateContext(
+            IWebResponseData response,
+            bool readEntireResponse,
+            Stream stream,
+            RequestMetrics metrics,
+            bool isException,
+            IRequestContext context)
         {
             if (response.IsHeaderPresent(HeaderKeys.XAmzId2Header))
                 metrics.AddProperty(Metric.AmzId2, response.GetHeaderValue(HeaderKeys.XAmzId2Header));
@@ -37,7 +53,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (response.IsHeaderPresent(HeaderKeys.XAmzCloudFrontIdHeader))
                 metrics.AddProperty(Metric.AmzCfId, response.GetHeaderValue(HeaderKeys.XAmzCloudFrontIdHeader));
 
-            return base.CreateContext(response, readEntireResponse, stream, metrics, isException);
+            return base.CreateContext(response, readEntireResponse, stream, metrics, isException, context);
         }
 
         public override AmazonWebServiceResponse Unmarshall(UnmarshallerContext input)
@@ -61,9 +77,23 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             return response;
         }
 
-        protected override UnmarshallerContext ConstructUnmarshallerContext(Stream responseStream, bool maintainResponseBody, IWebResponseData response, bool isException)
+        protected override UnmarshallerContext ConstructUnmarshallerContext(
+            Stream responseStream,
+            bool maintainResponseBody,
+            IWebResponseData response,
+            bool isException)
         {
-            return new S3UnmarshallerContext(responseStream, maintainResponseBody, response, isException);
+             return new S3UnmarshallerContext(responseStream, maintainResponseBody, response, isException);
+        }
+
+        protected override UnmarshallerContext ConstructUnmarshallerContext(
+            Stream responseStream,
+            bool maintainResponseBody,
+            IWebResponseData response,
+            bool isException,
+            IRequestContext requestContext)
+        {
+            return new S3UnmarshallerContext(responseStream, maintainResponseBody, response, isException, requestContext);
         }
 
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)

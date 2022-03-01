@@ -37,6 +37,7 @@ namespace Amazon.CloudWatchEvidently.Model
         private int? _maxResults;
         private string _nextToken;
         private string _project;
+        private ExperimentStatus _status;
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
@@ -94,6 +95,25 @@ namespace Amazon.CloudWatchEvidently.Model
         internal bool IsSetProject()
         {
             return this._project != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// Use this optional parameter to limit the returned results to only the experiments
+        /// with the status that you specify here.
+        /// </para>
+        /// </summary>
+        public ExperimentStatus Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
         }
 
     }

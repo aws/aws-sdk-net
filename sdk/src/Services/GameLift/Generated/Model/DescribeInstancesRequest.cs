@@ -156,8 +156,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Location. 
         /// <para>
-        /// The name of a location to retrieve instance information for, in the form of an AWS
-        /// Region code such as <code>us-west-2</code>. 
+        /// The name of a location to retrieve instance information for, in the form of an Amazon
+        /// Web Services Region code such as <code>us-west-2</code>. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

@@ -62,10 +62,6 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>DeploymentStrategy</code> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
     ///  <code>Package</code> 
     /// </para>
     ///  </li> <li> 

@@ -45,7 +45,7 @@ namespace Amazon.WAFV2.Model
         /// rule group <code>AWSManagedRulesATPRuleSet</code>. This is only populated if you are
         /// using a rule group in your web ACL that integrates with your applications in this
         /// way. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF
-        /// application integration</a> in the <i>WAF Developer Guide</i>.
+        /// client application integration</a> in the <i>WAF Developer Guide</i>.
         /// </para>
         /// </summary>
         public string ApplicationIntegrationURL

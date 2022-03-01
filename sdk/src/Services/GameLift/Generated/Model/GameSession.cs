@@ -211,8 +211,9 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// A set of custom properties for a game session, formatted as key:value pairs. These
         /// properties are passed to a game server process in the <a>GameSession</a> object with
-        /// a request to start a new game session. You can search for active game sessions based
-        /// on this custom data with <a>SearchGameSessions</a>.
+        /// a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
+        /// a Game Session</a>). You can search for active game sessions based on this custom
+        /// data with <a>SearchGameSessions</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=16)]
@@ -233,7 +234,8 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// A set of custom game session properties, formatted as a single string value. This
         /// data is passed to a game server process in the <a>GameSession</a> object with a request
-        /// to start a new game session.
+        /// to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
+        /// a Game Session</a>).
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=262144)]
@@ -294,8 +296,8 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property Location. 
         /// <para>
         /// The fleet location where the game session is running. This value might specify the
-        /// fleet's home Region or a remote location. Location is expressed as an AWS Region code
-        /// such as <code>us-west-2</code>. 
+        /// fleet's home Region or a remote location. Location is expressed as an Amazon Web Services
+        /// Region code such as <code>us-west-2</code>. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -319,7 +321,7 @@ namespace Amazon.GameLift.Model
         /// used, it contains data on all players assigned to the match, including player attributes
         /// and team assignments. For more details on matchmaker data, see <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">Match
         /// Data</a>. Matchmaker data is useful when requesting match backfills, and is updated
-        /// whenever new players are added during a successful backfill (see <a>StartMatchBackfill</a>).
+        /// whenever new players are added during a successful backfill (see <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartMatchBackfill.html">StartMatchBackfill</a>).
         /// 
         /// </para>
         /// </summary>

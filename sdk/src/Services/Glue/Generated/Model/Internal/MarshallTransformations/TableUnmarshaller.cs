@@ -166,6 +166,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.UpdateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("VersionId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.VersionId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ViewExpandedText", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

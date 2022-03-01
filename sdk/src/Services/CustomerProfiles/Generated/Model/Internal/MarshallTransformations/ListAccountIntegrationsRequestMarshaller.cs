@@ -60,6 +60,9 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             
+            if (publicRequest.IsSetIncludeHidden())
+                request.Parameters.Add("include-hidden", StringUtils.FromBool(publicRequest.IncludeHidden));
+            
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("max-results", StringUtils.FromInt(publicRequest.MaxResults));
             

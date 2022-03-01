@@ -33,9 +33,28 @@ namespace Amazon.FMS.Model
     /// </summary>
     public partial class ComplianceViolator
     {
+        private Dictionary<string, string> _metadata = new Dictionary<string, string>();
         private string _resourceId;
         private string _resourceType;
         private ViolationReason _violationReason;
+
+        /// <summary>
+        /// Gets and sets the property Metadata. 
+        /// <para>
+        /// Metadata about the resource that doesn't comply with the policy scope.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> Metadata
+        {
+            get { return this._metadata; }
+            set { this._metadata = value; }
+        }
+
+        // Check to see if Metadata property is set
+        internal bool IsSetMetadata()
+        {
+            return this._metadata != null && this._metadata.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property ResourceId. 

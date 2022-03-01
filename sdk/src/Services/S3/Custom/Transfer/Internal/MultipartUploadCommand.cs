@@ -187,7 +187,8 @@ namespace Amazon.S3.Transfer.Internal
                 Timeout = ClientConfig.GetTimeoutValue(this._config.DefaultTimeout, this._fileTransporterRequest.Timeout),
 #endif                
                 DisableMD5Stream = this._fileTransporterRequest.DisableMD5Stream,
-                DisablePayloadSigning = this._fileTransporterRequest.DisablePayloadSigning
+                DisablePayloadSigning = this._fileTransporterRequest.DisablePayloadSigning,
+                ChecksumAlgorithm = this._fileTransporterRequest.ChecksumAlgorithm
             };
 
             if ((filePosition + this._partSize >= this._contentLength)
@@ -236,7 +237,8 @@ namespace Amazon.S3.Transfer.Internal
                 ServerSideEncryptionCustomerMethod = this._fileTransporterRequest.ServerSideEncryptionCustomerMethod,
                 ServerSideEncryptionCustomerProvidedKey = this._fileTransporterRequest.ServerSideEncryptionCustomerProvidedKey,
                 ServerSideEncryptionCustomerProvidedKeyMD5 = this._fileTransporterRequest.ServerSideEncryptionCustomerProvidedKeyMD5,
-                TagSet = this._fileTransporterRequest.TagSet
+                TagSet = this._fileTransporterRequest.TagSet,
+                ChecksumAlgorithm = this._fileTransporterRequest.ChecksumAlgorithm
             };
             ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)initRequest).AddBeforeRequestHandler(this.RequestEventHandler);
 

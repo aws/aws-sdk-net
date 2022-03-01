@@ -43,6 +43,10 @@ namespace Amazon.Textract
         /// </summary>
         public static readonly BlockType LINE = new BlockType("LINE");
         /// <summary>
+        /// Constant MERGED_CELL for BlockType
+        /// </summary>
+        public static readonly BlockType MERGED_CELL = new BlockType("MERGED_CELL");
+        /// <summary>
         /// Constant PAGE for BlockType
         /// </summary>
         public static readonly BlockType PAGE = new BlockType("PAGE");
@@ -54,6 +58,10 @@ namespace Amazon.Textract
         /// Constant TABLE for BlockType
         /// </summary>
         public static readonly BlockType TABLE = new BlockType("TABLE");
+        /// <summary>
+        /// Constant TITLE for BlockType
+        /// </summary>
+        public static readonly BlockType TITLE = new BlockType("TITLE");
         /// <summary>
         /// Constant WORD for BlockType
         /// </summary>
@@ -150,6 +158,10 @@ namespace Amazon.Textract
     public class EntityType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant COLUMN_HEADER for EntityType
+        /// </summary>
+        public static readonly EntityType COLUMN_HEADER = new EntityType("COLUMN_HEADER");
         /// <summary>
         /// Constant KEY for EntityType
         /// </summary>
@@ -316,6 +328,14 @@ namespace Amazon.Textract
         /// Constant COMPLEX_FEATURES for RelationshipType
         /// </summary>
         public static readonly RelationshipType COMPLEX_FEATURES = new RelationshipType("COMPLEX_FEATURES");
+        /// <summary>
+        /// Constant MERGED_CELL for RelationshipType
+        /// </summary>
+        public static readonly RelationshipType MERGED_CELL = new RelationshipType("MERGED_CELL");
+        /// <summary>
+        /// Constant TITLE for RelationshipType
+        /// </summary>
+        public static readonly RelationshipType TITLE = new RelationshipType("TITLE");
         /// <summary>
         /// Constant VALUE for RelationshipType
         /// </summary>

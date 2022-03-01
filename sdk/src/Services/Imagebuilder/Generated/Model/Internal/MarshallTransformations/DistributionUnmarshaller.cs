@@ -76,6 +76,12 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                     unmarshalledObject.ContainerDistributionConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("fastLaunchConfigurations", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<FastLaunchConfiguration, FastLaunchConfigurationUnmarshaller>(FastLaunchConfigurationUnmarshaller.Instance);
+                    unmarshalledObject.FastLaunchConfigurations = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("launchTemplateConfigurations", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<LaunchTemplateConfiguration, LaunchTemplateConfigurationUnmarshaller>(LaunchTemplateConfigurationUnmarshaller.Instance);

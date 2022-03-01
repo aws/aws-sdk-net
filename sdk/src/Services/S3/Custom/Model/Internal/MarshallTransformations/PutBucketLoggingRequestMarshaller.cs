@@ -43,6 +43,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             request.HttpMethod = "PUT";
 
+            if (putBucketLoggingRequest.IsSetChecksumAlgorithm())
+                request.Headers.Add(S3Constants.AmzHeaderSdkChecksumAlgorithm, S3Transforms.ToStringValue(putBucketLoggingRequest.ChecksumAlgorithm));
+
             if (putBucketLoggingRequest.IsSetExpectedBucketOwner())
                 request.Headers.Add(S3Constants.AmzHeaderExpectedBucketOwner, S3Transforms.ToStringValue(putBucketLoggingRequest.ExpectedBucketOwner));
 
@@ -138,8 +141,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 request.Content = Encoding.UTF8.GetBytes(content);
                 request.Headers[HeaderKeys.ContentTypeHeader] = "application/xml";
 
-                var checksum = AWSSDKUtils.GenerateChecksumForContent(content, true);
-                request.Headers[HeaderKeys.ContentMD5Header] = checksum;
+                ChecksumUtils.SetRequestChecksum(request, putBucketLoggingRequest.ChecksumAlgorithm);
             }
             catch (EncoderFallbackException e)
             {

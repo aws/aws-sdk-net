@@ -89,10 +89,6 @@ namespace Amazon.CustomerProfiles.Model
     /// <para>
     /// FullName
     /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// BusinessName
-    /// </para>
     ///  </li> </ul> 
     /// <para>
     /// For example, two or more profiles—with spelling mistakes such as <b>John Doe</b> and

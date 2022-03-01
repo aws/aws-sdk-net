@@ -44,7 +44,7 @@ namespace Amazon.Amplify.Model
         ///  The condition for a URL rewrite or redirect rule, such as a country code. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2048)]
+        [AWSProperty(Min=0, Max=2048)]
         public string Condition
         {
             get { return this._condition; }

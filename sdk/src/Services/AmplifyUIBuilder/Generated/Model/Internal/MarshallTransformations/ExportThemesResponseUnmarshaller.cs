@@ -57,6 +57,12 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
                     response.Entities = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("nextToken", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.NextToken = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

@@ -47,7 +47,7 @@ namespace Amazon.Amplify.Model
         /// app. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1000)]
+        [AWSProperty(Required=true, Min=0, Max=1000)]
         public string BackendEnvironmentArn
         {
             get { return this._backendEnvironmentArn; }

@@ -787,14 +787,6 @@ namespace Amazon.Athena
         /// 
         ///  
         /// <para>
-        /// If the original query execution ran using an <a>ResultConfiguration$ExpectedBucketOwner</a>
-        /// setting, the setting also applies to Amazon S3 read operations when <code>GetQueryResults</code>
-        /// is called. If an expected bucket owner has been specified and the query results are
-        /// in an Amazon S3 bucket whose owner account ID is different from the expected bucket
-        /// owner, the <code>GetQueryResults</code> call fails with an Amazon S3 permissions error.
-        /// </para>
-        ///  
-        /// <para>
         /// To stream query results successfully, the IAM principal with permission to call <code>GetQueryResults</code>
         /// also must have permissions to the Amazon S3 <code>GetObject</code> action for the
         /// Athena query results location.
@@ -831,14 +823,6 @@ namespace Amazon.Athena
         /// in the <i>Amazon Athena User Guide</i>. This request does not execute the query but
         /// returns results. Use <a>StartQueryExecution</a> to run a query.
         /// 
-        ///  
-        /// <para>
-        /// If the original query execution ran using an <a>ResultConfiguration$ExpectedBucketOwner</a>
-        /// setting, the setting also applies to Amazon S3 read operations when <code>GetQueryResults</code>
-        /// is called. If an expected bucket owner has been specified and the query results are
-        /// in an Amazon S3 bucket whose owner account ID is different from the expected bucket
-        /// owner, the <code>GetQueryResults</code> call fails with an Amazon S3 permissions error.
-        /// </para>
         ///  
         /// <para>
         /// To stream query results successfully, the IAM principal with permission to call <code>GetQueryResults</code>
@@ -1686,6 +1670,48 @@ namespace Amazon.Athena
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UpdateDataCatalog">REST API Reference for UpdateDataCatalog Operation</seealso>
         Task<UpdateDataCatalogResponse> UpdateDataCatalogAsync(UpdateDataCatalogRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateNamedQuery
+
+
+        /// <summary>
+        /// Updates a <a>NamedQuery</a> object. The database or workgroup cannot be updated.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateNamedQuery service method.</param>
+        /// 
+        /// <returns>The response from the UpdateNamedQuery service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UpdateNamedQuery">REST API Reference for UpdateNamedQuery Operation</seealso>
+        UpdateNamedQueryResponse UpdateNamedQuery(UpdateNamedQueryRequest request);
+
+
+
+        /// <summary>
+        /// Updates a <a>NamedQuery</a> object. The database or workgroup cannot be updated.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateNamedQuery service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateNamedQuery service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UpdateNamedQuery">REST API Reference for UpdateNamedQuery Operation</seealso>
+        Task<UpdateNamedQueryResponse> UpdateNamedQueryAsync(UpdateNamedQueryRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

@@ -35,7 +35,7 @@ namespace Amazon.Budgets.Model
     /// 
     ///  
     /// <para>
-    /// This is the ARN pattern for a budget: 
+    /// This is the Amazon Resource Name (ARN) pattern for a budget: 
     /// </para>
     ///  
     /// <para>
@@ -44,6 +44,7 @@ namespace Amazon.Budgets.Model
     /// </summary>
     public partial class Budget
     {
+        private AutoAdjustData _autoAdjustData;
         private Spend _budgetLimit;
         private string _budgetName;
         private BudgetType _budgetType;
@@ -56,6 +57,24 @@ namespace Amazon.Budgets.Model
         private TimeUnit _timeUnit;
 
         /// <summary>
+        /// Gets and sets the property AutoAdjustData. 
+        /// <para>
+        /// The parameters that determine the budget amount for an auto-adjusting budget.
+        /// </para>
+        /// </summary>
+        public AutoAdjustData AutoAdjustData
+        {
+            get { return this._autoAdjustData; }
+            set { this._autoAdjustData = value; }
+        }
+
+        // Check to see if AutoAdjustData property is set
+        internal bool IsSetAutoAdjustData()
+        {
+            return this._autoAdjustData != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property BudgetLimit. 
         /// <para>
         /// The total amount of cost, usage, RI utilization, RI coverage, Savings Plans utilization,
@@ -65,7 +84,7 @@ namespace Amazon.Budgets.Model
         /// <para>
         ///  <code>BudgetLimit</code> is required for cost or usage budgets, but optional for
         /// RI or Savings Plans utilization or coverage budgets. RI and Savings Plans utilization
-        /// or coverage budgets default to <code>100</code>, which is the only valid value for
+        /// or coverage budgets default to <code>100</code>. This is the only valid value for
         /// RI or Savings Plans utilization or coverage budgets. You can't use <code>BudgetLimit</code>
         /// with <code>PlannedBudgetLimits</code> for <code>CreateBudget</code> and <code>UpdateBudget</code>
         /// actions. 
@@ -106,8 +125,8 @@ namespace Amazon.Budgets.Model
         /// <summary>
         /// Gets and sets the property BudgetType. 
         /// <para>
-        /// Whether this budget tracks costs, usage, RI utilization, RI coverage, Savings Plans
-        /// utilization, or Savings Plans coverage.
+        /// Specifies whether this budget tracks costs, usage, RI utilization, RI coverage, Savings
+        /// Plans utilization, or Savings Plans coverage.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -144,15 +163,18 @@ namespace Amazon.Budgets.Model
         /// <summary>
         /// Gets and sets the property CostFilters. 
         /// <para>
-        /// The cost filters, such as service or tag, that are applied to a budget.
+        /// The cost filters, such as <code>Region</code>, <code>Service</code>, <code>member
+        /// account</code>, <code>Tag</code>, or <code>Cost Category</code>, that are applied
+        /// to a budget.
         /// </para>
         ///  
         /// <para>
-        /// AWS Budgets supports the following services as a filter for RI budgets:
+        /// Amazon Web Services Budgets supports the following services as a <code>Service</code>
+        /// filter for RI budgets:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Amazon Elastic Compute Cloud - Compute
+        /// Amazon EC2
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -168,7 +190,7 @@ namespace Amazon.Budgets.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Amazon Elasticsearch Service
+        /// Amazon OpenSearch Service
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -233,7 +255,7 @@ namespace Amazon.Budgets.Model
         ///  
         /// <para>
         ///  <code>PlannedBudgetLimits</code> is available for cost or usage budget and supports
-        /// monthly and quarterly <code>TimeUnit</code>. 
+        /// both monthly and quarterly <code>TimeUnit</code>. 
         /// </para>
         ///  
         /// <para>
@@ -243,14 +265,14 @@ namespace Amazon.Budgets.Model
         /// </para>
         ///  
         /// <para>
-        /// For quarterly budgets, provide 4 quarters of <code>PlannedBudgetLimits</code> value
+        /// For quarterly budgets, provide four quarters of <code>PlannedBudgetLimits</code> value
         /// entries in standard calendar quarter increments. This must start from the current
-        /// quarter and include the next 3 quarters. The <code>key</code> is the start of the
-        /// quarter, <code>UTC</code> in epoch seconds. 
+        /// quarter and include the next three quarters. The <code>key</code> is the start of
+        /// the quarter, <code>UTC</code> in epoch seconds. 
         /// </para>
         ///  
         /// <para>
-        /// If the planned budget expires before 12 months for monthly or 4 quarters for quarterly,
+        /// If the planned budget expires before 12 months for monthly or four quarters for quarterly,
         /// provide the <code>PlannedBudgetLimits</code> values only for the remaining periods.
         /// </para>
         ///  
@@ -268,11 +290,11 @@ namespace Amazon.Budgets.Model
         ///  
         /// <para>
         ///  <code>DescribeBudget</code> and <code>DescribeBudgets</code> response along with
-        /// <code>PlannedBudgetLimits</code> will also contain <code>BudgetLimit</code> representing
+        /// <code>PlannedBudgetLimits</code> also contain <code>BudgetLimit</code> representing
         /// the current month or quarter limit present in <code>PlannedBudgetLimits</code>. This
-        /// only applies to budgets created with <code>PlannedBudgetLimits</code>. Budgets created
-        /// without <code>PlannedBudgetLimits</code> will only contain <code>BudgetLimit</code>,
-        /// and no <code>PlannedBudgetLimits</code>.
+        /// only applies to budgets that are created with <code>PlannedBudgetLimits</code>. Budgets
+        /// that are created without <code>PlannedBudgetLimits</code> only contain <code>BudgetLimit</code>.
+        /// They don't contain <code>PlannedBudgetLimits</code>.
         /// </para>
         /// </summary>
         public Dictionary<string, Spend> PlannedBudgetLimits
@@ -290,20 +312,20 @@ namespace Amazon.Budgets.Model
         /// <summary>
         /// Gets and sets the property TimePeriod. 
         /// <para>
-        /// The period of time that is covered by a budget. The period has a start date and an
-        /// end date. The start date must come before the end date. The end date must come before
-        /// <code>06/15/87 00:00 UTC</code>. 
+        /// The period of time that's covered by a budget. You setthe start date and end date.
+        /// The start date must come before the end date. The end date must come before <code>06/15/87
+        /// 00:00 UTC</code>. 
         /// </para>
         ///  
         /// <para>
-        /// If you create your budget and don't specify a start date, AWS defaults to the start
-        /// of your chosen time period (DAILY, MONTHLY, QUARTERLY, or ANNUALLY). For example,
-        /// if you created your budget on January 24, 2018, chose <code>DAILY</code>, and didn't
-        /// set a start date, AWS set your start date to <code>01/24/18 00:00 UTC</code>. If you
-        /// chose <code>MONTHLY</code>, AWS set your start date to <code>01/01/18 00:00 UTC</code>.
-        /// If you didn't specify an end date, AWS set your end date to <code>06/15/87 00:00 UTC</code>.
-        /// The defaults are the same for the AWS Billing and Cost Management console and the
-        /// API. 
+        /// If you create your budget and don't specify a start date, Amazon Web Services defaults
+        /// to the start of your chosen time period (DAILY, MONTHLY, QUARTERLY, or ANNUALLY).
+        /// For example, if you created your budget on January 24, 2018, chose <code>DAILY</code>,
+        /// and didn't set a start date, Amazon Web Services set your start date to <code>01/24/18
+        /// 00:00 UTC</code>. If you chose <code>MONTHLY</code>, Amazon Web Services set your
+        /// start date to <code>01/01/18 00:00 UTC</code>. If you didn't specify an end date,
+        /// Amazon Web Services set your end date to <code>06/15/87 00:00 UTC</code>. The defaults
+        /// are the same for the Billing and Cost Management console and the API. 
         /// </para>
         ///  
         /// <para>
@@ -311,7 +333,8 @@ namespace Amazon.Budgets.Model
         /// </para>
         ///  
         /// <para>
-        /// After the end date, AWS deletes the budget and all associated notifications and subscribers.
+        /// After the end date, Amazon Web Services deletes the budget and all the associated
+        /// notifications and subscribers.
         /// </para>
         /// </summary>
         public TimePeriod TimePeriod

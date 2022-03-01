@@ -188,12 +188,6 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// To create an Elastic Fabric Adapter (EFA), specify <code>efa</code>. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic
-        /// Fabric Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-        /// </para>
-        ///  
-        /// <para>
         /// Valid values: <code>interface</code> | <code>efa</code> 
         /// </para>
         /// </summary>

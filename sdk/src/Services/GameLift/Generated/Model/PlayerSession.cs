@@ -252,7 +252,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Port. 
         /// <para>
-        /// Port number for the game session. To connect to a Amazon GameLift server process,
+        /// Port number for the game session. To connect to a Amazon Web Services server process,
         /// an app needs both the IP address and port number.
         /// </para>
         /// </summary>

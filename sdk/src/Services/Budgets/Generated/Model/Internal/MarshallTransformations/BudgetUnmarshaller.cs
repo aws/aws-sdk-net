@@ -64,6 +64,12 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AutoAdjustData", targetDepth))
+                {
+                    var unmarshaller = AutoAdjustDataUnmarshaller.Instance;
+                    unmarshalledObject.AutoAdjustData = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("BudgetLimit", targetDepth))
                 {
                     var unmarshaller = SpendUnmarshaller.Instance;

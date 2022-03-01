@@ -136,7 +136,19 @@ namespace Amazon.Imagebuilder
 
         /// <summary>
         /// Creates a new component that can be used to build, validate, test, and assess your
-        /// image.
+        /// image. The component is based on a YAML document that you specify using exactly one
+        /// of the following methods:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Inline, using the <code>data</code> property in the request body.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A URL that points to a YAML document file stored in Amazon S3, using the <code>uri</code>
+        /// property in the request body.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateComponent service method.</param>
         /// 
@@ -188,7 +200,19 @@ namespace Amazon.Imagebuilder
 
         /// <summary>
         /// Creates a new component that can be used to build, validate, test, and assess your
-        /// image.
+        /// image. The component is based on a YAML document that you specify using exactly one
+        /// of the following methods:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Inline, using the <code>data</code> property in the request body.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A URL that points to a YAML document file stored in Amazon S3, using the <code>uri</code>
+        /// property in the request body.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateComponent service method.</param>
         /// <param name="cancellationToken">

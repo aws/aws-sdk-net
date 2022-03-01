@@ -73,6 +73,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (getObjectRequest.IsSetExpectedBucketOwner())
                 request.Headers.Add(S3Constants.AmzHeaderExpectedBucketOwner, S3Transforms.ToStringValue(getObjectRequest.ExpectedBucketOwner));
 
+            if (getObjectRequest.IsSetChecksumMode())
+                request.Headers.Add(S3Constants.AmzHeaderChecksumMode, S3Transforms.ToStringValue(getObjectRequest.ChecksumMode));
+
             if (string.IsNullOrEmpty(getObjectRequest.BucketName))
                 throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "GetObjectRequest.BucketName");
             if (string.IsNullOrEmpty(getObjectRequest.Key))

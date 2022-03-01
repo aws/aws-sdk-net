@@ -329,7 +329,7 @@ namespace Amazon.Lightsail.Model
         /// Gets and sets the property Origin. 
         /// <para>
         /// An object that describes the origin resource of the distribution, such as a Lightsail
-        /// instance or load balancer.
+        /// instance, bucket, or load balancer.
         /// </para>
         ///  
         /// <para>

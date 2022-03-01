@@ -29,16 +29,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FSx.Model
 {
     /// <summary>
-    /// The configuration object for the OpenZFS file system used in the <code>DeleteFileSystem</code>
+    /// The configuration object for the Amazon FSx for OpenZFS file system used in the <code>DeleteFileSystem</code>
     /// operation.
     /// </summary>
     public partial class DeleteFileSystemOpenZFSConfiguration
     {
         private List<Tag> _finalBackupTags = new List<Tag>();
+        private List<string> _options = new List<string>();
         private bool? _skipFinalBackup;
 
         /// <summary>
-        /// Gets and sets the property FinalBackupTags.
+        /// Gets and sets the property FinalBackupTags. 
+        /// <para>
+        /// A list of tags to apply to the file system's final backup.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
         public List<Tag> FinalBackupTags
@@ -54,12 +58,33 @@ namespace Amazon.FSx.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Options. 
+        /// <para>
+        /// To delete a file system if there are child volumes present below the root volume,
+        /// use the string <code>DELETE_CHILD_VOLUMES_AND_SNAPSHOTS</code>. If your file system
+        /// has child volumes and you don't use this option, the delete request will fail.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=1)]
+        public List<string> Options
+        {
+            get { return this._options; }
+            set { this._options = value; }
+        }
+
+        // Check to see if Options property is set
+        internal bool IsSetOptions()
+        {
+            return this._options != null && this._options.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property SkipFinalBackup. 
         /// <para>
         /// By default, Amazon FSx for OpenZFS takes a final backup on your behalf when the <code>DeleteFileSystem</code>
         /// operation is invoked. Doing this helps protect you from data loss, and we highly recommend
-        /// taking the final backup. If you want to skip this backup, use this value to do so.
-        /// 
+        /// taking the final backup. If you want to skip taking a final backup, set this value
+        /// to <code>true</code>.
         /// </para>
         /// </summary>
         public bool SkipFinalBackup

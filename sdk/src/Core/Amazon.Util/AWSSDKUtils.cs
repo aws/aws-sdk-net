@@ -1092,7 +1092,26 @@ namespace Amazon.Util
         public static string GenerateChecksumForContent(string content, bool fBase64Encode)
         {
             // Convert the input string to a byte array and compute the hash.
-            byte[] hashed = CryptoUtilFactory.CryptoInstance.ComputeMD5Hash(Encoding.UTF8.GetBytes(content));
+            return GenerateChecksumForBytes(Encoding.UTF8.GetBytes(content), fBase64Encode);
+        }
+
+        /// <summary>
+        /// Generates an MD5 Digest for the given byte array
+        /// </summary>
+        /// <param name="content">The content for which the MD5 Digest needs
+        /// to be computed.
+        /// </param>
+        /// <param name="fBase64Encode">Whether the returned checksum should be
+        /// base64 encoded.
+        /// </param>
+        /// <returns>A string representation of the hash with or w/o base64 encoding
+        /// </returns>
+        public static string GenerateChecksumForBytes(byte[] content, bool fBase64Encode)
+        {
+
+            var hashed = content != null ?
+                CryptoUtilFactory.CryptoInstance.ComputeMD5Hash(content) :
+                CryptoUtilFactory.CryptoInstance.ComputeMD5Hash(new byte[0]);
 
             if (fBase64Encode)
             {

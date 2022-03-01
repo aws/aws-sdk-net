@@ -35,6 +35,7 @@ namespace Amazon.AmplifyUIBuilder.Model
     {
         private List<ComponentChild> _children = new List<ComponentChild>();
         private string _componentType;
+        private Dictionary<string, ComponentEvent> _events = new Dictionary<string, ComponentEvent>();
         private string _name;
         private Dictionary<string, ComponentProperty> _properties = new Dictionary<string, ComponentProperty>();
 
@@ -76,6 +77,25 @@ namespace Amazon.AmplifyUIBuilder.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Events. 
+        /// <para>
+        /// Describes the events that can be raised on the child component. Use for the workflow
+        /// feature in Amplify Studio that allows you to bind events and actions to components.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, ComponentEvent> Events
+        {
+            get { return this._events; }
+            set { this._events = value; }
+        }
+
+        // Check to see if Events property is set
+        internal bool IsSetEvents()
+        {
+            return this._events != null && this._events.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
         /// The name of the child component.
@@ -97,7 +117,8 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// <summary>
         /// Gets and sets the property Properties. 
         /// <para>
-        /// Describes the properties of the child component.
+        /// Describes the properties of the child component. You can't specify <code>tags</code>
+        /// as a valid property for <code>properties</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

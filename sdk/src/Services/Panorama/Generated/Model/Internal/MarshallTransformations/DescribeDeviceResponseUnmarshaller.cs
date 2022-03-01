@@ -51,6 +51,12 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AlternateSoftwares", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<AlternateSoftwareMetadata, AlternateSoftwareMetadataUnmarshaller>(AlternateSoftwareMetadataUnmarshaller.Instance);
+                    response.AlternateSoftwares = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Arn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -91,6 +97,12 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.DeviceId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LatestAlternateSoftware", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.LatestAlternateSoftware = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("LatestSoftware", targetDepth))

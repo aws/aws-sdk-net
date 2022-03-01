@@ -408,8 +408,8 @@ namespace Amazon.RDS.Model
         ///  <note> 
         /// <para>
         /// When you apply a parameter group using the <code>DBInstanceParameterGroupName</code>
-        /// parameter, the DB cluster isn't rebooted automatically. Also, parameter changes aren't
-        /// applied during the next maintenance window but instead are applied immediately.
+        /// parameter, the DB cluster isn't rebooted automatically. Also, parameter changes are
+        /// applied immediately rather than during the next maintenance window.
         /// </para>
         ///  </note> 
         /// <para>
@@ -425,8 +425,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The <code>DBInstanceParameterGroupName</code> parameter is only valid in combination
-        /// with the <code>AllowMajorVersionUpgrade</code> parameter.
+        /// The <code>DBInstanceParameterGroupName</code> parameter is valid in combination with
+        /// the <code>AllowMajorVersionUpgrade</code> parameter for a major version upgrade only.
         /// </para>
         ///  </li> </ul> 
         /// <para>

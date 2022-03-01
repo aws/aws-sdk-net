@@ -85,11 +85,10 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property LaunchTemplateSpecification. 
         /// <para>
-        /// Provides the launch template to be used when launching the instance type specified
-        /// in <code>InstanceType</code>. For example, some instance types might require a launch
-        /// template with a different AMI. If not provided, Amazon EC2 Auto Scaling uses the launch
-        /// template that's defined for your mixed instances policy. For more information, see
-        /// <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups-launch-template-overrides.html">Specifying
+        /// Provides a launch template for the specified instance type or instance requirements.
+        /// For example, some instance types might require a launch template with a different
+        /// AMI. If not provided, Amazon EC2 Auto Scaling uses the launch template that's defined
+        /// for your mixed instances policy. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups-launch-template-overrides.html">Specifying
         /// a different launch template for an instance type</a> in the <i>Amazon EC2 Auto Scaling
         /// User Guide</i>. 
         /// </para>
@@ -117,9 +116,9 @@ namespace Amazon.AutoScaling.Model
         /// example, if there are two units remaining to fulfill capacity, and Amazon EC2 Auto
         /// Scaling can only launch an instance with a <code>WeightedCapacity</code> of five units,
         /// the instance is launched, and the desired capacity is exceeded by three units. For
-        /// more information, see <a href="https://docs.aws.amazon.com/ec2-auto-scaling-mixed-instances-groups-instance-weighting.html">Instance
-        /// weighting for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
-        /// Value must be in the range of 1–999.
+        /// more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups-instance-weighting.html">Configuring
+        /// instance weighting for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling
+        /// User Guide</i>. Value must be in the range of 1–999.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=32)]

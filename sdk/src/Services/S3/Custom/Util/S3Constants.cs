@@ -84,7 +84,10 @@ namespace Amazon.S3.Util
             AmzHeaderTagging                = "x-amz-tagging",
             AmzHeaderTaggingDirective       = "x-amz-tagging-directive",
             AmzHeaderTaggingCount           = "x-amz-tagging-count",
-            AmzHeaderSkipDestinationValidation = "x-amz-skip-destination-validation";
+            AmzHeaderSkipDestinationValidation = "x-amz-skip-destination-validation",
+            AmzHeaderChecksumAlgorithm      = "x-amz-checksum-algorithm",
+            AmzHeaderSdkChecksumAlgorithm   = "x-amz-sdk-checksum-algorithm",
+            AmzHeaderChecksumMode           = "x-amz-checksum-mode";
 
         internal static string
             AmzHeaderRestoreOutputPath      = "x-amz-restore-output-path";

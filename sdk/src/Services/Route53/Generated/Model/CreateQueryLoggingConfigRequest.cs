@@ -107,6 +107,29 @@ namespace Amazon.Route53.Model
     /// <para>
     ///  <code>arn:aws:logs:us-east-1:123412341234:log-group:/aws/route53/*</code> 
     /// </para>
+    ///  
+    /// <para>
+    /// To avoid the confused deputy problem, a security issue where an entity without a permission
+    /// for an action can coerce a more-privileged entity to perform it, you can optionally
+    /// limit the permissions that a service has to a resource in a resource-based policy
+    /// by supplying the following values:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// For <code>aws:SourceArn</code>, supply the hosted zone ARN used in creating the query
+    /// logging configuration. For example, <code>aws:SourceArn: arn:aws:route53:::hostedzone/hosted
+    /// zone ID</code>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// For <code>aws:SourceAccount</code>, supply the account ID for the account that creates
+    /// the query logging configuration. For example, <code>aws:SourceAccount:111111111111</code>.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/confused-deputy.html">The
+    /// confused deputy problem</a> in the <i>Amazon Web Services IAM User Guide</i>.
+    /// </para>
     ///  <note> 
     /// <para>
     /// You can't use the CloudWatch console to create or edit a resource policy. You must

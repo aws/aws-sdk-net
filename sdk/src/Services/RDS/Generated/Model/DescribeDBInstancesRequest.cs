@@ -91,14 +91,14 @@ namespace Amazon.RDS.Model
         ///  <ul> <li> 
         /// <para>
         ///  <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon
-        /// Resource Names (ARNs). The results list will only include information about the DB
-        /// instances associated with the DB clusters identified by these ARNs.
+        /// Resource Names (ARNs). The results list only includes information about the DB instances
+        /// associated with the DB clusters identified by these ARNs.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance Amazon
-        /// Resource Names (ARNs). The results list will only include information about the DB
-        /// instances identified by these ARNs.
+        /// Resource Names (ARNs). The results list only includes information about the DB instances
+        /// identified by these ARNs.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -108,12 +108,12 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>domain</code> - Accepts Active Directory directory IDs. The results list will
-        /// only include information about the DB instances associated with these domains.
+        ///  <code>domain</code> - Accepts Active Directory directory IDs. The results list only
+        /// includes information about the DB instances associated with these domains.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>engine</code> - Accepts engine names. The results list will only include information
+        ///  <code>engine</code> - Accepts engine names. The results list only includes information
         /// about the DB instances for these engines.
         /// </para>
         ///  </li> </ul>

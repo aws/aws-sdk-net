@@ -25,6 +25,126 @@ namespace Amazon.FinSpaceData
 {
 
     /// <summary>
+    /// Constants used for properties of type ApiAccess.
+    /// </summary>
+    public class ApiAccess : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for ApiAccess
+        /// </summary>
+        public static readonly ApiAccess DISABLED = new ApiAccess("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for ApiAccess
+        /// </summary>
+        public static readonly ApiAccess ENABLED = new ApiAccess("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ApiAccess(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ApiAccess FindValue(string value)
+        {
+            return FindValue<ApiAccess>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ApiAccess(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ApplicationPermission.
+    /// </summary>
+    public class ApplicationPermission : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AccessNotebooks for ApplicationPermission
+        /// </summary>
+        public static readonly ApplicationPermission AccessNotebooks = new ApplicationPermission("AccessNotebooks");
+        /// <summary>
+        /// Constant CreateDataset for ApplicationPermission
+        /// </summary>
+        public static readonly ApplicationPermission CreateDataset = new ApplicationPermission("CreateDataset");
+        /// <summary>
+        /// Constant GetTemporaryCredentials for ApplicationPermission
+        /// </summary>
+        public static readonly ApplicationPermission GetTemporaryCredentials = new ApplicationPermission("GetTemporaryCredentials");
+        /// <summary>
+        /// Constant ManageAttributeSets for ApplicationPermission
+        /// </summary>
+        public static readonly ApplicationPermission ManageAttributeSets = new ApplicationPermission("ManageAttributeSets");
+        /// <summary>
+        /// Constant ManageClusters for ApplicationPermission
+        /// </summary>
+        public static readonly ApplicationPermission ManageClusters = new ApplicationPermission("ManageClusters");
+        /// <summary>
+        /// Constant ManageUsersAndGroups for ApplicationPermission
+        /// </summary>
+        public static readonly ApplicationPermission ManageUsersAndGroups = new ApplicationPermission("ManageUsersAndGroups");
+        /// <summary>
+        /// Constant ViewAuditData for ApplicationPermission
+        /// </summary>
+        public static readonly ApplicationPermission ViewAuditData = new ApplicationPermission("ViewAuditData");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ApplicationPermission(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ApplicationPermission FindValue(string value)
+        {
+            return FindValue<ApplicationPermission>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ApplicationPermission(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ChangeType.
     /// </summary>
     public class ChangeType : ConstantClass
@@ -580,6 +700,110 @@ namespace Amazon.FinSpaceData
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator LocationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type UserStatus.
+    /// </summary>
+    public class UserStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CREATING for UserStatus
+        /// </summary>
+        public static readonly UserStatus CREATING = new UserStatus("CREATING");
+        /// <summary>
+        /// Constant DISABLED for UserStatus
+        /// </summary>
+        public static readonly UserStatus DISABLED = new UserStatus("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for UserStatus
+        /// </summary>
+        public static readonly UserStatus ENABLED = new UserStatus("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public UserStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UserStatus FindValue(string value)
+        {
+            return FindValue<UserStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UserStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type UserType.
+    /// </summary>
+    public class UserType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant APP_USER for UserType
+        /// </summary>
+        public static readonly UserType APP_USER = new UserType("APP_USER");
+        /// <summary>
+        /// Constant SUPER_USER for UserType
+        /// </summary>
+        public static readonly UserType SUPER_USER = new UserType("SUPER_USER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public UserType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UserType FindValue(string value)
+        {
+            return FindValue<UserType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UserType(string value)
         {
             return FindValue(value);
         }

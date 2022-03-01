@@ -99,10 +99,9 @@ namespace Amazon.S3.Model
     ///  
     /// <para>
     /// For objects that are encrypted with Amazon S3 managed encryption keys (SSE-S3) and
-    /// customer master keys (CMKs) stored in Amazon Web Services Key Management Service (SSE-KMS),
-    /// server-side encryption is handled transparently, so you don't need to specify anything.
-    /// For more information about server-side encryption, including SSE-S3 and SSE-KMS, see
-    /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Protecting
+    /// Amazon Web Services KMS keys (SSE-KMS), server-side encryption is handled transparently,
+    /// so you don't need to specify anything. For more information about server-side encryption,
+    /// including SSE-S3 and SSE-KMS, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Protecting
     /// Data Using Server-Side Encryption</a> in the <i>Amazon S3 User Guide</i>.
     /// </para>
     ///  </li> </ul> 
@@ -187,9 +186,11 @@ namespace Amazon.S3.Model
         /// <summary>
         /// The SSE Algorithm used to encrypt the object.
         /// </summary>
-        /// <seealso href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">
-        /// Server-Side Encryption (Using Customer-Provided Encryption Keys.
-        /// </seealso>
+        /// <para>
+        /// The SSE algorithm used to encrypt the object. This is only needed when the object
+        /// was created using a checksum algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting
+        /// data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
         public ServerSideEncryptionCustomerMethod ServerSideCustomerEncryptionMethod { get; set; }
 
         internal bool IsSetServerSideCustomerEncryptionMethod() => ServerSideCustomerEncryptionMethod != null;
@@ -197,9 +198,11 @@ namespace Amazon.S3.Model
         /// <summary>
         /// The SSE Customer Key.
         /// </summary>
-        /// <seealso href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">
-        /// Server-Side Encryption (Using Customer-Provided Encryption Keys.
-        /// </seealso>
+        /// <para>
+        /// The SSE customer key. This is only needed when the object was cureated using a checksum
+        /// algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting
+        /// data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
         public string ServerSideEncryptionCustomerProvidedKey { get; set; }
 
         internal bool IsSetServerSideEncryptionCustomerProvidedKey() => ServerSideEncryptionCustomerProvidedKey != null;
@@ -207,9 +210,11 @@ namespace Amazon.S3.Model
         /// <summary>
         /// The SSE Customer Key MD5.
         /// </summary>
-        /// <seealso href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">
-        /// Server-Side Encryption (Using Customer-Provided Encryption Keys.
-        /// </seealso>
+        /// <para>
+        /// The MD5 SSE customer key. This is only needed when the object was cureated using a
+        /// checksum algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting
+        /// data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
         public string ServerSideEncryptionCustomerProvidedKeyMD5 { get; set; }
 
         internal bool IsSetServerSideEncryptionCustomerProvidedKeyMD5() =>

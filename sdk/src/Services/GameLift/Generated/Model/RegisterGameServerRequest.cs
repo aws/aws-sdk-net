@@ -150,7 +150,7 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// A custom string that uniquely identifies the game server to register. Game server
         /// IDs are developer-defined and must be unique across all game server groups in your
-        /// AWS account.
+        /// Amazon Web Services account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=128)]

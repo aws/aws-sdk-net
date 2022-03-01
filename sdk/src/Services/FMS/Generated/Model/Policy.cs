@@ -113,7 +113,11 @@ namespace Amazon.FMS.Model
         /// the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”], “ORG_UNIT”
         /// : [“ouid111”, “ouid112”]}</code>.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  This option isn't available for the centralized deployment model when creating policies
+        /// to configure Network Firewall. 
+        /// </para>
         /// </summary>
         public Dictionary<string, List<string>> ExcludeMap
         {
@@ -133,6 +137,11 @@ namespace Amazon.FMS.Model
         /// If set to <code>True</code>, resources with the tags that are specified in the <code>ResourceTag</code>
         /// array are not in scope of the policy. If set to <code>False</code>, and the <code>ResourceTag</code>
         /// array is not null, only resources with the specified tags are in scope of the policy.
+        /// </para>
+        ///  
+        /// <para>
+        ///  This option isn't available for the centralized deployment model when creating policies
+        /// to configure Network Firewall. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -184,7 +193,11 @@ namespace Amazon.FMS.Model
         /// the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”], “ORG_UNIT”
         /// : [“ouid111”, “ouid112”]}</code>.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  This option isn't available for the centralized deployment model when creating policies
+        /// to configure Network Firewall. 
+        /// </para>
         /// </summary>
         public Dictionary<string, List<string>> IncludeMap
         {

@@ -193,6 +193,11 @@ namespace Amazon.S3.Model
         private List<Tag> tagset = new List<Tag>();
         private string websiteRedirectLocation;
         private bool calculateContentMD5Header = false;
+        private ChecksumAlgorithm _checksumAlgorithm;
+        private string _checksumCRC32;
+        private string _checksumCRC32C;
+        private string _checksumSHA1;
+        private string _checksumSHA256;
 
         /// <summary>
         /// Overriden to turn off sending SHA256 header.
@@ -441,7 +446,7 @@ namespace Amazon.S3.Model
         // Check to see if ObjectLockRetainUntilDate property is set
         internal bool IsSetObjectLockRetainUntilDate()
         {
-            return this.objectLockRetainUntilDate.HasValue; 
+            return this.objectLockRetainUntilDate.HasValue;
         }
 
         /// <summary>
@@ -824,6 +829,114 @@ namespace Amazon.S3.Model
             get { return this.calculateContentMD5Header; }
             set { this.calculateContentMD5Header = value; }
         }
+
+        /// <summary>
+        /// Gets and sets the property ChecksumAlgorithm. 
+        /// <para>
+        /// Indicates the algorithm used to create the checksum for the object. Amazon S3 will
+        /// fail the request with a 400 error if there is no checksum associated with the object.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">
+        /// Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you provide an individual checksum, Amazon S3 will ignore any provided <code>ChecksumAlgorithm</code>.
+        /// </para>
+        /// </summary>
+        public ChecksumAlgorithm ChecksumAlgorithm
+        {
+            get { return this._checksumAlgorithm; }
+            set { this._checksumAlgorithm = value; }
+        }
+
+        // Check to see if ChecksumAlgorithm property is set
+        internal bool IsSetChecksumAlgorithm()
+        {
+            return this._checksumAlgorithm != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChecksumCRC32. 
+        /// <para>
+        /// This header can be used as a data integrity check to verify that the data received
+        /// is the same data that was originally sent. This specifies the base64-encoded, 32-bit
+        /// CRC32 checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">
+        /// Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        /// </summary>
+        public string ChecksumCRC32
+        {
+            get { return this._checksumCRC32; }
+            set { this._checksumCRC32 = value; }
+        }
+
+        // Check to see if ChecksumCRC32 property is set
+        internal bool IsSetChecksumCRC32()
+        {
+            return this._checksumCRC32 != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChecksumCRC32C. 
+        /// <para>
+        /// This header can be used as a data integrity check to verify that the data received
+        /// is the same data that was originally sent. This specifies the base64-encoded, 32-bit
+        /// CRC32C checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">
+        /// Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        /// </summary>
+        public string ChecksumCRC32C
+        {
+            get { return this._checksumCRC32C; }
+            set { this._checksumCRC32C = value; }
+        }
+
+        // Check to see if ChecksumCRC32C property is set
+        internal bool IsSetChecksumCRC32C()
+        {
+            return this._checksumCRC32C != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChecksumSHA1. 
+        /// <para>
+        /// This header can be used as a data integrity check to verify that the data received
+        /// is the same data that was originally sent. This specifies the base64-encoded, 160-bit
+        /// SHA-1 digest of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">
+        /// Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        /// </summary>
+        public string ChecksumSHA1
+        {
+            get { return this._checksumSHA1; }
+            set { this._checksumSHA1 = value; }
+        }
+
+        // Check to see if ChecksumSHA1 property is set
+        internal bool IsSetChecksumSHA1()
+        {
+            return this._checksumSHA1 != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChecksumSHA256. 
+        /// <para>
+        /// This header can be used as a data integrity check to verify that the data received
+        /// is the same data that was originally sent. This specifies the base64-encoded, 256-bit
+        /// SHA-256 digest of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">
+        /// Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        /// </summary>
+        public string ChecksumSHA256
+        {
+            get { return this._checksumSHA256; }
+            set { this._checksumSHA256 = value; }
+        }
+
+        // Check to see if ChecksumSHA256 property is set
+        internal bool IsSetChecksumSHA256()
+        {
+            return this._checksumSHA256 != null;
+        }
     }
 }
-    

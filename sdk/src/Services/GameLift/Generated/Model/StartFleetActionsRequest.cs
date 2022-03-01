@@ -125,7 +125,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property Location. 
         /// <para>
         /// The fleet location to restart fleet actions for. Specify a location in the form of
-        /// an AWS Region code, such as <code>us-west-2</code>.
+        /// an Amazon Web Services Region code, such as <code>us-west-2</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

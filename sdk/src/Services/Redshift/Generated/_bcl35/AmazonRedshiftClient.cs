@@ -2056,8 +2056,8 @@ namespace Amazon.Redshift
         #region  CreateSnapshotCopyGrant
 
         /// <summary>
-        /// Creates a snapshot copy grant that permits Amazon Redshift to use a customer master
-        /// key (CMK) from Key Management Service (KMS) to encrypt copied snapshots in a destination
+        /// Creates a snapshot copy grant that permits Amazon Redshift to use an encrypted symmetric
+        /// key from Key Management Service (KMS) to encrypt copied snapshots in a destination
         /// region.
         /// 
         ///  
@@ -6390,9 +6390,9 @@ namespace Amazon.Redshift
         /// 
         ///  
         /// <para>
-        /// If your cluster and its snapshots are encrypted using a customer master key (CMK)
-        /// from Key Management Service, use <a>DeleteSnapshotCopyGrant</a> to delete the grant
-        /// that grants Amazon Redshift permission to the CMK in the destination region. 
+        /// If your cluster and its snapshots are encrypted using an encrypted symmetric key from
+        /// Key Management Service, use <a>DeleteSnapshotCopyGrant</a> to delete the grant that
+        /// grants Amazon Redshift permission to the key in the destination region. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableSnapshotCopy service method.</param>
@@ -7272,7 +7272,9 @@ namespace Amazon.Redshift
         /// 
         ///  
         /// <para>
-        /// A cluster can have up to 10 IAM roles associated at any time.
+        /// The maximum number of IAM roles that you can associate is subject to a quota. For
+        /// more information, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Quotas
+        /// and limits</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyClusterIamRoles service method.</param>

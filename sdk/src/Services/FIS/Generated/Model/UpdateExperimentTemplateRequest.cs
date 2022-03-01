@@ -37,6 +37,7 @@ namespace Amazon.FIS.Model
         private Dictionary<string, UpdateExperimentTemplateActionInputItem> _actions = new Dictionary<string, UpdateExperimentTemplateActionInputItem>();
         private string _description;
         private string _id;
+        private UpdateExperimentTemplateLogConfigurationInput _logConfiguration;
         private string _roleArn;
         private List<UpdateExperimentTemplateStopConditionInput> _stopConditions = new List<UpdateExperimentTemplateStopConditionInput>();
         private Dictionary<string, UpdateExperimentTemplateTargetInput> _targets = new Dictionary<string, UpdateExperimentTemplateTargetInput>();
@@ -95,6 +96,24 @@ namespace Amazon.FIS.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LogConfiguration. 
+        /// <para>
+        /// The configuration for experiment logging.
+        /// </para>
+        /// </summary>
+        public UpdateExperimentTemplateLogConfigurationInput LogConfiguration
+        {
+            get { return this._logConfiguration; }
+            set { this._logConfiguration = value; }
+        }
+
+        // Check to see if LogConfiguration property is set
+        internal bool IsSetLogConfiguration()
+        {
+            return this._logConfiguration != null;
         }
 
         /// <summary>

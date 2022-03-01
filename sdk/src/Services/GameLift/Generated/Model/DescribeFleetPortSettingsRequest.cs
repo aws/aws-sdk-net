@@ -106,8 +106,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Location. 
         /// <para>
-        /// A remote location to check for status of port setting updates. Use the AWS Region
-        /// code format, such as <code>us-west-2</code>.
+        /// A remote location to check for status of port setting updates. Use the Amazon Web
+        /// Services Region code format, such as <code>us-west-2</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

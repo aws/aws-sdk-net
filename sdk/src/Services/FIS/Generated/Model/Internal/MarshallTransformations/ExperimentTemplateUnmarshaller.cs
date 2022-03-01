@@ -94,6 +94,12 @@ namespace Amazon.FIS.Model.Internal.MarshallTransformations
                     unmarshalledObject.LastUpdateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("logConfiguration", targetDepth))
+                {
+                    var unmarshaller = ExperimentTemplateLogConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.LogConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("roleArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -59,7 +59,7 @@ namespace Amazon.FinSpaceData.Model
         /// <summary>
         /// Gets and sets the property ColumnName. 
         /// <para>
-        /// Name for a column.
+        /// The name of a column.
         /// </para>
         /// </summary>
         [AWSProperty(Max=126)]
@@ -82,51 +82,51 @@ namespace Amazon.FinSpaceData.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>STRING</code> - A String data type.
+        ///  <code>STRING</code> – A String data type.
         /// </para>
         ///  
         /// <para>
-        ///  <code>CHAR</code> - A char data type.
+        ///  <code>CHAR</code> – A char data type.
         /// </para>
         ///  
         /// <para>
-        ///  <code>INTEGER</code> - An integer data type.
+        ///  <code>INTEGER</code> – An integer data type.
         /// </para>
         ///  
         /// <para>
-        ///  <code>TINYINT</code> - A tinyint data type.
+        ///  <code>TINYINT</code> – A tinyint data type.
         /// </para>
         ///  
         /// <para>
-        ///  <code>SMALLINT</code> - A smallint data type.
+        ///  <code>SMALLINT</code> – A smallint data type.
         /// </para>
         ///  
         /// <para>
-        ///  <code>BIGINT</code> - A bigint data type.
+        ///  <code>BIGINT</code> – A bigint data type.
         /// </para>
         ///  
         /// <para>
-        ///  <code>FLOAT</code> - A float data type.
+        ///  <code>FLOAT</code> – A float data type.
         /// </para>
         ///  
         /// <para>
-        ///  <code>DOUBLE</code> - A double data type.
+        ///  <code>DOUBLE</code> – A double data type.
         /// </para>
         ///  
         /// <para>
-        ///  <code>DATE</code> - A date data type.
+        ///  <code>DATE</code> – A date data type.
         /// </para>
         ///  
         /// <para>
-        ///  <code>DATETIME</code> - A datetime data type.
+        ///  <code>DATETIME</code> – A datetime data type.
         /// </para>
         ///  
         /// <para>
-        ///  <code>BOOLEAN</code> - A boolean data type.
+        ///  <code>BOOLEAN</code> – A boolean data type.
         /// </para>
         ///  
         /// <para>
-        ///  <code>BINARY</code> - A binary data type.
+        ///  <code>BINARY</code> – A binary data type.
         /// </para>
         ///  </li> </ul>
         /// </summary>

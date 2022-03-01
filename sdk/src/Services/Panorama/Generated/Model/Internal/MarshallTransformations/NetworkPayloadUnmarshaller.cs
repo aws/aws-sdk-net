@@ -76,6 +76,12 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
                     unmarshalledObject.Ethernet1 = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Ntp", targetDepth))
+                {
+                    var unmarshaller = NtpPayloadUnmarshaller.Instance;
+                    unmarshalledObject.Ntp = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

@@ -38,6 +38,7 @@ namespace Amazon.EC2.Model
         private string _description;
         private string _imageId;
         private string _kernelId;
+        private string _lastLaunchedTime;
         private List<LaunchPermission> _launchPermissions = new List<LaunchPermission>();
         private List<ProductCode> _productCodes = new List<ProductCode>();
         private string _ramdiskId;
@@ -62,7 +63,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property BootMode.
+        /// Gets and sets the property BootMode. 
+        /// <para>
+        /// The boot mode.
+        /// </para>
         /// </summary>
         public string BootMode
         {
@@ -128,6 +132,31 @@ namespace Amazon.EC2.Model
         internal bool IsSetKernelId()
         {
             return this._kernelId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastLaunchedTime. 
+        /// <para>
+        /// The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
+        /// format</a>, when the AMI was last used to launch an EC2 instance. When the AMI is
+        /// used, there is a 24-hour delay before that usage is reported.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <code>lastLaunchedTime</code> data is available starting April 2017.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public string LastLaunchedTime
+        {
+            get { return this._lastLaunchedTime; }
+            set { this._lastLaunchedTime = value; }
+        }
+
+        // Check to see if LastLaunchedTime property is set
+        internal bool IsSetLastLaunchedTime()
+        {
+            return this._lastLaunchedTime != null;
         }
 
         /// <summary>

@@ -49,8 +49,8 @@ namespace Amazon.GameLift.Model
     /// <para>
     /// Track matchmaking events to respond as needed and acquire game session connection
     /// information for successfully completed matches. Ticket status updates are tracked
-    /// using event notification through Amazon Simple Notification Service (SNS), which is
-    /// defined in the matchmaking configuration.
+    /// using event notification through Amazon Simple Notification Service, which is defined
+    /// in the matchmaking configuration.
     /// </para>
     ///  
     /// <para>
@@ -135,8 +135,8 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property TicketId. 
         /// <para>
         /// A unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon
-        /// GameLift will generate one in the form of a UUID. Use this identifier to track the
-        /// matchmaking ticket status and retrieve match results.
+        /// Web Services will generate one in the form of a UUID. Use this identifier to track
+        /// the matchmaking ticket status and retrieve match results.
         /// </para>
         /// </summary>
         [AWSProperty(Max=128)]

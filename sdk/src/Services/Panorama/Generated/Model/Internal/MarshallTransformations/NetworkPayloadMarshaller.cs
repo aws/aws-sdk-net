@@ -67,6 +67,17 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetNtp())
+            {
+                context.Writer.WritePropertyName("Ntp");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = NtpPayloadMarshaller.Instance;
+                marshaller.Marshall(requestObject.Ntp, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

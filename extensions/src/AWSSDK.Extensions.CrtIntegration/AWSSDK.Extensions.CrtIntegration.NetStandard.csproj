@@ -32,7 +32,8 @@
   </Choose>
 
   <ItemGroup>
-    <PackageReference Include="AWSCRT-AUTH" Version="0.3.12" />
+    <PackageReference Include="AWSCRT-AUTH" Version="0.3.14" />
+    <PackageReference Include="AWSCRT-CHECKSUMS" Version="0.3.14" />
   </ItemGroup>
 
   <ItemGroup>

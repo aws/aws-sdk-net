@@ -30,7 +30,13 @@ namespace Amazon.Lightsail.Model
 {
     /// <summary>
     /// Container for the parameters to the DownloadDefaultKeyPair operation.
-    /// Downloads the default SSH key pair from the user's account.
+    /// Downloads the regional Amazon Lightsail default key pair.
+    /// 
+    ///  
+    /// <para>
+    /// This action also creates a Lightsail default key pair if a default key pair does not
+    /// currently exist in the Amazon Web Services Region.
+    /// </para>
     /// </summary>
     public partial class DownloadDefaultKeyPairRequest : AmazonLightsailRequest
     {

@@ -106,6 +106,12 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
                     unmarshalledObject.EnvironmentName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("events", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, ComponentEvent, StringUnmarshaller, ComponentEventUnmarshaller>(StringUnmarshaller.Instance, ComponentEventUnmarshaller.Instance);
+                    unmarshalledObject.Events = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("id", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -134,6 +140,12 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, ComponentProperty, StringUnmarshaller, ComponentPropertyUnmarshaller>(StringUnmarshaller.Instance, ComponentPropertyUnmarshaller.Instance);
                     unmarshalledObject.Properties = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("schemaVersion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SchemaVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("sourceId", targetDepth))

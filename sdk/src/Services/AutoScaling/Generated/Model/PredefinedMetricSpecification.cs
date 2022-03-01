@@ -49,18 +49,18 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ASGAverageNetworkIn</code> - Average number of bytes received on all network
-        /// interfaces by the Auto Scaling group.
+        ///  <code>ASGAverageNetworkIn</code> - Average number of bytes received (per instance
+        /// per minute) for the Auto Scaling group.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ASGAverageNetworkOut</code> - Average number of bytes sent out on all network
-        /// interfaces by the Auto Scaling group.
+        ///  <code>ASGAverageNetworkOut</code> - Average number of bytes sent out (per instance
+        /// per minute) for the Auto Scaling group.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ALBRequestCountPerTarget</code> - Number of requests completed per target in
-        /// an Application Load Balancer target group.
+        ///  <code>ALBRequestCountPerTarget</code> - Average Application Load Balancer request
+        /// count (per target per minute) for your Auto Scaling group.
         /// </para>
         ///  </li> </ul>
         /// </summary>

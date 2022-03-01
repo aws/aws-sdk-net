@@ -174,6 +174,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.SupportedTimezones.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("SupportsBabelfish", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.SupportsBabelfish = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("SupportsGlobalDatabases", targetDepth))
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;

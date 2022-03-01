@@ -62,6 +62,12 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 request.Parameters.Add("part-number-marker", S3Transforms.ToStringValue(listPartsRequest.PartNumberMarker));
             if (listPartsRequest.IsSetEncoding())
                 request.Parameters.Add("encoding-type", S3Transforms.ToStringValue(listPartsRequest.Encoding));
+            if (listPartsRequest.IsSetSSECustomerAlgorithm())
+                request.Headers["x-amz-server-side-encryption-customer-algorithm"] = S3Transforms.ToStringValue(listPartsRequest.SSECustomerAlgorithm);
+            if (listPartsRequest.IsSetSSECustomerKey())
+                request.Headers["x-amz-server-side-encryption-customer-key"] = S3Transforms.ToStringValue(listPartsRequest.SSECustomerKey);
+            if (listPartsRequest.IsSetSSECustomerKeyMD5())
+                request.Headers["x-amz-server-side-encryption-customer-key-MD5"] = S3Transforms.ToStringValue(listPartsRequest.SSECustomerKeyMD5);
 
             request.UseQueryString = true;
             

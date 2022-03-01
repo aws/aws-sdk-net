@@ -55,6 +55,7 @@ namespace Amazon.Amplify.Model
         private Platform _platform;
         private ProductionBranch _productionBranch;
         private string _repository;
+        private RepositoryCloneMethod _repositoryCloneMethod;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private DateTime? _updateTime;
 
@@ -197,7 +198,7 @@ namespace Amazon.Amplify.Model
         /// Describes the custom HTTP headers for the Amplify app.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=25000)]
+        [AWSProperty(Min=0, Max=25000)]
         public string CustomHeaders
         {
             get { return this._customHeaders; }
@@ -367,7 +368,7 @@ namespace Amazon.Amplify.Model
         /// Name (ARN) of the Amplify app. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1000)]
+        [AWSProperty(Min=0, Max=1000)]
         public string IamServiceRoleArn
         {
             get { return this._iamServiceRoleArn; }
@@ -439,7 +440,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property Repository. 
         /// <para>
-        ///  The repository for the Amplify app. 
+        ///  The Git repository for the Amplify app. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=1000)]
@@ -456,12 +457,33 @@ namespace Amazon.Amplify.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RepositoryCloneMethod. 
+        /// <para>
+        /// The authentication protocol to use to access the Git repository for an Amplify app.
+        /// For a GitHub repository, specify <code>TOKEN</code>. For an Amazon Web Services CodeCommit
+        /// repository, specify <code>SIGV4</code>. For GitLab and Bitbucket repositories, specify
+        /// <code>SSH</code>.
+        /// </para>
+        /// </summary>
+        public RepositoryCloneMethod RepositoryCloneMethod
+        {
+            get { return this._repositoryCloneMethod; }
+            set { this._repositoryCloneMethod = value; }
+        }
+
+        // Check to see if RepositoryCloneMethod property is set
+        internal bool IsSetRepositoryCloneMethod()
+        {
+            return this._repositoryCloneMethod != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
         ///  The tag for the Amplify app. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=50)]
+        [AWSProperty(Min=0, Max=50)]
         public Dictionary<string, string> Tags
         {
             get { return this._tags; }

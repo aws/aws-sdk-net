@@ -180,7 +180,12 @@ namespace Amazon.EC2.Model
         /// target the Capacity Reservation. This ensures that only permitted instances can use
         /// the reserved capacity.
         /// </para>
-        ///  </li> </ul> </li> </ul>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        ///  <code>placement-group-arn</code> - The ARN of the cluster placement group in which
+        /// the Capacity Reservation was created.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public List<Filter> Filters
         {

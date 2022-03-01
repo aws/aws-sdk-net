@@ -492,7 +492,7 @@ namespace Amazon.FSx
         /// The requested operation is not supported for this resource or API.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.VolumeNotFoundException">
-        /// No Amazon FSx for NetApp ONTAP volumes were found based upon the supplied parameters.
+        /// No Amazon FSx volumes were found based upon the supplied parameters.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateBackup">REST API Reference for CreateBackup Operation</seealso>
         CreateBackupResponse CreateBackup(CreateBackupRequest request);
@@ -608,7 +608,7 @@ namespace Amazon.FSx
         /// The requested operation is not supported for this resource or API.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.VolumeNotFoundException">
-        /// No Amazon FSx for NetApp ONTAP volumes were found based upon the supplied parameters.
+        /// No Amazon FSx volumes were found based upon the supplied parameters.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateBackup">REST API Reference for CreateBackup Operation</seealso>
         Task<CreateBackupResponse> CreateBackupAsync(CreateBackupRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1049,10 +1049,10 @@ namespace Amazon.FSx
         ///  
         /// <para>
         /// If a file system with the specified client request token exists and the parameters
-        /// match, this operation returns the description of the file system. If a client request
-        /// token with the specified by the file system exists and the parameters don't match,
-        /// this call returns <code>IncompatibleParameterError</code>. If a file system with the
-        /// specified client request token doesn't exist, this operation does the following:
+        /// match, this operation returns the description of the file system. If a file system
+        /// with the specified client request token exists but the parameters don't match, this
+        /// call returns <code>IncompatibleParameterError</code>. If a file system with the specified
+        /// client request token doesn't exist, this operation does the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -1134,10 +1134,10 @@ namespace Amazon.FSx
         ///  
         /// <para>
         /// If a file system with the specified client request token exists and the parameters
-        /// match, this operation returns the description of the file system. If a client request
-        /// token with the specified by the file system exists and the parameters don't match,
-        /// this call returns <code>IncompatibleParameterError</code>. If a file system with the
-        /// specified client request token doesn't exist, this operation does the following:
+        /// match, this operation returns the description of the file system. If a file system
+        /// with the specified client request token exists but the parameters don't match, this
+        /// call returns <code>IncompatibleParameterError</code>. If a file system with the specified
+        /// client request token doesn't exist, this operation does the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -1219,9 +1219,9 @@ namespace Amazon.FSx
 
 
         /// <summary>
-        /// Creates a snapshot of an existing Amazon FSx for OpenZFS file system. With snapshots,
-        /// you can easily undo file changes and compare file versions by restoring the volume
-        /// to a previous version.
+        /// Creates a snapshot of an existing Amazon FSx for OpenZFS volume. With snapshots, you
+        /// can easily undo file changes and compare file versions by restoring the volume to
+        /// a previous version.
         /// 
         ///  
         /// <para>
@@ -1230,7 +1230,6 @@ namespace Amazon.FSx
         /// the specified client request token exists, and the parameters don't match, this operation
         /// returns <code>IncompatibleParameterError</code>. If a snapshot with the specified
         /// client request token doesn't exist, <code>CreateSnapshot</code> does the following:
-        /// 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -1254,7 +1253,7 @@ namespace Amazon.FSx
         /// The <code>CreateSnapshot</code> operation returns while the snapshot's lifecycle state
         /// is still <code>CREATING</code>. You can check the snapshot creation status by calling
         /// the <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeSnapshots.html">DescribeSnapshots</a>
-        /// operation, which returns the snapshot state along with other information. 
+        /// operation, which returns the snapshot state along with other information.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSnapshot service method.</param>
@@ -1271,7 +1270,7 @@ namespace Amazon.FSx
         /// some service limits by contacting Amazon Web Services Support.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.VolumeNotFoundException">
-        /// No Amazon FSx for NetApp ONTAP volumes were found based upon the supplied parameters.
+        /// No Amazon FSx volumes were found based upon the supplied parameters.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateSnapshot">REST API Reference for CreateSnapshot Operation</seealso>
         CreateSnapshotResponse CreateSnapshot(CreateSnapshotRequest request);
@@ -1279,9 +1278,9 @@ namespace Amazon.FSx
 
 
         /// <summary>
-        /// Creates a snapshot of an existing Amazon FSx for OpenZFS file system. With snapshots,
-        /// you can easily undo file changes and compare file versions by restoring the volume
-        /// to a previous version.
+        /// Creates a snapshot of an existing Amazon FSx for OpenZFS volume. With snapshots, you
+        /// can easily undo file changes and compare file versions by restoring the volume to
+        /// a previous version.
         /// 
         ///  
         /// <para>
@@ -1290,7 +1289,6 @@ namespace Amazon.FSx
         /// the specified client request token exists, and the parameters don't match, this operation
         /// returns <code>IncompatibleParameterError</code>. If a snapshot with the specified
         /// client request token doesn't exist, <code>CreateSnapshot</code> does the following:
-        /// 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -1314,7 +1312,7 @@ namespace Amazon.FSx
         /// The <code>CreateSnapshot</code> operation returns while the snapshot's lifecycle state
         /// is still <code>CREATING</code>. You can check the snapshot creation status by calling
         /// the <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeSnapshots.html">DescribeSnapshots</a>
-        /// operation, which returns the snapshot state along with other information. 
+        /// operation, which returns the snapshot state along with other information.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSnapshot service method.</param>
@@ -1334,7 +1332,7 @@ namespace Amazon.FSx
         /// some service limits by contacting Amazon Web Services Support.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.VolumeNotFoundException">
-        /// No Amazon FSx for NetApp ONTAP volumes were found based upon the supplied parameters.
+        /// No Amazon FSx volumes were found based upon the supplied parameters.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateSnapshot">REST API Reference for CreateSnapshot Operation</seealso>
         Task<CreateSnapshotResponse> CreateSnapshotAsync(CreateSnapshotRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1893,9 +1891,9 @@ namespace Amazon.FSx
 
 
         /// <summary>
-        /// Deletes the Amazon FSx snapshot. After deletion, the snapshot no longer exists, and
-        /// its data is gone. Deleting a snapshot doesn't affect snapshots stored in a file system
-        /// backup. 
+        /// Deletes an Amazon FSx for OpenZFS snapshot. After deletion, the snapshot no longer
+        /// exists, and its data is gone. Deleting a snapshot doesn't affect snapshots stored
+        /// in a file system backup. 
         /// 
         ///  
         /// <para>
@@ -1921,9 +1919,9 @@ namespace Amazon.FSx
 
 
         /// <summary>
-        /// Deletes the Amazon FSx snapshot. After deletion, the snapshot no longer exists, and
-        /// its data is gone. Deleting a snapshot doesn't affect snapshots stored in a file system
-        /// backup. 
+        /// Deletes an Amazon FSx for OpenZFS snapshot. After deletion, the snapshot no longer
+        /// exists, and its data is gone. Deleting a snapshot doesn't affect snapshots stored
+        /// in a file system backup. 
         /// 
         ///  
         /// <para>
@@ -2032,7 +2030,7 @@ namespace Amazon.FSx
         /// A generic error indicating a server-side failure.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.VolumeNotFoundException">
-        /// No Amazon FSx for NetApp ONTAP volumes were found based upon the supplied parameters.
+        /// No Amazon FSx volumes were found based upon the supplied parameters.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DeleteVolume">REST API Reference for DeleteVolume Operation</seealso>
         DeleteVolumeResponse DeleteVolume(DeleteVolumeRequest request);
@@ -2060,7 +2058,7 @@ namespace Amazon.FSx
         /// A generic error indicating a server-side failure.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.VolumeNotFoundException">
-        /// No Amazon FSx for NetApp ONTAP volumes were found based upon the supplied parameters.
+        /// No Amazon FSx volumes were found based upon the supplied parameters.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DeleteVolume">REST API Reference for DeleteVolume Operation</seealso>
         Task<DeleteVolumeResponse> DeleteVolumeAsync(DeleteVolumeRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2125,7 +2123,7 @@ namespace Amazon.FSx
         /// A generic error indicating a server-side failure.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.VolumeNotFoundException">
-        /// No Amazon FSx for NetApp ONTAP volumes were found based upon the supplied parameters.
+        /// No Amazon FSx volumes were found based upon the supplied parameters.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeBackups">REST API Reference for DescribeBackups Operation</seealso>
         DescribeBackupsResponse DescribeBackups(DescribeBackupsRequest request);
@@ -2190,7 +2188,7 @@ namespace Amazon.FSx
         /// A generic error indicating a server-side failure.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.VolumeNotFoundException">
-        /// No Amazon FSx for NetApp ONTAP volumes were found based upon the supplied parameters.
+        /// No Amazon FSx volumes were found based upon the supplied parameters.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeBackups">REST API Reference for DescribeBackups Operation</seealso>
         Task<DescribeBackupsResponse> DescribeBackupsAsync(DescribeBackupsRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2555,7 +2553,7 @@ namespace Amazon.FSx
 
 
         /// <summary>
-        /// Returns the description of specific Amazon FSx snapshots, if a <code>SnapshotIds</code>
+        /// Returns the description of specific Amazon FSx for OpenZFS snapshots, if a <code>SnapshotIds</code>
         /// value is provided. Otherwise, this operation returns all snapshots owned by your Amazon
         /// Web Services account in the Amazon Web Services Region of the endpoint that you're
         /// calling.
@@ -2610,7 +2608,7 @@ namespace Amazon.FSx
 
 
         /// <summary>
-        /// Returns the description of specific Amazon FSx snapshots, if a <code>SnapshotIds</code>
+        /// Returns the description of specific Amazon FSx for OpenZFS snapshots, if a <code>SnapshotIds</code>
         /// value is provided. Otherwise, this operation returns all snapshots owned by your Amazon
         /// Web Services account in the Amazon Web Services Region of the endpoint that you're
         /// calling.
@@ -2729,7 +2727,7 @@ namespace Amazon.FSx
         /// A generic error indicating a server-side failure.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.VolumeNotFoundException">
-        /// No Amazon FSx for NetApp ONTAP volumes were found based upon the supplied parameters.
+        /// No Amazon FSx volumes were found based upon the supplied parameters.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeVolumes">REST API Reference for DescribeVolumes Operation</seealso>
         DescribeVolumesResponse DescribeVolumes(DescribeVolumesRequest request);
@@ -2752,7 +2750,7 @@ namespace Amazon.FSx
         /// A generic error indicating a server-side failure.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.VolumeNotFoundException">
-        /// No Amazon FSx for NetApp ONTAP volumes were found based upon the supplied parameters.
+        /// No Amazon FSx volumes were found based upon the supplied parameters.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeVolumes">REST API Reference for DescribeVolumes Operation</seealso>
         Task<DescribeVolumesResponse> DescribeVolumesAsync(DescribeVolumesRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -3033,7 +3031,7 @@ namespace Amazon.FSx
         /// A generic error indicating a server-side failure.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.VolumeNotFoundException">
-        /// No Amazon FSx for NetApp ONTAP volumes were found based upon the supplied parameters.
+        /// No Amazon FSx volumes were found based upon the supplied parameters.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/RestoreVolumeFromSnapshot">REST API Reference for RestoreVolumeFromSnapshot Operation</seealso>
         RestoreVolumeFromSnapshotResponse RestoreVolumeFromSnapshot(RestoreVolumeFromSnapshotRequest request);
@@ -3056,7 +3054,7 @@ namespace Amazon.FSx
         /// A generic error indicating a server-side failure.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.VolumeNotFoundException">
-        /// No Amazon FSx for NetApp ONTAP volumes were found based upon the supplied parameters.
+        /// No Amazon FSx volumes were found based upon the supplied parameters.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/RestoreVolumeFromSnapshot">REST API Reference for RestoreVolumeFromSnapshot Operation</seealso>
         Task<RestoreVolumeFromSnapshotResponse> RestoreVolumeFromSnapshotAsync(RestoreVolumeFromSnapshotRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -3571,7 +3569,7 @@ namespace Amazon.FSx
 
 
         /// <summary>
-        /// Updates the name of a snapshot.
+        /// Updates the name of an Amazon FSx for OpenZFS snapshot.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateSnapshot service method.</param>
         /// 
@@ -3591,7 +3589,7 @@ namespace Amazon.FSx
 
 
         /// <summary>
-        /// Updates the name of a snapshot.
+        /// Updates the name of an Amazon FSx for OpenZFS snapshot.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateSnapshot service method.</param>
         /// <param name="cancellationToken">
@@ -3700,7 +3698,7 @@ namespace Amazon.FSx
         /// A volume configuration is required for this operation.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.VolumeNotFoundException">
-        /// No Amazon FSx for NetApp ONTAP volumes were found based upon the supplied parameters.
+        /// No Amazon FSx volumes were found based upon the supplied parameters.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UpdateVolume">REST API Reference for UpdateVolume Operation</seealso>
         UpdateVolumeResponse UpdateVolume(UpdateVolumeRequest request);
@@ -3732,7 +3730,7 @@ namespace Amazon.FSx
         /// A volume configuration is required for this operation.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.VolumeNotFoundException">
-        /// No Amazon FSx for NetApp ONTAP volumes were found based upon the supplied parameters.
+        /// No Amazon FSx volumes were found based upon the supplied parameters.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UpdateVolume">REST API Reference for UpdateVolume Operation</seealso>
         Task<UpdateVolumeResponse> UpdateVolumeAsync(UpdateVolumeRequest request, CancellationToken cancellationToken = default(CancellationToken));

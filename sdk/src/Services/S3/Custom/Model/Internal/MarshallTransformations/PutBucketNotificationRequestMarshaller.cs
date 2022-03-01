@@ -49,6 +49,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
              if(putBucketNotificationRequest.IsSetSkipDestinationValidation())
                 request.Headers[S3Constants.AmzHeaderSkipDestinationValidation] = StringUtils.FromBool(putBucketNotificationRequest.SkipDestinationValidation);
 
+            if (putBucketNotificationRequest.IsSetChecksumAlgorithm())
+                request.Headers[S3Constants.AmzHeaderSdkChecksumAlgorithm] = S3Transforms.ToStringValue(putBucketNotificationRequest.ChecksumAlgorithm);
+
             if (string.IsNullOrEmpty(putBucketNotificationRequest.BucketName))
                 throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "PutBucketNotificationRequest.BucketName");
 
@@ -145,11 +148,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 var content = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(content);
                 request.Headers[HeaderKeys.ContentTypeHeader] = "application/xml";
-                
-                var checksum = AWSSDKUtils.GenerateChecksumForContent(content, true);
-                request.Headers[HeaderKeys.ContentMD5Header] = checksum;
-                
-            } 
+
+                ChecksumUtils.SetRequestChecksum(request, putBucketNotificationRequest.ChecksumAlgorithm);
+            }
             catch (EncoderFallbackException e) 
             {
                 throw new AmazonServiceException("Unable to marshall request to XML", e);

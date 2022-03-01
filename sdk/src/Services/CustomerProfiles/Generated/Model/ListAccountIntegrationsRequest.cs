@@ -34,9 +34,28 @@ namespace Amazon.CustomerProfiles.Model
     /// </summary>
     public partial class ListAccountIntegrationsRequest : AmazonCustomerProfilesRequest
     {
+        private bool? _includeHidden;
         private int? _maxResults;
         private string _nextToken;
         private string _uri;
+
+        /// <summary>
+        /// Gets and sets the property IncludeHidden. 
+        /// <para>
+        /// Boolean to indicate if hidden integration should be returned. Defaults to <code>False</code>.
+        /// </para>
+        /// </summary>
+        public bool IncludeHidden
+        {
+            get { return this._includeHidden.GetValueOrDefault(); }
+            set { this._includeHidden = value; }
+        }
+
+        // Check to see if IncludeHidden property is set
+        internal bool IsSetIncludeHidden()
+        {
+            return this._includeHidden.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 

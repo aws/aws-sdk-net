@@ -35,6 +35,7 @@ namespace Amazon.Panorama.Model
     {
         private EthernetPayload _ethernet0;
         private EthernetPayload _ethernet1;
+        private NtpPayload _ntp;
 
         /// <summary>
         /// Gets and sets the property Ethernet0. 
@@ -70,6 +71,24 @@ namespace Amazon.Panorama.Model
         internal bool IsSetEthernet1()
         {
             return this._ethernet1 != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Ntp. 
+        /// <para>
+        /// Network time protocol (NTP) server settings.
+        /// </para>
+        /// </summary>
+        public NtpPayload Ntp
+        {
+            get { return this._ntp; }
+            set { this._ntp = value; }
+        }
+
+        // Check to see if Ntp property is set
+        internal bool IsSetNtp()
+        {
+            return this._ntp != null;
         }
 
     }

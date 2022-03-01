@@ -91,6 +91,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (initiateMultipartUploadRequest.IsSetBucketKeyEnabled())
                 request.Headers.Add(S3Constants.AmzHeaderBucketKeyEnabled, S3Transforms.ToStringValue(initiateMultipartUploadRequest.BucketKeyEnabled));
 
+            if (initiateMultipartUploadRequest.IsSetChecksumAlgorithm())
+                request.Headers.Add(S3Constants.AmzHeaderChecksumAlgorithm, S3Transforms.ToStringValue(initiateMultipartUploadRequest.ChecksumAlgorithm));
+
             AmazonS3Util.SetMetadataHeaders(request, initiateMultipartUploadRequest.Metadata);
 
             if (string.IsNullOrEmpty(initiateMultipartUploadRequest.BucketName))

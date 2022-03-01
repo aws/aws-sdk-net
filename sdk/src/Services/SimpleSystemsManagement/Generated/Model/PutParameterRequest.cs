@@ -85,6 +85,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         ///  <code>aws:ec2:image</code> 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>aws:ssm:integration</code> 
+        /// </para>
         ///  </li> </ul> 
         /// <para>
         /// When you create a <code>String</code> parameter and specify <code>aws:ec2:image</code>,

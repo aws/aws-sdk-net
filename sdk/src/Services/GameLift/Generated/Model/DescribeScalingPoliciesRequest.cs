@@ -69,8 +69,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property FleetId. 
         /// <para>
-        /// A unique identifier for the fleet to retrieve scaling policies for. You can use either
-        /// the fleet ID or ARN value.
+        /// A unique identifier for the fleet for which to retrieve scaling policies. You can
+        /// use either the fleet ID or ARN value.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -109,7 +109,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Location. 
         /// <para>
-        ///  CONTENT TODO 
+        ///  The fleet location. If you don't specify this value, the response contains the scaling
+        /// policies of every location in the fleet. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

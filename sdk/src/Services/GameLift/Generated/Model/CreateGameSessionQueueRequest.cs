@@ -40,9 +40,9 @@ namespace Amazon.GameLift.Model
     /// A game session queue is configured with a set of destinations (GameLift fleets or
     /// aliases), which determine the locations where the queue can place new game sessions.
     /// These destinations can span multiple fleet types (Spot and On-Demand), instance types,
-    /// and AWS Regions. If the queue includes multi-location fleets, the queue is able to
-    /// place game sessions in all of a fleet's remote locations. You can opt to filter out
-    /// individual locations if needed.
+    /// and Amazon Web Services Regions. If the queue includes multi-location fleets, the
+    /// queue is able to place game sessions in all of a fleet's remote locations. You can
+    /// opt to filter out individual locations if needed.
     /// </para>
     ///  
     /// <para>
@@ -63,8 +63,9 @@ namespace Amazon.GameLift.Model
     ///  
     /// <para>
     /// If successful, a new <code>GameSessionQueue</code> object is returned with an assigned
-    /// queue ARN. New game session requests, which are submitted to the queue with <a>StartGameSessionPlacement</a>
-    /// or <a>StartMatchmaking</a>, reference a queue's name or ARN. 
+    /// queue ARN. New game session requests, which are submitted to queue with <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartGameSessionPlacement.html">StartGameSessionPlacement</a>
+    /// or <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartMatchmaking.html">StartMatchmaking</a>,
+    /// reference a queue's name or ARN. 
     /// </para>
     ///  
     /// <para>
@@ -86,8 +87,11 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  
     /// <para>
-    ///  <a>CreateGameSessionQueue</a> | <a>DescribeGameSessionQueues</a> | <a>UpdateGameSessionQueue</a>
-    /// | <a>DeleteGameSessionQueue</a> | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
+    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateGameSessionQueue.html">CreateGameSessionQueue</a>
+    /// | <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeGameSessionQueues.html">DescribeGameSessionQueues</a>
+    /// | <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateGameSessionQueue.html">UpdateGameSessionQueue</a>
+    /// | <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DeleteGameSessionQueue.html">DeleteGameSessionQueue</a>
+    /// | <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
     /// APIs by task</a> 
     /// </para>
     /// </summary>
@@ -147,8 +151,8 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property FilterConfiguration. 
         /// <para>
         /// A list of locations where a queue is allowed to place new game sessions. Locations
-        /// are specified in the form of AWS Region codes, such as <code>us-west-2</code>. If
-        /// this parameter is not set, game sessions can be placed in any queue location. 
+        /// are specified in the form of Amazon Web Services Region codes, such as <code>us-west-2</code>.
+        /// If this parameter is not set, game sessions can be placed in any queue location. 
         /// </para>
         /// </summary>
         public FilterConfiguration FilterConfiguration
@@ -251,12 +255,13 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property Tags. 
         /// <para>
         /// A list of labels to assign to the new game session queue resource. Tags are developer-defined
-        /// key-value pairs. Tagging AWS resources are useful for resource management, access
-        /// management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">
-        /// Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is
-        /// created, you can use <a>TagResource</a>, <a>UntagResource</a>, and <a>ListTagsForResource</a>
-        /// to add, remove, and view tags. The maximum tag limit may be lower than stated. See
-        /// the AWS General Reference for actual tagging limits.
+        /// key-value pairs. Tagging Amazon Web Services resources are useful for resource management,
+        /// access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">
+        /// Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>.
+        /// Once the resource is created, you can use <a>TagResource</a>, <a>UntagResource</a>,
+        /// and <a>ListTagsForResource</a> to add, remove, and view tags. The maximum tag limit
+        /// may be lower than stated. See the Amazon Web Services General Reference for actual
+        /// tagging limits.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=200)]

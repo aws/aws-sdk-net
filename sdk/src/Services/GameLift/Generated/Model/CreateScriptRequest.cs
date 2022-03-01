@@ -47,18 +47,18 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// An Amazon Simple Storage Service (Amazon S3) bucket under your AWS account. Use the
-    /// <i>StorageLocation</i> parameter for this option. You'll need to have an Identity
-    /// Access Management (IAM) role that allows the Amazon GameLift service to access your
-    /// S3 bucket. 
+    /// An Amazon Simple Storage Service (Amazon S3) bucket under your Amazon Web Services
+    /// account. Use the <i>StorageLocation</i> parameter for this option. You'll need to
+    /// have an Identity Access Management (IAM) role that allows the Amazon Web Services
+    /// service to access your S3 bucket. 
     /// </para>
     ///  </li> </ul> 
     /// <para>
     /// If the call is successful, a new script record is created with a unique script ID.
     /// If the script file is provided as a local file, the file is uploaded to an Amazon
-    /// GameLift-owned S3 bucket and the script record's storage location reflects this location.
-    /// If the script file is provided as an S3 bucket, Amazon GameLift accesses the file
-    /// at this storage location as needed for deployment.
+    /// Web Services-owned S3 bucket and the script record's storage location reflects this
+    /// location. If the script file is provided as an S3 bucket, Amazon Web Services accesses
+    /// the file at this storage location as needed for deployment.
     /// </para>
     ///  
     /// <para>
@@ -67,12 +67,12 @@ namespace Amazon.GameLift.Model
     ///  
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/realtime-intro.html">Amazon
-    /// GameLift Realtime Servers</a> 
+    /// Web Services Realtime Servers</a> 
     /// </para>
     ///  
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/setting-up-role.html">Set
-    /// Up a Role for Amazon GameLift Access</a> 
+    /// Up a Role for Amazon Web Services Access</a> 
     /// </para>
     ///  
     /// <para>
@@ -118,10 +118,10 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// The location of the Amazon S3 bucket where a zipped file containing your Realtime
         /// scripts is stored. The storage location must specify the Amazon S3 bucket name, the
-        /// zip file name (the "key"), and a role ARN that allows Amazon GameLift to access the
-        /// Amazon S3 storage location. The S3 bucket must be in the same Region where you want
-        /// to create a new script. By default, Amazon GameLift uploads the latest version of
-        /// the zip file; if you have S3 object versioning turned on, you can use the <code>ObjectVersion</code>
+        /// zip file name (the "key"), and a role ARN that allows Amazon Web Services to access
+        /// the Amazon S3 storage location. The S3 bucket must be in the same Region where you
+        /// want to create a new script. By default, Amazon Web Services uploads the latest version
+        /// of the zip file; if you have S3 object versioning turned on, you can use the <code>ObjectVersion</code>
         /// parameter to specify an earlier version. 
         /// </para>
         /// </summary>
@@ -141,12 +141,13 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property Tags. 
         /// <para>
         /// A list of labels to assign to the new script resource. Tags are developer-defined
-        /// key-value pairs. Tagging AWS resources are useful for resource management, access
-        /// management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">
-        /// Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is
-        /// created, you can use <a>TagResource</a>, <a>UntagResource</a>, and <a>ListTagsForResource</a>
-        /// to add, remove, and view tags. The maximum tag limit may be lower than stated. See
-        /// the AWS General Reference for actual tagging limits.
+        /// key-value pairs. Tagging Amazon Web Services resources are useful for resource management,
+        /// access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">
+        /// Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>.
+        /// Once the resource is created, you can use <a>TagResource</a>, <a>UntagResource</a>,
+        /// and <a>ListTagsForResource</a> to add, remove, and view tags. The maximum tag limit
+        /// may be lower than stated. See the Amazon Web Services General Reference for actual
+        /// tagging limits.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=200)]
@@ -191,9 +192,9 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  
         /// <para>
-        /// When using the AWS CLI tool to create a script, this parameter is set to the zip file
-        /// name. It must be prepended with the string "fileb://" to indicate that the file data
-        /// is a binary object. For example: <code>--zip-file fileb://myRealtimeScript.zip</code>.
+        /// When using the Amazon Web Services CLI tool to create a script, this parameter is
+        /// set to the zip file name. It must be prepended with the string "fileb://" to indicate
+        /// that the file data is a binary object. For example: <code>--zip-file fileb://myRealtimeScript.zip</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=5000000)]

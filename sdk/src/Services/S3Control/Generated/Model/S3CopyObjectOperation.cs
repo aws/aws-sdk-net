@@ -39,6 +39,7 @@ namespace Amazon.S3Control.Model
         private List<S3Grant> _accessControlGrants = new List<S3Grant>();
         private bool? _bucketKeyEnabled;
         private S3CannedAccessControlList _cannedAccessControlList;
+        private S3ChecksumAlgorithm _checksumAlgorithm;
         private S3MetadataDirective _metadataDirective;
         private DateTime? _modifiedSinceConstraint;
         private S3ObjectMetadata _newObjectMetadata;
@@ -108,6 +109,26 @@ namespace Amazon.S3Control.Model
         internal bool IsSetCannedAccessControlList()
         {
             return this._cannedAccessControlList != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChecksumAlgorithm. 
+        /// <para>
+        /// Indicates the algorithm you want Amazon S3 to use to create the checksum. For more
+        /// information see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CheckingObjectIntegrity.xml">
+        /// Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        /// </summary>
+        public S3ChecksumAlgorithm ChecksumAlgorithm
+        {
+            get { return this._checksumAlgorithm; }
+            set { this._checksumAlgorithm = value; }
+        }
+
+        // Check to see if ChecksumAlgorithm property is set
+        internal bool IsSetChecksumAlgorithm()
+        {
+            return this._checksumAlgorithm != null;
         }
 
         /// <summary>

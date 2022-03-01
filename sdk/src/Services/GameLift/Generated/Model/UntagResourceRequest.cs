@@ -31,8 +31,8 @@ namespace Amazon.GameLift.Model
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
     /// Removes a tag that is assigned to a GameLift resource. Resource tags are used to organize
-    /// AWS resources for a range of purposes. This operation handles the permissions necessary
-    /// to manage tags for the following GameLift resource types:
+    /// Amazon Web Services resources for a range of purposes. This operation handles the
+    /// permissions necessary to manage tags for the following GameLift resource types:
     /// 
     ///  <ul> <li> 
     /// <para>
@@ -75,12 +75,13 @@ namespace Amazon.GameLift.Model
     ///  
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-    /// AWS Resources</a> in the <i>AWS General Reference</i> 
+    /// Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>
+    /// 
     /// </para>
     ///  
     /// <para>
     ///  <a href="http://aws.amazon.com/answers/account-management/aws-tagging-strategies/">
-    /// AWS Tagging Strategies</a> 
+    /// Amazon Web Services Tagging Strategies</a> 
     /// </para>
     ///  
     /// <para>
@@ -124,8 +125,8 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property TagKeys. 
         /// <para>
         /// A list of one or more tag keys to remove from the specified GameLift resource. An
-        /// AWS resource can have only one tag with a specific tag key, so specifying the tag
-        /// key identifies which tag to remove. 
+        /// Amazon Web Services resource can have only one tag with a specific tag key, so specifying
+        /// the tag key identifies which tag to remove. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=200)]

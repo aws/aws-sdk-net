@@ -60,7 +60,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             request.HttpMethod = "PUT";
             string uriResourcePath = "/{Bucket}";
             request.AddSubResource("object-lock");
-        
+
+            if (publicRequest.IsSetChecksumAlgorithm())
+                request.Headers.Add(S3Constants.AmzHeaderSdkChecksumAlgorithm, S3Transforms.ToStringValue(publicRequest.ChecksumAlgorithm));
             if (publicRequest.IsSetContentMD5())
                 request.Headers.Add(HeaderKeys.ContentMD5Header, S3Transforms.ToStringValue(publicRequest.ContentMD5));
             if (publicRequest.IsSetRequestPayer())
@@ -119,9 +121,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 request.Content = System.Text.Encoding.UTF8.GetBytes(content);
                 request.Headers[HeaderKeys.ContentTypeHeader] = "application/xml";
 
-                var checksum = AWSSDKUtils.GenerateChecksumForContent(content, true);
-                request.Headers[HeaderKeys.ContentMD5Header] = checksum;
-            } 
+                ChecksumUtils.SetRequestChecksum(request, publicRequest.ChecksumAlgorithm);
+            }
             catch (EncoderFallbackException e) 
             {
                 throw new AmazonServiceException("Unable to marshall request to XML", e);

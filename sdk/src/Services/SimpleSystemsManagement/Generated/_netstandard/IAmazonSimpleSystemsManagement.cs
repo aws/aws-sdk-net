@@ -5621,7 +5621,7 @@ namespace Amazon.SimpleSystemsManagement
 
         /// <summary>
         /// Permanently ends a session and closes the data connection between the Session Manager
-        /// client and SSM Agent on the managed node. A terminated session isn't be resumed.
+        /// client and SSM Agent on the managed node. A terminated session can't be resumed.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TerminateSession service method.</param>
         /// <param name="cancellationToken">
@@ -5629,17 +5629,6 @@ namespace Amazon.SimpleSystemsManagement
         /// </param>
         /// 
         /// <returns>The response from the TerminateSession service method, as returned by SimpleSystemsManagement.</returns>
-        /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
-        /// Error returned when the ID specified for a resource, such as a maintenance window
-        /// or patch baseline, doesn't exist.
-        /// 
-        ///  
-        /// <para>
-        /// For information about resource quotas in Amazon Web Services Systems Manager, see
-        /// <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems
-        /// Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.
-        /// </para>
-        /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
@@ -5686,7 +5675,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <summary>
         /// Updates an association. You can update the association name and version, the document
         /// version, schedule, parameters, and Amazon Simple Storage Service (Amazon S3) output.
-        /// When you call <code>UpdateAssociation</code>, the system drops all optional parameters
+        /// When you call <code>UpdateAssociation</code>, the system removes all optional parameters
         /// from the request and overwrites the association with null values for those parameters.
         /// This is by design. You must specify all optional parameters in the call, even if you
         /// are not changing the parameters. This includes the <code>Name</code> parameter. Before

@@ -43,7 +43,7 @@ namespace Amazon.Amplify.Model
         ///  The Amazon Resource Name (ARN) to use to tag a resource. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=0, Max=2048)]
         public string ResourceArn
         {
             get { return this._resourceArn; }
@@ -62,7 +62,7 @@ namespace Amazon.Amplify.Model
         ///  The tags used to tag the resource. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=50)]
+        [AWSProperty(Required=true, Min=0, Max=50)]
         public Dictionary<string, string> Tags
         {
             get { return this._tags; }

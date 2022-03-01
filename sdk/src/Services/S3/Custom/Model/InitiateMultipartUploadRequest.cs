@@ -363,6 +363,7 @@ namespace Amazon.S3.Model
         private S3StorageClass storageClass;
         private List<Tag> tagset = new List<Tag>();
         private string websiteRedirectLocation;
+        private ChecksumAlgorithm _checksumAlgorithm;
 
         /// <summary>
         /// A canned access control list (ACL) to apply to the object.
@@ -783,6 +784,26 @@ namespace Amazon.S3.Model
                 return this.headersCollection;
             }
             internal set { this.headersCollection = value; }
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChecksumAlgorithm. 
+        /// <para>
+        /// Indicates the algorithm you want Amazon S3 to use to create the checksum for the object.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+        /// object integrity</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        /// </summary>
+        public ChecksumAlgorithm ChecksumAlgorithm
+        {
+            get { return this._checksumAlgorithm; }
+            set { this._checksumAlgorithm = value; }
+        }
+
+        // Check to see if ChecksumAlgorithm property is set
+        internal bool IsSetChecksumAlgorithm()
+        {
+            return this._checksumAlgorithm != null;
         }
 
         /// <summary>

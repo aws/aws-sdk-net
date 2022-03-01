@@ -104,6 +104,7 @@ namespace Amazon.AppRegistry.Model
         /// you are updating the attribute group.
         /// </para>
         /// </summary>
+        [Obsolete("Name update for attribute group is deprecated.")]
         [AWSProperty(Min=1, Max=256)]
         public string Name
         {

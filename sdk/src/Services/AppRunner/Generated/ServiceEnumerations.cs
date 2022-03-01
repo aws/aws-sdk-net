@@ -641,9 +641,21 @@ namespace Amazon.AppRunner
     {
 
         /// <summary>
+        /// Constant CORRETTO_11 for Runtime
+        /// </summary>
+        public static readonly Runtime CORRETTO_11 = new Runtime("CORRETTO_11");
+        /// <summary>
+        /// Constant CORRETTO_8 for Runtime
+        /// </summary>
+        public static readonly Runtime CORRETTO_8 = new Runtime("CORRETTO_8");
+        /// <summary>
         /// Constant NODEJS_12 for Runtime
         /// </summary>
         public static readonly Runtime NODEJS_12 = new Runtime("NODEJS_12");
+        /// <summary>
+        /// Constant NODEJS_14 for Runtime
+        /// </summary>
+        public static readonly Runtime NODEJS_14 = new Runtime("NODEJS_14");
         /// <summary>
         /// Constant PYTHON_3 for Runtime
         /// </summary>

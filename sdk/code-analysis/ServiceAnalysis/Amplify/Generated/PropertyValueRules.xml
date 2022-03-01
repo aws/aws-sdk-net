@@ -4,42 +4,51 @@
     <property>Amazon.Amplify.Model.CreateAppRequest.AccessToken</property>
     <min>1</min>
     <max>255</max>
+    <pattern>(?s).+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.CreateAppRequest.BasicAuthCredentials</property>
     <max>2000</max>
+    <pattern>(?s).*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.CreateAppRequest.BuildSpec</property>
     <min>1</min>
     <max>25000</max>
+    <pattern>(?s).+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.CreateAppRequest.CustomHeaders</property>
-    <min>1</min>
+    <min>0</min>
     <max>25000</max>
+    <pattern>(?s).*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.CreateAppRequest.Description</property>
     <max>1000</max>
+    <pattern>(?s).*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.CreateAppRequest.IamServiceRoleArn</property>
-    <min>1</min>
+    <min>0</min>
     <max>1000</max>
+    <pattern>(?s).*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.CreateAppRequest.Name</property>
     <min>1</min>
     <max>255</max>
+    <pattern>(?s).+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.CreateAppRequest.OauthToken</property>
     <max>1000</max>
+    <pattern>(?s).*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.CreateAppRequest.Repository</property>
     <max>1000</max>
+    <pattern>(?s).*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.CreateBackendEnvironmentRequest.AppId</property>
@@ -51,16 +60,19 @@
     <property>Amazon.Amplify.Model.CreateBackendEnvironmentRequest.DeploymentArtifacts</property>
     <min>1</min>
     <max>1000</max>
+    <pattern>(?s).+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.CreateBackendEnvironmentRequest.EnvironmentName</property>
     <min>1</min>
     <max>255</max>
+    <pattern>(?s).+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.CreateBackendEnvironmentRequest.StackName</property>
     <min>1</min>
     <max>255</max>
+    <pattern>(?s).+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.CreateBranchRequest.AppId</property>
@@ -70,38 +82,52 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.CreateBranchRequest.BackendEnvironmentArn</property>
-    <min>1</min>
+    <min>0</min>
     <max>1000</max>
+    <pattern>(?s).*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.CreateBranchRequest.BasicAuthCredentials</property>
     <max>2000</max>
+    <pattern>(?s).*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.CreateBranchRequest.BranchName</property>
     <min>1</min>
     <max>255</max>
+    <pattern>(?s).+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.CreateBranchRequest.BuildSpec</property>
     <min>1</min>
     <max>25000</max>
+    <pattern>(?s).+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.CreateBranchRequest.Description</property>
     <max>1000</max>
+    <pattern>(?s).*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.CreateBranchRequest.DisplayName</property>
     <max>255</max>
+    <pattern>(?s).*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.CreateBranchRequest.Framework</property>
     <max>255</max>
+    <pattern>(?s).*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.CreateBranchRequest.PullRequestEnvironmentName</property>
     <max>20</max>
+    <pattern>(?s).*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Amplify.Model.CreateBranchRequest.Ttl</property>
+    <min>0</min>
+    <max>32</max>
+    <pattern>\d*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.CreateDeploymentRequest.AppId</property>
@@ -113,10 +139,12 @@
     <property>Amazon.Amplify.Model.CreateDeploymentRequest.BranchName</property>
     <min>1</min>
     <max>255</max>
+    <pattern>(?s).+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.CreateDeploymentResponse.JobId</property>
     <max>255</max>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.CreateDeploymentResponse.ZipUploadUrl</property>
@@ -135,7 +163,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.CreateDomainAssociationRequest.DomainName</property>
-    <max>255</max>
+    <max>64</max>
+    <pattern>^(((?!-)[A-Za-z0-9-]{0,62}[A-Za-z0-9])\.)+((?!-)[A-Za-z0-9-]{1,62}[A-Za-z0-9])(\.)?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.CreateWebhookRequest.AppId</property>
@@ -147,10 +176,12 @@
     <property>Amazon.Amplify.Model.CreateWebhookRequest.BranchName</property>
     <min>1</min>
     <max>255</max>
+    <pattern>(?s).+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.CreateWebhookRequest.Description</property>
     <max>1000</max>
+    <pattern>(?s).*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.DeleteAppRequest.AppId</property>
@@ -168,6 +199,7 @@
     <property>Amazon.Amplify.Model.DeleteBackendEnvironmentRequest.EnvironmentName</property>
     <min>1</min>
     <max>255</max>
+    <pattern>(?s).+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.DeleteBranchRequest.AppId</property>
@@ -179,6 +211,7 @@
     <property>Amazon.Amplify.Model.DeleteBranchRequest.BranchName</property>
     <min>1</min>
     <max>255</max>
+    <pattern>(?s).+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.DeleteDomainAssociationRequest.AppId</property>
@@ -188,7 +221,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.DeleteDomainAssociationRequest.DomainName</property>
-    <max>255</max>
+    <max>64</max>
+    <pattern>^(((?!-)[A-Za-z0-9-]{0,62}[A-Za-z0-9])\.)+((?!-)[A-Za-z0-9-]{1,62}[A-Za-z0-9])(\.)?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.DeleteJobRequest.AppId</property>
@@ -200,14 +234,17 @@
     <property>Amazon.Amplify.Model.DeleteJobRequest.BranchName</property>
     <min>1</min>
     <max>255</max>
+    <pattern>(?s).+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.DeleteJobRequest.JobId</property>
     <max>255</max>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.DeleteWebhookRequest.WebhookId</property>
     <max>255</max>
+    <pattern>(?s).*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.GenerateAccessLogsRequest.AppId</property>
@@ -217,7 +254,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.GenerateAccessLogsRequest.DomainName</property>
-    <max>255</max>
+    <max>64</max>
+    <pattern>^(((?!-)[A-Za-z0-9-]{0,62}[A-Za-z0-9])\.)+((?!-)[A-Za-z0-9-]{1,62}[A-Za-z0-9])(\.)?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.GenerateAccessLogsResponse.LogUrl</property>
@@ -232,10 +270,12 @@
   <property-value-rule>
     <property>Amazon.Amplify.Model.GetArtifactUrlRequest.ArtifactId</property>
     <max>255</max>
+    <pattern>(?s).*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.GetArtifactUrlResponse.ArtifactId</property>
     <max>255</max>
+    <pattern>(?s).*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.GetArtifactUrlResponse.ArtifactUrl</property>
@@ -251,6 +291,7 @@
     <property>Amazon.Amplify.Model.GetBackendEnvironmentRequest.EnvironmentName</property>
     <min>1</min>
     <max>255</max>
+    <pattern>(?s).+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.GetBranchRequest.AppId</property>
@@ -262,6 +303,7 @@
     <property>Amazon.Amplify.Model.GetBranchRequest.BranchName</property>
     <min>1</min>
     <max>255</max>
+    <pattern>(?s).+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.GetDomainAssociationRequest.AppId</property>
@@ -271,7 +313,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.GetDomainAssociationRequest.DomainName</property>
-    <max>255</max>
+    <max>64</max>
+    <pattern>^(((?!-)[A-Za-z0-9-]{0,62}[A-Za-z0-9])\.)+((?!-)[A-Za-z0-9-]{1,62}[A-Za-z0-9])(\.)?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.GetJobRequest.AppId</property>
@@ -283,14 +326,17 @@
     <property>Amazon.Amplify.Model.GetJobRequest.BranchName</property>
     <min>1</min>
     <max>255</max>
+    <pattern>(?s).+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.GetJobRequest.JobId</property>
     <max>255</max>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.GetWebhookRequest.WebhookId</property>
     <max>255</max>
+    <pattern>(?s).*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.ListAppsRequest.MaxResults</property>
@@ -300,10 +346,12 @@
   <property-value-rule>
     <property>Amazon.Amplify.Model.ListAppsRequest.NextToken</property>
     <max>2000</max>
+    <pattern>(?s).*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.ListAppsResponse.NextToken</property>
     <max>2000</max>
+    <pattern>(?s).*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.ListArtifactsRequest.AppId</property>
@@ -315,10 +363,12 @@
     <property>Amazon.Amplify.Model.ListArtifactsRequest.BranchName</property>
     <min>1</min>
     <max>255</max>
+    <pattern>(?s).+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.ListArtifactsRequest.JobId</property>
     <max>255</max>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.ListArtifactsRequest.MaxResults</property>
@@ -328,10 +378,12 @@
   <property-value-rule>
     <property>Amazon.Amplify.Model.ListArtifactsRequest.NextToken</property>
     <max>2000</max>
+    <pattern>(?s).*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.ListArtifactsResponse.NextToken</property>
     <max>2000</max>
+    <pattern>(?s).*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.ListBackendEnvironmentsRequest.AppId</property>
@@ -343,6 +395,7 @@
     <property>Amazon.Amplify.Model.ListBackendEnvironmentsRequest.EnvironmentName</property>
     <min>1</min>
     <max>255</max>
+    <pattern>(?s).+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.ListBackendEnvironmentsRequest.MaxResults</property>
@@ -352,10 +405,12 @@
   <property-value-rule>
     <property>Amazon.Amplify.Model.ListBackendEnvironmentsRequest.NextToken</property>
     <max>2000</max>
+    <pattern>(?s).*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.ListBackendEnvironmentsResponse.NextToken</property>
     <max>2000</max>
+    <pattern>(?s).*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.ListBranchesRequest.AppId</property>
@@ -371,10 +426,12 @@
   <property-value-rule>
     <property>Amazon.Amplify.Model.ListBranchesRequest.NextToken</property>
     <max>2000</max>
+    <pattern>(?s).*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.ListBranchesResponse.NextToken</property>
     <max>2000</max>
+    <pattern>(?s).*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.ListDomainAssociationsRequest.AppId</property>
@@ -390,10 +447,12 @@
   <property-value-rule>
     <property>Amazon.Amplify.Model.ListDomainAssociationsRequest.NextToken</property>
     <max>2000</max>
+    <pattern>(?s).*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.ListDomainAssociationsResponse.NextToken</property>
     <max>2000</max>
+    <pattern>(?s).*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.ListJobsRequest.AppId</property>
@@ -405,6 +464,7 @@
     <property>Amazon.Amplify.Model.ListJobsRequest.BranchName</property>
     <min>1</min>
     <max>255</max>
+    <pattern>(?s).+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.ListJobsRequest.MaxResults</property>
@@ -414,13 +474,17 @@
   <property-value-rule>
     <property>Amazon.Amplify.Model.ListJobsRequest.NextToken</property>
     <max>2000</max>
+    <pattern>(?s).*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.ListJobsResponse.NextToken</property>
     <max>2000</max>
+    <pattern>(?s).*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.ListTagsForResourceRequest.ResourceArn</property>
+    <min>0</min>
+    <max>2048</max>
     <pattern>^arn:aws:amplify:.*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -437,10 +501,12 @@
   <property-value-rule>
     <property>Amazon.Amplify.Model.ListWebhooksRequest.NextToken</property>
     <max>2000</max>
+    <pattern>(?s).*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.ListWebhooksResponse.NextToken</property>
     <max>2000</max>
+    <pattern>(?s).*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.StartDeploymentRequest.AppId</property>
@@ -452,14 +518,17 @@
     <property>Amazon.Amplify.Model.StartDeploymentRequest.BranchName</property>
     <min>1</min>
     <max>255</max>
+    <pattern>(?s).+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.StartDeploymentRequest.JobId</property>
     <max>255</max>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.StartDeploymentRequest.SourceUrl</property>
-    <max>1000</max>
+    <max>3000</max>
+    <pattern>(?s).*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.StartJobRequest.AppId</property>
@@ -471,22 +540,27 @@
     <property>Amazon.Amplify.Model.StartJobRequest.BranchName</property>
     <min>1</min>
     <max>255</max>
+    <pattern>(?s).+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.StartJobRequest.CommitId</property>
     <max>255</max>
+    <pattern>(?s).*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.StartJobRequest.CommitMessage</property>
     <max>10000</max>
+    <pattern>(?s).*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.StartJobRequest.JobId</property>
     <max>255</max>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.StartJobRequest.JobReason</property>
     <max>255</max>
+    <pattern>(?s).*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.StartJobRequest.JobType</property>
@@ -502,23 +576,30 @@
     <property>Amazon.Amplify.Model.StopJobRequest.BranchName</property>
     <min>1</min>
     <max>255</max>
+    <pattern>(?s).+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.StopJobRequest.JobId</property>
     <max>255</max>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.TagResourceRequest.ResourceArn</property>
+    <min>0</min>
+    <max>2048</max>
     <pattern>^arn:aws:amplify:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.UntagResourceRequest.ResourceArn</property>
+    <min>0</min>
+    <max>2048</max>
     <pattern>^arn:aws:amplify:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.UpdateAppRequest.AccessToken</property>
     <min>1</min>
     <max>255</max>
+    <pattern>(?s).+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.UpdateAppRequest.AppId</property>
@@ -529,38 +610,46 @@
   <property-value-rule>
     <property>Amazon.Amplify.Model.UpdateAppRequest.BasicAuthCredentials</property>
     <max>2000</max>
+    <pattern>(?s).*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.UpdateAppRequest.BuildSpec</property>
     <min>1</min>
     <max>25000</max>
+    <pattern>(?s).+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.UpdateAppRequest.CustomHeaders</property>
-    <min>1</min>
+    <min>0</min>
     <max>25000</max>
+    <pattern>(?s).*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.UpdateAppRequest.Description</property>
     <max>1000</max>
+    <pattern>(?s).*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.UpdateAppRequest.IamServiceRoleArn</property>
-    <min>1</min>
+    <min>0</min>
     <max>1000</max>
+    <pattern>(?s).*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.UpdateAppRequest.Name</property>
     <min>1</min>
     <max>255</max>
+    <pattern>(?s).+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.UpdateAppRequest.OauthToken</property>
     <max>1000</max>
+    <pattern>(?s).*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.UpdateAppRequest.Repository</property>
     <max>1000</max>
+    <pattern>(?s).*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.UpdateBranchRequest.AppId</property>
@@ -570,38 +659,52 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.UpdateBranchRequest.BackendEnvironmentArn</property>
-    <min>1</min>
+    <min>0</min>
     <max>1000</max>
+    <pattern>(?s).*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.UpdateBranchRequest.BasicAuthCredentials</property>
     <max>2000</max>
+    <pattern>(?s).*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.UpdateBranchRequest.BranchName</property>
     <min>1</min>
     <max>255</max>
+    <pattern>(?s).+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.UpdateBranchRequest.BuildSpec</property>
     <min>1</min>
     <max>25000</max>
+    <pattern>(?s).+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.UpdateBranchRequest.Description</property>
     <max>1000</max>
+    <pattern>(?s).*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.UpdateBranchRequest.DisplayName</property>
     <max>255</max>
+    <pattern>(?s).*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.UpdateBranchRequest.Framework</property>
     <max>255</max>
+    <pattern>(?s).*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.UpdateBranchRequest.PullRequestEnvironmentName</property>
     <max>20</max>
+    <pattern>(?s).*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Amplify.Model.UpdateBranchRequest.Ttl</property>
+    <min>0</min>
+    <max>32</max>
+    <pattern>\d*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.UpdateDomainAssociationRequest.AppId</property>
@@ -616,20 +719,24 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.UpdateDomainAssociationRequest.DomainName</property>
-    <max>255</max>
+    <max>64</max>
+    <pattern>^(((?!-)[A-Za-z0-9-]{0,62}[A-Za-z0-9])\.)+((?!-)[A-Za-z0-9-]{1,62}[A-Za-z0-9])(\.)?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.UpdateWebhookRequest.BranchName</property>
     <min>1</min>
     <max>255</max>
+    <pattern>(?s).+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.UpdateWebhookRequest.Description</property>
     <max>1000</max>
+    <pattern>(?s).*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.UpdateWebhookRequest.WebhookId</property>
     <max>255</max>
+    <pattern>(?s).*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.App.AppArn</property>
@@ -644,16 +751,19 @@
   <property-value-rule>
     <property>Amazon.Amplify.Model.App.BasicAuthCredentials</property>
     <max>2000</max>
+    <pattern>(?s).*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.App.BuildSpec</property>
     <min>1</min>
     <max>25000</max>
+    <pattern>(?s).+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.App.CustomHeaders</property>
-    <min>1</min>
+    <min>0</min>
     <max>25000</max>
+    <pattern>(?s).*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.App.DefaultDomain</property>
@@ -663,20 +773,24 @@
   <property-value-rule>
     <property>Amazon.Amplify.Model.App.Description</property>
     <max>1000</max>
+    <pattern>(?s).*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.App.IamServiceRoleArn</property>
-    <min>1</min>
+    <min>0</min>
     <max>1000</max>
+    <pattern>(?s).*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.App.Name</property>
     <min>1</min>
     <max>255</max>
+    <pattern>(?s).+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.App.Repository</property>
     <max>1000</max>
+    <pattern>(?s).*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.Artifact.ArtifactFileName</property>
@@ -685,43 +799,52 @@
   <property-value-rule>
     <property>Amazon.Amplify.Model.Artifact.ArtifactId</property>
     <max>255</max>
+    <pattern>(?s).*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.AutoBranchCreationConfig.BasicAuthCredentials</property>
     <max>2000</max>
+    <pattern>(?s).*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.AutoBranchCreationConfig.BuildSpec</property>
     <min>1</min>
     <max>25000</max>
+    <pattern>(?s).+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.AutoBranchCreationConfig.Framework</property>
     <max>255</max>
+    <pattern>(?s).*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.AutoBranchCreationConfig.PullRequestEnvironmentName</property>
     <max>20</max>
+    <pattern>(?s).*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.BackendEnvironment.BackendEnvironmentArn</property>
-    <min>1</min>
+    <min>0</min>
     <max>1000</max>
+    <pattern>(?s).*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.BackendEnvironment.DeploymentArtifacts</property>
     <min>1</min>
     <max>1000</max>
+    <pattern>(?s).+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.BackendEnvironment.EnvironmentName</property>
     <min>1</min>
     <max>255</max>
+    <pattern>(?s).+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.BackendEnvironment.StackName</property>
     <min>1</min>
     <max>255</max>
+    <pattern>(?s).+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.Branch.ActiveJobId</property>
@@ -729,52 +852,63 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.Branch.BackendEnvironmentArn</property>
-    <min>1</min>
+    <min>0</min>
     <max>1000</max>
+    <pattern>(?s).*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.Branch.BasicAuthCredentials</property>
     <max>2000</max>
+    <pattern>(?s).*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.Branch.BranchArn</property>
     <max>1000</max>
+    <pattern>(?s).*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.Branch.BranchName</property>
     <min>1</min>
     <max>255</max>
+    <pattern>(?s).+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.Branch.BuildSpec</property>
     <min>1</min>
     <max>25000</max>
+    <pattern>(?s).+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.Branch.Description</property>
     <max>1000</max>
+    <pattern>(?s).*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.Branch.DestinationBranch</property>
     <min>1</min>
     <max>255</max>
+    <pattern>(?s).+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.Branch.DisplayName</property>
     <max>255</max>
+    <pattern>(?s).*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.Branch.Framework</property>
     <max>255</max>
+    <pattern>(?s).*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.Branch.PullRequestEnvironmentName</property>
     <max>20</max>
+    <pattern>(?s).*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.Branch.SourceBranch</property>
     <min>1</min>
     <max>255</max>
+    <pattern>(?s).+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.Branch.ThumbnailUrl</property>
@@ -786,24 +920,34 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Amplify.Model.Branch.Ttl</property>
+    <min>0</min>
+    <max>32</max>
+    <pattern>\d*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Amplify.Model.CustomRule.Condition</property>
-    <min>1</min>
+    <min>0</min>
     <max>2048</max>
+    <pattern>(?s).*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.CustomRule.Source</property>
     <min>1</min>
     <max>2048</max>
+    <pattern>(?s).+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.CustomRule.Status</property>
     <min>3</min>
     <max>7</max>
+    <pattern>.{3,7}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.CustomRule.Target</property>
     <min>1</min>
     <max>2048</max>
+    <pattern>(?s).+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.DomainAssociation.AutoSubDomainIAMRole</property>
@@ -820,7 +964,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.DomainAssociation.DomainName</property>
-    <max>255</max>
+    <max>64</max>
+    <pattern>^(((?!-)[A-Za-z0-9-]{0,62}[A-Za-z0-9])\.)+((?!-)[A-Za-z0-9-]{1,62}[A-Za-z0-9])(\.)?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.DomainAssociation.StatusReason</property>
@@ -829,10 +974,12 @@
   <property-value-rule>
     <property>Amazon.Amplify.Model.JobSummary.CommitId</property>
     <max>255</max>
+    <pattern>(?s).*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.JobSummary.CommitMessage</property>
     <max>10000</max>
+    <pattern>(?s).*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.JobSummary.JobArn</property>
@@ -841,6 +988,7 @@
   <property-value-rule>
     <property>Amazon.Amplify.Model.JobSummary.JobId</property>
     <max>255</max>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.JobSummary.JobType</property>
@@ -850,11 +998,13 @@
     <property>Amazon.Amplify.Model.ProductionBranch.BranchName</property>
     <min>1</min>
     <max>255</max>
+    <pattern>(?s).+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.ProductionBranch.Status</property>
     <min>3</min>
     <max>7</max>
+    <pattern>.{3,7}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.ProductionBranch.ThumbnailUrl</property>
@@ -893,19 +1043,23 @@
     <property>Amazon.Amplify.Model.SubDomainSetting.BranchName</property>
     <min>1</min>
     <max>255</max>
+    <pattern>(?s).+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.SubDomainSetting.Prefix</property>
     <max>255</max>
+    <pattern>(?s).*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.Webhook.BranchName</property>
     <min>1</min>
     <max>255</max>
+    <pattern>(?s).+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.Webhook.Description</property>
     <max>1000</max>
+    <pattern>(?s).*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.Webhook.WebhookArn</property>
@@ -914,6 +1068,7 @@
   <property-value-rule>
     <property>Amazon.Amplify.Model.Webhook.WebhookId</property>
     <max>255</max>
+    <pattern>(?s).*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.Webhook.WebhookUrl</property>
