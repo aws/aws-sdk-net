@@ -567,6 +567,10 @@ namespace Amazon.MediaPackage
         /// </summary>
         public static readonly Profile HBBTV_1_5 = new Profile("HBBTV_1_5");
         /// <summary>
+        /// Constant HYBRIDCAST for Profile
+        /// </summary>
+        public static readonly Profile HYBRIDCAST = new Profile("HYBRIDCAST");
+        /// <summary>
         /// Constant NONE for Profile
         /// </summary>
         public static readonly Profile NONE = new Profile("NONE");
