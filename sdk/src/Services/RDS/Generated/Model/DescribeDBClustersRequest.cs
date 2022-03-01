@@ -44,11 +44,7 @@ namespace Amazon.RDS.Model
     /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
     /// User Guide.</i> 
     /// </para>
-    ///  <note> 
-    /// <para>
-    /// The Multi-AZ DB clusters feature is in preview and is subject to change.
-    /// </para>
-    ///  </note> 
+    ///  
     /// <para>
     /// This operation can also return information for Amazon Neptune DB instances and Amazon
     /// DocumentDB instances.

@@ -1071,11 +1071,6 @@ namespace Amazon.RDS
         /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
         /// User Guide.</i> 
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// The Multi-AZ DB clusters feature is in preview and is subject to change.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CopyDBClusterSnapshot service method.</param>
         /// 
@@ -1572,11 +1567,6 @@ namespace Amazon.RDS
         /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
         /// User Guide.</i> 
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// The Multi-AZ DB clusters feature is in preview and is subject to change.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDBCluster service method.</param>
         /// 
@@ -1821,11 +1811,6 @@ namespace Amazon.RDS
         /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
         /// User Guide.</i> 
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// The Multi-AZ DB clusters feature is in preview and is subject to change.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDBClusterParameterGroup service method.</param>
         /// 
@@ -1899,11 +1884,6 @@ namespace Amazon.RDS
         /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
         /// User Guide.</i> 
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// The Multi-AZ DB clusters feature is in preview and is subject to change.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDBClusterSnapshot service method.</param>
         /// 
@@ -3102,11 +3082,6 @@ namespace Amazon.RDS
         /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
         /// User Guide.</i> 
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// The Multi-AZ DB clusters feature is in preview and is subject to change.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDBCluster service method.</param>
         /// 
@@ -3259,11 +3234,6 @@ namespace Amazon.RDS
         /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
         /// User Guide.</i> 
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// The Multi-AZ DB clusters feature is in preview and is subject to change.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDBClusterParameterGroup service method.</param>
         /// 
@@ -3343,11 +3313,6 @@ namespace Amazon.RDS
         /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
         /// User Guide.</i> 
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// The Multi-AZ DB clusters feature is in preview and is subject to change.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDBClusterSnapshot service method.</param>
         /// 
@@ -4643,11 +4608,6 @@ namespace Amazon.RDS
         /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
         /// User Guide.</i> 
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// The Multi-AZ DB clusters feature is in preview and is subject to change.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDBClusterParameterGroups service method.</param>
         /// 
@@ -4717,11 +4677,6 @@ namespace Amazon.RDS
         /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
         /// User Guide.</i> 
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// The Multi-AZ DB clusters feature is in preview and is subject to change.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDBClusterParameters service method.</param>
         /// 
@@ -4792,11 +4747,7 @@ namespace Amazon.RDS
         /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
         /// User Guide.</i> 
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// The Multi-AZ DB clusters feature is in preview and is subject to change.
-        /// </para>
-        ///  </note> 
+        ///  
         /// <para>
         /// This operation can also return information for Amazon Neptune DB instances and Amazon
         /// DocumentDB instances.
@@ -4945,11 +4896,6 @@ namespace Amazon.RDS
         /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
         /// User Guide.</i> 
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// The Multi-AZ DB clusters feature is in preview and is subject to change.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDBClusterSnapshots service method.</param>
         /// 
@@ -7127,11 +7073,6 @@ namespace Amazon.RDS
         /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
         /// User Guide.</i> 
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// The Multi-AZ DB clusters feature is in preview and is subject to change.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the FailoverDBCluster service method.</param>
         /// 
@@ -7704,11 +7645,6 @@ namespace Amazon.RDS
         /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
         /// User Guide.</i> 
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// The Multi-AZ DB clusters feature is in preview and is subject to change.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyDBCluster service method.</param>
         /// 
@@ -7913,11 +7849,6 @@ namespace Amazon.RDS
         /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
         /// User Guide.</i> 
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// The Multi-AZ DB clusters feature is in preview and is subject to change.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyDBClusterParameterGroup service method.</param>
         /// 
@@ -9130,8 +9061,7 @@ namespace Amazon.RDS
         /// </para>
         ///  
         /// <para>
-        /// Use this operation only for a non-Aurora Multi-AZ DB cluster. The Multi-AZ DB clusters
-        /// feature is in preview and is subject to change.
+        /// Use this operation only for a non-Aurora Multi-AZ DB cluster.
         /// </para>
         ///  
         /// <para>
@@ -9451,11 +9381,6 @@ namespace Amazon.RDS
         /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
         /// User Guide.</i> 
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// The Multi-AZ DB clusters feature is in preview and is subject to change.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RemoveRoleFromDBCluster service method.</param>
         /// 
@@ -9746,11 +9671,6 @@ namespace Amazon.RDS
         /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
         /// User Guide.</i> 
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// The Multi-AZ DB clusters feature is in preview and is subject to change.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ResetDBClusterParameterGroup service method.</param>
         /// 
@@ -10035,11 +9955,6 @@ namespace Amazon.RDS
         /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
         /// User Guide.</i> 
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// The Multi-AZ DB clusters feature is in preview and is subject to change.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RestoreDBClusterFromSnapshot service method.</param>
         /// 
@@ -10178,11 +10093,6 @@ namespace Amazon.RDS
         /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
         /// User Guide.</i> 
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// The Multi-AZ DB clusters feature is in preview and is subject to change.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RestoreDBClusterToPointInTime service method.</param>
         /// 
