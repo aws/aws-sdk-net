@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DescribeCustomPlugin operation
+    /// Response Unmarshaller for DeleteCustomPlugin operation
     /// </summary>  
-    public class DescribeCustomPluginResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DeleteCustomPluginResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,18 +45,12 @@ namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DescribeCustomPluginResponse response = new DescribeCustomPluginResponse();
+            DeleteCustomPluginResponse response = new DeleteCustomPluginResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("creationTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.CreationTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("customPluginArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -67,30 +61,6 @@ namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.CustomPluginState = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("description", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Description = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("latestRevision", targetDepth))
-                {
-                    var unmarshaller = CustomPluginRevisionSummaryUnmarshaller.Instance;
-                    response.LatestRevision = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("name", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Name = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("stateDescription", targetDepth))
-                {
-                    var unmarshaller = StateDescriptionUnmarshaller.Instance;
-                    response.StateDescription = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -148,9 +118,9 @@ namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
             return new AmazonKafkaConnectException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static DescribeCustomPluginResponseUnmarshaller _instance = new DescribeCustomPluginResponseUnmarshaller();        
+        private static DeleteCustomPluginResponseUnmarshaller _instance = new DeleteCustomPluginResponseUnmarshaller();        
 
-        internal static DescribeCustomPluginResponseUnmarshaller GetInstance()
+        internal static DeleteCustomPluginResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -158,7 +128,7 @@ namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DescribeCustomPluginResponseUnmarshaller Instance
+        public static DeleteCustomPluginResponseUnmarshaller Instance
         {
             get
             {

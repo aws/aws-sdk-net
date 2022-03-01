@@ -39,6 +39,7 @@ namespace Amazon.KafkaConnect.Model
         private string _description;
         private CustomPluginRevisionSummary _latestRevision;
         private string _name;
+        private StateDescription _stateDescription;
 
         /// <summary>
         /// Gets and sets the property CreationTime. 
@@ -147,6 +148,24 @@ namespace Amazon.KafkaConnect.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StateDescription. 
+        /// <para>
+        /// Details about the state of a custom plugin.
+        /// </para>
+        /// </summary>
+        public StateDescription StateDescription
+        {
+            get { return this._stateDescription; }
+            set { this._stateDescription = value; }
+        }
+
+        // Check to see if StateDescription property is set
+        internal bool IsSetStateDescription()
+        {
+            return this._stateDescription != null;
         }
 
     }
