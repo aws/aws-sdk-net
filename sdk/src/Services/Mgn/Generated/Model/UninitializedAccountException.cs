@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Mgn.Model
 {
     /// <summary>
-    /// Unitialized account exception.
+    /// Uninitialized account exception.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

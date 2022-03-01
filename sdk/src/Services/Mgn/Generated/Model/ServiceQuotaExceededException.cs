@@ -173,7 +173,7 @@ namespace Amazon.Mgn.Model
         /// <summary>
         /// Gets and sets the property ResourceId. 
         /// <para>
-        /// Exceeded the service quota resource Id.
+        /// Exceeded the service quota resource ID.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=65536)]

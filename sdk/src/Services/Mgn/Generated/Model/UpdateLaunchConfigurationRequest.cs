@@ -34,6 +34,7 @@ namespace Amazon.Mgn.Model
     /// </summary>
     public partial class UpdateLaunchConfigurationRequest : AmazonMgnRequest
     {
+        private BootMode _bootMode;
         private bool? _copyPrivateIp;
         private bool? _copyTags;
         private LaunchDisposition _launchDisposition;
@@ -41,6 +42,24 @@ namespace Amazon.Mgn.Model
         private string _name;
         private string _sourceServerID;
         private TargetInstanceTypeRightSizingMethod _targetInstanceTypeRightSizingMethod;
+
+        /// <summary>
+        /// Gets and sets the property BootMode. 
+        /// <para>
+        /// Update Launch configuration boot mode request.
+        /// </para>
+        /// </summary>
+        public BootMode BootMode
+        {
+            get { return this._bootMode; }
+            set { this._bootMode = value; }
+        }
+
+        // Check to see if BootMode property is set
+        internal bool IsSetBootMode()
+        {
+            return this._bootMode != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CopyPrivateIp. 

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Mgn.Model
 {
     /// <summary>
-    /// Configure launced instance.
+    /// Launched instance.
     /// </summary>
     public partial class LaunchedInstance
     {
@@ -40,7 +40,7 @@ namespace Amazon.Mgn.Model
         /// <summary>
         /// Gets and sets the property Ec2InstanceID. 
         /// <para>
-        /// Configure launced instance EC2 ID.
+        /// Launched instance EC2 ID.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=255)]
@@ -59,7 +59,7 @@ namespace Amazon.Mgn.Model
         /// <summary>
         /// Gets and sets the property FirstBoot. 
         /// <para>
-        /// Configure launced instance first boot.
+        /// Launched instance first boot.
         /// </para>
         /// </summary>
         public FirstBoot FirstBoot
@@ -77,7 +77,7 @@ namespace Amazon.Mgn.Model
         /// <summary>
         /// Gets and sets the property JobID. 
         /// <para>
-        /// Configure launced instance Job ID.
+        /// Launched instance Job ID.
         /// </para>
         /// </summary>
         [AWSProperty(Min=24, Max=24)]

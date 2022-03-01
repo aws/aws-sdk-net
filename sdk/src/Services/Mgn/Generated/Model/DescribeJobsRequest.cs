@@ -32,7 +32,7 @@ namespace Amazon.Mgn.Model
     /// Container for the parameters to the DescribeJobs operation.
     /// Returns a list of Jobs. Use the JobsID and fromDate and toData filters to limit which
     /// jobs are returned. The response is sorted by creationDataTime - latest date first.
-    /// Jobs are normaly created by the StartTest, StartCutover, and TerminateTargetInstances
+    /// Jobs are normally created by the StartTest, StartCutover, and TerminateTargetInstances
     /// APIs. Jobs are also created by DiagnosticLaunch and TerminateDiagnosticInstances,
     /// which are APIs available only to *Support* and only used in response to relevant support
     /// tickets.
@@ -65,7 +65,7 @@ namespace Amazon.Mgn.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// Request to describe Job log by max results.
+        /// Request to describe job log items by max results.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -84,7 +84,7 @@ namespace Amazon.Mgn.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Request to describe Job logby next token.
+        /// Request to describe job log items by next token.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]

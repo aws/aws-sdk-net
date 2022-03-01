@@ -25,6 +25,56 @@ namespace Amazon.Mgn
 {
 
     /// <summary>
+    /// Constants used for properties of type BootMode.
+    /// </summary>
+    public class BootMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant LEGACY_BIOS for BootMode
+        /// </summary>
+        public static readonly BootMode LEGACY_BIOS = new BootMode("LEGACY_BIOS");
+        /// <summary>
+        /// Constant UEFI for BootMode
+        /// </summary>
+        public static readonly BootMode UEFI = new BootMode("UEFI");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BootMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BootMode FindValue(string value)
+        {
+            return FindValue<BootMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BootMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ChangeServerLifeCycleStateSourceServerLifecycleState.
     /// </summary>
     public class ChangeServerLifeCycleStateSourceServerLifecycleState : ConstantClass
@@ -999,6 +1049,10 @@ namespace Amazon.Mgn
         /// </summary>
         public static readonly ReplicationConfigurationDefaultLargeStagingDiskType GP2 = new ReplicationConfigurationDefaultLargeStagingDiskType("GP2");
         /// <summary>
+        /// Constant GP3 for ReplicationConfigurationDefaultLargeStagingDiskType
+        /// </summary>
+        public static readonly ReplicationConfigurationDefaultLargeStagingDiskType GP3 = new ReplicationConfigurationDefaultLargeStagingDiskType("GP3");
+        /// <summary>
         /// Constant ST1 for ReplicationConfigurationDefaultLargeStagingDiskType
         /// </summary>
         public static readonly ReplicationConfigurationDefaultLargeStagingDiskType ST1 = new ReplicationConfigurationDefaultLargeStagingDiskType("ST1");
@@ -1103,9 +1157,17 @@ namespace Amazon.Mgn
         /// </summary>
         public static readonly ReplicationConfigurationReplicatedDiskStagingDiskType GP2 = new ReplicationConfigurationReplicatedDiskStagingDiskType("GP2");
         /// <summary>
+        /// Constant GP3 for ReplicationConfigurationReplicatedDiskStagingDiskType
+        /// </summary>
+        public static readonly ReplicationConfigurationReplicatedDiskStagingDiskType GP3 = new ReplicationConfigurationReplicatedDiskStagingDiskType("GP3");
+        /// <summary>
         /// Constant IO1 for ReplicationConfigurationReplicatedDiskStagingDiskType
         /// </summary>
         public static readonly ReplicationConfigurationReplicatedDiskStagingDiskType IO1 = new ReplicationConfigurationReplicatedDiskStagingDiskType("IO1");
+        /// <summary>
+        /// Constant IO2 for ReplicationConfigurationReplicatedDiskStagingDiskType
+        /// </summary>
+        public static readonly ReplicationConfigurationReplicatedDiskStagingDiskType IO2 = new ReplicationConfigurationReplicatedDiskStagingDiskType("IO2");
         /// <summary>
         /// Constant SC1 for ReplicationConfigurationReplicatedDiskStagingDiskType
         /// </summary>

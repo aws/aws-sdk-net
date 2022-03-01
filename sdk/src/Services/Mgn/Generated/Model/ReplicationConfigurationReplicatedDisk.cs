@@ -37,6 +37,7 @@ namespace Amazon.Mgn.Model
         private long? _iops;
         private bool? _isBootDisk;
         private ReplicationConfigurationReplicatedDiskStagingDiskType _stagingDiskType;
+        private long? _throughput;
 
         /// <summary>
         /// Gets and sets the property DeviceName. 
@@ -110,6 +111,25 @@ namespace Amazon.Mgn.Model
         internal bool IsSetStagingDiskType()
         {
             return this._stagingDiskType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Throughput. 
+        /// <para>
+        /// Replication Configuration replicated disk throughput.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0)]
+        public long Throughput
+        {
+            get { return this._throughput.GetValueOrDefault(); }
+            set { this._throughput = value; }
+        }
+
+        // Check to see if Throughput property is set
+        internal bool IsSetThroughput()
+        {
+            return this._throughput.HasValue; 
         }
 
     }

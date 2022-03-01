@@ -128,7 +128,7 @@ namespace Amazon.Mgn.Model
         /// <summary>
         /// Gets and sets the property DefaultLargeStagingDiskType. 
         /// <para>
-        /// Request to configure the Staging Disk EBS volume type to "gp2" during Replication
+        /// Request to configure the default large staging disk EBS volume type during Replication
         /// Settings template creation.
         /// </para>
         /// </summary>
@@ -148,7 +148,7 @@ namespace Amazon.Mgn.Model
         /// <summary>
         /// Gets and sets the property EbsEncryption. 
         /// <para>
-        /// Request to configure EBS enryption during Replication Settings template creation.
+        /// Request to configure EBS encryption during Replication Settings template creation.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -167,7 +167,7 @@ namespace Amazon.Mgn.Model
         /// <summary>
         /// Gets and sets the property EbsEncryptionKeyArn. 
         /// <para>
-        /// Request to configure an EBS enryption key during Replication Settings template creation.
+        /// Request to configure an EBS encryption key during Replication Settings template creation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -206,8 +206,8 @@ namespace Amazon.Mgn.Model
         /// <summary>
         /// Gets and sets the property ReplicationServersSecurityGroupsIDs. 
         /// <para>
-        /// Request to configure the Replication Server Secuirity group ID during Replication
-        /// Settings template creation.
+        /// Request to configure the Replication Server Security group ID during Replication Settings
+        /// template creation.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=32)]
@@ -246,7 +246,7 @@ namespace Amazon.Mgn.Model
         /// <summary>
         /// Gets and sets the property StagingAreaTags. 
         /// <para>
-        /// Request to configure Staiging Area tags during Replication Settings template creation.
+        /// Request to configure Staging Area tags during Replication Settings template creation.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

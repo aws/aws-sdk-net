@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Mgn.Model
 {
     /// <summary>
-    /// Data replication intiation step.
+    /// Data replication initiation step.
     /// </summary>
     public partial class DataReplicationInitiationStep
     {

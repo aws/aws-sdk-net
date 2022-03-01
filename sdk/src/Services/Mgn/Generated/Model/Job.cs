@@ -176,7 +176,7 @@ namespace Amazon.Mgn.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Tags associated with spcific Job.
+        /// Tags associated with specific Job.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Tags

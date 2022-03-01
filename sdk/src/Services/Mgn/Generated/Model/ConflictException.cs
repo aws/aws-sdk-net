@@ -149,7 +149,7 @@ namespace Amazon.Mgn.Model
         /// <summary>
         /// Gets and sets the property ResourceId. 
         /// <para>
-        /// A conflict occured when prompting for the Resource ID.
+        /// A conflict occurred when prompting for the Resource ID.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=65536)]
@@ -168,7 +168,7 @@ namespace Amazon.Mgn.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// A conflict occured when prompting for resource type.
+        /// A conflict occurred when prompting for resource type.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=65536)]

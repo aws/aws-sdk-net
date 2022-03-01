@@ -65,6 +65,12 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetBootMode())
+                {
+                    context.Writer.WritePropertyName("bootMode");
+                    context.Writer.Write(publicRequest.BootMode);
+                }
+
                 if(publicRequest.IsSetCopyPrivateIp())
                 {
                     context.Writer.WritePropertyName("copyPrivateIp");

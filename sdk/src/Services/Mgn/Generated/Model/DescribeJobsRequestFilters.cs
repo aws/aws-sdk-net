@@ -78,7 +78,7 @@ namespace Amazon.Mgn.Model
         /// <summary>
         /// Gets and sets the property ToDate. 
         /// <para>
-        /// Request to describe Job log by last date.
+        /// Request to describe job log items by last date.
         /// </para>
         /// </summary>
         [AWSProperty(Min=19, Max=32)]
