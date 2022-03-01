@@ -1,3 +1,17 @@
+### 3.7.220.0 (2022-03-01 19:17 UTC)
+* KafkaConnect (3.7.1.0)
+	* Adds operation for custom plugin deletion (DeleteCustomPlugin) and adds new StateDescription field to DescribeCustomPlugin and DescribeConnector responses to return errors from asynchronous resource creation.
+* MediaPackage (3.7.5.0)
+	* This release adds Hybridcast as an available profile option for Dash Origin Endpoints.
+* Mgn (3.7.3.0)
+	* Add support for GP3 and IO2 volume types. Add bootMode to LaunchConfiguration object (and as a parameter to UpdateLaunchConfigurationRequest).
+* RDS (3.7.10.8)
+	* Documentation updates for Multi-AZ DB clusters.
+* Core 3.7.8.5
+	* Updating endpoints.json file.
+
+	* All services packages updated to require new Core
+
 ### 3.7.219.0 (2022-02-28 19:18 UTC)
 * Amplify (3.7.1.0)
 	* Add repositoryCloneMethod field for hosting an Amplify app. This field shows what authorization method is used to clone the repo: SSH, TOKEN, or SIGV4.
