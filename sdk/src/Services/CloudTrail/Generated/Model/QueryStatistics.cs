@@ -33,8 +33,29 @@ namespace Amazon.CloudTrail.Model
     /// </summary>
     public partial class QueryStatistics
     {
+        private long? _bytesScanned;
         private int? _resultsCount;
         private int? _totalResultsCount;
+
+        /// <summary>
+        /// Gets and sets the property BytesScanned. 
+        /// <para>
+        /// The total bytes that the query scanned in the event data store. This value matches
+        /// the number of bytes for which your account is billed for the query, unless the query
+        /// is still running.
+        /// </para>
+        /// </summary>
+        public long BytesScanned
+        {
+            get { return this._bytesScanned.GetValueOrDefault(); }
+            set { this._bytesScanned = value; }
+        }
+
+        // Check to see if BytesScanned property is set
+        internal bool IsSetBytesScanned()
+        {
+            return this._bytesScanned.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property ResultsCount. 
