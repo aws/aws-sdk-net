@@ -405,6 +405,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* It is a preview launch of Amazon Kendra. Amazon Kendra is a managed, highly accurate and easy to use enterprise search service that is powered by machine learning.
 * [AWSSDK.KeyManagementService](https://www.nuget.org/packages/AWSSDK.KeyManagementService/)
 	* AWS Key Management Service (KMS) is a managed service that makes it easy for you to create and control the encryption keys used to encrypt your data, and uses Hardware Security Modules (HSMs) to protect the security of your keys.
+* [AWSSDK.Keyspaces](https://www.nuget.org/packages/AWSSDK.Keyspaces/)
+	* This release adds support for data definition language (DDL) operations
 * [AWSSDK.Kinesis](https://www.nuget.org/packages/AWSSDK.Kinesis/)
 	* Amazon Kinesis is a fully managed, cloud-based service for real-time processing of large, distributed data streams.
 * [AWSSDK.KinesisAnalytics](https://www.nuget.org/packages/AWSSDK.KinesisAnalytics/)
