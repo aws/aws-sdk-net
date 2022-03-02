@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Athena.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ResultConfiguration Object
+    /// Response Unmarshaller for AclConfiguration Object
     /// </summary>  
-    public class ResultConfigurationUnmarshaller : IUnmarshaller<ResultConfiguration, XmlUnmarshallerContext>, IUnmarshaller<ResultConfiguration, JsonUnmarshallerContext>
+    public class AclConfigurationUnmarshaller : IUnmarshaller<AclConfiguration, XmlUnmarshallerContext>, IUnmarshaller<AclConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ResultConfiguration IUnmarshaller<ResultConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AclConfiguration IUnmarshaller<AclConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,21 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ResultConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public AclConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ResultConfiguration unmarshalledObject = new ResultConfiguration();
+            AclConfiguration unmarshalledObject = new AclConfiguration();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("AclConfiguration", targetDepth))
-                {
-                    var unmarshaller = AclConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.AclConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("EncryptionConfiguration", targetDepth))
-                {
-                    var unmarshaller = EncryptionConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.EncryptionConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ExpectedBucketOwner", targetDepth))
+                if (context.TestExpression("S3AclOption", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ExpectedBucketOwner = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("OutputLocation", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OutputLocation = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.S3AclOption = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +76,12 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
         }
 
 
-        private static ResultConfigurationUnmarshaller _instance = new ResultConfigurationUnmarshaller();        
+        private static AclConfigurationUnmarshaller _instance = new AclConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ResultConfigurationUnmarshaller Instance
+        public static AclConfigurationUnmarshaller Instance
         {
             get
             {

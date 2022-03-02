@@ -34,12 +34,32 @@ namespace Amazon.Athena.Model
     /// </summary>
     public partial class ResultConfigurationUpdates
     {
+        private AclConfiguration _aclConfiguration;
         private EncryptionConfiguration _encryptionConfiguration;
         private string _expectedBucketOwner;
         private string _outputLocation;
+        private bool? _removeAclConfiguration;
         private bool? _removeEncryptionConfiguration;
         private bool? _removeExpectedBucketOwner;
         private bool? _removeOutputLocation;
+
+        /// <summary>
+        /// Gets and sets the property AclConfiguration. 
+        /// <para>
+        /// The ACL configuration for the query results.
+        /// </para>
+        /// </summary>
+        public AclConfiguration AclConfiguration
+        {
+            get { return this._aclConfiguration; }
+            set { this._aclConfiguration = value; }
+        }
+
+        // Check to see if AclConfiguration property is set
+        internal bool IsSetAclConfiguration()
+        {
+            return this._aclConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property EncryptionConfiguration. 
@@ -111,6 +131,29 @@ namespace Amazon.Athena.Model
         internal bool IsSetOutputLocation()
         {
             return this._outputLocation != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RemoveAclConfiguration. 
+        /// <para>
+        /// If set to <code>true</code>, indicates that the previously-specified ACL configuration
+        /// for queries in this workgroup should be ignored and set to null. If set to <code>false</code>
+        /// or not set, and a value is present in the <code>AclConfiguration</code> of <code>ResultConfigurationUpdates</code>,
+        /// the <code>AclConfiguration</code> in the workgroup's <code>ResultConfiguration</code>
+        /// is updated with the new value. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup
+        /// Settings Override Client-Side Settings</a>.
+        /// </para>
+        /// </summary>
+        public bool RemoveAclConfiguration
+        {
+            get { return this._removeAclConfiguration.GetValueOrDefault(); }
+            set { this._removeAclConfiguration = value; }
+        }
+
+        // Check to see if RemoveAclConfiguration property is set
+        internal bool IsSetRemoveAclConfiguration()
+        {
+            return this._removeAclConfiguration.HasValue; 
         }
 
         /// <summary>

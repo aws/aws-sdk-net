@@ -45,6 +45,17 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ResultConfigurationUpdates requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAclConfiguration())
+            {
+                context.Writer.WritePropertyName("AclConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AclConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.AclConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetEncryptionConfiguration())
             {
                 context.Writer.WritePropertyName("EncryptionConfiguration");
@@ -66,6 +77,12 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("OutputLocation");
                 context.Writer.Write(requestObject.OutputLocation);
+            }
+
+            if(requestObject.IsSetRemoveAclConfiguration())
+            {
+                context.Writer.WritePropertyName("RemoveAclConfiguration");
+                context.Writer.Write(requestObject.RemoveAclConfiguration);
             }
 
             if(requestObject.IsSetRemoveEncryptionConfiguration())

@@ -35,9 +35,35 @@ namespace Amazon.Athena.Model
     /// </summary>
     public partial class ResultConfiguration
     {
+        private AclConfiguration _aclConfiguration;
         private EncryptionConfiguration _encryptionConfiguration;
         private string _expectedBucketOwner;
         private string _outputLocation;
+
+        /// <summary>
+        /// Gets and sets the property AclConfiguration. 
+        /// <para>
+        /// Indicates that an Amazon S3 canned ACL should be set to control ownership of stored
+        /// query results. Currently the only supported canned ACL is <code>BUCKET_OWNER_FULL_CONTROL</code>.
+        /// This is a client-side setting. If workgroup settings override client-side settings,
+        /// then the query uses the ACL configuration that is specified for the workgroup, and
+        /// also uses the location for storing query results specified in the workgroup. For more
+        /// information, see <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a> and <a
+        /// href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup
+        /// Settings Override Client-Side Settings</a>.
+        /// </para>
+        /// </summary>
+        public AclConfiguration AclConfiguration
+        {
+            get { return this._aclConfiguration; }
+            set { this._aclConfiguration = value; }
+        }
+
+        // Check to see if AclConfiguration property is set
+        internal bool IsSetAclConfiguration()
+        {
+            return this._aclConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property EncryptionConfiguration. 
