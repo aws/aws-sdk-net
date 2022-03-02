@@ -30,7 +30,7 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeEC2InstanceLimits operation.
-    /// The GameLift service limits and current utilization for an Amazon Web Services Region
+    /// Retrieves the instance limits and current utilization for an Amazon Web Services Region
     /// or location. Instance limits control the number of instances, per instance type, per
     /// location, that your Amazon Web Services account can use. Learn more at <a href="http://aws.amazon.com/ec2/instance-types/">Amazon
     /// EC2 Instance Types</a>. The information returned includes the maximum number of instances
