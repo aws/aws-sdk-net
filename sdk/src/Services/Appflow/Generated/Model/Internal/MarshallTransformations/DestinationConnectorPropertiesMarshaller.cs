@@ -100,6 +100,17 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetMarketo())
+            {
+                context.Writer.WritePropertyName("Marketo");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = MarketoDestinationPropertiesMarshaller.Instance;
+                marshaller.Marshall(requestObject.Marketo, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetRedshift())
             {
                 context.Writer.WritePropertyName("Redshift");

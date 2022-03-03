@@ -38,6 +38,7 @@ namespace Amazon.Appflow.Model
         private EventBridgeDestinationProperties _eventBridge;
         private HoneycodeDestinationProperties _honeycode;
         private LookoutMetricsDestinationProperties _lookoutMetrics;
+        private MarketoDestinationProperties _marketo;
         private RedshiftDestinationProperties _redshift;
         private S3DestinationProperties _s3;
         private SalesforceDestinationProperties _salesforce;
@@ -134,6 +135,24 @@ namespace Amazon.Appflow.Model
         internal bool IsSetLookoutMetrics()
         {
             return this._lookoutMetrics != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Marketo. 
+        /// <para>
+        /// The properties required to query Marketo.
+        /// </para>
+        /// </summary>
+        public MarketoDestinationProperties Marketo
+        {
+            get { return this._marketo; }
+            set { this._marketo = value; }
+        }
+
+        // Check to see if Marketo property is set
+        internal bool IsSetMarketo()
+        {
+            return this._marketo != null;
         }
 
         /// <summary>

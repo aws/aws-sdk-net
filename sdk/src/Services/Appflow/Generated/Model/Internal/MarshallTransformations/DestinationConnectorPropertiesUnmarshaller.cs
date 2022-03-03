@@ -94,6 +94,12 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
                     unmarshalledObject.LookoutMetrics = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Marketo", targetDepth))
+                {
+                    var unmarshaller = MarketoDestinationPropertiesUnmarshaller.Instance;
+                    unmarshalledObject.Marketo = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Redshift", targetDepth))
                 {
                     var unmarshaller = RedshiftDestinationPropertiesUnmarshaller.Instance;

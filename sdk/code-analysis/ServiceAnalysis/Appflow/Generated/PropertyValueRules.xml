@@ -760,6 +760,11 @@
     <pattern>\S+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Appflow.Model.MarketoDestinationProperties.Object</property>
+    <max>512</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Appflow.Model.MarketoSourceProperties.Object</property>
     <max>512</max>
     <pattern>\S+</pattern>
