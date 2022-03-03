@@ -188,9 +188,7 @@ namespace Amazon.Runtime.Internal
         /// <param name="source">The ICredentialProfileSource to read the profile from.</param>
         public ProfileInternalConfiguration(ICredentialProfileSource source)
         {
-            var profileName = Environment.GetEnvironmentVariable(FallbackCredentialsFactory.AWS_PROFILE_ENVIRONMENT_VARIABLE);
-            if (profileName == null)
-                profileName = FallbackCredentialsFactory.DefaultProfileName;
+            var profileName = FallbackCredentialsFactory.GetProfileName();
             Setup(source, profileName);
         }
 

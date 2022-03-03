@@ -95,12 +95,7 @@ namespace Amazon.Runtime.Internal
         }
         public ProfileCSMConfigs(ICredentialProfileSource source, CSMFallbackConfigChain cSMFallbackConfigChain)
         {
-            ProfileName = AWSConfigs.AWSProfileName ?? Environment.GetEnvironmentVariable(FallbackCredentialsFactory.AWS_PROFILE_ENVIRONMENT_VARIABLE);
-
-            if (string.IsNullOrEmpty(ProfileName))
-            {
-                ProfileName = FallbackCredentialsFactory.DefaultProfileName;
-            }
+            ProfileName = FallbackCredentialsFactory.GetProfileName();
             CredentialProfile profile;
             if (!source.TryGetProfile(ProfileName, out profile))
             {
