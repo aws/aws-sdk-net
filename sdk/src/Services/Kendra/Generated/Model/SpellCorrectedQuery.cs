@@ -29,50 +29,48 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kendra.Model
 {
     /// <summary>
-    /// Provides the configuration information for the endpoint for your Amazon Kendra experience.
+    /// A query with suggested spell corrections.
     /// </summary>
-    public partial class ExperienceEndpoint
+    public partial class SpellCorrectedQuery
     {
-        private string _endpoint;
-        private EndpointType _endpointType;
+        private List<Correction> _corrections = new List<Correction>();
+        private string _suggestedQueryText;
 
         /// <summary>
-        /// Gets and sets the property Endpoint. 
+        /// Gets and sets the property Corrections. 
         /// <para>
-        /// The endpoint of your Amazon Kendra experience.
+        /// The corrected misspelled word or words in a query.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2048)]
-        public string Endpoint
+        public List<Correction> Corrections
         {
-            get { return this._endpoint; }
-            set { this._endpoint = value; }
+            get { return this._corrections; }
+            set { this._corrections = value; }
         }
 
-        // Check to see if Endpoint property is set
-        internal bool IsSetEndpoint()
+        // Check to see if Corrections property is set
+        internal bool IsSetCorrections()
         {
-            return this._endpoint != null;
+            return this._corrections != null && this._corrections.Count > 0; 
         }
 
         /// <summary>
-        /// Gets and sets the property EndpointType. 
+        /// Gets and sets the property SuggestedQueryText. 
         /// <para>
-        /// The type of endpoint for your Amazon Kendra experience. The type currently available
-        /// is <code>HOME</code>, which is a unique and fully hosted URL to the home page of your
-        /// Amazon Kendra experience.
+        /// The query with the suggested spell corrections.
         /// </para>
         /// </summary>
-        public EndpointType EndpointType
+        [AWSProperty(Min=1, Max=1000)]
+        public string SuggestedQueryText
         {
-            get { return this._endpointType; }
-            set { this._endpointType = value; }
+            get { return this._suggestedQueryText; }
+            set { this._suggestedQueryText = value; }
         }
 
-        // Check to see if EndpointType property is set
-        internal bool IsSetEndpointType()
+        // Check to see if SuggestedQueryText property is set
+        internal bool IsSetSuggestedQueryText()
         {
-            return this._endpointType != null;
+            return this._suggestedQueryText != null;
         }
 
     }

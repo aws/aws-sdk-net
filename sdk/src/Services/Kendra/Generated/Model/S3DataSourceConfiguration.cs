@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kendra.Model
 {
     /// <summary>
-    /// Provides configuration information for a data source to index documents in an Amazon
-    /// S3 bucket.
+    /// Provides the configuration information to connect to an Amazon S3 bucket.
     /// </summary>
     public partial class S3DataSourceConfiguration
     {

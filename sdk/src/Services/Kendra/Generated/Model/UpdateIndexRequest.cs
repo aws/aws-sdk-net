@@ -90,7 +90,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property DocumentMetadataConfigurationUpdates. 
         /// <para>
-        /// The document metadata to update. 
+        /// The document metadata you want to update.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=500)]

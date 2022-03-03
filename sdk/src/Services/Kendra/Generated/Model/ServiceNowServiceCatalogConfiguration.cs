@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kendra.Model
 {
     /// <summary>
-    /// Provides configuration information for crawling service catalog items in the ServiceNow
+    /// Provides the configuration information for crawling service catalog items in the ServiceNow
     /// site
     /// </summary>
     public partial class ServiceNowServiceCatalogConfiguration

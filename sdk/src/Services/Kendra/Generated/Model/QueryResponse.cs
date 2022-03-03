@@ -36,6 +36,7 @@ namespace Amazon.Kendra.Model
         private List<FacetResult> _facetResults = new List<FacetResult>();
         private string _queryId;
         private List<QueryResultItem> _resultItems = new List<QueryResultItem>();
+        private List<SpellCorrectedQuery> _spellCorrectedQueries = new List<SpellCorrectedQuery>();
         private int? _totalNumberOfResults;
         private List<Warning> _warnings = new List<Warning>();
 
@@ -94,6 +95,24 @@ namespace Amazon.Kendra.Model
         internal bool IsSetResultItems()
         {
             return this._resultItems != null && this._resultItems.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SpellCorrectedQueries. 
+        /// <para>
+        /// A list of information related to suggested spell corrections for a query.
+        /// </para>
+        /// </summary>
+        public List<SpellCorrectedQuery> SpellCorrectedQueries
+        {
+            get { return this._spellCorrectedQueries; }
+            set { this._spellCorrectedQueries = value; }
+        }
+
+        // Check to see if SpellCorrectedQueries property is set
+        internal bool IsSetSpellCorrectedQueries()
+        {
+            return this._spellCorrectedQueries != null && this._spellCorrectedQueries.Count > 0; 
         }
 
         /// <summary>

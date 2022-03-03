@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kendra.Model
 {
     /// <summary>
-    /// Provides the configuration information of the sitemap URLs to crawl.
+    /// Provides the configuration information for the sitemap URLs to crawl.
     /// 
     ///  
     /// <para>

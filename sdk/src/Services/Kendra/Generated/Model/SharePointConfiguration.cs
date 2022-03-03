@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kendra.Model
 {
     /// <summary>
-    /// Provides configuration information for connecting to a Microsoft SharePoint data source.
+    /// Provides the configuration information to connect to Microsoft SharePoint as your
+    /// data source.
     /// </summary>
     public partial class SharePointConfiguration
     {

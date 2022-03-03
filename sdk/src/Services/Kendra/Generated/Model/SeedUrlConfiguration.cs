@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kendra.Model
 {
     /// <summary>
-    /// Provides the configuration information of the seed or starting point URLs to crawl.
+    /// Provides the configuration information for the seed or starting point URLs to crawl.
     /// 
     ///  
     /// <para>

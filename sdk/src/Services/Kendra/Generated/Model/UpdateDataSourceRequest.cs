@@ -47,7 +47,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Configuration. 
         /// <para>
-        /// Configuration information for an Amazon Kendra data source.
+        /// Configuration information for an Amazon Kendra data source you want to update.
         /// </para>
         /// </summary>
         public DataSourceConfiguration Configuration

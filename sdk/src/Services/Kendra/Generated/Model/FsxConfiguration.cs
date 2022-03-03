@@ -68,9 +68,9 @@ namespace Amazon.Kendra.Model
         /// Gets and sets the property FieldMappings. 
         /// <para>
         /// A list of <code>DataSourceToIndexFieldMapping</code> objects that map Amazon FSx data
-        /// source attributes or field names to Amazon Kendra index field names in Amazon Kendra.
-        /// To create custom fields, use the <code>UpdateIndex</code> API before you map to Amazon
-        /// FSx fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
+        /// source attributes or field names to Amazon Kendra index field names. To create custom
+        /// fields, use the <code>UpdateIndex</code> API before you map to Amazon FSx fields.
+        /// For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
         /// data source fields</a>. The Amazon FSx data source field names must exist in your
         /// Amazon FSx custom metadata.
         /// </para>
@@ -171,8 +171,8 @@ namespace Amazon.Kendra.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// password—The password of the active directory user with read and mounting access Amazon
-        /// FSx Windows file system.
+        /// password—The password of the Active Directory user account with read and mounting
+        /// access to the Amazon FSx Windows file system.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -192,8 +192,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property VpcConfiguration. 
         /// <para>
-        /// Provides the configuration information for connecting to an Amazon Virtual Private
-        /// Cloud for your Amazon FSx. Your Amazon FSx instance must reside inside your VPC.
+        /// Configuration information for connecting to an Amazon Virtual Private Cloud for your
+        /// Amazon FSx. Your Amazon FSx instance must reside inside your VPC.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

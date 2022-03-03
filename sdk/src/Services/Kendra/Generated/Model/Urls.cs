@@ -53,8 +53,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property SeedUrlConfiguration. 
         /// <para>
-        /// Provides the configuration of the seed or starting point URLs of the websites you
-        /// want to crawl.
+        /// Configuration of the seed or starting point URLs of the websites you want to crawl.
         /// </para>
         ///  
         /// <para>
@@ -82,7 +81,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property SiteMapsConfiguration. 
         /// <para>
-        /// Provides the configuration of the sitemap URLs of the websites you want to crawl.
+        /// Configuration of the sitemap URLs of the websites you want to crawl.
         /// </para>
         ///  
         /// <para>

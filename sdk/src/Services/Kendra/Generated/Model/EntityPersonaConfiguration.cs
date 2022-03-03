@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kendra.Model
 {
     /// <summary>
-    /// Provides the configuration information of users or groups in your Amazon Web Services
+    /// Provides the configuration information for users or groups in your Amazon Web Services
     /// SSO identity source for access to your Amazon Kendra experience. Specific permissions
     /// are defined for each user or group once they are granted access to your Amazon Kendra
     /// experience.

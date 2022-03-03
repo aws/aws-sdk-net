@@ -51,9 +51,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Configuration. 
         /// <para>
-        /// Information that describes where the data source is located and how the data source
-        /// is configured. The specific information in the description depends on the data source
-        /// provider.
+        /// Describes how the data source is configured. The specific information in the description
+        /// depends on the data source provider.
         /// </para>
         /// </summary>
         public DataSourceConfiguration Configuration

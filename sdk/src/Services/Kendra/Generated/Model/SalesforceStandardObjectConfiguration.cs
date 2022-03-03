@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kendra.Model
 {
     /// <summary>
-    /// Specifies configuration information for indexing a single standard object.
+    /// Provides the configuration information for indexing a single standard object.
     /// </summary>
     public partial class SalesforceStandardObjectConfiguration
     {

@@ -69,6 +69,12 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                     response.ResultItems = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SpellCorrectedQueries", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<SpellCorrectedQuery, SpellCorrectedQueryUnmarshaller>(SpellCorrectedQueryUnmarshaller.Instance);
+                    response.SpellCorrectedQueries = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("TotalNumberOfResults", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

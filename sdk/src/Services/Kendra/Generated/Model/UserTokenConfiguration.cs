@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kendra.Model
 {
     /// <summary>
-    /// Provides configuration information for a token configuration.
+    /// Provides the configuration information for a token.
     /// </summary>
     public partial class UserTokenConfiguration
     {

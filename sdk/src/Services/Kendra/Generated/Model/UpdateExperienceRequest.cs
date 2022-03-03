@@ -46,8 +46,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Configuration. 
         /// <para>
-        /// Provides the user configuration information. This includes the Amazon Web Services
-        /// SSO field name that contains the identifiers of your users, such as their emails.
+        /// Configuration information for your Amazon Kendra you want to update.
         /// </para>
         /// </summary>
         public ExperienceConfiguration Configuration

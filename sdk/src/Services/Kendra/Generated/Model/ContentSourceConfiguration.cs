@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kendra.Model
 {
     /// <summary>
-    /// Configuration information for your content sources, such as data sources, FAQs, and
-    /// content indexed directly via <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_BatchPutDocument.html">BatchPutDocument</a>.
+    /// Provides the configuration information for your content sources, such as data sources,
+    /// FAQs, and content indexed directly via <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_BatchPutDocument.html">BatchPutDocument</a>.
     /// </summary>
     public partial class ContentSourceConfiguration
     {

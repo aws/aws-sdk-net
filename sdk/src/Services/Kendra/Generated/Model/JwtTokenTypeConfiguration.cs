@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kendra.Model
 {
     /// <summary>
-    /// Configuration information for the JWT token type.
+    /// Provides the configuration information for the JWT token type.
     /// </summary>
     public partial class JwtTokenTypeConfiguration
     {

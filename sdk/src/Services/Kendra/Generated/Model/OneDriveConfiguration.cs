@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kendra.Model
 {
     /// <summary>
-    /// Provides configuration information for data sources that connect to OneDrive.
+    /// Provides the configuration information to connect to OneDrive as your data source.
     /// </summary>
     public partial class OneDriveConfiguration
     {
