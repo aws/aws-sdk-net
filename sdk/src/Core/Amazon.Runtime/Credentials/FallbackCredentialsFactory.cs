@@ -59,10 +59,22 @@ namespace Amazon.Runtime
             };
         }
 
+        public static string GetProfileName()
+        {
+            var profileName = AWSConfigs.AWSProfileName ?? 
+                              Environment.GetEnvironmentVariable(AWS_PROFILE_ENVIRONMENT_VARIABLE);
+
+            if (string.IsNullOrEmpty(profileName))
+            {
+                profileName = DefaultProfileName;
+            }
+
+            return profileName;
+        }
+
         private static AWSCredentials GetAWSCredentials(ICredentialProfileSource source)
         {
-            var profileName = Environment.GetEnvironmentVariable(AWS_PROFILE_ENVIRONMENT_VARIABLE) ?? DefaultProfileName;
-
+            var profileName = GetProfileName();
             CredentialProfile profile;
             if (source.TryGetProfile(profileName, out profile))
                 return profile.GetAWSCredentials(source, true);

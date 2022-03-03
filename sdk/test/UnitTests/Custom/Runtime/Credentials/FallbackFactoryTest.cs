@@ -77,10 +77,13 @@ namespace AWSSDK.UnitTests
             .AppendLine("use_fips_endpoint=false")
             .ToString();
 
-        [TestMethod]
-        public void TestDefaultProfile()
+        [DataTestMethod]
+        [DataRow(null)]
+        [DataRow("")]
+        [DataRow("  ")]
+        public void TestDefaultProfile(string awsProfileValue)
         {
-            using (new FallbackFactoryTestFixture(ProfileText, null))
+            using (new FallbackFactoryTestFixture(ProfileText, awsProfileValue))
             {
                 var creds = FallbackCredentialsFactory.GetCredentials();
                 Assert.AreEqual("default_aws_access_key_id", creds.GetCredentials().AccessKey);
