@@ -30,7 +30,7 @@ namespace Amazon.FSx.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateVolume operation.
-    /// Creates an Amazon FSx for NetApp ONTAP or Amazon FSx for OpenZFS storage volume.
+    /// Creates an FSx for ONTAP or Amazon FSx for OpenZFS storage volume.
     /// </summary>
     public partial class CreateVolumeRequest : AmazonFSxRequest
     {

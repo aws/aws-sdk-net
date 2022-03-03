@@ -1345,7 +1345,7 @@ namespace Amazon.FSx
         #region  CreateVolume
 
         /// <summary>
-        /// Creates an Amazon FSx for NetApp ONTAP or Amazon FSx for OpenZFS storage volume.
+        /// Creates an FSx for ONTAP or Amazon FSx for OpenZFS storage volume.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateVolume service method.</param>
         /// 
@@ -1372,7 +1372,7 @@ namespace Amazon.FSx
         /// some service limits by contacting Amazon Web Services Support.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.StorageVirtualMachineNotFoundException">
-        /// No Amazon FSx for NetApp ONTAP SVMs were found based upon the supplied parameters.
+        /// No FSx for ONTAP SVMs were found based upon the supplied parameters.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.UnsupportedOperationException">
         /// The requested operation is not supported for this resource or API.
@@ -1457,7 +1457,7 @@ namespace Amazon.FSx
         /// some service limits by contacting Amazon Web Services Support.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.StorageVirtualMachineNotFoundException">
-        /// No Amazon FSx for NetApp ONTAP SVMs were found based upon the supplied parameters.
+        /// No FSx for ONTAP SVMs were found based upon the supplied parameters.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateVolumeFromBackup">REST API Reference for CreateVolumeFromBackup Operation</seealso>
         public virtual CreateVolumeFromBackupResponse CreateVolumeFromBackup(CreateVolumeFromBackupRequest request)
@@ -1871,7 +1871,7 @@ namespace Amazon.FSx
         /// A generic error indicating a server-side failure.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.StorageVirtualMachineNotFoundException">
-        /// No Amazon FSx for NetApp ONTAP SVMs were found based upon the supplied parameters.
+        /// No FSx for ONTAP SVMs were found based upon the supplied parameters.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DeleteStorageVirtualMachine">REST API Reference for DeleteStorageVirtualMachine Operation</seealso>
         public virtual DeleteStorageVirtualMachineResponse DeleteStorageVirtualMachine(DeleteStorageVirtualMachineRequest request)
@@ -2542,7 +2542,7 @@ namespace Amazon.FSx
         /// A generic error indicating a server-side failure.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.StorageVirtualMachineNotFoundException">
-        /// No Amazon FSx for NetApp ONTAP SVMs were found based upon the supplied parameters.
+        /// No FSx for ONTAP SVMs were found based upon the supplied parameters.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeStorageVirtualMachines">REST API Reference for DescribeStorageVirtualMachines Operation</seealso>
         public virtual DescribeStorageVirtualMachinesResponse DescribeStorageVirtualMachines(DescribeStorageVirtualMachinesRequest request)
@@ -3460,7 +3460,7 @@ namespace Amazon.FSx
         /// A generic error indicating a server-side failure.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.StorageVirtualMachineNotFoundException">
-        /// No Amazon FSx for NetApp ONTAP SVMs were found based upon the supplied parameters.
+        /// No FSx for ONTAP SVMs were found based upon the supplied parameters.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.UnsupportedOperationException">
         /// The requested operation is not supported for this resource or API.

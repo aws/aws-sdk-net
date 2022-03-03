@@ -127,8 +127,8 @@ namespace Amazon.FSx.Model
         /// Gets and sets the property DeploymentType. 
         /// <para>
         /// Specifies the file system deployment type. Amazon FSx for OpenZFS supports <code>SINGLE_AZ_1</code>.
-        /// <code>SINGLE_AZ_1</code> is a file system configured for a single Availability Zone
-        /// (AZ) of redundancy.
+        /// <code>SINGLE_AZ_1</code> deployment type is configured for redundancy within a single
+        /// Availability Zone.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

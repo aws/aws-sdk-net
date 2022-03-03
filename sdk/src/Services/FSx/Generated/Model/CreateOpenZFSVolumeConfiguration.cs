@@ -81,16 +81,22 @@ namespace Amazon.FSx.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>ZSTD</code> - Compresses the data in the volume using the Zstandard (ZSTD)
-        /// compression algorithm. Compared to LZ4, Z-Standard provides a better compression ratio
-        /// to minimize on-disk storage utilization.
+        /// compression algorithm. ZSTD compression provides a higher level of data compression
+        /// and higher read throughput performance than LZ4 compression.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>LZ4</code> - Compresses the data in the volume using the LZ4 compression algorithm.
-        /// Compared to Z-Standard, LZ4 is less compute-intensive and delivers higher write throughput
-        /// speeds.
+        /// LZ4 compression provides a lower level of compression and higher write throughput
+        /// performance than ZSTD compression.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information about volume compression types and the performance of your Amazon
+        /// FSx for OpenZFS file system, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#performance-tips-zfs">
+        /// Tips for maximizing performance</a> File system and volume settings in the <i>Amazon
+        /// FSx for OpenZFS User Guide</i>.
+        /// </para>
         /// </summary>
         public OpenZFSDataCompressionType DataCompressionType
         {
@@ -145,7 +151,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property ParentVolumeId. 
         /// <para>
-        /// The ID of the volume to use as the parent volume.
+        /// The ID of the volume to use as the parent volume of the volume that you are creating.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=23, Max=23)]
@@ -182,12 +188,14 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property RecordSizeKiB. 
         /// <para>
-        /// Specifies the record size of an OpenZFS volume, in kibibytes (KiB). Valid values are
-        /// 4, 8, 16, 32, 64, 128, 256, 512, or 1024 KiB. The default is 128 KiB. Most workloads
-        /// should use the default record size. Database workflows can benefit from a smaller
-        /// record size, while streaming workflows can benefit from a larger record size. For
-        /// additional guidance on when to set a custom record size, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#performance-tips-zfs">
-        /// Tips for maximizing performance</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.
+        /// Specifies the suggested block size for a volume in a ZFS dataset, in kibibytes (KiB).
+        /// Valid values are 4, 8, 16, 32, 64, 128, 256, 512, or 1024 KiB. The default is 128
+        /// KiB. We recommend using the default setting for the majority of use cases. Generally,
+        /// workloads that write in fixed small or large record sizes may benefit from setting
+        /// a custom record size, like database workloads (small record size) or media streaming
+        /// workloads (large record size). For additional guidance on when to set a custom record
+        /// size, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#record-size-performance">
+        /// ZFS Record size</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=4, Max=1024)]
@@ -206,9 +214,17 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property StorageCapacityQuotaGiB. 
         /// <para>
-        /// The maximum amount of storage in gibibytes (GiB) that the volume can use from its
-        /// parent. You can't specify a quota larger than the storage on the parent volume. To
-        /// not specify a storage capacity quota, set this to <code>-1</code>. 
+        /// Sets the maximum storage size in gibibytes (GiB) for the volume. You can specify a
+        /// quota that is larger than the storage on the parent volume. A volume quota limits
+        /// the amount of storage that the volume can consume to the configured amount, but does
+        /// not guarantee the space will be available on the parent volume. To guarantee quota
+        /// space, you must also set <code>StorageCapacityReservationGiB</code>. To <i>not</i>
+        /// specify a storage capacity quota, set this to <code>-1</code>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/managing-volumes.html#volume-properties">Volume
+        /// properties</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=-1, Max=2147483647)]
@@ -227,9 +243,13 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property StorageCapacityReservationGiB. 
         /// <para>
-        /// The amount of storage in gibibytes (GiB) to reserve from the parent volume. You can't
-        /// reserve more storage than the parent volume has reserved. To not specify a storage
-        /// capacity reservation, set this to <code>-1</code>.
+        /// Specifies the amount of storage in gibibytes (GiB) to reserve from the parent volume.
+        /// Setting <code>StorageCapacityReservationGiB</code> guarantees that the specified amount
+        /// of storage space on the parent volume will always be available for the volume. You
+        /// can't reserve more storage than the parent volume has. To <i>not</i> specify a storage
+        /// capacity reservation, set this to <code>0</code> or <code>-1</code>. For more information,
+        /// see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/managing-volumes.html#volume-properties">Volume
+        /// properties</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=-1, Max=2147483647)]

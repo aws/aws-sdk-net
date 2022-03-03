@@ -146,6 +146,13 @@ namespace Amazon.FSx.Model
         /// to. This file system directory can be linked to only one Amazon S3 bucket, and no
         /// other S3 bucket can be linked to the directory.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you specify only a forward slash (<code>/</code>) as the file system path, you
+        /// can link only 1 data repository to the file system. You can only specify "/" as the
+        /// file system path for the first data repository associated with a file system.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=4096)]
         public string FileSystemPath

@@ -108,13 +108,13 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/autoimport-data-repo.html">
+        /// For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/older-deployment-types.html#legacy-auto-import-from-s3">
         /// Automatically import updates from your S3 bucket</a>.
         /// </para>
         ///  <note> 
         /// <para>
         /// This parameter is not supported for file systems with the <code>Persistent_2</code>
-        /// deployment type. Instead, use <code>CreateDataRepositoryAssociation"</code> to create
+        /// deployment type. Instead, use <code>CreateDataRepositoryAssociation</code> to create
         /// a data repository association to link your Lustre file system to a data repository.
         /// </para>
         ///  </note>

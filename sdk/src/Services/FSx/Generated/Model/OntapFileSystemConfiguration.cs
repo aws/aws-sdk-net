@@ -118,6 +118,13 @@ namespace Amazon.FSx.Model
         /// <para>
         /// The IP address range in which the endpoints to access your file system are created.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// The Endpoint IP address range you select for your file system must exist outside the
+        /// VPC's CIDR range and must be at least /30 or larger. If you do not specify this optional
+        /// parameter, Amazon FSx will automatically select a CIDR block for you.
+        /// </para>
+        ///  </important>
         /// </summary>
         [AWSProperty(Min=9, Max=17)]
         public string EndpointIpAddressRange
