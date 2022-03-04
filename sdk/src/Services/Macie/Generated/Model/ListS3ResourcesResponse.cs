@@ -39,10 +39,10 @@ namespace Amazon.Macie.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// When a response is generated, if there is more data to be listed, this parameter is
-        /// present in the response and contains the value to use for the nextToken parameter
-        /// in a subsequent pagination request. If there is no more data to be listed, this parameter
-        /// is set to null. 
+        /// (Discontinued) When a response is generated, if there is more data to be listed, this
+        /// parameter is present in the response and contains the value to use for the <code>nextToken</code>
+        /// parameter in a subsequent pagination request. If there is no more data to be listed,
+        /// this parameter is set to null. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=500)]
@@ -61,7 +61,7 @@ namespace Amazon.Macie.Model
         /// <summary>
         /// Gets and sets the property S3Resources. 
         /// <para>
-        /// A list of the associated S3 resources returned by the action.
+        /// (Discontinued) A list of the associated S3 resources returned by the action.
         /// </para>
         /// </summary>
         public List<S3ResourceClassification> S3Resources

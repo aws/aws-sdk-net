@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie.Model
 {
     /// <summary>
-    /// The request was rejected because an invalid or out-of-range value was supplied for
-    /// an input parameter.
+    /// (Discontinued) The request was rejected because an invalid or out-of-range value was
+    /// supplied for an input parameter.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

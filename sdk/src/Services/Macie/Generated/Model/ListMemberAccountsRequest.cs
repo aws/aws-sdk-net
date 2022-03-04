@@ -30,8 +30,8 @@ namespace Amazon.Macie.Model
 {
     /// <summary>
     /// Container for the parameters to the ListMemberAccounts operation.
-    /// Lists all Amazon Macie Classic member accounts for the current Macie Classic administrator
-    /// account.
+    /// (Discontinued) Lists all Amazon Macie Classic member accounts for the current Macie
+    /// Classic administrator account.
     /// </summary>
     public partial class ListMemberAccountsRequest : AmazonMacieRequest
     {
@@ -41,8 +41,8 @@ namespace Amazon.Macie.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// Use this parameter to indicate the maximum number of items that you want in the response.
-        /// The default value is 250. 
+        /// (Discontinued) Use this parameter to indicate the maximum number of items that you
+        /// want in the response. The default value is 250.
         /// </para>
         /// </summary>
         [AWSProperty(Max=250)]
@@ -61,10 +61,10 @@ namespace Amazon.Macie.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Use this parameter when paginating results. Set the value of this parameter to null
-        /// on your first call to the ListMemberAccounts action. Subsequent calls to the action
-        /// fill nextToken in the request with the value of nextToken from the previous response
-        /// to continue listing data. 
+        /// (Discontinued) Use this parameter when paginating results. Set the value of this parameter
+        /// to null on your first call to the <code>ListMemberAccounts</code> action. Subsequent
+        /// calls to the action fill <code>nextToken</code> in the request with the value of <code>nextToken</code>
+        /// from the previous response to continue listing data.
         /// </para>
         /// </summary>
         [AWSProperty(Max=500)]

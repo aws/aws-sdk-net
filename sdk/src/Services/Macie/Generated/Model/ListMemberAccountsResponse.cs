@@ -39,8 +39,8 @@ namespace Amazon.Macie.Model
         /// <summary>
         /// Gets and sets the property MemberAccounts. 
         /// <para>
-        /// A list of the Amazon Macie Classic member accounts returned by the action. The current
-        /// Macie Classic administrator account is also included in this list. 
+        /// (Discontinued) A list of the Amazon Macie Classic member accounts returned by the
+        /// action. The current Macie Classic administrator account is also included in this list.
         /// </para>
         /// </summary>
         public List<MemberAccount> MemberAccounts
@@ -58,10 +58,10 @@ namespace Amazon.Macie.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// When a response is generated, if there is more data to be listed, this parameter is
-        /// present in the response and contains the value to use for the nextToken parameter
-        /// in a subsequent pagination request. If there is no more data to be listed, this parameter
-        /// is set to null. 
+        /// (Discontinued) When a response is generated, if there is more data to be listed, this
+        /// parameter is present in the response and contains the value to use for the <code>nextToken</code>
+        /// parameter in a subsequent pagination request. If there is no more data to be listed,
+        /// this parameter is set to null. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=500)]

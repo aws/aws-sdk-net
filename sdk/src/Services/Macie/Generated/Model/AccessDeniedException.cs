@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie.Model
 {
     /// <summary>
-    /// You do not have required permissions to access the requested resource.
+    /// (Discontinued) You do not have required permissions to access the requested resource.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
