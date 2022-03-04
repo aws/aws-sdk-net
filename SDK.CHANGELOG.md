@@ -1,3 +1,19 @@
+### 3.7.223.0 (2022-03-04 19:28 UTC)
+* Connect (3.7.14.0)
+	* This release updates the *InstanceStorageConfig APIs so they support a new ResourceType: REAL_TIME_CONTACT_ANALYSIS_SEGMENTS. Use this resource type to enable streaming for real-time contact analysis and to associate the Kinesis stream where real-time contact analysis segments will be published.
+* DevOpsGuru (3.7.8.0)
+	* Amazon DevOps Guru now integrates with Amazon CodeGuru Profiler. You can view CodeGuru Profiler recommendations for your AWS Lambda function in DevOps Guru. This feature is enabled by default for new customers as of 3/4/2022. Existing customers can enable this feature with UpdateEventSourcesConfig.
+* EC2 (3.7.60.3)
+	* Documentation updates for Amazon EC2.
+* Macie (3.7.0.133)
+	* Amazon Macie Classic (macie) has been discontinued and is no longer available. A new Amazon Macie (macie2) is now available with significant design improvements and additional features.
+* SecurityToken (3.7.1.124)
+	* Documentation updates for AWS Security Token Service.
+* Synthetics (3.7.4.0)
+	* Allow custom handler function.
+* Transfer (3.7.9.0)
+	* Add waiters for server online and offline.
+
 ### 3.7.222.0 (2022-03-03 19:21 UTC)
 * Appflow (3.7.7.0)
 	* Launching Amazon AppFlow Marketo as a destination connector SDK.
