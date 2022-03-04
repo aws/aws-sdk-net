@@ -595,7 +595,13 @@ namespace Amazon.EC2.Model
         /// This parameter is not supported for <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetSpotPlacementScores.html">GetSpotPlacementScores</a>
         /// and <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceTypesFromInstanceRequirements.html">GetInstanceTypesFromInstanceRequirements</a>.
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// If you set <code>TargetCapacityUnitType</code> to <code>vcpu</code> or <code>memory-mib</code>,
+        /// the price protection threshold is applied based on the per-vCPU or per-memory price
+        /// instead of the per-instance price.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// Default: <code>20</code> 
         /// </para>
@@ -659,7 +665,13 @@ namespace Amazon.EC2.Model
         /// This parameter is not supported for <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetSpotPlacementScores.html">GetSpotPlacementScores</a>
         /// and <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceTypesFromInstanceRequirements.html">GetInstanceTypesFromInstanceRequirements</a>.
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// If you set <code>TargetCapacityUnitType</code> to <code>vcpu</code> or <code>memory-mib</code>,
+        /// the price protection threshold is applied based on the per-vCPU or per-memory price
+        /// instead of the per-instance price.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// Default: <code>100</code> 
         /// </para>
