@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Recommendation Object
+    /// Response Unmarshaller for AnomalySourceMetadata Object
     /// </summary>  
-    public class RecommendationUnmarshaller : IUnmarshaller<Recommendation, XmlUnmarshallerContext>, IUnmarshaller<Recommendation, JsonUnmarshallerContext>
+    public class AnomalySourceMetadataUnmarshaller : IUnmarshaller<AnomalySourceMetadata, XmlUnmarshallerContext>, IUnmarshaller<AnomalySourceMetadata, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Recommendation IUnmarshaller<Recommendation, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AnomalySourceMetadata IUnmarshaller<AnomalySourceMetadata, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,57 +53,33 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Recommendation Unmarshall(JsonUnmarshallerContext context)
+        public AnomalySourceMetadata Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Recommendation unmarshalledObject = new Recommendation();
+            AnomalySourceMetadata unmarshalledObject = new AnomalySourceMetadata();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Category", targetDepth))
+                if (context.TestExpression("Source", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Category = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Source = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Description", targetDepth))
+                if (context.TestExpression("SourceResourceName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SourceResourceName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Link", targetDepth))
+                if (context.TestExpression("SourceResourceType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Link = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Name", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Reason", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Reason = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("RelatedAnomalies", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<RecommendationRelatedAnomaly, RecommendationRelatedAnomalyUnmarshaller>(RecommendationRelatedAnomalyUnmarshaller.Instance);
-                    unmarshalledObject.RelatedAnomalies = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("RelatedEvents", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<RecommendationRelatedEvent, RecommendationRelatedEventUnmarshaller>(RecommendationRelatedEventUnmarshaller.Instance);
-                    unmarshalledObject.RelatedEvents = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SourceResourceType = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -112,12 +88,12 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
         }
 
 
-        private static RecommendationUnmarshaller _instance = new RecommendationUnmarshaller();        
+        private static AnomalySourceMetadataUnmarshaller _instance = new AnomalySourceMetadataUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RecommendationUnmarshaller Instance
+        public static AnomalySourceMetadataUnmarshaller Instance
         {
             get
             {

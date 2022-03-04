@@ -232,6 +232,41 @@ namespace Amazon.DevOpsGuru
 
         #endregion
                 
+        #region  DescribeEventSourcesConfig
+
+
+
+        /// <summary>
+        /// This operation lists details about a DevOps Guru event source that is shared with
+        /// your&#x2028; account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEventSourcesConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeEventSourcesConfig service method, as returned by DevOpsGuru.</returns>
+        /// <exception cref="Amazon.DevOpsGuru.Model.AccessDeniedException">
+        /// You don't have permissions to perform the requested operation. The user or role that
+        /// is making the request must have at least one IAM permissions policy attached that
+        /// grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// Management</a> in the <i>IAM User Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsGuru.Model.InternalServerException">
+        /// An internal failure in an Amazon service occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsGuru.Model.ThrottlingException">
+        /// The request was denied due to a request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsGuru.Model.ValidationException">
+        /// Contains information about data passed in to a field during a request that is not
+        /// valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/DescribeEventSourcesConfig">REST API Reference for DescribeEventSourcesConfig Operation</seealso>
+        Task<DescribeEventSourcesConfigResponse> DescribeEventSourcesConfigAsync(DescribeEventSourcesConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DescribeFeedback
 
 
@@ -1004,6 +1039,40 @@ namespace Amazon.DevOpsGuru
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/StartCostEstimation">REST API Reference for StartCostEstimation Operation</seealso>
         Task<StartCostEstimationResponse> StartCostEstimationAsync(StartCostEstimationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateEventSourcesConfig
+
+
+
+        /// <summary>
+        /// Updates the event source configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateEventSourcesConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateEventSourcesConfig service method, as returned by DevOpsGuru.</returns>
+        /// <exception cref="Amazon.DevOpsGuru.Model.AccessDeniedException">
+        /// You don't have permissions to perform the requested operation. The user or role that
+        /// is making the request must have at least one IAM permissions policy attached that
+        /// grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// Management</a> in the <i>IAM User Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsGuru.Model.InternalServerException">
+        /// An internal failure in an Amazon service occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsGuru.Model.ThrottlingException">
+        /// The request was denied due to a request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsGuru.Model.ValidationException">
+        /// Contains information about data passed in to a field during a request that is not
+        /// valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/UpdateEventSourcesConfig">REST API Reference for UpdateEventSourcesConfig Operation</seealso>
+        Task<UpdateEventSourcesConfigResponse> UpdateEventSourcesConfigAsync(UpdateEventSourcesConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
