@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKMeetings.Model
 {
     /// <summary>
-    /// The configuration settings of the features available to a meeting.
+    /// The configuration settings of the features available to a meeting.&gt;
     /// </summary>
     public partial class MeetingFeaturesConfiguration
     {
