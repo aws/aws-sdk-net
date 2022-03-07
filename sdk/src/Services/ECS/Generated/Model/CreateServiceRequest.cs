@@ -47,8 +47,8 @@ namespace Amazon.ECS.Model
     /// <para>
     /// Tasks for services that don't use a load balancer are considered healthy if they're
     /// in the <code>RUNNING</code> state. Tasks for services that use a load balancer are
-    /// considered healthy if they're in the <code>RUNNING</code> state and the container
-    /// instance that they're hosted on is reported as healthy by the load balancer.
+    /// considered healthy if they're in the <code>RUNNING</code> state and are reported as
+    /// healthy by the load balancer.
     /// </para>
     ///  
     /// <para>
@@ -321,7 +321,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property EnableECSManagedTags. 
         /// <para>
-        /// Specifies whether to enable Amazon ECS managed tags for the tasks within the service.
+        /// Specifies whether to turn on Amazon ECS managed tags for the tasks within the service.
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
         /// Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service Developer
         /// Guide</i>.
@@ -367,6 +367,12 @@ namespace Amazon.ECS.Model
         /// only used when your service is configured to use a load balancer. If your service
         /// has a load balancer defined and you don't specify a health check grace period value,
         /// the default value of <code>0</code> is used.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you do not use an Elastic Load Balancing, we recomend that you use the <code>startPeriod</code>
+        /// in the task definition healtch check parameters. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_HealthCheck.html">Health
+        /// check</a>.
         /// </para>
         ///  
         /// <para>
@@ -464,10 +470,8 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// After you create a service using the <code>ECS</code> deployment controller, the load
-        /// balancer name or target group ARN, container name, and container port that's specified
-        /// in the service definition are immutable. If you use the <code>CODE_DEPLOY</code> deployment
-        /// controller, these values can be changed when updating the service.
+        /// If you use the <code>CODE_DEPLOY</code> deployment controller, these values can be
+        /// changed when updating the service.
         /// </para>
         ///  
         /// <para>

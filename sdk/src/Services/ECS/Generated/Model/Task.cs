@@ -697,6 +697,35 @@ namespace Amazon.ECS.Model
         /// The stop code indicating why a task was stopped. The <code>stoppedReason</code> might
         /// contain additional details.
         /// </para>
+        ///  
+        /// <para>
+        /// The following are valid values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>TaskFailedToStart</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>EssentialContainerExited</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>UserInitiated</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>TerminationNotice</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ServiceSchedulerInitiated</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>SpotInterruption</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public TaskStopCode StopCode
         {

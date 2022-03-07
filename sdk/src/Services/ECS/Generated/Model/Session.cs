@@ -58,7 +58,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property StreamUrl. 
         /// <para>
-        /// A URL back to managed agent on the container that the SSM Session Manager client uses
+        /// A URL to the managed agent on the container that the SSM Session Manager client uses
         /// to send commands and receive output from the container.
         /// </para>
         /// </summary>

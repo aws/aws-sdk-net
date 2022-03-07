@@ -108,10 +108,10 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property TransitEncryption. 
         /// <para>
-        /// Determines whether to enable encryption for Amazon EFS data in transit between the
-        /// Amazon ECS host and the Amazon EFS server. Transit encryption must be enabled if Amazon
-        /// EFS IAM authorization is used. If this parameter is omitted, the default value of
-        /// <code>DISABLED</code> is used. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/encryption-in-transit.html">Encrypting
+        /// Determines whether to use encryption for Amazon EFS data in transit between the Amazon
+        /// ECS host and the Amazon EFS server. Transit encryption must be enabled if Amazon EFS
+        /// IAM authorization is used. If this parameter is omitted, the default value of <code>DISABLED</code>
+        /// is used. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/encryption-in-transit.html">Encrypting
         /// Data in Transit</a> in the <i>Amazon Elastic File System User Guide</i>.
         /// </para>
         /// </summary>

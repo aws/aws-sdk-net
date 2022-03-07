@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// An attribute is a name-value pair that's associated with an Amazon ECS object. Attributes
-    /// enable you to extend the Amazon ECS data model by adding custom metadata to your resources.
+    /// An attribute is a name-value pair that's associated with an Amazon ECS object. Use
+    /// attributes to extend the Amazon ECS data model by adding custom metadata to your resources.
     /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#attributes">Attributes</a>
     /// in the <i>Amazon Elastic Container Service Developer Guide</i>.
     /// </summary>

@@ -181,7 +181,7 @@ namespace Amazon.ECS.Model
         ///  
         /// <para>
         /// For tasks using the EC2 launch type, the container instances require at least version
-        /// 1.26.0 of the container agent to enable container dependencies. However, we recommend
+        /// 1.26.0 of the container agent to turn on container dependencies. However, we recommend
         /// using the latest container agent version. For information about checking your agent
         /// version and updating to the latest version, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
         /// the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service Developer
@@ -1162,7 +1162,7 @@ namespace Amazon.ECS.Model
         ///  </li> </ul> 
         /// <para>
         /// For tasks using the EC2 launch type, your container instances require at least version
-        /// <code>1.26.0</code> of the container agent to enable a container start timeout value.
+        /// <code>1.26.0</code> of the container agent to use a container start timeout value.
         /// However, we recommend using the latest container agent version. For information about
         /// checking your agent version and updating to the latest version, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
         /// the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service Developer
@@ -1218,9 +1218,9 @@ namespace Amazon.ECS.Model
         /// parameter or the <code>ECS_CONTAINER_STOP_TIMEOUT</code> agent configuration variable
         /// are set, then the default values of 30 seconds for Linux containers and 30 seconds
         /// on Windows containers are used. Your container instances require at least version
-        /// 1.26.0 of the container agent to enable a container stop timeout value. However, we
-        /// recommend using the latest container agent version. For information about checking
-        /// your agent version and updating to the latest version, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
+        /// 1.26.0 of the container agent to use a container stop timeout value. However, we recommend
+        /// using the latest container agent version. For information about checking your agent
+        /// version and updating to the latest version, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
         /// the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service Developer
         /// Guide</i>. If you're using an Amazon ECS-optimized Linux AMI, your instance needs
         /// at least version 1.26.0-1 of the <code>ecs-init</code> package. If your container

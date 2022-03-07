@@ -119,7 +119,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Determines whether to enable managed scaling for the capacity provider.
+        /// Determines whether to use managed scaling for the capacity provider.
         /// </para>
         /// </summary>
         public ManagedScalingStatus Status

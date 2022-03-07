@@ -38,7 +38,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property TaskSet. 
         /// <para>
-        /// Details about the task set.
+        /// etails about the task set.
         /// </para>
         /// </summary>
         public TaskSet TaskSet
