@@ -33,8 +33,8 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
     /// Creates an Amazon Web Services Migration Hub Refactor Spaces application. The account
     /// that owns the environment also owns the applications created inside the environment,
     /// regardless of the account that creates the application. Refactor Spaces provisions
-    /// the Amazon API Gateway and Network Load Balancer for the application proxy inside
-    /// your account.
+    /// an Amazon API Gateway, API Gateway VPC link, and Network Load Balancer for the application
+    /// proxy inside your account.
     /// </summary>
     public partial class CreateApplicationRequest : AmazonMigrationHubRefactorSpacesRequest
     {

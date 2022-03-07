@@ -30,8 +30,8 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
 {
     /// <summary>
     /// Container for the parameters to the ListEnvironmentVpcs operation.
-    /// Lists all the virtual private clouds (VPCs) that are part of an Amazon Web Services
-    /// Migration Hub Refactor Spaces environment.
+    /// Lists all Amazon Web Services Migration Hub Refactor Spaces service virtual private
+    /// clouds (VPCs) that are part of the environment.
     /// </summary>
     public partial class ListEnvironmentVpcsRequest : AmazonMigrationHubRefactorSpacesRequest
     {
