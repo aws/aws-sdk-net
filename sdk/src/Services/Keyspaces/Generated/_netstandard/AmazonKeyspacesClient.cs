@@ -49,13 +49,16 @@ namespace Amazon.Keyspaces
     /// via open-source Cassandra drivers, Amazon Keyspaces supports data definition language
     /// (DDL) operations to manage keyspaces and tables using the Amazon Web Services SDK
     /// and CLI. This API reference describes the supported DDL operations in detail. &lt;/p&gt;
-    /// &lt;note&gt; &lt;p&gt;For the list of all supported CQL APIs, see &lt;a href=&quot;https://docs.aws.amazon.com/keyspaces/latest/devguide/cassandra-apis.html&quot;&gt;Supported
+    /// &lt;p&gt;For the list of all supported CQL APIs, see &lt;a href=&quot;https://docs.aws.amazon.com/keyspaces/latest/devguide/cassandra-apis.html&quot;&gt;Supported
     /// Cassandra APIs, operations, and data types in Amazon Keyspaces&lt;/a&gt; in the &lt;i&gt;Amazon
-    /// Keyspaces Developer Guide&lt;/i&gt;.&lt;/p&gt; &lt;p&gt;For more information about
-    /// Amazon Web Services APIs, for example how to implement retry logic or how to sign
-    /// Amazon Web Services API requests, see &lt;a href=&quot;https://docs.aws.amazon.com/general/latest/gr/aws-apis.html&quot;&gt;Amazon
+    /// Keyspaces Developer Guide&lt;/i&gt;.&lt;/p&gt; &lt;p&gt;To learn how Amazon Keyspaces
+    /// API actions are tracked in CloudTrail, see &lt;a href=&quot;https://docs.aws.amazon.com/keyspaces/latest/devguide/logging-using-cloudtrail.html#service-name-info-in-cloudtrail&quot;&gt;Amazon
+    /// Keyspaces information in CloudTrail&lt;/a&gt; in the &lt;i&gt;Amazon Keyspaces Developer
+    /// Guide&lt;/i&gt;.&lt;/p&gt; &lt;p&gt;For more information about Amazon Web Services
+    /// APIs, for example how to implement retry logic or how to sign Amazon Web Services
+    /// API requests, see &lt;a href=&quot;https://docs.aws.amazon.com/general/latest/gr/aws-apis.html&quot;&gt;Amazon
     /// Web Services APIs&lt;/a&gt; in the &lt;i&gt;General Reference&lt;/i&gt;. &lt;/p&gt;
-    /// &lt;/note&gt; </code></pre>
+    /// </code></pre>
     /// </summary>
     public partial class AmazonKeyspacesClient : AmazonServiceClient, IAmazonKeyspaces
     {
@@ -606,6 +609,12 @@ namespace Amazon.Keyspaces
         /// <summary>
         /// Returns information about the table, including the table's name and current status,
         /// the keyspace name, configuration settings, and metadata.
+        /// 
+        ///  
+        /// <para>
+        /// To read table metadata using <code>GetTable</code>, <code>Select</code> action permissions
+        /// for the table and system tables are required to complete the operation.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetTable service method.</param>
         /// <param name="cancellationToken">
@@ -944,13 +953,15 @@ namespace Amazon.Keyspaces
         /// <summary>
         /// Associates a set of tags with a Amazon Keyspaces resource. You can then activate these
         /// user-defined tags so that they appear on the Cost Management Console for cost allocation
-        /// tracking.
+        /// tracking. For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/tagging-keyspaces.html">Adding
+        /// tags and labels to Amazon Keyspaces resources</a> in the <i>Amazon Keyspaces Developer
+        /// Guide</i>.
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/tagging-keyspaces.html">Adding
-        /// tags and labels to Amazon Keyspaces resources</a> in the <i>Amazon Keyspaces Developer
-        /// Guide</i>.
+        /// For IAM policy examples that show how to control access to Amazon Keyspaces resources
+        /// based on tags, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/security_iam_id-based-policy-examples-tags">Amazon
+        /// Keyspaces resource access based on tags</a> in the <i>Amazon Keyspaces Developer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
