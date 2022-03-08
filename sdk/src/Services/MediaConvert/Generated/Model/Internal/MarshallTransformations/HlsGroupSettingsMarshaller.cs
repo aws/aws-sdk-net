@@ -106,6 +106,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.CaptionLanguageSetting);
             }
 
+            if(requestObject.IsSetCaptionSegmentLengthControl())
+            {
+                context.Writer.WritePropertyName("captionSegmentLengthControl");
+                context.Writer.Write(requestObject.CaptionSegmentLengthControl);
+            }
+
             if(requestObject.IsSetClientCache())
             {
                 context.Writer.WritePropertyName("clientCache");

@@ -41,6 +41,7 @@ namespace Amazon.MediaConvert.Model
         private string _baseUrl;
         private List<HlsCaptionLanguageMapping> _captionLanguageMappings = new List<HlsCaptionLanguageMapping>();
         private HlsCaptionLanguageSetting _captionLanguageSetting;
+        private HlsCaptionSegmentLengthControl _captionSegmentLengthControl;
         private HlsClientCache _clientCache;
         private HlsCodecSpecification _codecSpecification;
         private string _destination;
@@ -174,6 +175,26 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetCaptionLanguageSetting()
         {
             return this._captionLanguageSetting != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CaptionSegmentLengthControl. Set Caption segment length
+        /// control (CaptionSegmentLengthControl) to Match video (MATCH_VIDEO) to create caption
+        /// segments that align with the video segments from the first video output in this output
+        /// group. For example, if the video segments are 2 seconds long, your WebVTT segments
+        /// will also be 2 seconds long. Keep the default setting, Large segments (LARGE_SEGMENTS)
+        /// to create caption segments that are 300 seconds long.
+        /// </summary>
+        public HlsCaptionSegmentLengthControl CaptionSegmentLengthControl
+        {
+            get { return this._captionSegmentLengthControl; }
+            set { this._captionSegmentLengthControl = value; }
+        }
+
+        // Check to see if CaptionSegmentLengthControl property is set
+        internal bool IsSetCaptionSegmentLengthControl()
+        {
+            return this._captionSegmentLengthControl != null;
         }
 
         /// <summary>
@@ -554,8 +575,11 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TimedMetadataId3Frame. Indicates ID3 frame that has the
-        /// timecode.
+        /// Gets and sets the property TimedMetadataId3Frame. Specify the type of the ID3 frame
+        /// (timedMetadataId3Frame) to use for ID3 timestamps (timedMetadataId3Period) in your
+        /// output. To include ID3 timestamps: Specify PRIV (PRIV) or TDRL (TDRL) and set ID3
+        /// metadata (timedMetadata) to Passthrough (PASSTHROUGH). To exclude ID3 timestamps:
+        /// Set ID3 timestamp frame type to None (NONE).
         /// </summary>
         public HlsTimedMetadataId3Frame TimedMetadataId3Frame
         {
@@ -570,7 +594,12 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TimedMetadataId3Period. Timed Metadata interval in seconds.
+        /// Gets and sets the property TimedMetadataId3Period. Specify the interval in seconds
+        /// to write ID3 timestamps in your output. The first timestamp starts at the output timecode
+        /// and date, and increases incrementally with each ID3 timestamp. To use the default
+        /// interval of 10 seconds: Leave blank. To include this metadata in your output: Set
+        /// ID3 timestamp frame type (timedMetadataId3Frame) to PRIV (PRIV) or TDRL (TDRL), and
+        /// set ID3 metadata (timedMetadata) to Passthrough (PASSTHROUGH).
         /// </summary>
         [AWSProperty(Min=-2147483648, Max=2147483647)]
         public int TimedMetadataId3Period

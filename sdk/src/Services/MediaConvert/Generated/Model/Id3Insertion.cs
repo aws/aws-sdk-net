@@ -40,8 +40,8 @@ namespace Amazon.MediaConvert.Model
         private string _timecode;
 
         /// <summary>
-        /// Gets and sets the property Id3. Use ID3 tag (Id3) to provide a tag value in base64-encode
-        /// format.
+        /// Gets and sets the property Id3. Use ID3 tag (Id3) to provide a fully formed ID3 tag
+        /// in base64-encode format.
         /// </summary>
         public string Id3
         {

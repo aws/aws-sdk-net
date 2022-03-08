@@ -41,11 +41,14 @@ namespace Amazon.MediaConvert.Model
         private ImscStylePassthrough _stylePassthrough;
 
         /// <summary>
-        /// Gets and sets the property Accessibility. Specify whether to flag this caption track
-        /// as accessibility in your HLS/CMAF parent manifest. When you choose ENABLED, MediaConvert
-        /// includes the parameters CHARACTERISTICS="public.accessibility.describes-spoken-dialog,public.accessibility.describes-music-and-sound"
-        /// and AUTOSELECT="YES" in the EXT-X-MEDIA entry for this track. When you keep the default
-        /// choice, DISABLED, MediaConvert leaves this parameter out.
+        /// Gets and sets the property Accessibility. Set Accessibility subtitles (Accessibility)
+        /// to Enabled (ENABLED) if the ISMC or WebVTT captions track is intended to provide accessibility
+        /// for people who are deaf or hard of hearing. When you enable this feature, MediaConvert
+        /// adds the following attributes under EXT-X-MEDIA in the HLS or CMAF manifest for this
+        /// track: CHARACTERISTICS="public.accessibility.describes-spoken-dialog,public.accessibility.describes-music-and-sound"
+        /// and AUTOSELECT="YES". Keep the default value, Disabled (DISABLED), if the captions
+        /// track is not intended to provide such accessibility. MediaConvert will not add the
+        /// above attributes.
         /// </summary>
         public ImscAccessibilitySubs Accessibility
         {

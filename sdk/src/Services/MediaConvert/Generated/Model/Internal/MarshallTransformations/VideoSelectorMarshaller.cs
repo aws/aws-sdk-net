@@ -63,6 +63,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ColorSpaceUsage);
             }
 
+            if(requestObject.IsSetEmbeddedTimecodeOverride())
+            {
+                context.Writer.WritePropertyName("embeddedTimecodeOverride");
+                context.Writer.Write(requestObject.EmbeddedTimecodeOverride);
+            }
+
             if(requestObject.IsSetHdr10Metadata())
             {
                 context.Writer.WritePropertyName("hdr10Metadata");

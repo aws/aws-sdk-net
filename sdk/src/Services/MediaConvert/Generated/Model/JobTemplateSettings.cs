@@ -249,10 +249,10 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TimedMetadataInsertion. Enable Timed metadata insertion
-        /// (TimedMetadataInsertion) to include ID3 tags in any HLS outputs. To include timed
-        /// metadata, you must enable it here, enable it in each output container, and specify
-        /// tags and timecodes in ID3 insertion (Id3Insertion) objects.
+        /// Gets and sets the property TimedMetadataInsertion. Insert user-defined custom ID3
+        /// metadata (id3) at timecodes (timecode) that you specify. In each output that you want
+        /// to include this metadata, you must set ID3 metadata (timedMetadata) to Passthrough
+        /// (PASSTHROUGH).
         /// </summary>
         public TimedMetadataInsertion TimedMetadataInsertion
         {

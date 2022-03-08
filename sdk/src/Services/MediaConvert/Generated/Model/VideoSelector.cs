@@ -37,6 +37,7 @@ namespace Amazon.MediaConvert.Model
         private AlphaBehavior _alphaBehavior;
         private ColorSpace _colorSpace;
         private ColorSpaceUsage _colorSpaceUsage;
+        private EmbeddedTimecodeOverride _embeddedTimecodeOverride;
         private Hdr10Metadata _hdr10Metadata;
         private int? _pid;
         private int? _programNumber;
@@ -106,6 +107,26 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetColorSpaceUsage()
         {
             return this._colorSpaceUsage != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EmbeddedTimecodeOverride. Set Embedded timecode override
+        /// (embeddedTimecodeOverride) to Use MDPM (USE_MDPM) when your AVCHD input contains timecode
+        /// tag data in the Modified Digital Video Pack Metadata (MDPM). When you do, we recommend
+        /// you also set Timecode source (inputTimecodeSource) to Embedded (EMBEDDED). Leave Embedded
+        /// timecode override blank, or set to None (NONE), when your input does not contain MDPM
+        /// timecode.
+        /// </summary>
+        public EmbeddedTimecodeOverride EmbeddedTimecodeOverride
+        {
+            get { return this._embeddedTimecodeOverride; }
+            set { this._embeddedTimecodeOverride = value; }
+        }
+
+        // Check to see if EmbeddedTimecodeOverride property is set
+        internal bool IsSetEmbeddedTimecodeOverride()
+        {
+            return this._embeddedTimecodeOverride != null;
         }
 
         /// <summary>

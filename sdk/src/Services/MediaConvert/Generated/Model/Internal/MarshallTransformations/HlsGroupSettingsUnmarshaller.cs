@@ -100,6 +100,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.CaptionLanguageSetting = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("captionSegmentLengthControl", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CaptionSegmentLengthControl = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("clientCache", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

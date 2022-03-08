@@ -7949,6 +7949,56 @@ namespace Amazon.MediaConvert
 
 
     /// <summary>
+    /// Constants used for properties of type EmbeddedTimecodeOverride.
+    /// </summary>
+    public class EmbeddedTimecodeOverride : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NONE for EmbeddedTimecodeOverride
+        /// </summary>
+        public static readonly EmbeddedTimecodeOverride NONE = new EmbeddedTimecodeOverride("NONE");
+        /// <summary>
+        /// Constant USE_MDPM for EmbeddedTimecodeOverride
+        /// </summary>
+        public static readonly EmbeddedTimecodeOverride USE_MDPM = new EmbeddedTimecodeOverride("USE_MDPM");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EmbeddedTimecodeOverride(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EmbeddedTimecodeOverride FindValue(string value)
+        {
+            return FindValue<EmbeddedTimecodeOverride>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EmbeddedTimecodeOverride(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type F4vMoovPlacement.
     /// </summary>
     public class F4vMoovPlacement : ConstantClass
@@ -11126,6 +11176,56 @@ namespace Amazon.MediaConvert
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator HlsCaptionLanguageSetting(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type HlsCaptionSegmentLengthControl.
+    /// </summary>
+    public class HlsCaptionSegmentLengthControl : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant LARGE_SEGMENTS for HlsCaptionSegmentLengthControl
+        /// </summary>
+        public static readonly HlsCaptionSegmentLengthControl LARGE_SEGMENTS = new HlsCaptionSegmentLengthControl("LARGE_SEGMENTS");
+        /// <summary>
+        /// Constant MATCH_VIDEO for HlsCaptionSegmentLengthControl
+        /// </summary>
+        public static readonly HlsCaptionSegmentLengthControl MATCH_VIDEO = new HlsCaptionSegmentLengthControl("MATCH_VIDEO");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HlsCaptionSegmentLengthControl(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HlsCaptionSegmentLengthControl FindValue(string value)
+        {
+            return FindValue<HlsCaptionSegmentLengthControl>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HlsCaptionSegmentLengthControl(string value)
         {
             return FindValue(value);
         }
