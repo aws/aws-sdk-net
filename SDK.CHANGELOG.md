@@ -1,3 +1,15 @@
+### 3.7.225.0 (2022-03-08 19:18 UTC)
+* EKS (3.7.13.0)
+	* Introducing a new enum for NodeGroup error code: Ec2SubnetMissingIpv6Assignment
+* Keyspaces (3.7.0.2)
+	* Adding link to CloudTrail section in Amazon Keyspaces Developer Guide
+* MediaConvert (3.7.13.0)
+	* AWS Elemental MediaConvert SDK has added support for reading timecode from AVCHD sources and now provides the ability to segment WebVTT at the same interval as the video and audio in HLS packages.
+* Core 3.7.8.7
+	* Updating endpoints.json file.
+
+	* All services packages updated to require new Core
+
 ### 3.7.224.0 (2022-03-07 19:47 UTC)
 * ChimeSDKMeetings (3.7.4.0)
 	* Adds support for Transcribe language identification feature to the StartMeetingTranscription API.
