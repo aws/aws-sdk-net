@@ -813,6 +813,10 @@ namespace Amazon.EKS
         /// </summary>
         public static readonly NodegroupIssueCode Ec2SubnetInvalidConfiguration = new NodegroupIssueCode("Ec2SubnetInvalidConfiguration");
         /// <summary>
+        /// Constant Ec2SubnetMissingIpv6Assignment for NodegroupIssueCode
+        /// </summary>
+        public static readonly NodegroupIssueCode Ec2SubnetMissingIpv6Assignment = new NodegroupIssueCode("Ec2SubnetMissingIpv6Assignment");
+        /// <summary>
         /// Constant Ec2SubnetNotFound for NodegroupIssueCode
         /// </summary>
         public static readonly NodegroupIssueCode Ec2SubnetNotFound = new NodegroupIssueCode("Ec2SubnetNotFound");
