@@ -88,7 +88,7 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// he Amazon Resource Name (ARN) of the application. 
+        /// The Amazon Resource Name (ARN) of the application. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -218,7 +218,8 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
         /// <summary>
         /// Gets and sets the property OwnerAccountId. 
         /// <para>
-        /// The Amazon Web Services account ID of the application owner.
+        /// The Amazon Web Services account ID of the application owner (which is always the same
+        /// as the environment owner account ID).
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=12)]

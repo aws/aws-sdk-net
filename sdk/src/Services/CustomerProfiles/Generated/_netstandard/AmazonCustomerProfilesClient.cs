@@ -383,6 +383,57 @@ namespace Amazon.CustomerProfiles
 
         #endregion
         
+        #region  CreateIntegrationWorkflow
+
+        internal virtual CreateIntegrationWorkflowResponse CreateIntegrationWorkflow(CreateIntegrationWorkflowRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateIntegrationWorkflowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateIntegrationWorkflowResponseUnmarshaller.Instance;
+
+            return Invoke<CreateIntegrationWorkflowResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates an integration workflow. An integration workflow is an async process which
+        /// ingests historic data and sets up an integration for ongoing updates. The supported
+        /// Amazon AppFlow sources are Salesforce, ServiceNow, and Marketo.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateIntegrationWorkflow service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateIntegrationWorkflow service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateIntegrationWorkflow">REST API Reference for CreateIntegrationWorkflow Operation</seealso>
+        public virtual Task<CreateIntegrationWorkflowResponse> CreateIntegrationWorkflowAsync(CreateIntegrationWorkflowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateIntegrationWorkflowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateIntegrationWorkflowResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateIntegrationWorkflowResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateProfile
 
         internal virtual CreateProfileResponse CreateProfile(CreateProfileRequest request)
@@ -736,6 +787,56 @@ namespace Amazon.CustomerProfiles
 
         #endregion
         
+        #region  DeleteWorkflow
+
+        internal virtual DeleteWorkflowResponse DeleteWorkflow(DeleteWorkflowRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteWorkflowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteWorkflowResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteWorkflowResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes the specified workflow and all its corresponding resources. This is an async
+        /// process.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteWorkflow service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteWorkflow service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteWorkflow">REST API Reference for DeleteWorkflow Operation</seealso>
+        public virtual Task<DeleteWorkflowResponse> DeleteWorkflowAsync(DeleteWorkflowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteWorkflowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteWorkflowResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteWorkflowResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetAutoMergingPreview
 
         internal virtual GetAutoMergingPreviewResponse GetAutoMergingPreview(GetAutoMergingPreviewRequest request)
@@ -1031,10 +1132,6 @@ namespace Amazon.CustomerProfiles
         /// <para>
         /// FullName
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// BusinessName
-        /// </para>
         ///  </li> </ul> 
         /// <para>
         /// For example, two or more profiles—with spelling mistakes such as <b>John Doe</b> and
@@ -1178,6 +1275,104 @@ namespace Amazon.CustomerProfiles
             options.ResponseUnmarshaller = GetProfileObjectTypeTemplateResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetProfileObjectTypeTemplateResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetWorkflow
+
+        internal virtual GetWorkflowResponse GetWorkflow(GetWorkflowRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetWorkflowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetWorkflowResponseUnmarshaller.Instance;
+
+            return Invoke<GetWorkflowResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Get details of specified workflow.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetWorkflow service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetWorkflow service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetWorkflow">REST API Reference for GetWorkflow Operation</seealso>
+        public virtual Task<GetWorkflowResponse> GetWorkflowAsync(GetWorkflowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetWorkflowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetWorkflowResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetWorkflowResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetWorkflowSteps
+
+        internal virtual GetWorkflowStepsResponse GetWorkflowSteps(GetWorkflowStepsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetWorkflowStepsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetWorkflowStepsResponseUnmarshaller.Instance;
+
+            return Invoke<GetWorkflowStepsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Get granular list of steps in workflow.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetWorkflowSteps service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetWorkflowSteps service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetWorkflowSteps">REST API Reference for GetWorkflowSteps Operation</seealso>
+        public virtual Task<GetWorkflowStepsResponse> GetWorkflowStepsAsync(GetWorkflowStepsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetWorkflowStepsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetWorkflowStepsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetWorkflowStepsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1567,6 +1762,55 @@ namespace Amazon.CustomerProfiles
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListWorkflows
+
+        internal virtual ListWorkflowsResponse ListWorkflows(ListWorkflowsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListWorkflowsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListWorkflowsResponseUnmarshaller.Instance;
+
+            return Invoke<ListWorkflowsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Query to list all workflows.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListWorkflows service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListWorkflows service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListWorkflows">REST API Reference for ListWorkflows Operation</seealso>
+        public virtual Task<ListWorkflowsResponse> ListWorkflowsAsync(ListWorkflowsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListWorkflowsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListWorkflowsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListWorkflowsResponse>(request, options, cancellationToken);
         }
 
         #endregion

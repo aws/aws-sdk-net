@@ -76,6 +76,18 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
                     unmarshalledObject.Ethernet1Status = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("LastUpdatedTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.LastUpdatedTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("NtpStatus", targetDepth))
+                {
+                    var unmarshaller = NtpStatusUnmarshaller.Instance;
+                    unmarshalledObject.NtpStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

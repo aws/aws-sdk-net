@@ -72,7 +72,8 @@ namespace Amazon.Lightsail.Model
         /// Gets and sets the property IncludeConnectedResources. 
         /// <para>
         /// A Boolean value that indicates whether to include Lightsail instances that were given
-        /// access to the bucket using the <a>SetResourceAccessForBucket</a> action.
+        /// access to the bucket using the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_SetResourceAccessForBucket.html">SetResourceAccessForBucket</a>
+        /// action.
         /// </para>
         /// </summary>
         public bool IncludeConnectedResources

@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie.Model
 {
     /// <summary>
-    /// The S3 resources whose classification types you want to update. This data type is
-    /// used as a request parameter in the UpdateS3Resources action.
+    /// (Discontinued) The S3 resources whose classification types you want to update. This
+    /// data type is used as a request parameter in the <code>UpdateS3Resources</code> action.
     /// </summary>
     public partial class S3ResourceClassificationUpdate
     {
@@ -41,7 +41,7 @@ namespace Amazon.Macie.Model
         /// <summary>
         /// Gets and sets the property BucketName. 
         /// <para>
-        /// The name of the S3 bucket whose classification types you want to update.
+        /// (Discontinued) The name of the S3 bucket whose classification types you want to update.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=500)]
@@ -60,8 +60,8 @@ namespace Amazon.Macie.Model
         /// <summary>
         /// Gets and sets the property ClassificationTypeUpdate. 
         /// <para>
-        /// The classification type that you want to update for the resource associated with Amazon
-        /// Macie Classic. 
+        /// (Discontinued) The classification type that you want to update for the resource associated
+        /// with Amazon Macie Classic. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -80,7 +80,8 @@ namespace Amazon.Macie.Model
         /// <summary>
         /// Gets and sets the property Prefix. 
         /// <para>
-        /// The prefix of the S3 bucket whose classification types you want to update.
+        /// (Discontinued) The prefix of the S3 bucket whose classification types you want to
+        /// update.
         /// </para>
         /// </summary>
         [AWSProperty(Max=10000)]

@@ -12,6 +12,7 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using Amazon.Runtime;
 using Amazon.Runtime.Internal.Transform;
 using System.IO;
 
@@ -33,9 +34,21 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         /// <param name="maintainResponseBody"> If set to true, maintains a copy of the complete response body as the stream is being read.</param>
         /// <param name="responseData">Response data coming back from the request</param>
         /// <param name="isException">If set to is true, configure unmarshaller with exception specifics.</param>
-
         public S3UnmarshallerContext(Stream responseStream, bool maintainResponseBody, IWebResponseData responseData, bool isException)
-            : base(responseStream, maintainResponseBody, responseData, isException)
+            : base(responseStream, maintainResponseBody, responseData, isException, null)
+        {
+        }
+
+        /// <summary>
+        /// Wrap an XmlTextReader with state for event-based parsing of an XML stream.
+        /// </summary>
+        /// <param name="responseStream"><c>Stream</c> with the XML from a service response.</param>
+        /// <param name="maintainResponseBody"> If set to true, maintains a copy of the complete response body as the stream is being read.</param>
+        /// <param name="responseData">Response data coming back from the request</param>
+        /// <param name="isException">If set to is true, configure unmarshaller with exception specifics.</param>
+        /// <param name="requestContext">Context for the request that produced this response</param>
+        public S3UnmarshallerContext(Stream responseStream, bool maintainResponseBody, IWebResponseData responseData, bool isException, IRequestContext requestContext)
+            : base(responseStream, maintainResponseBody, responseData, isException, requestContext)
         {
         }
 

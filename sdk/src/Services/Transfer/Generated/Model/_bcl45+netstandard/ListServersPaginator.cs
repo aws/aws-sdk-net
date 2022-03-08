@@ -41,6 +41,12 @@ namespace Amazon.Transfer.Model
         /// </summary>
         public IPaginatedEnumerable<ListServersResponse> Responses => new PaginatedResponse<ListServersResponse>(this);
 
+        /// <summary>
+        /// Enumerable containing all of the Servers
+        /// </summary>
+        public IPaginatedEnumerable<ListedServer> Servers => 
+            new PaginatedResultKeyResponse<ListServersResponse, ListedServer>(this, (i) => i.Servers);
+
         internal ListServersPaginator(IAmazonTransfer client, ListServersRequest request)
         {
             this._client = client;

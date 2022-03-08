@@ -70,6 +70,12 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
                     unmarshalledObject.ManagedServiceData = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("PolicyOption", targetDepth))
+                {
+                    var unmarshaller = PolicyOptionUnmarshaller.Instance;
+                    unmarshalledObject.PolicyOption = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Type", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

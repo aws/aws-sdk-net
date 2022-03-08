@@ -119,18 +119,67 @@ namespace ServiceClientGenerator
 
         /// <summary>
         /// Determines if a checksum needs to be sent in the Content-MD5 header.
+        /// Checks both the older "httpChecksumRequired" property as well as the newer
+        /// "httpChecksum.requestChecksumRequired" property
         /// </summary>
         public bool HttpChecksumRequired
         {
             get
             {
                 if (data[ServiceModel.HttpChecksumRequiredKey] != null && data[ServiceModel.HttpChecksumRequiredKey].IsBoolean)
-                    return (bool)data[ServiceModel.HttpChecksumRequiredKey];
+                {
+                    if ((bool)data[ServiceModel.HttpChecksumRequiredKey])
+                    {
+                        return true;
+                    }
+                }
+
+                if (ChecksumConfiguration != null && ChecksumConfiguration.RequestChecksumRequired)
+                {
+                    return true;
+                }
+                    
 
                 return false;
             }
         }
 
+        /// <summary>
+        /// Request and response flexible checksum configuration, read from the "httpChecksum" object
+        /// </summary>
+        public ChecksumConfiguration ChecksumConfiguration
+        {
+            get
+            {
+                if (data[ServiceModel.HttpChecksumKey] != null)
+                    return new ChecksumConfiguration(data[ServiceModel.HttpChecksumKey]);
+
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Determines whether this operation's marshaller needs to call the checksum
+        /// handling in Core. This means it either requires a MD5 checksum and/or supports
+        /// flexible checksums.
+        /// </summary>
+        public bool RequiresChecksumDuringMarshalling
+        {
+            get
+            {
+                if (HttpChecksumRequired)
+                {
+                    return true;
+                }
+
+                if (!string.IsNullOrEmpty(ChecksumConfiguration?.RequestAlgorithmMember))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+        }
         /// <summary>
         /// Determines if the operation is customized to be only internally accessible.
         /// </summary>

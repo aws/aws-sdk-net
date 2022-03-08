@@ -67,7 +67,7 @@ namespace Amazon.CloudFormation.Model
         /// For public extensions, this will be the ARN assigned when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate
         /// the type</a> in this account and region. For private extensions, this will be the
         /// ARN assigned when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">register
-        /// the type</a> in this account and region. 
+        /// the type</a> in this account and region.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]

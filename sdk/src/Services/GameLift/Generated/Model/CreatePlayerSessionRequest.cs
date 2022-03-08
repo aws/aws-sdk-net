@@ -50,7 +50,11 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  
     /// <para>
-    ///  <i>Available in Amazon GameLift Local.</i> 
+    /// The maximum number of players per game session is 200. It is not adjustable. 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <i>Available in Amazon Web Services Local.</i> 
     /// </para>
     ///  
     /// <para>

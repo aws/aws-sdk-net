@@ -47,7 +47,7 @@ namespace Amazon.CloudFormation.Model
     /// </para>
     ///  
     /// <para>
-    /// To create a change set for the entire stack hierachy, <code>IncludeNestedStacks</code>
+    /// To create a change set for the entire stack hierarchy, <code>IncludeNestedStacks</code>
     /// must have been set to <code>True</code>.
     /// </para>
     /// </summary>
@@ -61,7 +61,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property ChangeSetName. 
         /// <para>
-        /// The name or ARN of the change set that you want use to update the specified stack.
+        /// The name or Amazon Resource Name (ARN) of the change set that you want use to update
+        /// the specified stack.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1600)]
@@ -124,8 +125,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property StackName. 
         /// <para>
-        /// If you specified the name of a change set, specify the stack name or ID (ARN) that
-        /// is associated with the change set you want to execute.
+        /// If you specified the name of a change set, specify the stack name or Amazon Resource
+        /// Name (ARN) that's associated with the change set you want to execute.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

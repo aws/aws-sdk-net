@@ -121,6 +121,12 @@ namespace Amazon.FSx.Model
         /// be created. By default, Amazon FSx selects an unused IP address range for you from
         /// the 198.19.* range.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// The Endpoint IP address range you select for your file system must exist outside the
+        /// VPC's CIDR range and must be at least /30 or larger.
+        /// </para>
+        ///  </important>
         /// </summary>
         [AWSProperty(Min=9, Max=17)]
         public string EndpointIpAddressRange

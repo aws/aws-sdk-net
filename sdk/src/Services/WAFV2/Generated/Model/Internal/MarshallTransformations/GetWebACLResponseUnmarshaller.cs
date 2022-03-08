@@ -51,6 +51,12 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("ApplicationIntegrationURL", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ApplicationIntegrationURL = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LockToken", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

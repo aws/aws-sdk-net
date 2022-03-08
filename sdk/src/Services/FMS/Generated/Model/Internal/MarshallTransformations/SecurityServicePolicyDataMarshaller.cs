@@ -51,6 +51,17 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ManagedServiceData);
             }
 
+            if(requestObject.IsSetPolicyOption())
+            {
+                context.Writer.WritePropertyName("PolicyOption");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = PolicyOptionMarshaller.Instance;
+                marshaller.Marshall(requestObject.PolicyOption, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("Type");

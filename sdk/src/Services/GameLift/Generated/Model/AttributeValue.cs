@@ -100,7 +100,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property SL. 
         /// <para>
-        /// For a list of up to 10 strings. Maximum length for each string is 100 characters.
+        /// For a list of up to 100 strings. Maximum length for each string is 100 characters.
         /// Duplicate values are not recognized; all occurrences of the repeated value after the
         /// first of a repeated value are ignored.
         /// </para>

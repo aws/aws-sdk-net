@@ -30,8 +30,8 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateSnapshotCopyGrant operation.
-    /// Creates a snapshot copy grant that permits Amazon Redshift to use a customer master
-    /// key (CMK) from Key Management Service (KMS) to encrypt copied snapshots in a destination
+    /// Creates a snapshot copy grant that permits Amazon Redshift to use an encrypted symmetric
+    /// key from Key Management Service (KMS) to encrypt copied snapshots in a destination
     /// region.
     /// 
     ///  
@@ -50,7 +50,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The unique identifier of the customer master key (CMK) to which to grant Amazon Redshift
+        /// The unique identifier of the encrypted symmetric key to which to grant Amazon Redshift
         /// permission. If no key is specified, the default key is used.
         /// </para>
         /// </summary>

@@ -33,6 +33,7 @@ namespace Amazon.Panorama.Model
     /// </summary>
     public partial class DescribeDeviceResponse : AmazonWebServiceResponse
     {
+        private List<AlternateSoftwareMetadata> _alternateSoftwares = new List<AlternateSoftwareMetadata>();
         private string _arn;
         private DateTime? _createdTime;
         private NetworkStatus _currentNetworkingStatus;
@@ -40,6 +41,7 @@ namespace Amazon.Panorama.Model
         private string _description;
         private DeviceConnectionStatus _deviceConnectionStatus;
         private string _deviceId;
+        private string _latestAlternateSoftware;
         private string _latestSoftware;
         private DateTime? _leaseExpirationTime;
         private string _name;
@@ -48,6 +50,24 @@ namespace Amazon.Panorama.Model
         private string _serialNumber;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private DeviceType _type;
+
+        /// <summary>
+        /// Gets and sets the property AlternateSoftwares. 
+        /// <para>
+        /// Beta software releases available for the device.
+        /// </para>
+        /// </summary>
+        public List<AlternateSoftwareMetadata> AlternateSoftwares
+        {
+            get { return this._alternateSoftwares; }
+            set { this._alternateSoftwares = value; }
+        }
+
+        // Check to see if AlternateSoftwares property is set
+        internal bool IsSetAlternateSoftwares()
+        {
+            return this._alternateSoftwares != null && this._alternateSoftwares.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -177,6 +197,25 @@ namespace Amazon.Panorama.Model
         internal bool IsSetDeviceId()
         {
             return this._deviceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LatestAlternateSoftware. 
+        /// <para>
+        /// The most recent beta software release.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string LatestAlternateSoftware
+        {
+            get { return this._latestAlternateSoftware; }
+            set { this._latestAlternateSoftware = value; }
+        }
+
+        // Check to see if LatestAlternateSoftware property is set
+        internal bool IsSetLatestAlternateSoftware()
+        {
+            return this._latestAlternateSoftware != null;
         }
 
         /// <summary>

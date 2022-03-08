@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kendra.Model
 {
     /// <summary>
-    /// Specifies the configuration information for your Amazon Kendra experience. This includes
+    /// Provides the configuration information for your Amazon Kendra experience. This includes
     /// the data source IDs and/or FAQ IDs, and user or group information to grant access
     /// to your Amazon Kendra experience.
     /// </summary>

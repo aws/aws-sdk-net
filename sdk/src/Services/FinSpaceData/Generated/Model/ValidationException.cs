@@ -36,6 +36,7 @@ namespace Amazon.FinSpaceData.Model
     #endif
     public partial class ValidationException : AmazonFinSpaceDataException
     {
+        private string _reason;
 
         /// <summary>
         /// Constructs a new ValidationException with the specified error
@@ -97,6 +98,7 @@ namespace Amazon.FinSpaceData.Model
         protected ValidationException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
+            this.Reason = (string)info.GetValue("Reason", typeof(string));
         }
 
         /// <summary>
@@ -117,8 +119,24 @@ namespace Amazon.FinSpaceData.Model
         public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
         {
             base.GetObjectData(info, context);
+            info.AddValue("Reason", this.Reason);
         }
 #endif
+
+        /// <summary>
+        /// Gets and sets the property Reason.
+        /// </summary>
+        public string Reason
+        {
+            get { return this._reason; }
+            set { this._reason = value; }
+        }
+
+        // Check to see if Reason property is set
+        internal bool IsSetReason()
+        {
+            return this._reason != null;
+        }
 
     }
 }

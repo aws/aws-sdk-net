@@ -42,7 +42,7 @@ namespace Amazon.CloudFormation.Model
     ///  
     /// <para>
     /// For deleted stacks, <code>GetTemplateSummary</code> returns the template information
-    /// for up to 90 days after the stack has been deleted. If the template does not exist,
+    /// for up to 90 days after the stack has been deleted. If the template doesn't exist,
     /// a <code>ValidationError</code> is returned.
     /// </para>
     /// </summary>
@@ -97,7 +97,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property StackName. 
         /// <para>
-        /// The name or the stack ID that is associated with the stack, which are not always interchangeable.
+        /// The name or the stack ID that's associated with the stack, which aren't always interchangeable.
         /// For running stacks, you can specify either the stack's name or its unique stack ID.
         /// For deleted stack, you must specify the unique stack ID.
         /// </para>
@@ -148,7 +148,7 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// Structure containing the template body with a minimum length of 1 byte and a maximum
         /// length of 51,200 bytes. For more information about templates, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-        /// Anatomy</a> in the CloudFormation User Guide.
+        /// anatomy</a> in the CloudFormation User Guide.
         /// </para>
         ///  
         /// <para>
@@ -173,9 +173,9 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property TemplateURL. 
         /// <para>
         /// Location of file containing the template body. The URL must point to a template (max
-        /// size: 460,800 bytes) that is located in an Amazon S3 bucket or a Systems Manager document.
+        /// size: 460,800 bytes) that's located in an Amazon S3 bucket or a Systems Manager document.
         /// For more information about templates, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-        /// Anatomy</a> in the CloudFormation User Guide.
+        /// anatomy</a> in the CloudFormation User Guide.
         /// </para>
         ///  
         /// <para>

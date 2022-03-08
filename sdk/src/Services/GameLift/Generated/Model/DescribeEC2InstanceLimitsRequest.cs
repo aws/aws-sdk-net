@@ -30,9 +30,9 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeEC2InstanceLimits operation.
-    /// The GameLift service limits and current utilization for an AWS Region or location.
-    /// Instance limits control the number of instances, per instance type, per location,
-    /// that your AWS account can use. Learn more at <a href="http://aws.amazon.com/ec2/instance-types/">Amazon
+    /// Retrieves the instance limits and current utilization for an Amazon Web Services Region
+    /// or location. Instance limits control the number of instances, per instance type, per
+    /// location, that your Amazon Web Services account can use. Learn more at <a href="http://aws.amazon.com/ec2/instance-types/">Amazon
     /// EC2 Instance Types</a>. The information returned includes the maximum number of instances
     /// allowed and your account's current usage across all fleets. This information can affect
     /// your ability to scale your GameLift fleets. You can request a limit increase for your
@@ -42,10 +42,10 @@ namespace Amazon.GameLift.Model
     /// <para>
     /// Instance limits differ based on whether the instances are deployed in a fleet's home
     /// Region or in a remote location. For remote locations, limits also differ based on
-    /// the combination of home Region and remote location. All requests must specify an AWS
-    /// Region (either explicitly or as your default settings). To get the limit for a remote
-    /// location, you must also specify the location. For example, the following requests
-    /// all return different results: 
+    /// the combination of home Region and remote location. All requests must specify an Amazon
+    /// Web Services Region (either explicitly or as your default settings). To get the limit
+    /// for a remote location, you must also specify the location. For example, the following
+    /// requests all return different results: 
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -72,16 +72,16 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// To get limit and usage data for all instance types that are deployed in an AWS Region
-    /// by fleets that reside in the same Region: Specify the Region only. Optionally, specify
-    /// a single instance type to retrieve information for.
+    /// To get limit and usage data for all instance types that are deployed in an Amazon
+    /// Web Services Region by fleets that reside in the same Region: Specify the Region only.
+    /// Optionally, specify a single instance type to retrieve information for.
     /// </para>
     ///  </li> <li> 
     /// <para>
     /// To get limit and usage data for all instance types that are deployed to a remote location
-    /// by fleets that reside in different AWS Region: Provide both the AWS Region and the
-    /// remote location. Optionally, specify a single instance type to retrieve information
-    /// for.
+    /// by fleets that reside in different Amazon Web Services Region: Provide both the Amazon
+    /// Web Services Region and the remote location. Optionally, specify a single instance
+    /// type to retrieve information for.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -117,10 +117,10 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property EC2InstanceType. 
         /// <para>
-        /// Name of an EC2 instance type that is supported in GameLift. A fleet instance type
-        /// determines the computing resources of each instance in the fleet, including CPU, memory,
-        /// storage, and networking capacity. Do not specify a value for this parameter to retrieve
-        /// limits for all instance types.
+        /// Name of an Amazon EC2 instance type that is supported in GameLift. A fleet instance
+        /// type determines the computing resources of each instance in the fleet, including CPU,
+        /// memory, storage, and networking capacity. Do not specify a value for this parameter
+        /// to retrieve limits for all instance types.
         /// </para>
         /// </summary>
         public EC2InstanceType EC2InstanceType
@@ -138,8 +138,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Location. 
         /// <para>
-        /// The name of a remote location to request instance limits for, in the form of an AWS
-        /// Region code such as <code>us-west-2</code>.
+        /// The name of a remote location to request instance limits for, in the form of an Amazon
+        /// Web Services Region code such as <code>us-west-2</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

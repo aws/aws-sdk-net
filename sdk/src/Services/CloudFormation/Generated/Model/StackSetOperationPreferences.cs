@@ -31,7 +31,6 @@ namespace Amazon.CloudFormation.Model
     /// <summary>
     /// The user-specified preferences for how CloudFormation performs a stack set operation.
     /// 
-    /// 
     ///  
     /// <para>
     /// For more information on maximum concurrent accounts and failure tolerance, see <a
@@ -117,7 +116,7 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property MaxConcurrentCount. 
         /// <para>
         /// The maximum number of accounts in which to perform this operation at one time. This
-        /// is dependent on the value of <code>FailureToleranceCount</code>. <code>MaxConcurrentCount</code>
+        /// is dependent on the value of <code>FailureToleranceCount</code>.<code>MaxConcurrentCount</code>
         /// is at most one more than the <code>FailureToleranceCount</code>.
         /// </para>
         ///  

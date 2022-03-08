@@ -35,10 +35,10 @@ namespace Amazon.Mgn.Model
     /// will be terminated / deleted within 90 minutes. Launched Test or Cutover instances
     /// will NOT be terminated. The AWS Replication Agent will receive a command to uninstall
     /// itself (within 10 minutes). The following properties of the SourceServer will be changed
-    /// immediately: dataReplicationInfo.dataReplicationState will be to DISCONNECTED; The
-    /// SourceServer.lifeCycle.state will be changed to CUTOVER; The totalStorageBytes property
-    /// fo each of dataReplicationInfo.replicatedDisks will be set to zero; dataReplicationInfo.lagDuration
-    /// and dataReplicationInfo.lagDurationwill be nullified.
+    /// immediately: dataReplicationInfo.dataReplicationState will be changed to DISCONNECTED;
+    /// The SourceServer.lifeCycle.state will be changed to CUTOVER; The totalStorageBytes
+    /// property fo each of dataReplicationInfo.replicatedDisks will be set to zero; dataReplicationInfo.lagDuration
+    /// and dataReplicationInfo.lagDuration will be nullified.
     /// </summary>
     public partial class FinalizeCutoverRequest : AmazonMgnRequest
     {
@@ -47,7 +47,7 @@ namespace Amazon.Mgn.Model
         /// <summary>
         /// Gets and sets the property SourceServerID. 
         /// <para>
-        /// Request to finalize Cutover by Soure Server ID.
+        /// Request to finalize Cutover by Source Server ID.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=19, Max=19)]

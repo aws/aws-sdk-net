@@ -41,7 +41,7 @@ namespace Amazon.TimestreamQuery.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// You are using <a href="https://docs.aws.amazon.com/Timestream/latest/developerguide/VPCEndpoints">VPC
+    /// You are using <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/VPCEndpoints">VPC
     /// endpoints (Amazon Web Services PrivateLink) with Timestream </a> 
     /// </para>
     ///  </li> <li> 
@@ -55,7 +55,7 @@ namespace Amazon.TimestreamQuery.Model
     ///  </li> </ul> 
     /// <para>
     /// For detailed information on how and when to use and implement DescribeEndpoints, see
-    /// <a href="https://docs.aws.amazon.com/Timestream/latest/developerguide/Using.API.html#Using-API.endpoint-discovery">The
+    /// <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/Using.API.html#Using-API.endpoint-discovery">The
     /// Endpoint Discovery Pattern</a>.
     /// </para>
     /// </summary>

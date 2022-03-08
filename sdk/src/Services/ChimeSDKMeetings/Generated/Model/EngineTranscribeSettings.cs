@@ -36,10 +36,13 @@ namespace Amazon.ChimeSDKMeetings.Model
         private TranscribeContentIdentificationType _contentIdentificationType;
         private TranscribeContentRedactionType _contentRedactionType;
         private bool? _enablePartialResultsStabilization;
+        private bool? _identifyLanguage;
         private TranscribeLanguageCode _languageCode;
         private string _languageModelName;
+        private string _languageOptions;
         private TranscribePartialResultsStability _partialResultsStability;
         private string _piiEntityTypes;
+        private TranscribeLanguageCode _preferredLanguage;
         private TranscribeRegion _region;
         private TranscribeVocabularyFilterMethod _vocabularyFilterMethod;
         private string _vocabularyFilterName;
@@ -110,12 +113,29 @@ namespace Amazon.ChimeSDKMeetings.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IdentifyLanguage. 
+        /// <para>
+        /// Automatically identifies the language spoken in media files.
+        /// </para>
+        /// </summary>
+        public bool IdentifyLanguage
+        {
+            get { return this._identifyLanguage.GetValueOrDefault(); }
+            set { this._identifyLanguage = value; }
+        }
+
+        // Check to see if IdentifyLanguage property is set
+        internal bool IsSetIdentifyLanguage()
+        {
+            return this._identifyLanguage.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property LanguageCode. 
         /// <para>
         /// The language code specified for the Amazon Transcribe engine.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public TranscribeLanguageCode LanguageCode
         {
             get { return this._languageCode; }
@@ -148,6 +168,26 @@ namespace Amazon.ChimeSDKMeetings.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LanguageOptions. 
+        /// <para>
+        /// Language codes for the languages that you want to identify. You must provide at least
+        /// 2 codes.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=200)]
+        public string LanguageOptions
+        {
+            get { return this._languageOptions; }
+            set { this._languageOptions = value; }
+        }
+
+        // Check to see if LanguageOptions property is set
+        internal bool IsSetLanguageOptions()
+        {
+            return this._languageOptions != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property PartialResultsStability. 
         /// <para>
         /// The stabity level of a partial results transcription. Determines how stable you want
@@ -175,7 +215,7 @@ namespace Amazon.ChimeSDKMeetings.Model
         /// </para>
         ///  
         /// <para>
-        /// PIIEntityTypes must be comma-separated. The available values are: <code>BANK_ACCOUNT_NUMBER</code>,
+        ///  <code>PIIEntityTypes</code> must be comma-separated. The available values are: <code>BANK_ACCOUNT_NUMBER</code>,
         /// <code>BANK_ROUTING, CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>, <code>CREDIT_DEBIT_EXPIRY</code>,
         /// <code>PIN</code>, <code>EMAIL</code>, <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>,
         /// <code>SSN</code>, and <code>ALL</code>.
@@ -196,6 +236,24 @@ namespace Amazon.ChimeSDKMeetings.Model
         internal bool IsSetPiiEntityTypes()
         {
             return this._piiEntityTypes != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PreferredLanguage. 
+        /// <para>
+        /// Language code for the preferred language.
+        /// </para>
+        /// </summary>
+        public TranscribeLanguageCode PreferredLanguage
+        {
+            get { return this._preferredLanguage; }
+            set { this._preferredLanguage = value; }
+        }
+
+        // Check to see if PreferredLanguage property is set
+        internal bool IsSetPreferredLanguage()
+        {
+            return this._preferredLanguage != null;
         }
 
         /// <summary>

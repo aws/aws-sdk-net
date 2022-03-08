@@ -33,8 +33,32 @@ namespace Amazon.WAFV2.Model
     /// </summary>
     public partial class GetWebACLResponse : AmazonWebServiceResponse
     {
+        private string _applicationIntegrationURL;
         private string _lockToken;
         private WebACL _webACL;
+
+        /// <summary>
+        /// Gets and sets the property ApplicationIntegrationURL. 
+        /// <para>
+        /// The URL to use in SDK integrations with Amazon Web Services managed rule groups. For
+        /// example, you can use the integration SDKs with the account takeover prevention managed
+        /// rule group <code>AWSManagedRulesATPRuleSet</code>. This is only populated if you are
+        /// using a rule group in your web ACL that integrates with your applications in this
+        /// way. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF
+        /// client application integration</a> in the <i>WAF Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        public string ApplicationIntegrationURL
+        {
+            get { return this._applicationIntegrationURL; }
+            set { this._applicationIntegrationURL = value; }
+        }
+
+        // Check to see if ApplicationIntegrationURL property is set
+        internal bool IsSetApplicationIntegrationURL()
+        {
+            return this._applicationIntegrationURL != null;
+        }
 
         /// <summary>
         /// Gets and sets the property LockToken. 

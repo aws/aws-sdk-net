@@ -185,8 +185,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Location. 
         /// <para>
-        /// The fleet location of the instance, expressed as an AWS Region code, such as <code>us-west-2</code>.
-        /// 
+        /// The fleet location of the instance, expressed as an Amazon Web Services Region code,
+        /// such as <code>us-west-2</code>. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -259,7 +259,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// EC2 instance type that defines the computing resources of this instance. 
+        /// Amazon EC2 instance type that defines the computing resources of this instance. 
         /// </para>
         /// </summary>
         public EC2InstanceType Type

@@ -641,11 +641,13 @@ namespace Amazon.Redshift.Model
         /// <para>
         /// A list of Identity and Access Management (IAM) roles that can be used by the cluster
         /// to access other Amazon Web Services services. You must supply the IAM roles in their
-        /// Amazon Resource Name (ARN) format. You can supply up to 10 IAM roles in a single request.
+        /// Amazon Resource Name (ARN) format. 
         /// </para>
         ///  
         /// <para>
-        /// A cluster can have up to 10 IAM roles associated with it at any time.
+        /// The maximum number of IAM roles that you can associate is subject to a quota. For
+        /// more information, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Quotas
+        /// and limits</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
         /// </para>
         /// </summary>
         public List<string> IamRoles
@@ -791,8 +793,8 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Can be any printable ASCII character (ASCII code 33 to 126) except ' (single quote),
-        /// " (double quote), \, /, @, or space.
+        /// Can be any printable ASCII character (ASCII code 33-126) except ' (single quote),
+        /// " (double quote), \, /, or @.
         /// </para>
         ///  </li> </ul>
         /// </summary>

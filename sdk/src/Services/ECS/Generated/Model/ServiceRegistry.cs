@@ -30,6 +30,18 @@ namespace Amazon.ECS.Model
 {
     /// <summary>
     /// The details for the service registry.
+    /// 
+    ///  
+    /// <para>
+    /// Each service may be associated with one service registry. Multiple service registries
+    /// for each service are not supported.
+    /// </para>
+    ///  
+    /// <para>
+    /// When you add, update, or remove the service registries configuration, Amazon ECS starts
+    /// a new deployment. New tasks are registered and deregistered to the updated service
+    /// registry configuration.
+    /// </para>
     /// </summary>
     public partial class ServiceRegistry
     {

@@ -684,6 +684,10 @@
       <Project>{76145C3D-D380-4BAC-9B92-2DB55ED091C7}</Project>
       <Name>AWSSDK.KeyManagementService.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/Keyspaces/AWSSDK.Keyspaces.CodeAnalysis.csproj">
+      <Project>{B065CF1C-D720-4921-B508-0ACC7842D3EF}</Project>
+      <Name>AWSSDK.Keyspaces.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/Kinesis/AWSSDK.Kinesis.CodeAnalysis.csproj">
       <Project>{942BC563-BAFE-4DD5-92C5-BAB2D6420914}</Project>
       <Name>AWSSDK.Kinesis.CodeAnalysis</Name>

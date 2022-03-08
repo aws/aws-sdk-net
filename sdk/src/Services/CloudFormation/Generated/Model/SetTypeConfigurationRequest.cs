@@ -42,7 +42,7 @@ namespace Amazon.CloudFormation.Model
     /// </para>
     ///  <important> 
     /// <para>
-    /// It is strongly recommended that you use dynamic references to restrict sensitive configuration
+    /// It's strongly recommended that you use dynamic references to restrict sensitive configuration
     /// definitions, such as third-party credentials. For more details on dynamic references,
     /// see <a href="https://docs.aws.amazon.com/">Using dynamic references to specify template
     /// values</a> in the <i>CloudFormation User Guide</i>.
@@ -60,7 +60,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Configuration. 
         /// <para>
-        /// The configuration data for the extension, in this account and region. 
+        /// The configuration data for the extension, in this account and region.
         /// </para>
         ///  
         /// <para>
@@ -141,7 +141,7 @@ namespace Amazon.CloudFormation.Model
         /// For public extensions, this will be the ARN assigned when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate
         /// the type</a> in this account and region. For private extensions, this will be the
         /// ARN assigned when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">register
-        /// the type</a> in this account and region. 
+        /// the type</a> in this account and region.
         /// </para>
         ///  
         /// <para>

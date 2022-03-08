@@ -30,7 +30,7 @@ namespace Amazon.CloudTrail.Model
 {
     /// <summary>
     /// The specified query cannot be canceled because it is in the <code>FINISHED</code>,
-    /// <code>FAILED</code>, or <code>CANCELLED</code> state.
+    /// <code>FAILED</code>, <code>TIMED_OUT</code>, or <code>CANCELLED</code> state.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -34,6 +34,7 @@ namespace Amazon.Pinpoint.Model
     public partial class ApplicationResponse
     {
         private string _arn;
+        private string _creationDate;
         private string _id;
         private string _name;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
@@ -55,6 +56,24 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CreationDate. 
+        /// <para>
+        /// The date and time when the Application was created.
+        /// </para>
+        /// </summary>
+        public string CreationDate
+        {
+            get { return this._creationDate; }
+            set { this._creationDate = value; }
+        }
+
+        // Check to see if CreationDate property is set
+        internal bool IsSetCreationDate()
+        {
+            return this._creationDate != null;
         }
 
         /// <summary>

@@ -102,6 +102,21 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (putObjectRequest.IsSetBucketKeyEnabled())
                 request.Headers.Add(S3Constants.AmzHeaderBucketKeyEnabled, S3Transforms.ToStringValue(putObjectRequest.BucketKeyEnabled));
 
+            if (putObjectRequest.IsSetChecksumAlgorithm())
+                request.Headers.Add(S3Constants.AmzHeaderSdkChecksumAlgorithm, S3Transforms.ToStringValue(putObjectRequest.ChecksumAlgorithm));
+
+            if (putObjectRequest.IsSetChecksumCRC32())
+                request.Headers.Add("x-amz-checksum-crc32", S3Transforms.ToStringValue(putObjectRequest.ChecksumCRC32));
+
+            if (putObjectRequest.IsSetChecksumCRC32C())
+                request.Headers.Add("x-amz-checksum-crc32c", S3Transforms.ToStringValue(putObjectRequest.ChecksumCRC32C));
+
+            if (putObjectRequest.IsSetChecksumSHA1())
+                request.Headers.Add("x-amz-checksum-sha1", S3Transforms.ToStringValue(putObjectRequest.ChecksumSHA1));
+
+            if (putObjectRequest.IsSetChecksumSHA256())
+                request.Headers.Add("x-amz-checksum-sha256", S3Transforms.ToStringValue(putObjectRequest.ChecksumSHA256));
+
             AmazonS3Util.SetMetadataHeaders(request, putObjectRequest.Metadata);
 
             if (string.IsNullOrEmpty(putObjectRequest.BucketName))
@@ -150,6 +165,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }
         
             request.ContentStream = putObjectRequest.InputStream;
+            ChecksumUtils.SetRequestChecksum(request, putObjectRequest.ChecksumAlgorithm, fallbackToMD5: false);
             if (!request.Headers.ContainsKey(HeaderKeys.ContentTypeHeader))
                 request.Headers.Add(HeaderKeys.ContentTypeHeader, "text/plain");
                       

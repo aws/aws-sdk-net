@@ -103,8 +103,8 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// Required: Conditional. If you do not specify <code>PhysicalResourceId</code>, you
-        /// must specify <code>StackName</code>.
+        /// Required: Conditional. If you don't specify <code>PhysicalResourceId</code>, you must
+        /// specify <code>StackName</code>.
         /// </para>
         ///  
         /// <para>
@@ -126,7 +126,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property StackName. 
         /// <para>
-        /// The name or the unique stack ID that is associated with the stack, which are not always
+        /// The name or the unique stack ID that is associated with the stack, which aren't always
         /// interchangeable:
         /// </para>
         ///  <ul> <li> 
@@ -143,7 +143,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// Required: Conditional. If you do not specify <code>StackName</code>, you must specify
+        /// Required: Conditional. If you don't specify <code>StackName</code>, you must specify
         /// <code>PhysicalResourceId</code>.
         /// </para>
         /// </summary>

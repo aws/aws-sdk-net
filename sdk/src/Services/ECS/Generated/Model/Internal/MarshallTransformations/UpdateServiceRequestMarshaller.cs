@@ -106,6 +106,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DesiredCount);
                 }
 
+                if(publicRequest.IsSetEnableECSManagedTags())
+                {
+                    context.Writer.WritePropertyName("enableECSManagedTags");
+                    context.Writer.Write(publicRequest.EnableECSManagedTags);
+                }
+
                 if(publicRequest.IsSetEnableExecuteCommand())
                 {
                     context.Writer.WritePropertyName("enableExecuteCommand");
@@ -122,6 +128,22 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("healthCheckGracePeriodSeconds");
                     context.Writer.Write(publicRequest.HealthCheckGracePeriodSeconds);
+                }
+
+                if(publicRequest.IsSetLoadBalancers())
+                {
+                    context.Writer.WritePropertyName("loadBalancers");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestLoadBalancersListValue in publicRequest.LoadBalancers)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = LoadBalancerMarshaller.Instance;
+                        marshaller.Marshall(publicRequestLoadBalancersListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
                 }
 
                 if(publicRequest.IsSetNetworkConfiguration())
@@ -173,10 +195,32 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.PlatformVersion);
                 }
 
+                if(publicRequest.IsSetPropagateTags())
+                {
+                    context.Writer.WritePropertyName("propagateTags");
+                    context.Writer.Write(publicRequest.PropagateTags);
+                }
+
                 if(publicRequest.IsSetService())
                 {
                     context.Writer.WritePropertyName("service");
                     context.Writer.Write(publicRequest.Service);
+                }
+
+                if(publicRequest.IsSetServiceRegistries())
+                {
+                    context.Writer.WritePropertyName("serviceRegistries");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestServiceRegistriesListValue in publicRequest.ServiceRegistries)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ServiceRegistryMarshaller.Instance;
+                        marshaller.Marshall(publicRequestServiceRegistriesListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
                 }
 
                 if(publicRequest.IsSetTaskDefinition())

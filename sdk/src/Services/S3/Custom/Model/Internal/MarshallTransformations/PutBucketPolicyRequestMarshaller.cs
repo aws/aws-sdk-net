@@ -17,6 +17,7 @@ using System.IO;
 using System.Text;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 using Amazon.S3.Util;
 using Amazon.Util;
 
@@ -40,6 +41,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             request.HttpMethod = "PUT";
 
+            if (putBucketPolicyRequest.IsSetChecksumAlgorithm())
+                request.Headers.Add(S3Constants.AmzHeaderSdkChecksumAlgorithm, S3Transforms.ToStringValue(putBucketPolicyRequest.ChecksumAlgorithm));
             if (putBucketPolicyRequest.IsSetContentMD5())
                 request.Headers.Add(HeaderKeys.ContentMD5Header, S3Transforms.ToStringValue(putBucketPolicyRequest.ContentMD5));
             if (!request.Headers.ContainsKey(HeaderKeys.ContentTypeHeader))
@@ -57,6 +60,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             request.AddSubResource("policy");
 
             request.ContentStream = new MemoryStream(Encoding.UTF8.GetBytes(putBucketPolicyRequest.Policy));
+
+            ChecksumUtils.SetRequestChecksum(request, putBucketPolicyRequest.ChecksumAlgorithm);
 
             return request;
         }

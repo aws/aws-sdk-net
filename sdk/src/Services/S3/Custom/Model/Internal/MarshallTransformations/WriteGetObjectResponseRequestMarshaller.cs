@@ -66,6 +66,18 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (writeGetObjectResponseRequest.IsSetCacheControl())
                 request.Headers["x-amz-fwd-header-Cache-Control"] = S3Transforms.ToStringValue(writeGetObjectResponseRequest.CacheControl);
 
+            if (writeGetObjectResponseRequest.IsSetChecksumCRC32())
+                request.Headers["x-amz-fwd-header-x-amz-checksum-crc32"] = S3Transforms.ToStringValue(writeGetObjectResponseRequest.ChecksumCRC32);
+
+            if (writeGetObjectResponseRequest.IsSetChecksumCRC32C())
+                request.Headers["x-amz-fwd-header-x-amz-checksum-crc32c"] = S3Transforms.ToStringValue(writeGetObjectResponseRequest.ChecksumCRC32C);
+
+            if (writeGetObjectResponseRequest.IsSetChecksumSHA1())
+                request.Headers["x-amz-fwd-header-x-amz-checksum-sha1"] = S3Transforms.ToStringValue(writeGetObjectResponseRequest.ChecksumSHA1);
+
+            if (writeGetObjectResponseRequest.IsSetChecksumSHA256())
+                request.Headers["x-amz-fwd-header-x-amz-checksum-sha256"] = S3Transforms.ToStringValue(writeGetObjectResponseRequest.ChecksumSHA256);
+
             if (writeGetObjectResponseRequest.IsSetContentDisposition())
                 request.Headers["x-amz-fwd-header-Content-Disposition"] = S3Transforms.ToStringValue(writeGetObjectResponseRequest.ContentDisposition);
 

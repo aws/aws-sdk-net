@@ -117,7 +117,7 @@ namespace Amazon.CloudTrail.Model
         /// Gets and sets the property QueryStatus. 
         /// <para>
         /// The status of the query. Values include <code>QUEUED</code>, <code>RUNNING</code>,
-        /// <code>FINISHED</code>, <code>FAILED</code>, or <code>CANCELLED</code>.
+        /// <code>FINISHED</code>, <code>FAILED</code>, <code>TIMED_OUT</code>, or <code>CANCELLED</code>.
         /// </para>
         /// </summary>
         public QueryStatus QueryStatus

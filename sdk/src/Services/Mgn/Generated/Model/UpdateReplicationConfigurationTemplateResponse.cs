@@ -90,7 +90,7 @@ namespace Amazon.Mgn.Model
         /// <summary>
         /// Gets and sets the property BandwidthThrottling. 
         /// <para>
-        /// Replication Configuration template bandwidth throtting.
+        /// Replication Configuration template bandwidth throttling.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -145,7 +145,7 @@ namespace Amazon.Mgn.Model
         /// <summary>
         /// Gets and sets the property DefaultLargeStagingDiskType. 
         /// <para>
-        /// Replication Configuration template use dedault large Staging Disk type.
+        /// Replication Configuration template use default large Staging Disk type.
         /// </para>
         /// </summary>
         public ReplicationConfigurationDefaultLargeStagingDiskType DefaultLargeStagingDiskType
@@ -200,7 +200,7 @@ namespace Amazon.Mgn.Model
         /// <summary>
         /// Gets and sets the property ReplicationConfigurationTemplateID. 
         /// <para>
-        /// Replication Configuration template template ID.
+        /// Replication Configuration template ID.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=21, Max=21)]

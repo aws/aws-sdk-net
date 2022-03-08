@@ -32,7 +32,7 @@ namespace Amazon.Mgn.Model
     /// Container for the parameters to the MarkAsArchived operation.
     /// Archives specific Source Servers by setting the SourceServer.isArchived property to
     /// true for specified SourceServers by ID. This command only works for SourceServers
-    /// with a lifecycle.state which equals DISCONNECTED or CUTOVER.
+    /// with a lifecycle. state which equals DISCONNECTED or CUTOVER.
     /// </summary>
     public partial class MarkAsArchivedRequest : AmazonMgnRequest
     {

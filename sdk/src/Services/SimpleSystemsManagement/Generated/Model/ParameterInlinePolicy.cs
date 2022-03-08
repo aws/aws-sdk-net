@@ -78,9 +78,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property PolicyType. 
         /// <para>
-        /// The type of policy. Parameter Store, a capablility of Amazon Web Services Systems
-        /// Manager, supports the following policy types: Expiration, ExpirationNotification,
-        /// and NoChangeNotification. 
+        /// The type of policy. Parameter Store, a capability of Amazon Web Services Systems Manager,
+        /// supports the following policy types: Expiration, ExpirationNotification, and NoChangeNotification.
+        /// 
         /// </para>
         /// </summary>
         public string PolicyType

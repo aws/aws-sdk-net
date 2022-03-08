@@ -60,6 +60,14 @@ namespace Amazon.Budgets.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeBudgetNotificationsForAccount operation
+        ///</summary>
+        public IDescribeBudgetNotificationsForAccountPaginator DescribeBudgetNotificationsForAccount(DescribeBudgetNotificationsForAccountRequest request) 
+        {
+            return new DescribeBudgetNotificationsForAccountPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeBudgetPerformanceHistory operation
         ///</summary>
         public IDescribeBudgetPerformanceHistoryPaginator DescribeBudgetPerformanceHistory(DescribeBudgetPerformanceHistoryRequest request) 

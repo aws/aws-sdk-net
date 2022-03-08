@@ -1782,7 +1782,7 @@ namespace Amazon.LookoutforVision
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>lookoutvision:StartModelPackagingJobs</code> 
+        ///  <code>lookoutvision:StartModelPackagingJob</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>

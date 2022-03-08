@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Budgets.Model
 {
     /// <summary>
-    /// A notification that is associated with a budget. A budget can have up to ten notifications.
+    /// A notification that's associated with a budget. A budget can have up to ten notifications.
     /// 
     /// 
     ///  
@@ -71,7 +71,7 @@ namespace Amazon.Budgets.Model
         /// <summary>
         /// Gets and sets the property ComparisonOperator. 
         /// <para>
-        /// The comparison that is used for this notification.
+        /// The comparison that's used for this notification.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -90,8 +90,8 @@ namespace Amazon.Budgets.Model
         /// <summary>
         /// Gets and sets the property NotificationState. 
         /// <para>
-        /// Whether this notification is in alarm. If a budget notification is in the <code>ALARM</code>
-        /// state, you have passed the set threshold for the budget.
+        /// Specifies whether this notification is in alarm. If a budget notification is in the
+        /// <code>ALARM</code> state, you passed the set threshold for the budget.
         /// </para>
         /// </summary>
         public NotificationState NotificationState
@@ -109,8 +109,8 @@ namespace Amazon.Budgets.Model
         /// <summary>
         /// Gets and sets the property NotificationType. 
         /// <para>
-        /// Whether the notification is for how much you have spent (<code>ACTUAL</code>) or for
-        /// how much you're forecasted to spend (<code>FORECASTED</code>).
+        /// Specifies whether the notification is for how much you have spent (<code>ACTUAL</code>)
+        /// or for how much that you're forecasted to spend (<code>FORECASTED</code>).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -129,12 +129,12 @@ namespace Amazon.Budgets.Model
         /// <summary>
         /// Gets and sets the property Threshold. 
         /// <para>
-        /// The threshold that is associated with a notification. Thresholds are always a percentage,
+        /// The threshold that's associated with a notification. Thresholds are always a percentage,
         /// and many customers find value being alerted between 50% - 200% of the budgeted amount.
         /// The maximum limit for your threshold is 1,000,000% above the budgeted amount.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=40000000000)]
+        [AWSProperty(Required=true, Min=0, Max=15000000000000)]
         public double Threshold
         {
             get { return this._threshold.GetValueOrDefault(); }
@@ -151,11 +151,12 @@ namespace Amazon.Budgets.Model
         /// Gets and sets the property ThresholdType. 
         /// <para>
         /// The type of threshold for a notification. For <code>ABSOLUTE_VALUE</code> thresholds,
-        /// AWS notifies you when you go over or are forecasted to go over your total cost threshold.
-        /// For <code>PERCENTAGE</code> thresholds, AWS notifies you when you go over or are forecasted
-        /// to go over a certain percentage of your forecasted spend. For example, if you have
-        /// a budget for 200 dollars and you have a <code>PERCENTAGE</code> threshold of 80%,
-        /// AWS notifies you when you go over 160 dollars.
+        /// Amazon Web Services notifies you when you go over or are forecasted to go over your
+        /// total cost threshold. For <code>PERCENTAGE</code> thresholds, Amazon Web Services
+        /// notifies you when you go over or are forecasted to go over a certain percentage of
+        /// your forecasted spend. For example, if you have a budget for 200 dollars and you have
+        /// a <code>PERCENTAGE</code> threshold of 80%, Amazon Web Services notifies you when
+        /// you go over 160 dollars.
         /// </para>
         /// </summary>
         public ThresholdType ThresholdType

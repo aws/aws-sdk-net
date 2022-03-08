@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Athena.Model
 {
     /// <summary>
-    /// The rows that comprise a query result table.
+    /// The rows that make up a query result table.
     /// </summary>
     public partial class Row
     {

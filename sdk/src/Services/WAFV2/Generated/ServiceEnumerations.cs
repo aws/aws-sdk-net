@@ -1775,6 +1775,10 @@ namespace Amazon.WAFV2
         /// </summary>
         public static readonly ParameterExceptionField LOGGING_FILTER = new ParameterExceptionField("LOGGING_FILTER");
         /// <summary>
+        /// Constant MANAGED_RULE_GROUP_CONFIG for ParameterExceptionField
+        /// </summary>
+        public static readonly ParameterExceptionField MANAGED_RULE_GROUP_CONFIG = new ParameterExceptionField("MANAGED_RULE_GROUP_CONFIG");
+        /// <summary>
         /// Constant MANAGED_RULE_SET for ParameterExceptionField
         /// </summary>
         public static readonly ParameterExceptionField MANAGED_RULE_SET = new ParameterExceptionField("MANAGED_RULE_SET");
@@ -1798,6 +1802,10 @@ namespace Amazon.WAFV2
         /// Constant OVERRIDE_ACTION for ParameterExceptionField
         /// </summary>
         public static readonly ParameterExceptionField OVERRIDE_ACTION = new ParameterExceptionField("OVERRIDE_ACTION");
+        /// <summary>
+        /// Constant PAYLOAD_TYPE for ParameterExceptionField
+        /// </summary>
+        public static readonly ParameterExceptionField PAYLOAD_TYPE = new ParameterExceptionField("PAYLOAD_TYPE");
         /// <summary>
         /// Constant POSITION for ParameterExceptionField
         /// </summary>
@@ -1916,6 +1924,106 @@ namespace Amazon.WAFV2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ParameterExceptionField(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PayloadType.
+    /// </summary>
+    public class PayloadType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FORM_ENCODED for PayloadType
+        /// </summary>
+        public static readonly PayloadType FORM_ENCODED = new PayloadType("FORM_ENCODED");
+        /// <summary>
+        /// Constant JSON for PayloadType
+        /// </summary>
+        public static readonly PayloadType JSON = new PayloadType("JSON");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PayloadType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PayloadType FindValue(string value)
+        {
+            return FindValue<PayloadType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PayloadType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Platform.
+    /// </summary>
+    public class Platform : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ANDROID for Platform
+        /// </summary>
+        public static readonly Platform ANDROID = new Platform("ANDROID");
+        /// <summary>
+        /// Constant IOS for Platform
+        /// </summary>
+        public static readonly Platform IOS = new Platform("IOS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Platform(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Platform FindValue(string value)
+        {
+            return FindValue<Platform>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Platform(string value)
         {
             return FindValue(value);
         }

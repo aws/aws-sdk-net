@@ -30,7 +30,16 @@ namespace Amazon.ECR.Model
 {
     /// <summary>
     /// Container for the parameters to the PutImageScanningConfiguration operation.
+    /// <important> 
+    /// <para>
+    /// The <code>PutImageScanningConfiguration</code> API is being deprecated, in favor of
+    /// specifying the image scanning configuration at the registry level. For more information,
+    /// see <a>PutRegistryScanningConfiguration</a>.
+    /// </para>
+    ///  </important> 
+    /// <para>
     /// Updates the image scanning configuration for the specified repository.
+    /// </para>
     /// </summary>
     public partial class PutImageScanningConfigurationRequest : AmazonECRRequest
     {

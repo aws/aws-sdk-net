@@ -62,7 +62,8 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  
         /// <para>
-        /// Use the <a>UpdateBucketBundle</a> action to change a bucket's bundle.
+        /// Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateBucketBundle.html">UpdateBucketBundle</a>
+        /// action to change a bucket's bundle.
         /// </para>
         /// </summary>
         public bool AbleToUpdateBundle
@@ -143,7 +144,8 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  
         /// <para>
-        /// Use the <a>UpdateBucketBundle</a> action to change the bundle of a bucket.
+        /// Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateBucketBundle.html">UpdateBucketBundle</a>
+        /// action to change the bundle of a bucket.
         /// </para>
         /// </summary>
         public string BundleId
@@ -273,8 +275,8 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  
         /// <para>
-        /// Use the <a>SetResourceAccessForBucket</a> action to update the instances that have
-        /// access to a bucket.
+        /// Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_SetResourceAccessForBucket.html">SetResourceAccessForBucket</a>
+        /// action to update the instances that have access to a bucket.
         /// </para>
         /// </summary>
         public List<ResourceReceivingAccess> ResourcesReceivingAccess

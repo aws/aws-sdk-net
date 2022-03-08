@@ -1,3 +1,238 @@
+### 3.7.224.0 (2022-03-07 19:47 UTC)
+* ChimeSDKMeetings (3.7.4.0)
+	* Adds support for Transcribe language identification feature to the StartMeetingTranscription API.
+* ECS (3.7.5.0)
+	* Amazon ECS UpdateService API now supports additional parameters: loadBalancers, propagateTags, enableECSManagedTags, and serviceRegistries
+* MigrationHubRefactorSpaces (3.7.0.30)
+	* AWS Migration Hub Refactor Spaces documentation update.
+
+### 3.7.223.0 (2022-03-04 19:28 UTC)
+* Connect (3.7.14.0)
+	* This release updates the *InstanceStorageConfig APIs so they support a new ResourceType: REAL_TIME_CONTACT_ANALYSIS_SEGMENTS. Use this resource type to enable streaming for real-time contact analysis and to associate the Kinesis stream where real-time contact analysis segments will be published.
+* DevOpsGuru (3.7.8.0)
+	* Amazon DevOps Guru now integrates with Amazon CodeGuru Profiler. You can view CodeGuru Profiler recommendations for your AWS Lambda function in DevOps Guru. This feature is enabled by default for new customers as of 3/4/2022. Existing customers can enable this feature with UpdateEventSourcesConfig.
+* EC2 (3.7.60.3)
+	* Documentation updates for Amazon EC2.
+* Macie (3.7.0.133)
+	* Amazon Macie Classic (macie) has been discontinued and is no longer available. A new Amazon Macie (macie2) is now available with significant design improvements and additional features.
+* SecurityToken (3.7.1.124)
+	* Documentation updates for AWS Security Token Service.
+* Synthetics (3.7.4.0)
+	* Allow custom handler function.
+* Transfer (3.7.9.0)
+	* Add waiters for server online and offline.
+
+### 3.7.222.0 (2022-03-03 19:21 UTC)
+* Appflow (3.7.7.0)
+	* Launching Amazon AppFlow Marketo as a destination connector SDK.
+* FSx (3.7.9.0)
+	* This release adds support for data repository associations to use root ("/") as the file system path
+* GreengrassV2 (3.7.4.22)
+	* Doc only update that clarifies Create Deployment section.
+* Kendra (3.7.14.0)
+	* Amazon Kendra now suggests spell corrections for a query. For more information, see https://docs.aws.amazon.com/kendra/latest/dg/query-spell-check.html
+* TimestreamQuery (3.7.1.29)
+	* Documentation only update for SDK and CLI
+* Core 3.7.8.6
+	* Updating endpoints.json file.
+
+	* All services packages updated to require new Core
+
+### 3.7.221.0 (2022-03-02 19:28 UTC)
+* Athena (3.7.5.0)
+	* This release adds support for S3 Object Ownership by allowing the S3 bucket owner full control canned ACL to be set when Athena writes query results to S3 buckets.
+* CloudTrail (3.7.3.0)
+	* Add bytesScanned field into responses of DescribeQuery and GetQueryResults.
+* ECR (3.7.3.0)
+	* This release adds support for tracking images lastRecordedPullTime.
+* GameLift (3.7.1.46)
+	* Minor updates to address errors.
+* Keyspaces (3.7.0.0)
+	* This release adds support for data definition language (DDL) operations
+
+### 3.7.220.0 (2022-03-01 19:17 UTC)
+* KafkaConnect (3.7.1.0)
+	* Adds operation for custom plugin deletion (DeleteCustomPlugin) and adds new StateDescription field to DescribeCustomPlugin and DescribeConnector responses to return errors from asynchronous resource creation.
+* MediaPackage (3.7.5.0)
+	* This release adds Hybridcast as an available profile option for Dash Origin Endpoints.
+* Mgn (3.7.3.0)
+	* Add support for GP3 and IO2 volume types. Add bootMode to LaunchConfiguration object (and as a parameter to UpdateLaunchConfigurationRequest).
+* RDS (3.7.10.8)
+	* Documentation updates for Multi-AZ DB clusters.
+* Core 3.7.8.5
+	* Updating endpoints.json file.
+
+	* All services packages updated to require new Core
+
+### 3.7.219.0 (2022-02-28 19:18 UTC)
+* Amplify (3.7.1.0)
+	* Add repositoryCloneMethod field for hosting an Amplify app. This field shows what authorization method is used to clone the repo: SSH, TOKEN, or SIGV4.
+* AmplifyUIBuilder (3.7.1.0)
+	* We are adding the ability to configure workflows and actions for components.
+* AppRegistry (3.7.2.0)
+	* AppRegistry is deprecating Application and Attribute-Group Name update feature. In this release, we are marking the name attributes for Update APIs as deprecated to give a heads up to our customers.
+* Athena (3.7.4.0)
+	* This release adds support for updating an existing named query.
+* EC2 (3.7.60.0)
+	* This release adds support for new AMI property 'lastLaunchedTime'
+* FinSpaceData (3.7.3.0)
+	* Add new APIs for managing Users and Permission Groups.
+* FIS (3.7.3.0)
+	* This release adds logging support for AWS Fault Injection Simulator experiments. Experiment templates can now be configured to send experiment activity logs to Amazon CloudWatch Logs or to an S3 bucket.
+* FSx (3.7.8.0)
+	* This release adds support for the following FSx for OpenZFS features: snapshot lifecycle transition messages, force flag for deleting file systems with child resources, LZ4 data compression, custom record sizes, and unsetting volume quotas and reservations.
+* Route53RecoveryCluster (3.7.1.0)
+	* This release adds a new API option to enable overriding safety rules to allow routing control state updates.
+* Core 3.7.8.4
+	* Updating endpoints.json file.
+
+	* All services packages updated to require new Core
+
+### 3.7.218.0 (2022-02-25 23:09 UTC)
+* ElastiCache (3.7.5.15)
+	* Doc only update for ElastiCache
+* Panorama (3.7.1.0)
+	* Added NTP server configuration parameter to ProvisionDevice operation. Added alternate software fields to DescribeDevice response
+* Core 3.7.8.3
+	* Updating endpoints.json file.
+
+	* All services packages updated to require new Core
+
+### 3.7.217.0 (2022-02-24 19:20 UTC)
+* AutoScaling (3.7.9.0)
+	* You can now hibernate instances in a warm pool to stop instances without deleting their RAM contents. You can now also return instances to the warm pool on scale in, instead of always terminating capacity that you will need later.
+* FMS (3.7.5.0)
+	* AWS Firewall Manager now supports the configuration of AWS Network Firewall policies with either centralized or distributed deployment models. This release also adds support for custom endpoint configuration, where you can choose which Availability Zones to create firewall endpoints in.
+* GlueDataBrew (3.7.7.0)
+	* This AWS Glue Databrew release adds feature to merge job outputs into a max number of files for S3 File output type.
+* Lightsail (3.7.5.0)
+	* This release adds support to delete and create Lightsail default key pairs that you can use with Lightsail instances.
+* Route53 (3.7.2.24)
+	* SDK doc update for Route 53 to update some parameters with new information.
+* S3 (3.7.8.0)
+	* This release adds support for new integrity checking capabilities in Amazon S3. You can choose from four supported checksum algorithms for data integrity checking on your upload and download requests. In addition, AWS SDK can automatically calculate a checksum as it streams data into S3
+* S3Control (3.7.6.0)
+	* Amazon S3 Batch Operations adds support for new integrity checking capabilities in Amazon S3.
+* Transfer (3.7.8.0)
+	* Support automatic pagination when listing AWS Transfer Family resources.
+
+### 3.7.216.0 (2022-02-23 19:14 UTC)
+* Lambda (3.7.9.0)
+	* Lambda releases .NET 6 managed runtime to be available in all commercial regions.
+* Textract (3.7.4.0)
+	* Added support for merged cells and column header for table response.
+* Transfer (3.7.7.0)
+	* The file input selection feature provides the ability to use either the originally uploaded file or the output file from the previous workflow step, enabling customers to make multiple copies of the original file while keeping the source file intact for file archival.
+* Core 3.7.8.2
+	* Updating endpoints.json file.
+
+	* All services packages updated to require new Core
+
+### 3.7.215.0 (2022-02-22 19:14 UTC)
+* AppRunner (3.7.3.0)
+	* AWS App Runner adds a Java platform (Corretto 8, Corretto 11 runtimes) and a Node.js 14 runtime.
+* Translate (3.7.4.0)
+	* This release enables customers to use translation settings for formality customization in their synchronous translation output.
+* WAFV2 (3.7.9.5)
+	* Updated descriptions for logging configuration.
+* Core 3.7.8.1
+	* Updating endpoints.json file.
+
+	* All services packages updated to require new Core
+
+### 3.7.214.0 (2022-02-22 14:38 UTC)
+* DynamoDBv2 (3.7.3.1)
+	* Add Dynamo S3Link implementation to .NET Standard
+* S3Control (3.7.5.5)
+	* Refactor MD5 handling to support flexible checkums for validating end-to-end data integrity
+* Core 3.7.8.0
+	* Add support for flexible checkums for validating end-to-end data integrity on supported service operations
+	* All services packages updated to require new Core
+
+### 3.7.213.0 (2022-02-21 19:15 UTC)
+* CustomerProfiles (3.7.6.0)
+	* This release introduces apis CreateIntegrationWorkflow, DeleteWorkflow, ListWorkflows, GetWorkflow and GetWorkflowSteps. These apis are used to manage and view integration workflows.
+* DynamoDBv2 (3.7.3.0)
+	* DynamoDB ExecuteStatement API now supports Limit as a request parameter to specify the maximum number of items to evaluate. If specified, the service will process up to the Limit and the results will include a LastEvaluatedKey value to continue the read in a subsequent operation.
+* Imagebuilder (3.7.6.0)
+	* This release adds support to enable faster launching for Windows AMIs created by EC2 Image Builder.
+* Core 3.7.7.2
+	* Updating endpoints.json file.
+
+	* All services packages updated to require new Core
+
+### 3.7.212.0 (2022-02-18 19:17 UTC)
+* Budgets (3.7.2.0)
+	* This change introduces DescribeBudgetNotificationsForAccount API which returns budget notifications for the specified account
+* GameLift (3.7.1.38)
+	* Increase string list limit from 10 to 100.
+* Transfer (3.7.6.0)
+	* Properties for Transfer Family used with SFTP, FTP, and FTPS protocols. Display Banners are bodies of text that can be displayed before and/or after a user authenticates onto a server using one of the previously mentioned protocols.
+
+### 3.7.211.0 (2022-02-17 19:16 UTC)
+* Backup (3.7.6.0)
+	* AWS Backup add new S3_BACKUP_OBJECT_FAILED and S3_RESTORE_OBJECT_FAILED event types in BackupVaultNotifications events list.
+* CloudWatchEvidently (3.7.1.0)
+	* Add support for filtering list of experiments and launches by status
+* IdentityManagement (3.7.2.104)
+	* Documentation updates for AWS Identity and Access Management (IAM).
+* Redshift (3.7.12.0)
+	* SDK release for Cross region datasharing and cost-control for cross region datasharing
+* Core 3.7.7.1
+	* Updating endpoints.json file.
+
+	* All services packages updated to require new Core
+
+### 3.7.210.0 (2022-02-16 19:18 UTC)
+* Budgets (3.7.1.0)
+	* Adds support for auto-adjusting budgets, a new budget method alongside fixed and planned. Auto-adjusting budgets introduces new metadata to configure a budget limit baseline using a historical lookback average or current period forecast.
+* CostExplorer (3.7.4.0)
+	* AWS Cost Anomaly Detection now supports SNS FIFO topic subscribers.
+* EC2 (3.7.59.4)
+	* Documentation updates for EC2.
+* Glue (3.7.14.0)
+	* Support for optimistic locking in UpdateTable
+* SimpleSystemsManagement (3.7.12.10)
+	* Assorted ticket fixes and updates for AWS Systems Manager.
+
+### 3.7.209.0 (2022-02-14 21:44 UTC)
+* Appflow (3.7.6.0)
+	* Launching Amazon AppFlow SAP as a destination connector SDK.
+* Athena (3.7.3.0)
+	* This release adds a subfield, ErrorType, to the AthenaError response object in the GetQueryExecution API when a query fails.
+* RDS (3.7.10.0)
+	* Adds support for determining which Aurora PostgreSQL versions support Babelfish.
+
+### 3.7.208.1 (2022-02-11 19:11 UTC)
+* SimpleSystemsManagement (3.7.12.9)
+	* Documentation updates for AWS Systems Manager.
+
+### 3.7.208.0 (2022-02-11 04:47 UTC)
+* Core 3.7.7.0
+	* Attempting credential expiration extension due to a credential service availability issue.  A refresh of these credentials will be attempted again in 5-15 minutes. Added support for using bidi characters in resource path for .NET Core 3.1 and newer platforms.
+	* All services packages updated to require new Core
+
+### 3.7.207.0 (2022-02-10 19:14 UTC)
+* CloudFormation (3.7.9.0)
+	* This SDK release adds AWS CloudFormation Hooks HandlerErrorCodes
+* LookoutforVision (3.7.2.0)
+	* This release makes CompilerOptions in Lookout for Vision's StartModelPackagingJob's Configuration object optional.
+* Pinpoint (3.7.6.0)
+	* This SDK release adds a new paramater creation date for GetApp and GetApps Api call
+* SimpleNotificationService (3.7.3.22)
+	* Customer requested typo fix in API documentation.
+* WAFV2 (3.7.9.0)
+	* Adds support for AWS WAF Fraud Control account takeover prevention (ATP), with configuration options for the new managed rule group AWSManagedRulesATPRuleSet and support for application integration SDKs for Android and iOS mobile apps.
+* Core 3.7.6.5
+	* Updating endpoints.json file.
+
+
+	* All services packages updated to require new Core
+
+### 3.7.206.0 (2022-02-09 19:13 UTC)
+* CloudFormation (3.7.8.0)
+	* This SDK release is for the feature launch of AWS CloudFormation Hooks.
+
 ### 3.7.205.0 (2022-02-08 19:13 UTC)
 * AppRunner (3.7.2.0)
 	* This release adds support for App Runner to route outbound network traffic of a service through an Amazon VPC. New API: CreateVpcConnector, DescribeVpcConnector, ListVpcConnectors, and DeleteVpcConnector. Updated API: CreateService, DescribeService, and UpdateService.

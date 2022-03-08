@@ -66,7 +66,7 @@ namespace Amazon.Transfer.Model
         /// The pathname for the folder being used by a workflow.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
+        [AWSProperty(Min=1, Max=65536)]
         public string Path
         {
             get { return this._path; }

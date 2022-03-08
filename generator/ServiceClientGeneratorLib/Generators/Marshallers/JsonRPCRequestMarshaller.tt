@@ -115,7 +115,7 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 				string snippet = stringWriter.ToString();
 				request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
 <#
-			CheckContentMd5Header(this.Operation, "snippet");
+					GenerateRequestChecksumHandling(this.Operation, "snippet");
 #>
 			}
 
@@ -185,7 +185,7 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 			var content = "{}";
             request.Content = System.Text.Encoding.UTF8.GetBytes(content);
 <#
-				CheckContentMd5Header(this.Operation, "content");
+				GenerateRequestChecksumHandling(this.Operation, "content");
 #>
 <#
 	}

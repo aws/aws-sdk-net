@@ -35,6 +35,7 @@ namespace Amazon.DynamoDBv2.Model
     {
         private ConsumedCapacity _consumedCapacity;
         private List<Dictionary<string, AttributeValue>> _items = new List<Dictionary<string, AttributeValue>>();
+        private Dictionary<string, AttributeValue> _lastEvaluatedKey = new Dictionary<string, AttributeValue>();
         private string _nextToken;
 
         /// <summary>
@@ -70,6 +71,30 @@ namespace Amazon.DynamoDBv2.Model
         internal bool IsSetItems()
         {
             return this._items != null && this._items.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastEvaluatedKey. 
+        /// <para>
+        /// The primary key of the item where the operation stopped, inclusive of the previous
+        /// result set. Use this value to start a new operation, excluding this value in the new
+        /// request. If <code>LastEvaluatedKey</code> is empty, then the "last page" of results
+        /// has been processed and there is no more data to be retrieved. If <code>LastEvaluatedKey</code>
+        /// is not empty, it does not necessarily mean that there is more data in the result set.
+        /// The only way to know when you have reached the end of the result set is when <code>LastEvaluatedKey</code>
+        /// is empty. 
+        /// </para>
+        /// </summary>
+        public Dictionary<string, AttributeValue> LastEvaluatedKey
+        {
+            get { return this._lastEvaluatedKey; }
+            set { this._lastEvaluatedKey = value; }
+        }
+
+        // Check to see if LastEvaluatedKey property is set
+        internal bool IsSetLastEvaluatedKey()
+        {
+            return this._lastEvaluatedKey != null && this._lastEvaluatedKey.Count > 0; 
         }
 
         /// <summary>

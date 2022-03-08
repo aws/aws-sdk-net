@@ -29,12 +29,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Budgets.Model
 {
     /// <summary>
-    /// The amount of cost or usage that is measured for a budget.
+    /// The amount of cost or usage that's measured for a budget.
     /// 
     ///  
     /// <para>
-    /// For example, a <code>Spend</code> for <code>3 GB</code> of S3 usage would have the
-    /// following parameters:
+    /// For example, a <code>Spend</code> for <code>3 GB</code> of S3 usage has the following
+    /// parameters:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -54,8 +54,8 @@ namespace Amazon.Budgets.Model
         /// <summary>
         /// Gets and sets the property Amount. 
         /// <para>
-        /// The cost or usage amount that is associated with a budget forecast, actual spend,
-        /// or budget threshold.
+        /// The cost or usage amount that's associated with a budget forecast, actual spend, or
+        /// budget threshold.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2147483647)]
@@ -74,8 +74,8 @@ namespace Amazon.Budgets.Model
         /// <summary>
         /// Gets and sets the property Unit. 
         /// <para>
-        /// The unit of measurement that is used for the budget forecast, actual spend, or budget
-        /// threshold, such as dollars or GB.
+        /// The unit of measurement that's used for the budget forecast, actual spend, or budget
+        /// threshold, such as USD or GBP.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2147483647)]

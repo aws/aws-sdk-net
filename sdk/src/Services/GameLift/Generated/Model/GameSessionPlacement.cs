@@ -379,7 +379,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property PlayerLatencies. 
         /// <para>
         /// A set of values, expressed in milliseconds, that indicates the amount of latency that
-        /// a player experiences when connected to AWS Regions.
+        /// a player experiences when connected to @aws; Regions.
         /// </para>
         /// </summary>
         public List<PlayerLatency> PlayerLatencies

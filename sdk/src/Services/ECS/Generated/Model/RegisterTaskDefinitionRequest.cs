@@ -511,7 +511,7 @@ namespace Amazon.ECS.Model
         /// <para>
         /// For tasks hosted on Amazon EC2 instances, the container instances require at least
         /// version <code>1.26.0</code> of the container agent and at least version <code>1.26.0-1</code>
-        /// of the <code>ecs-init</code> package to enable a proxy configuration. If your container
+        /// of the <code>ecs-init</code> package to use a proxy configuration. If your container
         /// instances are launched from the Amazon ECS-optimized AMI version <code>20190301</code>
         /// or later, then they contain the required versions of the container agent and <code>ecs-init</code>.
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-ami-versions.html">Amazon

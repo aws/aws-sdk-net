@@ -45,6 +45,17 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ResultConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAclConfiguration())
+            {
+                context.Writer.WritePropertyName("AclConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AclConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.AclConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetEncryptionConfiguration())
             {
                 context.Writer.WritePropertyName("EncryptionConfiguration");

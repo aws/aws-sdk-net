@@ -702,8 +702,9 @@ namespace Amazon.SecurityToken
         /// <summary>
         /// Returns a set of temporary security credentials for users who have been authenticated
         /// in a mobile or web application with a web identity provider. Example providers include
-        /// Amazon Cognito, Login with Amazon, Facebook, Google, or any OpenID Connect-compatible
-        /// identity provider.
+        /// the OAuth 2.0 providers Login with Amazon and Facebook, or any OpenID Connect-compatible
+        /// identity provider such as Google or <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-identity.html">Amazon
+        /// Cognito federated identities</a>.
         /// 
         ///  <note> 
         /// <para>

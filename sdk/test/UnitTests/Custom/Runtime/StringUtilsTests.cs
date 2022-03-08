@@ -134,5 +134,26 @@ namespace AWSSDK.UnitTests
 
             Assert.AreEqual(restoredDateTime, epochDateTime);
         }
+
+        private static IEnumerable<object[]> ListHeaderTestData =>
+            new List<object[]> {
+                new object[] {null, ""},
+                new object[] {new List<string> { "English" }, "English"},
+                new object[] {new List<string> { "English", "French" }, "English,French" },
+                new object[] {new List<string> { "English", "French", "German" }, "English,French,German" },
+                new object[] {new List<string> { "English", "" , "French" }, "English,French" },
+                new object[] {new List<string> { "English", null , "French" }, "English,French" },
+                new object[] {new List<string> { "French", "English" }, "French,English" },
+                new object[] {new List<string> { "\"English\"", "French,German", "'German'" }, "\"English\",\"French,German\",\'German\'" }
+            };
+
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        [DataTestMethod]
+        [DynamicData(nameof(ListHeaderTestData))]
+        public void TestStringUtilsFromList(List<string> values, string expectedHeader)
+        {
+            Assert.AreEqual(expectedHeader, StringUtils.FromList(values));
+        }
     }
 }

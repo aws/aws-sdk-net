@@ -253,6 +253,24 @@
     <pattern>[\s\S]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.FIS.Model.ExperimentCloudWatchLogsLogConfiguration.LogGroupArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>[\S]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FIS.Model.ExperimentS3LogConfiguration.BucketName</property>
+    <min>3</min>
+    <max>63</max>
+    <pattern>[\S]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FIS.Model.ExperimentS3LogConfiguration.Prefix</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>[\s\S]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.FIS.Model.ExperimentState.Reason</property>
     <max>512</max>
     <pattern>[\s\S]+</pattern>
@@ -317,6 +335,42 @@
   <property-value-rule>
     <property>Amazon.FIS.Model.ExperimentTemplateAction.Description</property>
     <max>512</max>
+    <pattern>[\s\S]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FIS.Model.ExperimentTemplateCloudWatchLogsLogConfiguration.LogGroupArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>[\S]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FIS.Model.ExperimentTemplateCloudWatchLogsLogConfigurationInput.LogGroupArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>[\S]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FIS.Model.ExperimentTemplateS3LogConfiguration.BucketName</property>
+    <min>3</min>
+    <max>63</max>
+    <pattern>[\S]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FIS.Model.ExperimentTemplateS3LogConfiguration.Prefix</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>[\s\S]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FIS.Model.ExperimentTemplateS3LogConfigurationInput.BucketName</property>
+    <min>3</min>
+    <max>63</max>
+    <pattern>[\S]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FIS.Model.ExperimentTemplateS3LogConfigurationInput.Prefix</property>
+    <min>1</min>
+    <max>1024</max>
     <pattern>[\s\S]+</pattern>
   </property-value-rule>
   <property-value-rule>

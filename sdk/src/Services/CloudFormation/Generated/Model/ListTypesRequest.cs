@@ -58,7 +58,7 @@ namespace Amazon.CloudFormation.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>DEPRECATED</code>: The extension has been deregistered and can no longer be
-        /// used in CloudFormation operations. 
+        /// used in CloudFormation operations.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -162,13 +162,13 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>IMMUTABLE</code>: The resource type does not include an update handler, so
-        /// the type cannot be updated and must instead be replaced during stack update operations.
+        ///  <code>IMMUTABLE</code>: The resource type doesn't include an update handler, so the
+        /// type can't be updated and must instead be replaced during stack update operations.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NON_PROVISIONABLE</code>: The resource type does not include create, read,
-        /// and delete handlers, and therefore cannot actually be provisioned.
+        ///  <code>NON_PROVISIONABLE</code>: The resource type doesn't include create, read, and
+        /// delete handlers, and therefore can't actually be provisioned.
         /// </para>
         ///  </li> </ul> 
         /// <para>

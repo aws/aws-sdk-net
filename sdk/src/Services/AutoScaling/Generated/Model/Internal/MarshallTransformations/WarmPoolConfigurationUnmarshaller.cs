@@ -54,6 +54,12 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("InstanceReusePolicy", targetDepth))
+                    {
+                        var unmarshaller = InstanceReusePolicyUnmarshaller.Instance;
+                        unmarshalledObject.InstanceReusePolicy = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("MaxGroupPreparedCapacity", targetDepth))
                     {
                         var unmarshaller = IntUnmarshaller.Instance;

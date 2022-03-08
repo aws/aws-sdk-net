@@ -131,7 +131,7 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property DefaultVersionId. 
         /// <para>
         /// The ID of the default version of the extension. The default version is used when the
-        /// extension version is not specified.
+        /// extension version isn't specified.
         /// </para>
         ///  
         /// <para>
@@ -142,7 +142,7 @@ namespace Amazon.CloudFormation.Model
         ///  
         /// <para>
         /// To set the default version of an extension, use <code> <a>SetTypeDefaultVersion</a>
-        /// </code>. 
+        /// </code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -175,7 +175,7 @@ namespace Amazon.CloudFormation.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>DEPRECATED</code>: The extension has been deactivated or deregistered and can
-        /// no longer be used in CloudFormation operations. 
+        /// no longer be used in CloudFormation operations.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -344,7 +344,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// This only applies if you specify a public extension, and you do not specify a version.
+        /// This only applies if you specify a public extension, and you don't specify a version.
         /// For all other requests, CloudFormation returns <code>null</code>.
         /// </para>
         /// </summary>
@@ -448,13 +448,13 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>IMMUTABLE</code>: The resource type does not include an update handler, so
-        /// the type cannot be updated and must instead be replaced during stack update operations.
+        ///  <code>IMMUTABLE</code>: The resource type doesn't include an update handler, so the
+        /// type can't be updated and must instead be replaced during stack update operations.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NON_PROVISIONABLE</code>: The resource type does not include all of the following
-        /// handlers, and therefore cannot actually be provisioned.
+        ///  <code>NON_PROVISIONABLE</code>: The resource type doesn't include all the following
+        /// handlers, and therefore can't actually be provisioned.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -515,7 +515,7 @@ namespace Amazon.CloudFormation.Model
         ///  
         /// <para>
         /// This applies only to public third-party extensions. For private registered extensions,
-        /// and extensions provided by Amazon, CloudFormation returns <code>null</code>.
+        /// and extensions provided by Amazon Web Services, CloudFormation returns <code>null</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=40)]
@@ -597,7 +597,6 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property TimeCreated. 
         /// <para>
         /// When the specified private extension version was registered or activated in your account.
-        /// 
         /// </para>
         /// </summary>
         public DateTime TimeCreated
@@ -615,7 +614,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The kind of extension. 
+        /// The kind of extension.
         /// </para>
         /// </summary>
         public RegistryType Type
@@ -658,12 +657,11 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property TypeTestsStatus. 
         /// <para>
         /// The contract test status of the registered extension version. To return the extension
-        /// test status of a specifc extension version, you must specify <code>VersionId</code>.
-        /// 
+        /// test status of a specific extension version, you must specify <code>VersionId</code>.
         /// </para>
         ///  
         /// <para>
-        /// This applies only to registered private extension versions. CloudFormation does not
+        /// This applies only to registered private extension versions. CloudFormation doesn't
         /// return this information for public extensions, whether or not they are activated in
         /// your account.
         /// </para>
@@ -688,7 +686,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NOT_TESTED</code>: Contract tests have not been performed on the extension.
+        ///  <code>NOT_TESTED</code>: Contract tests haven't been performed on the extension.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -707,12 +705,12 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property TypeTestsStatusDescription. 
         /// <para>
-        /// The description of the test status. To return the extension test status of a specifc
-        /// extension version, you must specify <code>VersionId</code>. 
+        /// The description of the test status. To return the extension test status of a specific
+        /// extension version, you must specify <code>VersionId</code>.
         /// </para>
         ///  
         /// <para>
-        /// This applies only to registered private extension versions. CloudFormation does not
+        /// This applies only to registered private extension versions. CloudFormation doesn't
         /// return this information for public extensions, whether or not they are activated in
         /// your account.
         /// </para>
@@ -746,7 +744,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PUBLIC</code>: The extension is publically visible and usable within any Amazon
+        ///  <code>PUBLIC</code>: The extension is publicly visible and usable within any Amazon
         /// account.
         /// </para>
         ///  </li> </ul>

@@ -148,6 +148,12 @@ namespace Amazon.Runtime.Internal.Util
             {
                 Algorithm.AppendBlock(buffer, offset, result);
             }
+
+            // Calculate the hash if this was the final read
+            if (result == 0)
+            {
+                CalculateHash();
+            }
             return result;
         }
 
@@ -187,6 +193,12 @@ namespace Amazon.Runtime.Internal.Util
             if (!FinishedHashing)
             {
                 Algorithm.AppendBlock(buffer, offset, result);
+            }
+
+            // Calculate the hash if this was the final read
+            if (result == 0)
+            {
+                CalculateHash();
             }
             return result;
         }

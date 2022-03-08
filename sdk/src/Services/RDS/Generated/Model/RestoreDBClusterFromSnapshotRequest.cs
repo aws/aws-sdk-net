@@ -57,11 +57,6 @@ namespace Amazon.RDS.Model
     /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
     /// User Guide.</i> 
     /// </para>
-    ///  <note> 
-    /// <para>
-    /// The Multi-AZ DB clusters feature is in preview and is subject to change.
-    /// </para>
-    ///  </note>
     /// </summary>
     public partial class RestoreDBClusterFromSnapshotRequest : AmazonRDSRequest
     {
@@ -162,7 +157,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid for: Aurora DB clusters only
+        /// Valid for: Aurora DB clusters and Multi-AZ DB clusters
         /// </para>
         /// </summary>
         public bool CopyTagsToSnapshot
@@ -258,7 +253,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid for: Aurora DB clusters and Multi-AZ DB clusters
+        /// Valid for: Multi-AZ DB clusters only
         /// </para>
         /// </summary>
         public string DBClusterInstanceClass
@@ -431,12 +426,51 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
-        /// Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Aurora User Guide</i>.
+        ///  <b>RDS for MySQL</b> 
         /// </para>
         ///  
         /// <para>
-        /// Valid for: Aurora DB clusters only
+        /// Possible values are <code>error</code>, <code>general</code>, and <code>slowquery</code>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>RDS for PostgreSQL</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Possible values are <code>postgresql</code> and <code>upgrade</code>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Aurora MySQL</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Possible values are <code>audit</code>, <code>error</code>, <code>general</code>,
+        /// and <code>slowquery</code>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Aurora PostgreSQL</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Possible value is <code>postgresql</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about exporting CloudWatch Logs for Amazon RDS, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+        /// Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Relational Database Service
+        /// User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about exporting CloudWatch Logs for Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+        /// Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid for: Aurora DB clusters and Multi-AZ DB clusters
         /// </para>
         /// </summary>
         public List<string> EnableCloudwatchLogsExports

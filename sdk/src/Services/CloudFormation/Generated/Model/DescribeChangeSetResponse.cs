@@ -94,7 +94,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property ChangeSetId. 
         /// <para>
-        /// The ARN of the change set.
+        /// The Amazon Resource Name (ARN) of the change set.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -170,7 +170,7 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property ExecutionStatus. 
         /// <para>
         /// If the change set execution status is <code>AVAILABLE</code>, you can execute the
-        /// change set. If you can’t execute the change set, the status indicates why. For example,
+        /// change set. If you can't execute the change set, the status indicates why. For example,
         /// a change set might be in an <code>UNAVAILABLE</code> state because CloudFormation
         /// is still creating it or in an <code>OBSOLETE</code> state because the stack was already
         /// updated.
@@ -328,7 +328,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property StackId. 
         /// <para>
-        /// The ARN of the stack that is associated with the change set.
+        /// The Amazon Resource Name (ARN) of the stack that's associated with the change set.
         /// </para>
         /// </summary>
         public string StackId
@@ -346,7 +346,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property StackName. 
         /// <para>
-        /// The name of the stack that is associated with the change set.
+        /// The name of the stack that's associated with the change set.
         /// </para>
         /// </summary>
         public string StackName

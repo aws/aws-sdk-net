@@ -747,8 +747,14 @@ namespace Amazon.AutoScaling
         /// </para>
         ///  <ol> <li> 
         /// <para>
+        /// (Optional) Create a launch template or launch configuration with a user data script
+        /// that runs while an instance is in a wait state due to a lifecycle hook.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// (Optional) Create a Lambda function and a rule that allows Amazon EventBridge to invoke
-        /// your Lambda function when Amazon EC2 Auto Scaling launches or terminates instances.
+        /// your Lambda function when an instance is put into a wait state due to a lifecycle
+        /// hook.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -764,7 +770,7 @@ namespace Amazon.AutoScaling
         ///  </li> <li> 
         /// <para>
         /// If you need more time, record the lifecycle action heartbeat to keep the instance
-        /// in a pending state.
+        /// in a wait state.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4023,9 +4029,9 @@ namespace Amazon.AutoScaling
         /// 
         ///  
         /// <para>
-        /// A lifecycle hook enables an Auto Scaling group to be aware of events in the Auto Scaling
-        /// instance lifecycle, and then perform a custom action when the corresponding lifecycle
-        /// event occurs.
+        /// Lifecycle hooks let you create solutions that are aware of events in the Auto Scaling
+        /// instance lifecycle, and then perform a custom action on instances when the corresponding
+        /// lifecycle event occurs.
         /// </para>
         ///  
         /// <para>
@@ -4034,8 +4040,14 @@ namespace Amazon.AutoScaling
         /// </para>
         ///  <ol> <li> 
         /// <para>
+        /// (Optional) Create a launch template or launch configuration with a user data script
+        /// that runs while an instance is in a wait state due to a lifecycle hook.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// (Optional) Create a Lambda function and a rule that allows Amazon EventBridge to invoke
-        /// your Lambda function when Amazon EC2 Auto Scaling launches or terminates instances.
+        /// your Lambda function when an instance is put into a wait state due to a lifecycle
+        /// hook.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4051,7 +4063,7 @@ namespace Amazon.AutoScaling
         ///  </li> <li> 
         /// <para>
         /// If you need more time, record the lifecycle action heartbeat to keep the instance
-        /// in a pending state using the <a>RecordLifecycleActionHeartbeat</a> API call.
+        /// in a wait state using the <a>RecordLifecycleActionHeartbeat</a> API call.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4481,8 +4493,14 @@ namespace Amazon.AutoScaling
         /// </para>
         ///  <ol> <li> 
         /// <para>
+        /// (Optional) Create a launch template or launch configuration with a user data script
+        /// that runs while an instance is in a wait state due to a lifecycle hook.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// (Optional) Create a Lambda function and a rule that allows Amazon EventBridge to invoke
-        /// your Lambda function when Amazon EC2 Auto Scaling launches or terminates instances.
+        /// your Lambda function when an instance is put into a wait state due to a lifecycle
+        /// hook.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4498,7 +4516,7 @@ namespace Amazon.AutoScaling
         ///  </li> <li> 
         /// <para>
         ///  <b>If you need more time, record the lifecycle action heartbeat to keep the instance
-        /// in a pending state.</b> 
+        /// in a wait state.</b> 
         /// </para>
         ///  </li> <li> 
         /// <para>

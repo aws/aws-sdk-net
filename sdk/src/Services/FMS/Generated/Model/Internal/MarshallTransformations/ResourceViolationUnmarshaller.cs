@@ -100,6 +100,12 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
                     unmarshalledObject.DnsRuleGroupPriorityConflictViolation = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("FirewallSubnetIsOutOfScopeViolation", targetDepth))
+                {
+                    var unmarshaller = FirewallSubnetIsOutOfScopeViolationUnmarshaller.Instance;
+                    unmarshalledObject.FirewallSubnetIsOutOfScopeViolation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("NetworkFirewallBlackHoleRouteDetectedViolation", targetDepth))
                 {
                     var unmarshaller = NetworkFirewallBlackHoleRouteDetectedViolationUnmarshaller.Instance;
@@ -164,6 +170,12 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = PossibleRemediationActionsUnmarshaller.Instance;
                     unmarshalledObject.PossibleRemediationActions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RouteHasOutOfScopeEndpointViolation", targetDepth))
+                {
+                    var unmarshaller = RouteHasOutOfScopeEndpointViolationUnmarshaller.Instance;
+                    unmarshalledObject.RouteHasOutOfScopeEndpointViolation = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

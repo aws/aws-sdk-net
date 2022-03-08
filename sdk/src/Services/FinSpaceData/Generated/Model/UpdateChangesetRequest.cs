@@ -111,19 +111,19 @@ namespace Amazon.FinSpaceData.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>PARQUET</code> - Parquet source file format.
+        ///  <code>PARQUET</code> – Parquet source file format.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CSV</code> - CSV source file format.
+        ///  <code>CSV</code> – CSV source file format.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>JSON</code> - JSON source file format.
+        ///  <code>JSON</code> – JSON source file format.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>XML</code> - XML source file format.
+        ///  <code>XML</code> – XML source file format.
         /// </para>
         ///  </li> </ul> 
         /// <para>

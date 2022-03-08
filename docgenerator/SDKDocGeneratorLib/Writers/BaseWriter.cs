@@ -132,7 +132,7 @@ namespace SDKDocGenerator.Writers
                 writer.WriteLine("<meta name=\"description\" content=\"{0}\">", GetTitle());
                 writer.WriteLine("<title>{0} | AWS SDK for .NET V3</title>", GetTitle());                
                 writer.WriteLine("<script type=\"text/javascript\" src=\"/assets/js/awsdocs-boot.js\"></script>");
-                writer.WriteLine("<link rel=\"canonical\" href=\"http://docs.aws.amazon.com/sdkfornet/v3/apidocs/index.html?page={0}&tocid={1}\"/>",
+                writer.WriteLine("<link rel=\"canonical\" href=\"https://docs.aws.amazon.com/sdkfornet/v3/apidocs/index.html?page={0}&tocid={1}\"/>",
                                 FilenameGenerator.Escape(this.GenerateFilename()),
                                 FilenameGenerator.Escape(this.GetTOCID()));
 
@@ -273,8 +273,8 @@ namespace SDKDocGenerator.Writers
             const string feedbackContentFormat = "<span id=\"feedback\">" +
                                                 "<!-- BEGIN-FEEDBACK-SECTION -->" +
                                                  "Did this page help you?&nbsp;&nbsp;" +
-                                                 "<a href=\"http://docs.aws.amazon.com/sdkfornet/latest/apidocs/feedbackyes.html?topic_id={0}\" target=\"_blank\">Yes</a>&nbsp;&nbsp;" +
-                                                 "<a href=\"http://docs.aws.amazon.com/sdkfornet/latest/apidocs/feedbackno.html?topic_id={0}\" target=\"_blank\">No</a>&nbsp;&nbsp;&nbsp;" +
+                                                 "<a href=\"https://docs.aws.amazon.com/sdkfornet/latest/apidocs/feedbackyes.html?topic_id={0}\" target=\"_blank\">Yes</a>&nbsp;&nbsp;" +
+                                                 "<a href=\"https://docs.aws.amazon.com/sdkfornet/latest/apidocs/feedbackno.html?topic_id={0}\" target=\"_blank\">No</a>&nbsp;&nbsp;&nbsp;" +
                                                  "<a href=\"{1}\" target=\"_blank\">Tell us about it...</a>" +
                                                  "</span>" +
                                                  "<!-- END-FEEDBACK-SECTION -->";
@@ -634,7 +634,7 @@ namespace SDKDocGenerator.Writers
                 typeName = typeName.Substring(lastPeriodIndex + 1);
             }
 
-            return string.Format("<a href=\"{0}\" {2}>{1}</a>", url, typeName, target);
+            return string.Format("<a href=\"{0}\" {2} rel=\"noopener noreferrer\">{1}</a>", url, typeName, target);
         }
     }
 

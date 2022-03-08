@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie.Model
 {
     /// <summary>
-    /// Includes details about the failed S3 resources.
+    /// (Discontinued) Includes details about the failed S3 resources.
     /// </summary>
     public partial class FailedS3Resource
     {
@@ -40,7 +40,7 @@ namespace Amazon.Macie.Model
         /// <summary>
         /// Gets and sets the property ErrorCode. 
         /// <para>
-        /// The status code of a failed item.
+        /// (Discontinued) The status code of a failed item.
         /// </para>
         /// </summary>
         [AWSProperty(Max=10)]
@@ -59,7 +59,7 @@ namespace Amazon.Macie.Model
         /// <summary>
         /// Gets and sets the property ErrorMessage. 
         /// <para>
-        /// The error message of a failed item.
+        /// (Discontinued) The error message of a failed item.
         /// </para>
         /// </summary>
         [AWSProperty(Max=10000)]
@@ -78,7 +78,7 @@ namespace Amazon.Macie.Model
         /// <summary>
         /// Gets and sets the property FailedItem. 
         /// <para>
-        /// The failed S3 resources.
+        /// (Discontinued) The failed S3 resources.
         /// </para>
         /// </summary>
         public S3Resource FailedItem

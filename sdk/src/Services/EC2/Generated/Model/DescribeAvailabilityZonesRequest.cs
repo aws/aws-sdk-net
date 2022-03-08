@@ -110,8 +110,7 @@ namespace Amazon.EC2.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>state</code> - The state of the Availability Zone, the Local Zone, or the Wavelength
-        /// Zone (<code>available</code> | <code>information</code> | <code>impaired</code> |
-        /// <code>unavailable</code>).
+        /// Zone (<code>available</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>

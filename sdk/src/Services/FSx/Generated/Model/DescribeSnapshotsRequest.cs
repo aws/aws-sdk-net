@@ -30,7 +30,7 @@ namespace Amazon.FSx.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeSnapshots operation.
-    /// Returns the description of specific Amazon FSx snapshots, if a <code>SnapshotIds</code>
+    /// Returns the description of specific Amazon FSx for OpenZFS snapshots, if a <code>SnapshotIds</code>
     /// value is provided. Otherwise, this operation returns all snapshots owned by your Amazon
     /// Web Services account in the Amazon Web Services Region of the endpoint that you're
     /// calling.

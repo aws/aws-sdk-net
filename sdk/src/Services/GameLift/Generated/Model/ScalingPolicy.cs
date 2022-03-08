@@ -140,7 +140,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Location. 
         /// <para>
-        ///  
+        ///  The fleet location. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -159,9 +159,9 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property MetricName. 
         /// <para>
-        /// Name of the Amazon GameLift-defined metric that is used to trigger a scaling adjustment.
+        /// Name of the Amazon Web Services-defined metric that is used to trigger a scaling adjustment.
         /// For detailed descriptions of fleet metrics, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor
-        /// Amazon GameLift with Amazon CloudWatch</a>. 
+        /// Amazon Web Services with Amazon CloudWatch</a>. 
         /// </para>
         ///  <ul> <li> 
         /// <para>

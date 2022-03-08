@@ -201,6 +201,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         response.SupportedTimezones.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("SupportsBabelfish", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        response.SupportsBabelfish = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("SupportsGlobalDatabases", targetDepth))
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;

@@ -35,7 +35,7 @@ namespace Amazon.CloudTrail.Model
     /// you can specify a time range, formatted as timestamps, by adding <code>StartTime</code>
     /// and <code>EndTime</code> parameters, and a <code>QueryStatus</code> value. Valid values
     /// for <code>QueryStatus</code> include <code>QUEUED</code>, <code>RUNNING</code>, <code>FINISHED</code>,
-    /// <code>FAILED</code>, or <code>CANCELLED</code>.
+    /// <code>FAILED</code>, <code>TIMED_OUT</code>, or <code>CANCELLED</code>.
     /// </summary>
     public partial class ListQueriesRequest : AmazonCloudTrailRequest
     {
@@ -128,7 +128,7 @@ namespace Amazon.CloudTrail.Model
         /// <para>
         /// The status of queries that you want to return in results. Valid values for <code>QueryStatus</code>
         /// include <code>QUEUED</code>, <code>RUNNING</code>, <code>FINISHED</code>, <code>FAILED</code>,
-        /// or <code>CANCELLED</code>.
+        /// <code>TIMED_OUT</code>, or <code>CANCELLED</code>.
         /// </para>
         /// </summary>
         public QueryStatus QueryStatus

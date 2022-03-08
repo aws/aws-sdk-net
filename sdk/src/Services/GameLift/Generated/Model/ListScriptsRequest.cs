@@ -30,8 +30,8 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the ListScripts operation.
-    /// Retrieves script records for all Realtime scripts that are associated with the AWS
-    /// account in use. 
+    /// Retrieves script records for all Realtime scripts that are associated with the Amazon
+    /// Web Services account in use. 
     /// 
     ///  
     /// <para>
@@ -40,7 +40,7 @@ namespace Amazon.GameLift.Model
     ///  
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/realtime-intro.html">Amazon
-    /// GameLift Realtime Servers</a> 
+    /// Web Services Realtime Servers</a> 
     /// </para>
     ///  
     /// <para>

@@ -46,7 +46,7 @@ namespace Amazon.AmplifyUIBuilder
     /// for client app development. For more information, see the <a href="https://docs.amplify.aws/">Amplify
     /// Framework</a>. For more information about deploying an Amplify application to Amazon
     /// Web Services, see the <a href="https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html">Amplify
-    /// Console User Guide</a>.
+    /// User Guide</a>.
     /// </para>
     /// </summary>
     public partial interface IAmazonAmplifyUIBuilder : IAmazonService, IDisposable

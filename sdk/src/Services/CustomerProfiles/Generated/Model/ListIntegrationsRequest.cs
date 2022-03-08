@@ -35,6 +35,7 @@ namespace Amazon.CustomerProfiles.Model
     public partial class ListIntegrationsRequest : AmazonCustomerProfilesRequest
     {
         private string _domainName;
+        private bool? _includeHidden;
         private int? _maxResults;
         private string _nextToken;
 
@@ -55,6 +56,24 @@ namespace Amazon.CustomerProfiles.Model
         internal bool IsSetDomainName()
         {
             return this._domainName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncludeHidden. 
+        /// <para>
+        /// Boolean to indicate if hidden integration should be returned. Defaults to <code>False</code>.
+        /// </para>
+        /// </summary>
+        public bool IncludeHidden
+        {
+            get { return this._includeHidden.GetValueOrDefault(); }
+            set { this._includeHidden = value; }
+        }
+
+        // Check to see if IncludeHidden property is set
+        internal bool IsSetIncludeHidden()
+        {
+            return this._includeHidden.HasValue; 
         }
 
         /// <summary>

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kendra.Model
 {
     /// <summary>
-    /// Configuration information for the JSON token type.
+    /// Provides the configuration information for the JSON token type.
     /// </summary>
     public partial class JsonTokenTypeConfiguration
     {

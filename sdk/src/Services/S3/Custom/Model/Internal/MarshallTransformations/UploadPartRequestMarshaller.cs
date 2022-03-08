@@ -42,6 +42,21 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             request.HttpMethod = "PUT";
 
+            if (uploadPartRequest.IsSetChecksumAlgorithm())
+                request.Headers.Add(S3Constants.AmzHeaderSdkChecksumAlgorithm, S3Transforms.ToStringValue(uploadPartRequest.ChecksumAlgorithm));
+
+            if (uploadPartRequest.IsSetChecksumCRC32())
+                request.Headers["x-amz-checksum-crc32"] = S3Transforms.ToStringValue(uploadPartRequest.ChecksumCRC32);
+
+            if (uploadPartRequest.IsSetChecksumCRC32C())
+                request.Headers["x-amz-checksum-crc32c"] = S3Transforms.ToStringValue(uploadPartRequest.ChecksumCRC32C);
+
+            if (uploadPartRequest.IsSetChecksumSHA1())
+                request.Headers["x-amz-checksum-sha1"] = S3Transforms.ToStringValue(uploadPartRequest.ChecksumSHA1);
+
+            if (uploadPartRequest.IsSetChecksumSHA256())
+                request.Headers["x-amz-checksum-sha256"] = S3Transforms.ToStringValue(uploadPartRequest.ChecksumSHA256);
+
             if (uploadPartRequest.IsSetMD5Digest())
                 request.Headers[HeaderKeys.ContentMD5Header] = uploadPartRequest.MD5Digest;
 
@@ -109,6 +124,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }
 
             request.ContentStream = uploadPartRequest.InputStream;
+            ChecksumUtils.SetRequestChecksum(request, uploadPartRequest.ChecksumAlgorithm, fallbackToMD5: false);
 
             if (!request.Headers.ContainsKey(HeaderKeys.ContentTypeHeader))
                 request.Headers.Add(HeaderKeys.ContentTypeHeader, "text/plain");

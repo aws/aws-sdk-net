@@ -33,6 +33,7 @@ namespace Amazon.Mgn.Model
     /// </summary>
     public partial class GetLaunchConfigurationResponse : AmazonWebServiceResponse
     {
+        private BootMode _bootMode;
         private bool? _copyPrivateIp;
         private bool? _copyTags;
         private string _ec2LaunchTemplateID;
@@ -41,6 +42,24 @@ namespace Amazon.Mgn.Model
         private string _name;
         private string _sourceServerID;
         private TargetInstanceTypeRightSizingMethod _targetInstanceTypeRightSizingMethod;
+
+        /// <summary>
+        /// Gets and sets the property BootMode. 
+        /// <para>
+        /// Launch configuration boot mode.
+        /// </para>
+        /// </summary>
+        public BootMode BootMode
+        {
+            get { return this._bootMode; }
+            set { this._bootMode = value; }
+        }
+
+        // Check to see if BootMode property is set
+        internal bool IsSetBootMode()
+        {
+            return this._bootMode != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CopyPrivateIp. 
@@ -81,7 +100,7 @@ namespace Amazon.Mgn.Model
         /// <summary>
         /// Gets and sets the property Ec2LaunchTemplateID. 
         /// <para>
-        /// Configure EC2 lauch configuration template ID.
+        /// Launch configuration EC2 Launch template ID.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=256)]
@@ -100,7 +119,7 @@ namespace Amazon.Mgn.Model
         /// <summary>
         /// Gets and sets the property LaunchDisposition. 
         /// <para>
-        /// Configure launch dispostion for launch configuration.
+        /// Launch disposition for launch configuration.
         /// </para>
         /// </summary>
         public LaunchDisposition LaunchDisposition
@@ -118,7 +137,7 @@ namespace Amazon.Mgn.Model
         /// <summary>
         /// Gets and sets the property Licensing. 
         /// <para>
-        /// Configure launch configuration OS licensing.
+        /// Launch configuration OS licensing.
         /// </para>
         /// </summary>
         public Licensing Licensing
@@ -136,7 +155,7 @@ namespace Amazon.Mgn.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Configure launch configuration name.
+        /// Launch configuration name.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=128)]
@@ -155,7 +174,7 @@ namespace Amazon.Mgn.Model
         /// <summary>
         /// Gets and sets the property SourceServerID. 
         /// <para>
-        /// Configure launch configuration Source Server ID.
+        /// Launch configuration Source Server ID.
         /// </para>
         /// </summary>
         [AWSProperty(Min=19, Max=19)]
@@ -174,7 +193,7 @@ namespace Amazon.Mgn.Model
         /// <summary>
         /// Gets and sets the property TargetInstanceTypeRightSizingMethod. 
         /// <para>
-        /// Configure launch configuration Target instance type right sizing method.
+        /// Launch configuration Target instance type right sizing method.
         /// </para>
         /// </summary>
         public TargetInstanceTypeRightSizingMethod TargetInstanceTypeRightSizingMethod

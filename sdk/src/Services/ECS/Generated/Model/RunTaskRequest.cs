@@ -167,7 +167,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property EnableECSManagedTags. 
         /// <para>
-        /// Specifies whether to enable Amazon ECS managed tags for the task. For more information,
+        /// Specifies whether to use Amazon ECS managed tags for the task. For more information,
         /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
         /// Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service Developer
         /// Guide</i>.
@@ -188,9 +188,9 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property EnableExecuteCommand. 
         /// <para>
-        /// Determines whether to enable the execute command functionality for the containers
-        /// in this task. If <code>true</code>, this enables execute command functionality on
-        /// all containers in the task.
+        /// Determines whether to use the execute command functionality for the containers in
+        /// this task. If <code>true</code>, this enables execute command functionality on all
+        /// containers in the task.
         /// </para>
         /// </summary>
         public bool EnableExecuteCommand

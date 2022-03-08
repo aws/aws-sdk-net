@@ -35,6 +35,11 @@ namespace Amazon.CloudFormation.Model
     {
         private string _clientRequestToken;
         private string _eventId;
+        private HookFailureMode _hookFailureMode;
+        private HookInvocationPoint _hookInvocationPoint;
+        private HookStatus _hookStatus;
+        private string _hookStatusReason;
+        private string _hookType;
         private string _logicalResourceId;
         private string _physicalResourceId;
         private string _resourceProperties;
@@ -64,7 +69,6 @@ namespace Amazon.CloudFormation.Model
         /// which helps you easily identify the stack operation . For example, if you create a
         /// stack using the console, each stack event would be assigned the same token in the
         /// following format: <code>Console-CreateStack-7f59c3cf-00d2-40c7-b2ff-e75db0987002</code>.
-        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -97,6 +101,107 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetEventId()
         {
             return this._eventId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HookFailureMode. 
+        /// <para>
+        /// Specify the hook failure mode for non-compliant resources in the followings ways.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>FAIL</code> Stops provisioning resources.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>WARN</code> Allows provisioning to continue with a warning message.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public HookFailureMode HookFailureMode
+        {
+            get { return this._hookFailureMode; }
+            set { this._hookFailureMode = value; }
+        }
+
+        // Check to see if HookFailureMode property is set
+        internal bool IsSetHookFailureMode()
+        {
+            return this._hookFailureMode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HookInvocationPoint. 
+        /// <para>
+        /// Invocation points are points in provisioning logic where hooks are initiated.
+        /// </para>
+        /// </summary>
+        public HookInvocationPoint HookInvocationPoint
+        {
+            get { return this._hookInvocationPoint; }
+            set { this._hookInvocationPoint = value; }
+        }
+
+        // Check to see if HookInvocationPoint property is set
+        internal bool IsSetHookInvocationPoint()
+        {
+            return this._hookInvocationPoint != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HookStatus. 
+        /// <para>
+        /// Provides the status of the change set hook.
+        /// </para>
+        /// </summary>
+        public HookStatus HookStatus
+        {
+            get { return this._hookStatus; }
+            set { this._hookStatus = value; }
+        }
+
+        // Check to see if HookStatus property is set
+        internal bool IsSetHookStatus()
+        {
+            return this._hookStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HookStatusReason. 
+        /// <para>
+        /// Provides the reason for the hook status.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
+        public string HookStatusReason
+        {
+            get { return this._hookStatusReason; }
+            set { this._hookStatusReason = value; }
+        }
+
+        // Check to see if HookStatusReason property is set
+        internal bool IsSetHookStatusReason()
+        {
+            return this._hookStatusReason != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HookType. 
+        /// <para>
+        /// The name of the hook.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string HookType
+        {
+            get { return this._hookType; }
+            set { this._hookType = value; }
+        }
+
+        // Check to see if HookType property is set
+        internal bool IsSetHookType()
+        {
+            return this._hookType != null;
         }
 
         /// <summary>

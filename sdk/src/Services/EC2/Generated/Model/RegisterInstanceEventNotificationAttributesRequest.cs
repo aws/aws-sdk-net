@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model
     /// 
     ///  
     /// <para>
-    /// To remove tags, use .
+    /// To remove tags, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeregisterInstanceEventNotificationAttributes.html">DeregisterInstanceEventNotificationAttributes</a>.
     /// </para>
     /// </summary>
     public partial class RegisterInstanceEventNotificationAttributesRequest : AmazonEC2Request

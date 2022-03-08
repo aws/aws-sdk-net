@@ -46,6 +46,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (putLifecycleConfigurationRequest.IsSetExpectedBucketOwner())
                 request.Headers.Add(S3Constants.AmzHeaderExpectedBucketOwner, S3Transforms.ToStringValue(putLifecycleConfigurationRequest.ExpectedBucketOwner));
 
+            if (putLifecycleConfigurationRequest.IsSetChecksumAlgorithm())
+                request.Headers[S3Constants.AmzHeaderSdkChecksumAlgorithm] = S3Transforms.ToStringValue(putLifecycleConfigurationRequest.ChecksumAlgorithm);
+
             if (string.IsNullOrEmpty(putLifecycleConfigurationRequest.BucketName))
                 throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "PutLifecycleConfigurationRequest.BucketName");
 
@@ -204,9 +207,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 request.Content = Encoding.UTF8.GetBytes(content);
                 request.Headers[HeaderKeys.ContentTypeHeader] = "application/xml";
 
-                var checksum = AWSSDKUtils.GenerateChecksumForContent(content, true);
-                request.Headers[HeaderKeys.ContentMD5Header] = checksum;
-
+                ChecksumUtils.SetRequestChecksum(request, putLifecycleConfigurationRequest.ChecksumAlgorithm);
             }
             catch (EncoderFallbackException e)
             {

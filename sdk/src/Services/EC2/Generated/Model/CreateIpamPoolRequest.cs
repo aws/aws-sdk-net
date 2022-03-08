@@ -66,6 +66,7 @@ namespace Amazon.EC2.Model
         /// for a pool.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public AddressFamily AddressFamily
         {
             get { return this._addressFamily; }

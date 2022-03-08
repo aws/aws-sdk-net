@@ -34,12 +34,31 @@ namespace Amazon.DevOpsGuru.Model
     /// </summary>
     public partial class Recommendation
     {
+        private string _category;
         private string _description;
         private string _link;
         private string _name;
         private string _reason;
         private List<RecommendationRelatedAnomaly> _relatedAnomalies = new List<RecommendationRelatedAnomaly>();
         private List<RecommendationRelatedEvent> _relatedEvents = new List<RecommendationRelatedEvent>();
+
+        /// <summary>
+        /// Gets and sets the property Category. 
+        /// <para>
+        /// The category type of the recommendation.
+        /// </para>
+        /// </summary>
+        public string Category
+        {
+            get { return this._category; }
+            set { this._category = value; }
+        }
+
+        // Check to see if Category property is set
+        internal bool IsSetCategory()
+        {
+            return this._category != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Description. 

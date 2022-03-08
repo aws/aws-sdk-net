@@ -44,11 +44,7 @@ namespace Amazon.RDS.Model
     /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
     /// User Guide.</i> 
     /// </para>
-    ///  <note> 
-    /// <para>
-    /// The Multi-AZ DB clusters feature is in preview and is subject to change.
-    /// </para>
-    ///  </note> 
+    ///  
     /// <para>
     /// This operation can also return information for Amazon Neptune DB instances and Amazon
     /// DocumentDB instances.
@@ -101,23 +97,23 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>clone-group-id</code> - Accepts clone group identifiers. The results list will
-        /// only include information about the DB clusters associated with these clone groups.
+        ///  <code>clone-group-id</code> - Accepts clone group identifiers. The results list only
+        /// includes information about the DB clusters associated with these clone groups.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon
-        /// Resource Names (ARNs). The results list will only include information about the DB
-        /// clusters identified by these ARNs.
+        /// Resource Names (ARNs). The results list only includes information about the DB clusters
+        /// identified by these ARNs.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>domain</code> - Accepts Active Directory directory IDs. The results list will
-        /// only include information about the DB clusters associated with these domains.
+        ///  <code>domain</code> - Accepts Active Directory directory IDs. The results list only
+        /// includes information about the DB clusters associated with these domains.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>engine</code> - Accepts engine names. The results list will only include information
+        ///  <code>engine</code> - Accepts engine names. The results list only includes information
         /// about the DB clusters for these engines.
         /// </para>
         ///  </li> </ul>

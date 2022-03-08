@@ -39,7 +39,7 @@ namespace Amazon.S3.Model
     /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">
     /// Controlling object ownership and disabling ACLs</a> in the <i>Amazon S3 User Guide</i>.
     /// </para>
-    ///  </note> <p class="title"> <b>Related Resources</b> 
+    ///  </note> <para class="title"> <b>Related Resources</b> 
     /// </para>
     ///  <ul> <li> 
     /// <para>

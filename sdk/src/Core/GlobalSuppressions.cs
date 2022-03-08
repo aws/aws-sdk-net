@@ -134,7 +134,7 @@ using System.Diagnostics.CodeAnalysis;
 [module: SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes", Scope = "member", Target = "Amazon.Runtime.AmazonWebServiceClient.#getRequestStreamCallback(System.IAsyncResult)")]
 [module: SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes", Scope = "member", Target = "Amazon.Runtime.AmazonWebServiceClient.#getResponseCallback(System.IAsyncResult)")]
 [module: SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes", Scope = "member", Target = "Amazon.Runtime.InstanceProfileAWSCredentials.#GenerateNewCredentials()")]
-[module: SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes", Scope = "member", Target = "Amazon.Util.CryptoUtilFactory+CryptoUtil.#get_SHA256HashAlgorithmInstance()")]
+[module: SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes", Scope = "member", Target = "Amazon.Util.CryptoUtilFactory+CryptoUtil.#CreateSHA256Instance()")]
 [module: SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes", Scope = "member", Target = "Amazon.Util.AWSSDKUtils.#PreserveStackTrace(System.Exception)")]
 [module: SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes", Scope = "member", Target = "Amazon.Util.AWSSDKUtils.#ForceCanonicalPathAndQuery(System.Uri)")]
 [module: SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes", Scope = "member", Target = "Amazon.Util.AWSSDKUtils.#DetermineFramework()")]
@@ -277,6 +277,7 @@ using System.Diagnostics.CodeAnalysis;
 [assembly: SuppressMessage("Performance", "CA1822:Mark members as static", Scope = "member", Target = "~M:Amazon.Runtime.Internal.Auth.AWS4aSignerCRTWrapper.SignRequest(Amazon.Runtime.Internal.IRequest,Amazon.Runtime.IClientConfig,Amazon.Runtime.Internal.Util.RequestMetrics,Amazon.Runtime.ImmutableCredentials)~Amazon.Runtime.Internal.Auth.AWS4aSigningResult")]
 [assembly: SuppressMessage("Performance", "CA1822:Mark members as static", Scope = "member", Target = "~M:Amazon.Runtime.Internal.Auth.AWS4aSignerCRTWrapper.Presign4a(Amazon.Runtime.Internal.IRequest,Amazon.Runtime.IClientConfig,Amazon.Runtime.Internal.Util.RequestMetrics,Amazon.Runtime.ImmutableCredentials,System.String,System.String)~Amazon.Runtime.Internal.Auth.AWS4aSigningResult")]
 [assembly: SuppressMessage("Performance", "CA1822:Mark members as static", Scope = "member", Target = "~M:Amazon.Runtime.Internal.Auth.AWS4aSignerCRTWrapper.SignChunk(System.IO.Stream,System.String,Amazon.Runtime.Internal.Auth.AWS4aSigningResult")]
+[assembly: SuppressMessage("Performance", "CA1822:Mark members as static", Scope = "member", Target = "~M:Amazon.Runtime.Internal.Auth.AWS4aSignerCRTWrapper.SignTrailingHeaderChunk(System.Collections.Generic.IDictionary{System.String,System.String},System.String,Amazon.Runtime.Internal.Auth.AWS4aSigningResult)~System.String")]
 
 // Link demand
 [module: SuppressMessage("Microsoft.Security", "CA2122:DoNotIndirectlyExposeMethodsWithLinkDemands", Scope = "member", Target = "Amazon.Runtime.Internal.Util.TraceSourceUtil.#GetTraceSourceWithListeners(System.String,System.Diagnostics.SourceLevels)")]
@@ -400,7 +401,7 @@ using System.Diagnostics.CodeAnalysis;
 [module: SuppressMessage("AwsSdkRules", "CR1002:PreventStaticLoggersRule", Scope = "member", Target = "Amazon.Runtime.Internal.Util.Logger.#emptyLogger")]
 
 // Call HashAlgorithm.Create is for "SHA-256"
-[module: SuppressMessage("AwsSdkRules", "CR1001:PreventHashAlgorithmCreateRule", Scope = "member", Target = "Amazon.Util.CryptoUtilFactory+CryptoUtil.#get_SHA256HashAlgorithmInstance()")]
+[module: SuppressMessage("AwsSdkRules", "CR1001:PreventHashAlgorithmCreateRule", Scope = "member", Target = "Amazon.Util.CryptoUtilFactory+CryptoUtil.#CreateSHA256Instance()")]
 
 // Visible instance fields
 [module: SuppressMessage("Microsoft.Design", "CA1051:DoNotDeclareVisibleInstanceFields", Scope = "member", Target = "Amazon.Runtime.RefreshingAWSCredentials.#currentState")]

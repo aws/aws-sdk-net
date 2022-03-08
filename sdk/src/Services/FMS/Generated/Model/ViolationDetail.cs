@@ -123,6 +123,11 @@ namespace Amazon.FMS.Model
         /// <para>
         /// The <code>ResourceTag</code> objects associated with the resource.
         /// </para>
+        ///  
+        /// <para>
+        ///  This option isn't available for the centralized deployment model when creating policies
+        /// to configure Network Firewall. 
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=200)]
         public List<Tag> ResourceTags

@@ -36,6 +36,25 @@ namespace Amazon.Lambda.Model
     /// 
     ///  
     /// <para>
+    /// If the function's package type is <code>Image</code>, you must specify the code package
+    /// in <code>ImageUri</code> as the URI of a <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-images.html">container
+    /// image</a> in the Amazon ECR registry. 
+    /// </para>
+    ///  
+    /// <para>
+    /// If the function's package type is <code>Zip</code>, you must specify the deployment
+    /// package as a <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-package.html#gettingstarted-package-zip">.zip
+    /// file archive</a>. Enter the Amazon S3 bucket and key of the code .zip file location.
+    /// You can also provide the function code inline using the <code>ZipFile</code> field.
+    /// 
+    /// </para>
+    ///  
+    /// <para>
+    /// The code in the deployment package must be compatible with the target instruction
+    /// set architecture of the function (<code>x86-64</code> or <code>arm64</code>). 
+    /// </para>
+    ///  
+    /// <para>
     /// The function's code is locked when you publish a version. You can't modify the code
     /// of a published version, only the unpublished version.
     /// </para>
@@ -140,7 +159,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property ImageUri. 
         /// <para>
-        /// URI of a container image in the Amazon ECR registry.
+        /// URI of a container image in the Amazon ECR registry. Do not use for a function defined
+        /// with a .zip file archive.
         /// </para>
         /// </summary>
         public string ImageUri
@@ -197,7 +217,8 @@ namespace Amazon.Lambda.Model
         /// Gets and sets the property S3Bucket. 
         /// <para>
         /// An Amazon S3 bucket in the same Amazon Web Services Region as your function. The bucket
-        /// can be in a different Amazon Web Services account.
+        /// can be in a different Amazon Web Services account. Use only with a function defined
+        /// with a .zip file archive deployment package.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=63)]
@@ -216,7 +237,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property S3Key. 
         /// <para>
-        /// The Amazon S3 key of the deployment package.
+        /// The Amazon S3 key of the deployment package. Use only with a function defined with
+        /// a .zip file archive deployment package.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -255,7 +277,8 @@ namespace Amazon.Lambda.Model
         /// Gets and sets the property ZipFile. 
         /// <para>
         /// The base64-encoded contents of the deployment package. Amazon Web Services SDK and
-        /// Amazon Web Services CLI clients handle the encoding for you.
+        /// Amazon Web Services CLI clients handle the encoding for you. Use only with a function
+        /// defined with a .zip file archive deployment package.
         /// </para>
         /// </summary>
         public MemoryStream ZipFile

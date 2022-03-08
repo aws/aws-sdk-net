@@ -20,7 +20,7 @@ namespace SDKDocGenerator
 {
     public static class NDocUtilities
     {
-        public const string MSDN_TYPE_URL_PATTERN = "http://msdn.microsoft.com/en-us/library/{0}.aspx";
+        public const string MSDN_TYPE_URL_PATTERN = "https://msdn.microsoft.com/en-us/library/{0}.aspx";
         public const string DOC_SAMPLES_SUBFOLDER = "AWSSDKDocSamples";
 
         public const string crossReferenceOpeningTagText = "<see"; // <see> and <seealso> tags
@@ -401,7 +401,7 @@ namespace SDKDocGenerator
             var href = rootNode.Attribute("href");
             if (href != null)
             {
-                content += string.Format(@"<div><a href=""{0}"" target=""_blank"">{1}</a></div>", href.Value, innerXml);
+                content += string.Format(@"<div><a href=""{0}"" target=""_parent"" rel=""noopener noreferrer"">{1}</a></div>", href.Value, innerXml);
             }
 
             var cref = rootNode.Attribute("cref");

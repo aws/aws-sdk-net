@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kendra.Model
 {
     /// <summary>
-    /// Provides configuration information required to connect to a ServiceNow data source.
+    /// Provides the configuration information to connect to ServiceNow as your data source.
     /// </summary>
     public partial class ServiceNowConfiguration
     {
@@ -92,8 +92,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property KnowledgeArticleConfiguration. 
         /// <para>
-        /// Provides configuration information for crawling knowledge articles in the ServiceNow
-        /// site.
+        /// Configuration information for crawling knowledge articles in the ServiceNow site.
         /// </para>
         /// </summary>
         public ServiceNowKnowledgeArticleConfiguration KnowledgeArticleConfiguration
@@ -131,8 +130,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property ServiceCatalogConfiguration. 
         /// <para>
-        /// Provides configuration information for crawling service catalogs in the ServiceNow
-        /// site.
+        /// Configuration information for crawling service catalogs in the ServiceNow site.
         /// </para>
         /// </summary>
         public ServiceNowServiceCatalogConfiguration ServiceCatalogConfiguration

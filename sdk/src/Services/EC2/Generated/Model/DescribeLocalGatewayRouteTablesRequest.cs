@@ -51,11 +51,21 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>local-gateway-route-table-arn</code> - The Amazon Resource Name (ARN) of the
+        /// local gateway route table.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>local-gateway-route-table-id</code> - The ID of a local gateway route table.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>outpost-arn</code> - The Amazon Resource Name (ARN) of the Outpost.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>owner-id</code> - The ID of the Amazon Web Services account that owns the local
+        /// gateway route table.
         /// </para>
         ///  </li> <li> 
         /// <para>

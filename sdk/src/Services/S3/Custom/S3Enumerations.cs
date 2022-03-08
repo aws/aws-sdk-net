@@ -1408,6 +1408,11 @@ namespace Amazon.S3
         public static readonly InventoryOptionalField BucketKeyStatus = new InventoryOptionalField("BucketKeyStatus");
 
         /// <summary>
+        /// Constant ChecksumAlgorithm for InventoryOptionalField
+        /// </summary>
+        public static readonly InventoryOptionalField ChecksumAlgorithm = new InventoryOptionalField("ChecksumAlgorithm");
+
+        /// <summary>
         /// Construct instance of InventoryOptionalField.
         /// </summary>
         /// <param name="value"></param>
@@ -2484,4 +2489,163 @@ namespace Amazon.S3
         }
     }
 
+    /// <summary>
+    /// Constants used for properties of type ChecksumAlgorithm.
+    /// </summary>
+    public class ChecksumAlgorithm : ConstantClass
+    {
+        /// <summary>
+        /// Constant CRC32 for ChecksumAlgorithm
+        /// </summary>
+        public static readonly ChecksumAlgorithm CRC32 = new ChecksumAlgorithm("CRC32");
+        /// <summary>
+        /// Constant CRC32C for ChecksumAlgorithm
+        /// </summary>
+        public static readonly ChecksumAlgorithm CRC32C = new ChecksumAlgorithm("CRC32C");
+        /// <summary>
+        /// Constant SHA1 for ChecksumAlgorithm
+        /// </summary>
+        public static readonly ChecksumAlgorithm SHA1 = new ChecksumAlgorithm("SHA1");
+        /// <summary>
+        /// Constant SHA256 for ChecksumAlgorithm
+        /// </summary>
+        public static readonly ChecksumAlgorithm SHA256 = new ChecksumAlgorithm("SHA256");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ChecksumAlgorithm(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ChecksumAlgorithm FindValue(string value)
+        {
+            return FindValue<ChecksumAlgorithm>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ChecksumAlgorithm(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ChecksumMode.
+    /// </summary>
+    public class ChecksumMode : ConstantClass
+    {
+        /// <summary>
+        /// Constant ENABLED for ChecksumMode
+        /// </summary>
+        public static readonly ChecksumMode ENABLED = new ChecksumMode("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ChecksumMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ChecksumMode FindValue(string value)
+        {
+            return FindValue<ChecksumMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ChecksumMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ObjectAttributes.
+    /// </summary>
+    public class ObjectAttributes : ConstantClass
+    {
+        /// <summary>
+        /// Constant Checksum for ObjectAttributes
+        /// </summary>
+        public static readonly ObjectAttributes Checksum = new ObjectAttributes("Checksum");
+        /// <summary>
+        /// Constant ETag for ObjectAttributes
+        /// </summary>
+        public static readonly ObjectAttributes ETag = new ObjectAttributes("ETag");
+        /// <summary>
+        /// Constant ObjectParts for ObjectAttributes
+        /// </summary>
+        public static readonly ObjectAttributes ObjectParts = new ObjectAttributes("ObjectParts");
+        /// <summary>
+        /// Constant ObjectSize for ObjectAttributes
+        /// </summary>
+        public static readonly ObjectAttributes ObjectSize = new ObjectAttributes("ObjectSize");
+        /// <summary>
+        /// Constant StorageClass for ObjectAttributes
+        /// </summary>
+        public static readonly ObjectAttributes StorageClass = new ObjectAttributes("StorageClass");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ObjectAttributes(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ObjectAttributes FindValue(string value)
+        {
+            return FindValue<ObjectAttributes>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ObjectAttributes(string value)
+        {
+            return FindValue(value);
+        }
+    }
 }

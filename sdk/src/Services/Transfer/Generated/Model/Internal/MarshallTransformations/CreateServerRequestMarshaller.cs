@@ -125,6 +125,18 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.LoggingRole);
                 }
 
+                if(publicRequest.IsSetPostAuthenticationLoginBanner())
+                {
+                    context.Writer.WritePropertyName("PostAuthenticationLoginBanner");
+                    context.Writer.Write(publicRequest.PostAuthenticationLoginBanner);
+                }
+
+                if(publicRequest.IsSetPreAuthenticationLoginBanner())
+                {
+                    context.Writer.WritePropertyName("PreAuthenticationLoginBanner");
+                    context.Writer.Write(publicRequest.PreAuthenticationLoginBanner);
+                }
+
                 if(publicRequest.IsSetProtocolDetails())
                 {
                     context.Writer.WritePropertyName("ProtocolDetails");

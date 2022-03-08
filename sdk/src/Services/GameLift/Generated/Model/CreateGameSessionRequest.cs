@@ -76,7 +76,7 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  
     /// <para>
-    ///  <i>Available in GameLift Local.</i> 
+    ///  <i>Available in Amazon Web Services Local.</i> 
     /// </para>
     ///  
     /// <para>
@@ -181,7 +181,8 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// A set of custom properties for a game session, formatted as key:value pairs. These
         /// properties are passed to a game server process in the <a>GameSession</a> object with
-        /// a request to start a new game session.
+        /// a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
+        /// a Game Session</a>).
         /// </para>
         /// </summary>
         [AWSProperty(Max=16)]
@@ -202,7 +203,8 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// A set of custom game session properties, formatted as a single string value. This
         /// data is passed to a game server process in the <a>GameSession</a> object with a request
-        /// to start a new game session.
+        /// to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
+        /// a Game Session</a>).
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=262144)]
@@ -272,7 +274,7 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// A fleet's remote location to place the new game session in. If this parameter is not
         /// set, the new game session is placed in the fleet's home Region. Specify a remote location
-        /// with an AWS Region code such as <code>us-west-2</code>. 
+        /// with an Amazon Web Services Region code such as <code>us-west-2</code>. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

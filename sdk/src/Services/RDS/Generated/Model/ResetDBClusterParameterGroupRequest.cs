@@ -55,11 +55,6 @@ namespace Amazon.RDS.Model
     /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
     /// User Guide.</i> 
     /// </para>
-    ///  <note> 
-    /// <para>
-    /// The Multi-AZ DB clusters feature is in preview and is subject to change.
-    /// </para>
-    ///  </note>
     /// </summary>
     public partial class ResetDBClusterParameterGroupRequest : AmazonRDSRequest
     {

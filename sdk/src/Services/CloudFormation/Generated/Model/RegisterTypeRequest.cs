@@ -36,19 +36,19 @@ namespace Amazon.CloudFormation.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    /// Validating the extension schema
+    /// Validating the extension schema.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Determining which handlers, if any, have been specified for the extension
+    /// Determining which handlers, if any, have been specified for the extension.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Making the extension available for use in your account
+    /// Making the extension available for use in your account.
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// For more information on how to develop extensions and ready them for registeration,
+    /// For more information on how to develop extensions and ready them for registration,
     /// see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-types.html">Creating
     /// Resource Providers</a> in the <i>CloudFormation CLI User Guide</i>.
     /// </para>
@@ -86,8 +86,8 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// A unique identifier that acts as an idempotency key for this registration request.
         /// Specifying a client request token prevents CloudFormation from generating more than
-        /// one version of an extension from the same registeration request, even if the request
-        /// is submitted multiple times. 
+        /// one version of an extension from the same registration request, even if the request
+        /// is submitted multiple times.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -161,8 +161,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property SchemaHandlerPackage. 
         /// <para>
-        /// A url to the S3 bucket containing the extension project package that contains the
-        /// neccessary files for the extension you want to register.
+        /// A URL to the S3 bucket containing the extension project package that contains the
+        /// necessary files for the extension you want to register.
         /// </para>
         ///  
         /// <para>
@@ -173,7 +173,7 @@ namespace Amazon.CloudFormation.Model
         ///  <note> 
         /// <para>
         /// The user registering the extension must be able to access the package in the S3 bucket.
-        /// That is, the user needs to have <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
+        /// That's, the user needs to have <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
         /// permissions for the schema handler package. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazons3.html">Actions,
         /// Resources, and Condition Keys for Amazon S3</a> in the <i>Identity and Access Management
         /// User Guide</i>.
@@ -218,7 +218,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// We recommend that extension names adhere to the following patterns: 
+        /// We recommend that extension names adhere to the following patterns:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -230,7 +230,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// The following organization namespaces are reserved and cannot be used in your extension
+        /// The following organization namespaces are reserved and can't be used in your extension
         /// names:
         /// </para>
         ///  <ul> <li> 

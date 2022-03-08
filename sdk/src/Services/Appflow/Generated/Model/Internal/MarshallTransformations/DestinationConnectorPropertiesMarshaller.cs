@@ -100,6 +100,17 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetMarketo())
+            {
+                context.Writer.WritePropertyName("Marketo");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = MarketoDestinationPropertiesMarshaller.Instance;
+                marshaller.Marshall(requestObject.Marketo, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetRedshift())
             {
                 context.Writer.WritePropertyName("Redshift");
@@ -129,6 +140,17 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 
                 var marshaller = SalesforceDestinationPropertiesMarshaller.Instance;
                 marshaller.Marshall(requestObject.Salesforce, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetSAPOData())
+            {
+                context.Writer.WritePropertyName("SAPOData");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = SAPODataDestinationPropertiesMarshaller.Instance;
+                marshaller.Marshall(requestObject.SAPOData, context);
 
                 context.Writer.WriteObjectEnd();
             }

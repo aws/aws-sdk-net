@@ -295,24 +295,36 @@ using Amazon.Runtime.Internal.Util;
             }
         }
 	}
-	protected void CheckContentMd5Header(Operation operation, string requestContent) 
+	protected void GenerateRequestChecksumHandling(Operation operation, string requestContent) 
     {
-		if (operation.HttpChecksumRequired) 
+        // If the request has a Content-MD5 property and it's set by the user, copy the value to the header.
+        // Otherwise the checksum handling in Core will calculate and set MD5 later.
+        if (operation.HttpChecksumRequired) 
         {
-#>
-                var checksum = Amazon.Util.AWSSDKUtils.GenerateChecksumForContent(<#=requestContent#>, true);
-<#+
-        var member = operation.RequestStructure.Members.FirstOrDefault(m => string.Equals(m.LocationName, "Content-MD5"));
-        if (member != default(Member)) 
-        {
+            var member = operation.RequestStructure.Members.FirstOrDefault(m => string.Equals(m.LocationName, "Content-MD5"));
+            if (member != default(Member)) 
+            {
 #>
                 if (publicRequest.IsSet<#=member.PropertyName#>())
-                    checksum = publicRequest.<#=member.PropertyName#>;
+                    request.Headers[Amazon.Util.HeaderKeys.ContentMD5Header] = publicRequest.<#=member.PropertyName#>;
 <#+
+            }
         }
+        
+        if (operation.RequiresChecksumDuringMarshalling)
+        {
+            if (!string.IsNullOrEmpty(operation.ChecksumConfiguration?.RequestAlgorithmMember))
+            {
 #>
-                request.Headers[Amazon.Util.HeaderKeys.ContentMD5Header] = checksum;
+                ChecksumUtils.SetRequestChecksum(request, request.<#=operation.ChecksumConfiguration.RequestAlgorithmMember#>, fallbackToMD5: <#=operation.HttpChecksumRequired.ToString().ToLower()#>);
+<#+            
+            }
+            else if (operation.HttpChecksumRequired) // no flexible checksum, just MD5
+            {
+#>
+                ChecksumUtils.SetRequestChecksumMD5(request);
 <#+
+            }
         }
-	}
+    }
 #>

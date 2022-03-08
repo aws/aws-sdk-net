@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kendra.Model
 {
     /// <summary>
-    /// A summary of information about an index.
+    /// A summary of information on the configuration of an index.
     /// </summary>
     public partial class IndexConfigurationSummary
     {

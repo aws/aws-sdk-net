@@ -34,9 +34,9 @@ namespace Amazon.CloudFormation.Model
     /// 
     ///  
     /// <para>
-    /// If you do not supply a <code>PublisherId</code>, and you have registered as an extension
+    /// If you don't supply a <code>PublisherId</code>, and you have registered as an extension
     /// publisher, <code>DescribePublisher</code> returns information about your own publisher
-    /// account. 
+    /// account.
     /// </para>
     ///  
     /// <para>
@@ -66,7 +66,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// If you do not supply a <code>PublisherId</code>, and you have registered as an extension
+        /// If you don't supply a <code>PublisherId</code>, and you have registered as an extension
         /// publisher, <code>DescribePublisher</code> returns information about your own publisher
         /// account.
         /// </para>

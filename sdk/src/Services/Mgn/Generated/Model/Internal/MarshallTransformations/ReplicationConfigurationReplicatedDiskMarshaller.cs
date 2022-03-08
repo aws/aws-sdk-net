@@ -69,6 +69,12 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.StagingDiskType);
             }
 
+            if(requestObject.IsSetThroughput())
+            {
+                context.Writer.WritePropertyName("throughput");
+                context.Writer.Write(requestObject.Throughput);
+            }
+
         }
 
         /// <summary>

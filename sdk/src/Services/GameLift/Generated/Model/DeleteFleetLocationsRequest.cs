@@ -95,8 +95,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Locations. 
         /// <para>
-        /// The list of fleet locations to delete. Specify locations in the form of an AWS Region
-        /// code, such as <code>us-west-2</code>.
+        /// The list of fleet locations to delete. Specify locations in the form of an Amazon
+        /// Web Services Region code, such as <code>us-west-2</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

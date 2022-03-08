@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kendra.Model
 {
     /// <summary>
-    /// Configuration information for the identifiers of your users.
+    /// Provides the configuration information for the identifiers of your users.
     /// </summary>
     public partial class UserIdentityConfiguration
     {

@@ -112,6 +112,12 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
                     unmarshalledObject.ImageTags = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("lastRecordedPullTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.LastRecordedPullTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("registryId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -491,6 +491,10 @@ namespace Amazon.Panorama
         /// </summary>
         public static readonly NetworkConnectionStatus CONNECTED = new NetworkConnectionStatus("CONNECTED");
         /// <summary>
+        /// Constant CONNECTING for NetworkConnectionStatus
+        /// </summary>
+        public static readonly NetworkConnectionStatus CONNECTING = new NetworkConnectionStatus("CONNECTING");
+        /// <summary>
         /// Constant NOT_CONNECTED for NetworkConnectionStatus
         /// </summary>
         public static readonly NetworkConnectionStatus NOT_CONNECTED = new NetworkConnectionStatus("NOT_CONNECTED");
@@ -756,6 +760,10 @@ namespace Amazon.Panorama
     public class PackageImportJobType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant MARKETPLACE_NODE_PACKAGE_VERSION for PackageImportJobType
+        /// </summary>
+        public static readonly PackageImportJobType MARKETPLACE_NODE_PACKAGE_VERSION = new PackageImportJobType("MARKETPLACE_NODE_PACKAGE_VERSION");
         /// <summary>
         /// Constant NODE_PACKAGE_VERSION for PackageImportJobType
         /// </summary>

@@ -45,7 +45,7 @@ namespace Amazon.FinSpaceData.Model
         /// <summary>
         /// Gets and sets the property AsOfTimestamp. 
         /// <para>
-        /// Beginning time to use for the Dataview. The value is determined as Epoch time in milliseconds.
+        /// Beginning time to use for the Dataview. The value is determined as epoch time in milliseconds.
         /// For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as
         /// 1635768000000.
         /// </para>

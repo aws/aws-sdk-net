@@ -33,8 +33,8 @@ namespace Amazon.CloudFormation.Model
     /// 
     ///  
     /// <para>
-    /// For information on resource and stack limitations, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">Limits</a>
-    /// in the <i>CloudFormation User Guide</i>.
+    /// For information on resource and stack limitations, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">CloudFormation
+    /// quotas</a> in the <i>CloudFormation User Guide</i>.
     /// </para>
     /// </summary>
     #if !NETSTANDARD

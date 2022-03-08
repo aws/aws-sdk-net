@@ -294,6 +294,40 @@ namespace <#=this.Config.Namespace#>.Model
         }
 <#
                 }
+                // Flexible checksum overrides to allow response validation configuration on the request
+                if (this.StructureType == StructureType.Request && !string.IsNullOrEmpty(this.Operation.ChecksumConfiguration?.RequestValidationModeMember))
+                {
+#>  
+#region Flexible checksum properties
+        /// <summary>
+        /// This must be enabled to retrieve the checksum
+        /// </summary>
+        protected override CoreChecksumResponseBehavior CoreChecksumMode
+        {
+            get
+            {
+                if (IsSet<#=this.Operation.ChecksumConfiguration.RequestValidationModeMember#>())
+                {
+                    return (CoreChecksumResponseBehavior)Enum.Parse(typeof(CoreChecksumResponseBehavior), this.<#=this.Operation.ChecksumConfiguration.RequestValidationModeMember#>);
+                }
+
+                return CoreChecksumResponseBehavior.DISABLED;
+            }
+        }
+
+        private static List<CoreChecksumAlgorithm> _supportedChecksumAlgorithms = new List<CoreChecksumAlgorithm>
+        {
+            <#= string.Join(", ", Operation.ChecksumConfiguration?.ResponseAlgorithms?.Select(s => $"CoreChecksumAlgorithm.{s}").ToArray()) #>
+        };
+
+        /// <summary>
+        /// Checksum algorithms supported by this operation for response validation
+        /// </summary>
+        protected override System.Collections.ObjectModel.ReadOnlyCollection<CoreChecksumAlgorithm> ChecksumResponseAlgorithms => _supportedChecksumAlgorithms.AsReadOnly();
+#endregion
+<#
+                }
+
 		        if (this.Structure.Members.Any(m => !m.IsExcluded && m.IsBackwardsCompatibleDateTimeProperty))
 		        {
 #>

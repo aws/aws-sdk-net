@@ -117,7 +117,7 @@ namespace Amazon.Mgn.Model
         /// <summary>
         /// Gets and sets the property LagDuration. 
         /// <para>
-        /// Request to query data replication lag durating.
+        /// Request to query data replication lag duration.
         /// </para>
         /// </summary>
         [AWSProperty(Min=19, Max=32)]

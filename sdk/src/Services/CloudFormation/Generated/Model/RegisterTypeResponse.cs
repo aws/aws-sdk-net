@@ -44,7 +44,6 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// Use this registration token when calling <code> <a>DescribeTypeRegistration</a> </code>,
         /// which returns information about the status and IDs of the extension registration.
-        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

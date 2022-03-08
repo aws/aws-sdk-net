@@ -36,10 +36,11 @@ namespace Amazon.GameLift.Model
     ///  
     /// <para>
     /// Creates a GameLift FleetIQ game server group for managing game hosting on a collection
-    /// of Amazon EC2 instances for game hosting. This operation creates the game server group,
-    /// creates an Auto Scaling group in your AWS account, and establishes a link between
-    /// the two groups. You can view the status of your game server groups in the GameLift
-    /// console. Game server group metrics and events are emitted to Amazon CloudWatch.
+    /// of Amazon Elastic Compute Cloud instances for game hosting. This operation creates
+    /// the game server group, creates an Auto Scaling group in your Amazon Web Services account,
+    /// and establishes a link between the two groups. You can view the status of your game
+    /// server groups in the GameLift console. Game server group metrics and events are emitted
+    /// to Amazon CloudWatch.
     /// </para>
     ///  
     /// <para>
@@ -47,24 +48,26 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// An Amazon EC2 launch template that specifies how to launch Amazon EC2 instances with
-    /// your game server build. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html">
-    /// Launching an Instance from a Launch Template</a> in the <i>Amazon EC2 User Guide</i>.
-    /// 
+    /// An Amazon Elastic Compute Cloud launch template that specifies how to launch Amazon
+    /// Elastic Compute Cloud instances with your game server build. For more information,
+    /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html">
+    /// Launching an Instance from a Launch Template</a> in the <i>Amazon Elastic Compute
+    /// Cloud User Guide</i>. 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// An IAM role that extends limited access to your AWS account to allow GameLift FleetIQ
-    /// to create and interact with the Auto Scaling group. For more information, see <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-iam-permissions-roles.html">Create
+    /// An IAM role that extends limited access to your Amazon Web Services account to allow
+    /// GameLift FleetIQ to create and interact with the Auto Scaling group. For more information,
+    /// see <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-iam-permissions-roles.html">Create
     /// IAM roles for cross-service interaction</a> in the <i>GameLift FleetIQ Developer Guide</i>.
     /// </para>
     ///  </li> </ul> 
     /// <para>
     /// To create a new game server group, specify a unique group name, IAM role and Amazon
-    /// EC2 launch template, and provide a list of instance types that can be used in the
-    /// group. You must also set initial maximum and minimum limits on the group's instance
-    /// count. You can optionally set an Auto Scaling policy with target tracking based on
-    /// a GameLift FleetIQ metric.
+    /// Elastic Compute Cloud launch template, and provide a list of instance types that can
+    /// be used in the group. You must also set initial maximum and minimum limits on the
+    /// group's instance count. You can optionally set an Auto Scaling policy with target
+    /// tracking based on a GameLift FleetIQ metric.
     /// </para>
     ///  
     /// <para>
@@ -117,7 +120,7 @@ namespace Amazon.GameLift.Model
         /// is optimized for game hosting. The scaling policy uses the metric <code>"PercentUtilizedGameServers"</code>
         /// to maintain a buffer of idle game servers that can immediately accommodate new games
         /// and players. After the Auto Scaling group is created, update this value directly in
-        /// the Auto Scaling group using the AWS console or APIs.
+        /// the Auto Scaling group using the Amazon Web Services console or APIs.
         /// </para>
         /// </summary>
         public GameServerGroupAutoScalingPolicy AutoScalingPolicy
@@ -178,8 +181,8 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property GameServerGroupName. 
         /// <para>
         /// An identifier for the new game server group. This value is used to generate unique
-        /// ARN identifiers for the EC2 Auto Scaling group and the GameLift FleetIQ game server
-        /// group. The name must be unique per Region per AWS account.
+        /// ARN identifiers for the Amazon EC2 Auto Scaling group and the GameLift FleetIQ game
+        /// server group. The name must be unique per Region per Amazon Web Services account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -203,8 +206,8 @@ namespace Amazon.GameLift.Model
         /// be terminated during a scale-down event, causing players to be dropped from the game.
         /// Protected instances cannot be terminated while there are active game servers running
         /// except in the event of a forced game server group deletion (see ). An exception to
-        /// this is with Spot Instances, which can be terminated by AWS regardless of protection
-        /// status. This property is set to <code>NO_PROTECTION</code> by default.
+        /// this is with Spot Instances, which can be terminated by Amazon Web Services regardless
+        /// of protection status. This property is set to <code>NO_PROTECTION</code> by default.
         /// </para>
         /// </summary>
         public GameServerProtectionPolicy GameServerProtectionPolicy
@@ -222,13 +225,13 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property InstanceDefinitions. 
         /// <para>
-        /// The EC2 instance types and sizes to use in the Auto Scaling group. The instance definitions
-        /// must specify at least two different instance types that are supported by GameLift
-        /// FleetIQ. For more information on instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2
-        /// Instance Types</a> in the <i>Amazon EC2 User Guide</i>. You can optionally specify
-        /// capacity weighting for each instance type. If no weight value is specified for an
-        /// instance type, it is set to the default value "1". For more information about capacity
-        /// weighting, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html">
+        /// The Amazon EC2 instance types and sizes to use in the Auto Scaling group. The instance
+        /// definitions must specify at least two different instance types that are supported
+        /// by GameLift FleetIQ. For more information on instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2
+        /// Instance Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. You can
+        /// optionally specify capacity weighting for each instance type. If no weight value is
+        /// specified for an instance type, it is set to the default value "1". For more information
+        /// about capacity weighting, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html">
         /// Instance Weighting for Amazon EC2 Auto Scaling</a> in the Amazon EC2 Auto Scaling
         /// User Guide.
         /// </para>
@@ -249,13 +252,14 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property LaunchTemplate. 
         /// <para>
-        /// The EC2 launch template that contains configuration settings and game server code
-        /// to be deployed to all instances in the game server group. You can specify the template
-        /// using either the template name or ID. For help with creating a launch template, see
-        /// <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html">Creating
-        /// a Launch Template for an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling
-        /// User Guide</i>. After the Auto Scaling group is created, update this value directly
-        /// in the Auto Scaling group using the AWS console or APIs.
+        /// The Amazon EC2 launch template that contains configuration settings and game server
+        /// code to be deployed to all instances in the game server group. You can specify the
+        /// template using either the template name or ID. For help with creating a launch template,
+        /// see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html">Creating
+        /// a Launch Template for an Auto Scaling Group</a> in the <i>Amazon Elastic Compute Cloud
+        /// Auto Scaling User Guide</i>. After the Auto Scaling group is created, update this
+        /// value directly in the Auto Scaling group using the Amazon Web Services console or
+        /// APIs.
         /// </para>
         ///  <note> 
         /// <para>
@@ -282,10 +286,10 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property MaxSize. 
         /// <para>
-        /// The maximum number of instances allowed in the EC2 Auto Scaling group. During automatic
-        /// scaling events, GameLift FleetIQ and EC2 do not scale up the group above this maximum.
-        /// After the Auto Scaling group is created, update this value directly in the Auto Scaling
-        /// group using the AWS console or APIs.
+        /// The maximum number of instances allowed in the Amazon EC2 Auto Scaling group. During
+        /// automatic scaling events, GameLift FleetIQ and EC2 do not scale up the group above
+        /// this maximum. After the Auto Scaling group is created, update this value directly
+        /// in the Auto Scaling group using the Amazon Web Services console or APIs.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
@@ -304,11 +308,11 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property MinSize. 
         /// <para>
-        /// The minimum number of instances allowed in the EC2 Auto Scaling group. During automatic
-        /// scaling events, GameLift FleetIQ and EC2 do not scale down the group below this minimum.
-        /// In production, this value should be set to at least 1. After the Auto Scaling group
-        /// is created, update this value directly in the Auto Scaling group using the AWS console
-        /// or APIs.
+        /// The minimum number of instances allowed in the Amazon EC2 Auto Scaling group. During
+        /// automatic scaling events, GameLift FleetIQ and Amazon EC2 do not scale down the group
+        /// below this minimum. In production, this value should be set to at least 1. After the
+        /// Auto Scaling group is created, update this value directly in the Auto Scaling group
+        /// using the Amazon Web Services console or APIs.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
@@ -328,7 +332,8 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property RoleArn. 
         /// <para>
         /// The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-        /// for an IAM role that allows Amazon GameLift to access your EC2 Auto Scaling groups.
+        /// for an IAM role that allows Amazon Web Services to access your Amazon EC2 Auto Scaling
+        /// groups.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
@@ -348,12 +353,13 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property Tags. 
         /// <para>
         /// A list of labels to assign to the new game server group resource. Tags are developer-defined
-        /// key-value pairs. Tagging AWS resources is useful for resource management, access management,
-        /// and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">
-        /// Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is
-        /// created, you can use <a>TagResource</a>, <a>UntagResource</a>, and <a>ListTagsForResource</a>
-        /// to add, remove, and view tags, respectively. The maximum tag limit may be lower than
-        /// stated. See the AWS General Reference for actual tagging limits.
+        /// key-value pairs. Tagging Amazon Web Services resources is useful for resource management,
+        /// access management, and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">
+        /// Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>.
+        /// Once the resource is created, you can use <a>TagResource</a>, <a>UntagResource</a>,
+        /// and <a>ListTagsForResource</a> to add, remove, and view tags, respectively. The maximum
+        /// tag limit may be lower than stated. See the Amazon Web Services General Reference
+        /// for actual tagging limits.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=200)]

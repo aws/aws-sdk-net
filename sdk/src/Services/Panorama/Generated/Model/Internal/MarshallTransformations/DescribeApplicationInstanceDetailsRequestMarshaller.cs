@@ -60,8 +60,8 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
 
             if (!publicRequest.IsSetApplicationInstanceId())
                 throw new AmazonPanoramaException("Request object does not have required field ApplicationInstanceId set");
-            request.AddPathResource("{applicationInstanceId}", StringUtils.FromString(publicRequest.ApplicationInstanceId));
-            request.ResourcePath = "/application-instances/{applicationInstanceId}/details";
+            request.AddPathResource("{ApplicationInstanceId}", StringUtils.FromString(publicRequest.ApplicationInstanceId));
+            request.ResourcePath = "/application-instances/{ApplicationInstanceId}/details";
 
             return request;
         }

@@ -160,7 +160,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Settings. 
         /// <para>
-        /// The setting to use when creating a cluster. This parameter is used to enable CloudWatch
+        /// The setting to use when creating a cluster. This parameter is used to turn on CloudWatch
         /// Container Insights for a cluster. If this value is specified, it overrides the <code>containerInsights</code>
         /// value set with <a>PutAccountSetting</a> or <a>PutAccountSettingDefault</a>.
         /// </para>

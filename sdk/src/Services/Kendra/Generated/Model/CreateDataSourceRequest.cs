@@ -87,7 +87,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Configuration. 
         /// <para>
-        /// The connector configuration information that is required to access the repository.
+        /// Configuration information that is required to access the data source repository.
         /// </para>
         ///  
         /// <para>

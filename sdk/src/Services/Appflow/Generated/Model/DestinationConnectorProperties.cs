@@ -38,9 +38,11 @@ namespace Amazon.Appflow.Model
         private EventBridgeDestinationProperties _eventBridge;
         private HoneycodeDestinationProperties _honeycode;
         private LookoutMetricsDestinationProperties _lookoutMetrics;
+        private MarketoDestinationProperties _marketo;
         private RedshiftDestinationProperties _redshift;
         private S3DestinationProperties _s3;
         private SalesforceDestinationProperties _salesforce;
+        private SAPODataDestinationProperties _sapoData;
         private SnowflakeDestinationProperties _snowflake;
         private UpsolverDestinationProperties _upsolver;
         private ZendeskDestinationProperties _zendesk;
@@ -136,6 +138,24 @@ namespace Amazon.Appflow.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Marketo. 
+        /// <para>
+        /// The properties required to query Marketo.
+        /// </para>
+        /// </summary>
+        public MarketoDestinationProperties Marketo
+        {
+            get { return this._marketo; }
+            set { this._marketo = value; }
+        }
+
+        // Check to see if Marketo property is set
+        internal bool IsSetMarketo()
+        {
+            return this._marketo != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Redshift. 
         /// <para>
         ///  The properties required to query Amazon Redshift. 
@@ -187,6 +207,24 @@ namespace Amazon.Appflow.Model
         internal bool IsSetSalesforce()
         {
             return this._salesforce != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SAPOData. 
+        /// <para>
+        /// The properties required to query SAPOData.
+        /// </para>
+        /// </summary>
+        public SAPODataDestinationProperties SAPOData
+        {
+            get { return this._sapoData; }
+            set { this._sapoData = value; }
+        }
+
+        // Check to see if SAPOData property is set
+        internal bool IsSetSAPOData()
+        {
+            return this._sapoData != null;
         }
 
         /// <summary>

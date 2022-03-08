@@ -37,6 +37,11 @@ namespace Amazon.S3.Model
     /// parameter and set its value to the <code>NextPartNumberMarker</code> field value from
     /// the previous response.
     /// 
+    /// 
+    /// <para>
+    /// If the upload was created using a checksum algorithm, you will need to have permission
+    /// to the <code>kms:Decrypt</code> action for the request to succeed. 
+    /// </para>
     ///  
     /// <para>
     /// For more information on multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/uploadobjusingmpu.html">Uploading
@@ -73,6 +78,11 @@ namespace Amazon.S3.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAttributes.html">GetObjectAttributes</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListMultipartUploads.html">ListMultipartUploads</a>
     /// 
     /// </para>
@@ -87,6 +97,9 @@ namespace Amazon.S3.Model
         private int? maxParts;
         private string partNumberMarker;
         private RequestPayer requestPayer;
+        private string _sseCustomerAlgorithm;
+        private string _sseCustomerKey;
+        private string _sseCustomerKeyMD5;
         private string uploadId;
 
         /// <summary>
@@ -242,6 +255,66 @@ namespace Amazon.S3.Model
         internal bool IsSetRequestPayer()
         {
             return requestPayer != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SSECustomerAlgorithm. 
+        /// <para>
+        /// The SSE algorithm used to encrypt the object. This is only needed when the object
+        /// was created using a checksum algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting
+        /// data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        /// </summary>
+        public string SSECustomerAlgorithm
+        {
+            get { return this._sseCustomerAlgorithm; }
+            set { this._sseCustomerAlgorithm = value; }
+        }
+
+        // Check to see if SSECustomerAlgorithm property is set
+        internal bool IsSetSSECustomerAlgorithm()
+        {
+            return this._sseCustomerAlgorithm != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SSECustomerKey. 
+        /// <para>
+        /// The SSE customer key. This is only needed when the object was cureated using a checksum
+        /// algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting
+        /// data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        /// </summary>
+        public string SSECustomerKey
+        {
+            get { return this._sseCustomerKey; }
+            set { this._sseCustomerKey = value; }
+        }
+
+        // Check to see if SSECustomerKey property is set
+        internal bool IsSetSSECustomerKey()
+        {
+            return this._sseCustomerKey != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SSECustomerKeyMD5. 
+        /// <para>
+        /// The MD5 SSE customer key. This is only needed when the object was cureated using a
+        /// checksum algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting
+        /// data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        /// </summary>
+        public string SSECustomerKeyMD5
+        {
+            get { return this._sseCustomerKeyMD5; }
+            set { this._sseCustomerKeyMD5 = value; }
+        }
+
+        // Check to see if SSECustomerKeyMD5 property is set
+        internal bool IsSetSSECustomerKeyMD5()
+        {
+            return this._sseCustomerKeyMD5 != null;
         }
 
         /// <summary>

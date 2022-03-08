@@ -40,7 +40,7 @@ namespace Amazon.Mgn.Model
         /// <summary>
         /// Gets and sets the property Finalized. 
         /// <para>
-        /// Lifecycle last Test finlized.
+        /// Lifecycle last Test finalized.
         /// </para>
         /// </summary>
         public LifeCycleLastTestFinalized Finalized

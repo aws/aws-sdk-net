@@ -60,7 +60,7 @@ namespace Amazon.CloudFormation.Model
     /// </para>
     ///  
     /// <para>
-    /// When detecting drift on a stack, CloudFormation does not detect drift on any nested
+    /// When detecting drift on a stack, CloudFormation doesn't detect drift on any nested
     /// stacks belonging to that stack. Perform <code>DetectStackDrift</code> directly on
     /// the nested stack itself.
     /// </para>

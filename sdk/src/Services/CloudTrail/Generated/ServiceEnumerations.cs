@@ -274,6 +274,10 @@ namespace Amazon.CloudTrail
         /// Constant RUNNING for QueryStatus
         /// </summary>
         public static readonly QueryStatus RUNNING = new QueryStatus("RUNNING");
+        /// <summary>
+        /// Constant TIMED_OUT for QueryStatus
+        /// </summary>
+        public static readonly QueryStatus TIMED_OUT = new QueryStatus("TIMED_OUT");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

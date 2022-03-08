@@ -44,8 +44,7 @@ namespace Amazon.GreengrassV2.Model
     /// <para>
     /// Every deployment has a revision number that indicates how many deployment revisions
     /// you define for a target. Use this operation to create a new revision of an existing
-    /// deployment. This operation returns the revision number of the new deployment when
-    /// you create it.
+    /// deployment.
     /// </para>
     ///  
     /// <para>

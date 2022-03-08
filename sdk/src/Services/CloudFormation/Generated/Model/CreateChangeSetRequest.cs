@@ -58,7 +58,7 @@ namespace Amazon.CloudFormation.Model
     /// </para>
     ///  
     /// <para>
-    /// To create a change set for the entire stack hierachy, set <code>IncludeNestedStacks</code>
+    /// To create a change set for the entire stack hierarchy, set <code>IncludeNestedStacks</code>
     /// to <code>True</code>.
     /// </para>
     /// </summary>
@@ -134,8 +134,8 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
-        /// AWS::IAM::InstanceProfile</a> 
+        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS::IAM::InstanceProfile</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -154,13 +154,13 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
-        /// AWS::IAM::UserToGroupAddition</a> 
+        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>
+        /// 
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
-        /// IAM Resources in CloudFormation Templates</a>.
+        /// IAM resources in CloudFormation templates</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -181,7 +181,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// This capacity does not apply to creating change sets, and specifying it when creating
+        /// This capacity doesn't apply to creating change sets, and specifying it when creating
         /// change sets has no effect.
         /// </para>
         ///  
@@ -193,7 +193,7 @@ namespace Amazon.CloudFormation.Model
         ///  </note> 
         /// <para>
         /// For more information on macros, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
-        /// CloudFormation Macros to Perform Custom Processing on Templates</a>.
+        /// CloudFormation macros to perform custom processing on templates</a>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -217,8 +217,8 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// A change set name can contain only alphanumeric, case sensitive characters and hyphens.
-        /// It must start with an alphabetic character and cannot exceed 128 characters.
+        /// A change set name can contain only alphanumeric, case sensitive characters, and hyphens.
+        /// It must start with an alphabetical character and can't exceed 128 characters.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -399,7 +399,7 @@ namespace Amazon.CloudFormation.Model
         /// the stack update fails. By default, CloudFormation grants permissions to all resource
         /// types. Identity and Access Management (IAM) uses this parameter for condition keys
         /// in IAM policies for CloudFormation. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
-        /// Access with Identity and Access Management</a> in the CloudFormation User Guide.
+        /// access with Identity and Access Management</a> in the CloudFormation User Guide.
         /// </para>
         /// </summary>
         public List<string> ResourceTypes
@@ -420,9 +420,9 @@ namespace Amazon.CloudFormation.Model
         /// The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that
         /// CloudFormation assumes when executing the change set. CloudFormation uses the role's
         /// credentials to make calls on your behalf. CloudFormation uses this role for all future
-        /// operations on the stack. As long as users have permission to operate on the stack,
+        /// operations on the stack. Provided that users have permission to operate on the stack,
         /// CloudFormation uses this role even if the users don't have permission to pass it.
-        /// Ensure that the role grants least privilege.
+        /// Ensure that the role grants least permission.
         /// </para>
         ///  
         /// <para>
@@ -533,7 +533,7 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property TemplateURL. 
         /// <para>
         /// The location of the file that contains the revised template. The URL must point to
-        /// a template (max size: 460,800 bytes) that is located in an S3 bucket or a Systems
+        /// a template (max size: 460,800 bytes) that's located in an Amazon S3 bucket or a Systems
         /// Manager document. CloudFormation generates the change set by comparing this template
         /// with the stack that you specified.
         /// </para>
@@ -558,7 +558,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property UsePreviousTemplate. 
         /// <para>
-        /// Whether to reuse the template that is associated with the stack to create the change
+        /// Whether to reuse the template that's associated with the stack to create the change
         /// set.
         /// </para>
         /// </summary>

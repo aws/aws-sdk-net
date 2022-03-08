@@ -30,9 +30,9 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the ListAliases operation.
-    /// Retrieves all aliases for this AWS account. You can filter the result set by alias
-    /// name and/or routing strategy type. Use the pagination parameters to retrieve results
-    /// in sequential pages.
+    /// Retrieves all aliases for this Amazon Web Services account. You can filter the result
+    /// set by alias name and/or routing strategy type. Use the pagination parameters to retrieve
+    /// results in sequential pages.
     /// 
     ///  <note> 
     /// <para>

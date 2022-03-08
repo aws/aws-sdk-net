@@ -14,7 +14,7 @@ Function Copy-Dependencies
         [Parameter()]
         [string[]]
         $DependencyNames = @("microsoft.bcl.asyncinterfaces", "system.runtime.compilerservices.unsafe", "system.threading.tasks.extensions", 
-                             "awscrt", "awscrt-auth", "awscrt-http"),
+                             "awscrt", "awscrt-auth", "awscrt-http", "awscrt-checksums"),
 
         # The location to copy the built dlls to
         [Parameter(Mandatory=$true, Position=1)]

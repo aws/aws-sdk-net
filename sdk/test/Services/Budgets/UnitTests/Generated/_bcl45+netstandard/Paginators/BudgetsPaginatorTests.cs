@@ -159,6 +159,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Budgets")]
+        public void DescribeBudgetNotificationsForAccountTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribeBudgetNotificationsForAccountRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<DescribeBudgetNotificationsForAccountResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<DescribeBudgetNotificationsForAccountResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.DescribeBudgetNotificationsForAccount(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.DescribeBudgetNotificationsForAccount(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Budgets")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void DescribeBudgetNotificationsForAccountTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribeBudgetNotificationsForAccountRequest>();
+
+            var response = InstantiateClassGenerator.Execute<DescribeBudgetNotificationsForAccountResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.DescribeBudgetNotificationsForAccount(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.DescribeBudgetNotificationsForAccount(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Budgets")]
         public void DescribeBudgetPerformanceHistoryTest_TwoPages()
         {
             var request = InstantiateClassGenerator.Execute<DescribeBudgetPerformanceHistoryRequest>();

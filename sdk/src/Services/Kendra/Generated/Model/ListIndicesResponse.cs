@@ -39,7 +39,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property IndexConfigurationSummaryItems. 
         /// <para>
-        /// An array of summary information for one or more indexes.
+        /// An array of summary information on the configuration of one or more indexes.
         /// </para>
         /// </summary>
         public List<IndexConfigurationSummary> IndexConfigurationSummaryItems

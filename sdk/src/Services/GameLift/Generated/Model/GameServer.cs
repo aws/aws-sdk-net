@@ -173,7 +173,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property GameServerId. 
         /// <para>
         /// A custom string that uniquely identifies the game server. Game server IDs are developer-defined
-        /// and are unique across all game server groups in an AWS account.
+        /// and are unique across all game server groups in an Amazon Web Services account.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=128)]

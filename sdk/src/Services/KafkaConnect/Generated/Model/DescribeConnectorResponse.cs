@@ -48,6 +48,7 @@ namespace Amazon.KafkaConnect.Model
         private LogDeliveryDescription _logDelivery;
         private List<PluginDescription> _plugins = new List<PluginDescription>();
         private string _serviceExecutionRoleArn;
+        private StateDescription _stateDescription;
         private WorkerConfigurationDescription _workerConfiguration;
 
         /// <summary>
@@ -321,6 +322,24 @@ namespace Amazon.KafkaConnect.Model
         internal bool IsSetServiceExecutionRoleArn()
         {
             return this._serviceExecutionRoleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StateDescription. 
+        /// <para>
+        /// Details about the state of a connector.
+        /// </para>
+        /// </summary>
+        public StateDescription StateDescription
+        {
+            get { return this._stateDescription; }
+            set { this._stateDescription = value; }
+        }
+
+        // Check to see if StateDescription property is set
+        internal bool IsSetStateDescription()
+        {
+            return this._stateDescription != null;
         }
 
         /// <summary>

@@ -43,8 +43,7 @@ namespace Amazon.RDS.Model
     /// </para>
     ///  
     /// <para>
-    /// Use this operation only for a non-Aurora Multi-AZ DB cluster. The Multi-AZ DB clusters
-    /// feature is in preview and is subject to change.
+    /// Use this operation only for a non-Aurora Multi-AZ DB cluster.
     /// </para>
     ///  
     /// <para>

@@ -147,6 +147,15 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>interface-type</code> - The type of network interface (<code>api_gateway_managed</code>
+        /// | <code>aws_codestar_connections_managed</code> | <code>branch</code> | <code>efa</code>
+        /// | <code>gateway_load_balancer</code> | <code>gateway_load_balancer_endpoint</code>
+        /// | <code>global_accelerator_managed</code> | <code>interface</code> | <code>iot_rules_managed</code>
+        /// | <code>lambda</code> | <code>load_balancer</code> | <code>nat_gateway</code> | <code>network_load_balancer</code>
+        /// | <code>quicksight</code> | <code>transit_gateway</code> | <code>trunk</code> | <code>vpc_endpoint</code>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>mac-address</code> - The MAC address of the network interface.
         /// </para>
         ///  </li> <li> 

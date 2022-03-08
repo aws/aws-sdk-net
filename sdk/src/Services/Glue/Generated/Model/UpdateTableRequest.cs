@@ -39,6 +39,7 @@ namespace Amazon.Glue.Model
         private bool? _skipArchive;
         private TableInput _tableInput;
         private string _transactionId;
+        private string _versionId;
 
         /// <summary>
         /// Gets and sets the property CatalogId. 
@@ -136,6 +137,22 @@ namespace Amazon.Glue.Model
         internal bool IsSetTransactionId()
         {
             return this._transactionId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VersionId.
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string VersionId
+        {
+            get { return this._versionId; }
+            set { this._versionId = value; }
+        }
+
+        // Check to see if VersionId property is set
+        internal bool IsSetVersionId()
+        {
+            return this._versionId != null;
         }
 
     }

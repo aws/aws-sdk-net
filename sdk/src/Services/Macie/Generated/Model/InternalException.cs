@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie.Model
 {
     /// <summary>
-    /// Internal server error.
+    /// (Discontinued) Internal server error.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

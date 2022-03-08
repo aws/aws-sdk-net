@@ -87,6 +87,12 @@ namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
                     response.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("stateDescription", targetDepth))
+                {
+                    var unmarshaller = StateDescriptionUnmarshaller.Instance;
+                    response.StateDescription = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

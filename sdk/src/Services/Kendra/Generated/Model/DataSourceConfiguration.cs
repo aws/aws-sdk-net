@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kendra.Model
 {
     /// <summary>
-    /// Configuration information for an Amazon Kendra data source.
+    /// Provides the configuration information for an Amazon Kendra data source.
     /// </summary>
     public partial class DataSourceConfiguration
     {
@@ -66,7 +66,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property DatabaseConfiguration. 
         /// <para>
-        /// Provides information necessary to create a data source connector for a database.
+        /// Provides the configuration information to connect to a database as your data source.
         /// </para>
         /// </summary>
         public DatabaseConfiguration DatabaseConfiguration
@@ -102,7 +102,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property GoogleDriveConfiguration. 
         /// <para>
-        /// Provides configuration for data sources that connect to Google Drive. 
+        /// Provides the configuration information to connect to Google Drive as your data source.
+        /// 
         /// </para>
         /// </summary>
         public GoogleDriveConfiguration GoogleDriveConfiguration
@@ -120,7 +121,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property OneDriveConfiguration. 
         /// <para>
-        /// Provides configuration for data sources that connect to Microsoft OneDrive.
+        /// Provides the configuration information to connect to Microsoft OneDrive as your data
+        /// source.
         /// </para>
         /// </summary>
         public OneDriveConfiguration OneDriveConfiguration
@@ -138,8 +140,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property S3Configuration. 
         /// <para>
-        /// Provides information to create a data source connector for a document repository in
-        /// an Amazon S3 bucket.
+        /// Provides the configuration information to connect to an Amazon S3 bucket as your data
+        /// source.
         /// </para>
         /// </summary>
         public S3DataSourceConfiguration S3Configuration
@@ -157,7 +159,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property SalesforceConfiguration. 
         /// <para>
-        /// Provides configuration information for data sources that connect to a Salesforce site.
+        /// Provides the configuration information to connect to Salesforce as your data source.
         /// </para>
         /// </summary>
         public SalesforceConfiguration SalesforceConfiguration
@@ -175,7 +177,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property ServiceNowConfiguration. 
         /// <para>
-        /// Provides configuration for data sources that connect to ServiceNow instances.
+        /// Provides the configuration information to connect to ServiceNow as your data source.
         /// </para>
         /// </summary>
         public ServiceNowConfiguration ServiceNowConfiguration
@@ -193,8 +195,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property SharePointConfiguration. 
         /// <para>
-        /// Provides information necessary to create a data source connector for a Microsoft SharePoint
-        /// site.
+        /// Provides the configuration information to connect to Microsoft SharePoint as your
+        /// data source.
         /// </para>
         /// </summary>
         public SharePointConfiguration SharePointConfiguration

@@ -58,7 +58,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property StackResourceDriftStatus. 
         /// <para>
-        /// Status of the resource's actual configuration compared to its expected configuration
+        /// Status of the resource's actual configuration compared to its expected configuration.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -71,12 +71,12 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NOT_CHECKED</code>: CloudFormation has not checked if the resource differs
-        /// from its expected configuration.
+        ///  <code>NOT_CHECKED</code>: CloudFormation hasn't checked if the resource differs from
+        /// its expected configuration.
         /// </para>
         ///  
         /// <para>
-        /// Any resources that do not currently support drift detection have a status of <code>NOT_CHECKED</code>.
+        /// Any resources that don't currently support drift detection have a status of <code>NOT_CHECKED</code>.
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources
         /// that Support Drift Detection</a>. If you performed an <a>ContinueUpdateRollback</a>
         /// operation on a stack, any resources included in <code>ResourcesToSkip</code> will
@@ -86,7 +86,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>IN_SYNC</code>: The resources's actual configuration matches its expected configuration.
+        ///  <code>IN_SYNC</code>: The resource's actual configuration matches its expected configuration.
         /// </para>
         ///  </li> </ul>
         /// </summary>

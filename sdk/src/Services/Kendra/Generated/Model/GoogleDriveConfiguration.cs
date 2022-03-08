@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kendra.Model
 {
     /// <summary>
-    /// Provides configuration information for data sources that connect to Google Drive.
+    /// Provides the configuration information to connect to Google Drive as your data source.
     /// </summary>
     public partial class GoogleDriveConfiguration
     {

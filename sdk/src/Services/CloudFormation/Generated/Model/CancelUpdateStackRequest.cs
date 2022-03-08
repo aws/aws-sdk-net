@@ -35,7 +35,7 @@ namespace Amazon.CloudFormation.Model
     /// 
     ///  <note> 
     /// <para>
-    /// You can cancel only stacks that are in the UPDATE_IN_PROGRESS state.
+    /// You can cancel only stacks that are in the <code>UPDATE_IN_PROGRESS</code> state.
     /// </para>
     ///  </note>
     /// </summary>
@@ -69,7 +69,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property StackName. 
         /// <para>
-        /// The name or the unique stack ID that is associated with the stack.
+        /// The name or the unique stack ID that's associated with the stack.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

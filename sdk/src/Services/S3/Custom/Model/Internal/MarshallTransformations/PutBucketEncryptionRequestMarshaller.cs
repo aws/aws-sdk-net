@@ -41,8 +41,14 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             request.HttpMethod = "PUT";
 
+            if (putBucketEncryptionRequest.IsSetChecksumAlgorithm())
+                request.Headers.Add(S3Constants.AmzHeaderSdkChecksumAlgorithm, S3Transforms.ToStringValue(putBucketEncryptionRequest.ChecksumAlgorithm));
+
             if (putBucketEncryptionRequest.IsSetExpectedBucketOwner())
                 request.Headers.Add(S3Constants.AmzHeaderExpectedBucketOwner, S3Transforms.ToStringValue(putBucketEncryptionRequest.ExpectedBucketOwner));
+
+            if (putBucketEncryptionRequest.IsSetContentMD5())
+                request.Headers.Add(HeaderKeys.ContentMD5Header, S3Transforms.ToStringValue(putBucketEncryptionRequest.ContentMD5));
 
             if (string.IsNullOrEmpty(putBucketEncryptionRequest.BucketName))
                 throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "PutBucketEncryptionRequest.BucketName");
@@ -98,12 +104,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 request.Content = Encoding.UTF8.GetBytes(content);
                 request.Headers[HeaderKeys.ContentTypeHeader] = "application/xml";
 
-                var checksum = AWSSDKUtils.GenerateChecksumForContent(content, true);
-                if (putBucketEncryptionRequest.IsSetContentMD5())
-                    checksum = putBucketEncryptionRequest.ContentMD5;
-                
-                request.Headers[HeaderKeys.ContentMD5Header] = checksum;
-
+                ChecksumUtils.SetRequestChecksum(request, putBucketEncryptionRequest.ChecksumAlgorithm);
             }
             catch (EncoderFallbackException e)
             {

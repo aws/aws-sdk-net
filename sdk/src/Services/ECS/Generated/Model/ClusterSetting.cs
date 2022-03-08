@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// The settings to use when creating a cluster. This parameter is used to enable CloudWatch
+    /// The settings to use when creating a cluster. This parameter is used to turn on CloudWatch
     /// Container Insights for a cluster.
     /// </summary>
     public partial class ClusterSetting

@@ -2025,6 +2025,10 @@ namespace Amazon.ECS
     {
 
         /// <summary>
+        /// Constant NONE for PropagateTags
+        /// </summary>
+        public static readonly PropagateTags NONE = new PropagateTags("NONE");
+        /// <summary>
         /// Constant SERVICE for PropagateTags
         /// </summary>
         public static readonly PropagateTags SERVICE = new PropagateTags("SERVICE");

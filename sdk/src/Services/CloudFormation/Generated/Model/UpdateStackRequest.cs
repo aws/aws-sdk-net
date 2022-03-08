@@ -31,7 +31,7 @@ namespace Amazon.CloudFormation.Model
     /// <summary>
     /// Container for the parameters to the UpdateStack operation.
     /// Updates a stack as specified in the template. After the call completes successfully,
-    /// the stack update starts. You can check the status of the stack via the <a>DescribeStacks</a>
+    /// the stack update starts. You can check the status of the stack through the <a>DescribeStacks</a>
     /// action.
     /// 
     ///  
@@ -118,8 +118,8 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
-        /// AWS::IAM::InstanceProfile</a> 
+        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS::IAM::InstanceProfile</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -138,8 +138,8 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
-        /// AWS::IAM::UserToGroupAddition</a> 
+        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>
+        /// 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -331,7 +331,7 @@ namespace Amazon.CloudFormation.Model
         /// The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that
         /// CloudFormation assumes to update the stack. CloudFormation uses the role's credentials
         /// to make calls on your behalf. CloudFormation always uses this role for all future
-        /// operations on the stack. As long as users have permission to operate on the stack,
+        /// operations on the stack. Provided that users have permission to operate on the stack,
         /// CloudFormation uses this role even if the users don't have permission to pass it.
         /// Ensure that the role grants least privilege.
         /// </para>
@@ -402,8 +402,8 @@ namespace Amazon.CloudFormation.Model
         ///  
         /// <para>
         /// You might update the stack policy, for example, in order to protect a new resource
-        /// that you created during a stack update. If you do not specify a stack policy, the
-        /// current policy that is associated with the stack is unchanged.
+        /// that you created during a stack update. If you don't specify a stack policy, the current
+        /// policy that is associated with the stack is unchanged.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=16384)]
@@ -485,8 +485,8 @@ namespace Amazon.CloudFormation.Model
         ///  
         /// <para>
         /// You might update the stack policy, for example, in order to protect a new resource
-        /// that you created during a stack update. If you do not specify a stack policy, the
-        /// current policy that is associated with the stack is unchanged.
+        /// that you created during a stack update. If you don't specify a stack policy, the current
+        /// policy that is associated with the stack is unchanged.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1350)]
@@ -556,8 +556,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property TemplateURL. 
         /// <para>
-        /// Location of file containing the template body. The URL must point to a template that
-        /// is located in an Amazon S3 bucket or a Systems Manager document. For more information,
+        /// Location of file containing the template body. The URL must point to a template that's
+        /// located in an Amazon S3 bucket or a Systems Manager document. For more information,
         /// go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
         /// Anatomy</a> in the CloudFormation User Guide.
         /// </para>

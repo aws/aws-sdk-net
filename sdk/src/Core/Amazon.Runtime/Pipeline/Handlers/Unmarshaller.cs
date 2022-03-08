@@ -128,7 +128,8 @@ namespace Amazon.Runtime.Internal
                         readEntireResponse,
                         responseContext.HttpResponse.ResponseBody.OpenResponse(),
                         requestContext.Metrics,
-                        false);
+                        false,
+                        requestContext);
 
                     try
                     {
@@ -187,7 +188,8 @@ namespace Amazon.Runtime.Internal
                         readEntireResponse,
                         responseStream,
                         requestContext.Metrics,
-                        false);
+                        false,
+                        requestContext);
 
                     var response = UnmarshallResponse(context, requestContext);
                     responseContext.Response = response;
@@ -221,6 +223,7 @@ namespace Amazon.Runtime.Internal
                 }
 
                 context.ValidateCRC32IfAvailable();
+                context.ValidateFlexibleCheckumsIfAvailable(response.ResponseMetadata);
                 return response;
             }
             finally

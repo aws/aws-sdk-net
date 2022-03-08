@@ -43,7 +43,7 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The error code that indicates why the instance could not be launched. For more information
         /// about error codes, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html.html">Error
-        /// Codes</a>.
+        /// codes</a>.
         /// </para>
         /// </summary>
         public string ErrorCode
@@ -63,7 +63,7 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The error message that describes why the instance could not be launched. For more
         /// information about error messages, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html.html">Error
-        /// Codes</a>.
+        /// codes</a>.
         /// </para>
         /// </summary>
         public string ErrorMessage

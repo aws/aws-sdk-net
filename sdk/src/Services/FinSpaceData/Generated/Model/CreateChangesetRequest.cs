@@ -43,21 +43,21 @@ namespace Amazon.FinSpaceData.Model
         /// <summary>
         /// Gets and sets the property ChangeType. 
         /// <para>
-        /// Option to indicate how a Changeset will be applied to a Dataset.
+        /// The option to indicate how a Changeset will be applied to a Dataset.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>REPLACE</code> - Changeset will be considered as a replacement to all prior
+        ///  <code>REPLACE</code> – Changeset will be considered as a replacement to all prior
         /// loaded Changesets.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>APPEND</code> - Changeset will be considered as an addition to the end of all
+        ///  <code>APPEND</code> – Changeset will be considered as an addition to the end of all
         /// prior loaded Changesets.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MODIFY</code> - Changeset is considered as a replacement to a specific prior
+        ///  <code>MODIFY</code> – Changeset is considered as a replacement to a specific prior
         /// ingested Changeset.
         /// </para>
         ///  </li> </ul>
@@ -128,19 +128,19 @@ namespace Amazon.FinSpaceData.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>PARQUET</code> - Parquet source file format.
+        ///  <code>PARQUET</code> – Parquet source file format.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CSV</code> - CSV source file format.
+        ///  <code>CSV</code> – CSV source file format.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>JSON</code> - JSON source file format.
+        ///  <code>JSON</code> – JSON source file format.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>XML</code> - XML source file format.
+        ///  <code>XML</code> – XML source file format.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -203,7 +203,7 @@ namespace Amazon.FinSpaceData.Model
         /// The S3 path that you specify must allow the FinSpace role access. To do that, you
         /// first need to configure the IAM policy on S3 bucket. For more information, see <a
         /// href="https://docs.aws.amazon.com/finspace/latest/data-api/fs-using-the-finspace-api.html#access-s3-buckets">Loading
-        /// data from an Amazon S3 Bucket using the FinSpace API</a>section.
+        /// data from an Amazon S3 Bucket using the FinSpace API</a> section.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

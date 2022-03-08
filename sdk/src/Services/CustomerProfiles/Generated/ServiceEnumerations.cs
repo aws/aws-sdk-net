@@ -1149,6 +1149,76 @@ namespace Amazon.CustomerProfiles
 
 
     /// <summary>
+    /// Constants used for properties of type Status.
+    /// </summary>
+    public class Status : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CANCELLED for Status
+        /// </summary>
+        public static readonly Status CANCELLED = new Status("CANCELLED");
+        /// <summary>
+        /// Constant COMPLETE for Status
+        /// </summary>
+        public static readonly Status COMPLETE = new Status("COMPLETE");
+        /// <summary>
+        /// Constant FAILED for Status
+        /// </summary>
+        public static readonly Status FAILED = new Status("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for Status
+        /// </summary>
+        public static readonly Status IN_PROGRESS = new Status("IN_PROGRESS");
+        /// <summary>
+        /// Constant NOT_STARTED for Status
+        /// </summary>
+        public static readonly Status NOT_STARTED = new Status("NOT_STARTED");
+        /// <summary>
+        /// Constant RETRY for Status
+        /// </summary>
+        public static readonly Status RETRY = new Status("RETRY");
+        /// <summary>
+        /// Constant SPLIT for Status
+        /// </summary>
+        public static readonly Status SPLIT = new Status("SPLIT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Status(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Status FindValue(string value)
+        {
+            return FindValue<Status>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Status(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type TaskType.
     /// </summary>
     public class TaskType : ConstantClass
@@ -1266,6 +1336,52 @@ namespace Amazon.CustomerProfiles
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator TriggerType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type WorkflowType.
+    /// </summary>
+    public class WorkflowType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant APPFLOW_INTEGRATION for WorkflowType
+        /// </summary>
+        public static readonly WorkflowType APPFLOW_INTEGRATION = new WorkflowType("APPFLOW_INTEGRATION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public WorkflowType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static WorkflowType FindValue(string value)
+        {
+            return FindValue<WorkflowType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator WorkflowType(string value)
         {
             return FindValue(value);
         }

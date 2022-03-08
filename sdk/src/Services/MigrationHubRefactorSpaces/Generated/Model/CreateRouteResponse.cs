@@ -200,7 +200,7 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
         /// <summary>
         /// Gets and sets the property ServiceId. 
         /// <para>
-        /// The ID of service in which the rute iscreated. Traffic that matches this route is
+        /// The ID of service in which the route is created. Traffic that matches this route is
         /// forwarded to this service.
         /// </para>
         /// </summary>
@@ -220,7 +220,7 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// he current state of the route. 
+        /// The current state of the route. 
         /// </para>
         /// </summary>
         public RouteState State

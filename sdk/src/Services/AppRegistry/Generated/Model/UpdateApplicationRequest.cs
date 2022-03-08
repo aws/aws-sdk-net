@@ -83,6 +83,7 @@ namespace Amazon.AppRegistry.Model
         /// are updating the application.
         /// </para>
         /// </summary>
+        [Obsolete("Name update for application is deprecated.")]
         [AWSProperty(Min=1, Max=256)]
         public string Name
         {

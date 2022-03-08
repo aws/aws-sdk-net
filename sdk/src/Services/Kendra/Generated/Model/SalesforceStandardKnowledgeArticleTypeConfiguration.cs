@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kendra.Model
 {
     /// <summary>
-    /// Provides configuration information for standard Salesforce knowledge articles.
+    /// Configuration information for standard Salesforce knowledge articles.
     /// </summary>
     public partial class SalesforceStandardKnowledgeArticleTypeConfiguration
     {

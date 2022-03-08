@@ -34,7 +34,7 @@ namespace Amazon.Budgets.Model
     /// 
     ///  
     /// <para>
-    /// For example, an email subscriber would have the following parameters:
+    /// For example, an email subscriber has the following parameters:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -54,7 +54,8 @@ namespace Amazon.Budgets.Model
         /// <summary>
         /// Gets and sets the property Address. 
         /// <para>
-        /// The address that AWS sends budget notifications to, either an SNS topic or an email.
+        /// The address that Amazon Web Services sends budget notifications to, either an SNS
+        /// topic or an email.
         /// </para>
         ///  
         /// <para>
@@ -78,7 +79,7 @@ namespace Amazon.Budgets.Model
         /// <summary>
         /// Gets and sets the property SubscriptionType. 
         /// <para>
-        /// The type of notification that AWS sends to a subscriber.
+        /// The type of notification that Amazon Web Services sends to a subscriber.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

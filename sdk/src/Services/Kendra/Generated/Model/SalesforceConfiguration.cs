@@ -224,8 +224,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property StandardObjectAttachmentConfiguration. 
         /// <para>
-        /// Provides configuration information for processing attachments to Salesforce standard
-        /// objects. 
+        /// Configuration information for processing attachments to Salesforce standard objects.
+        /// 
         /// </para>
         /// </summary>
         public SalesforceStandardObjectAttachmentConfiguration StandardObjectAttachmentConfiguration

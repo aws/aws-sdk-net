@@ -32,7 +32,7 @@ namespace Amazon.Runtime.Internal.Util
     {
         private static string MD5ManagedName = typeof(MD5Managed).FullName;
 
-        private MD5Managed _algorithm = null;
+        private HashAlgorithm _algorithm = null;
         private void Init(string algorithmName)
         {
             if (string.Equals(MD5ManagedName, algorithmName, StringComparison.Ordinal))
@@ -61,13 +61,14 @@ namespace Amazon.Runtime.Internal.Util
 
         public void AppendBlock(byte[] buffer, int offset, int count)
         {
-            _algorithm.TransformBlock(buffer, offset, count);
+            // We're not transforming the data, so don't use the outputBuffer arguments
+            _algorithm.TransformBlock(buffer, offset, count, null, 0);
         }
 
         public byte[] AppendLastBlock(byte[] buffer, int offset, int count)
         {
-            var hash = _algorithm.TransformFinalBlock(buffer, offset, count);
-            return hash;
+            _algorithm.TransformFinalBlock(buffer, offset, count);
+            return _algorithm.Hash;
         }
 
         #endregion

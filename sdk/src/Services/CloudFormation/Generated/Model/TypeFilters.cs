@@ -86,11 +86,11 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property PublisherId. 
         /// <para>
-        /// The id of the publisher of the extension. 
+        /// The id of the publisher of the extension.
         /// </para>
         ///  
         /// <para>
-        /// Extensions published by Amazon are not assigned a publisher ID. Use the <code>AWS_TYPE</code>
+        /// Extensions published by Amazon aren't assigned a publisher ID. Use the <code>AWS_TYPES</code>
         /// category to specify a list of types published by Amazon.
         /// </para>
         /// </summary>

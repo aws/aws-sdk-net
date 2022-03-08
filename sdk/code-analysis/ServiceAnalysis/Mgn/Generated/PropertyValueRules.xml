@@ -835,6 +835,10 @@
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Mgn.Model.ReplicationConfigurationReplicatedDisk.Throughput</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Mgn.Model.ResourceNotFoundException.Code</property>
     <min>0</min>
     <max>65536</max>

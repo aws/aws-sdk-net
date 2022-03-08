@@ -26,4 +26,22 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
             field.SetValue(null, source);
         }
     }
+
+    public class AWSConfigsDateFaker : IDisposable
+    {
+        private readonly FieldInfo _awsConfigsUtcNowSourceField;
+        public AWSConfigsDateFaker(Func<DateTime> currentDateTimeFunc)
+        {
+            _awsConfigsUtcNowSourceField = 
+                typeof(AWSConfigs)
+                    .GetField("utcNowSource", BindingFlags.Static | BindingFlags.NonPublic);
+
+            _awsConfigsUtcNowSourceField.SetValue(null, currentDateTimeFunc);
+        }
+
+        public void Dispose()
+        {
+            _awsConfigsUtcNowSourceField.SetValue(null, new Func<DateTime>(() => DateTime.UtcNow));
+        }
+    }
 }

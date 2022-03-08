@@ -152,8 +152,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Location. 
         /// <para>
-        /// The fleet location for the fleet utilization information, expressed as an AWS Region
-        /// code, such as <code>us-west-2</code>. 
+        /// The fleet location for the fleet utilization information, expressed as an Amazon Web
+        /// Services Region code, such as <code>us-west-2</code>. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

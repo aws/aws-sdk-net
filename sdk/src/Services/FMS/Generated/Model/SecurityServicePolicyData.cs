@@ -34,6 +34,7 @@ namespace Amazon.FMS.Model
     public partial class SecurityServicePolicyData
     {
         private string _managedServiceData;
+        private PolicyOption _policyOption;
         private SecurityServiceType _type;
 
         /// <summary>
@@ -57,12 +58,122 @@ namespace Amazon.FMS.Model
         /// </para>
         ///  </note> </li> <li> 
         /// <para>
-        /// Example: <code>NETWORK_FIREWALL</code> 
+        /// Example: <code>NETWORK_FIREWALL</code> - Centralized deployment model.
         /// </para>
         ///  
         /// <para>
-        ///  <code>"{\"type\":\"NETWORK_FIREWALL\",\"networkFirewallStatelessRuleGroupReferences\":[{\"resourceARN\":\"arn:aws:network-firewall:us-west-1:1234567891011:stateless-rulegroup/rulegroup2\",\"priority\":10}],\"networkFirewallStatelessDefaultActions\":[\"aws:pass\",\"custom1\"],\"networkFirewallStatelessFragmentDefaultActions\":[\"custom2\",\"aws:pass\"],\"networkFirewallStatelessCustomActions\":[{\"actionName\":\"custom1\",\"actionDefinition\":{\"publishMetricAction\":{\"dimensions\":[{\"value\":\"dimension1\"}]}}},{\"actionName\":\"custom2\",\"actionDefinition\":{\"publishMetricAction\":{\"dimensions\":[{\"value\":\"dimension2\"}]}}}],\"networkFirewallStatefulRuleGroupReferences\":[{\"resourceARN\":\"arn:aws:network-firewall:us-west-1:1234567891011:stateful-rulegroup/rulegroup1\"}],\"networkFirewallOrchestrationConfig\":{\"singleFirewallEndpointPerVPC\":true,\"allowedIPV4CidrList\":[\"10.24.34.0/28\"]}
-        /// }"</code> 
+        ///  <code>"{\"type\":\"NETWORK_FIREWALL\",\"awsNetworkFirewallConfig\":{\"networkFirewallStatelessRuleGroupReferences\":[{\"resourceARN\":\"arn:aws:network-firewall:us-east-1:123456789011:stateless-rulegroup/test\",\"priority\":1}],\"networkFirewallStatelessDefaultActions\":[\"aws:forward_to_sfe\",\"customActionName\"],\"networkFirewallStatelessFragmentDefaultActions\":[\"aws:forward_to_sfe\",\"customActionName\"],\"networkFirewallStatelessCustomActions\":[{\"actionName\":\"customActionName\",\"actionDefinition\":{\"publishMetricAction\":{\"dimensions\":[{\"value\":\"metricdimensionvalue\"}]}}}],\"networkFirewallStatefulRuleGroupReferences\":[{\"resourceARN\":\"arn:aws:network-firewall:us-east-1:123456789011:stateful-rulegroup/test\"}],\"networkFirewallLoggingConfiguration\":{\"logDestinationConfigs\":[{\"logDestinationType\":\"S3\",\"logType\":\"ALERT\",\"logDestination\":{\"bucketName\":\"s3-bucket-name\"}},{\"logDestinationType\":\"S3\",\"logType\":\"FLOW\",\"logDestination\":{\"bucketName\":\"s3-bucket-name\"}}],\"overrideExistingConfig\":true}},\"firewallDeploymentModel\":{\"centralizedFirewallDeploymentModel\":{\"centralizedFirewallOrchestrationConfig\":{\"inspectionVpcIds\":[{\"resourceId\":\"vpc-1234\",\"accountId\":\"123456789011\"}],\"firewallCreationConfig\":{\"endpointLocation\":{\"availabilityZoneConfigList\":[{\"availabilityZoneId\":null,\"availabilityZoneName\":\"us-east-1a\",\"allowedIPV4CidrList\":[\"10.0.0.0/28\"]}]}},\"allowedIPV4CidrList\":[]}}}}"</code>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        ///  To use the centralized deployment model, you must set <a href="https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_PolicyOption.html">PolicyOption</a>
+        /// to <code>CENTRALIZED</code>. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Example: <code>NETWORK_FIREWALL</code> - Distributed deployment model with automatic
+        /// Availability Zone configuration. With automatic Availbility Zone configuration, Firewall
+        /// Manager chooses which Availability Zones to create the endpoints in. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>"{ \"type\": \"NETWORK_FIREWALL\", \"networkFirewallStatelessRuleGroupReferences\":
+        /// [ { \"resourceARN\": \"arn:aws:network-firewall:us-east-1:123456789011:stateless-rulegroup/test\",
+        /// \"priority\": 1 } ], \"networkFirewallStatelessDefaultActions\": [ \"aws:forward_to_sfe\",
+        /// \"customActionName\" ], \"networkFirewallStatelessFragmentDefaultActions\": [ \"aws:forward_to_sfe\",
+        /// \"customActionName\" ], \"networkFirewallStatelessCustomActions\": [ { \"actionName\":
+        /// \"customActionName\", \"actionDefinition\": { \"publishMetricAction\": { \"dimensions\":
+        /// [ { \"value\": \"metricdimensionvalue\" } ] } } } ], \"networkFirewallStatefulRuleGroupReferences\":
+        /// [ { \"resourceARN\": \"arn:aws:network-firewall:us-east-1:123456789011:stateful-rulegroup/test\"
+        /// } ], \"networkFirewallOrchestrationConfig\": { \"singleFirewallEndpointPerVPC\": false,
+        /// \"allowedIPV4CidrList\": [ \"10.0.0.0/28\", \"192.168.0.0/28\" ], \"routeManagementAction\":
+        /// \"OFF\" }, \"networkFirewallLoggingConfiguration\": { \"logDestinationConfigs\": [
+        /// { \"logDestinationType\": \"S3\", \"logType\": \"ALERT\", \"logDestination\": { \"bucketName\":
+        /// \"s3-bucket-name\" } }, { \"logDestinationType\": \"S3\", \"logType\": \"FLOW\", \"logDestination\":
+        /// { \"bucketName\": \"s3-bucket-name\" } } ], \"overrideExistingConfig\": true } }"</code>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        ///  To use the distributed deployment model, you must set <a href="https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_PolicyOption.html">PolicyOption</a>
+        /// to <code>NULL</code>. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Example: <code>NETWORK_FIREWALL</code> - Distributed deployment model with automatic
+        /// Availability Zone configuration, and route management. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>"{ \"type\": \"NETWORK_FIREWALL\", \"networkFirewallStatelessRuleGroupReferences\":
+        /// [ { \"resourceARN\": \"arn:aws:network-firewall:us-east-1:123456789011:stateless-rulegroup/test\",
+        /// \"priority\": 1 } ], \"networkFirewallStatelessDefaultActions\": [ \"aws:forward_to_sfe\",
+        /// \"customActionName\" ], \"networkFirewallStatelessFragmentDefaultActions\": [ \"aws:forward_to_sfe\",
+        /// \"customActionName\" ], \"networkFirewallStatelessCustomActions\": [ { \"actionName\":
+        /// \"customActionName\", \"actionDefinition\": { \"publishMetricAction\": { \"dimensions\":
+        /// [ { \"value\": \"metricdimensionvalue\" } ] } } } ], \"networkFirewallStatefulRuleGroupReferences\":
+        /// [ { \"resourceARN\": \"arn:aws:network-firewall:us-east-1:123456789011:stateful-rulegroup/test\"
+        /// } ], \"networkFirewallOrchestrationConfig\": { \"singleFirewallEndpointPerVPC\": false,
+        /// \"allowedIPV4CidrList\": [ \"10.0.0.0/28\", \"192.168.0.0/28\" ], \"routeManagementAction\":
+        /// \"MONITOR\", \"routeManagementTargetTypes\": [ \"InternetGateway\" ] }, \"networkFirewallLoggingConfiguration\":
+        /// { \"logDestinationConfigs\": [ { \"logDestinationType\": \"S3\", \"logType\": \"ALERT\",
+        /// \"logDestination\": { \"bucketName\": \"s3-bucket-name\" } }, { \"logDestinationType\":
+        /// \"S3\", \"logType\": \"FLOW\", \"logDestination\": { \"bucketName\": \"s3-bucket-name\"
+        /// } } ], \"overrideExistingConfig\": true } }"</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Example: <code>NETWORK_FIREWALL</code> - Distributed deployment model with custom
+        /// Availability Zone configuration. With custom Availability Zone configuration, you
+        /// define which specific Availability Zones to create endpoints in by configuring <code>firewallCreationConfig</code>.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>"{ \"type\":\"NETWORK_FIREWALL\",\"networkFirewallStatelessRuleGroupReferences\":[{\"resourceARN\":\"arn:aws:network-firewall:us-east-1:123456789011:stateless-rulegroup/test\",\"priority\":1}],
+        /// \"networkFirewallStatelessDefaultActions\":[ \"aws:forward_to_sfe\", \"customActionName\"
+        /// ], \"networkFirewallStatelessFragmentDefaultActions\":[ \"aws:forward_to_sfe\", \"fragmentcustomactionname\"
+        /// ], \"networkFirewallStatelessCustomActions\":[ { \"actionName\":\"customActionName\",
+        /// \"actionDefinition\":{ \"publishMetricAction\":{ \"dimensions\":[ { \"value\":\"metricdimensionvalue\"
+        /// } ] } } }, { \"actionName\":\"fragmentcustomactionname\", \"actionDefinition\":{ \"publishMetricAction\":{
+        /// \"dimensions\":[ { \"value\":\"fragmentmetricdimensionvalue\" } ] } } } ], \"networkFirewallStatefulRuleGroupReferences\":[
+        /// { \"resourceARN\":\"arn:aws:network-firewall:us-east-1:123456789011:stateful-rulegroup/test\"
+        /// } ], \"networkFirewallOrchestrationConfig\":{ \"firewallCreationConfig\":{ \"endpointLocation\":{
+        /// \"availabilityZoneConfigList\":[ { \"availabilityZoneId\":null, \"availabilityZoneName\":\"us-east-1a\",
+        /// \"allowedIPV4CidrList\":[ \"10.0.0.0/28\" ] }, { ¯\"availabilityZoneId\":null, \"availabilityZoneName\":\"us-east-1b\",
+        /// \"allowedIPV4CidrList\":[ \"10.0.0.0/28\" ] } ] } }, \"singleFirewallEndpointPerVPC\":false,
+        /// \"allowedIPV4CidrList\":null, \"routeManagementAction\":\"OFF\", \"networkFirewallLoggingConfiguration\":{
+        /// \"logDestinationConfigs\":[ { \"logDestinationType\":\"S3\", \"logType\":\"ALERT\",
+        /// \"logDestination\":{ \"bucketName\":\"s3-bucket-name\" } }, { \"logDestinationType\":\"S3\",
+        /// \"logType\":\"FLOW\", \"logDestination\":{ \"bucketName\":\"s3-bucket-name\" } } ],
+        /// \"overrideExistingConfig\":boolean } }"</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Example: <code>NETWORK_FIREWALL</code> - Distributed deployment model with custom
+        /// Availability Zone configuration, and route management. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>"{ \"type\":\"NETWORK_FIREWALL\",\"networkFirewallStatelessRuleGroupReferences\":[{\"resourceARN\":\"arn:aws:network-firewall:us-east-1:123456789011:stateless-rulegroup/test\",\"priority\":1}],
+        /// \"networkFirewallStatelessDefaultActions\":[ \"aws:forward_to_sfe\", \"customActionName\"
+        /// ], \"networkFirewallStatelessFragmentDefaultActions\":[ \"aws:forward_to_sfe\", \"fragmentcustomactionname\"
+        /// ], \"networkFirewallStatelessCustomActions\":[ { \"actionName\":\"customActionName\",
+        /// \"actionDefinition\":{ \"publishMetricAction\":{ \"dimensions\":[ { \"value\":\"metricdimensionvalue\"
+        /// } ] } } }, { \"actionName\":\"fragmentcustomactionname\", \"actionDefinition\":{ \"publishMetricAction\":{
+        /// \"dimensions\":[ { \"value\":\"fragmentmetricdimensionvalue\" } ] } } } ], \"networkFirewallStatefulRuleGroupReferences\":[
+        /// { \"resourceARN\":\"arn:aws:network-firewall:us-east-1:123456789011:stateful-rulegroup/test\"
+        /// } ], \"networkFirewallOrchestrationConfig\":{ \"firewallCreationConfig\":{ \"endpointLocation\":{
+        /// \"availabilityZoneConfigList\":[ { \"availabilityZoneId\":null, \"availabilityZoneName\":\"us-east-1a\",
+        /// \"allowedIPV4CidrList\":[ \"10.0.0.0/28\" ] }, { ¯\"availabilityZoneId\":null, \"availabilityZoneName\":\"us-east-1b\",
+        /// \"allowedIPV4CidrList\":[ \"10.0.0.0/28\" ] } ] } }, \"singleFirewallEndpointPerVPC\":false,
+        /// \"allowedIPV4CidrList\":null, \"routeManagementAction\":\"MONITOR\", \"routeManagementTargetTypes\":[
+        /// \"InternetGateway\" ], \"routeManagementConfig\":{ \"allowCrossAZTrafficIfNoEndpoint\":true
+        /// } }, \"networkFirewallLoggingConfiguration\":{ \"logDestinationConfigs\":[ { \"logDestinationType\":\"S3\",
+        /// \"logType\":\"ALERT\", \"logDestination\":{ \"bucketName\":\"s3-bucket-name\" } },
+        /// { \"logDestinationType\":\"S3\", \"logType\":\"FLOW\", \"logDestination\":{ \"bucketName\":\"s3-bucket-name\"
+        /// } } ], \"overrideExistingConfig\":boolean } }"</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -179,6 +290,25 @@ namespace Amazon.FMS.Model
         internal bool IsSetManagedServiceData()
         {
             return this._managedServiceData != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PolicyOption. 
+        /// <para>
+        /// Contains the Network Firewall firewall policy options to configure a centralized deployment
+        /// model.
+        /// </para>
+        /// </summary>
+        public PolicyOption PolicyOption
+        {
+            get { return this._policyOption; }
+            set { this._policyOption = value; }
+        }
+
+        // Check to see if PolicyOption property is set
+        internal bool IsSetPolicyOption()
+        {
+            return this._policyOption != null;
         }
 
         /// <summary>

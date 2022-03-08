@@ -38,6 +38,7 @@ namespace Amazon.FIS.Model
         private DateTime? _endTime;
         private string _experimentTemplateId;
         private string _id;
+        private ExperimentLogConfiguration _logConfiguration;
         private string _roleArn;
         private DateTime? _startTime;
         private ExperimentState _state;
@@ -135,6 +136,24 @@ namespace Amazon.FIS.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LogConfiguration. 
+        /// <para>
+        /// The configuration for experiment logging.
+        /// </para>
+        /// </summary>
+        public ExperimentLogConfiguration LogConfiguration
+        {
+            get { return this._logConfiguration; }
+            set { this._logConfiguration = value; }
+        }
+
+        // Check to see if LogConfiguration property is set
+        internal bool IsSetLogConfiguration()
+        {
+            return this._logConfiguration != null;
         }
 
         /// <summary>

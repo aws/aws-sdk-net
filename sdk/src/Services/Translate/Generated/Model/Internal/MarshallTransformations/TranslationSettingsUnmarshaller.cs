@@ -64,6 +64,12 @@ namespace Amazon.Translate.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("Formality", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Formality = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Profanity", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

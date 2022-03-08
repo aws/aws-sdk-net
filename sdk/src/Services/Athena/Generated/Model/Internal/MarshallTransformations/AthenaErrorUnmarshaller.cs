@@ -70,6 +70,12 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
                     unmarshalledObject.ErrorCategory = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ErrorType", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.ErrorType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie.Model
 {
     /// <summary>
-    /// Contains information about the Amazon Macie Classic member account.
+    /// (Discontinued) Contains information about the Amazon Macie Classic member account.
     /// </summary>
     public partial class MemberAccount
     {
@@ -38,7 +38,8 @@ namespace Amazon.Macie.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The AWS account ID of the Amazon Macie Classic member account.
+        /// (Discontinued) The Amazon Web Services account ID of the Amazon Macie Classic member
+        /// account.
         /// </para>
         /// </summary>
         public string AccountId

@@ -162,6 +162,17 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetSpellCorrectionConfiguration())
+                {
+                    context.Writer.WritePropertyName("SpellCorrectionConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = SpellCorrectionConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.SpellCorrectionConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetUserContext())
                 {
                     context.Writer.WritePropertyName("UserContext");

@@ -45,6 +45,24 @@ namespace Amazon.EC2.Model
         /// <para>
         /// One or more filters.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>local-gateway-id</code> - The ID of a local gateway.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>outpost-arn</code> - The Amazon Resource Name (ARN) of the Outpost.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>owner-id</code> - The ID of the Amazon Web Services account that owns the local
+        /// gateway.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>state</code> - The state of the association.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public List<Filter> Filters
         {
@@ -61,35 +79,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property LocalGatewayIds. 
         /// <para>
-        /// One or more filters.
+        /// The IDs of the local gateways.
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>local-gateway-id</code> - The ID of a local gateway.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>local-gateway-route-table-id</code> - The ID of the local gateway route table.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>local-gateway-route-table-virtual-interface-group-association-id</code> - The
-        /// ID of the association.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>local-gateway-route-table-virtual-interface-group-id</code> - The ID of the
-        /// virtual interface group.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>outpost-arn</code> - The Amazon Resource Name (ARN) of the Outpost.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>state</code> - The state of the association.
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public List<string> LocalGatewayIds
         {

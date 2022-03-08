@@ -45,11 +45,6 @@ namespace Amazon.RDS.Model
     /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
     /// User Guide.</i> 
     /// </para>
-    ///  <note> 
-    /// <para>
-    /// The Multi-AZ DB clusters feature is in preview and is subject to change.
-    /// </para>
-    ///  </note>
     /// </summary>
     public partial class ModifyDBClusterRequest : AmazonRDSRequest
     {
@@ -279,11 +274,56 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property CloudwatchLogsExportConfiguration. 
         /// <para>
         /// The configuration setting for the log types to be enabled for export to CloudWatch
-        /// Logs for a specific DB cluster.
+        /// Logs for a specific DB cluster. The values in the list depend on the DB engine being
+        /// used.
         /// </para>
         ///  
         /// <para>
-        /// Valid for: Aurora DB clusters only
+        ///  <b>RDS for MySQL</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Possible values are <code>error</code>, <code>general</code>, and <code>slowquery</code>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>RDS for PostgreSQL</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Possible values are <code>postgresql</code> and <code>upgrade</code>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Aurora MySQL</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Possible values are <code>audit</code>, <code>error</code>, <code>general</code>,
+        /// and <code>slowquery</code>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Aurora PostgreSQL</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Possible value is <code>postgresql</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about exporting CloudWatch Logs for Amazon RDS, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+        /// Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Relational Database Service
+        /// User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about exporting CloudWatch Logs for Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+        /// Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid for: Aurora DB clusters and Multi-AZ DB clusters
         /// </para>
         /// </summary>
         public CloudwatchLogsExportConfiguration CloudwatchLogsExportConfiguration
@@ -306,7 +346,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid for: Aurora DB clusters only
+        /// Valid for: Aurora DB clusters and Multi-AZ DB clusters
         /// </para>
         /// </summary>
         public bool CopyTagsToSnapshot
@@ -408,8 +448,8 @@ namespace Amazon.RDS.Model
         ///  <note> 
         /// <para>
         /// When you apply a parameter group using the <code>DBInstanceParameterGroupName</code>
-        /// parameter, the DB cluster isn't rebooted automatically. Also, parameter changes aren't
-        /// applied during the next maintenance window but instead are applied immediately.
+        /// parameter, the DB cluster isn't rebooted automatically. Also, parameter changes are
+        /// applied immediately rather than during the next maintenance window.
         /// </para>
         ///  </note> 
         /// <para>
@@ -425,8 +465,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The <code>DBInstanceParameterGroupName</code> parameter is only valid in combination
-        /// with the <code>AllowMajorVersionUpgrade</code> parameter.
+        /// The <code>DBInstanceParameterGroupName</code> parameter is valid in combination with
+        /// the <code>AllowMajorVersionUpgrade</code> parameter for a major version upgrade only.
         /// </para>
         ///  </li> </ul> 
         /// <para>

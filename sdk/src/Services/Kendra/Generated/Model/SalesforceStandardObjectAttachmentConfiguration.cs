@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kendra.Model
 {
     /// <summary>
-    /// Provides configuration information for processing attachments to Salesforce standard
+    /// Provides the configuration information for processing attachments to Salesforce standard
     /// objects.
     /// </summary>
     public partial class SalesforceStandardObjectAttachmentConfiguration

@@ -77,6 +77,7 @@ namespace Amazon.Kendra.Model
         private string _queryText;
         private List<string> _requestedDocumentAttributes = new List<string>();
         private SortingConfiguration _sortingConfiguration;
+        private SpellCorrectionConfiguration _spellCorrectionConfiguration;
         private UserContext _userContext;
         private string _visitorId;
 
@@ -304,6 +305,24 @@ namespace Amazon.Kendra.Model
         internal bool IsSetSortingConfiguration()
         {
             return this._sortingConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SpellCorrectionConfiguration. 
+        /// <para>
+        /// Enables suggested spell corrections for queries.
+        /// </para>
+        /// </summary>
+        public SpellCorrectionConfiguration SpellCorrectionConfiguration
+        {
+            get { return this._spellCorrectionConfiguration; }
+            set { this._spellCorrectionConfiguration = value; }
+        }
+
+        // Check to see if SpellCorrectionConfiguration property is set
+        internal bool IsSetSpellCorrectionConfiguration()
+        {
+            return this._spellCorrectionConfiguration != null;
         }
 
         /// <summary>

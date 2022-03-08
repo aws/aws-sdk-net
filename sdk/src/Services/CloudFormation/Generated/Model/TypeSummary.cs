@@ -51,7 +51,7 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property DefaultVersionId. 
         /// <para>
         /// The ID of the default version of the extension. The default version is used when the
-        /// extension version is not specified.
+        /// extension version isn't specified.
         /// </para>
         ///  
         /// <para>
@@ -62,7 +62,7 @@ namespace Amazon.CloudFormation.Model
         ///  
         /// <para>
         /// To set the default version of an extension, use <code> <a>SetTypeDefaultVersion</a>
-        /// </code>. 
+        /// </code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -100,7 +100,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property IsActivated. 
         /// <para>
-        /// Whether or not the extension is activated for this account and region. 
+        /// Whether or not the extension is activated for this account and region.
         /// </para>
         ///  
         /// <para>
@@ -162,7 +162,7 @@ namespace Amazon.CloudFormation.Model
         ///  
         /// <para>
         /// How you specified <code>AutoUpdate</code> when enabling the extension affects whether
-        /// CloudFormation automatically updates the extention in this account and region when
+        /// CloudFormation automatically updates the extension in this account and region when
         /// a new version is released. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Setting
         /// CloudFormation to automatically use new versions of extensions</a> in the <i>CloudFormation
         /// User Guide</i>.
@@ -214,12 +214,12 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// For public extensions that have been activated for this account and region, the version
         /// of the public extension to be used for CloudFormation operations in this account and
-        /// region.
+        /// Region.
         /// </para>
         ///  
         /// <para>
         /// How you specified <code>AutoUpdate</code> when enabling the extension affects whether
-        /// CloudFormation automatically updates the extention in this account and region when
+        /// CloudFormation automatically updates the extension in this account and region when
         /// a new version is released. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Setting
         /// CloudFormation to automatically use new versions of extensions</a> in the <i>CloudFormation
         /// User Guide</i>.
@@ -242,7 +242,7 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property PublisherId. 
         /// <para>
         /// The ID of the extension publisher, if the extension is published by a third party.
-        /// Extensions published by Amazon do not return a publisher ID.
+        /// Extensions published by Amazon don't return a publisher ID.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=40)]

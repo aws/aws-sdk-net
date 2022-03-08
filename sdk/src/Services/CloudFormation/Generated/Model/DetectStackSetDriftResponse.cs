@@ -38,12 +38,12 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property OperationId. 
         /// <para>
-        /// The ID of the drift detection stack set operation. 
+        /// The ID of the drift detection stack set operation.
         /// </para>
         ///  
         /// <para>
-        /// you can use this operation id with <code> <a>DescribeStackSetOperation</a> </code>
-        /// to monitor the progress of the drift detection operation. 
+        /// You can use this operation ID with <code> <a>DescribeStackSetOperation</a> </code>
+        /// to monitor the progress of the drift detection operation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

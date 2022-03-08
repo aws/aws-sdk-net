@@ -67,10 +67,10 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Configuration. 
         /// <para>
-        /// Provides the configuration information for your Amazon Kendra experience. This includes
-        /// <code>ContentSourceConfiguration</code>, which specifies the data source IDs and/or
-        /// FAQ IDs, and <code>UserIdentityConfiguration</code>, which specifies the user or group
-        /// information to grant access to your Amazon Kendra experience.
+        /// Configuration information for your Amazon Kendra experience. This includes <code>ContentSourceConfiguration</code>,
+        /// which specifies the data source IDs and/or FAQ IDs, and <code>UserIdentityConfiguration</code>,
+        /// which specifies the user or group information to grant access to your Amazon Kendra
+        /// experience.
         /// </para>
         /// </summary>
         public ExperienceConfiguration Configuration

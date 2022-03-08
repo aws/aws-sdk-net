@@ -50,7 +50,7 @@ namespace Amazon.FinSpaceData.Model
         /// <summary>
         /// Gets and sets the property AsOfTimestamp. 
         /// <para>
-        /// Time range to use for the Dataview. The value is determined as Epoch time in milliseconds.
+        /// Time range to use for the Dataview. The value is determined as epoch time in milliseconds.
         /// For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as
         /// 1635768000000.
         /// </para>
@@ -89,7 +89,7 @@ namespace Amazon.FinSpaceData.Model
         /// Gets and sets the property CreateTime. 
         /// <para>
         /// The timestamp at which the Dataview was created in FinSpace. The value is determined
-        /// as Epoch time in milliseconds. For example, the value for Monday, November 1, 2021
+        /// as epoch time in milliseconds. For example, the value for Monday, November 1, 2021
         /// 12:00:00 PM UTC is specified as 1635768000000.
         /// </para>
         /// </summary>
@@ -200,7 +200,7 @@ namespace Amazon.FinSpaceData.Model
         /// <summary>
         /// Gets and sets the property LastModifiedTime. 
         /// <para>
-        /// The last time that a Dataview was modified. The value is determined as Epoch time
+        /// The last time that a Dataview was modified. The value is determined as epoch time
         /// in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC
         /// is specified as 1635768000000.
         /// </para>
@@ -260,35 +260,35 @@ namespace Amazon.FinSpaceData.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>RUNNING</code> - Dataview creation is running.
+        ///  <code>RUNNING</code> – Dataview creation is running.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>STARTING</code> - Dataview creation is starting.
+        ///  <code>STARTING</code> – Dataview creation is starting.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FAILED</code> - Dataview creation has failed.
+        ///  <code>FAILED</code> – Dataview creation has failed.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CANCELLED</code> - Dataview creation has been cancelled.
+        ///  <code>CANCELLED</code> – Dataview creation has been cancelled.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>TIMEOUT</code> - Dataview creation has timed out.
+        ///  <code>TIMEOUT</code> – Dataview creation has timed out.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SUCCESS</code> - Dataview creation has succeeded.
+        ///  <code>SUCCESS</code> – Dataview creation has succeeded.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PENDING</code> - Dataview creation is pending.
+        ///  <code>PENDING</code> – Dataview creation is pending.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FAILED_CLEANUP_FAILED</code> - Dataview creation failed and resource cleanup
+        ///  <code>FAILED_CLEANUP_FAILED</code> – Dataview creation failed and resource cleanup
         /// failed.
         /// </para>
         ///  </li> </ul>

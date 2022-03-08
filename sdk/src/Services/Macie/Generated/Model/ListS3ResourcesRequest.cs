@@ -30,11 +30,11 @@ namespace Amazon.Macie.Model
 {
     /// <summary>
     /// Container for the parameters to the ListS3Resources operation.
-    /// Lists all the S3 resources associated with Amazon Macie Classic. If memberAccountId
-    /// isn't specified, the action lists the S3 resources associated with Macie Classic for
-    /// the current Macie Classic administrator account. If memberAccountId is specified,
-    /// the action lists the S3 resources associated with Macie Classic for the specified
-    /// member account.
+    /// (Discontinued) Lists all the S3 resources associated with Amazon Macie Classic. If
+    /// <code>memberAccountId</code> isn't specified, the action lists the S3 resources associated
+    /// with Macie Classic for the current Macie Classic administrator account. If <code>memberAccountId</code>
+    /// is specified, the action lists the S3 resources associated with Macie Classic for
+    /// the specified member account.
     /// </summary>
     public partial class ListS3ResourcesRequest : AmazonMacieRequest
     {
@@ -45,8 +45,8 @@ namespace Amazon.Macie.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// Use this parameter to indicate the maximum number of items that you want in the response.
-        /// The default value is 250. 
+        /// (Discontinued) Use this parameter to indicate the maximum number of items that you
+        /// want in the response. The default value is 250. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=250)]
@@ -65,8 +65,8 @@ namespace Amazon.Macie.Model
         /// <summary>
         /// Gets and sets the property MemberAccountId. 
         /// <para>
-        /// The Amazon Macie Classic member account ID whose associated S3 resources you want
-        /// to list. 
+        /// (Discontinued) The Amazon Macie Classic member account ID whose associated S3 resources
+        /// you want to list. 
         /// </para>
         /// </summary>
         public string MemberAccountId
@@ -84,10 +84,10 @@ namespace Amazon.Macie.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Use this parameter when paginating results. Set its value to null on your first call
-        /// to the ListS3Resources action. Subsequent calls to the action fill nextToken in the
-        /// request with the value of nextToken from the previous response to continue listing
-        /// data. 
+        /// (Discontinued) Use this parameter when paginating results. Set its value to null on
+        /// your first call to the <code>ListS3Resources</code> action. Subsequent calls to the
+        /// action fill <code>nextToken</code> in the request with the value of <code>nextToken</code>
+        /// from the previous response to continue listing data. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=500)]

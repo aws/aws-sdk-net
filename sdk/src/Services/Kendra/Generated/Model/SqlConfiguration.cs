@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kendra.Model
 {
     /// <summary>
-    /// Provides information that configures Amazon Kendra to use a SQL database.
+    /// Provides the configuration information to use a SQL database.
     /// </summary>
     public partial class SqlConfiguration
     {

@@ -50,6 +50,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             request.AddSubResource("replication");
 
+            if (putBucketreplicationRequest.IsSetChecksumAlgorithm())
+                request.Headers.Add(S3Constants.AmzHeaderSdkChecksumAlgorithm, S3Transforms.ToStringValue(putBucketreplicationRequest.ChecksumAlgorithm));
+
             if (putBucketreplicationRequest.IsSetToken())
                 request.Headers.Add("x-amz-bucket-object-lock-token", putBucketreplicationRequest.Token);
 
@@ -246,8 +249,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 request.Content = Encoding.UTF8.GetBytes(content);
                 request.Headers[HeaderKeys.ContentTypeHeader] = "application/xml";
 
-                var checksum = AWSSDKUtils.GenerateChecksumForContent(content, true);
-                request.Headers[HeaderKeys.ContentMD5Header] = checksum;
+                ChecksumUtils.SetRequestChecksum(request, putBucketreplicationRequest.ChecksumAlgorithm);
             }
             catch (EncoderFallbackException e)
             {

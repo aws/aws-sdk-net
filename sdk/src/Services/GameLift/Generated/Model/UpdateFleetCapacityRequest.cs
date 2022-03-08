@@ -44,10 +44,11 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Desired capacity: Manually set the number of EC2 instances to be maintained in a fleet
-    /// location. Before changing a fleet's desired capacity, you may want to call <a>DescribeEC2InstanceLimits</a>
-    /// to get the maximum capacity of the fleet's EC2 instance type. Alternatively, consider
-    /// using automatic scaling to adjust capacity based on player demand.
+    /// Desired capacity: Manually set the number of Amazon EC2 instances to be maintained
+    /// in a fleet location. Before changing a fleet's desired capacity, you may want to call
+    /// <a>DescribeEC2InstanceLimits</a> to get the maximum capacity of the fleet's Amazon
+    /// EC2 instance type. Alternatively, consider using automatic scaling to adjust capacity
+    /// based on player demand.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -108,7 +109,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property DesiredInstances. 
         /// <para>
-        /// The number of EC2 instances you want to maintain in the specified fleet location.
+        /// The number of Amazon EC2 instances you want to maintain in the specified fleet location.
         /// This value must fall between the minimum and maximum size limits.
         /// </para>
         /// </summary>
@@ -149,7 +150,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property Location. 
         /// <para>
         /// The name of a remote location to update fleet capacity settings for, in the form of
-        /// an AWS Region code such as <code>us-west-2</code>.
+        /// an Amazon Web Services Region code such as <code>us-west-2</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

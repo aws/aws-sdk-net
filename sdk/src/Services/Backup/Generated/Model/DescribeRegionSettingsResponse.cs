@@ -39,8 +39,24 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property ResourceTypeManagementPreference. 
         /// <para>
-        /// Returns whether a DynamoDB recovery point was taken using <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html">
-        /// Backup's advanced DynamoDB backup features</a>. 
+        /// Returns whether Backup fully manages the backups for a resource type.
+        /// </para>
+        ///  
+        /// <para>
+        /// For the benefits of full Backup management, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#full-management">
+        /// Full Backup management</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For a list of resource types and whether each supports full Backup management, see
+        /// the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource">
+        /// Feature availability by resource</a> table.
+        /// </para>
+        ///  
+        /// <para>
+        /// If <code>"DynamoDB":false</code>, you can enable full Backup management for DynamoDB
+        /// backup by enabling <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html#advanced-ddb-backup-enable-cli">
+        /// Backup's advanced DynamoDB backup features</a>.
         /// </para>
         /// </summary>
         public Dictionary<string, bool> ResourceTypeManagementPreference

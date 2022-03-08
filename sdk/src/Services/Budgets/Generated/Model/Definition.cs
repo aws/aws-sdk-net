@@ -40,7 +40,7 @@ namespace Amazon.Budgets.Model
         /// <summary>
         /// Gets and sets the property IamActionDefinition. 
         /// <para>
-        ///  The AWS Identity and Access Management (IAM) action definition details. 
+        /// The Identity and Access Management (IAM) action definition details. 
         /// </para>
         /// </summary>
         public IamActionDefinition IamActionDefinition
@@ -58,7 +58,7 @@ namespace Amazon.Budgets.Model
         /// <summary>
         /// Gets and sets the property ScpActionDefinition. 
         /// <para>
-        ///  The service control policies (SCPs) action definition details. 
+        /// The service control policies (SCPs) action definition details. 
         /// </para>
         /// </summary>
         public ScpActionDefinition ScpActionDefinition
@@ -76,7 +76,7 @@ namespace Amazon.Budgets.Model
         /// <summary>
         /// Gets and sets the property SsmActionDefinition. 
         /// <para>
-        ///  The AWS Systems Manager (SSM) action definition details. 
+        /// The Amazon Web Services Systems Manager (SSM) action definition details. 
         /// </para>
         /// </summary>
         public SsmActionDefinition SsmActionDefinition

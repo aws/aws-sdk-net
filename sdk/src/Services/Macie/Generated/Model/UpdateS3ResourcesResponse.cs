@@ -38,8 +38,8 @@ namespace Amazon.Macie.Model
         /// <summary>
         /// Gets and sets the property FailedS3Resources. 
         /// <para>
-        /// The S3 resources whose classification types can't be updated. An error code and an
-        /// error message are provided for each failed item. 
+        /// (Discontinued) The S3 resources whose classification types can't be updated. An error
+        /// code and an error message are provided for each failed item.
         /// </para>
         /// </summary>
         public List<FailedS3Resource> FailedS3Resources

@@ -123,7 +123,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Severity. 
         /// <para>
-        /// The severity of the patchsuch as <code>Critical</code>, <code>Important</code>, and
+        /// The severity of the patch such as <code>Critical</code>, <code>Important</code>, and
         /// <code>Moderate</code>.
         /// </para>
         /// </summary>

@@ -104,6 +104,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 response.RequestCharged = RequestCharged.FindValue(responseData.GetHeaderValue(S3Constants.AmzHeaderRequestCharged));
             if (responseData.IsHeaderPresent(S3Constants.AmzHeaderBucketKeyEnabled))
                 response.BucketKeyEnabled = S3Transforms.ToBool(responseData.GetHeaderValue(S3Constants.AmzHeaderBucketKeyEnabled));
+            if (responseData.IsHeaderPresent(S3Constants.AmzHeaderChecksumAlgorithm))
+                response.ChecksumAlgorithm = context.ResponseData.GetHeaderValue("x-amz-checksum-algorithm");
             return;
         }
 

@@ -40,6 +40,7 @@ namespace Amazon.CustomerProfiles.Model
         private Dictionary<string, string> _objectTypeNames = new Dictionary<string, string>();
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private string _uri;
+        private string _workflowId;
 
         /// <summary>
         /// Gets and sets the property CreatedAt. 
@@ -175,6 +176,25 @@ namespace Amazon.CustomerProfiles.Model
         internal bool IsSetUri()
         {
             return this._uri != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorkflowId. 
+        /// <para>
+        /// Unique identifier for the workflow.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string WorkflowId
+        {
+            get { return this._workflowId; }
+            set { this._workflowId = value; }
+        }
+
+        // Check to see if WorkflowId property is set
+        internal bool IsSetWorkflowId()
+        {
+            return this._workflowId != null;
         }
 
     }

@@ -46,7 +46,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property AuthenticationConfiguration. 
         /// <para>
-        /// Provides configuration information required to connect to websites using authentication.
+        /// Configuration information required to connect to websites using authentication.
         /// </para>
         ///  
         /// <para>
@@ -188,8 +188,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property ProxyConfiguration. 
         /// <para>
-        /// Provides configuration information required to connect to your internal websites via
-        /// a web proxy.
+        /// Configuration information required to connect to your internal websites via a web
+        /// proxy.
         /// </para>
         ///  
         /// <para>

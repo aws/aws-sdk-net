@@ -80,7 +80,7 @@ namespace Amazon.CloudFormation.Model
         ///  
         /// <para>
         /// Use the following format, and adhere to semantic versioning when assigning a version
-        /// number to your extension: 
+        /// number to your extension:
         /// </para>
         ///  
         /// <para>
@@ -92,7 +92,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// If you do not specify a version number, CloudFormation increments the version number
+        /// If you don't specify a version number, CloudFormation increments the version number
         /// by one minor version release.
         /// </para>
         ///  

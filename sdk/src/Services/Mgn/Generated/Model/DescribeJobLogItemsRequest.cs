@@ -30,7 +30,7 @@ namespace Amazon.Mgn.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeJobLogItems operation.
-    /// Retrieves detailed Job log with paging.
+    /// Retrieves detailed job log items with paging.
     /// </summary>
     public partial class DescribeJobLogItemsRequest : AmazonMgnRequest
     {
