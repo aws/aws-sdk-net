@@ -1,3 +1,11 @@
+### 3.7.226.0 (2022-03-09 21:29 UTC)
+* Comprehend (3.7.6.0)
+	* Amazon Comprehend now supports extracting the sentiment associated with entities such as brands, products and services from text documents.
+* Core 3.7.8.8
+	* Updating endpoints.json file.
+
+	* All services packages updated to require new Core
+
 ### 3.7.225.0 (2022-03-08 19:18 UTC)
 * EKS (3.7.13.0)
 	* Introducing a new enum for NodeGroup error code: Ec2SubnetMissingIpv6Assignment
