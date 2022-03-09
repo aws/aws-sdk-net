@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Comprehend.Model
 {
     /// <summary>
-    /// Provides configuration parameters for the output of topic detection jobs.
+    /// Provides configuration parameters for the output of inference jobs.
     /// </summary>
     public partial class OutputDataConfig
     {
@@ -90,6 +90,12 @@ namespace Amazon.Comprehend.Model
         /// directory specific to the job. The <code>S3Uri</code> field contains the location
         /// of the output file, called <code>output.tar.gz</code>. It is a compressed archive
         /// that contains the ouput of the operation.
+        /// </para>
+        ///  
+        /// <para>
+        ///  For a PII entity detection job, the output file is plain text, not a compressed archive.
+        /// The output file name is the same as the input file, with <code>.out</code> appended
+        /// at the end. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=1024)]

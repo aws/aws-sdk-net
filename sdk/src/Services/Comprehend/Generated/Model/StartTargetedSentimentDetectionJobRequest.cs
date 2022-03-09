@@ -29,11 +29,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Comprehend.Model
 {
     /// <summary>
-    /// Container for the parameters to the StartSentimentDetectionJob operation.
-    /// Starts an asynchronous sentiment detection job for a collection of documents. Use
-    /// the operation to track the status of a job.
+    /// Container for the parameters to the StartTargetedSentimentDetectionJob operation.
+    /// Starts an asynchronous targeted sentiment detection job for a collection of documents.
+    /// Use the operation to track the status of a job.
     /// </summary>
-    public partial class StartSentimentDetectionJobRequest : AmazonComprehendRequest
+    public partial class StartTargetedSentimentDetectionJobRequest : AmazonComprehendRequest
     {
         private string _clientRequestToken;
         private string _dataAccessRoleArn;
@@ -70,7 +70,8 @@ namespace Amazon.Comprehend.Model
         /// <para>
         /// The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role
         /// that grants Amazon Comprehend read access to your input data. For more information,
-        /// see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions</a>.
+        /// see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">Role-based
+        /// permissions</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]
@@ -87,10 +88,7 @@ namespace Amazon.Comprehend.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InputDataConfig. 
-        /// <para>
-        /// Specifies the format and location of the input data for the job.
-        /// </para>
+        /// Gets and sets the property InputDataConfig.
         /// </summary>
         [AWSProperty(Required=true)]
         public InputDataConfig InputDataConfig
@@ -166,9 +164,10 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Tags to be associated with the sentiment detection job. A tag is a key-value pair
-        /// that adds metadata to a resource used by Amazon Comprehend. For example, a tag with
-        /// "Sales" as the key might be added to a resource to indicate its use by the sales department.
+        /// Tags to be associated with the targeted sentiment detection job. A tag is a key-value
+        /// pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag
+        /// with "Sales" as the key might be added to a resource to indicate its use by the sales
+        /// department.
         /// </para>
         /// </summary>
         public List<Tag> Tags
@@ -186,9 +185,9 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property VolumeKmsKeyId. 
         /// <para>
-        /// ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
-        /// data on the storage volume attached to the ML compute instance(s) that process the
-        /// analysis job. The VolumeKmsKeyId can be either of the following formats:
+        /// ID for the KMS key that Amazon Comprehend uses to encrypt data on the storage volume
+        /// attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId
+        /// can be either of the following formats:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -215,13 +214,7 @@ namespace Amazon.Comprehend.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VpcConfig. 
-        /// <para>
-        /// Configuration parameters for an optional private Virtual Private Cloud (VPC) containing
-        /// the resources you are using for your sentiment detection job. For more information,
-        /// see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
-        /// VPC</a>. 
-        /// </para>
+        /// Gets and sets the property VpcConfig.
         /// </summary>
         public VpcConfig VpcConfig
         {

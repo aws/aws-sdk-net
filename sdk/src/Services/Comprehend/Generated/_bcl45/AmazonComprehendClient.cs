@@ -2170,6 +2170,73 @@ namespace Amazon.Comprehend
 
         #endregion
         
+        #region  DescribeTargetedSentimentDetectionJob
+
+
+        /// <summary>
+        /// Gets the properties associated with a targeted sentiment detection job. Use this operation
+        /// to get the status of the job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTargetedSentimentDetectionJob service method.</param>
+        /// 
+        /// <returns>The response from the DescribeTargetedSentimentDetectionJob service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.JobNotFoundException">
+        /// The specified job was not found. Check the job ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeTargetedSentimentDetectionJob">REST API Reference for DescribeTargetedSentimentDetectionJob Operation</seealso>
+        public virtual DescribeTargetedSentimentDetectionJobResponse DescribeTargetedSentimentDetectionJob(DescribeTargetedSentimentDetectionJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeTargetedSentimentDetectionJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTargetedSentimentDetectionJobResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeTargetedSentimentDetectionJobResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Gets the properties associated with a targeted sentiment detection job. Use this operation
+        /// to get the status of the job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTargetedSentimentDetectionJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeTargetedSentimentDetectionJob service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.JobNotFoundException">
+        /// The specified job was not found. Check the job ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeTargetedSentimentDetectionJob">REST API Reference for DescribeTargetedSentimentDetectionJob Operation</seealso>
+        public virtual Task<DescribeTargetedSentimentDetectionJobResponse> DescribeTargetedSentimentDetectionJobAsync(DescribeTargetedSentimentDetectionJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeTargetedSentimentDetectionJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTargetedSentimentDetectionJobResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeTargetedSentimentDetectionJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeTopicsDetectionJob
 
 
@@ -3627,6 +3694,71 @@ namespace Amazon.Comprehend
 
         #endregion
         
+        #region  ListTargetedSentimentDetectionJobs
+
+
+        /// <summary>
+        /// Gets a list of targeted sentiment detection jobs that you have submitted.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTargetedSentimentDetectionJobs service method.</param>
+        /// 
+        /// <returns>The response from the ListTargetedSentimentDetectionJobs service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidFilterException">
+        /// The filter specified for the operation is invalid. Specify a different filter.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListTargetedSentimentDetectionJobs">REST API Reference for ListTargetedSentimentDetectionJobs Operation</seealso>
+        public virtual ListTargetedSentimentDetectionJobsResponse ListTargetedSentimentDetectionJobs(ListTargetedSentimentDetectionJobsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTargetedSentimentDetectionJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTargetedSentimentDetectionJobsResponseUnmarshaller.Instance;
+
+            return Invoke<ListTargetedSentimentDetectionJobsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Gets a list of targeted sentiment detection jobs that you have submitted.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTargetedSentimentDetectionJobs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTargetedSentimentDetectionJobs service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidFilterException">
+        /// The filter specified for the operation is invalid. Specify a different filter.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListTargetedSentimentDetectionJobs">REST API Reference for ListTargetedSentimentDetectionJobs Operation</seealso>
+        public virtual Task<ListTargetedSentimentDetectionJobsResponse> ListTargetedSentimentDetectionJobsAsync(ListTargetedSentimentDetectionJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTargetedSentimentDetectionJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTargetedSentimentDetectionJobsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListTargetedSentimentDetectionJobsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListTopicsDetectionJobs
 
 
@@ -4269,7 +4401,7 @@ namespace Amazon.Comprehend
 
 
         /// <summary>
-        /// Starts an asynchronous sentiment detection job for a collection of documents. use
+        /// Starts an asynchronous sentiment detection job for a collection of documents. Use
         /// the operation to track the status of a job.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartSentimentDetectionJob service method.</param>
@@ -4305,7 +4437,7 @@ namespace Amazon.Comprehend
 
 
         /// <summary>
-        /// Starts an asynchronous sentiment detection job for a collection of documents. use
+        /// Starts an asynchronous sentiment detection job for a collection of documents. Use
         /// the operation to track the status of a job.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartSentimentDetectionJob service method.</param>
@@ -4340,6 +4472,85 @@ namespace Amazon.Comprehend
             options.ResponseUnmarshaller = StartSentimentDetectionJobResponseUnmarshaller.Instance;
             
             return InvokeAsync<StartSentimentDetectionJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartTargetedSentimentDetectionJob
+
+
+        /// <summary>
+        /// Starts an asynchronous targeted sentiment detection job for a collection of documents.
+        /// Use the operation to track the status of a job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartTargetedSentimentDetectionJob service method.</param>
+        /// 
+        /// <returns>The response from the StartTargetedSentimentDetectionJob service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.KmsKeyValidationException">
+        /// The KMS customer managed key (CMK) entered cannot be validated. Verify the key and
+        /// re-enter it.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyTagsException">
+        /// The request contains more tags than can be associated with a resource (50 tags per
+        /// resource). The maximum number of tags includes both existing tags and those included
+        /// in your current request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartTargetedSentimentDetectionJob">REST API Reference for StartTargetedSentimentDetectionJob Operation</seealso>
+        public virtual StartTargetedSentimentDetectionJobResponse StartTargetedSentimentDetectionJob(StartTargetedSentimentDetectionJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartTargetedSentimentDetectionJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartTargetedSentimentDetectionJobResponseUnmarshaller.Instance;
+
+            return Invoke<StartTargetedSentimentDetectionJobResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Starts an asynchronous targeted sentiment detection job for a collection of documents.
+        /// Use the operation to track the status of a job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartTargetedSentimentDetectionJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartTargetedSentimentDetectionJob service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.KmsKeyValidationException">
+        /// The KMS customer managed key (CMK) entered cannot be validated. Verify the key and
+        /// re-enter it.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyTagsException">
+        /// The request contains more tags than can be associated with a resource (50 tags per
+        /// resource). The maximum number of tags includes both existing tags and those included
+        /// in your current request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartTargetedSentimentDetectionJob">REST API Reference for StartTargetedSentimentDetectionJob Operation</seealso>
+        public virtual Task<StartTargetedSentimentDetectionJobResponse> StartTargetedSentimentDetectionJobAsync(StartTargetedSentimentDetectionJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartTargetedSentimentDetectionJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartTargetedSentimentDetectionJobResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartTargetedSentimentDetectionJobResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4917,6 +5128,101 @@ namespace Amazon.Comprehend
             options.ResponseUnmarshaller = StopSentimentDetectionJobResponseUnmarshaller.Instance;
             
             return InvokeAsync<StopSentimentDetectionJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StopTargetedSentimentDetectionJob
+
+
+        /// <summary>
+        /// Stops a targeted sentiment detection job in progress.
+        /// 
+        ///  
+        /// <para>
+        /// If the job state is <code>IN_PROGRESS</code> the job is marked for termination and
+        /// put into the <code>STOP_REQUESTED</code> state. If the job completes before it can
+        /// be stopped, it is put into the <code>COMPLETED</code> state; otherwise the job is
+        /// be stopped and put into the <code>STOPPED</code> state.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the job is in the <code>COMPLETED</code> or <code>FAILED</code> state when you
+        /// call the <code>StopDominantLanguageDetectionJob</code> operation, the operation returns
+        /// a 400 Internal Request Exception. 
+        /// </para>
+        ///  
+        /// <para>
+        /// When a job is stopped, any documents already processed are written to the output location.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopTargetedSentimentDetectionJob service method.</param>
+        /// 
+        /// <returns>The response from the StopTargetedSentimentDetectionJob service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.JobNotFoundException">
+        /// The specified job was not found. Check the job ID and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopTargetedSentimentDetectionJob">REST API Reference for StopTargetedSentimentDetectionJob Operation</seealso>
+        public virtual StopTargetedSentimentDetectionJobResponse StopTargetedSentimentDetectionJob(StopTargetedSentimentDetectionJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopTargetedSentimentDetectionJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopTargetedSentimentDetectionJobResponseUnmarshaller.Instance;
+
+            return Invoke<StopTargetedSentimentDetectionJobResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Stops a targeted sentiment detection job in progress.
+        /// 
+        ///  
+        /// <para>
+        /// If the job state is <code>IN_PROGRESS</code> the job is marked for termination and
+        /// put into the <code>STOP_REQUESTED</code> state. If the job completes before it can
+        /// be stopped, it is put into the <code>COMPLETED</code> state; otherwise the job is
+        /// be stopped and put into the <code>STOPPED</code> state.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the job is in the <code>COMPLETED</code> or <code>FAILED</code> state when you
+        /// call the <code>StopDominantLanguageDetectionJob</code> operation, the operation returns
+        /// a 400 Internal Request Exception. 
+        /// </para>
+        ///  
+        /// <para>
+        /// When a job is stopped, any documents already processed are written to the output location.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopTargetedSentimentDetectionJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopTargetedSentimentDetectionJob service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.JobNotFoundException">
+        /// The specified job was not found. Check the job ID and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopTargetedSentimentDetectionJob">REST API Reference for StopTargetedSentimentDetectionJob Operation</seealso>
+        public virtual Task<StopTargetedSentimentDetectionJobResponse> StopTargetedSentimentDetectionJobAsync(StopTargetedSentimentDetectionJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopTargetedSentimentDetectionJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopTargetedSentimentDetectionJobResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StopTargetedSentimentDetectionJobResponse>(request, options, cancellationToken);
         }
 
         #endregion

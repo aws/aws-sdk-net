@@ -432,6 +432,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Comprehend")]
+        public void ListTargetedSentimentDetectionJobsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListTargetedSentimentDetectionJobsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListTargetedSentimentDetectionJobsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListTargetedSentimentDetectionJobsResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListTargetedSentimentDetectionJobs(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListTargetedSentimentDetectionJobs(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Comprehend")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListTargetedSentimentDetectionJobsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListTargetedSentimentDetectionJobsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListTargetedSentimentDetectionJobsResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListTargetedSentimentDetectionJobs(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListTargetedSentimentDetectionJobs(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Comprehend")]
         public void ListTopicsDetectionJobsTest_TwoPages()
         {
             var request = InstantiateClassGenerator.Execute<ListTopicsDetectionJobsRequest>();

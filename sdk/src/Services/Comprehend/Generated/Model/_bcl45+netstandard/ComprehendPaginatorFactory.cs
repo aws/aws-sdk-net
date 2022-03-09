@@ -116,6 +116,14 @@ namespace Amazon.Comprehend.Model
         }
 
         /// <summary>
+        /// Paginator for ListTargetedSentimentDetectionJobs operation
+        ///</summary>
+        public IListTargetedSentimentDetectionJobsPaginator ListTargetedSentimentDetectionJobs(ListTargetedSentimentDetectionJobsRequest request) 
+        {
+            return new ListTargetedSentimentDetectionJobsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListTopicsDetectionJobs operation
         ///</summary>
         public IListTopicsDetectionJobsPaginator ListTopicsDetectionJobs(ListTopicsDetectionJobsRequest request) 

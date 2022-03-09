@@ -42,8 +42,9 @@ namespace Amazon.Comprehend.Model
         /// <para>
         /// A measure of how accurate the recognizer results are for the test data. It is derived
         /// from the <code>Precision</code> and <code>Recall</code> values. The <code>F1Score</code>
-        /// is the harmonic average of the two scores. The highest score is 1, and the worst score
-        /// is 0. 
+        /// is the harmonic average of the two scores. For plain text entity recognizer models,
+        /// the range is 0 to 100, where 100 is the best score. For PDF/Word entity recognizer
+        /// models, the range is 0 to 1, where 1 is the best score. 
         /// </para>
         /// </summary>
         public double F1Score
