@@ -1,3 +1,15 @@
+### 3.7.227.0 (2022-03-10 19:15 UTC)
+* LexModelsV2 (3.7.12.0)
+	* This release makes slotTypeId an optional parameter in CreateSlot and UpdateSlot APIs in Amazon Lex V2 for model building. Customers can create and update slots without specifying a slot type id.
+* TranscribeService (3.7.11.0)
+	* Documentation fix for API `StartMedicalTranscriptionJobRequest`, now showing min sample rate as 16khz
+* Transfer (3.7.10.0)
+	* Adding more descriptive error types for managed workflows
+* Core 3.7.8.9
+	* Updating endpoints.json file.
+
+	* All services packages updated to require new Core
+
 ### 3.7.226.0 (2022-03-09 21:29 UTC)
 * Comprehend (3.7.6.0)
 	* Amazon Comprehend now supports extracting the sentiment associated with entities such as brands, products and services from text documents.
