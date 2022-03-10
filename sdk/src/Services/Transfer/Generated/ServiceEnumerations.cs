@@ -185,9 +185,37 @@ namespace Amazon.Transfer
     {
 
         /// <summary>
+        /// Constant ALREADY_EXISTS for ExecutionErrorType
+        /// </summary>
+        public static readonly ExecutionErrorType ALREADY_EXISTS = new ExecutionErrorType("ALREADY_EXISTS");
+        /// <summary>
+        /// Constant BAD_REQUEST for ExecutionErrorType
+        /// </summary>
+        public static readonly ExecutionErrorType BAD_REQUEST = new ExecutionErrorType("BAD_REQUEST");
+        /// <summary>
+        /// Constant CUSTOM_STEP_FAILED for ExecutionErrorType
+        /// </summary>
+        public static readonly ExecutionErrorType CUSTOM_STEP_FAILED = new ExecutionErrorType("CUSTOM_STEP_FAILED");
+        /// <summary>
+        /// Constant INTERNAL_SERVER_ERROR for ExecutionErrorType
+        /// </summary>
+        public static readonly ExecutionErrorType INTERNAL_SERVER_ERROR = new ExecutionErrorType("INTERNAL_SERVER_ERROR");
+        /// <summary>
+        /// Constant NOT_FOUND for ExecutionErrorType
+        /// </summary>
+        public static readonly ExecutionErrorType NOT_FOUND = new ExecutionErrorType("NOT_FOUND");
+        /// <summary>
         /// Constant PERMISSION_DENIED for ExecutionErrorType
         /// </summary>
         public static readonly ExecutionErrorType PERMISSION_DENIED = new ExecutionErrorType("PERMISSION_DENIED");
+        /// <summary>
+        /// Constant THROTTLED for ExecutionErrorType
+        /// </summary>
+        public static readonly ExecutionErrorType THROTTLED = new ExecutionErrorType("THROTTLED");
+        /// <summary>
+        /// Constant TIMEOUT for ExecutionErrorType
+        /// </summary>
+        public static readonly ExecutionErrorType TIMEOUT = new ExecutionErrorType("TIMEOUT");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

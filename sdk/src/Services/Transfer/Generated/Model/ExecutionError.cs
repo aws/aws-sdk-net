@@ -59,10 +59,53 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// Specifies the error type: currently, the only valid value is <code>PERMISSION_DENIED</code>,
-        /// which occurs if your policy does not contain the correct permissions to complete one
-        /// or more of the steps in the workflow.
+        /// Specifies the error type.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>ALREADY_EXISTS</code>: occurs for a copy step, if the overwrite option is not
+        /// selected and a file with the same name already exists in the target location.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>BAD_REQUEST</code>: a general bad request: for example, a step that attempts
+        /// to tag an EFS file returns <code>BAD_REQUEST</code>, as only S3 files can be tagged.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>CUSTOM_STEP_FAILED</code>: occurs when the custom step provided a callback
+        /// that indicates failure.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>INTERNAL_SERVER_ERROR</code>: a catch-all error that can occur for a variety
+        /// of reasons.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>NOT_FOUND</code>: occurs when a requested entity, for example a source file
+        /// for a copy step, does not exist.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>PERMISSION_DENIED</code>: occurs if your policy does not contain the correct
+        /// permissions to complete one or more of the steps in the workflow.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>TIMEOUT</code>: occurs when the execution times out.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        ///  You can set the <code>TimeoutSeconds</code> for a custom step, anywhere from 1 second
+        /// to 1800 seconds (30 minutes). 
+        /// </para>
+        ///  </note> </li> <li> 
+        /// <para>
+        ///  <code>THROTTLED</code>: occurs if you exceed the new execution refill rate of one
+        /// workflow per second.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public ExecutionErrorType Type
