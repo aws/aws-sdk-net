@@ -38,7 +38,12 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property MedicalTranscriptionJob. 
         /// <para>
-        /// An object that contains the results of the medical transcription job.
+        /// An object that contains detailed information about your medical transcription job.
+        /// Returned fields include: <code>CompletionTime</code>, <code>ContentIdentificationType</code>,
+        /// <code>CreationTime</code>, <code>FailureReason</code>, <code>LanguageCode</code>,
+        /// <code>Media</code>, <code>MediaFormat</code>, <code>MediaSampleRateHertz</code>, <code>MedicalTranscriptionJobName</code>,
+        /// <code>Settings</code>, <code>Specialty</code>, <code>StartTime</code>, <code>Tags</code>,
+        /// <code>Transcript</code>, <code>TranscriptionJobStatus</code>, and <code>Type</code>.
         /// </para>
         /// </summary>
         public MedicalTranscriptionJob MedicalTranscriptionJob

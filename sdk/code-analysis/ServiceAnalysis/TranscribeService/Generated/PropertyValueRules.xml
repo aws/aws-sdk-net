@@ -404,7 +404,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TranscribeService.Model.StartMedicalTranscriptionJobRequest.MediaSampleRateHertz</property>
-    <min>8000</min>
+    <min>16000</min>
     <max>48000</max>
   </property-value-rule>
   <property-value-rule>
@@ -675,7 +675,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TranscribeService.Model.MedicalTranscriptionJob.MediaSampleRateHertz</property>
-    <min>8000</min>
+    <min>16000</min>
     <max>48000</max>
   </property-value-rule>
   <property-value-rule>

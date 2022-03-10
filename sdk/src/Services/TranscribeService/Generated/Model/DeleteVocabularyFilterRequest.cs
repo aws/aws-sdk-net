@@ -30,7 +30,8 @@ namespace Amazon.TranscribeService.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteVocabularyFilter operation.
-    /// Removes a vocabulary filter.
+    /// Deletes a vocabulary filter. To use this operation, specify the name of the vocabulary
+    /// filter you want to delete using <code>VocabularyFilterName</code>.
     /// </summary>
     public partial class DeleteVocabularyFilterRequest : AmazonTranscribeServiceRequest
     {
@@ -39,7 +40,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property VocabularyFilterName. 
         /// <para>
-        /// The name of the vocabulary filter to remove.
+        /// The name of the vocabulary filter you want to delete. Vocabulary filter names are
+        /// case-sensitive.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=200)]

@@ -157,7 +157,7 @@ namespace Amazon.TranscribeService.Model
         /// field blank and let Amazon Transcribe Medical determine the sample rate.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=8000, Max=48000)]
+        [AWSProperty(Min=16000, Max=48000)]
         public int MediaSampleRateHertz
         {
             get { return this._mediaSampleRateHertz.GetValueOrDefault(); }
@@ -366,7 +366,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Add tags to an Amazon Transcribe medical transcription job.
+        /// Add tags to an Amazon Transcribe Medical transcription job.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]

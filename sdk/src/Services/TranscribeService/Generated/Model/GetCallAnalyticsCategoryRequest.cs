@@ -39,7 +39,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property CategoryName. 
         /// <para>
-        /// The name of the category you want information about. This value is case sensitive.
+        /// The name of the category you want information about. Category names are case sensitive.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=200)]

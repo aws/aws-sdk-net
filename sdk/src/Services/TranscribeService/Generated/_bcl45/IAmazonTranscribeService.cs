@@ -46,11 +46,13 @@ namespace Amazon.TranscribeService
 
 
         /// <summary>
-        /// Creates an analytics category. Amazon Transcribe applies the conditions specified
-        /// by your analytics categories to your call analytics jobs. For each analytics category,
-        /// you specify one or more rules. For example, you can specify a rule that the customer
-        /// sentiment was neutral or negative within that category. If you start a call analytics
-        /// job, Amazon Transcribe applies the category to the analytics job that you've specified.
+        /// Creates a call analytics category. Amazon Transcribe applies the conditions specified
+        /// by your call analytics categories to your call analytics jobs. For each analytics
+        /// category, you must create between 1 and 20 rules. For example, you can create a 'greeting'
+        /// category with a rule that flags calls in which your agent does not use a specified
+        /// phrase (for example: "Please note this call may be recorded.") in the first 15 seconds
+        /// of the call. When you start a call analytics job, Amazon Transcribe applies all your
+        /// existing call analytics categories to that job.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCallAnalyticsCategory service method.</param>
         /// 
@@ -77,11 +79,13 @@ namespace Amazon.TranscribeService
 
 
         /// <summary>
-        /// Creates an analytics category. Amazon Transcribe applies the conditions specified
-        /// by your analytics categories to your call analytics jobs. For each analytics category,
-        /// you specify one or more rules. For example, you can specify a rule that the customer
-        /// sentiment was neutral or negative within that category. If you start a call analytics
-        /// job, Amazon Transcribe applies the category to the analytics job that you've specified.
+        /// Creates a call analytics category. Amazon Transcribe applies the conditions specified
+        /// by your call analytics categories to your call analytics jobs. For each analytics
+        /// category, you must create between 1 and 20 rules. For example, you can create a 'greeting'
+        /// category with a rule that flags calls in which your agent does not use a specified
+        /// phrase (for example: "Please note this call may be recorded.") in the first 15 seconds
+        /// of the call. When you start a call analytics job, Amazon Transcribe applies all your
+        /// existing call analytics categories to that job.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCallAnalyticsCategory service method.</param>
         /// <param name="cancellationToken">
@@ -114,9 +118,11 @@ namespace Amazon.TranscribeService
 
 
         /// <summary>
-        /// Creates a new custom language model. Use Amazon S3 prefixes to provide the location
-        /// of your input files. The time it takes to create your model depends on the size of
-        /// your training data.
+        /// Creates a new custom language model. When creating a new language model, you must
+        /// specify if you want a Wideband (audio sample rates over 16,000 Hz) or Narrowband (audio
+        /// sample rates under 16,000 Hz) base model. You then include the S3 URI location of
+        /// your training and tuning files, the language for the model, a unique name, and any
+        /// tags you want associated with your model.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLanguageModel service method.</param>
         /// 
@@ -143,9 +149,11 @@ namespace Amazon.TranscribeService
 
 
         /// <summary>
-        /// Creates a new custom language model. Use Amazon S3 prefixes to provide the location
-        /// of your input files. The time it takes to create your model depends on the size of
-        /// your training data.
+        /// Creates a new custom language model. When creating a new language model, you must
+        /// specify if you want a Wideband (audio sample rates over 16,000 Hz) or Narrowband (audio
+        /// sample rates under 16,000 Hz) base model. You then include the S3 URI location of
+        /// your training and tuning files, the language for the model, a unique name, and any
+        /// tags you want associated with your model.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLanguageModel service method.</param>
         /// <param name="cancellationToken">
@@ -178,8 +186,21 @@ namespace Amazon.TranscribeService
 
 
         /// <summary>
-        /// Creates a new custom vocabulary that you can use to modify how Amazon Transcribe Medical
-        /// transcribes your audio file.
+        /// Creates a new custom medical vocabulary.
+        /// 
+        ///  
+        /// <para>
+        /// When creating a new medical vocabulary, you must upload a text file that contains
+        /// your new entries, phrases, and terms into an S3 bucket. Note that this differs from
+        /// , where you can include a list of terms within your request using the <code>Phrases</code>
+        /// flag, as <code>CreateMedicalVocabulary</code> does not support the <code>Phrases</code>
+        /// flag.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information on creating a custom vocabulary text file, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary-create.html">Creating
+        /// a custom vocabulary</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateMedicalVocabulary service method.</param>
         /// 
@@ -206,8 +227,21 @@ namespace Amazon.TranscribeService
 
 
         /// <summary>
-        /// Creates a new custom vocabulary that you can use to modify how Amazon Transcribe Medical
-        /// transcribes your audio file.
+        /// Creates a new custom medical vocabulary.
+        /// 
+        ///  
+        /// <para>
+        /// When creating a new medical vocabulary, you must upload a text file that contains
+        /// your new entries, phrases, and terms into an S3 bucket. Note that this differs from
+        /// , where you can include a list of terms within your request using the <code>Phrases</code>
+        /// flag, as <code>CreateMedicalVocabulary</code> does not support the <code>Phrases</code>
+        /// flag.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information on creating a custom vocabulary text file, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary-create.html">Creating
+        /// a custom vocabulary</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateMedicalVocabulary service method.</param>
         /// <param name="cancellationToken">
@@ -240,8 +274,19 @@ namespace Amazon.TranscribeService
 
 
         /// <summary>
-        /// Creates a new custom vocabulary that you can use to change the way Amazon Transcribe
-        /// handles transcription of an audio file.
+        /// Creates a new custom vocabulary.
+        /// 
+        ///  
+        /// <para>
+        /// When creating a new medical vocabulary, you can either upload a text file that contains
+        /// your new entries, phrases, and terms into an S3 bucket or include a list of terms
+        /// directly in your request using the <code>Phrases</code> flag.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information on creating a custom vocabulary, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary-create.html">Creating
+        /// a custom vocabulary</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateVocabulary service method.</param>
         /// 
@@ -268,8 +313,19 @@ namespace Amazon.TranscribeService
 
 
         /// <summary>
-        /// Creates a new custom vocabulary that you can use to change the way Amazon Transcribe
-        /// handles transcription of an audio file.
+        /// Creates a new custom vocabulary.
+        /// 
+        ///  
+        /// <para>
+        /// When creating a new medical vocabulary, you can either upload a text file that contains
+        /// your new entries, phrases, and terms into an S3 bucket or include a list of terms
+        /// directly in your request using the <code>Phrases</code> flag.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information on creating a custom vocabulary, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary-create.html">Creating
+        /// a custom vocabulary</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateVocabulary service method.</param>
         /// <param name="cancellationToken">
@@ -302,8 +358,8 @@ namespace Amazon.TranscribeService
 
 
         /// <summary>
-        /// Creates a new vocabulary filter that you can use to filter words, such as profane
-        /// words, from the output of a transcription job.
+        /// Creates a new vocabulary filter that you can use to filter words from your transcription
+        /// output. For example, you can use this operation to remove profanity from your transcript.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateVocabularyFilter service method.</param>
         /// 
@@ -330,8 +386,8 @@ namespace Amazon.TranscribeService
 
 
         /// <summary>
-        /// Creates a new vocabulary filter that you can use to filter words, such as profane
-        /// words, from the output of a transcription job.
+        /// Creates a new vocabulary filter that you can use to filter words from your transcription
+        /// output. For example, you can use this operation to remove profanity from your transcript.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateVocabularyFilter service method.</param>
         /// <param name="cancellationToken">
@@ -364,7 +420,8 @@ namespace Amazon.TranscribeService
 
 
         /// <summary>
-        /// Deletes a call analytics category using its name.
+        /// Deletes a call analytics category. To use this operation, specify the name of the
+        /// category you want to delete using <code>CategoryName</code>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteCallAnalyticsCategory service method.</param>
         /// 
@@ -391,7 +448,8 @@ namespace Amazon.TranscribeService
 
 
         /// <summary>
-        /// Deletes a call analytics category using its name.
+        /// Deletes a call analytics category. To use this operation, specify the name of the
+        /// category you want to delete using <code>CategoryName</code>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteCallAnalyticsCategory service method.</param>
         /// <param name="cancellationToken">
@@ -424,7 +482,8 @@ namespace Amazon.TranscribeService
 
 
         /// <summary>
-        /// Deletes a call analytics job using its name.
+        /// Deletes a call analytics job. To use this operation, specify the name of the job you
+        /// want to delete using <code>CallAnalyticsJobName</code>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteCallAnalyticsJob service method.</param>
         /// 
@@ -448,7 +507,8 @@ namespace Amazon.TranscribeService
 
 
         /// <summary>
-        /// Deletes a call analytics job using its name.
+        /// Deletes a call analytics job. To use this operation, specify the name of the job you
+        /// want to delete using <code>CallAnalyticsJobName</code>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteCallAnalyticsJob service method.</param>
         /// <param name="cancellationToken">
@@ -478,7 +538,8 @@ namespace Amazon.TranscribeService
 
 
         /// <summary>
-        /// Deletes a custom language model using its name.
+        /// Deletes a custom language model. To use this operation, specify the name of the language
+        /// model you want to delete using <code>ModelName</code>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteLanguageModel service method.</param>
         /// 
@@ -502,7 +563,8 @@ namespace Amazon.TranscribeService
 
 
         /// <summary>
-        /// Deletes a custom language model using its name.
+        /// Deletes a custom language model. To use this operation, specify the name of the language
+        /// model you want to delete using <code>ModelName</code>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteLanguageModel service method.</param>
         /// <param name="cancellationToken">
@@ -532,8 +594,8 @@ namespace Amazon.TranscribeService
 
 
         /// <summary>
-        /// Deletes a transcription job generated by Amazon Transcribe Medical and any related
-        /// information.
+        /// Deletes a medical transcription job, along with any related information. To use this
+        /// operation, specify the name of the job you want to delete using <code>MedicalTranscriptionJobName</code>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteMedicalTranscriptionJob service method.</param>
         /// 
@@ -557,8 +619,8 @@ namespace Amazon.TranscribeService
 
 
         /// <summary>
-        /// Deletes a transcription job generated by Amazon Transcribe Medical and any related
-        /// information.
+        /// Deletes a medical transcription job, along with any related information. To use this
+        /// operation, specify the name of the job you want to delete using <code>MedicalTranscriptionJobName</code>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteMedicalTranscriptionJob service method.</param>
         /// <param name="cancellationToken">
@@ -588,7 +650,8 @@ namespace Amazon.TranscribeService
 
 
         /// <summary>
-        /// Deletes a vocabulary from Amazon Transcribe Medical.
+        /// Deletes a custom medical vocabulary. To use this operation, specify the name of the
+        /// vocabulary you want to delete using <code>VocabularyName</code>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteMedicalVocabulary service method.</param>
         /// 
@@ -615,7 +678,8 @@ namespace Amazon.TranscribeService
 
 
         /// <summary>
-        /// Deletes a vocabulary from Amazon Transcribe Medical.
+        /// Deletes a custom medical vocabulary. To use this operation, specify the name of the
+        /// vocabulary you want to delete using <code>VocabularyName</code>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteMedicalVocabulary service method.</param>
         /// <param name="cancellationToken">
@@ -648,8 +712,8 @@ namespace Amazon.TranscribeService
 
 
         /// <summary>
-        /// Deletes a previously submitted transcription job along with any other generated results
-        /// such as the transcription, models, and so on.
+        /// Deletes a transcription job, along with any related information. To use this operation,
+        /// specify the name of the job you want to delete using <code>TranscriptionJobName</code>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteTranscriptionJob service method.</param>
         /// 
@@ -673,8 +737,8 @@ namespace Amazon.TranscribeService
 
 
         /// <summary>
-        /// Deletes a previously submitted transcription job along with any other generated results
-        /// such as the transcription, models, and so on.
+        /// Deletes a transcription job, along with any related information. To use this operation,
+        /// specify the name of the job you want to delete using <code>TranscriptionJobName</code>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteTranscriptionJob service method.</param>
         /// <param name="cancellationToken">
@@ -704,7 +768,8 @@ namespace Amazon.TranscribeService
 
 
         /// <summary>
-        /// Deletes a vocabulary from Amazon Transcribe.
+        /// Deletes a custom vocabulary. To use this operation, specify the name of the vocabulary
+        /// you want to delete using <code>VocabularyName</code>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteVocabulary service method.</param>
         /// 
@@ -731,7 +796,8 @@ namespace Amazon.TranscribeService
 
 
         /// <summary>
-        /// Deletes a vocabulary from Amazon Transcribe.
+        /// Deletes a custom vocabulary. To use this operation, specify the name of the vocabulary
+        /// you want to delete using <code>VocabularyName</code>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteVocabulary service method.</param>
         /// <param name="cancellationToken">
@@ -764,7 +830,8 @@ namespace Amazon.TranscribeService
 
 
         /// <summary>
-        /// Removes a vocabulary filter.
+        /// Deletes a vocabulary filter. To use this operation, specify the name of the vocabulary
+        /// filter you want to delete using <code>VocabularyFilterName</code>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteVocabularyFilter service method.</param>
         /// 
@@ -791,7 +858,8 @@ namespace Amazon.TranscribeService
 
 
         /// <summary>
-        /// Removes a vocabulary filter.
+        /// Deletes a vocabulary filter. To use this operation, specify the name of the vocabulary
+        /// filter you want to delete using <code>VocabularyFilterName</code>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteVocabularyFilter service method.</param>
         /// <param name="cancellationToken">
@@ -824,12 +892,20 @@ namespace Amazon.TranscribeService
 
 
         /// <summary>
-        /// Gets information about a single custom language model. Use this information to see
-        /// details about the language model in your Amazon Web Services account. You can also
-        /// see whether the base language model used to create your custom language model has
-        /// been updated. If Amazon Transcribe has updated the base model, you can create a new
-        /// custom language model using the updated base model. If the language model wasn't created,
-        /// you can use this operation to understand why Amazon Transcribe couldn't create it.
+        /// Provides information about a specific custom language model in your Amazon Web Services
+        /// account.
+        /// 
+        ///  
+        /// <para>
+        /// This operation also shows if the base language model you used to create your custom
+        /// language model has been updated. If Amazon Transcribe has updated the base model,
+        /// you can create a new custom language model using the updated base model.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you tried to create a new custom language model and the request wasn't successful,
+        /// you can use this operation to help identify the reason. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeLanguageModel service method.</param>
         /// 
@@ -856,12 +932,20 @@ namespace Amazon.TranscribeService
 
 
         /// <summary>
-        /// Gets information about a single custom language model. Use this information to see
-        /// details about the language model in your Amazon Web Services account. You can also
-        /// see whether the base language model used to create your custom language model has
-        /// been updated. If Amazon Transcribe has updated the base model, you can create a new
-        /// custom language model using the updated base model. If the language model wasn't created,
-        /// you can use this operation to understand why Amazon Transcribe couldn't create it.
+        /// Provides information about a specific custom language model in your Amazon Web Services
+        /// account.
+        /// 
+        ///  
+        /// <para>
+        /// This operation also shows if the base language model you used to create your custom
+        /// language model has been updated. If Amazon Transcribe has updated the base model,
+        /// you can create a new custom language model using the updated base model.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you tried to create a new custom language model and the request wasn't successful,
+        /// you can use this operation to help identify the reason. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeLanguageModel service method.</param>
         /// <param name="cancellationToken">
@@ -954,12 +1038,16 @@ namespace Amazon.TranscribeService
 
 
         /// <summary>
-        /// Returns information about a call analytics job. To see the status of the job, check
-        /// the <code>CallAnalyticsJobStatus</code> field. If the status is <code>COMPLETED</code>,
-        /// the job is finished and you can find the results at the location specified in the
-        /// <code>TranscriptFileUri</code> field. If you enable personally identifiable information
-        /// (PII) redaction, the redacted transcript appears in the <code>RedactedTranscriptFileUri</code>
-        /// field.
+        /// Retrieves information about a call analytics job.
+        /// 
+        ///  
+        /// <para>
+        /// To view the job's status, refer to the <code>CallAnalyticsJobStatus</code> field.
+        /// If the status is <code>COMPLETED</code>, the job is finished. You can then find your
+        /// transcript at the URI specified in the <code>TranscriptFileUri</code> field. If you
+        /// enabled personally identifiable information (PII) redaction, the redacted transcript
+        /// appears in the <code>RedactedTranscriptFileUri</code> field.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCallAnalyticsJob service method.</param>
         /// 
@@ -986,12 +1074,16 @@ namespace Amazon.TranscribeService
 
 
         /// <summary>
-        /// Returns information about a call analytics job. To see the status of the job, check
-        /// the <code>CallAnalyticsJobStatus</code> field. If the status is <code>COMPLETED</code>,
-        /// the job is finished and you can find the results at the location specified in the
-        /// <code>TranscriptFileUri</code> field. If you enable personally identifiable information
-        /// (PII) redaction, the redacted transcript appears in the <code>RedactedTranscriptFileUri</code>
-        /// field.
+        /// Retrieves information about a call analytics job.
+        /// 
+        ///  
+        /// <para>
+        /// To view the job's status, refer to the <code>CallAnalyticsJobStatus</code> field.
+        /// If the status is <code>COMPLETED</code>, the job is finished. You can then find your
+        /// transcript at the URI specified in the <code>TranscriptFileUri</code> field. If you
+        /// enabled personally identifiable information (PII) redaction, the redacted transcript
+        /// appears in the <code>RedactedTranscriptFileUri</code> field.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCallAnalyticsJob service method.</param>
         /// <param name="cancellationToken">
@@ -1024,10 +1116,14 @@ namespace Amazon.TranscribeService
 
 
         /// <summary>
-        /// Returns information about a transcription job from Amazon Transcribe Medical. To see
-        /// the status of the job, check the <code>TranscriptionJobStatus</code> field. If the
-        /// status is <code>COMPLETED</code>, the job is finished. You find the results of the
-        /// completed job in the <code>TranscriptFileUri</code> field.
+        /// Retrieves information about a medical transcription job.
+        /// 
+        ///  
+        /// <para>
+        /// To view the job's status, refer to the <code>TranscriptionJobStatus</code> field.
+        /// If the status is <code>COMPLETED</code>, the job is finished. You can then find your
+        /// transcript at the URI specified in the <code>TranscriptFileUri</code> field.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMedicalTranscriptionJob service method.</param>
         /// 
@@ -1054,10 +1150,14 @@ namespace Amazon.TranscribeService
 
 
         /// <summary>
-        /// Returns information about a transcription job from Amazon Transcribe Medical. To see
-        /// the status of the job, check the <code>TranscriptionJobStatus</code> field. If the
-        /// status is <code>COMPLETED</code>, the job is finished. You find the results of the
-        /// completed job in the <code>TranscriptFileUri</code> field.
+        /// Retrieves information about a medical transcription job.
+        /// 
+        ///  
+        /// <para>
+        /// To view the job's status, refer to the <code>TranscriptionJobStatus</code> field.
+        /// If the status is <code>COMPLETED</code>, the job is finished. You can then find your
+        /// transcript at the URI specified in the <code>TranscriptFileUri</code> field.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMedicalTranscriptionJob service method.</param>
         /// <param name="cancellationToken">

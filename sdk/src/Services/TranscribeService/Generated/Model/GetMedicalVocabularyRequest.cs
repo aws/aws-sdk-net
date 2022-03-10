@@ -39,8 +39,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property VocabularyName. 
         /// <para>
-        /// The name of the vocabulary that you want information about. The value is case sensitive.
-        /// 
+        /// The name of the medical vocabulary you want information about. This value is case
+        /// sensitive.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=200)]

@@ -44,8 +44,7 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code> s3://&lt;AWSDOC-EXAMPLE-BUCKET&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt;</code>
-        /// 
+        ///  <code>s3://DOC-EXAMPLE-BUCKET/keyprefix/objectkey</code> 
         /// </para>
         ///  
         /// <para>
@@ -53,11 +52,11 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>s3://AWSDOC-EXAMPLE-BUCKET/example.mp4</code> 
+        ///  <code>s3://DOC-EXAMPLE-BUCKET/example.flac</code> 
         /// </para>
         ///  
         /// <para>
-        ///  <code>s3://AWSDOC-EXAMPLE-BUCKET/mediadocs/example.mp4</code> 
+        ///  <code>s3://DOC-EXAMPLE-BUCKET/mediafiles/example.flac</code> 
         /// </para>
         ///  
         /// <para>

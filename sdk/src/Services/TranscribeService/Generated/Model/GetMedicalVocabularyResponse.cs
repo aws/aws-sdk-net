@@ -43,9 +43,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property DownloadUri. 
         /// <para>
-        /// The location in Amazon S3 where the vocabulary is stored. Use this URI to get the
-        /// contents of the vocabulary. You can download your vocabulary from the URI for a limited
-        /// time.
+        /// The S3 location where the vocabulary is stored; use this URI to view or download the
+        /// vocabulary.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2000)]
@@ -64,8 +63,13 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property FailureReason. 
         /// <para>
-        /// If the <code>VocabularyState</code> is <code>FAILED</code>, this field contains information
-        /// about why the job failed.
+        /// If your request returns a <code>VocabularyState</code> that is <code>FAILED</code>,
+        /// the <code>FailureReason</code> field contains information about why the request failed.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common
+        /// Errors</a> section.
         /// </para>
         /// </summary>
         public string FailureReason

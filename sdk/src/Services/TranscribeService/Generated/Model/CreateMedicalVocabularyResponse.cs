@@ -42,8 +42,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property FailureReason. 
         /// <para>
-        /// If the <code>VocabularyState</code> field is <code>FAILED</code>, this field contains
-        /// information about why the job failed.
+        /// If the <code>VocabularyState</code> field is <code>FAILED</code>, <code>FailureReason</code>
+        /// contains information about why the job failed.
         /// </para>
         /// </summary>
         public string FailureReason
@@ -61,8 +61,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property LanguageCode. 
         /// <para>
-        /// The language code for the entries in your custom vocabulary. US English (en-US) is
-        /// the only valid language code for Amazon Transcribe Medical.
+        /// The language code you selected for your medical vocabulary. Note that U.S. English
+        /// (<code>en-US</code>) is the only language supported with Amazon Transcribe Medical.
         /// </para>
         /// </summary>
         public LanguageCode LanguageCode
@@ -80,7 +80,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property LastModifiedTime. 
         /// <para>
-        /// The date and time that you created the vocabulary.
+        /// The date and time you created your custom medical vocabulary.
         /// </para>
         /// </summary>
         public DateTime LastModifiedTime
@@ -98,8 +98,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property VocabularyName. 
         /// <para>
-        /// The name of the vocabulary. The name must be unique within an Amazon Web Services
-        /// account and is case sensitive.
+        /// The name you chose for your vocabulary.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
@@ -118,9 +117,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property VocabularyState. 
         /// <para>
-        /// The processing state of your custom vocabulary in Amazon Transcribe Medical. If the
-        /// state is <code>READY</code>, you can use the vocabulary in a <code>StartMedicalTranscriptionJob</code>
-        /// request.
+        /// The processing state of your custom medical vocabulary. If the state is <code>READY</code>,
+        /// you can use the vocabulary in a <code>StartMedicalTranscriptionJob</code> request.
         /// </para>
         /// </summary>
         public VocabularyState VocabularyState

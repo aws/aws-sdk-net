@@ -45,7 +45,7 @@ namespace Amazon.TranscribeService.Model
         /// <code>MaxResults</code> parameter. If there are more jobs in the list will fit on
         /// a page, Amazon Transcribe Medical returns the <code>NextPage</code> token. To return
         /// the next page of vocabularies, include the token in the next request to the <code>ListMedicalVocabularies</code>
-        /// operation .
+        /// operation.
         /// </para>
         /// </summary>
         [AWSProperty(Max=8192)]

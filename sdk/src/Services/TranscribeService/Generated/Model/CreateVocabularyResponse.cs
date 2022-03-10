@@ -42,8 +42,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property FailureReason. 
         /// <para>
-        /// If the <code>VocabularyState</code> field is <code>FAILED</code>, this field contains
-        /// information about why the job failed.
+        /// If the <code>VocabularyState</code> field is <code>FAILED</code>, <code>FailureReason</code>
+        /// contains information about why the job failed.
         /// </para>
         /// </summary>
         public string FailureReason
@@ -61,7 +61,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property LanguageCode. 
         /// <para>
-        /// The language code of the vocabulary entries.
+        /// The language code you selected for your vocabulary.
         /// </para>
         /// </summary>
         public LanguageCode LanguageCode
@@ -79,7 +79,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property LastModifiedTime. 
         /// <para>
-        /// The date and time that the vocabulary was created.
+        /// The date and time you created your custom vocabulary.
         /// </para>
         /// </summary>
         public DateTime LastModifiedTime
@@ -97,7 +97,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property VocabularyName. 
         /// <para>
-        /// The name of the vocabulary.
+        /// The name you chose for your vocabulary.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
@@ -116,9 +116,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property VocabularyState. 
         /// <para>
-        /// The processing state of the vocabulary. When the <code>VocabularyState</code> field
-        /// contains <code>READY</code> the vocabulary is ready to be used in a <code>StartTranscriptionJob</code>
-        /// request.
+        /// The processing state of your vocabulary. If the state is <code>READY</code>, you can
+        /// use the vocabulary in a <code>StartTranscriptionJob</code> request.
         /// </para>
         /// </summary>
         public VocabularyState VocabularyState

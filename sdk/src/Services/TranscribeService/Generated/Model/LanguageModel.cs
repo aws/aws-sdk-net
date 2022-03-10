@@ -195,7 +195,7 @@ namespace Amazon.TranscribeService.Model
         /// Gets and sets the property UpgradeAvailability. 
         /// <para>
         /// Whether the base model used for the custom language model is up to date. If this field
-        /// is <code>true</code> then you are running the most up-to-date version of the base
+        /// is <code>false</code> then you are running the most up-to-date version of the base
         /// model in your custom language model.
         /// </para>
         /// </summary>

@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.TranscribeService.Model
 {
     /// <summary>
-    /// Specify the output format for your subtitle file.
+    /// Choose the output format for your subtitle file and the S3 location where you want
+    /// your file saved.
     /// </summary>
     public partial class SubtitlesOutput
     {
@@ -58,7 +59,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property SubtitleFileUris. 
         /// <para>
-        /// Choose the output location for your subtitle file. This location must be an S3 bucket.
+        /// Contains the output location for your subtitle file. This location must be an S3 bucket.
         /// </para>
         /// </summary>
         public List<string> SubtitleFileUris

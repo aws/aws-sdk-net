@@ -236,7 +236,7 @@ namespace Amazon.TranscribeService.Model
         /// Amazon Transcribe Medical.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=8000, Max=48000)]
+        [AWSProperty(Min=16000, Max=48000)]
         public int MediaSampleRateHertz
         {
             get { return this._mediaSampleRateHertz.GetValueOrDefault(); }

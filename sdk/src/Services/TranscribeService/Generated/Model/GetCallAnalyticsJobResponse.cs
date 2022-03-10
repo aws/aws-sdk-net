@@ -38,7 +38,12 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property CallAnalyticsJob. 
         /// <para>
-        /// An object that contains the results of your call analytics job.
+        /// An object that contains detailed information about your call analytics job. Returned
+        /// fields include: <code>CallAnalyticsJobName</code>, <code>CallAnalyticsJobStatus</code>,
+        /// <code>ChannelDefinitions</code>, <code>CompletionTime</code>, <code>CreationTime</code>,
+        /// <code>DataAccessRoleArn</code>, <code>FailureReason</code>, <code>IdentifiedLanguageScore</code>,
+        /// <code>LanguageCode</code>, <code>Media</code>, <code>MediaFormat</code>, <code>MediaSampleRateHertz</code>,
+        /// <code>Settings</code>, <code>StartTime</code>, and <code>Transcript</code>.
         /// </para>
         /// </summary>
         public CallAnalyticsJob CallAnalyticsJob
