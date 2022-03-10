@@ -9,6 +9,7 @@ using Xunit;
 
 using Amazon;
 using Amazon.S3;
+using Amazon.Runtime;
 
 namespace NETCore.SetupTests
 {
@@ -84,6 +85,7 @@ namespace NETCore.SetupTests
             Assert.Equal(6, options.DefaultClientConfig.MaxErrorRetry);
             Assert.Equal(TimeSpan.FromMilliseconds(1000), options.DefaultClientConfig.Timeout);
             Assert.Equal("us-east-1", options.DefaultClientConfig.AuthenticationRegion);
+            Assert.Equal(DefaultConfigurationMode.Standard, options.DefaultConfigurationMode);
 
             IAmazonS3 client = options.CreateServiceClient<IAmazonS3>();
             Assert.NotNull(client);
@@ -92,6 +94,40 @@ namespace NETCore.SetupTests
             Assert.Equal(6, client.Config.MaxErrorRetry);
             Assert.Equal(TimeSpan.FromMilliseconds(1000), client.Config.Timeout);
             Assert.Equal("us-east-1", client.Config.AuthenticationRegion);
+            Assert.Equal(DefaultConfigurationMode.Standard, client.Config.DefaultConfigurationMode);
+            Assert.Equal(RequestRetryMode.Standard, client.Config.RetryMode);
+
+            // Verify that setting the standard mode doesn't override explicit settings of retry mode to a non-legacy mode.
+            options.DefaultClientConfig.RetryMode = RequestRetryMode.Adaptive;
+            client = options.CreateServiceClient<IAmazonS3>();
+            Assert.Equal(DefaultConfigurationMode.Standard, client.Config.DefaultConfigurationMode);
+            Assert.Equal(RequestRetryMode.Adaptive, client.Config.RetryMode);
+        }
+
+        [Fact]
+        public void EnableLoggingTest()
+        {
+            var builder = new ConfigurationBuilder();
+            builder.AddJsonFile("./TestFiles/EnableLoggingTest.json");
+
+            IConfiguration config = builder.Build();
+            var options = config.GetAWSOptions();
+
+            Assert.Equal(RegionEndpoint.USWest2, options.Region);
+            Assert.Equal(LoggingOptions.Console, options.Logging.LogTo);
+            Assert.Equal(ResponseLoggingOption.OnError, options.Logging.LogResponses);
+            Assert.Equal(2000, options.Logging.LogResponsesSizeLimit);
+            Assert.True(options.Logging.LogMetrics);
+
+            // Create first service client to force logging settings to be applied
+            IAmazonS3 client = options.CreateServiceClient<IAmazonS3>();
+            Assert.NotNull(client);
+            Assert.Equal(RegionEndpoint.USWest2, client.Config.RegionEndpoint);
+
+            Assert.Equal(LoggingOptions.Console, AWSConfigs.LoggingConfig.LogTo);
+            Assert.Equal(ResponseLoggingOption.OnError, AWSConfigs.LoggingConfig.LogResponses);
+            Assert.Equal(2000, AWSConfigs.LoggingConfig.LogResponsesSizeLimit);
+            Assert.True(AWSConfigs.LoggingConfig.LogMetrics);
         }
 
         [Fact]
@@ -100,6 +136,7 @@ namespace NETCore.SetupTests
             var existingValue = Environment.GetEnvironmentVariable("AWS_REGION");
             try
             {
+                FallbackRegionFactory.Reset();
                 Environment.SetEnvironmentVariable("AWS_REGION", RegionEndpoint.APSouth1.SystemName);
 
                 var builder = new ConfigurationBuilder();
@@ -112,7 +149,8 @@ namespace NETCore.SetupTests
             finally
             {
                 Environment.SetEnvironmentVariable("AWS_REGION", existingValue);
+                FallbackRegionFactory.Reset();
             }
-        } 
+        }
     }
 }
