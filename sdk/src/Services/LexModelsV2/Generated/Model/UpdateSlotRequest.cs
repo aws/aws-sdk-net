@@ -230,7 +230,7 @@ namespace Amazon.LexModelsV2.Model
         /// The unique identifier of the new slot type to associate with this slot. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=25)]
+        [AWSProperty(Min=1, Max=25)]
         public string SlotTypeId
         {
             get { return this._slotTypeId; }

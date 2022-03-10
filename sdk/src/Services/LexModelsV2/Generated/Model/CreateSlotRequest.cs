@@ -221,7 +221,7 @@ namespace Amazon.LexModelsV2.Model
         /// the values that can be entered into the slot.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=25)]
+        [AWSProperty(Min=1, Max=25)]
         public string SlotTypeId
         {
             get { return this._slotTypeId; }
