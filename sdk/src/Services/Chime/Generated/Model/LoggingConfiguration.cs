@@ -34,12 +34,32 @@ namespace Amazon.Chime.Model
     /// </summary>
     public partial class LoggingConfiguration
     {
+        private bool? _enableMediaMetricLogs;
         private bool? _enableSIPLogs;
+
+        /// <summary>
+        /// Gets and sets the property EnableMediaMetricLogs. 
+        /// <para>
+        /// Boolean that enables logging of detailed media metrics for Voice Connectors to CloudWatch
+        /// logs.
+        /// </para>
+        /// </summary>
+        public bool EnableMediaMetricLogs
+        {
+            get { return this._enableMediaMetricLogs.GetValueOrDefault(); }
+            set { this._enableMediaMetricLogs = value; }
+        }
+
+        // Check to see if EnableMediaMetricLogs property is set
+        internal bool IsSetEnableMediaMetricLogs()
+        {
+            return this._enableMediaMetricLogs.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property EnableSIPLogs. 
         /// <para>
-        /// When true, enables SIP message logs for sending to Amazon CloudWatch Logs.
+        /// Boolean that enables SIP message logs to CloudWatch logs.
         /// </para>
         /// </summary>
         public bool EnableSIPLogs

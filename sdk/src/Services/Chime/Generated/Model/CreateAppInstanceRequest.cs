@@ -101,7 +101,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Tags assigned to the <code>AppInstanceUser</code>.
+        /// Tags assigned to the <code>AppInstance</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

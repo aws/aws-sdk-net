@@ -2234,6 +2234,9 @@ namespace Amazon.Chime
         /// <param name="request">Container for the necessary parameters to execute the CreateMeetingDialOut service method.</param>
         /// 
         /// <returns>The response from the CreateMeetingDialOut service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.AccessDeniedException">
+        /// You don't have permissions to perform the requested operation.
+        /// </exception>
         /// <exception cref="Amazon.Chime.Model.BadRequestException">
         /// The input parameters don't match the service's restrictions.
         /// </exception>
@@ -2278,6 +2281,9 @@ namespace Amazon.Chime
         /// </param>
         /// 
         /// <returns>The response from the CreateMeetingDialOut service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.AccessDeniedException">
+        /// You don't have permissions to perform the requested operation.
+        /// </exception>
         /// <exception cref="Amazon.Chime.Model.BadRequestException">
         /// The input parameters don't match the service's restrictions.
         /// </exception>
@@ -14214,8 +14220,8 @@ namespace Amazon.Chime
 
 
         /// <summary>
-        /// Allows you to trigger a Lambda function at any time while a call is active, and replace
-        /// the current actions with new actions returned by the invocation.
+        /// Invokes the AWS Lambda function associated with the SIP media application and transaction
+        /// ID in an update request. The Lambda function can then return a new set of actions.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateSipMediaApplicationCall service method.</param>
         /// 
@@ -14250,8 +14256,8 @@ namespace Amazon.Chime
 
 
         /// <summary>
-        /// Allows you to trigger a Lambda function at any time while a call is active, and replace
-        /// the current actions with new actions returned by the invocation.
+        /// Invokes the AWS Lambda function associated with the SIP media application and transaction
+        /// ID in an update request. The Lambda function can then return a new set of actions.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateSipMediaApplicationCall service method.</param>
         /// <param name="cancellationToken">

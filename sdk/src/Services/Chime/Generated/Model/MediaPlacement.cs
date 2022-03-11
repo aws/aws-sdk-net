@@ -84,7 +84,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property EventIngestionUrl. 
         /// <para>
-        /// The event ingestion URL.
+        /// The event ingestion URL to which you send client meeting events.
         /// </para>
         /// </summary>
         [AWSProperty(Max=4096)]

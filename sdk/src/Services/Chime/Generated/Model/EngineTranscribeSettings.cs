@@ -48,8 +48,8 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property ContentIdentificationType. 
         /// <para>
-        /// Set this field to <code>PII</code> to identify personal health information in the
-        /// transcription output.
+        /// Set this field to <code>PII</code> to identify personally identifiable information
+        /// in the transcription output.
         /// </para>
         /// </summary>
         public TranscribeContentIdentificationType ContentIdentificationType
