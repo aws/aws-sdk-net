@@ -30,12 +30,23 @@ namespace Amazon.Outposts.Model
 {
     /// <summary>
     /// Container for the parameters to the ListSites operation.
-    /// Lists the sites for your Amazon Web Services account.
+    /// Create a list of the Outpost sites for your Amazon Web Services account. Add operating
+    /// address filters to your request to return a more specific list of results. Use filters
+    /// to match site city, country code, or state/region of the operating address. 
+    /// 
+    ///  
+    /// <para>
+    /// If you specify multiple filters, the filters are joined with an <code>AND</code>,
+    /// and the request returns only results that match all of the specified filters.
+    /// </para>
     /// </summary>
     public partial class ListSitesRequest : AmazonOutpostsRequest
     {
         private int? _maxResults;
         private string _nextToken;
+        private List<string> _operatingAddressCityFilter = new List<string>();
+        private List<string> _operatingAddressCountryCodeFilter = new List<string>();
+        private List<string> _operatingAddressStateOrRegionFilter = new List<string>();
 
         /// <summary>
         /// Gets and sets the property MaxResults.
@@ -67,6 +78,78 @@ namespace Amazon.Outposts.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OperatingAddressCityFilter. 
+        /// <para>
+        ///  A filter for the city of the Outpost site. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Filter values are case sensitive. If you specify multiple values for a filter, the
+        /// values are joined with an <code>OR</code>, and the request returns all results that
+        /// match any of the specified values.
+        /// </para>
+        /// </summary>
+        public List<string> OperatingAddressCityFilter
+        {
+            get { return this._operatingAddressCityFilter; }
+            set { this._operatingAddressCityFilter = value; }
+        }
+
+        // Check to see if OperatingAddressCityFilter property is set
+        internal bool IsSetOperatingAddressCityFilter()
+        {
+            return this._operatingAddressCityFilter != null && this._operatingAddressCityFilter.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OperatingAddressCountryCodeFilter. 
+        /// <para>
+        ///  A filter for the country code of the Outpost site. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Filter values are case sensitive. If you specify multiple values for a filter, the
+        /// values are joined with an <code>OR</code>, and the request returns all results that
+        /// match any of the specified values.
+        /// </para>
+        /// </summary>
+        public List<string> OperatingAddressCountryCodeFilter
+        {
+            get { return this._operatingAddressCountryCodeFilter; }
+            set { this._operatingAddressCountryCodeFilter = value; }
+        }
+
+        // Check to see if OperatingAddressCountryCodeFilter property is set
+        internal bool IsSetOperatingAddressCountryCodeFilter()
+        {
+            return this._operatingAddressCountryCodeFilter != null && this._operatingAddressCountryCodeFilter.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OperatingAddressStateOrRegionFilter. 
+        /// <para>
+        ///  A filter for the state/region of the Outpost site. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Filter values are case sensitive. If you specify multiple values for a filter, the
+        /// values are joined with an <code>OR</code>, and the request returns all results that
+        /// match any of the specified values.
+        /// </para>
+        /// </summary>
+        public List<string> OperatingAddressStateOrRegionFilter
+        {
+            get { return this._operatingAddressStateOrRegionFilter; }
+            set { this._operatingAddressStateOrRegionFilter = value; }
+        }
+
+        // Check to see if OperatingAddressStateOrRegionFilter property is set
+        internal bool IsSetOperatingAddressStateOrRegionFilter()
+        {
+            return this._operatingAddressStateOrRegionFilter != null && this._operatingAddressStateOrRegionFilter.Count > 0; 
         }
 
     }

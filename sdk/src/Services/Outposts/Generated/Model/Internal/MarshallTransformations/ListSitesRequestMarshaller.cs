@@ -64,6 +64,15 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
+            
+            if (publicRequest.IsSetOperatingAddressCityFilter())
+                request.ParameterCollection.Add("OperatingAddressCityFilter", publicRequest.OperatingAddressCityFilter);
+            
+            if (publicRequest.IsSetOperatingAddressCountryCodeFilter())
+                request.ParameterCollection.Add("OperatingAddressCountryCodeFilter", publicRequest.OperatingAddressCountryCodeFilter);
+            
+            if (publicRequest.IsSetOperatingAddressStateOrRegionFilter())
+                request.ParameterCollection.Add("OperatingAddressStateOrRegionFilter", publicRequest.OperatingAddressStateOrRegionFilter);
             request.ResourcePath = "/sites";
             request.UseQueryString = true;
 
