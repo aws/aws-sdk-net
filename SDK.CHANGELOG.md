@@ -1,3 +1,15 @@
+### 3.7.228.0 (2022-03-11 19:14 UTC)
+* Chime (3.7.15.0)
+	* Chime VoiceConnector Logging APIs will now support MediaMetricLogs. Also CreateMeetingDialOut now returns AccessDeniedException.
+* Connect (3.7.15.0)
+	* This release adds support for enabling Rich Messaging when starting a new chat session via the StartChatContact API. Rich Messaging enables the following formatting options: bold, italics, hyperlinks, bulleted lists, and numbered lists.
+* Lambda (3.7.10.0)
+	* Adds PrincipalOrgID support to AddPermission API. Customers can use it to manage permissions to lambda functions at AWS Organizations level.
+* Outposts (3.7.7.0)
+	* This release adds address filters for listSites
+* SecretsManager (3.7.2.17)
+	* Documentation updates for Secrets Manager.
+
 ### 3.7.227.0 (2022-03-10 19:15 UTC)
 * LexModelsV2 (3.7.12.0)
 	* This release makes slotTypeId an optional parameter in CreateSlot and UpdateSlot APIs in Amazon Lex V2 for model building. Customers can create and update slots without specifying a slot type id.
