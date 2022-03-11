@@ -37,7 +37,7 @@ namespace AWSSDKDocSamples.Amazon.SecretsManager.Generated
                 ClientRequestToken = "EXAMPLE1-90ab-cdef-fedc-ba987SECRET1",
                 Description = "My test database secret created with the CLI",
                 Name = "MyTestDatabaseSecret",
-                SecretString = "{\"username\":\"david\",\"password\":\"BnQw!XDWgaEeT9XGTT29\"}"
+                SecretString = "{\"username\":\"david\",\"password\":\"EXAMPLE-PASSWORD\"}"
             });
 
             string arn = response.ARN;
@@ -148,8 +148,7 @@ namespace AWSSDKDocSamples.Amazon.SecretsManager.Generated
             var client = new AmazonSecretsManagerClient();
             var response = client.GetSecretValue(new GetSecretValueRequest 
             {
-                SecretId = "MyTestDatabaseSecret",
-                VersionStage = "AWSPREVIOUS"
+                SecretId = "MyTestDatabaseSecret"
             });
 
             string arn = response.ARN;
@@ -230,7 +229,7 @@ namespace AWSSDKDocSamples.Amazon.SecretsManager.Generated
             {
                 ClientRequestToken = "EXAMPLE2-90ab-cdef-fedc-ba987EXAMPLE",
                 SecretId = "MyTestDatabaseSecret",
-                SecretString = "{\"username\":\"david\",\"password\":\"BnQw!XDWgaEeT9XGTT29\"}"
+                SecretString = "{\"username\":\"david\",\"password\":\"EXAMPLE-PASSWORD\"}"
             });
 
             string arn = response.ARN;
@@ -265,7 +264,10 @@ namespace AWSSDKDocSamples.Amazon.SecretsManager.Generated
             var response = client.RotateSecret(new RotateSecretRequest 
             {
                 RotationLambdaARN = "arn:aws:lambda:us-west-2:123456789012:function:MyTestDatabaseRotationLambda",
-                RotationRules = new RotationRulesType { AutomaticallyAfterDays = 30 },
+                RotationRules = new RotationRulesType {
+                    Duration = "2h",
+                    ScheduleExpression = "cron(0 16 1,15 * ? *)"
+                },
                 SecretId = "MyTestDatabaseSecret"
             });
 

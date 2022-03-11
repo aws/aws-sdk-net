@@ -1375,8 +1375,9 @@ namespace Amazon.SecretsManager
 
 
         /// <summary>
-        /// Lists the secrets that are stored by Secrets Manager in the Amazon Web Services account.
-        /// 
+        /// Lists the secrets that are stored by Secrets Manager in the Amazon Web Services account,
+        /// not including secrets that are marked for deletion. To see secrets marked for deletion,
+        /// use the Secrets Manager console.
         /// 
         ///  
         /// <para>
@@ -1424,8 +1425,9 @@ namespace Amazon.SecretsManager
 
 
         /// <summary>
-        /// Lists the secrets that are stored by Secrets Manager in the Amazon Web Services account.
-        /// 
+        /// Lists the secrets that are stored by Secrets Manager in the Amazon Web Services account,
+        /// not including secrets that are marked for deletion. To see secrets marked for deletion,
+        /// use the Secrets Manager console.
         /// 
         ///  
         /// <para>
