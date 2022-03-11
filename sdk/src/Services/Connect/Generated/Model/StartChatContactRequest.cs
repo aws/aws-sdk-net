@@ -76,6 +76,7 @@ namespace Amazon.Connect.Model
         private ChatMessage _initialMessage;
         private string _instanceId;
         private ParticipantDetails _participantDetails;
+        private List<string> _supportedMessagingContentTypes = new List<string>();
 
         /// <summary>
         /// Gets and sets the property Attributes. 
@@ -226,6 +227,25 @@ namespace Amazon.Connect.Model
         internal bool IsSetParticipantDetails()
         {
             return this._participantDetails != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportedMessagingContentTypes. 
+        /// <para>
+        /// The supported chat message content types. Content types can be text/plain or both
+        /// text/plain and text/markdown.
+        /// </para>
+        /// </summary>
+        public List<string> SupportedMessagingContentTypes
+        {
+            get { return this._supportedMessagingContentTypes; }
+            set { this._supportedMessagingContentTypes = value; }
+        }
+
+        // Check to see if SupportedMessagingContentTypes property is set
+        internal bool IsSetSupportedMessagingContentTypes()
+        {
+            return this._supportedMessagingContentTypes != null && this._supportedMessagingContentTypes.Count > 0; 
         }
 
     }

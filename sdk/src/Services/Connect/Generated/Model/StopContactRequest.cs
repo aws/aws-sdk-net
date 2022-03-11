@@ -30,7 +30,25 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the StopContact operation.
-    /// Ends the specified contact.
+    /// Ends the specified contact. This call does not work for the following initiation methods:
+    /// 
+    ///  <ul> <li> 
+    /// <para>
+    /// CALLBACK
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// DISCONNECT
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// TRANSFER
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// QUEUE_TRANSFER
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class StopContactRequest : AmazonConnectRequest
     {

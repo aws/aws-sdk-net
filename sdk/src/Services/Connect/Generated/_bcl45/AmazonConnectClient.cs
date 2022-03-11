@@ -7928,13 +7928,26 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Starts recording the contact when the agent joins the call. StartContactRecording
-        /// is a one-time action. For example, if you use StopContactRecording to stop recording
-        /// an ongoing call, you can't use StartContactRecording to restart it. For scenarios
-        /// where the recording has started and you want to suspend and resume it, such as when
-        /// collecting sensitive information (for example, a credit card number), use SuspendContactRecording
-        /// and ResumeContactRecording.
+        /// Starts recording the contact: 
         /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// If the API is called <i>before</i> the agent joins the call, recording starts when
+        /// the agent joins the call.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the API is called <i>after</i> the agent joins the call, recording starts at the
+        /// time of the API call.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// StartContactRecording is a one-time action. For example, if you use StopContactRecording
+        /// to stop recording an ongoing call, you can't use StartContactRecording to restart
+        /// it. For scenarios where the recording has started and you want to suspend and resume
+        /// it, such as when collecting sensitive information (for example, a credit card number),
+        /// use SuspendContactRecording and ResumeContactRecording.
+        /// </para>
         ///  
         /// <para>
         /// You can use this API to override the recording behavior configured in the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/set-recording-behavior.html">Set
@@ -7972,13 +7985,26 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Starts recording the contact when the agent joins the call. StartContactRecording
-        /// is a one-time action. For example, if you use StopContactRecording to stop recording
-        /// an ongoing call, you can't use StartContactRecording to restart it. For scenarios
-        /// where the recording has started and you want to suspend and resume it, such as when
-        /// collecting sensitive information (for example, a credit card number), use SuspendContactRecording
-        /// and ResumeContactRecording.
+        /// Starts recording the contact: 
         /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// If the API is called <i>before</i> the agent joins the call, recording starts when
+        /// the agent joins the call.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the API is called <i>after</i> the agent joins the call, recording starts at the
+        /// time of the API call.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// StartContactRecording is a one-time action. For example, if you use StopContactRecording
+        /// to stop recording an ongoing call, you can't use StartContactRecording to restart
+        /// it. For scenarios where the recording has started and you want to suspend and resume
+        /// it, such as when collecting sensitive information (for example, a credit card number),
+        /// use SuspendContactRecording and ResumeContactRecording.
+        /// </para>
         ///  
         /// <para>
         /// You can use this API to override the recording behavior configured in the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/set-recording-behavior.html">Set
@@ -8322,7 +8348,25 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Ends the specified contact.
+        /// Ends the specified contact. This call does not work for the following initiation methods:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// CALLBACK
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DISCONNECT
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TRANSFER
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// QUEUE_TRANSFER
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopContact service method.</param>
         /// 
@@ -8354,7 +8398,25 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Ends the specified contact.
+        /// Ends the specified contact. This call does not work for the following initiation methods:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// CALLBACK
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DISCONNECT
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TRANSFER
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// QUEUE_TRANSFER
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopContact service method.</param>
         /// <param name="cancellationToken">

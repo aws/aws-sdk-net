@@ -58,7 +58,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property ContentType. 
         /// <para>
-        /// The type of the content. Supported types are text and plain.
+        /// The type of the content. Supported types are <code>text/plain</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

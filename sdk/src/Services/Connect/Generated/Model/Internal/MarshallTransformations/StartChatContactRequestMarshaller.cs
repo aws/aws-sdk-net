@@ -130,6 +130,17 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetSupportedMessagingContentTypes())
+                {
+                    context.Writer.WritePropertyName("SupportedMessagingContentTypes");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestSupportedMessagingContentTypesListValue in publicRequest.SupportedMessagingContentTypes)
+                    {
+                            context.Writer.Write(publicRequestSupportedMessagingContentTypesListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
