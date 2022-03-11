@@ -47,6 +47,12 @@
     <pattern>[^\s]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Lambda.Model.AddPermissionRequest.PrincipalOrgID</property>
+    <min>12</min>
+    <max>34</max>
+    <pattern>^o-[a-z0-9]{10,32}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Lambda.Model.AddPermissionRequest.Qualifier</property>
     <min>1</min>
     <max>128</max>
