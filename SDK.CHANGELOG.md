@@ -1,3 +1,17 @@
+### 3.7.229.0 (2022-03-14 20:23 UTC)
+* ConfigService (3.7.7.0)
+	* Add resourceType enums for AWS::ECR::PublicRepository and AWS::EC2::LaunchTemplate
+* ElastiCache (3.7.5.22)
+	* Doc only update for ElastiCache
+* Kendra (3.7.15.0)
+	* Amazon Kendra now provides a data source connector for Slack. For more information, see https://docs.aws.amazon.com/kendra/latest/dg/data-source-slack.html
+* TimestreamQuery (3.7.2.0)
+	* Amazon Timestream Scheduled Queries now support Timestamp datatype in a multi-measure record.
+* Core 3.7.8.10
+	* Updating endpoints.json file.
+
+	* All services packages updated to require new Core
+
 ### 3.7.228.0 (2022-03-11 19:14 UTC)
 * Chime (3.7.15.0)
 	* Chime VoiceConnector Logging APIs will now support MediaMetricLogs. Also CreateMeetingDialOut now returns AccessDeniedException.
