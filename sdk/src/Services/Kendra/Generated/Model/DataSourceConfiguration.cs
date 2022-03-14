@@ -42,13 +42,14 @@ namespace Amazon.Kendra.Model
         private SalesforceConfiguration _salesforceConfiguration;
         private ServiceNowConfiguration _serviceNowConfiguration;
         private SharePointConfiguration _sharePointConfiguration;
+        private SlackConfiguration _slackConfiguration;
         private WebCrawlerConfiguration _webCrawlerConfiguration;
         private WorkDocsConfiguration _workDocsConfiguration;
 
         /// <summary>
         /// Gets and sets the property ConfluenceConfiguration. 
         /// <para>
-        /// Provides configuration information for connecting to a Confluence data source.
+        /// Provides the configuration information to connect to Confluence as your data source.
         /// </para>
         /// </summary>
         public ConfluenceConfiguration ConfluenceConfiguration
@@ -103,7 +104,6 @@ namespace Amazon.Kendra.Model
         /// Gets and sets the property GoogleDriveConfiguration. 
         /// <para>
         /// Provides the configuration information to connect to Google Drive as your data source.
-        /// 
         /// </para>
         /// </summary>
         public GoogleDriveConfiguration GoogleDriveConfiguration
@@ -209,6 +209,24 @@ namespace Amazon.Kendra.Model
         internal bool IsSetSharePointConfiguration()
         {
             return this._sharePointConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SlackConfiguration. 
+        /// <para>
+        /// Provides the configuration information to connect to Slack as your data source.
+        /// </para>
+        /// </summary>
+        public SlackConfiguration SlackConfiguration
+        {
+            get { return this._slackConfiguration; }
+            set { this._slackConfiguration = value; }
+        }
+
+        // Check to see if SlackConfiguration property is set
+        internal bool IsSetSlackConfiguration()
+        {
+            return this._slackConfiguration != null;
         }
 
         /// <summary>

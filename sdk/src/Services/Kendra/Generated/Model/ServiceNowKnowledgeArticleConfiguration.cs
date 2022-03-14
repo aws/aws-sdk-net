@@ -102,9 +102,15 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property ExcludeAttachmentFilePatterns. 
         /// <para>
-        /// List of regular expressions applied to knowledge articles. Items that don't match
-        /// the inclusion pattern are not indexed. The regex is applied to the field specified
-        /// in the <code>PatternTargetField</code> 
+        /// A list of regular expression patterns to exclude certain attachments of knowledge
+        /// articles in your ServiceNow. Item that match the patterns are excluded from the index.
+        /// Items that don't match the patterns are included in the index. If an item matches
+        /// both an inclusion and exclusion pattern, the exclusion pattern takes precedence and
+        /// the item isn't included in the index.
+        /// </para>
+        ///  
+        /// <para>
+        /// The regex is applied to the field specified in the <code>PatternTargetField</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
@@ -123,8 +129,11 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property FieldMappings. 
         /// <para>
-        /// Mapping between ServiceNow fields and Amazon Kendra index fields. You must create
-        /// the index field before you map the field.
+        /// Maps attributes or field names of knoweldge articles to Amazon Kendra index field
+        /// names. To create custom fields, use the <code>UpdateIndex</code> API before you map
+        /// to ServiceNow fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
+        /// data source fields</a>. The ServiceNow data source field names must exist in your
+        /// ServiceNow custom metadata.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -169,9 +178,15 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property IncludeAttachmentFilePatterns. 
         /// <para>
-        /// List of regular expressions applied to knowledge articles. Items that don't match
-        /// the inclusion pattern are not indexed. The regex is applied to the field specified
-        /// in the <code>PatternTargetField</code>.
+        /// A list of regular expression patterns to include certain attachments of knowledge
+        /// articles in your ServiceNow. Item that match the patterns are included in the index.
+        /// Items that don't match the patterns are excluded from the index. If an item matches
+        /// both an inclusion and exclusion pattern, the exclusion pattern takes precedence and
+        /// the item isn't included in the index.
+        /// </para>
+        ///  
+        /// <para>
+        /// The regex is applied to the field specified in the <code>PatternTargetField</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]

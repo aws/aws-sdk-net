@@ -144,6 +144,17 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetSlackConfiguration())
+            {
+                context.Writer.WritePropertyName("SlackConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = SlackConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.SlackConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetWebCrawlerConfiguration())
             {
                 context.Writer.WritePropertyName("WebCrawlerConfiguration");

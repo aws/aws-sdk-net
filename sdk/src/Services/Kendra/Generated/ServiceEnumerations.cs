@@ -817,6 +817,10 @@ namespace Amazon.Kendra
         /// </summary>
         public static readonly DataSourceType SHAREPOINT = new DataSourceType("SHAREPOINT");
         /// <summary>
+        /// Constant SLACK for DataSourceType
+        /// </summary>
+        public static readonly DataSourceType SLACK = new DataSourceType("SLACK");
+        /// <summary>
         /// Constant WEBCRAWLER for DataSourceType
         /// </summary>
         public static readonly DataSourceType WEBCRAWLER = new DataSourceType("WEBCRAWLER");
@@ -2704,6 +2708,64 @@ namespace Amazon.Kendra
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SharePointVersion(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SlackEntity.
+    /// </summary>
+    public class SlackEntity : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DIRECT_MESSAGE for SlackEntity
+        /// </summary>
+        public static readonly SlackEntity DIRECT_MESSAGE = new SlackEntity("DIRECT_MESSAGE");
+        /// <summary>
+        /// Constant GROUP_MESSAGE for SlackEntity
+        /// </summary>
+        public static readonly SlackEntity GROUP_MESSAGE = new SlackEntity("GROUP_MESSAGE");
+        /// <summary>
+        /// Constant PRIVATE_CHANNEL for SlackEntity
+        /// </summary>
+        public static readonly SlackEntity PRIVATE_CHANNEL = new SlackEntity("PRIVATE_CHANNEL");
+        /// <summary>
+        /// Constant PUBLIC_CHANNEL for SlackEntity
+        /// </summary>
+        public static readonly SlackEntity PUBLIC_CHANNEL = new SlackEntity("PUBLIC_CHANNEL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SlackEntity(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SlackEntity FindValue(string value)
+        {
+            return FindValue<SlackEntity>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SlackEntity(string value)
         {
             return FindValue(value);
         }

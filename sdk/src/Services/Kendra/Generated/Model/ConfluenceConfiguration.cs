@@ -47,8 +47,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property AttachmentConfiguration. 
         /// <para>
-        /// Specifies configuration information for indexing attachments to Confluence blogs and
-        /// pages.
+        /// Configuration information for indexing attachments to Confluence blogs and pages.
         /// </para>
         /// </summary>
         public ConfluenceAttachmentConfiguration AttachmentConfiguration
@@ -66,7 +65,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property BlogConfiguration. 
         /// <para>
-        ///  Specifies configuration information for indexing Confluence blogs.
+        /// Configuration information for indexing Confluence blogs.
         /// </para>
         /// </summary>
         public ConfluenceBlogConfiguration BlogConfiguration
@@ -84,11 +83,11 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property ExclusionPatterns. 
         /// <para>
-        /// A list of regular expression patterns that apply to a URL on the Confluence server.
-        /// An exclusion pattern can apply to a blog post, a page, a space, or an attachment.
-        /// Items that match the pattern are excluded from the index. Items that don't match the
-        /// pattern are included in the index. If a item matches both an exclusion pattern and
-        /// an inclusion pattern, the item isn't included in the index.
+        /// &gt;A list of regular expression patterns to exclude certain blog posts, pages, spaces,
+        /// or attachments in your Confluence. Content that matches the patterns are excluded
+        /// from the index. Content that doesn't match the patterns is included in the index.
+        /// If content matches both an inclusion and exclusion pattern, the exclusion pattern
+        /// takes precedence and the content isn't included in the index.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
@@ -107,11 +106,11 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property InclusionPatterns. 
         /// <para>
-        /// A list of regular expression patterns that apply to a URL on the Confluence server.
-        /// An inclusion pattern can apply to a blog post, a page, a space, or an attachment.
-        /// Items that match the patterns are included in the index. Items that don't match the
-        /// pattern are excluded from the index. If an item matches both an inclusion pattern
-        /// and an exclusion pattern, the item isn't included in the index.
+        /// A list of regular expression patterns to include certain blog posts, pages, spaces,
+        /// or attachments in your Confluence. Content that matches the patterns are included
+        /// in the index. Content that doesn't match the patterns is excluded from the index.
+        /// If content matches both an inclusion and exclusion pattern, the exclusion pattern
+        /// takes precedence and the content isn't included in the index.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
@@ -130,7 +129,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property PageConfiguration. 
         /// <para>
-        /// Specifies configuration information for indexing Confluence pages.
+        /// Configuration information for indexing Confluence pages.
         /// </para>
         /// </summary>
         public ConfluencePageConfiguration PageConfiguration
@@ -148,18 +147,18 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property SecretArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key/value
+        /// The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value
         /// pairs required to connect to your Confluence server. The secret must contain a JSON
         /// structure with the following keys:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// username - The user name or email address of a user with administrative privileges
-        /// for the Confluence server.
+        /// username—The user name or email address of a user with administrative privileges for
+        /// the Confluence server.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// password - The password associated with the user logging in to the Confluence server.
+        /// password—The password associated with the user logging in to the Confluence server.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -180,8 +179,8 @@ namespace Amazon.Kendra.Model
         /// Gets and sets the property ServerUrl. 
         /// <para>
         /// The URL of your Confluence instance. Use the full URL of the server. For example,
-        /// <code>https://server.example.com:port/</code>. You can also use an IP address, for
-        /// example, <code>https://192.168.1.113/</code>.
+        /// <i>https://server.example.com:port/</i>. You can also use an IP address, for example,
+        /// <i>https://192.168.1.113/</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]
@@ -200,7 +199,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property SpaceConfiguration. 
         /// <para>
-        /// Specifies configuration information for indexing Confluence spaces.
+        /// Configuration information for indexing Confluence spaces.
         /// </para>
         /// </summary>
         public ConfluenceSpaceConfiguration SpaceConfiguration
@@ -237,7 +236,9 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property VpcConfiguration. 
         /// <para>
-        /// Specifies the information for connecting to an Amazon VPC.
+        /// Configuration information for an Amazon Virtual Private Cloud to connect to your Confluence.
+        /// For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring
+        /// a VPC</a>.
         /// </para>
         /// </summary>
         public DataSourceVpcConfiguration VpcConfiguration

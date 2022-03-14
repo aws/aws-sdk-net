@@ -220,12 +220,10 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property UrlExclusionPatterns. 
         /// <para>
-        /// The regular expression pattern to exclude certain URLs to crawl.
-        /// </para>
-        ///  
-        /// <para>
-        /// If there is a regular expression pattern to include certain URLs that conflicts with
-        /// the exclude pattern, the exclude pattern takes precedence.
+        /// A list of regular expression patterns to exclude certain URLs to crawl. URLs that
+        /// match the patterns are excluded from the index. URLs that don't match the patterns
+        /// are included in the index. If a URL matches both an inclusion and exclusion pattern,
+        /// the exclusion pattern takes precedence and the URL file isn't included in the index.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
@@ -244,12 +242,10 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property UrlInclusionPatterns. 
         /// <para>
-        /// The regular expression pattern to include certain URLs to crawl.
-        /// </para>
-        ///  
-        /// <para>
-        /// If there is a regular expression pattern to exclude certain URLs that conflicts with
-        /// the include pattern, the exclude pattern takes precedence.
+        /// A list of regular expression patterns to include certain URLs to crawl. URLs that
+        /// match the patterns are included in the index. URLs that don't match the patterns are
+        /// excluded from the index. If a URL matches both an inclusion and exclusion pattern,
+        /// the exclusion pattern takes precedence and the URL file isn't included in the index.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]

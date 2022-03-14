@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kendra.Model
 {
     /// <summary>
-    /// Specifies the configuration for indexing Confluence spaces.
+    /// Configuration information for indexing Confluence spaces.
     /// </summary>
     public partial class ConfluenceSpaceConfiguration
     {
@@ -126,9 +126,11 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property SpaceFieldMappings. 
         /// <para>
-        /// Defines how space metadata fields should be mapped to index fields. Before you can
-        /// map a field, you must first create an index field with a matching type using the console
-        /// or the <code>UpdateIndex</code> API.
+        /// Maps attributes or field names of Confluence spaces to Amazon Kendra index field names.
+        /// To create custom fields, use the <code>UpdateIndex</code> API before you map to Confluence
+        /// fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
+        /// data source fields</a>. The Confluence data source field names must exist in your
+        /// Confluence custom metadata.
         /// </para>
         ///  
         /// <para>

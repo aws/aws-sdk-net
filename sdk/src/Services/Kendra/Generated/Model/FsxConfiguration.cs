@@ -46,9 +46,9 @@ namespace Amazon.Kendra.Model
         /// <para>
         /// A list of regular expression patterns to exclude certain files in your Amazon FSx
         /// file system. Files that match the patterns are excluded from the index. Files that
-        /// don’t match the patterns are included in the index. If a file matches both an inclusion
-        /// pattern and an exclusion pattern, the exclusion pattern takes precedence and the file
-        /// isn't included in the index.
+        /// don't match the patterns are included in the index. If a file matches both an inclusion
+        /// and exclusion pattern, the exclusion pattern takes precedence and the file isn't included
+        /// in the index.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
@@ -139,8 +139,8 @@ namespace Amazon.Kendra.Model
         /// A list of regular expression patterns to include certain files in your Amazon FSx
         /// file system. Files that match the patterns are included in the index. Files that don't
         /// match the patterns are excluded from the index. If a file matches both an inclusion
-        /// pattern and an exclusion pattern, the exclusion pattern takes precedence and the file
-        /// isn't included in the index.
+        /// and exclusion pattern, the exclusion pattern takes precedence and the file isn't included
+        /// in the index.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
@@ -192,8 +192,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property VpcConfiguration. 
         /// <para>
-        /// Configuration information for connecting to an Amazon Virtual Private Cloud for your
-        /// Amazon FSx. Your Amazon FSx instance must reside inside your VPC.
+        /// Configuration information for an Amazon Virtual Private Cloud to connect to your Amazon
+        /// FSx. Your Amazon FSx instance must reside inside your VPC.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
