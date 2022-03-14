@@ -201,6 +201,10 @@ namespace Amazon.TimestreamQuery
         /// </summary>
         public static readonly ScalarMeasureValueType DOUBLE = new ScalarMeasureValueType("DOUBLE");
         /// <summary>
+        /// Constant TIMESTAMP for ScalarMeasureValueType
+        /// </summary>
+        public static readonly ScalarMeasureValueType TIMESTAMP = new ScalarMeasureValueType("TIMESTAMP");
+        /// <summary>
         /// Constant VARCHAR for ScalarMeasureValueType
         /// </summary>
         public static readonly ScalarMeasureValueType VARCHAR = new ScalarMeasureValueType("VARCHAR");
