@@ -1613,6 +1613,10 @@ namespace Amazon.ConfigService
         /// </summary>
         public static readonly ResourceType AWSEC2InternetGateway = new ResourceType("AWS::EC2::InternetGateway");
         /// <summary>
+        /// Constant AWSEC2LaunchTemplate for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSEC2LaunchTemplate = new ResourceType("AWS::EC2::LaunchTemplate");
+        /// <summary>
         /// Constant AWSEC2NatGateway for ResourceType
         /// </summary>
         public static readonly ResourceType AWSEC2NatGateway = new ResourceType("AWS::EC2::NatGateway");
@@ -1672,6 +1676,10 @@ namespace Amazon.ConfigService
         /// Constant AWSEC2VPNGateway for ResourceType
         /// </summary>
         public static readonly ResourceType AWSEC2VPNGateway = new ResourceType("AWS::EC2::VPNGateway");
+        /// <summary>
+        /// Constant AWSECRPublicRepository for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSECRPublicRepository = new ResourceType("AWS::ECR::PublicRepository");
         /// <summary>
         /// Constant AWSECRRepository for ResourceType
         /// </summary>

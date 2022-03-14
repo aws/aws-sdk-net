@@ -151,8 +151,8 @@ namespace Amazon.ConfigService.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// You can only use a YAML template with one resource type, that is, config rule and
-        /// a remediation action. 
+        /// You can only use a YAML template with two resource types: config rule (<code>AWS::Config::ConfigRule</code>)
+        /// and a remediation action (<code>AWS::Config::RemediationConfiguration</code>).
         /// </para>
         ///  </note>
         /// </summary>

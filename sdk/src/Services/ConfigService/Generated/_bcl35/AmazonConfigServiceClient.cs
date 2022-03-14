@@ -5878,7 +5878,7 @@ namespace Amazon.ConfigService
         ///  
         /// <para>
         ///  <code>accountIds</code> that are passed will be replaced with existing accounts.
-        /// If you want to add additional accounts into the aggregator, call <code>DescribeAggregator</code>
+        /// If you want to add additional accounts into the aggregator, call <code>DescribeConfigurationAggregators</code>
         /// to get the previous accounts and then append new ones.
         /// </para>
         ///  <note> 
