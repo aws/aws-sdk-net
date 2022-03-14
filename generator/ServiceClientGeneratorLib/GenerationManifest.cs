@@ -178,11 +178,11 @@ namespace ServiceClientGenerator
                     JsonData metadataNode = LoadJsonFromFile(metadataJsonFile);
 
                     var activeNode = metadataNode[ModelsSectionKeys.ActiveKey];
-                    if (    activeNode != null
+                    if (activeNode != null
                         &&  activeNode.IsBoolean
                         && !(bool)activeNode )
                     {
-                        continue;                 
+                        continue;
                     }
 
                     var serviceModelFileName = GetLatestModel(serviceDirectory);

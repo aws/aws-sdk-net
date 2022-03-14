@@ -214,7 +214,10 @@ namespace ServiceClientGenerator
                 ExecuteGenerator(new ServicePaginatorFactoryInterface(), $"I{Configuration.ServiceNameRoot}PaginatorFactory.cs", PaginatorsSubFolder);
                 ExecuteGenerator(new ServicePaginatorFactory(), $"{Configuration.ServiceNameRoot}PaginatorFactory.cs", PaginatorsSubFolder);
 
-                GeneratePaginatorTests();
+                // Paginator tests only need to be generated against a single service,
+                // so generate for the Test service
+                if (Configuration.IsTestService)
+                    GeneratePaginatorTests();
             }
 #endif
             // Do not generate base exception if this is a child model.
@@ -1184,7 +1187,7 @@ namespace ServiceClientGenerator
         {
             if (this.Configuration.ServiceModel.HasPaginators && this.Configuration.GenerateConstructors)
             {
-                var paginatorTests = new PaginatorTests()
+                var paginatorTests = new PaginatorTests
                 {
                     Config = this.Configuration
                 };
@@ -1192,7 +1195,7 @@ namespace ServiceClientGenerator
                 var text = paginatorTests.TransformText();
                 var outputSubFolder = PaginatorTestsSubFolder;
                 WriteFile(ServiceUnitTestFilesRoot, outputSubFolder, this.Configuration.ClassName + "PaginatorTests.cs", text);
-            }         
+            }
         }
 
         internal static bool WriteFile(string baseOutputDir,

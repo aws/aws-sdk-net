@@ -1,0 +1,10 @@
+{
+  "pagination": {
+	  "TestPaginator": {
+      "input_token": "nextToken",
+      "output_token": "nextToken",
+      "limit_key": "limit",
+      "result_key": "list"
+    },
+  }  
+}
