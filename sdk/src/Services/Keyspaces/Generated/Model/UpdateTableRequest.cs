@@ -50,17 +50,16 @@ namespace Amazon.Keyspaces.Model
         /// <para>
         /// For each column to be added to the specified table:
         /// </para>
-        ///  <ul> <li> 
+        ///  
         /// <para>
-        ///  <i> <code>name</code> </i> - The name of the column.
+        /// • <code>name</code> - The name of the column.
         /// </para>
-        ///  </li> <li> 
+        ///  
         /// <para>
-        ///  <code> <i>type</i> </code> - An Amazon Keyspaces data type. For more information,
-        /// see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/cql.elements.html#cql.data-types">Data
+        /// • <code>type</code> - An Amazon Keyspaces data type. For more information, see <a
+        /// href="https://docs.aws.amazon.com/keyspaces/latest/devguide/cql.elements.html#cql.data-types">Data
         /// types</a> in the <i>Amazon Keyspaces Developer Guide</i>.
         /// </para>
-        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Min=1)]
         public List<ColumnDefinition> AddColumns
@@ -80,16 +79,16 @@ namespace Amazon.Keyspaces.Model
         /// <para>
         /// Modifies the read/write throughput capacity mode for the table. The options are:
         /// </para>
-        ///  <ul> <li> 
+        ///  
         /// <para>
-        ///  <code>throughputMode:PAY_PER_REQUEST</code> and 
+        /// • <code>throughputMode:PAY_PER_REQUEST</code> and 
         /// </para>
-        ///  </li> <li> 
+        ///  
         /// <para>
-        ///  <code>throughputMode:PROVISIONED</code>. The provisioned capacity mode requires <code>readCapacityUnits</code>
-        /// and <code>writeCapacityUnits</code> as inputs. 
+        /// • <code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code>
+        /// and <code>writeCapacityUnits</code> as input.
         /// </para>
-        ///  </li> </ul> 
+        ///  
         /// <para>
         /// The default is <code>throughput_mode:PAY_PER_REQUEST</code>.
         /// </para>
@@ -138,18 +137,28 @@ namespace Amazon.Keyspaces.Model
         /// <summary>
         /// Gets and sets the property EncryptionSpecification. 
         /// <para>
-        ///  Modifies the encryption settings of the table. You can choose one of the following
+        /// Modifies the encryption settings of the table. You can choose one of the following
         /// KMS key (KMS key):
         /// </para>
-        ///  <pre><code> &lt;ul&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;type:AWS_OWNED_KMS_KEY&lt;/code&gt;
-        /// - This key is owned by Amazon Keyspaces. &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;
-        /// &lt;code&gt;type:CUSTOMER_MANAGED_KMS_KEY&lt;/code&gt; - This key is stored in your
-        /// account and is created, owned, and managed by you. This option requires the &lt;code&gt;kms_key_identifier&lt;/code&gt;
-        /// of the KMS key in Amazon Resource Name (ARN) format as input. &lt;/p&gt; &lt;/li&gt;
-        /// &lt;/ul&gt; &lt;p&gt;The default is &lt;code&gt;AWS_OWNED_KMS_KEY&lt;/code&gt;. &lt;/p&gt;
-        /// &lt;p&gt;For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html&quot;&gt;Encryption
-        /// at rest&lt;/a&gt; in the &lt;i&gt;Amazon Keyspaces Developer Guide&lt;/i&gt;.&lt;/p&gt;
-        /// </code></pre>
+        ///  
+        /// <para>
+        /// • <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces. 
+        /// </para>
+        ///  
+        /// <para>
+        /// • <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account
+        /// and is created, owned, and managed by you. This option requires the <code>kms_key_identifier</code>
+        /// of the KMS key in Amazon Resource Name (ARN) format as input. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The default is <code>AWS_OWNED_KMS_KEY</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html">Encryption
+        /// at rest</a> in the <i>Amazon Keyspaces Developer Guide</i>.
+        /// </para>
         /// </summary>
         public EncryptionSpecification EncryptionSpecification
         {
@@ -185,18 +194,17 @@ namespace Amazon.Keyspaces.Model
         /// <summary>
         /// Gets and sets the property PointInTimeRecovery. 
         /// <para>
-        ///  Modifies the <code>pointInTimeRecovery</code> settings of the table. The options
-        /// are:
+        /// Modifies the <code>pointInTimeRecovery</code> settings of the table. The options are:
         /// </para>
-        ///  <ul> <li> 
+        ///  
         /// <para>
-        ///  <code>ENABLED</code> 
+        /// • <code>ENABLED</code> 
         /// </para>
-        ///  </li> <li> 
+        ///  
         /// <para>
-        ///  <code>DISABLED</code> 
+        /// • <code>DISABLED</code> 
         /// </para>
-        ///  </li> </ul> 
+        ///  
         /// <para>
         /// If it's not specified, the default is <code>DISABLED</code>.
         /// </para>
@@ -242,15 +250,15 @@ namespace Amazon.Keyspaces.Model
         /// <para>
         /// Modifies Time to Live custom settings for the table. The options are:
         /// </para>
-        ///  <ul> <li> 
+        ///  
         /// <para>
-        ///  <code>status:enabled</code> 
+        /// • <code>status:enabled</code> 
         /// </para>
-        ///  </li> <li> 
+        ///  
         /// <para>
-        ///  <code>status:disabled</code> 
+        /// • <code>status:disabled</code> 
         /// </para>
-        ///  </li> </ul> 
+        ///  
         /// <para>
         /// The default is <code>status:disabled</code>. After <code>ttl</code> is enabled, you
         /// can't disable it for the table.

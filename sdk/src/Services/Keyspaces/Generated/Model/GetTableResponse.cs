@@ -51,15 +51,14 @@ namespace Amazon.Keyspaces.Model
         /// <para>
         /// The read/write throughput capacity mode for a table. The options are:
         /// </para>
-        ///  <ul> <li> 
+        ///  
         /// <para>
-        ///  <code>throughputMode:PAY_PER_REQUEST</code> and 
+        /// • <code>throughputMode:PAY_PER_REQUEST</code> 
         /// </para>
-        ///  </li> <li> 
+        ///  
         /// <para>
-        ///  <code>throughputMode:PROVISIONED</code>. 
+        /// • <code>throughputMode:PROVISIONED</code> 
         /// </para>
-        ///  </li> </ul>
         /// </summary>
         public CapacitySpecificationSummary CapacitySpecification
         {

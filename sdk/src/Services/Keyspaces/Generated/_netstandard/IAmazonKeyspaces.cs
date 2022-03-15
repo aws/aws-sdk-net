@@ -38,20 +38,30 @@ namespace Amazon.Keyspaces
     /// create keyspaces and tables in Amazon Keyspaces, without deploying any infrastructure
     /// or installing software. 
     /// 
-    ///  <pre><code> &lt;p&gt;In addition to supporting Cassandra Query Language (CQL) requests
-    /// via open-source Cassandra drivers, Amazon Keyspaces supports data definition language
-    /// (DDL) operations to manage keyspaces and tables using the Amazon Web Services SDK
-    /// and CLI. This API reference describes the supported DDL operations in detail. &lt;/p&gt;
-    /// &lt;p&gt;For the list of all supported CQL APIs, see &lt;a href=&quot;https://docs.aws.amazon.com/keyspaces/latest/devguide/cassandra-apis.html&quot;&gt;Supported
-    /// Cassandra APIs, operations, and data types in Amazon Keyspaces&lt;/a&gt; in the &lt;i&gt;Amazon
-    /// Keyspaces Developer Guide&lt;/i&gt;.&lt;/p&gt; &lt;p&gt;To learn how Amazon Keyspaces
-    /// API actions are tracked in CloudTrail, see &lt;a href=&quot;https://docs.aws.amazon.com/keyspaces/latest/devguide/logging-using-cloudtrail.html#service-name-info-in-cloudtrail&quot;&gt;Amazon
-    /// Keyspaces information in CloudTrail&lt;/a&gt; in the &lt;i&gt;Amazon Keyspaces Developer
-    /// Guide&lt;/i&gt;.&lt;/p&gt; &lt;p&gt;For more information about Amazon Web Services
-    /// APIs, for example how to implement retry logic or how to sign Amazon Web Services
-    /// API requests, see &lt;a href=&quot;https://docs.aws.amazon.com/general/latest/gr/aws-apis.html&quot;&gt;Amazon
-    /// Web Services APIs&lt;/a&gt; in the &lt;i&gt;General Reference&lt;/i&gt;. &lt;/p&gt;
-    /// </code></pre>
+    ///  
+    /// <para>
+    /// In addition to supporting Cassandra Query Language (CQL) requests via open-source
+    /// Cassandra drivers, Amazon Keyspaces supports data definition language (DDL) operations
+    /// to manage keyspaces and tables using the Amazon Web Services SDK and CLI. This API
+    /// reference describes the supported DDL operations in detail.
+    /// </para>
+    ///  
+    /// <para>
+    /// For the list of all supported CQL APIs, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/cassandra-apis.html">Supported
+    /// Cassandra APIs, operations, and data types in Amazon Keyspaces</a> in the <i>Amazon
+    /// Keyspaces Developer Guide</i>.
+    /// </para>
+    ///  
+    /// <para>
+    /// To learn how Amazon Keyspaces API actions are recorded with CloudTrail, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/logging-using-cloudtrail.html#service-name-info-in-cloudtrail">Amazon
+    /// Keyspaces information in CloudTrail</a> in the <i>Amazon Keyspaces Developer Guide</i>.
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information about Amazon Web Services APIs, for example how to implement
+    /// retry logic or how to sign Amazon Web Services API requests, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-apis.html">Amazon
+    /// Web Services APIs</a> in the <i>General Reference</i>.
+    /// </para>
     /// </summary>
     public partial interface IAmazonKeyspaces : IAmazonService, IDisposable
     {
@@ -70,11 +80,10 @@ namespace Amazon.Keyspaces
         /// The <code>CreateKeyspace</code> operation adds a new keyspace to your account. In
         /// an Amazon Web Services account, keyspace names must be unique within each Region.
         /// 
-        /// 
         ///  
         /// <para>
         ///  <code>CreateKeyspace</code> is an asynchronous operation. You can monitor the creation
-        /// status of the new keyspace by using the <code>GetKeyspace</code> operation. 
+        /// status of the new keyspace by using the <code>GetKeyspace</code> operation.
         /// </para>
         ///  
         /// <para>
@@ -119,7 +128,7 @@ namespace Amazon.Keyspaces
 
         /// <summary>
         /// The <code>CreateTable</code> operation adds a new table to the specified keyspace.
-        /// Within a keyspace, table names must be unique. 
+        /// Within a keyspace, table names must be unique.
         /// 
         ///  
         /// <para>
@@ -127,7 +136,7 @@ namespace Amazon.Keyspaces
         /// the status of the table is set to <code>CREATING</code>. You can monitor the creation
         /// status of the new table by using the <code>GetTable</code> operation, which returns
         /// the current <code>status</code> of the table. You can start using a table when the
-        /// status is <code>ACTIVE</code>. 
+        /// status is <code>ACTIVE</code>.
         /// </para>
         ///  
         /// <para>
@@ -464,7 +473,7 @@ namespace Amazon.Keyspaces
         /// 
         ///  
         /// <para>
-        ///  Any number of users can execute up to 4 concurrent restores (any type of restore)
+        /// Any number of users can execute up to 4 concurrent restores (any type of restore)
         /// in a given account.
         /// </para>
         ///  
@@ -486,45 +495,44 @@ namespace Amazon.Keyspaces
         /// <para>
         /// You can also overwrite these settings during restore:
         /// </para>
-        ///  <ul> <li> 
+        ///  
         /// <para>
-        /// Read/write capacity mode
+        /// • Read/write capacity mode
         /// </para>
-        ///  </li> <li> 
+        ///  
         /// <para>
-        /// Provisioned throughput capacity settings
+        /// • Provisioned throughput capacity settings
         /// </para>
-        ///  </li> <li> 
+        ///  
         /// <para>
-        /// Point-in-time (PITR) settings
+        /// • Point-in-time (PITR) settings
         /// </para>
-        ///  </li> <li> 
+        ///  
         /// <para>
-        /// Tags
+        /// • Tags
         /// </para>
-        ///  </li> </ul> 
+        ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery_HowItWorks.html#howitworks_backup_settings">PITR
         /// restore settings</a> in the <i>Amazon Keyspaces Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// The following settings are not restored, and you must configure them manually for
-        /// the new table. 
+        /// Note that the following settings are not restored, and you must configure them manually
+        /// for the new table:
         /// </para>
-        ///  <ul> <li> 
+        ///  
         /// <para>
-        /// Automatic scaling policies (for tables that use provisioned capacity mode)
+        /// • Automatic scaling policies (for tables that use provisioned capacity mode)
         /// </para>
-        ///  </li> <li> 
+        ///  
         /// <para>
-        /// Identity and Access Management (IAM) policies
+        /// • Identity and Access Management (IAM) policies
         /// </para>
-        ///  </li> <li> 
+        ///  
         /// <para>
-        /// Amazon CloudWatch metrics and alarms
+        /// • Amazon CloudWatch metrics and alarms
         /// </para>
-        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RestoreTable service method.</param>
         /// <param name="cancellationToken">

@@ -30,7 +30,7 @@ namespace Amazon.Keyspaces.Model
 {
     /// <summary>
     /// Describes a tag. A tag is a key-value pair. You can add up to 50 tags to a single
-    /// Amazon Keyspaces resource. 
+    /// Amazon Keyspaces resource.
     /// 
     ///  
     /// <para>

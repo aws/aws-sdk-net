@@ -37,7 +37,7 @@ namespace Amazon.Keyspaces.Model
     /// 
     ///  
     /// <para>
-    ///  Any number of users can execute up to 4 concurrent restores (any type of restore)
+    /// Any number of users can execute up to 4 concurrent restores (any type of restore)
     /// in a given account.
     /// </para>
     ///  
@@ -59,45 +59,44 @@ namespace Amazon.Keyspaces.Model
     /// <para>
     /// You can also overwrite these settings during restore:
     /// </para>
-    ///  <ul> <li> 
+    ///  
     /// <para>
-    /// Read/write capacity mode
+    /// • Read/write capacity mode
     /// </para>
-    ///  </li> <li> 
+    ///  
     /// <para>
-    /// Provisioned throughput capacity settings
+    /// • Provisioned throughput capacity settings
     /// </para>
-    ///  </li> <li> 
+    ///  
     /// <para>
-    /// Point-in-time (PITR) settings
+    /// • Point-in-time (PITR) settings
     /// </para>
-    ///  </li> <li> 
+    ///  
     /// <para>
-    /// Tags
+    /// • Tags
     /// </para>
-    ///  </li> </ul> 
+    ///  
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery_HowItWorks.html#howitworks_backup_settings">PITR
     /// restore settings</a> in the <i>Amazon Keyspaces Developer Guide</i>.
     /// </para>
     ///  
     /// <para>
-    /// The following settings are not restored, and you must configure them manually for
-    /// the new table. 
+    /// Note that the following settings are not restored, and you must configure them manually
+    /// for the new table:
     /// </para>
-    ///  <ul> <li> 
+    ///  
     /// <para>
-    /// Automatic scaling policies (for tables that use provisioned capacity mode)
+    /// • Automatic scaling policies (for tables that use provisioned capacity mode)
     /// </para>
-    ///  </li> <li> 
+    ///  
     /// <para>
-    /// Identity and Access Management (IAM) policies
+    /// • Identity and Access Management (IAM) policies
     /// </para>
-    ///  </li> <li> 
+    ///  
     /// <para>
-    /// Amazon CloudWatch metrics and alarms
+    /// • Amazon CloudWatch metrics and alarms
     /// </para>
-    ///  </li> </ul>
     /// </summary>
     public partial class RestoreTableRequest : AmazonKeyspacesRequest
     {
@@ -117,16 +116,16 @@ namespace Amazon.Keyspaces.Model
         /// Specifies the read/write throughput capacity mode for the target table. The options
         /// are:
         /// </para>
-        ///  <ul> <li> 
+        ///  
         /// <para>
-        ///  <code>throughputMode:PAY_PER_REQUEST</code> and 
+        /// • <code>throughputMode:PAY_PER_REQUEST</code> 
         /// </para>
-        ///  </li> <li> 
+        ///  
         /// <para>
-        ///  <code>throughputMode:PROVISIONED</code>. The provisioned capacity mode requires <code>readCapacityUnits</code>
-        /// and <code>writeCapacityUnits</code> as inputs. 
+        /// • <code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code>
+        /// and <code>writeCapacityUnits</code> as input.
         /// </para>
-        ///  </li> </ul> 
+        ///  
         /// <para>
         /// The default is <code>throughput_mode:PAY_PER_REQUEST</code>.
         /// </para>
@@ -151,18 +150,28 @@ namespace Amazon.Keyspaces.Model
         /// <summary>
         /// Gets and sets the property EncryptionSpecificationOverride. 
         /// <para>
-        ///  Specifies the encryption settings for the target table. You can choose one of the
+        /// Specifies the encryption settings for the target table. You can choose one of the
         /// following KMS key (KMS key):
         /// </para>
-        ///  <pre><code> &lt;ul&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;type:AWS_OWNED_KMS_KEY&lt;/code&gt;
-        /// - This key is owned by Amazon Keyspaces. &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;
-        /// &lt;code&gt;type:CUSTOMER_MANAGED_KMS_KEY&lt;/code&gt; - This key is stored in your
-        /// account and is created, owned, and managed by you. This option requires the &lt;code&gt;kms_key_identifier&lt;/code&gt;
-        /// of the KMS key in Amazon Resource Name (ARN) format as input. &lt;/p&gt; &lt;/li&gt;
-        /// &lt;/ul&gt; &lt;p&gt;The default is &lt;code&gt;type:AWS_OWNED_KMS_KEY&lt;/code&gt;.
-        /// &lt;/p&gt; &lt;p&gt;For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html&quot;&gt;Encryption
-        /// at rest&lt;/a&gt; in the &lt;i&gt;Amazon Keyspaces Developer Guide&lt;/i&gt;.&lt;/p&gt;
-        /// </code></pre>
+        ///  
+        /// <para>
+        /// • <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces. 
+        /// </para>
+        ///  
+        /// <para>
+        /// • <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account
+        /// and is created, owned, and managed by you. This option requires the <code>kms_key_identifier</code>
+        /// of the KMS key in Amazon Resource Name (ARN) format as input. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The default is <code>type:AWS_OWNED_KMS_KEY</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html">Encryption
+        /// at rest</a> in the <i>Amazon Keyspaces Developer Guide</i>.
+        /// </para>
         /// </summary>
         public EncryptionSpecification EncryptionSpecificationOverride
         {
@@ -179,18 +188,18 @@ namespace Amazon.Keyspaces.Model
         /// <summary>
         /// Gets and sets the property PointInTimeRecoveryOverride. 
         /// <para>
-        ///  Specifies the <code>pointInTimeRecovery</code> settings for the target table. The
+        /// Specifies the <code>pointInTimeRecovery</code> settings for the target table. The
         /// options are:
         /// </para>
-        ///  <ul> <li> 
+        ///  
         /// <para>
-        ///  <code>ENABLED</code> 
+        /// • <code>ENABLED</code> 
         /// </para>
-        ///  </li> <li> 
+        ///  
         /// <para>
-        ///  <code>DISABLED</code> 
+        /// • <code>DISABLED</code> 
         /// </para>
-        ///  </li> </ul> 
+        ///  
         /// <para>
         /// If it's not specified, the default is <code>DISABLED</code>.
         /// </para>

@@ -33,11 +33,10 @@ namespace Amazon.Keyspaces.Model
     /// The <code>CreateKeyspace</code> operation adds a new keyspace to your account. In
     /// an Amazon Web Services account, keyspace names must be unique within each Region.
     /// 
-    /// 
     ///  
     /// <para>
     ///  <code>CreateKeyspace</code> is an asynchronous operation. You can monitor the creation
-    /// status of the new keyspace by using the <code>GetKeyspace</code> operation. 
+    /// status of the new keyspace by using the <code>GetKeyspace</code> operation.
     /// </para>
     ///  
     /// <para>
