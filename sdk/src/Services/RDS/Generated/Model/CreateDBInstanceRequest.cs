@@ -94,10 +94,10 @@ namespace Amazon.RDS.Model
         /// Instantiates CreateDBInstanceRequest with the parameterized properties
         /// </summary>
         /// <param name="dbInstanceIdentifier">The DB instance identifier. This parameter is stored as a lowercase string. Constraints: <ul> <li> Must contain from 1 to 63 letters, numbers, or hyphens. </li> <li> First character must be a letter. </li> <li> Can't end with a hyphen or contain two consecutive hyphens. </li> </ul> Example: <code>mydbinstance</code> </param>
-        /// <param name="allocatedStorage">The amount of storage in gibibytes (GiB) to allocate for the DB instance. Type: Integer  <b>Amazon Aurora</b>  Not applicable. Aurora cluster volumes automatically grow as the amount of data in your database increases, though you are only charged for the space that you use in an Aurora cluster volume.  <b>Amazon RDS Custom</b>  Constraints to the amount of storage for each storage type are the following:  <ul> <li> General Purpose (SSD) storage (gp2): Must be an integer from 40 to 65536 for RDS Custom for Oracle, 16384 for RDS Custom for SQL Server. </li> <li> Provisioned IOPS storage (io1): Must be an integer from 40 to 65536 for RDS Custom for Oracle, 16384 for RDS Custom for SQL Server. </li> </ul>  <b>MySQL</b>  Constraints to the amount of storage for each storage type are the following:  <ul> <li> General Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536. </li> <li> Provisioned IOPS storage (io1): Must be an integer from 100 to 65536. </li> <li> Magnetic storage (standard): Must be an integer from 5 to 3072. </li> </ul>  <b>MariaDB</b>  Constraints to the amount of storage for each storage type are the following:  <ul> <li> General Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536. </li> <li> Provisioned IOPS storage (io1): Must be an integer from 100 to 65536. </li> <li> Magnetic storage (standard): Must be an integer from 5 to 3072. </li> </ul>  <b>PostgreSQL</b>  Constraints to the amount of storage for each storage type are the following:  <ul> <li> General Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536. </li> <li> Provisioned IOPS storage (io1): Must be an integer from 100 to 65536. </li> <li> Magnetic storage (standard): Must be an integer from 5 to 3072. </li> </ul>  <b>Oracle</b>  Constraints to the amount of storage for each storage type are the following:  <ul> <li> General Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536. </li> <li> Provisioned IOPS storage (io1): Must be an integer from 100 to 65536. </li> <li> Magnetic storage (standard): Must be an integer from 10 to 3072. </li> </ul>  <b>SQL Server</b>  Constraints to the amount of storage for each storage type are the following:  <ul> <li> General Purpose (SSD) storage (gp2): <ul> <li> Enterprise and Standard editions: Must be an integer from 20 to 16384. </li> <li> Web and Express editions: Must be an integer from 20 to 16384. </li> </ul> </li> <li> Provisioned IOPS storage (io1): <ul> <li> Enterprise and Standard editions: Must be an integer from 100 to 16384. </li> <li> Web and Express editions: Must be an integer from 100 to 16384. </li> </ul> </li> <li> Magnetic storage (standard): <ul> <li> Enterprise and Standard editions: Must be an integer from 20 to 1024. </li> <li> Web and Express editions: Must be an integer from 20 to 1024. </li> </ul> </li> </ul></param>
-        /// <param name="dbInstanceClass">The compute and memory capacity of the DB instance, for example db.m4.large. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide.</i> </param>
-        /// <param name="engine">The name of the database engine to be used for this instance.  Not every database engine is available for every Amazon Web Services Region.  Valid Values:  <ul> <li>  <code>aurora</code> (for MySQL 5.6-compatible Aurora) </li> <li>  <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL 8.0-compatible Aurora) </li> <li>  <code>aurora-postgresql</code>  </li> <li>  <code>custom-oracle-ee (for RDS Custom for Oracle instances)</code>  </li> <li>  <code>custom-sqlserver-ee (for RDS Custom for SQL Server instances)</code>  </li> <li>  <code>custom-sqlserver-se (for RDS Custom for SQL Server instances)</code>  </li> <li>  <code>custom-sqlserver-web (for RDS Custom for SQL Server instances)</code>  </li> <li>  <code>mariadb</code>  </li> <li>  <code>mysql</code>  </li> <li>  <code>oracle-ee</code>  </li> <li>  <code>oracle-ee-cdb</code>  </li> <li>  <code>oracle-se2</code>  </li> <li>  <code>oracle-se2-cdb</code>  </li> <li>  <code>postgres</code>  </li> <li>  <code>sqlserver-ee</code>  </li> <li>  <code>sqlserver-se</code>  </li> <li>  <code>sqlserver-ex</code>  </li> <li>  <code>sqlserver-web</code>  </li> </ul></param>
-        /// <param name="masterUsername">The name for the master user.  <b>Amazon Aurora</b>  Not applicable. The name for the master user is managed by the DB cluster.   <b>Amazon RDS</b>  Constraints: <ul> <li> Required. </li> <li> Must be 1 to 16 letters, numbers, or underscores. </li> <li> First character must be a letter. </li> <li> Can't be a reserved word for the chosen database engine. </li> </ul></param>
+        /// <param name="allocatedStorage">The amount of storage in gibibytes (GiB) to allocate for the DB instance. Type: Integer  <b>Amazon Aurora</b>  Not applicable. Aurora cluster volumes automatically grow as the amount of data in your database increases, though you are only charged for the space that you use in an Aurora cluster volume.  <b>Amazon RDS Custom</b>  Constraints to the amount of storage for each storage type are the following: <ul> <li> General Purpose (SSD) storage (gp2): Must be an integer from 40 to 65536 for RDS Custom for Oracle, 16384 for RDS Custom for SQL Server. </li> <li> Provisioned IOPS storage (io1): Must be an integer from 40 to 65536 for RDS Custom for Oracle, 16384 for RDS Custom for SQL Server. </li> </ul>  <b>MySQL</b>  Constraints to the amount of storage for each storage type are the following: <ul> <li> General Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536. </li> <li> Provisioned IOPS storage (io1): Must be an integer from 100 to 65536. </li> <li> Magnetic storage (standard): Must be an integer from 5 to 3072. </li> </ul>  <b>MariaDB</b>  Constraints to the amount of storage for each storage type are the following: <ul> <li> General Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536. </li> <li> Provisioned IOPS storage (io1): Must be an integer from 100 to 65536. </li> <li> Magnetic storage (standard): Must be an integer from 5 to 3072. </li> </ul>  <b>PostgreSQL</b>  Constraints to the amount of storage for each storage type are the following: <ul> <li> General Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536. </li> <li> Provisioned IOPS storage (io1): Must be an integer from 100 to 65536. </li> <li> Magnetic storage (standard): Must be an integer from 5 to 3072. </li> </ul>  <b>Oracle</b>  Constraints to the amount of storage for each storage type are the following: <ul> <li> General Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536. </li> <li> Provisioned IOPS storage (io1): Must be an integer from 100 to 65536. </li> <li> Magnetic storage (standard): Must be an integer from 10 to 3072. </li> </ul>  <b>SQL Server</b>  Constraints to the amount of storage for each storage type are the following: <ul> <li> General Purpose (SSD) storage (gp2): <ul> <li> Enterprise and Standard editions: Must be an integer from 20 to 16384. </li> <li> Web and Express editions: Must be an integer from 20 to 16384. </li> </ul> </li> <li> Provisioned IOPS storage (io1): <ul> <li> Enterprise and Standard editions: Must be an integer from 100 to 16384. </li> <li> Web and Express editions: Must be an integer from 100 to 16384. </li> </ul> </li> <li> Magnetic storage (standard): <ul> <li> Enterprise and Standard editions: Must be an integer from 20 to 1024. </li> <li> Web and Express editions: Must be an integer from 20 to 1024. </li> </ul> </li> </ul></param>
+        /// <param name="dbInstanceClass">The compute and memory capacity of the DB instance, for example db.m4.large. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide</i>.</param>
+        /// <param name="engine">The name of the database engine to be used for this instance. Not every database engine is available for every Amazon Web Services Region. Valid Values: <ul> <li>  <code>aurora</code> (for MySQL 5.6-compatible Aurora) </li> <li>  <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL 8.0-compatible Aurora) </li> <li>  <code>aurora-postgresql</code>  </li> <li>  <code>custom-oracle-ee (for RDS Custom for Oracle instances)</code>  </li> <li>  <code>custom-sqlserver-ee (for RDS Custom for SQL Server instances)</code>  </li> <li>  <code>custom-sqlserver-se (for RDS Custom for SQL Server instances)</code>  </li> <li>  <code>custom-sqlserver-web (for RDS Custom for SQL Server instances)</code>  </li> <li>  <code>mariadb</code>  </li> <li>  <code>mysql</code>  </li> <li>  <code>oracle-ee</code>  </li> <li>  <code>oracle-ee-cdb</code>  </li> <li>  <code>oracle-se2</code>  </li> <li>  <code>oracle-se2-cdb</code>  </li> <li>  <code>postgres</code>  </li> <li>  <code>sqlserver-ee</code>  </li> <li>  <code>sqlserver-se</code>  </li> <li>  <code>sqlserver-ex</code>  </li> <li>  <code>sqlserver-web</code>  </li> </ul></param>
+        /// <param name="masterUsername">The name for the master user.  <b>Amazon Aurora</b>  Not applicable. The name for the master user is managed by the DB cluster.  <b>Amazon RDS</b>  Constraints: <ul> <li> Required. </li> <li> Must be 1 to 16 letters, numbers, or underscores. </li> <li> First character must be a letter. </li> <li> Can't be a reserved word for the chosen database engine. </li> </ul></param>
         /// <param name="masterUserPassword">The password for the master user. The password can include any printable ASCII character except "/", """, or "@".  <b>Amazon Aurora</b>  Not applicable. The password for the master user is managed by the DB cluster.  <b>MariaDB</b>  Constraints: Must contain from 8 to 41 characters.  <b>Microsoft SQL Server</b>  Constraints: Must contain from 8 to 128 characters.  <b>MySQL</b>  Constraints: Must contain from 8 to 41 characters.  <b>Oracle</b>  Constraints: Must contain from 8 to 30 characters.  <b>PostgreSQL</b>  Constraints: Must contain from 8 to 128 characters.</param>
         public CreateDBInstanceRequest(string dbInstanceIdentifier, int allocatedStorage, string dbInstanceClass, string engine, string masterUsername, string masterUserPassword)
         {
@@ -134,7 +134,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraints to the amount of storage for each storage type are the following: 
+        /// Constraints to the amount of storage for each storage type are the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -152,7 +152,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraints to the amount of storage for each storage type are the following: 
+        /// Constraints to the amount of storage for each storage type are the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -172,7 +172,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraints to the amount of storage for each storage type are the following: 
+        /// Constraints to the amount of storage for each storage type are the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -192,7 +192,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraints to the amount of storage for each storage type are the following: 
+        /// Constraints to the amount of storage for each storage type are the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -212,7 +212,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraints to the amount of storage for each storage type are the following: 
+        /// Constraints to the amount of storage for each storage type are the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -232,7 +232,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraints to the amount of storage for each storage type are the following: 
+        /// Constraints to the amount of storage for each storage type are the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -312,9 +312,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
         /// <para>
-        ///  The Availability Zone (AZ) where the database will be created. For information on
+        /// The Availability Zone (AZ) where the database will be created. For information on
         /// Amazon Web Services Regions and Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
-        /// and Availability Zones</a>. 
+        /// and Availability Zones</a>.
         /// </para>
         ///  
         /// <para>
@@ -322,7 +322,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Not applicable. Availability Zones are managed by the DB cluster. 
+        /// Not applicable. Availability Zones are managed by the DB cluster.
         /// </para>
         ///  
         /// <para>
@@ -331,13 +331,13 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  Example: <code>us-east-1d</code> 
+        /// Example: <code>us-east-1d</code> 
         /// </para>
         ///  
         /// <para>
-        ///  Constraint: The <code>AvailabilityZone</code> parameter can't be specified if the
+        /// Constraint: The <code>AvailabilityZone</code> parameter can't be specified if the
         /// DB instance is a Multi-AZ deployment. The specified Availability Zone must be in the
-        /// same Amazon Web Services Region as the current endpoint. 
+        /// same Amazon Web Services Region as the current endpoint.
         /// </para>
         ///  <note> 
         /// <para>
@@ -523,7 +523,7 @@ namespace Amazon.RDS.Model
         ///  </li> </ul> 
         /// <para>
         /// For the list of permissions required for the IAM role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc">
-        /// Configure IAM and your VPC</a> in the <i>Amazon Relational Database Service User Guide</i>.
+        /// Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -571,7 +571,7 @@ namespace Amazon.RDS.Model
         /// DB instance classes are available in all Amazon Web Services Regions, or for all database
         /// engines. For the full list of DB instance classes, and availability for your engine,
         /// see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-        /// Instance Class</a> in the <i>Amazon RDS User Guide.</i> 
+        /// Instance Class</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -717,7 +717,7 @@ namespace Amazon.RDS.Model
         /// <para>
         /// The Oracle System ID (SID) of the created DB instance. If you specify <code>null</code>,
         /// the default value <code>ORCL</code> is used. You can't specify the string NULL, or
-        /// any other reserved word, for <code>DBName</code>. 
+        /// any other reserved word, for <code>DBName</code>.
         /// </para>
         ///  
         /// <para>
@@ -738,7 +738,7 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// The Oracle System ID (SID) of the created RDS Custom DB instance. If you don't specify
-        /// a value, the default value is <code>ORCL</code>. 
+        /// a value, the default value is <code>ORCL</code>.
         /// </para>
         ///  
         /// <para>
@@ -934,7 +934,7 @@ namespace Amazon.RDS.Model
         /// A value that indicates whether the DB instance has deletion protection enabled. The
         /// database can't be deleted when deletion protection is enabled. By default, deletion
         /// protection isn't enabled. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
-        /// Deleting a DB Instance</a>. 
+        /// Deleting a DB Instance</a>.
         /// </para>
         ///  
         /// <para>
@@ -944,7 +944,7 @@ namespace Amazon.RDS.Model
         /// <para>
         /// Not applicable. You can enable or disable deletion protection for the DB cluster.
         /// For more information, see <code>CreateDBCluster</code>. DB instances in a DB cluster
-        /// can be deleted even when deletion protection is enabled for the DB cluster. 
+        /// can be deleted even when deletion protection is enabled for the DB cluster.
         /// </para>
         /// </summary>
         public bool DeletionProtection
@@ -1015,9 +1015,8 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property EnableCloudwatchLogsExports. 
         /// <para>
         /// The list of log types that need to be enabled for exporting to CloudWatch Logs. The
-        /// values in the list depend on the DB engine. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
-        /// Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Relational Database Service
-        /// User Guide</i>.
+        /// values in the list depend on the DB engine. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">
+        /// Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -1025,7 +1024,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Not applicable. CloudWatch Logs exports are managed by the DB cluster. 
+        /// Not applicable. CloudWatch Logs exports are managed by the DB cluster.
         /// </para>
         ///  
         /// <para>
@@ -1033,7 +1032,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Not applicable. 
+        /// Not applicable.
         /// </para>
         ///  
         /// <para>
@@ -1042,7 +1041,7 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// Possible values are <code>audit</code>, <code>error</code>, <code>general</code>,
-        /// and <code>slowquery</code>. 
+        /// and <code>slowquery</code>.
         /// </para>
         ///  
         /// <para>
@@ -1050,7 +1049,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Possible values are <code>agent</code> and <code>error</code>. 
+        /// Possible values are <code>agent</code> and <code>error</code>.
         /// </para>
         ///  
         /// <para>
@@ -1059,7 +1058,7 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// Possible values are <code>audit</code>, <code>error</code>, <code>general</code>,
-        /// and <code>slowquery</code>. 
+        /// and <code>slowquery</code>.
         /// </para>
         ///  
         /// <para>
@@ -1068,7 +1067,7 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// Possible values are <code>alert</code>, <code>audit</code>, <code>listener</code>,
-        /// <code>trace</code>, and <code>oemagent</code>. 
+        /// <code>trace</code>, and <code>oemagent</code>.
         /// </para>
         ///  
         /// <para>
@@ -1076,7 +1075,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Possible values are <code>postgresql</code> and <code>upgrade</code>. 
+        /// Possible values are <code>postgresql</code> and <code>upgrade</code>.
         /// </para>
         /// </summary>
         public List<string> EnableCloudwatchLogsExports
@@ -1142,7 +1141,7 @@ namespace Amazon.RDS.Model
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
         /// IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User
-        /// Guide.</i> 
+        /// Guide</i>.
         /// </para>
         /// </summary>
         public bool EnableIAMDatabaseAuthentication
@@ -1162,8 +1161,7 @@ namespace Amazon.RDS.Model
         /// <para>
         /// A value that indicates whether to enable Performance Insights for the DB instance.
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using
-        /// Amazon Performance Insights</a> in the <i>Amazon Relational Database Service User
-        /// Guide</i>. 
+        /// Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -1185,15 +1183,15 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Engine. 
         /// <para>
-        /// The name of the database engine to be used for this instance. 
+        /// The name of the database engine to be used for this instance.
         /// </para>
         ///  
         /// <para>
-        /// Not every database engine is available for every Amazon Web Services Region. 
+        /// Not every database engine is available for every Amazon Web Services Region.
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: 
+        /// Valid Values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -1317,7 +1315,7 @@ namespace Amazon.RDS.Model
         /// for RDS Custom for Oracle. The CEV name has the following format: <code>19.<i>customized_string</i>
         /// </code>. An example identifier is <code>19.my_cev1</code>. For more information, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-creating.html#custom-creating.create">
-        /// Creating an RDS Custom for Oracle DB instance</a> in the <i>Amazon RDS User Guide.</i>.
+        /// Creating an RDS Custom for Oracle DB instance</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -1326,8 +1324,7 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits.html#custom-reqs-limits.reqsMS">RDS
-        /// Custom for SQL Server general requirements</a> in the <i>Amazon RDS User Guide.</i>
-        /// 
+        /// Custom for SQL Server general requirements</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -1336,7 +1333,7 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// For information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB
-        /// on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> 
+        /// on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -1345,7 +1342,7 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// For information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport">Microsoft
-        /// SQL Server Versions on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> 
+        /// SQL Server Versions on Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -1354,7 +1351,7 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// For information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL
-        /// on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> 
+        /// on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -1363,7 +1360,7 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// For information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.Oracle.PatchComposition.html">Oracle
-        /// Database Engine Release Notes</a> in the <i>Amazon RDS User Guide.</i> 
+        /// Database Engine Release Notes</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -1372,8 +1369,7 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// For information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts">Amazon
-        /// RDS for PostgreSQL versions and extensions</a> in the <i>Amazon RDS User Guide.</i>
-        /// 
+        /// RDS for PostgreSQL versions and extensions</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
         /// </summary>
         public string EngineVersion
@@ -1395,13 +1391,13 @@ namespace Amazon.RDS.Model
         /// allocated for the DB instance. For information about valid <code>Iops</code> values,
         /// see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon
         /// RDS Provisioned IOPS storage to improve performance</a> in the <i>Amazon RDS User
-        /// Guide</i>. 
+        /// Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// Constraints: For MariaDB, MySQL, Oracle, and PostgreSQL DB instances, must be a multiple
         /// between .5 and 50 of the storage amount for the DB instance. For SQL Server DB instances,
-        /// must be a multiple between 1 and 50 of the storage amount for the DB instance. 
+        /// must be a multiple between 1 and 50 of the storage amount for the DB instance.
         /// </para>
         /// </summary>
         public int Iops
@@ -1474,7 +1470,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  Valid values: <code>license-included</code> | <code>bring-your-own-license</code>
+        /// Valid values: <code>license-included</code> | <code>bring-your-own-license</code>
         /// | <code>general-public-license</code> 
         /// </para>
         ///  
@@ -1505,7 +1501,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Not applicable. The name for the master user is managed by the DB cluster. 
+        /// Not applicable. The name for the master user is managed by the DB cluster.
         /// </para>
         ///  
         /// <para>
@@ -1848,11 +1844,11 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  Default: <code>3306</code> 
+        /// Default: <code>3306</code> 
         /// </para>
         ///  
         /// <para>
-        ///  Valid values: <code>1150-65535</code> 
+        /// Valid values: <code>1150-65535</code> 
         /// </para>
         ///  
         /// <para>
@@ -1864,11 +1860,11 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  Default: <code>3306</code> 
+        /// Default: <code>3306</code> 
         /// </para>
         ///  
         /// <para>
-        ///  Valid values: <code>1150-65535</code> 
+        /// Valid values: <code>1150-65535</code> 
         /// </para>
         ///  
         /// <para>
@@ -1880,11 +1876,11 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  Default: <code>5432</code> 
+        /// Default: <code>5432</code> 
         /// </para>
         ///  
         /// <para>
-        ///  Valid values: <code>1150-65535</code> 
+        /// Valid values: <code>1150-65535</code> 
         /// </para>
         ///  
         /// <para>
@@ -1896,11 +1892,11 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  Default: <code>1521</code> 
+        /// Default: <code>1521</code> 
         /// </para>
         ///  
         /// <para>
-        ///  Valid values: <code>1150-65535</code> 
+        /// Valid values: <code>1150-65535</code> 
         /// </para>
         ///  
         /// <para>
@@ -1908,11 +1904,11 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  Default: <code>1433</code> 
+        /// Default: <code>1433</code> 
         /// </para>
         ///  
         /// <para>
-        ///  Valid values: <code>1150-65535</code> except <code>1234</code>, <code>1434</code>,
+        /// Valid values: <code>1150-65535</code> except <code>1234</code>, <code>1434</code>,
         /// <code>3260</code>, <code>3343</code>, <code>3389</code>, <code>47001</code>, and <code>49152-49156</code>.
         /// </para>
         ///  
@@ -1921,11 +1917,11 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  Default: <code>3306</code> 
+        /// Default: <code>3306</code> 
         /// </para>
         ///  
         /// <para>
-        ///  Valid values: <code>1150-65535</code> 
+        /// Valid values: <code>1150-65535</code> 
         /// </para>
         ///  
         /// <para>
@@ -1947,11 +1943,11 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property PreferredBackupWindow. 
         /// <para>
-        ///  The daily time range during which automated backups are created if automated backups
+        /// The daily time range during which automated backups are created if automated backups
         /// are enabled, using the <code>BackupRetentionPeriod</code> parameter. The default is
         /// a 30-minute window selected at random from an 8-hour block of time for each Amazon
         /// Web Services Region. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Backup
-        /// window</a> in the <i>Amazon RDS User Guide</i>. 
+        /// window</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -2001,16 +1997,16 @@ namespace Amazon.RDS.Model
         /// <para>
         /// The time range each week during which system maintenance can occur, in Universal Coordinated
         /// Time (UTC). For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance">Amazon
-        /// RDS Maintenance Window</a>. 
+        /// RDS Maintenance Window</a>.
         /// </para>
         ///  
         /// <para>
-        ///  Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> 
+        /// Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> 
         /// </para>
         ///  
         /// <para>
         /// The default is a 30-minute window selected at random from an 8-hour block of time
-        /// for each Amazon Web Services Region, occurring on a random day of the week. 
+        /// for each Amazon Web Services Region, occurring on a random day of the week.
         /// </para>
         ///  
         /// <para>
@@ -2063,7 +2059,6 @@ namespace Amazon.RDS.Model
         /// instance after a failure of the existing primary instance. For more information, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance">
         /// Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User Guide</i>.
-        /// 
         /// </para>
         ///  
         /// <para>
@@ -2197,16 +2192,16 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  Valid values: <code>standard | gp2 | io1</code> 
+        /// Valid values: <code>standard | gp2 | io1</code> 
         /// </para>
         ///  
         /// <para>
-        ///  If you specify <code>io1</code>, you must also include a value for the <code>Iops</code>
-        /// parameter. 
+        /// If you specify <code>io1</code>, you must also include a value for the <code>Iops</code>
+        /// parameter.
         /// </para>
         ///  
         /// <para>
-        ///  Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise
+        /// Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise
         /// <code>gp2</code> 
         /// </para>
         /// </summary>
@@ -2289,7 +2284,7 @@ namespace Amazon.RDS.Model
         /// <para>
         /// The time zone of the DB instance. The time zone parameter is currently supported only
         /// by <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.TimeZone">Microsoft
-        /// SQL Server</a>. 
+        /// SQL Server</a>.
         /// </para>
         /// </summary>
         public string Timezone

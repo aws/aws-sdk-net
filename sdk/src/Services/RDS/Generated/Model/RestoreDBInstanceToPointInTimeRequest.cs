@@ -229,7 +229,7 @@ namespace Amazon.RDS.Model
         ///  </li> </ul> 
         /// <para>
         /// For the list of permissions required for the IAM role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc">
-        /// Configure IAM and your VPC</a> in the <i>Amazon Relational Database Service User Guide</i>.
+        /// Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -255,7 +255,7 @@ namespace Amazon.RDS.Model
         /// Not all DB instance classes are available in all Amazon Web Services Regions, or for
         /// all database engines. For the full list of DB instance classes, and availability for
         /// your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-        /// Instance Class</a> in the <i>Amazon RDS User Guide.</i> 
+        /// Instance Class</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -378,7 +378,7 @@ namespace Amazon.RDS.Model
         /// A value that indicates whether the DB instance has deletion protection enabled. The
         /// database can't be deleted when deletion protection is enabled. By default, deletion
         /// protection isn't enabled. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
-        /// Deleting a DB Instance</a>. 
+        /// Deleting a DB Instance</a>.
         /// </para>
         /// </summary>
         public bool DeletionProtection
@@ -664,7 +664,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  Valid values: <code>license-included</code> | <code>bring-your-own-license</code>
+        /// Valid values: <code>license-included</code> | <code>bring-your-own-license</code>
         /// | <code>general-public-license</code> 
         /// </para>
         /// </summary>
@@ -963,16 +963,16 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  Valid values: <code>standard | gp2 | io1</code> 
+        /// Valid values: <code>standard | gp2 | io1</code> 
         /// </para>
         ///  
         /// <para>
-        ///  If you specify <code>io1</code>, you must also include a value for the <code>Iops</code>
-        /// parameter. 
+        /// If you specify <code>io1</code>, you must also include a value for the <code>Iops</code>
+        /// parameter.
         /// </para>
         ///  
         /// <para>
-        ///  Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise
+        /// Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise
         /// <code>gp2</code> 
         /// </para>
         /// </summary>
@@ -1109,8 +1109,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property UseLatestRestorableTime. 
         /// <para>
-        ///  A value that indicates whether the DB instance is restored from the latest backup
-        /// time. By default, the DB instance isn't restored from the latest backup time. 
+        /// A value that indicates whether the DB instance is restored from the latest backup
+        /// time. By default, the DB instance isn't restored from the latest backup time.
         /// </para>
         ///  
         /// <para>
@@ -1132,11 +1132,11 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property VpcSecurityGroupIds. 
         /// <para>
-        ///  A list of EC2 VPC security groups to associate with this DB instance. 
+        /// A list of EC2 VPC security groups to associate with this DB instance.
         /// </para>
         ///  
         /// <para>
-        ///  Default: The default EC2 VPC security group for the DB subnet group's VPC. 
+        /// Default: The default EC2 VPC security group for the DB subnet group's VPC.
         /// </para>
         /// </summary>
         public List<string> VpcSecurityGroupIds

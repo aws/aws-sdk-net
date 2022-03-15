@@ -54,7 +54,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        ///  A value that indicates whether to activate the subscription. 
+        /// A value that indicates whether to activate the subscription.
         /// </para>
         /// </summary>
         public bool Enabled
@@ -72,11 +72,11 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EventCategories. 
         /// <para>
-        ///  A list of event categories for a source type (<code>SourceType</code>) that you want
+        /// A list of event categories for a source type (<code>SourceType</code>) that you want
         /// to subscribe to. You can see a list of the categories for a given source type in <a
         /// href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a>
         /// in the <i>Amazon RDS User Guide</i> or by using the <code>DescribeEventCategories</code>
-        /// operation. 
+        /// operation.
         /// </para>
         /// </summary>
         public List<string> EventCategories

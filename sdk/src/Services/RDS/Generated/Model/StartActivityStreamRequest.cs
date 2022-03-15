@@ -107,7 +107,7 @@ namespace Amazon.RDS.Model
         /// <para>
         /// Specifies the mode of the database activity stream. Database events such as a change
         /// or access generate an activity stream event. The database session can handle these
-        /// events either synchronously or asynchronously. 
+        /// events either synchronously or asynchronously.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -33,7 +33,7 @@ namespace Amazon.RDS.Model
     /// Modifies the parameters of a DB parameter group. To modify more than one parameter,
     /// submit a list of the following: <code>ParameterName</code>, <code>ParameterValue</code>,
     /// and <code>ApplyMethod</code>. A maximum of 20 parameters can be modified in a single
-    /// request. 
+    /// request.
     /// 
     ///  <important> 
     /// <para>

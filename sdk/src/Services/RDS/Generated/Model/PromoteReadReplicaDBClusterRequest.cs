@@ -40,7 +40,6 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property DBClusterIdentifier. 
         /// <para>
         /// The identifier of the DB cluster read replica to promote. This parameter isn't case-sensitive.
-        /// 
         /// </para>
         ///  
         /// <para>

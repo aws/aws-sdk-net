@@ -78,7 +78,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property State. 
         /// <para>
         /// The current state of the connection health lifecycle for the RDS Proxy target. The
-        /// following is a typical lifecycle example for the states of an RDS Proxy target: 
+        /// following is a typical lifecycle example for the states of an RDS Proxy target:
         /// </para>
         ///  
         /// <para>

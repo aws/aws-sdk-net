@@ -71,7 +71,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property FeatureName. 
         /// <para>
         /// The name of the feature for the DB instance that the IAM role is to be associated
-        /// with. For information about supported feature names, see <a>DBEngineVersion</a>. 
+        /// with. For information about supported feature names, see <a>DBEngineVersion</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -91,7 +91,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property RoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the IAM role to associate with the DB instance,
-        /// for example <code>arn:aws:iam::123456789012:role/AccessRole</code>. 
+        /// for example <code>arn:aws:iam::123456789012:role/AccessRole</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

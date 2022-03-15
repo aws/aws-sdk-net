@@ -47,7 +47,7 @@ namespace Amazon.RDS.Model
     ///  </note> 
     /// <para>
     /// For more information on Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-    /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
+    /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
     /// </para>
     ///  <note> 
     /// <para>
@@ -276,7 +276,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property DBClusterParameterGroupName. 
         /// <para>
         /// The name of the DB cluster parameter group to associate with the restored DB cluster.
-        /// If this argument is omitted, <code>default.aurora5.6</code> is used. 
+        /// If this argument is omitted, <code>default.aurora5.6</code> is used.
         /// </para>
         ///  
         /// <para>
@@ -331,7 +331,7 @@ namespace Amazon.RDS.Model
         /// <para>
         /// A value that indicates whether the DB cluster has deletion protection enabled. The
         /// database can't be deleted when deletion protection is enabled. By default, deletion
-        /// protection isn't enabled. 
+        /// protection isn't enabled.
         /// </para>
         /// </summary>
         public bool DeletionProtection
@@ -350,13 +350,13 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property Domain. 
         /// <para>
         /// Specify the Active Directory directory ID to restore the DB cluster in. The domain
-        /// must be created prior to this operation. 
+        /// must be created prior to this operation.
         /// </para>
         ///  
         /// <para>
-        ///  For Amazon Aurora DB clusters, Amazon RDS can use Kerberos Authentication to authenticate
+        /// For Amazon Aurora DB clusters, Amazon RDS can use Kerberos Authentication to authenticate
         /// users that connect to the DB cluster. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos
-        /// Authentication</a> in the <i>Amazon Aurora User Guide</i>. 
+        /// Authentication</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         /// </summary>
         public string Domain
@@ -440,7 +440,7 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html">
-        /// IAM Database Authentication</a> in the <i>Amazon Aurora User Guide.</i> 
+        /// IAM Database Authentication</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         /// </summary>
         public bool EnableIAMDatabaseAuthentication
@@ -667,7 +667,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  Default: <code>3306</code> 
+        /// Default: <code>3306</code> 
         /// </para>
         /// </summary>
         public int Port
@@ -686,13 +686,13 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property PreferredBackupWindow. 
         /// <para>
         /// The daily time range during which automated backups are created if automated backups
-        /// are enabled using the <code>BackupRetentionPeriod</code> parameter. 
+        /// are enabled using the <code>BackupRetentionPeriod</code> parameter.
         /// </para>
         ///  
         /// <para>
         /// The default is a 30-minute window selected at random from an 8-hour block of time
         /// for each Amazon Web Services Region. To view the time blocks available, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow">
-        /// Backup window</a> in the <i>Amazon Aurora User Guide.</i> 
+        /// Backup window</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -743,8 +743,7 @@ namespace Amazon.RDS.Model
         /// The default is a 30-minute window selected at random from an 8-hour block of time
         /// for each Amazon Web Services Region, occurring on a random day of the week. To see
         /// the time blocks available, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora">
-        /// Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Aurora User Guide.</i>
-        /// 
+        /// Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -831,7 +830,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property SourceEngine. 
         /// <para>
         /// The identifier for the database engine that was backed up to create the files stored
-        /// in the Amazon S3 bucket. 
+        /// in the Amazon S3 bucket.
         /// </para>
         ///  
         /// <para>
@@ -858,7 +857,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// MySQL versions 5.5, 5.6, and 5.7 are supported. 
+        /// MySQL versions 5.5, 5.6, and 5.7 are supported.
         /// </para>
         ///  
         /// <para>

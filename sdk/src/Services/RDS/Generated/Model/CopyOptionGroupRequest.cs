@@ -42,7 +42,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property SourceOptionGroupIdentifier. 
         /// <para>
-        /// The identifier for the source option group. 
+        /// The identifier for the source option group.
         /// </para>
         ///  
         /// <para>

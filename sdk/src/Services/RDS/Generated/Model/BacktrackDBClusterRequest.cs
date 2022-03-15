@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model
     ///  
     /// <para>
     /// For more information on backtracking, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Managing.Backtrack.html">
-    /// Backtracking an Aurora DB Cluster</a> in the <i>Amazon Aurora User Guide.</i> 
+    /// Backtracking an Aurora DB Cluster</a> in the <i>Amazon Aurora User Guide</i>.
     /// </para>
     ///  <note> 
     /// <para>

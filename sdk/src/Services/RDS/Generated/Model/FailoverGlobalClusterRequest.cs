@@ -44,14 +44,14 @@ namespace Amazon.RDS.Model
     /// <para>
     /// For more information about failing over an Amazon Aurora global database, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database-disaster-recovery.html#aurora-global-database-disaster-recovery.managed-failover">Managed
     /// planned failover for Amazon Aurora global databases</a> in the <i>Amazon Aurora User
-    /// Guide.</i> 
+    /// Guide</i>.
     /// </para>
     ///  <note> 
     /// <para>
     /// This action applies to <a>GlobalCluster</a> (Aurora global databases) only. Use this
     /// action only on healthy Aurora global databases with running Aurora DB clusters and
     /// no Region-wide outages, to test disaster recovery scenarios or to reconfigure your
-    /// Aurora global database topology. 
+    /// Aurora global database topology.
     /// </para>
     ///  </note>
     /// </summary>
@@ -66,7 +66,7 @@ namespace Amazon.RDS.Model
         /// Identifier of the Aurora global database (<a>GlobalCluster</a>) that should be failed
         /// over. The identifier is the unique key assigned by the user when the Aurora global
         /// database was created. In other words, it's the name of the Aurora global database
-        /// that you want to fail over. 
+        /// that you want to fail over.
         /// </para>
         ///  
         /// <para>
@@ -97,7 +97,7 @@ namespace Amazon.RDS.Model
         /// Identifier of the secondary Aurora DB cluster that you want to promote to primary
         /// for the Aurora global database (<a>GlobalCluster</a>.) Use the Amazon Resource Name
         /// (ARN) for the identifier so that Aurora can locate the cluster in its Amazon Web Services
-        /// Region. 
+        /// Region.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]

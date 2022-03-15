@@ -63,12 +63,12 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property InitQuery. 
         /// <para>
-        ///  One or more SQL statements for the proxy to run when opening each new database connection.
+        /// One or more SQL statements for the proxy to run when opening each new database connection.
         /// Typically used with <code>SET</code> statements to make sure that each connection
         /// has identical settings such as time zone and character set. This setting is empty
         /// by default. For multiple statements, use semicolons as the separator. You can also
         /// include multiple variables in a single <code>SET</code> statement, such as <code>SET
-        /// x=1, y=2</code>. 
+        /// x=1, y=2</code>.
         /// </para>
         /// </summary>
         public string InitQuery
@@ -106,12 +106,11 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property MaxIdleConnectionsPercent. 
         /// <para>
-        ///  Controls how actively the proxy closes idle database connections in the connection
+        /// Controls how actively the proxy closes idle database connections in the connection
         /// pool. The value is expressed as a percentage of the <code>max_connections</code> setting
         /// for the RDS DB instance or Aurora DB cluster used by the target group. With a high
         /// value, the proxy leaves a high percentage of idle database connections open. A low
         /// value causes the proxy to close more idle connections and return them to the database.
-        /// 
         /// </para>
         /// </summary>
         public int MaxIdleConnectionsPercent

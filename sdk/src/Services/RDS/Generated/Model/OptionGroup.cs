@@ -47,7 +47,7 @@ namespace Amazon.RDS.Model
         /// <para>
         /// Indicates whether this option group can be applied to both VPC and non-VPC instances.
         /// The value <code>true</code> indicates the option group can be applied to both VPC
-        /// and non-VPC instances. 
+        /// and non-VPC instances.
         /// </para>
         /// </summary>
         public bool AllowsVpcAndNonVpcInstanceMemberships
@@ -177,7 +177,7 @@ namespace Amazon.RDS.Model
         /// is blank. If <b>AllowsVpcAndNonVpcInstanceMemberships</b> is <code>true</code> and
         /// this field is blank, then this option group can be applied to both VPC and non-VPC
         /// instances. If this field contains a value, then this option group can only be applied
-        /// to instances that are in the VPC indicated by this field. 
+        /// to instances that are in the VPC indicated by this field.
         /// </para>
         /// </summary>
         public string VpcId

@@ -29,12 +29,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Contains the details for an Amazon RDS DB cluster snapshot 
+    /// Contains the details for an Amazon RDS DB cluster snapshot
     /// 
     ///  
     /// <para>
     /// This data type is used as a response element in the <code>DescribeDBClusterSnapshots</code>
-    /// action. 
+    /// action.
     /// </para>
     /// </summary>
     public partial class DBClusterSnapshot

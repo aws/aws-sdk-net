@@ -74,8 +74,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        ///  A value that indicates whether to activate the subscription. If the event notification
-        /// subscription isn't activated, the subscription is created but not active. 
+        /// A value that indicates whether to activate the subscription. If the event notification
+        /// subscription isn't activated, the subscription is created but not active.
         /// </para>
         /// </summary>
         public bool Enabled
@@ -93,12 +93,12 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EventCategories. 
         /// <para>
-        ///  A list of event categories for a particular source type (<code>SourceType</code>)
+        /// A list of event categories for a particular source type (<code>SourceType</code>)
         /// that you want to subscribe to. You can see a list of the categories for a given source
         /// type in the "Amazon RDS event categories and event messages" section of the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.Messages.html">
         /// <i>Amazon RDS User Guide</i> </a> or the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Events.Messages.html">
         /// <i>Amazon Aurora User Guide</i> </a>. You can also see this list by using the <code>DescribeEventCategories</code>
-        /// operation. 
+        /// operation.
         /// </para>
         /// </summary>
         public List<string> EventCategories

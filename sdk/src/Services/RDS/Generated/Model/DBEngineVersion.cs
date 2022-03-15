@@ -195,8 +195,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DefaultCharacterSet. 
         /// <para>
-        ///  The default character set for new instances of this engine version, if the <code>CharacterSetName</code>
-        /// parameter of the CreateDBInstance API isn't specified. 
+        /// The default character set for new instances of this engine version, if the <code>CharacterSetName</code>
+        /// parameter of the CreateDBInstance API isn't specified.
         /// </para>
         /// </summary>
         public CharacterSet DefaultCharacterSet
@@ -325,7 +325,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property SupportedCharacterSets. 
         /// <para>
         /// A list of the character sets supported by this engine for the <code>CharacterSetName</code>
-        /// parameter of the <code>CreateDBInstance</code> operation. 
+        /// parameter of the <code>CreateDBInstance</code> operation.
         /// </para>
         /// </summary>
         public List<CharacterSet> SupportedCharacterSets
@@ -361,7 +361,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property SupportedFeatureNames. 
         /// <para>
-        ///  A list of features supported by the DB engine. 
+        /// A list of features supported by the DB engine.
         /// </para>
         ///  
         /// <para>
@@ -409,7 +409,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property SupportedNcharCharacterSets. 
         /// <para>
         /// A list of the character sets supported by the Oracle DB engine for the <code>NcharCharacterSetName</code>
-        /// parameter of the <code>CreateDBInstance</code> operation. 
+        /// parameter of the <code>CreateDBInstance</code> operation.
         /// </para>
         /// </summary>
         public List<CharacterSet> SupportedNcharCharacterSets
@@ -428,7 +428,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property SupportedTimezones. 
         /// <para>
         /// A list of the time zones supported by this engine for the <code>Timezone</code> parameter
-        /// of the <code>CreateDBInstance</code> action. 
+        /// of the <code>CreateDBInstance</code> action.
         /// </para>
         /// </summary>
         public List<Timezone> SupportedTimezones

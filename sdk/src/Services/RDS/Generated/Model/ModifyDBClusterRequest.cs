@@ -37,13 +37,13 @@ namespace Amazon.RDS.Model
     ///  
     /// <para>
     /// For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-    /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
+    /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
     /// </para>
     ///  
     /// <para>
     /// For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
     /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
-    /// User Guide.</i> 
+    /// User Guide</i>.
     /// </para>
     /// </summary>
     public partial class ModifyDBClusterRequest : AmazonRDSRequest
@@ -312,9 +312,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information about exporting CloudWatch Logs for Amazon RDS, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
-        /// Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Relational Database Service
-        /// User Guide</i>.
+        /// For more information about exporting CloudWatch Logs for Amazon RDS, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">
+        /// Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -398,8 +397,8 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// For the full list of DB instance classes and availability for your engine, see <a
-        /// href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-        /// Instance Class</a> in the <i>Amazon RDS User Guide.</i> 
+        /// href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">
+        /// DB Instance Class</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -443,7 +442,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBInstanceParameterGroupName. 
         /// <para>
-        /// The name of the DB parameter group to apply to all instances of the DB cluster. 
+        /// The name of the DB parameter group to apply to all instances of the DB cluster.
         /// </para>
         ///  <note> 
         /// <para>
@@ -514,12 +513,12 @@ namespace Amazon.RDS.Model
         /// <para>
         /// The Active Directory directory ID to move the DB cluster to. Specify <code>none</code>
         /// to remove the cluster from its current domain. The domain must be created prior to
-        /// this operation. 
+        /// this operation.
         /// </para>
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos
-        /// Authentication</a> in the <i>Amazon Aurora User Guide</i>. 
+        /// Authentication</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -576,7 +575,7 @@ namespace Amazon.RDS.Model
         /// current primary cluster and the resulting changes are replicated back to this cluster.
         /// For the primary DB cluster of an Aurora global database, this value is used immediately
         /// if the primary is demoted by the <a>FailoverGlobalCluster</a> API operation, but it
-        /// does nothing until then. 
+        /// does nothing until then.
         /// </para>
         ///  
         /// <para>
@@ -599,18 +598,18 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property EnableHttpEndpoint. 
         /// <para>
         /// A value that indicates whether to enable the HTTP endpoint for an Aurora Serverless
-        /// DB cluster. By default, the HTTP endpoint is disabled.
+        /// v1 DB cluster. By default, the HTTP endpoint is disabled.
         /// </para>
         ///  
         /// <para>
         /// When enabled, the HTTP endpoint provides a connectionless web service API for running
-        /// SQL queries on the Aurora Serverless DB cluster. You can also query your database
+        /// SQL queries on the Aurora Serverless v1 DB cluster. You can also query your database
         /// from inside the RDS console with the query editor.
         /// </para>
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using
-        /// the Data API for Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.
+        /// the Data API for Aurora Serverless v1</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -638,7 +637,7 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html">
-        /// IAM Database Authentication</a> in the <i>Amazon Aurora User Guide.</i> 
+        /// IAM Database Authentication</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -665,7 +664,7 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">
-        /// Using Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>. 
+        /// Using Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -768,7 +767,7 @@ namespace Amazon.RDS.Model
         /// <para>
         /// For information about valid Iops values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon
         /// RDS Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS User
-        /// Guide</i>. 
+        /// Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -1041,13 +1040,13 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property PreferredBackupWindow. 
         /// <para>
         /// The daily time range during which automated backups are created if automated backups
-        /// are enabled, using the <code>BackupRetentionPeriod</code> parameter. 
+        /// are enabled, using the <code>BackupRetentionPeriod</code> parameter.
         /// </para>
         ///  
         /// <para>
         /// The default is a 30-minute window selected at random from an 8-hour block of time
         /// for each Amazon Web Services Region. To view the time blocks available, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow">
-        /// Backup window</a> in the <i>Amazon Aurora User Guide.</i> 
+        /// Backup window</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -1102,7 +1101,7 @@ namespace Amazon.RDS.Model
         /// for each Amazon Web Services Region, occurring on a random day of the week. To see
         /// the time blocks available, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora">
         /// Adjusting the Preferred DB Cluster Maintenance Window</a> in the <i>Amazon Aurora
-        /// User Guide.</i> 
+        /// User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -1159,15 +1158,15 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  Valid values: <code>io1</code> 
+        /// Valid values: <code>io1</code> 
         /// </para>
         ///  
         /// <para>
-        ///  When specified, a value for the <code>Iops</code> parameter is required. 
+        /// When specified, a value for the <code>Iops</code> parameter is required.
         /// </para>
         ///  
         /// <para>
-        ///  Default: <code>io1</code> 
+        /// Default: <code>io1</code> 
         /// </para>
         ///  
         /// <para>

@@ -64,16 +64,16 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Engine. 
         /// <para>
-        /// The name of the database engine to be used for this instance. 
+        /// The name of the database engine to be used for this instance.
         /// </para>
         ///  
         /// <para>
         /// The list only includes supported DB engines that require an on-premises customer provided
-        /// license. 
+        /// license.
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: 
+        /// Valid Values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -152,8 +152,7 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport">
-        /// Microsoft SQL Server Versions on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
-        /// 
+        /// Microsoft SQL Server Versions on Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -76,7 +76,7 @@ namespace Amazon.RDS.Model
         /// <para>
         /// (Optional) The user-supplied instance identifier. If this parameter is specified,
         /// it must match the identifier of an existing DB instance. It returns information from
-        /// the specific DB instance' automated backup. This parameter isn't case-sensitive. 
+        /// the specific DB instance' automated backup. This parameter isn't case-sensitive.
         /// </para>
         /// </summary>
         public string DBInstanceIdentifier
@@ -95,7 +95,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property DbiResourceId. 
         /// <para>
         /// The resource ID of the DB instance that is the source of the automated backup. This
-        /// parameter isn't case-sensitive. 
+        /// parameter isn't case-sensitive.
         /// </para>
         /// </summary>
         public string DbiResourceId

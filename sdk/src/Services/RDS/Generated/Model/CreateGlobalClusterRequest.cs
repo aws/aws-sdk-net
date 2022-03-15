@@ -33,14 +33,13 @@ namespace Amazon.RDS.Model
     /// Creates an Aurora global database spread across multiple Amazon Web Services Regions.
     /// The global database contains a single primary cluster with read-write capability,
     /// and a read-only secondary cluster that receives data from the primary cluster through
-    /// high-speed replication performed by the Aurora storage subsystem. 
+    /// high-speed replication performed by the Aurora storage subsystem.
     /// 
     ///  
     /// <para>
-    ///  You can create a global database that is initially empty, and then add a primary
-    /// cluster and a secondary cluster to it. Or you can specify an existing Aurora cluster
-    /// during the create operation, and this cluster becomes the primary cluster of the global
-    /// database. 
+    /// You can create a global database that is initially empty, and then add a primary cluster
+    /// and a secondary cluster to it. Or you can specify an existing Aurora cluster during
+    /// the create operation, and this cluster becomes the primary cluster of the global database.
     /// </para>
     ///  <note> 
     /// <para>
@@ -61,9 +60,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DatabaseName. 
         /// <para>
-        ///  The name for your database of up to 64 alpha-numeric characters. If you do not provide
+        /// The name for your database of up to 64 alpha-numeric characters. If you do not provide
         /// a name, Amazon Aurora will not create a database in the global database cluster you
-        /// are creating. 
+        /// are creating.
         /// </para>
         /// </summary>
         public string DatabaseName
@@ -81,8 +80,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DeletionProtection. 
         /// <para>
-        ///  The deletion protection setting for the new global database. The global database
-        /// can't be deleted when deletion protection is enabled. 
+        /// The deletion protection setting for the new global database. The global database can't
+        /// be deleted when deletion protection is enabled.
         /// </para>
         /// </summary>
         public bool DeletionProtection
@@ -154,8 +153,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property SourceDBClusterIdentifier. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) to use as the primary cluster of the global database.
-        /// This parameter is optional. 
+        /// The Amazon Resource Name (ARN) to use as the primary cluster of the global database.
+        /// This parameter is optional.
         /// </para>
         /// </summary>
         public string SourceDBClusterIdentifier
@@ -173,7 +172,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property StorageEncrypted. 
         /// <para>
-        ///  The storage encryption setting for the new global database cluster. 
+        /// The storage encryption setting for the new global database cluster.
         /// </para>
         /// </summary>
         public bool StorageEncrypted

@@ -58,7 +58,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  This setting doesn't apply to RDS Custom.
+        /// This setting doesn't apply to RDS Custom.
         /// </para>
         /// </summary>
         public string AvailabilityZoneGroup
@@ -99,7 +99,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: 
+        /// Valid Values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -235,9 +235,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        ///  An optional pagination token provided by a previous DescribeOrderableDBInstanceOptions
+        /// An optional pagination token provided by a previous DescribeOrderableDBInstanceOptions
         /// request. If this parameter is specified, the response includes only records beyond
-        /// the marker, up to the value specified by <code>MaxRecords</code> . 
+        /// the marker, up to the value specified by <code>MaxRecords</code>.
         /// </para>
         /// </summary>
         public string Marker
@@ -255,9 +255,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property MaxRecords. 
         /// <para>
-        ///  The maximum number of records to include in the response. If more records exist than
+        /// The maximum number of records to include in the response. If more records exist than
         /// the specified <code>MaxRecords</code> value, a pagination token called a marker is
-        /// included in the response so that you can retrieve the remaining results. 
+        /// included in the response so that you can retrieve the remaining results.
         /// </para>
         ///  
         /// <para>

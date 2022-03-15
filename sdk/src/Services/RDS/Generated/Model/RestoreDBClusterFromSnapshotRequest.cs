@@ -49,7 +49,7 @@ namespace Amazon.RDS.Model
     ///  </note> 
     /// <para>
     /// For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-    /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
+    /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -460,8 +460,7 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// For more information about exporting CloudWatch Logs for Amazon RDS, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
-        /// Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Relational Database Service
-        /// User Guide</i>.
+        /// Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide.</i>.
         /// </para>
         ///  
         /// <para>
@@ -494,7 +493,7 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html">
-        /// IAM Database Authentication</a> in the <i>Amazon Aurora User Guide.</i> 
+        /// IAM Database Authentication</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -634,7 +633,7 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Updates.html">MySQL
-        /// on Amazon RDS Versions</a> in the <i>Amazon Aurora User Guide.</i> 
+        /// on Amazon RDS Versions</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -643,8 +642,7 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraPostgreSQL.Updates.20180305.html">Amazon
-        /// Aurora PostgreSQL releases and engine versions</a> in the <i>Amazon Aurora User Guide.</i>
-        /// 
+        /// Aurora PostgreSQL releases and engine versions</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -692,7 +690,7 @@ namespace Amazon.RDS.Model
         /// <para>
         /// For information about valid Iops values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon
         /// RDS Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS User
-        /// Guide</i>. 
+        /// Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -951,15 +949,15 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  Valid values: <code>io1</code> 
+        /// Valid values: <code>io1</code> 
         /// </para>
         ///  
         /// <para>
-        ///  When specified, a value for the <code>Iops</code> parameter is required. 
+        /// When specified, a value for the <code>Iops</code> parameter is required.
         /// </para>
         ///  
         /// <para>
-        ///  Default: <code>io1</code> 
+        /// Default: <code>io1</code> 
         /// </para>
         ///  
         /// <para>

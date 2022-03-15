@@ -31,11 +31,7 @@ namespace Amazon.RDS
     /// <summary>
     /// Interface for accessing RDS
     ///
-    /// Amazon Relational Database Service 
-    /// <para>
-    ///  
-    /// </para>
-    ///  
+    /// Amazon Relational Database Service  
     /// <para>
     /// Amazon Relational Database Service (Amazon RDS) is a web service that makes it easier
     /// to set up, operate, and scale a relational database in the cloud. It provides cost-efficient,
@@ -429,7 +425,7 @@ namespace Amazon.RDS
         ///  </note> 
         /// <para>
         /// For an overview of CIDR ranges, go to the <a href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Wikipedia
-        /// Tutorial</a>. 
+        /// Tutorial</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AuthorizeDBSecurityGroupIngress service method.</param>
@@ -470,7 +466,7 @@ namespace Amazon.RDS
         ///  </note> 
         /// <para>
         /// For an overview of CIDR ranges, go to the <a href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Wikipedia
-        /// Tutorial</a>. 
+        /// Tutorial</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AuthorizeDBSecurityGroupIngress service method.</param>
@@ -506,7 +502,7 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// For more information on backtracking, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Managing.Backtrack.html">
-        /// Backtracking an Aurora DB Cluster</a> in the <i>Amazon Aurora User Guide.</i> 
+        /// Backtracking an Aurora DB Cluster</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -534,7 +530,7 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// For more information on backtracking, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Managing.Backtrack.html">
-        /// Backtracking an Aurora DB Cluster</a> in the <i>Amazon Aurora User Guide.</i> 
+        /// Backtracking an Aurora DB Cluster</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -734,7 +730,7 @@ namespace Amazon.RDS
         ///  <code>SourceDBClusterSnapshotIdentifier</code> - The DB cluster snapshot identifier
         /// for the encrypted DB cluster snapshot to be copied. This identifier must be in the
         /// ARN format for the source Amazon Web Services Region and is the same value as the
-        /// <code>SourceDBClusterSnapshotIdentifier</code> in the pre-signed URL. 
+        /// <code>SourceDBClusterSnapshotIdentifier</code> in the pre-signed URL.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -746,18 +742,18 @@ namespace Amazon.RDS
         /// <para>
         /// For more information on copying encrypted Amazon Aurora DB cluster snapshots from
         /// one Amazon Web Services Region to another, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_CopySnapshot.html">
-        /// Copying a Snapshot</a> in the <i>Amazon Aurora User Guide.</i> 
+        /// Copying a Snapshot</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
+        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
         /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
-        /// User Guide.</i> 
+        /// User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CopyDBClusterSnapshot service method.</param>
@@ -869,7 +865,7 @@ namespace Amazon.RDS
         ///  <code>SourceDBClusterSnapshotIdentifier</code> - The DB cluster snapshot identifier
         /// for the encrypted DB cluster snapshot to be copied. This identifier must be in the
         /// ARN format for the source Amazon Web Services Region and is the same value as the
-        /// <code>SourceDBClusterSnapshotIdentifier</code> in the pre-signed URL. 
+        /// <code>SourceDBClusterSnapshotIdentifier</code> in the pre-signed URL.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -881,18 +877,18 @@ namespace Amazon.RDS
         /// <para>
         /// For more information on copying encrypted Amazon Aurora DB cluster snapshots from
         /// one Amazon Web Services Region to another, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_CopySnapshot.html">
-        /// Copying a Snapshot</a> in the <i>Amazon Aurora User Guide.</i> 
+        /// Copying a Snapshot</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
+        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
         /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
-        /// User Guide.</i> 
+        /// User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CopyDBClusterSnapshot service method.</param>
@@ -984,7 +980,7 @@ namespace Amazon.RDS
         /// <para>
         /// You can copy a snapshot from one Amazon Web Services Region to another. In that case,
         /// the Amazon Web Services Region where you call the <code>CopyDBSnapshot</code> action
-        /// is the destination Amazon Web Services Region for the DB snapshot copy. 
+        /// is the destination Amazon Web Services Region for the DB snapshot copy.
         /// </para>
         ///  
         /// <para>
@@ -993,7 +989,7 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// For more information about copying snapshots, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopyDBSnapshot">Copying
-        /// a DB Snapshot</a> in the <i>Amazon RDS User Guide.</i> 
+        /// a DB Snapshot</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CopyDBSnapshot service method.</param>
@@ -1031,7 +1027,7 @@ namespace Amazon.RDS
         /// <para>
         /// You can copy a snapshot from one Amazon Web Services Region to another. In that case,
         /// the Amazon Web Services Region where you call the <code>CopyDBSnapshot</code> action
-        /// is the destination Amazon Web Services Region for the DB snapshot copy. 
+        /// is the destination Amazon Web Services Region for the DB snapshot copy.
         /// </para>
         ///  
         /// <para>
@@ -1040,7 +1036,7 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// For more information about copying snapshots, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopyDBSnapshot">Copying
-        /// a DB Snapshot</a> in the <i>Amazon RDS User Guide.</i> 
+        /// a DB Snapshot</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CopyDBSnapshot service method.</param>
@@ -1196,11 +1192,11 @@ namespace Amazon.RDS
         /// 
         ///  <ul> <li> 
         /// <para>
-        ///  Oracle Database 12.1 Enterprise Edition with the January 2021 or later RU/RUR
+        /// Oracle Database 12.1 Enterprise Edition with the January 2021 or later RU/RUR
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  Oracle Database 19c Enterprise Edition with the January 2021 or later RU/RUR
+        /// Oracle Database 19c Enterprise Edition with the January 2021 or later RU/RUR
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -1266,11 +1262,11 @@ namespace Amazon.RDS
         /// 
         ///  <ul> <li> 
         /// <para>
-        ///  Oracle Database 12.1 Enterprise Edition with the January 2021 or later RU/RUR
+        /// Oracle Database 12.1 Enterprise Edition with the January 2021 or later RU/RUR
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  Oracle Database 19c Enterprise Edition with the January 2021 or later RU/RUR
+        /// Oracle Database 19c Enterprise Edition with the January 2021 or later RU/RUR
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -1349,13 +1345,13 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// For more information on Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
+        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
         /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
-        /// User Guide.</i> 
+        /// User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDBCluster service method.</param>
@@ -1442,13 +1438,13 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// For more information on Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
+        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
         /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
-        /// User Guide.</i> 
+        /// User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDBCluster service method.</param>
@@ -1613,7 +1609,7 @@ namespace Amazon.RDS
         /// </para>
         ///  
         /// <para>
-        ///  A DB cluster parameter group is initially created with the default parameters for
+        /// A DB cluster parameter group is initially created with the default parameters for
         /// the database engine used by instances in the DB cluster. To provide custom values
         /// for any of the parameters, you must modify the group after creating it using <code>ModifyDBClusterParameterGroup</code>.
         /// Once you've created a DB cluster parameter group, you need to associate it with your
@@ -1623,13 +1619,13 @@ namespace Amazon.RDS
         /// <para>
         /// When you associate a new DB cluster parameter group with a running Aurora DB cluster,
         /// reboot the DB instances in the DB cluster without failover for the new DB cluster
-        /// parameter group and associated settings to take effect. 
+        /// parameter group and associated settings to take effect.
         /// </para>
         ///  
         /// <para>
         /// When you associate a new DB cluster parameter group with a running Multi-AZ DB cluster,
         /// reboot the DB cluster without failover for the new DB cluster parameter group and
-        /// associated settings to take effect. 
+        /// associated settings to take effect.
         /// </para>
         ///  <important> 
         /// <para>
@@ -1647,13 +1643,13 @@ namespace Amazon.RDS
         ///  </important> 
         /// <para>
         /// For more information on Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
+        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
         /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
-        /// User Guide.</i> 
+        /// User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDBClusterParameterGroup service method.</param>
@@ -1680,7 +1676,7 @@ namespace Amazon.RDS
         /// </para>
         ///  
         /// <para>
-        ///  A DB cluster parameter group is initially created with the default parameters for
+        /// A DB cluster parameter group is initially created with the default parameters for
         /// the database engine used by instances in the DB cluster. To provide custom values
         /// for any of the parameters, you must modify the group after creating it using <code>ModifyDBClusterParameterGroup</code>.
         /// Once you've created a DB cluster parameter group, you need to associate it with your
@@ -1690,13 +1686,13 @@ namespace Amazon.RDS
         /// <para>
         /// When you associate a new DB cluster parameter group with a running Aurora DB cluster,
         /// reboot the DB instances in the DB cluster without failover for the new DB cluster
-        /// parameter group and associated settings to take effect. 
+        /// parameter group and associated settings to take effect.
         /// </para>
         ///  
         /// <para>
         /// When you associate a new DB cluster parameter group with a running Multi-AZ DB cluster,
         /// reboot the DB cluster without failover for the new DB cluster parameter group and
-        /// associated settings to take effect. 
+        /// associated settings to take effect.
         /// </para>
         ///  <important> 
         /// <para>
@@ -1714,13 +1710,13 @@ namespace Amazon.RDS
         ///  </important> 
         /// <para>
         /// For more information on Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
+        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
         /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
-        /// User Guide.</i> 
+        /// User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDBClusterParameterGroup service method.</param>
@@ -1750,13 +1746,13 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// For more information on Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
+        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
         /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
-        /// User Guide.</i> 
+        /// User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDBClusterSnapshot service method.</param>
@@ -1788,13 +1784,13 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// For more information on Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
+        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
         /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
-        /// User Guide.</i> 
+        /// User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDBClusterSnapshot service method.</param>
@@ -1994,7 +1990,7 @@ namespace Amazon.RDS
         /// Creates a new DB instance that acts as a read replica for an existing source DB instance.
         /// You can create a read replica for a DB instance running MySQL, MariaDB, Oracle, PostgreSQL,
         /// or SQL Server. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html">Working
-        /// with Read Replicas</a> in the <i>Amazon RDS User Guide</i>. 
+        /// with Read Replicas</a> in the <i>Amazon RDS User Guide</i>.
         /// 
         ///  
         /// <para>
@@ -2009,7 +2005,7 @@ namespace Amazon.RDS
         /// </para>
         ///  <important> 
         /// <para>
-        /// Your source DB instance must have backup retention enabled. 
+        /// Your source DB instance must have backup retention enabled.
         /// </para>
         ///  </important>
         /// </summary>
@@ -2089,7 +2085,7 @@ namespace Amazon.RDS
         /// Creates a new DB instance that acts as a read replica for an existing source DB instance.
         /// You can create a read replica for a DB instance running MySQL, MariaDB, Oracle, PostgreSQL,
         /// or SQL Server. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html">Working
-        /// with Read Replicas</a> in the <i>Amazon RDS User Guide</i>. 
+        /// with Read Replicas</a> in the <i>Amazon RDS User Guide</i>.
         /// 
         ///  
         /// <para>
@@ -2104,7 +2100,7 @@ namespace Amazon.RDS
         /// </para>
         ///  <important> 
         /// <para>
-        /// Your source DB instance must have backup retention enabled. 
+        /// Your source DB instance must have backup retention enabled.
         /// </para>
         ///  </important>
         /// </summary>
@@ -2191,13 +2187,13 @@ namespace Amazon.RDS
         /// 
         ///  
         /// <para>
-        ///  A DB parameter group is initially created with the default parameters for the database
+        /// A DB parameter group is initially created with the default parameters for the database
         /// engine used by the DB instance. To provide custom values for any of the parameters,
         /// you must modify the group after creating it using <code>ModifyDBParameterGroup</code>.
         /// Once you've created a DB parameter group, you need to associate it with your DB instance
         /// using <code>ModifyDBInstance</code>. When you associate a new DB parameter group with
         /// a running DB instance, you need to reboot the DB instance without failover for the
-        /// new DB parameter group and associated settings to take effect. 
+        /// new DB parameter group and associated settings to take effect.
         /// </para>
         ///  
         /// <para>
@@ -2237,13 +2233,13 @@ namespace Amazon.RDS
         /// 
         ///  
         /// <para>
-        ///  A DB parameter group is initially created with the default parameters for the database
+        /// A DB parameter group is initially created with the default parameters for the database
         /// engine used by the DB instance. To provide custom values for any of the parameters,
         /// you must modify the group after creating it using <code>ModifyDBParameterGroup</code>.
         /// Once you've created a DB parameter group, you need to associate it with your DB instance
         /// using <code>ModifyDBInstance</code>. When you associate a new DB parameter group with
         /// a running DB instance, you need to reboot the DB instance without failover for the
-        /// new DB parameter group and associated settings to take effect. 
+        /// new DB parameter group and associated settings to take effect.
         /// </para>
         ///  
         /// <para>
@@ -2720,14 +2716,13 @@ namespace Amazon.RDS
         /// Creates an Aurora global database spread across multiple Amazon Web Services Regions.
         /// The global database contains a single primary cluster with read-write capability,
         /// and a read-only secondary cluster that receives data from the primary cluster through
-        /// high-speed replication performed by the Aurora storage subsystem. 
+        /// high-speed replication performed by the Aurora storage subsystem.
         /// 
         ///  
         /// <para>
-        ///  You can create a global database that is initially empty, and then add a primary
-        /// cluster and a secondary cluster to it. Or you can specify an existing Aurora cluster
-        /// during the create operation, and this cluster becomes the primary cluster of the global
-        /// database. 
+        /// You can create a global database that is initially empty, and then add a primary cluster
+        /// and a secondary cluster to it. Or you can specify an existing Aurora cluster during
+        /// the create operation, and this cluster becomes the primary cluster of the global database.
         /// </para>
         ///  <note> 
         /// <para>
@@ -2761,14 +2756,13 @@ namespace Amazon.RDS
         /// Creates an Aurora global database spread across multiple Amazon Web Services Regions.
         /// The global database contains a single primary cluster with read-write capability,
         /// and a read-only secondary cluster that receives data from the primary cluster through
-        /// high-speed replication performed by the Aurora storage subsystem. 
+        /// high-speed replication performed by the Aurora storage subsystem.
         /// 
         ///  
         /// <para>
-        ///  You can create a global database that is initially empty, and then add a primary
-        /// cluster and a secondary cluster to it. Or you can specify an existing Aurora cluster
-        /// during the create operation, and this cluster becomes the primary cluster of the global
-        /// database. 
+        /// You can create a global database that is initially empty, and then add a primary cluster
+        /// and a secondary cluster to it. Or you can specify an existing Aurora cluster during
+        /// the create operation, and this cluster becomes the primary cluster of the global database.
         /// </para>
         ///  <note> 
         /// <para>
@@ -3024,13 +3018,13 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// For more information on Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
+        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
         /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
-        /// User Guide.</i> 
+        /// User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDBCluster service method.</param>
@@ -3064,13 +3058,13 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// For more information on Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
+        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
         /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
-        /// User Guide.</i> 
+        /// User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDBCluster service method.</param>
@@ -3169,13 +3163,13 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// For more information on Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
+        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
         /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
-        /// User Guide.</i> 
+        /// User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDBClusterParameterGroup service method.</param>
@@ -3201,13 +3195,13 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// For more information on Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
+        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
         /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
-        /// User Guide.</i> 
+        /// User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDBClusterParameterGroup service method.</param>
@@ -3243,13 +3237,13 @@ namespace Amazon.RDS
         ///  </note> 
         /// <para>
         /// For more information on Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
+        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
         /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
-        /// User Guide.</i> 
+        /// User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDBClusterSnapshot service method.</param>
@@ -3278,13 +3272,13 @@ namespace Amazon.RDS
         ///  </note> 
         /// <para>
         /// For more information on Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
+        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
         /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
-        /// User Guide.</i> 
+        /// User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDBClusterSnapshot service method.</param>
@@ -3316,10 +3310,10 @@ namespace Amazon.RDS
         /// 
         ///  
         /// <para>
-        ///  If you request a final DB snapshot the status of the Amazon RDS DB instance is <code>deleting</code>
+        /// If you request a final DB snapshot the status of the Amazon RDS DB instance is <code>deleting</code>
         /// until the DB snapshot is created. The API action <code>DescribeDBInstance</code> is
         /// used to monitor the status of this operation. The action can't be canceled or reverted
-        /// once submitted. 
+        /// once submitted.
         /// </para>
         ///  
         /// <para>
@@ -3385,10 +3379,10 @@ namespace Amazon.RDS
         /// 
         ///  
         /// <para>
-        ///  If you request a final DB snapshot the status of the Amazon RDS DB instance is <code>deleting</code>
+        /// If you request a final DB snapshot the status of the Amazon RDS DB instance is <code>deleting</code>
         /// until the DB snapshot is created. The API action <code>DescribeDBInstance</code> is
         /// used to monitor the status of this operation. The action can't be canceled or reverted
-        /// once submitted. 
+        /// once submitted.
         /// </para>
         ///  
         /// <para>
@@ -3836,7 +3830,7 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Deletes a global database cluster. The primary and secondary clusters must already
-        /// be detached or destroyed first. 
+        /// be detached or destroyed first.
         /// 
         ///  <note> 
         /// <para>
@@ -3861,7 +3855,7 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Deletes a global database cluster. The primary and secondary clusters must already
-        /// be detached or destroyed first. 
+        /// be detached or destroyed first.
         /// 
         ///  <note> 
         /// <para>
@@ -4205,7 +4199,7 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// For more information on Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
+        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -4233,7 +4227,7 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// For more information on Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
+        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -4310,18 +4304,18 @@ namespace Amazon.RDS
         /// <summary>
         /// Returns a list of <code>DBClusterParameterGroup</code> descriptions. If a <code>DBClusterParameterGroupName</code>
         /// parameter is specified, the list will contain only the description of the specified
-        /// DB cluster parameter group. 
+        /// DB cluster parameter group.
         /// 
         ///  
         /// <para>
         /// For more information on Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
+        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
         /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
-        /// User Guide.</i> 
+        /// User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDBClusterParameterGroups service method.</param>
@@ -4338,18 +4332,18 @@ namespace Amazon.RDS
         /// <summary>
         /// Returns a list of <code>DBClusterParameterGroup</code> descriptions. If a <code>DBClusterParameterGroupName</code>
         /// parameter is specified, the list will contain only the description of the specified
-        /// DB cluster parameter group. 
+        /// DB cluster parameter group.
         /// 
         ///  
         /// <para>
         /// For more information on Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
+        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
         /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
-        /// User Guide.</i> 
+        /// User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDBClusterParameterGroups service method.</param>
@@ -4375,13 +4369,13 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// For more information on Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
+        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
         /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
-        /// User Guide.</i> 
+        /// User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDBClusterParameters service method.</param>
@@ -4401,13 +4395,13 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// For more information on Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
+        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
         /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
-        /// User Guide.</i> 
+        /// User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDBClusterParameters service method.</param>
@@ -4434,13 +4428,13 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
+        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
         /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
-        /// User Guide.</i> 
+        /// User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -4466,13 +4460,13 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
+        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
         /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
-        /// User Guide.</i> 
+        /// User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -4573,13 +4567,13 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
+        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
         /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
-        /// User Guide.</i> 
+        /// User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDBClusterSnapshots service method.</param>
@@ -4600,13 +4594,13 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
+        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
         /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
-        /// User Guide.</i> 
+        /// User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDBClusterSnapshots service method.</param>
@@ -5353,7 +5347,7 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// For an overview of CIDR ranges, go to the <a href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Wikipedia
-        /// Tutorial</a>. 
+        /// Tutorial</a>.
         /// </para>
         /// </summary>
         /// 
@@ -5372,7 +5366,7 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// For an overview of CIDR ranges, go to the <a href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Wikipedia
-        /// Tutorial</a>. 
+        /// Tutorial</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDBSubnetGroups service method.</param>
@@ -5392,7 +5386,7 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// For an overview of CIDR ranges, go to the <a href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Wikipedia
-        /// Tutorial</a>. 
+        /// Tutorial</a>.
         /// </para>
         /// </summary>
         /// <param name="cancellationToken">
@@ -5415,7 +5409,7 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// For an overview of CIDR ranges, go to the <a href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Wikipedia
-        /// Tutorial</a>. 
+        /// Tutorial</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDBSubnetGroups service method.</param>
@@ -5442,7 +5436,7 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// For more information on Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
+        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEngineDefaultClusterParameters service method.</param>
@@ -5460,7 +5454,7 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// For more information on Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
+        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEngineDefaultClusterParameters service method.</param>
@@ -5789,11 +5783,10 @@ namespace Amazon.RDS
         /// <summary>
         /// Returns information about Aurora global database clusters. This API supports pagination.
         /// 
-        /// 
         ///  
         /// <para>
-        ///  For more information on Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
+        /// For more information on Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
+        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -5816,11 +5809,10 @@ namespace Amazon.RDS
         /// <summary>
         /// Returns information about Aurora global database clusters. This API supports pagination.
         /// 
-        /// 
         ///  
         /// <para>
-        ///  For more information on Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
+        /// For more information on Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
+        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -6199,7 +6191,6 @@ namespace Amazon.RDS
         /// You can call <code>DescribeValidDBInstanceModifications</code> to learn what modifications
         /// you can make to your DB instance. You can use this information when you call <code>ModifyDBInstance</code>.
         /// 
-        /// 
         ///  
         /// <para>
         /// This command doesn't apply to RDS Custom.
@@ -6222,7 +6213,6 @@ namespace Amazon.RDS
         /// <summary>
         /// You can call <code>DescribeValidDBInstanceModifications</code> to learn what modifications
         /// you can make to your DB instance. You can use this information when you call <code>ModifyDBInstance</code>.
-        /// 
         /// 
         ///  
         /// <para>
@@ -6330,13 +6320,13 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
+        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
         /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
-        /// User Guide.</i> 
+        /// User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the FailoverDBCluster service method.</param>
@@ -6387,13 +6377,13 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
+        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
         /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
-        /// User Guide.</i> 
+        /// User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the FailoverDBCluster service method.</param>
@@ -6434,14 +6424,14 @@ namespace Amazon.RDS
         /// <para>
         /// For more information about failing over an Amazon Aurora global database, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database-disaster-recovery.html#aurora-global-database-disaster-recovery.managed-failover">Managed
         /// planned failover for Amazon Aurora global databases</a> in the <i>Amazon Aurora User
-        /// Guide.</i> 
+        /// Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
         /// This action applies to <a>GlobalCluster</a> (Aurora global databases) only. Use this
         /// action only on healthy Aurora global databases with running Aurora DB clusters and
         /// no Region-wide outages, to test disaster recovery scenarios or to reconfigure your
-        /// Aurora global database topology. 
+        /// Aurora global database topology.
         /// </para>
         ///  </note>
         /// </summary>
@@ -6481,14 +6471,14 @@ namespace Amazon.RDS
         /// <para>
         /// For more information about failing over an Amazon Aurora global database, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database-disaster-recovery.html#aurora-global-database-disaster-recovery.managed-failover">Managed
         /// planned failover for Amazon Aurora global databases</a> in the <i>Amazon Aurora User
-        /// Guide.</i> 
+        /// Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
         /// This action applies to <a>GlobalCluster</a> (Aurora global databases) only. Use this
         /// action only on healthy Aurora global databases with running Aurora DB clusters and
         /// no Region-wide outages, to test disaster recovery scenarios or to reconfigure your
-        /// Aurora global database topology. 
+        /// Aurora global database topology.
         /// </para>
         ///  </note>
         /// </summary>
@@ -6746,36 +6736,36 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Set the capacity of an Aurora Serverless DB cluster to a specific value.
+        /// Set the capacity of an Aurora Serverless v1 DB cluster to a specific value.
         /// 
         ///  
         /// <para>
-        /// Aurora Serverless scales seamlessly based on the workload on the DB cluster. In some
-        /// cases, the capacity might not scale fast enough to meet a sudden change in workload,
+        /// Aurora Serverless v1 scales seamlessly based on the workload on the DB cluster. In
+        /// some cases, the capacity might not scale fast enough to meet a sudden change in workload,
         /// such as a large number of new transactions. Call <code>ModifyCurrentDBClusterCapacity</code>
         /// to set the capacity explicitly.
         /// </para>
         ///  
         /// <para>
-        /// After this call sets the DB cluster capacity, Aurora Serverless can automatically
+        /// After this call sets the DB cluster capacity, Aurora Serverless v1 can automatically
         /// scale the DB cluster based on the cooldown period for scaling up and the cooldown
         /// period for scaling down.
         /// </para>
         ///  
         /// <para>
-        /// For more information about Aurora Serverless, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using
-        /// Amazon Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.
+        /// For more information about Aurora Serverless v1, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using
+        /// Amazon Aurora Serverless v1</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  <important> 
         /// <para>
         /// If you call <code>ModifyCurrentDBClusterCapacity</code> with the default <code>TimeoutAction</code>,
-        /// connections that prevent Aurora Serverless from finding a scaling point might be dropped.
-        /// For more information about scaling points, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.how-it-works.html#aurora-serverless.how-it-works.auto-scaling">
-        /// Autoscaling for Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.
+        /// connections that prevent Aurora Serverless v1 from finding a scaling point might be
+        /// dropped. For more information about scaling points, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.how-it-works.html#aurora-serverless.how-it-works.auto-scaling">
+        /// Autoscaling for Aurora Serverless v1</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  </important> <note> 
         /// <para>
-        /// This action only applies to Aurora Serverless DB clusters.
+        /// This action only applies to Aurora Serverless v1 DB clusters.
         /// </para>
         ///  </note>
         /// </summary>
@@ -6799,36 +6789,36 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Set the capacity of an Aurora Serverless DB cluster to a specific value.
+        /// Set the capacity of an Aurora Serverless v1 DB cluster to a specific value.
         /// 
         ///  
         /// <para>
-        /// Aurora Serverless scales seamlessly based on the workload on the DB cluster. In some
-        /// cases, the capacity might not scale fast enough to meet a sudden change in workload,
+        /// Aurora Serverless v1 scales seamlessly based on the workload on the DB cluster. In
+        /// some cases, the capacity might not scale fast enough to meet a sudden change in workload,
         /// such as a large number of new transactions. Call <code>ModifyCurrentDBClusterCapacity</code>
         /// to set the capacity explicitly.
         /// </para>
         ///  
         /// <para>
-        /// After this call sets the DB cluster capacity, Aurora Serverless can automatically
+        /// After this call sets the DB cluster capacity, Aurora Serverless v1 can automatically
         /// scale the DB cluster based on the cooldown period for scaling up and the cooldown
         /// period for scaling down.
         /// </para>
         ///  
         /// <para>
-        /// For more information about Aurora Serverless, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using
-        /// Amazon Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.
+        /// For more information about Aurora Serverless v1, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using
+        /// Amazon Aurora Serverless v1</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  <important> 
         /// <para>
         /// If you call <code>ModifyCurrentDBClusterCapacity</code> with the default <code>TimeoutAction</code>,
-        /// connections that prevent Aurora Serverless from finding a scaling point might be dropped.
-        /// For more information about scaling points, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.how-it-works.html#aurora-serverless.how-it-works.auto-scaling">
-        /// Autoscaling for Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.
+        /// connections that prevent Aurora Serverless v1 from finding a scaling point might be
+        /// dropped. For more information about scaling points, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.how-it-works.html#aurora-serverless.how-it-works.auto-scaling">
+        /// Autoscaling for Aurora Serverless v1</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  </important> <note> 
         /// <para>
-        /// This action only applies to Aurora Serverless DB clusters.
+        /// This action only applies to Aurora Serverless v1 DB clusters.
         /// </para>
         ///  </note>
         /// </summary>
@@ -6937,13 +6927,13 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
+        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
         /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
-        /// User Guide.</i> 
+        /// User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyDBCluster service method.</param>
@@ -7002,13 +6992,13 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
+        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
         /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
-        /// User Guide.</i> 
+        /// User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyDBCluster service method.</param>
@@ -7138,10 +7128,10 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Modifies the parameters of a DB cluster parameter group. To modify more than one
-        /// parameter, submit a list of the following: <code>ParameterName</code>, <code>ParameterValue</code>,
+        /// Modifies the parameters of a DB cluster parameter group. To modify more than one parameter,
+        /// submit a list of the following: <code>ParameterName</code>, <code>ParameterValue</code>,
         /// and <code>ApplyMethod</code>. A maximum of 20 parameters can be modified in a single
-        /// request. 
+        /// request.
         /// 
         ///  <important> 
         /// <para>
@@ -7157,7 +7147,7 @@ namespace Amazon.RDS
         /// </para>
         ///  
         /// <para>
-        /// If the modified DB cluster parameter group is used by an Aurora Serverless cluster,
+        /// If the modified DB cluster parameter group is used by an Aurora Serverless v1 cluster,
         /// Aurora applies the update immediately. The cluster restart might interrupt your workload.
         /// In that case, your application must reopen any connections and retry any transactions
         /// that were active when the parameter changes took effect.
@@ -7165,7 +7155,7 @@ namespace Amazon.RDS
         ///  </important> 
         /// <para>
         /// For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
+        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -7191,10 +7181,10 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Modifies the parameters of a DB cluster parameter group. To modify more than one
-        /// parameter, submit a list of the following: <code>ParameterName</code>, <code>ParameterValue</code>,
+        /// Modifies the parameters of a DB cluster parameter group. To modify more than one parameter,
+        /// submit a list of the following: <code>ParameterName</code>, <code>ParameterValue</code>,
         /// and <code>ApplyMethod</code>. A maximum of 20 parameters can be modified in a single
-        /// request. 
+        /// request.
         /// 
         ///  <important> 
         /// <para>
@@ -7210,7 +7200,7 @@ namespace Amazon.RDS
         /// </para>
         ///  
         /// <para>
-        /// If the modified DB cluster parameter group is used by an Aurora Serverless cluster,
+        /// If the modified DB cluster parameter group is used by an Aurora Serverless v1 cluster,
         /// Aurora applies the update immediately. The cluster restart might interrupt your workload.
         /// In that case, your application must reopen any connections and retry any transactions
         /// that were active when the parameter changes took effect.
@@ -7218,7 +7208,7 @@ namespace Amazon.RDS
         ///  </important> 
         /// <para>
         /// For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
+        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -7527,7 +7517,7 @@ namespace Amazon.RDS
         /// Modifies the parameters of a DB parameter group. To modify more than one parameter,
         /// submit a list of the following: <code>ParameterName</code>, <code>ParameterValue</code>,
         /// and <code>ApplyMethod</code>. A maximum of 20 parameters can be modified in a single
-        /// request. 
+        /// request.
         /// 
         ///  <important> 
         /// <para>
@@ -7563,7 +7553,7 @@ namespace Amazon.RDS
         /// Modifies the parameters of a DB parameter group. To modify more than one parameter,
         /// submit a list of the following: <code>ParameterName</code>, <code>ParameterValue</code>,
         /// and <code>ApplyMethod</code>. A maximum of 20 parameters can be modified in a single
-        /// request. 
+        /// request.
         /// 
         ///  <important> 
         /// <para>
@@ -7762,7 +7752,7 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// Amazon RDS supports upgrading DB snapshots for MySQL, PostgreSQL, and Oracle. This
-        /// command doesn't apply to RDS Custom. 
+        /// command doesn't apply to RDS Custom.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyDBSnapshot service method.</param>
@@ -7783,7 +7773,7 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// Amazon RDS supports upgrading DB snapshots for MySQL, PostgreSQL, and Oracle. This
-        /// command doesn't apply to RDS Custom. 
+        /// command doesn't apply to RDS Custom.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyDBSnapshot service method.</param>
@@ -8058,10 +8048,10 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Modify a setting for an Amazon Aurora global cluster. You can change one or more
-        /// database configuration parameters by specifying these parameters and the new values
-        /// in the request. For more information on Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
+        /// Modify a setting for an Amazon Aurora global cluster. You can change one or more database
+        /// configuration parameters by specifying these parameters and the new values in the
+        /// request. For more information on Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
+        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
         /// 
         ///  <note> 
         /// <para>
@@ -8091,10 +8081,10 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Modify a setting for an Amazon Aurora global cluster. You can change one or more
-        /// database configuration parameters by specifying these parameters and the new values
-        /// in the request. For more information on Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
+        /// Modify a setting for an Amazon Aurora global cluster. You can change one or more database
+        /// configuration parameters by specifying these parameters and the new values in the
+        /// request. For more information on Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
+        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
         /// 
         ///  <note> 
         /// <para>
@@ -8330,12 +8320,10 @@ namespace Amazon.RDS
         /// if you make certain modifications, or if you change the DB cluster parameter group
         /// associated with the DB cluster, reboot the DB cluster for the changes to take effect.
         /// 
-        /// 
         ///  
         /// <para>
         /// Rebooting a DB cluster restarts the database engine service. Rebooting a DB cluster
         /// results in a momentary outage, during which the DB cluster status is set to rebooting.
-        /// 
         /// </para>
         ///  
         /// <para>
@@ -8370,12 +8358,10 @@ namespace Amazon.RDS
         /// if you make certain modifications, or if you change the DB cluster parameter group
         /// associated with the DB cluster, reboot the DB cluster for the changes to take effect.
         /// 
-        /// 
         ///  
         /// <para>
         /// Rebooting a DB cluster restarts the database engine service. Rebooting a DB cluster
         /// results in a momentary outage, during which the DB cluster status is set to rebooting.
-        /// 
         /// </para>
         ///  
         /// <para>
@@ -8416,12 +8402,10 @@ namespace Amazon.RDS
         /// if you make certain modifications, or if you change the DB parameter group associated
         /// with the DB instance, you must reboot the instance for the changes to take effect.
         /// 
-        /// 
         ///  
         /// <para>
         /// Rebooting a DB instance restarts the database engine service. Rebooting a DB instance
         /// results in a momentary outage, during which the DB instance status is set to rebooting.
-        /// 
         /// </para>
         ///  
         /// <para>
@@ -8452,12 +8436,10 @@ namespace Amazon.RDS
         /// if you make certain modifications, or if you change the DB parameter group associated
         /// with the DB instance, you must reboot the instance for the changes to take effect.
         /// 
-        /// 
         ///  
         /// <para>
         /// Rebooting a DB instance restarts the database engine service. Rebooting a DB instance
         /// results in a momentary outage, during which the DB instance status is set to rebooting.
-        /// 
         /// </para>
         ///  
         /// <para>
@@ -8580,9 +8562,9 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Detaches an Aurora secondary cluster from an Aurora global database cluster. The
-        /// cluster becomes a standalone cluster with read-write capability instead of being read-only
-        /// and receiving data from a primary cluster in a different Region. 
+        /// Detaches an Aurora secondary cluster from an Aurora global database cluster. The cluster
+        /// becomes a standalone cluster with read-write capability instead of being read-only
+        /// and receiving data from a primary cluster in a different Region.
         /// 
         ///  <note> 
         /// <para>
@@ -8609,9 +8591,9 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Detaches an Aurora secondary cluster from an Aurora global database cluster. The
-        /// cluster becomes a standalone cluster with read-write capability instead of being read-only
-        /// and receiving data from a primary cluster in a different Region. 
+        /// Detaches an Aurora secondary cluster from an Aurora global database cluster. The cluster
+        /// becomes a standalone cluster with read-write capability instead of being read-only
+        /// and receiving data from a primary cluster in a different Region.
         /// 
         ///  <note> 
         /// <para>
@@ -8650,7 +8632,7 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
+        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -8684,7 +8666,7 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
+        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -8882,15 +8864,14 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Modifies the parameters of a DB cluster parameter group to the default value. To
-        /// reset specific parameters submit a list of the following: <code>ParameterName</code>
-        /// and <code>ApplyMethod</code>. To reset the entire DB cluster parameter group, specify
+        /// Modifies the parameters of a DB cluster parameter group to the default value. To reset
+        /// specific parameters submit a list of the following: <code>ParameterName</code> and
+        /// <code>ApplyMethod</code>. To reset the entire DB cluster parameter group, specify
         /// the <code>DBClusterParameterGroupName</code> and <code>ResetAllParameters</code> parameters.
-        /// 
         /// 
         ///  
         /// <para>
-        ///  When resetting the entire group, dynamic parameters are updated immediately and static
+        /// When resetting the entire group, dynamic parameters are updated immediately and static
         /// parameters are set to <code>pending-reboot</code> to take effect on the next DB instance
         /// restart or <code>RebootDBInstance</code> request. You must call <code>RebootDBInstance</code>
         /// for every DB instance in your DB cluster that you want the updated static parameter
@@ -8899,7 +8880,7 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
+        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -8925,15 +8906,14 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Modifies the parameters of a DB cluster parameter group to the default value. To
-        /// reset specific parameters submit a list of the following: <code>ParameterName</code>
-        /// and <code>ApplyMethod</code>. To reset the entire DB cluster parameter group, specify
+        /// Modifies the parameters of a DB cluster parameter group to the default value. To reset
+        /// specific parameters submit a list of the following: <code>ParameterName</code> and
+        /// <code>ApplyMethod</code>. To reset the entire DB cluster parameter group, specify
         /// the <code>DBClusterParameterGroupName</code> and <code>ResetAllParameters</code> parameters.
-        /// 
         /// 
         ///  
         /// <para>
-        ///  When resetting the entire group, dynamic parameters are updated immediately and static
+        /// When resetting the entire group, dynamic parameters are updated immediately and static
         /// parameters are set to <code>pending-reboot</code> to take effect on the next DB instance
         /// restart or <code>RebootDBInstance</code> request. You must call <code>RebootDBInstance</code>
         /// for every DB instance in your DB cluster that you want the updated static parameter
@@ -8942,7 +8922,7 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
+        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -9047,7 +9027,7 @@ namespace Amazon.RDS
         ///  </note> 
         /// <para>
         /// For more information on Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
+        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -9132,7 +9112,7 @@ namespace Amazon.RDS
         ///  </note> 
         /// <para>
         /// For more information on Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
+        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -9225,7 +9205,7 @@ namespace Amazon.RDS
         ///  </note> 
         /// <para>
         /// For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
+        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -9321,7 +9301,7 @@ namespace Amazon.RDS
         ///  </note> 
         /// <para>
         /// For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
+        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -9408,7 +9388,7 @@ namespace Amazon.RDS
         /// in time before <code>LatestRestorableTime</code> for up to <code>BackupRetentionPeriod</code>
         /// days. The target DB cluster is created from the source DB cluster with the same configuration
         /// as the original DB cluster, except that the new DB cluster is created with the default
-        /// DB security group. 
+        /// DB security group.
         /// 
         ///  <note> 
         /// <para>
@@ -9422,7 +9402,7 @@ namespace Amazon.RDS
         ///  </note> 
         /// <para>
         /// For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
+        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -9506,7 +9486,7 @@ namespace Amazon.RDS
         /// in time before <code>LatestRestorableTime</code> for up to <code>BackupRetentionPeriod</code>
         /// days. The target DB cluster is created from the source DB cluster with the same configuration
         /// as the original DB cluster, except that the new DB cluster is created with the default
-        /// DB security group. 
+        /// DB security group.
         /// 
         ///  <note> 
         /// <para>
@@ -9520,7 +9500,7 @@ namespace Amazon.RDS
         ///  </note> 
         /// <para>
         /// For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
+        /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -10362,8 +10342,7 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-cluster-stop-start.html">
-        /// Stopping and Starting an Aurora Cluster</a> in the <i>Amazon Aurora User Guide.</i>
-        /// 
+        /// Stopping and Starting an Aurora Cluster</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -10395,8 +10374,7 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-cluster-stop-start.html">
-        /// Stopping and Starting an Aurora Cluster</a> in the <i>Amazon Aurora User Guide.</i>
-        /// 
+        /// Stopping and Starting an Aurora Cluster</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -10429,7 +10407,7 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Starts an Amazon RDS DB instance that was stopped using the Amazon Web Services console,
-        /// the stop-db-instance CLI command, or the StopDBInstance action. 
+        /// the stop-db-instance CLI command, or the StopDBInstance action.
         /// 
         ///  
         /// <para>
@@ -10439,8 +10417,8 @@ namespace Amazon.RDS
         /// </para>
         ///  <note> 
         /// <para>
-        ///  This command doesn't apply to RDS Custom, Aurora MySQL, and Aurora PostgreSQL. For
-        /// Aurora DB clusters, use <code>StartDBCluster</code> instead. 
+        /// This command doesn't apply to RDS Custom, Aurora MySQL, and Aurora PostgreSQL. For
+        /// Aurora DB clusters, use <code>StartDBCluster</code> instead.
         /// </para>
         ///  </note>
         /// </summary>
@@ -10496,7 +10474,7 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Starts an Amazon RDS DB instance that was stopped using the Amazon Web Services console,
-        /// the stop-db-instance CLI command, or the StopDBInstance action. 
+        /// the stop-db-instance CLI command, or the StopDBInstance action.
         /// 
         ///  
         /// <para>
@@ -10506,8 +10484,8 @@ namespace Amazon.RDS
         /// </para>
         ///  <note> 
         /// <para>
-        ///  This command doesn't apply to RDS Custom, Aurora MySQL, and Aurora PostgreSQL. For
-        /// Aurora DB clusters, use <code>StartDBCluster</code> instead. 
+        /// This command doesn't apply to RDS Custom, Aurora MySQL, and Aurora PostgreSQL. For
+        /// Aurora DB clusters, use <code>StartDBCluster</code> instead.
         /// </para>
         ///  </note>
         /// </summary>
@@ -10655,7 +10633,7 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Starts an export of a snapshot to Amazon S3. The provided IAM role must have access
-        /// to the S3 bucket. 
+        /// to the S3 bucket.
         /// 
         ///  
         /// <para>
@@ -10702,7 +10680,7 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Starts an export of a snapshot to Amazon S3. The provided IAM role must have access
-        /// to the S3 bucket. 
+        /// to the S3 bucket.
         /// 
         ///  
         /// <para>
@@ -10830,13 +10808,12 @@ namespace Amazon.RDS
         /// <summary>
         /// Stops an Amazon Aurora DB cluster. When you stop a DB cluster, Aurora retains the
         /// DB cluster's metadata, including its endpoints and DB parameter groups. Aurora also
-        /// retains the transaction logs so you can do a point-in-time restore if necessary. 
+        /// retains the transaction logs so you can do a point-in-time restore if necessary.
         /// 
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-cluster-stop-start.html">
-        /// Stopping and Starting an Aurora Cluster</a> in the <i>Amazon Aurora User Guide.</i>
-        /// 
+        /// Stopping and Starting an Aurora Cluster</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -10864,13 +10841,12 @@ namespace Amazon.RDS
         /// <summary>
         /// Stops an Amazon Aurora DB cluster. When you stop a DB cluster, Aurora retains the
         /// DB cluster's metadata, including its endpoints and DB parameter groups. Aurora also
-        /// retains the transaction logs so you can do a point-in-time restore if necessary. 
+        /// retains the transaction logs so you can do a point-in-time restore if necessary.
         /// 
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-cluster-stop-start.html">
-        /// Stopping and Starting an Aurora Cluster</a> in the <i>Amazon Aurora User Guide.</i>
-        /// 
+        /// Stopping and Starting an Aurora Cluster</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -10902,10 +10878,10 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Stops an Amazon RDS DB instance. When you stop a DB instance, Amazon RDS retains
-        /// the DB instance's metadata, including its endpoint, DB parameter group, and option
-        /// group membership. Amazon RDS also retains the transaction logs so you can do a point-in-time
-        /// restore if necessary. 
+        /// Stops an Amazon RDS DB instance. When you stop a DB instance, Amazon RDS retains the
+        /// DB instance's metadata, including its endpoint, DB parameter group, and option group
+        /// membership. Amazon RDS also retains the transaction logs so you can do a point-in-time
+        /// restore if necessary.
         /// 
         ///  
         /// <para>
@@ -10915,8 +10891,8 @@ namespace Amazon.RDS
         /// </para>
         ///  <note> 
         /// <para>
-        ///  This command doesn't apply to RDS Custom, Aurora MySQL, and Aurora PostgreSQL. For
-        /// Aurora clusters, use <code>StopDBCluster</code> instead. 
+        /// This command doesn't apply to RDS Custom, Aurora MySQL, and Aurora PostgreSQL. For
+        /// Aurora clusters, use <code>StopDBCluster</code> instead.
         /// </para>
         ///  </note>
         /// </summary>
@@ -10944,10 +10920,10 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Stops an Amazon RDS DB instance. When you stop a DB instance, Amazon RDS retains
-        /// the DB instance's metadata, including its endpoint, DB parameter group, and option
-        /// group membership. Amazon RDS also retains the transaction logs so you can do a point-in-time
-        /// restore if necessary. 
+        /// Stops an Amazon RDS DB instance. When you stop a DB instance, Amazon RDS retains the
+        /// DB instance's metadata, including its endpoint, DB parameter group, and option group
+        /// membership. Amazon RDS also retains the transaction logs so you can do a point-in-time
+        /// restore if necessary.
         /// 
         ///  
         /// <para>
@@ -10957,8 +10933,8 @@ namespace Amazon.RDS
         /// </para>
         ///  <note> 
         /// <para>
-        ///  This command doesn't apply to RDS Custom, Aurora MySQL, and Aurora PostgreSQL. For
-        /// Aurora clusters, use <code>StopDBCluster</code> instead. 
+        /// This command doesn't apply to RDS Custom, Aurora MySQL, and Aurora PostgreSQL. For
+        /// Aurora clusters, use <code>StopDBCluster</code> instead.
         /// </para>
         ///  </note>
         /// </summary>

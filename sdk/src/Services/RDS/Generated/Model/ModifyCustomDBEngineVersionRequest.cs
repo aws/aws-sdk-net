@@ -135,7 +135,7 @@ namespace Amazon.RDS.Model
         /// example, you might change the status of your CEV from <code>available</code> to <code>inactive</code>,
         /// and from <code>inactive</code> back to <code>available</code>. To change the availability
         /// status of the CEV, it must not currently be in use by an RDS Custom instance, snapshot,
-        /// or automated backup. 
+        /// or automated backup.
         /// </para>
         /// </summary>
         public CustomEngineVersionStatus Status

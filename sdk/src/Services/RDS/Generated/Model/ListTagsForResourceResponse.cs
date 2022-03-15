@@ -38,7 +38,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property TagList. 
         /// <para>
-        /// List of tags returned by the ListTagsForResource operation.
+        /// List of tags returned by the <code>ListTagsForResource</code> operation.
         /// </para>
         /// </summary>
         public List<Tag> TagList

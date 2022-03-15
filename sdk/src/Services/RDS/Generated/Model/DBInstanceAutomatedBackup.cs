@@ -197,7 +197,6 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property DBInstanceIdentifier. 
         /// <para>
         /// The customer id of the instance that is/was associated with the automated backup.
-        /// 
         /// </para>
         /// </summary>
         public string DBInstanceIdentifier
@@ -307,7 +306,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property InstanceCreateTime. 
         /// <para>
-        /// Provides the date and time that the DB instance was created. 
+        /// Provides the date and time that the DB instance was created.
         /// </para>
         /// </summary>
         public DateTime InstanceCreateTime
@@ -325,7 +324,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Iops. 
         /// <para>
-        /// The IOPS (I/O operations per second) value for the automated backup. 
+        /// The IOPS (I/O operations per second) value for the automated backup.
         /// </para>
         /// </summary>
         public int Iops

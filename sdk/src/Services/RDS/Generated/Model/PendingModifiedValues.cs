@@ -358,7 +358,6 @@ namespace Amazon.RDS.Model
         /// <para>
         /// The number of minutes to pause the automation. When the time period ends, RDS Custom
         /// resumes full automation. The minimum value is 60 (default). The maximum value is 1,440.
-        /// 
         /// </para>
         /// </summary>
         public DateTime ResumeFullAutomationModeTime

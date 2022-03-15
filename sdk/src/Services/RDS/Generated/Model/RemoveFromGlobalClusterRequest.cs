@@ -30,9 +30,9 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the RemoveFromGlobalCluster operation.
-    /// Detaches an Aurora secondary cluster from an Aurora global database cluster. The
-    /// cluster becomes a standalone cluster with read-write capability instead of being read-only
-    /// and receiving data from a primary cluster in a different Region. 
+    /// Detaches an Aurora secondary cluster from an Aurora global database cluster. The cluster
+    /// becomes a standalone cluster with read-write capability instead of being read-only
+    /// and receiving data from a primary cluster in a different Region.
     /// 
     ///  <note> 
     /// <para>
@@ -48,8 +48,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DbClusterIdentifier. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) identifying the cluster that was detached from the
-        /// Aurora global database cluster. 
+        /// The Amazon Resource Name (ARN) identifying the cluster that was detached from the
+        /// Aurora global database cluster.
         /// </para>
         /// </summary>
         public string DbClusterIdentifier
@@ -67,7 +67,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property GlobalClusterIdentifier. 
         /// <para>
-        ///  The cluster identifier to detach from the Aurora global database cluster. 
+        /// The cluster identifier to detach from the Aurora global database cluster.
         /// </para>
         /// </summary>
         public string GlobalClusterIdentifier

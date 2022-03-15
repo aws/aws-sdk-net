@@ -40,9 +40,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        ///  An optional pagination token provided by a previous OrderableDBInstanceOptions request.
+        /// An optional pagination token provided by a previous OrderableDBInstanceOptions request.
         /// If this parameter is specified, the response includes only records beyond the marker,
-        /// up to the value specified by <code>MaxRecords</code> . 
+        /// up to the value specified by <code>MaxRecords</code>.
         /// </para>
         /// </summary>
         public string Marker

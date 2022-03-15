@@ -60,7 +60,7 @@ namespace Amazon.RDS.Model
         /// The status of the DB instance's option group membership. Valid values are: <code>in-sync</code>,
         /// <code>pending-apply</code>, <code>pending-removal</code>, <code>pending-maintenance-apply</code>,
         /// <code>pending-maintenance-removal</code>, <code>applying</code>, <code>removing</code>,
-        /// and <code>failed</code>. 
+        /// and <code>failed</code>.
         /// </para>
         /// </summary>
         public string Status

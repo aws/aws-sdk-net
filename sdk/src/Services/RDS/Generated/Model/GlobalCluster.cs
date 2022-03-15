@@ -48,7 +48,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DatabaseName. 
         /// <para>
-        ///  The default database name within the new global database cluster. 
+        /// The default database name within the new global database cluster.
         /// </para>
         /// </summary>
         public string DatabaseName
@@ -66,7 +66,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DeletionProtection. 
         /// <para>
-        ///  The deletion protection setting for the new global database cluster. 
+        /// The deletion protection setting for the new global database cluster.
         /// </para>
         /// </summary>
         public bool DeletionProtection
@@ -84,7 +84,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Engine. 
         /// <para>
-        ///  The Aurora database engine used by the global database cluster. 
+        /// The Aurora database engine used by the global database cluster.
         /// </para>
         /// </summary>
         public string Engine
@@ -123,7 +123,7 @@ namespace Amazon.RDS.Model
         /// A data object containing all properties for the current state of an in-process or
         /// pending failover process for this Aurora global database. This object is empty unless
         /// the <a>FailoverGlobalCluster</a> API operation has been called on this Aurora global
-        /// database (<a>GlobalCluster</a>). 
+        /// database (<a>GlobalCluster</a>).
         /// </para>
         /// </summary>
         public FailoverState FailoverState
@@ -159,8 +159,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property GlobalClusterIdentifier. 
         /// <para>
-        ///  Contains a user-supplied global database cluster identifier. This identifier is the
-        /// unique key that identifies a global database cluster. 
+        /// Contains a user-supplied global database cluster identifier. This identifier is the
+        /// unique key that identifies a global database cluster.
         /// </para>
         /// </summary>
         public string GlobalClusterIdentifier
@@ -178,8 +178,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property GlobalClusterMembers. 
         /// <para>
-        ///  The list of cluster IDs for secondary clusters within the global database cluster.
-        /// Currently limited to 1 item. 
+        /// The list of cluster IDs for secondary clusters within the global database cluster.
+        /// Currently limited to 1 item.
         /// </para>
         /// </summary>
         public List<GlobalClusterMember> GlobalClusterMembers
@@ -197,9 +197,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property GlobalClusterResourceId. 
         /// <para>
-        ///  The Amazon Web Services Region-unique, immutable identifier for the global database
+        /// The Amazon Web Services Region-unique, immutable identifier for the global database
         /// cluster. This identifier is found in Amazon Web Services CloudTrail log entries whenever
-        /// the Amazon Web Services KMS key for the DB cluster is accessed. 
+        /// the Amazon Web Services KMS key for the DB cluster is accessed.
         /// </para>
         /// </summary>
         public string GlobalClusterResourceId
@@ -235,7 +235,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property StorageEncrypted. 
         /// <para>
-        ///  The storage encryption setting for the global database cluster. 
+        /// The storage encryption setting for the global database cluster.
         /// </para>
         /// </summary>
         public bool StorageEncrypted

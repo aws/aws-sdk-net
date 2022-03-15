@@ -111,7 +111,7 @@ namespace Amazon.RDS.Model
     ///  <code>SourceDBClusterSnapshotIdentifier</code> - The DB cluster snapshot identifier
     /// for the encrypted DB cluster snapshot to be copied. This identifier must be in the
     /// ARN format for the source Amazon Web Services Region and is the same value as the
-    /// <code>SourceDBClusterSnapshotIdentifier</code> in the pre-signed URL. 
+    /// <code>SourceDBClusterSnapshotIdentifier</code> in the pre-signed URL.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -123,18 +123,18 @@ namespace Amazon.RDS.Model
     /// <para>
     /// For more information on copying encrypted Amazon Aurora DB cluster snapshots from
     /// one Amazon Web Services Region to another, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_CopySnapshot.html">
-    /// Copying a Snapshot</a> in the <i>Amazon Aurora User Guide.</i> 
+    /// Copying a Snapshot</a> in the <i>Amazon Aurora User Guide</i>.
     /// </para>
     ///  
     /// <para>
     /// For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-    /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
+    /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
     /// </para>
     ///  
     /// <para>
     /// For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
     /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
-    /// User Guide.</i> 
+    /// User Guide</i>.
     /// </para>
     /// </summary>
     public partial class CopyDBClusterSnapshotRequest : AmazonRDSRequest
@@ -178,12 +178,11 @@ namespace Amazon.RDS.Model
         /// you can specify a value for <code>KmsKeyId</code> to encrypt the copy with a new KMS
         /// key. If you don't specify a value for <code>KmsKeyId</code>, then the copy of the
         /// DB cluster snapshot is encrypted with the same KMS key as the source DB cluster snapshot.
-        /// 
         /// </para>
         ///  
         /// <para>
         /// If you copy an encrypted DB cluster snapshot that is shared from another Amazon Web
-        /// Services account, then you must specify a value for <code>KmsKeyId</code>. 
+        /// Services account, then you must specify a value for <code>KmsKeyId</code>.
         /// </para>
         ///  
         /// <para>
@@ -308,7 +307,7 @@ namespace Amazon.RDS.Model
         /// If the source snapshot is in a different Amazon Web Services Region than the copy,
         /// specify a valid DB cluster snapshot ARN. For more information, go to <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_CopySnapshot.html#USER_CopySnapshot.AcrossRegions">
         /// Copying Snapshots Across Amazon Web Services Regions</a> in the <i>Amazon Aurora User
-        /// Guide.</i> 
+        /// Guide</i>.
         /// </para>
         ///  </li> </ul> 
         /// <para>

@@ -31,7 +31,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// Container for the parameters to the StartExportTask operation.
     /// Starts an export of a snapshot to Amazon S3. The provided IAM role must have access
-    /// to the S3 bucket. 
+    /// to the S3 bucket.
     /// 
     ///  
     /// <para>
@@ -91,7 +91,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property ExportTaskIdentifier. 
         /// <para>
         /// A unique identifier for the snapshot export task. This ID isn't an identifier for
-        /// the Amazon S3 bucket where the snapshot is to be exported to. 
+        /// the Amazon S3 bucket where the snapshot is to be exported to.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -111,7 +111,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property IamRoleArn. 
         /// <para>
         /// The name of the IAM role to use for writing to the Amazon S3 bucket when exporting
-        /// a snapshot. 
+        /// a snapshot.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -134,7 +134,7 @@ namespace Amazon.RDS.Model
         /// to Amazon S3. The Amazon Web Services KMS key identifier is the key ARN, key ID, alias
         /// ARN, or alias name for the KMS key. The caller of this operation must be authorized
         /// to execute the following operations. These can be set in the Amazon Web Services KMS
-        /// key policy: 
+        /// key policy:
         /// </para>
         ///  <ul> <li> 
         /// <para>

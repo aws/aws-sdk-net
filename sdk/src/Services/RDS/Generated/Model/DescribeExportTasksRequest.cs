@@ -68,7 +68,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Supported filters include the following: 
+        /// Supported filters include the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -129,9 +129,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        ///  An optional pagination token provided by a previous <code>DescribeExportTasks</code>
+        /// An optional pagination token provided by a previous <code>DescribeExportTasks</code>
         /// request. If you specify this parameter, the response includes only records beyond
-        /// the marker, up to the value specified by the <code>MaxRecords</code> parameter. 
+        /// the marker, up to the value specified by the <code>MaxRecords</code> parameter.
         /// </para>
         /// </summary>
         public string Marker
@@ -149,10 +149,10 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property MaxRecords. 
         /// <para>
-        ///  The maximum number of records to include in the response. If more records exist than
+        /// The maximum number of records to include in the response. If more records exist than
         /// the specified value, a pagination token called a marker is included in the response.
         /// You can use the marker in a later <code>DescribeExportTasks</code> request to retrieve
-        /// the remaining results. 
+        /// the remaining results.
         /// </para>
         ///  
         /// <para>

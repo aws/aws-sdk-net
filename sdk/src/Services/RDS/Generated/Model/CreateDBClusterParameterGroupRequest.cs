@@ -38,7 +38,7 @@ namespace Amazon.RDS.Model
     /// </para>
     ///  
     /// <para>
-    ///  A DB cluster parameter group is initially created with the default parameters for
+    /// A DB cluster parameter group is initially created with the default parameters for
     /// the database engine used by instances in the DB cluster. To provide custom values
     /// for any of the parameters, you must modify the group after creating it using <code>ModifyDBClusterParameterGroup</code>.
     /// Once you've created a DB cluster parameter group, you need to associate it with your
@@ -48,13 +48,13 @@ namespace Amazon.RDS.Model
     /// <para>
     /// When you associate a new DB cluster parameter group with a running Aurora DB cluster,
     /// reboot the DB instances in the DB cluster without failover for the new DB cluster
-    /// parameter group and associated settings to take effect. 
+    /// parameter group and associated settings to take effect.
     /// </para>
     ///  
     /// <para>
     /// When you associate a new DB cluster parameter group with a running Multi-AZ DB cluster,
     /// reboot the DB cluster without failover for the new DB cluster parameter group and
-    /// associated settings to take effect. 
+    /// associated settings to take effect.
     /// </para>
     ///  <important> 
     /// <para>
@@ -72,13 +72,13 @@ namespace Amazon.RDS.Model
     ///  </important> 
     /// <para>
     /// For more information on Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-    /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
+    /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
     /// </para>
     ///  
     /// <para>
     /// For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
     /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
-    /// User Guide.</i> 
+    /// User Guide</i>.
     /// </para>
     /// </summary>
     public partial class CreateDBClusterParameterGroupRequest : AmazonRDSRequest

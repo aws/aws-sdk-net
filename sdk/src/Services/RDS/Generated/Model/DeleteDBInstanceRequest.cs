@@ -37,10 +37,10 @@ namespace Amazon.RDS.Model
     /// 
     ///  
     /// <para>
-    ///  If you request a final DB snapshot the status of the Amazon RDS DB instance is <code>deleting</code>
+    /// If you request a final DB snapshot the status of the Amazon RDS DB instance is <code>deleting</code>
     /// until the DB snapshot is created. The API action <code>DescribeDBInstance</code> is
     /// used to monitor the status of this operation. The action can't be canceled or reverted
-    /// once submitted. 
+    /// once submitted.
     /// </para>
     ///  
     /// <para>
@@ -143,8 +143,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property FinalDBSnapshotIdentifier. 
         /// <para>
-        ///  The <code>DBSnapshotIdentifier</code> of the new <code>DBSnapshot</code> created
-        /// when the <code>SkipFinalSnapshot</code> parameter is disabled. 
+        /// The <code>DBSnapshotIdentifier</code> of the new <code>DBSnapshot</code> created when
+        /// the <code>SkipFinalSnapshot</code> parameter is disabled.
         /// </para>
         ///  <note> 
         /// <para>

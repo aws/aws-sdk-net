@@ -34,7 +34,7 @@ namespace Amazon.RDS.Model
     /// in time before <code>LatestRestorableTime</code> for up to <code>BackupRetentionPeriod</code>
     /// days. The target DB cluster is created from the source DB cluster with the same configuration
     /// as the original DB cluster, except that the new DB cluster is created with the default
-    /// DB security group. 
+    /// DB security group.
     /// 
     ///  <note> 
     /// <para>
@@ -48,7 +48,7 @@ namespace Amazon.RDS.Model
     ///  </note> 
     /// <para>
     /// For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-    /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
+    /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -314,13 +314,13 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property Domain. 
         /// <para>
         /// Specify the Active Directory directory ID to restore the DB cluster in. The domain
-        /// must be created prior to this operation. 
+        /// must be created prior to this operation.
         /// </para>
         ///  
         /// <para>
-        ///  For Amazon Aurora DB clusters, Amazon RDS can use Kerberos Authentication to authenticate
+        /// For Amazon Aurora DB clusters, Amazon RDS can use Kerberos Authentication to authenticate
         /// users that connect to the DB cluster. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos
-        /// Authentication</a> in the <i>Amazon Aurora User Guide</i>. 
+        /// Authentication</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -404,8 +404,7 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// For more information about exporting CloudWatch Logs for Amazon RDS, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
-        /// Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Relational Database Service
-        /// User Guide</i>.
+        /// Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide.</i>.
         /// </para>
         ///  
         /// <para>
@@ -438,7 +437,7 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html">
-        /// IAM Database Authentication</a> in the <i>Amazon Aurora User Guide.</i> 
+        /// IAM Database Authentication</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -462,9 +461,9 @@ namespace Amazon.RDS.Model
         /// <para>
         /// The engine mode of the new cluster. Specify <code>provisioned</code> or <code>serverless</code>,
         /// depending on the type of the cluster you are creating. You can create an Aurora Serverless
-        /// clone from a provisioned cluster, or a provisioned clone from an Aurora Serverless
-        /// cluster. To create a clone that is an Aurora Serverless cluster, the original cluster
-        /// must be an Aurora Serverless cluster or an encrypted provisioned cluster.
+        /// v1 clone from a provisioned cluster, or a provisioned clone from an Aurora Serverless
+        /// v1 cluster. To create a clone that is an Aurora Serverless v1 cluster, the original
+        /// cluster must be an Aurora Serverless v1 cluster or an encrypted provisioned cluster.
         /// </para>
         ///  
         /// <para>
@@ -493,12 +492,12 @@ namespace Amazon.RDS.Model
         /// <para>
         /// For information about valid <code>Iops</code> values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon
         /// RDS Provisioned IOPS storage to improve performance</a> in the <i>Amazon RDS User
-        /// Guide</i>. 
+        /// Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// Constraints: Must be a multiple between .5 and 50 of the storage amount for the DB
-        /// instance. 
+        /// instance.
         /// </para>
         ///  
         /// <para>
@@ -600,7 +599,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraints: A value from <code>1150-65535</code>. 
+        /// Constraints: A value from <code>1150-65535</code>.
         /// </para>
         ///  
         /// <para>
@@ -849,15 +848,15 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  Valid values: <code>io1</code> 
+        /// Valid values: <code>io1</code> 
         /// </para>
         ///  
         /// <para>
-        ///  When specified, a value for the <code>Iops</code> parameter is required. 
+        /// When specified, a value for the <code>Iops</code> parameter is required.
         /// </para>
         ///  
         /// <para>
-        ///  Default: <code>io1</code> 
+        /// Default: <code>io1</code> 
         /// </para>
         ///  
         /// <para>
@@ -896,7 +895,7 @@ namespace Amazon.RDS.Model
         /// <para>
         /// A value that indicates whether to restore the DB cluster to the latest restorable
         /// backup time. By default, the DB cluster isn't restored to the latest restorable backup
-        /// time. 
+        /// time.
         /// </para>
         ///  
         /// <para>

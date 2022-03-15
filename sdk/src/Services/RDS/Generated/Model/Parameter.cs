@@ -30,7 +30,7 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// This data type is used as a request parameter in the <code>ModifyDBParameterGroup</code>
-    /// and <code>ResetDBParameterGroup</code> actions. 
+    /// and <code>ResetDBParameterGroup</code> actions.
     /// 
     ///  
     /// <para>
@@ -150,9 +150,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property IsModifiable. 
         /// <para>
-        ///  Indicates whether (<code>true</code>) or not (<code>false</code>) the parameter can
+        /// Indicates whether (<code>true</code>) or not (<code>false</code>) the parameter can
         /// be modified. Some parameters have security or operational implications that prevent
-        /// them from being changed. 
+        /// them from being changed.
         /// </para>
         /// </summary>
         public bool IsModifiable

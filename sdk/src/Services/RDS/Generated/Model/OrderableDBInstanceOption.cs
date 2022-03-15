@@ -33,8 +33,8 @@ namespace Amazon.RDS.Model
     /// 
     ///  
     /// <para>
-    ///  This data type is used as a response element in the <code>DescribeOrderableDBInstanceOptions</code>
-    /// action. 
+    /// This data type is used as a response element in the <code>DescribeOrderableDBInstanceOptions</code>
+    /// action.
     /// </para>
     /// </summary>
     public partial class OrderableDBInstanceOption

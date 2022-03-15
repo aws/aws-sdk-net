@@ -33,7 +33,7 @@ namespace Amazon.RDS.Model
     /// Creates a new DB instance that acts as a read replica for an existing source DB instance.
     /// You can create a read replica for a DB instance running MySQL, MariaDB, Oracle, PostgreSQL,
     /// or SQL Server. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html">Working
-    /// with Read Replicas</a> in the <i>Amazon RDS User Guide</i>. 
+    /// with Read Replicas</a> in the <i>Amazon RDS User Guide</i>.
     /// 
     ///  
     /// <para>
@@ -48,7 +48,7 @@ namespace Amazon.RDS.Model
     /// </para>
     ///  <important> 
     /// <para>
-    /// Your source DB instance must have backup retention enabled. 
+    /// Your source DB instance must have backup retention enabled.
     /// </para>
     ///  </important>
     /// </summary>
@@ -143,7 +143,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  Example: <code>us-east-1d</code> 
+        /// Example: <code>us-east-1d</code> 
         /// </para>
         /// </summary>
         public string AvailabilityZone
@@ -199,7 +199,7 @@ namespace Amazon.RDS.Model
         ///  </li> </ul> 
         /// <para>
         /// For the list of permissions required for the IAM role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc">
-        /// Configure IAM and your VPC</a> in the <i>Amazon Relational Database Service User Guide</i>.
+        /// Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -225,7 +225,7 @@ namespace Amazon.RDS.Model
         /// all DB instance classes are available in all Amazon Web Services Regions, or for all
         /// database engines. For the full list of DB instance classes, and availability for your
         /// engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-        /// Instance Class</a> in the <i>Amazon RDS User Guide.</i> 
+        /// Instance Class</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -374,7 +374,7 @@ namespace Amazon.RDS.Model
         /// A value that indicates whether the DB instance has deletion protection enabled. The
         /// database can't be deleted when deletion protection is enabled. By default, deletion
         /// protection isn't enabled. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
-        /// Deleting a DB Instance</a>. 
+        /// Deleting a DB Instance</a>.
         /// </para>
         /// </summary>
         public bool DeletionProtection
@@ -475,7 +475,7 @@ namespace Amazon.RDS.Model
         /// <para>
         /// For more information about IAM database authentication, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
         /// IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User
-        /// Guide.</i> 
+        /// Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -502,7 +502,7 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using
-        /// Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>. 
+        /// Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -680,7 +680,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property MultiAZ. 
         /// <para>
-        /// A value that indicates whether the read replica is in a Multi-AZ deployment. 
+        /// A value that indicates whether the read replica is in a Multi-AZ deployment.
         /// </para>
         ///  
         /// <para>
@@ -772,7 +772,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property PerformanceInsightsRetentionPeriod. 
         /// <para>
         /// The amount of time, in days, to retain Performance Insights data. Valid values are
-        /// 7 or 731 (2 years). 
+        /// 7 or 731 (2 years).
         /// </para>
         ///  
         /// <para>
@@ -822,7 +822,6 @@ namespace Amazon.RDS.Model
         /// <para>
         /// The URL that contains a Signature Version 4 signed request for the <code>CreateDBInstanceReadReplica</code>
         /// API action in the source Amazon Web Services Region that contains the source DB instance.
-        /// 
         /// </para>
         ///  
         /// <para>
@@ -835,7 +834,7 @@ namespace Amazon.RDS.Model
         /// The presigned URL must be a valid request for the <code>CreateDBInstanceReadReplica</code>
         /// API action that can be executed in the source Amazon Web Services Region that contains
         /// the encrypted source DB instance. The presigned URL request must contain the following
-        /// parameter values: 
+        /// parameter values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -851,7 +850,7 @@ namespace Amazon.RDS.Model
         /// you call the <code>CreateDBInstanceReadReplica</code> action in the us-east-1 Amazon
         /// Web Services Region and provide a presigned URL that contains a call to the <code>CreateDBInstanceReadReplica</code>
         /// action in the us-west-2 Amazon Web Services Region. For this example, the <code>DestinationRegion</code>
-        /// in the presigned URL must be set to the us-east-1 Amazon Web Services Region. 
+        /// in the presigned URL must be set to the us-east-1 Amazon Web Services Region.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -859,7 +858,7 @@ namespace Amazon.RDS.Model
         /// use to encrypt the read replica in the destination Amazon Web Services Region. This
         /// is the same identifier for both the <code>CreateDBInstanceReadReplica</code> action
         /// that is called in the destination Amazon Web Services Region, and the action contained
-        /// in the presigned URL. 
+        /// in the presigned URL.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -869,14 +868,13 @@ namespace Amazon.RDS.Model
         /// an encrypted read replica from a DB instance in the us-west-2 Amazon Web Services
         /// Region, then your <code>SourceDBInstanceIdentifier</code> looks like the following
         /// example: <code>arn:aws:rds:us-west-2:123456789012:instance:mysql-instance1-20161115</code>.
-        /// 
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// To learn how to generate a Signature Version 4 signed request, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
         /// Requests: Using Query Parameters (Amazon Web Services Signature Version 4)</a> and
         /// <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
-        /// Version 4 Signing Process</a>. 
+        /// Version 4 Signing Process</a>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -1082,16 +1080,16 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  Valid values: <code>standard | gp2 | io1</code> 
+        /// Valid values: <code>standard | gp2 | io1</code> 
         /// </para>
         ///  
         /// <para>
-        ///  If you specify <code>io1</code>, you must also include a value for the <code>Iops</code>
-        /// parameter. 
+        /// If you specify <code>io1</code>, you must also include a value for the <code>Iops</code>
+        /// parameter.
         /// </para>
         ///  
         /// <para>
-        ///  Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise
+        /// Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise
         /// <code>gp2</code> 
         /// </para>
         /// </summary>
@@ -1148,7 +1146,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property VpcSecurityGroupIds. 
         /// <para>
-        ///  A list of Amazon EC2 VPC security groups to associate with the read replica. 
+        /// A list of Amazon EC2 VPC security groups to associate with the read replica.
         /// </para>
         ///  
         /// <para>
@@ -1156,7 +1154,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  Default: The default EC2 VPC security group for the DB subnet group's VPC. 
+        /// Default: The default EC2 VPC security group for the DB subnet group's VPC.
         /// </para>
         /// </summary>
         public List<string> VpcSecurityGroupIds

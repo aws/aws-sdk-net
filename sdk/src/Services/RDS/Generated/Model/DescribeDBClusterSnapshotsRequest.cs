@@ -35,13 +35,13 @@ namespace Amazon.RDS.Model
     ///  
     /// <para>
     /// For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-    /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
+    /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
     /// </para>
     ///  
     /// <para>
     /// For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
     /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
-    /// User Guide.</i> 
+    /// User Guide</i>.
     /// </para>
     /// </summary>
     public partial class DescribeDBClusterSnapshotsRequest : AmazonRDSRequest
@@ -60,7 +60,7 @@ namespace Amazon.RDS.Model
         /// <para>
         /// The ID of the DB cluster to retrieve the list of DB cluster snapshots for. This parameter
         /// can't be used in conjunction with the <code>DBClusterSnapshotIdentifier</code> parameter.
-        /// This parameter isn't case-sensitive. 
+        /// This parameter isn't case-sensitive.
         /// </para>
         ///  
         /// <para>
@@ -89,7 +89,7 @@ namespace Amazon.RDS.Model
         /// <para>
         /// A specific DB cluster snapshot identifier to describe. This parameter can't be used
         /// in conjunction with the <code>DBClusterIdentifier</code> parameter. This value is
-        /// stored as a lowercase string. 
+        /// stored as a lowercase string.
         /// </para>
         ///  
         /// <para>
@@ -214,7 +214,7 @@ namespace Amazon.RDS.Model
         /// <para>
         /// An optional pagination token provided by a previous <code>DescribeDBClusterSnapshots</code>
         /// request. If this parameter is specified, the response includes only records beyond
-        /// the marker, up to the value specified by <code>MaxRecords</code>. 
+        /// the marker, up to the value specified by <code>MaxRecords</code>.
         /// </para>
         /// </summary>
         public string Marker
@@ -234,7 +234,7 @@ namespace Amazon.RDS.Model
         /// <para>
         /// The maximum number of records to include in the response. If more records exist than
         /// the specified <code>MaxRecords</code> value, a pagination token called a marker is
-        /// included in the response so you can retrieve the remaining results. 
+        /// included in the response so you can retrieve the remaining results.
         /// </para>
         ///  
         /// <para>

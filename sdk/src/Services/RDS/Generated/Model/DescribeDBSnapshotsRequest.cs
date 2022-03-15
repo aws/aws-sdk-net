@@ -54,7 +54,7 @@ namespace Amazon.RDS.Model
         /// <para>
         /// The ID of the DB instance to retrieve the list of DB snapshots for. This parameter
         /// can't be used in conjunction with <code>DBSnapshotIdentifier</code>. This parameter
-        /// isn't case-sensitive. 
+        /// isn't case-sensitive.
         /// </para>
         ///  
         /// <para>
@@ -99,9 +99,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBSnapshotIdentifier. 
         /// <para>
-        ///  A specific DB snapshot identifier to describe. This parameter can't be used in conjunction
+        /// A specific DB snapshot identifier to describe. This parameter can't be used in conjunction
         /// with <code>DBInstanceIdentifier</code>. This value is stored as a lowercase string.
-        /// 
         /// </para>
         ///  
         /// <para>
@@ -236,9 +235,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        ///  An optional pagination token provided by a previous <code>DescribeDBSnapshots</code>
+        /// An optional pagination token provided by a previous <code>DescribeDBSnapshots</code>
         /// request. If this parameter is specified, the response includes only records beyond
-        /// the marker, up to the value specified by <code>MaxRecords</code>. 
+        /// the marker, up to the value specified by <code>MaxRecords</code>.
         /// </para>
         /// </summary>
         public string Marker
@@ -256,9 +255,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property MaxRecords. 
         /// <para>
-        ///  The maximum number of records to include in the response. If more records exist than
+        /// The maximum number of records to include in the response. If more records exist than
         /// the specified <code>MaxRecords</code> value, a pagination token called a marker is
-        /// included in the response so that you can retrieve the remaining results. 
+        /// included in the response so that you can retrieve the remaining results.
         /// </para>
         ///  
         /// <para>

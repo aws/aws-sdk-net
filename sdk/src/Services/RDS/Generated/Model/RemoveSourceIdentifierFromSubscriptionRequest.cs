@@ -40,8 +40,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property SourceIdentifier. 
         /// <para>
-        ///  The source identifier to be removed from the subscription, such as the <b>DB instance
-        /// identifier</b> for a DB instance or the name of a security group. 
+        /// The source identifier to be removed from the subscription, such as the <b>DB instance
+        /// identifier</b> for a DB instance or the name of a security group.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

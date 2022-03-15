@@ -68,7 +68,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property ResourceArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the DB cluster for the database activity stream.
-        /// For example, <code>arn:aws:rds:us-east-1:12345667890:cluster:das-cluster</code>. 
+        /// For example, <code>arn:aws:rds:us-east-1:12345667890:cluster:das-cluster</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -29,12 +29,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Contains the details of an Amazon RDS DB subnet group. 
+    /// Contains the details of an Amazon RDS DB subnet group.
     /// 
     ///  
     /// <para>
     /// This data type is used as a response element in the <code>DescribeDBSubnetGroups</code>
-    /// action. 
+    /// action.
     /// </para>
     /// </summary>
     public partial class DBSubnetGroup
@@ -121,7 +121,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Subnets. 
         /// <para>
-        ///  Contains a list of <code>Subnet</code> elements. 
+        /// Contains a list of <code>Subnet</code> elements.
         /// </para>
         /// </summary>
         public List<Subnet> Subnets

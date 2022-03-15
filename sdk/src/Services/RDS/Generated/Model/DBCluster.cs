@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster. 
+    /// Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.
     /// 
     ///  
     /// <para>
@@ -175,7 +175,7 @@ namespace Amazon.RDS.Model
         /// <para>
         /// The mode of the database activity stream. Database events such as a change or access
         /// generate an activity stream event. The database session can handle these events either
-        /// synchronously or asynchronously. 
+        /// synchronously or asynchronously.
         /// </para>
         /// </summary>
         public ActivityStreamMode ActivityStreamMode
@@ -366,13 +366,13 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Capacity. 
         /// <para>
-        /// The current capacity of an Aurora Serverless DB cluster. The capacity is 0 (zero)
+        /// The current capacity of an Aurora Serverless v1 DB cluster. The capacity is 0 (zero)
         /// when the cluster is paused.
         /// </para>
         ///  
         /// <para>
-        /// For more information about Aurora Serverless, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using
-        /// Amazon Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.
+        /// For more information about Aurora Serverless v1, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using
+        /// Amazon Aurora Serverless v1</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         /// </summary>
         public int Capacity
@@ -674,7 +674,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property DeletionProtection. 
         /// <para>
         /// Indicates if the DB cluster has deletion protection enabled. The database can't be
-        /// deleted when deletion protection is enabled. 
+        /// deleted when deletion protection is enabled.
         /// </para>
         /// </summary>
         public bool DeletionProtection
@@ -906,19 +906,19 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property HttpEndpointEnabled. 
         /// <para>
-        /// A value that indicates whether the HTTP endpoint for an Aurora Serverless DB cluster
+        /// A value that indicates whether the HTTP endpoint for an Aurora Serverless v1 DB cluster
         /// is enabled.
         /// </para>
         ///  
         /// <para>
         /// When enabled, the HTTP endpoint provides a connectionless web service API for running
-        /// SQL queries on the Aurora Serverless DB cluster. You can also query your database
+        /// SQL queries on the Aurora Serverless v1 DB cluster. You can also query your database
         /// from inside the RDS console with the query editor.
         /// </para>
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using
-        /// the Data API for Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.
+        /// the Data API for Aurora Serverless v1</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         /// </summary>
         public bool HttpEndpointEnabled
@@ -1230,7 +1230,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property PreferredBackupWindow. 
         /// <para>
         /// Specifies the daily time range during which automated backups are created if automated
-        /// backups are enabled, as determined by the <code>BackupRetentionPeriod</code>. 
+        /// backups are enabled, as determined by the <code>BackupRetentionPeriod</code>.
         /// </para>
         /// </summary>
         public string PreferredBackupWindow
@@ -1311,7 +1311,7 @@ namespace Amazon.RDS.Model
         /// connections across the Aurora Replicas that are available in a DB cluster. As clients
         /// request new connections to the reader endpoint, Aurora distributes the connection
         /// requests among the Aurora Replicas in the DB cluster. This functionality can help
-        /// balance your read workload across multiple Aurora Replicas in your DB cluster. 
+        /// balance your read workload across multiple Aurora Replicas in your DB cluster.
         /// </para>
         ///  
         /// <para>

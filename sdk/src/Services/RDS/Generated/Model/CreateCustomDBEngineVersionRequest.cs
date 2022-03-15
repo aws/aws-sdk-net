@@ -35,11 +35,11 @@ namespace Amazon.RDS.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    ///  Oracle Database 12.1 Enterprise Edition with the January 2021 or later RU/RUR
+    /// Oracle Database 12.1 Enterprise Edition with the January 2021 or later RU/RUR
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  Oracle Database 19c Enterprise Edition with the January 2021 or later RU/RUR
+    /// Oracle Database 19c Enterprise Edition with the January 2021 or later RU/RUR
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -258,7 +258,7 @@ namespace Amazon.RDS.Model
         ///  </dd> <dt>OtherPatchFileNames</dt> <dd> 
         /// <para>
         /// The patches that are not in the list of PSU and RU patches. Amazon RDS applies these
-        /// patches after applying the PSU and RU patches. 
+        /// patches after applying the PSU and RU patches.
         /// </para>
         ///  </dd> </dl> 
         /// <para>

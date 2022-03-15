@@ -102,19 +102,17 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property AllocatedStorage. 
         /// <para>
-        /// The new amount of storage in gibibytes (GiB) to allocate for the DB instance. 
+        /// The new amount of storage in gibibytes (GiB) to allocate for the DB instance.
         /// </para>
         ///  
         /// <para>
         /// For MariaDB, MySQL, Oracle, and PostgreSQL, the value supplied must be at least 10%
         /// greater than the current value. Values that are not at least 10% greater than the
         /// existing value are rounded up so that they are 10% greater than the current value.
-        /// 
         /// </para>
         ///  
         /// <para>
         /// For the valid values for allocated storage for each engine, see <code>CreateDBInstance</code>.
-        /// 
         /// </para>
         /// </summary>
         public int AllocatedStorage
@@ -167,13 +165,13 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  If this parameter is disabled, changes to the DB instance are applied during the
-        /// next maintenance window. Some parameter changes can cause an outage and are applied
-        /// on the next call to <a>RebootDBInstance</a>, or the next failure reboot. Review the
-        /// table of parameters in <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Modifying.html">Modifying
+        /// If this parameter is disabled, changes to the DB instance are applied during the next
+        /// maintenance window. Some parameter changes can cause an outage and are applied on
+        /// the next call to <a>RebootDBInstance</a>, or the next failure reboot. Review the table
+        /// of parameters in <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Modifying.html">Modifying
         /// a DB Instance</a> in the <i>Amazon RDS User Guide</i> to see the impact of enabling
         /// or disabling <code>ApplyImmediately</code> for each modified parameter and to determine
-        /// when the changes are applied. 
+        /// when the changes are applied.
         /// </para>
         /// </summary>
         public bool ApplyImmediately
@@ -389,7 +387,7 @@ namespace Amazon.RDS.Model
         /// <para>
         /// For more information about rotating your SSL/TLS certificate for Aurora DB engines,
         /// see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL-certificate-rotation.html">
-        /// Rotating Your SSL/TLS Certificate</a> in the <i>Amazon Aurora User Guide.</i> 
+        /// Rotating Your SSL/TLS Certificate</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -473,13 +471,13 @@ namespace Amazon.RDS.Model
         /// all DB instance classes are available in all Amazon Web Services Regions, or for all
         /// database engines. For the full list of DB instance classes, and availability for your
         /// engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-        /// Instance Class</a> in the <i>Amazon RDS User Guide</i>. 
+        /// Instance Class</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// If you modify the DB instance class, an outage occurs during the change. The change
         /// is applied during the next maintenance window, unless <code>ApplyImmediately</code>
-        /// is enabled for this request. 
+        /// is enabled for this request.
         /// </para>
         ///  
         /// <para>
@@ -595,11 +593,11 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  Default: <code>3306</code> 
+        /// Default: <code>3306</code> 
         /// </para>
         ///  
         /// <para>
-        ///  Valid values: <code>1150-65535</code> 
+        /// Valid values: <code>1150-65535</code> 
         /// </para>
         ///  
         /// <para>
@@ -607,11 +605,11 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  Default: <code>3306</code> 
+        /// Default: <code>3306</code> 
         /// </para>
         ///  
         /// <para>
-        ///  Valid values: <code>1150-65535</code> 
+        /// Valid values: <code>1150-65535</code> 
         /// </para>
         ///  
         /// <para>
@@ -619,11 +617,11 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  Default: <code>5432</code> 
+        /// Default: <code>5432</code> 
         /// </para>
         ///  
         /// <para>
-        ///  Valid values: <code>1150-65535</code> 
+        /// Valid values: <code>1150-65535</code> 
         /// </para>
         ///  
         /// <para>
@@ -635,11 +633,11 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  Default: <code>1521</code> 
+        /// Default: <code>1521</code> 
         /// </para>
         ///  
         /// <para>
-        ///  Valid values: <code>1150-65535</code> 
+        /// Valid values: <code>1150-65535</code> 
         /// </para>
         ///  
         /// <para>
@@ -647,11 +645,11 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  Default: <code>1433</code> 
+        /// Default: <code>1433</code> 
         /// </para>
         ///  
         /// <para>
-        ///  Valid values: <code>1150-65535</code> except <code>1234</code>, <code>1434</code>,
+        /// Valid values: <code>1150-65535</code> except <code>1234</code>, <code>1434</code>,
         /// <code>3260</code>, <code>3343</code>, <code>3389</code>, <code>47001</code>, and <code>49152-49156</code>.
         /// </para>
         ///  
@@ -660,11 +658,11 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  Default: <code>3306</code> 
+        /// Default: <code>3306</code> 
         /// </para>
         ///  
         /// <para>
-        ///  Valid values: <code>1150-65535</code> 
+        /// Valid values: <code>1150-65535</code> 
         /// </para>
         /// </summary>
         public int DBPortNumber
@@ -717,7 +715,7 @@ namespace Amazon.RDS.Model
         /// The new DB subnet group for the DB instance. You can use this parameter to move your
         /// DB instance to a different VPC. If your DB instance isn't in a VPC, you can also use
         /// this parameter to move your DB instance into a VPC. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html#USER_VPC.Non-VPC2VPC">Working
-        /// with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide</i>. 
+        /// with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -726,7 +724,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  This parameter doesn't apply to RDS Custom.
+        /// This parameter doesn't apply to RDS Custom.
         /// </para>
         ///  
         /// <para>
@@ -755,7 +753,7 @@ namespace Amazon.RDS.Model
         /// A value that indicates whether the DB instance has deletion protection enabled. The
         /// database can't be deleted when deletion protection is enabled. By default, deletion
         /// protection isn't enabled. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
-        /// Deleting a DB Instance</a>. 
+        /// Deleting a DB Instance</a>.
         /// </para>
         /// </summary>
         public bool DeletionProtection
@@ -900,8 +898,7 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using
-        /// Amazon Performance Insights</a> in the <i>Amazon Relational Database Service User
-        /// Guide</i>. 
+        /// Amazon Performance Insights</a> in the <i>Amazon RDS User Guide.</i>.
         /// </para>
         ///  
         /// <para>
@@ -923,9 +920,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
-        ///  The version number of the database engine to upgrade to. Changing this parameter
-        /// results in an outage and the change is applied during the next maintenance window
-        /// unless the <code>ApplyImmediately</code> parameter is enabled for this request. 
+        /// The version number of the database engine to upgrade to. Changing this parameter results
+        /// in an outage and the change is applied during the next maintenance window unless the
+        /// <code>ApplyImmediately</code> parameter is enabled for this request.
         /// </para>
         ///  
         /// <para>
@@ -943,7 +940,7 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// In RDS Custom for Oracle, this parameter is supported for read replicas only if they
-        /// are in the <code>PATCH_DB_FAILURE</code> lifecycle. 
+        /// are in the <code>PATCH_DB_FAILURE</code> lifecycle.
         /// </para>
         /// </summary>
         public string EngineVersion
@@ -961,7 +958,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Iops. 
         /// <para>
-        /// The new Provisioned IOPS (I/O operations per second) value for the RDS instance. 
+        /// The new Provisioned IOPS (I/O operations per second) value for the RDS instance.
         /// </para>
         ///  
         /// <para>
@@ -969,7 +966,7 @@ namespace Amazon.RDS.Model
         /// the next maintenance window unless the <code>ApplyImmediately</code> parameter is
         /// enabled for this request. If you are migrating from Provisioned IOPS to standard storage,
         /// set this value to 0. The DB instance will require a reboot for the change in storage
-        /// type to take effect. 
+        /// type to take effect.
         /// </para>
         ///  
         /// <para>
@@ -983,14 +980,14 @@ namespace Amazon.RDS.Model
         /// degradation. While the migration takes place, nightly backups for the instance are
         /// suspended. No other Amazon RDS operations can take place for the instance, including
         /// modifying the instance, rebooting the instance, deleting the instance, creating a
-        /// read replica for the instance, and creating a DB snapshot of the instance. 
+        /// read replica for the instance, and creating a DB snapshot of the instance.
         /// </para>
         ///  
         /// <para>
         /// Constraints: For MariaDB, MySQL, Oracle, and PostgreSQL, the value supplied must be
         /// at least 10% greater than the current value. Values that are not at least 10% greater
         /// than the existing value are rounded up so that they are 10% greater than the current
-        /// value. 
+        /// value.
         /// </para>
         ///  
         /// <para>
@@ -1044,10 +1041,10 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  Changing this parameter doesn't result in an outage and the change is asynchronously
+        /// Changing this parameter doesn't result in an outage and the change is asynchronously
         /// applied as soon as possible. Between the time of the request and the completion of
         /// the request, the <code>MasterUserPassword</code> element exists in the <code>PendingModifiedValues</code>
-        /// element of the operation response. 
+        /// element of the operation response.
         /// </para>
         ///  
         /// <para>
@@ -1060,7 +1057,7 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// Not applicable. The password for the master user is managed by the DB cluster. For
-        /// more information, see <code>ModifyDBCluster</code>. 
+        /// more information, see <code>ModifyDBCluster</code>.
         /// </para>
         ///  
         /// <para>
@@ -1110,7 +1107,7 @@ namespace Amazon.RDS.Model
         /// <para>
         /// Amazon RDS API actions never return the password, so this action provides a way to
         /// regain access to a primary instance user if the password is lost. This includes restoring
-        /// privileges that might have been accidentally revoked. 
+        /// privileges that might have been accidentally revoked.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1226,7 +1223,7 @@ namespace Amazon.RDS.Model
         /// A value that indicates whether the DB instance is a Multi-AZ deployment. Changing
         /// this parameter doesn't result in an outage. The change is applied during the next
         /// maintenance window unless the <code>ApplyImmediately</code> parameter is enabled for
-        /// this request. 
+        /// this request.
         /// </para>
         ///  
         /// <para>
@@ -1251,7 +1248,7 @@ namespace Amazon.RDS.Model
         /// The new DB instance identifier for the DB instance when renaming a DB instance. When
         /// you change the DB instance identifier, an instance reboot occurs immediately if you
         /// enable <code>ApplyImmediately</code>, or will occur during the next maintenance window
-        /// if you disable Apply Immediately. This value is stored as a lowercase string. 
+        /// if you disable Apply Immediately. This value is stored as a lowercase string.
         /// </para>
         ///  
         /// <para>
@@ -1392,7 +1389,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property PreferredBackupWindow. 
         /// <para>
-        ///  The daily time range during which automated backups are created if automated backups
+        /// The daily time range during which automated backups are created if automated backups
         /// are enabled, as determined by the <code>BackupRetentionPeriod</code> parameter. Changing
         /// this parameter doesn't result in an outage and the change is asynchronously applied
         /// as soon as possible. The default is a 30-minute window selected at random from an
@@ -1522,7 +1519,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// This setting doesn't apply to RDS Custom. 
+        /// This setting doesn't apply to RDS Custom.
         /// </para>
         ///  
         /// <para>
@@ -1548,7 +1545,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property PubliclyAccessible. 
         /// <para>
-        /// A value that indicates whether the DB instance is publicly accessible. 
+        /// A value that indicates whether the DB instance is publicly accessible.
         /// </para>
         ///  
         /// <para>
@@ -1568,7 +1565,7 @@ namespace Amazon.RDS.Model
         /// <para>
         ///  <code>PubliclyAccessible</code> only applies to DB instances in a VPC. The DB instance
         /// must be part of a public subnet and <code>PubliclyAccessible</code> must be enabled
-        /// for it to be publicly accessible. 
+        /// for it to be publicly accessible.
         /// </para>
         ///  
         /// <para>
@@ -1628,7 +1625,7 @@ namespace Amazon.RDS.Model
         /// <para>
         /// The number of minutes to pause the automation. When the time period ends, RDS Custom
         /// resumes full automation. The minimum value is <code>60</code> (default). The maximum
-        /// value is <code>1,440</code>. 
+        /// value is <code>1,440</code>.
         /// </para>
         /// </summary>
         public int ResumeFullAutomationModeMinutes
@@ -1646,12 +1643,12 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property StorageType. 
         /// <para>
-        /// Specifies the storage type to be associated with the DB instance. 
+        /// Specifies the storage type to be associated with the DB instance.
         /// </para>
         ///  
         /// <para>
         /// If you specify Provisioned IOPS (<code>io1</code>), you must also include a value
-        /// for the <code>Iops</code> parameter. 
+        /// for the <code>Iops</code> parameter.
         /// </para>
         ///  
         /// <para>
@@ -1665,11 +1662,11 @@ namespace Amazon.RDS.Model
         /// degradation. While the migration takes place, nightly backups for the instance are
         /// suspended. No other Amazon RDS operations can take place for the instance, including
         /// modifying the instance, rebooting the instance, deleting the instance, creating a
-        /// read replica for the instance, and creating a DB snapshot of the instance. 
+        /// read replica for the instance, and creating a DB snapshot of the instance.
         /// </para>
         ///  
         /// <para>
-        ///  Valid values: <code>standard | gp2 | io1</code> 
+        /// Valid values: <code>standard | gp2 | io1</code> 
         /// </para>
         ///  
         /// <para>

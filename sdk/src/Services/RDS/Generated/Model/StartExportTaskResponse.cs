@@ -29,12 +29,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Contains the details of a snapshot export to Amazon S3. 
+    /// Contains the details of a snapshot export to Amazon S3.
     /// 
     ///  
     /// <para>
     /// This data type is used as a response element in the <code>DescribeExportTasks</code>
-    /// action. 
+    /// action.
     /// </para>
     /// </summary>
     public partial class StartExportTaskResponse : AmazonWebServiceResponse
@@ -97,7 +97,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property ExportTaskIdentifier. 
         /// <para>
         /// A unique identifier for the snapshot export task. This ID isn't an identifier for
-        /// the Amazon S3 bucket where the snapshot is exported to. 
+        /// the Amazon S3 bucket where the snapshot is exported to.
         /// </para>
         /// </summary>
         public string ExportTaskIdentifier
@@ -134,7 +134,6 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property IamRoleArn. 
         /// <para>
         /// The name of the IAM role that is used to write to Amazon S3 when exporting a snapshot.
-        /// 
         /// </para>
         /// </summary>
         public string IamRoleArn
@@ -155,7 +154,7 @@ namespace Amazon.RDS.Model
         /// The key identifier of the Amazon Web Services KMS key that is used to encrypt the
         /// snapshot when it's exported to Amazon S3. The KMS key identifier is its key ARN, key
         /// ID, alias ARN, or alias name. The IAM role used for the snapshot export must have
-        /// encryption and decryption permissions to use this KMS key. 
+        /// encryption and decryption permissions to use this KMS key.
         /// </para>
         /// </summary>
         public string KmsKeyId
