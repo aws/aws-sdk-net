@@ -11,9 +11,19 @@
     <max>16384</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DataExchange.Model.CreateRevisionResponse.RevocationComment</property>
+    <min>10</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DataExchange.Model.GetRevisionResponse.Comment</property>
     <min>0</min>
     <max>16384</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataExchange.Model.GetRevisionResponse.RevocationComment</property>
+    <min>10</min>
+    <max>512</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataExchange.Model.ListDataSetRevisionsRequest.MaxResults</property>
@@ -41,6 +51,21 @@
     <max>25</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DataExchange.Model.RevokeRevisionRequest.RevocationComment</property>
+    <min>10</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataExchange.Model.RevokeRevisionResponse.Comment</property>
+    <min>0</min>
+    <max>16384</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataExchange.Model.RevokeRevisionResponse.RevocationComment</property>
+    <min>10</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DataExchange.Model.UpdateRevisionRequest.Comment</property>
     <min>0</min>
     <max>16384</max>
@@ -49,6 +74,11 @@
     <property>Amazon.DataExchange.Model.UpdateRevisionResponse.Comment</property>
     <min>0</min>
     <max>16384</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataExchange.Model.UpdateRevisionResponse.RevocationComment</property>
+    <min>10</min>
+    <max>512</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataExchange.Model.ImportAssetFromApiGatewayApiRequestDetails.ApiSpecificationMd5Hash</property>
@@ -78,5 +108,10 @@
     <property>Amazon.DataExchange.Model.RevisionEntry.Comment</property>
     <min>0</min>
     <max>16384</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataExchange.Model.RevisionEntry.RevocationComment</property>
+    <min>10</min>
+    <max>512</max>
   </property-value-rule>
 </property-value-rules>

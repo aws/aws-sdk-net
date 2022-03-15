@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataExchange.Model
 {
     /// <summary>
-    /// A revision is a container for one or more assets.
+    /// This is the response object from the RevokeRevision operation.
     /// </summary>
-    public partial class RevisionEntry
+    public partial class RevokeRevisionResponse : AmazonWebServiceResponse
     {
         private string _arn;
         private string _comment;
@@ -51,7 +51,6 @@ namespace Amazon.DataExchange.Model
         /// The ARN for the revision.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string Arn
         {
             get { return this._arn; }
@@ -89,7 +88,6 @@ namespace Amazon.DataExchange.Model
         /// The date and time that the revision was created, in ISO 8601 format.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public DateTime CreatedAt
         {
             get { return this._createdAt.GetValueOrDefault(); }
@@ -108,7 +106,6 @@ namespace Amazon.DataExchange.Model
         /// The unique identifier for the data set associated with this revision.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string DataSetId
         {
             get { return this._dataSetId; }
@@ -125,9 +122,9 @@ namespace Amazon.DataExchange.Model
         /// Gets and sets the property Finalized. 
         /// <para>
         /// To publish a revision to a data set in a product, the revision must first be finalized.
-        /// Finalizing a revision tells AWS Data Exchange that your changes to the assets in the
-        /// revision are complete. After it's in this read-only state, you can publish the revision
-        /// to your products.
+        /// Finalizing a revision tells AWS Data Exchange that changes to the assets in the revision
+        /// are complete. After it's in this read-only state, you can publish the revision to
+        /// your products.
         /// </para>
         ///  
         /// <para>
@@ -154,7 +151,6 @@ namespace Amazon.DataExchange.Model
         /// The unique identifier for the revision.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string Id
         {
             get { return this._id; }
@@ -249,7 +245,6 @@ namespace Amazon.DataExchange.Model
         /// The date and time that the revision was last updated, in ISO 8601 format.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public DateTime UpdatedAt
         {
             get { return this._updatedAt.GetValueOrDefault(); }

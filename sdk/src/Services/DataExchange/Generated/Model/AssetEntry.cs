@@ -32,9 +32,9 @@ namespace Amazon.DataExchange.Model
     /// An asset in AWS Data Exchange is a piece of data (S3 object) or a means of fulfilling
     /// data (Amazon Redshift datashare or Amazon API Gateway API). The asset can be a structured
     /// data file, an image file, or some other data file that can be stored as an S3 object,
-    /// an Amazon API Gateway API, or an Amazon Redshift datashare (Preview). When you create
-    /// an import job for your files, API Gateway APIs, or Amazon Redshift datashares, you
-    /// create an asset in AWS Data Exchange.
+    /// an Amazon API Gateway API, or an Amazon Redshift datashare. When you create an import
+    /// job for your files, API Gateway APIs, or Amazon Redshift datashares, you create an
+    /// asset in AWS Data Exchange.
     /// </summary>
     public partial class AssetEntry
     {

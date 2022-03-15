@@ -39,6 +39,9 @@ namespace Amazon.DataExchange.Model
         private string _dataSetId;
         private bool? _finalized;
         private string _id;
+        private string _revocationComment;
+        private bool? _revoked;
+        private DateTime? _revokedAt;
         private string _sourceId;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private DateTime? _updatedAt;
@@ -159,6 +162,62 @@ namespace Amazon.DataExchange.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RevocationComment. 
+        /// <para>
+        /// A required comment to inform subscribers of the reason their access to the revision
+        /// was revoked.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=10, Max=512)]
+        public string RevocationComment
+        {
+            get { return this._revocationComment; }
+            set { this._revocationComment = value; }
+        }
+
+        // Check to see if RevocationComment property is set
+        internal bool IsSetRevocationComment()
+        {
+            return this._revocationComment != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Revoked. 
+        /// <para>
+        /// A status indicating that subscribers' access to the revision was revoked.
+        /// </para>
+        /// </summary>
+        public bool Revoked
+        {
+            get { return this._revoked.GetValueOrDefault(); }
+            set { this._revoked = value; }
+        }
+
+        // Check to see if Revoked property is set
+        internal bool IsSetRevoked()
+        {
+            return this._revoked.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RevokedAt. 
+        /// <para>
+        /// The date and time that the revision was revoked, in ISO 8601 format.
+        /// </para>
+        /// </summary>
+        public DateTime RevokedAt
+        {
+            get { return this._revokedAt.GetValueOrDefault(); }
+            set { this._revokedAt = value; }
+        }
+
+        // Check to see if RevokedAt property is set
+        internal bool IsSetRevokedAt()
+        {
+            return this._revokedAt.HasValue; 
         }
 
         /// <summary>

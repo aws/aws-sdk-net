@@ -249,6 +249,10 @@ namespace Amazon.DataExchange
         /// <exception cref="Amazon.DataExchange.Model.AccessDeniedException">
         /// Access to the resource is denied.
         /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ConflictException">
+        /// The request couldn't be completed because it conflicted with the current state of
+        /// the resource.
+        /// </exception>
         /// <exception cref="Amazon.DataExchange.Model.InternalServerException">
         /// An exception occurred with the service.
         /// </exception>
@@ -1135,6 +1139,65 @@ namespace Amazon.DataExchange
         /// <returns>Returns a  ListTagsForResourceResult from DataExchange.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  RevokeRevision
+
+
+        /// <summary>
+        /// This operation revokes subscribers' access to a revision.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RevokeRevision service method.</param>
+        /// 
+        /// <returns>The response from the RevokeRevision service method, as returned by DataExchange.</returns>
+        /// <exception cref="Amazon.DataExchange.Model.AccessDeniedException">
+        /// Access to the resource is denied.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ConflictException">
+        /// The request couldn't be completed because it conflicted with the current state of
+        /// the resource.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.InternalServerException">
+        /// An exception occurred with the service.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ResourceNotFoundException">
+        /// The resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ValidationException">
+        /// The request was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/RevokeRevision">REST API Reference for RevokeRevision Operation</seealso>
+        RevokeRevisionResponse RevokeRevision(RevokeRevisionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RevokeRevision operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RevokeRevision operation on AmazonDataExchangeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRevokeRevision
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/RevokeRevision">REST API Reference for RevokeRevision Operation</seealso>
+        IAsyncResult BeginRevokeRevision(RevokeRevisionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RevokeRevision operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRevokeRevision.</param>
+        /// 
+        /// <returns>Returns a  RevokeRevisionResult from DataExchange.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/RevokeRevision">REST API Reference for RevokeRevision Operation</seealso>
+        RevokeRevisionResponse EndRevokeRevision(IAsyncResult asyncResult);
 
         #endregion
         

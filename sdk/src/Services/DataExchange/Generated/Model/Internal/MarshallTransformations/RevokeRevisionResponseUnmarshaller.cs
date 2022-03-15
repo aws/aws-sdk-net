@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetRevision operation
+    /// Response Unmarshaller for RevokeRevision operation
     /// </summary>  
-    public class GetRevisionResponseUnmarshaller : JsonResponseUnmarshaller
+    public class RevokeRevisionResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,7 +45,7 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetRevisionResponse response = new GetRevisionResponse();
+            RevokeRevisionResponse response = new RevokeRevisionResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
@@ -111,12 +111,6 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
                     response.SourceId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Tags", targetDepth))
-                {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    response.Tags = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("UpdatedAt", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
@@ -146,6 +140,14 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
             {
+                if (errorResponse.Code != null && errorResponse.Code.Equals("AccessDeniedException"))
+                {
+                    return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
+                {
+                    return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerException"))
                 {
                     return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -166,9 +168,9 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
             return new AmazonDataExchangeException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static GetRevisionResponseUnmarshaller _instance = new GetRevisionResponseUnmarshaller();        
+        private static RevokeRevisionResponseUnmarshaller _instance = new RevokeRevisionResponseUnmarshaller();        
 
-        internal static GetRevisionResponseUnmarshaller GetInstance()
+        internal static RevokeRevisionResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -176,7 +178,7 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetRevisionResponseUnmarshaller Instance
+        public static RevokeRevisionResponseUnmarshaller Instance
         {
             get
             {
