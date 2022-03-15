@@ -45,7 +45,7 @@ namespace Amazon.RoboMaker.Model
         /// An array of key/value pairs specifying environment variables for the robot application
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=16)]
+        [AWSProperty(Min=0, Max=20)]
         public Dictionary<string, string> EnvironmentVariables
         {
             get { return this._environmentVariables; }

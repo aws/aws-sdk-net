@@ -140,9 +140,15 @@ namespace Amazon.RoboMaker.Model
         /// Gets and sets the property UseDefaultTools. 
         /// <para>
         /// A Boolean indicating whether to use default robot application tools. The default tools
-        /// are rviz, rqt, terminal and rosbag record. The default is <code>False</code>. 
+        /// are rviz, rqt, terminal and rosbag record. The default is <code>False</code>.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// This API is no longer supported and will throw an error if used.
+        /// </para>
+        ///  </important>
         /// </summary>
+        [Obsolete("AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html.")]
         public bool UseDefaultTools
         {
             get { return this._useDefaultTools.GetValueOrDefault(); }
@@ -164,9 +170,15 @@ namespace Amazon.RoboMaker.Model
         /// </para>
         ///  
         /// <para>
-        /// If you set this value, you must specify an <code>outputLocation</code>. 
+        /// If you set this value, you must specify an <code>outputLocation</code>.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// This API is no longer supported and will throw an error if used.
+        /// </para>
+        ///  </important>
         /// </summary>
+        [Obsolete("AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html.")]
         public bool UseDefaultUploadConfigurations
         {
             get { return this._useDefaultUploadConfigurations.GetValueOrDefault(); }

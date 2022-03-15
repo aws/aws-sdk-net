@@ -35,6 +35,7 @@ namespace Amazon.RoboMaker.Model
     {
         private string _arn;
         private DateTime? _createdAt;
+        private OutputLocation _outputLocation;
         private WorldExportJobStatus _status;
         private List<string> _worlds = new List<string>();
 
@@ -73,6 +74,21 @@ namespace Amazon.RoboMaker.Model
         internal bool IsSetCreatedAt()
         {
             return this._createdAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OutputLocation.
+        /// </summary>
+        public OutputLocation OutputLocation
+        {
+            get { return this._outputLocation; }
+            set { this._outputLocation = value; }
+        }
+
+        // Check to see if OutputLocation property is set
+        internal bool IsSetOutputLocation()
+        {
+            return this._outputLocation != null;
         }
 
         /// <summary>
