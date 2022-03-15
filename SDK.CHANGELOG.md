@@ -15,6 +15,8 @@
 	* Various documentation improvements
 * RoboMaker (3.7.7.0)
 	* This release deprecates ROS, Ubuntu and Gazbeo from RoboMaker Simulation Service Software Suites in favor of user-supplied containers and Relaxed Software Suites.
+* Bump versions for CRT dependencies
+	* Read more https://github.com/awslabs/aws-lc/releases/tag/v1.0.2
 
 ### 3.7.229.0 (2022-03-14 20:23 UTC)
 * ConfigService (3.7.7.0)
