@@ -1945,8 +1945,27 @@ namespace Amazon.ECS
         /// These errors are usually caused by a server issue.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.TargetNotConnectedException">
-        /// The target container isn't properly configured with the execute command agent or the
-        /// container is no longer active or running.
+        /// The execute command cannot run. This error can be caused by any of the following configuration
+        /// issues:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Incorrect IAM permissions
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The SSM agent is not installed or is not running
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  There is an interface Amazon VPC endpoint for Amazon ECS, but there is not one for
+        /// for Systems Manager Session Manager
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For information about how to troubleshoot the issues, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-exec.html">Troubleshooting
+        /// issues with ECS Exec</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ExecuteCommand">REST API Reference for ExecuteCommand Operation</seealso>
         public virtual ExecuteCommandResponse ExecuteCommand(ExecuteCommandRequest request)
@@ -3922,7 +3941,7 @@ namespace Amazon.ECS
         /// tasks until the replacement tasks are considered healthy. Tasks for services that
         /// do not use a load balancer are considered healthy if they're in the <code>RUNNING</code>
         /// state. Tasks for services that use a load balancer are considered healthy if they're
-        /// in the <code>RUNNING</code> state and are reported as healthy by the load balancer..
+        /// in the <code>RUNNING</code> state and are reported as healthy by the load balancer.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4031,19 +4050,19 @@ namespace Amazon.ECS
         ///  
         /// <para>
         /// For services using the rolling update (<code>ECS</code>) you can update the desired
-        /// count, the deployment configuration, the network configuration, load balancers, service
-        /// registries, enable ECS managed tags option, propagate tags option, task placement
-        /// constraints and strategies, and the task definition. When you update any of these
-        /// parameters, Amazon ECS starts new tasks with the new configuration. 
+        /// count, deployment configuration, network configuration, load balancers, service registries,
+        /// enable ECS managed tags option, propagate tags option, task placement constraints
+        /// and strategies, and task definition. When you update any of these parameters, Amazon
+        /// ECS starts new tasks with the new configuration. 
         /// </para>
         ///  
         /// <para>
         /// For services using the blue/green (<code>CODE_DEPLOY</code>) deployment controller,
-        /// only the desired count, deployment configuration, task placement constraints and strategies,
-        /// enable ECS managed tags option, and propagate tags can be updated using this API.
-        /// If the network configuration, platform version, task definition, or load balancer
-        /// need to be updated, create a new CodeDeploy deployment. For more information, see
-        /// <a href="https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_CreateDeployment.html">CreateDeployment</a>
+        /// only the desired count, deployment configuration, health check grace period, task
+        /// placement constraints and strategies, enable ECS managed tags option, and propagate
+        /// tags can be updated using this API. If the network configuration, platform version,
+        /// task definition, or load balancer need to be updated, create a new CodeDeploy deployment.
+        /// For more information, see <a href="https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_CreateDeployment.html">CreateDeployment</a>
         /// in the <i>CodeDeploy API Reference</i>.
         /// </para>
         ///  
