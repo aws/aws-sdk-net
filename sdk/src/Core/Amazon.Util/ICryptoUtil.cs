@@ -15,7 +15,7 @@
 using Amazon.Runtime;
 using System.IO;
 
-namespace Amazon.Util.Internal
+namespace Amazon.Util
 {
     public interface ICryptoUtil
     {
