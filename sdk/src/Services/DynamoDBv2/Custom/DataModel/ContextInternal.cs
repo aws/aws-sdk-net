@@ -225,7 +225,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
             var primitiveList = entry as PrimitiveList;
             if (primitiveList != null)
-                return (primitiveList.Entries != null && primitiveList.Entries.Count > 0);
+                return (primitiveList.Entries != null);
 
             var dynamoDBBool = entry as DynamoDBBool;
             if (dynamoDBBool != null)
