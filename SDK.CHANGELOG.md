@@ -1,3 +1,21 @@
+### 3.7.230.0 (2022-03-15 20:31 UTC)
+* CognitoIdentityProvider (3.7.2.0)
+	* Updated EmailConfigurationType and SmsConfigurationType to reflect that you can now choose Amazon SES and Amazon SNS resources in the same Region.
+* DataExchange (3.7.4.0)
+	* This feature enables data providers to use the RevokeRevision operation to revoke subscriber access to a given revision. Subscribers are unable to interact with assets within a revoked revision.
+* EC2 (3.7.61.0)
+	* Adds the Cascade parameter to the DeleteIpam API. Customers can use this parameter to automatically delete their IPAM, including non-default scopes, pools, cidrs, and allocations. There mustn't be any pools provisioned in the default public scope to use this parameter.
+* ECS (3.7.5.5)
+	* Documentation only update to address tickets
+* Keyspaces (3.7.0.6)
+	* Fixing formatting issues in CLI and SDK documentation
+* LocationService (3.7.8.20)
+	* New HERE style "VectorHereExplore" and "VectorHereExploreTruck".
+* RDS (3.7.10.14)
+	* Various documentation improvements
+* RoboMaker (3.7.7.0)
+	* This release deprecates ROS, Ubuntu and Gazbeo from RoboMaker Simulation Service Software Suites in favor of user-supplied containers and Relaxed Software Suites.
+
 ### 3.7.229.0 (2022-03-14 20:23 UTC)
 * ConfigService (3.7.7.0)
 	* Add resourceType enums for AWS::ECR::PublicRepository and AWS::EC2::LaunchTemplate
