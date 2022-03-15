@@ -67,6 +67,7 @@ namespace Amazon.EC2.Model
         /// The ID of the allocation.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string IpamPoolAllocationId
         {
             get { return this._ipamPoolAllocationId; }

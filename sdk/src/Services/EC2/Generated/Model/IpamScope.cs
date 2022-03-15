@@ -38,7 +38,7 @@ namespace Amazon.EC2.Model
     ///  
     /// <para>
     /// For more information, see <a href="/vpc/latest/ipam/how-it-works-ipam.html">How IPAM
-    /// works</a> in the <i>Amazon VPC IPAM User Guide</i> 
+    /// works</a> in the <i>Amazon VPC IPAM User Guide</i>.
     /// </para>
     /// </summary>
     public partial class IpamScope

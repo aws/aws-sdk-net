@@ -30,7 +30,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the ProvisionIpamPoolCidr operation.
-    /// Provision a CIDR to an IPAM pool. You can use thsi action to provision new CIDRs to
+    /// Provision a CIDR to an IPAM pool. You can use this action to provision new CIDRs to
     /// a top-level pool or to transfer a CIDR from a top-level pool to a pool within it.
     /// 
     ///  

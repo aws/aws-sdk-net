@@ -48,7 +48,57 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DeleteIpamRequest : AmazonEC2Request
     {
+        private bool? _cascade;
         private string _ipamId;
+
+        /// <summary>
+        /// Gets and sets the property Cascade. 
+        /// <para>
+        /// Enables you to quickly delete an IPAM, private scopes, pools in private scopes, and
+        /// any allocations in the pools in private scopes. You cannot delete the IPAM with this
+        /// option if there is a pool in your public scope. If you use this option, IPAM does
+        /// the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Deallocates any CIDRs allocated to VPC resources (such as VPCs) in pools in private
+        /// scopes.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// No VPC resources are deleted as a result of enabling this option. The CIDR associated
+        /// with the resource will no longer be allocated from an IPAM pool, but the CIDR itself
+        /// will remain unchanged.
+        /// </para>
+        ///  </note> </li> <li> 
+        /// <para>
+        /// Deprovisions all IPv4 CIDRs provisioned to IPAM pools in private scopes.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Deletes all IPAM pools in private scopes.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Deletes all non-default private scopes in the IPAM.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Deletes the default public and private scopes and the IPAM.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public bool Cascade
+        {
+            get { return this._cascade.GetValueOrDefault(); }
+            set { this._cascade = value; }
+        }
+
+        // Check to see if Cascade property is set
+        internal bool IsSetCascade()
+        {
+            return this._cascade.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property IpamId. 

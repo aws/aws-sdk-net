@@ -31,6 +31,15 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Container for the parameters to the MoveByoipCidrToIpam operation.
     /// Move an BYOIP IPv4 CIDR to IPAM from a public IPv4 pool.
+    /// 
+    ///  
+    /// <para>
+    /// If you already have an IPv4 BYOIP CIDR with Amazon Web Services, you can move the
+    /// CIDR to IPAM from a public IPv4 pool. You cannot move an IPv6 CIDR to IPAM. If you
+    /// are bringing a new IP address to Amazon Web Services for the first time, complete
+    /// the steps in <a href="/vpc/latest/ipam/tutorials-byoip-ipam.html">Tutorial: BYOIP
+    /// address CIDRs to IPAM</a>.
+    /// </para>
     /// </summary>
     public partial class MoveByoipCidrToIpamRequest : AmazonEC2Request
     {
