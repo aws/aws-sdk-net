@@ -57,6 +57,12 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.SnsCallerArn);
             }
 
+            if(requestObject.IsSetSnsRegion())
+            {
+                context.Writer.WritePropertyName("SnsRegion");
+                context.Writer.Write(requestObject.SnsRegion);
+            }
+
         }
 
         /// <summary>

@@ -29,12 +29,15 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// The email configuration type.
+    /// The email configuration of your user pool. The email configuration type sets your
+    /// preferred sending method, Amazon Web Services Region, and sender for messages from
+    /// your user pool.
     /// 
     ///  <note> 
     /// <para>
-    /// Amazon Cognito has specific Regions for use with Amazon Simple Email Service. For
-    /// more information on the supported Regions, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-email.html">Email
+    /// Amazon Cognito can send email messages with Amazon Simple Email Service resources
+    /// in the Amazon Web Services Region where you created your user pool, and in alternate
+    /// Regions in some cases. For more information on the supported Regions, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-email.html">Email
     /// settings for Amazon Cognito user pools</a>.
     /// </para>
     ///  </note>
@@ -56,20 +59,19 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// in that configuration set are applied to the email. Configuration sets can be used
         /// to apply the following types of rules to emails: 
         /// </para>
-        ///  <ul> <li> 
+        ///  <dl> <dt>Event publishing</dt> <dd> 
         /// <para>
-        /// Event publishing – Amazon Simple Email Service can track the number of send, delivery,
-        /// open, click, bounce, and complaint events for each email sent. Use event publishing
-        /// to send information about these events to other Amazon Web Services services such
-        /// as and Amazon CloudWatch.
+        /// Amazon Simple Email Service can track the number of send, delivery, open, click, bounce,
+        /// and complaint events for each email sent. Use event publishing to send information
+        /// about these events to other Amazon Web Services services such as and Amazon CloudWatch
         /// </para>
-        ///  </li> <li> 
+        ///  </dd> <dt>IP pool management</dt> <dd> 
         /// <para>
-        /// IP pool management – When leasing dedicated IP addresses with Amazon Simple Email
-        /// Service, you can create groups of IP addresses, called dedicated IP pools. You can
-        /// then associate the dedicated IP pools with configuration sets.
+        /// When leasing dedicated IP addresses with Amazon Simple Email Service, you can create
+        /// groups of IP addresses, called dedicated IP pools. You can then associate the dedicated
+        /// IP pools with configuration sets.
         /// </para>
-        ///  </li> </ul>
+        ///  </dd> </dl>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
         public string ConfigurationSet
@@ -87,9 +89,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property EmailSendingAccount. 
         /// <para>
-        /// Specifies whether Amazon Cognito emails your users by using its built-in email functionality
-        /// or your Amazon Simple Email Service email configuration. Specify one of the following
-        /// values:
+        /// Specifies whether Amazon Cognito uses its built-in functionality to send your users
+        /// email messages, or uses your Amazon Simple Email Service email configuration. Specify
+        /// one of the following values:
         /// </para>
         ///  <dl> <dt>COGNITO_DEFAULT</dt> <dd> 
         /// <para>
@@ -241,7 +243,14 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// If you specify <code>DEVELOPER</code>, Amazon Cognito emails your users with this
         /// address by calling Amazon SES on your behalf.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        /// The Region value of the <code>SourceArn</code> parameter must indicate a supported
+        /// Amazon Web Services Region of your user pool. Typically, the Region in the <code>SourceArn</code>
+        /// and the user pool Region are the same. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-email.html#user-pool-email-developer-region-mapping">Amazon
+        /// SES email configuration regions</a> in the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon
+        /// Cognito Developer Guide</a>.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
         public string SourceArn

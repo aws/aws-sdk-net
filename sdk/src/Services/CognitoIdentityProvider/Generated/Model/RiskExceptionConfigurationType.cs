@@ -44,7 +44,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// prefix.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=20)]
+        [AWSProperty(Max=200)]
         public List<string> BlockedIPRangeList
         {
             get { return this._blockedIPRangeList; }
@@ -64,7 +64,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// is in CIDR notation.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=20)]
+        [AWSProperty(Max=200)]
         public List<string> SkippedIPRangeList
         {
             get { return this._skippedIPRangeList; }

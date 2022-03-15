@@ -38,7 +38,6 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.AdminCreateUserRequest.TemporaryPassword</property>
-    <min>6</min>
     <max>256</max>
     <pattern>[\S]+</pattern>
   </property-value-rule>
@@ -320,7 +319,6 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.AdminSetUserPasswordRequest.Password</property>
-    <min>6</min>
     <max>256</max>
     <pattern>[\S]+</pattern>
   </property-value-rule>
@@ -433,13 +431,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.ChangePasswordRequest.PreviousPassword</property>
-    <min>6</min>
     <max>256</max>
     <pattern>[\S]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.ChangePasswordRequest.ProposedPassword</property>
-    <min>6</min>
     <max>256</max>
     <pattern>[\S]+</pattern>
   </property-value-rule>
@@ -472,7 +468,6 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.ConfirmForgotPasswordRequest.Password</property>
-    <min>6</min>
     <max>256</max>
     <pattern>[\S]+</pattern>
   </property-value-rule>
@@ -1239,7 +1234,6 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.SignUpRequest.Password</property>
-    <min>6</min>
     <max>256</max>
     <pattern>[\S]+</pattern>
   </property-value-rule>
@@ -1855,6 +1849,11 @@
     <min>20</min>
     <max>2048</max>
     <pattern>arn:[\w+=/,.@-]+:[\w+=/,.@-]+:([\w+=/,.@-]*)?:[0-9]+:[\w+=/,.@-]+(:[\w+=/,.@-]+)?(:[\w+=/,.@-]+)?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.SmsConfigurationType.SnsRegion</property>
+    <min>5</min>
+    <max>32</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.SmsMfaConfigType.SmsAuthenticationMessage</property>

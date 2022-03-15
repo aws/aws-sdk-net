@@ -29,27 +29,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// The SMS configuration type that includes the settings the Amazon Cognito User Pool
-    /// must call for the Amazon Simple Notification Service service to send an SMS message
-    /// from your Amazon Web Services account. The Amazon Cognito User Pool makes the request
-    /// to the Amazon SNS Service by using an Identity and Access Management role that you
-    /// provide for your Amazon Web Services account.
+    /// The SMS configuration type is the settings that your Amazon Cognito user pool must
+    /// use to send an SMS message from your Amazon Web Services account through Amazon Simple
+    /// Notification Service. To send SMS messages with Amazon SNS in the Amazon Web Services
+    /// Region that you want, the Amazon Cognito user pool uses an Identity and Access Management
+    /// (IAM) role in your Amazon Web Services account.
     /// </summary>
     public partial class SmsConfigurationType
     {
         private string _externalId;
         private string _snsCallerArn;
+        private string _snsRegion;
 
         /// <summary>
         /// Gets and sets the property ExternalId. 
         /// <para>
-        /// The external ID is a value that you should use to add security to your IAM role that
-        /// is used to call Amazon SNS to send SMS messages for your user pool. If you provide
-        /// an <code>ExternalId</code>, the Amazon Cognito User Pool will include it when attempting
-        /// to assume your IAM role so that you can set your roles trust policy to require the
-        /// <code>ExternalID</code>. If you use the Amazon Cognito Management Console to create
-        /// a role for SMS multi-factor authentication (MFA), Amazon Cognito will create a role
-        /// with the required permissions and a trust policy that demonstrates use of the <code>ExternalId</code>.
+        /// The external ID provides additional security for your IAM role. You can use an <code>ExternalId</code>
+        /// with the IAM role that you use with Amazon SNS to send SMS messages for your user
+        /// pool. If you provide an <code>ExternalId</code>, your Amazon Cognito user pool includes
+        /// it in the request to assume your IAM role. You can configure the role trust policy
+        /// to require that Amazon Cognito, and any principal, provide the <code>ExternalID</code>.
+        /// If you use the Amazon Cognito Management Console to create a role for SMS multi-factor
+        /// authentication (MFA), Amazon Cognito creates a role with the required permissions
+        /// and a trust policy that demonstrates use of the <code>ExternalId</code>.
         /// </para>
         ///  
         /// <para>
@@ -90,6 +92,34 @@ namespace Amazon.CognitoIdentityProvider.Model
         internal bool IsSetSnsCallerArn()
         {
             return this._snsCallerArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SnsRegion. 
+        /// <para>
+        /// The Amazon Web Services Region to use with Amazon SNS integration. You can choose
+        /// the same Region as your user pool, or a supported <b>Legacy Amazon SNS alternate Region</b>.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        ///  Amazon Cognito resources in the Asia Pacific (Seoul) Amazon Web Services Region must
+        /// use your Amazon SNS configuration in the Asia Pacific (Tokyo) Region. For more information,
+        /// see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-sms-settings.html">SMS
+        /// message settings for Amazon Cognito user pools</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=5, Max=32)]
+        public string SnsRegion
+        {
+            get { return this._snsRegion; }
+            set { this._snsRegion = value; }
+        }
+
+        // Check to see if SnsRegion property is set
+        internal bool IsSetSnsRegion()
+        {
+            return this._snsRegion != null;
         }
 
     }

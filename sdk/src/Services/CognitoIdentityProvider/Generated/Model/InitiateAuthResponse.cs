@@ -67,10 +67,14 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values include the following. Note that all of these challenges require <code>USERNAME</code>
-        /// and <code>SECRET_HASH</code> (if applicable) in the parameters.
+        /// Valid values include the following:
         /// </para>
-        ///  <ul> <li> 
+        ///  <note> 
+        /// <para>
+        /// All of the following challenges require <code>USERNAME</code> and <code>SECRET_HASH</code>
+        /// (if applicable) in the parameters.
+        /// </para>
+        ///  </note> <ul> <li> 
         /// <para>
         ///  <code>SMS_MFA</code>: Next challenge is to supply an <code>SMS_MFA_CODE</code>, delivered
         /// via SMS.

@@ -132,10 +132,6 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                 {
                     return UserLambdaValidationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("UserNotConfirmedException"))
-                {
-                    return UserNotConfirmedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("UserNotFoundException"))
                 {
                     return UserNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

@@ -38,8 +38,8 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// </para>
     ///  <note> 
     /// <para>
-    /// Amazon Cognito User Pools only supports sending events to Amazon Pinpoint projects
-    /// in the US East (N. Virginia) us-east-1 Region, regardless of the Region in which the
+    /// Amazon Cognito user pools only support sending events to Amazon Pinpoint projects
+    /// in the US East (N. Virginia) us-east-1 Region, regardless of the Region where the
     /// user pool resides.
     /// </para>
     ///  </note>

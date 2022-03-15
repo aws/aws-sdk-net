@@ -15280,38 +15280,6 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("CognitoIdentityProvider")]
-        public void ForgotPassword_UserNotConfirmedExceptionMarshallTest()
-        {
-            var operation =  service_model.FindOperation("ForgotPassword");
-
-            var request = InstantiateClassGenerator.Execute<ForgotPasswordRequest>();
-            var marshaller = new ForgotPasswordRequestMarshaller();
-            var internalRequest = marshaller.Marshall(request);
-            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
-
-            Comparer.CompareObjectToJson<ForgotPasswordRequest>(request,jsonRequest);
-
-            var exception = operation.Exceptions.First(e => e.Name.Equals("UserNotConfirmedException"));
-            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
-            var webResponse = new WebResponseData
-            {
-                Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UserNotConfirmedException"},
-                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
-                }
-            };
-            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
-            var response = ForgotPasswordResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
-
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Json")]
-        [TestCategory("CognitoIdentityProvider")]
         public void ForgotPassword_UserNotFoundExceptionMarshallTest()
         {
             var operation =  service_model.FindOperation("ForgotPassword");

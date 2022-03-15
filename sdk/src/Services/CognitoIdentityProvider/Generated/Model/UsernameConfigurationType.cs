@@ -45,21 +45,20 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <para>
         /// Valid values include:
         /// </para>
-        ///  <ul> <li> 
+        ///  <dl> <dt>True</dt> <dd> 
         /// <para>
-        ///  <b> <code>True</code> </b>: Enables case sensitivity for all username input. When
-        /// this option is set to <code>True</code>, users must sign in using the exact capitalization
-        /// of their given username, such as “UserName”. This is the default value.
+        /// Enables case sensitivity for all username input. When this option is set to <code>True</code>,
+        /// users must sign in using the exact capitalization of their given username, such as
+        /// “UserName”. This is the default value.
         /// </para>
-        ///  </li> <li> 
+        ///  </dd> <dt>False</dt> <dd> 
         /// <para>
-        ///  <b> <code>False</code> </b>: Enables case insensitivity for all username input. For
-        /// example, when this option is set to <code>False</code>, users can sign in using either
-        /// "username" or "Username". This option also enables both <code>preferred_username</code>
-        /// and <code>email</code> alias to be case insensitive, in addition to the <code>username</code>
-        /// attribute.
+        /// Enables case insensitivity for all username input. For example, when this option is
+        /// set to <code>False</code>, users can sign in using either "username" or "Username".
+        /// This option also enables both <code>preferred_username</code> and <code>email</code>
+        /// alias to be case insensitive, in addition to the <code>username</code> attribute.
         /// </para>
-        ///  </li> </ul>
+        ///  </dd> </dl>
         /// </summary>
         [AWSProperty(Required=true)]
         public bool CaseSensitive

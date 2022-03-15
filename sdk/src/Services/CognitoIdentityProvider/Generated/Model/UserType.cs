@@ -169,10 +169,6 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// COMPROMISED - User is disabled due to a potential security threat.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// UNKNOWN - User status isn't known.
         /// </para>
         ///  </li> <li> 

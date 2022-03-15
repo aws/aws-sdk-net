@@ -60,7 +60,11 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property SmsConfiguration. 
         /// <para>
-        /// The SMS configuration.
+        /// The SMS configuration with the settings that your Amazon Cognito user pool must use
+        /// to send an SMS message from your Amazon Web Services account through Amazon Simple
+        /// Notification Service. To request Amazon SNS in the Amazon Web Services Region that
+        /// you want, the Amazon Cognito user pool uses an Identity and Access Management (IAM)
+        /// role that you provide for your Amazon Web Services account.
         /// </para>
         /// </summary>
         public SmsConfigurationType SmsConfiguration

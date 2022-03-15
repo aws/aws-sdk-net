@@ -245,7 +245,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property EmailConfiguration. 
         /// <para>
-        /// The email configuration.
+        /// The email configuration of your user pool. The email configuration type sets your
+        /// preferred sending method, Amazon Web Services Region, and sender for messages tfrom
+        /// your user pool.
         /// </para>
         /// </summary>
         public EmailConfigurationType EmailConfiguration
@@ -263,7 +265,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property EmailConfigurationFailure. 
         /// <para>
-        /// The reason why the email configuration can't send the messages to your users.
+        /// Deprecated. Review error codes from API requests with <code>EventSource:cognito-idp.amazonaws.com</code>
+        /// in CloudTrail for information about problems with user pool email configuration.
         /// </para>
         /// </summary>
         public string EmailConfigurationFailure
@@ -500,7 +503,11 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property SmsConfiguration. 
         /// <para>
-        /// The SMS configuration.
+        /// The SMS configuration with the settings that your Amazon Cognito user pool must use
+        /// to send an SMS message from your Amazon Web Services account through Amazon Simple
+        /// Notification Service. To send SMS messages with Amazon SNS in the Amazon Web Services
+        /// Region that you want, the Amazon Cognito user pool uses an Identity and Access Management
+        /// (IAM) role in your Amazon Web Services account.
         /// </para>
         /// </summary>
         public SmsConfigurationType SmsConfiguration
@@ -525,21 +532,20 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// This message might include comma-separated values to describe why your SMS configuration
         /// can't send messages to user pool end users.
         /// </para>
-        ///  <ul> <li> 
+        ///  <dl> <dt>InvalidSmsRoleAccessPolicyException</dt> <dd> 
         /// <para>
-        /// InvalidSmsRoleAccessPolicyException - The Identity and Access Management role that
-        /// Amazon Cognito uses to send SMS messages isn't properly configured. For more information,
-        /// see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SmsConfigurationType.html">SmsConfigurationType</a>.
+        /// The Identity and Access Management role that Amazon Cognito uses to send SMS messages
+        /// isn't properly configured. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SmsConfigurationType.html">SmsConfigurationType</a>.
         /// </para>
-        ///  </li> <li> 
+        ///  </dd> <dt>SNSSandbox</dt> <dd> 
         /// <para>
-        /// SNSSandbox - The Amazon Web Services account is in SNS Sandbox and messages will only
-        /// reach verified end users. This parameter won’t get populated with SNSSandbox if the
-        /// IAM user creating the user pool doesn’t have SNS permissions. To learn how to move
-        /// your Amazon Web Services account out of the sandbox, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox-moving-to-production.html">Moving
+        /// The Amazon Web Services account is in the SNS SMS Sandbox and messages will only reach
+        /// verified end users. This parameter won’t get populated with SNSSandbox if the IAM
+        /// user creating the user pool doesn’t have SNS permissions. To learn how to move your
+        /// Amazon Web Services account out of the sandbox, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox-moving-to-production.html">Moving
         /// out of the SMS sandbox</a>.
         /// </para>
-        ///  </li> </ul>
+        ///  </dd> </dl>
         /// </summary>
         public string SmsConfigurationFailure
         {

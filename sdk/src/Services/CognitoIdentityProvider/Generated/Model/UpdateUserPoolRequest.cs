@@ -38,21 +38,21 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// <para>
     /// This action might generate an SMS text message. Starting June 1, 2021, US telecom
     /// carriers require you to register an origination phone number before you can send SMS
-    /// messages to U.S. phone numbers. If you use SMS text messages in Amazon Cognito, you
+    /// messages to US phone numbers. If you use SMS text messages in Amazon Cognito, you
     /// must register a phone number with <a href="https://console.aws.amazon.com/pinpoint/home/">Amazon
-    /// Pinpoint</a>. Amazon Cognito will use the registered number automatically. Otherwise,
-    /// Amazon Cognito users that must receive SMS messages might be unable to sign up, activate
+    /// Pinpoint</a>. Amazon Cognito uses the registered number automatically. Otherwise,
+    /// Amazon Cognito users who must receive SMS messages might not be able to sign up, activate
     /// their accounts, or sign in.
     /// </para>
     ///  
     /// <para>
     /// If you have never used SMS text messages with Amazon Cognito or any other Amazon Web
-    /// Service, Amazon Simple Notification Service might place your account in SMS sandbox.
+    /// Service, Amazon Simple Notification Service might place your account in the SMS sandbox.
     /// In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
-    /// mode</a> </i>, you will have limitations, such as sending messages only to verified
-    /// phone numbers. After testing in the sandbox environment, you can move out of the SMS
-    /// sandbox and into production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html">
-    /// SMS message settings for Amazon Cognito User Pools</a> in the <i>Amazon Cognito Developer
+    /// mode</a> </i>, you can send messages only to verified phone numbers. After you test
+    /// your app while in the sandbox environment, you can move out of the sandbox and into
+    /// production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html">
+    /// SMS message settings for Amazon Cognito user pools</a> in the <i>Amazon Cognito Developer
     /// Guide</i>.
     /// </para>
     ///  </note>
@@ -158,7 +158,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property EmailConfiguration. 
         /// <para>
-        /// Email configuration.
+        /// The email configuration of your user pool. The email configuration type sets your
+        /// preferred sending method, Amazon Web Services Region, and sender for email invitation
+        /// and verification messages from your user pool.
         /// </para>
         /// </summary>
         public EmailConfigurationType EmailConfiguration
@@ -303,7 +305,11 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property SmsConfiguration. 
         /// <para>
-        /// SMS configuration.
+        /// The SMS configuration with the settings that your Amazon Cognito user pool must use
+        /// to send an SMS message from your Amazon Web Services account through Amazon Simple
+        /// Notification Service. To send SMS messages with Amazon SNS in the Amazon Web Services
+        /// Region that you want, the Amazon Cognito user pool uses an Identity and Access Management
+        /// (IAM) role in your Amazon Web Services account.
         /// </para>
         /// </summary>
         public SmsConfigurationType SmsConfiguration

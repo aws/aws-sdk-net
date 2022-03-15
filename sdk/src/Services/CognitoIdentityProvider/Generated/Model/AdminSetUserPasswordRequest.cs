@@ -60,7 +60,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The password for the user.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=6, Max=256)]
+        [AWSProperty(Required=true, Max=256)]
         public string Password
         {
             get { return this._password; }
