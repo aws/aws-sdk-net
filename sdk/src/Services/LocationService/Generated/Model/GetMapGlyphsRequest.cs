@@ -85,6 +85,12 @@ namespace Amazon.LocationService.Model
         /// <para>
         /// VectorHereBerlin – <code>Fira GO Regular</code> | <code>Fira GO Bold</code> 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// VectorHereExplore, VectorHereExploreTruck – <code>Firo GO Italic</code> | <code>Fira
+        /// GO Map</code> | <code>Fira GO Map Bold</code> | <code>Noto Sans CJK JP Bold</code>
+        /// | <code>Noto Sans CJK JP Light</code> | <code>Noto Sans CJK JP Regular</code> 
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -92,13 +92,19 @@ namespace Amazon.LocationService.Model
         ///  <code>VectorHereBerlin</code> – The HERE Berlin map style is a high contrast detailed
         /// base map of the world that blends 3D and 2D rendering.
         /// </para>
-        ///  <note> 
+        ///  </li> <li> 
         /// <para>
-        /// When using HERE as your data provider, and selecting the Style <code>VectorHereBerlin</code>,
-        /// you may not use HERE Technologies maps for Asset Management. See the <a href="https://aws.amazon.com/service-terms/">AWS
-        /// Service Terms</a> for Amazon Location Service.
+        ///  <code>VectorHereExplore</code> – A default HERE map style containing a neutral, global
+        /// map and its features including roads, buildings, landmarks, and water features. It
+        /// also now includes a fully designed map of Japan.
         /// </para>
-        ///  </note> </li> </ul>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>VectorHereExploreTruck</code> – A global map containing truck restrictions
+        /// and attributes (e.g. width / height / HAZMAT) symbolized with highlighted segments
+        /// and icons on top of HERE Explore to support use cases within transport and logistics.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
         public string Style

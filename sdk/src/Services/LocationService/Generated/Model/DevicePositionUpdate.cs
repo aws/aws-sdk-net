@@ -79,7 +79,7 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property Position. 
         /// <para>
-        /// The latest device position defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS
+        /// The latest device position defined in <a href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">WGS
         /// 84</a> format: <code>[X or longitude, Y or latitude]</code>.
         /// </para>
         /// </summary>

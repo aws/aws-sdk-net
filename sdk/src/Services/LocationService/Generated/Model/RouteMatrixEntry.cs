@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LocationService.Model
 {
     /// <summary>
-    /// The result for one <code>SnappedDeparturePosition</code> <code>SnappedDestinationPosition</code>
+    /// The result for the calculated route of one <code>DeparturePosition</code> <code>DestinationPosition</code>
     /// pair.
     /// </summary>
     public partial class RouteMatrixEntry
