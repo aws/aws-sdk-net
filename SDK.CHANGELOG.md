@@ -1,3 +1,19 @@
+### 3.7.231.0 (2022-03-16 21:00 UTC)
+* ACMPCA (3.7.4.0)
+	* AWS Certificate Manager (ACM) Private Certificate Authority (CA) now supports customizable certificate subject names and extensions.
+* AmplifyBackend (3.7.5.0)
+	* Adding the ability to customize Cognito verification messages for email and SMS in CreateBackendAuth and UpdateBackendAuth. Adding deprecation documentation for ForgotPassword in CreateBackendAuth and UpdateBackendAuth
+* BillingConductor (3.7.0.0)
+	* This is the initial SDK release for AWS Billing Conductor. The AWS Billing Conductor is a customizable billing service, allowing you to customize your billing data to match your desired business structure.
+* S3Outposts (3.7.2.0)
+	* S3 on Outposts is releasing a new API, ListSharedEndpoints, that lists all endpoints associated with S3 on Outpost, that has been shared by Resource Access Manager (RAM).
+* SSMIncidents (3.7.4.0)
+	* Removed incorrect validation pattern for IncidentRecordSource.invokedBy
+* Core 3.7.8.11
+	* Updating endpoints.json file.
+
+	* All services packages updated to require new Core
+
 ### 3.7.230.0 (2022-03-15 20:31 UTC)
 * CognitoIdentityProvider (3.7.2.0)
 	* Updated EmailConfigurationType and SmsConfigurationType to reflect that you can now choose Amazon SES and Amazon SNS resources in the same Region.
