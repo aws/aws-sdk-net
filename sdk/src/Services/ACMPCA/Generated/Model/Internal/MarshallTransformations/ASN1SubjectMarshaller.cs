@@ -57,6 +57,22 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Country);
             }
 
+            if(requestObject.IsSetCustomAttributes())
+            {
+                context.Writer.WritePropertyName("CustomAttributes");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectCustomAttributesListValue in requestObject.CustomAttributes)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CustomAttributeMarshaller.Instance;
+                    marshaller.Marshall(requestObjectCustomAttributesListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetDistinguishedNameQualifier())
             {
                 context.Writer.WritePropertyName("DistinguishedNameQualifier");

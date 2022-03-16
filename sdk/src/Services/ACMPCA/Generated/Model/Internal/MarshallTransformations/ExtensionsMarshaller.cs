@@ -61,6 +61,22 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetCustomExtensions())
+            {
+                context.Writer.WritePropertyName("CustomExtensions");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectCustomExtensionsListValue in requestObject.CustomExtensions)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CustomExtensionMarshaller.Instance;
+                    marshaller.Marshall(requestObjectCustomExtensionsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetExtendedKeyUsage())
             {
                 context.Writer.WritePropertyName("ExtendedKeyUsage");

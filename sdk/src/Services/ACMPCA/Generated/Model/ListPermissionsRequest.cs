@@ -30,13 +30,13 @@ namespace Amazon.ACMPCA.Model
 {
     /// <summary>
     /// Container for the parameters to the ListPermissions operation.
-    /// List all permissions on a private CA, if any, granted to the AWS Certificate Manager
-    /// (ACM) service principal (acm.amazonaws.com). 
+    /// List all permissions on a private CA, if any, granted to the Certificate Manager (ACM)
+    /// service principal (acm.amazonaws.com). 
     /// 
     ///  
     /// <para>
     /// These permissions allow ACM to issue and renew ACM certificates that reside in the
-    /// same AWS account as the CA. 
+    /// same Amazon Web Services account as the CA. 
     /// </para>
     ///  
     /// <para>
@@ -63,7 +63,7 @@ namespace Amazon.ACMPCA.Model
     /// cannot be used to enable automatic renewals. Instead, the ACM certificate owner must
     /// set up a resource-based policy to enable cross-account issuance and renewals. For
     /// more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-rbp.html">Using
-    /// a Resource Based Policy with ACM Private CA</a>.
+    /// a Resource Based Policy with Amazon Web Services Private CA</a>.
     /// </para>
     ///  </li> </ul>
     /// </summary>

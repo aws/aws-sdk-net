@@ -38,7 +38,7 @@ namespace Amazon.ACMPCA.Model
     ///  <note> 
     /// <para>
     /// You cannot use the ACM <b>ListCertificateAuthorities</b> action to retrieve the ARNs
-    /// of the certificates that you issue by using ACM Private CA.
+    /// of the certificates that you issue by using Amazon Web Services Private CA.
     /// </para>
     ///  </note>
     /// </summary>
@@ -65,7 +65,7 @@ namespace Amazon.ACMPCA.Model
         ///  
         /// <para>
         /// If conflicting or duplicate certificate information is supplied during certificate
-        /// issuance, ACM Private CA applies <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html#template-order-of-operations">order
+        /// issuance, Amazon Web Services Private CA applies <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html#template-order-of-operations">order
         /// of operation rules</a> to determine what information is used.
         /// </para>
         /// </summary>
@@ -127,7 +127,7 @@ namespace Amazon.ACMPCA.Model
         ///  
         /// <para>
         ///  <code>openssl req -new -config openssl_rsa.cnf -extensions usr_cert -newkey rsa:2048
-        /// -days -365 -keyout private/test_cert_priv_key.pem -out csr/test_cert_.csr</code> 
+        /// -days 365 -keyout private/test_cert_priv_key.pem -out csr/test_cert_.csr</code> 
         /// </para>
         ///  
         /// <para>
@@ -154,9 +154,9 @@ namespace Amazon.ACMPCA.Model
         /// Alphanumeric string that can be used to distinguish between calls to the <b>IssueCertificate</b>
         /// action. Idempotency tokens for <b>IssueCertificate</b> time out after one minute.
         /// Therefore, if you call <b>IssueCertificate</b> multiple times with the same idempotency
-        /// token within one minute, ACM Private CA recognizes that you are requesting only one
-        /// certificate and will issue only one. If you change the idempotency token for each
-        /// call, PCA recognizes that you are requesting multiple certificates.
+        /// token within one minute, Amazon Web Services Private CA recognizes that you are requesting
+        /// only one certificate and will issue only one. If you change the idempotency token
+        /// for each call, PCA recognizes that you are requesting multiple certificates.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=36)]
@@ -183,6 +183,12 @@ namespace Amazon.ACMPCA.Model
         /// This parameter should not be confused with the <code>SigningAlgorithm</code> parameter
         /// used to sign a CSR in the <code>CreateCertificateAuthority</code> action.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The specified signing algorithm family (RSA or ECDSA) much match the algorithm family
+        /// of the CA's secret key.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true)]
         public SigningAlgorithm SigningAlgorithm
@@ -201,7 +207,7 @@ namespace Amazon.ACMPCA.Model
         /// Gets and sets the property TemplateArn. 
         /// <para>
         /// Specifies a custom configuration template to use when issuing a certificate. If this
-        /// parameter is not provided, ACM Private CA defaults to the <code>EndEntityCertificate/V1</code>
+        /// parameter is not provided, Amazon Web Services Private CA defaults to the <code>EndEntityCertificate/V1</code>
         /// template. For CA certificates, you should choose the shortest path length that meets
         /// your needs. The path length is indicated by the PathLen<i>N</i> portion of the ARN,
         /// where <i>N</i> is the <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaTerms.html#terms-cadepth">CA
@@ -214,8 +220,8 @@ namespace Amazon.ACMPCA.Model
         /// </para>
         ///  
         /// <para>
-        /// For a list of <code>TemplateArn</code> values supported by ACM Private CA, see <a
-        /// href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html">Understanding
+        /// For a list of <code>TemplateArn</code> values supported by Amazon Web Services Private
+        /// CA, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html">Understanding
         /// Certificate Templates</a>.
         /// </para>
         /// </summary>
@@ -243,8 +249,8 @@ namespace Amazon.ACMPCA.Model
         /// Certificate validity is the period of time during which a certificate is valid. Validity
         /// can be expressed as an explicit date and time when the certificate expires, or as
         /// a span of time after issuance, stated in days, months, or years. For more information,
-        /// see <a href="https://tools.ietf.org/html/rfc5280#section-4.1.2.5">Validity</a> in
-        /// RFC 5280. 
+        /// see <a href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.1.2.5">Validity</a>
+        /// in RFC 5280. 
         /// </para>
         ///  
         /// <para>
@@ -280,8 +286,8 @@ namespace Amazon.ACMPCA.Model
         /// </para>
         ///  
         /// <para>
-        /// By default, when issuing a certificate, ACM Private CA sets the "Not Before" date
-        /// to the issuance time minus 60 minutes. This compensates for clock inconsistencies
+        /// By default, when issuing a certificate, Amazon Web Services Private CA sets the "Not
+        /// Before" date to the issuance time minus 60 minutes. This compensates for clock inconsistencies
         /// across computer systems. The <code>ValidityNotBefore</code> parameter can be used
         /// to customize the “Not Before” value. 
         /// </para>
@@ -295,7 +301,7 @@ namespace Amazon.ACMPCA.Model
         /// The <code>ValidityNotBefore</code> value is expressed as an explicit date and time,
         /// using the <code>Validity</code> type value <code>ABSOLUTE</code>. For more information,
         /// see <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_Validity.html">Validity</a>
-        /// in this API reference and <a href="https://tools.ietf.org/html/rfc5280#section-4.1.2.5">Validity</a>
+        /// in this API reference and <a href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.1.2.5">Validity</a>
         /// in RFC 5280.
         /// </para>
         /// </summary>

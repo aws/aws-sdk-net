@@ -32,15 +32,15 @@ namespace Amazon.ACMPCA.Model
     /// Validity specifies the period of time during which a certificate is valid. Validity
     /// can be expressed as an explicit date and time when the validity of a certificate starts
     /// or expires, or as a span of time after issuance, stated in days, months, or years.
-    /// For more information, see <a href="https://tools.ietf.org/html/rfc5280#section-4.1.2.5">Validity</a>
+    /// For more information, see <a href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.1.2.5">Validity</a>
     /// in RFC 5280.
     /// 
     ///  
     /// <para>
-    /// ACM Private CA API consumes the <code>Validity</code> data type differently in two
-    /// distinct parameters of the <code>IssueCertificate</code> action. The required parameter
-    /// <code>IssueCertificate</code>:<code>Validity</code> specifies the end of a certificate's
-    /// validity period. The optional parameter <code>IssueCertificate</code>:<code>ValidityNotBefore</code>
+    /// Amazon Web Services Private CA API consumes the <code>Validity</code> data type differently
+    /// in two distinct parameters of the <code>IssueCertificate</code> action. The required
+    /// parameter <code>IssueCertificate</code>:<code>Validity</code> specifies the end of
+    /// a certificate's validity period. The optional parameter <code>IssueCertificate</code>:<code>ValidityNotBefore</code>
     /// specifies a customized starting time for the validity period.
     /// </para>
     /// </summary>
@@ -52,8 +52,8 @@ namespace Amazon.ACMPCA.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// Determines how <i>ACM Private CA</i> interprets the <code>Value</code> parameter,
-        /// an integer. Supported validity types include those listed below. Type definitions
+        /// Determines how <i>Amazon Web Services Private CA</i> interprets the <code>Value</code>
+        /// parameter, an integer. Supported validity types include those listed below. Type definitions
         /// with values include a sample input value and the resulting output. 
         /// </para>
         ///  

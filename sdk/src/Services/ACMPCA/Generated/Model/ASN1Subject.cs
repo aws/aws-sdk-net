@@ -39,6 +39,7 @@ namespace Amazon.ACMPCA.Model
     {
         private string _commonName;
         private string _country;
+        private List<CustomAttribute> _customAttributes = new List<CustomAttribute>();
         private string _distinguishedNameQualifier;
         private string _generationQualifier;
         private string _givenName;
@@ -94,6 +95,33 @@ namespace Amazon.ACMPCA.Model
         internal bool IsSetCountry()
         {
             return this._country != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomAttributes.  
+        /// <para>
+        /// Contains a sequence of one or more X.500 relative distinguished names (RDNs), each
+        /// of which consists of an object identifier (OID) and a value. For more information,
+        /// see NIST’s definition of <a href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object
+        /// Identifier (OID)</a>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Custom attributes cannot be used in combination with standard attributes.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        [AWSProperty(Min=1, Max=30)]
+        public List<CustomAttribute> CustomAttributes
+        {
+            get { return this._customAttributes; }
+            set { this._customAttributes = value; }
+        }
+
+        // Check to see if CustomAttributes property is set
+        internal bool IsSetCustomAttributes()
+        {
+            return this._customAttributes != null && this._customAttributes.Count > 0; 
         }
 
         /// <summary>

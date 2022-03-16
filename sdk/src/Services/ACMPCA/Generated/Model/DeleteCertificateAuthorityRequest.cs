@@ -50,8 +50,8 @@ namespace Amazon.ACMPCA.Model
     /// <para>
     /// Additionally, you can delete a CA if you are waiting for it to be created (that is,
     /// the status of the CA is <code>CREATING</code>). You can also delete it if the CA has
-    /// been created but you haven't yet imported the signed certificate into ACM Private
-    /// CA (that is, the status of the CA is <code>PENDING_CERTIFICATE</code>). 
+    /// been created but you haven't yet imported the signed certificate into Amazon Web Services
+    /// Private CA (that is, the status of the CA is <code>PENDING_CERTIFICATE</code>). 
     /// </para>
     ///  
     /// <para>

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ACMPCA.Model
 {
     /// <summary>
-    /// Describes an ASN.1 X.400 <code>GeneralName</code> as defined in <a href="https://tools.ietf.org/html/rfc5280">RFC
+    /// Describes an ASN.1 X.400 <code>GeneralName</code> as defined in <a href="https://datatracker.ietf.org/doc/html/rfc5280">RFC
     /// 5280</a>. Only one of the following naming options should be provided. Providing more
     /// than one option results in an <code>InvalidArgsException</code> error.
     /// </summary>
@@ -155,7 +155,7 @@ namespace Amazon.ACMPCA.Model
         /// <summary>
         /// Gets and sets the property Rfc822Name. 
         /// <para>
-        /// Represents <code>GeneralName</code> as an <a href="https://tools.ietf.org/html/rfc822">RFC
+        /// Represents <code>GeneralName</code> as an <a href="https://datatracker.ietf.org/doc/html/rfc822">RFC
         /// 822</a> email address.
         /// </para>
         /// </summary>

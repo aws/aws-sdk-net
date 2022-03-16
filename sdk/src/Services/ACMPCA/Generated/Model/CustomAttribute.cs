@@ -29,51 +29,50 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ACMPCA.Model
 {
     /// <summary>
-    /// Describes an Electronic Data Interchange (EDI) entity as described in as defined in
-    /// <a href="https://datatracker.ietf.org/doc/html/rfc5280">Subject Alternative Name</a>
-    /// in RFC 5280.
+    /// Defines the X.500 relative distinguished name (RDN).
     /// </summary>
-    public partial class EdiPartyName
+    public partial class CustomAttribute
     {
-        private string _nameAssigner;
-        private string _partyName;
+        private string _objectIdentifier;
+        private string _value;
 
         /// <summary>
-        /// Gets and sets the property NameAssigner. 
+        /// Gets and sets the property ObjectIdentifier. 
         /// <para>
-        /// Specifies the name assigner.
+        /// Specifies the object identifier (OID) of the attribute type of the relative distinguished
+        /// name (RDN).
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=256)]
-        public string NameAssigner
+        [AWSProperty(Required=true, Min=0, Max=64)]
+        public string ObjectIdentifier
         {
-            get { return this._nameAssigner; }
-            set { this._nameAssigner = value; }
+            get { return this._objectIdentifier; }
+            set { this._objectIdentifier = value; }
         }
 
-        // Check to see if NameAssigner property is set
-        internal bool IsSetNameAssigner()
+        // Check to see if ObjectIdentifier property is set
+        internal bool IsSetObjectIdentifier()
         {
-            return this._nameAssigner != null;
+            return this._objectIdentifier != null;
         }
 
         /// <summary>
-        /// Gets and sets the property PartyName. 
+        /// Gets and sets the property Value.  
         /// <para>
-        /// Specifies the party name.
+        /// Specifies the attribute value of relative distinguished name (RDN).
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=256)]
-        public string PartyName
+        [AWSProperty(Required=true, Min=1, Max=256)]
+        public string Value
         {
-            get { return this._partyName; }
-            set { this._partyName = value; }
+            get { return this._value; }
+            set { this._value = value; }
         }
 
-        // Check to see if PartyName property is set
-        internal bool IsSetPartyName()
+        // Check to see if Value property is set
+        internal bool IsSetValue()
         {
-            return this._partyName != null;
+            return this._value != null;
         }
 
     }

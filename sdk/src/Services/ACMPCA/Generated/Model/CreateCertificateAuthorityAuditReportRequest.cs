@@ -39,15 +39,20 @@ namespace Amazon.ACMPCA.Model
     /// <para>
     /// Both PCA and the IAM principal must have permission to write to the S3 bucket that
     /// you specify. If the IAM principal making the call does not have permission to write
-    /// to the bucket, then an exception is thrown. For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaAuthAccess.html">Configure
-    /// Access to ACM Private CA</a>.
+    /// to the bucket, then an exception is thrown. For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/crl-planning.html#s3-policies">Access
+    /// policies for CRLs in Amazon S3</a>.
     /// </para>
     ///  </note> 
     /// <para>
-    /// ACM Private CA assets that are stored in Amazon S3 can be protected with encryption.
-    /// For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaAuditReport.html#audit-report-encryption">Encrypting
+    /// Amazon Web Services Private CA assets that are stored in Amazon S3 can be protected
+    /// with encryption. For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaAuditReport.html#audit-report-encryption">Encrypting
     /// Your Audit Reports</a>.
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// You can generate a maximum of one report every 30 minutes.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class CreateCertificateAuthorityAuditReportRequest : AmazonACMPCARequest
     {

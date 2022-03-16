@@ -44,16 +44,16 @@ namespace Amazon.ACMPCA.Model
     /// 
     ///  
     /// <para>
-    /// ACM Private CA assets that are stored in Amazon S3 can be protected with encryption.
-    /// For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#crl-encryption">Encrypting
+    /// Amazon Web Services Private CA assets that are stored in Amazon S3 can be protected
+    /// with encryption. For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#crl-encryption">Encrypting
     /// Your CRLs</a>.
     /// </para>
     ///  <note> 
     /// <para>
     /// Both PCA and the IAM principal must have permission to write to the S3 bucket that
     /// you specify. If the IAM principal making the call does not have permission to write
-    /// to the bucket, then an exception is thrown. For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaAuthAccess.html">Configure
-    /// Access to ACM Private CA</a>.
+    /// to the bucket, then an exception is thrown. For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/crl-planning.html#s3-policies">Access
+    /// policies for CRLs in Amazon S3</a>.
     /// </para>
     ///  </note>
     /// </summary>
@@ -111,10 +111,10 @@ namespace Amazon.ACMPCA.Model
         /// Custom string that can be used to distinguish between calls to the <b>CreateCertificateAuthority</b>
         /// action. Idempotency tokens for <b>CreateCertificateAuthority</b> time out after five
         /// minutes. Therefore, if you call <b>CreateCertificateAuthority</b> multiple times with
-        /// the same idempotency token within five minutes, ACM Private CA recognizes that you
-        /// are requesting only certificate authority and will issue only one. If you change the
-        /// idempotency token for each call, PCA recognizes that you are requesting multiple certificate
-        /// authorities.
+        /// the same idempotency token within five minutes, Amazon Web Services Private CA recognizes
+        /// that you are requesting only certificate authority and will issue only one. If you
+        /// change the idempotency token for each call, PCA recognizes that you are requesting
+        /// multiple certificate authorities.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=36)]

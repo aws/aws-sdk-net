@@ -36,27 +36,28 @@ namespace Amazon.ACMPCA.Model
     /// in the <b>S3BucketName</b> parameter. You can hide the name of your bucket by specifying
     /// a value for the <b>CustomCname</b> parameter. Your private CA copies the CNAME or
     /// the S3 bucket name to the <b>CRL Distribution Points</b> extension of each certificate
-    /// it issues. Your S3 bucket policy must give write permission to ACM Private CA. 
+    /// it issues. Your S3 bucket policy must give write permission to Amazon Web Services
+    /// Private CA. 
     /// 
     ///  
     /// <para>
-    /// ACM Private CA assets that are stored in Amazon S3 can be protected with encryption.
-    /// For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#crl-encryption">Encrypting
+    /// Amazon Web Services Private CA assets that are stored in Amazon S3 can be protected
+    /// with encryption. For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#crl-encryption">Encrypting
     /// Your CRLs</a>.
     /// </para>
     ///  
     /// <para>
     /// Your private CA uses the value in the <b>ExpirationInDays</b> parameter to calculate
-    /// the <b>nextUpdate</b> field in the CRL. The CRL is refreshed at 1/2 the age of next
-    /// update or when a certificate is revoked. When a certificate is revoked, it is recorded
-    /// in the next CRL that is generated and in the next audit report. Only time valid certificates
-    /// are listed in the CRL. Expired certificates are not included.
+    /// the <b>nextUpdate</b> field in the CRL. The CRL is refreshed prior to a certificate's
+    /// expiration date or when a certificate is revoked. When a certificate is revoked, it
+    /// appears in the CRL until the certificate expires, and then in one additional CRL after
+    /// expiration, and it always appears in the audit report.
     /// </para>
     ///  
     /// <para>
     /// A CRL is typically updated approximately 30 minutes after a certificate is revoked.
-    /// If for any reason a CRL update fails, ACM Private CA makes further attempts every
-    /// 15 minutes.
+    /// If for any reason a CRL update fails, Amazon Web Services Private CA makes further
+    /// attempts every 15 minutes.
     /// </para>
     ///  
     /// <para>
@@ -127,8 +128,8 @@ namespace Amazon.ACMPCA.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// Certificate revocation lists created by ACM Private CA are DER-encoded. You can use
-    /// the following OpenSSL command to list a CRL.
+    /// Certificate revocation lists created by Amazon Web Services Private CA are DER-encoded.
+    /// You can use the following OpenSSL command to list a CRL.
     /// </para>
     ///  
     /// <para>
@@ -137,8 +138,8 @@ namespace Amazon.ACMPCA.Model
     ///  
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/crl-planning.html">Planning
-    /// a certificate revocation list (CRL)</a> in the <i>AWS Certificate Manager Private
-    /// Certificate Authority (PCA) User Guide</i> 
+    /// a certificate revocation list (CRL)</a> in the <i>Amazon Web Services Private Certificate
+    /// Authority User Guide</i> 
     /// </para>
     /// </summary>
     public partial class CrlConfiguration
@@ -220,7 +221,7 @@ namespace Amazon.ACMPCA.Model
         /// Distribution Points</b> extension of the issued certificate. You can change the name
         /// of your bucket by calling the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UpdateCertificateAuthority.html">UpdateCertificateAuthority</a>
         /// operation. You must specify a <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#s3-policies">bucket
-        /// policy</a> that allows ACM Private CA to write the CRL to your bucket.
+        /// policy</a> that allows Amazon Web Services Private CA to write the CRL to your bucket.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=255)]

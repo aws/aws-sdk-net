@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ACMPCA.Model
 {
     /// <summary>
-    /// Defines a <code>PolicyInformation</code> qualifier. ACM Private CA supports the <a
-    /// href="https://tools.ietf.org/html/rfc5280#section-4.2.1.4">certification practice
-    /// statement (CPS) qualifier</a> defined in RFC 5280.
+    /// Defines a <code>PolicyInformation</code> qualifier. Amazon Web Services Private CA
+    /// supports the <a href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.2.1.4">certification
+    /// practice statement (CPS) qualifier</a> defined in RFC 5280.
     /// </summary>
     public partial class Qualifier
     {

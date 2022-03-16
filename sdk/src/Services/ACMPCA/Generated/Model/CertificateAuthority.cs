@@ -35,9 +35,9 @@ namespace Amazon.ACMPCA.Model
     /// key contained in the <b>Subject Public Key Info</b> field. Call the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>
     /// action to create your private CA. You must then call the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_GetCertificateAuthorityCertificate.html">GetCertificateAuthorityCertificate</a>
     /// action to retrieve a private CA certificate signing request (CSR). Sign the CSR with
-    /// your ACM Private CA-hosted or on-premises root or subordinate CA certificate. Call
-    /// the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ImportCertificateAuthorityCertificate.html">ImportCertificateAuthorityCertificate</a>
-    /// action to import the signed certificate into AWS Certificate Manager (ACM).
+    /// your Amazon Web Services Private CA-hosted or on-premises root or subordinate CA certificate.
+    /// Call the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ImportCertificateAuthorityCertificate.html">ImportCertificateAuthorityCertificate</a>
+    /// action to import the signed certificate into Certificate Manager (ACM).
     /// </summary>
     public partial class CertificateAuthority
     {
@@ -142,11 +142,11 @@ namespace Amazon.ACMPCA.Model
         /// </para>
         ///  
         /// <para>
-        /// Note: AWS Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER. You must
-        /// explicitly specify this parameter and value when creating a CA in that Region. Specifying
-        /// a different value (or no value) results in an <code>InvalidArgsException</code> with
-        /// the message "A certificate authority cannot be created in this region with the specified
-        /// security standard."
+        /// Note: Amazon Web Services Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER.
+        /// You must explicitly specify this parameter and value when creating a CA in that Region.
+        /// Specifying a different value (or no value) results in an <code>InvalidArgsException</code>
+        /// with the message "A certificate authority cannot be created in this region with the
+        /// specified security standard."
         /// </para>
         /// </summary>
         public KeyStorageSecurityStandard KeyStorageSecurityStandard
@@ -218,7 +218,7 @@ namespace Amazon.ACMPCA.Model
         /// <summary>
         /// Gets and sets the property OwnerAccount. 
         /// <para>
-        /// The AWS account ID that owns the certificate authority.
+        /// The Amazon Web Services account ID that owns the certificate authority.
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=12)]
