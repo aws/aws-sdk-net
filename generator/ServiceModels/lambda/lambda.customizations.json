@@ -82,10 +82,15 @@
         "Variables"
       ],
       "UpdateFunctionConfigurationRequest": [
-        "Layers"
+        "Layers",
+		"FileSystemConfigs"
       ],
       "ImageConfig": [
           "EntryPoint", "Command"
-      ]
+      ],
+	  "VpcConfig": [
+		"SecurityGroupIds",
+		"SubnetIds"
+	  ]
     }
 }
