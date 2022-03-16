@@ -46,6 +46,27 @@
     <pattern>^[A-Za-z0-9\+\:\/\=\?\#-_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.S3Outposts.Model.ListSharedEndpointsRequest.MaxResults</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Outposts.Model.ListSharedEndpointsRequest.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^[A-Za-z0-9\+\:\/\=\?\#-_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Outposts.Model.ListSharedEndpointsRequest.OutpostId</property>
+    <pattern>^(op-[a-f0-9]{17}|\d{12}|ec2)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Outposts.Model.ListSharedEndpointsResponse.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^[A-Za-z0-9\+\:\/\=\?\#-_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.S3Outposts.Model.Endpoint.CustomerOwnedIpv4Pool</property>
     <pattern>^ipv4pool-coip-([0-9a-f]{17})$</pattern>
   </property-value-rule>

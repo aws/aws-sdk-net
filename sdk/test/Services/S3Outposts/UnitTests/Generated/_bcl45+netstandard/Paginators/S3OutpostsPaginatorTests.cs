@@ -77,5 +77,44 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
             paginator.Responses.ToList();
         }
 
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("S3Outposts")]
+        public void ListSharedEndpointsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListSharedEndpointsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListSharedEndpointsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListSharedEndpointsResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListSharedEndpoints(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListSharedEndpoints(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("S3Outposts")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListSharedEndpointsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListSharedEndpointsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListSharedEndpointsResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListSharedEndpoints(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListSharedEndpoints(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
     }
 }

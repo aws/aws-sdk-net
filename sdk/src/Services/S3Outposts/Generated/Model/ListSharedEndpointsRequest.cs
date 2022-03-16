@@ -29,8 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.S3Outposts.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListEndpoints operation.
-    /// Lists endpoints associated with the specified Outpost. 
+    /// Container for the parameters to the ListSharedEndpoints operation.
+    /// Lists all endpoints associated with an Outpost that has been shared by Amazon Web
+    /// Services Resource Access Manager (RAM).
     /// 
     ///  
     /// <para>
@@ -48,10 +49,11 @@ namespace Amazon.S3Outposts.Model
     /// </para>
     ///  </li> </ul>
     /// </summary>
-    public partial class ListEndpointsRequest : AmazonS3OutpostsRequest
+    public partial class ListSharedEndpointsRequest : AmazonS3OutpostsRequest
     {
         private int? _maxResults;
         private string _nextToken;
+        private string _outpostId;
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
@@ -76,7 +78,7 @@ namespace Amazon.S3Outposts.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// If a previous response from this operation included a <code>NextToken</code> value,
-        /// provide that value here to retrieve the next page of results.
+        /// you can provide that value here to retrieve the next page of results.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -90,6 +92,25 @@ namespace Amazon.S3Outposts.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OutpostId. 
+        /// <para>
+        /// The ID of the Amazon Web Services Outpost.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public string OutpostId
+        {
+            get { return this._outpostId; }
+            set { this._outpostId = value; }
+        }
+
+        // Check to see if OutpostId property is set
+        internal bool IsSetOutpostId()
+        {
+            return this._outpostId != null;
         }
 
     }

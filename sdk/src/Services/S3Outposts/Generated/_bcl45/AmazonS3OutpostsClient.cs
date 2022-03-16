@@ -258,19 +258,11 @@ namespace Amazon.S3Outposts
 
 
         /// <summary>
-        /// Amazon S3 on Outposts Access Points simplify managing data access at scale for shared
-        /// datasets in S3 on Outposts. S3 on Outposts uses endpoints to connect to Outposts buckets
-        /// so that you can perform actions within your virtual private cloud (VPC). For more
-        /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/AccessingS3Outposts.html">
-        /// Accessing S3 on Outposts using VPC only access points</a>.
+        /// Creates an endpoint and associates it with the specified Outpost.
         /// 
-        ///  
-        /// <para>
-        /// This action creates an endpoint and associates it with the specified Outposts.
-        /// </para>
         ///  <note> 
         /// <para>
-        /// It can take up to 5 minutes for this action to complete.
+        /// It can take up to 5 minutes for this action to finish.
         /// </para>
         ///  </note>  
         /// <para>
@@ -318,19 +310,11 @@ namespace Amazon.S3Outposts
 
 
         /// <summary>
-        /// Amazon S3 on Outposts Access Points simplify managing data access at scale for shared
-        /// datasets in S3 on Outposts. S3 on Outposts uses endpoints to connect to Outposts buckets
-        /// so that you can perform actions within your virtual private cloud (VPC). For more
-        /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/AccessingS3Outposts.html">
-        /// Accessing S3 on Outposts using VPC only access points</a>.
+        /// Creates an endpoint and associates it with the specified Outpost.
         /// 
-        ///  
-        /// <para>
-        /// This action creates an endpoint and associates it with the specified Outposts.
-        /// </para>
         ///  <note> 
         /// <para>
-        /// It can take up to 5 minutes for this action to complete.
+        /// It can take up to 5 minutes for this action to finish.
         /// </para>
         ///  </note>  
         /// <para>
@@ -385,19 +369,11 @@ namespace Amazon.S3Outposts
 
 
         /// <summary>
-        /// Amazon S3 on Outposts Access Points simplify managing data access at scale for shared
-        /// datasets in S3 on Outposts. S3 on Outposts uses endpoints to connect to Outposts buckets
-        /// so that you can perform actions within your virtual private cloud (VPC). For more
-        /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/AccessingS3Outposts.html">
-        /// Accessing S3 on Outposts using VPC only access points</a>.
+        /// Deletes an endpoint.
         /// 
-        ///  
-        /// <para>
-        /// This action deletes an endpoint.
-        /// </para>
         ///  <note> 
         /// <para>
-        /// It can take up to 5 minutes for this action to complete.
+        /// It can take up to 5 minutes for this action to finish.
         /// </para>
         ///  </note>  
         /// <para>
@@ -442,19 +418,11 @@ namespace Amazon.S3Outposts
 
 
         /// <summary>
-        /// Amazon S3 on Outposts Access Points simplify managing data access at scale for shared
-        /// datasets in S3 on Outposts. S3 on Outposts uses endpoints to connect to Outposts buckets
-        /// so that you can perform actions within your virtual private cloud (VPC). For more
-        /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/AccessingS3Outposts.html">
-        /// Accessing S3 on Outposts using VPC only access points</a>.
+        /// Deletes an endpoint.
         /// 
-        ///  
-        /// <para>
-        /// This action deletes an endpoint.
-        /// </para>
         ///  <note> 
         /// <para>
-        /// It can take up to 5 minutes for this action to complete.
+        /// It can take up to 5 minutes for this action to finish.
         /// </para>
         ///  </note>  
         /// <para>
@@ -506,17 +474,9 @@ namespace Amazon.S3Outposts
 
 
         /// <summary>
-        /// Amazon S3 on Outposts Access Points simplify managing data access at scale for shared
-        /// datasets in S3 on Outposts. S3 on Outposts uses endpoints to connect to Outposts buckets
-        /// so that you can perform actions within your virtual private cloud (VPC). For more
-        /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/AccessingS3Outposts.html">
-        /// Accessing S3 on Outposts using VPC only access points</a>.
+        /// Lists endpoints associated with the specified Outpost. 
         /// 
         ///  
-        /// <para>
-        /// This action lists endpoints associated with the Outposts. 
-        /// </para>
-        ///   
         /// <para>
         /// Related actions include:
         /// </para>
@@ -559,17 +519,9 @@ namespace Amazon.S3Outposts
 
 
         /// <summary>
-        /// Amazon S3 on Outposts Access Points simplify managing data access at scale for shared
-        /// datasets in S3 on Outposts. S3 on Outposts uses endpoints to connect to Outposts buckets
-        /// so that you can perform actions within your virtual private cloud (VPC). For more
-        /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/AccessingS3Outposts.html">
-        /// Accessing S3 on Outposts using VPC only access points</a>.
+        /// Lists endpoints associated with the specified Outpost. 
         /// 
         ///  
-        /// <para>
-        /// This action lists endpoints associated with the Outposts. 
-        /// </para>
-        ///   
         /// <para>
         /// Related actions include:
         /// </para>
@@ -611,6 +563,105 @@ namespace Amazon.S3Outposts
             options.ResponseUnmarshaller = ListEndpointsResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListEndpointsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListSharedEndpoints
+
+
+        /// <summary>
+        /// Lists all endpoints associated with an Outpost that has been shared by Amazon Web
+        /// Services Resource Access Manager (RAM).
+        /// 
+        ///  
+        /// <para>
+        /// Related actions include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_CreateEndpoint.html">CreateEndpoint</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_DeleteEndpoint.html">DeleteEndpoint</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSharedEndpoints service method.</param>
+        /// 
+        /// <returns>The response from the ListSharedEndpoints service method, as returned by S3Outposts.</returns>
+        /// <exception cref="Amazon.S3Outposts.Model.AccessDeniedException">
+        /// Access was denied for this action.
+        /// </exception>
+        /// <exception cref="Amazon.S3Outposts.Model.InternalServerException">
+        /// There was an exception with the internal server.
+        /// </exception>
+        /// <exception cref="Amazon.S3Outposts.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.S3Outposts.Model.ValidationException">
+        /// There was an exception validating this data.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3outposts-2017-07-25/ListSharedEndpoints">REST API Reference for ListSharedEndpoints Operation</seealso>
+        public virtual ListSharedEndpointsResponse ListSharedEndpoints(ListSharedEndpointsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSharedEndpointsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSharedEndpointsResponseUnmarshaller.Instance;
+
+            return Invoke<ListSharedEndpointsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists all endpoints associated with an Outpost that has been shared by Amazon Web
+        /// Services Resource Access Manager (RAM).
+        /// 
+        ///  
+        /// <para>
+        /// Related actions include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_CreateEndpoint.html">CreateEndpoint</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_DeleteEndpoint.html">DeleteEndpoint</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSharedEndpoints service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListSharedEndpoints service method, as returned by S3Outposts.</returns>
+        /// <exception cref="Amazon.S3Outposts.Model.AccessDeniedException">
+        /// Access was denied for this action.
+        /// </exception>
+        /// <exception cref="Amazon.S3Outposts.Model.InternalServerException">
+        /// There was an exception with the internal server.
+        /// </exception>
+        /// <exception cref="Amazon.S3Outposts.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.S3Outposts.Model.ValidationException">
+        /// There was an exception validating this data.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3outposts-2017-07-25/ListSharedEndpoints">REST API Reference for ListSharedEndpoints Operation</seealso>
+        public virtual Task<ListSharedEndpointsResponse> ListSharedEndpointsAsync(ListSharedEndpointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSharedEndpointsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSharedEndpointsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListSharedEndpointsResponse>(request, options, cancellationToken);
         }
 
         #endregion

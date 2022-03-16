@@ -30,19 +30,11 @@ namespace Amazon.S3Outposts.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateEndpoint operation.
-    /// Amazon S3 on Outposts Access Points simplify managing data access at scale for shared
-    /// datasets in S3 on Outposts. S3 on Outposts uses endpoints to connect to Outposts buckets
-    /// so that you can perform actions within your virtual private cloud (VPC). For more
-    /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/AccessingS3Outposts.html">
-    /// Accessing S3 on Outposts using VPC only access points</a>.
+    /// Creates an endpoint and associates it with the specified Outpost.
     /// 
-    ///  
-    /// <para>
-    /// This action creates an endpoint and associates it with the specified Outposts.
-    /// </para>
     ///  <note> 
     /// <para>
-    /// It can take up to 5 minutes for this action to complete.
+    /// It can take up to 5 minutes for this action to finish.
     /// </para>
     ///  </note>  
     /// <para>
@@ -71,10 +63,16 @@ namespace Amazon.S3Outposts.Model
         /// <summary>
         /// Gets and sets the property AccessType. 
         /// <para>
-        /// The type of access for the on-premise network connectivity for the Outpost endpoint.
-        /// To access the endpoint from an on-premises network, you must specify the access type
-        /// and provide the customer owned IPv4 pool.
+        /// The type of access for the network connectivity for the Amazon S3 on Outposts endpoint.
+        /// To use the Amazon Web Services VPC, choose <code>Private</code>. To use the endpoint
+        /// with an on-premises network, choose <code>CustomerOwnedIp</code>. If you choose <code>CustomerOwnedIp</code>,
+        /// you must also provide the customer-owned IP address pool (CoIP pool).
         /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <code>Private</code> is the default access type value.
+        /// </para>
+        ///  </note>
         /// </summary>
         public EndpointAccessType AccessType
         {
@@ -91,8 +89,8 @@ namespace Amazon.S3Outposts.Model
         /// <summary>
         /// Gets and sets the property CustomerOwnedIpv4Pool. 
         /// <para>
-        /// The ID of the customer-owned IPv4 pool for the endpoint. IP addresses will be allocated
-        /// from this pool for the endpoint.
+        /// The ID of the customer-owned IPv4 address pool (CoIP pool) for the endpoint. IP addresses
+        /// are allocated from this pool for the endpoint.
         /// </para>
         /// </summary>
         public string CustomerOwnedIpv4Pool
@@ -110,7 +108,7 @@ namespace Amazon.S3Outposts.Model
         /// <summary>
         /// Gets and sets the property OutpostId. 
         /// <para>
-        /// The ID of the AWS Outposts. 
+        /// The ID of the Outposts. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -149,7 +147,7 @@ namespace Amazon.S3Outposts.Model
         /// Gets and sets the property SubnetId. 
         /// <para>
         /// The ID of the subnet in the selected VPC. The endpoint subnet must belong to the Outpost
-        /// that has the Amazon S3 on Outposts provisioned.
+        /// that has Amazon S3 on Outposts provisioned.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

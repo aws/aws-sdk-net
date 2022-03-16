@@ -42,5 +42,13 @@ namespace Amazon.S3Outposts.Model
         {
             return new ListEndpointsPaginator(this.client, request);
         }
+
+        /// <summary>
+        /// Paginator for ListSharedEndpoints operation
+        ///</summary>
+        public IListSharedEndpointsPaginator ListSharedEndpoints(ListSharedEndpointsRequest request) 
+        {
+            return new ListSharedEndpointsPaginator(this.client, request);
+        }
     }
 }

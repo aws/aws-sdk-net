@@ -29,54 +29,38 @@ using Amazon.Runtime.Internal;
 namespace Amazon.S3Outposts.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListEndpoints operation.
-    /// Lists endpoints associated with the specified Outpost. 
-    /// 
-    ///  
-    /// <para>
-    /// Related actions include:
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_CreateEndpoint.html">CreateEndpoint</a>
-    /// 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_DeleteEndpoint.html">DeleteEndpoint</a>
-    /// 
-    /// </para>
-    ///  </li> </ul>
+    /// This is the response object from the ListSharedEndpoints operation.
     /// </summary>
-    public partial class ListEndpointsRequest : AmazonS3OutpostsRequest
+    public partial class ListSharedEndpointsResponse : AmazonWebServiceResponse
     {
-        private int? _maxResults;
+        private List<Endpoint> _endpoints = new List<Endpoint>();
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property MaxResults. 
+        /// Gets and sets the property Endpoints. 
         /// <para>
-        /// The maximum number of endpoints that will be returned in the response.
+        /// The list of endpoints associated with the specified Outpost that have been shared
+        /// by Amazon Web Services Resource Access Manager (RAM).
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=100)]
-        public int MaxResults
+        public List<Endpoint> Endpoints
         {
-            get { return this._maxResults.GetValueOrDefault(); }
-            set { this._maxResults = value; }
+            get { return this._endpoints; }
+            set { this._endpoints = value; }
         }
 
-        // Check to see if MaxResults property is set
-        internal bool IsSetMaxResults()
+        // Check to see if Endpoints property is set
+        internal bool IsSetEndpoints()
         {
-            return this._maxResults.HasValue; 
+            return this._endpoints != null && this._endpoints.Count > 0; 
         }
 
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If a previous response from this operation included a <code>NextToken</code> value,
-        /// provide that value here to retrieve the next page of results.
+        /// If the number of endpoints associated with the specified Outpost exceeds <code>MaxResults</code>,
+        /// you can include this value in subsequent calls to this operation to retrieve more
+        /// results.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
