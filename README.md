@@ -159,6 +159,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* Initial release of AWS Backup gateway which enables you to centralize and automate protection of on-premises VMware and VMware Cloud on AWS workloads using AWS Backup.
 * [AWSSDK.Batch](https://www.nuget.org/packages/AWSSDK.Batch/)
 	* AWS Batch enables developers, scientists, and engineers to easily and efficiently run hundreds of thousands of batch computing jobs on AWS. 
+* [AWSSDK.BillingConductor](https://www.nuget.org/packages/AWSSDK.BillingConductor/)
+	* This is the initial SDK release for AWS Billing Conductor. The AWS Billing Conductor is a customizable billing service, allowing you to customize your billing data to match your desired business structure.
 * [AWSSDK.Braket](https://www.nuget.org/packages/AWSSDK.Braket/)
 	* Amazon Braket general availability with Device and Quantum Task operations.
 * [AWSSDK.Budgets](https://www.nuget.org/packages/AWSSDK.Budgets/)

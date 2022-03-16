@@ -192,6 +192,10 @@
       <Project>{8672DE1E-8F7B-480C-9A87-C75AA468FFEB}</Project>
       <Name>AWSSDK.Batch.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/BillingConductor/AWSSDK.BillingConductor.CodeAnalysis.csproj">
+      <Project>{83B61196-5A40-427D-9C0D-2715909AD303}</Project>
+      <Name>AWSSDK.BillingConductor.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/Braket/AWSSDK.Braket.CodeAnalysis.csproj">
       <Project>{779E41EE-7E66-4A69-A705-9A583A872184}</Project>
       <Name>AWSSDK.Braket.CodeAnalysis</Name>
