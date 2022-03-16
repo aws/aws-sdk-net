@@ -39,7 +39,7 @@ namespace Amazon.AmplifyBackend.Model
         /// <summary>
         /// Gets and sets the property EmailMessage. 
         /// <para>
-        /// The body of the email.
+        /// The contents of the email message.
         /// </para>
         /// </summary>
         public string EmailMessage
@@ -57,7 +57,7 @@ namespace Amazon.AmplifyBackend.Model
         /// <summary>
         /// Gets and sets the property EmailSubject. 
         /// <para>
-        /// The subject of the email.
+        /// The contents of the subject line of the email message.
         /// </para>
         /// </summary>
         public string EmailSubject

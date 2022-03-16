@@ -112,6 +112,17 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.UserPoolName);
             }
 
+            if(requestObject.IsSetVerificationMessage())
+            {
+                context.Writer.WritePropertyName("verificationMessage");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = CreateBackendAuthVerificationMessageConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.VerificationMessage, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>
