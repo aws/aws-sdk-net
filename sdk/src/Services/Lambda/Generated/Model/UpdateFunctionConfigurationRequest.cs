@@ -144,10 +144,32 @@ namespace Amazon.Lambda.Model
             set { this._fileSystemConfigs = value; }
         }
 
+        /// <summary>
+        /// This property is set to true if the property <seealso cref="FileSystemConfigs"/>
+        /// is set; false otherwise.
+        /// This property can be used to determine if the related property
+        /// was returned by a service response or if the related property
+        /// should be sent to the service during a service call.
+        /// </summary>
+        /// <returns>
+        /// True if the related property was set or will be sent to a service; false otherwise.
+        /// </returns>
+        public bool IsFileSystemConfigsSet
+        {
+            get
+            {
+                return Amazon.Util.Internal.InternalSDKUtils.GetIsSet(this._fileSystemConfigs);
+            }
+            set
+            {
+                Amazon.Util.Internal.InternalSDKUtils.SetIsSet(value, ref this._fileSystemConfigs);
+            }
+        }
+
         // Check to see if FileSystemConfigs property is set
         internal bool IsSetFileSystemConfigs()
         {
-            return this._fileSystemConfigs != null && this._fileSystemConfigs.Count > 0; 
+            return this.IsFileSystemConfigsSet; 
         }
 
         /// <summary>
