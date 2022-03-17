@@ -1,3 +1,10 @@
+### 3.7.232.0 (2022-03-17 13:37 UTC)
+* Lambda (3.7.10.3)
+	* Add IsSet<property-name> methods for list properties on the UpdateFunctionConfiguration operation. This allows users to tell the SDK when they want clear out the values of collection properties like SubnetIds.
+* Core 3.7.9.0
+	* BREAKING CHANGE: Revert Amazon.Util.Internal.ICryptoUtil back to Amazon.Util.ICryptoUtil. This fixes an earlier breaking change for some older service clients when used alongside v3.7.8+ of AWSSDK.Core, but causes a new breaking change for some service clients released between v3.7.8 and this fix in future versions of AWSSDK.Core.
+	* All services packages updated to require new Core
+
 ### 3.7.231.0 (2022-03-16 21:00 UTC)
 * ACMPCA (3.7.4.0)
 	* AWS Certificate Manager (ACM) Private Certificate Authority (CA) now supports customizable certificate subject names and extensions.
