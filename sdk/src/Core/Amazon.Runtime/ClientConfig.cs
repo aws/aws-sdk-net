@@ -212,6 +212,7 @@ namespace Amazon.Runtime
                 this.regionEndpoint = null;
                 this.probeForRegionEndpoint = false;
 
+                if (!string.IsNullOrEmpty(value) && !value.EndsWith("/")) value += "/";
                 this.serviceURL = value;
             }
         }
