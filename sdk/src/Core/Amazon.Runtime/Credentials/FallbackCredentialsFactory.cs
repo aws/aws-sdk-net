@@ -59,7 +59,7 @@ namespace Amazon.Runtime
             };
         }
 
-        public static string GetProfileName()
+        internal static string GetProfileName()
         {
             var profileName = AWSConfigs.AWSProfileName ?? 
                               Environment.GetEnvironmentVariable(AWS_PROFILE_ENVIRONMENT_VARIABLE);
