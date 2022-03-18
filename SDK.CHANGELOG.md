@@ -1,3 +1,7 @@
+### 3.7.233.0 (2022-03-18 18:12 UTC)
+* Glue (3.7.15.0)
+	* Added 9 new APIs for AWS Glue Interactive Sessions: ListSessions, StopSession, CreateSession, GetSession, DeleteSession, RunStatement, GetStatement, ListStatements, CancelStatement
+
 ### 3.7.232.0 (2022-03-17 13:37 UTC)
 * Lambda (3.7.10.3)
 	* Add IsSet<property-name> methods for list properties on the UpdateFunctionConfiguration operation. This allows users to tell the SDK when they want clear out the values of collection properties like SubnetIds.
