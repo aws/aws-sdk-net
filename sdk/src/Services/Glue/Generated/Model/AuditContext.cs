@@ -29,14 +29,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// 
+    /// A structure containing information for audit.
     /// </summary>
     public partial class AuditContext
     {
         private string _additionalAuditContext;
+        private bool? _allColumnsRequested;
+        private List<string> _requestedColumns = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property AdditionalAuditContext.
+        /// Gets and sets the property AdditionalAuditContext. 
+        /// <para>
+        /// The context for the audit..
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]
         public string AdditionalAuditContext
@@ -49,6 +54,42 @@ namespace Amazon.Glue.Model
         internal bool IsSetAdditionalAuditContext()
         {
             return this._additionalAuditContext != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AllColumnsRequested. 
+        /// <para>
+        /// All columns request for audit.
+        /// </para>
+        /// </summary>
+        public bool AllColumnsRequested
+        {
+            get { return this._allColumnsRequested.GetValueOrDefault(); }
+            set { this._allColumnsRequested = value; }
+        }
+
+        // Check to see if AllColumnsRequested property is set
+        internal bool IsSetAllColumnsRequested()
+        {
+            return this._allColumnsRequested.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RequestedColumns. 
+        /// <para>
+        /// The requested columns for audit.
+        /// </para>
+        /// </summary>
+        public List<string> RequestedColumns
+        {
+            get { return this._requestedColumns; }
+            set { this._requestedColumns = value; }
+        }
+
+        // Check to see if RequestedColumns property is set
+        internal bool IsSetRequestedColumns()
+        {
+            return this._requestedColumns != null && this._requestedColumns.Count > 0; 
         }
 
     }

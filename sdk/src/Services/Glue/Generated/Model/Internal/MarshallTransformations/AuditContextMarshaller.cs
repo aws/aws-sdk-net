@@ -51,6 +51,23 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.AdditionalAuditContext);
             }
 
+            if(requestObject.IsSetAllColumnsRequested())
+            {
+                context.Writer.WritePropertyName("AllColumnsRequested");
+                context.Writer.Write(requestObject.AllColumnsRequested);
+            }
+
+            if(requestObject.IsSetRequestedColumns())
+            {
+                context.Writer.WritePropertyName("RequestedColumns");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectRequestedColumnsListValue in requestObject.RequestedColumns)
+                {
+                        context.Writer.Write(requestObjectRequestedColumnsListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
         }
 
         /// <summary>

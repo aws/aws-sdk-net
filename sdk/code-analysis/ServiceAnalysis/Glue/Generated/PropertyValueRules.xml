@@ -122,6 +122,17 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.CancelStatementRequest.RequestOrigin</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\.\-_A-Za-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.CancelStatementRequest.SessionId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.CheckSchemaVersionValidityRequest.SchemaDefinition</property>
     <min>1</min>
     <max>170000</max>
@@ -319,7 +330,7 @@
     <property>Amazon.Glue.Model.CreateRegistryResponse.RegistryArn</property>
     <min>1</min>
     <max>10240</max>
-    <pattern>arn:aws:glue:.*</pattern>
+    <pattern>arn:(aws|aws-us-gov|aws-cn):glue:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.CreateRegistryResponse.RegistryName</property>
@@ -363,7 +374,7 @@
     <property>Amazon.Glue.Model.CreateSchemaResponse.RegistryArn</property>
     <min>1</min>
     <max>10240</max>
-    <pattern>arn:aws:glue:.*</pattern>
+    <pattern>arn:(aws|aws-us-gov|aws-cn):glue:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.CreateSchemaResponse.RegistryName</property>
@@ -375,7 +386,7 @@
     <property>Amazon.Glue.Model.CreateSchemaResponse.SchemaArn</property>
     <min>1</min>
     <max>10240</max>
-    <pattern>arn:aws:glue:.*</pattern>
+    <pattern>arn:(aws|aws-us-gov|aws-cn):glue:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.CreateSchemaResponse.SchemaCheckpoint</property>
@@ -403,6 +414,47 @@
     <property>Amazon.Glue.Model.CreateSecurityConfigurationResponse.Name</property>
     <min>1</min>
     <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.CreateSessionRequest.Description</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.CreateSessionRequest.GlueVersion</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^\w+\.\w+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.CreateSessionRequest.Id</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.CreateSessionRequest.IdleTimeout</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.CreateSessionRequest.RequestOrigin</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\.\-_A-Za-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.CreateSessionRequest.Role</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws[^:]*:iam::[0-9]*:role/.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.CreateSessionRequest.SecurityConfiguration</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.CreateSessionRequest.Timeout</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.CreateTableRequest.CatalogId</property>
@@ -599,7 +651,7 @@
     <property>Amazon.Glue.Model.DeleteRegistryResponse.RegistryArn</property>
     <min>1</min>
     <max>10240</max>
-    <pattern>arn:aws:glue:.*</pattern>
+    <pattern>arn:(aws|aws-us-gov|aws-cn):glue:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.DeleteRegistryResponse.RegistryName</property>
@@ -616,13 +668,13 @@
     <property>Amazon.Glue.Model.DeleteResourcePolicyRequest.ResourceArn</property>
     <min>1</min>
     <max>10240</max>
-    <pattern>arn:aws:glue:.*</pattern>
+    <pattern>arn:(aws|aws-us-gov|aws-cn):glue:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.DeleteSchemaResponse.SchemaArn</property>
     <min>1</min>
     <max>10240</max>
-    <pattern>arn:aws:glue:.*</pattern>
+    <pattern>arn:(aws|aws-us-gov|aws-cn):glue:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.DeleteSchemaResponse.SchemaName</property>
@@ -638,6 +690,22 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.DeleteSecurityConfigurationRequest.Name</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.DeleteSessionRequest.Id</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.DeleteSessionRequest.RequestOrigin</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\.\-_A-Za-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.DeleteSessionResponse.Id</property>
     <min>1</min>
     <max>255</max>
   </property-value-rule>
@@ -1018,7 +1086,7 @@
     <property>Amazon.Glue.Model.GetRegistryResponse.RegistryArn</property>
     <min>1</min>
     <max>10240</max>
-    <pattern>arn:aws:glue:.*</pattern>
+    <pattern>arn:(aws|aws-us-gov|aws-cn):glue:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.GetRegistryResponse.RegistryName</property>
@@ -1035,7 +1103,7 @@
     <property>Amazon.Glue.Model.GetResourcePolicyRequest.ResourceArn</property>
     <min>1</min>
     <max>10240</max>
-    <pattern>arn:aws:glue:.*</pattern>
+    <pattern>arn:(aws|aws-us-gov|aws-cn):glue:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.GetResourcePolicyResponse.PolicyHash</property>
@@ -1045,7 +1113,6 @@
   <property-value-rule>
     <property>Amazon.Glue.Model.GetResourcePolicyResponse.PolicyInJson</property>
     <min>2</min>
-    <max>10240</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.GetSchemaResponse.Description</property>
@@ -1066,7 +1133,7 @@
     <property>Amazon.Glue.Model.GetSchemaResponse.RegistryArn</property>
     <min>1</min>
     <max>10240</max>
-    <pattern>arn:aws:glue:.*</pattern>
+    <pattern>arn:(aws|aws-us-gov|aws-cn):glue:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.GetSchemaResponse.RegistryName</property>
@@ -1078,7 +1145,7 @@
     <property>Amazon.Glue.Model.GetSchemaResponse.SchemaArn</property>
     <min>1</min>
     <max>10240</max>
-    <pattern>arn:aws:glue:.*</pattern>
+    <pattern>arn:(aws|aws-us-gov|aws-cn):glue:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.GetSchemaResponse.SchemaCheckpoint</property>
@@ -1101,7 +1168,7 @@
     <property>Amazon.Glue.Model.GetSchemaByDefinitionResponse.SchemaArn</property>
     <min>1</min>
     <max>10240</max>
-    <pattern>arn:aws:glue:.*</pattern>
+    <pattern>arn:(aws|aws-us-gov|aws-cn):glue:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.GetSchemaByDefinitionResponse.SchemaVersionId</property>
@@ -1119,7 +1186,7 @@
     <property>Amazon.Glue.Model.GetSchemaVersionResponse.SchemaArn</property>
     <min>1</min>
     <max>10240</max>
-    <pattern>arn:aws:glue:.*</pattern>
+    <pattern>arn:(aws|aws-us-gov|aws-cn):glue:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.GetSchemaVersionResponse.SchemaDefinition</property>
@@ -1153,6 +1220,28 @@
     <property>Amazon.Glue.Model.GetSecurityConfigurationsRequest.MaxResults</property>
     <min>1</min>
     <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.GetSessionRequest.Id</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.GetSessionRequest.RequestOrigin</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\.\-_A-Za-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.GetStatementRequest.RequestOrigin</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\.\-_A-Za-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.GetStatementRequest.SessionId</property>
+    <min>1</min>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.GetTableRequest.CatalogId</property>
@@ -1245,7 +1334,7 @@
     <property>Amazon.Glue.Model.GetTagsRequest.ResourceArn</property>
     <min>1</min>
     <max>10240</max>
-    <pattern>arn:aws:glue:.*</pattern>
+    <pattern>arn:(aws|aws-us-gov|aws-cn):glue:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.GetTriggerRequest.Name</property>
@@ -1433,6 +1522,44 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.ListSessionsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.ListSessionsRequest.NextToken</property>
+    <max>400000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.ListSessionsRequest.RequestOrigin</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\.\-_A-Za-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.ListSessionsResponse.NextToken</property>
+    <max>400000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.ListStatementsRequest.NextToken</property>
+    <max>400000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.ListStatementsRequest.RequestOrigin</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\.\-_A-Za-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.ListStatementsRequest.SessionId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.ListStatementsResponse.NextToken</property>
+    <max>400000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.ListTriggersRequest.DependentJobName</property>
     <min>1</min>
     <max>255</max>
@@ -1460,13 +1587,12 @@
   <property-value-rule>
     <property>Amazon.Glue.Model.PutResourcePolicyRequest.PolicyInJson</property>
     <min>2</min>
-    <max>10240</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.PutResourcePolicyRequest.ResourceArn</property>
     <min>1</min>
     <max>10240</max>
-    <pattern>arn:aws:glue:.*</pattern>
+    <pattern>arn:(aws|aws-us-gov|aws-cn):glue:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.PutResourcePolicyResponse.PolicyHash</property>
@@ -1501,7 +1627,7 @@
     <property>Amazon.Glue.Model.PutSchemaVersionMetadataResponse.SchemaArn</property>
     <min>1</min>
     <max>10240</max>
-    <pattern>arn:aws:glue:.*</pattern>
+    <pattern>arn:(aws|aws-us-gov|aws-cn):glue:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.PutSchemaVersionMetadataResponse.SchemaName</property>
@@ -1592,7 +1718,7 @@
     <property>Amazon.Glue.Model.RemoveSchemaVersionMetadataResponse.SchemaArn</property>
     <min>1</min>
     <max>10240</max>
-    <pattern>arn:aws:glue:.*</pattern>
+    <pattern>arn:(aws|aws-us-gov|aws-cn):glue:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.RemoveSchemaVersionMetadataResponse.SchemaName</property>
@@ -1623,6 +1749,21 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.ResumeWorkflowRunResponse.RunId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.RunStatementRequest.Code</property>
+    <max>68000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.RunStatementRequest.RequestOrigin</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\.\-_A-Za-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.RunStatementRequest.SessionId</property>
     <min>1</min>
     <max>255</max>
   </property-value-rule>
@@ -1767,6 +1908,22 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.StopSessionRequest.Id</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.StopSessionRequest.RequestOrigin</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\.\-_A-Za-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.StopSessionResponse.Id</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.StopTriggerRequest.Name</property>
     <min>1</min>
     <max>255</max>
@@ -1790,13 +1947,13 @@
     <property>Amazon.Glue.Model.TagResourceRequest.ResourceArn</property>
     <min>1</min>
     <max>10240</max>
-    <pattern>arn:aws:glue:.*</pattern>
+    <pattern>arn:(aws|aws-us-gov|aws-cn):glue:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.UntagResourceRequest.ResourceArn</property>
     <min>1</min>
     <max>10240</max>
-    <pattern>arn:aws:glue:.*</pattern>
+    <pattern>arn:(aws|aws-us-gov|aws-cn):glue:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.UpdateBlueprintRequest.BlueprintLocation</property>
@@ -1959,7 +2116,7 @@
     <property>Amazon.Glue.Model.UpdateRegistryResponse.RegistryArn</property>
     <min>1</min>
     <max>10240</max>
-    <pattern>arn:aws:glue:.*</pattern>
+    <pattern>arn:(aws|aws-us-gov|aws-cn):glue:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.UpdateRegistryResponse.RegistryName</property>
@@ -1982,7 +2139,7 @@
     <property>Amazon.Glue.Model.UpdateSchemaResponse.SchemaArn</property>
     <min>1</min>
     <max>10240</max>
-    <pattern>arn:aws:glue:.*</pattern>
+    <pattern>arn:(aws|aws-us-gov|aws-cn):glue:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.UpdateSchemaResponse.SchemaName</property>
@@ -2602,7 +2759,6 @@
   <property-value-rule>
     <property>Amazon.Glue.Model.GluePolicy.PolicyInJson</property>
     <min>2</min>
-    <max>10240</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.GlueTable.CatalogId</property>
@@ -2671,6 +2827,10 @@
   <property-value-rule>
     <property>Amazon.Glue.Model.JobCommand.PythonVersion</property>
     <pattern>^[2-3]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.JobCommand.ScriptLocation</property>
+    <max>400000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.JobRun.GlueVersion</property>
@@ -2922,7 +3082,7 @@
     <property>Amazon.Glue.Model.RegistryId.RegistryArn</property>
     <min>1</min>
     <max>10240</max>
-    <pattern>arn:aws:glue:.*</pattern>
+    <pattern>arn:(aws|aws-us-gov|aws-cn):glue:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.RegistryId.RegistryName</property>
@@ -2939,7 +3099,7 @@
     <property>Amazon.Glue.Model.RegistryListItem.RegistryArn</property>
     <min>1</min>
     <max>10240</max>
-    <pattern>arn:aws:glue:.*</pattern>
+    <pattern>arn:(aws|aws-us-gov|aws-cn):glue:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.RegistryListItem.RegistryName</property>
@@ -2976,7 +3136,7 @@
     <property>Amazon.Glue.Model.SchemaId.SchemaArn</property>
     <min>1</min>
     <max>10240</max>
-    <pattern>arn:aws:glue:.*</pattern>
+    <pattern>arn:(aws|aws-us-gov|aws-cn):glue:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.SchemaId.SchemaName</property>
@@ -2999,7 +3159,7 @@
     <property>Amazon.Glue.Model.SchemaListItem.SchemaArn</property>
     <min>1</min>
     <max>10240</max>
-    <pattern>arn:aws:glue:.*</pattern>
+    <pattern>arn:(aws|aws-us-gov|aws-cn):glue:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.SchemaListItem.SchemaName</property>
@@ -3027,7 +3187,7 @@
     <property>Amazon.Glue.Model.SchemaVersionListItem.SchemaArn</property>
     <min>1</min>
     <max>10240</max>
-    <pattern>arn:aws:glue:.*</pattern>
+    <pattern>arn:(aws|aws-us-gov|aws-cn):glue:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.SchemaVersionListItem.SchemaVersionId</property>
@@ -3068,6 +3228,47 @@
     <property>Amazon.Glue.Model.SerDeInfo.SerializationLibrary</property>
     <min>1</min>
     <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.Session.Description</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.Session.ErrorMessage</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.Session.GlueVersion</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^\w+\.\w+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.Session.Id</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.Session.Role</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws[^:]*:iam::[0-9]*:role/.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.Session.SecurityConfiguration</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.SessionCommand.Name</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.SessionCommand.PythonVersion</property>
+    <pattern>^[2-3]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.SortCriterion.FieldName</property>

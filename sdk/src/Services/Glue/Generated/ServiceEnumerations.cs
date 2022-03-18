@@ -2311,6 +2311,72 @@ namespace Amazon.Glue
 
 
     /// <summary>
+    /// Constants used for properties of type SessionStatus.
+    /// </summary>
+    public class SessionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for SessionStatus
+        /// </summary>
+        public static readonly SessionStatus FAILED = new SessionStatus("FAILED");
+        /// <summary>
+        /// Constant PROVISIONING for SessionStatus
+        /// </summary>
+        public static readonly SessionStatus PROVISIONING = new SessionStatus("PROVISIONING");
+        /// <summary>
+        /// Constant READY for SessionStatus
+        /// </summary>
+        public static readonly SessionStatus READY = new SessionStatus("READY");
+        /// <summary>
+        /// Constant STOPPED for SessionStatus
+        /// </summary>
+        public static readonly SessionStatus STOPPED = new SessionStatus("STOPPED");
+        /// <summary>
+        /// Constant STOPPING for SessionStatus
+        /// </summary>
+        public static readonly SessionStatus STOPPING = new SessionStatus("STOPPING");
+        /// <summary>
+        /// Constant TIMEOUT for SessionStatus
+        /// </summary>
+        public static readonly SessionStatus TIMEOUT = new SessionStatus("TIMEOUT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SessionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SessionStatus FindValue(string value)
+        {
+            return FindValue<SessionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SessionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Sort.
     /// </summary>
     public class Sort : ConstantClass
@@ -2404,6 +2470,72 @@ namespace Amazon.Glue
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SortDirectionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type StatementState.
+    /// </summary>
+    public class StatementState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AVAILABLE for StatementState
+        /// </summary>
+        public static readonly StatementState AVAILABLE = new StatementState("AVAILABLE");
+        /// <summary>
+        /// Constant CANCELLED for StatementState
+        /// </summary>
+        public static readonly StatementState CANCELLED = new StatementState("CANCELLED");
+        /// <summary>
+        /// Constant CANCELLING for StatementState
+        /// </summary>
+        public static readonly StatementState CANCELLING = new StatementState("CANCELLING");
+        /// <summary>
+        /// Constant ERROR for StatementState
+        /// </summary>
+        public static readonly StatementState ERROR = new StatementState("ERROR");
+        /// <summary>
+        /// Constant RUNNING for StatementState
+        /// </summary>
+        public static readonly StatementState RUNNING = new StatementState("RUNNING");
+        /// <summary>
+        /// Constant WAITING for StatementState
+        /// </summary>
+        public static readonly StatementState WAITING = new StatementState("WAITING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StatementState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StatementState FindValue(string value)
+        {
+            return FindValue<StatementState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StatementState(string value)
         {
             return FindValue(value);
         }

@@ -171,6 +171,11 @@ namespace Amazon.Glue.Model
         IListSchemaVersionsPaginator ListSchemaVersions(ListSchemaVersionsRequest request);
 
         /// <summary>
+        /// Paginator for ListSessions operation
+        ///</summary>
+        IListSessionsPaginator ListSessions(ListSessionsRequest request);
+
+        /// <summary>
         /// Paginator for ListTriggers operation
         ///</summary>
         IListTriggersPaginator ListTriggers(ListTriggersRequest request);

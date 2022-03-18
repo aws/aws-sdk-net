@@ -1290,6 +1290,83 @@ namespace Amazon.Glue
 
         #endregion
         
+        #region  CancelStatement
+
+
+        /// <summary>
+        /// Cancels the statement..
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelStatement service method.</param>
+        /// 
+        /// <returns>The response from the CancelStatement service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.IllegalSessionStateException">
+        /// The session is in an invalid state to perform a requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CancelStatement">REST API Reference for CancelStatement Operation</seealso>
+        public virtual CancelStatementResponse CancelStatement(CancelStatementRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelStatementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelStatementResponseUnmarshaller.Instance;
+
+            return Invoke<CancelStatementResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Cancels the statement..
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelStatement service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CancelStatement service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.IllegalSessionStateException">
+        /// The session is in an invalid state to perform a requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CancelStatement">REST API Reference for CancelStatement Operation</seealso>
+        public virtual Task<CancelStatementResponse> CancelStatementAsync(CancelStatementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelStatementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelStatementResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CancelStatementResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CheckSchemaVersionValidity
 
 
@@ -2487,6 +2564,95 @@ namespace Amazon.Glue
             options.ResponseUnmarshaller = CreateSecurityConfigurationResponseUnmarshaller.Instance;
             
             return InvokeAsync<CreateSecurityConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateSession
+
+
+        /// <summary>
+        /// Creates a new session.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSession service method.</param>
+        /// 
+        /// <returns>The response from the CreateSession service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.AlreadyExistsException">
+        /// A resource to be created or added already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.IdempotentParameterMismatchException">
+        /// The same unique identifier was associated with two different records.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNumberLimitExceededException">
+        /// A resource numerical limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ValidationException">
+        /// A value could not be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateSession">REST API Reference for CreateSession Operation</seealso>
+        public virtual CreateSessionResponse CreateSession(CreateSessionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateSessionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateSessionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a new session.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSession service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateSession service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.AlreadyExistsException">
+        /// A resource to be created or added already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.IdempotentParameterMismatchException">
+        /// The same unique identifier was associated with two different records.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNumberLimitExceededException">
+        /// A resource numerical limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ValidationException">
+        /// A value could not be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateSession">REST API Reference for CreateSession Operation</seealso>
+        public virtual Task<CreateSessionResponse> CreateSessionAsync(CreateSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateSessionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateSessionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4068,6 +4234,83 @@ namespace Amazon.Glue
             options.ResponseUnmarshaller = DeleteSecurityConfigurationResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteSecurityConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteSession
+
+
+        /// <summary>
+        /// Deletes the session.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSession service method.</param>
+        /// 
+        /// <returns>The response from the DeleteSession service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.IllegalSessionStateException">
+        /// The session is in an invalid state to perform a requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteSession">REST API Reference for DeleteSession Operation</seealso>
+        public virtual DeleteSessionResponse DeleteSession(DeleteSessionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSessionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteSessionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes the session.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSession service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteSession service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.IllegalSessionStateException">
+        /// The session is in an invalid state to perform a requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteSession">REST API Reference for DeleteSession Operation</seealso>
+        public virtual Task<DeleteSessionResponse> DeleteSessionAsync(DeleteSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSessionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteSessionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -7245,6 +7488,154 @@ namespace Amazon.Glue
 
         #endregion
         
+        #region  GetSession
+
+
+        /// <summary>
+        /// Retrieves the session.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSession service method.</param>
+        /// 
+        /// <returns>The response from the GetSession service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetSession">REST API Reference for GetSession Operation</seealso>
+        public virtual GetSessionResponse GetSession(GetSessionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSessionResponseUnmarshaller.Instance;
+
+            return Invoke<GetSessionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves the session.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSession service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetSession service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetSession">REST API Reference for GetSession Operation</seealso>
+        public virtual Task<GetSessionResponse> GetSessionAsync(GetSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSessionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetSessionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetStatement
+
+
+        /// <summary>
+        /// Retrieves the statement.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetStatement service method.</param>
+        /// 
+        /// <returns>The response from the GetStatement service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.IllegalSessionStateException">
+        /// The session is in an invalid state to perform a requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetStatement">REST API Reference for GetStatement Operation</seealso>
+        public virtual GetStatementResponse GetStatement(GetStatementRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetStatementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetStatementResponseUnmarshaller.Instance;
+
+            return Invoke<GetStatementResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves the statement.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetStatement service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetStatement service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.IllegalSessionStateException">
+        /// The session is in an invalid state to perform a requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetStatement">REST API Reference for GetStatement Operation</seealso>
+        public virtual Task<GetStatementResponse> GetStatementAsync(GetStatementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetStatementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetStatementResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetStatementResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetTable
 
 
@@ -8992,6 +9383,148 @@ namespace Amazon.Glue
 
         #endregion
         
+        #region  ListSessions
+
+
+        /// <summary>
+        /// Retrieve a session..
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSessions service method.</param>
+        /// 
+        /// <returns>The response from the ListSessions service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListSessions">REST API Reference for ListSessions Operation</seealso>
+        public virtual ListSessionsResponse ListSessions(ListSessionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSessionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSessionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListSessionsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieve a session..
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSessions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListSessions service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListSessions">REST API Reference for ListSessions Operation</seealso>
+        public virtual Task<ListSessionsResponse> ListSessionsAsync(ListSessionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSessionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSessionsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListSessionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListStatements
+
+
+        /// <summary>
+        /// Lists statements for the session.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListStatements service method.</param>
+        /// 
+        /// <returns>The response from the ListStatements service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.IllegalSessionStateException">
+        /// The session is in an invalid state to perform a requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListStatements">REST API Reference for ListStatements Operation</seealso>
+        public virtual ListStatementsResponse ListStatements(ListStatementsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListStatementsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListStatementsResponseUnmarshaller.Instance;
+
+            return Invoke<ListStatementsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists statements for the session.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListStatements service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListStatements service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.IllegalSessionStateException">
+        /// The session is in an invalid state to perform a requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListStatements">REST API Reference for ListStatements Operation</seealso>
+        public virtual Task<ListStatementsResponse> ListStatementsAsync(ListStatementsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListStatementsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListStatementsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListStatementsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListTriggers
 
 
@@ -9801,6 +10334,95 @@ namespace Amazon.Glue
             options.ResponseUnmarshaller = ResumeWorkflowRunResponseUnmarshaller.Instance;
             
             return InvokeAsync<ResumeWorkflowRunResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  RunStatement
+
+
+        /// <summary>
+        /// Executes the statement.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RunStatement service method.</param>
+        /// 
+        /// <returns>The response from the RunStatement service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.IllegalSessionStateException">
+        /// The session is in an invalid state to perform a requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNumberLimitExceededException">
+        /// A resource numerical limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ValidationException">
+        /// A value could not be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/RunStatement">REST API Reference for RunStatement Operation</seealso>
+        public virtual RunStatementResponse RunStatement(RunStatementRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RunStatementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RunStatementResponseUnmarshaller.Instance;
+
+            return Invoke<RunStatementResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Executes the statement.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RunStatement service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RunStatement service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.IllegalSessionStateException">
+        /// The session is in an invalid state to perform a requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNumberLimitExceededException">
+        /// A resource numerical limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ValidationException">
+        /// A value could not be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/RunStatement">REST API Reference for RunStatement Operation</seealso>
+        public virtual Task<RunStatementResponse> RunStatementAsync(RunStatementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RunStatementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RunStatementResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<RunStatementResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -10886,6 +11508,83 @@ namespace Amazon.Glue
             options.ResponseUnmarshaller = StopCrawlerScheduleResponseUnmarshaller.Instance;
             
             return InvokeAsync<StopCrawlerScheduleResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StopSession
+
+
+        /// <summary>
+        /// Stops the session.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopSession service method.</param>
+        /// 
+        /// <returns>The response from the StopSession service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.IllegalSessionStateException">
+        /// The session is in an invalid state to perform a requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StopSession">REST API Reference for StopSession Operation</seealso>
+        public virtual StopSessionResponse StopSession(StopSessionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopSessionResponseUnmarshaller.Instance;
+
+            return Invoke<StopSessionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Stops the session.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopSession service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopSession service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.IllegalSessionStateException">
+        /// The session is in an invalid state to perform a requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StopSession">REST API Reference for StopSession Operation</seealso>
+        public virtual Task<StopSessionResponse> StopSessionAsync(StopSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopSessionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StopSessionResponse>(request, options, cancellationToken);
         }
 
         #endregion

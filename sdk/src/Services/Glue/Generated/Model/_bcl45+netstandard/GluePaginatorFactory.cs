@@ -268,6 +268,14 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
+        /// Paginator for ListSessions operation
+        ///</summary>
+        public IListSessionsPaginator ListSessions(ListSessionsRequest request) 
+        {
+            return new ListSessionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListTriggers operation
         ///</summary>
         public IListTriggersPaginator ListTriggers(ListTriggersRequest request) 

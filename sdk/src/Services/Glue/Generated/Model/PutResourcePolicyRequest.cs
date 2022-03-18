@@ -120,7 +120,7 @@ namespace Amazon.Glue.Model
         /// Contains the policy document to set, in JSON format.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=2, Max=10240)]
+        [AWSProperty(Required=true, Min=2)]
         public string PolicyInJson
         {
             get { return this._policyInJson; }

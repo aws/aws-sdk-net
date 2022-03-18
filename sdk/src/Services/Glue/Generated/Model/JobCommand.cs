@@ -82,6 +82,7 @@ namespace Amazon.Glue.Model
         /// a job.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=400000)]
         public string ScriptLocation
         {
             get { return this._scriptLocation; }
