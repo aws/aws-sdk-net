@@ -1,3 +1,15 @@
+### 3.7.234.0 (2022-03-21 20:15 UTC)
+* ChimeSDKMeetings (3.7.5.0)
+	* Add support for media replication to link multiple WebRTC media sessions together to reach larger and global audiences. Participants connected to a replica session can be granted access to join the primary session and can switch sessions with their existing WebRTC connection
+* ECR (3.7.4.0)
+	* This release includes a fix in the DescribeImageScanFindings paginated output.
+* MediaConnect (3.7.5.0)
+	* This release adds support for selecting a maintenance window.
+* QuickSight (3.7.10.0)
+	* AWS QuickSight Service Features - Expand public API support for group management.
+* RAM (3.7.3.23)
+	* Document improvements to the RAM API operations and parameter descriptions.
+
 ### 3.7.233.0 (2022-03-18 18:12 UTC)
 * Glue (3.7.15.0)
 	* Added 9 new APIs for AWS Glue Interactive Sessions: ListSessions, StopSession, CreateSession, GetSession, DeleteSession, RunStatement, GetStatement, ListStatements, CancelStatement
