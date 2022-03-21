@@ -1189,8 +1189,8 @@ namespace Amazon.RAM
 
 
         /// <summary>
-        /// Lists the resources that you added to a resource shares or the resources that are
-        /// shared with you.
+        /// Lists the resources that you added to a resource share or the resources that are shared
+        /// with you.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListResources service method.</param>
         /// 

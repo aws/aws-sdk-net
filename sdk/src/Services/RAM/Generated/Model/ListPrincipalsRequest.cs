@@ -170,11 +170,12 @@ namespace Amazon.RAM.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b> <code>SELF</code> </b> – resources that you are sharing
+        ///  <b> <code>SELF</code> </b> – principals that your account is sharing resources with
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>OTHER-ACCOUNTS</code> </b> – resources that other accounts share with you
+        ///  <b> <code>OTHER-ACCOUNTS</code> </b> – principals that are sharing resources with
+        /// your account
         /// </para>
         ///  </li> </ul>
         /// </summary>
