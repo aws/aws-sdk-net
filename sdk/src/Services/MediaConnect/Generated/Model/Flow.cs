@@ -38,6 +38,7 @@ namespace Amazon.MediaConnect.Model
         private string _egressIp;
         private List<Entitlement> _entitlements = new List<Entitlement>();
         private string _flowArn;
+        private Maintenance _maintenance;
         private List<MediaStream> _mediaStreams = new List<MediaStream>();
         private string _name;
         private List<Output> _outputs = new List<Output>();
@@ -128,6 +129,21 @@ namespace Amazon.MediaConnect.Model
         internal bool IsSetFlowArn()
         {
             return this._flowArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Maintenance.
+        /// </summary>
+        public Maintenance Maintenance
+        {
+            get { return this._maintenance; }
+            set { this._maintenance = value; }
+        }
+
+        // Check to see if Maintenance property is set
+        internal bool IsSetMaintenance()
+        {
+            return this._maintenance != null;
         }
 
         /// <summary>

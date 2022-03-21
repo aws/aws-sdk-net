@@ -68,6 +68,17 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetMaintenance())
+                {
+                    context.Writer.WritePropertyName("maintenance");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = UpdateMaintenanceMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Maintenance, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetSourceFailoverConfig())
                 {
                     context.Writer.WritePropertyName("sourceFailoverConfig");

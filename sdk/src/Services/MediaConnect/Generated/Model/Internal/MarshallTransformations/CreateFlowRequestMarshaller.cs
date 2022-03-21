@@ -87,6 +87,17 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetMaintenance())
+                {
+                    context.Writer.WritePropertyName("maintenance");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AddMaintenanceMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Maintenance, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetMediaStreams())
                 {
                     context.Writer.WritePropertyName("mediaStreams");

@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ListedFlow Object
+    /// Response Unmarshaller for Maintenance Object
     /// </summary>  
-    public class ListedFlowUnmarshaller : IUnmarshaller<ListedFlow, XmlUnmarshallerContext>, IUnmarshaller<ListedFlow, JsonUnmarshallerContext>
+    public class MaintenanceUnmarshaller : IUnmarshaller<Maintenance, XmlUnmarshallerContext>, IUnmarshaller<Maintenance, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ListedFlow IUnmarshaller<ListedFlow, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        Maintenance IUnmarshaller<Maintenance, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,57 +53,39 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ListedFlow Unmarshall(JsonUnmarshallerContext context)
+        public Maintenance Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ListedFlow unmarshalledObject = new ListedFlow();
+            Maintenance unmarshalledObject = new Maintenance();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("availabilityZone", targetDepth))
+                if (context.TestExpression("maintenanceDay", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AvailabilityZone = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MaintenanceDay = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("description", targetDepth))
+                if (context.TestExpression("maintenanceDeadline", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MaintenanceDeadline = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("flowArn", targetDepth))
+                if (context.TestExpression("maintenanceScheduledDate", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FlowArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MaintenanceScheduledDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("maintenance", targetDepth))
-                {
-                    var unmarshaller = MaintenanceUnmarshaller.Instance;
-                    unmarshalledObject.Maintenance = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("name", targetDepth))
+                if (context.TestExpression("maintenanceStartHour", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("sourceType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SourceType = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("status", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MaintenanceStartHour = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -112,12 +94,12 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
         }
 
 
-        private static ListedFlowUnmarshaller _instance = new ListedFlowUnmarshaller();        
+        private static MaintenanceUnmarshaller _instance = new MaintenanceUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ListedFlowUnmarshaller Instance
+        public static MaintenanceUnmarshaller Instance
         {
             get
             {

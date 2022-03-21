@@ -37,6 +37,7 @@ namespace Amazon.MediaConnect.Model
     {
         private string _availabilityZone;
         private List<GrantEntitlementRequest> _entitlements = new List<GrantEntitlementRequest>();
+        private AddMaintenance _maintenance;
         private List<AddMediaStreamRequest> _mediaStreams = new List<AddMediaStreamRequest>();
         private string _name;
         private List<AddOutputRequest> _outputs = new List<AddOutputRequest>();
@@ -76,6 +77,21 @@ namespace Amazon.MediaConnect.Model
         internal bool IsSetEntitlements()
         {
             return this._entitlements != null && this._entitlements.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Maintenance.
+        /// </summary>
+        public AddMaintenance Maintenance
+        {
+            get { return this._maintenance; }
+            set { this._maintenance = value; }
+        }
+
+        // Check to see if Maintenance property is set
+        internal bool IsSetMaintenance()
+        {
+            return this._maintenance != null;
         }
 
         /// <summary>

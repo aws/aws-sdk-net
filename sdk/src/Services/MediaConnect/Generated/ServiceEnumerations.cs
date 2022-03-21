@@ -457,6 +457,76 @@ namespace Amazon.MediaConnect
 
 
     /// <summary>
+    /// Constants used for properties of type MaintenanceDay.
+    /// </summary>
+    public class MaintenanceDay : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Friday for MaintenanceDay
+        /// </summary>
+        public static readonly MaintenanceDay Friday = new MaintenanceDay("Friday");
+        /// <summary>
+        /// Constant Monday for MaintenanceDay
+        /// </summary>
+        public static readonly MaintenanceDay Monday = new MaintenanceDay("Monday");
+        /// <summary>
+        /// Constant Saturday for MaintenanceDay
+        /// </summary>
+        public static readonly MaintenanceDay Saturday = new MaintenanceDay("Saturday");
+        /// <summary>
+        /// Constant Sunday for MaintenanceDay
+        /// </summary>
+        public static readonly MaintenanceDay Sunday = new MaintenanceDay("Sunday");
+        /// <summary>
+        /// Constant Thursday for MaintenanceDay
+        /// </summary>
+        public static readonly MaintenanceDay Thursday = new MaintenanceDay("Thursday");
+        /// <summary>
+        /// Constant Tuesday for MaintenanceDay
+        /// </summary>
+        public static readonly MaintenanceDay Tuesday = new MaintenanceDay("Tuesday");
+        /// <summary>
+        /// Constant Wednesday for MaintenanceDay
+        /// </summary>
+        public static readonly MaintenanceDay Wednesday = new MaintenanceDay("Wednesday");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MaintenanceDay(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MaintenanceDay FindValue(string value)
+        {
+            return FindValue<MaintenanceDay>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MaintenanceDay(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type MediaStreamType.
     /// </summary>
     public class MediaStreamType : ConstantClass
