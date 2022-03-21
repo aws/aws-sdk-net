@@ -100,7 +100,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Namespace. 
         /// <para>
-        /// The namespace. Currently, you should set this to <code>default</code>.
+        /// The namespace that you want the user to be a part of.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=64)]

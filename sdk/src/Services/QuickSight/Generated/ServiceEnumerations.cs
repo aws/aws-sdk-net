@@ -1311,6 +1311,98 @@ namespace Amazon.QuickSight
 
 
     /// <summary>
+    /// Constants used for properties of type GroupFilterAttribute.
+    /// </summary>
+    public class GroupFilterAttribute : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant GROUP_NAME for GroupFilterAttribute
+        /// </summary>
+        public static readonly GroupFilterAttribute GROUP_NAME = new GroupFilterAttribute("GROUP_NAME");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GroupFilterAttribute(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GroupFilterAttribute FindValue(string value)
+        {
+            return FindValue<GroupFilterAttribute>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GroupFilterAttribute(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type GroupFilterOperator.
+    /// </summary>
+    public class GroupFilterOperator : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant StartsWith for GroupFilterOperator
+        /// </summary>
+        public static readonly GroupFilterOperator StartsWith = new GroupFilterOperator("StartsWith");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GroupFilterOperator(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GroupFilterOperator FindValue(string value)
+        {
+            return FindValue<GroupFilterOperator>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GroupFilterOperator(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type IdentityStore.
     /// </summary>
     public class IdentityStore : ConstantClass

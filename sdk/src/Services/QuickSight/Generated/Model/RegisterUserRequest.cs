@@ -122,7 +122,7 @@ namespace Amazon.QuickSight.Model
         /// A set of custom permissions includes any combination of these restrictions. Currently,
         /// you need to create the profile names for custom permission sets by using the Amazon
         /// QuickSight console. Then, you use the <code>RegisterUser</code> API operation to assign
-        /// the named set of permissions to a QuickSight user. 
+        /// the named set of permissions to a Amazon QuickSight user. 
         /// </para>
         ///  
         /// <para>

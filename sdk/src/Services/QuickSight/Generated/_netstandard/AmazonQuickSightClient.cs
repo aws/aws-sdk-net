@@ -810,7 +810,7 @@ namespace Amazon.QuickSight
         /// 
         ///  
         /// <para>
-        /// The permissions resource is <code>arn:aws:quicksight:us-east-1:<i>&lt;relevant-aws-account-id&gt;</i>:group/default/<i>&lt;group-name&gt;</i>
+        /// The permissions resource is <code>arn:aws:quicksight:&lt;your-region&gt;:<i>&lt;relevant-aws-account-id&gt;</i>:group/default/<i>&lt;group-name&gt;</i>
         /// </code>.
         /// </para>
         ///  
@@ -3242,6 +3242,66 @@ namespace Amazon.QuickSight
             options.ResponseUnmarshaller = DescribeGroupResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeGroupMembership
+
+        internal virtual DescribeGroupMembershipResponse DescribeGroupMembership(DescribeGroupMembershipRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeGroupMembershipRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeGroupMembershipResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeGroupMembershipResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Use the <code>DescribeGroupMembership</code> operation to determine if a user is a
+        /// member of the specified group. If the user exists and is a member of the specified
+        /// group, an associated <code>GroupMember</code> object is returned.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeGroupMembership service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeGroupMembership service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.PreconditionNotMetException">
+        /// One or more preconditions aren't met.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceUnavailableException">
+        /// This resource is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeGroupMembership">REST API Reference for DescribeGroupMembership Operation</seealso>
+        public virtual Task<DescribeGroupMembershipResponse> DescribeGroupMembershipAsync(DescribeGroupMembershipRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeGroupMembershipRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeGroupMembershipResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeGroupMembershipResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5870,6 +5930,68 @@ namespace Amazon.QuickSight
             options.ResponseUnmarshaller = SearchFoldersResponseUnmarshaller.Instance;
 
             return InvokeAsync<SearchFoldersResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  SearchGroups
+
+        internal virtual SearchGroupsResponse SearchGroups(SearchGroupsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchGroupsResponseUnmarshaller.Instance;
+
+            return Invoke<SearchGroupsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Use the <code>SearchGroups</code> operation to search groups in a specified Amazon
+        /// QuickSight namespace using the supplied filters.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchGroups service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SearchGroups service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
+        /// The <code>NextToken</code> value isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.PreconditionNotMetException">
+        /// One or more preconditions aren't met.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceUnavailableException">
+        /// This resource is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/SearchGroups">REST API Reference for SearchGroups Operation</seealso>
+        public virtual Task<SearchGroupsResponse> SearchGroupsAsync(SearchGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchGroupsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SearchGroupsResponse>(request, options, cancellationToken);
         }
 
         #endregion

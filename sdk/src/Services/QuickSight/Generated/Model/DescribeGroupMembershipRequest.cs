@@ -29,16 +29,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListGroupMemberships operation.
-    /// Lists member users in a group.
+    /// Container for the parameters to the DescribeGroupMembership operation.
+    /// Use the <code>DescribeGroupMembership</code> operation to determine if a user is a
+    /// member of the specified group. If the user exists and is a member of the specified
+    /// group, an associated <code>GroupMember</code> object is returned.
     /// </summary>
-    public partial class ListGroupMembershipsRequest : AmazonQuickSightRequest
+    public partial class DescribeGroupMembershipRequest : AmazonQuickSightRequest
     {
         private string _awsAccountId;
         private string _groupName;
-        private int? _maxResults;
+        private string _memberName;
         private string _awsNamespace;
-        private string _nextToken;
 
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
@@ -63,7 +64,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property GroupName. 
         /// <para>
-        /// The name of the group that you want to see a membership list of.
+        /// The name of the group that you want to search.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
@@ -80,28 +81,28 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaxResults. 
+        /// Gets and sets the property MemberName. 
         /// <para>
-        /// The maximum number of results to return from this request.
+        /// The user name of the user that you want to search for.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
-        public int MaxResults
+        [AWSProperty(Required=true, Min=1, Max=256)]
+        public string MemberName
         {
-            get { return this._maxResults.GetValueOrDefault(); }
-            set { this._maxResults = value; }
+            get { return this._memberName; }
+            set { this._memberName = value; }
         }
 
-        // Check to see if MaxResults property is set
-        internal bool IsSetMaxResults()
+        // Check to see if MemberName property is set
+        internal bool IsSetMemberName()
         {
-            return this._maxResults.HasValue; 
+            return this._memberName != null;
         }
 
         /// <summary>
         /// Gets and sets the property Namespace. 
         /// <para>
-        /// The namespace of the group that you want a list of users from.
+        /// The namespace that includes the group you are searching within.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=64)]
@@ -115,24 +116,6 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetNamespace()
         {
             return this._awsNamespace != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property NextToken. 
-        /// <para>
-        /// A pagination token that can be used in a subsequent request.
-        /// </para>
-        /// </summary>
-        public string NextToken
-        {
-            get { return this._nextToken; }
-            set { this._nextToken = value; }
-        }
-
-        // Check to see if NextToken property is set
-        internal bool IsSetNextToken()
-        {
-            return this._nextToken != null;
         }
 
     }

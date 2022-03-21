@@ -29,13 +29,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListGroupMemberships operation.
-    /// Lists member users in a group.
+    /// Container for the parameters to the SearchGroups operation.
+    /// Use the <code>SearchGroups</code> operation to search groups in a specified Amazon
+    /// QuickSight namespace using the supplied filters.
     /// </summary>
-    public partial class ListGroupMembershipsRequest : AmazonQuickSightRequest
+    public partial class SearchGroupsRequest : AmazonQuickSightRequest
     {
         private string _awsAccountId;
-        private string _groupName;
+        private List<GroupSearchFilter> _filters = new List<GroupSearchFilter>();
         private int? _maxResults;
         private string _awsNamespace;
         private string _nextToken;
@@ -61,22 +62,22 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
-        /// Gets and sets the property GroupName. 
+        /// Gets and sets the property Filters. 
         /// <para>
-        /// The name of the group that you want to see a membership list of.
+        /// The structure for the search filters that you want to apply to your search.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
-        public string GroupName
+        [AWSProperty(Required=true, Min=1, Max=1)]
+        public List<GroupSearchFilter> Filters
         {
-            get { return this._groupName; }
-            set { this._groupName = value; }
+            get { return this._filters; }
+            set { this._filters = value; }
         }
 
-        // Check to see if GroupName property is set
-        internal bool IsSetGroupName()
+        // Check to see if Filters property is set
+        internal bool IsSetFilters()
         {
-            return this._groupName != null;
+            return this._filters != null && this._filters.Count > 0; 
         }
 
         /// <summary>
@@ -101,7 +102,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Namespace. 
         /// <para>
-        /// The namespace of the group that you want a list of users from.
+        /// The namespace that you want to search.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=64)]

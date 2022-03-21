@@ -956,7 +956,7 @@ namespace Amazon.QuickSight
         /// 
         ///  
         /// <para>
-        /// The permissions resource is <code>arn:aws:quicksight:us-east-1:<i>&lt;relevant-aws-account-id&gt;</i>:group/default/<i>&lt;group-name&gt;</i>
+        /// The permissions resource is <code>arn:aws:quicksight:&lt;your-region&gt;:<i>&lt;relevant-aws-account-id&gt;</i>:group/default/<i>&lt;group-name&gt;</i>
         /// </code>.
         /// </para>
         ///  
@@ -4199,6 +4199,86 @@ namespace Amazon.QuickSight
         public virtual DescribeGroupResponse EndDescribeGroup(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeGroupResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeGroupMembership
+
+        /// <summary>
+        /// Use the <code>DescribeGroupMembership</code> operation to determine if a user is a
+        /// member of the specified group. If the user exists and is a member of the specified
+        /// group, an associated <code>GroupMember</code> object is returned.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeGroupMembership service method.</param>
+        /// 
+        /// <returns>The response from the DescribeGroupMembership service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.PreconditionNotMetException">
+        /// One or more preconditions aren't met.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceUnavailableException">
+        /// This resource is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeGroupMembership">REST API Reference for DescribeGroupMembership Operation</seealso>
+        public virtual DescribeGroupMembershipResponse DescribeGroupMembership(DescribeGroupMembershipRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeGroupMembershipRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeGroupMembershipResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeGroupMembershipResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeGroupMembership operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeGroupMembership operation on AmazonQuickSightClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeGroupMembership
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeGroupMembership">REST API Reference for DescribeGroupMembership Operation</seealso>
+        public virtual IAsyncResult BeginDescribeGroupMembership(DescribeGroupMembershipRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeGroupMembershipRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeGroupMembershipResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeGroupMembership operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeGroupMembership.</param>
+        /// 
+        /// <returns>Returns a  DescribeGroupMembershipResult from QuickSight.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeGroupMembership">REST API Reference for DescribeGroupMembership Operation</seealso>
+        public virtual DescribeGroupMembershipResponse EndDescribeGroupMembership(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeGroupMembershipResponse>(asyncResult);
         }
 
         #endregion
@@ -7667,6 +7747,88 @@ namespace Amazon.QuickSight
         public virtual SearchFoldersResponse EndSearchFolders(IAsyncResult asyncResult)
         {
             return EndInvoke<SearchFoldersResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  SearchGroups
+
+        /// <summary>
+        /// Use the <code>SearchGroups</code> operation to search groups in a specified Amazon
+        /// QuickSight namespace using the supplied filters.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchGroups service method.</param>
+        /// 
+        /// <returns>The response from the SearchGroups service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
+        /// The <code>NextToken</code> value isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.PreconditionNotMetException">
+        /// One or more preconditions aren't met.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceUnavailableException">
+        /// This resource is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/SearchGroups">REST API Reference for SearchGroups Operation</seealso>
+        public virtual SearchGroupsResponse SearchGroups(SearchGroupsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchGroupsResponseUnmarshaller.Instance;
+
+            return Invoke<SearchGroupsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SearchGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SearchGroups operation on AmazonQuickSightClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSearchGroups
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/SearchGroups">REST API Reference for SearchGroups Operation</seealso>
+        public virtual IAsyncResult BeginSearchGroups(SearchGroupsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchGroupsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SearchGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSearchGroups.</param>
+        /// 
+        /// <returns>Returns a  SearchGroupsResult from QuickSight.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/SearchGroups">REST API Reference for SearchGroups Operation</seealso>
+        public virtual SearchGroupsResponse EndSearchGroups(IAsyncResult asyncResult)
+        {
+            return EndInvoke<SearchGroupsResponse>(asyncResult);
         }
 
         #endregion

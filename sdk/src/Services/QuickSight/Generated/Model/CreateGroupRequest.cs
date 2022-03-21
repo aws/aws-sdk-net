@@ -34,7 +34,7 @@ namespace Amazon.QuickSight.Model
     /// 
     ///  
     /// <para>
-    /// The permissions resource is <code>arn:aws:quicksight:us-east-1:<i>&lt;relevant-aws-account-id&gt;</i>:group/default/<i>&lt;group-name&gt;</i>
+    /// The permissions resource is <code>arn:aws:quicksight:&lt;your-region&gt;:<i>&lt;relevant-aws-account-id&gt;</i>:group/default/<i>&lt;group-name&gt;</i>
     /// </code>.
     /// </para>
     ///  
@@ -110,7 +110,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Namespace. 
         /// <para>
-        /// The namespace. Currently, you should set this to <code>default</code>.
+        /// The namespace that you want the group to be a part of.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=64)]
