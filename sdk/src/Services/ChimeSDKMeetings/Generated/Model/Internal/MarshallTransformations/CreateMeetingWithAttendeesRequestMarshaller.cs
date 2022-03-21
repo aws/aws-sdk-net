@@ -133,6 +133,12 @@ namespace Amazon.ChimeSDKMeetings.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetPrimaryMeetingId())
+                {
+                    context.Writer.WritePropertyName("PrimaryMeetingId");
+                    context.Writer.Write(publicRequest.PrimaryMeetingId);
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

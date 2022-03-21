@@ -35,6 +35,11 @@
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ChimeSDKMeetings.Model.CreateMeetingRequest.PrimaryMeetingId</property>
+    <min>2</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ChimeSDKMeetings.Model.CreateMeetingWithAttendeesRequest.ClientRequestToken</property>
     <min>2</min>
     <max>64</max>
@@ -52,6 +57,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKMeetings.Model.CreateMeetingWithAttendeesRequest.MeetingHostId</property>
+    <min>2</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMeetings.Model.CreateMeetingWithAttendeesRequest.PrimaryMeetingId</property>
     <min>2</min>
     <max>64</max>
   </property-value-rule>
@@ -240,6 +250,11 @@
   <property-value-rule>
     <property>Amazon.ChimeSDKMeetings.Model.Meeting.MeetingId</property>
     <pattern>[a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMeetings.Model.Meeting.PrimaryMeetingId</property>
+    <min>2</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKMeetings.Model.NotFoundException.Code</property>

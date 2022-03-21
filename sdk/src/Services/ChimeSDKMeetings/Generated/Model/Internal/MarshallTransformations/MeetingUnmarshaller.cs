@@ -100,6 +100,12 @@ namespace Amazon.ChimeSDKMeetings.Model.Internal.MarshallTransformations
                     unmarshalledObject.MeetingId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("PrimaryMeetingId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PrimaryMeetingId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

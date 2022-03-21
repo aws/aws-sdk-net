@@ -44,6 +44,7 @@ namespace Amazon.ChimeSDKMeetings.Model
         private MeetingFeaturesConfiguration _meetingFeatures;
         private string _meetingHostId;
         private NotificationsConfiguration _notificationsConfiguration;
+        private string _primaryMeetingId;
 
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
@@ -170,6 +171,25 @@ namespace Amazon.ChimeSDKMeetings.Model
         internal bool IsSetNotificationsConfiguration()
         {
             return this._notificationsConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PrimaryMeetingId. 
+        /// <para>
+        /// When specified, replicates the media from the primary meeting to the new meeting.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=2, Max=64)]
+        public string PrimaryMeetingId
+        {
+            get { return this._primaryMeetingId; }
+            set { this._primaryMeetingId = value; }
+        }
+
+        // Check to see if PrimaryMeetingId property is set
+        internal bool IsSetPrimaryMeetingId()
+        {
+            return this._primaryMeetingId != null;
         }
 
     }
