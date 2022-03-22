@@ -307,13 +307,9 @@ namespace Amazon.LakeFormation
         /// </summary>
         public static readonly Permission ALTER = new Permission("ALTER");
         /// <summary>
-        /// Constant ALTER_TAG for Permission
+        /// Constant ASSOCIATE for Permission
         /// </summary>
-        public static readonly Permission ALTER_TAG = new Permission("ALTER_TAG");
-        /// <summary>
-        /// Constant ASSOCIATE_TAG for Permission
-        /// </summary>
-        public static readonly Permission ASSOCIATE_TAG = new Permission("ASSOCIATE_TAG");
+        public static readonly Permission ASSOCIATE = new Permission("ASSOCIATE");
         /// <summary>
         /// Constant CREATE_DATABASE for Permission
         /// </summary>
@@ -335,17 +331,9 @@ namespace Amazon.LakeFormation
         /// </summary>
         public static readonly Permission DELETE = new Permission("DELETE");
         /// <summary>
-        /// Constant DELETE_TAG for Permission
-        /// </summary>
-        public static readonly Permission DELETE_TAG = new Permission("DELETE_TAG");
-        /// <summary>
         /// Constant DESCRIBE for Permission
         /// </summary>
         public static readonly Permission DESCRIBE = new Permission("DESCRIBE");
-        /// <summary>
-        /// Constant DESCRIBE_TAG for Permission
-        /// </summary>
-        public static readonly Permission DESCRIBE_TAG = new Permission("DESCRIBE_TAG");
         /// <summary>
         /// Constant DROP for Permission
         /// </summary>
