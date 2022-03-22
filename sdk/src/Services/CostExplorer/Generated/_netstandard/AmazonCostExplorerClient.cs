@@ -1589,6 +1589,47 @@ namespace Amazon.CostExplorer
 
         #endregion
         
+        #region  ListTagsForResource
+
+        internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return Invoke<ListTagsForResourceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a list of resource tags associated with the resource specified by the Amazon
+        /// Resource Name (ARN).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ProvideAnomalyFeedback
 
         internal virtual ProvideAnomalyFeedbackResponse ProvideAnomalyFeedback(ProvideAnomalyFeedbackRequest request)
@@ -1626,6 +1667,105 @@ namespace Amazon.CostExplorer
 
         #endregion
         
+        #region  TagResource
+
+        internal virtual TagResourceResponse TagResource(TagResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<TagResourceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// An API operation for adding one or more tags (key-value pairs) to a resource.
+        /// 
+        ///  
+        /// <para>
+        /// You can use the <code>TagResource</code> operation with a resource that already has
+        /// tags. If you specify a new tag key for the resource, this tag is appended to the list
+        /// of tags associated with the resource. If you specify a tag key that is already associated
+        /// with the resource, the new tag value you specify replaces the previous value for that
+        /// tag.
+        /// </para>
+        ///  
+        /// <para>
+        ///  Although the maximum number of array members is 200, user-tag maximum is 50. The
+        /// remaining are reserved for Amazon Web Services use.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.TooManyTagsException">
+        /// Can occur if you specify a number of tags for a resource greater than the maximum
+        /// 50 user tags per resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UntagResource
+
+        internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<UntagResourceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Removes one or more tags from a resource. Specify only tag key(s) in your request.
+        /// Do not specify the value.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UpdateAnomalyMonitor
 
         internal virtual UpdateAnomalyMonitorResponse UpdateAnomalyMonitor(UpdateAnomalyMonitorRequest request)
@@ -1641,7 +1781,7 @@ namespace Amazon.CostExplorer
 
         /// <summary>
         /// Updates an existing cost anomaly monitor. The changes made are applied going forward,
-        /// and doesn'tt change anomalies detected in the past.
+        /// and doesn't change anomalies detected in the past.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAnomalyMonitor service method.</param>
         /// <param name="cancellationToken">

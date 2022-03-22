@@ -1531,6 +1531,53 @@ namespace Amazon.CostExplorer
 
         #endregion
         
+        #region  ListTagsForResource
+
+
+        /// <summary>
+        /// Returns a list of resource tags associated with the resource specified by the Amazon
+        /// Resource Name (ARN).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource operation on AmazonCostExplorerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTagsForResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTagsForResource.</param>
+        /// 
+        /// <returns>Returns a  ListTagsForResourceResult from CostExplorer.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ProvideAnomalyFeedback
 
 
@@ -1574,12 +1621,123 @@ namespace Amazon.CostExplorer
 
         #endregion
         
+        #region  TagResource
+
+
+        /// <summary>
+        /// An API operation for adding one or more tags (key-value pairs) to a resource.
+        /// 
+        ///  
+        /// <para>
+        /// You can use the <code>TagResource</code> operation with a resource that already has
+        /// tags. If you specify a new tag key for the resource, this tag is appended to the list
+        /// of tags associated with the resource. If you specify a tag key that is already associated
+        /// with the resource, the new tag value you specify replaces the previous value for that
+        /// tag.
+        /// </para>
+        ///  
+        /// <para>
+        ///  Although the maximum number of array members is 200, user-tag maximum is 50. The
+        /// remaining are reserved for Amazon Web Services use.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.TooManyTagsException">
+        /// Can occur if you specify a number of tags for a resource greater than the maximum
+        /// 50 user tags per resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/TagResource">REST API Reference for TagResource Operation</seealso>
+        TagResourceResponse TagResource(TagResourceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TagResource operation on AmazonCostExplorerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTagResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/TagResource">REST API Reference for TagResource Operation</seealso>
+        IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginTagResource.</param>
+        /// 
+        /// <returns>Returns a  TagResourceResult from CostExplorer.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/TagResource">REST API Reference for TagResource Operation</seealso>
+        TagResourceResponse EndTagResource(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UntagResource
+
+
+        /// <summary>
+        /// Removes one or more tags from a resource. Specify only tag key(s) in your request.
+        /// Do not specify the value.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        UntagResourceResponse UntagResource(UntagResourceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource operation on AmazonCostExplorerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUntagResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUntagResource.</param>
+        /// 
+        /// <returns>Returns a  UntagResourceResult from CostExplorer.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        UntagResourceResponse EndUntagResource(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  UpdateAnomalyMonitor
 
 
         /// <summary>
         /// Updates an existing cost anomaly monitor. The changes made are applied going forward,
-        /// and doesn'tt change anomalies detected in the past.
+        /// and doesn't change anomalies detected in the past.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAnomalyMonitor service method.</param>
         /// 

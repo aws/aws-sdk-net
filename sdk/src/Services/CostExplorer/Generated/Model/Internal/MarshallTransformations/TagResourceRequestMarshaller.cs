@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateCostCategoryDefinition Request Marshaller
+    /// TagResource Request Marshaller
     /// </summary>       
-    public class CreateCostCategoryDefinitionRequestMarshaller : IMarshaller<IRequest, CreateCostCategoryDefinitionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class TagResourceRequestMarshaller : IMarshaller<IRequest, TagResourceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateCostCategoryDefinitionRequest)input);
+            return this.Marshall((TagResourceRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateCostCategoryDefinitionRequest publicRequest)
+        public IRequest Marshall(TagResourceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CostExplorer");
-            string target = "AWSInsightsIndexService.CreateCostCategoryDefinition";
+            string target = "AWSInsightsIndexService.TagResource";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-10-25";
@@ -67,16 +67,10 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDefaultValue())
+                if(publicRequest.IsSetResourceArn())
                 {
-                    context.Writer.WritePropertyName("DefaultValue");
-                    context.Writer.Write(publicRequest.DefaultValue);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
+                    context.Writer.WritePropertyName("ResourceArn");
+                    context.Writer.Write(publicRequest.ResourceArn);
                 }
 
                 if(publicRequest.IsSetResourceTags())
@@ -95,44 +89,6 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
-                if(publicRequest.IsSetRules())
-                {
-                    context.Writer.WritePropertyName("Rules");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestRulesListValue in publicRequest.Rules)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = CostCategoryRuleMarshaller.Instance;
-                        marshaller.Marshall(publicRequestRulesListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetRuleVersion())
-                {
-                    context.Writer.WritePropertyName("RuleVersion");
-                    context.Writer.Write(publicRequest.RuleVersion);
-                }
-
-                if(publicRequest.IsSetSplitChargeRules())
-                {
-                    context.Writer.WritePropertyName("SplitChargeRules");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSplitChargeRulesListValue in publicRequest.SplitChargeRules)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = CostCategorySplitChargeRuleMarshaller.Instance;
-                        marshaller.Marshall(publicRequestSplitChargeRulesListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
@@ -141,9 +97,9 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateCostCategoryDefinitionRequestMarshaller _instance = new CreateCostCategoryDefinitionRequestMarshaller();        
+        private static TagResourceRequestMarshaller _instance = new TagResourceRequestMarshaller();        
 
-        internal static CreateCostCategoryDefinitionRequestMarshaller GetInstance()
+        internal static TagResourceRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -151,7 +107,7 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateCostCategoryDefinitionRequestMarshaller Instance
+        public static TagResourceRequestMarshaller Instance
         {
             get
             {

@@ -34,40 +34,46 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ResourceNotFoundException Object
+    /// Response Unmarshaller for ResourceTag Object
     /// </summary>  
-    public class ResourceNotFoundExceptionUnmarshaller : IErrorResponseUnmarshaller<ResourceNotFoundException, JsonUnmarshallerContext>
+    public class ResourceTagUnmarshaller : IUnmarshaller<ResourceTag, XmlUnmarshallerContext>, IUnmarshaller<ResourceTag, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ResourceNotFoundException Unmarshall(JsonUnmarshallerContext context)
+        ResourceTag IUnmarshaller<ResourceTag, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-            return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse());
+            throw new NotImplementedException();
         }
 
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="errorResponse"></param>
         /// <returns></returns>
-        public ResourceNotFoundException Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
+        public ResourceTag Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
 
-            ResourceNotFoundException unmarshalledObject = new ResourceNotFoundException(errorResponse.Message, errorResponse.InnerException,
-                errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
+            ResourceTag unmarshalledObject = new ResourceTag();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ResourceName", targetDepth))
+                if (context.TestExpression("Key", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResourceName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Key = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Value", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Value = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -75,12 +81,13 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
-        private static ResourceNotFoundExceptionUnmarshaller _instance = new ResourceNotFoundExceptionUnmarshaller();        
+
+        private static ResourceTagUnmarshaller _instance = new ResourceTagUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ResourceNotFoundExceptionUnmarshaller Instance
+        public static ResourceTagUnmarshaller Instance
         {
             get
             {

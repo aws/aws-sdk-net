@@ -29,41 +29,53 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CostExplorer.Model
 {
     /// <summary>
-    /// Container for the parameters to the CreateAnomalySubscription operation.
-    /// Adds a subscription to a cost anomaly detection monitor. You can use each subscription
-    /// to define subscribers with email or SNS notifications. Email subscribers can set a
-    /// dollar threshold and a time frequency for receiving notifications.
+    /// Container for the parameters to the TagResource operation.
+    /// An API operation for adding one or more tags (key-value pairs) to a resource.
+    /// 
+    ///  
+    /// <para>
+    /// You can use the <code>TagResource</code> operation with a resource that already has
+    /// tags. If you specify a new tag key for the resource, this tag is appended to the list
+    /// of tags associated with the resource. If you specify a tag key that is already associated
+    /// with the resource, the new tag value you specify replaces the previous value for that
+    /// tag.
+    /// </para>
+    ///  
+    /// <para>
+    ///  Although the maximum number of array members is 200, user-tag maximum is 50. The
+    /// remaining are reserved for Amazon Web Services use.
+    /// </para>
     /// </summary>
-    public partial class CreateAnomalySubscriptionRequest : AmazonCostExplorerRequest
+    public partial class TagResourceRequest : AmazonCostExplorerRequest
     {
-        private AnomalySubscription _anomalySubscription;
+        private string _resourceArn;
         private List<ResourceTag> _resourceTags = new List<ResourceTag>();
 
         /// <summary>
-        /// Gets and sets the property AnomalySubscription. 
+        /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The cost anomaly subscription object that you want to create. 
+        /// The Amazon Resource Name (ARN) of the resource. For a list of supported resources,
+        /// see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ResourceTag.html">ResourceTag</a>.
+        /// 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public AnomalySubscription AnomalySubscription
+        [AWSProperty(Required=true, Min=20, Max=2048)]
+        public string ResourceArn
         {
-            get { return this._anomalySubscription; }
-            set { this._anomalySubscription = value; }
+            get { return this._resourceArn; }
+            set { this._resourceArn = value; }
         }
 
-        // Check to see if AnomalySubscription property is set
-        internal bool IsSetAnomalySubscription()
+        // Check to see if ResourceArn property is set
+        internal bool IsSetResourceArn()
         {
-            return this._anomalySubscription != null;
+            return this._resourceArn != null;
         }
 
         /// <summary>
         /// Gets and sets the property ResourceTags. 
         /// <para>
-        ///  An optional list of tags to associate with the specified <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalySubscription.html">
-        /// <code>AnomalySubscription</code> </a>. You can use resource tags to control access
-        /// to your <code>subscription</code> using IAM policies.
+        ///  A list of tag key-value pairs to be added to the resource.
         /// </para>
         ///  
         /// <para>
@@ -103,7 +115,7 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Min=0, Max=200)]
+        [AWSProperty(Required=true, Min=0, Max=200)]
         public List<ResourceTag> ResourceTags
         {
             get { return this._resourceTags; }

@@ -31,7 +31,7 @@ namespace Amazon.CostExplorer.Model
     /// <summary>
     /// Container for the parameters to the UpdateAnomalyMonitor operation.
     /// Updates an existing cost anomaly monitor. The changes made are applied going forward,
-    /// and doesn'tt change anomalies detected in the past.
+    /// and doesn't change anomalies detected in the past.
     /// </summary>
     public partial class UpdateAnomalyMonitorRequest : AmazonCostExplorerRequest
     {

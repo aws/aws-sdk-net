@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateAnomalySubscription Request Marshaller
+    /// UntagResource Request Marshaller
     /// </summary>       
-    public class CreateAnomalySubscriptionRequestMarshaller : IMarshaller<IRequest, CreateAnomalySubscriptionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class UntagResourceRequestMarshaller : IMarshaller<IRequest, UntagResourceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateAnomalySubscriptionRequest)input);
+            return this.Marshall((UntagResourceRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateAnomalySubscriptionRequest publicRequest)
+        public IRequest Marshall(UntagResourceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CostExplorer");
-            string target = "AWSInsightsIndexService.CreateAnomalySubscription";
+            string target = "AWSInsightsIndexService.UntagResource";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-10-25";
@@ -67,29 +67,19 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAnomalySubscription())
+                if(publicRequest.IsSetResourceArn())
                 {
-                    context.Writer.WritePropertyName("AnomalySubscription");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = AnomalySubscriptionMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.AnomalySubscription, context);
-
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WritePropertyName("ResourceArn");
+                    context.Writer.Write(publicRequest.ResourceArn);
                 }
 
-                if(publicRequest.IsSetResourceTags())
+                if(publicRequest.IsSetResourceTagKeys())
                 {
-                    context.Writer.WritePropertyName("ResourceTags");
+                    context.Writer.WritePropertyName("ResourceTagKeys");
                     context.Writer.WriteArrayStart();
-                    foreach(var publicRequestResourceTagsListValue in publicRequest.ResourceTags)
+                    foreach(var publicRequestResourceTagKeysListValue in publicRequest.ResourceTagKeys)
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ResourceTagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestResourceTagsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.Write(publicRequestResourceTagKeysListValue);
                     }
                     context.Writer.WriteArrayEnd();
                 }
@@ -102,9 +92,9 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateAnomalySubscriptionRequestMarshaller _instance = new CreateAnomalySubscriptionRequestMarshaller();        
+        private static UntagResourceRequestMarshaller _instance = new UntagResourceRequestMarshaller();        
 
-        internal static CreateAnomalySubscriptionRequestMarshaller GetInstance()
+        internal static UntagResourceRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -112,7 +102,7 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateAnomalySubscriptionRequestMarshaller Instance
+        public static UntagResourceRequestMarshaller Instance
         {
             get
             {

@@ -36,6 +36,7 @@ namespace Amazon.CostExplorer.Model
     {
         private string _defaultValue;
         private string _name;
+        private List<ResourceTag> _resourceTags = new List<ResourceTag>();
         private List<CostCategoryRule> _rules = new List<CostCategoryRule>();
         private CostCategoryRuleVersion _ruleVersion;
         private List<CostCategorySplitChargeRule> _splitChargeRules = new List<CostCategorySplitChargeRule>();
@@ -70,6 +71,64 @@ namespace Amazon.CostExplorer.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceTags. 
+        /// <para>
+        ///  An optional list of tags to associate with the specified <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategory.html">
+        /// <code>CostCategory</code> </a>. You can use resource tags to control access to your
+        /// <code>cost category</code> using IAM policies.
+        /// </para>
+        ///  
+        /// <para>
+        /// Each tag consists of a key and a value, and each key must be unique for the resource.
+        /// The following restrictions apply to resource tags:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Although the maximum number of array members is 200, you can assign a maximum of 50
+        /// user-tags to one resource. The remaining are reserved for Amazon Web Services use
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The maximum length of a key is 128 characters
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The maximum length of a value is 256 characters
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Valid characters for keys and values are: <code>A-Z</code>, <code>a-z</code>, spaces,
+        /// <code>_.:/=+-</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Keys and values are case sensitive
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Keys and values are trimmed for any leading or trailing whitespaces
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Don’t use <code>aws:</code> as a prefix for your keys. This prefix is reserved for
+        /// Amazon Web Services use
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        [AWSProperty(Min=0, Max=200)]
+        public List<ResourceTag> ResourceTags
+        {
+            get { return this._resourceTags; }
+            set { this._resourceTags = value; }
+        }
+
+        // Check to see if ResourceTags property is set
+        internal bool IsSetResourceTags()
+        {
+            return this._resourceTags != null && this._resourceTags.Count > 0; 
         }
 
         /// <summary>
