@@ -77,6 +77,12 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
                     context.Writer.Write(StringUtils.FromDateTimeToISO8601(publicRequest.EndTimeExclusive));
                 }
 
+                if(publicRequest.IsSetMaxResults())
+                {
+                    context.Writer.WritePropertyName("MaxResults");
+                    context.Writer.Write(publicRequest.MaxResults);
+                }
+
                 if(publicRequest.IsSetNextToken())
                 {
                     context.Writer.WritePropertyName("NextToken");
