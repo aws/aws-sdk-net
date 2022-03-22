@@ -80,7 +80,7 @@ namespace Amazon.Polly.Model
         ///  </li> <li> 
         /// <para>
         /// If you request <code>json</code> as the <code>OutputFormat</code>, the <code>ContentType</code>
-        /// returned is audio/json.
+        /// returned is application/x-json-stream.
         /// </para>
         ///  </li> </ul> 
         /// <para>

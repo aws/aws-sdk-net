@@ -135,6 +135,10 @@ namespace Amazon.Polly
         /// </summary>
         public static readonly LanguageCode Arb = new LanguageCode("arb");
         /// <summary>
+        /// Constant CaES for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode CaES = new LanguageCode("ca-ES");
+        /// <summary>
         /// Constant CmnCN for LanguageCode
         /// </summary>
         public static readonly LanguageCode CmnCN = new LanguageCode("cmn-CN");
@@ -532,6 +536,10 @@ namespace Amazon.Polly
         /// Constant Aria for VoiceId
         /// </summary>
         public static readonly VoiceId Aria = new VoiceId("Aria");
+        /// <summary>
+        /// Constant Arlet for VoiceId
+        /// </summary>
+        public static readonly VoiceId Arlet = new VoiceId("Arlet");
         /// <summary>
         /// Constant Astrid for VoiceId
         /// </summary>
