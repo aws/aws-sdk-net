@@ -38,7 +38,7 @@ namespace Amazon.ECS.Model
     /// </para>
     ///  
     /// <para>
-    /// When you add, update, or remove a load blaancer configuration, Amazon ECS starts a
+    /// When you add, update, or remove a load balancer configuration, Amazon ECS starts a
     /// new deployment with the updated Elastic Load Balancing configuration. This causes
     /// tasks to register to and deregister from load balancers.
     /// </para>

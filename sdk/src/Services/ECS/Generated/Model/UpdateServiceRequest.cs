@@ -427,6 +427,30 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
+        /// For services that use rolling updates, you can add, update, or remove Elastic Load
+        /// Balancing target groups. You can update from a single target group to multiple target
+        /// groups and from multiple target groups to a single target group.
+        /// </para>
+        ///  
+        /// <para>
+        /// For services that use blue/green deployments, you can update Elastic Load Balancing
+        /// target groups by using <code> <a href="https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_CreateDeployment.html">CreateDeployment</a>
+        /// </code> through CodeDeploy. Note that multiple target groups are not supported for
+        /// blue/green deployments. For more information see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/register-multiple-targetgroups.html">Register
+        /// multiple target groups with a service</a> in the <i>Amazon Elastic Container Service
+        /// Developer Guide</i>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For services that use the external deployment controller, you can add, update, or
+        /// remove load balancers by using <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateTaskSet.html">CreateTaskSet</a>.
+        /// Note that multiple target groups are not supported for external deployments. For more
+        /// information see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/register-multiple-targetgroups.html">Register
+        /// multiple target groups with a service</a> in the <i>Amazon Elastic Container Service
+        /// Developer Guide</i>. 
+        /// </para>
+        ///  
+        /// <para>
         /// You can remove existing <code>loadBalancers</code> by passing an empty list.
         /// </para>
         /// </summary>
