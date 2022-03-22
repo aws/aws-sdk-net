@@ -1,3 +1,15 @@
+### 3.7.235.0 (2022-03-22 20:43 UTC)
+* CostExplorer (3.7.5.0)
+	* Added three new APIs to support tagging and resource-level authorization on Cost Explorer resources: TagResource, UntagResource, ListTagsForResource.  Added optional parameters to CreateCostCategoryDefinition, CreateAnomalySubscription and CreateAnomalyMonitor APIs to support Tag On Create.
+* ECS (3.7.5.8)
+	* Documentation only update to address tickets
+* LakeFormation (3.7.5.0)
+	* The release fixes the incorrect permissions called out in the documentation - DESCRIBE_TAG, ASSOCIATE_TAG, DELETE_TAG, ALTER_TAG. This trebuchet release fixes the corresponding SDK and documentation.
+* LocationService (3.7.9.0)
+	* Amazon Location Service now includes a MaxResults parameter for GetDevicePositionHistory requests.
+* Polly (3.7.4.0)
+	* Amazon Polly adds new Catalan voice - Arlet. Arlet is available as Neural voice only.
+
 ### 3.7.234.0 (2022-03-21 20:15 UTC)
 * ChimeSDKMeetings (3.7.5.0)
 	* Add support for media replication to link multiple WebRTC media sessions together to reach larger and global audiences. Participants connected to a replica session can be granted access to join the primary session and can switch sessions with their existing WebRTC connection
