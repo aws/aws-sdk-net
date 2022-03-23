@@ -41,6 +41,16 @@ namespace Amazon.Transfer.Model
         /// <para>
         /// A trigger that starts a workflow: the workflow begins to execute after a file is uploaded.
         /// </para>
+        ///  
+        /// <para>
+        /// To remove an associated workflow from a server, you can provide an empty <code>OnUpload</code>
+        /// object, as in the following example.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>aws transfer update-server --server-id s-01234567890abcdef --workflow-details
+        /// '{"OnUpload":[]}'</code> 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=1)]
         public List<WorkflowDetail> OnUpload

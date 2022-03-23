@@ -442,6 +442,16 @@ namespace Amazon.Transfer.Model
         /// Specifies the workflow ID for the workflow to assign and the execution role used for
         /// executing the workflow.
         /// </para>
+        ///  
+        /// <para>
+        /// To remove an associated workflow from a server, you can provide an empty <code>OnUpload</code>
+        /// object, as in the following example.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>aws transfer update-server --server-id s-01234567890abcdef --workflow-details
+        /// '{"OnUpload":[]}'</code> 
+        /// </para>
         /// </summary>
         public WorkflowDetails WorkflowDetails
         {
