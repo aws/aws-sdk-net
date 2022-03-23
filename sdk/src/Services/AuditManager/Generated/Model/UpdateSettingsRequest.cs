@@ -101,7 +101,7 @@ namespace Amazon.AuditManager.Model
         /// notifications to. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=20, Max=2048)]
+        [AWSProperty(Min=4, Max=2048)]
         public string SnsTopic
         {
             get { return this._snsTopic; }
