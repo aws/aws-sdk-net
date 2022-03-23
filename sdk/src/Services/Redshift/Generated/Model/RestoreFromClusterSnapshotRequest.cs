@@ -63,6 +63,7 @@ namespace Amazon.Redshift.Model
         private string _clusterSubnetGroupName;
         private string _defaultIamRoleArn;
         private string _elasticIp;
+        private bool? _encrypted;
         private bool? _enhancedVpcRouting;
         private string _hsmClientCertificateIdentifier;
         private string _hsmConfigurationIdentifier;
@@ -413,6 +414,25 @@ namespace Amazon.Redshift.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Encrypted. 
+        /// <para>
+        /// Enables support for restoring an unencrypted snapshot to a cluster encrypted with
+        /// Key Management Service (KMS) and a CMK.
+        /// </para>
+        /// </summary>
+        public bool Encrypted
+        {
+            get { return this._encrypted.GetValueOrDefault(); }
+            set { this._encrypted = value; }
+        }
+
+        // Check to see if Encrypted property is set
+        internal bool IsSetEncrypted()
+        {
+            return this._encrypted.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property EnhancedVpcRouting. 
         /// <para>
         /// An option that specifies whether to create the cluster with enhanced VPC routing enabled.
@@ -510,8 +530,12 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The Key Management Service (KMS) key ID of the encryption key that you want to use
-        /// to encrypt data in the cluster that you restore from a shared snapshot.
+        /// The Key Management Service (KMS) key ID of the encryption key to encrypt data in the
+        /// cluster restored from a shared snapshot. You can also provide the key ID when you
+        /// restore from an unencrypted snapshot to an encrypted cluster in the same account.
+        /// Additionally, you can specify a new KMS key ID when you restore from an encrypted
+        /// snapshot in the same account in order to change it. In that case, the restored cluster
+        /// is encrypted with the new KMS key ID.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2147483647)]
