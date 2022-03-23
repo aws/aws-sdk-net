@@ -544,6 +544,10 @@
       <Project>{45470356-7DDA-4651-8080-A500E6F59934}</Project>
       <Name>AWSSDK.GameLift.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/GameSparks/AWSSDK.GameSparks.CodeAnalysis.csproj">
+      <Project>{A6A52E47-FE79-448A-AE78-EA0FB37E5525}</Project>
+      <Name>AWSSDK.GameSparks.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/Glacier/AWSSDK.Glacier.CodeAnalysis.csproj">
       <Project>{CDE14F2C-15AE-4926-B794-7FCDBC764DA3}</Project>
       <Name>AWSSDK.Glacier.CodeAnalysis</Name>

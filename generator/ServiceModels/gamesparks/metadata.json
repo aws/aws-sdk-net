@@ -1,0 +1,5 @@
+{
+  "active": true,
+  "synopsis": "Released the preview of Amazon GameSparks, a fully managed AWS service that provides a multi-service backend for game developers.",
+  "generate-client-constructors": true
+}
