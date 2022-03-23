@@ -4569,6 +4569,10 @@ namespace Amazon.SimpleSystemsManagement
     {
 
         /// <summary>
+        /// Constant Automation for ResourceTypeForTagging
+        /// </summary>
+        public static readonly ResourceTypeForTagging Automation = new ResourceTypeForTagging("Automation");
+        /// <summary>
         /// Constant Document for ResourceTypeForTagging
         /// </summary>
         public static readonly ResourceTypeForTagging Document = new ResourceTypeForTagging("Document");

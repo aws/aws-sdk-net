@@ -80,7 +80,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Parameters. 
         /// <para>
-        /// Reserved for future use.
+        /// The values you want to specify for the parameters defined in the Session document.
         /// </para>
         /// </summary>
         public Dictionary<string, List<string>> Parameters
