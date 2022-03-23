@@ -158,9 +158,25 @@ namespace TestWrapper.TestRunners
             var failedCount = statistics["failed"];
             var skippedCount = statistics["total"] - statistics["executed"];
 
-            var failedTests = testRun
+            var unitTestResults = testRun
                 .Descendants(ns + "Results")
-                .Descendants(ns + "UnitTestResult")
+                .Descendants(ns + "UnitTestResult");
+
+            /*
+            * Previously, there was one query looking at all failed test results in the trx file.
+            * However, there are a few methods which use [DataTest] and [DataRow] attributes, and in their case
+            * the output will look something like this (one line for the test name and one line for each input):
+            *    Failed Tests :
+            *     TestMethod01
+            *     TestMethod01 (abc)
+            *     TestMethod01 (xyz)
+            * In the XML file, the input lines will be inside an "InnerResults" element and contain an attribute
+            * called "parentExecutionId". We don't want to include them in the results summary (only the parent test name).
+            */
+            var singleTests = unitTestResults.Where(ele => !ele.Descendants(ns + "InnerResults").Any() && !ele.Attributes("parentExecutionId").Any());
+            var dataRowTests = unitTestResults.Where(ele => ele.Descendants(ns + "InnerResults").Any());
+            
+            var failedTests = singleTests.Union(dataRowTests)
                 .Where(ele => ele.Attributes("outcome").First().Value == "Failed")
                 .Select(ele => ele.Attributes("testName").First().Value)
                 .ToList();

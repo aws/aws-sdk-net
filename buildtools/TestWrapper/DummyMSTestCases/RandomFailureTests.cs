@@ -6,8 +6,16 @@ namespace TestCases
     [TestClass]
     public class RandomFailureTests
     {
-        static Random random = new Random();
-        static int FREQUENCY = 25;
+        private static readonly Random random = new Random();
+        private static readonly int FREQUENCY = 25;
+
+        private const string SAMPLE_S3_MULTILINE_STRING =
+            "B;chunk-signature=6a4d50a3307c001ad83900a73442136a0a0f203520fd8c0e966f655cc830bbe8\r\n" +
+            "Hello world\r\n" +
+            "0;chunk-signature=9384094dc67fd7c29a4c7e0aa3866233b3774e41d1470b8f51a96becbd91f60c\r\n" +
+            "x-amz-checksum-sha1:e1AsOh9IyGCa4hLN+2Od7jlnP14=\r\n" +
+            "x-amz-trailer-signature:5e9fae6e80d8cb558e2c43d228a8c36d6b36b5f6f8b86fb8f6596111f3f229a1\r\n" +
+            "\r\n";
 
         [TestMethod]
         public void TestMethod01()
@@ -156,6 +164,15 @@ namespace TestCases
         [TestMethod]
         public void TestMethod25()
         {
+            Assert.IsFalse(random.Next(100) < FREQUENCY);
+        }
+
+        [DataTestMethod]
+        [DataRow(SAMPLE_S3_MULTILINE_STRING)]
+        [DataRow("another multiline\r\n string\r\n")]
+        public void TestMethod26(string input)
+        {
+            Assert.IsTrue(input.Contains("\r\n"));
             Assert.IsFalse(random.Next(100) < FREQUENCY);
         }
     }
