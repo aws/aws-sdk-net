@@ -1,3 +1,23 @@
+### 3.7.236.0 (2022-03-23 20:03 UTC)
+* AuditManager (3.7.9.0)
+	* This release updates 1 API parameter, the SnsArn attribute. The character length and regex pattern for the SnsArn attribute have been updated, which enables you to deselect an SNS topic when using the UpdateSettings operation.
+* EBS (3.7.1.0)
+	* Increased the maximum supported value for the Timeout parameter of the StartSnapshot API from 60 minutes to 4320 minutes.  Changed the HTTP error code for ConflictException from 503 to 409.
+* ElastiCache (3.7.5.25)
+	* Doc only update for ElastiCache
+* GameSparks (3.7.0.0)
+	* Released the preview of Amazon GameSparks, a fully managed AWS service that provides a multi-service backend for game developers.
+* Redshift (3.7.13.0)
+	* This release adds a new [--encrypted | --no-encrypted] field in restore-from-cluster-snapshot API. Customers can now restore an unencrypted snapshot to a cluster encrypted with AWS Managed Key or their own KMS key.
+* SimpleSystemsManagement (3.7.13.0)
+	* Update AddTagsToResource, ListTagsForResource, and RemoveTagsFromResource APIs to reflect the support for tagging Automation resources. Includes other minor documentation updates.
+* Transfer (3.7.10.4)
+	* Documentation updates for AWS Transfer Family to describe how to remove an associated workflow from a server.
+* Core 3.7.9.1
+	* Updating endpoints.json file.
+
+	* All services packages updated to require new Core
+
 ### 3.7.235.0 (2022-03-22 20:43 UTC)
 * CostExplorer (3.7.5.0)
 	* Added three new APIs to support tagging and resource-level authorization on Cost Explorer resources: TagResource, UntagResource, ListTagsForResource.  Added optional parameters to CreateCostCategoryDefinition, CreateAnomalySubscription and CreateAnomalyMonitor APIs to support Tag On Create.
