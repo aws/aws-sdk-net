@@ -180,6 +180,10 @@ namespace Amazon.EBS
         /// Constant DEPENDENCY_REQUEST_THROTTLED for RequestThrottledExceptionReason
         /// </summary>
         public static readonly RequestThrottledExceptionReason DEPENDENCY_REQUEST_THROTTLED = new RequestThrottledExceptionReason("DEPENDENCY_REQUEST_THROTTLED");
+        /// <summary>
+        /// Constant RESOURCE_LEVEL_THROTTLE for RequestThrottledExceptionReason
+        /// </summary>
+        public static readonly RequestThrottledExceptionReason RESOURCE_LEVEL_THROTTLE = new RequestThrottledExceptionReason("RESOURCE_LEVEL_THROTTLE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -372,6 +376,10 @@ namespace Amazon.EBS
     public class ValidationExceptionReason : ConstantClass
     {
 
+        /// <summary>
+        /// Constant CONFLICTING_BLOCK_UPDATE for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason CONFLICTING_BLOCK_UPDATE = new ValidationExceptionReason("CONFLICTING_BLOCK_UPDATE");
         /// <summary>
         /// Constant INVALID_BLOCK for ValidationExceptionReason
         /// </summary>

@@ -178,7 +178,7 @@
   <property-value-rule>
     <property>Amazon.EBS.Model.StartSnapshotRequest.Timeout</property>
     <min>10</min>
-    <max>60</max>
+    <max>4320</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EBS.Model.StartSnapshotRequest.VolumeSize</property>
@@ -252,6 +252,6 @@
   <property-value-rule>
     <property>Amazon.EBS.Model.Tag.Value</property>
     <max>255</max>
-    <pattern>^[\S\s]+$</pattern>
+    <pattern>^[\S\s]*$</pattern>
   </property-value-rule>
 </property-value-rules>
