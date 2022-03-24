@@ -312,7 +312,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property MediaSampleRateHertz. 
         /// <para>
-        /// The sample rate, in Hertz, of the audio.
+        /// The sample rate, in Hertz, of the input audio.
         /// </para>
         /// </summary>
         [AWSProperty(Min=8000, Max=48000)]

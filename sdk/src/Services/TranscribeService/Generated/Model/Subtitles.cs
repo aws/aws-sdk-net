@@ -29,16 +29,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.TranscribeService.Model
 {
     /// <summary>
-    /// Generate subtitles for your batch transcription job.
+    /// Generate subtitles for your batch transcription job. Note that your subtitle files
+    /// are placed in the same location as your transcription output.
     /// </summary>
     public partial class Subtitles
     {
         private List<string> _formats = new List<string>();
+        private int? _outputStartIndex;
 
         /// <summary>
         /// Gets and sets the property Formats. 
         /// <para>
-        /// Specify the output format for your subtitle file.
+        /// Specify the output format for your subtitle file; if you select both <code>srt</code>
+        /// and <code>vtt</code> formats, two output files are generated.
         /// </para>
         /// </summary>
         public List<string> Formats
@@ -51,6 +54,32 @@ namespace Amazon.TranscribeService.Model
         internal bool IsSetFormats()
         {
             return this._formats != null && this._formats.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OutputStartIndex. 
+        /// <para>
+        /// Defines the starting value that is assigned to the first subtitle segment.
+        /// </para>
+        ///  
+        /// <para>
+        /// The default start index for Amazon Transcribe is <code>0</code>, which differs from
+        /// the more widely used standard of <code>1</code>. If you're uncertain which value to
+        /// use, we recommend choosing <code>1</code>, as this may improve compatibility with
+        /// other services.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1)]
+        public int OutputStartIndex
+        {
+            get { return this._outputStartIndex.GetValueOrDefault(); }
+            set { this._outputStartIndex = value; }
+        }
+
+        // Check to see if OutputStartIndex property is set
+        internal bool IsSetOutputStartIndex()
+        {
+            return this._outputStartIndex.HasValue; 
         }
 
     }

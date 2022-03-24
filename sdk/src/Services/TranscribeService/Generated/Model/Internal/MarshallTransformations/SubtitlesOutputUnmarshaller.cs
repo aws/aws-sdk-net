@@ -70,6 +70,12 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
                     unmarshalledObject.Formats = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("OutputStartIndex", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.OutputStartIndex = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SubtitleFileUris", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);

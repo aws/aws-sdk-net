@@ -78,6 +78,11 @@ namespace Amazon.TranscribeService.Model
         /// language identification is disabled by default. You receive a <code>BadRequestException</code>
         /// error if you enter a value for a <code>LanguageCode</code>.
         /// </para>
+        ///  
+        /// <para>
+        /// You must include either <code>LanguageCode</code> or <code>IdentifyLanguage</code>
+        /// in your request.
+        /// </para>
         /// </summary>
         public bool IdentifyLanguage
         {
@@ -134,7 +139,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property LanguageCode. 
         /// <para>
-        /// The language code for the language used in the input media file.
+        /// The language code for the language used in the input media file. You must include
+        /// either <code>LanguageCode</code> or <code>IdentifyLanguage</code> in your request.
         /// </para>
         ///  
         /// <para>

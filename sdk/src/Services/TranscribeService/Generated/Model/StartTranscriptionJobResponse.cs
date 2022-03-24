@@ -38,7 +38,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property TranscriptionJob. 
         /// <para>
-        /// An object containing details of the asynchronous transcription job.
+        /// Provides information about your asynchronous transcription job.
         /// </para>
         /// </summary>
         public TranscriptionJob TranscriptionJob

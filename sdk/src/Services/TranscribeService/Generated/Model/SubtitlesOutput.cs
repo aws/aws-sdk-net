@@ -29,19 +29,21 @@ using Amazon.Runtime.Internal;
 namespace Amazon.TranscribeService.Model
 {
     /// <summary>
-    /// Choose the output format for your subtitle file and the S3 location where you want
-    /// your file saved.
+    /// The S3 location where your subtitle files are located. Note that your subtitle files
+    /// are placed in the same location as your transcription output. Refer to <code>TranscriptFileUri</code>
+    /// to download your files.
     /// </summary>
     public partial class SubtitlesOutput
     {
         private List<string> _formats = new List<string>();
+        private int? _outputStartIndex;
         private List<string> _subtitleFileUris = new List<string>();
 
         /// <summary>
         /// Gets and sets the property Formats. 
         /// <para>
-        /// Specify the output format for your subtitle file; if you select both SRT and VTT formats,
-        /// two output files are generated.
+        /// The format of your subtitle files. If your request specified both <code>srt</code>
+        /// and <code>vtt</code> formats, both formats are shown.
         /// </para>
         /// </summary>
         public List<string> Formats
@@ -54,6 +56,26 @@ namespace Amazon.TranscribeService.Model
         internal bool IsSetFormats()
         {
             return this._formats != null && this._formats.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OutputStartIndex. 
+        /// <para>
+        /// Shows the output start index value for your subtitle files. If you did not specify
+        /// a value in your request, the default value of <code>0</code> is used.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1)]
+        public int OutputStartIndex
+        {
+            get { return this._outputStartIndex.GetValueOrDefault(); }
+            set { this._outputStartIndex = value; }
+        }
+
+        // Check to see if OutputStartIndex property is set
+        internal bool IsSetOutputStartIndex()
+        {
+            return this._outputStartIndex.HasValue; 
         }
 
         /// <summary>
