@@ -112,6 +112,7 @@ namespace Amazon.Lambda.Model
         private DeadLetterConfig _deadLetterConfig;
         private string _description;
         private Environment _environment;
+        private EphemeralStorage _ephemeralStorage;
         private List<FileSystemConfig> _fileSystemConfigs = new List<FileSystemConfig>();
         private string _functionName;
         private string _handler;
@@ -243,6 +244,25 @@ namespace Amazon.Lambda.Model
         internal bool IsSetEnvironment()
         {
             return this._environment != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EphemeralStorage. 
+        /// <para>
+        /// The size of the function’s /tmp directory in MB. The default value is 512, but can
+        /// be any whole number between 512 and 10240 MB.
+        /// </para>
+        /// </summary>
+        public EphemeralStorage EphemeralStorage
+        {
+            get { return this._ephemeralStorage; }
+            set { this._ephemeralStorage = value; }
+        }
+
+        // Check to see if EphemeralStorage property is set
+        internal bool IsSetEphemeralStorage()
+        {
+            return this._ephemeralStorage != null;
         }
 
         /// <summary>

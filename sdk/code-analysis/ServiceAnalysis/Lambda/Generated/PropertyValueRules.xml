@@ -1431,6 +1431,11 @@
     <pattern>(arn:(aws[a-zA-Z-]*)?:[a-z0-9-.]+:.*)|()</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Lambda.Model.EphemeralStorage.Size</property>
+    <min>512</min>
+    <max>10240</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Lambda.Model.FileSystemConfig.Arn</property>
     <max>200</max>
     <pattern>arn:aws[a-zA-Z-]*:elasticfilesystem:[a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1}:\d{12}:access-point/fsap-[a-f0-9]{17}</pattern>

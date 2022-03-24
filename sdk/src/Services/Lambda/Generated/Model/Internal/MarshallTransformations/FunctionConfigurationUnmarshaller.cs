@@ -100,6 +100,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     unmarshalledObject.Environment = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("EphemeralStorage", targetDepth))
+                {
+                    var unmarshaller = EphemeralStorageUnmarshaller.Instance;
+                    unmarshalledObject.EphemeralStorage = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("FileSystemConfigs", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<FileSystemConfig, FileSystemConfigUnmarshaller>(FileSystemConfigUnmarshaller.Instance);

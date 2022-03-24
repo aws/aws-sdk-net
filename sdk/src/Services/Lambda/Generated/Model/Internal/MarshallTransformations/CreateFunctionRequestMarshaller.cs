@@ -121,6 +121,17 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetEphemeralStorage())
+                {
+                    context.Writer.WritePropertyName("EphemeralStorage");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = EphemeralStorageMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.EphemeralStorage, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetFileSystemConfigs())
                 {
                     context.Writer.WritePropertyName("FileSystemConfigs");
