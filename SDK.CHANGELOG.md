@@ -1,3 +1,15 @@
+### 3.7.237.0 (2022-03-24 18:16 UTC)
+* ConfigService (3.7.8.0)
+	* Added new APIs GetCustomRulePolicy and GetOrganizationCustomRulePolicy, and updated existing APIs PutConfigRule, DescribeConfigRule, DescribeConfigRuleEvaluationStatus, PutOrganizationConfigRule, DescribeConfigRule to support a new feature for building AWS Config rules with AWS CloudFormation Guard
+* Lambda (3.7.11.0)
+	* Adds support for increased ephemeral storage (/tmp) up to 10GB for Lambda functions. Customers can now provision up to 10 GB of ephemeral storage per function instance, a 20x increase over the previous limit of 512 MB.
+* TranscribeService (3.7.12.0)
+	* This release adds an additional parameter for subtitling with Amazon Transcribe batch jobs: outputStartIndex.
+* Core 3.7.9.2
+	* Updating endpoints.json file.
+
+	* All services packages updated to require new Core
+
 ### 3.7.236.0 (2022-03-23 20:03 UTC)
 * AuditManager (3.7.9.0)
 	* This release updates 1 API parameter, the SnsArn attribute. The character length and regex pattern for the SnsArn attribute have been updated, which enables you to deselect an SNS topic when using the UpdateSettings operation.
