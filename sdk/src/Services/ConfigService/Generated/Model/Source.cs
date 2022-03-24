@@ -29,20 +29,53 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// Provides the Config rule owner (Amazon Web Services or customer), the rule identifier,
-    /// and the events that trigger the evaluation of your Amazon Web Services resources.
+    /// Provides the CustomPolicyDetails, the rule owner (Amazon Web Services or customer),
+    /// the rule identifier, and the events that cause the evaluation of your Amazon Web Services
+    /// resources.
     /// </summary>
     public partial class Source
     {
+        private CustomPolicyDetails _customPolicyDetails;
         private Owner _owner;
         private List<SourceDetail> _sourceDetails = new List<SourceDetail>();
         private string _sourceIdentifier;
+
+        /// <summary>
+        /// Gets and sets the property CustomPolicyDetails. 
+        /// <para>
+        /// Provides the runtime system, policy definition, and whether debug logging is enabled.
+        /// Required when owner is set to <code>CUSTOM_POLICY</code>.
+        /// </para>
+        /// </summary>
+        public CustomPolicyDetails CustomPolicyDetails
+        {
+            get { return this._customPolicyDetails; }
+            set { this._customPolicyDetails = value; }
+        }
+
+        // Check to see if CustomPolicyDetails property is set
+        internal bool IsSetCustomPolicyDetails()
+        {
+            return this._customPolicyDetails != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Owner. 
         /// <para>
         /// Indicates whether Amazon Web Services or the customer owns and manages the Config
         /// rule.
+        /// </para>
+        ///  
+        /// <para>
+        /// Config Managed Rules are predefined rules owned by Amazon Web Services. For more information,
+        /// see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Config
+        /// Managed Rules</a> in the Config developer guide.
+        /// </para>
+        ///  
+        /// <para>
+        /// Config Custom Rules are rules that you can develop either with Guard (<code>CUSTOM_POLICY</code>)
+        /// or Lambda (<code>CUSTOM_LAMBDA</code>). For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_develop-rules.html">Config
+        /// Custom Rules </a> in the Config developer guide.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -61,8 +94,15 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property SourceDetails. 
         /// <para>
-        /// Provides the source and type of the event that causes Config to evaluate your Amazon
-        /// Web Services resources.
+        /// Provides the source and the message types that cause Config to evaluate your Amazon
+        /// Web Services resources against a rule. It also provides the frequency with which you
+        /// want Config to run evaluations for the rule if the trigger type is periodic.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the owner is set to <code>CUSTOM_POLICY</code>, the only acceptable values for
+        /// the Config rule trigger message type are <code>ConfigurationItemChangeNotification</code>
+        /// and <code>OversizedConfigurationItemChangeNotification</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=25)]
@@ -81,17 +121,21 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property SourceIdentifier. 
         /// <para>
-        /// For Config managed rules, a predefined identifier from a list. For example, <code>IAM_PASSWORD_POLICY</code>
-        /// is a managed rule. To reference a managed rule, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Using
-        /// Config managed rules</a>.
+        /// For Config Managed rules, a predefined identifier from a list. For example, <code>IAM_PASSWORD_POLICY</code>
+        /// is a managed rule. To reference a managed rule, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html">List
+        /// of Config Managed Rules</a>.
         /// </para>
         ///  
         /// <para>
-        /// For custom rules, the identifier is the Amazon Resource Name (ARN) of the rule's Lambda
-        /// function, such as <code>arn:aws:lambda:us-east-2:123456789012:function:custom_rule_name</code>.
+        /// For Config Custom Lambda rules, the identifier is the Amazon Resource Name (ARN) of
+        /// the rule's Lambda function, such as <code>arn:aws:lambda:us-east-2:123456789012:function:custom_rule_name</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For Config Custom Policy rules, this field will be ignored.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=256)]
+        [AWSProperty(Min=1, Max=256)]
         public string SourceIdentifier
         {
             get { return this._sourceIdentifier; }

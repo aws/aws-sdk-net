@@ -29,13 +29,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// Status information for your Config managed rules. The status includes information
-    /// such as the last time the rule ran, the last time it failed, and the related error
-    /// for the last failure.
+    /// Status information for your Config Managed rules and Config Custom Policy rules. The
+    /// status includes information such as the last time the rule ran, the last time it failed,
+    /// and the related error for the last failure.
     /// 
     ///  
     /// <para>
-    /// This action does not return status information about custom Config rules.
+    /// This action does not return status information about Config Custom Lambda rules.
     /// </para>
     /// </summary>
     public partial class ConfigRuleEvaluationStatus
@@ -46,6 +46,9 @@ namespace Amazon.ConfigService.Model
         private DateTime? _firstActivatedTime;
         private bool? _firstEvaluationStarted;
         private DateTime? _lastDeactivatedTime;
+        private string _lastDebugLogDeliveryStatus;
+        private string _lastDebugLogDeliveryStatusReason;
+        private DateTime? _lastDebugLogDeliveryTime;
         private string _lastErrorCode;
         private string _lastErrorMessage;
         private DateTime? _lastFailedEvaluationTime;
@@ -138,8 +141,8 @@ namespace Amazon.ConfigService.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>false</code> - Config has not once finished evaluating your Amazon Web Services
-        /// resources against the rule.
+        ///  <code>false</code> - Config has not finished evaluating your Amazon Web Services
+        /// resources against the rule at least once.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -171,6 +174,63 @@ namespace Amazon.ConfigService.Model
         internal bool IsSetLastDeactivatedTime()
         {
             return this._lastDeactivatedTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastDebugLogDeliveryStatus. 
+        /// <para>
+        /// The status of the last attempted delivery of a debug log for your Config Custom Policy
+        /// rules. Either <code>Successful</code> or <code>Failed</code>.
+        /// </para>
+        /// </summary>
+        public string LastDebugLogDeliveryStatus
+        {
+            get { return this._lastDebugLogDeliveryStatus; }
+            set { this._lastDebugLogDeliveryStatus = value; }
+        }
+
+        // Check to see if LastDebugLogDeliveryStatus property is set
+        internal bool IsSetLastDebugLogDeliveryStatus()
+        {
+            return this._lastDebugLogDeliveryStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastDebugLogDeliveryStatusReason. 
+        /// <para>
+        /// The reason Config was not able to deliver a debug log. This is for the last failed
+        /// attempt to retrieve a debug log for your Config Custom Policy rules.
+        /// </para>
+        /// </summary>
+        public string LastDebugLogDeliveryStatusReason
+        {
+            get { return this._lastDebugLogDeliveryStatusReason; }
+            set { this._lastDebugLogDeliveryStatusReason = value; }
+        }
+
+        // Check to see if LastDebugLogDeliveryStatusReason property is set
+        internal bool IsSetLastDebugLogDeliveryStatusReason()
+        {
+            return this._lastDebugLogDeliveryStatusReason != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastDebugLogDeliveryTime. 
+        /// <para>
+        /// The time Config last attempted to deliver a debug log for your Config Custom Policy
+        /// rules.
+        /// </para>
+        /// </summary>
+        public DateTime LastDebugLogDeliveryTime
+        {
+            get { return this._lastDebugLogDeliveryTime.GetValueOrDefault(); }
+            set { this._lastDebugLogDeliveryTime = value; }
+        }
+
+        // Check to see if LastDebugLogDeliveryTime property is set
+        internal bool IsSetLastDebugLogDeliveryTime()
+        {
+            return this._lastDebugLogDeliveryTime.HasValue; 
         }
 
         /// <summary>

@@ -48,12 +48,12 @@ namespace Amazon.ConfigService.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// For PutConfigOrganizationRule, organization config rule deletion is in progress. Try
+    /// For PutConfigOrganizationRule, organization Config rule deletion is in progress. Try
     /// your request again later.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// For DeleteOrganizationConfigRule, organization config rule creation is in progress.
+    /// For DeleteOrganizationConfigRule, organization Config rule creation is in progress.
     /// Try your request again later.
     /// </para>
     ///  </li> <li> 

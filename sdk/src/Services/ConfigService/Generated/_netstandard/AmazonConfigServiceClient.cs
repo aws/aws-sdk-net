@@ -486,8 +486,9 @@ namespace Amazon.ConfigService
         /// 
         /// <returns>The response from the DeleteConfigRule service method, as returned by ConfigService.</returns>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigRuleException">
-        /// One or more Config rules in the request are invalid. Verify that the rule names are
-        /// correct and try again.
+        /// The Config rule in the request is not valid. Verify that the rule is an Config Custom
+        /// Policy rule, that the rule name is correct, and that valid Amazon Resouce Names (ARNs)
+        /// are used before trying again.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ResourceInUseException">
         /// You see this exception in the following cases: 
@@ -509,12 +510,12 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For PutConfigOrganizationRule, organization config rule deletion is in progress. Try
+        /// For PutConfigOrganizationRule, organization Config rule deletion is in progress. Try
         /// your request again later.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For DeleteOrganizationConfigRule, organization config rule creation is in progress.
+        /// For DeleteOrganizationConfigRule, organization Config rule creation is in progress.
         /// Try your request again later.
         /// </para>
         ///  </li> <li> 
@@ -681,12 +682,12 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For PutConfigOrganizationRule, organization config rule deletion is in progress. Try
+        /// For PutConfigOrganizationRule, organization Config rule deletion is in progress. Try
         /// your request again later.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For DeleteOrganizationConfigRule, organization config rule creation is in progress.
+        /// For DeleteOrganizationConfigRule, organization Config rule creation is in progress.
         /// Try your request again later.
         /// </para>
         ///  </li> <li> 
@@ -817,8 +818,9 @@ namespace Amazon.ConfigService
         /// 
         /// <returns>The response from the DeleteEvaluationResults service method, as returned by ConfigService.</returns>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigRuleException">
-        /// One or more Config rules in the request are invalid. Verify that the rule names are
-        /// correct and try again.
+        /// The Config rule in the request is not valid. Verify that the rule is an Config Custom
+        /// Policy rule, that the rule name is correct, and that valid Amazon Resouce Names (ARNs)
+        /// are used before trying again.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ResourceInUseException">
         /// You see this exception in the following cases: 
@@ -840,12 +842,12 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For PutConfigOrganizationRule, organization config rule deletion is in progress. Try
+        /// For PutConfigOrganizationRule, organization Config rule deletion is in progress. Try
         /// your request again later.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For DeleteOrganizationConfigRule, organization config rule creation is in progress.
+        /// For DeleteOrganizationConfigRule, organization Config rule creation is in progress.
         /// Try your request again later.
         /// </para>
         ///  </li> <li> 
@@ -886,13 +888,13 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// Deletes the specified organization config rule and all of its evaluation results from
+        /// Deletes the specified organization Config rule and all of its evaluation results from
         /// all member accounts in that organization. 
         /// 
         ///  
         /// <para>
         /// Only a master account and a delegated administrator account can delete an organization
-        /// config rule. When calling this API with a delegated administrator, you must ensure
+        /// Config rule. When calling this API with a delegated administrator, you must ensure
         /// Organizations <code>ListDelegatedAdministrator</code> permissions are added.
         /// </para>
         ///  
@@ -908,7 +910,9 @@ namespace Amazon.ConfigService
         /// 
         /// <returns>The response from the DeleteOrganizationConfigRule service method, as returned by ConfigService.</returns>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchOrganizationConfigRuleException">
-        /// You specified one or more organization config rules that do not exist.
+        /// The Config rule in the request is not valid. Verify that the rule is an organization
+        /// Config Custom Policy rule, that the rule name is correct, and that valid Amazon Resouce
+        /// Names (ARNs) are used before trying again.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.OrganizationAccessDeniedException">
         /// For <code>PutConfigurationAggregator</code> API, you can see this exception for the
@@ -964,12 +968,12 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For PutConfigOrganizationRule, organization config rule deletion is in progress. Try
+        /// For PutConfigOrganizationRule, organization Config rule deletion is in progress. Try
         /// your request again later.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For DeleteOrganizationConfigRule, organization config rule creation is in progress.
+        /// For DeleteOrganizationConfigRule, organization Config rule creation is in progress.
         /// Try your request again later.
         /// </para>
         ///  </li> <li> 
@@ -1010,7 +1014,7 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// Deletes the specified organization conformance pack and all of the config rules and
+        /// Deletes the specified organization conformance pack and all of the Config rules and
         /// remediation actions from all member accounts in that organization. 
         /// 
         ///  
@@ -1094,12 +1098,12 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For PutConfigOrganizationRule, organization config rule deletion is in progress. Try
+        /// For PutConfigOrganizationRule, organization Config rule deletion is in progress. Try
         /// your request again later.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For DeleteOrganizationConfigRule, organization config rule creation is in progress.
+        /// For DeleteOrganizationConfigRule, organization Config rule creation is in progress.
         /// Try your request again later.
         /// </para>
         ///  </li> <li> 
@@ -1202,7 +1206,7 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For PutOrganizationConfigRule, organization config rule cannot be created because
+        /// For PutOrganizationConfigRule, organization Config rule cannot be created because
         /// you do not have permissions to call IAM <code>GetRole</code> action or create a service
         /// linked role.
         /// </para>
@@ -1786,8 +1790,9 @@ namespace Amazon.ConfigService
         /// valid and try again.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigRuleException">
-        /// One or more Config rules in the request are invalid. Verify that the rule names are
-        /// correct and try again.
+        /// The Config rule in the request is not valid. Verify that the rule is an Config Custom
+        /// Policy rule, that the rule name is correct, and that valid Amazon Resouce Names (ARNs)
+        /// are used before trying again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeComplianceByConfigRule">REST API Reference for DescribeComplianceByConfigRule Operation</seealso>
         public virtual Task<DescribeComplianceByConfigRuleResponse> DescribeComplianceByConfigRuleAsync(DescribeComplianceByConfigRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1909,8 +1914,9 @@ namespace Amazon.ConfigService
         /// valid and try again.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigRuleException">
-        /// One or more Config rules in the request are invalid. Verify that the rule names are
-        /// correct and try again.
+        /// The Config rule in the request is not valid. Verify that the rule is an Config Custom
+        /// Policy rule, that the rule name is correct, and that valid Amazon Resouce Names (ARNs)
+        /// are used before trying again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigRuleEvaluationStatus">REST API Reference for DescribeConfigRuleEvaluationStatus Operation</seealso>
         public virtual Task<DescribeConfigRuleEvaluationStatusResponse> DescribeConfigRuleEvaluationStatusAsync(DescribeConfigRuleEvaluationStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1951,8 +1957,9 @@ namespace Amazon.ConfigService
         /// was returned in the previous response to get the next page of results.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigRuleException">
-        /// One or more Config rules in the request are invalid. Verify that the rule names are
-        /// correct and try again.
+        /// The Config rule in the request is not valid. Verify that the rule is an Config Custom
+        /// Policy rule, that the rule name is correct, and that valid Amazon Resouce Names (ARNs)
+        /// are used before trying again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigRules">REST API Reference for DescribeConfigRules Operation</seealso>
         public virtual Task<DescribeConfigRulesResponse> DescribeConfigRulesAsync(DescribeConfigRulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2537,13 +2544,13 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// Returns a list of organization config rules. 
+        /// Returns a list of organization Config rules. 
         /// 
         ///  <note> 
         /// <para>
         /// When you specify the limit and the next token, you receive a paginated response. Limit
-        /// and next token are not applicable if you specify organization config rule names. It
-        /// is only applicable, when you request all the organization config rules.
+        /// and next token are not applicable if you specify organization Config rule names. It
+        /// is only applicable, when you request all the organization Config rules.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2561,7 +2568,9 @@ namespace Amazon.ConfigService
         /// was returned in the previous response to get the next page of results.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchOrganizationConfigRuleException">
-        /// You specified one or more organization config rules that do not exist.
+        /// The Config rule in the request is not valid. Verify that the rule is an organization
+        /// Config Custom Policy rule, that the rule name is correct, and that valid Amazon Resouce
+        /// Names (ARNs) are used before trying again.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.OrganizationAccessDeniedException">
         /// For <code>PutConfigurationAggregator</code> API, you can see this exception for the
@@ -2623,18 +2632,18 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// Provides organization config rule deployment status for an organization.
+        /// Provides organization Config rule deployment status for an organization.
         /// 
         ///  <note> 
         /// <para>
-        /// The status is not considered successful until organization config rule is successfully
+        /// The status is not considered successful until organization Config rule is successfully
         /// deployed in all the member accounts with an exception of excluded accounts.
         /// </para>
         ///  
         /// <para>
         /// When you specify the limit and the next token, you receive a paginated response. Limit
-        /// and next token are not applicable if you specify organization config rule names. It
-        /// is only applicable, when you request all the organization config rules.
+        /// and next token are not applicable if you specify organization Config rule names. It
+        /// is only applicable, when you request all the organization Config rules.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2652,7 +2661,9 @@ namespace Amazon.ConfigService
         /// was returned in the previous response to get the next page of results.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchOrganizationConfigRuleException">
-        /// You specified one or more organization config rules that do not exist.
+        /// The Config rule in the request is not valid. Verify that the rule is an organization
+        /// Config Custom Policy rule, that the rule name is correct, and that valid Amazon Resouce
+        /// Names (ARNs) are used before trying again.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.OrganizationAccessDeniedException">
         /// For <code>PutConfigurationAggregator</code> API, you can see this exception for the
@@ -3499,8 +3510,9 @@ namespace Amazon.ConfigService
         /// valid and try again.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigRuleException">
-        /// One or more Config rules in the request are invalid. Verify that the rule names are
-        /// correct and try again.
+        /// The Config rule in the request is not valid. Verify that the rule is an Config Custom
+        /// Policy rule, that the rule name is correct, and that valid Amazon Resouce Names (ARNs)
+        /// are used before trying again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceDetailsByConfigRule">REST API Reference for GetComplianceDetailsByConfigRule Operation</seealso>
         public virtual Task<GetComplianceDetailsByConfigRuleResponse> GetComplianceDetailsByConfigRuleAsync(GetComplianceDetailsByConfigRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3726,6 +3738,45 @@ namespace Amazon.ConfigService
 
         #endregion
         
+        #region  GetCustomRulePolicy
+
+        internal virtual GetCustomRulePolicyResponse GetCustomRulePolicy(GetCustomRulePolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCustomRulePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCustomRulePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<GetCustomRulePolicyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns the policy definition containing the logic for your Config Custom Policy rule.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCustomRulePolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetCustomRulePolicy service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigRuleException">
+        /// The Config rule in the request is not valid. Verify that the rule is an Config Custom
+        /// Policy rule, that the rule name is correct, and that valid Amazon Resouce Names (ARNs)
+        /// are used before trying again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetCustomRulePolicy">REST API Reference for GetCustomRulePolicy Operation</seealso>
+        public virtual Task<GetCustomRulePolicyResponse> GetCustomRulePolicyAsync(GetCustomRulePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCustomRulePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCustomRulePolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetCustomRulePolicyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetDiscoveredResourceCounts
 
         internal virtual GetDiscoveredResourceCountsResponse GetDiscoveredResourceCounts(GetDiscoveredResourceCountsRequest request)
@@ -3854,7 +3905,7 @@ namespace Amazon.ConfigService
 
         /// <summary>
         /// Returns detailed status for each member account within an organization for a given
-        /// organization config rule.
+        /// organization Config rule.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetOrganizationConfigRuleDetailedStatus service method.</param>
         /// <param name="cancellationToken">
@@ -3870,7 +3921,9 @@ namespace Amazon.ConfigService
         /// was returned in the previous response to get the next page of results.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchOrganizationConfigRuleException">
-        /// You specified one or more organization config rules that do not exist.
+        /// The Config rule in the request is not valid. Verify that the rule is an organization
+        /// Config Custom Policy rule, that the rule name is correct, and that valid Amazon Resouce
+        /// Names (ARNs) are used before trying again.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.OrganizationAccessDeniedException">
         /// For <code>PutConfigurationAggregator</code> API, you can see this exception for the
@@ -3999,6 +4052,80 @@ namespace Amazon.ConfigService
             options.ResponseUnmarshaller = GetOrganizationConformancePackDetailedStatusResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetOrganizationConformancePackDetailedStatusResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetOrganizationCustomRulePolicy
+
+        internal virtual GetOrganizationCustomRulePolicyResponse GetOrganizationCustomRulePolicy(GetOrganizationCustomRulePolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetOrganizationCustomRulePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetOrganizationCustomRulePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<GetOrganizationCustomRulePolicyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns the policy definition containing the logic for your organization Config Custom
+        /// Policy rule.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetOrganizationCustomRulePolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetOrganizationCustomRulePolicy service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.NoSuchOrganizationConfigRuleException">
+        /// The Config rule in the request is not valid. Verify that the rule is an organization
+        /// Config Custom Policy rule, that the rule name is correct, and that valid Amazon Resouce
+        /// Names (ARNs) are used before trying again.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.OrganizationAccessDeniedException">
+        /// For <code>PutConfigurationAggregator</code> API, you can see this exception for the
+        /// following reasons:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// No permission to call <code>EnableAWSServiceAccess</code> API
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The configuration aggregator cannot be updated because your Amazon Web Services Organization
+        /// management account or the delegated administrator role changed. Delete this aggregator
+        /// and create a new one with the current Amazon Web Services Organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The configuration aggregator is associated with a previous Amazon Web Services Organization
+        /// and Config cannot aggregate data with current Amazon Web Services Organization. Delete
+        /// this aggregator and create a new one with the current Amazon Web Services Organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You are not a registered delegated administrator for Config with permissions to call
+        /// <code>ListDelegatedAdministrators</code> API. Ensure that the management account registers
+        /// delagated administrator for Config service principle name before the delegated administrator
+        /// creates an aggregator.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code>
+        /// APIs, Config throws an exception if APIs are called from member accounts. All APIs
+        /// must be called from organization master account.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetOrganizationCustomRulePolicy">REST API Reference for GetOrganizationCustomRulePolicy Operation</seealso>
+        public virtual Task<GetOrganizationCustomRulePolicyResponse> GetOrganizationCustomRulePolicyAsync(GetOrganizationCustomRulePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetOrganizationCustomRulePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetOrganizationCustomRulePolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetOrganizationCustomRulePolicyResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4527,7 +4654,7 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For PutOrganizationConfigRule, organization config rule cannot be created because
+        /// For PutOrganizationConfigRule, organization Config rule cannot be created because
         /// you do not have permissions to call IAM <code>GetRole</code> action or create a service
         /// linked role.
         /// </para>
@@ -4578,12 +4705,12 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For PutConfigOrganizationRule, organization config rule deletion is in progress. Try
+        /// For PutConfigOrganizationRule, organization Config rule deletion is in progress. Try
         /// your request again later.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For DeleteOrganizationConfigRule, organization config rule creation is in progress.
+        /// For DeleteOrganizationConfigRule, organization Config rule creation is in progress.
         /// Try your request again later.
         /// </para>
         ///  </li> <li> 
@@ -4850,7 +4977,7 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For PutOrganizationConfigRule, organization config rule cannot be created because
+        /// For PutOrganizationConfigRule, organization Config rule cannot be created because
         /// you do not have permissions to call IAM <code>GetRole</code> action or create a service
         /// linked role.
         /// </para>
@@ -4897,12 +5024,12 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For PutConfigOrganizationRule, organization config rule deletion is in progress. Try
+        /// For PutConfigOrganizationRule, organization Config rule deletion is in progress. Try
         /// your request again later.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For DeleteOrganizationConfigRule, organization config rule creation is in progress.
+        /// For DeleteOrganizationConfigRule, organization Config rule creation is in progress.
         /// Try your request again later.
         /// </para>
         ///  </li> <li> 
@@ -5038,8 +5165,9 @@ namespace Amazon.ConfigService
         /// The specified <code>ResultToken</code> is invalid.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigRuleException">
-        /// One or more Config rules in the request are invalid. Verify that the rule names are
-        /// correct and try again.
+        /// The Config rule in the request is not valid. Verify that the rule is an Config Custom
+        /// Policy rule, that the rule name is correct, and that valid Amazon Resouce Names (ARNs)
+        /// are used before trying again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutEvaluations">REST API Reference for PutEvaluations Operation</seealso>
         public virtual Task<PutEvaluationsResponse> PutEvaluationsAsync(PutEvaluationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -5081,8 +5209,9 @@ namespace Amazon.ConfigService
         /// valid and try again.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigRuleException">
-        /// One or more Config rules in the request are invalid. Verify that the rule names are
-        /// correct and try again.
+        /// The Config rule in the request is not valid. Verify that the rule is an Config Custom
+        /// Policy rule, that the rule name is correct, and that valid Amazon Resouce Names (ARNs)
+        /// are used before trying again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutExternalEvaluation">REST API Reference for PutExternalEvaluation Operation</seealso>
         public virtual Task<PutExternalEvaluationResponse> PutExternalEvaluationAsync(PutExternalEvaluationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -5110,13 +5239,13 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// Adds or updates organization config rule for your entire organization evaluating whether
+        /// Adds or updates organization Config rule for your entire organization evaluating whether
         /// your Amazon Web Services resources comply with your desired configurations.
         /// 
         ///  
         /// <para>
         ///  Only a master account and a delegated administrator can create or update an organization
-        /// config rule. When calling this API with a delegated administrator, you must ensure
+        /// Config rule. When calling this API with a delegated administrator, you must ensure
         /// Organizations <code>ListDelegatedAdministrator</code> permissions are added. 
         /// </para>
         ///  
@@ -5146,7 +5275,7 @@ namespace Amazon.ConfigService
         /// </para>
         ///  
         /// <para>
-        /// The maximum number of organization config rules that Config supports is 150 and 3
+        /// The maximum number of organization Config rules that Config supports is 150 and 3
         /// delegated administrator per organization. 
         /// </para>
         ///  <note> 
@@ -5181,7 +5310,7 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For PutOrganizationConfigRule, organization config rule cannot be created because
+        /// For PutOrganizationConfigRule, organization Config rule cannot be created because
         /// you do not have permissions to call IAM <code>GetRole</code> action or create a service
         /// linked role.
         /// </para>
@@ -5205,7 +5334,7 @@ namespace Amazon.ConfigService
         /// valid and try again.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.MaxNumberOfOrganizationConfigRulesExceededException">
-        /// You have reached the limit of the number of organization config rules you can create.
+        /// You have reached the limit of the number of organization Config rules you can create.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoAvailableOrganizationException">
         /// Organization is no longer available.
@@ -5268,12 +5397,12 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For PutConfigOrganizationRule, organization config rule deletion is in progress. Try
+        /// For PutConfigOrganizationRule, organization Config rule deletion is in progress. Try
         /// your request again later.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For DeleteOrganizationConfigRule, organization config rule creation is in progress.
+        /// For DeleteOrganizationConfigRule, organization Config rule creation is in progress.
         /// Try your request again later.
         /// </para>
         ///  </li> <li> 
@@ -5392,7 +5521,7 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For PutOrganizationConfigRule, organization config rule cannot be created because
+        /// For PutOrganizationConfigRule, organization Config rule cannot be created because
         /// you do not have permissions to call IAM <code>GetRole</code> action or create a service
         /// linked role.
         /// </para>
@@ -5479,12 +5608,12 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For PutConfigOrganizationRule, organization config rule deletion is in progress. Try
+        /// For PutConfigOrganizationRule, organization Config rule deletion is in progress. Try
         /// your request again later.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For DeleteOrganizationConfigRule, organization config rule creation is in progress.
+        /// For DeleteOrganizationConfigRule, organization Config rule creation is in progress.
         /// Try your request again later.
         /// </para>
         ///  </li> <li> 
@@ -5580,7 +5709,7 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For PutOrganizationConfigRule, organization config rule cannot be created because
+        /// For PutOrganizationConfigRule, organization Config rule cannot be created because
         /// you do not have permissions to call IAM <code>GetRole</code> action or create a service
         /// linked role.
         /// </para>
@@ -5662,7 +5791,7 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For PutOrganizationConfigRule, organization config rule cannot be created because
+        /// For PutOrganizationConfigRule, organization Config rule cannot be created because
         /// you do not have permissions to call IAM <code>GetRole</code> action or create a service
         /// linked role.
         /// </para>
@@ -5755,7 +5884,7 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For PutOrganizationConfigRule, organization config rule cannot be created because
+        /// For PutOrganizationConfigRule, organization Config rule cannot be created because
         /// you do not have permissions to call IAM <code>GetRole</code> action or create a service
         /// linked role.
         /// </para>
@@ -6130,8 +6259,9 @@ namespace Amazon.ConfigService
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigRuleException">
-        /// One or more Config rules in the request are invalid. Verify that the rule names are
-        /// correct and try again.
+        /// The Config rule in the request is not valid. Verify that the rule is an Config Custom
+        /// Policy rule, that the rule name is correct, and that valid Amazon Resouce Names (ARNs)
+        /// are used before trying again.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ResourceInUseException">
         /// You see this exception in the following cases: 
@@ -6153,12 +6283,12 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For PutConfigOrganizationRule, organization config rule deletion is in progress. Try
+        /// For PutConfigOrganizationRule, organization Config rule deletion is in progress. Try
         /// your request again later.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For DeleteOrganizationConfigRule, organization config rule creation is in progress.
+        /// For DeleteOrganizationConfigRule, organization Config rule creation is in progress.
         /// Try your request again later.
         /// </para>
         ///  </li> <li> 
@@ -6308,7 +6438,7 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For PutOrganizationConfigRule, organization config rule cannot be created because
+        /// For PutOrganizationConfigRule, organization Config rule cannot be created because
         /// you do not have permissions to call IAM <code>GetRole</code> action or create a service
         /// linked role.
         /// </para>

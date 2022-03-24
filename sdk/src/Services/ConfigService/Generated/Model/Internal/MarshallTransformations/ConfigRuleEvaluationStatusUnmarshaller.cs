@@ -100,6 +100,24 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
                     unmarshalledObject.LastDeactivatedTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("LastDebugLogDeliveryStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LastDebugLogDeliveryStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LastDebugLogDeliveryStatusReason", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LastDebugLogDeliveryStatusReason = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LastDebugLogDeliveryTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.LastDebugLogDeliveryTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LastErrorCode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

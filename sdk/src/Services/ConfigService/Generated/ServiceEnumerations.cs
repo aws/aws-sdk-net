@@ -925,6 +925,56 @@ namespace Amazon.ConfigService
 
 
     /// <summary>
+    /// Constants used for properties of type OrganizationConfigRuleTriggerTypeNoSN.
+    /// </summary>
+    public class OrganizationConfigRuleTriggerTypeNoSN : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ConfigurationItemChangeNotification for OrganizationConfigRuleTriggerTypeNoSN
+        /// </summary>
+        public static readonly OrganizationConfigRuleTriggerTypeNoSN ConfigurationItemChangeNotification = new OrganizationConfigRuleTriggerTypeNoSN("ConfigurationItemChangeNotification");
+        /// <summary>
+        /// Constant OversizedConfigurationItemChangeNotification for OrganizationConfigRuleTriggerTypeNoSN
+        /// </summary>
+        public static readonly OrganizationConfigRuleTriggerTypeNoSN OversizedConfigurationItemChangeNotification = new OrganizationConfigRuleTriggerTypeNoSN("OversizedConfigurationItemChangeNotification");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OrganizationConfigRuleTriggerTypeNoSN(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OrganizationConfigRuleTriggerTypeNoSN FindValue(string value)
+        {
+            return FindValue<OrganizationConfigRuleTriggerTypeNoSN>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OrganizationConfigRuleTriggerTypeNoSN(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type OrganizationResourceDetailedStatus.
     /// </summary>
     public class OrganizationResourceDetailedStatus : ConstantClass
@@ -1172,6 +1222,10 @@ namespace Amazon.ConfigService
         /// Constant CUSTOM_LAMBDA for Owner
         /// </summary>
         public static readonly Owner CUSTOM_LAMBDA = new Owner("CUSTOM_LAMBDA");
+        /// <summary>
+        /// Constant CUSTOM_POLICY for Owner
+        /// </summary>
+        public static readonly Owner CUSTOM_POLICY = new Owner("CUSTOM_POLICY");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1732,6 +1786,10 @@ namespace Amazon.ConfigService
         /// Constant AWSElasticsearchDomain for ResourceType
         /// </summary>
         public static readonly ResourceType AWSElasticsearchDomain = new ResourceType("AWS::Elasticsearch::Domain");
+        /// <summary>
+        /// Constant AWSGuardDutyDetector for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSGuardDutyDetector = new ResourceType("AWS::GuardDuty::Detector");
         /// <summary>
         /// Constant AWSIAMGroup for ResourceType
         /// </summary>

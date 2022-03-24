@@ -29,29 +29,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// This is the response object from the PutOrganizationConfigRule operation.
+    /// Container for the parameters to the GetCustomRulePolicy operation.
+    /// Returns the policy definition containing the logic for your Config Custom Policy rule.
     /// </summary>
-    public partial class PutOrganizationConfigRuleResponse : AmazonWebServiceResponse
+    public partial class GetCustomRulePolicyRequest : AmazonConfigServiceRequest
     {
-        private string _organizationConfigRuleArn;
+        private string _configRuleName;
 
         /// <summary>
-        /// Gets and sets the property OrganizationConfigRuleArn. 
+        /// Gets and sets the property ConfigRuleName. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of an organization Config rule.
+        /// The name of your Config Custom Policy rule.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=256)]
-        public string OrganizationConfigRuleArn
+        [AWSProperty(Min=1, Max=128)]
+        public string ConfigRuleName
         {
-            get { return this._organizationConfigRuleArn; }
-            set { this._organizationConfigRuleArn = value; }
+            get { return this._configRuleName; }
+            set { this._configRuleName = value; }
         }
 
-        // Check to see if OrganizationConfigRuleArn property is set
-        internal bool IsSetOrganizationConfigRuleArn()
+        // Check to see if ConfigRuleName property is set
+        internal bool IsSetConfigRuleName()
         {
-            return this._organizationConfigRuleArn != null;
+            return this._configRuleName != null;
         }
 
     }

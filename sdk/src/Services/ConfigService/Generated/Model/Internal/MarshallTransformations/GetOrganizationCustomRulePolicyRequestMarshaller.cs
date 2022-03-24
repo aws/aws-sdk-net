@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// PutOrganizationConfigRule Request Marshaller
+    /// GetOrganizationCustomRulePolicy Request Marshaller
     /// </summary>       
-    public class PutOrganizationConfigRuleRequestMarshaller : IMarshaller<IRequest, PutOrganizationConfigRuleRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class GetOrganizationCustomRulePolicyRequestMarshaller : IMarshaller<IRequest, GetOrganizationCustomRulePolicyRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((PutOrganizationConfigRuleRequest)input);
+            return this.Marshall((GetOrganizationCustomRulePolicyRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(PutOrganizationConfigRuleRequest publicRequest)
+        public IRequest Marshall(GetOrganizationCustomRulePolicyRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ConfigService");
-            string target = "StarlingDoveService.PutOrganizationConfigRule";
+            string target = "StarlingDoveService.GetOrganizationCustomRulePolicy";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2014-11-12";
@@ -67,54 +67,10 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetExcludedAccounts())
-                {
-                    context.Writer.WritePropertyName("ExcludedAccounts");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestExcludedAccountsListValue in publicRequest.ExcludedAccounts)
-                    {
-                            context.Writer.Write(publicRequestExcludedAccountsListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
                 if(publicRequest.IsSetOrganizationConfigRuleName())
                 {
                     context.Writer.WritePropertyName("OrganizationConfigRuleName");
                     context.Writer.Write(publicRequest.OrganizationConfigRuleName);
-                }
-
-                if(publicRequest.IsSetOrganizationCustomPolicyRuleMetadata())
-                {
-                    context.Writer.WritePropertyName("OrganizationCustomPolicyRuleMetadata");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = OrganizationCustomPolicyRuleMetadataMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.OrganizationCustomPolicyRuleMetadata, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetOrganizationCustomRuleMetadata())
-                {
-                    context.Writer.WritePropertyName("OrganizationCustomRuleMetadata");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = OrganizationCustomRuleMetadataMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.OrganizationCustomRuleMetadata, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetOrganizationManagedRuleMetadata())
-                {
-                    context.Writer.WritePropertyName("OrganizationManagedRuleMetadata");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = OrganizationManagedRuleMetadataMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.OrganizationManagedRuleMetadata, context);
-
-                    context.Writer.WriteObjectEnd();
                 }
 
                 writer.WriteObjectEnd();
@@ -125,9 +81,9 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static PutOrganizationConfigRuleRequestMarshaller _instance = new PutOrganizationConfigRuleRequestMarshaller();        
+        private static GetOrganizationCustomRulePolicyRequestMarshaller _instance = new GetOrganizationCustomRulePolicyRequestMarshaller();        
 
-        internal static PutOrganizationConfigRuleRequestMarshaller GetInstance()
+        internal static GetOrganizationCustomRulePolicyRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -135,7 +91,7 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PutOrganizationConfigRuleRequestMarshaller Instance
+        public static GetOrganizationCustomRulePolicyRequestMarshaller Instance
         {
             get
             {

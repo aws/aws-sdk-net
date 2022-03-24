@@ -63,7 +63,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ConfigRuleName. 
         /// <para>
-        /// Name of the config rule.
+        /// Name of the Config rule.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

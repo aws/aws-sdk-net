@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Source Object
+    /// Response Unmarshaller for CustomPolicyDetails Object
     /// </summary>  
-    public class SourceUnmarshaller : IUnmarshaller<Source, XmlUnmarshallerContext>, IUnmarshaller<Source, JsonUnmarshallerContext>
+    public class CustomPolicyDetailsUnmarshaller : IUnmarshaller<CustomPolicyDetails, XmlUnmarshallerContext>, IUnmarshaller<CustomPolicyDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Source IUnmarshaller<Source, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        CustomPolicyDetails IUnmarshaller<CustomPolicyDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,33 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Source Unmarshall(JsonUnmarshallerContext context)
+        public CustomPolicyDetails Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Source unmarshalledObject = new Source();
+            CustomPolicyDetails unmarshalledObject = new CustomPolicyDetails();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("CustomPolicyDetails", targetDepth))
+                if (context.TestExpression("EnableDebugLogDelivery", targetDepth))
                 {
-                    var unmarshaller = CustomPolicyDetailsUnmarshaller.Instance;
-                    unmarshalledObject.CustomPolicyDetails = unmarshaller.Unmarshall(context);
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.EnableDebugLogDelivery = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Owner", targetDepth))
+                if (context.TestExpression("PolicyRuntime", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Owner = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PolicyRuntime = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("SourceDetails", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<SourceDetail, SourceDetailUnmarshaller>(SourceDetailUnmarshaller.Instance);
-                    unmarshalledObject.SourceDetails = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SourceIdentifier", targetDepth))
+                if (context.TestExpression("PolicyText", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SourceIdentifier = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PolicyText = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +88,12 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
         }
 
 
-        private static SourceUnmarshaller _instance = new SourceUnmarshaller();        
+        private static CustomPolicyDetailsUnmarshaller _instance = new CustomPolicyDetailsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SourceUnmarshaller Instance
+        public static CustomPolicyDetailsUnmarshaller Instance
         {
             get
             {

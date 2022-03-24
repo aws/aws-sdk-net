@@ -29,28 +29,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// An object that specifies organization custom rule metadata such as resource type,
-    /// resource ID of Amazon Web Services resource, Lambda function ARN, and organization
-    /// trigger types that trigger Config to evaluate your Amazon Web Services resources against
-    /// a rule. It also provides the frequency with which you want Config to run evaluations
-    /// for the rule if the trigger type is periodic.
+    /// An object that specifies metadata for your organization Config Custom Policy rule
+    /// including the runtime system in use, which accounts have debug logging enabled, and
+    /// other custom rule metadata such as resource type, resource ID of Amazon Web Services
+    /// resource, and organization trigger types that trigger Config to evaluate Amazon Web
+    /// Services resources against a rule.
     /// </summary>
-    public partial class OrganizationCustomRuleMetadata
+    public partial class OrganizationCustomPolicyRuleMetadataNoPolicy
     {
+        private List<string> _debugLogDeliveryAccounts = new List<string>();
         private string _description;
         private string _inputParameters;
-        private string _lambdaFunctionArn;
         private MaximumExecutionFrequency _maximumExecutionFrequency;
         private List<string> _organizationConfigRuleTriggerTypes = new List<string>();
+        private string _policyRuntime;
         private string _resourceIdScope;
         private List<string> _resourceTypesScope = new List<string>();
         private string _tagKeyScope;
         private string _tagValueScope;
 
         /// <summary>
+        /// Gets and sets the property DebugLogDeliveryAccounts. 
+        /// <para>
+        /// A list of accounts that you can enable debug logging for your organization Config
+        /// Custom Policy rule. List is null when debug logging is enabled for all accounts.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1000)]
+        public List<string> DebugLogDeliveryAccounts
+        {
+            get { return this._debugLogDeliveryAccounts; }
+            set { this._debugLogDeliveryAccounts = value; }
+        }
+
+        // Check to see if DebugLogDeliveryAccounts property is set
+        internal bool IsSetDebugLogDeliveryAccounts()
+        {
+            return this._debugLogDeliveryAccounts != null && this._debugLogDeliveryAccounts.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description that you provide for your organization Config rule.
+        /// The description that you provide for your organization Config Custom Policy rule.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=256)]
@@ -69,7 +90,8 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property InputParameters. 
         /// <para>
-        /// A string, in JSON format, that is passed to your organization Config rule Lambda function.
+        /// A string, in JSON format, that is passed to your organization Config Custom Policy
+        /// rule.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -86,38 +108,12 @@ namespace Amazon.ConfigService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LambdaFunctionArn. 
-        /// <para>
-        /// The lambda function ARN.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=256)]
-        public string LambdaFunctionArn
-        {
-            get { return this._lambdaFunctionArn; }
-            set { this._lambdaFunctionArn = value; }
-        }
-
-        // Check to see if LambdaFunctionArn property is set
-        internal bool IsSetLambdaFunctionArn()
-        {
-            return this._lambdaFunctionArn != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property MaximumExecutionFrequency. 
         /// <para>
-        /// The maximum frequency with which Config runs evaluations for a rule. Your custom rule
-        /// is triggered when Config delivers the configuration snapshot. For more information,
-        /// see <a>ConfigSnapshotDeliveryProperties</a>.
+        /// The maximum frequency with which Config runs evaluations for a rule. Your Config Custom
+        /// Policy rule is triggered when Config delivers the configuration snapshot. For more
+        /// information, see <a>ConfigSnapshotDeliveryProperties</a>.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// By default, rules with a periodic trigger are evaluated every 24 hours. To change
-        /// the frequency, specify a valid value for the <code>MaximumExecutionFrequency</code>
-        /// parameter.
-        /// </para>
-        ///  </note>
         /// </summary>
         public MaximumExecutionFrequency MaximumExecutionFrequency
         {
@@ -134,8 +130,8 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property OrganizationConfigRuleTriggerTypes. 
         /// <para>
-        /// The type of notification that triggers Config to run an evaluation for a rule. You
-        /// can specify the following notification types:
+        /// The type of notification that triggers Config to run an evaluation for a rule. For
+        /// Config Custom Policy rules, Config supports change triggered notification types:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -149,14 +145,8 @@ namespace Amazon.ConfigService.Model
         /// type when a resource changes and the notification exceeds the maximum size allowed
         /// by Amazon SNS.
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>ScheduledNotification</code> - Triggers a periodic evaluation at the frequency
-        /// specified for <code>MaximumExecutionFrequency</code>.
-        /// </para>
         ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Required=true)]
         public List<string> OrganizationConfigRuleTriggerTypes
         {
             get { return this._organizationConfigRuleTriggerTypes; }
@@ -167,6 +157,28 @@ namespace Amazon.ConfigService.Model
         internal bool IsSetOrganizationConfigRuleTriggerTypes()
         {
             return this._organizationConfigRuleTriggerTypes != null && this._organizationConfigRuleTriggerTypes.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PolicyRuntime. 
+        /// <para>
+        /// The runtime system for your organization Config Custom Policy rules. Guard is a policy-as-code
+        /// language that allows you to write policies that are enforced by Config Custom Policy
+        /// rules. For more information about Guard, see the <a href="https://github.com/aws-cloudformation/cloudformation-guard">Guard
+        /// GitHub Repository</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string PolicyRuntime
+        {
+            get { return this._policyRuntime; }
+            set { this._policyRuntime = value; }
+        }
+
+        // Check to see if PolicyRuntime property is set
+        internal bool IsSetPolicyRuntime()
+        {
+            return this._policyRuntime != null;
         }
 
         /// <summary>
@@ -211,7 +223,7 @@ namespace Amazon.ConfigService.Model
         /// Gets and sets the property TagKeyScope. 
         /// <para>
         /// One part of a key-value pair that make up a tag. A key is a general label that acts
-        /// like a category for more specific tag values. 
+        /// like a category for more specific tag values.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -231,7 +243,7 @@ namespace Amazon.ConfigService.Model
         /// Gets and sets the property TagValueScope. 
         /// <para>
         /// The optional part of a key-value pair that make up a tag. A value acts as a descriptor
-        /// within a tag category (key). 
+        /// within a tag category (key).
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

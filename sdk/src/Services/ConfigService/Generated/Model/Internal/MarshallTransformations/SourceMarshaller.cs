@@ -45,6 +45,17 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Source requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetCustomPolicyDetails())
+            {
+                context.Writer.WritePropertyName("CustomPolicyDetails");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = CustomPolicyDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.CustomPolicyDetails, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetOwner())
             {
                 context.Writer.WritePropertyName("Owner");

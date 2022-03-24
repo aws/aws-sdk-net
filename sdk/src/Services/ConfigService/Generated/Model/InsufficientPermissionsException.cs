@@ -43,7 +43,7 @@ namespace Amazon.ConfigService.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// For PutOrganizationConfigRule, organization config rule cannot be created because
+    /// For PutOrganizationConfigRule, organization Config rule cannot be created because
     /// you do not have permissions to call IAM <code>GetRole</code> action or create a service
     /// linked role.
     /// </para>

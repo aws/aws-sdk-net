@@ -31,7 +31,7 @@ namespace Amazon.ConfigService.Model
     /// <summary>
     /// Container for the parameters to the GetOrganizationConfigRuleDetailedStatus operation.
     /// Returns detailed status for each member account within an organization for a given
-    /// organization config rule.
+    /// organization Config rule.
     /// </summary>
     public partial class GetOrganizationConfigRuleDetailedStatusRequest : AmazonConfigServiceRequest
     {
@@ -101,7 +101,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property OrganizationConfigRuleName. 
         /// <para>
-        /// The name of organization config rule for which you want status details for member
+        /// The name of your organization Config rule for which you want status details for member
         /// accounts.
         /// </para>
         /// </summary>

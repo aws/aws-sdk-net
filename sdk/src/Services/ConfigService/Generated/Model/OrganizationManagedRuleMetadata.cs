@@ -48,7 +48,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description that you provide for organization config rule.
+        /// The description that you provide for your organization Config rule.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=256)]
@@ -67,7 +67,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property InputParameters. 
         /// <para>
-        /// A string, in JSON format, that is passed to organization config rule Lambda function.
+        /// A string, in JSON format, that is passed to your organization Config rule Lambda function.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

@@ -30,13 +30,13 @@ namespace Amazon.ConfigService.Model
 {
     /// <summary>
     /// Container for the parameters to the PutOrganizationConfigRule operation.
-    /// Adds or updates organization config rule for your entire organization evaluating whether
+    /// Adds or updates organization Config rule for your entire organization evaluating whether
     /// your Amazon Web Services resources comply with your desired configurations.
     /// 
     ///  
     /// <para>
     ///  Only a master account and a delegated administrator can create or update an organization
-    /// config rule. When calling this API with a delegated administrator, you must ensure
+    /// Config rule. When calling this API with a delegated administrator, you must ensure
     /// Organizations <code>ListDelegatedAdministrator</code> permissions are added. 
     /// </para>
     ///  
@@ -66,7 +66,7 @@ namespace Amazon.ConfigService.Model
     /// </para>
     ///  
     /// <para>
-    /// The maximum number of organization config rules that Config supports is 150 and 3
+    /// The maximum number of organization Config rules that Config supports is 150 and 3
     /// delegated administrator per organization. 
     /// </para>
     ///  <note> 
@@ -84,13 +84,14 @@ namespace Amazon.ConfigService.Model
     {
         private List<string> _excludedAccounts = new List<string>();
         private string _organizationConfigRuleName;
+        private OrganizationCustomPolicyRuleMetadata _organizationCustomPolicyRuleMetadata;
         private OrganizationCustomRuleMetadata _organizationCustomRuleMetadata;
         private OrganizationManagedRuleMetadata _organizationManagedRuleMetadata;
 
         /// <summary>
         /// Gets and sets the property ExcludedAccounts. 
         /// <para>
-        /// A comma-separated list of accounts that you want to exclude from an organization config
+        /// A comma-separated list of accounts that you want to exclude from an organization Config
         /// rule.
         /// </para>
         /// </summary>
@@ -110,7 +111,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property OrganizationConfigRuleName. 
         /// <para>
-        /// The name that you assign to an organization config rule.
+        /// The name that you assign to an organization Config rule.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
@@ -124,6 +125,28 @@ namespace Amazon.ConfigService.Model
         internal bool IsSetOrganizationConfigRuleName()
         {
             return this._organizationConfigRuleName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OrganizationCustomPolicyRuleMetadata. 
+        /// <para>
+        /// An object that specifies metadata for your organization's Config Custom Policy rule.
+        /// The metadata includes the runtime system in use, which accounts have debug logging
+        /// enabled, and other custom rule metadata, such as resource type, resource ID of Amazon
+        /// Web Services resource, and organization trigger types that initiate Config to evaluate
+        /// Amazon Web Services resources against a rule.
+        /// </para>
+        /// </summary>
+        public OrganizationCustomPolicyRuleMetadata OrganizationCustomPolicyRuleMetadata
+        {
+            get { return this._organizationCustomPolicyRuleMetadata; }
+            set { this._organizationCustomPolicyRuleMetadata = value; }
+        }
+
+        // Check to see if OrganizationCustomPolicyRuleMetadata property is set
+        internal bool IsSetOrganizationCustomPolicyRuleMetadata()
+        {
+            return this._organizationCustomPolicyRuleMetadata != null;
         }
 
         /// <summary>

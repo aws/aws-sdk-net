@@ -30,7 +30,7 @@ namespace Amazon.ConfigService.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteOrganizationConformancePack operation.
-    /// Deletes the specified organization conformance pack and all of the config rules and
+    /// Deletes the specified organization conformance pack and all of the Config rules and
     /// remediation actions from all member accounts in that organization. 
     /// 
     ///  

@@ -30,13 +30,13 @@ namespace Amazon.ConfigService.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeOrganizationConfigRules operation.
-    /// Returns a list of organization config rules. 
+    /// Returns a list of organization Config rules. 
     /// 
     ///  <note> 
     /// <para>
     /// When you specify the limit and the next token, you receive a paginated response. Limit
-    /// and next token are not applicable if you specify organization config rule names. It
-    /// is only applicable, when you request all the organization config rules.
+    /// and next token are not applicable if you specify organization Config rule names. It
+    /// is only applicable, when you request all the organization Config rules.
     /// </para>
     ///  </note>
     /// </summary>
@@ -49,7 +49,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property Limit. 
         /// <para>
-        /// The maximum number of organization config rules returned on each page. If you do no
+        /// The maximum number of organization Config rules returned on each page. If you do no
         /// specify a number, Config uses the default. The default is 100.
         /// </para>
         /// </summary>
@@ -88,8 +88,8 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property OrganizationConfigRuleNames. 
         /// <para>
-        /// The names of organization config rules for which you want details. If you do not specify
-        /// any names, Config returns details for all your organization config rules.
+        /// The names of organization Config rules for which you want details. If you do not specify
+        /// any names, Config returns details for all your organization Config rules.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=25)]

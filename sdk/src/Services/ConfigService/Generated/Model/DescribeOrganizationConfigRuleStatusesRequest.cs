@@ -30,18 +30,18 @@ namespace Amazon.ConfigService.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeOrganizationConfigRuleStatuses operation.
-    /// Provides organization config rule deployment status for an organization.
+    /// Provides organization Config rule deployment status for an organization.
     /// 
     ///  <note> 
     /// <para>
-    /// The status is not considered successful until organization config rule is successfully
+    /// The status is not considered successful until organization Config rule is successfully
     /// deployed in all the member accounts with an exception of excluded accounts.
     /// </para>
     ///  
     /// <para>
     /// When you specify the limit and the next token, you receive a paginated response. Limit
-    /// and next token are not applicable if you specify organization config rule names. It
-    /// is only applicable, when you request all the organization config rules.
+    /// and next token are not applicable if you specify organization Config rule names. It
+    /// is only applicable, when you request all the organization Config rules.
     /// </para>
     ///  </note>
     /// </summary>
@@ -93,7 +93,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property OrganizationConfigRuleNames. 
         /// <para>
-        /// The names of organization config rules for which you want status details. If you do
+        /// The names of organization Config rules for which you want status details. If you do
         /// not specify any names, Config returns details for all your organization Config rules.
         /// </para>
         /// </summary>
