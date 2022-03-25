@@ -173,20 +173,19 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Origin. 
         /// <para>
-        /// Describes how the route was created. The following are possible values:
+        /// Describes how the route was created. The following are the possible values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CreateRouteTable</code> - The route was automatically created when the route
-        /// table was created.
+        /// CreateRouteTable - The route was automatically created when the route table was created.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CreateRoute</code> - The route was manually added to the route table.
+        /// CreateRoute - The route was manually added to the route table.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>EnableVgwRoutePropagation</code> - The route was propagated by route propagation.
+        /// EnableVgwRoutePropagation - The route was propagated by route propagation.
         /// </para>
         ///  </li> </ul>
         /// </summary>

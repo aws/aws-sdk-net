@@ -75,6 +75,10 @@ namespace Amazon.EC2.Model
         private string _state;
         private AnalysisComponent _subnet;
         private AnalysisComponent _subnetRouteTable;
+        private AnalysisComponent _transitGateway;
+        private AnalysisComponent _transitGatewayAttachment;
+        private AnalysisComponent _transitGatewayRouteTable;
+        private TransitGatewayRouteTableRoute _transitGatewayRouteTableRoute;
         private AnalysisComponent _vpc;
         private AnalysisComponent _vpcEndpoint;
         private AnalysisComponent _vpcPeeringConnection;
@@ -301,7 +305,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Direction. 
         /// <para>
-        /// The direction. The following are possible values:
+        /// The direction. The following are the possible values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -813,6 +817,78 @@ namespace Amazon.EC2.Model
         internal bool IsSetSubnetRouteTable()
         {
             return this._subnetRouteTable != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TransitGateway. 
+        /// <para>
+        /// The transit gateway.
+        /// </para>
+        /// </summary>
+        public AnalysisComponent TransitGateway
+        {
+            get { return this._transitGateway; }
+            set { this._transitGateway = value; }
+        }
+
+        // Check to see if TransitGateway property is set
+        internal bool IsSetTransitGateway()
+        {
+            return this._transitGateway != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TransitGatewayAttachment. 
+        /// <para>
+        /// The transit gateway attachment.
+        /// </para>
+        /// </summary>
+        public AnalysisComponent TransitGatewayAttachment
+        {
+            get { return this._transitGatewayAttachment; }
+            set { this._transitGatewayAttachment = value; }
+        }
+
+        // Check to see if TransitGatewayAttachment property is set
+        internal bool IsSetTransitGatewayAttachment()
+        {
+            return this._transitGatewayAttachment != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TransitGatewayRouteTable. 
+        /// <para>
+        /// The transit gateway route table.
+        /// </para>
+        /// </summary>
+        public AnalysisComponent TransitGatewayRouteTable
+        {
+            get { return this._transitGatewayRouteTable; }
+            set { this._transitGatewayRouteTable = value; }
+        }
+
+        // Check to see if TransitGatewayRouteTable property is set
+        internal bool IsSetTransitGatewayRouteTable()
+        {
+            return this._transitGatewayRouteTable != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TransitGatewayRouteTableRoute. 
+        /// <para>
+        /// The transit gateway route table route.
+        /// </para>
+        /// </summary>
+        public TransitGatewayRouteTableRoute TransitGatewayRouteTableRoute
+        {
+            get { return this._transitGatewayRouteTableRoute; }
+            set { this._transitGatewayRouteTableRoute = value; }
+        }
+
+        // Check to see if TransitGatewayRouteTableRoute property is set
+        internal bool IsSetTransitGatewayRouteTableRoute()
+        {
+            return this._transitGatewayRouteTableRoute != null;
         }
 
         /// <summary>

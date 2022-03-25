@@ -301,6 +301,30 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.SubnetRouteTable = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("transitGateway", targetDepth))
+                    {
+                        var unmarshaller = AnalysisComponentUnmarshaller.Instance;
+                        unmarshalledObject.TransitGateway = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("transitGatewayAttachment", targetDepth))
+                    {
+                        var unmarshaller = AnalysisComponentUnmarshaller.Instance;
+                        unmarshalledObject.TransitGatewayAttachment = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("transitGatewayRouteTable", targetDepth))
+                    {
+                        var unmarshaller = AnalysisComponentUnmarshaller.Instance;
+                        unmarshalledObject.TransitGatewayRouteTable = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("transitGatewayRouteTableRoute", targetDepth))
+                    {
+                        var unmarshaller = TransitGatewayRouteTableRouteUnmarshaller.Instance;
+                        unmarshalledObject.TransitGatewayRouteTableRoute = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("vpc", targetDepth))
                     {
                         var unmarshaller = AnalysisComponentUnmarshaller.Instance;

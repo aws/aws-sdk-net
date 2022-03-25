@@ -42,7 +42,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// The filters. The following are possible values:
+        /// The filters. The following are the possible values:
         /// </para>
         ///  <ul> <li> 
         /// <para>

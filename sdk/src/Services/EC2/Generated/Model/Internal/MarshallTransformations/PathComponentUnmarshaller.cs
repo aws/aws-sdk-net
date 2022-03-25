@@ -60,6 +60,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.AclRule = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("additionalDetailSet/item", targetDepth))
+                    {
+                        var unmarshaller = AdditionalDetailUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.AdditionalDetails.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("attachedTo", targetDepth))
                     {
                         var unmarshaller = AnalysisComponentUnmarshaller.Instance;
@@ -118,6 +125,18 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = AnalysisComponentUnmarshaller.Instance;
                         unmarshalledObject.Subnet = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("transitGateway", targetDepth))
+                    {
+                        var unmarshaller = AnalysisComponentUnmarshaller.Instance;
+                        unmarshalledObject.TransitGateway = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("transitGatewayRouteTableRoute", targetDepth))
+                    {
+                        var unmarshaller = TransitGatewayRouteTableRouteUnmarshaller.Instance;
+                        unmarshalledObject.TransitGatewayRouteTableRoute = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("vpc", targetDepth))
