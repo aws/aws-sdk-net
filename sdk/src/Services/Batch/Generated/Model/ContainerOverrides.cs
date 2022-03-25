@@ -113,8 +113,8 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property Memory. 
         /// <para>
         /// This parameter is deprecated, use <code>resourceRequirements</code> to override the
-        /// memory requirements specified in the job definition. It's not supported for jobs that
-        /// run on Fargate resources. For jobs run on EC2 resources, it overrides the <code>memory</code>
+        /// memory requirements specified in the job definition. It's not supported for jobs running
+        /// on Fargate resources. For jobs running on EC2 resources, it overrides the <code>memory</code>
         /// parameter set in the job definition, but doesn't override any memory requirement specified
         /// in the <code>resourceRequirements</code> structure in the job definition. To override
         /// memory requirements that are specified in the <code>resourceRequirements</code> structure
@@ -162,7 +162,7 @@ namespace Amazon.Batch.Model
         /// <para>
         /// This parameter is deprecated, use <code>resourceRequirements</code> to override the
         /// <code>vcpus</code> parameter that's set in the job definition. It's not supported
-        /// for jobs that run on Fargate resources. For jobs run on EC2 resources, it overrides
+        /// for jobs running on Fargate resources. For jobs running on EC2 resources, it overrides
         /// the <code>vcpus</code> parameter set in the job definition, but doesn't override any
         /// vCPU requirement specified in the <code>resourceRequirements</code> structure in the
         /// job definition. To override vCPU requirements that are specified in the <code>resourceRequirements</code>

@@ -279,7 +279,7 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// This parameter is only supported when the <code>type</code> parameter is set to <code>UNMANAGED</code>/
+        /// This parameter is only supported when the <code>type</code> parameter is set to <code>UNMANAGED</code>.
         /// </para>
         ///  </note>
         /// </summary>

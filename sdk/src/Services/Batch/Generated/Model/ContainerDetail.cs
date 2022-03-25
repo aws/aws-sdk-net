@@ -334,7 +334,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Memory. 
         /// <para>
-        /// For jobs run on EC2 resources that didn't specify memory requirements using <code>resourceRequirements</code>,
+        /// For jobs running on EC2 resources that didn't specify memory requirements using <code>resourceRequirements</code>,
         /// the number of MiB of memory reserved for the job. For other jobs, including all run
         /// on Fargate resources, see <code>resourceRequirements</code>.
         /// </para>

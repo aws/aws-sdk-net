@@ -641,7 +641,7 @@ namespace Amazon.Batch
         /// are specified in the <code>resourceRequirements</code> objects in the job definition
         /// are the exception. They can't be overridden this way using the <code>memory</code>
         /// and <code>vcpus</code> parameters. Rather, you must specify updates to job definition
-        /// parameters in a <code>ResourceRequirements</code> object that's included in the <code>containerOverrides</code>
+        /// parameters in a <code>resourceRequirements</code> object that's included in the <code>containerOverrides</code>
         /// parameter.
         /// 
         ///  <note> 

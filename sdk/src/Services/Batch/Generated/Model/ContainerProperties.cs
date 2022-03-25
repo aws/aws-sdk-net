@@ -171,6 +171,12 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
+        /// Images in Amazon ECR Public repositories use the full <code>registry/repository[:tag]</code>
+        /// or <code>registry/repository[@digest]</code> naming conventions. For example, <code>public.ecr.aws/<i>registry_alias</i>/<i>my-web-app</i>:<i>latest</i>
+        /// </code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// Images in Amazon ECR repositories use the full registry and repository URI (for example,
         /// <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;</code>).
         /// </para>
@@ -324,12 +330,12 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property Memory. 
         /// <para>
         /// This parameter is deprecated, use <code>resourceRequirements</code> to specify the
-        /// memory requirements for the job definition. It's not supported for jobs that run on
-        /// Fargate resources. For jobs run on EC2 resources, it specifies the memory hard limit
-        /// (in MiB) for a container. If your container attempts to exceed the specified number,
-        /// it's terminated. You must specify at least 4 MiB of memory for a job using this parameter.
-        /// The memory hard limit can be specified in several places. It must be specified for
-        /// each node at least once.
+        /// memory requirements for the job definition. It's not supported for jobs running on
+        /// Fargate resources. For jobs running on EC2 resources, it specifies the memory hard
+        /// limit (in MiB) for a container. If your container attempts to exceed the specified
+        /// number, it's terminated. You must specify at least 4 MiB of memory for a job using
+        /// this parameter. The memory hard limit can be specified in several places. It must
+        /// be specified for each node at least once.
         /// </para>
         /// </summary>
         [Obsolete("This field is deprecated, use resourceRequirements instead.")]
@@ -528,9 +534,9 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property Vcpus. 
         /// <para>
         /// This parameter is deprecated, use <code>resourceRequirements</code> to specify the
-        /// vCPU requirements for the job definition. It's not supported for jobs that run on
-        /// Fargate resources. For jobs run on EC2 resources, it specifies the number of vCPUs
-        /// reserved for the job.
+        /// vCPU requirements for the job definition. It's not supported for jobs running on Fargate
+        /// resources. For jobs running on EC2 resources, it specifies the number of vCPUs reserved
+        /// for the job.
         /// </para>
         ///  
         /// <para>
