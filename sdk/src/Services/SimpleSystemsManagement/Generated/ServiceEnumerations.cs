@@ -2933,6 +2933,10 @@ namespace Amazon.SimpleSystemsManagement
         /// </summary>
         public static readonly OperatingSystem REDHAT_ENTERPRISE_LINUX = new OperatingSystem("REDHAT_ENTERPRISE_LINUX");
         /// <summary>
+        /// Constant ROCKY_LINUX for OperatingSystem
+        /// </summary>
+        public static readonly OperatingSystem ROCKY_LINUX = new OperatingSystem("ROCKY_LINUX");
+        /// <summary>
         /// Constant SUSE for OperatingSystem
         /// </summary>
         public static readonly OperatingSystem SUSE = new OperatingSystem("SUSE");

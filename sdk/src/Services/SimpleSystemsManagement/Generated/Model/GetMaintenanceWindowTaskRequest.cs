@@ -30,7 +30,7 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the GetMaintenanceWindowTask operation.
-    /// Lists the tasks in a maintenance window.
+    /// Retrieves the details of a maintenance window task.
     /// 
     ///  <note> 
     /// <para>
@@ -39,7 +39,11 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// inserts a placeholder value of <code>1</code>, which may be reported in the response
     /// to this command. These values don't affect the running of your task and can be ignored.
     /// </para>
-    ///  </note>
+    ///  </note> 
+    /// <para>
+    /// To retrieve a list of tasks in a maintenance window, instead use the <a>DescribeMaintenanceWindowTasks</a>
+    /// command.
+    /// </para>
     /// </summary>
     public partial class GetMaintenanceWindowTaskRequest : AmazonSimpleSystemsManagementRequest
     {

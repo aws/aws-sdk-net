@@ -128,6 +128,13 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// updating only the latest version of the document. You can specify the version number
         /// of the latest version or use the <code>$LATEST</code> variable.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you change a document version for a State Manager association, Systems Manager
+        /// immediately runs the association unless you previously specifed the <code>apply-only-at-cron-interval</code>
+        /// parameter.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string DocumentVersion
         {

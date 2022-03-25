@@ -103,7 +103,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property DocumentVersion. 
         /// <para>
-        /// The version of the document used in the association.
+        /// The version of the document used in the association. If you change a document version
+        /// for a State Manager association, Systems Manager immediately runs the association
+        /// unless you previously specifed the <code>apply-only-at-cron-interval</code> parameter.
         /// </para>
         ///  <important> 
         /// <para>

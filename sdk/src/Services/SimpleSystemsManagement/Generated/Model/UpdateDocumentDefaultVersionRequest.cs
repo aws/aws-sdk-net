@@ -30,7 +30,15 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateDocumentDefaultVersion operation.
-    /// Set the default version of a document.
+    /// Set the default version of a document. 
+    /// 
+    ///  <note> 
+    /// <para>
+    /// If you change a document version for a State Manager association, Systems Manager
+    /// immediately runs the association unless you previously specifed the <code>apply-only-at-cron-interval</code>
+    /// parameter.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class UpdateDocumentDefaultVersionRequest : AmazonSimpleSystemsManagementRequest
     {

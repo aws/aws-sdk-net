@@ -87,10 +87,21 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// Also, if you specified this option when you created the association, you can reset
-        /// it. To do so, specify the <code>no-apply-only-at-cron-interval</code> parameter when
-        /// you update the association from the command line. This parameter forces the association
-        /// to run immediately after updating it and according to the interval specified.
+        /// If you chose this option when you created an association and later you edit that association
+        /// or you make changes to the SSM document on which that association is based (by using
+        /// the Documents page in the console), State Manager applies the association at the next
+        /// specified cron interval. For example, if you chose the <code>Latest</code> version
+        /// of an SSM document when you created an association and you edit the association by
+        /// choosing a different document version on the Documents page, State Manager applies
+        /// the association at the next specified cron interval if you previously selected this
+        /// option. If this option wasn't selected, State Manager immediately runs the association.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can reset this option. To do so, specify the <code>no-apply-only-at-cron-interval</code>
+        /// parameter when you update the association from the command line. This parameter forces
+        /// the association to run immediately after updating it and according to the interval
+        /// specified.
         /// </para>
         /// </summary>
         public bool ApplyOnlyAtCronInterval
