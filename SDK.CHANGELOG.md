@@ -1,3 +1,7 @@
+### 3.7.239.0 (2022-03-28 15:10 UTC)
+* Core 3.7.10.0
+	* Consolidate Profile resolution code and fixed bug where searching for profile did not honor AWSConfigs.AWSProfileName
+
 ### 3.7.238.0 (2022-03-25 18:16 UTC)
 * Batch (3.7.4.0)
 	* Bug Fix: Fixed a bug where shapes were marked as unboxed and were not serialized and sent over the wire, causing an API error from the service.
