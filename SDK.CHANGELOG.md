@@ -1,3 +1,13 @@
+### 3.7.240.0 (2022-03-28 19:56 UTC)
+* ACMPCA (3.7.4.4)
+	* Updating service name entities
+* MediaLive (3.7.9.0)
+	* This release adds support for selecting a maintenance window.
+* Core 3.7.10.1
+	* Updating endpoints.json file.
+
+	* All services packages updated to require new Core
+
 ### 3.7.239.0 (2022-03-28 15:10 UTC)
 * Core 3.7.10.0
 	* Consolidate Profile resolution code and fixed bug where searching for profile did not honor AWSConfigs.AWSProfileName
