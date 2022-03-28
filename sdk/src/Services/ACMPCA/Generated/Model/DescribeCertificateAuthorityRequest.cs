@@ -36,14 +36,13 @@ namespace Amazon.ACMPCA.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    ///  <code>CREATING</code> - Amazon Web Services Private CA is creating your private certificate
-    /// authority.
+    ///  <code>CREATING</code> - ACM Private CA is creating your private certificate authority.
     /// </para>
     ///  </li> <li> 
     /// <para>
     ///  <code>PENDING_CERTIFICATE</code> - The certificate is pending. You must use your
-    /// Amazon Web Services Private CA-hosted or on-premises root or subordinate CA to sign
-    /// your private CA CSR and then import it into PCA. 
+    /// ACM Private CA-hosted or on-premises root or subordinate CA to sign your private CA
+    /// CSR and then import it into PCA. 
     /// </para>
     ///  </li> <li> 
     /// <para>

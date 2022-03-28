@@ -51,7 +51,7 @@ namespace Amazon.ACMPCA.Model
     /// to Amazon Web Services Organizations, or to an Amazon Web Services Organizations unit.
     /// Policies are under the control of a CA administrator. For more information, see <a
     /// href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-rbp.html">Using a Resource
-    /// Based Policy with Amazon Web Services Private CA</a>.
+    /// Based Policy with ACM Private CA</a>.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -62,8 +62,8 @@ namespace Amazon.ACMPCA.Model
     /// <para>
     /// For ACM to manage automatic renewal of these certificates, the ACM user must configure
     /// a Service Linked Role (SLR). The SLR allows the ACM service to assume the identity
-    /// of the user, subject to confirmation against the Amazon Web Services Private CA policy.
-    /// For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-slr.html">Using
+    /// of the user, subject to confirmation against the ACM Private CA policy. For more information,
+    /// see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-slr.html">Using
     /// a Service Linked Role with ACM</a>.
     /// </para>
     ///  </li> <li> 

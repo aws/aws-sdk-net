@@ -44,8 +44,8 @@ namespace Amazon.ACMPCA.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// Amazon Web Services Private CA assets that are stored in Amazon S3 can be protected
-    /// with encryption. For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaAuditReport.html#audit-report-encryption">Encrypting
+    /// ACM Private CA assets that are stored in Amazon S3 can be protected with encryption.
+    /// For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaAuditReport.html#audit-report-encryption">Encrypting
     /// Your Audit Reports</a>.
     /// </para>
     ///  <note> 

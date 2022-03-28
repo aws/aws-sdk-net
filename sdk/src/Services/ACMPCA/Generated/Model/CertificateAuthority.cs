@@ -35,8 +35,8 @@ namespace Amazon.ACMPCA.Model
     /// key contained in the <b>Subject Public Key Info</b> field. Call the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>
     /// action to create your private CA. You must then call the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_GetCertificateAuthorityCertificate.html">GetCertificateAuthorityCertificate</a>
     /// action to retrieve a private CA certificate signing request (CSR). Sign the CSR with
-    /// your Amazon Web Services Private CA-hosted or on-premises root or subordinate CA certificate.
-    /// Call the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ImportCertificateAuthorityCertificate.html">ImportCertificateAuthorityCertificate</a>
+    /// your ACM Private CA-hosted or on-premises root or subordinate CA certificate. Call
+    /// the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ImportCertificateAuthorityCertificate.html">ImportCertificateAuthorityCertificate</a>
     /// action to import the signed certificate into Certificate Manager (ACM).
     /// </summary>
     public partial class CertificateAuthority
