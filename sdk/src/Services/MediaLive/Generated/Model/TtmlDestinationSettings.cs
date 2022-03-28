@@ -36,9 +36,8 @@ namespace Amazon.MediaLive.Model
         private TtmlDestinationStyleControl _styleControl;
 
         /// <summary>
-        /// Gets and sets the property StyleControl. When set to passthrough, passes through style
-        /// and position information from a TTML-like input source (TTML, SMPTE-TT, CFF-TT) to
-        /// the CFF-TT output or TTML output.
+        /// Gets and sets the property StyleControl. This field is not currently supported and
+        /// will not affect the output styling. Leave the default value.
         /// </summary>
         public TtmlDestinationStyleControl StyleControl
         {

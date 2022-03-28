@@ -10241,6 +10241,76 @@ namespace Amazon.MediaLive
 
 
     /// <summary>
+    /// Constants used for properties of type MaintenanceDay.
+    /// </summary>
+    public class MaintenanceDay : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FRIDAY for MaintenanceDay
+        /// </summary>
+        public static readonly MaintenanceDay FRIDAY = new MaintenanceDay("FRIDAY");
+        /// <summary>
+        /// Constant MONDAY for MaintenanceDay
+        /// </summary>
+        public static readonly MaintenanceDay MONDAY = new MaintenanceDay("MONDAY");
+        /// <summary>
+        /// Constant SATURDAY for MaintenanceDay
+        /// </summary>
+        public static readonly MaintenanceDay SATURDAY = new MaintenanceDay("SATURDAY");
+        /// <summary>
+        /// Constant SUNDAY for MaintenanceDay
+        /// </summary>
+        public static readonly MaintenanceDay SUNDAY = new MaintenanceDay("SUNDAY");
+        /// <summary>
+        /// Constant THURSDAY for MaintenanceDay
+        /// </summary>
+        public static readonly MaintenanceDay THURSDAY = new MaintenanceDay("THURSDAY");
+        /// <summary>
+        /// Constant TUESDAY for MaintenanceDay
+        /// </summary>
+        public static readonly MaintenanceDay TUESDAY = new MaintenanceDay("TUESDAY");
+        /// <summary>
+        /// Constant WEDNESDAY for MaintenanceDay
+        /// </summary>
+        public static readonly MaintenanceDay WEDNESDAY = new MaintenanceDay("WEDNESDAY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MaintenanceDay(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MaintenanceDay FindValue(string value)
+        {
+            return FindValue<MaintenanceDay>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MaintenanceDay(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type MotionGraphicsInsertion.
     /// </summary>
     public class MotionGraphicsInsertion : ConstantClass

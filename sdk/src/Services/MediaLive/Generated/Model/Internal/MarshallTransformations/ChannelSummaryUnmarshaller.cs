@@ -118,6 +118,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     unmarshalledObject.LogLevel = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("maintenance", targetDepth))
+                {
+                    var unmarshaller = MaintenanceStatusUnmarshaller.Instance;
+                    unmarshalledObject.Maintenance = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

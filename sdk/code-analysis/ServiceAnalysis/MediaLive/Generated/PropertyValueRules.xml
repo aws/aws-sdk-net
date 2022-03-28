@@ -639,6 +639,14 @@
     <max>65535</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaLive.Model.MaintenanceCreateSettings.MaintenanceStartTime</property>
+    <pattern>^([0,1]?[0-9]|2[0-3]):00$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.MaintenanceUpdateSettings.MaintenanceStartTime</property>
+    <pattern>^([0,1]?[0-9]|2[0-3]):00$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaLive.Model.MediaPackageOutputDestinationSettings.ChannelId</property>
     <min>1</min>
   </property-value-rule>

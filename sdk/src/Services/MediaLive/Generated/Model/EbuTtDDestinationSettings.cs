@@ -39,9 +39,8 @@ namespace Amazon.MediaLive.Model
         private EbuTtDDestinationStyleControl _styleControl;
 
         /// <summary>
-        /// Gets and sets the property CopyrightHolder. Applies only if you plan to convert these
-        /// source captions to EBU-TT-D or TTML in an output. Complete this field if you want
-        /// to include the name of the copyright holder in the copyright metadata tag in the TTML
+        /// Gets and sets the property CopyrightHolder. Complete this field if you want to include
+        /// the name of the copyright holder in the copyright tag in the captions metadata.
         /// </summary>
         [AWSProperty(Max=1000)]
         public string CopyrightHolder

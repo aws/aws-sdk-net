@@ -139,6 +139,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.LogLevel);
                 }
 
+                if(publicRequest.IsSetMaintenance())
+                {
+                    context.Writer.WritePropertyName("maintenance");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = MaintenanceUpdateSettingsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Maintenance, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetName())
                 {
                     context.Writer.WritePropertyName("name");

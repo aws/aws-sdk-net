@@ -43,6 +43,7 @@ namespace Amazon.MediaLive.Model
         private List<InputAttachment> _inputAttachments = new List<InputAttachment>();
         private InputSpecification _inputSpecification;
         private LogLevel _logLevel;
+        private MaintenanceStatus _maintenance;
         private string _name;
         private List<PipelineDetail> _pipelineDetails = new List<PipelineDetail>();
         private int? _pipelinesRunningCount;
@@ -205,6 +206,21 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetLogLevel()
         {
             return this._logLevel != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Maintenance. Maintenance settings for this channel.
+        /// </summary>
+        public MaintenanceStatus Maintenance
+        {
+            get { return this._maintenance; }
+            set { this._maintenance = value; }
+        }
+
+        // Check to see if Maintenance property is set
+        internal bool IsSetMaintenance()
+        {
+            return this._maintenance != null;
         }
 
         /// <summary>
