@@ -1,3 +1,7 @@
+### 3.7.241.0 (2022-03-29 18:27 UTC)
+* Organizations (3.7.1.0)
+	* This release provides the new CloseAccount API that enables principals in the management account to close any member account within an organization.
+
 ### 3.7.240.0 (2022-03-28 19:56 UTC)
 * ACMPCA (3.7.4.4)
 	* Updating service name entities
