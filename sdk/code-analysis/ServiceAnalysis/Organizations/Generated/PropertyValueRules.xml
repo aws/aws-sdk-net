@@ -21,6 +21,11 @@
     <pattern>^h-[0-9a-z]{8,32}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Organizations.Model.CloseAccountRequest.AccountId</property>
+    <max>12</max>
+    <pattern>^\d{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Organizations.Model.CreateAccountRequest.AccountName</property>
     <min>1</min>
     <max>50</max>
@@ -548,8 +553,8 @@
   <property-value-rule>
     <property>Amazon.Organizations.Model.Account.Name</property>
     <min>1</min>
-    <max>50</max>
-    <pattern>[\u0020-\u007E]+</pattern>
+    <max>128</max>
+    <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.Child.Id</property>
@@ -595,8 +600,8 @@
   <property-value-rule>
     <property>Amazon.Organizations.Model.DelegatedAdministrator.Name</property>
     <min>1</min>
-    <max>50</max>
-    <pattern>[\u0020-\u007E]+</pattern>
+    <max>128</max>
+    <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.DelegatedService.ServicePrincipal</property>

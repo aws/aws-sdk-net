@@ -31,7 +31,7 @@ namespace Amazon.Organizations.Model
     /// <summary>
     /// Container for the parameters to the CreatePolicy operation.
     /// Creates a policy of a specified type that you can attach to a root, an organizational
-    /// unit (OU), or an individual AWS account.
+    /// unit (OU), or an individual Amazon Web Services account.
     /// 
     ///  
     /// <para>
@@ -126,7 +126,7 @@ namespace Amazon.Organizations.Model
         /// the list, you must specify both a tag key and a value. You can set the value to an
         /// empty string, but you can't set it to <code>null</code>. For more information about
         /// tagging, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging
-        /// AWS Organizations resources</a> in the AWS Organizations User Guide.
+        /// Organizations resources</a> in the Organizations User Guide.
         /// </para>
         ///  <note> 
         /// <para>

@@ -29,30 +29,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Organizations.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeAccount operation.
-    /// Retrieves Organizations-related information about the specified account.
-    /// 
-    ///  
-    /// <para>
-    /// This operation can be called only from the organization's management account or by
-    /// a member account that is a delegated administrator for an Amazon Web Services service.
-    /// </para>
+    /// Container for the parameters to the CloseAccount operation.
+    /// Closes an Amazon Web Services account that is now a part of an Organizations, either
+    /// created within the organization, or invited to join the organization.
     /// </summary>
-    public partial class DescribeAccountRequest : AmazonOrganizationsRequest
+    public partial class CloseAccountRequest : AmazonOrganizationsRequest
     {
         private string _accountId;
 
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The unique identifier (ID) of the Amazon Web Services account that you want information
-        /// about. You can get the ID from the <a>ListAccounts</a> or <a>ListAccountsForParent</a>
-        /// operations.
-        /// </para>
-        ///  
-        /// <para>
-        /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID
-        /// string requires exactly 12 digits.
+        /// Retrieves the Amazon Web Services account Id for the current <code>CloseAccount</code>
+        /// API request. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=12)]

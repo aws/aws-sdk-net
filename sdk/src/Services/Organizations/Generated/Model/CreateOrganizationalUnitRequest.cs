@@ -39,7 +39,7 @@ namespace Amazon.Organizations.Model
     ///  
     /// <para>
     /// For more information about OUs, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_ous.html">Managing
-    /// Organizational Units</a> in the <i>AWS Organizations User Guide.</i> 
+    /// Organizational Units</a> in the <i>Organizations User Guide.</i> 
     /// </para>
     ///  
     /// <para>
@@ -121,7 +121,7 @@ namespace Amazon.Organizations.Model
         /// list, you must specify both a tag key and a value. You can set the value to an empty
         /// string, but you can't set it to <code>null</code>. For more information about tagging,
         /// see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging
-        /// AWS Organizations resources</a> in the AWS Organizations User Guide.
+        /// Organizations resources</a> in the Organizations User Guide.
         /// </para>
         ///  <note> 
         /// <para>

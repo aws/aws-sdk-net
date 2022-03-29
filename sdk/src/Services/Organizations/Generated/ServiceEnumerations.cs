@@ -131,6 +131,10 @@ namespace Amazon.Organizations
         /// </summary>
         public static readonly AccountStatus ACTIVE = new AccountStatus("ACTIVE");
         /// <summary>
+        /// Constant PENDING_CLOSURE for AccountStatus
+        /// </summary>
+        public static readonly AccountStatus PENDING_CLOSURE = new AccountStatus("PENDING_CLOSURE");
+        /// <summary>
         /// Constant SUSPENDED for AccountStatus
         /// </summary>
         public static readonly AccountStatus SUSPENDED = new AccountStatus("SUSPENDED");
@@ -305,6 +309,10 @@ namespace Amazon.Organizations
         /// </summary>
         public static readonly ConstraintViolationExceptionReason ACCOUNT_NUMBER_LIMIT_EXCEEDED = new ConstraintViolationExceptionReason("ACCOUNT_NUMBER_LIMIT_EXCEEDED");
         /// <summary>
+        /// Constant CANNOT_CLOSE_MANAGEMENT_ACCOUNT for ConstraintViolationExceptionReason
+        /// </summary>
+        public static readonly ConstraintViolationExceptionReason CANNOT_CLOSE_MANAGEMENT_ACCOUNT = new ConstraintViolationExceptionReason("CANNOT_CLOSE_MANAGEMENT_ACCOUNT");
+        /// <summary>
         /// Constant CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR for ConstraintViolationExceptionReason
         /// </summary>
         public static readonly ConstraintViolationExceptionReason CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR = new ConstraintViolationExceptionReason("CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR");
@@ -312,6 +320,14 @@ namespace Amazon.Organizations
         /// Constant CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG for ConstraintViolationExceptionReason
         /// </summary>
         public static readonly ConstraintViolationExceptionReason CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG = new ConstraintViolationExceptionReason("CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG");
+        /// <summary>
+        /// Constant CLOSE_ACCOUNT_QUOTA_EXCEEDED for ConstraintViolationExceptionReason
+        /// </summary>
+        public static readonly ConstraintViolationExceptionReason CLOSE_ACCOUNT_QUOTA_EXCEEDED = new ConstraintViolationExceptionReason("CLOSE_ACCOUNT_QUOTA_EXCEEDED");
+        /// <summary>
+        /// Constant CLOSE_ACCOUNT_REQUESTS_LIMIT_EXCEEDED for ConstraintViolationExceptionReason
+        /// </summary>
+        public static readonly ConstraintViolationExceptionReason CLOSE_ACCOUNT_REQUESTS_LIMIT_EXCEEDED = new ConstraintViolationExceptionReason("CLOSE_ACCOUNT_REQUESTS_LIMIT_EXCEEDED");
         /// <summary>
         /// Constant CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION for ConstraintViolationExceptionReason
         /// </summary>
@@ -388,6 +404,10 @@ namespace Amazon.Organizations
         /// Constant POLICY_NUMBER_LIMIT_EXCEEDED for ConstraintViolationExceptionReason
         /// </summary>
         public static readonly ConstraintViolationExceptionReason POLICY_NUMBER_LIMIT_EXCEEDED = new ConstraintViolationExceptionReason("POLICY_NUMBER_LIMIT_EXCEEDED");
+        /// <summary>
+        /// Constant SERVICE_ACCESS_NOT_ENABLED for ConstraintViolationExceptionReason
+        /// </summary>
+        public static readonly ConstraintViolationExceptionReason SERVICE_ACCESS_NOT_ENABLED = new ConstraintViolationExceptionReason("SERVICE_ACCESS_NOT_ENABLED");
         /// <summary>
         /// Constant TAG_POLICY_VIOLATION for ConstraintViolationExceptionReason
         /// </summary>
@@ -656,6 +676,10 @@ namespace Amazon.Organizations
         /// Constant INVITE_DISABLED_DURING_ENABLE_ALL_FEATURES for HandshakeConstraintViolationExceptionReason
         /// </summary>
         public static readonly HandshakeConstraintViolationExceptionReason INVITE_DISABLED_DURING_ENABLE_ALL_FEATURES = new HandshakeConstraintViolationExceptionReason("INVITE_DISABLED_DURING_ENABLE_ALL_FEATURES");
+        /// <summary>
+        /// Constant MANAGEMENT_ACCOUNT_EMAIL_NOT_VERIFIED for HandshakeConstraintViolationExceptionReason
+        /// </summary>
+        public static readonly HandshakeConstraintViolationExceptionReason MANAGEMENT_ACCOUNT_EMAIL_NOT_VERIFIED = new HandshakeConstraintViolationExceptionReason("MANAGEMENT_ACCOUNT_EMAIL_NOT_VERIFIED");
         /// <summary>
         /// Constant ORGANIZATION_ALREADY_HAS_ALL_FEATURES for HandshakeConstraintViolationExceptionReason
         /// </summary>

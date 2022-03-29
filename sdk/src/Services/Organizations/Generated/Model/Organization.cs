@@ -51,7 +51,8 @@ namespace Amazon.Organizations.Model
         ///  
         /// <para>
         /// For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN
-        /// Formats Supported by Organizations</a> in the <i>AWS Service Authorization Reference</i>.
+        /// Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization
+        /// Reference</i>.
         /// </para>
         /// </summary>
         public string Arn
@@ -97,7 +98,7 @@ namespace Amazon.Organizations.Model
         /// to "ALL", then all features are enabled and policies can be applied to accounts in
         /// the organization. If set to "CONSOLIDATED_BILLING", then only consolidated billing
         /// functionality is available. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">Enabling
-        /// All Features in Your Organization</a> in the <i>AWS Organizations User Guide</i>.
+        /// All Features in Your Organization</a> in the <i>Organizations User Guide</i>.
         /// </para>
         /// </summary>
         public OrganizationFeatureSet FeatureSet
@@ -144,7 +145,8 @@ namespace Amazon.Organizations.Model
         ///  
         /// <para>
         /// For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN
-        /// Formats Supported by Organizations</a> in the <i>AWS Service Authorization Reference</i>.
+        /// Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization
+        /// Reference</i>.
         /// </para>
         /// </summary>
         public string MasterAccountArn
@@ -162,8 +164,8 @@ namespace Amazon.Organizations.Model
         /// <summary>
         /// Gets and sets the property MasterAccountEmail. 
         /// <para>
-        /// The email address that is associated with the AWS account that is designated as the
-        /// management account for the organization.
+        /// The email address that is associated with the Amazon Web Services account that is
+        /// designated as the management account for the organization.
         /// </para>
         /// </summary>
         [AWSProperty(Min=6, Max=64)]

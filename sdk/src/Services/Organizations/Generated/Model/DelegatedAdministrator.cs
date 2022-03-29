@@ -81,7 +81,8 @@ namespace Amazon.Organizations.Model
         /// <summary>
         /// Gets and sets the property Email. 
         /// <para>
-        /// The email address that is associated with the delegated administrator's AWS account.
+        /// The email address that is associated with the delegated administrator's Amazon Web
+        /// Services account.
         /// </para>
         /// </summary>
         [AWSProperty(Min=6, Max=64)]
@@ -158,7 +159,7 @@ namespace Amazon.Organizations.Model
         /// The friendly name of the delegated administrator's account.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=50)]
+        [AWSProperty(Min=1, Max=128)]
         public string Name
         {
             get { return this._name; }

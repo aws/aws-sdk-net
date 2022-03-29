@@ -36,8 +36,8 @@ namespace Amazon.Organizations.Model
     /// 
     ///  
     /// <para>
-    ///  <b>Note:</b> Handshakes that are <code>CANCELED</code>, <code>ACCEPTED</code>, or
-    /// <code>DECLINED</code> show up in lists for only 30 days after entering that state
+    ///  <b>Note:</b> Handshakes that are <code>CANCELED</code>, <code>ACCEPTED</code>, <code>DECLINED</code>,
+    /// or <code>EXPIRED</code> show up in lists for only 30 days after entering that state
     /// After that they are deleted.
     /// </para>
     /// </summary>
@@ -100,7 +100,8 @@ namespace Amazon.Organizations.Model
         ///  
         /// <para>
         /// For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN
-        /// Formats Supported by Organizations</a> in the <i>AWS Service Authorization Reference</i>.
+        /// Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization
+        /// Reference</i>.
         /// </para>
         /// </summary>
         public string Arn

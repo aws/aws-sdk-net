@@ -42,13 +42,13 @@ namespace Amazon.Organizations.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information about policy inheritance, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies-inheritance.html">How
-    /// Policy Inheritance Works</a> in the <i>AWS Organizations User Guide</i>.
+    /// For more information about policy inheritance, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies-inheritance.html">How
+    /// Policy Inheritance Works</a> in the <i>Organizations User Guide</i>.
     /// </para>
     ///  
     /// <para>
     /// This operation can be called only from the organization's management account or by
-    /// a member account that is a delegated administrator for an AWS service.
+    /// a member account that is a delegated administrator for an Amazon Web Services service.
     /// </para>
     /// </summary>
     public partial class DescribeEffectivePolicyRequest : AmazonOrganizationsRequest

@@ -31,17 +31,18 @@ namespace Amazon.Organizations.Model
     /// <summary>
     /// Container for the parameters to the InviteAccountToOrganization operation.
     /// Sends an invitation to another account to join your organization as a member account.
-    /// AWS Organizations sends email on your behalf to the email address that is associated
-    /// with the other account's owner. The invitation is implemented as a <a>Handshake</a>
-    /// whose details are in the response.
+    /// Organizations sends email on your behalf to the email address that is associated with
+    /// the other account's owner. The invitation is implemented as a <a>Handshake</a> whose
+    /// details are in the response.
     /// 
     ///  <important> <ul> <li> 
     /// <para>
-    /// You can invite AWS accounts only from the same seller as the management account. For
-    /// example, if your organization's management account was created by Amazon Internet
-    /// Services Pvt. Ltd (AISPL), an AWS seller in India, you can invite only other AISPL
-    /// accounts to your organization. You can't combine accounts from AISPL and AWS or from
-    /// any other AWS seller. For more information, see <a href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/useconsolidatedbilliing-India.html">Consolidated
+    /// You can invite Amazon Web Services accounts only from the same seller as the management
+    /// account. For example, if your organization's management account was created by Amazon
+    /// Internet Services Pvt. Ltd (AISPL), an Amazon Web Services seller in India, you can
+    /// invite only other AISPL accounts to your organization. You can't combine accounts
+    /// from AISPL and Amazon Web Services or from any other Amazon Web Services seller. For
+    /// more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/useconsolidatedbilliing-India.html">Consolidated
     /// Billing in India</a>.
     /// </para>
     ///  </li> <li> 
@@ -49,7 +50,7 @@ namespace Amazon.Organizations.Model
     /// If you receive an exception that indicates that you exceeded your account limits for
     /// the organization or that the operation failed because your organization is still initializing,
     /// wait one hour and then try again. If the error persists after an hour, contact <a
-    /// href="https://console.aws.amazon.com/support/home#/">AWS Support</a>.
+    /// href="https://console.aws.amazon.com/support/home#/">Amazon Web Services Support</a>.
     /// </para>
     ///  </li> </ul> </important> 
     /// <para>
@@ -94,7 +95,7 @@ namespace Amazon.Organizations.Model
         /// the organization. For each tag in the list, you must specify both a tag key and a
         /// value. You can set the value to an empty string, but you can't set it to <code>null</code>.
         /// For more information about tagging, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging
-        /// AWS Organizations resources</a> in the AWS Organizations User Guide.
+        /// Organizations resources</a> in the Organizations User Guide.
         /// </para>
         ///  <important> 
         /// <para>
@@ -127,8 +128,8 @@ namespace Amazon.Organizations.Model
         /// <summary>
         /// Gets and sets the property Target. 
         /// <para>
-        /// The identifier (ID) of the AWS account that you want to invite to join your organization.
-        /// This is a JSON object that contains the following elements:
+        /// The identifier (ID) of the Amazon Web Services account that you want to invite to
+        /// join your organization. This is a JSON object that contains the following elements:
         /// </para>
         ///  
         /// <para>
@@ -137,7 +138,7 @@ namespace Amazon.Organizations.Model
         /// </para>
         ///  
         /// <para>
-        /// If you use the AWS CLI, you can submit this as a single string, similar to the following
+        /// If you use the CLI, you can submit this as a single string, similar to the following
         /// example:
         /// </para>
         ///  
@@ -146,9 +147,9 @@ namespace Amazon.Organizations.Model
         /// </para>
         ///  
         /// <para>
-        /// If you specify <code>"Type": "ACCOUNT"</code>, you must provide the AWS account ID
-        /// number as the <code>Id</code>. If you specify <code>"Type": "EMAIL"</code>, you must
-        /// specify the email address that is associated with the account.
+        /// If you specify <code>"Type": "ACCOUNT"</code>, you must provide the Amazon Web Services
+        /// account ID number as the <code>Id</code>. If you specify <code>"Type": "EMAIL"</code>,
+        /// you must specify the email address that is associated with the account.
         /// </para>
         ///  
         /// <para>

@@ -48,20 +48,11 @@ namespace Amazon.Organizations.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization
-    /// that doesn't yet have enough information to exist as a standalone account. This account
-    /// requires you to first agree to the AWS Customer Agreement. Follow the steps at <a
-    /// href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master">Removing
-    /// a member account from your organization</a>in the <i>AWS Organizations User Guide.</i>
-    /// 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
     /// ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account
     /// from the organization that doesn't yet have enough information to exist as a standalone
     /// account. This account requires you to first complete phone verification. Follow the
-    /// steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master">Removing
-    /// a member account from your organization</a> in the <i>AWS Organizations User Guide.</i>
+    /// steps at <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master">Removing
+    /// a member account from your organization</a> in the <i>Organizations User Guide.</i>
     /// 
     /// </para>
     ///  </li> <li> 
@@ -72,14 +63,14 @@ namespace Amazon.Organizations.Model
     ///  </li> <li> 
     /// <para>
     /// ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of
-    /// accounts in an organization. If you need more accounts, contact <a href="https://console.aws.amazon.com/support/home#/">AWS
-    /// Support</a> to request an increase in your limit. 
+    /// accounts in an organization. If you need more accounts, contact <a href="https://docs.aws.amazon.com/support/home#/">Amazon
+    /// Web Services Support</a> to request an increase in your limit. 
     /// </para>
     ///  
     /// <para>
     /// Or the number of invitations that you tried to send would cause you to exceed the
-    /// limit of accounts in your organization. Send fewer invitations or contact AWS Support
-    /// to request an increase in the number of accounts.
+    /// limit of accounts in your organization. Send fewer invitations or contact Amazon Web
+    /// Services Support to request an increase in the number of accounts.
     /// </para>
     ///  <note> 
     /// <para>
@@ -89,13 +80,15 @@ namespace Amazon.Organizations.Model
     /// <para>
     /// If you get this exception when running a command immediately after creating the organization,
     /// wait one hour and try again. After an hour, if the command continues to fail with
-    /// this error, contact <a href="https://console.aws.amazon.com/support/home#/">AWS Support</a>.
+    /// this error, contact <a href="https://docs.aws.amazon.com/support/home#/">Amazon Web
+    /// Services Support</a>.
     /// </para>
     ///  </important> </li> <li> 
     /// <para>
     /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the management
-    /// account of the organization as a delegated administrator for an AWS service integrated
-    /// with Organizations. You can designate only a member account as a delegated administrator.
+    /// account of the organization as a delegated administrator for an Amazon Web Services
+    /// service integrated with Organizations. You can designate only a member account as
+    /// a delegated administrator.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -111,10 +104,10 @@ namespace Amazon.Organizations.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: You attempted to register an AWS
-    /// account as a delegated administrator for an AWS service that already has a delegated
-    /// administrator. To complete this operation, you must first deregister any existing
-    /// delegated administrators for this service.
+    /// DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: You attempted to register an Amazon
+    /// Web Services account as a delegated administrator for an Amazon Web Services service
+    /// that already has a delegated administrator. To complete this operation, you must first
+    /// deregister any existing delegated administrators for this service.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -136,9 +129,9 @@ namespace Amazon.Organizations.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE: Applies only to the AWS Regions in China.
-    /// To create an organization, the master must have a valid business license. For more
-    /// information, contact customer support.
+    /// MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE: Applies only to the Amazon Web Services /&gt;
+    /// Regions in China. To create an organization, the master must have a valid business
+    /// license. For more information, contact customer support.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -149,17 +142,17 @@ namespace Amazon.Organizations.Model
     ///  </li> <li> 
     /// <para>
     /// MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the management account
-    /// must have an associated account in the AWS GovCloud (US-West) Region. For more information,
-    /// see <a href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS
-    /// Organizations</a> in the <i>AWS GovCloud User Guide.</i> 
+    /// must have an associated account in the Amazon Web Services GovCloud (US-West) Region.
+    /// For more information, see <a href="https://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">Organizations</a>
+    /// in the <i>Amazon Web Services GovCloud User Guide.</i> 
     /// </para>
     ///  </li> <li> 
     /// <para>
     /// MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this management
     /// account, you first must associate a valid payment instrument, such as a credit card,
-    /// with the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
+    /// with the account. Follow the steps at <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
     /// leave an organization when all required account information has not yet been provided</a>
-    /// in the <i>AWS Organizations User Guide.</i> 
+    /// in the <i>Organizations User Guide.</i> 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -180,9 +173,9 @@ namespace Amazon.Organizations.Model
     /// <para>
     /// MEMBER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To complete this operation with this member
     /// account, you first must associate a valid payment instrument, such as a credit card,
-    /// with the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
+    /// with the account. Follow the steps at <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
     /// leave an organization when all required account information has not yet been provided</a>
-    /// in the <i>AWS Organizations User Guide.</i> 
+    /// in the <i>Organizations User Guide.</i> 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -218,8 +211,19 @@ namespace Amazon.Organizations.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
+    /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
+    /// you enabled service access. Call the <code>EnableAWSServiceAccess</code> API first.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     /// TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that
     /// are not compliant with the tag policy requirements for this account.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, there is a waiting
+    /// period before you can remove it from the organization. If you get an error that indicates
+    /// that a wait period is required, try again in a few days.
     /// </para>
     ///  </li> </ul>
     /// </summary>

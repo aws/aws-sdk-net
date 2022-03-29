@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Organizations.Model
 {
     /// <summary>
-    /// The specified account is not a delegated administrator for this AWS service.
+    /// The specified account is not a delegated administrator for this Amazon Web Services
+    /// service.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -41,7 +41,7 @@ namespace Amazon.Organizations.Model
         /// <para>
         /// A list of the service principals for the services that are enabled to integrate with
         /// your organization. Each principal is a structure that includes the name and the date
-        /// that it was enabled for integration with AWS Organizations.
+        /// that it was enabled for integration with Organizations.
         /// </para>
         /// </summary>
         public List<EnabledServicePrincipal> EnabledServicePrincipals

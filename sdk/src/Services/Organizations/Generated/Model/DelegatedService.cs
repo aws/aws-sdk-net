@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Organizations.Model
 {
     /// <summary>
-    /// Contains information about the AWS service for which the account is a delegated administrator.
+    /// Contains information about the Amazon Web Services service for which the account is
+    /// a delegated administrator.
     /// </summary>
     public partial class DelegatedService
     {
@@ -57,8 +58,8 @@ namespace Amazon.Organizations.Model
         /// <summary>
         /// Gets and sets the property ServicePrincipal. 
         /// <para>
-        /// The name of an AWS service that can request an operation for the specified service.
-        /// This is typically in the form of a URL, such as: <code> <i>servicename</i>.amazonaws.com</code>.
+        /// The name of an Amazon Web Services service that can request an operation for the specified
+        /// service. This is typically in the form of a URL, such as: <code> <i>servicename</i>.amazonaws.com</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

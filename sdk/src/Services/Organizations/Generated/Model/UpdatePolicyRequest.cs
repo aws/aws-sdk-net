@@ -51,7 +51,7 @@ namespace Amazon.Organizations.Model
         /// If provided, the new content for the policy. The text must be correctly formatted
         /// JSON that complies with the syntax for the policy's type. For more information, see
         /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service
-        /// Control Policy Syntax</a> in the <i>AWS Organizations User Guide.</i> 
+        /// Control Policy Syntax</a> in the <i>Organizations User Guide.</i> 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000000)]

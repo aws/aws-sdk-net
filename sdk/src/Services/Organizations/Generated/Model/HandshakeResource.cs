@@ -63,7 +63,7 @@ namespace Amazon.Organizations.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ACCOUNT</code> - Specifies an AWS account ID number.
+        ///  <code>ACCOUNT</code> - Specifies an Amazon Web Services account ID number.
         /// </para>
         ///  </li> <li> 
         /// <para>
