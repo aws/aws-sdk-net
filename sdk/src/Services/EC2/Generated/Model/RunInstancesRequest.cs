@@ -135,6 +135,7 @@ namespace Amazon.EC2.Model
         private string _keyName;
         private LaunchTemplateSpecification _launchTemplate;
         private List<LicenseConfigurationRequest> _licenseSpecifications = new List<LicenseConfigurationRequest>();
+        private InstanceMaintenanceOptionsRequest _maintenanceOptions;
         private int? _maxCount;
         private InstanceMetadataOptionsRequest _metadataOptions;
         private int? _minCount;
@@ -692,6 +693,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetLicenseSpecifications()
         {
             return this._licenseSpecifications != null && this._licenseSpecifications.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaintenanceOptions. 
+        /// <para>
+        /// The maintenance and recovery options for the instance.
+        /// </para>
+        /// </summary>
+        public InstanceMaintenanceOptionsRequest MaintenanceOptions
+        {
+            get { return this._maintenanceOptions; }
+            set { this._maintenanceOptions = value; }
+        }
+
+        // Check to see if MaintenanceOptions property is set
+        internal bool IsSetMaintenanceOptions()
+        {
+            return this._maintenanceOptions != null;
         }
 
         /// <summary>

@@ -57,7 +57,7 @@ namespace Amazon.EC2.Model
         /// Instantiates ResetInstanceAttributeRequest with the parameterized properties
         /// </summary>
         /// <param name="instanceId">The ID of the instance.</param>
-        /// <param name="attribute">The attribute to reset. <important> You can only reset the following attributes: <code>kernel</code> | <code>ramdisk</code> | <code>sourceDestCheck</code>. To change an instance attribute, use <a>ModifyInstanceAttribute</a>. </important></param>
+        /// <param name="attribute">The attribute to reset. <important> You can only reset the following attributes: <code>kernel</code> | <code>ramdisk</code> | <code>sourceDestCheck</code>. </important></param>
         public ResetInstanceAttributeRequest(string instanceId, InstanceAttributeName attribute)
         {
             _instanceId = instanceId;
@@ -72,7 +72,7 @@ namespace Amazon.EC2.Model
         ///  <important> 
         /// <para>
         /// You can only reset the following attributes: <code>kernel</code> | <code>ramdisk</code>
-        /// | <code>sourceDestCheck</code>. To change an instance attribute, use <a>ModifyInstanceAttribute</a>.
+        /// | <code>sourceDestCheck</code>.
         /// </para>
         ///  </important>
         /// </summary>

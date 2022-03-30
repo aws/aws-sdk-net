@@ -456,6 +456,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             publicRequestLaunchTemplateDatalistValueIndex++;
                         }
                     }
+                    if(publicRequest.LaunchTemplateData.IsSetMaintenanceOptions())
+                    {
+                        if(publicRequest.LaunchTemplateData.MaintenanceOptions.IsSetAutoRecovery())
+                        {
+                            request.Parameters.Add("LaunchTemplateData" + "." + "MaintenanceOptions" + "." + "AutoRecovery", StringUtils.FromString(publicRequest.LaunchTemplateData.MaintenanceOptions.AutoRecovery));
+                        }
+                    }
                     if(publicRequest.LaunchTemplateData.IsSetMetadataOptions())
                     {
                         if(publicRequest.LaunchTemplateData.MetadataOptions.IsSetHttpEndpoint())

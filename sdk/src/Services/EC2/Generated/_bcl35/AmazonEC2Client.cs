@@ -27240,6 +27240,64 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  ModifyInstanceMaintenanceOptions
+
+        /// <summary>
+        /// Modifies the recovery behavior of your instance to disable simplified automatic recovery
+        /// or set the recovery behavior to default. The default configuration will not enable
+        /// simplified automatic recovery for an unsupported instance type. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-recover.html#instance-configuration-recovery">Simplified
+        /// automatic recovery</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyInstanceMaintenanceOptions service method.</param>
+        /// 
+        /// <returns>The response from the ModifyInstanceMaintenanceOptions service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceMaintenanceOptions">REST API Reference for ModifyInstanceMaintenanceOptions Operation</seealso>
+        public virtual ModifyInstanceMaintenanceOptionsResponse ModifyInstanceMaintenanceOptions(ModifyInstanceMaintenanceOptionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyInstanceMaintenanceOptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyInstanceMaintenanceOptionsResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyInstanceMaintenanceOptionsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyInstanceMaintenanceOptions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyInstanceMaintenanceOptions operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyInstanceMaintenanceOptions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceMaintenanceOptions">REST API Reference for ModifyInstanceMaintenanceOptions Operation</seealso>
+        public virtual IAsyncResult BeginModifyInstanceMaintenanceOptions(ModifyInstanceMaintenanceOptionsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyInstanceMaintenanceOptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyInstanceMaintenanceOptionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyInstanceMaintenanceOptions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyInstanceMaintenanceOptions.</param>
+        /// 
+        /// <returns>Returns a  ModifyInstanceMaintenanceOptionsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceMaintenanceOptions">REST API Reference for ModifyInstanceMaintenanceOptions Operation</seealso>
+        public virtual ModifyInstanceMaintenanceOptionsResponse EndModifyInstanceMaintenanceOptions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ModifyInstanceMaintenanceOptionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ModifyInstanceMetadataOptions
 
         /// <summary>

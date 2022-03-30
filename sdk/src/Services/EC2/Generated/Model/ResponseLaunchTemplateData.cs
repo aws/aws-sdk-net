@@ -52,6 +52,7 @@ namespace Amazon.EC2.Model
         private string _kernelId;
         private string _keyName;
         private List<LaunchTemplateLicenseConfiguration> _licenseSpecifications = new List<LaunchTemplateLicenseConfiguration>();
+        private LaunchTemplateInstanceMaintenanceOptions _maintenanceOptions;
         private LaunchTemplateInstanceMetadataOptions _metadataOptions;
         private LaunchTemplatesMonitoring _monitoring;
         private List<LaunchTemplateInstanceNetworkInterfaceSpecification> _networkInterfaces = new List<LaunchTemplateInstanceNetworkInterfaceSpecification>();
@@ -413,6 +414,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetLicenseSpecifications()
         {
             return this._licenseSpecifications != null && this._licenseSpecifications.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaintenanceOptions. 
+        /// <para>
+        /// The maintenance options for your instance.
+        /// </para>
+        /// </summary>
+        public LaunchTemplateInstanceMaintenanceOptions MaintenanceOptions
+        {
+            get { return this._maintenanceOptions; }
+            set { this._maintenanceOptions = value; }
+        }
+
+        // Check to see if MaintenanceOptions property is set
+        internal bool IsSetMaintenanceOptions()
+        {
+            return this._maintenanceOptions != null;
         }
 
         /// <summary>

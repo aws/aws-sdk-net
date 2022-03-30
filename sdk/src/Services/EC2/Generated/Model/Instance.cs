@@ -58,6 +58,7 @@ namespace Amazon.EC2.Model
         private string _keyName;
         private DateTime? _launchTime;
         private List<LicenseConfiguration> _licenses = new List<LicenseConfiguration>();
+        private InstanceMaintenanceOptions _maintenanceOptions;
         private InstanceMetadataOptionsResponse _metadataOptions;
         private Monitoring _monitoring;
         private List<InstanceNetworkInterface> _networkInterfaces = new List<InstanceNetworkInterface>();
@@ -541,6 +542,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetLicenses()
         {
             return this._licenses != null && this._licenses.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaintenanceOptions. 
+        /// <para>
+        /// Provides information on the recovery and maintenance options of your instance.
+        /// </para>
+        /// </summary>
+        public InstanceMaintenanceOptions MaintenanceOptions
+        {
+            get { return this._maintenanceOptions; }
+            set { this._maintenanceOptions = value; }
+        }
+
+        // Check to see if MaintenanceOptions property is set
+        internal bool IsSetMaintenanceOptions()
+        {
+            return this._maintenanceOptions != null;
         }
 
         /// <summary>

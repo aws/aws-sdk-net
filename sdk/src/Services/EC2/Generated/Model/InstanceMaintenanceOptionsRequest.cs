@@ -29,29 +29,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Contains the output of ModifySpotFleetRequest.
+    /// The maintenance options for the instance.
     /// </summary>
-    public partial class ModifySpotFleetRequestResponse : AmazonWebServiceResponse
+    public partial class InstanceMaintenanceOptionsRequest
     {
-        private bool? _return;
+        private InstanceAutoRecoveryState _autoRecovery;
 
         /// <summary>
-        /// Gets and sets the property Return. 
+        /// Gets and sets the property AutoRecovery. 
         /// <para>
-        /// If the request succeeds, the response returns <code>true</code>. If the request fails,
-        /// no response is returned, and instead an error message is returned.
+        /// Disables the automatic recovery behavior of your instance or sets it to default. For
+        /// more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-recover.html#instance-configuration-recovery">Simplified
+        /// automatic recovery</a>.
         /// </para>
         /// </summary>
-        public bool Return
+        public InstanceAutoRecoveryState AutoRecovery
         {
-            get { return this._return.GetValueOrDefault(); }
-            set { this._return = value; }
+            get { return this._autoRecovery; }
+            set { this._autoRecovery = value; }
         }
 
-        // Check to see if Return property is set
-        internal bool IsSetReturn()
+        // Check to see if AutoRecovery property is set
+        internal bool IsSetAutoRecovery()
         {
-            return this._return.HasValue; 
+            return this._autoRecovery != null;
         }
 
     }

@@ -319,6 +319,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+                if(publicRequest.IsSetMaintenanceOptions())
+                {
+                    if(publicRequest.MaintenanceOptions.IsSetAutoRecovery())
+                    {
+                        request.Parameters.Add("MaintenanceOptions" + "." + "AutoRecovery", StringUtils.FromString(publicRequest.MaintenanceOptions.AutoRecovery));
+                    }
+                }
                 if(publicRequest.IsSetMaxCount())
                 {
                     request.Parameters.Add("MaxCount", StringUtils.FromInt(publicRequest.MaxCount));

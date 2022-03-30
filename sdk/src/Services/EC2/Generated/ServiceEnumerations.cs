@@ -6117,6 +6117,56 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type InstanceAutoRecoveryState.
+    /// </summary>
+    public class InstanceAutoRecoveryState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Default for InstanceAutoRecoveryState
+        /// </summary>
+        public static readonly InstanceAutoRecoveryState Default = new InstanceAutoRecoveryState("default");
+        /// <summary>
+        /// Constant Disabled for InstanceAutoRecoveryState
+        /// </summary>
+        public static readonly InstanceAutoRecoveryState Disabled = new InstanceAutoRecoveryState("disabled");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InstanceAutoRecoveryState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InstanceAutoRecoveryState FindValue(string value)
+        {
+            return FindValue<InstanceAutoRecoveryState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InstanceAutoRecoveryState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type InstanceEventWindowState.
     /// </summary>
     public class InstanceEventWindowState : ConstantClass
@@ -9818,6 +9868,56 @@ namespace Amazon.EC2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator KeyType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LaunchTemplateAutoRecoveryState.
+    /// </summary>
+    public class LaunchTemplateAutoRecoveryState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Default for LaunchTemplateAutoRecoveryState
+        /// </summary>
+        public static readonly LaunchTemplateAutoRecoveryState Default = new LaunchTemplateAutoRecoveryState("default");
+        /// <summary>
+        /// Constant Disabled for LaunchTemplateAutoRecoveryState
+        /// </summary>
+        public static readonly LaunchTemplateAutoRecoveryState Disabled = new LaunchTemplateAutoRecoveryState("disabled");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LaunchTemplateAutoRecoveryState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LaunchTemplateAutoRecoveryState FindValue(string value)
+        {
+            return FindValue<LaunchTemplateAutoRecoveryState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LaunchTemplateAutoRecoveryState(string value)
         {
             return FindValue(value);
         }
