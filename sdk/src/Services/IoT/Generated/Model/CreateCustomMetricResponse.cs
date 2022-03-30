@@ -39,7 +39,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property MetricArn. 
         /// <para>
-        ///  The Amazon Resource Number (ARN) of the custom metric, e.g. <code>arn:<i>aws-partition</i>:iot:<i>region</i>:<i>accountId</i>:custommetric/<i>metricName</i>
+        ///  The Amazon Resource Number (ARN) of the custom metric. For example, <code>arn:<i>aws-partition</i>:iot:<i>region</i>:<i>accountId</i>:custommetric/<i>metricName</i>
         /// </code> 
         /// </para>
         /// </summary>

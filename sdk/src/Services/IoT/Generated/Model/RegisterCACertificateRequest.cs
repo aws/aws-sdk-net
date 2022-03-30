@@ -112,6 +112,10 @@ namespace Amazon.IoT.Model
         /// <para>
         /// A boolean value that specifies if the CA certificate is set to active.
         /// </para>
+        ///  
+        /// <para>
+        /// Valid values: <code>ACTIVE | INACTIVE</code> 
+        /// </para>
         /// </summary>
         public bool SetAsActive
         {

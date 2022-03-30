@@ -90,6 +90,10 @@ namespace Amazon.IoT.Model
         /// <para>
         /// A boolean value that specifies if the certificate is set to active.
         /// </para>
+        ///  
+        /// <para>
+        /// Valid values: <code>ACTIVE | INACTIVE</code> 
+        /// </para>
         /// </summary>
         [Obsolete("This property is deprecated")]
         public bool SetAsActive
@@ -107,7 +111,8 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the register certificate request.
+        /// The status of the register certificate request. Valid values that you can use include
+        /// <code>ACTIVE</code>, <code>INACTIVE</code>, and <code>REVOKED</code>.
         /// </para>
         /// </summary>
         public CertificateStatus Status

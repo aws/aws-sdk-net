@@ -49,6 +49,11 @@ namespace Amazon.IoT.Model
         /// <para>
         /// The number of seconds the credential will be valid.
         /// </para>
+        ///  
+        /// <para>
+        /// This value must be less than or equal to the maximum session duration of the IAM role
+        /// that the role alias references.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=900, Max=43200)]
         public int CredentialDurationSeconds
