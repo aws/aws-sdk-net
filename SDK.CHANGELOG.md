@@ -1,3 +1,15 @@
+### 3.7.242.0 (2022-03-30 22:07 UTC)
+* EC2 (3.7.63.0)
+	* This release simplifies the auto-recovery configuration process enabling customers to set the recovery behavior to disabled or default
+* FMS (3.7.6.0)
+	* AWS Firewall Manager now supports the configuration of third-party policies that can use either the centralized or distributed deployment models.
+* FSx (3.7.10.0)
+	* This release adds support for modifying throughput capacity for FSx for ONTAP file systems.
+* IoT (3.7.11.23)
+	* Doc only update for IoT that fixes customer-reported issues.
+* IotData (3.7.2.0)
+	* Update the default AWS IoT Core Data Plane endpoint from VeriSign signed to ATS signed. If you have firewalls with strict egress rules, configure the rules to grant you access to data-ats.iot.[region].amazonaws.com or data-ats.iot.[region].amazonaws.com.cn.
+
 ### 3.7.241.0 (2022-03-29 18:27 UTC)
 * Organizations (3.7.1.0)
 	* This release provides the new CloseAccount API that enables principals in the management account to close any member account within an organization.
