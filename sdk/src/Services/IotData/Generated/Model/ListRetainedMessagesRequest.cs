@@ -50,8 +50,8 @@ namespace Amazon.IotData.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information about messaging costs, see <a href="http://aws.amazon.com/iot-core/pricing/#Messaging">IoT
-    /// Core pricing - Messaging</a>.
+    /// For more information about messaging costs, see <a href="http://aws.amazon.com/iot-core/pricing/#Messaging">Amazon
+    /// Web Services IoT Core pricing - Messaging</a>.
     /// </para>
     /// </summary>
     public partial class ListRetainedMessagesRequest : AmazonIotDataRequest

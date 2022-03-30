@@ -52,7 +52,7 @@ namespace Amazon.IotData
         {
             get
             {
-                return "data.iot";
+                return "data-ats.iot";
             }
         }
 

@@ -44,8 +44,8 @@ namespace Amazon.IotData.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information about messaging costs, see <a href="http://aws.amazon.com/iot-core/pricing/#Messaging">IoT
-    /// Core pricing - Messaging</a>.
+    /// For more information about messaging costs, see <a href="http://aws.amazon.com/iot-core/pricing/#Messaging">Amazon
+    /// Web Services IoT Core pricing - Messaging</a>.
     /// </para>
     /// </summary>
     public partial class PublishRequest : AmazonIotDataRequest
@@ -63,7 +63,7 @@ namespace Amazon.IotData.Model
         ///  
         /// <para>
         /// Publishing an empty (null) payload with <b>retain</b> = <code>true</code> deletes
-        /// the retained message identified by <b>topic</b> from IoT Core.
+        /// the retained message identified by <b>topic</b> from Amazon Web Services IoT Core.
         /// </para>
         /// </summary>
         public MemoryStream Payload
