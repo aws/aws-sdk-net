@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.FMS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for PolicyOption Object
+    /// Response Unmarshaller for ThirdPartyFirewallFirewallPolicy Object
     /// </summary>  
-    public class PolicyOptionUnmarshaller : IUnmarshaller<PolicyOption, XmlUnmarshallerContext>, IUnmarshaller<PolicyOption, JsonUnmarshallerContext>
+    public class ThirdPartyFirewallFirewallPolicyUnmarshaller : IUnmarshaller<ThirdPartyFirewallFirewallPolicy, XmlUnmarshallerContext>, IUnmarshaller<ThirdPartyFirewallFirewallPolicy, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        PolicyOption IUnmarshaller<PolicyOption, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ThirdPartyFirewallFirewallPolicy IUnmarshaller<ThirdPartyFirewallFirewallPolicy, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,27 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public PolicyOption Unmarshall(JsonUnmarshallerContext context)
+        public ThirdPartyFirewallFirewallPolicy Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            PolicyOption unmarshalledObject = new PolicyOption();
+            ThirdPartyFirewallFirewallPolicy unmarshalledObject = new ThirdPartyFirewallFirewallPolicy();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("NetworkFirewallPolicy", targetDepth))
+                if (context.TestExpression("FirewallPolicyId", targetDepth))
                 {
-                    var unmarshaller = NetworkFirewallPolicyUnmarshaller.Instance;
-                    unmarshalledObject.NetworkFirewallPolicy = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FirewallPolicyId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ThirdPartyFirewallPolicy", targetDepth))
+                if (context.TestExpression("FirewallPolicyName", targetDepth))
                 {
-                    var unmarshaller = ThirdPartyFirewallPolicyUnmarshaller.Instance;
-                    unmarshalledObject.ThirdPartyFirewallPolicy = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FirewallPolicyName = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +82,12 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         }
 
 
-        private static PolicyOptionUnmarshaller _instance = new PolicyOptionUnmarshaller();        
+        private static ThirdPartyFirewallFirewallPolicyUnmarshaller _instance = new ThirdPartyFirewallFirewallPolicyUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PolicyOptionUnmarshaller Instance
+        public static ThirdPartyFirewallFirewallPolicyUnmarshaller Instance
         {
             get
             {

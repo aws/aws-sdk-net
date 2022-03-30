@@ -40,6 +40,7 @@ namespace Amazon.FMS.Model
         private DnsRuleGroupLimitExceededViolation _dnsRuleGroupLimitExceededViolation;
         private DnsRuleGroupPriorityConflictViolation _dnsRuleGroupPriorityConflictViolation;
         private FirewallSubnetIsOutOfScopeViolation _firewallSubnetIsOutOfScopeViolation;
+        private FirewallSubnetMissingVPCEndpointViolation _firewallSubnetMissingVPCEndpointViolation;
         private NetworkFirewallBlackHoleRouteDetectedViolation _networkFirewallBlackHoleRouteDetectedViolation;
         private NetworkFirewallInternetTrafficNotInspectedViolation _networkFirewallInternetTrafficNotInspectedViolation;
         private NetworkFirewallInvalidRouteConfigurationViolation _networkFirewallInvalidRouteConfigurationViolation;
@@ -52,6 +53,9 @@ namespace Amazon.FMS.Model
         private NetworkFirewallUnexpectedGatewayRoutesViolation _networkFirewallUnexpectedGatewayRoutesViolation;
         private PossibleRemediationActions _possibleRemediationActions;
         private RouteHasOutOfScopeEndpointViolation _routeHasOutOfScopeEndpointViolation;
+        private ThirdPartyFirewallMissingExpectedRouteTableViolation _thirdPartyFirewallMissingExpectedRouteTableViolation;
+        private ThirdPartyFirewallMissingFirewallViolation _thirdPartyFirewallMissingFirewallViolation;
+        private ThirdPartyFirewallMissingSubnetViolation _thirdPartyFirewallMissingSubnetViolation;
 
         /// <summary>
         /// Gets and sets the property AwsEc2InstanceViolation. 
@@ -183,6 +187,24 @@ namespace Amazon.FMS.Model
         internal bool IsSetFirewallSubnetIsOutOfScopeViolation()
         {
             return this._firewallSubnetIsOutOfScopeViolation != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FirewallSubnetMissingVPCEndpointViolation. 
+        /// <para>
+        /// The violation details for a third-party firewall's VPC endpoint subnet that was deleted.
+        /// </para>
+        /// </summary>
+        public FirewallSubnetMissingVPCEndpointViolation FirewallSubnetMissingVPCEndpointViolation
+        {
+            get { return this._firewallSubnetMissingVPCEndpointViolation; }
+            set { this._firewallSubnetMissingVPCEndpointViolation = value; }
+        }
+
+        // Check to see if FirewallSubnetMissingVPCEndpointViolation property is set
+        internal bool IsSetFirewallSubnetMissingVPCEndpointViolation()
+        {
+            return this._firewallSubnetMissingVPCEndpointViolation != null;
         }
 
         /// <summary>
@@ -403,6 +425,61 @@ namespace Amazon.FMS.Model
         internal bool IsSetRouteHasOutOfScopeEndpointViolation()
         {
             return this._routeHasOutOfScopeEndpointViolation != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ThirdPartyFirewallMissingExpectedRouteTableViolation. 
+        /// <para>
+        /// The violation details for a third-party firewall that has the Firewall Manager managed
+        /// route table that was associated with the third-party firewall has been deleted.
+        /// </para>
+        /// </summary>
+        public ThirdPartyFirewallMissingExpectedRouteTableViolation ThirdPartyFirewallMissingExpectedRouteTableViolation
+        {
+            get { return this._thirdPartyFirewallMissingExpectedRouteTableViolation; }
+            set { this._thirdPartyFirewallMissingExpectedRouteTableViolation = value; }
+        }
+
+        // Check to see if ThirdPartyFirewallMissingExpectedRouteTableViolation property is set
+        internal bool IsSetThirdPartyFirewallMissingExpectedRouteTableViolation()
+        {
+            return this._thirdPartyFirewallMissingExpectedRouteTableViolation != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ThirdPartyFirewallMissingFirewallViolation. 
+        /// <para>
+        /// The violation details for a third-party firewall that's been deleted.
+        /// </para>
+        /// </summary>
+        public ThirdPartyFirewallMissingFirewallViolation ThirdPartyFirewallMissingFirewallViolation
+        {
+            get { return this._thirdPartyFirewallMissingFirewallViolation; }
+            set { this._thirdPartyFirewallMissingFirewallViolation = value; }
+        }
+
+        // Check to see if ThirdPartyFirewallMissingFirewallViolation property is set
+        internal bool IsSetThirdPartyFirewallMissingFirewallViolation()
+        {
+            return this._thirdPartyFirewallMissingFirewallViolation != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ThirdPartyFirewallMissingSubnetViolation. 
+        /// <para>
+        /// The violation details for a third-party firewall's subnet that's been deleted.
+        /// </para>
+        /// </summary>
+        public ThirdPartyFirewallMissingSubnetViolation ThirdPartyFirewallMissingSubnetViolation
+        {
+            get { return this._thirdPartyFirewallMissingSubnetViolation; }
+            set { this._thirdPartyFirewallMissingSubnetViolation = value; }
+        }
+
+        // Check to see if ThirdPartyFirewallMissingSubnetViolation property is set
+        internal bool IsSetThirdPartyFirewallMissingSubnetViolation()
+        {
+            return this._thirdPartyFirewallMissingSubnetViolation != null;
         }
 
     }

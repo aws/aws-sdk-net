@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.FMS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// PolicyOption Marshaller
+    /// ThirdPartyFirewallPolicy Marshaller
     /// </summary>
-    public class PolicyOptionMarshaller : IRequestMarshaller<PolicyOption, JsonMarshallerContext> 
+    public class ThirdPartyFirewallPolicyMarshaller : IRequestMarshaller<ThirdPartyFirewallPolicy, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,28 +43,12 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(PolicyOption requestObject, JsonMarshallerContext context)
+        public void Marshall(ThirdPartyFirewallPolicy requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetNetworkFirewallPolicy())
+            if(requestObject.IsSetFirewallDeploymentModel())
             {
-                context.Writer.WritePropertyName("NetworkFirewallPolicy");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = NetworkFirewallPolicyMarshaller.Instance;
-                marshaller.Marshall(requestObject.NetworkFirewallPolicy, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetThirdPartyFirewallPolicy())
-            {
-                context.Writer.WritePropertyName("ThirdPartyFirewallPolicy");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = ThirdPartyFirewallPolicyMarshaller.Instance;
-                marshaller.Marshall(requestObject.ThirdPartyFirewallPolicy, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("FirewallDeploymentModel");
+                context.Writer.Write(requestObject.FirewallDeploymentModel);
             }
 
         }
@@ -72,7 +56,7 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static PolicyOptionMarshaller Instance = new PolicyOptionMarshaller();
+        public readonly static ThirdPartyFirewallPolicyMarshaller Instance = new ThirdPartyFirewallPolicyMarshaller();
 
     }
 }

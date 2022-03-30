@@ -106,6 +106,12 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
                     unmarshalledObject.FirewallSubnetIsOutOfScopeViolation = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("FirewallSubnetMissingVPCEndpointViolation", targetDepth))
+                {
+                    var unmarshaller = FirewallSubnetMissingVPCEndpointViolationUnmarshaller.Instance;
+                    unmarshalledObject.FirewallSubnetMissingVPCEndpointViolation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("NetworkFirewallBlackHoleRouteDetectedViolation", targetDepth))
                 {
                     var unmarshaller = NetworkFirewallBlackHoleRouteDetectedViolationUnmarshaller.Instance;
@@ -176,6 +182,24 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = RouteHasOutOfScopeEndpointViolationUnmarshaller.Instance;
                     unmarshalledObject.RouteHasOutOfScopeEndpointViolation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ThirdPartyFirewallMissingExpectedRouteTableViolation", targetDepth))
+                {
+                    var unmarshaller = ThirdPartyFirewallMissingExpectedRouteTableViolationUnmarshaller.Instance;
+                    unmarshalledObject.ThirdPartyFirewallMissingExpectedRouteTableViolation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ThirdPartyFirewallMissingFirewallViolation", targetDepth))
+                {
+                    var unmarshaller = ThirdPartyFirewallMissingFirewallViolationUnmarshaller.Instance;
+                    unmarshalledObject.ThirdPartyFirewallMissingFirewallViolation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ThirdPartyFirewallMissingSubnetViolation", targetDepth))
+                {
+                    var unmarshaller = ThirdPartyFirewallMissingSubnetViolationUnmarshaller.Instance;
+                    unmarshalledObject.ThirdPartyFirewallMissingSubnetViolation = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

@@ -58,19 +58,19 @@ namespace Amazon.FMS.Model
         /// </para>
         ///  </note> </li> <li> 
         /// <para>
-        /// Example: <code>NETWORK_FIREWALL</code> - Centralized deployment model.
+        /// Example: <code>DNS_FIREWALL</code> 
         /// </para>
         ///  
         /// <para>
-        ///  <code>"{\"type\":\"NETWORK_FIREWALL\",\"awsNetworkFirewallConfig\":{\"networkFirewallStatelessRuleGroupReferences\":[{\"resourceARN\":\"arn:aws:network-firewall:us-east-1:123456789011:stateless-rulegroup/test\",\"priority\":1}],\"networkFirewallStatelessDefaultActions\":[\"aws:forward_to_sfe\",\"customActionName\"],\"networkFirewallStatelessFragmentDefaultActions\":[\"aws:forward_to_sfe\",\"customActionName\"],\"networkFirewallStatelessCustomActions\":[{\"actionName\":\"customActionName\",\"actionDefinition\":{\"publishMetricAction\":{\"dimensions\":[{\"value\":\"metricdimensionvalue\"}]}}}],\"networkFirewallStatefulRuleGroupReferences\":[{\"resourceARN\":\"arn:aws:network-firewall:us-east-1:123456789011:stateful-rulegroup/test\"}],\"networkFirewallLoggingConfiguration\":{\"logDestinationConfigs\":[{\"logDestinationType\":\"S3\",\"logType\":\"ALERT\",\"logDestination\":{\"bucketName\":\"s3-bucket-name\"}},{\"logDestinationType\":\"S3\",\"logType\":\"FLOW\",\"logDestination\":{\"bucketName\":\"s3-bucket-name\"}}],\"overrideExistingConfig\":true}},\"firewallDeploymentModel\":{\"centralizedFirewallDeploymentModel\":{\"centralizedFirewallOrchestrationConfig\":{\"inspectionVpcIds\":[{\"resourceId\":\"vpc-1234\",\"accountId\":\"123456789011\"}],\"firewallCreationConfig\":{\"endpointLocation\":{\"availabilityZoneConfigList\":[{\"availabilityZoneId\":null,\"availabilityZoneName\":\"us-east-1a\",\"allowedIPV4CidrList\":[\"10.0.0.0/28\"]}]}},\"allowedIPV4CidrList\":[]}}}}"</code>
+        ///  <code>"{\"type\":\"DNS_FIREWALL\",\"preProcessRuleGroups\":[{\"ruleGroupId\":\"rslvr-frg-1\",\"priority\":10}],\"postProcessRuleGroups\":[{\"ruleGroupId\":\"rslvr-frg-2\",\"priority\":9911}]}"</code>
         /// 
         /// </para>
-        ///  
+        ///  <note> 
         /// <para>
-        ///  To use the centralized deployment model, you must set <a href="https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_PolicyOption.html">PolicyOption</a>
-        /// to <code>CENTRALIZED</code>. 
+        /// Valid values for <code>preProcessRuleGroups</code> are between 1 and 99. Valid values
+        /// for <code>postProcessRuleGroups</code> are between 9901 and 10000.
         /// </para>
-        ///  </li> <li> 
+        ///  </note> </li> <li> 
         /// <para>
         /// Example: <code>NETWORK_FIREWALL</code> - Distributed deployment model with automatic
         /// Availability Zone configuration. With automatic Availbility Zone configuration, Firewall
@@ -177,6 +177,15 @@ namespace Amazon.FMS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// Example: <code>PARTNER_FIREWALL</code> for Firewall Manager
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>"{\"type\":\"THIRD_PARTY_FIREWALL\",\"thirdPartyrFirewall\":\"PALO_ALTO_NETWORKS_CLOUD_NGFW\",\"thirdPartyFirewallConfig\":{\"thirdPartyFirewallPolicyList\":[\"global-123456789012-1\"],\"networkFirewallLoggingConfiguration\":null},\"firewallDeploymentModel\":{\"distributedFirewallDeploymentModel\":{\"distributedFirewallOrchestrationConfig\":{\"firewallCreationConfig\":{\"endpointLocation\":{\"availabilityZoneConfigList\":[{\"availabilityZoneId\":null,\"availabilityZoneName\":\"us-east-1a\",\"allowedIPV4CidrList\":[\"10.0.1.0/28\"]}]}},\"allowedIPV4CidrList\":null},\"distributedRouteManagementConfig\":null},\"centralizedFirewallDeploymentModel\":null}}""</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// Specification for <code>SHIELD_ADVANCED</code> for Amazon CloudFront distributions
         /// 
         /// </para>
@@ -229,6 +238,24 @@ namespace Amazon.FMS.Model
         ///  <code>"{\"type\": \"WAF\", \"ruleGroups\": [{\"id\":\"12345678-1bcd-9012-efga-0987654321ab\",
         /// \"overrideAction\" : {\"type\": \"COUNT\"}}], \"defaultAction\": {\"type\": \"BLOCK\"}}"</code>
         /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Example: <code>WAFV2</code> - Firewall Manager support for WAF managed rule group
+        /// versioning 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>"{\"type\":\"WAFV2\",\"preProcessRuleGroups\":[{\"ruleGroupArn\":null,\"overrideAction\":{\"type\":\"NONE\"},\"managedRuleGroupIdentifier\":{\"versionEnabled\":true,\"version\":\"Version_2.0\",\"vendorName\":\"AWS\",\"managedRuleGroupName\":\"AWSManagedRulesCommonRuleSet\"},\"ruleGroupType\":\"ManagedRuleGroup\",\"excludeRules\":[{\"name\":\"NoUserAgent_HEADER\"}]}],\"postProcessRuleGroups\":[],\"defaultAction\":{\"type\":\"ALLOW\"},\"overrideCustomerWebACLAssociation\":false,\"loggingConfiguration\":{\"logDestinationConfigs\":[\"arn:aws:firehose:us-west-2:12345678912:deliverystream/aws-waf-logs-fms-admin-destination\"],\"redactedFields\":[{\"redactedFieldType\":\"SingleHeader\",\"redactedFieldValue\":\"Cookies\"},{\"redactedFieldType\":\"Method\"}]}}"</code>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        ///  To use a specific version of a WAF managed rule group in your Firewall Manager policy,
+        /// you must set <code>versionEnabled</code> to <code>true</code>, and set <code>version</code>
+        /// to the version you'd like to use. If you don't set <code>versionEnabled</code> to
+        /// <code>true</code>, or if you omit <code>versionEnabled</code>, then Firewall Manager
+        /// uses the default version of the WAF managed rule group. 
         /// </para>
         ///  </li> <li> 
         /// <para>

@@ -35,6 +35,7 @@ namespace Amazon.FMS.Model
     public partial class PolicyOption
     {
         private NetworkFirewallPolicy _networkFirewallPolicy;
+        private ThirdPartyFirewallPolicy _thirdPartyFirewallPolicy;
 
         /// <summary>
         /// Gets and sets the property NetworkFirewallPolicy. 
@@ -52,6 +53,24 @@ namespace Amazon.FMS.Model
         internal bool IsSetNetworkFirewallPolicy()
         {
             return this._networkFirewallPolicy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ThirdPartyFirewallPolicy. 
+        /// <para>
+        /// Defines the policy options for a third-party firewall policy.
+        /// </para>
+        /// </summary>
+        public ThirdPartyFirewallPolicy ThirdPartyFirewallPolicy
+        {
+            get { return this._thirdPartyFirewallPolicy; }
+            set { this._thirdPartyFirewallPolicy = value; }
+        }
+
+        // Check to see if ThirdPartyFirewallPolicy property is set
+        internal bool IsSetThirdPartyFirewallPolicy()
+        {
+            return this._thirdPartyFirewallPolicy != null;
         }
 
     }

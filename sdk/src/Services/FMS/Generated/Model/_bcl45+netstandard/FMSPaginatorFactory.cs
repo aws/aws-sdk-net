@@ -74,5 +74,13 @@ namespace Amazon.FMS.Model
         {
             return new ListProtocolsListsPaginator(this.client, request);
         }
+
+        /// <summary>
+        /// Paginator for ListThirdPartyFirewallFirewallPolicies operation
+        ///</summary>
+        public IListThirdPartyFirewallFirewallPoliciesPaginator ListThirdPartyFirewallFirewallPolicies(ListThirdPartyFirewallFirewallPoliciesRequest request) 
+        {
+            return new ListThirdPartyFirewallFirewallPoliciesPaginator(this.client, request);
+        }
     }
 }
