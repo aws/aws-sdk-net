@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FSx.Model
 {
     /// <summary>
-    /// Specifies who can mount the file system and the options that can be used while mounting
+    /// Specifies who can mount an OpenZFS file system and the options available while mounting
     /// the file system.
     /// </summary>
     public partial class OpenZFSClientConfiguration

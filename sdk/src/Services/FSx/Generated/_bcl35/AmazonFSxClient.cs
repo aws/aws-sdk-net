@@ -928,7 +928,7 @@ namespace Amazon.FSx
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Returns the description of the file system.
+        /// Returns the description of the file system in JSON format.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -3269,6 +3269,10 @@ namespace Amazon.FSx
         ///  </li> <li> 
         /// <para>
         ///  <code>StorageCapacity</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ThroughputCapacity</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>

@@ -37,6 +37,7 @@ namespace Amazon.FSx.Model
         private string _dailyAutomaticBackupStartTime;
         private DiskIopsConfiguration _diskIopsConfiguration;
         private string _fsxAdminPassword;
+        private int? _throughputCapacity;
         private string _weeklyMaintenanceStartTime;
 
         /// <summary>
@@ -110,6 +111,26 @@ namespace Amazon.FSx.Model
         internal bool IsSetFsxAdminPassword()
         {
             return this._fsxAdminPassword != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ThroughputCapacity. 
+        /// <para>
+        /// Specifies the throughput of an FSx for NetApp ONTAP file system, measured in megabytes
+        /// per second (MBps). Valid values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=8, Max=4096)]
+        public int ThroughputCapacity
+        {
+            get { return this._throughputCapacity.GetValueOrDefault(); }
+            set { this._throughputCapacity = value; }
+        }
+
+        // Check to see if ThroughputCapacity property is set
+        internal bool IsSetThroughputCapacity()
+        {
+            return this._throughputCapacity.HasValue; 
         }
 
         /// <summary>

@@ -77,7 +77,7 @@ namespace Amazon.FSx.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Returns the description of the file system.
+    /// Returns the description of the file system in JSON format.
     /// </para>
     ///  </li> </ul> 
     /// <para>

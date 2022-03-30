@@ -120,6 +120,10 @@ namespace Amazon.FSx.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
+    ///  <code>ThroughputCapacity</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <code>WeeklyMaintenanceStartTime</code> 
     /// </para>
     ///  </li> </ul> 
