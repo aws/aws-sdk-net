@@ -948,6 +948,10 @@
       <Project>{9FC0FD04-8531-4ED4-B05D-33604EDDCA2C}</Project>
       <Name>AWSSDK.PinpointSMSVoice.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/PinpointSMSVoiceV2/AWSSDK.PinpointSMSVoiceV2.CodeAnalysis.csproj">
+      <Project>{749F9678-8C20-4EDE-8FB9-367849E8866C}</Project>
+      <Name>AWSSDK.PinpointSMSVoiceV2.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/Polly/AWSSDK.Polly.CodeAnalysis.csproj">
       <Project>{3D893BFD-952F-490E-A950-7F59E6609344}</Project>
       <Name>AWSSDK.Polly.CodeAnalysis</Name>
