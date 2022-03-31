@@ -16,7 +16,6 @@
     <property>Amazon.CloudControlApi.Model.CreateResourceRequest.DesiredState</property>
     <min>1</min>
     <max>16384</max>
-    <pattern>(.|\s)*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudControlApi.Model.CreateResourceRequest.RoleArn</property>
@@ -134,7 +133,6 @@
     <property>Amazon.CloudControlApi.Model.ListResourcesRequest.ResourceModel</property>
     <min>1</min>
     <max>16384</max>
-    <pattern>(.|\s)*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudControlApi.Model.ListResourcesRequest.RoleArn</property>
@@ -182,7 +180,6 @@
     <property>Amazon.CloudControlApi.Model.UpdateResourceRequest.PatchDocument</property>
     <min>1</min>
     <max>65536</max>
-    <pattern>(.|\s)*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudControlApi.Model.UpdateResourceRequest.RoleArn</property>
@@ -218,12 +215,10 @@
     <property>Amazon.CloudControlApi.Model.ProgressEvent.ResourceModel</property>
     <min>1</min>
     <max>16384</max>
-    <pattern>(.|\s)*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudControlApi.Model.ProgressEvent.StatusMessage</property>
     <max>1024</max>
-    <pattern>(.|\s)*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudControlApi.Model.ProgressEvent.TypeName</property>
@@ -241,6 +236,5 @@
     <property>Amazon.CloudControlApi.Model.ResourceDescription.Properties</property>
     <min>1</min>
     <max>16384</max>
-    <pattern>(.|\s)*</pattern>
   </property-value-rule>
 </property-value-rules>

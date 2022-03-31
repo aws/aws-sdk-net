@@ -30,7 +30,7 @@ namespace Amazon.CloudControlApi.Model
 {
     /// <summary>
     /// One or more properties included in this resource operation are defined as create-only,
-    /// and therefore cannot be updated.
+    /// and therefore can't be updated.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

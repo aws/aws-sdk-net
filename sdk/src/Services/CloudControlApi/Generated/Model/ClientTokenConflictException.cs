@@ -33,7 +33,7 @@ namespace Amazon.CloudControlApi.Model
     /// 
     ///  
     /// <para>
-    /// It is best practice for client tokens to be unique for each resource operation request.
+    /// It's best practice for client tokens to be unique for each resource operation request.
     /// However, client token expire after 36 hours.
     /// </para>
     /// </summary>

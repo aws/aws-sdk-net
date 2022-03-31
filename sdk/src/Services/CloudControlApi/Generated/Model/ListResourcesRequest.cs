@@ -30,14 +30,14 @@ namespace Amazon.CloudControlApi.Model
 {
     /// <summary>
     /// Container for the parameters to the ListResources operation.
-    /// Returns information about the specified resources. For more information, see <a href="cloudcontrolapi/latest/userguide/resource-operations-list.html">Discovering
+    /// Returns information about the specified resources. For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-list.html">Discovering
     /// resources</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.
     /// 
     ///  
     /// <para>
     /// You can use this action to return information about existing resources in your account
-    /// and Amazon Web Services Region, whether or not those resources were provisioned using
-    /// Cloud Control API.
+    /// and Amazon Web Services Region, whether those resources were provisioned using Cloud
+    /// Control API.
     /// </para>
     /// </summary>
     public partial class ListResourcesRequest : AmazonCloudControlApiRequest
@@ -52,14 +52,7 @@ namespace Amazon.CloudControlApi.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of results to be returned with a single call. If the number of
-        /// available results exceeds this maximum, the response includes a <code>NextToken</code>
-        /// value that you can assign to the <code>NextToken</code> request parameter to get the
-        /// next set of results.
-        /// </para>
-        ///  
-        /// <para>
-        /// The default is <code>20</code>.
+        /// Reserved.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -120,10 +113,10 @@ namespace Amazon.CloudControlApi.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) for Cloud
-        /// Control API to use when performing this resource operation. The role specified must
-        /// have the permissions required for this operation. The necessary permissions for each
-        /// event handler are defined in the <code> <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html#schema-properties-handlers">handlers</a>
+        /// The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role for
+        /// Cloud Control API to use when performing this resource operation. The role specified
+        /// must have the permissions required for this operation. The necessary permissions for
+        /// each event handler are defined in the <code> <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html#schema-properties-handlers">handlers</a>
         /// </code> section of the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">resource
         /// type definition schema</a>.
         /// </para>

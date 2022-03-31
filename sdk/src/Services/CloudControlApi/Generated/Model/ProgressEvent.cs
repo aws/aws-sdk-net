@@ -139,7 +139,7 @@ namespace Amazon.CloudControlApi.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>PENDING</code>: The resource operation has not yet started.
+        ///  <code>PENDING</code>: The resource operation hasn't yet started.
         /// </para>
         ///  </li> <li> 
         /// <para>

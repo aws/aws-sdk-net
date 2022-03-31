@@ -37,7 +37,7 @@ namespace Amazon.CloudControlApi.Model
     /// 
     ///  <note> 
     /// <para>
-    /// Resource operation requests expire after seven days.
+    /// Resource operation requests expire after 7 days.
     /// </para>
     ///  </note>
     /// </summary>

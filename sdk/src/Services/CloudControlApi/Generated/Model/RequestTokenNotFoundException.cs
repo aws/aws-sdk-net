@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudControlApi.Model
 {
     /// <summary>
-    /// A resource operation with the specified request token cannot be found.
+    /// A resource operation with the specified request token can't be found.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

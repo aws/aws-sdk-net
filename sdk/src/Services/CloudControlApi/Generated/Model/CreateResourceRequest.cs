@@ -90,7 +90,7 @@ namespace Amazon.CloudControlApi.Model
         /// Gets and sets the property DesiredState. 
         /// <para>
         /// Structured data format representing the desired state of the resource, consisting
-        /// of that resource's properties and their desired values. 
+        /// of that resource's properties and their desired values.
         /// </para>
         ///  <note> 
         /// <para>
@@ -118,8 +118,7 @@ namespace Amazon.CloudControlApi.Model
         /// <para>
         /// For more information about the properties of a specific resource, refer to the related
         /// topic for the resource in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Resource
-        /// and property types reference</a> in the <i>Amazon Web Services CloudFormation Users
-        /// Guide</i>.
+        /// and property types reference</a> in the <i>CloudFormation Users Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=16384)]
@@ -138,10 +137,10 @@ namespace Amazon.CloudControlApi.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) for Cloud
-        /// Control API to use when performing this resource operation. The role specified must
-        /// have the permissions required for this operation. The necessary permissions for each
-        /// event handler are defined in the <code> <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html#schema-properties-handlers">handlers</a>
+        /// The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role for
+        /// Cloud Control API to use when performing this resource operation. The role specified
+        /// must have the permissions required for this operation. The necessary permissions for
+        /// each event handler are defined in the <code> <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html#schema-properties-handlers">handlers</a>
         /// </code> section of the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">resource
         /// type definition schema</a>.
         /// </para>

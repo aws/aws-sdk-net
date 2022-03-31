@@ -30,7 +30,7 @@ namespace Amazon.CloudControlApi.Model
 {
     /// <summary>
     /// The resource is temporarily unavailable to be acted upon. For example, if the resource
-    /// is currently undergoing an operation and cannot be acted upon until that operation
+    /// is currently undergoing an operation and can't be acted upon until that operation
     /// is finished.
     /// </summary>
     #if !NETSTANDARD
