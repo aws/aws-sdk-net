@@ -52,7 +52,7 @@ namespace Amazon.GlueDataBrew.Model
         /// variables' values can be either an actual value or a column name. These values are
         /// defined in the SubstitutionMap. If a CheckExpression starts with a column reference,
         /// then ColumnSelectors in the rule should be null. If ColumnSelectors has been defined,
-        /// then there should be no columnn reference in the left side of a condition, for example,
+        /// then there should be no column reference in the left side of a condition, for example,
         /// <code>is_between :val1 and :val2</code>.
         /// </para>
         ///  

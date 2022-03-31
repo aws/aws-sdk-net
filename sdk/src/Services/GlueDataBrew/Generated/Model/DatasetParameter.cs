@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GlueDataBrew.Model
 {
     /// <summary>
-    /// Represents a dataset paramater that defines type and conditions for a parameter in
+    /// Represents a dataset parameter that defines type and conditions for a parameter in
     /// the Amazon S3 path of the dataset.
     /// </summary>
     public partial class DatasetParameter

@@ -267,6 +267,10 @@ namespace Amazon.GlueDataBrew
         /// </summary>
         public static readonly InputFormat JSON = new InputFormat("JSON");
         /// <summary>
+        /// Constant ORC for InputFormat
+        /// </summary>
+        public static readonly InputFormat ORC = new InputFormat("ORC");
+        /// <summary>
         /// Constant PARQUET for InputFormat
         /// </summary>
         public static readonly InputFormat PARQUET = new InputFormat("PARQUET");
