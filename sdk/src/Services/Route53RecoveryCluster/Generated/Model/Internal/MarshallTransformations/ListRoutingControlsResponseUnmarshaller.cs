@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Route53RecoveryCluster.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for UpdateRoutingControlStates operation
+    /// Response Unmarshaller for ListRoutingControls operation
     /// </summary>  
-    public class UpdateRoutingControlStatesResponseUnmarshaller : JsonResponseUnmarshaller
+    public class ListRoutingControlsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,8 +45,25 @@ namespace Amazon.Route53RecoveryCluster.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            UpdateRoutingControlStatesResponse response = new UpdateRoutingControlStatesResponse();
+            ListRoutingControlsResponse response = new ListRoutingControlsResponse();
 
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
+            {
+                if (context.TestExpression("NextToken", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.NextToken = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RoutingControls", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<RoutingControl, RoutingControlUnmarshaller>(RoutingControlUnmarshaller.Instance);
+                    response.RoutingControls = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+            }
 
             return response;
         }
@@ -73,10 +90,6 @@ namespace Amazon.Route53RecoveryCluster.Model.Internal.MarshallTransformations
                 {
                     return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
-                {
-                    return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("EndpointTemporarilyUnavailableException"))
                 {
                     return EndpointTemporarilyUnavailableExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -88,10 +101,6 @@ namespace Amazon.Route53RecoveryCluster.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                 {
                     return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceLimitExceededException"))
-                {
-                    return ServiceLimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottlingException"))
                 {
@@ -105,9 +114,9 @@ namespace Amazon.Route53RecoveryCluster.Model.Internal.MarshallTransformations
             return new AmazonRoute53RecoveryClusterException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static UpdateRoutingControlStatesResponseUnmarshaller _instance = new UpdateRoutingControlStatesResponseUnmarshaller();        
+        private static ListRoutingControlsResponseUnmarshaller _instance = new ListRoutingControlsResponseUnmarshaller();        
 
-        internal static UpdateRoutingControlStatesResponseUnmarshaller GetInstance()
+        internal static ListRoutingControlsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -115,7 +124,7 @@ namespace Amazon.Route53RecoveryCluster.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdateRoutingControlStatesResponseUnmarshaller Instance
+        public static ListRoutingControlsResponseUnmarshaller Instance
         {
             get
             {

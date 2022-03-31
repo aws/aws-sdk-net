@@ -29,43 +29,46 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53RecoveryCluster.Model
 {
     /// <summary>
-    /// The request references a routing control or control panel that was not found.
+    /// The request can't update that many routing control states at the same time. Try again
+    /// with fewer routing control states.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
-    public partial class ResourceNotFoundException : AmazonRoute53RecoveryClusterException
+    public partial class ServiceLimitExceededException : AmazonRoute53RecoveryClusterException
     {
+        private string _limitCode;
         private string _resourceId;
         private string _resourceType;
+        private string _serviceCode;
 
         /// <summary>
-        /// Constructs a new ResourceNotFoundException with the specified error
+        /// Constructs a new ServiceLimitExceededException with the specified error
         /// message.
         /// </summary>
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        public ResourceNotFoundException(string message) 
+        public ServiceLimitExceededException(string message) 
             : base(message) {}
 
         /// <summary>
-        /// Construct instance of ResourceNotFoundException
+        /// Construct instance of ServiceLimitExceededException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
-        public ResourceNotFoundException(string message, Exception innerException) 
+        public ServiceLimitExceededException(string message, Exception innerException) 
             : base(message, innerException) {}
 
         /// <summary>
-        /// Construct instance of ResourceNotFoundException
+        /// Construct instance of ServiceLimitExceededException
         /// </summary>
         /// <param name="innerException"></param>
-        public ResourceNotFoundException(Exception innerException) 
+        public ServiceLimitExceededException(Exception innerException) 
             : base(innerException) {}
 
         /// <summary>
-        /// Construct instance of ResourceNotFoundException
+        /// Construct instance of ServiceLimitExceededException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
@@ -73,34 +76,36 @@ namespace Amazon.Route53RecoveryCluster.Model
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public ResourceNotFoundException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+        public ServiceLimitExceededException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, requestId, statusCode) {}
 
         /// <summary>
-        /// Construct instance of ResourceNotFoundException
+        /// Construct instance of ServiceLimitExceededException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="errorType"></param>
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public ResourceNotFoundException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+        public ServiceLimitExceededException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
 #if !NETSTANDARD
         /// <summary>
-        /// Constructs a new instance of the ResourceNotFoundException class with serialized data.
+        /// Constructs a new instance of the ServiceLimitExceededException class with serialized data.
         /// </summary>
         /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
         /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
         /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is null. </exception>
         /// <exception cref="T:System.Runtime.Serialization.SerializationException">The class name is null or <see cref="P:System.Exception.HResult" /> is zero (0). </exception>
-        protected ResourceNotFoundException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        protected ServiceLimitExceededException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
+            this.LimitCode = (string)info.GetValue("LimitCode", typeof(string));
             this.ResourceId = (string)info.GetValue("ResourceId", typeof(string));
             this.ResourceType = (string)info.GetValue("ResourceType", typeof(string));
+            this.ServiceCode = (string)info.GetValue("ServiceCode", typeof(string));
         }
 
         /// <summary>
@@ -121,16 +126,38 @@ namespace Amazon.Route53RecoveryCluster.Model
         public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
         {
             base.GetObjectData(info, context);
+            info.AddValue("LimitCode", this.LimitCode);
             info.AddValue("ResourceId", this.ResourceId);
             info.AddValue("ResourceType", this.ResourceType);
+            info.AddValue("ServiceCode", this.ServiceCode);
         }
 #endif
 
         /// <summary>
-        /// Gets and sets the property ResourceId. Hypothetical resource identifier that was not
-        /// found
+        /// Gets and sets the property LimitCode. 
+        /// <para>
+        /// The code of the limit that was exceeded.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
+        public string LimitCode
+        {
+            get { return this._limitCode; }
+            set { this._limitCode = value; }
+        }
+
+        // Check to see if LimitCode property is set
+        internal bool IsSetLimitCode()
+        {
+            return this._limitCode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceId. 
+        /// <para>
+        /// The resource identifier of the limit that was exceeded.
+        /// </para>
+        /// </summary>
         public string ResourceId
         {
             get { return this._resourceId; }
@@ -144,9 +171,11 @@ namespace Amazon.Route53RecoveryCluster.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ResourceType. Hypothetical resource type that was not found
+        /// Gets and sets the property ResourceType. 
+        /// <para>
+        /// The resource type of the limit that was exceeded.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string ResourceType
         {
             get { return this._resourceType; }
@@ -157,6 +186,25 @@ namespace Amazon.Route53RecoveryCluster.Model
         internal bool IsSetResourceType()
         {
             return this._resourceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServiceCode. 
+        /// <para>
+        /// The service code of the limit that was exceeded.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public string ServiceCode
+        {
+            get { return this._serviceCode; }
+            set { this._serviceCode = value; }
+        }
+
+        // Check to see if ServiceCode property is set
+        internal bool IsSetServiceCode()
+        {
+            return this._serviceCode != null;
         }
 
     }

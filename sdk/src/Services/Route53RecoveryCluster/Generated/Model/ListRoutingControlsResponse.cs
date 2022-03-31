@@ -29,49 +29,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53RecoveryCluster.Model
 {
     /// <summary>
-    /// A routing control state entry.
+    /// This is the response object from the ListRoutingControls operation.
     /// </summary>
-    public partial class UpdateRoutingControlStateEntry
+    public partial class ListRoutingControlsResponse : AmazonWebServiceResponse
     {
-        private string _routingControlArn;
-        private RoutingControlState _routingControlState;
+        private string _nextToken;
+        private List<RoutingControl> _routingControls = new List<RoutingControl>();
 
         /// <summary>
-        /// Gets and sets the property RoutingControlArn. 
+        /// Gets and sets the property NextToken. 
         /// <para>
-        /// The Amazon Resource Name (ARN) for a routing control state entry.
+        /// The token for the next set of results. You receive this token from a previous call.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=255)]
-        public string RoutingControlArn
+        [AWSProperty(Min=1, Max=8096)]
+        public string NextToken
         {
-            get { return this._routingControlArn; }
-            set { this._routingControlArn = value; }
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
         }
 
-        // Check to see if RoutingControlArn property is set
-        internal bool IsSetRoutingControlArn()
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
         {
-            return this._routingControlArn != null;
+            return this._nextToken != null;
         }
 
         /// <summary>
-        /// Gets and sets the property RoutingControlState. 
+        /// Gets and sets the property RoutingControls. 
         /// <para>
-        /// The routing control state in a set of routing control state entries.
+        /// The list of routing controls.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public RoutingControlState RoutingControlState
+        public List<RoutingControl> RoutingControls
         {
-            get { return this._routingControlState; }
-            set { this._routingControlState = value; }
+            get { return this._routingControls; }
+            set { this._routingControls = value; }
         }
 
-        // Check to see if RoutingControlState property is set
-        internal bool IsSetRoutingControlState()
+        // Check to see if RoutingControls property is set
+        internal bool IsSetRoutingControls()
         {
-            return this._routingControlState != null;
+            return this._routingControls != null && this._routingControls.Count > 0; 
         }
 
     }

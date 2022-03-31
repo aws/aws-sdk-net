@@ -29,21 +29,63 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53RecoveryCluster.Model
 {
     /// <summary>
-    /// This is the response object from the GetRoutingControlState operation.
+    /// A routing control, which is a simple on/off switch that you can use to route traffic
+    /// to cells. When a routing control state is On, traffic flows to a cell. When the state
+    /// is Off, traffic does not flow.
     /// </summary>
-    public partial class GetRoutingControlStateResponse : AmazonWebServiceResponse
+    public partial class RoutingControl
     {
+        private string _controlPanelArn;
+        private string _controlPanelName;
         private string _routingControlArn;
         private string _routingControlName;
         private RoutingControlState _routingControlState;
 
         /// <summary>
-        /// Gets and sets the property RoutingControlArn. 
+        /// Gets and sets the property ControlPanelArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the response.
+        /// The Amazon Resource Name (ARN) of the control panel where the routing control is located.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=255)]
+        [AWSProperty(Min=1, Max=255)]
+        public string ControlPanelArn
+        {
+            get { return this._controlPanelArn; }
+            set { this._controlPanelArn = value; }
+        }
+
+        // Check to see if ControlPanelArn property is set
+        internal bool IsSetControlPanelArn()
+        {
+            return this._controlPanelArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ControlPanelName. 
+        /// <para>
+        /// The name of the control panel where the routing control is located.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string ControlPanelName
+        {
+            get { return this._controlPanelName; }
+            set { this._controlPanelName = value; }
+        }
+
+        // Check to see if ControlPanelName property is set
+        internal bool IsSetControlPanelName()
+        {
+            return this._controlPanelName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RoutingControlArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the routing control.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string RoutingControlArn
         {
             get { return this._routingControlArn; }
@@ -59,7 +101,7 @@ namespace Amazon.Route53RecoveryCluster.Model
         /// <summary>
         /// Gets and sets the property RoutingControlName. 
         /// <para>
-        /// The routing control name.
+        /// The name of the routing control.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -78,10 +120,10 @@ namespace Amazon.Route53RecoveryCluster.Model
         /// <summary>
         /// Gets and sets the property RoutingControlState. 
         /// <para>
-        /// The state of the routing control.
+        /// The current state of the routing control. When a routing control state is On, traffic
+        /// flows to a cell. When the state is Off, traffic does not flow. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public RoutingControlState RoutingControlState
         {
             get { return this._routingControlState; }
