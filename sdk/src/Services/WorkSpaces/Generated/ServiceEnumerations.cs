@@ -187,6 +187,72 @@ namespace Amazon.WorkSpaces
 
 
     /// <summary>
+    /// Constants used for properties of type ClientDeviceType.
+    /// </summary>
+    public class ClientDeviceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DeviceTypeAndroid for ClientDeviceType
+        /// </summary>
+        public static readonly ClientDeviceType DeviceTypeAndroid = new ClientDeviceType("DeviceTypeAndroid");
+        /// <summary>
+        /// Constant DeviceTypeIos for ClientDeviceType
+        /// </summary>
+        public static readonly ClientDeviceType DeviceTypeIos = new ClientDeviceType("DeviceTypeIos");
+        /// <summary>
+        /// Constant DeviceTypeLinux for ClientDeviceType
+        /// </summary>
+        public static readonly ClientDeviceType DeviceTypeLinux = new ClientDeviceType("DeviceTypeLinux");
+        /// <summary>
+        /// Constant DeviceTypeOsx for ClientDeviceType
+        /// </summary>
+        public static readonly ClientDeviceType DeviceTypeOsx = new ClientDeviceType("DeviceTypeOsx");
+        /// <summary>
+        /// Constant DeviceTypeWeb for ClientDeviceType
+        /// </summary>
+        public static readonly ClientDeviceType DeviceTypeWeb = new ClientDeviceType("DeviceTypeWeb");
+        /// <summary>
+        /// Constant DeviceTypeWindows for ClientDeviceType
+        /// </summary>
+        public static readonly ClientDeviceType DeviceTypeWindows = new ClientDeviceType("DeviceTypeWindows");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ClientDeviceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ClientDeviceType FindValue(string value)
+        {
+            return FindValue<ClientDeviceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ClientDeviceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Compute.
     /// </summary>
     public class Compute : ConstantClass

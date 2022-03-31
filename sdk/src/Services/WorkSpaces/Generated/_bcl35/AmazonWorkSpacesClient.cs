@@ -38,7 +38,29 @@ namespace Amazon.WorkSpaces
     /// Amazon WorkSpaces Service 
     /// <para>
     /// Amazon WorkSpaces enables you to provision virtual, cloud-based Microsoft Windows
-    /// and Amazon Linux desktops for your users.
+    /// or Amazon Linux desktops for your users, known as <i>WorkSpaces</i>. WorkSpaces eliminates
+    /// the need to procure and deploy hardware or install complex software. You can quickly
+    /// add or remove users as your needs change. Users can access their virtual desktops
+    /// from multiple devices or web browsers.
+    /// </para>
+    ///  
+    /// <para>
+    /// This API Reference provides detailed information about the actions, data types, parameters,
+    /// and errors of the WorkSpaces service. For more information about the supported Amazon
+    /// Web Services Regions, endpoints, and service quotas of the Amazon WorkSpaces service,
+    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/wsp.html">WorkSpaces endpoints
+    /// and quotas</a> in the <i>Amazon Web Services General Reference</i>.
+    /// </para>
+    ///  
+    /// <para>
+    /// You can also manage your WorkSpaces resources using the WorkSpaces console, Command
+    /// Line Interface (CLI), and SDKs. For more information about administering WorkSpaces,
+    /// see the <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/">Amazon
+    /// WorkSpaces Administration Guide</a>. For more information about using the Amazon WorkSpaces
+    /// client application or web browser to access provisioned WorkSpaces, see the <a href="https://docs.aws.amazon.com/workspaces/latest/userguide/">Amazon
+    /// WorkSpaces User Guide</a>. For more information about using the CLI to manage your
+    /// WorkSpaces resources, see the <a href="https://docs.aws.amazon.com/cli/latest/reference/workspaces/index.html">WorkSpaces
+    /// section of the CLI Reference</a>.
     /// </para>
     /// </summary>
     public partial class AmazonWorkSpacesClient : AmazonServiceClient, IAmazonWorkSpaces
@@ -1120,6 +1142,78 @@ namespace Amazon.WorkSpaces
 
         #endregion
         
+        #region  DeleteClientBranding
+
+        /// <summary>
+        /// Deletes customized client branding. Client branding allows you to customize your WorkSpace's
+        /// client login portal. You can tailor your login portal company logo, the support email
+        /// address, support link, link to reset password, and a custom message for users trying
+        /// to sign in.
+        /// 
+        ///  
+        /// <para>
+        /// After you delete your customized client branding, your login portal reverts to the
+        /// default client branding.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteClientBranding service method.</param>
+        /// 
+        /// <returns>The response from the DeleteClientBranding service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeleteClientBranding">REST API Reference for DeleteClientBranding Operation</seealso>
+        public virtual DeleteClientBrandingResponse DeleteClientBranding(DeleteClientBrandingRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteClientBrandingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteClientBrandingResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteClientBrandingResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteClientBranding operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteClientBranding operation on AmazonWorkSpacesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteClientBranding
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeleteClientBranding">REST API Reference for DeleteClientBranding Operation</seealso>
+        public virtual IAsyncResult BeginDeleteClientBranding(DeleteClientBrandingRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteClientBrandingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteClientBrandingResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteClientBranding operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteClientBranding.</param>
+        /// 
+        /// <returns>Returns a  DeleteClientBrandingResult from WorkSpaces.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeleteClientBranding">REST API Reference for DeleteClientBranding Operation</seealso>
+        public virtual DeleteClientBrandingResponse EndDeleteClientBranding(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteClientBrandingResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteConnectClientAddIn
 
         /// <summary>
@@ -1737,6 +1831,78 @@ namespace Amazon.WorkSpaces
         public virtual DescribeAccountModificationsResponse EndDescribeAccountModifications(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeAccountModificationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeClientBranding
+
+        /// <summary>
+        /// Describes the specified client branding. Client branding allows you to customize the
+        /// log in page of various device types for your users. You can add your company logo,
+        /// the support email address, support link, link to reset password, and a custom message
+        /// for users trying to sign in.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Only device types that have branding information configured will be shown in the response.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeClientBranding service method.</param>
+        /// 
+        /// <returns>The response from the DescribeClientBranding service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeClientBranding">REST API Reference for DescribeClientBranding Operation</seealso>
+        public virtual DescribeClientBrandingResponse DescribeClientBranding(DescribeClientBrandingRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeClientBrandingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeClientBrandingResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeClientBrandingResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeClientBranding operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeClientBranding operation on AmazonWorkSpacesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeClientBranding
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeClientBranding">REST API Reference for DescribeClientBranding Operation</seealso>
+        public virtual IAsyncResult BeginDescribeClientBranding(DescribeClientBrandingRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeClientBrandingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeClientBrandingResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeClientBranding operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeClientBranding.</param>
+        /// 
+        /// <returns>Returns a  DescribeClientBrandingResult from WorkSpaces.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeClientBranding">REST API Reference for DescribeClientBranding Operation</seealso>
+        public virtual DescribeClientBrandingResponse EndDescribeClientBranding(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeClientBrandingResponse>(asyncResult);
         }
 
         #endregion
@@ -2749,6 +2915,99 @@ namespace Amazon.WorkSpaces
         public virtual DisassociateIpGroupsResponse EndDisassociateIpGroups(IAsyncResult asyncResult)
         {
             return EndInvoke<DisassociateIpGroupsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ImportClientBranding
+
+        /// <summary>
+        /// Imports client branding. Client branding allows you to customize your WorkSpace's
+        /// client login portal. You can tailor your login portal company logo, the support email
+        /// address, support link, link to reset password, and a custom message for users trying
+        /// to sign in.
+        /// 
+        ///  
+        /// <para>
+        /// After you import client branding, the default branding experience for the specified
+        /// platform type is replaced with the imported experience
+        /// </para>
+        ///  <note> <ul> <li> 
+        /// <para>
+        /// You must specify at least one platform type when importing client branding.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You can import up to 6 MB of data with each request. If your request exceeds this
+        /// limit, you can import client branding for different platform types using separate
+        /// requests.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// In each platform type, the <code>SupportEmail</code> and <code>SupportLink</code>
+        /// parameters are mutually exclusive. You can specify only one parameter for each platform
+        /// type, but not both.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Imported data can take up to a minute to appear in the WorkSpaces client.
+        /// </para>
+        ///  </li> </ul> </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ImportClientBranding service method.</param>
+        /// 
+        /// <returns>The response from the ImportClientBranding service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceLimitExceededException">
+        /// Your resource limits have been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ImportClientBranding">REST API Reference for ImportClientBranding Operation</seealso>
+        public virtual ImportClientBrandingResponse ImportClientBranding(ImportClientBrandingRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ImportClientBrandingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ImportClientBrandingResponseUnmarshaller.Instance;
+
+            return Invoke<ImportClientBrandingResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ImportClientBranding operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ImportClientBranding operation on AmazonWorkSpacesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndImportClientBranding
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ImportClientBranding">REST API Reference for ImportClientBranding Operation</seealso>
+        public virtual IAsyncResult BeginImportClientBranding(ImportClientBrandingRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ImportClientBrandingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ImportClientBrandingResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ImportClientBranding operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginImportClientBranding.</param>
+        /// 
+        /// <returns>Returns a  ImportClientBrandingResult from WorkSpaces.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ImportClientBranding">REST API Reference for ImportClientBranding Operation</seealso>
+        public virtual ImportClientBrandingResponse EndImportClientBranding(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ImportClientBrandingResponse>(asyncResult);
         }
 
         #endregion
