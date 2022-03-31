@@ -1,3 +1,23 @@
+### 3.7.243.0 (2022-03-31 18:24 UTC)
+* AuditManager (3.7.9.3)
+	* This release adds documentation updates for Audit Manager. The updates provide data deletion guidance when a customer deregisters Audit Manager or deregisters a delegated administrator.
+* CloudControlApi (3.7.1.0)
+	* SDK release for Cloud Control API in Amazon Web Services China (Beijing) Region, operated by Sinnet, and Amazon Web Services China (Ningxia) Region, operated by NWCD
+* GlueDataBrew (3.7.8.0)
+	* This AWS Glue Databrew release adds feature to support ORC as an input format.
+* ManagedGrafana (3.7.1.0)
+	* This release adds tagging support to the Managed Grafana service. New APIs: TagResource, UntagResource and ListTagsForResource. Updates: add optional field tags to support tagging while calling CreateWorkspace.
+* PinpointSMSVoiceV2 (3.7.0.0)
+	* Amazon Pinpoint now offers a version 2.0 suite of SMS and voice APIs, providing increased control over sending and configuration. This release is a new SDK for sending SMS and voice messages called PinpointSMSVoiceV2.
+* Route53RecoveryCluster (3.7.2.0)
+	* This release adds a new API "ListRoutingControls" to list routing control states using the highly reliable Route 53 ARC data plane endpoints.
+* WorkSpaces (3.7.4.0)
+	* Added APIs that allow you to customize the logo, login message, and help links in the WorkSpaces client login page. To learn more, visit https://docs.aws.amazon.com/workspaces/latest/adminguide/customize-branding.html
+* Core 3.7.10.2
+	* Updating endpoints.json file.
+
+	* All services packages updated to require new Core
+
 ### 3.7.242.0 (2022-03-30 22:07 UTC)
 * EC2 (3.7.63.0)
 	* This release simplifies the auto-recovery configuration process enabling customers to set the recovery behavior to disabled or default
