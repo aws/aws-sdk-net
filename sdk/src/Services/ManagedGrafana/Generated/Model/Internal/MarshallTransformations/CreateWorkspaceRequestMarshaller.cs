@@ -111,6 +111,20 @@ namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.StackSetName);
                 }
 
+                if(publicRequest.IsSetTags())
+                {
+                    context.Writer.WritePropertyName("tags");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    {
+                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                            context.Writer.Write(publicRequestTagsValue);
+                    }
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetWorkspaceDataSources())
                 {
                     context.Writer.WritePropertyName("workspaceDataSources");

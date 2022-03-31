@@ -29,54 +29,51 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ManagedGrafana.Model
 {
     /// <summary>
-    /// A structure that specifies one user or group in the workspace.
+    /// Container for the parameters to the UntagResource operation.
+    /// The <code>UntagResource</code> operation removes the association of the tag with the
+    /// Amazon Managed Grafana resource.
     /// </summary>
-    public partial class User
+    public partial class UntagResourceRequest : AmazonManagedGrafanaRequest
     {
-        private string _id;
-        private UserType _type;
+        private string _resourceArn;
+        private List<string> _tagKeys = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property Id. 
+        /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The ID of the user or group.
-        /// </para>
-        ///  
-        /// <para>
-        /// Pattern: <code>^([0-9a-fA-F]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}$</code>
-        /// 
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=47)]
-        public string Id
-        {
-            get { return this._id; }
-            set { this._id = value; }
-        }
-
-        // Check to see if Id property is set
-        internal bool IsSetId()
-        {
-            return this._id != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Type. 
-        /// <para>
-        /// Specifies whether this is a single user or a group.
+        /// The ARN of the resource the tag association is removed from. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public UserType Type
+        public string ResourceArn
         {
-            get { return this._type; }
-            set { this._type = value; }
+            get { return this._resourceArn; }
+            set { this._resourceArn = value; }
         }
 
-        // Check to see if Type property is set
-        internal bool IsSetType()
+        // Check to see if ResourceArn property is set
+        internal bool IsSetResourceArn()
         {
-            return this._type != null;
+            return this._resourceArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TagKeys. 
+        /// <para>
+        /// The key values of the tag to be removed from the resource.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public List<string> TagKeys
+        {
+            get { return this._tagKeys; }
+            set { this._tagKeys = value; }
+        }
+
+        // Check to see if TagKeys property is set
+        internal bool IsSetTagKeys()
+        {
+            return this._tagKeys != null && this._tagKeys.Count > 0; 
         }
 
     }

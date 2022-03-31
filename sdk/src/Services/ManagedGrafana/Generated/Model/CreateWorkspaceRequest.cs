@@ -48,6 +48,7 @@ namespace Amazon.ManagedGrafana.Model
         private string _organizationRoleName;
         private PermissionType _permissionType;
         private string _stackSetName;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private List<string> _workspaceDataSources = new List<string>();
         private string _workspaceDescription;
         private string _workspaceName;
@@ -142,9 +143,11 @@ namespace Amazon.ManagedGrafana.Model
         /// <summary>
         /// Gets and sets the property PermissionType. 
         /// <para>
-        /// If you specify <code>Service Managed</code>, Amazon Managed Grafana automatically
-        /// creates the IAM roles and provisions the permissions that the workspace needs to use
-        /// Amazon Web Services data sources and notification channels.
+        /// If you specify <code>SERVICE_MANAGED</code> on AWS Grafana console, Amazon Managed
+        /// Grafana automatically creates the IAM roles and provisions the permissions that the
+        /// workspace needs to use Amazon Web Services data sources and notification channels.
+        /// In CLI mode, the permissionType <code>SERVICE_MANAGED</code> will not create the IAM
+        /// role for you.
         /// </para>
         ///  
         /// <para>
@@ -158,7 +161,7 @@ namespace Amazon.ManagedGrafana.Model
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon
         /// Managed Grafana permissions and policies for Amazon Web Services data sources and
-        /// notification channels</a> 
+        /// notification channels</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -194,6 +197,25 @@ namespace Amazon.ManagedGrafana.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The list of tags associated with the workspace.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=50)]
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property WorkspaceDataSources. 
         /// <para>
         /// Specify the Amazon Web Services data sources that you want to be queried in this workspace.
@@ -224,6 +246,10 @@ namespace Amazon.ManagedGrafana.Model
         /// Gets and sets the property WorkspaceDescription. 
         /// <para>
         /// A description for the workspace. This is used only to help you identify this workspace.
+        /// </para>
+        ///  
+        /// <para>
+        /// Pattern: <code>^[\\p{L}\\p{Z}\\p{N}\\p{P}]{0,2048}$</code> 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]
@@ -301,9 +327,7 @@ namespace Amazon.ManagedGrafana.Model
         /// <para>
         /// The workspace needs an IAM role that grants permissions to the Amazon Web Services
         /// resources that the workspace will view data from. If you already have a role that
-        /// you want to use, specify it here. If you omit this field and you specify some Amazon
-        /// Web Services resources in <code>workspaceDataSources</code> or <code>workspaceNotificationDestinations</code>,
-        /// a new IAM role with the necessary permissions is automatically created.
+        /// you want to use, specify it here. The permission type should be set to <code>CUSTOMER_MANAGED</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

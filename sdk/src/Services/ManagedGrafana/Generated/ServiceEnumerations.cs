@@ -135,6 +135,10 @@ namespace Amazon.ManagedGrafana
         /// </summary>
         public static readonly DataSourceType AMAZON_OPENSEARCH_SERVICE = new DataSourceType("AMAZON_OPENSEARCH_SERVICE");
         /// <summary>
+        /// Constant ATHENA for DataSourceType
+        /// </summary>
+        public static readonly DataSourceType ATHENA = new DataSourceType("ATHENA");
+        /// <summary>
         /// Constant CLOUDWATCH for DataSourceType
         /// </summary>
         public static readonly DataSourceType CLOUDWATCH = new DataSourceType("CLOUDWATCH");
@@ -142,6 +146,10 @@ namespace Amazon.ManagedGrafana
         /// Constant PROMETHEUS for DataSourceType
         /// </summary>
         public static readonly DataSourceType PROMETHEUS = new DataSourceType("PROMETHEUS");
+        /// <summary>
+        /// Constant REDSHIFT for DataSourceType
+        /// </summary>
+        public static readonly DataSourceType REDSHIFT = new DataSourceType("REDSHIFT");
         /// <summary>
         /// Constant SITEWISE for DataSourceType
         /// </summary>
