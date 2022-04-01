@@ -1,3 +1,11 @@
+### 3.7.244.0 (2022-04-01 18:13 UTC)
+* Connect (3.7.16.0)
+	* This release updates these APIs: UpdateInstanceAttribute, DescribeInstanceAttribute and ListInstanceAttributes. You can use it to programmatically enable/disable multi-party conferencing using attribute type MULTI_PARTY_CONFERENCING on the specified Amazon Connect instance.
+* Core 3.7.10.3
+	* Updating endpoints.json file.
+
+	* All services packages updated to require new Core
+
 ### 3.7.243.0 (2022-03-31 18:24 UTC)
 * AuditManager (3.7.9.3)
 	* This release adds documentation updates for Audit Manager. The updates provide data deletion guidance when a customer deregisters Audit Manager or deregisters a delegated administrator.
