@@ -1005,6 +1005,10 @@ namespace Amazon.Connect
         /// </summary>
         public static readonly InstanceAttributeType INBOUND_CALLS = new InstanceAttributeType("INBOUND_CALLS");
         /// <summary>
+        /// Constant MULTI_PARTY_CONFERENCE for InstanceAttributeType
+        /// </summary>
+        public static readonly InstanceAttributeType MULTI_PARTY_CONFERENCE = new InstanceAttributeType("MULTI_PARTY_CONFERENCE");
+        /// <summary>
         /// Constant OUTBOUND_CALLS for InstanceAttributeType
         /// </summary>
         public static readonly InstanceAttributeType OUTBOUND_CALLS = new InstanceAttributeType("OUTBOUND_CALLS");

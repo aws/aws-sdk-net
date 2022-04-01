@@ -34,10 +34,6 @@ namespace Amazon.Connect.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    /// CALLBACK
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
     /// DISCONNECT
     /// </para>
     ///  </li> <li> 

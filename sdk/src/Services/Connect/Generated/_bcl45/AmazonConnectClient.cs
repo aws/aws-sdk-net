@@ -8352,10 +8352,6 @@ namespace Amazon.Connect
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// CALLBACK
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// DISCONNECT
         /// </para>
         ///  </li> <li> 
@@ -8401,10 +8397,6 @@ namespace Amazon.Connect
         /// Ends the specified contact. This call does not work for the following initiation methods:
         /// 
         ///  <ul> <li> 
-        /// <para>
-        /// CALLBACK
-        /// </para>
-        ///  </li> <li> 
         /// <para>
         /// DISCONNECT
         /// </para>

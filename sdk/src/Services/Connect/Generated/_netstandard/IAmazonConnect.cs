@@ -3867,10 +3867,6 @@ namespace Amazon.Connect
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// CALLBACK
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// DISCONNECT
         /// </para>
         ///  </li> <li> 
