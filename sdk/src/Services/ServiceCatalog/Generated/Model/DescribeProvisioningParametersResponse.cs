@@ -34,6 +34,7 @@ namespace Amazon.ServiceCatalog.Model
     public partial class DescribeProvisioningParametersResponse : AmazonWebServiceResponse
     {
         private List<ConstraintSummary> _constraintSummaries = new List<ConstraintSummary>();
+        private List<ProvisioningArtifactOutput> _provisioningArtifactOutputKeys = new List<ProvisioningArtifactOutput>();
         private List<ProvisioningArtifactOutput> _provisioningArtifactOutputs = new List<ProvisioningArtifactOutput>();
         private List<ProvisioningArtifactParameter> _provisioningArtifactParameters = new List<ProvisioningArtifactParameter>();
         private ProvisioningArtifactPreferences _provisioningArtifactPreferences;
@@ -59,11 +60,32 @@ namespace Amazon.ServiceCatalog.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ProvisioningArtifactOutputKeys. 
+        /// <para>
+        /// A list of the keys and descriptions of the outputs. These outputs can be referenced
+        /// from a provisioned product launched from this provisioning artifact.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=60)]
+        public List<ProvisioningArtifactOutput> ProvisioningArtifactOutputKeys
+        {
+            get { return this._provisioningArtifactOutputKeys; }
+            set { this._provisioningArtifactOutputKeys = value; }
+        }
+
+        // Check to see if ProvisioningArtifactOutputKeys property is set
+        internal bool IsSetProvisioningArtifactOutputKeys()
+        {
+            return this._provisioningArtifactOutputKeys != null && this._provisioningArtifactOutputKeys.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property ProvisioningArtifactOutputs. 
         /// <para>
         /// The output of the provisioning artifact.
         /// </para>
         /// </summary>
+        [Obsolete("This property is deprecated and returns the Id and Description of the Provisioning Artifact. Use ProvisioningArtifactOutputKeys instead to get the Keys and Descriptions of the outputs.")]
         [AWSProperty(Max=60)]
         public List<ProvisioningArtifactOutput> ProvisioningArtifactOutputs
         {
