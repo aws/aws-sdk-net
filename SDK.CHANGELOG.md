@@ -1,3 +1,13 @@
+### 3.7.245.0 (2022-04-04 18:17 UTC)
+* IoT (3.7.12.0)
+	* AWS IoT - AWS IoT Device Defender adds support to list metric datapoints collected for IoT devices through the ListMetricValues API
+* Proton (3.7.3.0)
+	* SDK release to support tagging for AWS Proton Repository resource
+* ServerMigrationService (3.7.0.145)
+	* Revised product update notice for SMS console deprecation.
+* ServiceCatalog (3.7.2.0)
+	* This release adds ProvisioningArtifictOutputKeys to DescribeProvisioningParameters to reference the outputs of a Provisioned Product and deprecates ProvisioningArtifactOutputs.
+
 ### 3.7.244.0 (2022-04-01 18:13 UTC)
 * Connect (3.7.16.0)
 	* This release updates these APIs: UpdateInstanceAttribute, DescribeInstanceAttribute and ListInstanceAttributes. You can use it to programmatically enable/disable multi-party conferencing using attribute type MULTI_PARTY_CONFERENCING on the specified Amazon Connect instance.
