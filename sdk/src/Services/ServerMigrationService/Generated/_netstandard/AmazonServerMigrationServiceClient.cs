@@ -44,17 +44,11 @@ namespace Amazon.ServerMigrationService
     /// </para>
     ///  
     /// <para>
-    /// As of March 31, 2022, Amazon Web Services will discontinue Server Migration Service
-    /// (Amazon Web Services SMS). Going forward, we recommend <a href="http://aws.amazon.com/application-migration-service">Amazon
+    /// We recommend <a href="http://aws.amazon.com/application-migration-service">Amazon
     /// Web Services Application Migration Service</a> (Amazon Web Services MGN) as the primary
-    /// migration service for lift-and-shift migrations.
-    /// </para>
-    ///  
-    /// <para>
-    /// You can initiate new migration jobs in Server Migration Service until January 1, 2022.
-    /// Complete these active migration projects by March 31, 2022. For more information,
-    /// see <a href="http://aws.amazon.com/application-migration-service/when-to-choose-aws-mgn/">When
-    /// to Choose AWS Application Migration Service</a>.
+    /// migration service for lift-and-shift migrations. If Amazon Web Services MGN is unavailable
+    /// in a specific Amazon Web Services Region, you can use the Server Migration Service
+    /// APIs through March 2023.
     /// </para>
     ///  </important> 
     /// <para>
