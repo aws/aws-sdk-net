@@ -93,7 +93,7 @@ namespace Amazon.Proton.Model
         /// Gets and sets the property ManagementAccountId. 
         /// <para>
         /// The ID of the management account that accepts or rejects the environment account connection.
-        /// You create an manage the Proton environment in this account. If the management account
+        /// You create and manage the Proton environment in this account. If the management account
         /// accepts the environment account connection, Proton can use the associated IAM role
         /// to provision environment infrastructure resources in the associated environment account.
         /// </para>
@@ -135,7 +135,12 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Tags for your environment account connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
+        /// An optional list of metadata items that you can associate with the Proton environment
+        /// account connection. A tag is a key-value pair.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
         /// resources and tagging</a> in the <i>Proton Administrator Guide</i>.
         /// </para>
         /// </summary>

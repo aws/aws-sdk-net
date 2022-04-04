@@ -35,13 +35,12 @@ namespace Amazon.Proton.Model
     /// 
     ///  
     /// <para>
-    /// After you reject an environment account connection request, you <i>won’t</i> be able
-    /// to accept or use the rejected environment account connection.
+    /// After you reject an environment account connection request, you <i>can't</i> accept
+    /// or use the rejected environment account connection.
     /// </para>
     ///  
     /// <para>
-    /// You <i>can’t</i> reject an environment account connection that is connected to an
-    /// environment.
+    /// You <i>can’t</i> reject an environment account connection that's connected to an environment.
     /// </para>
     ///  
     /// <para>

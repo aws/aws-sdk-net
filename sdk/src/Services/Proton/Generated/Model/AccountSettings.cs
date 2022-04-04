@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Proton.Model
 {
     /// <summary>
-    /// The Proton pipeline service role and repository data.
+    /// The Proton pipeline service role and repository data shared across the Amazon Web
+    /// Services account.
     /// </summary>
     public partial class AccountSettings
     {
@@ -39,15 +40,10 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property PipelineProvisioningRepository. 
         /// <para>
-        /// The repository that you provide with pull request provisioning.
+        /// The repository configured in the Amazon Web Services account for pipeline provisioning.
+        /// Required it if you have environments configured for self-managed provisioning with
+        /// services that include pipelines.
         /// </para>
-        ///  <important> 
-        /// <para>
-        /// Provisioning by pull request is currently in feature preview and is only usable with
-        /// Terraform based Proton Templates. To learn more about <a href="https://aws.amazon.com/service-terms">Amazon
-        /// Web Services Feature Preview terms</a>, see section 2 on Beta and Previews.
-        /// </para>
-        ///  </important>
         /// </summary>
         public RepositoryBranch PipelineProvisioningRepository
         {
@@ -64,7 +60,9 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property PipelineServiceRoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Proton pipeline service role.
+        /// The Amazon Resource Name (ARN) of the service role you want to use for provisioning
+        /// pipelines. Assumed by Proton for Amazon Web Services-managed provisioning, and by
+        /// customer-owned automation for self-managed provisioning.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]

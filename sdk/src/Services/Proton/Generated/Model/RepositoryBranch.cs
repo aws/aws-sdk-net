@@ -30,14 +30,6 @@ namespace Amazon.Proton.Model
 {
     /// <summary>
     /// Detail data for a repository branch.
-    /// 
-    ///  <important> 
-    /// <para>
-    /// Provisioning by pull request is currently in feature preview and is only usable with
-    /// Terraform based Proton Templates. To learn more about <a href="https://aws.amazon.com/service-terms">Amazon
-    /// Web Services Feature Preview terms</a>, see section 2 on Beta and Previews.
-    /// </para>
-    ///  </important>
     /// </summary>
     public partial class RepositoryBranch
     {

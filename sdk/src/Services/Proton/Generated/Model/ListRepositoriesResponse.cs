@@ -39,7 +39,7 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A token to indicate the location of the next repository in the array of repositories,
+        /// A token that indicates the location of the next repository in the array of repositories,
         /// after the current requested list of repositories. 
         /// </para>
         /// </summary>

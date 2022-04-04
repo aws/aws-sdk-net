@@ -879,18 +879,20 @@ namespace Amazon.Proton
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Standard provisioning: Proton makes direct calls to provision your resources.
+        /// Amazon Web Services-managed provisioning: Proton makes direct calls to provision your
+        /// resources.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Pull request provisioning: Proton makes pull requests on your repository to provide
+        /// Self-managed provisioning: Proton makes pull requests on your repository to provide
         /// compiled infrastructure as code (IaC) files that your IaC engine uses to provision
         /// resources.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information, see the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-environments.html">Environments</a>
-        /// in the <i>Proton Administrator Guide.</i> 
+        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-environments.html">Environments</a>
+        /// and <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-works-prov-methods.html">Provisioning
+        /// methods</a> in the <i>Proton Administrator Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateEnvironment service method.</param>
@@ -1224,10 +1226,18 @@ namespace Amazon.Proton
         #region  CreateRepository
 
         /// <summary>
-        /// Create and register a link to a repository that can be used with pull request provisioning
-        /// or template sync configurations. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-bundles.html">Template
-        /// bundles</a> and <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-sync-configs.html">Template
+        /// Create and register a link to a repository that can be used with self-managed provisioning
+        /// (infrastructure or pipelines) or for template sync configurations. When you create
+        /// a repository link, Proton creates a <a href="https://docs.aws.amazon.com/proton/latest/adminguide/using-service-linked-roles.html">service-linked
+        /// role</a> for you.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-works-prov-methods.html#ag-works-prov-methods-self">Self-managed
+        /// provisioning</a>, <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-bundles.html">Template
+        /// bundles</a>, and <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-sync-configs.html">Template
         /// sync configurations</a> in the <i>Proton Administrator Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateRepository service method.</param>
         /// 
@@ -1381,7 +1391,7 @@ namespace Amazon.Proton
 
         /// <summary>
         /// Create a service template. The administrator creates a service template to define
-        /// standardized infrastructure and an optional CICD service pipeline. Developers, in
+        /// standardized infrastructure and an optional CI/CD service pipeline. Developers, in
         /// turn, select the service template from Proton. If the selected service template includes
         /// a service pipeline definition, they provide a link to their source code repository.
         /// Proton then deploys and manages the infrastructure defined by the selected service
@@ -1537,10 +1547,10 @@ namespace Amazon.Proton
         #region  CreateTemplateSyncConfig
 
         /// <summary>
-        /// Set up a template for automated template version creation. When a commit is pushed
-        /// to your registered <a href="https://docs.aws.amazon.com/proton/latest/APIReference/API_Repository.html">repository</a>,
+        /// Set up a template to create new template versions automatically. When a commit is
+        /// pushed to your registered <a href="https://docs.aws.amazon.com/proton/latest/APIReference/API_Repository.html">repository</a>,
         /// Proton checks for changes to your repository template bundles. If it detects a template
-        /// bundle change, a new minor or major version of its template is created, if the version
+        /// bundle change, a new major or minor version of its template is created, if the version
         /// doesn’t already exist. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-sync-configs.html">Template
         /// sync configurations</a> in the <i>Proton Administrator Guide</i>.
         /// </summary>
@@ -2723,7 +2733,22 @@ namespace Amazon.Proton
         #region  GetRepositorySyncStatus
 
         /// <summary>
-        /// Get the repository sync status.
+        /// Get the sync status of a repository used for Proton template sync. For more information
+        /// about template sync, see .
+        /// 
+        ///  <note> 
+        /// <para>
+        /// A repository sync status isn't tied to the Proton Repository resource (or any other
+        /// Proton resource). Therefore, tags on an Proton Repository resource have no effect
+        /// on this action. Specifically, you can't use these tags to control access to this action
+        /// using Attribute-based access control (ABAC).
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about ABAC, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/security_iam_service-with-iam.html#security_iam_service-with-iam-tags">ABAC</a>
+        /// in the <i>Proton Administrator Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetRepositorySyncStatus service method.</param>
         /// 
@@ -2862,7 +2887,7 @@ namespace Amazon.Proton
 
         /// <summary>
         /// Get detail data for a service instance. A service instance is an instantiation of
-        /// service template, which is running in a specific environment.
+        /// service template and it runs in a specific environment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetServiceInstance service method.</param>
         /// 
@@ -4374,17 +4399,14 @@ namespace Amazon.Proton
         #region  NotifyResourceDeploymentStatusChange
 
         /// <summary>
-        /// Notify Proton of status changes to a provisioned resource when you use pull request
-        /// provisioning. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-bundles.html">Template
-        /// bundles</a>.
+        /// Notify Proton of status changes to a provisioned resource when you use self-managed
+        /// provisioning.
         /// 
-        ///  <important> 
+        ///  
         /// <para>
-        /// Provisioning by pull request is currently in feature preview and is only usable with
-        /// Terraform based Proton Templates. To learn more about <a href="https://aws.amazon.com/service-terms">Amazon
-        /// Web Services Feature Preview terms</a>, see section 2 on Beta and Previews.
+        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-works-prov-methods.html#ag-works-prov-methods-self">Self-managed
+        /// provisioning</a> in the <i>Proton Administrator Guide</i>.
         /// </para>
-        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the NotifyResourceDeploymentStatusChange service method.</param>
         /// 
@@ -4465,13 +4487,12 @@ namespace Amazon.Proton
         /// 
         ///  
         /// <para>
-        /// After you reject an environment account connection request, you <i>won’t</i> be able
-        /// to accept or use the rejected environment account connection.
+        /// After you reject an environment account connection request, you <i>can't</i> accept
+        /// or use the rejected environment account connection.
         /// </para>
         ///  
         /// <para>
-        /// You <i>can’t</i> reject an environment account connection that is connected to an
-        /// environment.
+        /// You <i>can’t</i> reject an environment account connection that's connected to an environment.
         /// </para>
         ///  
         /// <para>
@@ -4549,10 +4570,15 @@ namespace Amazon.Proton
         #region  TagResource
 
         /// <summary>
-        /// Tag a resource. For more information, see <i>Proton resources and tagging</i> in the
-        /// <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
+        /// Tag a resource. A tag is a key-value pair of metadata that you associate with an Proton
+        /// resource.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
         /// Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
         /// User Guide</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
@@ -4624,10 +4650,15 @@ namespace Amazon.Proton
         #region  UntagResource
 
         /// <summary>
-        /// Remove a tag from a resource. For more information, see <i>Proton resources and tagging</i>
-        /// in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
+        /// Remove a customer tag from a resource. A tag is a key-value pair of metadata associated
+        /// with an Proton resource.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
         /// Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
         /// User Guide</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 
@@ -4778,15 +4809,16 @@ namespace Amazon.Proton
         /// </para>
         ///  
         /// <para>
-        /// You can only update to a new environment account connection if it was created in the
-        /// same environment account that the current environment account connection was created
-        /// in and is associated with the current environment.
+        /// You can only update to a new environment account connection if that connection was
+        /// created in the same environment account that the current environment account connection
+        /// was created in. The account connection must also be associated with the current environment.
         /// </para>
         ///  
         /// <para>
         /// If the environment <i>isn't</i> associated with an environment account connection,
-        /// <i>don't</i> update or include the <code>environmentAccountConnectionId</code> parameter
-        /// to update or connect to an environment account connection.
+        /// <i>don't</i> update or include the <code>environmentAccountConnectionId</code> parameter.
+        /// You <i>can't</i> update or connect the environment to an environment account connection
+        /// if it <i>isn't</i> already associated with an environment connection.
         /// </para>
         ///  
         /// <para>
@@ -4795,19 +4827,25 @@ namespace Amazon.Proton
         /// </para>
         ///  
         /// <para>
-        /// If the environment was provisioned with pull request provisioning, include the <code>provisioningRepository</code>
+        /// If the environment was configured for Amazon Web Services-managed provisioning, omit
+        /// the <code>provisioningRepository</code> parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the environment was configured for self-managed provisioning, specify the <code>provisioningRepository</code>
         /// parameter and omit the <code>protonServiceRoleArn</code> and <code>environmentAccountConnectionId</code>
         /// parameters.
         /// </para>
         ///  
         /// <para>
-        /// If the environment wasn't provisioned with pull request provisioning, omit the <code>provisioningRepository</code>
-        /// parameter.
+        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-environments.html">Environments</a>
+        /// and <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-works-prov-methods.html">Provisioning
+        /// methods</a> in the <i>Proton Administrator Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// There are four modes for updating an environment as described in the following. The
-        /// <code>deploymentType</code> field defines the mode.
+        /// There are four modes for updating an environment. The <code>deploymentType</code>
+        /// field defines the mode.
         /// </para>
         ///  <dl> <dt/> <dd> 
         /// <para>
@@ -4847,7 +4885,7 @@ namespace Amazon.Proton
         /// In this mode, the environment is deployed and updated with the published, recommended
         /// (latest) major and minor version of the current template, by default. You can also
         /// specify a different major version that's higher than the major version in use and
-        /// a minor version (optional).
+        /// a minor version.
         /// </para>
         ///  </dd> </dl>
         /// </summary>
@@ -5238,8 +5276,8 @@ namespace Amazon.Proton
         /// 
         ///  
         /// <para>
-        /// There are four modes for updating a service instance as described in the following.
-        /// The <code>deploymentType</code> field defines the mode.
+        /// There are four modes for updating a service instance. The <code>deploymentType</code>
+        /// field defines the mode.
         /// </para>
         ///  <dl> <dt/> <dd> 
         /// <para>
@@ -5278,8 +5316,8 @@ namespace Amazon.Proton
         /// <para>
         /// In this mode, the service instance is deployed and updated with the published, recommended
         /// (latest) major and minor version of the current template, by default. You can also
-        /// specify a different major version that is higher than the major version in use and
-        /// a minor version (optional).
+        /// specify a different major version that's higher than the major version in use and
+        /// a minor version.
         /// </para>
         ///  </dd> </dl>
         /// </summary>
@@ -5357,8 +5395,8 @@ namespace Amazon.Proton
         /// 
         ///  
         /// <para>
-        /// There are four modes for updating a service pipeline as described in the following.
-        /// The <code>deploymentType</code> field defines the mode.
+        /// There are four modes for updating a service pipeline. The <code>deploymentType</code>
+        /// field defines the mode.
         /// </para>
         ///  <dl> <dt/> <dd> 
         /// <para>
@@ -5376,8 +5414,8 @@ namespace Amazon.Proton
         ///  
         /// <para>
         /// In this mode, the service pipeline is deployed and updated with the new spec that
-        /// you provide. Only requested parameters are updated. <i>Don’t</i> include minor or
-        /// major version parameters when you use this <code>deployment-type</code>.
+        /// you provide. Only requested parameters are updated. <i>Don’t</i> include major or
+        /// minor version parameters when you use this <code>deployment-type</code>.
         /// </para>
         ///  </dd> <dt/> <dd> 
         /// <para>
@@ -5386,8 +5424,8 @@ namespace Amazon.Proton
         ///  
         /// <para>
         /// In this mode, the service pipeline is deployed and updated with the published, recommended
-        /// (latest) minor version of the current major version in use, by default. You can also
-        /// specify a different minor version of the current major version in use.
+        /// (latest) minor version of the current major version in use, by default. You can specify
+        /// a different minor version of the current major version in use.
         /// </para>
         ///  </dd> <dt/> <dd> 
         /// <para>
@@ -5396,9 +5434,9 @@ namespace Amazon.Proton
         ///  
         /// <para>
         /// In this mode, the service pipeline is deployed and updated with the published, recommended
-        /// (latest) major and minor version of the current template by default. You can also
-        /// specify a different major version that is higher than the major version in use and
-        /// a minor version (optional).
+        /// (latest) major and minor version of the current template by default. You can specify
+        /// a different major version that's higher than the major version in use and a minor
+        /// version.
         /// </para>
         ///  </dd> </dl>
         /// </summary>

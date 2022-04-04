@@ -86,12 +86,12 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property MajorVersion. 
         /// <para>
-        /// To create a new minor version of the environment template, include a <code>major Version</code>.
+        /// To create a new minor version of the environment template, include <code>major Version</code>.
         /// </para>
         ///  
         /// <para>
-        /// To create a new major and minor version of the environment template, <i>exclude</i>
-        /// <code>major Version</code>.
+        /// To create a new major and minor version of the environment template, exclude <code>major
+        /// Version</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=20)]
@@ -130,7 +130,14 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Create tags for a new version of an environment template.
+        /// An optional list of metadata items that you can associate with the Proton environment
+        /// template version. A tag is a key-value pair.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
+        /// Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
+        /// User Guide</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]

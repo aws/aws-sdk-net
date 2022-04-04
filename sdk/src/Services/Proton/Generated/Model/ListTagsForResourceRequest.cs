@@ -63,7 +63,7 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A token to indicate the location of the next resource tag in the array of resource
+        /// A token that indicates the location of the next resource tag in the array of resource
         /// tags, after the list of resource tags that was previously requested.
         /// </para>
         /// </summary>

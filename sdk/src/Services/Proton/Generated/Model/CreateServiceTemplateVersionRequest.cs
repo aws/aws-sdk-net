@@ -150,7 +150,14 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Create tags for a new version of a service template.
+        /// An optional list of metadata items that you can associate with the Proton service
+        /// template version. A tag is a key-value pair.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
+        /// Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
+        /// User Guide</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]

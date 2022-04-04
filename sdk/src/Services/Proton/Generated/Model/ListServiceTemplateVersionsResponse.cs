@@ -39,9 +39,9 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A token to indicate the location of the next major or minor version in the array of
-        /// major or minor versions of a service template, after the current requested list of
-        /// service major or minor versions.
+        /// A token that indicates the location of the next major or minor version in the array
+        /// of major or minor versions of a service template, after the current requested list
+        /// of service major or minor versions.
         /// </para>
         /// </summary>
         public string NextToken

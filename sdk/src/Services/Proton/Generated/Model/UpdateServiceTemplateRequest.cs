@@ -60,7 +60,7 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property DisplayName. 
         /// <para>
-        /// The name of the service template to update as displayed in the developer interface.
+        /// The name of the service template to update that's displayed in the developer interface.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

@@ -217,7 +217,7 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property TemplateName. 
         /// <para>
-        /// The name of the version of an environment template.
+        /// The name of the environment template.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

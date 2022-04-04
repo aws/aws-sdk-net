@@ -39,8 +39,8 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A token to indicate the location of the next provisioned resource in the array of
-        /// provisioned resources, after the current requested list of provisioned resources.
+        /// A token that indicates the location of the next provisioned resource in the array
+        /// of provisioned resources, after the current requested list of provisioned resources.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=0)]

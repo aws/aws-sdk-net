@@ -66,7 +66,7 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the IAM service role that is associated with the
+        /// The Amazon Resource Name (ARN) of the IAM service role that's associated with the
         /// environment account connection to update.
         /// </para>
         /// </summary>

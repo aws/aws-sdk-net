@@ -30,10 +30,15 @@ namespace Amazon.Proton.Model
 {
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
-    /// Remove a tag from a resource. For more information, see <i>Proton resources and tagging</i>
-    /// in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
+    /// Remove a customer tag from a resource. A tag is a key-value pair of metadata associated
+    /// with an Proton resource.
+    /// 
+    ///  
+    /// <para>
+    /// For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
     /// Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
     /// User Guide</a>.
+    /// </para>
     /// </summary>
     public partial class UntagResourceRequest : AmazonProtonRequest
     {
@@ -43,7 +48,7 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the resource that the tag is to be removed from.
+        /// The Amazon Resource Name (ARN) of the resource to remove customer tags from.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=200)]
@@ -62,7 +67,8 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property TagKeys. 
         /// <para>
-        /// An array of tag keys indicating the resource tags to be removed from the resource.
+        /// A list of customer tag keys that indicate the customer tags to be removed from the
+        /// resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=50)]

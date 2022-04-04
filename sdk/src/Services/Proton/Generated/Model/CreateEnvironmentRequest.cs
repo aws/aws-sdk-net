@@ -38,18 +38,20 @@ namespace Amazon.Proton.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Standard provisioning: Proton makes direct calls to provision your resources.
+    /// Amazon Web Services-managed provisioning: Proton makes direct calls to provision your
+    /// resources.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Pull request provisioning: Proton makes pull requests on your repository to provide
+    /// Self-managed provisioning: Proton makes pull requests on your repository to provide
     /// compiled infrastructure as code (IaC) files that your IaC engine uses to provision
     /// resources.
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// For more information, see the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-environments.html">Environments</a>
-    /// in the <i>Proton Administrator Guide.</i> 
+    /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-environments.html">Environments</a>
+    /// and <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-works-prov-methods.html">Provisioning
+    /// methods</a> in the <i>Proton Administrator Guide</i>.
     /// </para>
     /// </summary>
     public partial class CreateEnvironmentRequest : AmazonProtonRequest
@@ -88,11 +90,15 @@ namespace Amazon.Proton.Model
         /// Gets and sets the property EnvironmentAccountConnectionId. 
         /// <para>
         /// The ID of the environment account connection that you provide if you're provisioning
-        /// your environment infrastructure resources to an environment account. You must include
-        /// either the <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code>
-        /// parameter and value and omit the <code>provisioningRepository</code> parameter and
-        /// values. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment
+        /// your environment infrastructure resources to an environment account. For more information,
+        /// see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment
         /// account connections</a> in the <i>Proton Administrator guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To use Amazon Web Services-managed provisioning for the environment, specify either
+        /// the <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code>
+        /// parameter and omit the <code>provisioningRepository</code> parameter.
         /// </para>
         /// </summary>
         public string EnvironmentAccountConnectionId
@@ -130,9 +136,13 @@ namespace Amazon.Proton.Model
         /// Gets and sets the property ProtonServiceRoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the Proton service role that allows Proton to make
-        /// calls to other services on your behalf. You must include either the <code>environmentAccountConnectionId</code>
-        /// or <code>protonServiceRoleArn</code> parameter and value and omit the <code>provisioningRepository</code>
-        /// parameter when you use standard provisioning.
+        /// calls to other services on your behalf.
+        /// </para>
+        ///  
+        /// <para>
+        /// To use Amazon Web Services-managed provisioning for the environment, specify either
+        /// the <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code>
+        /// parameter and omit the <code>provisioningRepository</code> parameter.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
@@ -151,17 +161,15 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property ProvisioningRepository. 
         /// <para>
-        /// The repository that you provide with pull request provisioning. If you provide this
-        /// parameter, you must omit the <code>environmentAccountConnectionId</code> and <code>protonServiceRoleArn</code>
+        /// The infrastructure repository that you use to host your rendered infrastructure templates
+        /// for self-managed provisioning.
+        /// </para>
+        ///  
+        /// <para>
+        /// To use self-managed provisioning for the environment, specify this parameter and omit
+        /// the <code>environmentAccountConnectionId</code> and <code>protonServiceRoleArn</code>
         /// parameters.
         /// </para>
-        ///  <important> 
-        /// <para>
-        /// Provisioning by pull request is currently in feature preview and is only usable with
-        /// Terraform based Proton Templates. To learn more about <a href="https://aws.amazon.com/service-terms">Amazon
-        /// Web Services Feature Preview terms</a>, see section 2 on Beta and Previews.
-        /// </para>
-        ///  </important>
         /// </summary>
         public RepositoryBranchInput ProvisioningRepository
         {
@@ -178,8 +186,8 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property Spec. 
         /// <para>
-        /// A link to a YAML formatted spec file that provides inputs as defined in the environment
-        /// template bundle schema file. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-environments.html">Environments</a>
+        /// A YAML formatted string that provides inputs as defined in the environment template
+        /// bundle schema file. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-environments.html">Environments</a>
         /// in the <i>Proton Administrator Guide</i>.
         /// </para>
         /// </summary>
@@ -199,8 +207,12 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Create tags for your environment. For more information, see <i>Proton resources and
-        /// tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
+        /// An optional list of metadata items that you can associate with the Proton environment.
+        /// A tag is a key-value pair.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
         /// Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
         /// User Guide</a>.
         /// </para>

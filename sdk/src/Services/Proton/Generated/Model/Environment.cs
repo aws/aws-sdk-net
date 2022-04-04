@@ -283,15 +283,9 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property ProvisioningRepository. 
         /// <para>
-        /// The repository that you provide with pull request provisioning.
+        /// The infrastructure repository that you use to host your rendered infrastructure templates
+        /// for self-managed provisioning.
         /// </para>
-        ///  <important> 
-        /// <para>
-        /// Provisioning by pull request is currently in feature preview and is only usable with
-        /// Terraform based Proton Templates. To learn more about <a href="https://aws.amazon.com/service-terms">Amazon
-        /// Web Services Feature Preview terms</a>, see section 2 on Beta and Previews.
-        /// </para>
-        ///  </important>
         /// </summary>
         public RepositoryBranch ProvisioningRepository
         {
@@ -327,7 +321,7 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property TemplateMajorVersion. 
         /// <para>
-        /// The ID of the major version of the environment template.
+        /// The major version of the environment template.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=20)]
@@ -346,7 +340,7 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property TemplateMinorVersion. 
         /// <para>
-        /// The ID of the minor version of the environment template.
+        /// The minor version of the environment template.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=20)]

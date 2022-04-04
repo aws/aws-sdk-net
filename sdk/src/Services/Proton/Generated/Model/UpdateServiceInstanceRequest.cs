@@ -34,8 +34,8 @@ namespace Amazon.Proton.Model
     /// 
     ///  
     /// <para>
-    /// There are four modes for updating a service instance as described in the following.
-    /// The <code>deploymentType</code> field defines the mode.
+    /// There are four modes for updating a service instance. The <code>deploymentType</code>
+    /// field defines the mode.
     /// </para>
     ///  <dl> <dt/> <dd> 
     /// <para>
@@ -74,8 +74,8 @@ namespace Amazon.Proton.Model
     /// <para>
     /// In this mode, the service instance is deployed and updated with the published, recommended
     /// (latest) major and minor version of the current template, by default. You can also
-    /// specify a different major version that is higher than the major version in use and
-    /// a minor version (optional).
+    /// specify a different major version that's higher than the major version in use and
+    /// a minor version.
     /// </para>
     ///  </dd> </dl>
     /// </summary>
@@ -95,8 +95,8 @@ namespace Amazon.Proton.Model
         /// </para>
         ///  
         /// <para>
-        /// There are four modes for updating a service instance as described in the following.
-        /// The <code>deploymentType</code> field defines the mode.
+        /// There are four modes for updating a service instance. The <code>deploymentType</code>
+        /// field defines the mode.
         /// </para>
         ///  <dl> <dt/> <dd> 
         /// <para>
@@ -114,8 +114,8 @@ namespace Amazon.Proton.Model
         ///  
         /// <para>
         /// In this mode, the service instance is deployed and updated with the new spec that
-        /// you provide. Only requested parameters are updated. <i>Don’t</i> include minor or
-        /// major version parameters when you use this <code>deployment-type</code>.
+        /// you provide. Only requested parameters are updated. <i>Don’t</i> include major or
+        /// minor version parameters when you use this <code>deployment-type</code>.
         /// </para>
         ///  </dd> <dt/> <dd> 
         /// <para>
@@ -134,9 +134,9 @@ namespace Amazon.Proton.Model
         ///  
         /// <para>
         /// In this mode, the service instance is deployed and updated with the published, recommended
-        /// (latest) major and minor version of the current template, by default. You can also
-        /// specify a different major version that is higher than the major version in use and
-        /// a minor version (optional).
+        /// (latest) major and minor version of the current template, by default. You can specify
+        /// a different major version that's higher than the major version in use and a minor
+        /// version.
         /// </para>
         ///  </dd> </dl>
         /// </summary>

@@ -30,10 +30,10 @@ namespace Amazon.Proton.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateTemplateSyncConfig operation.
-    /// Set up a template for automated template version creation. When a commit is pushed
-    /// to your registered <a href="https://docs.aws.amazon.com/proton/latest/APIReference/API_Repository.html">repository</a>,
+    /// Set up a template to create new template versions automatically. When a commit is
+    /// pushed to your registered <a href="https://docs.aws.amazon.com/proton/latest/APIReference/API_Repository.html">repository</a>,
     /// Proton checks for changes to your repository template bundles. If it detects a template
-    /// bundle change, a new minor or major version of its template is created, if the version
+    /// bundle change, a new major or minor version of its template is created, if the version
     /// doesn’t already exist. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-sync-configs.html">Template
     /// sync configurations</a> in the <i>Proton Administrator Guide</i>.
     /// </summary>
@@ -68,7 +68,7 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property RepositoryName. 
         /// <para>
-        /// The name of your repository, for example <code>myrepos/myrepo</code>.
+        /// The name of your repository (for example, <code>myrepos/myrepo</code>).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

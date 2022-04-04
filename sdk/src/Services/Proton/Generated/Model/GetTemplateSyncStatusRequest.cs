@@ -79,7 +79,7 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property TemplateVersion. 
         /// <para>
-        /// The template version.
+        /// The template major version.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=20)]
