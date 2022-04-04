@@ -1875,6 +1875,22 @@
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.ListMetricValuesRequest.DimensionName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9:_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.ListMetricValuesRequest.MaxResults</property>
+    <min>1</min>
+    <max>250</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.ListMetricValuesRequest.ThingName</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.ListMitigationActionsRequest.MaxResults</property>
     <min>1</min>
     <max>250</max>

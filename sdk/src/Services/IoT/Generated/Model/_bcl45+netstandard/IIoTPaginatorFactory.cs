@@ -146,6 +146,11 @@ namespace Amazon.IoT.Model
         IListJobTemplatesPaginator ListJobTemplates(ListJobTemplatesRequest request);
 
         /// <summary>
+        /// Paginator for ListMetricValues operation
+        ///</summary>
+        IListMetricValuesPaginator ListMetricValues(ListMetricValuesRequest request);
+
+        /// <summary>
         /// Paginator for ListMitigationActions operation
         ///</summary>
         IListMitigationActionsPaginator ListMitigationActions(ListMitigationActionsRequest request);

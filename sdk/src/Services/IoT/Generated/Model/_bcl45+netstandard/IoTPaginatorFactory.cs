@@ -228,6 +228,14 @@ namespace Amazon.IoT.Model
         }
 
         /// <summary>
+        /// Paginator for ListMetricValues operation
+        ///</summary>
+        public IListMetricValuesPaginator ListMetricValues(ListMetricValuesRequest request) 
+        {
+            return new ListMetricValuesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListMitigationActions operation
         ///</summary>
         public IListMitigationActionsPaginator ListMitigationActions(ListMitigationActionsRequest request) 

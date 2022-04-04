@@ -10429,6 +10429,53 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  ListMetricValues
+
+        internal virtual ListMetricValuesResponse ListMetricValues(ListMetricValuesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMetricValuesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMetricValuesResponseUnmarshaller.Instance;
+
+            return Invoke<ListMetricValuesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists the values reported for an IoT Device Defender metric (device-side metric, cloud-side
+        /// metric, or custom metric) by the given thing during the specified time period.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMetricValues service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListMetricValues service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListMetricValues">REST API Reference for ListMetricValues Operation</seealso>
+        public virtual Task<ListMetricValuesResponse> ListMetricValuesAsync(ListMetricValuesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMetricValuesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMetricValuesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListMetricValuesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListMitigationActions
 
         internal virtual ListMitigationActionsResponse ListMitigationActions(ListMitigationActionsRequest request)

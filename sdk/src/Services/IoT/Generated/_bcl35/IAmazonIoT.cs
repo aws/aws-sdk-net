@@ -10923,6 +10923,59 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  ListMetricValues
+
+
+        /// <summary>
+        /// Lists the values reported for an IoT Device Defender metric (device-side metric, cloud-side
+        /// metric, or custom metric) by the given thing during the specified time period.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMetricValues service method.</param>
+        /// 
+        /// <returns>The response from the ListMetricValues service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListMetricValues">REST API Reference for ListMetricValues Operation</seealso>
+        ListMetricValuesResponse ListMetricValues(ListMetricValuesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListMetricValues operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListMetricValues operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListMetricValues
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListMetricValues">REST API Reference for ListMetricValues Operation</seealso>
+        IAsyncResult BeginListMetricValues(ListMetricValuesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListMetricValues operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListMetricValues.</param>
+        /// 
+        /// <returns>Returns a  ListMetricValuesResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListMetricValues">REST API Reference for ListMetricValues Operation</seealso>
+        ListMetricValuesResponse EndListMetricValues(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListMitigationActions
 
 
