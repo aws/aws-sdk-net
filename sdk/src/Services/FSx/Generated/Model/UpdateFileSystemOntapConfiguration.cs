@@ -117,7 +117,7 @@ namespace Amazon.FSx.Model
         /// Gets and sets the property ThroughputCapacity. 
         /// <para>
         /// Specifies the throughput of an FSx for NetApp ONTAP file system, measured in megabytes
-        /// per second (MBps). Valid values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s.
+        /// per second (MBps). Valid values are 128, 256, 512, 1024, or 2048 MB/s.
         /// </para>
         /// </summary>
         [AWSProperty(Min=8, Max=4096)]

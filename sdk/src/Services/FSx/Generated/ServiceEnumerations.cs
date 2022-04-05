@@ -955,6 +955,10 @@ namespace Amazon.FSx
         /// </summary>
         public static readonly FileSystemLifecycle MISCONFIGURED = new FileSystemLifecycle("MISCONFIGURED");
         /// <summary>
+        /// Constant MISCONFIGURED_UNAVAILABLE for FileSystemLifecycle
+        /// </summary>
+        public static readonly FileSystemLifecycle MISCONFIGURED_UNAVAILABLE = new FileSystemLifecycle("MISCONFIGURED_UNAVAILABLE");
+        /// <summary>
         /// Constant UPDATING for FileSystemLifecycle
         /// </summary>
         public static readonly FileSystemLifecycle UPDATING = new FileSystemLifecycle("UPDATING");

@@ -260,6 +260,12 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>MISCONFIGURED_UNAVAILABLE</code> - (Amazon FSx for Windows File Server only)
+        /// The file system is currently unavailable due to a change in your Active Directory
+        /// configuration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>UPDATING</code> - The file system is undergoing a customer-initiated update.
         /// </para>
         ///  </li> </ul>
