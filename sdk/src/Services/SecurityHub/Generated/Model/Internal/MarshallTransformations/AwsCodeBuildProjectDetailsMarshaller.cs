@@ -95,6 +95,22 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Name);
             }
 
+            if(requestObject.IsSetSecondaryArtifacts())
+            {
+                context.Writer.WritePropertyName("SecondaryArtifacts");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectSecondaryArtifactsListValue in requestObject.SecondaryArtifacts)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AwsCodeBuildProjectArtifactsDetailsMarshaller.Instance;
+                    marshaller.Marshall(requestObjectSecondaryArtifactsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetServiceRole())
             {
                 context.Writer.WritePropertyName("ServiceRole");

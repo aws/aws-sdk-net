@@ -60,6 +60,7 @@ namespace Amazon.SecurityHub.Model
         private AwsRedshiftClusterHsmStatus _hsmStatus;
         private List<AwsRedshiftClusterIamRole> _iamRoles = new List<AwsRedshiftClusterIamRole>();
         private string _kmsKeyId;
+        private AwsRedshiftClusterLoggingStatus _loggingStatus;
         private string _maintenanceTrackName;
         private int? _manualSnapshotRetentionPeriod;
         private string _masterUsername;
@@ -626,6 +627,24 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetKmsKeyId()
         {
             return this._kmsKeyId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LoggingStatus. 
+        /// <para>
+        /// Information about the logging status of the cluster.
+        /// </para>
+        /// </summary>
+        public AwsRedshiftClusterLoggingStatus LoggingStatus
+        {
+            get { return this._loggingStatus; }
+            set { this._loggingStatus = value; }
+        }
+
+        // Check to see if LoggingStatus property is set
+        internal bool IsSetLoggingStatus()
+        {
+            return this._loggingStatus != null;
         }
 
         /// <summary>

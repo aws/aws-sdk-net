@@ -56,6 +56,22 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetAdditionalAttributes())
+            {
+                context.Writer.WritePropertyName("AdditionalAttributes");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectAdditionalAttributesListValue in requestObject.AdditionalAttributes)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AwsElbLoadBalancerAdditionalAttributeMarshaller.Instance;
+                    marshaller.Marshall(requestObjectAdditionalAttributesListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetConnectionDraining())
             {
                 context.Writer.WritePropertyName("ConnectionDraining");

@@ -226,6 +226,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.KmsKeyId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("LoggingStatus", targetDepth))
+                {
+                    var unmarshaller = AwsRedshiftClusterLoggingStatusUnmarshaller.Instance;
+                    unmarshalledObject.LoggingStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("MaintenanceTrackName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

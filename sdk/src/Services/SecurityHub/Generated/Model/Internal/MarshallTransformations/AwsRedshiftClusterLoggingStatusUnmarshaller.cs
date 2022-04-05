@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AwsElbLoadBalancerAttributes Object
+    /// Response Unmarshaller for AwsRedshiftClusterLoggingStatus Object
     /// </summary>  
-    public class AwsElbLoadBalancerAttributesUnmarshaller : IUnmarshaller<AwsElbLoadBalancerAttributes, XmlUnmarshallerContext>, IUnmarshaller<AwsElbLoadBalancerAttributes, JsonUnmarshallerContext>
+    public class AwsRedshiftClusterLoggingStatusUnmarshaller : IUnmarshaller<AwsRedshiftClusterLoggingStatus, XmlUnmarshallerContext>, IUnmarshaller<AwsRedshiftClusterLoggingStatus, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AwsElbLoadBalancerAttributes IUnmarshaller<AwsElbLoadBalancerAttributes, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AwsRedshiftClusterLoggingStatus IUnmarshaller<AwsRedshiftClusterLoggingStatus, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,51 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public AwsElbLoadBalancerAttributes Unmarshall(JsonUnmarshallerContext context)
+        public AwsRedshiftClusterLoggingStatus Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AwsElbLoadBalancerAttributes unmarshalledObject = new AwsElbLoadBalancerAttributes();
+            AwsRedshiftClusterLoggingStatus unmarshalledObject = new AwsRedshiftClusterLoggingStatus();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("AccessLog", targetDepth))
+                if (context.TestExpression("BucketName", targetDepth))
                 {
-                    var unmarshaller = AwsElbLoadBalancerAccessLogUnmarshaller.Instance;
-                    unmarshalledObject.AccessLog = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.BucketName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("AdditionalAttributes", targetDepth))
+                if (context.TestExpression("LastFailureMessage", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<AwsElbLoadBalancerAdditionalAttribute, AwsElbLoadBalancerAdditionalAttributeUnmarshaller>(AwsElbLoadBalancerAdditionalAttributeUnmarshaller.Instance);
-                    unmarshalledObject.AdditionalAttributes = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LastFailureMessage = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ConnectionDraining", targetDepth))
+                if (context.TestExpression("LastFailureTime", targetDepth))
                 {
-                    var unmarshaller = AwsElbLoadBalancerConnectionDrainingUnmarshaller.Instance;
-                    unmarshalledObject.ConnectionDraining = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LastFailureTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ConnectionSettings", targetDepth))
+                if (context.TestExpression("LastSuccessfulDeliveryTime", targetDepth))
                 {
-                    var unmarshaller = AwsElbLoadBalancerConnectionSettingsUnmarshaller.Instance;
-                    unmarshalledObject.ConnectionSettings = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LastSuccessfulDeliveryTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("CrossZoneLoadBalancing", targetDepth))
+                if (context.TestExpression("LoggingEnabled", targetDepth))
                 {
-                    var unmarshaller = AwsElbLoadBalancerCrossZoneLoadBalancingUnmarshaller.Instance;
-                    unmarshalledObject.CrossZoneLoadBalancing = unmarshaller.Unmarshall(context);
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.LoggingEnabled = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("S3KeyPrefix", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.S3KeyPrefix = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +106,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         }
 
 
-        private static AwsElbLoadBalancerAttributesUnmarshaller _instance = new AwsElbLoadBalancerAttributesUnmarshaller();        
+        private static AwsRedshiftClusterLoggingStatusUnmarshaller _instance = new AwsRedshiftClusterLoggingStatusUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AwsElbLoadBalancerAttributesUnmarshaller Instance
+        public static AwsRedshiftClusterLoggingStatusUnmarshaller Instance
         {
             get
             {

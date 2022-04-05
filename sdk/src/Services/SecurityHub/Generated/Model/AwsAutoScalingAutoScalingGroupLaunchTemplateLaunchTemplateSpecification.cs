@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// Details about the launch template to use for a mixed instances policy.
+    /// Details about the launch template to use.
     /// </summary>
-    public partial class AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification
+    public partial class AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification
     {
         private string _launchTemplateId;
         private string _launchTemplateName;

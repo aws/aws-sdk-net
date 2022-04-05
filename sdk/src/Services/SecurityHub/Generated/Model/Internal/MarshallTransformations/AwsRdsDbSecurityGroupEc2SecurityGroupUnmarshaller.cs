@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AwsElbLoadBalancerAttributes Object
+    /// Response Unmarshaller for AwsRdsDbSecurityGroupEc2SecurityGroup Object
     /// </summary>  
-    public class AwsElbLoadBalancerAttributesUnmarshaller : IUnmarshaller<AwsElbLoadBalancerAttributes, XmlUnmarshallerContext>, IUnmarshaller<AwsElbLoadBalancerAttributes, JsonUnmarshallerContext>
+    public class AwsRdsDbSecurityGroupEc2SecurityGroupUnmarshaller : IUnmarshaller<AwsRdsDbSecurityGroupEc2SecurityGroup, XmlUnmarshallerContext>, IUnmarshaller<AwsRdsDbSecurityGroupEc2SecurityGroup, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AwsElbLoadBalancerAttributes IUnmarshaller<AwsElbLoadBalancerAttributes, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AwsRdsDbSecurityGroupEc2SecurityGroup IUnmarshaller<AwsRdsDbSecurityGroupEc2SecurityGroup, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,39 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public AwsElbLoadBalancerAttributes Unmarshall(JsonUnmarshallerContext context)
+        public AwsRdsDbSecurityGroupEc2SecurityGroup Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AwsElbLoadBalancerAttributes unmarshalledObject = new AwsElbLoadBalancerAttributes();
+            AwsRdsDbSecurityGroupEc2SecurityGroup unmarshalledObject = new AwsRdsDbSecurityGroupEc2SecurityGroup();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("AccessLog", targetDepth))
+                if (context.TestExpression("Ec2SecurityGroupId", targetDepth))
                 {
-                    var unmarshaller = AwsElbLoadBalancerAccessLogUnmarshaller.Instance;
-                    unmarshalledObject.AccessLog = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Ec2SecurityGroupId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("AdditionalAttributes", targetDepth))
+                if (context.TestExpression("Ec2SecurityGroupName", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<AwsElbLoadBalancerAdditionalAttribute, AwsElbLoadBalancerAdditionalAttributeUnmarshaller>(AwsElbLoadBalancerAdditionalAttributeUnmarshaller.Instance);
-                    unmarshalledObject.AdditionalAttributes = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Ec2SecurityGroupName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ConnectionDraining", targetDepth))
+                if (context.TestExpression("Ec2SecurityGroupOwnerId", targetDepth))
                 {
-                    var unmarshaller = AwsElbLoadBalancerConnectionDrainingUnmarshaller.Instance;
-                    unmarshalledObject.ConnectionDraining = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Ec2SecurityGroupOwnerId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ConnectionSettings", targetDepth))
+                if (context.TestExpression("Status", targetDepth))
                 {
-                    var unmarshaller = AwsElbLoadBalancerConnectionSettingsUnmarshaller.Instance;
-                    unmarshalledObject.ConnectionSettings = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("CrossZoneLoadBalancing", targetDepth))
-                {
-                    var unmarshaller = AwsElbLoadBalancerCrossZoneLoadBalancingUnmarshaller.Instance;
-                    unmarshalledObject.CrossZoneLoadBalancing = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +94,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         }
 
 
-        private static AwsElbLoadBalancerAttributesUnmarshaller _instance = new AwsElbLoadBalancerAttributesUnmarshaller();        
+        private static AwsRdsDbSecurityGroupEc2SecurityGroupUnmarshaller _instance = new AwsRdsDbSecurityGroupEc2SecurityGroupUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AwsElbLoadBalancerAttributesUnmarshaller Instance
+        public static AwsRdsDbSecurityGroupEc2SecurityGroupUnmarshaller Instance
         {
             get
             {

@@ -340,6 +340,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.AwsRdsDbInstance = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("AwsRdsDbSecurityGroup", targetDepth))
+                {
+                    var unmarshaller = AwsRdsDbSecurityGroupDetailsUnmarshaller.Instance;
+                    unmarshalledObject.AwsRdsDbSecurityGroup = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("AwsRdsDbSnapshot", targetDepth))
                 {
                     var unmarshaller = AwsRdsDbSnapshotDetailsUnmarshaller.Instance;

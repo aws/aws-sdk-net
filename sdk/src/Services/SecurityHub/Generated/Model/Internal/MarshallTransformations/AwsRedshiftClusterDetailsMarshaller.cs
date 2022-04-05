@@ -277,6 +277,17 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.KmsKeyId);
             }
 
+            if(requestObject.IsSetLoggingStatus())
+            {
+                context.Writer.WritePropertyName("LoggingStatus");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsRedshiftClusterLoggingStatusMarshaller.Instance;
+                marshaller.Marshall(requestObject.LoggingStatus, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetMaintenanceTrackName())
             {
                 context.Writer.WritePropertyName("MaintenanceTrackName");

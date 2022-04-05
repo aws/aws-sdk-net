@@ -39,7 +39,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property LaunchTemplateSpecification. 
         /// <para>
-        /// The launch template to use.
+        /// The launch template to use for a mixed instances policy.
         /// </para>
         /// </summary>
         public AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification LaunchTemplateSpecification

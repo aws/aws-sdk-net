@@ -61,6 +61,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetCapacityRebalance())
+            {
+                context.Writer.WritePropertyName("CapacityRebalance");
+                context.Writer.Write(requestObject.CapacityRebalance);
+            }
+
             if(requestObject.IsSetCreatedTime())
             {
                 context.Writer.WritePropertyName("CreatedTime");
@@ -83,6 +89,17 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("LaunchConfigurationName");
                 context.Writer.Write(requestObject.LaunchConfigurationName);
+            }
+
+            if(requestObject.IsSetLaunchTemplate())
+            {
+                context.Writer.WritePropertyName("LaunchTemplate");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecificationMarshaller.Instance;
+                marshaller.Marshall(requestObject.LaunchTemplate, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
             if(requestObject.IsSetLoadBalancerNames())

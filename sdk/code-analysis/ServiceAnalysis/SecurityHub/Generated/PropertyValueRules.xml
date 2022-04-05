@@ -543,6 +543,18 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification.LaunchTemplateId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification.LaunchTemplateName</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification.Version</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SecurityHub.Model.AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetails.OnDemandAllocationStrategy</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
@@ -2099,6 +2111,14 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsElbLoadBalancerAdditionalAttribute.Key</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsElbLoadBalancerAdditionalAttribute.Value</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SecurityHub.Model.AwsElbLoadBalancerDetails.CanonicalHostedZoneName</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
@@ -3003,6 +3023,50 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsRdsDbSecurityGroupDetails.DbSecurityGroupArn</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsRdsDbSecurityGroupDetails.DbSecurityGroupDescription</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsRdsDbSecurityGroupDetails.DbSecurityGroupName</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsRdsDbSecurityGroupDetails.OwnerId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsRdsDbSecurityGroupDetails.VpcId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsRdsDbSecurityGroupEc2SecurityGroup.Ec2SecurityGroupId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsRdsDbSecurityGroupEc2SecurityGroup.Ec2SecurityGroupName</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsRdsDbSecurityGroupEc2SecurityGroup.Ec2SecurityGroupOwnerId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsRdsDbSecurityGroupEc2SecurityGroup.Status</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsRdsDbSecurityGroupIpRange.CidrIp</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsRdsDbSecurityGroupIpRange.Status</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SecurityHub.Model.AwsRdsDbSnapshotDetails.AvailabilityZone</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
@@ -3332,6 +3396,26 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityHub.Model.AwsRedshiftClusterIamRole.IamRoleArn</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsRedshiftClusterLoggingStatus.BucketName</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsRedshiftClusterLoggingStatus.LastFailureMessage</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsRedshiftClusterLoggingStatus.LastFailureTime</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsRedshiftClusterLoggingStatus.LastSuccessfulDeliveryTime</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsRedshiftClusterLoggingStatus.S3KeyPrefix</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>

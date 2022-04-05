@@ -96,6 +96,7 @@ namespace Amazon.SecurityHub.Model
         private AwsRdsDbClusterDetails _awsRdsDbCluster;
         private AwsRdsDbClusterSnapshotDetails _awsRdsDbClusterSnapshot;
         private AwsRdsDbInstanceDetails _awsRdsDbInstance;
+        private AwsRdsDbSecurityGroupDetails _awsRdsDbSecurityGroup;
         private AwsRdsDbSnapshotDetails _awsRdsDbSnapshot;
         private AwsRdsEventSubscriptionDetails _awsRdsEventSubscription;
         private AwsRedshiftClusterDetails _awsRedshiftCluster;
@@ -940,6 +941,24 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetAwsRdsDbInstance()
         {
             return this._awsRdsDbInstance != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsRdsDbSecurityGroup. 
+        /// <para>
+        /// Details about an Amazon RDS DB security group.
+        /// </para>
+        /// </summary>
+        public AwsRdsDbSecurityGroupDetails AwsRdsDbSecurityGroup
+        {
+            get { return this._awsRdsDbSecurityGroup; }
+            set { this._awsRdsDbSecurityGroup = value; }
+        }
+
+        // Check to see if AwsRdsDbSecurityGroup property is set
+        internal bool IsSetAwsRdsDbSecurityGroup()
+        {
+            return this._awsRdsDbSecurityGroup != null;
         }
 
         /// <summary>

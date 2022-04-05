@@ -551,6 +551,17 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetAwsRdsDbSecurityGroup())
+            {
+                context.Writer.WritePropertyName("AwsRdsDbSecurityGroup");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsRdsDbSecurityGroupDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AwsRdsDbSecurityGroup, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetAwsRdsDbSnapshot())
             {
                 context.Writer.WritePropertyName("AwsRdsDbSnapshot");

@@ -34,10 +34,12 @@ namespace Amazon.SecurityHub.Model
     public partial class AwsAutoScalingAutoScalingGroupDetails
     {
         private List<AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails> _availabilityZones = new List<AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails>();
+        private bool? _capacityRebalance;
         private string _createdTime;
         private int? _healthCheckGracePeriod;
         private string _healthCheckType;
         private string _launchConfigurationName;
+        private AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification _launchTemplate;
         private List<string> _loadBalancerNames = new List<string>();
         private AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails _mixedInstancesPolicy;
 
@@ -57,6 +59,24 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetAvailabilityZones()
         {
             return this._availabilityZones != null && this._availabilityZones.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CapacityRebalance. 
+        /// <para>
+        /// Indicates whether capacity rebalancing is enabled. 
+        /// </para>
+        /// </summary>
+        public bool CapacityRebalance
+        {
+            get { return this._capacityRebalance.GetValueOrDefault(); }
+            set { this._capacityRebalance = value; }
+        }
+
+        // Check to see if CapacityRebalance property is set
+        internal bool IsSetCapacityRebalance()
+        {
+            return this._capacityRebalance.HasValue; 
         }
 
         /// <summary>
@@ -136,6 +156,24 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetLaunchConfigurationName()
         {
             return this._launchConfigurationName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LaunchTemplate. 
+        /// <para>
+        /// The launch template to use.
+        /// </para>
+        /// </summary>
+        public AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification LaunchTemplate
+        {
+            get { return this._launchTemplate; }
+            set { this._launchTemplate = value; }
+        }
+
+        // Check to see if LaunchTemplate property is set
+        internal bool IsSetLaunchTemplate()
+        {
+            return this._launchTemplate != null;
         }
 
         /// <summary>
