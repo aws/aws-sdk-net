@@ -88,7 +88,7 @@ namespace Amazon.DataSync.Model
         /// Gets and sets the property ServerHostname. 
         /// <para>
         /// The name of the NFS server. This value is the IP address or Domain Name Service (DNS)
-        /// name of the NFS server. An agent that is installed on-premises uses this host name
+        /// name of the NFS server. An agent that is installed on-premises uses this hostname
         /// to mount the NFS server in a network. 
         /// </para>
         ///  

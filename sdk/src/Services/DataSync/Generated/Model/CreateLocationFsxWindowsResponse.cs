@@ -39,7 +39,7 @@ namespace Amazon.DataSync.Model
         /// Gets and sets the property LocationArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the FSx for Windows File Server file system location
-        /// that is created.
+        /// you created.
         /// </para>
         /// </summary>
         [AWSProperty(Max=128)]

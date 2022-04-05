@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataSync.Model
 {
     /// <summary>
-    /// The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that
-    /// is used to access an Amazon S3 bucket.
+    /// The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role used
+    /// to access an Amazon S3 bucket.
     /// 
     ///  
     /// <para>
@@ -45,8 +45,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property BucketAccessRoleArn. 
         /// <para>
-        /// The Amazon S3 bucket to access. This bucket is used as a parameter in the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateLocationS3.html">CreateLocationS3</a>
-        /// operation. 
+        /// The ARN of the IAM role for accessing the S3 bucket. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=2048)]

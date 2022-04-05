@@ -29,10 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataSync.Model
 {
     /// <summary>
-    /// The subnet and the security group that DataSync uses to access target EFS file system.
-    /// The subnet must have at least one mount target for that file system. The security
-    /// group that you provide needs to be able to communicate with the security group on
-    /// the mount target in the subnet specified.
+    /// The subnet that DataSync uses to access target EFS file system. The subnet must have
+    /// at least one mount target for that file system. The security group that you provide
+    /// needs to be able to communicate with the security group on the mount target in the
+    /// subnet specified.
     /// </summary>
     public partial class Ec2Config
     {
@@ -62,8 +62,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property SubnetArn. 
         /// <para>
-        /// The ARN of the subnet and the security group that DataSync uses to access the target
-        /// EFS file system.
+        /// The ARN of the subnet that DataSync uses to access the target EFS file system.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=128)]

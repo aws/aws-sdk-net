@@ -133,8 +133,8 @@ namespace Amazon.DataSync.Model
         /// Gets and sets the property ServerHostname. 
         /// <para>
         /// The name of the self-managed object storage server. This value is the IP address or
-        /// Domain Name Service (DNS) name of the object storage server. An agent uses this host
-        /// name to mount the object storage server in a network. 
+        /// Domain Name Service (DNS) name of the object storage server. An agent uses this hostname
+        /// to mount the object storage server in a network. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=255)]

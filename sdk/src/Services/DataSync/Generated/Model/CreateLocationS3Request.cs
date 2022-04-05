@@ -50,7 +50,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property AgentArns. 
         /// <para>
-        /// If you are using DataSync on an Amazon Web Services Outpost, specify the Amazon Resource
+        /// If you're using DataSync on an Amazon Web Services Outpost, specify the Amazon Resource
         /// Names (ARNs) of the DataSync agents deployed on your Outpost. For more information
         /// about launching a DataSync agent on an Amazon Web Services Outpost, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/deploy-agents.html#outposts-agent">Deploy
         /// your DataSync agent on Outposts</a>.

@@ -29,31 +29,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataSync.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeLocationFsxWindows operation.
-    /// Returns metadata about an Amazon FSx for Windows File Server location, such as information
-    /// about its path.
+    /// Represents the protocol that DataSync uses to access your Amazon FSx for OpenZFS file
+    /// system.
     /// </summary>
-    public partial class DescribeLocationFsxWindowsRequest : AmazonDataSyncRequest
+    public partial class FsxProtocol
     {
-        private string _locationArn;
+        private FsxProtocolNfs _nfs;
 
         /// <summary>
-        /// Gets and sets the property LocationArn. 
+        /// Gets and sets the property NFS. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the FSx for Windows File Server location to describe.
+        /// Represents the Network File System (NFS) protocol that DataSync uses to access your
+        /// FSx for OpenZFS file system.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=128)]
-        public string LocationArn
+        public FsxProtocolNfs NFS
         {
-            get { return this._locationArn; }
-            set { this._locationArn = value; }
+            get { return this._nfs; }
+            set { this._nfs = value; }
         }
 
-        // Check to see if LocationArn property is set
-        internal bool IsSetLocationArn()
+        // Check to see if NFS property is set
+        internal bool IsSetNFS()
         {
-            return this._locationArn != null;
+            return this._nfs != null;
         }
 
     }

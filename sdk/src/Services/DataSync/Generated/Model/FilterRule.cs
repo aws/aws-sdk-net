@@ -68,7 +68,7 @@ namespace Amazon.DataSync.Model
         ///  
         /// </para>
         /// </summary>
-        [AWSProperty(Max=409600)]
+        [AWSProperty(Max=102400)]
         public string Value
         {
             get { return this._value; }

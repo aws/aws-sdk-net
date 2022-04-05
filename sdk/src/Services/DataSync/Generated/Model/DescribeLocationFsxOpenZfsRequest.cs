@@ -29,18 +29,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataSync.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeLocationFsxWindows operation.
-    /// Returns metadata about an Amazon FSx for Windows File Server location, such as information
-    /// about its path.
+    /// Container for the parameters to the DescribeLocationFsxOpenZfs operation.
+    /// Returns metadata about an Amazon FSx for OpenZFS location, such as information about
+    /// its path.
     /// </summary>
-    public partial class DescribeLocationFsxWindowsRequest : AmazonDataSyncRequest
+    public partial class DescribeLocationFsxOpenZfsRequest : AmazonDataSyncRequest
     {
         private string _locationArn;
 
         /// <summary>
         /// Gets and sets the property LocationArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the FSx for Windows File Server location to describe.
+        /// The Amazon Resource Name (ARN) of the FSx for OpenZFS location to describe.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=128)]

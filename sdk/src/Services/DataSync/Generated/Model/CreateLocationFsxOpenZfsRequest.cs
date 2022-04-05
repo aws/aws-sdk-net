@@ -29,42 +29,21 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataSync.Model
 {
     /// <summary>
-    /// Container for the parameters to the CreateLocationFsxWindows operation.
-    /// Creates an endpoint for an Amazon FSx for Windows File Server file system.
+    /// Container for the parameters to the CreateLocationFsxOpenZfs operation.
+    /// Creates an endpoint for an Amazon FSx for OpenZFS file system.
     /// </summary>
-    public partial class CreateLocationFsxWindowsRequest : AmazonDataSyncRequest
+    public partial class CreateLocationFsxOpenZfsRequest : AmazonDataSyncRequest
     {
-        private string _domain;
         private string _fsxFilesystemArn;
-        private string _password;
+        private FsxProtocol _protocol;
         private List<string> _securityGroupArns = new List<string>();
         private string _subdirectory;
         private List<TagListEntry> _tags = new List<TagListEntry>();
-        private string _user;
-
-        /// <summary>
-        /// Gets and sets the property Domain. 
-        /// <para>
-        /// The name of the Windows domain that the FSx for Windows File Server belongs to.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Max=253)]
-        public string Domain
-        {
-            get { return this._domain; }
-            set { this._domain = value; }
-        }
-
-        // Check to see if Domain property is set
-        internal bool IsSetDomain()
-        {
-            return this._domain != null;
-        }
 
         /// <summary>
         /// Gets and sets the property FsxFilesystemArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) for the FSx for Windows File Server file system.
+        /// The Amazon Resource Name (ARN) of the FSx for OpenZFS file system.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=128)]
@@ -81,30 +60,29 @@ namespace Amazon.DataSync.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Password. 
+        /// Gets and sets the property Protocol. 
         /// <para>
-        /// The password of the user who has the permissions to access files and folders in the
-        /// FSx for Windows File Server file system.
+        /// The type of protocol that DataSync uses to access your file system.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=104)]
-        public string Password
+        [AWSProperty(Required=true)]
+        public FsxProtocol Protocol
         {
-            get { return this._password; }
-            set { this._password = value; }
+            get { return this._protocol; }
+            set { this._protocol = value; }
         }
 
-        // Check to see if Password property is set
-        internal bool IsSetPassword()
+        // Check to see if Protocol property is set
+        internal bool IsSetProtocol()
         {
-            return this._password != null;
+            return this._protocol != null;
         }
 
         /// <summary>
         /// Gets and sets the property SecurityGroupArns. 
         /// <para>
-        /// The ARNs of the security groups that are used to configure the FSx for Windows File
-        /// Server file system.
+        /// The ARNs of the security groups that are used to configure the FSx for OpenZFS file
+        /// system.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=5)]
@@ -123,9 +101,9 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property Subdirectory. 
         /// <para>
-        /// A subdirectory in the location's path. This subdirectory in the Amazon FSx for Windows
-        /// File Server file system is used to read data from the Amazon FSx for Windows File
-        /// Server source location or write data to the FSx for Windows File Server destination.
+        /// A subdirectory in the location's path that must begin with <code>/fsx</code>. DataSync
+        /// uses this subdirectory to read or write data (depending on whether the file system
+        /// is a source or destination location).
         /// </para>
         /// </summary>
         [AWSProperty(Max=4096)]
@@ -160,31 +138,6 @@ namespace Amazon.DataSync.Model
         internal bool IsSetTags()
         {
             return this._tags != null && this._tags.Count > 0; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property User. 
-        /// <para>
-        /// The user who has the permissions to access files and folders in the FSx for Windows
-        /// File Server file system.
-        /// </para>
-        ///  
-        /// <para>
-        /// For information about choosing a user name that ensures sufficient permissions to
-        /// files, folders, and metadata, see <a href="create-fsx-location.html#FSxWuser">user</a>.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Max=104)]
-        public string User
-        {
-            get { return this._user; }
-            set { this._user = value; }
-        }
-
-        // Check to see if User property is set
-        internal bool IsSetUser()
-        {
-            return this._user != null;
         }
 
     }
