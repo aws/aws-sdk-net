@@ -1,3 +1,13 @@
+### 3.7.246.0 (2022-04-05 18:13 UTC)
+* DataSync (3.7.5.0)
+	* AWS DataSync now supports Amazon FSx for OpenZFS locations.
+* FSx (3.7.11.0)
+	* Provide customers more visibility into file system status by adding new "Misconfigured Unavailable" status for Amazon FSx for Windows File Server.
+* S3Control (3.7.6.16)
+	* Documentation-only update for doc bug fixes for the S3 Control API docs.
+* SecurityHub (3.7.10.0)
+	* Added additional ASFF details for RdsSecurityGroup AutoScalingGroup, ElbLoadBalancer, CodeBuildProject and RedshiftCluster.
+
 ### 3.7.245.0 (2022-04-04 18:17 UTC)
 * IoT (3.7.12.0)
 	* AWS IoT - AWS IoT Device Defender adds support to list metric datapoints collected for IoT devices through the ListMetricValues API
