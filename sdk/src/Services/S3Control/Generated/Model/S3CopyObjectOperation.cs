@@ -321,8 +321,8 @@ namespace Amazon.S3Control.Model
         /// Gets and sets the property TargetKeyPrefix. 
         /// <para>
         /// Specifies the folder prefix into which you would like the objects to be copied. For
-        /// example, to copy objects into a folder named "Folder1" in the destination bucket,
-        /// set the TargetKeyPrefix to "Folder1/".
+        /// example, to copy objects into a folder named <code>Folder1</code> in the destination
+        /// bucket, set the TargetKeyPrefix to <code>Folder1</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
