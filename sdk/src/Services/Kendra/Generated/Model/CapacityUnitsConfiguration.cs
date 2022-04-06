@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kendra.Model
 {
     /// <summary>
-    /// Specifies capacity units configured for your enterprise edition index. You can add
-    /// and remove capacity units to tune an index to your requirements.
+    /// Specifies additional capacity units configured for your Enterprise Edition index.
+    /// You can add and remove capacity units to fit your usage requirements.
     /// </summary>
     public partial class CapacityUnitsConfiguration
     {

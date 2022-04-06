@@ -30,7 +30,7 @@ namespace Amazon.Kendra.Model
 {
     /// <summary>
     /// Container for the parameters to the ListIndices operation.
-    /// Lists the Amazon Kendra indexes that you have created.
+    /// Lists the Amazon Kendra indexes that you created.
     /// </summary>
     public partial class ListIndicesRequest : AmazonKendraRequest
     {

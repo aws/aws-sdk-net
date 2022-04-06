@@ -102,7 +102,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the index.
+        /// The identifier of the index.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]

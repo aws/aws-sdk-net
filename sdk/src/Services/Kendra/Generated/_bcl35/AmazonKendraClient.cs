@@ -2013,7 +2013,7 @@ namespace Amazon.Kendra
         #region  DescribeIndex
 
         /// <summary>
-        /// Describes an existing Amazon Kendra index
+        /// Describes an existing Amazon Kendra index.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeIndex service method.</param>
         /// 
@@ -3185,7 +3185,7 @@ namespace Amazon.Kendra
         #region  ListIndices
 
         /// <summary>
-        /// Lists the Amazon Kendra indexes that you have created.
+        /// Lists the Amazon Kendra indexes that you created.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListIndices service method.</param>
         /// 

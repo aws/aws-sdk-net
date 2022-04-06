@@ -64,6 +64,12 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("BoxConfiguration", targetDepth))
+                {
+                    var unmarshaller = BoxConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.BoxConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ConfluenceConfiguration", targetDepth))
                 {
                     var unmarshaller = ConfluenceConfigurationUnmarshaller.Instance;

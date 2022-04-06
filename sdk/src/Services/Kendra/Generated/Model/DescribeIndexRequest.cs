@@ -30,7 +30,7 @@ namespace Amazon.Kendra.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeIndex operation.
-    /// Describes an existing Amazon Kendra index
+    /// Describes an existing Amazon Kendra index.
     /// </summary>
     public partial class DescribeIndexRequest : AmazonKendraRequest
     {
@@ -39,7 +39,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The name of the index to describe.
+        /// The identifier of the index to describe.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]

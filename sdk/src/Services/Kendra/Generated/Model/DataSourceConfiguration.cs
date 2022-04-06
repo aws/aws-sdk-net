@@ -33,6 +33,7 @@ namespace Amazon.Kendra.Model
     /// </summary>
     public partial class DataSourceConfiguration
     {
+        private BoxConfiguration _boxConfiguration;
         private ConfluenceConfiguration _confluenceConfiguration;
         private DatabaseConfiguration _databaseConfiguration;
         private FsxConfiguration _fsxConfiguration;
@@ -45,6 +46,24 @@ namespace Amazon.Kendra.Model
         private SlackConfiguration _slackConfiguration;
         private WebCrawlerConfiguration _webCrawlerConfiguration;
         private WorkDocsConfiguration _workDocsConfiguration;
+
+        /// <summary>
+        /// Gets and sets the property BoxConfiguration. 
+        /// <para>
+        /// Provides the configuration information to connect to Box as your data source.
+        /// </para>
+        /// </summary>
+        public BoxConfiguration BoxConfiguration
+        {
+            get { return this._boxConfiguration; }
+            set { this._boxConfiguration = value; }
+        }
+
+        // Check to see if BoxConfiguration property is set
+        internal bool IsSetBoxConfiguration()
+        {
+            return this._boxConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ConfluenceConfiguration. 

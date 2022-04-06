@@ -147,9 +147,10 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// An Identity and Access Management(IAM) role that gives Amazon Kendra permissions to
-        /// access your Amazon CloudWatch logs and metrics. This is also the role used when you
-        /// use the <code>BatchPutDocument</code> API to index documents from an Amazon S3 bucket.
+        /// An Identity and Access Management (IAM) role that gives Amazon Kendra permissions
+        /// to access your Amazon CloudWatch logs and metrics. This is also the role you use when
+        /// you call the <code>BatchPutDocument</code> API to index documents from an Amazon S3
+        /// bucket.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1284)]
@@ -168,7 +169,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property ServerSideEncryptionConfiguration. 
         /// <para>
-        /// The identifier of the KMScustomer managed key (CMK) to use to encrypt data indexed
+        /// The identifier of the KMS customer managed key (CMK) that's used to encrypt data indexed
         /// by Amazon Kendra. Amazon Kendra doesn't support asymmetric CMKs.
         /// </para>
         /// </summary>

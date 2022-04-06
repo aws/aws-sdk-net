@@ -777,6 +777,10 @@ namespace Amazon.Kendra
     {
 
         /// <summary>
+        /// Constant BOX for DataSourceType
+        /// </summary>
+        public static readonly DataSourceType BOX = new DataSourceType("BOX");
+        /// <summary>
         /// Constant CONFLUENCE for DataSourceType
         /// </summary>
         public static readonly DataSourceType CONFLUENCE = new DataSourceType("CONFLUENCE");

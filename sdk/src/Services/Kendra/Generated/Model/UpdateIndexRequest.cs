@@ -47,13 +47,14 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property CapacityUnits. 
         /// <para>
-        /// Sets the number of additional storage and query capacity units that should be used
-        /// by the index. You can change the capacity of the index up to 5 times per day.
+        /// Sets the number of additional document storage and query capacity units that should
+        /// be used by the index. You can change the capacity of the index up to 5 times per day,
+        /// or make 5 API calls.
         /// </para>
         ///  
         /// <para>
         /// If you are using extra storage units, you can't reduce the storage capacity below
-        /// that required to meet the storage needs for your index.
+        /// what is required to meet the storage needs for your index.
         /// </para>
         /// </summary>
         public CapacityUnitsConfiguration CapacityUnits

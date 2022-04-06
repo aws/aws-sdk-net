@@ -45,6 +45,17 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DataSourceConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetBoxConfiguration())
+            {
+                context.Writer.WritePropertyName("BoxConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = BoxConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.BoxConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetConfluenceConfiguration())
             {
                 context.Writer.WritePropertyName("ConfluenceConfiguration");

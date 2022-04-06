@@ -1323,6 +1323,18 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Kendra.Model.BoxConfiguration.EnterpriseId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[A-Z0-9]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.BoxConfiguration.SecretArn</property>
+    <min>1</min>
+    <max>1284</max>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Kendra.Model.CapacityUnitsConfiguration.QueryCapacityUnits</property>
     <min>0</min>
   </property-value-rule>

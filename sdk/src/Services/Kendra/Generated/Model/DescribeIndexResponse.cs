@@ -53,10 +53,12 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property CapacityUnits. 
         /// <para>
-        /// For Enterprise edition indexes, you can choose to use additional capacity to meet
+        /// For Enterprise Edition indexes, you can choose to use additional capacity to meet
         /// the needs of your application. This contains the capacity units used for the index.
-        /// A 0 for the query capacity or the storage capacity indicates that the index is using
-        /// the default capacity for the index.
+        /// A query or document storage capacity of zero indicates that the index is using the
+        /// default capacity. For more information on the default capacity for an index and adjusting
+        /// this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/adjusting-capacity.html">Adjusting
+        /// capacity</a>.
         /// </para>
         /// </summary>
         public CapacityUnitsConfiguration CapacityUnits
@@ -92,7 +94,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description of the index.
+        /// The description for the index.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1000)]
@@ -149,7 +151,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property ErrorMessage. 
         /// <para>
-        /// When th e<code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code>
+        /// When the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code>
         /// field contains a message that explains why.
         /// </para>
         /// </summary>
@@ -169,7 +171,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The name of the index.
+        /// The identifier of the index.
         /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]
@@ -246,8 +248,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property ServerSideEncryptionConfiguration. 
         /// <para>
-        /// The identifier of the KMScustomer master key (CMK) used to encrypt your data. Amazon
-        /// Kendra doesn't support asymmetric CMKs.
+        /// The identifier of the KMScustomer master key (CMK) that is used to encrypt your data.
+        /// Amazon Kendra doesn't support asymmetric CMKs.
         /// </para>
         /// </summary>
         public ServerSideEncryptionConfiguration ServerSideEncryptionConfiguration
