@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Lambda.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// AddPermission Request Marshaller
+    /// UpdateFunctionUrlConfig Request Marshaller
     /// </summary>       
-    public class AddPermissionRequestMarshaller : IMarshaller<IRequest, AddPermissionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class UpdateFunctionUrlConfigRequestMarshaller : IMarshaller<IRequest, UpdateFunctionUrlConfigRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((AddPermissionRequest)input);
+            return this.Marshall((UpdateFunctionUrlConfigRequest)input);
         }
 
         /// <summary>
@@ -52,12 +52,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(AddPermissionRequest publicRequest)
+        public IRequest Marshall(UpdateFunctionUrlConfigRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Lambda");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-03-31";
-            request.HttpMethod = "POST";
+            request.HttpMethod = "PUT";
 
             if (!publicRequest.IsSetFunctionName())
                 throw new AmazonLambdaException("Request object does not have required field FunctionName set");
@@ -65,64 +65,27 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetQualifier())
                 request.Parameters.Add("Qualifier", StringUtils.FromString(publicRequest.Qualifier));
-            request.ResourcePath = "/2015-03-31/functions/{FunctionName}/policy";
+            request.ResourcePath = "/2021-10-31/functions/{FunctionName}/url";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAction())
+                if(publicRequest.IsSetAuthType())
                 {
-                    context.Writer.WritePropertyName("Action");
-                    context.Writer.Write(publicRequest.Action);
+                    context.Writer.WritePropertyName("AuthType");
+                    context.Writer.Write(publicRequest.AuthType);
                 }
 
-                if(publicRequest.IsSetEventSourceToken())
+                if(publicRequest.IsSetCors())
                 {
-                    context.Writer.WritePropertyName("EventSourceToken");
-                    context.Writer.Write(publicRequest.EventSourceToken);
-                }
+                    context.Writer.WritePropertyName("Cors");
+                    context.Writer.WriteObjectStart();
 
-                if(publicRequest.IsSetFunctionUrlAuthType())
-                {
-                    context.Writer.WritePropertyName("FunctionUrlAuthType");
-                    context.Writer.Write(publicRequest.FunctionUrlAuthType);
-                }
+                    var marshaller = CorsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Cors, context);
 
-                if(publicRequest.IsSetPrincipal())
-                {
-                    context.Writer.WritePropertyName("Principal");
-                    context.Writer.Write(publicRequest.Principal);
-                }
-
-                if(publicRequest.IsSetPrincipalOrgID())
-                {
-                    context.Writer.WritePropertyName("PrincipalOrgID");
-                    context.Writer.Write(publicRequest.PrincipalOrgID);
-                }
-
-                if(publicRequest.IsSetRevisionId())
-                {
-                    context.Writer.WritePropertyName("RevisionId");
-                    context.Writer.Write(publicRequest.RevisionId);
-                }
-
-                if(publicRequest.IsSetSourceAccount())
-                {
-                    context.Writer.WritePropertyName("SourceAccount");
-                    context.Writer.Write(publicRequest.SourceAccount);
-                }
-
-                if(publicRequest.IsSetSourceArn())
-                {
-                    context.Writer.WritePropertyName("SourceArn");
-                    context.Writer.Write(publicRequest.SourceArn);
-                }
-
-                if(publicRequest.IsSetStatementId())
-                {
-                    context.Writer.WritePropertyName("StatementId");
-                    context.Writer.Write(publicRequest.StatementId);
+                    context.Writer.WriteObjectEnd();
                 }
 
                 writer.WriteObjectEnd();
@@ -134,9 +97,9 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static AddPermissionRequestMarshaller _instance = new AddPermissionRequestMarshaller();        
+        private static UpdateFunctionUrlConfigRequestMarshaller _instance = new UpdateFunctionUrlConfigRequestMarshaller();        
 
-        internal static AddPermissionRequestMarshaller GetInstance()
+        internal static UpdateFunctionUrlConfigRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -144,7 +107,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AddPermissionRequestMarshaller Instance
+        public static UpdateFunctionUrlConfigRequestMarshaller Instance
         {
             get
             {

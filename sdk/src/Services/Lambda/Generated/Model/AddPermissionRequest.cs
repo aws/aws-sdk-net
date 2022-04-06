@@ -59,6 +59,7 @@ namespace Amazon.Lambda.Model
         private string _action;
         private string _eventSourceToken;
         private string _functionName;
+        private FunctionUrlAuthType _functionUrlAuthType;
         private string _principal;
         private string _principalOrgID;
         private string _qualifier;
@@ -144,6 +145,28 @@ namespace Amazon.Lambda.Model
         internal bool IsSetFunctionName()
         {
             return this._functionName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FunctionUrlAuthType. 
+        /// <para>
+        /// The type of authentication that your function URL uses. Set to <code>AWS_IAM</code>
+        /// if you want to restrict access to authenticated <code>IAM</code> users only. Set to
+        /// <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint.
+        /// For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">
+        /// Security and auth model for Lambda function URLs</a>.
+        /// </para>
+        /// </summary>
+        public FunctionUrlAuthType FunctionUrlAuthType
+        {
+            get { return this._functionUrlAuthType; }
+            set { this._functionUrlAuthType = value; }
+        }
+
+        // Check to see if FunctionUrlAuthType property is set
+        internal bool IsSetFunctionUrlAuthType()
+        {
+            return this._functionUrlAuthType != null;
         }
 
         /// <summary>
