@@ -1787,6 +1787,10 @@ namespace Amazon.ConfigService
         /// </summary>
         public static readonly ResourceType AWSElasticsearchDomain = new ResourceType("AWS::Elasticsearch::Domain");
         /// <summary>
+        /// Constant AWSEMRSecurityConfiguration for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSEMRSecurityConfiguration = new ResourceType("AWS::EMR::SecurityConfiguration");
+        /// <summary>
         /// Constant AWSGuardDutyDetector for ResourceType
         /// </summary>
         public static readonly ResourceType AWSGuardDutyDetector = new ResourceType("AWS::GuardDuty::Detector");
@@ -1902,6 +1906,10 @@ namespace Amazon.ConfigService
         /// Constant AWSS3Bucket for ResourceType
         /// </summary>
         public static readonly ResourceType AWSS3Bucket = new ResourceType("AWS::S3::Bucket");
+        /// <summary>
+        /// Constant AWSSageMakerCodeRepository for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSSageMakerCodeRepository = new ResourceType("AWS::SageMaker::CodeRepository");
         /// <summary>
         /// Constant AWSSecretsManagerSecret for ResourceType
         /// </summary>

@@ -7022,13 +7022,13 @@ namespace Amazon.ConfigService
         /// 
         ///  
         /// <para>
-        /// You can use this action for custom Config rules and Config managed rules. A custom
-        /// Config rule is a rule that you develop and maintain. An Config managed rule is a customizable,
+        /// You can use this action for Config custom rules and Config managed rules. A Config
+        /// custom rule is a rule that you develop and maintain. An Config managed rule is a customizable,
         /// predefined rule that Config provides.
         /// </para>
         ///  
         /// <para>
-        /// If you are adding a new custom Config rule, you must first create the Lambda function
+        /// If you are adding a new Config custom rule, you must first create the Lambda function
         /// that the rule invokes to evaluate your resources. When you use the <code>PutConfigRule</code>
         /// action to add the rule to Config, you must specify the Amazon Resource Name (ARN)
         /// that Lambda assigns to the function. Specify the ARN for the <code>SourceIdentifier</code>
@@ -7175,13 +7175,13 @@ namespace Amazon.ConfigService
         /// 
         ///  
         /// <para>
-        /// You can use this action for custom Config rules and Config managed rules. A custom
-        /// Config rule is a rule that you develop and maintain. An Config managed rule is a customizable,
+        /// You can use this action for Config custom rules and Config managed rules. A Config
+        /// custom rule is a rule that you develop and maintain. An Config managed rule is a customizable,
         /// predefined rule that Config provides.
         /// </para>
         ///  
         /// <para>
-        /// If you are adding a new custom Config rule, you must first create the Lambda function
+        /// If you are adding a new Config custom rule, you must first create the Lambda function
         /// that the rule invokes to evaluate your resources. When you use the <code>PutConfigRule</code>
         /// action to add the rule to Config, you must specify the Amazon Resource Name (ARN)
         /// that Lambda assigns to the function. Specify the ARN for the <code>SourceIdentifier</code>
@@ -8169,8 +8169,8 @@ namespace Amazon.ConfigService
         /// </para>
         ///  
         /// <para>
-        /// You can use this action to create both custom Config rules and Config managed rules.
-        /// If you are adding a new custom Config rule, you must first create Lambda function
+        /// You can use this action to create both Config custom rules and Config managed rules.
+        /// If you are adding a new Config custom rule, you must first create Lambda function
         /// in the master account or a delegated administrator that the rule invokes to evaluate
         /// your resources. You also need to create an IAM role in the managed-account that can
         /// be assumed by the Lambda function. When you use the <code>PutOrganizationConfigRule</code>
@@ -8371,8 +8371,8 @@ namespace Amazon.ConfigService
         /// </para>
         ///  
         /// <para>
-        /// You can use this action to create both custom Config rules and Config managed rules.
-        /// If you are adding a new custom Config rule, you must first create Lambda function
+        /// You can use this action to create both Config custom rules and Config managed rules.
+        /// If you are adding a new Config custom rule, you must first create Lambda function
         /// in the master account or a delegated administrator that the rule invokes to evaluate
         /// your resources. You also need to create an IAM role in the managed-account that can
         /// be assumed by the Lambda function. When you use the <code>PutOrganizationConfigRule</code>
