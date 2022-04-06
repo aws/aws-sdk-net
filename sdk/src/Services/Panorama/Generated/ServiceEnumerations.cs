@@ -89,6 +89,10 @@ namespace Amazon.Panorama
         /// </summary>
         public static readonly ApplicationInstanceStatus DEPLOYMENT_ERROR = new ApplicationInstanceStatus("DEPLOYMENT_ERROR");
         /// <summary>
+        /// Constant DEPLOYMENT_FAILED for ApplicationInstanceStatus
+        /// </summary>
+        public static readonly ApplicationInstanceStatus DEPLOYMENT_FAILED = new ApplicationInstanceStatus("DEPLOYMENT_FAILED");
+        /// <summary>
         /// Constant DEPLOYMENT_IN_PROGRESS for ApplicationInstanceStatus
         /// </summary>
         public static readonly ApplicationInstanceStatus DEPLOYMENT_IN_PROGRESS = new ApplicationInstanceStatus("DEPLOYMENT_IN_PROGRESS");
@@ -204,6 +208,56 @@ namespace Amazon.Panorama
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ConnectionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DeviceBrand.
+    /// </summary>
+    public class DeviceBrand : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AWS_PANORAMA for DeviceBrand
+        /// </summary>
+        public static readonly DeviceBrand AWS_PANORAMA = new DeviceBrand("AWS_PANORAMA");
+        /// <summary>
+        /// Constant LENOVO for DeviceBrand
+        /// </summary>
+        public static readonly DeviceBrand LENOVO = new DeviceBrand("LENOVO");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DeviceBrand(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DeviceBrand FindValue(string value)
+        {
+            return FindValue<DeviceBrand>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DeviceBrand(string value)
         {
             return FindValue(value);
         }
@@ -934,6 +988,10 @@ namespace Amazon.Panorama
         /// Constant DEPLOYMENT_ERROR for StatusFilter
         /// </summary>
         public static readonly StatusFilter DEPLOYMENT_ERROR = new StatusFilter("DEPLOYMENT_ERROR");
+        /// <summary>
+        /// Constant DEPLOYMENT_FAILED for StatusFilter
+        /// </summary>
+        public static readonly StatusFilter DEPLOYMENT_FAILED = new StatusFilter("DEPLOYMENT_FAILED");
         /// <summary>
         /// Constant DEPLOYMENT_SUCCEEDED for StatusFilter
         /// </summary>

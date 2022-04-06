@@ -33,12 +33,31 @@ namespace Amazon.Panorama.Model
     /// </summary>
     public partial class Device
     {
+        private DeviceBrand _brand;
         private DateTime? _createdTime;
         private string _deviceId;
         private DateTime? _lastUpdatedTime;
         private DateTime? _leaseExpirationTime;
         private string _name;
         private DeviceStatus _provisioningStatus;
+
+        /// <summary>
+        /// Gets and sets the property Brand. 
+        /// <para>
+        /// The device's maker.
+        /// </para>
+        /// </summary>
+        public DeviceBrand Brand
+        {
+            get { return this._brand; }
+            set { this._brand = value; }
+        }
+
+        // Check to see if Brand property is set
+        internal bool IsSetBrand()
+        {
+            return this._brand != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CreatedTime. 

@@ -63,6 +63,12 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
                     response.Arn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Brand", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Brand = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CreatedTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

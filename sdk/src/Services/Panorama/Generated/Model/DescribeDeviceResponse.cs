@@ -35,6 +35,7 @@ namespace Amazon.Panorama.Model
     {
         private List<AlternateSoftwareMetadata> _alternateSoftwares = new List<AlternateSoftwareMetadata>();
         private string _arn;
+        private DeviceBrand _brand;
         private DateTime? _createdTime;
         private NetworkStatus _currentNetworkingStatus;
         private string _currentSoftware;
@@ -86,6 +87,24 @@ namespace Amazon.Panorama.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Brand. 
+        /// <para>
+        /// The device's maker.
+        /// </para>
+        /// </summary>
+        public DeviceBrand Brand
+        {
+            get { return this._brand; }
+            set { this._brand = value; }
+        }
+
+        // Check to see if Brand property is set
+        internal bool IsSetBrand()
+        {
+            return this._brand != null;
         }
 
         /// <summary>
