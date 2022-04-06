@@ -1,3 +1,17 @@
+### 3.7.247.0 (2022-04-06 18:18 UTC)
+* ConfigService (3.7.9.0)
+	* Add resourceType enums for AWS::EMR::SecurityConfiguration and AWS::SageMaker::CodeRepository
+* Kendra (3.7.16.0)
+	* Amazon Kendra now provides a data source connector for Box. For more information, see https://docs.aws.amazon.com/kendra/latest/dg/data-source-box.html
+* Lambda (3.7.12.0)
+	* This release adds new APIs for creating and managing Lambda Function URLs and adds a new FunctionUrlAuthType parameter to the AddPermission API. Customers can use Function URLs to create built-in HTTPS endpoints on their functions.
+* Panorama (3.7.2.0)
+	* Added Brand field to device listings.
+* Core 3.7.10.4
+	* Updating endpoints.json file.
+
+	* All services packages updated to require new Core
+
 ### 3.7.246.0 (2022-04-05 18:13 UTC)
 * DataSync (3.7.5.0)
 	* AWS DataSync now supports Amazon FSx for OpenZFS locations.
