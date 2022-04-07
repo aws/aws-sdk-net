@@ -90,19 +90,20 @@ namespace Amazon.PI.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>os</code> (OS counter metrics)
+        ///  <code>os</code> (OS counter metrics) - All engines
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>db</code> (DB load metrics)
+        ///  <code>db</code> (DB load metrics) - All engines except for Amazon DocumentDB
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>db.sql.stats</code> (per-SQL metrics)
+        ///  <code>db.sql.stats</code> (per-SQL metrics) - All engines except for Amazon DocumentDB
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>db.sql_tokenized.stats</code> (per-SQL digest metrics)
+        ///  <code>db.sql_tokenized.stats</code> (per-SQL digest metrics) - All engines except
+        /// for Amazon DocumentDB
         /// </para>
         ///  </li> </ul>
         /// </summary>

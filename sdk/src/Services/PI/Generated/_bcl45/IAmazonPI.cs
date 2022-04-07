@@ -36,14 +36,13 @@ namespace Amazon.PI
     /// Amazon RDS Performance Insights enables you to monitor and explore different dimensions
     /// of database load based on data captured from a running DB instance. The guide provides
     /// detailed information about Performance Insights data types, parameters and errors.
-    /// 
     /// </para>
     ///  
     /// <para>
     /// When Performance Insights is enabled, the Amazon RDS Performance Insights API provides
     /// visibility into the performance of your DB instance. Amazon CloudWatch provides the
     /// authoritative source for Amazon Web Services service-vended monitoring metrics. Performance
-    /// Insights offers a domain-specific view of DB load. 
+    /// Insights offers a domain-specific view of DB load.
     /// </para>
     ///  
     /// <para>
@@ -51,19 +50,25 @@ namespace Amazon.PI
     /// data to API consumers as a two-dimensional time-series dataset. The time dimension
     /// provides DB load data for each time point in the queried time range. Each time point
     /// decomposes overall load in relation to the requested dimensions, measured at that
-    /// time point. Examples include SQL, Wait event, User, and Host. 
+    /// time point. Examples include SQL, Wait event, User, and Host.
     /// </para>
     ///  <ul> <li> 
     /// <para>
     /// To learn more about Performance Insights and Amazon Aurora DB instances, go to the
-    /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_PerfInsights.html">
-    /// Amazon Aurora User Guide</a>. 
+    /// <i> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_PerfInsights.html">
+    /// Amazon Aurora User Guide</a> </i>. 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// To learn more about Performance Insights and Amazon RDS DB instances, go to the <a
-    /// href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">
-    /// Amazon RDS User Guide</a>. 
+    /// To learn more about Performance Insights and Amazon RDS DB instances, go to the <i>
+    /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">
+    /// Amazon RDS User Guide</a> </i>. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// To learn more about Performance Insights and Amazon DocumentDB clusters, go to the
+    /// <i> <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/performance-insights.html">
+    /// Amazon DocumentDB Developer Guide</a> </i>.
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -144,7 +149,7 @@ namespace Amazon.PI
         /// <summary>
         /// Get the attributes of the specified dimension group for a DB instance or data source.
         /// For example, if you specify a SQL ID, <code>GetDimensionKeyDetails</code> retrieves
-        /// the full text of the dimension <code>db.sql.statement</code>cassociated with this
+        /// the full text of the dimension <code>db.sql.statement</code> associated with this
         /// ID. This operation is useful because <code>GetResourceMetrics</code> and <code>DescribeDimensionKeys</code>
         /// don't support retrieval of large SQL statement text.
         /// </summary>
@@ -168,7 +173,7 @@ namespace Amazon.PI
         /// <summary>
         /// Get the attributes of the specified dimension group for a DB instance or data source.
         /// For example, if you specify a SQL ID, <code>GetDimensionKeyDetails</code> retrieves
-        /// the full text of the dimension <code>db.sql.statement</code>cassociated with this
+        /// the full text of the dimension <code>db.sql.statement</code> associated with this
         /// ID. This operation is useful because <code>GetResourceMetrics</code> and <code>DescribeDimensionKeys</code>
         /// don't support retrieval of large SQL statement text.
         /// </summary>
@@ -244,7 +249,7 @@ namespace Amazon.PI
 
 
         /// <summary>
-        /// Retrieve Performance Insights metrics for a set of data sources, over a time period.
+        /// Retrieve Performance Insights metrics for a set of data sources over a time period.
         /// You can provide specific dimension groups and dimensions, and provide aggregation
         /// and filtering criteria for each group.
         /// 
@@ -273,7 +278,7 @@ namespace Amazon.PI
 
 
         /// <summary>
-        /// Retrieve Performance Insights metrics for a set of data sources, over a time period.
+        /// Retrieve Performance Insights metrics for a set of data sources over a time period.
         /// You can provide specific dimension groups and dimensions, and provide aggregation
         /// and filtering criteria for each group.
         /// 
