@@ -11,6 +11,14 @@ namespace ServiceClientGenerator
     {
         public static string DetermineSigner(string signatureVersion, string serviceBasename)
         {
+            switch (serviceBasename)
+            {
+                case "EventBridge":
+                    // we should not continue to add new hardcoded service specific signers
+                    // and instead implement a solution based on a signer selection specification
+                    return "EventBridgeSigner";
+            }
+
             switch (signatureVersion)
             {
                 case "v2":
