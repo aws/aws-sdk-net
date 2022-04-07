@@ -30,7 +30,8 @@ namespace Amazon.Personalize.Model
 {
     /// <summary>
     /// Provides a summary of the properties of a dataset import job. For a complete listing,
-    /// call the <a>DescribeDatasetImportJob</a> API.
+    /// call the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeDatasetImportJob.html">DescribeDatasetImportJob</a>
+    /// API.
     /// </summary>
     public partial class DatasetImportJobSummary
     {

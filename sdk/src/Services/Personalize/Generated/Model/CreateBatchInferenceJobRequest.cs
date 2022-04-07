@@ -31,7 +31,8 @@ namespace Amazon.Personalize.Model
     /// <summary>
     /// Container for the parameters to the CreateBatchInferenceJob operation.
     /// Creates a batch inference job. The operation can handle up to 50 million records and
-    /// the input file must be in JSON format. For more information, see <a>recommendations-batch</a>.
+    /// the input file must be in JSON format. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/creating-batch-inference-job.html">Creating
+    /// a batch inference job</a>.
     /// </summary>
     public partial class CreateBatchInferenceJobRequest : AmazonPersonalizeRequest
     {
@@ -43,6 +44,7 @@ namespace Amazon.Personalize.Model
         private int? _numResults;
         private string _roleArn;
         private string _solutionVersionArn;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property BatchInferenceJobConfig. 
@@ -67,7 +69,7 @@ namespace Amazon.Personalize.Model
         /// <para>
         /// The ARN of the filter to apply to the batch inference job. For more information on
         /// using filters, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter-batch.html">Filtering
-        /// Batch Recommendations</a>..
+        /// batch recommendations</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=256)]
@@ -144,7 +146,7 @@ namespace Amazon.Personalize.Model
         /// <summary>
         /// Gets and sets the property NumResults. 
         /// <para>
-        /// The number of recommendations to retreive.
+        /// The number of recommendations to retrieve.
         /// </para>
         /// </summary>
         public int NumResults
@@ -197,6 +199,26 @@ namespace Amazon.Personalize.Model
         internal bool IsSetSolutionVersionArn()
         {
             return this._solutionVersionArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+        /// to apply to the batch inference job.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=200)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

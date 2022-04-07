@@ -50,10 +50,11 @@ namespace Amazon.Personalize.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    ///  To get the status of the export job, call <a>DescribeDatasetExportJob</a>, and specify
-    /// the Amazon Resource Name (ARN) of the dataset export job. The dataset export is complete
-    /// when the status shows as ACTIVE. If the status shows as CREATE FAILED, the response
-    /// includes a <code>failureReason</code> key, which describes why the job failed. 
+    ///  To get the status of the export job, call <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeDatasetExportJob.html">DescribeDatasetExportJob</a>,
+    /// and specify the Amazon Resource Name (ARN) of the dataset export job. The dataset
+    /// export is complete when the status shows as ACTIVE. If the status shows as CREATE
+    /// FAILED, the response includes a <code>failureReason</code> key, which describes why
+    /// the job failed. 
     /// </para>
     /// </summary>
     public partial class CreateDatasetExportJobRequest : AmazonPersonalizeRequest
@@ -63,6 +64,7 @@ namespace Amazon.Personalize.Model
         private string _jobName;
         private DatasetExportJobOutput _jobOutput;
         private string _roleArn;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property DatasetArn. 
@@ -161,6 +163,26 @@ namespace Amazon.Personalize.Model
         internal bool IsSetRoleArn()
         {
             return this._roleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+        /// to apply to the dataset export job.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=200)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

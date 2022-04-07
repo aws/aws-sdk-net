@@ -30,8 +30,8 @@ namespace Amazon.Personalize.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeDatasetExportJob operation.
-    /// Describes the dataset export job created by <a>CreateDatasetExportJob</a>, including
-    /// the export job status.
+    /// Describes the dataset export job created by <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDatasetExportJob.html">CreateDatasetExportJob</a>,
+    /// including the export job status.
     /// </summary>
     public partial class DescribeDatasetExportJobRequest : AmazonPersonalizeRequest
     {

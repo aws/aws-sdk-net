@@ -31,7 +31,7 @@ namespace Amazon.Personalize.Model
     /// <summary>
     /// Container for the parameters to the DescribeSolutionVersion operation.
     /// Describes a specific version of a solution. For more information on solutions, see
-    /// <a>CreateSolution</a>.
+    /// <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolution.html">CreateSolution</a>
     /// </summary>
     public partial class DescribeSolutionVersionRequest : AmazonPersonalizeRequest
     {

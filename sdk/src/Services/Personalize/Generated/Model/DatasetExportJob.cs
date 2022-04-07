@@ -30,7 +30,7 @@ namespace Amazon.Personalize.Model
 {
     /// <summary>
     /// Describes a job that exports a dataset to an Amazon S3 bucket. For more information,
-    /// see <a>CreateDatasetExportJob</a>.
+    /// see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDatasetExportJob.html">CreateDatasetExportJob</a>.
     /// 
     ///  
     /// <para>

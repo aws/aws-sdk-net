@@ -30,7 +30,8 @@ namespace Amazon.Personalize.Model
 {
     /// <summary>
     /// Provides a summary of the properties of a recommender update. For a complete listing,
-    /// call the DescribeRecommender API operation.
+    /// call the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeRecommender.html">DescribeRecommender</a>
+    /// API.
     /// </summary>
     public partial class RecommenderUpdateSummary
     {

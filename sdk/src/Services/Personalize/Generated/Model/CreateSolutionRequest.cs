@@ -32,13 +32,14 @@ namespace Amazon.Personalize.Model
     /// Container for the parameters to the CreateSolution operation.
     /// Creates the configuration for training a model. A trained model is known as a solution.
     /// After the configuration is created, you train the model (create a solution) by calling
-    /// the <a>CreateSolutionVersion</a> operation. Every time you call <code>CreateSolutionVersion</code>,
-    /// a new version of the solution is created.
+    /// the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolutionVersion.html">CreateSolutionVersion</a>
+    /// operation. Every time you call <code>CreateSolutionVersion</code>, a new version of
+    /// the solution is created.
     /// 
     ///  
     /// <para>
-    /// After creating a solution version, you check its accuracy by calling <a>GetSolutionMetrics</a>.
-    /// When you are satisfied with the version, you deploy it using <a>CreateCampaign</a>.
+    /// After creating a solution version, you check its accuracy by calling <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_GetSolutionMetrics.html">GetSolutionMetrics</a>.
+    /// When you are satisfied with the version, you deploy it using <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateCampaign.html">CreateCampaign</a>.
     /// The campaign provides recommendations to a client through the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html">GetRecommendations</a>
     /// API.
     /// </para>
@@ -74,34 +75,40 @@ namespace Amazon.Personalize.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// To get the status of the solution, call <a>DescribeSolution</a>. Wait until the status
-    /// shows as ACTIVE before calling <code>CreateSolutionVersion</code>.
+    /// To get the status of the solution, call <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeSolution.html">DescribeSolution</a>.
+    /// Wait until the status shows as ACTIVE before calling <code>CreateSolutionVersion</code>.
     /// </para>
     ///  <p class="title"> <b>Related APIs</b> 
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>ListSolutions</a> 
+    ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListSolutions.html">ListSolutions</a>
+    /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>CreateSolutionVersion</a> 
+    ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolutionVersion.html">CreateSolutionVersion</a>
+    /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DescribeSolution</a> 
+    ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeSolution.html">DescribeSolution</a>
+    /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DeleteSolution</a> 
+    ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DeleteSolution.html">DeleteSolution</a>
+    /// 
     /// </para>
     ///  </li> </ul> <ul> <li> 
     /// <para>
-    ///  <a>ListSolutionVersions</a> 
+    ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListSolutionVersions.html">ListSolutionVersions</a>
+    /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DescribeSolutionVersion</a> 
+    ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeSolutionVersion.html">DescribeSolutionVersion</a>
+    /// 
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -114,6 +121,7 @@ namespace Amazon.Personalize.Model
         private bool? _performhpo;
         private string _recipeArn;
         private SolutionConfig _solutionConfig;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property DatasetGroupArn. 
@@ -274,6 +282,26 @@ namespace Amazon.Personalize.Model
         internal bool IsSetSolutionConfig()
         {
             return this._solutionConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+        /// to apply to the solution.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=200)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

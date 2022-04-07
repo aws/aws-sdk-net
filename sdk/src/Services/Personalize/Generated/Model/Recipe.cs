@@ -30,7 +30,8 @@ namespace Amazon.Personalize.Model
 {
     /// <summary>
     /// Provides information about a recipe. Each recipe provides an algorithm that Amazon
-    /// Personalize uses in model training when you use the <a>CreateSolution</a> operation.
+    /// Personalize uses in model training when you use the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolution.html">CreateSolution</a>
+    /// operation.
     /// </summary>
     public partial class Recipe
     {
