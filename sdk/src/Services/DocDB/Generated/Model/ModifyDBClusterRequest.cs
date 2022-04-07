@@ -319,7 +319,7 @@ namespace Amazon.DocDB.Model
         ///  
         /// <para>
         /// The default is a 30-minute window selected at random from an 8-hour block of time
-        /// for each Region. 
+        /// for each Amazon Web Services Region. 
         /// </para>
         ///  
         /// <para>
@@ -368,7 +368,7 @@ namespace Amazon.DocDB.Model
         ///  
         /// <para>
         /// The default is a 30-minute window selected at random from an 8-hour block of time
-        /// for each Region, occurring on a random day of the week. 
+        /// for each Amazon Web Services Region, occurring on a random day of the week. 
         /// </para>
         ///  
         /// <para>

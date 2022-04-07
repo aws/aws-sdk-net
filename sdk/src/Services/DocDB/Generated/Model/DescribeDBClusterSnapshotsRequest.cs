@@ -128,8 +128,8 @@ namespace Amazon.DocDB.Model
         /// Gets and sets the property IncludePublic. 
         /// <para>
         /// Set to <code>true</code> to include manual cluster snapshots that are public and can
-        /// be copied or restored by any account, and otherwise <code>false</code>. The default
-        /// is <code>false</code>.
+        /// be copied or restored by any Amazon Web Services account, and otherwise <code>false</code>.
+        /// The default is <code>false</code>.
         /// </para>
         /// </summary>
         public bool IncludePublic
@@ -147,9 +147,9 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property IncludeShared. 
         /// <para>
-        /// Set to <code>true</code> to include shared manual cluster snapshots from other accounts
-        /// that this account has been given permission to copy or restore, and otherwise <code>false</code>.
-        /// The default is <code>false</code>.
+        /// Set to <code>true</code> to include shared manual cluster snapshots from other Amazon
+        /// Web Services accounts that this Amazon Web Services account has been given permission
+        /// to copy or restore, and otherwise <code>false</code>. The default is <code>false</code>.
         /// </para>
         /// </summary>
         public bool IncludeShared
@@ -221,17 +221,17 @@ namespace Amazon.DocDB.Model
         ///  <ul> <li> 
         /// <para>
         ///  <code>automated</code> - Return all cluster snapshots that Amazon DocumentDB has
-        /// automatically created for your account.
+        /// automatically created for your Amazon Web Services account.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>manual</code> - Return all cluster snapshots that you have manually created
-        /// for your account.
+        /// for your Amazon Web Services account.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>shared</code> - Return all manual cluster snapshots that have been shared to
-        /// your account.
+        /// your Amazon Web Services account.
         /// </para>
         ///  </li> <li> 
         /// <para>

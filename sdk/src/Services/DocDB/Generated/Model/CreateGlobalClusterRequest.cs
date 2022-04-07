@@ -30,11 +30,11 @@ namespace Amazon.DocDB.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateGlobalCluster operation.
-    /// Creates an Amazon DocumentDB global cluster that can span multiple multiple Regions.
-    /// The global cluster contains one primary cluster with read-write capability, and up-to
-    /// give read-only secondary clusters. Global clusters uses storage-based fast replication
-    /// across regions with latencies less than one second, using dedicated infrastructure
-    /// with no impact to your workload’s performance.
+    /// Creates an Amazon DocumentDB global cluster that can span multiple multiple Amazon
+    /// Web Services Regions. The global cluster contains one primary cluster with read-write
+    /// capability, and up-to give read-only secondary clusters. Global clusters uses storage-based
+    /// fast replication across regions with latencies less than one second, using dedicated
+    /// infrastructure with no impact to your workload’s performance.
     /// 
     ///   
     /// <para>
