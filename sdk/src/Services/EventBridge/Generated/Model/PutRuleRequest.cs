@@ -158,10 +158,11 @@ namespace Amazon.EventBridge.Model
         /// <summary>
         /// Gets and sets the property EventPattern. 
         /// <para>
-        /// The event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events
-        /// and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.
+        /// The event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-patterns.html.html">EventBridge
+        /// event patterns</a> in the <i>Amazon EventBridge User Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=4096)]
         public string EventPattern
         {
             get { return this._eventPattern; }
