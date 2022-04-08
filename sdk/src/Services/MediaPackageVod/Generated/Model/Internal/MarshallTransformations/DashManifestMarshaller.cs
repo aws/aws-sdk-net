@@ -69,6 +69,12 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Profile);
             }
 
+            if(requestObject.IsSetScteMarkersSource())
+            {
+                context.Writer.WritePropertyName("scteMarkersSource");
+                context.Writer.Write(requestObject.ScteMarkersSource);
+            }
+
             if(requestObject.IsSetStreamSelection())
             {
                 context.Writer.WritePropertyName("streamSelection");
