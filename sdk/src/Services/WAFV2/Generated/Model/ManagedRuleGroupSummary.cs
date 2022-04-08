@@ -41,6 +41,7 @@ namespace Amazon.WAFV2.Model
         private string _description;
         private string _name;
         private string _vendorName;
+        private bool? _versioningSupported;
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -100,6 +101,25 @@ namespace Amazon.WAFV2.Model
         internal bool IsSetVendorName()
         {
             return this._vendorName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VersioningSupported. 
+        /// <para>
+        /// Indicates whether the managed rule group is versioned. If it is, you can retrieve
+        /// the versions list by calling <a>ListAvailableManagedRuleGroupVersions</a>. 
+        /// </para>
+        /// </summary>
+        public bool VersioningSupported
+        {
+            get { return this._versioningSupported.GetValueOrDefault(); }
+            set { this._versioningSupported = value; }
+        }
+
+        // Check to see if VersioningSupported property is set
+        internal bool IsSetVersioningSupported()
+        {
+            return this._versioningSupported.HasValue; 
         }
 
     }

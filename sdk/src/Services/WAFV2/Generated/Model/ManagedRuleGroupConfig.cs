@@ -37,6 +37,15 @@ namespace Amazon.WAFV2.Model
     /// Use this for the account takeover prevention managed rule group <code>AWSManagedRulesATPRuleSet</code>,
     /// to provide information about the sign-in page of your application. 
     /// </para>
+    ///  
+    /// <para>
+    /// You can provide multiple individual <code>ManagedRuleGroupConfig</code> objects for
+    /// any rule group configuration, for example <code>UsernameField</code> and <code>PasswordField</code>.
+    /// The configuration that you provide depends on the needs of the managed rule group.
+    /// For the ATP managed rule group, you provide the following individual configuration
+    /// objects: <code>LoginPath</code>, <code>PasswordField</code>, <code>PayloadType</code>
+    /// and <code>UsernameField</code>.
+    /// </para>
     /// </summary>
     public partial class ManagedRuleGroupConfig
     {

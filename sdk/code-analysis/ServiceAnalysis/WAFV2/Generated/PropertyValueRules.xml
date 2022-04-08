@@ -430,6 +430,12 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WAFV2.Model.ListAvailableManagedRuleGroupVersionsResponse.CurrentDefaultVersion</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[\w#:\.\-/]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WAFV2.Model.ListAvailableManagedRuleGroupVersionsResponse.NextMarker</property>
     <min>1</min>
     <max>256</max>

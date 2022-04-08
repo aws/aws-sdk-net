@@ -73,6 +73,7 @@ namespace Amazon.WAFV2.Model
         /// without modifying how they handle your web traffic.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=100)]
         public List<ExcludedRule> ExcludedRules
         {
             get { return this._excludedRules; }

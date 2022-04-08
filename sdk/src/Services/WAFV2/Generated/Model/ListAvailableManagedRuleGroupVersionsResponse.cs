@@ -33,8 +33,28 @@ namespace Amazon.WAFV2.Model
     /// </summary>
     public partial class ListAvailableManagedRuleGroupVersionsResponse : AmazonWebServiceResponse
     {
+        private string _currentDefaultVersion;
         private string _nextMarker;
         private List<ManagedRuleGroupVersion> _versions = new List<ManagedRuleGroupVersion>();
+
+        /// <summary>
+        /// Gets and sets the property CurrentDefaultVersion. 
+        /// <para>
+        /// The name of the version that's currently set as the default. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string CurrentDefaultVersion
+        {
+            get { return this._currentDefaultVersion; }
+            set { this._currentDefaultVersion = value; }
+        }
+
+        // Check to see if CurrentDefaultVersion property is set
+        internal bool IsSetCurrentDefaultVersion()
+        {
+            return this._currentDefaultVersion != null;
+        }
 
         /// <summary>
         /// Gets and sets the property NextMarker. 
