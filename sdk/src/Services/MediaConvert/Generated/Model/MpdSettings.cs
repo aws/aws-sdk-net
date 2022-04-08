@@ -37,6 +37,7 @@ namespace Amazon.MediaConvert.Model
         private MpdAccessibilityCaptionHints _accessibilityCaptionHints;
         private MpdAudioDuration _audioDuration;
         private MpdCaptionContainerType _captionContainerType;
+        private MpdKlvMetadata _klvMetadata;
         private MpdScte35Esam _scte35Esam;
         private MpdScte35Source _scte35Source;
         private MpdTimedMetadata _timedMetadata;
@@ -106,6 +107,22 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetCaptionContainerType()
         {
             return this._captionContainerType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KlvMetadata. Applies to DASH ISO outputs. Use this setting
+        /// to specify whether the service inserts the KLV metadata from the input in this output.
+        /// </summary>
+        public MpdKlvMetadata KlvMetadata
+        {
+            get { return this._klvMetadata; }
+            set { this._klvMetadata = value; }
+        }
+
+        // Check to see if KlvMetadata property is set
+        internal bool IsSetKlvMetadata()
+        {
+            return this._klvMetadata != null;
         }
 
         /// <summary>

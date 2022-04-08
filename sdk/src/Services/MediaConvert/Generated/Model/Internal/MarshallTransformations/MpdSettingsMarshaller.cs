@@ -63,6 +63,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.CaptionContainerType);
             }
 
+            if(requestObject.IsSetKlvMetadata())
+            {
+                context.Writer.WritePropertyName("klvMetadata");
+                context.Writer.Write(requestObject.KlvMetadata);
+            }
+
             if(requestObject.IsSetScte35Esam())
             {
                 context.Writer.WritePropertyName("scte35Esam");

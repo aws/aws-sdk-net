@@ -40,6 +40,7 @@ namespace Amazon.MediaConvert.Model
         private CmfcAudioTrackType _audioTrackType;
         private CmfcDescriptiveVideoServiceFlag _descriptiveVideoServiceFlag;
         private CmfcIFrameOnlyManifest _iFrameOnlyManifest;
+        private CmfcKlvMetadata _klvMetadata;
         private CmfcScte35Esam _scte35Esam;
         private CmfcScte35Source _scte35Source;
         private CmfcTimedMetadata _timedMetadata;
@@ -187,6 +188,22 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetIFrameOnlyManifest()
         {
             return this._iFrameOnlyManifest != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KlvMetadata. Applies to CMAF outputs. Use this setting
+        /// to specify whether the service inserts the KLV metadata from the input in this output.
+        /// </summary>
+        public CmfcKlvMetadata KlvMetadata
+        {
+            get { return this._klvMetadata; }
+            set { this._klvMetadata = value; }
+        }
+
+        // Check to see if KlvMetadata property is set
+        internal bool IsSetKlvMetadata()
+        {
+            return this._klvMetadata != null;
         }
 
         /// <summary>

@@ -4411,6 +4411,56 @@ namespace Amazon.MediaConvert
 
 
     /// <summary>
+    /// Constants used for properties of type CmfcKlvMetadata.
+    /// </summary>
+    public class CmfcKlvMetadata : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NONE for CmfcKlvMetadata
+        /// </summary>
+        public static readonly CmfcKlvMetadata NONE = new CmfcKlvMetadata("NONE");
+        /// <summary>
+        /// Constant PASSTHROUGH for CmfcKlvMetadata
+        /// </summary>
+        public static readonly CmfcKlvMetadata PASSTHROUGH = new CmfcKlvMetadata("PASSTHROUGH");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CmfcKlvMetadata(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CmfcKlvMetadata FindValue(string value)
+        {
+            return FindValue<CmfcKlvMetadata>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CmfcKlvMetadata(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CmfcScte35Esam.
     /// </summary>
     public class CmfcScte35Esam : ConstantClass
@@ -14199,6 +14249,56 @@ namespace Amazon.MediaConvert
 
 
     /// <summary>
+    /// Constants used for properties of type M2tsKlvMetadata.
+    /// </summary>
+    public class M2tsKlvMetadata : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NONE for M2tsKlvMetadata
+        /// </summary>
+        public static readonly M2tsKlvMetadata NONE = new M2tsKlvMetadata("NONE");
+        /// <summary>
+        /// Constant PASSTHROUGH for M2tsKlvMetadata
+        /// </summary>
+        public static readonly M2tsKlvMetadata PASSTHROUGH = new M2tsKlvMetadata("PASSTHROUGH");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public M2tsKlvMetadata(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static M2tsKlvMetadata FindValue(string value)
+        {
+            return FindValue<M2tsKlvMetadata>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator M2tsKlvMetadata(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type M2tsNielsenId3.
     /// </summary>
     public class M2tsNielsenId3 : ConstantClass
@@ -15458,6 +15558,56 @@ namespace Amazon.MediaConvert
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator MpdCaptionContainerType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MpdKlvMetadata.
+    /// </summary>
+    public class MpdKlvMetadata : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NONE for MpdKlvMetadata
+        /// </summary>
+        public static readonly MpdKlvMetadata NONE = new MpdKlvMetadata("NONE");
+        /// <summary>
+        /// Constant PASSTHROUGH for MpdKlvMetadata
+        /// </summary>
+        public static readonly MpdKlvMetadata PASSTHROUGH = new MpdKlvMetadata("PASSTHROUGH");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MpdKlvMetadata(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MpdKlvMetadata FindValue(string value)
+        {
+            return FindValue<MpdKlvMetadata>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MpdKlvMetadata(string value)
         {
             return FindValue(value);
         }
@@ -20306,6 +20456,10 @@ namespace Amazon.MediaConvert
         /// Constant ENABLED for WebvttStylePassthrough
         /// </summary>
         public static readonly WebvttStylePassthrough ENABLED = new WebvttStylePassthrough("ENABLED");
+        /// <summary>
+        /// Constant STRICT for WebvttStylePassthrough
+        /// </summary>
+        public static readonly WebvttStylePassthrough STRICT = new WebvttStylePassthrough("STRICT");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

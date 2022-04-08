@@ -172,6 +172,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.FragmentTime);
             }
 
+            if(requestObject.IsSetKlvMetadata())
+            {
+                context.Writer.WritePropertyName("klvMetadata");
+                context.Writer.Write(requestObject.KlvMetadata);
+            }
+
             if(requestObject.IsSetMaxPcrInterval())
             {
                 context.Writer.WritePropertyName("maxPcrInterval");

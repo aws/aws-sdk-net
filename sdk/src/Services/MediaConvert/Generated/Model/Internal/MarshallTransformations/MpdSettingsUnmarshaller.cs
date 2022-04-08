@@ -82,6 +82,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.CaptionContainerType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("klvMetadata", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.KlvMetadata = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("scte35Esam", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

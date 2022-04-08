@@ -58,6 +58,7 @@ namespace Amazon.MediaConvert.Model
         private M2tsEsRateInPes _esRateInPes;
         private M2tsForceTsVideoEbpOrder _forceTsVideoEbpOrder;
         private double? _fragmentTime;
+        private M2tsKlvMetadata _klvMetadata;
         private int? _maxPcrInterval;
         private int? _minEbpInterval;
         private M2tsNielsenId3 _nielsenId3;
@@ -383,6 +384,22 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetFragmentTime()
         {
             return this._fragmentTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property KlvMetadata. Applies to MPEG-TS outputs. Use this setting
+        /// to specify whether the service inserts the KLV metadata from the input in this output.
+        /// </summary>
+        public M2tsKlvMetadata KlvMetadata
+        {
+            get { return this._klvMetadata; }
+            set { this._klvMetadata = value; }
+        }
+
+        // Check to see if KlvMetadata property is set
+        internal bool IsSetKlvMetadata()
+        {
+            return this._klvMetadata != null;
         }
 
         /// <summary>
