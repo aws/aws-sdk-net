@@ -879,7 +879,7 @@ namespace ServiceClientGenerator
                 {
                     var matches = ProjectReferenceRegex.Match(line);
                     var fileName = matches.ToString().Replace("\"", "");
-                    if (!(fileName.Contains("\\Core\\") || fileName.Contains(serviceName) || fileName.Contains("Test") || depsProjects.Contains(fileName)))
+                    if (!(fileName.Contains("\\Core\\") || fileName.Contains($".{serviceName}.") || fileName.Contains("Test") || depsProjects.Contains(fileName)))
                     {
                         // This is in a different folder in than the usual service dependencies.
                         // Also skipping the recursion since this does not currently have any ProjectReferences beyond Core
