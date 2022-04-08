@@ -1,3 +1,11 @@
+### 3.7.249.0 (2022-04-08 18:15 UTC)
+* MediaConvert (3.7.14.0)
+	* AWS Elemental MediaConvert SDK has added support for the pass-through of WebVTT styling to WebVTT outputs, pass-through of KLV metadata to supported formats, and improved filter support for processing 444/RGB content.
+* MediaPackageVod (3.7.5.0)
+	* This release adds ScteMarkersSource as an available field for Dash Packaging Configurations. When set to MANIFEST, MediaPackage will source the SCTE-35 markers from the manifest. When set to SEGMENTS, MediaPackage will source the SCTE-35 markers from the segments.
+* WAFV2 (3.7.10.0)
+	* Add a new CurrentDefaultVersion field to ListAvailableManagedRuleGroupVersions API response; add a new VersioningSupported boolean to each ManagedRuleGroup returned from ListAvailableManagedRuleGroups API response.
+
 ### 3.7.248.0 (2022-04-07 21:45 UTC)
 * APIGateway (3.7.3.0)
 	* ApiGateway CLI command get-usage now includes usagePlanId, startDate, and endDate fields in the output to match documentation.
