@@ -32,7 +32,7 @@ namespace Amazon.EMRContainers
     public partial class AmazonEMRContainersConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.2.59");
+            InternalSDKUtils.BuildUserAgentString("3.7.2.60");
 
         private string _userAgent = UserAgentString;
 

@@ -1,3 +1,15 @@
+### 3.7.250.0 (2022-04-11 18:14 UTC)
+* AmplifyUIBuilder (3.7.2.0)
+	* In this release, we have added the ability to bind events to component level actions.
+* AppRunner (3.7.4.0)
+	* This release adds tracing for App Runner services with X-Ray using AWS Distro for OpenTelemetry. New APIs: CreateObservabilityConfiguration, DescribeObservabilityConfiguration, ListObservabilityConfigurations, and DeleteObservabilityConfiguration. Updated APIs: CreateService and UpdateService.
+* WorkSpaces (3.7.5.0)
+	* Added API support that allows customers to create GPU-enabled WorkSpaces using EC2 G4dn instances.
+* Core 3.7.10.6
+	* Updating endpoints.json file.
+
+	* All services packages updated to require new Core
+
 ### 3.7.249.0 (2022-04-08 18:15 UTC)
 * MediaConvert (3.7.14.0)
 	* AWS Elemental MediaConvert SDK has added support for the pass-through of WebVTT styling to WebVTT outputs, pass-through of KLV metadata to supported formats, and improved filter support for processing 444/RGB content.
