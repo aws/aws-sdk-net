@@ -457,6 +457,56 @@ namespace Amazon.AppRunner
 
 
     /// <summary>
+    /// Constants used for properties of type ObservabilityConfigurationStatus.
+    /// </summary>
+    public class ObservabilityConfigurationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for ObservabilityConfigurationStatus
+        /// </summary>
+        public static readonly ObservabilityConfigurationStatus ACTIVE = new ObservabilityConfigurationStatus("ACTIVE");
+        /// <summary>
+        /// Constant INACTIVE for ObservabilityConfigurationStatus
+        /// </summary>
+        public static readonly ObservabilityConfigurationStatus INACTIVE = new ObservabilityConfigurationStatus("INACTIVE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ObservabilityConfigurationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ObservabilityConfigurationStatus FindValue(string value)
+        {
+            return FindValue<ObservabilityConfigurationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ObservabilityConfigurationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type OperationStatus.
     /// </summary>
     public class OperationStatus : ConstantClass
@@ -802,6 +852,52 @@ namespace Amazon.AppRunner
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SourceCodeVersionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TracingVendor.
+    /// </summary>
+    public class TracingVendor : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AWSXRAY for TracingVendor
+        /// </summary>
+        public static readonly TracingVendor AWSXRAY = new TracingVendor("AWSXRAY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TracingVendor(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TracingVendor FindValue(string value)
+        {
+            return FindValue<TracingVendor>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TracingVendor(string value)
         {
             return FindValue(value);
         }

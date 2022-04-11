@@ -364,16 +364,18 @@ namespace Amazon.AppRunner
 
         /// <summary>
         /// Create an App Runner automatic scaling configuration resource. App Runner requires
-        /// this resource when you create App Runner services that require non-default auto scaling
-        /// settings. You can share an auto scaling configuration across multiple services.
+        /// this resource when you create or update App Runner services and you require non-default
+        /// auto scaling settings. You can share an auto scaling configuration across multiple
+        /// services.
         /// 
         ///  
         /// <para>
         /// Create multiple revisions of a configuration by calling this action multiple times
         /// using the same <code>AutoScalingConfigurationName</code>. The call returns incremental
-        /// <code>AutoScalingConfigurationRevision</code> values. When you create a service, you
-        /// can set it to use the latest active revision of an auto scaling configuration or a
-        /// specific revision.
+        /// <code>AutoScalingConfigurationRevision</code> values. When you create a service and
+        /// configure an auto scaling configuration resource, the service uses the latest active
+        /// revision of the auto scaling configuration by default. You can optionally configure
+        /// the service to use a specific revision.
         /// </para>
         ///  
         /// <para>
@@ -477,6 +479,77 @@ namespace Amazon.AppRunner
             options.ResponseUnmarshaller = CreateConnectionResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateConnectionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateObservabilityConfiguration
+
+        internal virtual CreateObservabilityConfigurationResponse CreateObservabilityConfiguration(CreateObservabilityConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateObservabilityConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateObservabilityConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateObservabilityConfigurationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Create an App Runner observability configuration resource. App Runner requires this
+        /// resource when you create or update App Runner services and you want to enable non-default
+        /// observability features. You can share an observability configuration across multiple
+        /// services.
+        /// 
+        ///  
+        /// <para>
+        /// Create multiple revisions of a configuration by calling this action multiple times
+        /// using the same <code>ObservabilityConfigurationName</code>. The call returns incremental
+        /// <code>ObservabilityConfigurationRevision</code> values. When you create a service
+        /// and configure an observability configuration resource, the service uses the latest
+        /// active revision of the observability configuration by default. You can optionally
+        /// configure the service to use a specific revision.
+        /// </para>
+        ///  
+        /// <para>
+        /// The observability configuration resource is designed to configure multiple features
+        /// (currently one feature, tracing). This action takes optional parameters that describe
+        /// the configuration of these features (currently one parameter, <code>TraceConfiguration</code>).
+        /// If you don't specify a feature parameter, App Runner doesn't enable the feature.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateObservabilityConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateObservabilityConfiguration service method, as returned by AppRunner.</returns>
+        /// <exception cref="Amazon.AppRunner.Model.InternalServiceErrorException">
+        /// An unexpected service exception occurred.
+        /// </exception>
+        /// <exception cref="Amazon.AppRunner.Model.InvalidRequestException">
+        /// One or more input parameters aren't valid. Refer to the API action's document page,
+        /// correct the input parameters, and try the action again.
+        /// </exception>
+        /// <exception cref="Amazon.AppRunner.Model.ServiceQuotaExceededException">
+        /// App Runner can't create this resource. You've reached your account quota for this
+        /// resource type.
+        /// 
+        ///  
+        /// <para>
+        /// For App Runner per-resource quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/apprunner.html">App
+        /// Runner endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/CreateObservabilityConfiguration">REST API Reference for CreateObservabilityConfiguration Operation</seealso>
+        public virtual Task<CreateObservabilityConfigurationResponse> CreateObservabilityConfigurationAsync(CreateObservabilityConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateObservabilityConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateObservabilityConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateObservabilityConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -687,6 +760,53 @@ namespace Amazon.AppRunner
 
         #endregion
         
+        #region  DeleteObservabilityConfiguration
+
+        internal virtual DeleteObservabilityConfigurationResponse DeleteObservabilityConfiguration(DeleteObservabilityConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteObservabilityConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteObservabilityConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteObservabilityConfigurationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Delete an App Runner observability configuration resource. You can delete a specific
+        /// revision or the latest active revision. You can't delete a configuration that's used
+        /// by one or more App Runner services.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteObservabilityConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteObservabilityConfiguration service method, as returned by AppRunner.</returns>
+        /// <exception cref="Amazon.AppRunner.Model.InternalServiceErrorException">
+        /// An unexpected service exception occurred.
+        /// </exception>
+        /// <exception cref="Amazon.AppRunner.Model.InvalidRequestException">
+        /// One or more input parameters aren't valid. Refer to the API action's document page,
+        /// correct the input parameters, and try the action again.
+        /// </exception>
+        /// <exception cref="Amazon.AppRunner.Model.ResourceNotFoundException">
+        /// A resource doesn't exist for the specified Amazon Resource Name (ARN) in your Amazon
+        /// Web Services account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DeleteObservabilityConfiguration">REST API Reference for DeleteObservabilityConfiguration Operation</seealso>
+        public virtual Task<DeleteObservabilityConfigurationResponse> DeleteObservabilityConfigurationAsync(DeleteObservabilityConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteObservabilityConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteObservabilityConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteObservabilityConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteService
 
         internal virtual DeleteServiceResponse DeleteService(DeleteServiceRequest request)
@@ -879,6 +999,51 @@ namespace Amazon.AppRunner
 
         #endregion
         
+        #region  DescribeObservabilityConfiguration
+
+        internal virtual DescribeObservabilityConfigurationResponse DescribeObservabilityConfiguration(DescribeObservabilityConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeObservabilityConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeObservabilityConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeObservabilityConfigurationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Return a full description of an App Runner observability configuration resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeObservabilityConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeObservabilityConfiguration service method, as returned by AppRunner.</returns>
+        /// <exception cref="Amazon.AppRunner.Model.InternalServiceErrorException">
+        /// An unexpected service exception occurred.
+        /// </exception>
+        /// <exception cref="Amazon.AppRunner.Model.InvalidRequestException">
+        /// One or more input parameters aren't valid. Refer to the API action's document page,
+        /// correct the input parameters, and try the action again.
+        /// </exception>
+        /// <exception cref="Amazon.AppRunner.Model.ResourceNotFoundException">
+        /// A resource doesn't exist for the specified Amazon Resource Name (ARN) in your Amazon
+        /// Web Services account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DescribeObservabilityConfiguration">REST API Reference for DescribeObservabilityConfiguration Operation</seealso>
+        public virtual Task<DescribeObservabilityConfigurationResponse> DescribeObservabilityConfigurationAsync(DescribeObservabilityConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeObservabilityConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeObservabilityConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeObservabilityConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeService
 
         internal virtual DescribeServiceResponse DescribeService(DescribeServiceRequest request)
@@ -1040,10 +1205,16 @@ namespace Amazon.AppRunner
 
 
         /// <summary>
-        /// Returns a list of App Runner automatic scaling configurations in your Amazon Web Services
-        /// account. You can query the revisions for a specific configuration name or the revisions
-        /// for all configurations in your account. You can optionally query only the latest revision
-        /// of each requested name.
+        /// Returns a list of active App Runner automatic scaling configurations in your Amazon
+        /// Web Services account. You can query the revisions for a specific configuration name
+        /// or the revisions for all active configurations in your account. You can optionally
+        /// query only the latest revision of each requested name.
+        /// 
+        ///  
+        /// <para>
+        /// To retrieve a full description of a particular configuration revision, call and provide
+        /// one of the ARNs returned by <code>ListAutoScalingConfigurations</code>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAutoScalingConfigurations service method.</param>
         /// <param name="cancellationToken">
@@ -1108,6 +1279,56 @@ namespace Amazon.AppRunner
             options.ResponseUnmarshaller = ListConnectionsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListConnectionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListObservabilityConfigurations
+
+        internal virtual ListObservabilityConfigurationsResponse ListObservabilityConfigurations(ListObservabilityConfigurationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListObservabilityConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListObservabilityConfigurationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListObservabilityConfigurationsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a list of active App Runner observability configurations in your Amazon Web
+        /// Services account. You can query the revisions for a specific configuration name or
+        /// the revisions for all active configurations in your account. You can optionally query
+        /// only the latest revision of each requested name.
+        /// 
+        ///  
+        /// <para>
+        /// To retrieve a full description of a particular configuration revision, call and provide
+        /// one of the ARNs returned by <code>ListObservabilityConfigurations</code>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListObservabilityConfigurations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListObservabilityConfigurations service method, as returned by AppRunner.</returns>
+        /// <exception cref="Amazon.AppRunner.Model.InternalServiceErrorException">
+        /// An unexpected service exception occurred.
+        /// </exception>
+        /// <exception cref="Amazon.AppRunner.Model.InvalidRequestException">
+        /// One or more input parameters aren't valid. Refer to the API action's document page,
+        /// correct the input parameters, and try the action again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/ListObservabilityConfigurations">REST API Reference for ListObservabilityConfigurations Operation</seealso>
+        public virtual Task<ListObservabilityConfigurationsResponse> ListObservabilityConfigurationsAsync(ListObservabilityConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListObservabilityConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListObservabilityConfigurationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListObservabilityConfigurationsResponse>(request, options, cancellationToken);
         }
 
         #endregion

@@ -161,8 +161,8 @@ namespace Amazon.AppRunner.Model
         /// Gets and sets the property Latest. 
         /// <para>
         /// It's set to <code>true</code> for the configuration with the highest <code>Revision</code>
-        /// among all configurations that share the same <code>Name</code>. It's set to <code>false</code>
-        /// otherwise.
+        /// among all configurations that share the same <code>AutoScalingConfigurationName</code>.
+        /// It's set to <code>false</code> otherwise.
         /// </para>
         /// </summary>
         public bool Latest

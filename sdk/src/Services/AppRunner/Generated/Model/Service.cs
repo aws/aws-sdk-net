@@ -52,6 +52,7 @@ namespace Amazon.AppRunner.Model
         private HealthCheckConfiguration _healthCheckConfiguration;
         private InstanceConfiguration _instanceConfiguration;
         private NetworkConfiguration _networkConfiguration;
+        private ServiceObservabilityConfiguration _observabilityConfiguration;
         private string _serviceArn;
         private string _serviceId;
         private string _serviceName;
@@ -193,6 +194,24 @@ namespace Amazon.AppRunner.Model
         internal bool IsSetNetworkConfiguration()
         {
             return this._networkConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ObservabilityConfiguration. 
+        /// <para>
+        /// The observability configuration of this service.
+        /// </para>
+        /// </summary>
+        public ServiceObservabilityConfiguration ObservabilityConfiguration
+        {
+            get { return this._observabilityConfiguration; }
+            set { this._observabilityConfiguration = value; }
+        }
+
+        // Check to see if ObservabilityConfiguration property is set
+        internal bool IsSetObservabilityConfiguration()
+        {
+            return this._observabilityConfiguration != null;
         }
 
         /// <summary>

@@ -106,6 +106,17 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetObservabilityConfiguration())
+                {
+                    context.Writer.WritePropertyName("ObservabilityConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ServiceObservabilityConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ObservabilityConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetServiceArn())
                 {
                     context.Writer.WritePropertyName("ServiceArn");

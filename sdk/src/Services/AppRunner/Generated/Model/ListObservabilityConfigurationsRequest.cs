@@ -29,45 +29,24 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppRunner.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListAutoScalingConfigurations operation.
-    /// Returns a list of active App Runner automatic scaling configurations in your Amazon
-    /// Web Services account. You can query the revisions for a specific configuration name
-    /// or the revisions for all active configurations in your account. You can optionally
-    /// query only the latest revision of each requested name.
+    /// Container for the parameters to the ListObservabilityConfigurations operation.
+    /// Returns a list of active App Runner observability configurations in your Amazon Web
+    /// Services account. You can query the revisions for a specific configuration name or
+    /// the revisions for all active configurations in your account. You can optionally query
+    /// only the latest revision of each requested name.
     /// 
     ///  
     /// <para>
     /// To retrieve a full description of a particular configuration revision, call and provide
-    /// one of the ARNs returned by <code>ListAutoScalingConfigurations</code>.
+    /// one of the ARNs returned by <code>ListObservabilityConfigurations</code>.
     /// </para>
     /// </summary>
-    public partial class ListAutoScalingConfigurationsRequest : AmazonAppRunnerRequest
+    public partial class ListObservabilityConfigurationsRequest : AmazonAppRunnerRequest
     {
-        private string _autoScalingConfigurationName;
         private bool? _latestOnly;
         private int? _maxResults;
         private string _nextToken;
-
-        /// <summary>
-        /// Gets and sets the property AutoScalingConfigurationName. 
-        /// <para>
-        /// The name of the App Runner auto scaling configuration that you want to list. If specified,
-        /// App Runner lists revisions that share this name. If not specified, App Runner returns
-        /// revisions of all active configurations.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=4, Max=32)]
-        public string AutoScalingConfigurationName
-        {
-            get { return this._autoScalingConfigurationName; }
-            set { this._autoScalingConfigurationName = value; }
-        }
-
-        // Check to see if AutoScalingConfigurationName property is set
-        internal bool IsSetAutoScalingConfigurationName()
-        {
-            return this._autoScalingConfigurationName != null;
-        }
+        private string _observabilityConfigurationName;
 
         /// <summary>
         /// Gets and sets the property LatestOnly. 
@@ -145,6 +124,27 @@ namespace Amazon.AppRunner.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ObservabilityConfigurationName. 
+        /// <para>
+        /// The name of the App Runner observability configuration that you want to list. If specified,
+        /// App Runner lists revisions that share this name. If not specified, App Runner returns
+        /// revisions of all active configurations.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=4, Max=32)]
+        public string ObservabilityConfigurationName
+        {
+            get { return this._observabilityConfigurationName; }
+            set { this._observabilityConfigurationName = value; }
+        }
+
+        // Check to see if ObservabilityConfigurationName property is set
+        internal bool IsSetObservabilityConfigurationName()
+        {
+            return this._observabilityConfigurationName != null;
         }
 
     }
