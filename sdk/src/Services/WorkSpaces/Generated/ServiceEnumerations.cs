@@ -263,9 +263,17 @@ namespace Amazon.WorkSpaces
         /// </summary>
         public static readonly Compute GRAPHICS = new Compute("GRAPHICS");
         /// <summary>
+        /// Constant GRAPHICS_G4DN for Compute
+        /// </summary>
+        public static readonly Compute GRAPHICS_G4DN = new Compute("GRAPHICS_G4DN");
+        /// <summary>
         /// Constant GRAPHICSPRO for Compute
         /// </summary>
         public static readonly Compute GRAPHICSPRO = new Compute("GRAPHICSPRO");
+        /// <summary>
+        /// Constant GRAPHICSPRO_G4DN for Compute
+        /// </summary>
+        public static readonly Compute GRAPHICSPRO_G4DN = new Compute("GRAPHICSPRO_G4DN");
         /// <summary>
         /// Constant PERFORMANCE for Compute
         /// </summary>
@@ -1106,6 +1114,10 @@ namespace Amazon.WorkSpaces
         /// Constant BYOL_GRAPHICS for WorkspaceImageIngestionProcess
         /// </summary>
         public static readonly WorkspaceImageIngestionProcess BYOL_GRAPHICS = new WorkspaceImageIngestionProcess("BYOL_GRAPHICS");
+        /// <summary>
+        /// Constant BYOL_GRAPHICS_G4DN for WorkspaceImageIngestionProcess
+        /// </summary>
+        public static readonly WorkspaceImageIngestionProcess BYOL_GRAPHICS_G4DN = new WorkspaceImageIngestionProcess("BYOL_GRAPHICS_G4DN");
         /// <summary>
         /// Constant BYOL_GRAPHICSPRO for WorkspaceImageIngestionProcess
         /// </summary>
