@@ -111,6 +111,12 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetSourceId())
+            {
+                context.Writer.WritePropertyName("sourceId");
+                context.Writer.Write(requestObject.SourceId);
+            }
+
         }
 
         /// <summary>

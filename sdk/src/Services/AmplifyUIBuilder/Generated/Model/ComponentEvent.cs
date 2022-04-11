@@ -36,6 +36,7 @@ namespace Amazon.AmplifyUIBuilder.Model
     public partial class ComponentEvent
     {
         private string _action;
+        private string _bindingEvent;
         private ActionParameters _parameters;
 
         /// <summary>
@@ -54,6 +55,25 @@ namespace Amazon.AmplifyUIBuilder.Model
         internal bool IsSetAction()
         {
             return this._action != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BindingEvent. 
+        /// <para>
+        /// Binds an event to an action on a component. When you specify a <code>bindingEvent</code>,
+        /// the event is called when the action is performed.
+        /// </para>
+        /// </summary>
+        public string BindingEvent
+        {
+            get { return this._bindingEvent; }
+            set { this._bindingEvent = value; }
+        }
+
+        // Check to see if BindingEvent property is set
+        internal bool IsSetBindingEvent()
+        {
+            return this._bindingEvent != null;
         }
 
         /// <summary>

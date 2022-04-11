@@ -94,6 +94,12 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
                     unmarshalledObject.Properties = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("sourceId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SourceId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

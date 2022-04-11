@@ -70,6 +70,12 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
                     unmarshalledObject.Action = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("bindingEvent", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.BindingEvent = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("parameters", targetDepth))
                 {
                     var unmarshaller = ActionParametersUnmarshaller.Instance;

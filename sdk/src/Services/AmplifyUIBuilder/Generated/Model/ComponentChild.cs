@@ -38,6 +38,7 @@ namespace Amazon.AmplifyUIBuilder.Model
         private Dictionary<string, ComponentEvent> _events = new Dictionary<string, ComponentEvent>();
         private string _name;
         private Dictionary<string, ComponentProperty> _properties = new Dictionary<string, ComponentProperty>();
+        private string _sourceId;
 
         /// <summary>
         /// Gets and sets the property Children. 
@@ -132,6 +133,24 @@ namespace Amazon.AmplifyUIBuilder.Model
         internal bool IsSetProperties()
         {
             return this._properties != null && this._properties.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceId. 
+        /// <para>
+        /// The unique ID of the child component in its original source system, such as Figma.
+        /// </para>
+        /// </summary>
+        public string SourceId
+        {
+            get { return this._sourceId; }
+            set { this._sourceId = value; }
+        }
+
+        // Check to see if SourceId property is set
+        internal bool IsSetSourceId()
+        {
+            return this._sourceId != null;
         }
 
     }

@@ -51,6 +51,12 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Action);
             }
 
+            if(requestObject.IsSetBindingEvent())
+            {
+                context.Writer.WritePropertyName("bindingEvent");
+                context.Writer.Write(requestObject.BindingEvent);
+            }
+
             if(requestObject.IsSetParameters())
             {
                 context.Writer.WritePropertyName("parameters");
