@@ -31,18 +31,11 @@ namespace Amazon.IoTTwinMaker
     /// <summary>
     /// Interface for accessing IoTTwinMaker
     ///
-    /// <important> 
-    /// <para>
-    ///  TwinMaker is in public preview and is subject to change. 
-    /// </para>
-    ///  </important> 
-    /// <para>
     /// IoT TwinMaker is a service that enables you to build operational digital twins of
     /// physical systems. IoT TwinMaker overlays measurements and analysis from real-world
     /// sensors, cameras, and enterprise applications so you can create data visualizations
     /// to monitor your physical factory, building, or industrial plant. You can use this
     /// real-world data to monitor operations and diagnose and repair errors.
-    /// </para>
     /// </summary>
     public partial interface IAmazonIoTTwinMaker : IAmazonService, IDisposable
     {
@@ -89,12 +82,6 @@ namespace Amazon.IoTTwinMaker
 
         /// <summary>
         /// Creates a component type.
-        /// 
-        ///  <important> 
-        /// <para>
-        ///  TwinMaker is in public preview and is subject to change. 
-        /// </para>
-        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateComponentType service method.</param>
         /// <param name="cancellationToken">

@@ -45,6 +45,7 @@ namespace Amazon.IoTTwinMaker.Model
         private string _componentName;
         private string _componentTypeId;
         private DateTime? _endDateTime;
+        private string _endTime;
         private string _entityId;
         private InterpolationParameters _interpolation;
         private int? _maxResults;
@@ -53,6 +54,7 @@ namespace Amazon.IoTTwinMaker.Model
         private List<PropertyFilter> _propertyFilters = new List<PropertyFilter>();
         private List<string> _selectedProperties = new List<string>();
         private DateTime? _startDateTime;
+        private string _startTime;
         private string _workspaceId;
 
         /// <summary>
@@ -99,7 +101,7 @@ namespace Amazon.IoTTwinMaker.Model
         /// The date and time of the latest property value to return.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [Obsolete("This field is deprecated and will throw an error in the future. Use endTime instead.")]
         public DateTime EndDateTime
         {
             get { return this._endDateTime.GetValueOrDefault(); }
@@ -110,6 +112,22 @@ namespace Amazon.IoTTwinMaker.Model
         internal bool IsSetEndDateTime()
         {
             return this._endDateTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EndTime.
+        /// </summary>
+        [AWSProperty(Min=20, Max=35)]
+        public string EndTime
+        {
+            get { return this._endTime; }
+            set { this._endTime = value; }
+        }
+
+        // Check to see if EndTime property is set
+        internal bool IsSetEndTime()
+        {
+            return this._endTime != null;
         }
 
         /// <summary>
@@ -250,7 +268,7 @@ namespace Amazon.IoTTwinMaker.Model
         /// The date and time of the earliest property value to return.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [Obsolete("This field is deprecated and will throw an error in the future. Use startTime instead.")]
         public DateTime StartDateTime
         {
             get { return this._startDateTime.GetValueOrDefault(); }
@@ -261,6 +279,22 @@ namespace Amazon.IoTTwinMaker.Model
         internal bool IsSetStartDateTime()
         {
             return this._startDateTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StartTime.
+        /// </summary>
+        [AWSProperty(Min=20, Max=35)]
+        public string StartTime
+        {
+            get { return this._startTime; }
+            set { this._startTime = value; }
+        }
+
+        // Check to see if StartTime property is set
+        internal bool IsSetStartTime()
+        {
+            return this._startTime != null;
         }
 
         /// <summary>

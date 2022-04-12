@@ -34,6 +34,7 @@ namespace Amazon.IoTTwinMaker.Model
     public partial class ListEntitiesFilter
     {
         private string _componentTypeId;
+        private string _externalId;
         private string _parentEntityId;
 
         /// <summary>
@@ -53,6 +54,26 @@ namespace Amazon.IoTTwinMaker.Model
         internal bool IsSetComponentTypeId()
         {
             return this._componentTypeId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExternalId. 
+        /// <para>
+        /// The external-Id property of a component. The external-Id property is the primary key
+        /// of an external storage system.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string ExternalId
+        {
+            get { return this._externalId; }
+            set { this._externalId = value; }
+        }
+
+        // Check to see if ExternalId property is set
+        internal bool IsSetExternalId()
+        {
+            return this._externalId != null;
         }
 
         /// <summary>

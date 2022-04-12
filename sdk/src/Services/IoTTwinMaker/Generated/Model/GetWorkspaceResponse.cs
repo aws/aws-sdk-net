@@ -123,7 +123,7 @@ namespace Amazon.IoTTwinMaker.Model
         /// The ARN of the S3 bucket where resources associated with the workspace are stored.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=0, Max=1024)]
         public string S3Location
         {
             get { return this._s3Location; }

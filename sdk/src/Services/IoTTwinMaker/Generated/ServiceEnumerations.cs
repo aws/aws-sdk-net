@@ -281,6 +281,10 @@ namespace Amazon.IoTTwinMaker
     {
 
         /// <summary>
+        /// Constant CREATE for PropertyUpdateType
+        /// </summary>
+        public static readonly PropertyUpdateType CREATE = new PropertyUpdateType("CREATE");
+        /// <summary>
         /// Constant DELETE for PropertyUpdateType
         /// </summary>
         public static readonly PropertyUpdateType DELETE = new PropertyUpdateType("DELETE");

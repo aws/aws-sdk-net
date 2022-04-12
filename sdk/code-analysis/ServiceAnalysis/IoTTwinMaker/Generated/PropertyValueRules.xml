@@ -115,6 +115,12 @@
     <pattern>arn:((aws)|(aws-cn)|(aws-us-gov)):iam::[0-9]{12}:role/.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoTTwinMaker.Model.CreateWorkspaceRequest.S3Location</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>.*(^arn:((aws)|(aws-cn)|(aws-us-gov)):s3:::)([a-zA-Z0-9_-]+$).*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.CreateWorkspaceRequest.WorkspaceId</property>
     <min>1</min>
     <max>128</max>
@@ -289,6 +295,11 @@
     <pattern>[a-zA-Z_\.\-0-9:]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoTTwinMaker.Model.GetPropertyValueHistoryRequest.EndTime</property>
+    <min>20</min>
+    <max>35</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.GetPropertyValueHistoryRequest.EntityId</property>
     <min>1</min>
     <max>128</max>
@@ -304,6 +315,11 @@
     <min>0</min>
     <max>17880</max>
     <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTTwinMaker.Model.GetPropertyValueHistoryRequest.StartTime</property>
+    <min>20</min>
+    <max>35</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.GetPropertyValueHistoryRequest.WorkspaceId</property>
@@ -382,6 +398,12 @@
     <min>20</min>
     <max>2048</max>
     <pattern>arn:((aws)|(aws-cn)|(aws-us-gov)):iam::[0-9]{12}:role/.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTTwinMaker.Model.GetWorkspaceResponse.S3Location</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>.*(^arn:((aws)|(aws-cn)|(aws-us-gov)):s3:::)([a-zA-Z0-9_-]+$).*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.GetWorkspaceResponse.WorkspaceId</property>
@@ -797,6 +819,12 @@
     <pattern>[a-zA-Z_\.\-0-9:]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoTTwinMaker.Model.ListEntitiesFilter.ExternalId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.ListEntitiesFilter.ParentEntityId</property>
     <min>1</min>
     <max>128</max>
@@ -819,6 +847,11 @@
     <min>1</min>
     <max>256</max>
     <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTTwinMaker.Model.PropertyValue.Time</property>
+    <min>20</min>
+    <max>35</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.Relationship.RelationshipType</property>

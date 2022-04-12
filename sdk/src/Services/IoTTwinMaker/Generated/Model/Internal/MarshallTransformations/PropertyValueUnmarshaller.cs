@@ -64,6 +64,12 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("time", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Time = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("timestamp", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

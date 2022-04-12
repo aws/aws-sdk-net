@@ -33,8 +33,25 @@ namespace Amazon.IoTTwinMaker.Model
     /// </summary>
     public partial class PropertyValue
     {
+        private string _time;
         private DateTime? _timestamp;
         private DataValue _value;
+
+        /// <summary>
+        /// Gets and sets the property Time.
+        /// </summary>
+        [AWSProperty(Min=20, Max=35)]
+        public string Time
+        {
+            get { return this._time; }
+            set { this._time = value; }
+        }
+
+        // Check to see if Time property is set
+        internal bool IsSetTime()
+        {
+            return this._time != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Timestamp. 
@@ -42,7 +59,7 @@ namespace Amazon.IoTTwinMaker.Model
         /// The timestamp of a value for a time series property.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [Obsolete("This field is deprecated and will throw an error in the future. Use time instead.")]
         public DateTime Timestamp
         {
             get { return this._timestamp.GetValueOrDefault(); }

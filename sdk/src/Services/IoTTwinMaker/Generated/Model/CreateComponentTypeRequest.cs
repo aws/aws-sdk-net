@@ -31,12 +31,6 @@ namespace Amazon.IoTTwinMaker.Model
     /// <summary>
     /// Container for the parameters to the CreateComponentType operation.
     /// Creates a component type.
-    /// 
-    ///  <important> 
-    /// <para>
-    ///  TwinMaker is in public preview and is subject to change. 
-    /// </para>
-    ///  </important>
     /// </summary>
     public partial class CreateComponentTypeRequest : AmazonIoTTwinMakerRequest
     {
