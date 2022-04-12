@@ -30,8 +30,10 @@ namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeEventSourcesConfig operation.
-    /// This operation lists details about a DevOps Guru event source that is shared with
-    /// your&#x2028; account.
+    /// Returns the integration status of services that are integrated with DevOps Guru as
+    /// Consumer via EventBridge. The one service that can be integrated with DevOps Guru
+    /// is Amazon CodeGuru Profiler, which can produce proactive recommendations which can
+    /// be stored and viewed in DevOps Guru.
     /// </summary>
     public partial class DescribeEventSourcesConfigRequest : AmazonDevOpsGuruRequest
     {

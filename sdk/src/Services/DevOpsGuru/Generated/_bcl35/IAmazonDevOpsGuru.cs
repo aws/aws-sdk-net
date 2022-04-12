@@ -76,9 +76,16 @@ namespace Amazon.DevOpsGuru
         /// <para>
         /// If you use an Amazon SNS topic in another account, you must attach a policy to it
         /// that grants DevOps Guru permission to it notifications. DevOps Guru adds the required
-        /// policy on your behalf to send notifications using Amazon SNS in your account. For
-        /// more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-required-permissions.html">Permissions
+        /// policy on your behalf to send notifications using Amazon SNS in your account. DevOps
+        /// Guru only supports standard SNS topics. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-required-permissions.html">Permissions
         /// for cross account Amazon SNS topics</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you use an Amazon SNS topic in another account, you must attach a policy to it
+        /// that grants DevOps Guru permission to it notifications. DevOps Guru adds the required
+        /// policy on your behalf to send notifications using Amazon SNS in your account. For
+        /// more information, see Permissions for cross account Amazon SNS topics.
         /// </para>
         ///  
         /// <para>
@@ -144,6 +151,68 @@ namespace Amazon.DevOpsGuru
         /// <returns>Returns a  AddNotificationChannelResult from DevOpsGuru.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/AddNotificationChannel">REST API Reference for AddNotificationChannel Operation</seealso>
         AddNotificationChannelResponse EndAddNotificationChannel(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteInsight
+
+
+        /// <summary>
+        /// Deletes the insight along with the associated anomalies, events and recommendations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteInsight service method.</param>
+        /// 
+        /// <returns>The response from the DeleteInsight service method, as returned by DevOpsGuru.</returns>
+        /// <exception cref="Amazon.DevOpsGuru.Model.AccessDeniedException">
+        /// You don't have permissions to perform the requested operation. The user or role that
+        /// is making the request must have at least one IAM permissions policy attached that
+        /// grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// Management</a> in the <i>IAM User Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsGuru.Model.ConflictException">
+        /// An exception that is thrown when a conflict occurs.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsGuru.Model.InternalServerException">
+        /// An internal failure in an Amazon service occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsGuru.Model.ResourceNotFoundException">
+        /// A requested resource could not be found
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsGuru.Model.ThrottlingException">
+        /// The request was denied due to a request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsGuru.Model.ValidationException">
+        /// Contains information about data passed in to a field during a request that is not
+        /// valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/DeleteInsight">REST API Reference for DeleteInsight Operation</seealso>
+        DeleteInsightResponse DeleteInsight(DeleteInsightRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteInsight operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteInsight operation on AmazonDevOpsGuruClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteInsight
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/DeleteInsight">REST API Reference for DeleteInsight Operation</seealso>
+        IAsyncResult BeginDeleteInsight(DeleteInsightRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteInsight operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteInsight.</param>
+        /// 
+        /// <returns>Returns a  DeleteInsightResult from DevOpsGuru.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/DeleteInsight">REST API Reference for DeleteInsight Operation</seealso>
+        DeleteInsightResponse EndDeleteInsight(IAsyncResult asyncResult);
 
         #endregion
         
@@ -326,8 +395,10 @@ namespace Amazon.DevOpsGuru
 
 
         /// <summary>
-        /// This operation lists details about a DevOps Guru event source that is shared with
-        /// your&#x2028; account.
+        /// Returns the integration status of services that are integrated with DevOps Guru as
+        /// Consumer via EventBridge. The one service that can be integrated with DevOps Guru
+        /// is Amazon CodeGuru Profiler, which can produce proactive recommendations which can
+        /// be stored and viewed in DevOps Guru.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEventSourcesConfig service method.</param>
         /// 
@@ -1598,7 +1669,10 @@ namespace Amazon.DevOpsGuru
 
 
         /// <summary>
-        /// Updates the event source configuration.
+        /// Enables or disables integration with a service that can be integrated with DevOps
+        /// Guru. The one service that can be integrated with DevOps Guru is Amazon CodeGuru Profiler,
+        /// which can produce proactive recommendations which can be stored and viewed in DevOps
+        /// Guru.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateEventSourcesConfig service method.</param>
         /// 

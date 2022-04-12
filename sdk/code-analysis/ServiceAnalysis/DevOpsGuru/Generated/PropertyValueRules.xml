@@ -7,6 +7,12 @@
     <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DevOpsGuru.Model.DeleteInsightRequest.Id</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[\w-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DevOpsGuru.Model.DescribeAnomalyRequest.AccountId</property>
     <min>12</min>
     <max>12</max>

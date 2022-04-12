@@ -29,14 +29,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
-    /// Describes the event sources.
+    /// Information about the integration of DevOps Guru as consumer with another AWS service,
+    /// such as AWS CodeGuru Profiler via EventBridge.
     /// </summary>
     public partial class EventSourcesConfig
     {
         private AmazonCodeGuruProfilerIntegration _amazonCodeGuruProfiler;
 
         /// <summary>
-        /// Gets and sets the property AmazonCodeGuruProfiler.
+        /// Gets and sets the property AmazonCodeGuruProfiler. 
+        /// <para>
+        /// Information about whether DevOps Guru is configured to consume recommendations which
+        /// are generated from AWS CodeGuru Profiler.
+        /// </para>
         /// </summary>
         public AmazonCodeGuruProfilerIntegration AmazonCodeGuruProfiler
         {

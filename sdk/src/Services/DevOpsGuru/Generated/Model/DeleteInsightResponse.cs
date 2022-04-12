@@ -29,29 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
-    /// This is the response object from the DescribeEventSourcesConfig operation.
+    /// This is the response object from the DeleteInsight operation.
     /// </summary>
-    public partial class DescribeEventSourcesConfigResponse : AmazonWebServiceResponse
+    public partial class DeleteInsightResponse : AmazonWebServiceResponse
     {
-        private EventSourcesConfig _eventSources;
-
-        /// <summary>
-        /// Gets and sets the property EventSources. 
-        /// <para>
-        /// Lists the event sources in the configuration.
-        /// </para>
-        /// </summary>
-        public EventSourcesConfig EventSources
-        {
-            get { return this._eventSources; }
-            set { this._eventSources = value; }
-        }
-
-        // Check to see if EventSources property is set
-        internal bool IsSetEventSources()
-        {
-            return this._eventSources != null;
-        }
 
     }
 }

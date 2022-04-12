@@ -229,7 +229,7 @@ namespace Amazon.DevOpsGuru.Model
         /// <summary>
         /// Gets and sets the property SourceMetadata. 
         /// <para>
-        /// Returns the metadata of the source.
+        /// The metadata of the source which detects proactive anomalies.
         /// </para>
         /// </summary>
         public AnomalySourceMetadata SourceMetadata

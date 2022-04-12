@@ -30,7 +30,10 @@ namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateEventSourcesConfig operation.
-    /// Updates the event source configuration.
+    /// Enables or disables integration with a service that can be integrated with DevOps
+    /// Guru. The one service that can be integrated with DevOps Guru is Amazon CodeGuru Profiler,
+    /// which can produce proactive recommendations which can be stored and viewed in DevOps
+    /// Guru.
     /// </summary>
     public partial class UpdateEventSourcesConfigRequest : AmazonDevOpsGuruRequest
     {
@@ -39,7 +42,8 @@ namespace Amazon.DevOpsGuru.Model
         /// <summary>
         /// Gets and sets the property EventSources. 
         /// <para>
-        /// The name of the event source.
+        /// Configuration information about the integration of DevOps Guru as the Consumer via
+        /// EventBridge with another AWS Service.
         /// </para>
         /// </summary>
         public EventSourcesConfig EventSources

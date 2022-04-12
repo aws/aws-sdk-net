@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
-    /// Metadata about an anomaly. The anomaly is detected using analysis of the metric data&#x2028;
-    /// over a period of time
+    /// Metadata about the detection source that generates proactive anomalies. The anomaly
+    /// is detected using analysis of the metric data&#x2028; over a period of time
     /// </summary>
     public partial class AnomalySourceMetadata
     {

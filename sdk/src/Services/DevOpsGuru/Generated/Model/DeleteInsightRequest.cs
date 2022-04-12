@@ -29,28 +29,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
-    /// This is the response object from the DescribeEventSourcesConfig operation.
+    /// Container for the parameters to the DeleteInsight operation.
+    /// Deletes the insight along with the associated anomalies, events and recommendations.
     /// </summary>
-    public partial class DescribeEventSourcesConfigResponse : AmazonWebServiceResponse
+    public partial class DeleteInsightRequest : AmazonDevOpsGuruRequest
     {
-        private EventSourcesConfig _eventSources;
+        private string _id;
 
         /// <summary>
-        /// Gets and sets the property EventSources. 
+        /// Gets and sets the property Id. 
         /// <para>
-        /// Lists the event sources in the configuration.
+        /// The ID of the insight.
         /// </para>
         /// </summary>
-        public EventSourcesConfig EventSources
+        [AWSProperty(Required=true, Min=1, Max=100)]
+        public string Id
         {
-            get { return this._eventSources; }
-            set { this._eventSources = value; }
+            get { return this._id; }
+            set { this._id = value; }
         }
 
-        // Check to see if EventSources property is set
-        internal bool IsSetEventSources()
+        // Check to see if Id property is set
+        internal bool IsSetId()
         {
-            return this._eventSources != null;
+            return this._id != null;
         }
 
     }

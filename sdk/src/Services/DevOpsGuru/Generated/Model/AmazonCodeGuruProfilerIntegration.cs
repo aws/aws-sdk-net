@@ -29,7 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
-    /// Information about your account's integration with Amazon CodeGuru Profiler.
+    /// Information about your account's integration with Amazon CodeGuru Profiler. This returns
+    /// whether DevOps Guru is configured to consume recommendations generated from Amazon
+    /// CodeGuru Profiler.
     /// </summary>
     public partial class AmazonCodeGuruProfilerIntegration
     {
@@ -38,7 +40,8 @@ namespace Amazon.DevOpsGuru.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the CodeGuru Profiler integration.
+        /// The status of the CodeGuru Profiler integration. Specifies if DevOps Guru is enabled
+        /// to consume recommendations that are generated from Amazon CodeGuru Profiler.
         /// </para>
         /// </summary>
         public EventSourceOptInStatus Status
