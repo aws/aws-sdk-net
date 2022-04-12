@@ -1,3 +1,17 @@
+### 3.7.251.0 (2022-04-12 19:03 UTC)
+* DevOpsGuru (3.7.9.0)
+	* This release adds new APIs DeleteInsight to deletes the insight along with the associated anomalies, events and recommendations.
+* EC2 (3.7.64.0)
+	* X2idn and X2iedn instances are powered by 3rd generation Intel Xeon Scalable processors with an all-core turbo frequency up to 3.5 GHzAmazon EC2. C6a instances are powered by 3rd generation AMD EPYC processors.
+* ElasticFileSystem (3.7.5.0)
+	* Amazon EFS adds support for a ThrottlingException when using the CreateAccessPoint API if the account is nearing the AccessPoint limit(120).
+* IoTTwinMaker (3.7.1.0)
+	* This release adds the following new features: 1) ListEntities API now supports search using ExternalId. 2) BatchPutPropertyValue and GetPropertyValueHistory API now allows users to represent time in sub-second level precisions.
+* Core 3.7.10.7
+	* Updating endpoints.json file.
+
+	* All services packages updated to require new Core
+
 ### 3.7.250.0 (2022-04-11 18:14 UTC)
 * AmplifyUIBuilder (3.7.2.0)
 	* In this release, we have added the ability to bind events to component level actions.
