@@ -29,45 +29,43 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticFileSystem.Model
 {
     /// <summary>
-    /// Returned if the Availability Zone that was specified for a mount target is different
-    /// from the Availability Zone that was specified for One Zone storage. For more information,
-    /// see <a href="https://docs.aws.amazon.com/efs/latest/ug/availability-durability.html">Regional
-    /// and One Zone storage redundancy</a>.
+    /// Returned when the <code>CreateAccessPoint</code> API action is called too quickly
+    /// and the number of Access Points in the account is nearing the limit of 120.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
-    public partial class AvailabilityZonesMismatchException : AmazonElasticFileSystemException
+    public partial class ThrottlingException : AmazonElasticFileSystemException
     {
         private string _errorCode;
 
         /// <summary>
-        /// Constructs a new AvailabilityZonesMismatchException with the specified error
+        /// Constructs a new ThrottlingException with the specified error
         /// message.
         /// </summary>
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        public AvailabilityZonesMismatchException(string message) 
+        public ThrottlingException(string message) 
             : base(message) {}
 
         /// <summary>
-        /// Construct instance of AvailabilityZonesMismatchException
+        /// Construct instance of ThrottlingException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
-        public AvailabilityZonesMismatchException(string message, Exception innerException) 
+        public ThrottlingException(string message, Exception innerException) 
             : base(message, innerException) {}
 
         /// <summary>
-        /// Construct instance of AvailabilityZonesMismatchException
+        /// Construct instance of ThrottlingException
         /// </summary>
         /// <param name="innerException"></param>
-        public AvailabilityZonesMismatchException(Exception innerException) 
+        public ThrottlingException(Exception innerException) 
             : base(innerException) {}
 
         /// <summary>
-        /// Construct instance of AvailabilityZonesMismatchException
+        /// Construct instance of ThrottlingException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
@@ -75,30 +73,30 @@ namespace Amazon.ElasticFileSystem.Model
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public AvailabilityZonesMismatchException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+        public ThrottlingException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, requestId, statusCode) {}
 
         /// <summary>
-        /// Construct instance of AvailabilityZonesMismatchException
+        /// Construct instance of ThrottlingException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="errorType"></param>
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public AvailabilityZonesMismatchException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+        public ThrottlingException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
 #if !NETSTANDARD
         /// <summary>
-        /// Constructs a new instance of the AvailabilityZonesMismatchException class with serialized data.
+        /// Constructs a new instance of the ThrottlingException class with serialized data.
         /// </summary>
         /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
         /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
         /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is null. </exception>
         /// <exception cref="T:System.Runtime.Serialization.SerializationException">The class name is null or <see cref="P:System.Exception.HResult" /> is zero (0). </exception>
-        protected AvailabilityZonesMismatchException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        protected ThrottlingException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
             this.ErrorCode = (string)info.GetValue("ErrorCode", typeof(string));

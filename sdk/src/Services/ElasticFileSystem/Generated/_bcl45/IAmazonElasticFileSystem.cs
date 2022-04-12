@@ -36,8 +36,8 @@ namespace Amazon.ElasticFileSystem
     /// Amazon Elastic File System (Amazon EFS) provides simple, scalable file storage for
     /// use with Amazon EC2 Linux and Mac instances in the Amazon Web Services Cloud. With
     /// Amazon EFS, storage capacity is elastic, growing and shrinking automatically as you
-    /// add and remove files, so your applications have the storage they need, when they need
-    /// it. For more information, see the <a href="https://docs.aws.amazon.com/efs/latest/ug/api-reference.html">Amazon
+    /// add and remove files, so that your applications have the storage they need, when they
+    /// need it. For more information, see the <a href="https://docs.aws.amazon.com/efs/latest/ug/api-reference.html">Amazon
     /// Elastic File System API Reference</a> and the <a href="https://docs.aws.amazon.com/efs/latest/ug/whatisefs.html">Amazon
     /// Elastic File System User Guide</a>.
     /// </para>
@@ -60,8 +60,8 @@ namespace Amazon.ElasticFileSystem
         /// path, to any file system request made through the access point. The operating system
         /// user and group override any identity information provided by the NFS client. The file
         /// system path is exposed as the access point's root directory. Applications using the
-        /// access point can only access data in its own directory and below. To learn more, see
-        /// <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Mounting
+        /// access point can only access data in the application's own directory and any subdirectories.
+        /// To learn more, see <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Mounting
         /// a file system using EFS access points</a>.
         /// 
         ///  
@@ -74,12 +74,12 @@ namespace Amazon.ElasticFileSystem
         /// 
         /// <returns>The response from the CreateAccessPoint service method, as returned by ElasticFileSystem.</returns>
         /// <exception cref="Amazon.ElasticFileSystem.Model.AccessPointAlreadyExistsException">
-        /// Returned if the access point you are trying to create already exists, with the creation
-        /// token you provided in the request.
+        /// Returned if the access point that you are trying to create already exists, with the
+        /// creation token you provided in the request.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.AccessPointLimitExceededException">
         /// Returned if the Amazon Web Services account has already created the maximum number
-        /// of access points allowed per file system.
+        /// of access points allowed per file system. For more informaton, see <a href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#limits-efs-resources-per-account-per-region">https://docs.aws.amazon.com/efs/latest/ug/limits.html#limits-efs-resources-per-account-per-region</a>.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.BadRequestException">
         /// Returned if the request is malformed or contains an error such as an invalid parameter
@@ -95,6 +95,10 @@ namespace Amazon.ElasticFileSystem
         /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
         /// Returned if an error occurred on the server side.
         /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.ThrottlingException">
+        /// Returned when the <code>CreateAccessPoint</code> API action is called too quickly
+        /// and the number of Access Points in the account is nearing the limit of 120.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/CreateAccessPoint">REST API Reference for CreateAccessPoint Operation</seealso>
         CreateAccessPointResponse CreateAccessPoint(CreateAccessPointRequest request);
 
@@ -106,8 +110,8 @@ namespace Amazon.ElasticFileSystem
         /// path, to any file system request made through the access point. The operating system
         /// user and group override any identity information provided by the NFS client. The file
         /// system path is exposed as the access point's root directory. Applications using the
-        /// access point can only access data in its own directory and below. To learn more, see
-        /// <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Mounting
+        /// access point can only access data in the application's own directory and any subdirectories.
+        /// To learn more, see <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Mounting
         /// a file system using EFS access points</a>.
         /// 
         ///  
@@ -123,12 +127,12 @@ namespace Amazon.ElasticFileSystem
         /// 
         /// <returns>The response from the CreateAccessPoint service method, as returned by ElasticFileSystem.</returns>
         /// <exception cref="Amazon.ElasticFileSystem.Model.AccessPointAlreadyExistsException">
-        /// Returned if the access point you are trying to create already exists, with the creation
-        /// token you provided in the request.
+        /// Returned if the access point that you are trying to create already exists, with the
+        /// creation token you provided in the request.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.AccessPointLimitExceededException">
         /// Returned if the Amazon Web Services account has already created the maximum number
-        /// of access points allowed per file system.
+        /// of access points allowed per file system. For more informaton, see <a href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#limits-efs-resources-per-account-per-region">https://docs.aws.amazon.com/efs/latest/ug/limits.html#limits-efs-resources-per-account-per-region</a>.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.BadRequestException">
         /// Returned if the request is malformed or contains an error such as an invalid parameter
@@ -143,6 +147,10 @@ namespace Amazon.ElasticFileSystem
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
         /// Returned if an error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.ThrottlingException">
+        /// Returned when the <code>CreateAccessPoint</code> API action is called too quickly
+        /// and the number of Access Points in the account is nearing the limit of 120.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/CreateAccessPoint">REST API Reference for CreateAccessPoint Operation</seealso>
         Task<CreateAccessPointResponse> CreateAccessPointAsync(CreateAccessPointRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -249,8 +257,8 @@ namespace Amazon.ElasticFileSystem
         /// Returned if there's not enough capacity to provision additional throughput. This value
         /// might be returned when you try to create a file system in provisioned throughput mode,
         /// when you attempt to increase the provisioned throughput of an existing file system,
-        /// or when you attempt to change an existing file system from bursting to provisioned
-        /// throughput mode. Try again later.
+        /// or when you attempt to change an existing file system from Bursting Throughput to
+        /// Provisioned Throughput mode. Try again later.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
         /// Returned if an error occurred on the server side.
@@ -363,8 +371,8 @@ namespace Amazon.ElasticFileSystem
         /// Returned if there's not enough capacity to provision additional throughput. This value
         /// might be returned when you try to create a file system in provisioned throughput mode,
         /// when you attempt to increase the provisioned throughput of an existing file system,
-        /// or when you attempt to change an existing file system from bursting to provisioned
-        /// throughput mode. Try again later.
+        /// or when you attempt to change an existing file system from Bursting Throughput to
+        /// Provisioned Throughput mode. Try again later.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
         /// Returned if an error occurred on the server side.
@@ -481,8 +489,8 @@ namespace Amazon.ElasticFileSystem
         /// Returned if there's not enough capacity to provision additional throughput. This value
         /// might be returned when you try to create a file system in provisioned throughput mode,
         /// when you attempt to increase the provisioned throughput of an existing file system,
-        /// or when you attempt to change an existing file system from bursting to provisioned
-        /// throughput mode. Try again later.
+        /// or when you attempt to change an existing file system from Bursting Throughput to
+        /// Provisioned Throughput mode. Try again later.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
         /// Returned if an error occurred on the server side.
@@ -599,8 +607,8 @@ namespace Amazon.ElasticFileSystem
         /// Returned if there's not enough capacity to provision additional throughput. This value
         /// might be returned when you try to create a file system in provisioned throughput mode,
         /// when you attempt to increase the provisioned throughput of an existing file system,
-        /// or when you attempt to change an existing file system from bursting to provisioned
-        /// throughput mode. Try again later.
+        /// or when you attempt to change an existing file system from Bursting Throughput to
+        /// Provisioned Throughput mode. Try again later.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
         /// Returned if an error occurred on the server side.
@@ -795,8 +803,8 @@ namespace Amazon.ElasticFileSystem
         /// <returns>The response from the CreateMountTarget service method, as returned by ElasticFileSystem.</returns>
         /// <exception cref="Amazon.ElasticFileSystem.Model.AvailabilityZonesMismatchException">
         /// Returned if the Availability Zone that was specified for a mount target is different
-        /// from the Availability Zone that was specified for One Zone storage classes. For more
-        /// information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/availability-durability.html">Regional
+        /// from the Availability Zone that was specified for One Zone storage. For more information,
+        /// see <a href="https://docs.aws.amazon.com/efs/latest/ug/availability-durability.html">Regional
         /// and One Zone storage redundancy</a>.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.BadRequestException">
@@ -823,10 +831,10 @@ namespace Amazon.ElasticFileSystem
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.NetworkInterfaceLimitExceededException">
         /// The calling account has reached the limit for elastic network interfaces for the specific
-        /// Amazon Web Services Region. The client should try to delete some elastic network interfaces
-        /// or get the account limit raised. For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Appendix_Limits.html">Amazon
-        /// VPC Limits</a> in the <i>Amazon VPC User Guide </i> (see the Network interfaces per
-        /// VPC entry in the table).
+        /// Amazon Web Services Region. Either delete some network interfaces or request that
+        /// the account quota be raised. For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Appendix_Limits.html">Amazon
+        /// VPC Quotas</a> in the <i>Amazon VPC User Guide</i> (see the <b>Network interfaces
+        /// per Region</b> entry in the <b>Network interfaces</b> table).
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.NoFreeAddressesInSubnetException">
         /// Returned if <code>IpAddress</code> was not specified in the request and there are
@@ -837,7 +845,8 @@ namespace Amazon.ElasticFileSystem
         /// than five.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.SecurityGroupNotFoundException">
-        /// Returned if one of the specified security groups doesn't exist in the subnet's VPC.
+        /// Returned if one of the specified security groups doesn't exist in the subnet's virtual
+        /// private cloud (VPC).
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.SubnetNotFoundException">
         /// Returned if there is no subnet with ID <code>SubnetId</code> provided in the request.
@@ -1028,8 +1037,8 @@ namespace Amazon.ElasticFileSystem
         /// <returns>The response from the CreateMountTarget service method, as returned by ElasticFileSystem.</returns>
         /// <exception cref="Amazon.ElasticFileSystem.Model.AvailabilityZonesMismatchException">
         /// Returned if the Availability Zone that was specified for a mount target is different
-        /// from the Availability Zone that was specified for One Zone storage classes. For more
-        /// information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/availability-durability.html">Regional
+        /// from the Availability Zone that was specified for One Zone storage. For more information,
+        /// see <a href="https://docs.aws.amazon.com/efs/latest/ug/availability-durability.html">Regional
         /// and One Zone storage redundancy</a>.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.BadRequestException">
@@ -1056,10 +1065,10 @@ namespace Amazon.ElasticFileSystem
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.NetworkInterfaceLimitExceededException">
         /// The calling account has reached the limit for elastic network interfaces for the specific
-        /// Amazon Web Services Region. The client should try to delete some elastic network interfaces
-        /// or get the account limit raised. For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Appendix_Limits.html">Amazon
-        /// VPC Limits</a> in the <i>Amazon VPC User Guide </i> (see the Network interfaces per
-        /// VPC entry in the table).
+        /// Amazon Web Services Region. Either delete some network interfaces or request that
+        /// the account quota be raised. For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Appendix_Limits.html">Amazon
+        /// VPC Quotas</a> in the <i>Amazon VPC User Guide</i> (see the <b>Network interfaces
+        /// per Region</b> entry in the <b>Network interfaces</b> table).
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.NoFreeAddressesInSubnetException">
         /// Returned if <code>IpAddress</code> was not specified in the request and there are
@@ -1070,7 +1079,8 @@ namespace Amazon.ElasticFileSystem
         /// than five.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.SecurityGroupNotFoundException">
-        /// Returned if one of the specified security groups doesn't exist in the subnet's VPC.
+        /// Returned if one of the specified security groups doesn't exist in the subnet's virtual
+        /// private cloud (VPC).
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.SubnetNotFoundException">
         /// Returned if there is no subnet with ID <code>SubnetId</code> provided in the request.
@@ -1090,57 +1100,62 @@ namespace Amazon.ElasticFileSystem
         /// <summary>
         /// Creates a replication configuration that replicates an existing EFS file system to
         /// a new, read-only file system. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-replication.html">Amazon
-        /// EFS replication</a>. The replication configuration specifies the following:
+        /// EFS replication</a> in the <i>Amazon EFS User Guide</i>. The replication configuration
+        /// specifies the following:
         /// 
         ///  <ul> <li> 
         /// <para>
-        ///  <b>Source file system</b> - an existing EFS file system that you want replicated.
+        ///  <b>Source file system</b> - An existing EFS file system that you want replicated.
         /// The source file system cannot be a destination file system in an existing replication
         /// configuration.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Destination file system configuration</b> - the configuration of the destination
+        ///  <b>Destination file system configuration</b> - The configuration of the destination
         /// file system to which the source file system will be replicated. There can only be
-        /// one destination file system in a replication configuration.
+        /// one destination file system in a replication configuration. The destination file system
+        /// configuration consists of the following properties:
         /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <b>Amazon Web Services Region</b> - The Amazon Web Services Region in which the destination
-        /// file system is created. EFS Replication is available in all Amazon Web Services Region
-        /// that Amazon EFS is available in, except the following regions: Asia Pacific (Hong
-        /// Kong) Europe (Milan), Middle East (Bahrain), Africa (Cape Town), and Asia Pacific
-        /// (Jakarta).
+        /// file system is created. Amazon EFS replication is available in all Amazon Web Services
+        /// Regions that Amazon EFS is available in, except Africa (Cape Town), Asia Pacific (Hong
+        /// Kong), Asia Pacific (Jakarta), Europe (Milan), and Middle East (Bahrain).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Availability zone</b> - If you want the destination file system to use One Zone
-        /// availability and durability, you must specify the Availability Zone to create the
-        /// file system in. For more information about EFS storage classes, see <a href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">
+        ///  <b>Availability Zone</b> - If you want the destination file system to use EFS One
+        /// Zone availability and durability, you must specify the Availability Zone to create
+        /// the file system in. For more information about EFS storage classes, see <a href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">
         /// Amazon EFS storage classes</a> in the <i>Amazon EFS User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <b>Encryption</b> - All destination file systems are created with encryption at rest
-        /// enabled. You can specify the KMS key that is used to encrypt the destination file
-        /// system. Your service-managed KMS key for Amazon EFS is used if you don't specify a
-        /// KMS key. You cannot change this after the file system is created.
+        /// enabled. You can specify the Key Management Service (KMS) key that is used to encrypt
+        /// the destination file system. If you don't specify a KMS key, your service-managed
+        /// KMS key for Amazon EFS is used. 
         /// </para>
-        ///  </li> </ul> </li> </ul> 
+        ///  <note> 
+        /// <para>
+        /// After the file system is created, you cannot change the KMS key.
+        /// </para>
+        ///  </note> </li> </ul> </li> </ul> 
         /// <para>
         /// The following properties are set by default:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>Performance mode</b> - The destination file system's performance mode will match
-        /// that of the source file system, unless the destination file system uses One Zone storage.
-        /// In that case, the <i>General Purpose</i> performance mode is used. The Performance
+        ///  <b>Performance mode</b> - The destination file system's performance mode matches
+        /// that of the source file system, unless the destination file system uses EFS One Zone
+        /// storage. In that case, the General Purpose performance mode is used. The performance
         /// mode cannot be changed.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Throughput mode</b> - The destination file system use the Bursting throughput
-        /// mode by default. You can modify the throughput mode once the file system is created.
+        ///  <b>Throughput mode</b> - The destination file system uses the Bursting Throughput
+        /// mode by default. After the file system is created, you can modify the throughput mode.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -1148,19 +1163,19 @@ namespace Amazon.ElasticFileSystem
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>Lifecycle management</b> - EFS lifecycle management and intelligent tiering are
-        /// not enabled on the destination file system. You can enable EFS lifecycle management
-        /// and intelligent tiering after the destination file system is created.
+        ///  <b>Lifecycle management</b> - EFS lifecycle management and EFS Intelligent-Tiering
+        /// are not enabled on the destination file system. After the destination file system
+        /// is created, you can enable EFS lifecycle management and EFS Intelligent-Tiering.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <b>Automatic backups</b> - Automatic daily backups not enabled on the destination
-        /// file system. You can change this setting after the file system is created.
+        /// file system. After the file system is created, you can change this setting.
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-replication.html">Amazon
-        /// EFS replication</a>.
+        /// EFS replication</a> in the <i>Amazon EFS User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateReplicationConfiguration service method.</param>
@@ -1185,14 +1200,14 @@ namespace Amazon.ElasticFileSystem
         /// Returned if there's not enough capacity to provision additional throughput. This value
         /// might be returned when you try to create a file system in provisioned throughput mode,
         /// when you attempt to increase the provisioned throughput of an existing file system,
-        /// or when you attempt to change an existing file system from bursting to provisioned
-        /// throughput mode. Try again later.
+        /// or when you attempt to change an existing file system from Bursting Throughput to
+        /// Provisioned Throughput mode. Try again later.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
         /// Returned if an error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.ReplicationNotFoundException">
-        /// Returned if the specified file system did not have a replication configuration.
+        /// Returned if the specified file system does not have a replication configuration.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.ThroughputLimitExceededException">
         /// Returned if the throughput mode or amount of provisioned throughput can't be changed
@@ -1214,57 +1229,62 @@ namespace Amazon.ElasticFileSystem
         /// <summary>
         /// Creates a replication configuration that replicates an existing EFS file system to
         /// a new, read-only file system. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-replication.html">Amazon
-        /// EFS replication</a>. The replication configuration specifies the following:
+        /// EFS replication</a> in the <i>Amazon EFS User Guide</i>. The replication configuration
+        /// specifies the following:
         /// 
         ///  <ul> <li> 
         /// <para>
-        ///  <b>Source file system</b> - an existing EFS file system that you want replicated.
+        ///  <b>Source file system</b> - An existing EFS file system that you want replicated.
         /// The source file system cannot be a destination file system in an existing replication
         /// configuration.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Destination file system configuration</b> - the configuration of the destination
+        ///  <b>Destination file system configuration</b> - The configuration of the destination
         /// file system to which the source file system will be replicated. There can only be
-        /// one destination file system in a replication configuration.
+        /// one destination file system in a replication configuration. The destination file system
+        /// configuration consists of the following properties:
         /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <b>Amazon Web Services Region</b> - The Amazon Web Services Region in which the destination
-        /// file system is created. EFS Replication is available in all Amazon Web Services Region
-        /// that Amazon EFS is available in, except the following regions: Asia Pacific (Hong
-        /// Kong) Europe (Milan), Middle East (Bahrain), Africa (Cape Town), and Asia Pacific
-        /// (Jakarta).
+        /// file system is created. Amazon EFS replication is available in all Amazon Web Services
+        /// Regions that Amazon EFS is available in, except Africa (Cape Town), Asia Pacific (Hong
+        /// Kong), Asia Pacific (Jakarta), Europe (Milan), and Middle East (Bahrain).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Availability zone</b> - If you want the destination file system to use One Zone
-        /// availability and durability, you must specify the Availability Zone to create the
-        /// file system in. For more information about EFS storage classes, see <a href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">
+        ///  <b>Availability Zone</b> - If you want the destination file system to use EFS One
+        /// Zone availability and durability, you must specify the Availability Zone to create
+        /// the file system in. For more information about EFS storage classes, see <a href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">
         /// Amazon EFS storage classes</a> in the <i>Amazon EFS User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <b>Encryption</b> - All destination file systems are created with encryption at rest
-        /// enabled. You can specify the KMS key that is used to encrypt the destination file
-        /// system. Your service-managed KMS key for Amazon EFS is used if you don't specify a
-        /// KMS key. You cannot change this after the file system is created.
+        /// enabled. You can specify the Key Management Service (KMS) key that is used to encrypt
+        /// the destination file system. If you don't specify a KMS key, your service-managed
+        /// KMS key for Amazon EFS is used. 
         /// </para>
-        ///  </li> </ul> </li> </ul> 
+        ///  <note> 
+        /// <para>
+        /// After the file system is created, you cannot change the KMS key.
+        /// </para>
+        ///  </note> </li> </ul> </li> </ul> 
         /// <para>
         /// The following properties are set by default:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>Performance mode</b> - The destination file system's performance mode will match
-        /// that of the source file system, unless the destination file system uses One Zone storage.
-        /// In that case, the <i>General Purpose</i> performance mode is used. The Performance
+        ///  <b>Performance mode</b> - The destination file system's performance mode matches
+        /// that of the source file system, unless the destination file system uses EFS One Zone
+        /// storage. In that case, the General Purpose performance mode is used. The performance
         /// mode cannot be changed.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Throughput mode</b> - The destination file system use the Bursting throughput
-        /// mode by default. You can modify the throughput mode once the file system is created.
+        ///  <b>Throughput mode</b> - The destination file system uses the Bursting Throughput
+        /// mode by default. After the file system is created, you can modify the throughput mode.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -1272,19 +1292,19 @@ namespace Amazon.ElasticFileSystem
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>Lifecycle management</b> - EFS lifecycle management and intelligent tiering are
-        /// not enabled on the destination file system. You can enable EFS lifecycle management
-        /// and intelligent tiering after the destination file system is created.
+        ///  <b>Lifecycle management</b> - EFS lifecycle management and EFS Intelligent-Tiering
+        /// are not enabled on the destination file system. After the destination file system
+        /// is created, you can enable EFS lifecycle management and EFS Intelligent-Tiering.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <b>Automatic backups</b> - Automatic daily backups not enabled on the destination
-        /// file system. You can change this setting after the file system is created.
+        /// file system. After the file system is created, you can change this setting.
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-replication.html">Amazon
-        /// EFS replication</a>.
+        /// EFS replication</a> in the <i>Amazon EFS User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateReplicationConfiguration service method.</param>
@@ -1312,14 +1332,14 @@ namespace Amazon.ElasticFileSystem
         /// Returned if there's not enough capacity to provision additional throughput. This value
         /// might be returned when you try to create a file system in provisioned throughput mode,
         /// when you attempt to increase the provisioned throughput of an existing file system,
-        /// or when you attempt to change an existing file system from bursting to provisioned
-        /// throughput mode. Try again later.
+        /// or when you attempt to change an existing file system from Bursting Throughput to
+        /// Provisioned Throughput mode. Try again later.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
         /// Returned if an error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.ReplicationNotFoundException">
-        /// Returned if the specified file system did not have a replication configuration.
+        /// Returned if the specified file system does not have a replication configuration.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.ThroughputLimitExceededException">
         /// Returned if the throughput mode or amount of provisioned throughput can't be changed
@@ -1344,8 +1364,8 @@ namespace Amazon.ElasticFileSystem
         /// <summary>
         /// <note> 
         /// <para>
-        /// DEPRECATED - CreateTags is deprecated and not maintained. Please use the API action
-        /// to create tags for EFS resources.
+        /// DEPRECATED - <code>CreateTags</code> is deprecated and not maintained. To create tags
+        /// for EFS resources, use the API action.
         /// </para>
         ///  </note> 
         /// <para>
@@ -1384,8 +1404,8 @@ namespace Amazon.ElasticFileSystem
         /// <summary>
         /// <note> 
         /// <para>
-        /// DEPRECATED - CreateTags is deprecated and not maintained. Please use the API action
-        /// to create tags for EFS resources.
+        /// DEPRECATED - <code>CreateTags</code> is deprecated and not maintained. To create tags
+        /// for EFS resources, use the API action.
         /// </para>
         ///  </note> 
         /// <para>
@@ -1500,6 +1520,17 @@ namespace Amazon.ElasticFileSystem
         /// 
         ///  
         /// <para>
+        /// You need to manually delete mount targets attached to a file system before you can
+        /// delete an EFS file system. This step is performed for you when you use the Amazon
+        /// Web Services console to delete a file system.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// You cannot delete a file system that is part of an EFS Replication configuration.
+        /// You need to delete the replication configuration first.
+        /// </para>
+        ///  </note> 
+        /// <para>
         ///  You can't delete a file system that is in use. That is, if the file system has any
         /// mount targets, you must first delete them. For more information, see <a>DescribeMountTargets</a>
         /// and <a>DeleteMountTarget</a>. 
@@ -1544,6 +1575,17 @@ namespace Amazon.ElasticFileSystem
         /// system.
         /// 
         ///  
+        /// <para>
+        /// You need to manually delete mount targets attached to a file system before you can
+        /// delete an EFS file system. This step is performed for you when you use the Amazon
+        /// Web Services console to delete a file system.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// You cannot delete a file system that is part of an EFS Replication configuration.
+        /// You need to delete the replication configuration first.
+        /// </para>
+        ///  </note> 
         /// <para>
         ///  You can't delete a file system that is in use. That is, if the file system has any
         /// mount targets, you must first delete them. For more information, see <a>DescribeMountTargets</a>
@@ -1590,6 +1632,17 @@ namespace Amazon.ElasticFileSystem
         /// system.
         /// 
         ///  
+        /// <para>
+        /// You need to manually delete mount targets attached to a file system before you can
+        /// delete an EFS file system. This step is performed for you when you use the Amazon
+        /// Web Services console to delete a file system.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// You cannot delete a file system that is part of an EFS Replication configuration.
+        /// You need to delete the replication configuration first.
+        /// </para>
+        ///  </note> 
         /// <para>
         ///  You can't delete a file system that is in use. That is, if the file system has any
         /// mount targets, you must first delete them. For more information, see <a>DescribeMountTargets</a>
@@ -1639,6 +1692,17 @@ namespace Amazon.ElasticFileSystem
         /// system.
         /// 
         ///  
+        /// <para>
+        /// You need to manually delete mount targets attached to a file system before you can
+        /// delete an EFS file system. This step is performed for you when you use the Amazon
+        /// Web Services console to delete a file system.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// You cannot delete a file system that is part of an EFS Replication configuration.
+        /// You need to delete the replication configuration first.
+        /// </para>
+        ///  </note> 
         /// <para>
         ///  You can't delete a file system that is in use. That is, if the file system has any
         /// mount targets, you must first delete them. For more information, see <a>DescribeMountTargets</a>
@@ -2017,7 +2081,9 @@ namespace Amazon.ElasticFileSystem
         /// Deletes an existing replication configuration. To delete a replication configuration,
         /// you must make the request from the Amazon Web Services Region in which the destination
         /// file system is located. Deleting a replication configuration ends the replication
-        /// process. You can write to the destination file system once it's status becomes <code>Writeable</code>.
+        /// process. After a replication configuration is deleted, the destination file system
+        /// is no longer read-only. You can write to the destination file system after its status
+        /// becomes <code>Writeable</code>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteReplicationConfiguration service method.</param>
         /// 
@@ -2034,7 +2100,7 @@ namespace Amazon.ElasticFileSystem
         /// Returned if an error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.ReplicationNotFoundException">
-        /// Returned if the specified file system did not have a replication configuration.
+        /// Returned if the specified file system does not have a replication configuration.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DeleteReplicationConfiguration">REST API Reference for DeleteReplicationConfiguration Operation</seealso>
         DeleteReplicationConfigurationResponse DeleteReplicationConfiguration(DeleteReplicationConfigurationRequest request);
@@ -2045,7 +2111,9 @@ namespace Amazon.ElasticFileSystem
         /// Deletes an existing replication configuration. To delete a replication configuration,
         /// you must make the request from the Amazon Web Services Region in which the destination
         /// file system is located. Deleting a replication configuration ends the replication
-        /// process. You can write to the destination file system once it's status becomes <code>Writeable</code>.
+        /// process. After a replication configuration is deleted, the destination file system
+        /// is no longer read-only. You can write to the destination file system after its status
+        /// becomes <code>Writeable</code>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteReplicationConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -2065,7 +2133,7 @@ namespace Amazon.ElasticFileSystem
         /// Returned if an error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.ReplicationNotFoundException">
-        /// Returned if the specified file system did not have a replication configuration.
+        /// Returned if the specified file system does not have a replication configuration.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DeleteReplicationConfiguration">REST API Reference for DeleteReplicationConfiguration Operation</seealso>
         Task<DeleteReplicationConfigurationResponse> DeleteReplicationConfigurationAsync(DeleteReplicationConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2078,8 +2146,8 @@ namespace Amazon.ElasticFileSystem
         /// <summary>
         /// <note> 
         /// <para>
-        /// DEPRECATED - DeleteTags is deprecated and not maintained. Please use the API action
-        /// to remove tags from EFS resources.
+        /// DEPRECATED - <code>DeleteTags</code> is deprecated and not maintained. To remove tags
+        /// from EFS resources, use the API action.
         /// </para>
         ///  </note> 
         /// <para>
@@ -2117,8 +2185,8 @@ namespace Amazon.ElasticFileSystem
         /// <summary>
         /// <note> 
         /// <para>
-        /// DEPRECATED - DeleteTags is deprecated and not maintained. Please use the API action
-        /// to remove tags from EFS resources.
+        /// DEPRECATED - <code>DeleteTags</code> is deprecated and not maintained. To remove tags
+        /// from EFS resources, use the API action.
         /// </para>
         ///  </note> 
         /// <para>
@@ -2530,7 +2598,7 @@ namespace Amazon.ElasticFileSystem
         /// 
         ///  
         /// <para>
-        /// When EFS Intelligent Tiering is enabled, <code>TransitionToPrimaryStorageClass</code>
+        /// When EFS Intelligent-Tiering is enabled, <code>TransitionToPrimaryStorageClass</code>
         /// has a value of <code>AFTER_1_ACCESS</code>.
         /// </para>
         ///  
@@ -2567,7 +2635,7 @@ namespace Amazon.ElasticFileSystem
         /// 
         ///  
         /// <para>
-        /// When EFS Intelligent Tiering is enabled, <code>TransitionToPrimaryStorageClass</code>
+        /// When EFS Intelligent-Tiering is enabled, <code>TransitionToPrimaryStorageClass</code>
         /// has a value of <code>AFTER_1_ACCESS</code>.
         /// </para>
         ///  
@@ -2940,9 +3008,9 @@ namespace Amazon.ElasticFileSystem
 
 
         /// <summary>
-        /// Retrieves the replication configurations for either a specific file system, or all
-        /// configurations for the Amazon Web Services account in an Amazon Web Services Region
-        /// if a file system is not specified.
+        /// Retrieves the replication configuration for a specific file system. If a file system
+        /// is not specified, all of the replication configurations for the Amazon Web Services
+        /// account in an Amazon Web Services Region are retrieved.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeReplicationConfigurations service method.</param>
         /// 
@@ -2959,7 +3027,7 @@ namespace Amazon.ElasticFileSystem
         /// Returned if an error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.ReplicationNotFoundException">
-        /// Returned if the specified file system did not have a replication configuration.
+        /// Returned if the specified file system does not have a replication configuration.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.ValidationException">
         /// Returned if the Backup service is not available in the Amazon Web Services Region
@@ -2971,9 +3039,9 @@ namespace Amazon.ElasticFileSystem
 
 
         /// <summary>
-        /// Retrieves the replication configurations for either a specific file system, or all
-        /// configurations for the Amazon Web Services account in an Amazon Web Services Region
-        /// if a file system is not specified.
+        /// Retrieves the replication configuration for a specific file system. If a file system
+        /// is not specified, all of the replication configurations for the Amazon Web Services
+        /// account in an Amazon Web Services Region are retrieved.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeReplicationConfigurations service method.</param>
         /// <param name="cancellationToken">
@@ -2993,7 +3061,7 @@ namespace Amazon.ElasticFileSystem
         /// Returned if an error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.ReplicationNotFoundException">
-        /// Returned if the specified file system did not have a replication configuration.
+        /// Returned if the specified file system does not have a replication configuration.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.ValidationException">
         /// Returned if the Backup service is not available in the Amazon Web Services Region
@@ -3010,8 +3078,9 @@ namespace Amazon.ElasticFileSystem
         /// <summary>
         /// <note> 
         /// <para>
-        /// DEPRECATED - The DeleteTags action is deprecated and not maintained. Please use the
-        /// API action to remove tags from EFS resources.
+        /// DEPRECATED - The <code>DescribeTags</code> action is deprecated and not maintained.
+        /// To view tags associated with EFS resources, use the <code>ListTagsForResource</code>
+        /// API action.
         /// </para>
         ///  </note> 
         /// <para>
@@ -3047,8 +3116,9 @@ namespace Amazon.ElasticFileSystem
         /// <summary>
         /// <note> 
         /// <para>
-        /// DEPRECATED - The DeleteTags action is deprecated and not maintained. Please use the
-        /// API action to remove tags from EFS resources.
+        /// DEPRECATED - The <code>DescribeTags</code> action is deprecated and not maintained.
+        /// To view tags associated with EFS resources, use the <code>ListTagsForResource</code>
+        /// API action.
         /// </para>
         ///  </note> 
         /// <para>
@@ -3085,8 +3155,9 @@ namespace Amazon.ElasticFileSystem
         /// <summary>
         /// <note> 
         /// <para>
-        /// DEPRECATED - The DeleteTags action is deprecated and not maintained. Please use the
-        /// API action to remove tags from EFS resources.
+        /// DEPRECATED - The <code>DescribeTags</code> action is deprecated and not maintained.
+        /// To view tags associated with EFS resources, use the <code>ListTagsForResource</code>
+        /// API action.
         /// </para>
         ///  </note> 
         /// <para>
@@ -3126,8 +3197,9 @@ namespace Amazon.ElasticFileSystem
         /// <summary>
         /// <note> 
         /// <para>
-        /// DEPRECATED - The DeleteTags action is deprecated and not maintained. Please use the
-        /// API action to remove tags from EFS resources.
+        /// DEPRECATED - The <code>DescribeTags</code> action is deprecated and not maintained.
+        /// To view tags associated with EFS resources, use the <code>ListTagsForResource</code>
+        /// API action.
         /// </para>
         ///  </note> 
         /// <para>
@@ -3290,7 +3362,8 @@ namespace Amazon.ElasticFileSystem
         /// than five.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.SecurityGroupNotFoundException">
-        /// Returned if one of the specified security groups doesn't exist in the subnet's VPC.
+        /// Returned if one of the specified security groups doesn't exist in the subnet's virtual
+        /// private cloud (VPC).
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/ModifyMountTargetSecurityGroups">REST API Reference for ModifyMountTargetSecurityGroups Operation</seealso>
         ModifyMountTargetSecurityGroupsResponse ModifyMountTargetSecurityGroups(ModifyMountTargetSecurityGroupsRequest request);
@@ -3350,7 +3423,8 @@ namespace Amazon.ElasticFileSystem
         /// than five.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.SecurityGroupNotFoundException">
-        /// Returned if one of the specified security groups doesn't exist in the subnet's VPC.
+        /// Returned if one of the specified security groups doesn't exist in the subnet's virtual
+        /// private cloud (VPC).
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/ModifyMountTargetSecurityGroups">REST API Reference for ModifyMountTargetSecurityGroups Operation</seealso>
         Task<ModifyMountTargetSecurityGroupsResponse> ModifyMountTargetSecurityGroupsAsync(ModifyMountTargetSecurityGroupsRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -3372,8 +3446,8 @@ namespace Amazon.ElasticFileSystem
         /// <para>
         /// Starting in October, 2021, you will receive an error if you try to set the account
         /// preference to use the short 8 character format resource ID. Contact Amazon Web Services
-        /// support if you receive an error and need to use short IDs for file system and mount
-        /// target resources.
+        /// support if you receive an error and must use short IDs for file system and mount target
+        /// resources.
         /// </para>
         ///  </note>
         /// </summary>
@@ -3404,8 +3478,8 @@ namespace Amazon.ElasticFileSystem
         /// <para>
         /// Starting in October, 2021, you will receive an error if you try to set the account
         /// preference to use the short 8 character format resource ID. Contact Amazon Web Services
-        /// support if you receive an error and need to use short IDs for file system and mount
-        /// target resources.
+        /// support if you receive an error and must use short IDs for file system and mount target
+        /// resources.
         /// </para>
         ///  </note>
         /// </summary>
@@ -3534,9 +3608,9 @@ namespace Amazon.ElasticFileSystem
         /// Returned if an error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.InvalidPolicyException">
-        /// Returned if the <code>FileSystemPolicy</code> is is malformed or contains an error
-        /// such as an invalid parameter value or a missing required parameter. Returned in the
-        /// case of a policy lockout safety check error.
+        /// Returned if the <code>FileSystemPolicy</code> is malformed or contains an error such
+        /// as a parameter value that is not valid or a missing required parameter. Returned in
+        /// the case of a policy lockout safety check error.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/PutFileSystemPolicy">REST API Reference for PutFileSystemPolicy Operation</seealso>
         PutFileSystemPolicyResponse PutFileSystemPolicy(PutFileSystemPolicyRequest request);
@@ -3584,9 +3658,9 @@ namespace Amazon.ElasticFileSystem
         /// Returned if an error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.InvalidPolicyException">
-        /// Returned if the <code>FileSystemPolicy</code> is is malformed or contains an error
-        /// such as an invalid parameter value or a missing required parameter. Returned in the
-        /// case of a policy lockout safety check error.
+        /// Returned if the <code>FileSystemPolicy</code> is malformed or contains an error such
+        /// as a parameter value that is not valid or a missing required parameter. Returned in
+        /// the case of a policy lockout safety check error.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/PutFileSystemPolicy">REST API Reference for PutFileSystemPolicy Operation</seealso>
         Task<PutFileSystemPolicyResponse> PutFileSystemPolicyAsync(PutFileSystemPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -3597,13 +3671,34 @@ namespace Amazon.ElasticFileSystem
 
 
         /// <summary>
-        /// Enables lifecycle management by creating a new <code>LifecycleConfiguration</code>
-        /// object. A <code>LifecycleConfiguration</code> object defines when files in an Amazon
-        /// EFS file system are automatically transitioned to the lower-cost EFS Infrequent Access
-        /// (IA) storage class. To enable EFS Intelligent Tiering, set the value of <code>TransitionToPrimaryStorageClass</code>
-        /// to <code>AFTER_1_ACCESS</code>. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/lifecycle-management-efs.html">EFS
-        /// Lifecycle Management</a>.
+        /// Use this action to manage EFS lifecycle management and intelligent tiering. A <code>LifecycleConfiguration</code>
+        /// consists of one or more <code>LifecyclePolicy</code> objects that define the following:
         /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>EFS Lifecycle management</b> - When Amazon EFS automatically transitions files
+        /// in a file system into the lower-cost Infrequent Access (IA) storage class.
+        /// </para>
+        ///  
+        /// <para>
+        /// To enable EFS Lifecycle management, set the value of <code>TransitionToIA</code> to
+        /// one of the available options.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>EFS Intelligent tiering</b> - When Amazon EFS automatically transitions files
+        /// from IA back into the file system's primary storage class (Standard or One Zone Standard.
+        /// </para>
+        ///  
+        /// <para>
+        /// To enable EFS Intelligent Tiering, set the value of <code>TransitionToPrimaryStorageClass</code>
+        /// to <code>AFTER_1_ACCESS</code>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/lifecycle-management-efs.html">EFS
+        /// Lifecycle Management</a>.
+        /// </para>
         ///  
         /// <para>
         /// Each Amazon EFS file system supports one lifecycle configuration, which applies to
@@ -3611,8 +3706,8 @@ namespace Amazon.ElasticFileSystem
         /// exists for the specified file system, a <code>PutLifecycleConfiguration</code> call
         /// modifies the existing configuration. A <code>PutLifecycleConfiguration</code> call
         /// with an empty <code>LifecyclePolicies</code> array in the request body deletes any
-        /// existing <code>LifecycleConfiguration</code> and turns off lifecycle management for
-        /// the file system.
+        /// existing <code>LifecycleConfiguration</code> and turns off lifecycle management and
+        /// intelligent tiering for the file system.
         /// </para>
         ///  
         /// <para>
@@ -3621,17 +3716,22 @@ namespace Amazon.ElasticFileSystem
         ///  <ul> <li> 
         /// <para>
         /// The ID for the file system for which you are enabling, disabling, or modifying lifecycle
-        /// management.
+        /// management and intelligent tiering.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// A <code>LifecyclePolicies</code> array of <code>LifecyclePolicy</code> objects that
-        /// define when files are moved to the IA storage class. Amazon EFS requires that each
-        /// <code>LifecyclePolicy</code> object have only have a single transition, so the <code>LifecyclePolicies</code>
-        /// array needs to be structured with separate <code>LifecyclePolicy</code> objects. See
-        /// the example requests in the following section for more information.
+        /// define when files are moved into IA storage, and when they are moved back to Standard
+        /// storage.
         /// </para>
-        ///  </li> </ul> 
+        ///  <note> 
+        /// <para>
+        /// Amazon EFS requires that each <code>LifecyclePolicy</code> object have only have a
+        /// single transition, so the <code>LifecyclePolicies</code> array needs to be structured
+        /// with separate <code>LifecyclePolicy</code> objects. See the example requests in the
+        /// following section for more information.
+        /// </para>
+        ///  </note> </li> </ul> 
         /// <para>
         /// This operation requires permissions for the <code>elasticfilesystem:PutLifecycleConfiguration</code>
         /// operation.
@@ -3640,7 +3740,7 @@ namespace Amazon.ElasticFileSystem
         /// <para>
         /// To apply a <code>LifecycleConfiguration</code> object to an encrypted file system,
         /// you need the same Key Management Service permissions as when you created the encrypted
-        /// file system. 
+        /// file system.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutLifecycleConfiguration service method.</param>
@@ -3666,13 +3766,34 @@ namespace Amazon.ElasticFileSystem
 
 
         /// <summary>
-        /// Enables lifecycle management by creating a new <code>LifecycleConfiguration</code>
-        /// object. A <code>LifecycleConfiguration</code> object defines when files in an Amazon
-        /// EFS file system are automatically transitioned to the lower-cost EFS Infrequent Access
-        /// (IA) storage class. To enable EFS Intelligent Tiering, set the value of <code>TransitionToPrimaryStorageClass</code>
-        /// to <code>AFTER_1_ACCESS</code>. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/lifecycle-management-efs.html">EFS
-        /// Lifecycle Management</a>.
+        /// Use this action to manage EFS lifecycle management and intelligent tiering. A <code>LifecycleConfiguration</code>
+        /// consists of one or more <code>LifecyclePolicy</code> objects that define the following:
         /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>EFS Lifecycle management</b> - When Amazon EFS automatically transitions files
+        /// in a file system into the lower-cost Infrequent Access (IA) storage class.
+        /// </para>
+        ///  
+        /// <para>
+        /// To enable EFS Lifecycle management, set the value of <code>TransitionToIA</code> to
+        /// one of the available options.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>EFS Intelligent tiering</b> - When Amazon EFS automatically transitions files
+        /// from IA back into the file system's primary storage class (Standard or One Zone Standard.
+        /// </para>
+        ///  
+        /// <para>
+        /// To enable EFS Intelligent Tiering, set the value of <code>TransitionToPrimaryStorageClass</code>
+        /// to <code>AFTER_1_ACCESS</code>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/lifecycle-management-efs.html">EFS
+        /// Lifecycle Management</a>.
+        /// </para>
         ///  
         /// <para>
         /// Each Amazon EFS file system supports one lifecycle configuration, which applies to
@@ -3680,8 +3801,8 @@ namespace Amazon.ElasticFileSystem
         /// exists for the specified file system, a <code>PutLifecycleConfiguration</code> call
         /// modifies the existing configuration. A <code>PutLifecycleConfiguration</code> call
         /// with an empty <code>LifecyclePolicies</code> array in the request body deletes any
-        /// existing <code>LifecycleConfiguration</code> and turns off lifecycle management for
-        /// the file system.
+        /// existing <code>LifecycleConfiguration</code> and turns off lifecycle management and
+        /// intelligent tiering for the file system.
         /// </para>
         ///  
         /// <para>
@@ -3690,17 +3811,22 @@ namespace Amazon.ElasticFileSystem
         ///  <ul> <li> 
         /// <para>
         /// The ID for the file system for which you are enabling, disabling, or modifying lifecycle
-        /// management.
+        /// management and intelligent tiering.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// A <code>LifecyclePolicies</code> array of <code>LifecyclePolicy</code> objects that
-        /// define when files are moved to the IA storage class. Amazon EFS requires that each
-        /// <code>LifecyclePolicy</code> object have only have a single transition, so the <code>LifecyclePolicies</code>
-        /// array needs to be structured with separate <code>LifecyclePolicy</code> objects. See
-        /// the example requests in the following section for more information.
+        /// define when files are moved into IA storage, and when they are moved back to Standard
+        /// storage.
         /// </para>
-        ///  </li> </ul> 
+        ///  <note> 
+        /// <para>
+        /// Amazon EFS requires that each <code>LifecyclePolicy</code> object have only have a
+        /// single transition, so the <code>LifecyclePolicies</code> array needs to be structured
+        /// with separate <code>LifecyclePolicy</code> objects. See the example requests in the
+        /// following section for more information.
+        /// </para>
+        ///  </note> </li> </ul> 
         /// <para>
         /// This operation requires permissions for the <code>elasticfilesystem:PutLifecycleConfiguration</code>
         /// operation.
@@ -3709,7 +3835,7 @@ namespace Amazon.ElasticFileSystem
         /// <para>
         /// To apply a <code>LifecycleConfiguration</code> object to an encrypted file system,
         /// you need the same Key Management Service permissions as when you created the encrypted
-        /// file system. 
+        /// file system.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutLifecycleConfiguration service method.</param>
@@ -3906,8 +4032,8 @@ namespace Amazon.ElasticFileSystem
         /// Returned if there's not enough capacity to provision additional throughput. This value
         /// might be returned when you try to create a file system in provisioned throughput mode,
         /// when you attempt to increase the provisioned throughput of an existing file system,
-        /// or when you attempt to change an existing file system from bursting to provisioned
-        /// throughput mode. Try again later.
+        /// or when you attempt to change an existing file system from Bursting Throughput to
+        /// Provisioned Throughput mode. Try again later.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
         /// Returned if an error occurred on the server side.
@@ -3917,8 +4043,8 @@ namespace Amazon.ElasticFileSystem
         /// because the throughput limit of 1024 MiB/s has been reached.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.TooManyRequestsException">
-        /// Returned if you don’t wait at least 24 hours before changing the throughput mode,
-        /// or decreasing the Provisioned Throughput value.
+        /// Returned if you don’t wait at least 24 hours before either changing the throughput
+        /// mode, or decreasing the Provisioned Throughput value.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/UpdateFileSystem">REST API Reference for UpdateFileSystem Operation</seealso>
         UpdateFileSystemResponse UpdateFileSystem(UpdateFileSystemRequest request);
@@ -3950,8 +4076,8 @@ namespace Amazon.ElasticFileSystem
         /// Returned if there's not enough capacity to provision additional throughput. This value
         /// might be returned when you try to create a file system in provisioned throughput mode,
         /// when you attempt to increase the provisioned throughput of an existing file system,
-        /// or when you attempt to change an existing file system from bursting to provisioned
-        /// throughput mode. Try again later.
+        /// or when you attempt to change an existing file system from Bursting Throughput to
+        /// Provisioned Throughput mode. Try again later.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
         /// Returned if an error occurred on the server side.
@@ -3961,8 +4087,8 @@ namespace Amazon.ElasticFileSystem
         /// because the throughput limit of 1024 MiB/s has been reached.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.TooManyRequestsException">
-        /// Returned if you don’t wait at least 24 hours before changing the throughput mode,
-        /// or decreasing the Provisioned Throughput value.
+        /// Returned if you don’t wait at least 24 hours before either changing the throughput
+        /// mode, or decreasing the Provisioned Throughput value.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/UpdateFileSystem">REST API Reference for UpdateFileSystem Operation</seealso>
         Task<UpdateFileSystemResponse> UpdateFileSystemAsync(UpdateFileSystemRequest request, CancellationToken cancellationToken = default(CancellationToken));

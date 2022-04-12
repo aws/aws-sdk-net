@@ -30,7 +30,7 @@ namespace Amazon.ElasticFileSystem.Model
 {
     /// <summary>
     /// Returned if the Amazon Web Services account has already created the maximum number
-    /// of access points allowed per file system.
+    /// of access points allowed per file system. For more informaton, see <a href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#limits-efs-resources-per-account-per-region">https://docs.aws.amazon.com/efs/latest/ug/limits.html#limits-efs-resources-per-account-per-region</a>.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -41,8 +41,8 @@ namespace Amazon.ElasticFileSystem.Model
     /// <para>
     /// Starting in October, 2021, you will receive an error if you try to set the account
     /// preference to use the short 8 character format resource ID. Contact Amazon Web Services
-    /// support if you receive an error and need to use short IDs for file system and mount
-    /// target resources.
+    /// support if you receive an error and must use short IDs for file system and mount target
+    /// resources.
     /// </para>
     ///  </note>
     /// </summary>
@@ -61,7 +61,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// <para>
         /// Starting in October, 2021, you will receive an error when setting the account preference
         /// to <code>SHORT_ID</code>. Contact Amazon Web Services support if you receive an error
-        /// and need to use short IDs for file system and mount target resources.
+        /// and must use short IDs for file system and mount target resources.
         /// </para>
         ///  </note>
         /// </summary>

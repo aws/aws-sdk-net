@@ -239,7 +239,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// Gets and sets the property KmsKeyId. 
         /// <para>
         /// The ID of the KMS key that you want to use to protect the encrypted file system. This
-        /// parameter is only required if you want to use a non-default KMS key. If this parameter
+        /// parameter is required only if you want to use a non-default KMS key. If this parameter
         /// is not specified, the default KMS key for Amazon EFS is used. You can specify a KMS
         /// key ID using the following formats:
         /// </para>

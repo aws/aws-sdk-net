@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticFileSystem.Model
 {
     /// <summary>
-    /// Returned if the specified file system did not have a replication configuration.
+    /// Returned if the specified file system does not have a replication configuration.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

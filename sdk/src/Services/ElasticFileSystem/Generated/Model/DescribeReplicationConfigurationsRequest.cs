@@ -30,9 +30,9 @@ namespace Amazon.ElasticFileSystem.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeReplicationConfigurations operation.
-    /// Retrieves the replication configurations for either a specific file system, or all
-    /// configurations for the Amazon Web Services account in an Amazon Web Services Region
-    /// if a file system is not specified.
+    /// Retrieves the replication configuration for a specific file system. If a file system
+    /// is not specified, all of the replication configurations for the Amazon Web Services
+    /// account in an Amazon Web Services Region are retrieved.
     /// </summary>
     public partial class DescribeReplicationConfigurationsRequest : AmazonElasticFileSystemRequest
     {
@@ -43,8 +43,8 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property FileSystemId. 
         /// <para>
-        /// You can retrieve replication configurations for a specific file system by providing
-        /// a file system ID.
+        /// You can retrieve the replication configuration for a specific file system by providing
+        /// its file system ID.
         /// </para>
         /// </summary>
         [AWSProperty(Max=128)]
@@ -63,8 +63,8 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// (Optional) You can optionally specify the <code>MaxItems</code> parameter to limit
-        /// the number of objects returned in a response. The default value is 100. 
+        /// (Optional) To limit the number of objects returned in a response, you can specify
+        /// the <code>MaxItems</code> parameter. The default value is 100. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -83,7 +83,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  <code>NextToken</code> is present if the response is paginated. You can use <code>NextMarker</code>
+        ///  <code>NextToken</code> is present if the response is paginated. You can use <code>NextToken</code>
         /// in a subsequent request to fetch the next page of output.
         /// </para>
         /// </summary>

@@ -59,7 +59,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property Replications. 
         /// <para>
-        /// The collection of replication configurations returned.
+        /// The collection of replication configurations that is returned.
         /// </para>
         /// </summary>
         public List<ReplicationConfigurationDescription> Replications

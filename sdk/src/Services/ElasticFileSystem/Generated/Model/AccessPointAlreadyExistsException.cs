@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticFileSystem.Model
 {
     /// <summary>
-    /// Returned if the access point you are trying to create already exists, with the creation
-    /// token you provided in the request.
+    /// Returned if the access point that you are trying to create already exists, with the
+    /// creation token you provided in the request.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

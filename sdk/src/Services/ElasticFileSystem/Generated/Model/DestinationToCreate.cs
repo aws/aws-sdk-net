@@ -40,7 +40,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZoneName. 
         /// <para>
-        /// To create a file system that uses One Zone storage, specify the name of the Availability
+        /// To create a file system that uses EFS One Zone storage, specify the name of the Availability
         /// Zone in which to create the destination file system.
         /// </para>
         /// </summary>
@@ -60,17 +60,18 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// Specifies the KMS key you want to use to encrypt the destination file system. If you
-        /// do not specify a KMS key, EFS uses your default KMS key for Amazon EFS, <code>/aws/elasticfilesystem</code>.
-        /// This ID can be in one of the following formats:
+        /// Specifies the Key Management Service (KMS) key that you want to use to encrypt the
+        /// destination file system. If you do not specify a KMS key, Amazon EFS uses your default
+        /// KMS key for Amazon EFS, <code>/aws/elasticfilesystem</code>. This ID can be in one
+        /// of the following formats:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Key ID - A unique identifier of the key, for example <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.
+        /// Key ID - The unique identifier of the key, for example <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// ARN - An Amazon Resource Name (ARN) for the key, for example <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.
+        /// ARN - The Amazon Resource Name (ARN) for the key, for example <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -78,7 +79,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Key alias ARN - An ARN for a key alias, for example <code>arn:aws:kms:us-west-2:444455556666:alias/projectKey1</code>.
+        /// Key alias ARN - The ARN for a key alias, for example <code>arn:aws:kms:us-west-2:444455556666:alias/projectKey1</code>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -98,7 +99,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
-        /// To create a file system that uses regional storage, specify the Amazon Web Services
+        /// To create a file system that uses Regional storage, specify the Amazon Web Services
         /// Region in which to create the destination file system.
         /// </para>
         /// </summary>

@@ -62,7 +62,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property Destinations. 
         /// <para>
-        /// Array of destination objects. Only one destination object is supported.
+        /// An array of destination objects. Only one destination object is supported.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -101,7 +101,8 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property SourceFileSystemArn. 
         /// <para>
-        /// The ARN of the current source file system in the replication configuration.
+        /// The Amazon Resource Name (ARN) of the current source file system in the replication
+        /// configuration.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
