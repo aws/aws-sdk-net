@@ -29,5 +29,10 @@ namespace Amazon.FSx.Model
         /// Enumerable containing all full responses for the operation
         /// </summary>
         IPaginatedEnumerable<DescribeVolumesResponse> Responses { get; }
+
+        /// <summary>
+        /// Enumerable containing all of the Volumes
+        /// </summary>
+        IPaginatedEnumerable<Volume> Volumes { get; }
     }
 }

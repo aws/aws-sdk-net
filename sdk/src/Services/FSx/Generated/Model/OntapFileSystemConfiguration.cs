@@ -79,7 +79,23 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property DeploymentType. 
         /// <para>
-        /// The ONTAP file system deployment type.
+        /// Specifies the FSx for ONTAP file system deployment type in use in the file system.
+        /// 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>MULTI_AZ_1</code> - (Default) A high availability file system configured for
+        /// Multi-AZ redundancy to tolerate temporary Availability Zone (AZ) unavailability. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>SINGLE_AZ_1</code> - A file system configured for Single-AZ redundancy.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For information about the use cases for Multi-AZ and Single-AZ deployments, refer
+        /// to <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-multiAZ.html">Choosing
+        /// Multi-AZ or Single-AZ file system deployment</a>. 
         /// </para>
         /// </summary>
         public OntapDeploymentType DeploymentType
@@ -116,7 +132,8 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property EndpointIpAddressRange. 
         /// <para>
-        /// The IP address range in which the endpoints to access your file system are created.
+        /// (Multi-AZ only) The IP address range in which the endpoints to access your file system
+        /// are created.
         /// </para>
         ///  <important> 
         /// <para>
@@ -178,7 +195,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property RouteTableIds. 
         /// <para>
-        /// The VPC route tables in which your file system's endpoints are created.
+        /// (Multi-AZ only) The VPC route tables in which your file system's endpoints are created.
         /// </para>
         /// </summary>
         [AWSProperty(Max=50)]

@@ -29,5 +29,10 @@ namespace Amazon.FSx.Model
         /// Enumerable containing all full responses for the operation
         /// </summary>
         IPaginatedEnumerable<DescribeStorageVirtualMachinesResponse> Responses { get; }
+
+        /// <summary>
+        /// Enumerable containing all of the StorageVirtualMachines
+        /// </summary>
+        IPaginatedEnumerable<StorageVirtualMachine> StorageVirtualMachines { get; }
     }
 }

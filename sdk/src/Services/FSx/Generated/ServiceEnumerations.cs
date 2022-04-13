@@ -1348,6 +1348,10 @@ namespace Amazon.FSx
         /// Constant MULTI_AZ_1 for OntapDeploymentType
         /// </summary>
         public static readonly OntapDeploymentType MULTI_AZ_1 = new OntapDeploymentType("MULTI_AZ_1");
+        /// <summary>
+        /// Constant SINGLE_AZ_1 for OntapDeploymentType
+        /// </summary>
+        public static readonly OntapDeploymentType SINGLE_AZ_1 = new OntapDeploymentType("SINGLE_AZ_1");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

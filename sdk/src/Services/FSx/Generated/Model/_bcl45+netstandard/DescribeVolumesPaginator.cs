@@ -41,6 +41,12 @@ namespace Amazon.FSx.Model
         /// </summary>
         public IPaginatedEnumerable<DescribeVolumesResponse> Responses => new PaginatedResponse<DescribeVolumesResponse>(this);
 
+        /// <summary>
+        /// Enumerable containing all of the Volumes
+        /// </summary>
+        public IPaginatedEnumerable<Volume> Volumes => 
+            new PaginatedResultKeyResponse<DescribeVolumesResponse, Volume>(this, (i) => i.Volumes);
+
         internal DescribeVolumesPaginator(IAmazonFSx client, DescribeVolumesRequest request)
         {
             this._client = client;
