@@ -1,3 +1,9 @@
+### 3.7.252.0 (2022-04-13 18:11 UTC)
+* CloudWatch (3.7.4.0)
+	* Adds support for additional statistics in CloudWatch Metric Streams.
+* FSx (3.7.12.0)
+	* This release adds support for deploying FSx for ONTAP file systems in a single Availability Zone.
+
 ### 3.7.251.0 (2022-04-12 19:03 UTC)
 * DevOpsGuru (3.7.9.0)
 	* This release adds new APIs DeleteInsight to deletes the insight along with the associated anomalies, events and recommendations.
