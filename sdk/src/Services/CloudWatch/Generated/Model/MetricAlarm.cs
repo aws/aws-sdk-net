@@ -544,8 +544,14 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property TreatMissingData. 
         /// <para>
-        /// Sets how this alarm is to handle missing data points. If this parameter is omitted,
-        /// the default behavior of <code>missing</code> is used.
+        /// Sets how this alarm is to handle missing data points. The valid values are <code>breaching</code>,
+        /// <code>notBreaching</code>, <code>ignore</code>, and <code>missing</code>. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data">Configuring
+        /// how CloudWatch alarms treat missing data</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If this parameter is omitted, the default behavior of <code>missing</code> is used.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

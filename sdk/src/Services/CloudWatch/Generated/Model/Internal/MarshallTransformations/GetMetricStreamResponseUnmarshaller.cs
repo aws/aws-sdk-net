@@ -143,6 +143,13 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                         response.State = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("StatisticsConfigurations/member", targetDepth))
+                    {
+                        var unmarshaller = MetricStreamStatisticsConfigurationUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        response.StatisticsConfigurations.Add(item);
+                        continue;
+                    }
                 } 
            }
 

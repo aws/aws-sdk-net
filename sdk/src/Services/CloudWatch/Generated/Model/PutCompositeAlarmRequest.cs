@@ -38,7 +38,9 @@ namespace Amazon.CloudWatch.Model
     ///  
     /// <para>
     /// The alarms specified in a composite alarm's rule expression can include metric alarms
-    /// and other composite alarms.
+    /// and other composite alarms. The rule expression of a composite alarm can include as
+    /// many as 100 underlying alarms. Any single alarm can be included in the rule expressions
+    /// of as many as 150 composite alarms.
     /// </para>
     ///  
     /// <para>

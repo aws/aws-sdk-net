@@ -29,10 +29,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatch.Model
 {
     /// <summary>
-    /// A dimension is a name/value pair that is part of the identity of a metric. You can
-    /// assign up to 10 dimensions to a metric. Because dimensions are part of the unique
-    /// identifier for a metric, whenever you add a unique name/value pair to one of your
-    /// metrics, you are creating a new variation of that metric.
+    /// A dimension is a name/value pair that is part of the identity of a metric. Because
+    /// dimensions are part of the unique identifier for a metric, whenever you add a unique
+    /// name/value pair to one of your metrics, you are creating a new variation of that metric.
+    /// For example, many Amazon EC2 metrics publish <code>InstanceId</code> as a dimension
+    /// name, and the actual instance ID as the value for that dimension.
+    /// 
+    ///  
+    /// <para>
+    /// You can assign up to 10 dimensions to a metric.
+    /// </para>
     /// </summary>
     public partial class Dimension
     {
@@ -42,8 +48,8 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the dimension. Dimension names must contain only ASCII characters and
-        /// must include at least one non-whitespace character.
+        /// The name of the dimension. Dimension names must contain only ASCII characters, must
+        /// include at least one non-whitespace character, and cannot start with a colon (<code>:</code>).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]

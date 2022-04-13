@@ -98,6 +98,39 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("RoleArn", StringUtils.FromString(publicRequest.RoleArn));
                 }
+                if(publicRequest.IsSetStatisticsConfigurations())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.StatisticsConfigurations)
+                    {
+                        if(publicRequestlistValue.IsSetAdditionalStatistics())
+                        {
+                            int publicRequestlistValuelistValueIndex = 1;
+                            foreach(var publicRequestlistValuelistValue in publicRequestlistValue.AdditionalStatistics)
+                            {
+                                request.Parameters.Add("StatisticsConfigurations" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AdditionalStatistics" + "." + "member" + "." + publicRequestlistValuelistValueIndex, StringUtils.FromString(publicRequestlistValuelistValue));
+                                publicRequestlistValuelistValueIndex++;
+                            }
+                        }
+                        if(publicRequestlistValue.IsSetIncludeMetrics())
+                        {
+                            int publicRequestlistValuelistValueIndex = 1;
+                            foreach(var publicRequestlistValuelistValue in publicRequestlistValue.IncludeMetrics)
+                            {
+                                if(publicRequestlistValuelistValue.IsSetMetricName())
+                                {
+                                    request.Parameters.Add("StatisticsConfigurations" + "." + "member" + "." + publicRequestlistValueIndex + "." + "IncludeMetrics" + "." + "member" + "." + publicRequestlistValuelistValueIndex + "." + "MetricName", StringUtils.FromString(publicRequestlistValuelistValue.MetricName));
+                                }
+                                if(publicRequestlistValuelistValue.IsSetNamespace())
+                                {
+                                    request.Parameters.Add("StatisticsConfigurations" + "." + "member" + "." + publicRequestlistValueIndex + "." + "IncludeMetrics" + "." + "member" + "." + publicRequestlistValuelistValueIndex + "." + "Namespace", StringUtils.FromString(publicRequestlistValuelistValue.Namespace));
+                                }
+                                publicRequestlistValuelistValueIndex++;
+                            }
+                        }
+                        publicRequestlistValueIndex++;
+                    }
+                }
                 if(publicRequest.IsSetTags())
                 {
                     int publicRequestlistValueIndex = 1;

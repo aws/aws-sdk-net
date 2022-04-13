@@ -43,6 +43,7 @@ namespace Amazon.CloudWatch.Model
         private MetricStreamOutputFormat _outputFormat;
         private string _roleArn;
         private string _state;
+        private List<MetricStreamStatisticsConfiguration> _statisticsConfigurations = new List<MetricStreamStatisticsConfiguration>();
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -178,7 +179,12 @@ namespace Amazon.CloudWatch.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OutputFormat.
+        /// Gets and sets the property OutputFormat. 
+        /// <para>
+        /// The output format for the stream. Valid values are <code>json</code> and <code>opentelemetry0.7</code>.
+        /// For more information about metric stream output formats, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-metric-streams-formats.html">
+        /// Metric streams output formats</a>.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
         public MetricStreamOutputFormat OutputFormat
@@ -228,6 +234,27 @@ namespace Amazon.CloudWatch.Model
         internal bool IsSetState()
         {
             return this._state != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StatisticsConfigurations. 
+        /// <para>
+        /// Each entry in this array displays information about one or more metrics that include
+        /// extended statistics in the metric stream. For more information about extended statistics,
+        /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html">
+        /// CloudWatch statistics definitions</a>. 
+        /// </para>
+        /// </summary>
+        public List<MetricStreamStatisticsConfiguration> StatisticsConfigurations
+        {
+            get { return this._statisticsConfigurations; }
+            set { this._statisticsConfigurations = value; }
+        }
+
+        // Check to see if StatisticsConfigurations property is set
+        internal bool IsSetStatisticsConfigurations()
+        {
+            return this._statisticsConfigurations != null && this._statisticsConfigurations.Count > 0; 
         }
 
     }
