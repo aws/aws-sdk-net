@@ -70,6 +70,12 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
                     unmarshalledObject.AuthCodeUrls = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("oauth2CustomProperties", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<OAuth2CustomParameter, OAuth2CustomParameterUnmarshaller>(OAuth2CustomParameterUnmarshaller.Instance);
+                    unmarshalledObject.Oauth2CustomProperties = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("oauth2GrantTypesSupported", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);

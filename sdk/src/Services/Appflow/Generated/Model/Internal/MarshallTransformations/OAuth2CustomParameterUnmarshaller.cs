@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for OAuth2Properties Object
+    /// Response Unmarshaller for OAuth2CustomParameter Object
     /// </summary>  
-    public class OAuth2PropertiesUnmarshaller : IUnmarshaller<OAuth2Properties, XmlUnmarshallerContext>, IUnmarshaller<OAuth2Properties, JsonUnmarshallerContext>
+    public class OAuth2CustomParameterUnmarshaller : IUnmarshaller<OAuth2CustomParameter, XmlUnmarshallerContext>, IUnmarshaller<OAuth2CustomParameter, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        OAuth2Properties IUnmarshaller<OAuth2Properties, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        OAuth2CustomParameter IUnmarshaller<OAuth2CustomParameter, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,57 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public OAuth2Properties Unmarshall(JsonUnmarshallerContext context)
+        public OAuth2CustomParameter Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            OAuth2Properties unmarshalledObject = new OAuth2Properties();
+            OAuth2CustomParameter unmarshalledObject = new OAuth2CustomParameter();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("oAuth2GrantType", targetDepth))
+                if (context.TestExpression("connectorSuppliedValues", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OAuth2GrantType = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.ConnectorSuppliedValues = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("tokenUrl", targetDepth))
+                if (context.TestExpression("description", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TokenUrl = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("tokenUrlCustomProperties", targetDepth))
+                if (context.TestExpression("isRequired", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    unmarshalledObject.TokenUrlCustomProperties = unmarshaller.Unmarshall(context);
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.IsRequired = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("isSensitiveField", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.IsSensitiveField = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("key", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Key = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("label", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Label = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("type", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +112,12 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         }
 
 
-        private static OAuth2PropertiesUnmarshaller _instance = new OAuth2PropertiesUnmarshaller();        
+        private static OAuth2CustomParameterUnmarshaller _instance = new OAuth2CustomParameterUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static OAuth2PropertiesUnmarshaller Instance
+        public static OAuth2CustomParameterUnmarshaller Instance
         {
             get
             {

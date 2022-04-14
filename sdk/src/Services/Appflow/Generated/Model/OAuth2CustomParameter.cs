@@ -1,0 +1,175 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the appflow-2020-08-23.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+namespace Amazon.Appflow.Model
+{
+    /// <summary>
+    /// Custom parameter required for OAuth 2.0 authentication.
+    /// </summary>
+    public partial class OAuth2CustomParameter
+    {
+        private List<string> _connectorSuppliedValues = new List<string>();
+        private string _description;
+        private bool? _isRequired;
+        private bool? _isSensitiveField;
+        private string _key;
+        private string _label;
+        private OAuth2CustomPropType _type;
+
+        /// <summary>
+        /// Gets and sets the property ConnectorSuppliedValues. 
+        /// <para>
+        /// Contains default values for this authentication parameter that are supplied by the
+        /// connector.
+        /// </para>
+        /// </summary>
+        public List<string> ConnectorSuppliedValues
+        {
+            get { return this._connectorSuppliedValues; }
+            set { this._connectorSuppliedValues = value; }
+        }
+
+        // Check to see if ConnectorSuppliedValues property is set
+        internal bool IsSetConnectorSuppliedValues()
+        {
+            return this._connectorSuppliedValues != null && this._connectorSuppliedValues.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// A description about the custom parameter used for OAuth 2.0 authentication.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=1024)]
+        public string Description
+        {
+            get { return this._description; }
+            set { this._description = value; }
+        }
+
+        // Check to see if Description property is set
+        internal bool IsSetDescription()
+        {
+            return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsRequired. 
+        /// <para>
+        /// Indicates whether the custom parameter for OAuth 2.0 authentication is required.
+        /// </para>
+        /// </summary>
+        public bool IsRequired
+        {
+            get { return this._isRequired.GetValueOrDefault(); }
+            set { this._isRequired = value; }
+        }
+
+        // Check to see if IsRequired property is set
+        internal bool IsSetIsRequired()
+        {
+            return this._isRequired.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsSensitiveField. 
+        /// <para>
+        /// Indicates whether this authentication custom parameter is a sensitive field.
+        /// </para>
+        /// </summary>
+        public bool IsSensitiveField
+        {
+            get { return this._isSensitiveField.GetValueOrDefault(); }
+            set { this._isSensitiveField = value; }
+        }
+
+        // Check to see if IsSensitiveField property is set
+        internal bool IsSetIsSensitiveField()
+        {
+            return this._isSensitiveField.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Key. 
+        /// <para>
+        /// The key of the custom parameter required for OAuth 2.0 authentication.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=512)]
+        public string Key
+        {
+            get { return this._key; }
+            set { this._key = value; }
+        }
+
+        // Check to see if Key property is set
+        internal bool IsSetKey()
+        {
+            return this._key != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Label. 
+        /// <para>
+        /// The label of the custom parameter used for OAuth 2.0 authentication.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=128)]
+        public string Label
+        {
+            get { return this._label; }
+            set { this._label = value; }
+        }
+
+        // Check to see if Label property is set
+        internal bool IsSetLabel()
+        {
+            return this._label != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// Indicates whether custom parameter is used with TokenUrl or AuthUrl.
+        /// </para>
+        /// </summary>
+        public OAuth2CustomPropType Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
+        }
+
+    }
+}

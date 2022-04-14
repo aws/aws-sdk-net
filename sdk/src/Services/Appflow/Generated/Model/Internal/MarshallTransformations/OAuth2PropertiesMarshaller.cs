@@ -57,6 +57,20 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.TokenUrl);
             }
 
+            if(requestObject.IsSetTokenUrlCustomProperties())
+            {
+                context.Writer.WritePropertyName("tokenUrlCustomProperties");
+                context.Writer.WriteObjectStart();
+                foreach (var requestObjectTokenUrlCustomPropertiesKvp in requestObject.TokenUrlCustomProperties)
+                {
+                    context.Writer.WritePropertyName(requestObjectTokenUrlCustomPropertiesKvp.Key);
+                    var requestObjectTokenUrlCustomPropertiesValue = requestObjectTokenUrlCustomPropertiesKvp.Value;
+
+                        context.Writer.Write(requestObjectTokenUrlCustomPropertiesValue);
+                }
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

@@ -455,7 +455,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.ConnectorOAuthRequest.AuthCode</property>
-    <max>512</max>
+    <max>2048</max>
     <pattern>\S+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -788,6 +788,21 @@
     <property>Amazon.Appflow.Model.OAuth2Credentials.RefreshToken</property>
     <max>1024</max>
     <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Appflow.Model.OAuth2CustomParameter.Description</property>
+    <max>1024</max>
+    <pattern>[\s\w/!@#+=.-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Appflow.Model.OAuth2CustomParameter.Key</property>
+    <max>512</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Appflow.Model.OAuth2CustomParameter.Label</property>
+    <max>128</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.OAuth2Properties.TokenUrl</property>

@@ -34,6 +34,7 @@ namespace Amazon.Appflow.Model
     public partial class OAuth2Defaults
     {
         private List<string> _authCodeUrls = new List<string>();
+        private List<OAuth2CustomParameter> _oauth2CustomProperties = new List<OAuth2CustomParameter>();
         private List<string> _oauth2GrantTypesSupported = new List<string>();
         private List<string> _oauthScopes = new List<string>();
         private List<string> _tokenUrls = new List<string>();
@@ -54,6 +55,24 @@ namespace Amazon.Appflow.Model
         internal bool IsSetAuthCodeUrls()
         {
             return this._authCodeUrls != null && this._authCodeUrls.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Oauth2CustomProperties. 
+        /// <para>
+        /// List of custom parameters required for OAuth 2.0 authentication.
+        /// </para>
+        /// </summary>
+        public List<OAuth2CustomParameter> Oauth2CustomProperties
+        {
+            get { return this._oauth2CustomProperties; }
+            set { this._oauth2CustomProperties = value; }
+        }
+
+        // Check to see if Oauth2CustomProperties property is set
+        internal bool IsSetOauth2CustomProperties()
+        {
+            return this._oauth2CustomProperties != null && this._oauth2CustomProperties.Count > 0; 
         }
 
         /// <summary>

@@ -1095,6 +1095,56 @@ namespace Amazon.Appflow
 
 
     /// <summary>
+    /// Constants used for properties of type OAuth2CustomPropType.
+    /// </summary>
+    public class OAuth2CustomPropType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUTH_URL for OAuth2CustomPropType
+        /// </summary>
+        public static readonly OAuth2CustomPropType AUTH_URL = new OAuth2CustomPropType("AUTH_URL");
+        /// <summary>
+        /// Constant TOKEN_URL for OAuth2CustomPropType
+        /// </summary>
+        public static readonly OAuth2CustomPropType TOKEN_URL = new OAuth2CustomPropType("TOKEN_URL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OAuth2CustomPropType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OAuth2CustomPropType FindValue(string value)
+        {
+            return FindValue<OAuth2CustomPropType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OAuth2CustomPropType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type OAuth2GrantType.
     /// </summary>
     public class OAuth2GrantType : ConstantClass

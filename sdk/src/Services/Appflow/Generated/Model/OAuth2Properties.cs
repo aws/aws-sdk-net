@@ -35,6 +35,7 @@ namespace Amazon.Appflow.Model
     {
         private OAuth2GrantType _oAuth2GrantType;
         private string _tokenUrl;
+        private Dictionary<string, string> _tokenUrlCustomProperties = new Dictionary<string, string>();
 
         /// <summary>
         /// Gets and sets the property OAuth2GrantType. 
@@ -72,6 +73,27 @@ namespace Amazon.Appflow.Model
         internal bool IsSetTokenUrl()
         {
             return this._tokenUrl != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TokenUrlCustomProperties. 
+        /// <para>
+        /// Associates your token URL with a map of properties that you define. Use this parameter
+        /// to provide any additional details that the connector requires to authenticate your
+        /// request.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=50)]
+        public Dictionary<string, string> TokenUrlCustomProperties
+        {
+            get { return this._tokenUrlCustomProperties; }
+            set { this._tokenUrlCustomProperties = value; }
+        }
+
+        // Check to see if TokenUrlCustomProperties property is set
+        internal bool IsSetTokenUrlCustomProperties()
+        {
+            return this._tokenUrlCustomProperties != null && this._tokenUrlCustomProperties.Count > 0; 
         }
 
     }
