@@ -1,3 +1,21 @@
+### 3.7.253.0 (2022-04-14 18:17 UTC)
+* Appflow (3.7.8.0)
+	* Enables users to pass custom token URL parameters for Oauth2 authentication during create connector profile
+* AppStream (3.7.5.0)
+	* Includes updates for create and update fleet APIs to manage the session scripts locations for Elastic fleets.
+* Batch (3.7.5.0)
+	* Enables configuration updates for compute environments with BEST_FIT_PROGRESSIVE and SPOT_CAPACITY_OPTIMIZED allocation strategies.
+* CloudWatch (3.7.4.1)
+	* Updates documentation for additional statistics in CloudWatch Metric Streams.
+* EC2 (3.7.64.1)
+	* Documentation updates for Amazon EC2.
+* Glue (3.7.16.0)
+	* Auto Scaling for Glue version 3.0 and later jobs to dynamically scale compute resources. This SDK change provides customers with the auto-scaled DPU usage
+* Core 3.7.10.8
+	* Updating endpoints.json file.
+
+	* All services packages updated to require new Core
+
 ### 3.7.252.0 (2022-04-13 18:11 UTC)
 * CloudWatch (3.7.4.0)
 	* Adds support for additional statistics in CloudWatch Metric Streams.
