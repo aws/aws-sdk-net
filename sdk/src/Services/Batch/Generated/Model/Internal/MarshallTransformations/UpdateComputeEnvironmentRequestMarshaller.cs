@@ -100,6 +100,17 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.UnmanagedvCpus);
                 }
 
+                if(publicRequest.IsSetUpdatePolicy())
+                {
+                    context.Writer.WritePropertyName("updatePolicy");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = UpdatePolicyMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.UpdatePolicy, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

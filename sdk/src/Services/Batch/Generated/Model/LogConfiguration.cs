@@ -58,7 +58,7 @@ namespace Amazon.Batch.Model
         /// <para>
         /// Specifies the Amazon CloudWatch Logs logging driver. For more information, see <a
         /// href="https://docs.aws.amazon.com/batch/latest/userguide/using_awslogs.html">Using
-        /// the awslogs Log Driver</a> in the <i>Batch User Guide</i> and <a href="https://docs.docker.com/config/containers/logging/awslogs/">Amazon
+        /// the awslogs log driver</a> in the <i>Batch User Guide</i> and <a href="https://docs.docker.com/config/containers/logging/awslogs/">Amazon
         /// CloudWatch Logs logging driver</a> in the Docker documentation.
         /// </para>
         ///  </dd> <dt>fluentd</dt> <dd> 
@@ -153,7 +153,7 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property SecretOptions. 
         /// <para>
         /// The secrets to pass to the log configuration. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying
-        /// Sensitive Data</a> in the <i>Batch User Guide</i>.
+        /// sensitive data</a> in the <i>Batch User Guide</i>.
         /// </para>
         /// </summary>
         public List<Secret> SecretOptions

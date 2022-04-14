@@ -56,10 +56,10 @@ namespace Amazon.Batch.Model
         /// <para>
         /// The set of compute environments mapped to a job queue and their order relative to
         /// each other. The job scheduler uses this parameter to determine which compute environment
-        /// should run a specific job. Compute environments must be in the <code>VALID</code>
-        /// state before you can associate them with a job queue. You can associate up to three
-        /// compute environments with a job queue. All of the compute environments must be either
-        /// EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>);
+        /// runs a specific job. Compute environments must be in the <code>VALID</code> state
+        /// before you can associate them with a job queue. You can associate up to three compute
+        /// environments with a job queue. All of the compute environments must be either EC2
+        /// (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>);
         /// EC2 and Fargate compute environments can't be mixed.
         /// </para>
         ///  <note> 

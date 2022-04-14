@@ -93,7 +93,7 @@ namespace Amazon.Batch.Model
         /// <para>
         /// If you're trying to maximize your resource utilization by providing your jobs as much
         /// memory as possible for a particular instance type, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/memory-management.html">Memory
-        /// Management</a> in the <i>Batch User Guide</i>.
+        /// management</a> in the <i>Batch User Guide</i>.
         /// </para>
         ///  </note> 
         /// <para>

@@ -552,8 +552,8 @@ namespace Amazon.Batch
         ///  
         /// <para>
         /// If you're using an unmanaged compute environment, you can use the <code>DescribeComputeEnvironment</code>
-        /// operation to determine the <code>ecsClusterArn</code> that you should launch your
-        /// Amazon ECS container instances into.
+        /// operation to determine the <code>ecsClusterArn</code> that you launch your Amazon
+        /// ECS container instances into.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeComputeEnvironments service method.</param>

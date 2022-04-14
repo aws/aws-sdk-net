@@ -93,11 +93,11 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property ContainerOverrides. 
         /// <para>
         /// A list of container overrides in the JSON format that specify the name of a container
-        /// in the specified job definition and the overrides it should receive. You can override
-        /// the default command for a container, which is specified in the job definition or the
-        /// Docker image, with a <code>command</code> override. You can also override existing
-        /// environment variables on a container or add new environment variables to it with an
-        /// <code>environment</code> override.
+        /// in the specified job definition and the overrides it receives. You can override the
+        /// default command for a container, which is specified in the job definition or the Docker
+        /// image, with a <code>command</code> override. You can also override existing environment
+        /// variables on a container or add new environment variables to it with an <code>environment</code>
+        /// override.
         /// </para>
         /// </summary>
         public ContainerOverrides ContainerOverrides

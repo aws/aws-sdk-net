@@ -135,7 +135,7 @@ namespace Amazon.Batch.Model
         /// EFS server. If you don't specify a transit encryption port, it uses the port selection
         /// strategy that the Amazon EFS mount helper uses. The value must be between 0 and 65,535.
         /// For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-mount-helper.html">EFS
-        /// Mount Helper</a> in the <i>Amazon Elastic File System User Guide</i>.
+        /// mount helper</a> in the <i>Amazon Elastic File System User Guide</i>.
         /// </para>
         /// </summary>
         public int TransitEncryptionPort

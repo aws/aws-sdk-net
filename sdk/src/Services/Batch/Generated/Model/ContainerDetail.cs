@@ -294,7 +294,7 @@ namespace Amazon.Batch.Model
         /// drivers available on that instance with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code>
         /// environment variable before containers placed on that instance can use these log configuration
         /// options. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
-        /// ECS Container Agent Configuration</a> in the <i>Amazon Elastic Container Service Developer
+        /// ECS container agent configuration</a> in the <i>Amazon Elastic Container Service Developer
         /// Guide</i>.
         /// </para>
         ///  </note>

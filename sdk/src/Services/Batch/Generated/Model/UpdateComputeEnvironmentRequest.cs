@@ -39,6 +39,7 @@ namespace Amazon.Batch.Model
         private string _serviceRole;
         private CEState _state;
         private int? _unmanagedvCpus;
+        private UpdatePolicy _updatePolicy;
 
         /// <summary>
         /// Gets and sets the property ComputeEnvironment. 
@@ -91,12 +92,15 @@ namespace Amazon.Batch.Model
         /// <para>
         /// If the compute environment has a service-linked role, it can't be changed to use a
         /// regular IAM role. Likewise, if the compute environment has a regular IAM role, it
-        /// can't be changed to use a service-linked role.
+        /// can't be changed to use a service-linked role. To update the parameters for the compute
+        /// environment that require an infrastructure update to change, the <b>AWSServiceRoleForBatch</b>
+        /// service-linked role must be used. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
+        /// compute environments</a> in the <i>Batch User Guide</i>.
         /// </para>
         ///  </important> 
         /// <para>
         /// If your specified role has a path other than <code>/</code>, then you must either
-        /// specify the full role ARN (this is recommended) or prefix the role name with the path.
+        /// specify the full role ARN (recommended) or prefix the role name with the path.
         /// </para>
         ///  <note> 
         /// <para>
@@ -159,8 +163,8 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property UnmanagedvCpus. 
         /// <para>
         /// The maximum number of vCPUs expected to be used for an unmanaged compute environment.
-        /// This parameter should not be specified for a managed compute environment. This parameter
-        /// is only used for fair share scheduling to reserve vCPU capacity for new share identifiers.
+        /// Do not specify this parameter for a managed compute environment. This parameter is
+        /// only used for fair share scheduling to reserve vCPU capacity for new share identifiers.
         /// If this parameter is not provided for a fair share job queue, no vCPU capacity will
         /// be reserved.
         /// </para>
@@ -175,6 +179,26 @@ namespace Amazon.Batch.Model
         internal bool IsSetUnmanagedvCpus()
         {
             return this._unmanagedvCpus.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UpdatePolicy. 
+        /// <para>
+        /// Specifies the updated infrastructure update policy for the compute environment. For
+        /// more information about infrastructure updates, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
+        /// compute environments</a> in the <i>Batch User Guide</i>.
+        /// </para>
+        /// </summary>
+        public UpdatePolicy UpdatePolicy
+        {
+            get { return this._updatePolicy; }
+            set { this._updatePolicy = value; }
+        }
+
+        // Check to see if UpdatePolicy property is set
+        internal bool IsSetUpdatePolicy()
+        {
+            return this._updatePolicy != null;
         }
 
     }

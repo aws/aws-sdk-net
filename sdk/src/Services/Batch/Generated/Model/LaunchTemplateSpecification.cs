@@ -101,11 +101,16 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  <important> 
         /// <para>
-        /// After the compute environment is created, the launch template version that's used
-        /// isn't changed, even if the <code>$Default</code> or <code>$Latest</code> version for
-        /// the launch template is updated. To use a new launch template version, create a new
-        /// compute environment, add the new compute environment to the existing job queue, remove
-        /// the old compute environment from the job queue, and delete the old compute environment.
+        /// If the AMI ID that's used in a compute environment is from the launch template, the
+        /// AMI isn't changed when the compute environment is updated. It's only changed if the
+        /// <code>updateToLatestImageVersion</code> parameter for the compute environment is set
+        /// to <code>true</code>. During an infrastructure update, if either <code>$Latest</code>
+        /// or <code>$Default</code> is specified, Batch re-evaluates the launch template version,
+        /// and it might use a different version of the launch template. This is the case even
+        /// if the launch template isn't specified in the update. When updating a compute environment,
+        /// changing the launch template requires an infrastructure update of the compute environment.
+        /// For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
+        /// compute environments</a> in the <i>Batch User Guide</i>.
         /// </para>
         ///  </important> 
         /// <para>

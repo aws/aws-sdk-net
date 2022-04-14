@@ -30,7 +30,7 @@ namespace Amazon.Batch.Model
 {
     /// <summary>
     /// An object representing an Batch compute resource. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
-    /// Environments</a> in the <i>Batch User Guide</i>.
+    /// environments</a> in the <i>Batch User Guide</i>.
     /// </summary>
     public partial class ComputeResource
     {
@@ -59,7 +59,7 @@ namespace Amazon.Batch.Model
         /// the best fitting instance type can be allocated. This might be because of availability
         /// of the instance type in the Region or <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon
         /// EC2 service limits</a>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/allocation-strategies.html">Allocation
-        /// Strategies</a> in the <i>Batch User Guide</i>.
+        /// strategies</a> in the <i>Batch User Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -75,7 +75,10 @@ namespace Amazon.Batch.Model
         /// EC2 service limits</a> then additional jobs aren't run until the currently running
         /// jobs have completed. This allocation strategy keeps costs lower but can limit scaling.
         /// If you are using Spot Fleets with <code>BEST_FIT</code> then the Spot Fleet IAM Role
-        /// must be specified.
+        /// must be specified. Compute resources that use a <code>BEST_FIT</code> allocation strategy
+        /// don't support infrastructure updates and can't update some parameters. For more information,
+        /// see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
+        /// compute environments</a> in the <i>Batch User Guide</i>.
         /// </para>
         ///  </dd> <dt>BEST_FIT_PROGRESSIVE</dt> <dd> 
         /// <para>
@@ -264,7 +267,7 @@ namespace Amazon.Batch.Model
         /// You can specify the short name or full Amazon Resource Name (ARN) of an instance profile.
         /// For example, <code> <i>ecsInstanceRole</i> </code> or <code>arn:aws:iam::<i>&lt;aws_account_id&gt;</i>:instance-profile/<i>ecsInstanceRole</i>
         /// </code>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/instance_IAM_role.html">Amazon
-        /// ECS Instance Role</a> in the <i>Batch User Guide</i>.
+        /// ECS instance role</a> in the <i>Batch User Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -333,7 +336,7 @@ namespace Amazon.Batch.Model
         /// the same parameters in the launch template. You must specify either the launch template
         /// ID or launch template name in the request, but not both. For more information, see
         /// <a href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Launch
-        /// Template Support</a> in the <i>Batch User Guide</i>.
+        /// template support</a> in the <i>Batch User Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -415,7 +418,7 @@ namespace Amazon.Batch.Model
         /// creating a cluster placement group and associate it with your compute resources. This
         /// keeps your multi-node parallel job on a logical grouping of instances within a single
         /// Availability Zone with high network flow potential. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-        /// Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+        /// groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -467,7 +470,7 @@ namespace Amazon.Batch.Model
         /// <code>SPOT</code> compute environment. This role is required if the allocation strategy
         /// set to <code>BEST_FIT</code> or if the allocation strategy isn't specified. For more
         /// information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/spot_fleet_IAM_role.html">Amazon
-        /// EC2 Spot Fleet Role</a> in the <i>Batch User Guide</i>.
+        /// EC2 spot fleet role</a> in the <i>Batch User Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -480,7 +483,7 @@ namespace Amazon.Batch.Model
         /// use the newer <b>AmazonEC2SpotFleetTaggingRole</b> managed policy. The previously
         /// recommended <b>AmazonEC2SpotFleetRole</b> managed policy doesn't have the required
         /// permissions to tag Spot Instances. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#spot-instance-no-tag">Spot
-        /// Instances not tagged on creation</a> in the <i>Batch User Guide</i>.
+        /// instances not tagged on creation</a> in the <i>Batch User Guide</i>.
         /// </para>
         ///  </important>
         /// </summary>
@@ -502,7 +505,7 @@ namespace Amazon.Batch.Model
         /// The VPC subnets where the compute resources are launched. These subnets must be within
         /// the same VPC. Fargate compute resources can contain up to 16 subnets. For more information,
         /// see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs
-        /// and Subnets</a> in the <i>Amazon VPC User Guide</i>.
+        /// and subnets</a> in the <i>Amazon VPC User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -554,13 +557,13 @@ namespace Amazon.Batch.Model
         /// <para>
         /// The type of compute environment: <code>EC2</code>, <code>SPOT</code>, <code>FARGATE</code>,
         /// or <code>FARGATE_SPOT</code>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
-        /// Environments</a> in the <i>Batch User Guide</i>.
+        /// environments</a> in the <i>Batch User Guide</i>.
         /// </para>
         ///  
         /// <para>
         ///  If you choose <code>SPOT</code>, you must also specify an Amazon EC2 Spot Fleet role
         /// with the <code>spotIamFleetRole</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/spot_fleet_IAM_role.html">Amazon
-        /// EC2 Spot Fleet role</a> in the <i>Batch User Guide</i>.
+        /// EC2 spot fleet role</a> in the <i>Batch User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

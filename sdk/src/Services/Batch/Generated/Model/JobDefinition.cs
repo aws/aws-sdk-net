@@ -135,7 +135,7 @@ namespace Amazon.Batch.Model
         /// definition. Parameters are specified as a key-value pair mapping. Parameters in a
         /// <code>SubmitJob</code> request override any corresponding parameter defaults from
         /// the job definition. For more information about specifying parameters, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/job_definition_parameters.html">Job
-        /// Definition Parameters</a> in the <i>Batch User Guide</i>.
+        /// definition parameters</a> in the <i>Batch User Guide</i>.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Parameters

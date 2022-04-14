@@ -239,7 +239,7 @@ namespace Amazon.Batch.Model
         /// <para>
         /// The Amazon Resource Name (ARN) of the IAM role that the container can assume for Amazon
         /// Web Services permissions. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
-        /// Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// roles for tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         /// </summary>
         public string JobRoleArn
@@ -309,7 +309,7 @@ namespace Amazon.Batch.Model
         /// drivers available on that instance with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code>
         /// environment variable before containers placed on that instance can use these log configuration
         /// options. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
-        /// ECS Container Agent Configuration</a> in the <i>Amazon Elastic Container Service Developer
+        /// ECS container agent configuration</a> in the <i>Amazon Elastic Container Service Developer
         /// Guide</i>.
         /// </para>
         ///  </note>

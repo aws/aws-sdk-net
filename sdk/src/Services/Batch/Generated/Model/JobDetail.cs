@@ -172,7 +172,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property JobDefinition. 
         /// <para>
-        /// The job definition that's used by this job.
+        /// The Amazon Resource Name (ARN) of the job definition that's used by this job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -433,7 +433,7 @@ namespace Amazon.Batch.Model
         ///  <note> 
         /// <para>
         /// If your jobs don't progress to <code>STARTING</code>, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#job_stuck_in_runnable">Jobs
-        /// Stuck in RUNNABLE Status</a> in the troubleshooting section of the <i>Batch User Guide</i>.
+        /// stuck in RUNNABLE status</a> in the troubleshooting section of the <i>Batch User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
