@@ -178,6 +178,12 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                     unmarshalledObject.Platform = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SessionScriptS3Location", targetDepth))
+                {
+                    var unmarshaller = S3LocationUnmarshaller.Instance;
+                    unmarshalledObject.SessionScriptS3Location = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("State", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

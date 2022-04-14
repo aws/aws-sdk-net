@@ -309,6 +309,10 @@ namespace Amazon.AppStream
         /// </summary>
         public static readonly FleetAttribute IAM_ROLE_ARN = new FleetAttribute("IAM_ROLE_ARN");
         /// <summary>
+        /// Constant SESSION_SCRIPT_S3_LOCATION for FleetAttribute
+        /// </summary>
+        public static readonly FleetAttribute SESSION_SCRIPT_S3_LOCATION = new FleetAttribute("SESSION_SCRIPT_S3_LOCATION");
+        /// <summary>
         /// Constant USB_DEVICE_FILTER_STRINGS for FleetAttribute
         /// </summary>
         public static readonly FleetAttribute USB_DEVICE_FILTER_STRINGS = new FleetAttribute("USB_DEVICE_FILTER_STRINGS");

@@ -87,6 +87,7 @@ namespace Amazon.AppStream.Model
         private int? _maxUserDurationInSeconds;
         private string _name;
         private PlatformType _platform;
+        private S3Location _sessionScriptS3Location;
         private StreamView _streamView;
         private List<string> _usbDeviceFilterStrings = new List<string>();
         private VpcConfig _vpcConfig;
@@ -598,6 +599,25 @@ namespace Amazon.AppStream.Model
         internal bool IsSetPlatform()
         {
             return this._platform != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SessionScriptS3Location. 
+        /// <para>
+        /// The S3 location of the session scripts configuration zip file. This only applies to
+        /// Elastic fleets. 
+        /// </para>
+        /// </summary>
+        public S3Location SessionScriptS3Location
+        {
+            get { return this._sessionScriptS3Location; }
+            set { this._sessionScriptS3Location = value; }
+        }
+
+        // Check to see if SessionScriptS3Location property is set
+        internal bool IsSetSessionScriptS3Location()
+        {
+            return this._sessionScriptS3Location != null;
         }
 
         /// <summary>

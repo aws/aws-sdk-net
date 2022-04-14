@@ -173,6 +173,17 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Platform);
                 }
 
+                if(publicRequest.IsSetSessionScriptS3Location())
+                {
+                    context.Writer.WritePropertyName("SessionScriptS3Location");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = S3LocationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.SessionScriptS3Location, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetStreamView())
                 {
                     context.Writer.WritePropertyName("StreamView");
