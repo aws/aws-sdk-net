@@ -680,6 +680,14 @@ namespace Amazon.CloudWatch.Model
         /// <para>
         /// Valid Values: <code>breaching | notBreaching | ignore | missing</code> 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Alarms that evaluate metrics in the <code>AWS/DynamoDB</code> namespace always <code>ignore</code>
+        /// missing data even if you choose a different option for <code>TreatMissingData</code>.
+        /// When an <code>AWS/DynamoDB</code> metric has missing data, alarms that evaluate that
+        /// metric remain in their current state.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
         public string TreatMissingData

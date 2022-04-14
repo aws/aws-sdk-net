@@ -31,8 +31,8 @@ namespace Amazon.CloudWatch.Model
     /// <summary>
     /// By default, a metric stream always sends the <code>MAX</code>, <code>MIN</code>, <code>SUM</code>,
     /// and <code>SAMPLECOUNT</code> statistics for each metric that is streamed. This structure
-    /// contains information for one metric that includes extended statistics in the stream.
-    /// For more information about extended statistics, see CloudWatch, listed in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html">
+    /// contains information for one metric that includes additional statistics in the stream.
+    /// For more information about statistics, see CloudWatch, listed in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html">
     /// CloudWatch statistics definitions</a>.
     /// </summary>
     public partial class MetricStreamStatisticsConfiguration
@@ -43,7 +43,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property AdditionalStatistics. 
         /// <para>
-        /// The list of extended statistics that are to be streamed for the metrics listed in
+        /// The list of additional statistics that are to be streamed for the metrics listed in
         /// the <code>IncludeMetrics</code> array in this structure. This list can include as
         /// many as 20 statistics.
         /// </para>
@@ -56,7 +56,7 @@ namespace Amazon.CloudWatch.Model
         ///  
         /// <para>
         /// If the <code>OutputFormat</code> for the stream is <code>json</code>, the valid values
-        /// are include the abbreviations for all of the extended statistics listed in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html">
+        /// include the abbreviations for all of the statistics listed in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html">
         /// CloudWatch statistics definitions</a>. For example, this includes <code>tm98, </code>
         /// <code>wm90</code>, <code>PR(:300)</code>, and so on.
         /// </para>
@@ -77,14 +77,14 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property IncludeMetrics. 
         /// <para>
-        /// An array of metric name and namespace pairs that stream the extended statistics listed
-        /// in the value of the <code>AdditionalStatistics</code> parameter. There can be as many
-        /// as 100 pairs in the array.
+        /// An array of metric name and namespace pairs that stream the additional statistics
+        /// listed in the value of the <code>AdditionalStatistics</code> parameter. There can
+        /// be as many as 100 pairs in the array.
         /// </para>
         ///  
         /// <para>
         /// All metrics that match the combination of metric name and namespace will be streamed
-        /// with the extended statistics, no matter their dimensions.
+        /// with the additional statistics, no matter their dimensions.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

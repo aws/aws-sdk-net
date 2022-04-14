@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatch.Model
 {
     /// <summary>
-    /// This object contains the information for one metric that is to streamed with extended
+    /// This object contains the information for one metric that is to be streamed with additional
     /// statistics.
     /// </summary>
     public partial class MetricStreamStatisticsMetric
@@ -59,7 +59,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property Namespace. 
         /// <para>
-        /// The metric namespace for the metric.
+        /// The namespace of the metric.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]

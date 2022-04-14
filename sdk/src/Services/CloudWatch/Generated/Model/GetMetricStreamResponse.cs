@@ -240,8 +240,8 @@ namespace Amazon.CloudWatch.Model
         /// Gets and sets the property StatisticsConfigurations. 
         /// <para>
         /// Each entry in this array displays information about one or more metrics that include
-        /// extended statistics in the metric stream. For more information about extended statistics,
-        /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html">
+        /// additional statistics in the metric stream. For more information about the additional
+        /// statistics, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html">
         /// CloudWatch statistics definitions</a>. 
         /// </para>
         /// </summary>
