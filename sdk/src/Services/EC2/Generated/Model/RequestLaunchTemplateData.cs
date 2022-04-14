@@ -30,6 +30,12 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// The information to include in the launch template.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// You must specify at least one parameter for the launch template data.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class RequestLaunchTemplateData
     {

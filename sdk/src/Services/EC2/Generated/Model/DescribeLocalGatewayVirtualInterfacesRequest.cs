@@ -63,11 +63,6 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>local-gateway-virtual-interface-group-id</code> - The ID of the virtual interface
-        /// group.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         ///  <code>owner-id</code> - The ID of the Amazon Web Services account that owns the local
         /// gateway virtual interface.
         /// </para>

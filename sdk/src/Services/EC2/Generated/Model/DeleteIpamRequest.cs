@@ -33,14 +33,7 @@ namespace Amazon.EC2.Model
     /// Delete an IPAM. Deleting an IPAM removes all monitored data associated with the IPAM
     /// including the historical data for CIDRs.
     /// 
-    ///  <note> 
-    /// <para>
-    /// You cannot delete an IPAM if there are CIDRs provisioned to pools or if there are
-    /// allocations in the pools within the IPAM. To deprovision pool CIDRs, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeprovisionIpamPoolCidr.html">DeprovisionIpamPoolCidr</a>.
-    /// To release allocations, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ReleaseIpamPoolAllocation.html">ReleaseIpamPoolAllocation</a>.
-    /// 
-    /// </para>
-    ///  </note> 
+    ///  
     /// <para>
     /// For more information, see <a href="/vpc/latest/ipam/delete-ipam.html">Delete an IPAM</a>
     /// in the <i>Amazon VPC IPAM User Guide</i>. 

@@ -135,6 +135,13 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>creation-date</code> - The time when the image was created, in the ISO 8601
+        /// format in the UTC time zone (YYYY-MM-DDThh:mm:ss.sssZ), for example, <code>2021-09-29T11:04:43.305Z</code>.
+        /// You can use a wildcard (<code>*</code>), for example, <code>2021-09-29T*</code>, which
+        /// matches an entire day.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>description</code> - The description of the image (provided during image creation).
         /// </para>
         ///  </li> <li> 

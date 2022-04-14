@@ -1660,43 +1660,18 @@ namespace Amazon.EC2
         /// <para>
         /// For devices that use Border Gateway Protocol (BGP), you can also provide the device's
         /// BGP Autonomous System Number (ASN). You can use an existing ASN assigned to your network.
-        /// If you don't have an ASN already, you can use a private ASN (in the 64512 - 65534
-        /// range).
+        /// If you don't have an ASN already, you can use a private ASN. For more information,
+        /// see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/cgw-options.html">Customer
+        /// gateway options for your Site-to-Site VPN connection</a> in the <i>Amazon Web Services
+        /// Site-to-Site VPN User Guide</i>.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// Amazon EC2 supports all 4-byte ASN numbers in the range of 1 - 2147483647, with the
-        /// exception of the following:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// 7224 - reserved in the <code>us-east-1</code> Region
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// 9059 - reserved in the <code>eu-west-1</code> Region
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// 17943 - reserved in the <code>ap-southeast-1</code> Region
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// 10124 - reserved in the <code>ap-northeast-1</code> Region
-        /// </para>
-        ///  </li> </ul> </note> 
-        /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">Amazon
-        /// Web Services Site-to-Site VPN</a> in the <i>Amazon Web Services Site-to-Site VPN User
-        /// Guide</i>.
-        /// </para>
-        ///  <important> 
+        ///  
         /// <para>
         /// To create more than one customer gateway with the same VPN type, IP address, and BGP
-        /// ASN, specify a unique device name for each customer gateway. Identical requests return
-        /// information about the existing customer gateway and do not create new customer gateways.
+        /// ASN, specify a unique device name for each customer gateway. An identical request
+        /// returns information about the existing customer gateway; it doesn't create a new customer
+        /// gateway.
         /// </para>
-        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCustomerGateway service method.</param>
         /// <param name="cancellationToken">
@@ -1963,13 +1938,19 @@ namespace Amazon.EC2
         /// Creates an Amazon EBS-backed AMI from an Amazon EBS-backed instance that is either
         /// running or stopped.
         /// 
+        ///  
+        /// <para>
+        /// By default, when Amazon EC2 creates the new AMI, it reboots the instance so that it
+        /// can take snapshots of the attached volumes while data is at rest, in order to ensure
+        /// a consistent state. You can set the <code>NoReboot</code> parameter to <code>true</code>
+        /// in the API request, or use the <code>--no-reboot</code> option in the CLI to prevent
+        /// Amazon EC2 from shutting down and rebooting the instance.
+        /// </para>
         ///  <important> 
         /// <para>
-        /// By default, Amazon EC2 shuts down and reboots the instance before creating the AMI
-        /// to ensure that everything on the instance is stopped and in a consistent state during
-        /// the creation process. If you're confident that your instance is in a consistent state
-        /// appropriate for AMI creation, use the <b>NoReboot</b> parameter to prevent Amazon
-        /// EC2 from shutting down and rebooting the instance. 
+        /// If you choose to bypass the shutdown and reboot process by setting the <code>NoReboot</code>
+        /// parameter to <code>true</code> in the API request, or by using the <code>--no-reboot</code>
+        /// option in the CLI, we can't guarantee the file system integrity of the created image.
         /// </para>
         ///  </important> 
         /// <para>
@@ -2127,7 +2108,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Create an IPAM. Amazon VCP IP Address Manager (IPAM) is a VPC feature that you can
+        /// Create an IPAM. Amazon VPC IP Address Manager (IPAM) is a VPC feature that you can
         /// use to automate your IP address management workflows including assigning, tracking,
         /// troubleshooting, and auditing IP addresses across Amazon Web Services Regions and
         /// accounts throughout your Amazon Web Services Organization.
@@ -2247,12 +2228,24 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Creates a launch template. A launch template contains the parameters to launch an
-        /// instance. When you launch an instance using <a>RunInstances</a>, you can specify a
-        /// launch template instead of providing the launch parameters in the request. For more
-        /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html">Launching
+        /// Creates a launch template.
+        /// 
+        ///  
+        /// <para>
+        /// A launch template contains the parameters to launch an instance. When you launch an
+        /// instance using <a>RunInstances</a>, you can specify a launch template instead of providing
+        /// the launch parameters in the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html">Launching
         /// an instance from a launch template</a> in the <i>Amazon Elastic Compute Cloud User
         /// Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you want to clone an existing launch template as the basis for creating a new launch
+        /// template, you can use the Amazon EC2 console. The API, SDKs, and CLI do not support
+        /// cloning a template. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template-from-existing-launch-template">Create
+        /// a launch template from an existing launch template</a> in the <i>Amazon Elastic Compute
+        /// Cloud User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLaunchTemplate service method.</param>
         /// <param name="cancellationToken">
@@ -3552,33 +3545,8 @@ namespace Amazon.EC2
         /// Creates a VPC endpoint for a specified service. An endpoint enables you to create
         /// a private connection between your VPC and the service. The service may be provided
         /// by Amazon Web Services, an Amazon Web Services Marketplace Partner, or another Amazon
-        /// Web Services account. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints.html">VPC
-        /// Endpoints</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
-        /// 
-        ///  
-        /// <para>
-        /// A <code>gateway</code> endpoint serves as a target for a route in your route table
-        /// for traffic destined for the Amazon Web Service. You can specify an endpoint policy
-        /// to attach to the endpoint, which will control access to the service from your VPC.
-        /// You can also specify the VPC route tables that use the endpoint.
-        /// </para>
-        ///  
-        /// <para>
-        /// An <code>interface</code> endpoint is a network interface in your subnet that serves
-        /// as an endpoint for communicating with the specified service. You can specify the subnets
-        /// in which to create an endpoint, and the security groups to associate with the endpoint
-        /// network interface.
-        /// </para>
-        ///  
-        /// <para>
-        /// A <code>GatewayLoadBalancer</code> endpoint is a network interface in your subnet
-        /// that serves an endpoint for communicating with a Gateway Load Balancer that you've
-        /// configured as a VPC endpoint service.
-        /// </para>
-        ///  
-        /// <para>
-        /// Use <a>DescribeVpcEndpointServices</a> to get a list of supported services.
-        /// </para>
+        /// Web Services account. For more information, see the <a href="https://docs.aws.amazon.com/vpc/latest/privatelink/">Amazon
+        /// Web Services PrivateLink Guide</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateVpcEndpoint service method.</param>
         /// <param name="cancellationToken">
@@ -3622,36 +3590,34 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Creates a VPC endpoint service configuration to which service consumers (Amazon Web
-        /// Services accounts, IAM users, and IAM roles) can connect.
+        /// Creates a VPC endpoint service to which service consumers (Amazon Web Services accounts,
+        /// IAM users, and IAM roles) can connect.
         /// 
         ///  
         /// <para>
-        /// To create an endpoint service configuration, you must first create one of the following
-        /// for your service:
+        /// Before you create an endpoint service, you must create one of the following for your
+        /// service:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// A <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/introduction.html">Network
+        /// A <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/">Network
         /// Load Balancer</a>. Service consumers connect to your service using an interface endpoint.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// A <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/gateway/introduction.html">Gateway
+        /// A <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/gateway/">Gateway
         /// Load Balancer</a>. Service consumers connect to your service using a Gateway Load
         /// Balancer endpoint.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html">VPC
-        /// Endpoint Services</a> in the <i>Amazon Virtual Private Cloud User Guide</i>. 
+        /// If you set the private DNS name, you must prove that you own the private DNS domain
+        /// name.
         /// </para>
         ///  
         /// <para>
-        /// If you set the private DNS name, you must prove that you own the private DNS domain
-        /// name. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-services-dns-validation.html">VPC
-        /// Endpoint Service Private DNS Name Verification</a> in the <i>Amazon Virtual Private
-        /// Cloud User Guide</i>.
+        /// For more information, see the <a href="https://docs.aws.amazon.com/vpc/latest/privatelink/">Amazon
+        /// Web Services PrivateLink Guide</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateVpcEndpointServiceConfiguration service method.</param>
@@ -4069,14 +4035,7 @@ namespace Amazon.EC2
         /// Delete an IPAM. Deleting an IPAM removes all monitored data associated with the IPAM
         /// including the historical data for CIDRs.
         /// 
-        ///  <note> 
-        /// <para>
-        /// You cannot delete an IPAM if there are CIDRs provisioned to pools or if there are
-        /// allocations in the pools within the IPAM. To deprovision pool CIDRs, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeprovisionIpamPoolCidr.html">DeprovisionIpamPoolCidr</a>.
-        /// To release allocations, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ReleaseIpamPoolAllocation.html">ReleaseIpamPoolAllocation</a>.
-        /// 
-        /// </para>
-        ///  </note> 
+        ///  
         /// <para>
         /// For more information, see <a href="/vpc/latest/ipam/delete-ipam.html">Delete an IPAM</a>
         /// in the <i>Amazon VPC IPAM User Guide</i>. 
@@ -12565,8 +12524,9 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// If you reach the maximum volume modification rate per volume limit, you must wait
-        /// at least six hours before applying further modifications to the affected EBS volume.
+        /// After modifying a volume, you must wait at least six hours and ensure that the volume
+        /// is in the <code>in-use</code> or <code>available</code> state before you can modify
+        /// the same volume. This is sometimes referred to as a cooldown period.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyVolume service method.</param>
@@ -12636,8 +12596,8 @@ namespace Amazon.EC2
         /// <summary>
         /// Modifies attributes of a specified VPC endpoint. The attributes that you can modify
         /// depend on the type of VPC endpoint (interface, gateway, or Gateway Load Balancer).
-        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints.html">VPC
-        /// Endpoints</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// For more information, see the <a href="https://docs.aws.amazon.com/vpc/latest/privatelink/">Amazon
+        /// Web Services PrivateLink Guide</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyVpcEndpoint service method.</param>
         /// <param name="cancellationToken">
@@ -12682,9 +12642,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// If you set or modify the private DNS name, you must prove that you own the private
-        /// DNS domain name. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-services-dns-validation.html">VPC
-        /// Endpoint Service Private DNS Name Verification</a> in the <i>Amazon Virtual Private
-        /// Cloud User Guide</i>.
+        /// DNS domain name.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyVpcEndpointServiceConfiguration service method.</param>
@@ -12721,9 +12679,9 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Modifies the permissions for your <a href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html">VPC
-        /// endpoint service</a>. You can add or remove permissions for service consumers (IAM
-        /// users, IAM roles, and Amazon Web Services accounts) to connect to your endpoint service.
+        /// Modifies the permissions for your VPC endpoint service. You can add or remove permissions
+        /// for service consumers (IAM users, IAM roles, and Amazon Web Services accounts) to
+        /// connect to your endpoint service.
         /// 
         ///  
         /// <para>
@@ -14575,8 +14533,6 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// Before the service provider runs this command, they must add a record to the DNS server.
-        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-services-dns-validation.html#add-dns-txt-record">Adding
-        /// a TXT Record to Your Domain's DNS Server </a> in the <i>Amazon VPC User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartVpcEndpointServicePrivateDnsVerification service method.</param>

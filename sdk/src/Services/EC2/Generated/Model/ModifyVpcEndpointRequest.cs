@@ -32,8 +32,8 @@ namespace Amazon.EC2.Model
     /// Container for the parameters to the ModifyVpcEndpoint operation.
     /// Modifies attributes of a specified VPC endpoint. The attributes that you can modify
     /// depend on the type of VPC endpoint (interface, gateway, or Gateway Load Balancer).
-    /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints.html">VPC
-    /// Endpoints</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+    /// For more information, see the <a href="https://docs.aws.amazon.com/vpc/latest/privatelink/">Amazon
+    /// Web Services PrivateLink Guide</a>.
     /// </summary>
     public partial class ModifyVpcEndpointRequest : AmazonEC2Request
     {

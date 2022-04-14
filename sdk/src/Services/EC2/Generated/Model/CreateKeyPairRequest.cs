@@ -97,8 +97,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property KeyType. 
         /// <para>
-        /// The type of key pair. Note that ED25519 keys are not supported for Windows instances,
-        /// EC2 Instance Connect, and EC2 Serial Console.
+        /// The type of key pair. Note that ED25519 keys are not supported for Windows instances.
         /// </para>
         ///  
         /// <para>

@@ -182,6 +182,12 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The ARN of the Outpost on which the snapshot is stored.
         /// </para>
+        ///  
+        /// <para>
+        /// This parameter is only supported on <code>BlockDeviceMapping</code> objects called
+        /// by <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">
+        /// CreateImage</a>.
+        /// </para>
         /// </summary>
         public string OutpostArn
         {
