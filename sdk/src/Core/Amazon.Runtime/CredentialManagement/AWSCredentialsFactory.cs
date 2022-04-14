@@ -19,7 +19,11 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
+#if !BCL35
+using Amazon.Runtime.Credentials.Internal;
+#endif
 using Amazon.Runtime.Internal.Settings;
+using Amazon.Util.Internal;
 
 namespace Amazon.Runtime.CredentialManagement
 {
@@ -137,9 +141,20 @@ namespace Amazon.Runtime.CredentialManagement
             return profileType.HasValue && CallbackProfileTypes.Contains(profileType.Value);
         }
 
-        private static AWSCredentials GetAWSCredentials(string profileName, ICredentialProfileSource profileSource,
-            CredentialProfileOptions options, RegionEndpoint stsRegion, bool nonCallbackOnly)
+        private static AWSCredentials GetAWSCredentials(
+            string profileName, 
+            ICredentialProfileSource profileSource,
+            CredentialProfileOptions options, 
+            RegionEndpoint stsRegion, 
+            bool nonCallbackOnly)
         {
+#if !BCL35
+            var ssoTokenFileCache = new SSOTokenFileCache(
+                CryptoUtilFactory.CryptoInstance,
+                new FileRetriever(),
+                new DirectoryRetriever());
+#endif
+
             var profileType = CredentialProfileTypeDetector.DetectProfileType(options);
             if (nonCallbackOnly && profileType.HasValue && IsCallbackRequired(profileType.Value))
             {
@@ -155,7 +170,7 @@ namespace Amazon.Runtime.CredentialManagement
                     throw new InvalidOperationException(mfaMessage);
                 }
 #if !BCL35
-                else if (profileType == CredentialProfileType.SSO && !SSOAWSCredentials.HasCachedAccessTokenAvailable(options.SsoStartUrl))
+                else if (profileType == CredentialProfileType.SSO && !ssoTokenFileCache.Exists(options))
                 {
                     var ssoMessage = profileName == null
                         ? $"The credential options represent {nameof(SSOAWSCredentials)}.  This is not allowed here.  " +

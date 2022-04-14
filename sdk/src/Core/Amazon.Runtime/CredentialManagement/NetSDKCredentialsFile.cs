@@ -65,6 +65,7 @@ namespace Amazon.Runtime.CredentialManagement
         private const string SsoRegion = "sso_region";
         private const string SsoRoleName = "sso_role_name";
         private const string SsoStartUrl = "sso_start_url";
+        private const string SsoSession = "sso_session";
 
         private static readonly HashSet<string> ReservedPropertyNames = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
         {
@@ -109,6 +110,7 @@ namespace Amazon.Runtime.CredentialManagement
                     { nameof(CredentialProfileOptions.SsoRegion), SsoRegion },
                     { nameof(CredentialProfileOptions.SsoRoleName), SsoRoleName },
                     { nameof(CredentialProfileOptions.SsoStartUrl), SsoStartUrl },
+                    { nameof(CredentialProfileOptions.SsoSession), SsoSession}
 #endif
                 }
             );

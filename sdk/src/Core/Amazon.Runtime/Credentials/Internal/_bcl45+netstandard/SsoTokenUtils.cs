@@ -14,20 +14,24 @@
  */
 
 using System;
+using System.Linq;
 using System.Text;
 using System.Xml;
+using Amazon.Util;
 using ThirdParty.Json.LitJson;
 
 namespace Amazon.Runtime.Credentials.Internal
 {
     public static class SsoTokenUtils
     {
-        private const int TokenExpirationBufferMinutes = 15;
-
         private static class JsonPropertyNames
         {
             public const string AccessToken = "accessToken";
             public const string Region = "region";
+            public const string RefreshToken = "refreshToken";
+            public const string ClientId = "clientId";
+            public const string ClientSecret = "clientSecret";
+            public const string RegistrationExpiresAt = "registrationExpiresAt";
             public const string ExpiresAt = "expiresAt";
             public const string StartUrl = "startUrl";
         }
@@ -35,24 +39,50 @@ namespace Amazon.Runtime.Credentials.Internal
         #region Extension Methods
 
         /// <summary>
-        /// Whether or not the SSO Token is considered expired
+        /// True if <see cref="SsoToken.ExpiresAt"/> is less than the current time
         /// </summary>
-        /// <param name="token">SSO Token to check if expired</param>
-        /// <returns>false if the token is not expired, true otherwise</returns>
         public static bool IsExpired(this SsoToken token)
         {
-            if (token == null)
-            {
-                return true;
-            }
+            if (null == token)
+                throw new ArgumentNullException(nameof(token));
 
-            // Spec: When checking to see if a cached token is expired, the SDK MAY treat the token as expired if it will
-            // expire within 15 minutes of the expiresAt time. The SDK MAY choose a longer or shorter expiration window.
-#pragma warning disable CR1003 // Do not use DateTime.Now or DateTime.UtcNow, use AWSSDKUtils.CorrectedNow or AWSSDKUtils.CorrectedUtcNow
-            return token.ExpiresAt < DateTime.UtcNow.AddMinutes(TokenExpirationBufferMinutes);
-#pragma warning restore CR1003 // Do not use DateTime.Now or DateTime.UtcNow, use AWSSDKUtils.CorrectedNow or AWSSDKUtils.CorrectedUtcNow
+#pragma warning disable CS0618 // Type or member is obsolete
+            var currentTime = AWSSDKUtils.CorrectedUtcNow;
+#pragma warning restore CS0618 // Type or member is obsolete
+
+            return token.ExpiresAt < currentTime;
         }
 
+        /// <summary>
+        /// True if either the <paramref name="token"/> will expire in 6 minutes or
+        /// has already expired.
+        /// <para />
+        /// Per Spec: Always try and refresh an expired token.
+        /// </summary>
+        public static bool NeedsRefresh(this SsoToken token)
+        {
+#pragma warning disable CS0618 // Type or member is obsolete
+            var currentTime = AWSSDKUtils.CorrectedUtcNow;
+#pragma warning restore CS0618 // Type or member is obsolete
+
+            return token.ExpiresAt <= currentTime.AddMinutes(6);
+        }
+
+        /// <summary>
+        /// Indicates if <paramref name="token"/> has the necessary data properties
+        /// to facilitate a refresh attempt.
+        /// <para />
+        /// NOTE: This does NOT check if the <paramref name="token"/> is within a refresh
+        /// time window.  For that, use <see cref="NeedsRefresh"/>/
+        /// </summary>
+        public static bool CanRefresh(this SsoToken token)
+        {
+            return
+                !string.IsNullOrEmpty(token.RefreshToken) &&
+                !string.IsNullOrEmpty(token.ClientId) &&
+                !string.IsNullOrEmpty(token.ClientSecret);
+        }
+        
         /// <summary>
         /// Serializes the SSO Token to JSON
         /// </summary>
@@ -79,8 +109,11 @@ namespace Amazon.Runtime.Credentials.Internal
             var jsonData = new JsonData
             {
                 [JsonPropertyNames.AccessToken] = new JsonData(token.AccessToken),
-                [JsonPropertyNames.ExpiresAt] =
-                    new JsonData(XmlConvert.ToString(token.ExpiresAt, XmlDateTimeSerializationMode.Utc)),
+                [JsonPropertyNames.ExpiresAt] = new JsonData(XmlConvert.ToString(token.ExpiresAt, XmlDateTimeSerializationMode.Utc)),
+                [JsonPropertyNames.RefreshToken] = new JsonData(token.RefreshToken),
+                [JsonPropertyNames.ClientId] = new JsonData(token.ClientId),
+                [JsonPropertyNames.ClientSecret] = new JsonData(token.ClientSecret),
+                [JsonPropertyNames.RegistrationExpiresAt] = new JsonData(token.RegistrationExpiresAt),
                 [JsonPropertyNames.Region] = new JsonData(token.Region),
                 [JsonPropertyNames.StartUrl] = new JsonData(token.StartUrl)
             };
@@ -96,13 +129,38 @@ namespace Amazon.Runtime.Credentials.Internal
         public static SsoToken FromJson(string json)
         {
             var jsonData = JsonMapper.ToObject(json);
-            return new SsoToken()
-            {
-                AccessToken = jsonData[JsonPropertyNames.AccessToken].ToString(),
-                ExpiresAt = XmlConvert.ToDateTime(jsonData[JsonPropertyNames.ExpiresAt].ToString(), XmlDateTimeSerializationMode.Utc),
-                Region = jsonData[JsonPropertyNames.Region].ToString(),
-                StartUrl = jsonData[JsonPropertyNames.StartUrl].ToString(),
-            };
+
+            var token = new SsoToken();
+
+            if (jsonData.PropertyNames.Contains(JsonPropertyNames.AccessToken))
+                token.AccessToken = jsonData[JsonPropertyNames.AccessToken].ToString();
+            else
+                throw new AmazonClientException($"Token is invalid: missing required field [{JsonPropertyNames.AccessToken}]");
+
+            if (jsonData.PropertyNames.Contains(JsonPropertyNames.ExpiresAt))
+                token.ExpiresAt = XmlConvert.ToDateTime(jsonData[JsonPropertyNames.ExpiresAt].ToString(), XmlDateTimeSerializationMode.Utc);
+            else
+                throw new AmazonClientException($"Token is invalid: missing required field [{JsonPropertyNames.ExpiresAt}]");
+
+            if (jsonData.PropertyNames.Contains(JsonPropertyNames.RefreshToken))
+                token.RefreshToken = jsonData[JsonPropertyNames.RefreshToken]?.ToString();
+
+            if (jsonData.PropertyNames.Contains(JsonPropertyNames.ClientId))
+                token.ClientId = jsonData[JsonPropertyNames.ClientId]?.ToString();
+
+            if (jsonData.PropertyNames.Contains(JsonPropertyNames.ClientSecret))
+                token.ClientSecret = jsonData[JsonPropertyNames.ClientSecret]?.ToString();
+
+            if (jsonData.PropertyNames.Contains(JsonPropertyNames.RegistrationExpiresAt))
+                token.RegistrationExpiresAt = jsonData[JsonPropertyNames.RegistrationExpiresAt]?.ToString();
+
+            if (jsonData.PropertyNames.Contains(JsonPropertyNames.Region))
+                token.Region = jsonData[JsonPropertyNames.Region]?.ToString();
+
+            if (jsonData.PropertyNames.Contains(JsonPropertyNames.StartUrl))
+                token.StartUrl = jsonData[JsonPropertyNames.StartUrl]?.ToString();
+            
+            return token;
         }
     }
 }

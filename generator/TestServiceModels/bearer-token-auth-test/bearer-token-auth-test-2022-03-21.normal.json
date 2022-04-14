@@ -1,0 +1,98 @@
+{
+    "version":"2.0",
+    "metadata":{
+      "apiVersion":"2022-03-21",
+      "endpointPrefix":"bearer-token-auth-test",
+      "jsonVersion":"1.1",
+      "protocol":"rest-json",
+      "serviceAbbreviation":"Bearer-Token-Auth-Test",
+      "serviceFullName":"Bearer Token auth Test",
+      "serviceId":"Bearer-Token-Auth-Test",
+      "signatureVersion":"bearer",
+      "signingName":"Bearer-Token-Auth-Test",
+      "uid":"bearer-token-auth-test-2022-03-21"
+    },
+    "operations":{
+      "InheritBearerAuthOperation":{
+        "name":"InheritBearerAuthOperation",
+        "http":{
+          "method":"GET",
+          "requestUri":"/inherit-bearer-auth"
+        },		
+        "input":{"shape":"InheritBearerAuthOperationRequest"},
+        "output":{"shape":"InheritBearerAuthOperationResult"},
+        "errors":[],
+        "documentation":"<p> Request that inherits the bearer signature version set at the Service </p>"
+      },
+      "OverrideAuthToSigV4Operation":{
+        "name":"OverrideAuthToSigV4Operation",
+        "http":{
+          "method":"GET",
+          "requestUri":"/overide-auth-to-sigv4"
+        },
+		"authtype": "v4"
+        "input":{"shape":"OverrideAuthToSigV4OperationRequest"},
+        "output":{"shape":"OverrideAuthToSigV4OperationResult"},
+        "errors":[],
+        "documentation": "<p> An operation that overrides auth to Sigv4. </p>"
+	  }
+    },
+    "shapes":{      
+      "String":{"type":"string"},
+      
+      "InheritBearerAuthOperationRequest":{
+        "type":"structure",
+        "required":[],
+        "members":{
+          "testId":{
+            "shape":"TestId",
+            "documentation":"<p> The unique ID for a test. </p>",
+            "location":"header",
+            "locationName":"x-amz-test-id"
+          }
+        },
+        "documentation":"<p>A request that inherits the bearer signature version. </p>"
+      },
+      "InheritBearerAuthOperationResult":{
+        "type":"structure",
+        "required":["testId"],
+        "members":{
+          "testId":{
+            "shape":"TestId",
+            "documentation":"<p> Optional test identifer. </p>"
+          }
+        },
+        "documentation":"<p> The result structure for InheritBearerAuthOperationRequest. </p>"
+      },
+      "TestId":{
+        "type":"string",
+        "max":8,
+        "min":3,
+        "pattern":"t-[a-z0-9-]+"
+      },
+      "OverrideAuthToSigV4OperationRequest":{
+        "type":"structure",
+        "required":[],
+        "members":{
+          "testId":{
+            "shape":"TestId",
+            "documentation":"<p> The unique ID for a test. </p>",
+            "location":"header",
+            "locationName":"x-amz-test-id"
+          }
+        },
+        "documentation":"<p> A request for an operation that overrides auth to Sigv4. </p>"
+      },
+      "OverrideAuthToSigV4OperationResult":{
+        "type":"structure",
+        "required":["testId"],		
+        "members":{
+          "testId":{
+            "shape":"TestId",
+            "documentation":"<p>A request that overrides auth type to Sigv4. </p>"
+          }
+        },
+        "documentation":"<p> The result structure for OverrideAuthToSigV4Operation. </p>"
+      }
+    }
+  }

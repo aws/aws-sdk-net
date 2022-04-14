@@ -41,6 +41,7 @@ namespace AWSSDK.UnitTests
             public const string SsoRegion = "sso_region";
             public const string SsoRoleName = "sso_role_name";
             public const string SsoStartUrl = "sso_start_url";
+            public const string SsoSession = "sso_session";
         }
 
         private static readonly string DefaultProfileText = new StringBuilder()
@@ -63,7 +64,7 @@ namespace AWSSDK.UnitTests
             .Append("aws_session_token=session_aws_session_token")
             .ToString();
 
-        private static readonly CredentialProfileOptions SessionProfileOptions = new CredentialProfileOptions()
+        private static readonly CredentialProfileOptions SessionProfileOptions = new CredentialProfileOptions
         {
             AccessKey = "session_aws_access_key_id",
             SecretKey = "session_aws_secret_access_key",
@@ -77,7 +78,7 @@ namespace AWSSDK.UnitTests
             .Append("aws_session_token=session_aws_session_token_UPDATED")
             .ToString();
 
-        private static readonly CredentialProfileOptions SessionProfileOptionsUpdated = new CredentialProfileOptions()
+        private static readonly CredentialProfileOptions SessionProfileOptionsUpdated = new CredentialProfileOptions
         {
             AccessKey = "session_aws_access_key_id",
             SecretKey = "session_aws_secret_access_key",
@@ -91,7 +92,7 @@ namespace AWSSDK.UnitTests
             .Append("source_profile=basic_profile")
             .ToString();
 
-        private static readonly CredentialProfileOptions AssumeRoleMfaProfileOptions = new CredentialProfileOptions()
+        private static readonly CredentialProfileOptions AssumeRoleMfaProfileOptions = new CredentialProfileOptions
         {
             SourceProfile = "basic_profile",
             RoleArn = "assume_role_arn",
@@ -107,12 +108,40 @@ namespace AWSSDK.UnitTests
             .Append($"sso_start_url={SampleValues.SsoStartUrl}")
             .ToString();
 
-        private static readonly CredentialProfileOptions SsoProfileOptions = new CredentialProfileOptions()
+        private static readonly string SsoSplitProfileText = new StringBuilder()
+            .AppendLine("[profile sso]")
+            .AppendLine($"sso_account_id={SampleValues.SsoAccountId}")
+            .AppendLine($"sso_role_name={SampleValues.SsoRoleName}")
+            .AppendLine($"sso_session = {SampleValues.SsoSession}")
+            .AppendLine()
+            .AppendLine($"[sso-session {SampleValues.SsoSession}]")
+            .AppendLine($"sso_region={SampleValues.SsoRegion}")
+            .Append($"sso_start_url={SampleValues.SsoStartUrl}")
+            .ToString();
+
+        private static readonly string SsoSplitProfileMissingSessionText = new StringBuilder()
+            .AppendLine("[profile sso]")
+            .AppendLine($"sso_account_id={SampleValues.SsoAccountId}")
+            .AppendLine($"sso_role_name={SampleValues.SsoRoleName}")
+            .AppendLine($"sso_session = {SampleValues.SsoSession}")
+            .AppendLine()
+            .ToString();
+
+        private static readonly CredentialProfileOptions SsoProfileOptions = new CredentialProfileOptions
         {
             SsoAccountId = SampleValues.SsoAccountId,
             SsoRegion = SampleValues.SsoRegion,
             SsoRoleName = SampleValues.SsoRoleName,
             SsoStartUrl = SampleValues.SsoStartUrl,
+        };
+
+        private static readonly CredentialProfileOptions SsoProfileWithSessionOptions = new CredentialProfileOptions
+        {
+            SsoAccountId = SampleValues.SsoAccountId,
+            SsoRegion = SampleValues.SsoRegion,
+            SsoRoleName = SampleValues.SsoRoleName,
+            SsoStartUrl = SampleValues.SsoStartUrl,
+            SsoSession = SampleValues.SsoSession
         };
 #endif
 
@@ -143,7 +172,7 @@ namespace AWSSDK.UnitTests
             .Append("aws_access_key_id=basic_aws_access_key_id")
             .ToString();
 
-        private static readonly CredentialProfileOptions BasicProfileOptions = new CredentialProfileOptions()
+        private static readonly CredentialProfileOptions BasicProfileOptions = new CredentialProfileOptions
         {
             AccessKey = "basic_aws_access_key_id",
             SecretKey = "basic_aws_secret_access_key"
@@ -160,7 +189,7 @@ namespace AWSSDK.UnitTests
             .Append("aws_secret_access_key=basic_aws_secret_access_key")
             .ToString();
 
-        private static readonly CredentialProfileOptions BasicProfilePrecedenceOptions = new CredentialProfileOptions()
+        private static readonly CredentialProfileOptions BasicProfilePrecedenceOptions = new CredentialProfileOptions
         {
             AccessKey = "basic_aws_access_key_id_CREDENTIALS_FILE",
             SecretKey = "basic_aws_secret_access_key"
@@ -218,7 +247,7 @@ namespace AWSSDK.UnitTests
             .ToString();
 
 
-        private static readonly CredentialProfileOptions SAMLRoleProfileOptions = new CredentialProfileOptions()
+        private static readonly CredentialProfileOptions SAMLRoleProfileOptions = new CredentialProfileOptions
         {
             EndpointName = "endpoint_name",
             RoleArn = "saml_arn",
@@ -233,14 +262,14 @@ namespace AWSSDK.UnitTests
             .Append("property=value")
             .ToString();
 
-        private static readonly CredentialProfileOptions UpdatedProfileTypeOptionsBefore = new CredentialProfileOptions()
+        private static readonly CredentialProfileOptions UpdatedProfileTypeOptionsBefore = new CredentialProfileOptions
         {
             AccessKey = "session_aws_access_key_id",
             SecretKey = "session_aws_secret_access_key",
             Token = "session_aws_session_token"
         };
 
-        private static readonly Dictionary<string, string> UpdatedProfileTypePropertiesBeforeAndAfter = new Dictionary<string, string>()
+        private static readonly Dictionary<string, string> UpdatedProfileTypePropertiesBeforeAndAfter = new Dictionary<string, string>
         {
             { "property", "value" }
         };
@@ -252,13 +281,13 @@ namespace AWSSDK.UnitTests
             .Append("property=value")
             .ToString();
 
-        private static readonly CredentialProfileOptions UpdatedProfileTypeOptionsAfter = new CredentialProfileOptions()
+        private static readonly CredentialProfileOptions UpdatedProfileTypeOptionsAfter = new CredentialProfileOptions
         {
             AccessKey = "session_aws_access_key_id",
             SecretKey = "session_aws_secret_access_key"
         };
 
-        private static readonly CredentialProfileOptions UpdatedProfileWithPropertiesOptions = new CredentialProfileOptions()
+        private static readonly CredentialProfileOptions UpdatedProfileWithPropertiesOptions = new CredentialProfileOptions
         {
             AccessKey = "session_aws_access_key_id",
             SecretKey = "session_aws_secret_access_key"
@@ -273,7 +302,7 @@ namespace AWSSDK.UnitTests
             .Append("property2=value2")
             .ToString();
 
-        private static readonly Dictionary<string, string> UpdatedProfileWithPropertiesBefore = new Dictionary<string, string>()
+        private static readonly Dictionary<string, string> UpdatedProfileWithPropertiesBefore = new Dictionary<string, string>
         {
             { "property1", "value1" },
             { "property2", "value2" },
@@ -289,7 +318,7 @@ namespace AWSSDK.UnitTests
             .Append("property4=value4")
             .ToString();
 
-        private static readonly Dictionary<string, string> UpdatedProfileWithPropertiesAfter = new Dictionary<string, string>()
+        private static readonly Dictionary<string, string> UpdatedProfileWithPropertiesAfter = new Dictionary<string, string>
         {
             { "property1", "value1" },
             { "property2", null },
@@ -386,7 +415,7 @@ namespace AWSSDK.UnitTests
         {
             using (var tester = new SharedCredentialsFileTestFixture())
             {
-                var properties = new Dictionary<string, string>()
+                var properties = new Dictionary<string, string>
                 {
                     { propertyName, "aargh!" }
                 };
@@ -438,10 +467,40 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         public void ReadSsoProfile()
         {
-            using (var tester = new SharedCredentialsFileTestFixture(SsoProfileText))
+            using (var tester = new SharedCredentialsFileTestFixture(SsoProfileText, ""))
             {
                 tester.ReadAndAssertProfile("sso", SsoProfileOptions);
             }
+        }
+
+        [TestMethod]
+        public void ReadSsoSplitProfile()
+        {
+            using (var tester = new SharedCredentialsFileTestFixture("[sso]\r\n", SsoSplitProfileText))
+            {
+                tester.ReadAndAssertProfile("sso", SsoProfileWithSessionOptions);
+            }
+        }
+
+        [TestMethod]
+        public void ReadSsoSplitProfileMissingSession()
+        {
+            Exception exception = null;
+            try
+            {
+                using (var tester = new SharedCredentialsFileTestFixture("[sso]", SsoSplitProfileMissingSessionText))
+                {
+                    tester.ReadAndAssertProfile("sso", SsoProfileWithSessionOptions);
+                }
+            }
+            catch (Exception e)
+            {
+                exception = e;
+            }
+
+            Assert.IsNotNull(exception);
+            Assert.IsInstanceOfType(exception, typeof(AmazonClientException));
+            Assert.AreEqual("Invalid Configuration.  Failed to find sso_session [sso_session]", exception.Message);
         }
 
         [TestMethod]

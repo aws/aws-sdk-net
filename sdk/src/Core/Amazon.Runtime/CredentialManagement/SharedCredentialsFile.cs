@@ -54,6 +54,7 @@ namespace Amazon.Runtime.CredentialManagement
         private const string SsoRegion = "sso_region";
         private const string SsoRoleName = "sso_role_name";
         private const string SsoStartUrl = "sso_start_url";
+        private const string SsoSession = "sso_session";
         private const string EC2MetadataServiceEndpointField = "ec2_metadata_service_endpoint";
         private const string EC2MetadataServiceEndpointModeField = "ec2_metadata_service_endpoint_mode";
         private const string UseDualstackEndpointField = "use_dualstack_endpoint";
@@ -76,6 +77,7 @@ namespace Amazon.Runtime.CredentialManagement
             SsoRegion,
             SsoRoleName,
             SsoStartUrl,
+            SsoSession,
             EC2MetadataServiceEndpointField,
             EC2MetadataServiceEndpointModeField,
             UseDualstackEndpointField,
@@ -131,6 +133,7 @@ namespace Amazon.Runtime.CredentialManagement
                     { nameof(CredentialProfileOptions.SsoAccountId), SsoAccountId },
                     { nameof(CredentialProfileOptions.SsoRegion), SsoRegion },
                     { nameof(CredentialProfileOptions.SsoRoleName), SsoRoleName },
+                    { nameof(CredentialProfileOptions.SsoSession), SsoSession },
                     { nameof(CredentialProfileOptions.SsoStartUrl), SsoStartUrl },
 #endif
                 }
@@ -208,7 +211,7 @@ namespace Amazon.Runtime.CredentialManagement
             foreach (var profileName in ListAllProfileNames())
             {
                 CredentialProfile profile = null;
-                if (TryGetProfile(profileName, false, out profile) && profile.CanCreateAWSCredentials)
+                if (TryGetProfile(profileName, doRefresh: false, isSsoSession: false, out profile) && profile.CanCreateAWSCredentials)
                 {
                     profiles.Add(profile);
                 }
@@ -218,7 +221,7 @@ namespace Amazon.Runtime.CredentialManagement
 
         public bool TryGetProfile(string profileName, out CredentialProfile profile)
         {
-            return TryGetProfile(profileName, true, out profile);
+            return TryGetProfile(profileName, doRefresh: true, isSsoSession: false, out profile);
         }
 
         /// <summary>
@@ -386,7 +389,7 @@ namespace Amazon.Runtime.CredentialManagement
             return profileNames;
         }
 
-        private bool TryGetProfile(string profileName, bool doRefresh, out CredentialProfile profile)
+        private bool TryGetProfile(string profileName, bool doRefresh, bool isSsoSession, out CredentialProfile profile)
         {
             if (doRefresh)
             {
@@ -394,7 +397,7 @@ namespace Amazon.Runtime.CredentialManagement
             }
 
             Dictionary<string, string> profileDictionary = null;
-            if (TryGetSection(profileName, out profileDictionary))
+            if (TryGetSection(profileName, isSsoSession, out profileDictionary))
             {
                 CredentialProfileOptions profileOptions;
                 Dictionary<string, string> reservedProperties;
@@ -593,6 +596,24 @@ namespace Amazon.Runtime.CredentialManagement
 #endif
                 }
 
+#if !BCL35
+                if (profileDictionary.TryGetValue(SsoSession, out var session))
+                {
+                    profileOptions.SsoSession = session;
+
+                    if (TryGetProfile(session, doRefresh: false, isSsoSession: true, out var sessionProfile))
+                    {
+                        profileOptions.SsoRegion = sessionProfile.Options.SsoRegion;
+                        profileOptions.SsoStartUrl = sessionProfile.Options.SsoStartUrl;
+                    }
+                    else
+                    {
+                        _logger.InfoFormat($"Failed to find {SsoSession} [{session}]");
+                        throw new AmazonClientException($"Invalid Configuration.  Failed to find {SsoSession} [{session}]");
+                    }
+                }
+#endif
+
                 string useDualstackEndpointString;
                 bool? useDualstackEndpoint = null;
                 if (reservedProperties.TryGetValue(UseDualstackEndpointField, out useDualstackEndpointString))
@@ -660,10 +681,7 @@ namespace Amazon.Runtime.CredentialManagement
         /// Try to get a profile that may be partially in the credentials file and partially in the config file.
         /// If there are identically named properties in both files, the properties in the credentials file take precedence.
         /// </summary>
-        /// <param name="sectionName"></param>
-        /// <param name="iniProperties"></param>
-        /// <returns></returns>
-        private bool TryGetSection(string sectionName, out Dictionary<string, string> iniProperties)
+        private bool TryGetSection(string sectionName, bool isSsoSession, out Dictionary<string, string> iniProperties)
         {
             Dictionary<string, string> credentialsProperties = null;
             Dictionary<string, string> configProperties = null;
@@ -673,7 +691,7 @@ namespace Amazon.Runtime.CredentialManagement
             if (_configFile != null)
             {
                 _configFile.ProfileMarkerRequired = sectionName != DefaultProfileName;
-                hasConfigProperties = _configFile.TryGetSection(sectionName, out configProperties);
+                hasConfigProperties = _configFile.TryGetSection(sectionName, isSsoSession, out configProperties);
             }
 
             if (hasConfigProperties)

@@ -78,9 +78,17 @@ namespace Amazon.Runtime
         private int? maxRetries = null;
         private const int MaxRetriesDefault = 2;
         private const int MaxRetriesLegacyDefault = 4;
+        private IAWSTokenProvider _awsTokenProvider = new DefaultAWSTokenProviderChain();
 #if BCL
         private readonly TcpKeepAlive tcpKeepAlive = new TcpKeepAlive();
 #endif
+
+        /// <inheritdoc />
+        public IAWSTokenProvider AWSTokenProvider
+        {
+            get { return this._awsTokenProvider; }
+            set { this._awsTokenProvider = value; }
+        }
 
         /// <summary>
         /// Gets Service Version

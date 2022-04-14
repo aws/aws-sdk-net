@@ -27,6 +27,7 @@ namespace UnitTests
             "MaxErrorRetry",
             "LogResponse",
             "ReadEntireResponse",
+            "AWSTokenProvider",
             "BufferSize",
             "ProgressUpdateInterval",
             "ResignRetries",

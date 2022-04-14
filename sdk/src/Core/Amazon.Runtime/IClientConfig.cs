@@ -30,6 +30,14 @@ namespace Amazon.Runtime
     public partial interface IClientConfig
     {
         /// <summary>
+        /// For Services using Bearer authentication, this controls how <see cref="BearerTokenSigner"/>
+        /// resolves a <see cref="AWSToken"/>.
+        /// <para />
+        /// See <see cref="DefaultAWSTokenProviderChain"/> for additional information.
+        /// </summary>
+        IAWSTokenProvider AWSTokenProvider { get; }
+
+        /// <summary>
         /// Returns the <see cref="Amazon.Runtime.DefaultConfigurationMode"/> that will be used. If none is specified,
         /// than the correct one is computed by <see cref="IDefaultConfigurationProvider"/>.
         /// </summary>

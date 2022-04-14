@@ -31,6 +31,8 @@ namespace ServiceClientGenerator
                     return "Amazon.S3.Internal.S3Signer";
                 case "s3v4":
                     return "S3Signer";
+                case "bearer":
+                    return "BearerTokenSigner";
                 case "":
                     return "NullSigner";
                 default:

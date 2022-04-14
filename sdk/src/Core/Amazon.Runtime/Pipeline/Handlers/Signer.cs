@@ -18,6 +18,9 @@ using Amazon.Runtime.Internal.Util;
 using Amazon.Util;
 using System;
 using System.IO;
+#if AWS_ASYNC_API 
+using System.Threading.Tasks;
+#endif
 
 namespace Amazon.Runtime.Internal
 {
@@ -47,10 +50,10 @@ namespace Amazon.Runtime.Internal
         /// <param name="executionContext">The execution context, it contains the
         /// request and response context.</param>
         /// <returns>A task that represents the asynchronous operation.</returns>
-        public override System.Threading.Tasks.Task<T> InvokeAsync<T>(IExecutionContext executionContext)
+        public override async System.Threading.Tasks.Task<T> InvokeAsync<T>(IExecutionContext executionContext)
         {
-            PreInvoke(executionContext);
-            return base.InvokeAsync<T>(executionContext);            
+            await PreInvokeAsync(executionContext).ConfigureAwait(false);
+            return await base.InvokeAsync<T>(executionContext).ConfigureAwait(false);
         }
 
 #elif AWS_APM_API
@@ -84,6 +87,17 @@ namespace Amazon.Runtime.Internal
             } 
         }
 
+#if AWS_ASYNC_API
+        protected static async System.Threading.Tasks.Task PreInvokeAsync(IExecutionContext executionContext)
+        {
+            if (ShouldSign(executionContext.RequestContext))
+            {
+                await SignRequestAsync(executionContext.RequestContext).ConfigureAwait(false);
+                executionContext.RequestContext.IsSigned = true;
+            }
+        }
+#endif
+
         /// <summary>
         /// Determines if the request should be signed.
         /// </summary>
@@ -104,12 +118,14 @@ namespace Amazon.Runtime.Internal
             ImmutableCredentials immutableCredentials = requestContext.ImmutableCredentials;
 
             // credentials would be null in the case of anonymous users getting public resources from S3
-            if (immutableCredentials == null)
+            if (immutableCredentials == null && requestContext.Signer.RequiresCredentials)
                 return;
 
             using (requestContext.Metrics.StartEvent(Metric.RequestSigningTime))
             {
-                if (immutableCredentials.UseToken && !(requestContext.Signer is NullSigner))
+                if (immutableCredentials?.UseToken == true && 
+                    !(requestContext.Signer is NullSigner) && 
+                    !(requestContext.Signer is BearerTokenSigner))
                 {
                     ClientProtocol protocol = requestContext.Signer.Protocol;
                     switch (protocol)
@@ -127,5 +143,49 @@ namespace Amazon.Runtime.Internal
                 requestContext.Signer.Sign(requestContext.Request, requestContext.ClientConfig, requestContext.Metrics, immutableCredentials);
             }
         }
+
+#if AWS_ASYNC_API
+        /// <summary>
+        /// Signs the request.
+        /// </summary>
+        /// <param name="requestContext">The request context.</param>
+        private static async Task SignRequestAsync(IRequestContext requestContext)
+        {
+            ImmutableCredentials immutableCredentials = requestContext.ImmutableCredentials;
+
+            // credentials would be null in the case of anonymous users getting public resources from S3
+            if (immutableCredentials == null && requestContext.Signer.RequiresCredentials)
+                return;
+
+            using (requestContext.Metrics.StartEvent(Metric.RequestSigningTime))
+            {
+                if (immutableCredentials?.UseToken == true &&
+                    !(requestContext.Signer is NullSigner) &&
+                    !(requestContext.Signer is BearerTokenSigner))
+                {
+                    ClientProtocol protocol = requestContext.Signer.Protocol;
+                    switch (protocol)
+                    {
+                        case ClientProtocol.QueryStringProtocol:
+                            requestContext.Request.Parameters["SecurityToken"] = immutableCredentials.Token;
+                            break;
+                        case ClientProtocol.RestProtocol:
+                            requestContext.Request.Headers[HeaderKeys.XAmzSecurityTokenHeader] = immutableCredentials.Token;
+                            break;
+                        default:
+                            throw new InvalidDataException("Cannot determine protocol");
+                    }
+                }
+
+                await requestContext.Signer
+                    .SignAsync(
+                        requestContext.Request, 
+                        requestContext.ClientConfig, 
+                        requestContext.Metrics, 
+                        immutableCredentials)
+                    .ConfigureAwait(false);
+            }
+        }
+#endif
     }
 }

@@ -26,6 +26,8 @@ namespace Amazon.Runtime.Internal.Util
     public class ProfileIniFile : IniFile
     {
         private const string ProfileMarker = "profile";
+        private const string SsoSessionMarker = "sso-session";
+
         public bool ProfileMarkerRequired { get; set; }
         public override HashSet<string> ListSectionNames()
         {
@@ -51,6 +53,11 @@ namespace Amazon.Runtime.Internal.Util
 
         public override bool TryGetSection(string sectionName, out Dictionary<string, string> properties)
         {
+            return this.TryGetSection(sectionName, isSsoSession: false, out properties);
+        }
+
+        public bool TryGetSection(string sectionName, bool isSsoSession, out Dictionary<string, string> properties)
+        {
             bool hasCredentialsProperties = false;
             properties = null;
 
@@ -59,7 +66,9 @@ namespace Amazon.Runtime.Internal.Util
 
             if (!hasCredentialsProperties)
             {
-                var credentialSectionNameRegex = new Regex("^" + ProfileMarker + "[ \\t]+" + Regex.Escape(sectionName) + "$", RegexOptions.Singleline);
+                var marker = isSsoSession ? SsoSessionMarker : ProfileMarker;
+
+                var credentialSectionNameRegex = new Regex("^" + marker + "[ \\t]+" + Regex.Escape(sectionName) + "$", RegexOptions.Singleline);
                 hasCredentialsProperties = this.TryGetSection(credentialSectionNameRegex, out properties);
             }
             return hasCredentialsProperties;

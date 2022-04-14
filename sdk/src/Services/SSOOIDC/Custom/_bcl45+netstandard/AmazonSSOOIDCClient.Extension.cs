@@ -25,26 +25,30 @@ namespace Amazon.SSOOIDC
 #if BCL
         GetSsoTokenResponse ICoreAmazonSSOOIDC.GetSsoToken(GetSsoTokenRequest request)
         {
-            var ssoToken = CoreAmazonSSOOIDC.GetSsoToken(this, request);
-
-            return new GetSsoTokenResponse()
-            {
-                AccessToken = ssoToken.AccessToken,
-                ExpiresAt = ssoToken.ExpiresAt,
-            };
+            return CoreAmazonSSOOIDC.GetSsoToken(this, request);
         }
 #endif
 
 #if AWS_ASYNC_API
         async Task<GetSsoTokenResponse> ICoreAmazonSSOOIDC.GetSsoTokenAsync(GetSsoTokenRequest request)
         {
-            var ssoToken = await CoreAmazonSSOOIDC.GetSsoTokenAsync(this, request).ConfigureAwait(false);
+            return await CoreAmazonSSOOIDC.GetSsoTokenAsync(this, request).ConfigureAwait(false);
+        }
+#endif
 
-            return new GetSsoTokenResponse()
-            {
-                AccessToken = ssoToken.AccessToken,
-                ExpiresAt = ssoToken.ExpiresAt,
-            };
+#if BCL
+        GetSsoTokenResponse ICoreAmazonSSOOIDC.RefreshToken(
+            GetSsoTokenResponse previousResponse)
+        {
+            return CoreAmazonSSOOIDC.RefreshToken(this, previousResponse);
+        }
+#endif
+
+#if AWS_ASYNC_API
+        async Task<GetSsoTokenResponse> ICoreAmazonSSOOIDC.RefreshTokenAsync(
+            GetSsoTokenResponse previousResponse)
+        {
+            return await CoreAmazonSSOOIDC.RefreshTokenAsync(this, previousResponse).ConfigureAwait(false);
         }
 #endif
     }

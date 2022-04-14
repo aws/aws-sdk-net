@@ -2,7 +2,7 @@
   <PropertyGroup>
    <RunAnalyzersDuringBuild Condition="'$(RunAnalyzersDuringBuild)'==''">true</RunAnalyzersDuringBuild>
     <TargetFramework>net45</TargetFramework>
-    <DefineConstants>$(DefineConstants);TRACE;BCL;BCL45;ASYNC_AWAIT;DEBUG</DefineConstants>
+    <DefineConstants>$(DefineConstants);TRACE;BCL;BCL45;ASYNC_AWAIT;DEBUG;AWS_ASYNC_API</DefineConstants>
     <DebugType>portable</DebugType>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <AssemblyName>AWSSDK.UnitTests.Net45</AssemblyName>

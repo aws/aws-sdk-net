@@ -15,7 +15,9 @@
 
 using System;
 using System.Collections.Generic;
+#if AWS_ASYNC_API
 using System.Threading.Tasks;
+#endif
 
 namespace Amazon.Runtime.SharedInterfaces
 {
@@ -46,6 +48,26 @@ namespace Amazon.Runtime.SharedInterfaces
         /// </summary>
         Task<GetSsoTokenResponse> GetSsoTokenAsync(GetSsoTokenRequest getSsoTokenRequest);
 #endif
+
+#if BCL
+        /// <summary>
+        /// This method is used internally to access the Amazon SSO OIDC service within other service assemblies.
+        /// Please use AmazonSSOOIDCClient to access the Amazon SSO OIDC service instead.
+        /// 
+        /// Use Amazon SSO OIDC to refresh <paramref name="previousResponse"/>
+        /// </summary>
+        GetSsoTokenResponse RefreshToken(GetSsoTokenResponse previousResponse);
+#endif
+
+#if AWS_ASYNC_API
+        /// <summary>
+        /// This method is used internally to access the Amazon SSO OIDC service within other service assemblies.
+        /// Please use AmazonSSOOIDCClient to access the Amazon SSO OIDC service instead.
+        /// 
+        /// Use Amazon SSO OIDC to refresh <paramref name="previousResponse"/>
+        /// </summary>
+        Task<GetSsoTokenResponse> RefreshTokenAsync(GetSsoTokenResponse previousResponse);
+#endif
     }
 
     public class GetSsoTokenRequest
@@ -75,6 +97,8 @@ namespace Amazon.Runtime.SharedInterfaces
         /// Optional, can be null.
         /// </summary>
         public IDictionary<string, object> AdditionalProperties { get; set; }
+
+        public IList<string> Scopes { get; set; }
     }
 
     public class GetSsoTokenResponse
@@ -88,5 +112,45 @@ namespace Amazon.Runtime.SharedInterfaces
         /// When <see cref="AccessToken"/> expires
         /// </summary>
         public DateTime ExpiresAt { get; set; }
+
+        /// <summary>
+        ///  An opaque string returned by the sso-oidc service.
+        /// </summary>
+        public string RefreshToken { get; set; }
+
+        /// <summary>
+        /// The client ID generated when performing the registration portion of the OIDC authorization flow.
+        /// The clientId is used alongside the <see cref="RefreshToken"/> to refresh the <see cref="AccessToken"/>.
+        /// </summary>
+        public string ClientId { get; set; }
+
+        /// <summary>
+        /// he client secret generated when performing the registration portion of the OIDC authorization flow.
+        /// The <see cref="ClientSecret"/> is used alongside the <see cref="RefreshToken"/> to refresh the <see cref="AccessToken"/>.
+        /// </summary>
+        public string ClientSecret { get; set; }
+
+        /// <summary>
+        /// The expiration time of the client registration (<see cref="ClientId"/> and <see cref="ClientSecret"/>) as
+        /// an RFC 3339 formatted timestamp.
+        /// </summary>
+        public string RegistrationExpiresAt { get; set; }
+
+        /// <summary>
+        /// The configured sso_region for the profile that credentials are being resolved for.
+        /// This field is set as a convenience and is not directly used by the token provider but is useful in other contexts.
+        /// Logic that requires the SSO region as part of the SSO token provider MUST use the SSO region configured on the profile
+        /// and MUST NOT use the region in the cached token.
+        /// </summary>
+        public string Region { get; set; }
+
+        /// <summary>
+        /// The configured sso_start_url for the profile that credentials are being resolved for.
+        /// This field is set as a convenience and is not directly used by the token provider but
+        /// is useful in other contexts. Logic that requires the SSO start URL as part of the SSO
+        /// token provider MUST use the SSO start URL configured on the profile and MUST NOT
+        /// use the SSO start URL in the cached token.
+        /// </summary>
+        public string StartUrl { get; set; }
     }
 }

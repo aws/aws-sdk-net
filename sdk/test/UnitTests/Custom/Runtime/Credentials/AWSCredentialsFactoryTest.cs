@@ -496,8 +496,11 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         public void GetSsoCredentialsWithMissingFields()
         {
-            var credentials = AWSCredentialsFactory.GetAWSCredentials(SsoProfileMissingFields, ProfileStore);
-            Assert.IsInstanceOfType(credentials, typeof(SSOAWSCredentials));
+            // can not create SSO Credentials without the Region
+
+            AssertExtensions.ExpectException(() =>
+                    AWSCredentialsFactory.GetAWSCredentials(SsoProfileMissingFields, ProfileStore),
+                typeof(ArgumentNullException)); 
         }
 
         [TestMethod]

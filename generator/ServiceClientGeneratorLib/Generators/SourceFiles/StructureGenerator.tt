@@ -287,6 +287,11 @@ namespace <#=this.Config.Namespace#>.Model
             return new AWS4Signer(false);
 <#
                         break;
+                        case OperationAuthType.Bearer:
+#>
+            return new BearerTokenSigner();
+<#
+                        break;
                         default:
                             throw new ArgumentException("Unhandled value for operation authtype:" + this.Operation.AuthType.Value);
                     }

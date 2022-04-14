@@ -7,7 +7,7 @@ This project file should not be used as part of a release pipeline.
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
         <TargetFramework>net45</TargetFramework>
-        <DefineConstants>$(DefineConstants);TRACE;BCL;BCL45;ASYNC_AWAIT;DEBUG</DefineConstants>
+        <DefineConstants>$(DefineConstants);TRACE;BCL;BCL45;ASYNC_AWAIT;DEBUG;AWS_ASYNC_API</DefineConstants>
         <DebugType>portable</DebugType>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
         <AssemblyName>AWSSDK.UnitTests.Net45</AssemblyName>
@@ -36,8 +36,10 @@ This project file should not be used as part of a release pipeline.
         <ProjectReference Include="..\..\..\extensions\src\AWSSDK.Extensions.CrtIntegration\AWSSDK.Extensions.CrtIntegration.Net45.csproj" />
         <ProjectReference Include="..\..\src\Core\AWSSDK.Core.Net45.csproj" />
         <ProjectReference Include="..\..\src\Services\IotData\AWSSDK.IotData.Net45.csproj" />
+        <ProjectReference Include="..\..\src\Services\SSOOIDC\AWSSDK.SSOOIDC.Net45.csproj" />
         <ProjectReference Include="..\Common\AWSSDK.CommonTest.csproj" />
         <ProjectReference Include="..\..\..\generator\ServiceClientGeneratorLib\ServiceClientGeneratorLib.csproj" />
+        <ProjectReference Include="..\Services\BearerTokenAuthTest\AWSSDK.BearerTokenAuthTest.Net45.csproj" />
         <ProjectReference Include="..\..\src\Services\AutoScaling\*.Net45.csproj" />
         <ProjectReference Include="..\..\src\Services\CloudFront\*.Net45.csproj" />
         <ProjectReference Include="..\..\src\Services\DynamoDBv2\*.Net45.csproj" />
@@ -65,7 +67,7 @@ This project file should not be used as part of a release pipeline.
     <ItemGroup>
         <EmbeddedResource Include="Custom\Runtime\TestResponses\*.txt" />
         <EmbeddedResource Include="Custom\Runtime\EventStreams\test_vectors\*" />
-        <EmbeddedResource Include="Custom\Runtime\TestEndpoints\*.json"/>
+        <EmbeddedResource Include="Custom\Runtime\TestEndpoints\*.json" />
         <EmbeddedResource Include="Custom\TestTools\ComparerTest.json" />
         <EmbeddedResource Include="..\Services\CloudFront\UnitTests\Custom\EmbeddedResource\sample.rsa.private.key.txt" />
     </ItemGroup>
