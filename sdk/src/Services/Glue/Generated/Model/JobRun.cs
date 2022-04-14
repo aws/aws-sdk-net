@@ -37,6 +37,7 @@ namespace Amazon.Glue.Model
         private Dictionary<string, string> _arguments = new Dictionary<string, string>();
         private int? _attempt;
         private DateTime? _completedOn;
+        private double? _dpuSeconds;
         private string _errorMessage;
         private int? _executionTime;
         private string _glueVersion;
@@ -152,6 +153,31 @@ namespace Amazon.Glue.Model
         internal bool IsSetCompletedOn()
         {
             return this._completedOn.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DPUSeconds. 
+        /// <para>
+        /// This field populates only when an Auto Scaling job run completes, and represents the
+        /// total time each executor ran during the lifecycle of a job run in seconds, multiplied
+        /// by a DPU factor (1 for <code>G.1X</code> and 2 for <code>G.2X</code> workers). This
+        /// value may be different than the <code>executionEngineRuntime</code> * <code>MaxCapacity</code>
+        /// as in the case of Auto Scaling jobs, as the number of executors running at a given
+        /// time may be less than the <code>MaxCapacity</code>. Therefore, it is possible that
+        /// the value of <code>DPUSeconds</code> is less than <code>executionEngineRuntime</code>
+        /// * <code>MaxCapacity</code>.
+        /// </para>
+        /// </summary>
+        public double DPUSeconds
+        {
+            get { return this._dpuSeconds.GetValueOrDefault(); }
+            set { this._dpuSeconds = value; }
+        }
+
+        // Check to see if DPUSeconds property is set
+        internal bool IsSetDPUSeconds()
+        {
+            return this._dpuSeconds.HasValue; 
         }
 
         /// <summary>

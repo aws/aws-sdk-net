@@ -88,6 +88,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.CompletedOn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DPUSeconds", targetDepth))
+                {
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.DPUSeconds = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ErrorMessage", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
