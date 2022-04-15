@@ -125,6 +125,64 @@ namespace Amazon.Lightsail
 
 
     /// <summary>
+    /// Constants used for properties of type AccountLevelBpaSyncStatus.
+    /// </summary>
+    public class AccountLevelBpaSyncStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Defaulted for AccountLevelBpaSyncStatus
+        /// </summary>
+        public static readonly AccountLevelBpaSyncStatus Defaulted = new AccountLevelBpaSyncStatus("Defaulted");
+        /// <summary>
+        /// Constant Failed for AccountLevelBpaSyncStatus
+        /// </summary>
+        public static readonly AccountLevelBpaSyncStatus Failed = new AccountLevelBpaSyncStatus("Failed");
+        /// <summary>
+        /// Constant InSync for AccountLevelBpaSyncStatus
+        /// </summary>
+        public static readonly AccountLevelBpaSyncStatus InSync = new AccountLevelBpaSyncStatus("InSync");
+        /// <summary>
+        /// Constant NeverSynced for AccountLevelBpaSyncStatus
+        /// </summary>
+        public static readonly AccountLevelBpaSyncStatus NeverSynced = new AccountLevelBpaSyncStatus("NeverSynced");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AccountLevelBpaSyncStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AccountLevelBpaSyncStatus FindValue(string value)
+        {
+            return FindValue<AccountLevelBpaSyncStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AccountLevelBpaSyncStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AddOnType.
     /// </summary>
     public class AddOnType : ConstantClass
@@ -376,6 +434,64 @@ namespace Amazon.Lightsail
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator BlueprintType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type BPAStatusMessage.
+    /// </summary>
+    public class BPAStatusMessage : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DEFAULTED_FOR_SLR_MISSING for BPAStatusMessage
+        /// </summary>
+        public static readonly BPAStatusMessage DEFAULTED_FOR_SLR_MISSING = new BPAStatusMessage("DEFAULTED_FOR_SLR_MISSING");
+        /// <summary>
+        /// Constant DEFAULTED_FOR_SLR_MISSING_ON_HOLD for BPAStatusMessage
+        /// </summary>
+        public static readonly BPAStatusMessage DEFAULTED_FOR_SLR_MISSING_ON_HOLD = new BPAStatusMessage("DEFAULTED_FOR_SLR_MISSING_ON_HOLD");
+        /// <summary>
+        /// Constant SYNC_ON_HOLD for BPAStatusMessage
+        /// </summary>
+        public static readonly BPAStatusMessage SYNC_ON_HOLD = new BPAStatusMessage("SYNC_ON_HOLD");
+        /// <summary>
+        /// Constant Unknown for BPAStatusMessage
+        /// </summary>
+        public static readonly BPAStatusMessage Unknown = new BPAStatusMessage("Unknown");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BPAStatusMessage(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BPAStatusMessage FindValue(string value)
+        {
+            return FindValue<BPAStatusMessage>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BPAStatusMessage(string value)
         {
             return FindValue(value);
         }

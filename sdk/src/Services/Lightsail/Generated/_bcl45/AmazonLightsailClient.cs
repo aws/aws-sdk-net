@@ -1973,7 +1973,7 @@ namespace Amazon.Lightsail
         ///  
         /// <para>
         /// You can deploy containers to your container service using container images from a
-        /// public registry like Docker Hub, or from your local machine. For more information,
+        /// public registry such as Amazon ECR Public, or from your local machine. For more information,
         /// see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-creating-container-images">Creating
         /// container images for your Amazon Lightsail container services</a> in the <i>Amazon
         /// Lightsail Developer Guide</i>.
@@ -2032,7 +2032,7 @@ namespace Amazon.Lightsail
         ///  
         /// <para>
         /// You can deploy containers to your container service using container images from a
-        /// public registry like Docker Hub, or from your local machine. For more information,
+        /// public registry such as Amazon ECR Public, or from your local machine. For more information,
         /// see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-creating-container-images">Creating
         /// container images for your Amazon Lightsail container services</a> in the <i>Amazon
         /// Lightsail Developer Guide</i>.
@@ -8289,12 +8289,14 @@ namespace Amazon.Lightsail
 
 
         /// <summary>
-        /// Returns information about one or more Amazon Lightsail buckets.
+        /// Returns information about one or more Amazon Lightsail buckets. The information returned
+        /// includes the synchronization status of the Amazon Simple Storage Service (Amazon S3)
+        /// account-level block public access feature for your Lightsail buckets.
         /// 
         ///  
         /// <para>
         /// For more information about buckets, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/buckets-in-amazon-lightsail">Buckets
-        /// in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer Guide</i>..
+        /// in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBuckets service method.</param>
@@ -8337,12 +8339,14 @@ namespace Amazon.Lightsail
 
 
         /// <summary>
-        /// Returns information about one or more Amazon Lightsail buckets.
+        /// Returns information about one or more Amazon Lightsail buckets. The information returned
+        /// includes the synchronization status of the Amazon Simple Storage Service (Amazon S3)
+        /// account-level block public access feature for your Lightsail buckets.
         /// 
         ///  
         /// <para>
         /// For more information about buckets, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/buckets-in-amazon-lightsail">Buckets
-        /// in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer Guide</i>..
+        /// in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBuckets service method.</param>
@@ -9989,7 +9993,7 @@ namespace Amazon.Lightsail
         ///  
         /// <para>
         /// A distribution bundle specifies the monthly network transfer quota and monthly cost
-        /// of your dsitribution.
+        /// of your distribution.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDistributionBundles service method.</param>
@@ -10041,7 +10045,7 @@ namespace Amazon.Lightsail
         ///  
         /// <para>
         /// A distribution bundle specifies the monthly network transfer quota and monthly cost
-        /// of your dsitribution.
+        /// of your distribution.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDistributionBundles service method.</param>
@@ -17329,7 +17333,7 @@ namespace Amazon.Lightsail
         ///  
         /// <para>
         /// A distribution bundle specifies the monthly network transfer quota and monthly cost
-        /// of your dsitribution.
+        /// of your distribution.
         /// </para>
         ///  
         /// <para>
@@ -17392,7 +17396,7 @@ namespace Amazon.Lightsail
         ///  
         /// <para>
         /// A distribution bundle specifies the monthly network transfer quota and monthly cost
-        /// of your dsitribution.
+        /// of your distribution.
         /// </para>
         ///  
         /// <para>

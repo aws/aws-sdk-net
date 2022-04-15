@@ -35,7 +35,7 @@ namespace Amazon.Lightsail.Model
     ///  
     /// <para>
     /// A distribution bundle specifies the monthly network transfer quota and monthly cost
-    /// of your dsitribution.
+    /// of your distribution.
     /// </para>
     ///  
     /// <para>
