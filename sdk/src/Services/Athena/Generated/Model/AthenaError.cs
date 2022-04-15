@@ -38,7 +38,9 @@ namespace Amazon.Athena.Model
     public partial class AthenaError
     {
         private int? _errorCategory;
+        private string _errorMessage;
         private int? _errorType;
+        private bool? _retryable;
 
         /// <summary>
         /// Gets and sets the property ErrorCategory. 
@@ -73,6 +75,24 @@ namespace Amazon.Athena.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ErrorMessage. 
+        /// <para>
+        /// Contains a short description of the error that occurred.
+        /// </para>
+        /// </summary>
+        public string ErrorMessage
+        {
+            get { return this._errorMessage; }
+            set { this._errorMessage = value; }
+        }
+
+        // Check to see if ErrorMessage property is set
+        internal bool IsSetErrorMessage()
+        {
+            return this._errorMessage != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ErrorType. 
         /// <para>
         /// An integer value that provides specific information about an Athena query error. For
@@ -91,6 +111,24 @@ namespace Amazon.Athena.Model
         internal bool IsSetErrorType()
         {
             return this._errorType.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Retryable. 
+        /// <para>
+        /// True if the query might succeed if resubmitted.
+        /// </para>
+        /// </summary>
+        public bool Retryable
+        {
+            get { return this._retryable.GetValueOrDefault(); }
+            set { this._retryable = value; }
+        }
+
+        // Check to see if Retryable property is set
+        internal bool IsSetRetryable()
+        {
+            return this._retryable.HasValue; 
         }
 
     }

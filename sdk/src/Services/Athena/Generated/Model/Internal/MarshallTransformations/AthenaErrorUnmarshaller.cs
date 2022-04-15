@@ -70,10 +70,22 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
                     unmarshalledObject.ErrorCategory = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ErrorMessage", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ErrorMessage = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ErrorType", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
                     unmarshalledObject.ErrorType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Retryable", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.Retryable = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
