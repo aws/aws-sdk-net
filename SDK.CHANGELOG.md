@@ -1,3 +1,11 @@
+### 3.7.254.0 (2022-04-15 18:16 UTC)
+* Athena (3.7.6.0)
+	* This release adds subfields, ErrorMessage, Retryable, to the AthenaError response object in the GetQueryExecution API when a query fails.
+* Lightsail (3.7.6.0)
+	* This release adds support to describe the synchronization status of the account-level block public access feature for your Amazon Lightsail buckets.
+* RDS (3.7.11.0)
+	* Removes Amazon RDS on VMware with the deletion of APIs related to Custom Availability Zones and Media installation
+
 ### 3.7.253.0 (2022-04-14 18:17 UTC)
 * Appflow (3.7.8.0)
 	* Enables users to pass custom token URL parameters for Oauth2 authentication during create connector profile
