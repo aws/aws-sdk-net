@@ -1396,97 +1396,6 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("RDS")]
-        public void CreateCustomAvailabilityZoneMarshallTest()
-        {
-            var operation = service_model.FindOperation("CreateCustomAvailabilityZone");
-
-            var request = InstantiateClassGenerator.Execute<CreateCustomAvailabilityZoneRequest>();
-            var marshaller = new CreateCustomAvailabilityZoneRequestMarshaller();
-            var internalRequest = marshaller.Marshall(request);
-            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
-            validator.Validate();
-
-
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
-            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
-            var response = CreateCustomAvailabilityZoneResponseUnmarshaller.Instance.Unmarshall(context)
-                as CreateCustomAvailabilityZoneResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Query")]
-        [TestCategory("RDS")]
-        public void CreateCustomAvailabilityZone_CustomAvailabilityZoneAlreadyExistsExceptionMarshallTest()
-        {
-            var operation = service_model.FindOperation("CreateCustomAvailabilityZone");
-
-            var request = InstantiateClassGenerator.Execute<CreateCustomAvailabilityZoneRequest>();
-            var marshaller = new CreateCustomAvailabilityZoneRequestMarshaller();
-            var internalRequest = marshaller.Marshall(request);
-
-            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
-            validator.Validate();
-
-            var exception = operation.Exceptions.First(e => e.Name.Equals("CustomAvailabilityZoneAlreadyExistsException"));
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
-            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
-            var response = CreateCustomAvailabilityZoneResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
-
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Query")]
-        [TestCategory("RDS")]
-        public void CreateCustomAvailabilityZone_CustomAvailabilityZoneQuotaExceededExceptionMarshallTest()
-        {
-            var operation = service_model.FindOperation("CreateCustomAvailabilityZone");
-
-            var request = InstantiateClassGenerator.Execute<CreateCustomAvailabilityZoneRequest>();
-            var marshaller = new CreateCustomAvailabilityZoneRequestMarshaller();
-            var internalRequest = marshaller.Marshall(request);
-
-            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
-            validator.Validate();
-
-            var exception = operation.Exceptions.First(e => e.Name.Equals("CustomAvailabilityZoneQuotaExceededException"));
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
-            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
-            var response = CreateCustomAvailabilityZoneResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
-
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Query")]
-        [TestCategory("RDS")]
-        public void CreateCustomAvailabilityZone_KMSKeyNotAccessibleExceptionMarshallTest()
-        {
-            var operation = service_model.FindOperation("CreateCustomAvailabilityZone");
-
-            var request = InstantiateClassGenerator.Execute<CreateCustomAvailabilityZoneRequest>();
-            var marshaller = new CreateCustomAvailabilityZoneRequestMarshaller();
-            var internalRequest = marshaller.Marshall(request);
-
-            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
-            validator.Validate();
-
-            var exception = operation.Exceptions.First(e => e.Name.Equals("KMSKeyNotAccessibleException"));
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
-            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
-            var response = CreateCustomAvailabilityZoneResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
-
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Query")]
-        [TestCategory("RDS")]
         public void CreateCustomDBEngineVersionMarshallTest()
         {
             var operation = service_model.FindOperation("CreateCustomDBEngineVersion");
@@ -4300,74 +4209,6 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("RDS")]
-        public void DeleteCustomAvailabilityZoneMarshallTest()
-        {
-            var operation = service_model.FindOperation("DeleteCustomAvailabilityZone");
-
-            var request = InstantiateClassGenerator.Execute<DeleteCustomAvailabilityZoneRequest>();
-            var marshaller = new DeleteCustomAvailabilityZoneRequestMarshaller();
-            var internalRequest = marshaller.Marshall(request);
-            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
-            validator.Validate();
-
-
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
-            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
-            var response = DeleteCustomAvailabilityZoneResponseUnmarshaller.Instance.Unmarshall(context)
-                as DeleteCustomAvailabilityZoneResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Query")]
-        [TestCategory("RDS")]
-        public void DeleteCustomAvailabilityZone_CustomAvailabilityZoneNotFoundExceptionMarshallTest()
-        {
-            var operation = service_model.FindOperation("DeleteCustomAvailabilityZone");
-
-            var request = InstantiateClassGenerator.Execute<DeleteCustomAvailabilityZoneRequest>();
-            var marshaller = new DeleteCustomAvailabilityZoneRequestMarshaller();
-            var internalRequest = marshaller.Marshall(request);
-
-            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
-            validator.Validate();
-
-            var exception = operation.Exceptions.First(e => e.Name.Equals("CustomAvailabilityZoneNotFoundException"));
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
-            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
-            var response = DeleteCustomAvailabilityZoneResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
-
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Query")]
-        [TestCategory("RDS")]
-        public void DeleteCustomAvailabilityZone_KMSKeyNotAccessibleExceptionMarshallTest()
-        {
-            var operation = service_model.FindOperation("DeleteCustomAvailabilityZone");
-
-            var request = InstantiateClassGenerator.Execute<DeleteCustomAvailabilityZoneRequest>();
-            var marshaller = new DeleteCustomAvailabilityZoneRequestMarshaller();
-            var internalRequest = marshaller.Marshall(request);
-
-            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
-            validator.Validate();
-
-            var exception = operation.Exceptions.First(e => e.Name.Equals("KMSKeyNotAccessibleException"));
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
-            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
-            var response = DeleteCustomAvailabilityZoneResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
-
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Query")]
-        [TestCategory("RDS")]
         public void DeleteCustomDBEngineVersionMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteCustomDBEngineVersion");
@@ -5575,51 +5416,6 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("RDS")]
-        public void DeleteInstallationMediaMarshallTest()
-        {
-            var operation = service_model.FindOperation("DeleteInstallationMedia");
-
-            var request = InstantiateClassGenerator.Execute<DeleteInstallationMediaRequest>();
-            var marshaller = new DeleteInstallationMediaRequestMarshaller();
-            var internalRequest = marshaller.Marshall(request);
-            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
-            validator.Validate();
-
-
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
-            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
-            var response = DeleteInstallationMediaResponseUnmarshaller.Instance.Unmarshall(context)
-                as DeleteInstallationMediaResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Query")]
-        [TestCategory("RDS")]
-        public void DeleteInstallationMedia_InstallationMediaNotFoundExceptionMarshallTest()
-        {
-            var operation = service_model.FindOperation("DeleteInstallationMedia");
-
-            var request = InstantiateClassGenerator.Execute<DeleteInstallationMediaRequest>();
-            var marshaller = new DeleteInstallationMediaRequestMarshaller();
-            var internalRequest = marshaller.Marshall(request);
-
-            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
-            validator.Validate();
-
-            var exception = operation.Exceptions.First(e => e.Name.Equals("InstallationMediaNotFoundException"));
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
-            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
-            var response = DeleteInstallationMediaResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
-
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Query")]
-        [TestCategory("RDS")]
         public void DeleteOptionGroupMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteOptionGroup");
@@ -5856,51 +5652,6 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
             var response = DescribeCertificatesResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
-
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Query")]
-        [TestCategory("RDS")]
-        public void DescribeCustomAvailabilityZonesMarshallTest()
-        {
-            var operation = service_model.FindOperation("DescribeCustomAvailabilityZones");
-
-            var request = InstantiateClassGenerator.Execute<DescribeCustomAvailabilityZonesRequest>();
-            var marshaller = new DescribeCustomAvailabilityZonesRequestMarshaller();
-            var internalRequest = marshaller.Marshall(request);
-            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
-            validator.Validate();
-
-
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
-            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
-            var response = DescribeCustomAvailabilityZonesResponseUnmarshaller.Instance.Unmarshall(context)
-                as DescribeCustomAvailabilityZonesResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Query")]
-        [TestCategory("RDS")]
-        public void DescribeCustomAvailabilityZones_CustomAvailabilityZoneNotFoundExceptionMarshallTest()
-        {
-            var operation = service_model.FindOperation("DescribeCustomAvailabilityZones");
-
-            var request = InstantiateClassGenerator.Execute<DescribeCustomAvailabilityZonesRequest>();
-            var marshaller = new DescribeCustomAvailabilityZonesRequestMarshaller();
-            var internalRequest = marshaller.Marshall(request);
-
-            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
-            validator.Validate();
-
-            var exception = operation.Exceptions.First(e => e.Name.Equals("CustomAvailabilityZoneNotFoundException"));
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
-            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
-            var response = DescribeCustomAvailabilityZonesResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -7215,51 +6966,6 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("RDS")]
-        public void DescribeInstallationMediaMarshallTest()
-        {
-            var operation = service_model.FindOperation("DescribeInstallationMedia");
-
-            var request = InstantiateClassGenerator.Execute<DescribeInstallationMediaRequest>();
-            var marshaller = new DescribeInstallationMediaRequestMarshaller();
-            var internalRequest = marshaller.Marshall(request);
-            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
-            validator.Validate();
-
-
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
-            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
-            var response = DescribeInstallationMediaResponseUnmarshaller.Instance.Unmarshall(context)
-                as DescribeInstallationMediaResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Query")]
-        [TestCategory("RDS")]
-        public void DescribeInstallationMedia_InstallationMediaNotFoundExceptionMarshallTest()
-        {
-            var operation = service_model.FindOperation("DescribeInstallationMedia");
-
-            var request = InstantiateClassGenerator.Execute<DescribeInstallationMediaRequest>();
-            var marshaller = new DescribeInstallationMediaRequestMarshaller();
-            var internalRequest = marshaller.Marshall(request);
-
-            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
-            validator.Validate();
-
-            var exception = operation.Exceptions.First(e => e.Name.Equals("InstallationMediaNotFoundException"));
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
-            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
-            var response = DescribeInstallationMediaResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
-
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Query")]
-        [TestCategory("RDS")]
         public void DescribeOptionGroupOptionsMarshallTest()
         {
             var operation = service_model.FindOperation("DescribeOptionGroupOptions");
@@ -7839,74 +7545,6 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
             var response = FailoverGlobalClusterResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
-
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Query")]
-        [TestCategory("RDS")]
-        public void ImportInstallationMediaMarshallTest()
-        {
-            var operation = service_model.FindOperation("ImportInstallationMedia");
-
-            var request = InstantiateClassGenerator.Execute<ImportInstallationMediaRequest>();
-            var marshaller = new ImportInstallationMediaRequestMarshaller();
-            var internalRequest = marshaller.Marshall(request);
-            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
-            validator.Validate();
-
-
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
-            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
-            var response = ImportInstallationMediaResponseUnmarshaller.Instance.Unmarshall(context)
-                as ImportInstallationMediaResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Query")]
-        [TestCategory("RDS")]
-        public void ImportInstallationMedia_CustomAvailabilityZoneNotFoundExceptionMarshallTest()
-        {
-            var operation = service_model.FindOperation("ImportInstallationMedia");
-
-            var request = InstantiateClassGenerator.Execute<ImportInstallationMediaRequest>();
-            var marshaller = new ImportInstallationMediaRequestMarshaller();
-            var internalRequest = marshaller.Marshall(request);
-
-            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
-            validator.Validate();
-
-            var exception = operation.Exceptions.First(e => e.Name.Equals("CustomAvailabilityZoneNotFoundException"));
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
-            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
-            var response = ImportInstallationMediaResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
-
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Query")]
-        [TestCategory("RDS")]
-        public void ImportInstallationMedia_InstallationMediaAlreadyExistsExceptionMarshallTest()
-        {
-            var operation = service_model.FindOperation("ImportInstallationMedia");
-
-            var request = InstantiateClassGenerator.Execute<ImportInstallationMediaRequest>();
-            var marshaller = new ImportInstallationMediaRequestMarshaller();
-            var internalRequest = marshaller.Marshall(request);
-
-            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
-            validator.Validate();
-
-            var exception = operation.Exceptions.First(e => e.Name.Equals("InstallationMediaAlreadyExistsException"));
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
-            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
-            var response = ImportInstallationMediaResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }

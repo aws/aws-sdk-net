@@ -322,7 +322,9 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Not applicable. Availability Zones are managed by the DB cluster.
+        /// Each Aurora DB cluster hosts copies of its storage in three separate Availability
+        /// Zones. Specify one of these Availability Zones. Aurora automatically chooses an appropriate
+        /// Availability Zone if you don't specify one.
         /// </para>
         ///  
         /// <para>

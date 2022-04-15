@@ -1504,87 +1504,6 @@ namespace Amazon.RDS
 
         #endregion
         
-        #region  CreateCustomAvailabilityZone
-
-
-        /// <summary>
-        /// Creates a custom Availability Zone (AZ).
-        /// 
-        ///  
-        /// <para>
-        /// A custom AZ is an on-premises AZ that is integrated with a VMware vSphere cluster.
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information about RDS on VMware, see the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html">
-        /// RDS on VMware User Guide.</a> 
-        /// </para>
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the CreateCustomAvailabilityZone service method.</param>
-        /// 
-        /// <returns>The response from the CreateCustomAvailabilityZone service method, as returned by RDS.</returns>
-        /// <exception cref="Amazon.RDS.Model.CustomAvailabilityZoneAlreadyExistsException">
-        /// <code>CustomAvailabilityZoneName</code> is already used by an existing custom Availability
-        /// Zone.
-        /// </exception>
-        /// <exception cref="Amazon.RDS.Model.CustomAvailabilityZoneQuotaExceededException">
-        /// You have exceeded the maximum number of custom Availability Zones.
-        /// </exception>
-        /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
-        /// An error occurred accessing an Amazon Web Services KMS key.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateCustomAvailabilityZone">REST API Reference for CreateCustomAvailabilityZone Operation</seealso>
-        public virtual CreateCustomAvailabilityZoneResponse CreateCustomAvailabilityZone(CreateCustomAvailabilityZoneRequest request)
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = CreateCustomAvailabilityZoneRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = CreateCustomAvailabilityZoneResponseUnmarshaller.Instance;
-
-            return Invoke<CreateCustomAvailabilityZoneResponse>(request, options);
-        }
-
-
-        /// <summary>
-        /// Creates a custom Availability Zone (AZ).
-        /// 
-        ///  
-        /// <para>
-        /// A custom AZ is an on-premises AZ that is integrated with a VMware vSphere cluster.
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information about RDS on VMware, see the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html">
-        /// RDS on VMware User Guide.</a> 
-        /// </para>
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the CreateCustomAvailabilityZone service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the CreateCustomAvailabilityZone service method, as returned by RDS.</returns>
-        /// <exception cref="Amazon.RDS.Model.CustomAvailabilityZoneAlreadyExistsException">
-        /// <code>CustomAvailabilityZoneName</code> is already used by an existing custom Availability
-        /// Zone.
-        /// </exception>
-        /// <exception cref="Amazon.RDS.Model.CustomAvailabilityZoneQuotaExceededException">
-        /// You have exceeded the maximum number of custom Availability Zones.
-        /// </exception>
-        /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
-        /// An error occurred accessing an Amazon Web Services KMS key.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateCustomAvailabilityZone">REST API Reference for CreateCustomAvailabilityZone Operation</seealso>
-        public virtual Task<CreateCustomAvailabilityZoneResponse> CreateCustomAvailabilityZoneAsync(CreateCustomAvailabilityZoneRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = CreateCustomAvailabilityZoneRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = CreateCustomAvailabilityZoneResponseUnmarshaller.Instance;
-            
-            return InvokeAsync<CreateCustomAvailabilityZoneResponse>(request, options, cancellationToken);
-        }
-
-        #endregion
-        
         #region  CreateCustomDBEngineVersion
 
 
@@ -3455,81 +3374,6 @@ namespace Amazon.RDS
 
         #endregion
         
-        #region  DeleteCustomAvailabilityZone
-
-
-        /// <summary>
-        /// Deletes a custom Availability Zone (AZ).
-        /// 
-        ///  
-        /// <para>
-        /// A custom AZ is an on-premises AZ that is integrated with a VMware vSphere cluster.
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information about RDS on VMware, see the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html">
-        /// RDS on VMware User Guide.</a> 
-        /// </para>
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the DeleteCustomAvailabilityZone service method.</param>
-        /// 
-        /// <returns>The response from the DeleteCustomAvailabilityZone service method, as returned by RDS.</returns>
-        /// <exception cref="Amazon.RDS.Model.CustomAvailabilityZoneNotFoundException">
-        /// <code>CustomAvailabilityZoneId</code> doesn't refer to an existing custom Availability
-        /// Zone identifier.
-        /// </exception>
-        /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
-        /// An error occurred accessing an Amazon Web Services KMS key.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteCustomAvailabilityZone">REST API Reference for DeleteCustomAvailabilityZone Operation</seealso>
-        public virtual DeleteCustomAvailabilityZoneResponse DeleteCustomAvailabilityZone(DeleteCustomAvailabilityZoneRequest request)
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = DeleteCustomAvailabilityZoneRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = DeleteCustomAvailabilityZoneResponseUnmarshaller.Instance;
-
-            return Invoke<DeleteCustomAvailabilityZoneResponse>(request, options);
-        }
-
-
-        /// <summary>
-        /// Deletes a custom Availability Zone (AZ).
-        /// 
-        ///  
-        /// <para>
-        /// A custom AZ is an on-premises AZ that is integrated with a VMware vSphere cluster.
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information about RDS on VMware, see the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html">
-        /// RDS on VMware User Guide.</a> 
-        /// </para>
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the DeleteCustomAvailabilityZone service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the DeleteCustomAvailabilityZone service method, as returned by RDS.</returns>
-        /// <exception cref="Amazon.RDS.Model.CustomAvailabilityZoneNotFoundException">
-        /// <code>CustomAvailabilityZoneId</code> doesn't refer to an existing custom Availability
-        /// Zone identifier.
-        /// </exception>
-        /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
-        /// An error occurred accessing an Amazon Web Services KMS key.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteCustomAvailabilityZone">REST API Reference for DeleteCustomAvailabilityZone Operation</seealso>
-        public virtual Task<DeleteCustomAvailabilityZoneResponse> DeleteCustomAvailabilityZoneAsync(DeleteCustomAvailabilityZoneRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = DeleteCustomAvailabilityZoneRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = DeleteCustomAvailabilityZoneResponseUnmarshaller.Instance;
-            
-            return InvokeAsync<DeleteCustomAvailabilityZoneResponse>(request, options, cancellationToken);
-        }
-
-        #endregion
-        
         #region  DeleteCustomDBEngineVersion
 
 
@@ -4699,55 +4543,6 @@ namespace Amazon.RDS
 
         #endregion
         
-        #region  DeleteInstallationMedia
-
-
-        /// <summary>
-        /// Deletes the installation medium for a DB engine that requires an on-premises customer
-        /// provided license, such as Microsoft SQL Server.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the DeleteInstallationMedia service method.</param>
-        /// 
-        /// <returns>The response from the DeleteInstallationMedia service method, as returned by RDS.</returns>
-        /// <exception cref="Amazon.RDS.Model.InstallationMediaNotFoundException">
-        /// <code>InstallationMediaID</code> doesn't refer to an existing installation medium.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteInstallationMedia">REST API Reference for DeleteInstallationMedia Operation</seealso>
-        public virtual DeleteInstallationMediaResponse DeleteInstallationMedia(DeleteInstallationMediaRequest request)
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = DeleteInstallationMediaRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = DeleteInstallationMediaResponseUnmarshaller.Instance;
-
-            return Invoke<DeleteInstallationMediaResponse>(request, options);
-        }
-
-
-        /// <summary>
-        /// Deletes the installation medium for a DB engine that requires an on-premises customer
-        /// provided license, such as Microsoft SQL Server.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the DeleteInstallationMedia service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the DeleteInstallationMedia service method, as returned by RDS.</returns>
-        /// <exception cref="Amazon.RDS.Model.InstallationMediaNotFoundException">
-        /// <code>InstallationMediaID</code> doesn't refer to an existing installation medium.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteInstallationMedia">REST API Reference for DeleteInstallationMedia Operation</seealso>
-        public virtual Task<DeleteInstallationMediaResponse> DeleteInstallationMediaAsync(DeleteInstallationMediaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = DeleteInstallationMediaRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = DeleteInstallationMediaResponseUnmarshaller.Instance;
-            
-            return InvokeAsync<DeleteInstallationMediaResponse>(request, options, cancellationToken);
-        }
-
-        #endregion
-        
         #region  DeleteOptionGroup
 
 
@@ -5018,75 +4813,6 @@ namespace Amazon.RDS
             options.ResponseUnmarshaller = DescribeCertificatesResponseUnmarshaller.Instance;
             
             return InvokeAsync<DescribeCertificatesResponse>(request, options, cancellationToken);
-        }
-
-        #endregion
-        
-        #region  DescribeCustomAvailabilityZones
-
-
-        /// <summary>
-        /// Returns information about custom Availability Zones (AZs).
-        /// 
-        ///  
-        /// <para>
-        /// A custom AZ is an on-premises AZ that is integrated with a VMware vSphere cluster.
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information about RDS on VMware, see the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html">
-        /// RDS on VMware User Guide.</a> 
-        /// </para>
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the DescribeCustomAvailabilityZones service method.</param>
-        /// 
-        /// <returns>The response from the DescribeCustomAvailabilityZones service method, as returned by RDS.</returns>
-        /// <exception cref="Amazon.RDS.Model.CustomAvailabilityZoneNotFoundException">
-        /// <code>CustomAvailabilityZoneId</code> doesn't refer to an existing custom Availability
-        /// Zone identifier.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeCustomAvailabilityZones">REST API Reference for DescribeCustomAvailabilityZones Operation</seealso>
-        public virtual DescribeCustomAvailabilityZonesResponse DescribeCustomAvailabilityZones(DescribeCustomAvailabilityZonesRequest request)
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = DescribeCustomAvailabilityZonesRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = DescribeCustomAvailabilityZonesResponseUnmarshaller.Instance;
-
-            return Invoke<DescribeCustomAvailabilityZonesResponse>(request, options);
-        }
-
-
-        /// <summary>
-        /// Returns information about custom Availability Zones (AZs).
-        /// 
-        ///  
-        /// <para>
-        /// A custom AZ is an on-premises AZ that is integrated with a VMware vSphere cluster.
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information about RDS on VMware, see the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html">
-        /// RDS on VMware User Guide.</a> 
-        /// </para>
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the DescribeCustomAvailabilityZones service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the DescribeCustomAvailabilityZones service method, as returned by RDS.</returns>
-        /// <exception cref="Amazon.RDS.Model.CustomAvailabilityZoneNotFoundException">
-        /// <code>CustomAvailabilityZoneId</code> doesn't refer to an existing custom Availability
-        /// Zone identifier.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeCustomAvailabilityZones">REST API Reference for DescribeCustomAvailabilityZones Operation</seealso>
-        public virtual Task<DescribeCustomAvailabilityZonesResponse> DescribeCustomAvailabilityZonesAsync(DescribeCustomAvailabilityZonesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = DescribeCustomAvailabilityZonesRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = DescribeCustomAvailabilityZonesResponseUnmarshaller.Instance;
-            
-            return InvokeAsync<DescribeCustomAvailabilityZonesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -7145,55 +6871,6 @@ namespace Amazon.RDS
 
         #endregion
         
-        #region  DescribeInstallationMedia
-
-
-        /// <summary>
-        /// Describes the available installation media for a DB engine that requires an on-premises
-        /// customer provided license, such as Microsoft SQL Server.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the DescribeInstallationMedia service method.</param>
-        /// 
-        /// <returns>The response from the DescribeInstallationMedia service method, as returned by RDS.</returns>
-        /// <exception cref="Amazon.RDS.Model.InstallationMediaNotFoundException">
-        /// <code>InstallationMediaID</code> doesn't refer to an existing installation medium.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeInstallationMedia">REST API Reference for DescribeInstallationMedia Operation</seealso>
-        public virtual DescribeInstallationMediaResponse DescribeInstallationMedia(DescribeInstallationMediaRequest request)
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = DescribeInstallationMediaRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = DescribeInstallationMediaResponseUnmarshaller.Instance;
-
-            return Invoke<DescribeInstallationMediaResponse>(request, options);
-        }
-
-
-        /// <summary>
-        /// Describes the available installation media for a DB engine that requires an on-premises
-        /// customer provided license, such as Microsoft SQL Server.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the DescribeInstallationMedia service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the DescribeInstallationMedia service method, as returned by RDS.</returns>
-        /// <exception cref="Amazon.RDS.Model.InstallationMediaNotFoundException">
-        /// <code>InstallationMediaID</code> doesn't refer to an existing installation medium.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeInstallationMedia">REST API Reference for DescribeInstallationMedia Operation</seealso>
-        public virtual Task<DescribeInstallationMediaResponse> DescribeInstallationMediaAsync(DescribeInstallationMediaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = DescribeInstallationMediaRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = DescribeInstallationMediaResponseUnmarshaller.Instance;
-            
-            return InvokeAsync<DescribeInstallationMediaResponse>(request, options, cancellationToken);
-        }
-
-        #endregion
-        
         #region  DescribeOptionGroupOptions
 
 
@@ -7987,63 +7664,6 @@ namespace Amazon.RDS
 
         #endregion
         
-        #region  ImportInstallationMedia
-
-
-        /// <summary>
-        /// Imports the installation media for a DB engine that requires an on-premises customer
-        /// provided license, such as SQL Server.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the ImportInstallationMedia service method.</param>
-        /// 
-        /// <returns>The response from the ImportInstallationMedia service method, as returned by RDS.</returns>
-        /// <exception cref="Amazon.RDS.Model.CustomAvailabilityZoneNotFoundException">
-        /// <code>CustomAvailabilityZoneId</code> doesn't refer to an existing custom Availability
-        /// Zone identifier.
-        /// </exception>
-        /// <exception cref="Amazon.RDS.Model.InstallationMediaAlreadyExistsException">
-        /// The specified installation medium has already been imported.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ImportInstallationMedia">REST API Reference for ImportInstallationMedia Operation</seealso>
-        public virtual ImportInstallationMediaResponse ImportInstallationMedia(ImportInstallationMediaRequest request)
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = ImportInstallationMediaRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = ImportInstallationMediaResponseUnmarshaller.Instance;
-
-            return Invoke<ImportInstallationMediaResponse>(request, options);
-        }
-
-
-        /// <summary>
-        /// Imports the installation media for a DB engine that requires an on-premises customer
-        /// provided license, such as SQL Server.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the ImportInstallationMedia service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the ImportInstallationMedia service method, as returned by RDS.</returns>
-        /// <exception cref="Amazon.RDS.Model.CustomAvailabilityZoneNotFoundException">
-        /// <code>CustomAvailabilityZoneId</code> doesn't refer to an existing custom Availability
-        /// Zone identifier.
-        /// </exception>
-        /// <exception cref="Amazon.RDS.Model.InstallationMediaAlreadyExistsException">
-        /// The specified installation medium has already been imported.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ImportInstallationMedia">REST API Reference for ImportInstallationMedia Operation</seealso>
-        public virtual Task<ImportInstallationMediaResponse> ImportInstallationMediaAsync(ImportInstallationMediaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = ImportInstallationMediaRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = ImportInstallationMediaResponseUnmarshaller.Instance;
-            
-            return InvokeAsync<ImportInstallationMediaResponse>(request, options, cancellationToken);
-        }
-
-        #endregion
-        
         #region  ListTagsForResource
 
 
@@ -8136,7 +7756,7 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Override the system-default Secure Sockets Layer/Transport Layer Security (SSL/TLS)
-        /// certificate for Amazon RDS for new DB instances temporarily, or remove the override.
+        /// certificate for Amazon RDS for new DB instances, or remove the override.
         /// 
         ///  
         /// <para>
@@ -8193,7 +7813,7 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Override the system-default Secure Sockets Layer/Transport Layer Security (SSL/TLS)
-        /// certificate for Amazon RDS for new DB instances temporarily, or remove the override.
+        /// certificate for Amazon RDS for new DB instances, or remove the override.
         /// 
         ///  
         /// <para>
