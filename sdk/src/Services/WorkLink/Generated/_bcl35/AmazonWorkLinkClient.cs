@@ -288,6 +288,7 @@ namespace Amazon.WorkLink
         /// You are not authorized to perform this action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/AssociateDomain">REST API Reference for AssociateDomain Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual AssociateDomainResponse AssociateDomain(AssociateDomainRequest request)
         {
             var options = new InvokeOptions();
@@ -309,6 +310,7 @@ namespace Amazon.WorkLink
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateDomain
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/AssociateDomain">REST API Reference for AssociateDomain Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual IAsyncResult BeginAssociateDomain(AssociateDomainRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -326,6 +328,7 @@ namespace Amazon.WorkLink
         /// 
         /// <returns>Returns a  AssociateDomainResult from WorkLink.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/AssociateDomain">REST API Reference for AssociateDomain Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual AssociateDomainResponse EndAssociateDomain(IAsyncResult asyncResult)
         {
             return EndInvoke<AssociateDomainResponse>(asyncResult);
@@ -361,6 +364,7 @@ namespace Amazon.WorkLink
         /// You are not authorized to perform this action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/AssociateWebsiteAuthorizationProvider">REST API Reference for AssociateWebsiteAuthorizationProvider Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual AssociateWebsiteAuthorizationProviderResponse AssociateWebsiteAuthorizationProvider(AssociateWebsiteAuthorizationProviderRequest request)
         {
             var options = new InvokeOptions();
@@ -382,6 +386,7 @@ namespace Amazon.WorkLink
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateWebsiteAuthorizationProvider
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/AssociateWebsiteAuthorizationProvider">REST API Reference for AssociateWebsiteAuthorizationProvider Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual IAsyncResult BeginAssociateWebsiteAuthorizationProvider(AssociateWebsiteAuthorizationProviderRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -399,6 +404,7 @@ namespace Amazon.WorkLink
         /// 
         /// <returns>Returns a  AssociateWebsiteAuthorizationProviderResult from WorkLink.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/AssociateWebsiteAuthorizationProvider">REST API Reference for AssociateWebsiteAuthorizationProvider Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual AssociateWebsiteAuthorizationProviderResponse EndAssociateWebsiteAuthorizationProvider(IAsyncResult asyncResult)
         {
             return EndInvoke<AssociateWebsiteAuthorizationProviderResponse>(asyncResult);
@@ -434,6 +440,7 @@ namespace Amazon.WorkLink
         /// You are not authorized to perform this action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/AssociateWebsiteCertificateAuthority">REST API Reference for AssociateWebsiteCertificateAuthority Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual AssociateWebsiteCertificateAuthorityResponse AssociateWebsiteCertificateAuthority(AssociateWebsiteCertificateAuthorityRequest request)
         {
             var options = new InvokeOptions();
@@ -455,6 +462,7 @@ namespace Amazon.WorkLink
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateWebsiteCertificateAuthority
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/AssociateWebsiteCertificateAuthority">REST API Reference for AssociateWebsiteCertificateAuthority Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual IAsyncResult BeginAssociateWebsiteCertificateAuthority(AssociateWebsiteCertificateAuthorityRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -472,6 +480,7 @@ namespace Amazon.WorkLink
         /// 
         /// <returns>Returns a  AssociateWebsiteCertificateAuthorityResult from WorkLink.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/AssociateWebsiteCertificateAuthority">REST API Reference for AssociateWebsiteCertificateAuthority Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual AssociateWebsiteCertificateAuthorityResponse EndAssociateWebsiteCertificateAuthority(IAsyncResult asyncResult)
         {
             return EndInvoke<AssociateWebsiteCertificateAuthorityResponse>(asyncResult);
@@ -508,6 +517,7 @@ namespace Amazon.WorkLink
         /// You are not authorized to perform this action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/CreateFleet">REST API Reference for CreateFleet Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual CreateFleetResponse CreateFleet(CreateFleetRequest request)
         {
             var options = new InvokeOptions();
@@ -529,6 +539,7 @@ namespace Amazon.WorkLink
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateFleet
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/CreateFleet">REST API Reference for CreateFleet Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual IAsyncResult BeginCreateFleet(CreateFleetRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -546,6 +557,7 @@ namespace Amazon.WorkLink
         /// 
         /// <returns>Returns a  CreateFleetResult from WorkLink.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/CreateFleet">REST API Reference for CreateFleet Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual CreateFleetResponse EndCreateFleet(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateFleetResponse>(asyncResult);
@@ -577,6 +589,7 @@ namespace Amazon.WorkLink
         /// You are not authorized to perform this action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DeleteFleet">REST API Reference for DeleteFleet Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual DeleteFleetResponse DeleteFleet(DeleteFleetRequest request)
         {
             var options = new InvokeOptions();
@@ -598,6 +611,7 @@ namespace Amazon.WorkLink
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteFleet
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DeleteFleet">REST API Reference for DeleteFleet Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual IAsyncResult BeginDeleteFleet(DeleteFleetRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -615,6 +629,7 @@ namespace Amazon.WorkLink
         /// 
         /// <returns>Returns a  DeleteFleetResult from WorkLink.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DeleteFleet">REST API Reference for DeleteFleet Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual DeleteFleetResponse EndDeleteFleet(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteFleetResponse>(asyncResult);
@@ -646,6 +661,7 @@ namespace Amazon.WorkLink
         /// You are not authorized to perform this action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DescribeAuditStreamConfiguration">REST API Reference for DescribeAuditStreamConfiguration Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual DescribeAuditStreamConfigurationResponse DescribeAuditStreamConfiguration(DescribeAuditStreamConfigurationRequest request)
         {
             var options = new InvokeOptions();
@@ -667,6 +683,7 @@ namespace Amazon.WorkLink
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAuditStreamConfiguration
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DescribeAuditStreamConfiguration">REST API Reference for DescribeAuditStreamConfiguration Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual IAsyncResult BeginDescribeAuditStreamConfiguration(DescribeAuditStreamConfigurationRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -684,6 +701,7 @@ namespace Amazon.WorkLink
         /// 
         /// <returns>Returns a  DescribeAuditStreamConfigurationResult from WorkLink.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DescribeAuditStreamConfiguration">REST API Reference for DescribeAuditStreamConfiguration Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual DescribeAuditStreamConfigurationResponse EndDescribeAuditStreamConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeAuditStreamConfigurationResponse>(asyncResult);
@@ -716,6 +734,7 @@ namespace Amazon.WorkLink
         /// You are not authorized to perform this action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DescribeCompanyNetworkConfiguration">REST API Reference for DescribeCompanyNetworkConfiguration Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual DescribeCompanyNetworkConfigurationResponse DescribeCompanyNetworkConfiguration(DescribeCompanyNetworkConfigurationRequest request)
         {
             var options = new InvokeOptions();
@@ -737,6 +756,7 @@ namespace Amazon.WorkLink
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeCompanyNetworkConfiguration
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DescribeCompanyNetworkConfiguration">REST API Reference for DescribeCompanyNetworkConfiguration Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual IAsyncResult BeginDescribeCompanyNetworkConfiguration(DescribeCompanyNetworkConfigurationRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -754,6 +774,7 @@ namespace Amazon.WorkLink
         /// 
         /// <returns>Returns a  DescribeCompanyNetworkConfigurationResult from WorkLink.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DescribeCompanyNetworkConfiguration">REST API Reference for DescribeCompanyNetworkConfiguration Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual DescribeCompanyNetworkConfigurationResponse EndDescribeCompanyNetworkConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeCompanyNetworkConfigurationResponse>(asyncResult);
@@ -785,6 +806,7 @@ namespace Amazon.WorkLink
         /// You are not authorized to perform this action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DescribeDevice">REST API Reference for DescribeDevice Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual DescribeDeviceResponse DescribeDevice(DescribeDeviceRequest request)
         {
             var options = new InvokeOptions();
@@ -806,6 +828,7 @@ namespace Amazon.WorkLink
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeDevice
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DescribeDevice">REST API Reference for DescribeDevice Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual IAsyncResult BeginDescribeDevice(DescribeDeviceRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -823,6 +846,7 @@ namespace Amazon.WorkLink
         /// 
         /// <returns>Returns a  DescribeDeviceResult from WorkLink.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DescribeDevice">REST API Reference for DescribeDevice Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual DescribeDeviceResponse EndDescribeDevice(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeDeviceResponse>(asyncResult);
@@ -854,6 +878,7 @@ namespace Amazon.WorkLink
         /// You are not authorized to perform this action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DescribeDevicePolicyConfiguration">REST API Reference for DescribeDevicePolicyConfiguration Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual DescribeDevicePolicyConfigurationResponse DescribeDevicePolicyConfiguration(DescribeDevicePolicyConfigurationRequest request)
         {
             var options = new InvokeOptions();
@@ -875,6 +900,7 @@ namespace Amazon.WorkLink
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeDevicePolicyConfiguration
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DescribeDevicePolicyConfiguration">REST API Reference for DescribeDevicePolicyConfiguration Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual IAsyncResult BeginDescribeDevicePolicyConfiguration(DescribeDevicePolicyConfigurationRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -892,6 +918,7 @@ namespace Amazon.WorkLink
         /// 
         /// <returns>Returns a  DescribeDevicePolicyConfigurationResult from WorkLink.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DescribeDevicePolicyConfiguration">REST API Reference for DescribeDevicePolicyConfiguration Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual DescribeDevicePolicyConfigurationResponse EndDescribeDevicePolicyConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeDevicePolicyConfigurationResponse>(asyncResult);
@@ -923,6 +950,7 @@ namespace Amazon.WorkLink
         /// You are not authorized to perform this action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DescribeDomain">REST API Reference for DescribeDomain Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual DescribeDomainResponse DescribeDomain(DescribeDomainRequest request)
         {
             var options = new InvokeOptions();
@@ -944,6 +972,7 @@ namespace Amazon.WorkLink
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeDomain
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DescribeDomain">REST API Reference for DescribeDomain Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual IAsyncResult BeginDescribeDomain(DescribeDomainRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -961,6 +990,7 @@ namespace Amazon.WorkLink
         /// 
         /// <returns>Returns a  DescribeDomainResult from WorkLink.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DescribeDomain">REST API Reference for DescribeDomain Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual DescribeDomainResponse EndDescribeDomain(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeDomainResponse>(asyncResult);
@@ -993,6 +1023,7 @@ namespace Amazon.WorkLink
         /// You are not authorized to perform this action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DescribeFleetMetadata">REST API Reference for DescribeFleetMetadata Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual DescribeFleetMetadataResponse DescribeFleetMetadata(DescribeFleetMetadataRequest request)
         {
             var options = new InvokeOptions();
@@ -1014,6 +1045,7 @@ namespace Amazon.WorkLink
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeFleetMetadata
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DescribeFleetMetadata">REST API Reference for DescribeFleetMetadata Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual IAsyncResult BeginDescribeFleetMetadata(DescribeFleetMetadataRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1031,6 +1063,7 @@ namespace Amazon.WorkLink
         /// 
         /// <returns>Returns a  DescribeFleetMetadataResult from WorkLink.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DescribeFleetMetadata">REST API Reference for DescribeFleetMetadata Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual DescribeFleetMetadataResponse EndDescribeFleetMetadata(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeFleetMetadataResponse>(asyncResult);
@@ -1062,6 +1095,7 @@ namespace Amazon.WorkLink
         /// You are not authorized to perform this action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DescribeIdentityProviderConfiguration">REST API Reference for DescribeIdentityProviderConfiguration Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual DescribeIdentityProviderConfigurationResponse DescribeIdentityProviderConfiguration(DescribeIdentityProviderConfigurationRequest request)
         {
             var options = new InvokeOptions();
@@ -1083,6 +1117,7 @@ namespace Amazon.WorkLink
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeIdentityProviderConfiguration
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DescribeIdentityProviderConfiguration">REST API Reference for DescribeIdentityProviderConfiguration Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual IAsyncResult BeginDescribeIdentityProviderConfiguration(DescribeIdentityProviderConfigurationRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1100,6 +1135,7 @@ namespace Amazon.WorkLink
         /// 
         /// <returns>Returns a  DescribeIdentityProviderConfigurationResult from WorkLink.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DescribeIdentityProviderConfiguration">REST API Reference for DescribeIdentityProviderConfiguration Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual DescribeIdentityProviderConfigurationResponse EndDescribeIdentityProviderConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeIdentityProviderConfigurationResponse>(asyncResult);
@@ -1131,6 +1167,7 @@ namespace Amazon.WorkLink
         /// You are not authorized to perform this action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DescribeWebsiteCertificateAuthority">REST API Reference for DescribeWebsiteCertificateAuthority Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual DescribeWebsiteCertificateAuthorityResponse DescribeWebsiteCertificateAuthority(DescribeWebsiteCertificateAuthorityRequest request)
         {
             var options = new InvokeOptions();
@@ -1152,6 +1189,7 @@ namespace Amazon.WorkLink
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeWebsiteCertificateAuthority
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DescribeWebsiteCertificateAuthority">REST API Reference for DescribeWebsiteCertificateAuthority Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual IAsyncResult BeginDescribeWebsiteCertificateAuthority(DescribeWebsiteCertificateAuthorityRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1169,6 +1207,7 @@ namespace Amazon.WorkLink
         /// 
         /// <returns>Returns a  DescribeWebsiteCertificateAuthorityResult from WorkLink.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DescribeWebsiteCertificateAuthority">REST API Reference for DescribeWebsiteCertificateAuthority Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual DescribeWebsiteCertificateAuthorityResponse EndDescribeWebsiteCertificateAuthority(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeWebsiteCertificateAuthorityResponse>(asyncResult);
@@ -1201,6 +1240,7 @@ namespace Amazon.WorkLink
         /// You are not authorized to perform this action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DisassociateDomain">REST API Reference for DisassociateDomain Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual DisassociateDomainResponse DisassociateDomain(DisassociateDomainRequest request)
         {
             var options = new InvokeOptions();
@@ -1222,6 +1262,7 @@ namespace Amazon.WorkLink
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateDomain
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DisassociateDomain">REST API Reference for DisassociateDomain Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual IAsyncResult BeginDisassociateDomain(DisassociateDomainRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1239,6 +1280,7 @@ namespace Amazon.WorkLink
         /// 
         /// <returns>Returns a  DisassociateDomainResult from WorkLink.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DisassociateDomain">REST API Reference for DisassociateDomain Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual DisassociateDomainResponse EndDisassociateDomain(IAsyncResult asyncResult)
         {
             return EndInvoke<DisassociateDomainResponse>(asyncResult);
@@ -1274,6 +1316,7 @@ namespace Amazon.WorkLink
         /// You are not authorized to perform this action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DisassociateWebsiteAuthorizationProvider">REST API Reference for DisassociateWebsiteAuthorizationProvider Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual DisassociateWebsiteAuthorizationProviderResponse DisassociateWebsiteAuthorizationProvider(DisassociateWebsiteAuthorizationProviderRequest request)
         {
             var options = new InvokeOptions();
@@ -1295,6 +1338,7 @@ namespace Amazon.WorkLink
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateWebsiteAuthorizationProvider
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DisassociateWebsiteAuthorizationProvider">REST API Reference for DisassociateWebsiteAuthorizationProvider Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual IAsyncResult BeginDisassociateWebsiteAuthorizationProvider(DisassociateWebsiteAuthorizationProviderRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1312,6 +1356,7 @@ namespace Amazon.WorkLink
         /// 
         /// <returns>Returns a  DisassociateWebsiteAuthorizationProviderResult from WorkLink.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DisassociateWebsiteAuthorizationProvider">REST API Reference for DisassociateWebsiteAuthorizationProvider Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual DisassociateWebsiteAuthorizationProviderResponse EndDisassociateWebsiteAuthorizationProvider(IAsyncResult asyncResult)
         {
             return EndInvoke<DisassociateWebsiteAuthorizationProviderResponse>(asyncResult);
@@ -1343,6 +1388,7 @@ namespace Amazon.WorkLink
         /// You are not authorized to perform this action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DisassociateWebsiteCertificateAuthority">REST API Reference for DisassociateWebsiteCertificateAuthority Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual DisassociateWebsiteCertificateAuthorityResponse DisassociateWebsiteCertificateAuthority(DisassociateWebsiteCertificateAuthorityRequest request)
         {
             var options = new InvokeOptions();
@@ -1364,6 +1410,7 @@ namespace Amazon.WorkLink
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateWebsiteCertificateAuthority
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DisassociateWebsiteCertificateAuthority">REST API Reference for DisassociateWebsiteCertificateAuthority Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual IAsyncResult BeginDisassociateWebsiteCertificateAuthority(DisassociateWebsiteCertificateAuthorityRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1381,6 +1428,7 @@ namespace Amazon.WorkLink
         /// 
         /// <returns>Returns a  DisassociateWebsiteCertificateAuthorityResult from WorkLink.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DisassociateWebsiteCertificateAuthority">REST API Reference for DisassociateWebsiteCertificateAuthority Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual DisassociateWebsiteCertificateAuthorityResponse EndDisassociateWebsiteCertificateAuthority(IAsyncResult asyncResult)
         {
             return EndInvoke<DisassociateWebsiteCertificateAuthorityResponse>(asyncResult);
@@ -1412,6 +1460,7 @@ namespace Amazon.WorkLink
         /// You are not authorized to perform this action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/ListDevices">REST API Reference for ListDevices Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual ListDevicesResponse ListDevices(ListDevicesRequest request)
         {
             var options = new InvokeOptions();
@@ -1433,6 +1482,7 @@ namespace Amazon.WorkLink
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDevices
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/ListDevices">REST API Reference for ListDevices Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual IAsyncResult BeginListDevices(ListDevicesRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1450,6 +1500,7 @@ namespace Amazon.WorkLink
         /// 
         /// <returns>Returns a  ListDevicesResult from WorkLink.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/ListDevices">REST API Reference for ListDevices Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual ListDevicesResponse EndListDevices(IAsyncResult asyncResult)
         {
             return EndInvoke<ListDevicesResponse>(asyncResult);
@@ -1481,6 +1532,7 @@ namespace Amazon.WorkLink
         /// You are not authorized to perform this action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/ListDomains">REST API Reference for ListDomains Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual ListDomainsResponse ListDomains(ListDomainsRequest request)
         {
             var options = new InvokeOptions();
@@ -1502,6 +1554,7 @@ namespace Amazon.WorkLink
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDomains
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/ListDomains">REST API Reference for ListDomains Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual IAsyncResult BeginListDomains(ListDomainsRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1519,6 +1572,7 @@ namespace Amazon.WorkLink
         /// 
         /// <returns>Returns a  ListDomainsResult from WorkLink.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/ListDomains">REST API Reference for ListDomains Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual ListDomainsResponse EndListDomains(IAsyncResult asyncResult)
         {
             return EndInvoke<ListDomainsResponse>(asyncResult);
@@ -1547,6 +1601,7 @@ namespace Amazon.WorkLink
         /// You are not authorized to perform this action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/ListFleets">REST API Reference for ListFleets Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual ListFleetsResponse ListFleets(ListFleetsRequest request)
         {
             var options = new InvokeOptions();
@@ -1568,6 +1623,7 @@ namespace Amazon.WorkLink
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListFleets
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/ListFleets">REST API Reference for ListFleets Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual IAsyncResult BeginListFleets(ListFleetsRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1585,6 +1641,7 @@ namespace Amazon.WorkLink
         /// 
         /// <returns>Returns a  ListFleetsResult from WorkLink.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/ListFleets">REST API Reference for ListFleets Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual ListFleetsResponse EndListFleets(IAsyncResult asyncResult)
         {
             return EndInvoke<ListFleetsResponse>(asyncResult);
@@ -1604,6 +1661,7 @@ namespace Amazon.WorkLink
         /// The request is not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
             var options = new InvokeOptions();
@@ -1625,6 +1683,7 @@ namespace Amazon.WorkLink
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTagsForResource
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1642,6 +1701,7 @@ namespace Amazon.WorkLink
         /// 
         /// <returns>Returns a  ListTagsForResourceResult from WorkLink.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult)
         {
             return EndInvoke<ListTagsForResourceResponse>(asyncResult);
@@ -1673,6 +1733,7 @@ namespace Amazon.WorkLink
         /// You are not authorized to perform this action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/ListWebsiteAuthorizationProviders">REST API Reference for ListWebsiteAuthorizationProviders Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual ListWebsiteAuthorizationProvidersResponse ListWebsiteAuthorizationProviders(ListWebsiteAuthorizationProvidersRequest request)
         {
             var options = new InvokeOptions();
@@ -1694,6 +1755,7 @@ namespace Amazon.WorkLink
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListWebsiteAuthorizationProviders
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/ListWebsiteAuthorizationProviders">REST API Reference for ListWebsiteAuthorizationProviders Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual IAsyncResult BeginListWebsiteAuthorizationProviders(ListWebsiteAuthorizationProvidersRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1711,6 +1773,7 @@ namespace Amazon.WorkLink
         /// 
         /// <returns>Returns a  ListWebsiteAuthorizationProvidersResult from WorkLink.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/ListWebsiteAuthorizationProviders">REST API Reference for ListWebsiteAuthorizationProviders Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual ListWebsiteAuthorizationProvidersResponse EndListWebsiteAuthorizationProviders(IAsyncResult asyncResult)
         {
             return EndInvoke<ListWebsiteAuthorizationProvidersResponse>(asyncResult);
@@ -1739,6 +1802,7 @@ namespace Amazon.WorkLink
         /// You are not authorized to perform this action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/ListWebsiteCertificateAuthorities">REST API Reference for ListWebsiteCertificateAuthorities Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual ListWebsiteCertificateAuthoritiesResponse ListWebsiteCertificateAuthorities(ListWebsiteCertificateAuthoritiesRequest request)
         {
             var options = new InvokeOptions();
@@ -1760,6 +1824,7 @@ namespace Amazon.WorkLink
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListWebsiteCertificateAuthorities
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/ListWebsiteCertificateAuthorities">REST API Reference for ListWebsiteCertificateAuthorities Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual IAsyncResult BeginListWebsiteCertificateAuthorities(ListWebsiteCertificateAuthoritiesRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1777,6 +1842,7 @@ namespace Amazon.WorkLink
         /// 
         /// <returns>Returns a  ListWebsiteCertificateAuthoritiesResult from WorkLink.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/ListWebsiteCertificateAuthorities">REST API Reference for ListWebsiteCertificateAuthorities Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual ListWebsiteCertificateAuthoritiesResponse EndListWebsiteCertificateAuthorities(IAsyncResult asyncResult)
         {
             return EndInvoke<ListWebsiteCertificateAuthoritiesResponse>(asyncResult);
@@ -1808,6 +1874,7 @@ namespace Amazon.WorkLink
         /// You are not authorized to perform this action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/RestoreDomainAccess">REST API Reference for RestoreDomainAccess Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual RestoreDomainAccessResponse RestoreDomainAccess(RestoreDomainAccessRequest request)
         {
             var options = new InvokeOptions();
@@ -1829,6 +1896,7 @@ namespace Amazon.WorkLink
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRestoreDomainAccess
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/RestoreDomainAccess">REST API Reference for RestoreDomainAccess Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual IAsyncResult BeginRestoreDomainAccess(RestoreDomainAccessRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1846,6 +1914,7 @@ namespace Amazon.WorkLink
         /// 
         /// <returns>Returns a  RestoreDomainAccessResult from WorkLink.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/RestoreDomainAccess">REST API Reference for RestoreDomainAccess Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual RestoreDomainAccessResponse EndRestoreDomainAccess(IAsyncResult asyncResult)
         {
             return EndInvoke<RestoreDomainAccessResponse>(asyncResult);
@@ -1877,6 +1946,7 @@ namespace Amazon.WorkLink
         /// You are not authorized to perform this action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/RevokeDomainAccess">REST API Reference for RevokeDomainAccess Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual RevokeDomainAccessResponse RevokeDomainAccess(RevokeDomainAccessRequest request)
         {
             var options = new InvokeOptions();
@@ -1898,6 +1968,7 @@ namespace Amazon.WorkLink
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRevokeDomainAccess
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/RevokeDomainAccess">REST API Reference for RevokeDomainAccess Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual IAsyncResult BeginRevokeDomainAccess(RevokeDomainAccessRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1915,6 +1986,7 @@ namespace Amazon.WorkLink
         /// 
         /// <returns>Returns a  RevokeDomainAccessResult from WorkLink.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/RevokeDomainAccess">REST API Reference for RevokeDomainAccess Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual RevokeDomainAccessResponse EndRevokeDomainAccess(IAsyncResult asyncResult)
         {
             return EndInvoke<RevokeDomainAccessResponse>(asyncResult);
@@ -1947,6 +2019,7 @@ namespace Amazon.WorkLink
         /// You are not authorized to perform this action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/SignOutUser">REST API Reference for SignOutUser Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual SignOutUserResponse SignOutUser(SignOutUserRequest request)
         {
             var options = new InvokeOptions();
@@ -1968,6 +2041,7 @@ namespace Amazon.WorkLink
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSignOutUser
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/SignOutUser">REST API Reference for SignOutUser Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual IAsyncResult BeginSignOutUser(SignOutUserRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1985,6 +2059,7 @@ namespace Amazon.WorkLink
         /// 
         /// <returns>Returns a  SignOutUserResult from WorkLink.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/SignOutUser">REST API Reference for SignOutUser Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual SignOutUserResponse EndSignOutUser(IAsyncResult asyncResult)
         {
             return EndInvoke<SignOutUserResponse>(asyncResult);
@@ -2006,6 +2081,7 @@ namespace Amazon.WorkLink
         /// The request is not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/TagResource">REST API Reference for TagResource Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
             var options = new InvokeOptions();
@@ -2027,6 +2103,7 @@ namespace Amazon.WorkLink
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTagResource
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/TagResource">REST API Reference for TagResource Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -2044,6 +2121,7 @@ namespace Amazon.WorkLink
         /// 
         /// <returns>Returns a  TagResourceResult from WorkLink.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/TagResource">REST API Reference for TagResource Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual TagResourceResponse EndTagResource(IAsyncResult asyncResult)
         {
             return EndInvoke<TagResourceResponse>(asyncResult);
@@ -2063,6 +2141,7 @@ namespace Amazon.WorkLink
         /// The request is not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
             var options = new InvokeOptions();
@@ -2084,6 +2163,7 @@ namespace Amazon.WorkLink
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUntagResource
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -2101,6 +2181,7 @@ namespace Amazon.WorkLink
         /// 
         /// <returns>Returns a  UntagResourceResult from WorkLink.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual UntagResourceResponse EndUntagResource(IAsyncResult asyncResult)
         {
             return EndInvoke<UntagResourceResponse>(asyncResult);
@@ -2132,6 +2213,7 @@ namespace Amazon.WorkLink
         /// You are not authorized to perform this action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/UpdateAuditStreamConfiguration">REST API Reference for UpdateAuditStreamConfiguration Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual UpdateAuditStreamConfigurationResponse UpdateAuditStreamConfiguration(UpdateAuditStreamConfigurationRequest request)
         {
             var options = new InvokeOptions();
@@ -2153,6 +2235,7 @@ namespace Amazon.WorkLink
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateAuditStreamConfiguration
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/UpdateAuditStreamConfiguration">REST API Reference for UpdateAuditStreamConfiguration Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual IAsyncResult BeginUpdateAuditStreamConfiguration(UpdateAuditStreamConfigurationRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -2170,6 +2253,7 @@ namespace Amazon.WorkLink
         /// 
         /// <returns>Returns a  UpdateAuditStreamConfigurationResult from WorkLink.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/UpdateAuditStreamConfiguration">REST API Reference for UpdateAuditStreamConfiguration Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual UpdateAuditStreamConfigurationResponse EndUpdateAuditStreamConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateAuditStreamConfigurationResponse>(asyncResult);
@@ -2201,6 +2285,7 @@ namespace Amazon.WorkLink
         /// You are not authorized to perform this action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/UpdateCompanyNetworkConfiguration">REST API Reference for UpdateCompanyNetworkConfiguration Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual UpdateCompanyNetworkConfigurationResponse UpdateCompanyNetworkConfiguration(UpdateCompanyNetworkConfigurationRequest request)
         {
             var options = new InvokeOptions();
@@ -2222,6 +2307,7 @@ namespace Amazon.WorkLink
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateCompanyNetworkConfiguration
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/UpdateCompanyNetworkConfiguration">REST API Reference for UpdateCompanyNetworkConfiguration Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual IAsyncResult BeginUpdateCompanyNetworkConfiguration(UpdateCompanyNetworkConfigurationRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -2239,6 +2325,7 @@ namespace Amazon.WorkLink
         /// 
         /// <returns>Returns a  UpdateCompanyNetworkConfigurationResult from WorkLink.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/UpdateCompanyNetworkConfiguration">REST API Reference for UpdateCompanyNetworkConfiguration Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual UpdateCompanyNetworkConfigurationResponse EndUpdateCompanyNetworkConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateCompanyNetworkConfigurationResponse>(asyncResult);
@@ -2270,6 +2357,7 @@ namespace Amazon.WorkLink
         /// You are not authorized to perform this action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/UpdateDevicePolicyConfiguration">REST API Reference for UpdateDevicePolicyConfiguration Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual UpdateDevicePolicyConfigurationResponse UpdateDevicePolicyConfiguration(UpdateDevicePolicyConfigurationRequest request)
         {
             var options = new InvokeOptions();
@@ -2291,6 +2379,7 @@ namespace Amazon.WorkLink
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateDevicePolicyConfiguration
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/UpdateDevicePolicyConfiguration">REST API Reference for UpdateDevicePolicyConfiguration Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual IAsyncResult BeginUpdateDevicePolicyConfiguration(UpdateDevicePolicyConfigurationRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -2308,6 +2397,7 @@ namespace Amazon.WorkLink
         /// 
         /// <returns>Returns a  UpdateDevicePolicyConfigurationResult from WorkLink.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/UpdateDevicePolicyConfiguration">REST API Reference for UpdateDevicePolicyConfiguration Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual UpdateDevicePolicyConfigurationResponse EndUpdateDevicePolicyConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateDevicePolicyConfigurationResponse>(asyncResult);
@@ -2339,6 +2429,7 @@ namespace Amazon.WorkLink
         /// You are not authorized to perform this action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/UpdateDomainMetadata">REST API Reference for UpdateDomainMetadata Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual UpdateDomainMetadataResponse UpdateDomainMetadata(UpdateDomainMetadataRequest request)
         {
             var options = new InvokeOptions();
@@ -2360,6 +2451,7 @@ namespace Amazon.WorkLink
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateDomainMetadata
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/UpdateDomainMetadata">REST API Reference for UpdateDomainMetadata Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual IAsyncResult BeginUpdateDomainMetadata(UpdateDomainMetadataRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -2377,6 +2469,7 @@ namespace Amazon.WorkLink
         /// 
         /// <returns>Returns a  UpdateDomainMetadataResult from WorkLink.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/UpdateDomainMetadata">REST API Reference for UpdateDomainMetadata Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual UpdateDomainMetadataResponse EndUpdateDomainMetadata(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateDomainMetadataResponse>(asyncResult);
@@ -2408,6 +2501,7 @@ namespace Amazon.WorkLink
         /// You are not authorized to perform this action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/UpdateFleetMetadata">REST API Reference for UpdateFleetMetadata Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual UpdateFleetMetadataResponse UpdateFleetMetadata(UpdateFleetMetadataRequest request)
         {
             var options = new InvokeOptions();
@@ -2429,6 +2523,7 @@ namespace Amazon.WorkLink
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateFleetMetadata
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/UpdateFleetMetadata">REST API Reference for UpdateFleetMetadata Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual IAsyncResult BeginUpdateFleetMetadata(UpdateFleetMetadataRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -2446,6 +2541,7 @@ namespace Amazon.WorkLink
         /// 
         /// <returns>Returns a  UpdateFleetMetadataResult from WorkLink.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/UpdateFleetMetadata">REST API Reference for UpdateFleetMetadata Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual UpdateFleetMetadataResponse EndUpdateFleetMetadata(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateFleetMetadataResponse>(asyncResult);
@@ -2477,6 +2573,7 @@ namespace Amazon.WorkLink
         /// You are not authorized to perform this action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/UpdateIdentityProviderConfiguration">REST API Reference for UpdateIdentityProviderConfiguration Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual UpdateIdentityProviderConfigurationResponse UpdateIdentityProviderConfiguration(UpdateIdentityProviderConfigurationRequest request)
         {
             var options = new InvokeOptions();
@@ -2498,6 +2595,7 @@ namespace Amazon.WorkLink
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateIdentityProviderConfiguration
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/UpdateIdentityProviderConfiguration">REST API Reference for UpdateIdentityProviderConfiguration Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual IAsyncResult BeginUpdateIdentityProviderConfiguration(UpdateIdentityProviderConfigurationRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -2515,6 +2613,7 @@ namespace Amazon.WorkLink
         /// 
         /// <returns>Returns a  UpdateIdentityProviderConfigurationResult from WorkLink.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/UpdateIdentityProviderConfiguration">REST API Reference for UpdateIdentityProviderConfiguration Operation</seealso>
+        [Obsolete("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
         public virtual UpdateIdentityProviderConfigurationResponse EndUpdateIdentityProviderConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateIdentityProviderConfigurationResponse>(asyncResult);
