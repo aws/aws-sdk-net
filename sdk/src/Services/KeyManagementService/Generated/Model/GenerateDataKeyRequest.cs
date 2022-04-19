@@ -30,22 +30,18 @@ namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
     /// Container for the parameters to the GenerateDataKey operation.
-    /// Generates a unique symmetric data key for client-side encryption. This operation returns
-    /// a plaintext copy of the data key and a copy that is encrypted under a KMS key that
-    /// you specify. You can use the plaintext key to encrypt your data outside of KMS and
-    /// store the encrypted data key with the encrypted data.
+    /// Returns a unique symmetric data key for use outside of KMS. This operation returns
+    /// a plaintext copy of the data key and a copy that is encrypted under a symmetric encryption
+    /// KMS key that you specify. The bytes in the plaintext key are random; they are not
+    /// related to the caller or the KMS key. You can use the plaintext key to encrypt your
+    /// data outside of KMS and store the encrypted data key with the encrypted data.
     /// 
     ///  
     /// <para>
-    ///  <code>GenerateDataKey</code> returns a unique data key for each request. The bytes
-    /// in the plaintext key are not related to the caller or the KMS key.
-    /// </para>
-    ///  
-    /// <para>
-    /// To generate a data key, specify the symmetric KMS key that will be used to encrypt
-    /// the data key. You cannot use an asymmetric KMS key to generate data keys. To get the
-    /// type of your KMS key, use the <a>DescribeKey</a> operation. You must also specify
-    /// the length of the data key. Use either the <code>KeySpec</code> or <code>NumberOfBytes</code>
+    /// To generate a data key, specify the symmetric encryption KMS key that will be used
+    /// to encrypt the data key. You cannot use an asymmetric KMS key to encrypt data keys.
+    /// To get the type of your KMS key, use the <a>DescribeKey</a> operation. You must also
+    /// specify the length of the data key. Use either the <code>KeySpec</code> or <code>NumberOfBytes</code>
     /// parameters (but not both). For 128-bit and 256-bit data keys, use the <code>KeySpec</code>
     /// parameter. 
     /// </para>
@@ -57,7 +53,7 @@ namespace Amazon.KeyManagementService.Model
     /// </para>
     ///  
     /// <para>
-    /// You can use the optional encryption context to add additional security to the encryption
+    /// You can use an optional encryption context to add additional security to the encryption
     /// operation. If you specify an <code>EncryptionContext</code>, you must specify the
     /// same encryption context (a case-sensitive exact match) when decrypting the encrypted
     /// data key. Otherwise, the request to decrypt fails with an <code>InvalidCiphertextException</code>.
@@ -77,7 +73,7 @@ namespace Amazon.KeyManagementService.Model
     /// <para>
     /// The KMS key that you use for this operation must be in a compatible key state. For
     /// details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-    /// state: Effect on your KMS key</a> in the <i>Key Management Service Developer Guide</i>.
+    /// states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -176,16 +172,17 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  
         /// <para>
-        /// An <i>encryption context</i> is a collection of non-secret key-value pairs that represents
+        /// An <i>encryption context</i> is a collection of non-secret key-value pairs that represent
         /// additional authenticated data. When you use an encryption context to encrypt data,
         /// you must specify the same (an exact case-sensitive match) encryption context to decrypt
-        /// the data. An encryption context is optional when encrypting with a symmetric KMS key,
-        /// but it is highly recommended.
+        /// the data. An encryption context is supported only on operations with symmetric encryption
+        /// KMS keys. On operations with symmetric encryption KMS keys, an encryption context
+        /// is optional, but it is strongly recommended.
         /// </para>
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
-        /// Context</a> in the <i>Key Management Service Developer Guide</i>.
+        /// context</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         /// </summary>
         public Dictionary<string, string> EncryptionContext
@@ -230,7 +227,9 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property KeyId. 
         /// <para>
-        /// Identifies the symmetric KMS key that encrypts the data key.
+        /// Specifies the symmetric encryption KMS key that encrypts the data key. You cannot
+        /// specify an asymmetric KMS key or a KMS key in a custom key store. To get the type
+        /// and origin of your KMS key, use the <a>DescribeKey</a> operation.
         /// </para>
         ///  
         /// <para>

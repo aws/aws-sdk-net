@@ -55,6 +55,7 @@ namespace Amazon.KeyManagementService.Model
         private KeySpec _keySpec;
         private KeyState _keyState;
         private KeyUsageType _keyUsage;
+        private List<string> _macAlgorithms = new List<string>();
         private bool? _multiRegion;
         private MultiRegionConfiguration _multiRegionConfiguration;
         private OriginType _origin;
@@ -360,7 +361,7 @@ namespace Amazon.KeyManagementService.Model
         ///  
         /// <para>
         /// For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-        /// state: Effect on your KMS key</a> in the <i>Key Management Service Developer Guide</i>.
+        /// states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         /// </summary>
         public KeyState KeyState
@@ -395,6 +396,28 @@ namespace Amazon.KeyManagementService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MacAlgorithms. 
+        /// <para>
+        /// The message authentication code (MAC) algorithm that the HMAC KMS key supports.
+        /// </para>
+        ///  
+        /// <para>
+        /// This value is present only when the <code>KeyUsage</code> of the KMS key is <code>GENERATE_VERIFY_MAC</code>.
+        /// </para>
+        /// </summary>
+        public List<string> MacAlgorithms
+        {
+            get { return this._macAlgorithms; }
+            set { this._macAlgorithms = value; }
+        }
+
+        // Check to see if MacAlgorithms property is set
+        internal bool IsSetMacAlgorithms()
+        {
+            return this._macAlgorithms != null && this._macAlgorithms.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property MultiRegion. 
         /// <para>
         /// Indicates whether the KMS key is a multi-Region (<code>True</code>) or regional (<code>False</code>)
@@ -403,8 +426,8 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using
-        /// multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.
+        /// For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Multi-Region
+        /// keys in KMS</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         /// </summary>
         public bool MultiRegion

@@ -43,8 +43,8 @@ namespace Amazon.KeyManagementService.Model
     /// these KMS keys have the same key ID, key material, and other metadata, you can use
     /// them interchangeably to encrypt data in one Amazon Web Services Region and decrypt
     /// it in a different Amazon Web Services Region without re-encrypting the data or making
-    /// a cross-Region call. For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using
-    /// multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.
+    /// a cross-Region call. For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Multi-Region
+    /// keys in KMS</a> in the <i>Key Management Service Developer Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -60,9 +60,9 @@ namespace Amazon.KeyManagementService.Model
     /// its <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">key
     /// policy</a>, <a href="https://docs.aws.amazon.com/kms/latest/developerguide/tagging-keys.html">tags</a>,
     /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-alias.html">aliases</a>,
-    /// and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">key
-    /// state</a>. KMS pricing and quotas for KMS keys apply to each primary key and replica
-    /// key.
+    /// and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+    /// states of KMS keys</a>. KMS pricing and quotas for KMS keys apply to each primary
+    /// key and replica key.
     /// </para>
     ///  
     /// <para>
@@ -73,8 +73,18 @@ namespace Amazon.KeyManagementService.Model
     /// it in cryptographic operations. If you are creating and using the replica key programmatically,
     /// retry on <code>KMSInvalidStateException</code> or call <code>DescribeKey</code> to
     /// check its <code>KeyState</code> value before using it. For details about the <code>Creating</code>
-    /// key state, see <a href="kms/latest/developerguide/key-state.html">Key state: Effect
-    /// on your KMS key</a> in the <i>Key Management Service Developer Guide</i>.
+    /// key state, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+    /// states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.
+    /// </para>
+    ///  
+    /// <para>
+    /// You cannot create more than one replica of a primary key in any Region. If the Region
+    /// already includes a replica of the key you're trying to replicate, <code>ReplicateKey</code>
+    /// returns an <code>AlreadyExistsException</code> error. If the key state of the existing
+    /// replica is <code>PendingDeletion</code>, you can cancel the scheduled key deletion
+    /// (<a>CancelKeyDeletion</a>) or wait for the key to be deleted. The new replica key
+    /// you create will have the same <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html#mrk-sync-properties">shared
+    /// properties</a> as the original replica key.
     /// </para>
     ///  
     /// <para>
@@ -315,17 +325,22 @@ namespace Amazon.KeyManagementService.Model
         /// For a list of Amazon Web Services Regions in which KMS is supported, see <a href="https://docs.aws.amazon.com/general/latest/gr/kms.html#kms_region">KMS
         /// service endpoints</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// HMAC KMS keys are not supported in all Amazon Web Services Regions. If you try to
+        /// replicate an HMAC KMS key in an Amazon Web Services Region in which HMAC keys are
+        /// not supported, the <code>ReplicateKey</code> operation returns an <code>UnsupportedOperationException</code>.
+        /// For a list of Regions in which HMAC KMS keys are supported, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/hmac.html">HMAC
+        /// keys in KMS</a> in the <i>Key Management Service Developer Guide</i>.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// The replica must be in a different Amazon Web Services Region than its primary key
         /// and other replicas of that primary key, but in the same Amazon Web Services partition.
         /// KMS must be available in the replica Region. If the Region is not enabled by default,
-        /// the Amazon Web Services account must be enabled in the Region. 
-        /// </para>
-        ///  
-        /// <para>
-        /// For information about Amazon Web Services partitions, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resource Names (ARNs) in the <i>Amazon Web Services General Reference</i>.</a> For
+        /// the Amazon Web Services account must be enabled in the Region. For information about
+        /// Amazon Web Services partitions, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>. For
         /// information about enabling and disabling Regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html#rande-manage-enable">Enabling
         /// a Region</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html#rande-manage-disable">Disabling
         /// a Region</a> in the <i>Amazon Web Services General Reference</i>.
@@ -353,8 +368,8 @@ namespace Amazon.KeyManagementService.Model
         ///  <note> 
         /// <para>
         /// Tagging or untagging a KMS key can allow or deny permission to the KMS key. For details,
-        /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">Using
-        /// ABAC in KMS</a> in the <i>Key Management Service Developer Guide</i>.
+        /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC
+        /// in KMS</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  </note> 
         /// <para>

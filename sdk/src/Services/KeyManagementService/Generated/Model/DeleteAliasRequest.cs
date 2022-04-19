@@ -35,8 +35,8 @@ namespace Amazon.KeyManagementService.Model
     ///  <note> 
     /// <para>
     /// Adding, deleting, or updating an alias can allow or deny permission to the KMS key.
-    /// For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">Using
-    /// ABAC in KMS</a> in the <i>Key Management Service Developer Guide</i>.
+    /// For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC
+    /// in KMS</a> in the <i>Key Management Service Developer Guide</i>.
     /// </para>
     ///  </note> 
     /// <para>

@@ -42,9 +42,9 @@ namespace Amazon.KeyManagementService.Model
         /// <para>
         /// Displays details about the new replica key, including its Amazon Resource Name (<a
         /// href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
-        /// ARN</a>) and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">key
-        /// state</a>. It also includes the ARN and Amazon Web Services Region of its primary
-        /// key and other replica keys.
+        /// ARN</a>) and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+        /// states of KMS keys</a>. It also includes the ARN and Amazon Web Services Region of
+        /// its primary key and other replica keys.
         /// </para>
         /// </summary>
         public KeyMetadata ReplicaKeyMetadata

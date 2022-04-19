@@ -186,6 +186,22 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
             #endregion
         }
 
+        public void KeyManagementServiceCreateKey()
+        {
+            #region to-create-an-hmac-kms-key-1630628752841
+
+            var client = new AmazonKeyManagementServiceClient();
+            var response = client.CreateKey(new CreateKeyRequest 
+            {
+                KeySpec = "HMAC_384", // Describes the type of key material in the KMS key.
+                KeyUsage = "GENERATE_VERIFY_MAC" // The cryptographic operations for which you can use the KMS key.
+            });
+
+            KeyMetadata keyMetadata = response.KeyMetadata; // Detailed information about the KMS key that this operation creates.
+
+            #endregion
+        }
+
         public void KeyManagementServiceDecrypt()
         {
             #region to-decrypt-data-1478281622886
@@ -281,7 +297,52 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
             var client = new AmazonKeyManagementServiceClient();
             var response = client.DescribeKey(new DescribeKeyRequest 
             {
-                KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab" // The identifier of the KMS key that you want information about. You can use the key ID or the Amazon Resource Name (ARN) of the KMS key.
+                KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab" // An identifier for the KMS key. You can use the key ID, key ARN, alias name, alias ARN of the KMS key.
+            });
+
+            KeyMetadata keyMetadata = response.KeyMetadata; // An object that contains information about the specified KMS key.
+
+            #endregion
+        }
+
+        public void KeyManagementServiceDescribeKey()
+        {
+            #region to-get-details-about-an-rsa-asymmetric-kms-key-1637971611761
+
+            var client = new AmazonKeyManagementServiceClient();
+            var response = client.DescribeKey(new DescribeKeyRequest 
+            {
+                KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab" // An identifier for the KMS key. You can use the key ID, key ARN, alias name, alias ARN of the KMS key.
+            });
+
+            KeyMetadata keyMetadata = response.KeyMetadata; // An object that contains information about the specified KMS key.
+
+            #endregion
+        }
+
+        public void KeyManagementServiceDescribeKey()
+        {
+            #region to-get-details-about-a-multi-region-key-1637969624239
+
+            var client = new AmazonKeyManagementServiceClient();
+            var response = client.DescribeKey(new DescribeKeyRequest 
+            {
+                KeyId = "arn:aws:kms:ap-northeast-1:111122223333:key/mrk-1234abcd12ab34cd56ef1234567890ab" // An identifier for the KMS key. You can use the key ID, key ARN, alias name, alias ARN of the KMS key.
+            });
+
+            KeyMetadata keyMetadata = response.KeyMetadata; // An object that contains information about the specified KMS key.
+
+            #endregion
+        }
+
+        public void KeyManagementServiceDescribeKey()
+        {
+            #region to-get-details-about-an-hmac-kms-key-1637970472619
+
+            var client = new AmazonKeyManagementServiceClient();
+            var response = client.DescribeKey(new DescribeKeyRequest 
+            {
+                KeyId = "arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab" // An identifier for the KMS key. You can use the key ID, key ARN, alias name, alias ARN of the KMS key.
             });
 
             KeyMetadata keyMetadata = response.KeyMetadata; // An object that contains information about the specified KMS key.
@@ -401,11 +462,11 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
             var client = new AmazonKeyManagementServiceClient();
             var response = client.GenerateDataKeyPair(new GenerateDataKeyPairRequest 
             {
-                KeyId = "arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab", // The key ID of the symmetric KMS key that encrypts the private RSA key in the data key pair.
+                KeyId = "arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab", // The key ID of the symmetric encryption KMS key that encrypts the private RSA key in the data key pair.
                 KeyPairSpec = "RSA_3072" // The requested key spec of the RSA data key pair.
             });
 
-            string keyId = response.KeyId; // The key ARN of the symmetric KMS key that was used to encrypt the private key.
+            string keyId = response.KeyId; // The key ARN of the symmetric encryption KMS key that was used to encrypt the private key.
             string keyPairSpec = response.KeyPairSpec; // The actual key spec of the RSA data key pair.
             MemoryStream privateKeyCiphertextBlob = response.PrivateKeyCiphertextBlob; // The encrypted private key of the RSA data key pair.
             MemoryStream privateKeyPlaintext = response.PrivateKeyPlaintext; // The plaintext private key of the RSA data key pair.
@@ -421,11 +482,11 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
             var client = new AmazonKeyManagementServiceClient();
             var response = client.GenerateDataKeyPairWithoutPlaintext(new GenerateDataKeyPairWithoutPlaintextRequest 
             {
-                KeyId = "arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab", // The symmetric KMS key that encrypts the private key of the ECC data key pair.
+                KeyId = "arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab", // The symmetric encryption KMS key that encrypts the private key of the ECC data key pair.
                 KeyPairSpec = "ECC_NIST_P521" // The requested key spec of the ECC asymmetric data key pair.
             });
 
-            string keyId = response.KeyId; // The key ARN of the symmetric KMS key that encrypted the private key in the ECC asymmetric data key pair.
+            string keyId = response.KeyId; // The key ARN of the symmetric encryption KMS key that encrypted the private key in the ECC asymmetric data key pair.
             string keyPairSpec = response.KeyPairSpec; // The actual key spec of the ECC asymmetric data key pair.
             MemoryStream privateKeyCiphertextBlob = response.PrivateKeyCiphertextBlob; // The encrypted private key of the asymmetric ECC data key pair.
             MemoryStream publicKey = response.PublicKey; // The public key (plaintext).
@@ -446,6 +507,25 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
 
             MemoryStream ciphertextBlob = response.CiphertextBlob; // The encrypted data key.
             string keyId = response.KeyId; // The ARN of the KMS key that was used to encrypt the data key.
+
+            #endregion
+        }
+
+        public void KeyManagementServiceGenerateMac()
+        {
+            #region to-generate-an-hmac-for-a-message-1631570135665
+
+            var client = new AmazonKeyManagementServiceClient();
+            var response = client.GenerateMac(new GenerateMacRequest 
+            {
+                KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab", // The HMAC KMS key input to the HMAC algorithm.
+                MacAlgorithm = "HMAC_SHA_384", // The HMAC algorithm requested for the operation.
+                Message = new MemoryStream(Hello World) // The message input to the HMAC algorithm.
+            });
+
+            string keyId = response.KeyId; // The key ARN of the HMAC KMS key used in the operation.
+            MemoryStream mac = response.Mac; // The HMAC tag that results from this operation.
+            string macAlgorithm = response.MacAlgorithm; // The HMAC algorithm used in the operation.
 
             #endregion
         }
@@ -966,8 +1046,28 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
             });
 
             string keyId = response.KeyId; // The key ARN of the asymmetric KMS key that was used to verify the digital signature.
-            bool signatureValid = response.SignatureValid; // Indicates whether the signature was verified (true) or failed verification (false).
+            bool signatureValid = response.SignatureValid; // A value of 'true' Indicates that the signature was verified. If verification fails, the call to Verify fails.
             string signingAlgorithm = response.SigningAlgorithm; // The signing algorithm that was used to verify the signature.
+
+            #endregion
+        }
+
+        public void KeyManagementServiceVerifyMac()
+        {
+            #region to-verify-an-hmac-1631570863401
+
+            var client = new AmazonKeyManagementServiceClient();
+            var response = client.VerifyMac(new VerifyMacRequest 
+            {
+                KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab", // The HMAC KMS key input to the HMAC algorithm.
+                Mac = new MemoryStream(<HMAC_TAG>), // The HMAC to be verified.
+                MacAlgorithm = "HMAC_SHA_384", // The HMAC algorithm requested for the operation.
+                Message = new MemoryStream(Hello World) // The message input to the HMAC algorithm.
+            });
+
+            string keyId = response.KeyId; // The key ARN of the HMAC key used in the operation.
+            string macAlgorithm = response.MacAlgorithm; // The HMAC algorithm used in the operation.
+            bool macValid = response.MacValid; // A value of 'true' indicates that verification succeeded. If verification fails, the call to VerifyMac fails.
 
             #endregion
         }

@@ -211,6 +211,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.KeyManagementService.IAmazonKeyManagementService.CreateKey(Amazon.KeyManagementService.Model.CreateKeyRequest)" />
+            <member name="M:Amazon.KeyManagementService.AmazonKeyManagementServiceClient.CreateKey(Amazon.KeyManagementService.Model.CreateKeyRequest)" />
+            <member name="T:Amazon.KeyManagementService.Model.CreateKeyRequest" />
+            <member name="T:Amazon.KeyManagementService.Model.CreateKeyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example creates a 384-bit symmetric HMAC KMS key. The GENERATE_VERIFY_MAC key usage value is required even though it's the only valid value for HMAC KMS keys. The key spec and key usage can't be changed after the key is created. 
+                </para>
+                <code
+                    title="To create an HMAC KMS key"
+                    source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
+                    region="to-create-an-hmac-kms-key-1630628752841" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.KeyManagementService.IAmazonKeyManagementService.Decrypt(Amazon.KeyManagementService.Model.DecryptRequest)" />
             <member name="M:Amazon.KeyManagementService.AmazonKeyManagementServiceClient.Decrypt(Amazon.KeyManagementService.Model.DecryptRequest)" />
             <member name="T:Amazon.KeyManagementService.Model.DecryptRequest" />
@@ -333,12 +352,69 @@
         <value>
             <example>
                 <para>
-                    The following example gets metadata about a symmetric KMS key.
+                    The following example gets metadata for a symmetric encryption KMS key.
                 </para>
                 <code
                     title="To get details about a KMS key"
                     source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
                     region="get-key-details-1478565820907" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.KeyManagementService.IAmazonKeyManagementService.DescribeKey(Amazon.KeyManagementService.Model.DescribeKeyRequest)" />
+            <member name="M:Amazon.KeyManagementService.AmazonKeyManagementServiceClient.DescribeKey(Amazon.KeyManagementService.Model.DescribeKeyRequest)" />
+            <member name="T:Amazon.KeyManagementService.Model.DescribeKeyRequest" />
+            <member name="T:Amazon.KeyManagementService.Model.DescribeKeyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example gets metadata for an asymmetric RSA KMS key used for signing and verification.
+                </para>
+                <code
+                    title="To get details about an RSA asymmetric KMS key"
+                    source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
+                    region="to-get-details-about-an-rsa-asymmetric-kms-key-1637971611761" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.KeyManagementService.IAmazonKeyManagementService.DescribeKey(Amazon.KeyManagementService.Model.DescribeKeyRequest)" />
+            <member name="M:Amazon.KeyManagementService.AmazonKeyManagementServiceClient.DescribeKey(Amazon.KeyManagementService.Model.DescribeKeyRequest)" />
+            <member name="T:Amazon.KeyManagementService.Model.DescribeKeyRequest" />
+            <member name="T:Amazon.KeyManagementService.Model.DescribeKeyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example gets metadata for a multi-Region replica key. This multi-Region key is a symmetric encryption key. DescribeKey returns information about the primary key and all of its replicas.
+                </para>
+                <code
+                    title="To get details about a multi-Region key"
+                    source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
+                    region="to-get-details-about-a-multi-region-key-1637969624239" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.KeyManagementService.IAmazonKeyManagementService.DescribeKey(Amazon.KeyManagementService.Model.DescribeKeyRequest)" />
+            <member name="M:Amazon.KeyManagementService.AmazonKeyManagementServiceClient.DescribeKey(Amazon.KeyManagementService.Model.DescribeKeyRequest)" />
+            <member name="T:Amazon.KeyManagementService.Model.DescribeKeyRequest" />
+            <member name="T:Amazon.KeyManagementService.Model.DescribeKeyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example gets the metadata of an HMAC KMS key. 
+                </para>
+                <code
+                    title="To get details about an HMAC KMS key"
+                    source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
+                    region="to-get-details-about-an-hmac-kms-key-1637970472619" />
             </example>
         </value>
     </doc>
@@ -485,7 +561,7 @@
         <value>
             <example>
                 <para>
-                    This example generates an RSA data key pair for encryption and decryption. The operation returns a plaintext public key and private key, and a copy of the private key that is encrypted under a symmetric KMS key that you specify.
+                    This example generates an RSA data key pair for encryption and decryption. The operation returns a plaintext public key and private key, and a copy of the private key that is encrypted under a symmetric encryption KMS key that you specify.
                 </para>
                 <code
                     title="To generate an RSA key pair for encryption and decryption"
@@ -504,7 +580,7 @@
         <value>
             <example>
                 <para>
-                    This example returns an asymmetric elliptic curve (ECC) data key pair. The private key is encrypted under the symmetric KMS key that you specify. This operation doesn't return a plaintext (unencrypted) private key.
+                    This example returns an asymmetric elliptic curve (ECC) data key pair. The private key is encrypted under the symmetric encryption KMS key that you specify. This operation doesn't return a plaintext (unencrypted) private key.
                 </para>
                 <code
                     title="To generate an asymmetric data key pair without a plaintext key"
@@ -529,6 +605,25 @@
                     title="To generate an encrypted data key"
                     source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
                     region="to-generate-an-encrypted-data-key-1478914121134" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.KeyManagementService.IAmazonKeyManagementService.GenerateMac(Amazon.KeyManagementService.Model.GenerateMacRequest)" />
+            <member name="M:Amazon.KeyManagementService.AmazonKeyManagementServiceClient.GenerateMac(Amazon.KeyManagementService.Model.GenerateMacRequest)" />
+            <member name="T:Amazon.KeyManagementService.Model.GenerateMacRequest" />
+            <member name="T:Amazon.KeyManagementService.Model.GenerateMacResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example generates an HMAC for a message, an HMAC KMS key, and a MAC algorithm. The algorithm must be supported by the specified HMAC KMS key.
+                </para>
+                <code
+                    title="To generate an HMAC for a message"
+                    source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
+                    region="to-generate-an-hmac-for-a-message-1631570135665" />
             </example>
         </value>
     </doc>
@@ -1042,6 +1137,25 @@
                     title="To use an asymmetric KMS key to verify a digital signature"
                     source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
                     region="to-use-an-asymmetric-kms-key-to-verify-a-digital-signature-1628633365663" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.KeyManagementService.IAmazonKeyManagementService.VerifyMac(Amazon.KeyManagementService.Model.VerifyMacRequest)" />
+            <member name="M:Amazon.KeyManagementService.AmazonKeyManagementServiceClient.VerifyMac(Amazon.KeyManagementService.Model.VerifyMacRequest)" />
+            <member name="T:Amazon.KeyManagementService.Model.VerifyMacRequest" />
+            <member name="T:Amazon.KeyManagementService.Model.VerifyMacResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example verifies an HMAC for a particular message, HMAC KMS keys, and MAC algorithm. A value of 'true' in the MacValid value in the response indicates that the HMAC is valid.
+                </para>
+                <code
+                    title="To verify an HMAC"
+                    source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
+                    region="to-verify-an-hmac-1631570863401" />
             </example>
         </value>
     </doc>

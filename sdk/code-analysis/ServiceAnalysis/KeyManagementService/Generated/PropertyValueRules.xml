@@ -304,6 +304,26 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.GenerateMacRequest.KeyId</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.GenerateMacRequest.Message</property>
+    <min>1</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.GenerateMacResponse.KeyId</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.GenerateMacResponse.Mac</property>
+    <min>1</min>
+    <max>6144</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.KeyManagementService.Model.GenerateRandomRequest.CustomKeyStoreId</property>
     <min>1</min>
     <max>64</max>
@@ -748,6 +768,26 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.VerifyResponse.KeyId</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.VerifyMacRequest.KeyId</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.VerifyMacRequest.Mac</property>
+    <min>1</min>
+    <max>6144</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.VerifyMacRequest.Message</property>
+    <min>1</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.VerifyMacResponse.KeyId</property>
     <min>1</min>
     <max>2048</max>
   </property-value-rule>

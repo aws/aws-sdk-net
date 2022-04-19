@@ -31,11 +31,11 @@ namespace Amazon.KeyManagementService.Model
     /// <summary>
     /// Container for the parameters to the Sign operation.
     /// Creates a <a href="https://en.wikipedia.org/wiki/Digital_signature">digital signature</a>
-    /// for a message or message digest by using the private key in an asymmetric KMS key.
-    /// To verify the signature, use the <a>Verify</a> operation, or use the public key in
-    /// the same asymmetric KMS key outside of KMS. For information about symmetric and asymmetric
-    /// KMS keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
-    /// Symmetric and Asymmetric KMS keys</a> in the <i>Key Management Service Developer Guide</i>.
+    /// for a message or message digest by using the private key in an asymmetric signing
+    /// KMS key. To verify the signature, use the <a>Verify</a> operation, or use the public
+    /// key in the same asymmetric KMS key outside of KMS. For information about asymmetric
+    /// KMS keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Asymmetric
+    /// KMS keys</a> in the <i>Key Management Service Developer Guide</i>.
     /// 
     ///  
     /// <para>
@@ -83,7 +83,7 @@ namespace Amazon.KeyManagementService.Model
     /// <para>
     /// The KMS key that you use for this operation must be in a compatible key state. For
     /// details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-    /// state: Effect on your KMS key</a> in the <i>Key Management Service Developer Guide</i>.
+    /// states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.
     /// </para>
     ///  
     /// <para>

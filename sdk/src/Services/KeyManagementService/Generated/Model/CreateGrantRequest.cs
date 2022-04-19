@@ -43,8 +43,8 @@ namespace Amazon.KeyManagementService.Model
     /// </para>
     ///  
     /// <para>
-    /// For detailed information about grants, including grant terminology, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html">Using
-    /// grants</a> in the <i> <i>Key Management Service Developer Guide</i> </i>. For examples
+    /// For detailed information about grants, including grant terminology, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html">Grants
+    /// in KMS</a> in the <i> <i>Key Management Service Developer Guide</i> </i>. For examples
     /// of working with grants in several programming languages, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-grants.html">Programming
     /// grants</a>. 
     /// </para>
@@ -77,7 +77,7 @@ namespace Amazon.KeyManagementService.Model
     /// <para>
     /// The KMS key that you use for this operation must be in a compatible key state. For
     /// details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-    /// state: Effect on your KMS key</a> in the <i>Key Management Service Developer Guide</i>.
+    /// states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -131,24 +131,34 @@ namespace Amazon.KeyManagementService.Model
         /// <para>
         /// KMS supports the <code>EncryptionContextEquals</code> and <code>EncryptionContextSubset</code>
         /// grant constraints. Each constraint value can include up to 8 encryption context pairs.
-        /// The encryption context value in each constraint cannot exceed 384 characters.
-        /// </para>
-        ///  
-        /// <para>
-        /// These grant constraints allow the permissions in the grant only when the encryption
-        /// context in the request matches (<code>EncryptionContextEquals</code>) or includes
-        /// (<code>EncryptionContextSubset</code>) the encryption context specified in this structure.
-        /// For information about grant constraints, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-grant-overview.html#grant-constraints">Using
+        /// The encryption context value in each constraint cannot exceed 384 characters. For
+        /// information about grant constraints, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-grant-overview.html#grant-constraints">Using
         /// grant constraints</a> in the <i>Key Management Service Developer Guide</i>. For more
         /// information about encryption context, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
-        /// Context</a> in the <i> <i>Key Management Service Developer Guide</i> </i>. 
+        /// context</a> in the <i> <i>Key Management Service Developer Guide</i> </i>. 
         /// </para>
         ///  
         /// <para>
-        /// The encryption context grant constraints are supported only on operations that include
-        /// an encryption context. You cannot use an encryption context grant constraint for cryptographic
-        /// operations with asymmetric KMS keys or for management operations, such as <a>DescribeKey</a>
-        /// or <a>RetireGrant</a>.
+        /// The encryption context grant constraints allow the permissions in the grant only when
+        /// the encryption context in the request matches (<code>EncryptionContextEquals</code>)
+        /// or includes (<code>EncryptionContextSubset</code>) the encryption context specified
+        /// in this structure. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The encryption context grant constraints are supported only on <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#terms-grant-operations">grant
+        /// operations</a> that include an <code>EncryptionContext</code> parameter, such as cryptographic
+        /// operations on symmetric encryption KMS keys. Grants with grant constraints can include
+        /// the <a>DescribeKey</a> and <a>RetireGrant</a> operations, but the constraint doesn't
+        /// apply to these operations. If a grant with a grant constraint includes the <code>CreateGrant</code>
+        /// operation, the constraint requires that any grants created with the <code>CreateGrant</code>
+        /// permission have an equally strict or stricter encryption context constraint.
+        /// </para>
+        ///  
+        /// <para>
+        /// You cannot use an encryption context grant constraint for cryptographic operations
+        /// with asymmetric KMS keys or HMAC KMS keys. These keys don't support an encryption
+        /// context. 
         /// </para>
         /// </summary>
         public GrantConstraints Constraints
@@ -303,8 +313,9 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  
         /// <para>
-        /// The operation must be supported on the KMS key. For example, you cannot create a grant
-        /// for a symmetric KMS key that allows the <a>Sign</a> operation, or a grant for an asymmetric
+        /// This list must include only operations that are permitted in a grant. Also, the operation
+        /// must be supported on the KMS key. For example, you cannot create a grant for a symmetric
+        /// encryption KMS key that allows the <a>Sign</a> operation, or a grant for an asymmetric
         /// KMS key that allows the <a>GenerateDataKey</a> operation. If you try, KMS returns
         /// a <code>ValidationError</code> exception. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#terms-grant-operations">Grant
         /// operations</a> in the <i>Key Management Service Developer Guide</i>.

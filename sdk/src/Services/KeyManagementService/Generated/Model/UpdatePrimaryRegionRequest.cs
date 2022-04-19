@@ -49,8 +49,8 @@ namespace Amazon.KeyManagementService.Model
     /// these KMS keys have the same key ID, key material, and other metadata, you can use
     /// them interchangeably to encrypt data in one Amazon Web Services Region and decrypt
     /// it in a different Amazon Web Services Region without re-encrypting the data or making
-    /// a cross-Region call. For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using
-    /// multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.
+    /// a cross-Region call. For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Multi-Region
+    /// keys in KMS</a> in the <i>Key Management Service Developer Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -86,8 +86,8 @@ namespace Amazon.KeyManagementService.Model
     /// restored when the update is complete. While the key state is <code>Updating</code>,
     /// you can use the keys in cryptographic operations, but you cannot replicate the new
     /// primary key or perform certain management operations, such as enabling or disabling
-    /// these keys. For details about the <code>Updating</code> key state, see <a href="kms/latest/developerguide/key-state.html">Key
-    /// state: Effect on your KMS key</a> in the <i>Key Management Service Developer Guide</i>.
+    /// these keys. For details about the <code>Updating</code> key state, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+    /// states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.
     /// </para>
     ///  
     /// <para>

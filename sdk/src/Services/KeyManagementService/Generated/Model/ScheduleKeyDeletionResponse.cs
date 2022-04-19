@@ -90,7 +90,7 @@ namespace Amazon.KeyManagementService.Model
         ///  
         /// <para>
         /// For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-        /// state: Effect on your KMS key</a> in the <i>Key Management Service Developer Guide</i>.
+        /// states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         /// </summary>
         public KeyState KeyState

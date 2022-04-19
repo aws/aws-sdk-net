@@ -160,6 +160,12 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
                     unmarshalledObject.KeyUsage = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("MacAlgorithms", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.MacAlgorithms = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("MultiRegion", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;

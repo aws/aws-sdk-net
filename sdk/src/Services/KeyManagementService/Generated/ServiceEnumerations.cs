@@ -241,6 +241,22 @@ namespace Amazon.KeyManagementService
         /// </summary>
         public static readonly CustomerMasterKeySpec ECC_SECG_P256K1 = new CustomerMasterKeySpec("ECC_SECG_P256K1");
         /// <summary>
+        /// Constant HMAC_224 for CustomerMasterKeySpec
+        /// </summary>
+        public static readonly CustomerMasterKeySpec HMAC_224 = new CustomerMasterKeySpec("HMAC_224");
+        /// <summary>
+        /// Constant HMAC_256 for CustomerMasterKeySpec
+        /// </summary>
+        public static readonly CustomerMasterKeySpec HMAC_256 = new CustomerMasterKeySpec("HMAC_256");
+        /// <summary>
+        /// Constant HMAC_384 for CustomerMasterKeySpec
+        /// </summary>
+        public static readonly CustomerMasterKeySpec HMAC_384 = new CustomerMasterKeySpec("HMAC_384");
+        /// <summary>
+        /// Constant HMAC_512 for CustomerMasterKeySpec
+        /// </summary>
+        public static readonly CustomerMasterKeySpec HMAC_512 = new CustomerMasterKeySpec("HMAC_512");
+        /// <summary>
         /// Constant RSA_2048 for CustomerMasterKeySpec
         /// </summary>
         public static readonly CustomerMasterKeySpec RSA_2048 = new CustomerMasterKeySpec("RSA_2048");
@@ -555,6 +571,10 @@ namespace Amazon.KeyManagementService
         /// </summary>
         public static readonly GrantOperation GenerateDataKeyWithoutPlaintext = new GrantOperation("GenerateDataKeyWithoutPlaintext");
         /// <summary>
+        /// Constant GenerateMac for GrantOperation
+        /// </summary>
+        public static readonly GrantOperation GenerateMac = new GrantOperation("GenerateMac");
+        /// <summary>
         /// Constant GetPublicKey for GrantOperation
         /// </summary>
         public static readonly GrantOperation GetPublicKey = new GrantOperation("GetPublicKey");
@@ -578,6 +598,10 @@ namespace Amazon.KeyManagementService
         /// Constant Verify for GrantOperation
         /// </summary>
         public static readonly GrantOperation Verify = new GrantOperation("Verify");
+        /// <summary>
+        /// Constant VerifyMac for GrantOperation
+        /// </summary>
+        public static readonly GrantOperation VerifyMac = new GrantOperation("VerifyMac");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -686,6 +710,22 @@ namespace Amazon.KeyManagementService
         /// Constant ECC_SECG_P256K1 for KeySpec
         /// </summary>
         public static readonly KeySpec ECC_SECG_P256K1 = new KeySpec("ECC_SECG_P256K1");
+        /// <summary>
+        /// Constant HMAC_224 for KeySpec
+        /// </summary>
+        public static readonly KeySpec HMAC_224 = new KeySpec("HMAC_224");
+        /// <summary>
+        /// Constant HMAC_256 for KeySpec
+        /// </summary>
+        public static readonly KeySpec HMAC_256 = new KeySpec("HMAC_256");
+        /// <summary>
+        /// Constant HMAC_384 for KeySpec
+        /// </summary>
+        public static readonly KeySpec HMAC_384 = new KeySpec("HMAC_384");
+        /// <summary>
+        /// Constant HMAC_512 for KeySpec
+        /// </summary>
+        public static readonly KeySpec HMAC_512 = new KeySpec("HMAC_512");
         /// <summary>
         /// Constant RSA_2048 for KeySpec
         /// </summary>
@@ -823,6 +863,10 @@ namespace Amazon.KeyManagementService
         /// </summary>
         public static readonly KeyUsageType ENCRYPT_DECRYPT = new KeyUsageType("ENCRYPT_DECRYPT");
         /// <summary>
+        /// Constant GENERATE_VERIFY_MAC for KeyUsageType
+        /// </summary>
+        public static readonly KeyUsageType GENERATE_VERIFY_MAC = new KeyUsageType("GENERATE_VERIFY_MAC");
+        /// <summary>
         /// Constant SIGN_VERIFY for KeyUsageType
         /// </summary>
         public static readonly KeyUsageType SIGN_VERIFY = new KeyUsageType("SIGN_VERIFY");
@@ -856,6 +900,64 @@ namespace Amazon.KeyManagementService
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator KeyUsageType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MacAlgorithmSpec.
+    /// </summary>
+    public class MacAlgorithmSpec : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HMAC_SHA_224 for MacAlgorithmSpec
+        /// </summary>
+        public static readonly MacAlgorithmSpec HMAC_SHA_224 = new MacAlgorithmSpec("HMAC_SHA_224");
+        /// <summary>
+        /// Constant HMAC_SHA_256 for MacAlgorithmSpec
+        /// </summary>
+        public static readonly MacAlgorithmSpec HMAC_SHA_256 = new MacAlgorithmSpec("HMAC_SHA_256");
+        /// <summary>
+        /// Constant HMAC_SHA_384 for MacAlgorithmSpec
+        /// </summary>
+        public static readonly MacAlgorithmSpec HMAC_SHA_384 = new MacAlgorithmSpec("HMAC_SHA_384");
+        /// <summary>
+        /// Constant HMAC_SHA_512 for MacAlgorithmSpec
+        /// </summary>
+        public static readonly MacAlgorithmSpec HMAC_SHA_512 = new MacAlgorithmSpec("HMAC_SHA_512");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MacAlgorithmSpec(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MacAlgorithmSpec FindValue(string value)
+        {
+            return FindValue<MacAlgorithmSpec>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MacAlgorithmSpec(string value)
         {
             return FindValue(value);
         }

@@ -30,9 +30,9 @@ namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
     /// Container for the parameters to the GetParametersForImport operation.
-    /// Returns the items you need to import key material into a symmetric, customer managed
-    /// KMS key. For more information about importing key material into KMS, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing
-    /// Key Material</a> in the <i>Key Management Service Developer Guide</i>.
+    /// Returns the items you need to import key material into a symmetric encryption KMS
+    /// key. For more information about importing key material into KMS, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing
+    /// key material</a> in the <i>Key Management Service Developer Guide</i>.
     /// 
     ///  
     /// <para>
@@ -42,11 +42,12 @@ namespace Amazon.KeyManagementService.Model
     /// </para>
     ///  
     /// <para>
-    /// You must specify the key ID of the symmetric KMS key into which you will import key
-    /// material. This KMS key's <code>Origin</code> must be <code>EXTERNAL</code>. You must
-    /// also specify the wrapping algorithm and type of wrapping key (public key) that you
-    /// will use to encrypt the key material. You cannot perform this operation on an asymmetric
-    /// KMS key or on any KMS key in a different Amazon Web Services account.
+    /// You must specify the key ID of the symmetric encryption KMS key into which you will
+    /// import key material. This KMS key's <code>Origin</code> must be <code>EXTERNAL</code>.
+    /// You must also specify the wrapping algorithm and type of wrapping key (public key)
+    /// that you will use to encrypt the key material. You cannot perform this operation on
+    /// an asymmetric KMS key, an HMAC KMS key, or on any KMS key in a different Amazon Web
+    /// Services account.
     /// </para>
     ///  
     /// <para>
@@ -60,7 +61,7 @@ namespace Amazon.KeyManagementService.Model
     /// <para>
     /// The KMS key that you use for this operation must be in a compatible key state. For
     /// details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
-    /// state: Effect on your KMS key</a> in the <i>Key Management Service Developer Guide</i>.
+    /// states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -95,8 +96,8 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property KeyId. 
         /// <para>
-        /// The identifier of the symmetric KMS key into which you will import key material. The
-        /// <code>Origin</code> of the KMS key must be <code>EXTERNAL</code>.
+        /// The identifier of the symmetric encryption KMS key into which you will import key
+        /// material. The <code>Origin</code> of the KMS key must be <code>EXTERNAL</code>.
         /// </para>
         ///  
         /// <para>
