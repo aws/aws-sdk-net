@@ -3307,6 +3307,94 @@ namespace Amazon.Personalize
 
         #endregion
         
+        #region  StartRecommender
+
+        internal virtual StartRecommenderResponse StartRecommender(StartRecommenderRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartRecommenderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartRecommenderResponseUnmarshaller.Instance;
+
+            return Invoke<StartRecommenderResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Starts a recommender that is INACTIVE. Starting a recommender does not create any
+        /// new models, but resumes billing and automatic retraining for the recommender.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartRecommender service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartRecommender service method, as returned by Personalize.</returns>
+        /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
+        /// Could not find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/StartRecommender">REST API Reference for StartRecommender Operation</seealso>
+        public virtual Task<StartRecommenderResponse> StartRecommenderAsync(StartRecommenderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartRecommenderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartRecommenderResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartRecommenderResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StopRecommender
+
+        internal virtual StopRecommenderResponse StopRecommender(StopRecommenderRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopRecommenderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopRecommenderResponseUnmarshaller.Instance;
+
+            return Invoke<StopRecommenderResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Stops a recommender that is ACTIVE. Stopping a recommender halts billing and automatic
+        /// retraining for the recommender.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopRecommender service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopRecommender service method, as returned by Personalize.</returns>
+        /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
+        /// Could not find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/StopRecommender">REST API Reference for StopRecommender Operation</seealso>
+        public virtual Task<StopRecommenderResponse> StopRecommenderAsync(StopRecommenderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopRecommenderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopRecommenderResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StopRecommenderResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  StopSolutionVersionCreation
 
         internal virtual StopSolutionVersionCreationResponse StopSolutionVersionCreation(StopSolutionVersionCreationRequest request)
@@ -3496,8 +3584,10 @@ namespace Amazon.Personalize
         /// </para>
         ///  <note> 
         /// <para>
-        /// You must wait until the <code>status</code> of the updated campaign is <code>ACTIVE</code>
-        /// before asking the campaign for recommendations.
+        /// You can still get recommendations from a campaign while an update is in progress.
+        /// The campaign will use the previous solution version and campaign configuration to
+        /// generate recommendations until the latest campaign update status is <code>Active</code>.
+        /// 
         /// </para>
         ///  </note> 
         /// <para>

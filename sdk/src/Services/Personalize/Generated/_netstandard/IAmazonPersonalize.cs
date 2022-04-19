@@ -2243,6 +2243,62 @@ namespace Amazon.Personalize
 
         #endregion
                 
+        #region  StartRecommender
+
+
+
+        /// <summary>
+        /// Starts a recommender that is INACTIVE. Starting a recommender does not create any
+        /// new models, but resumes billing and automatic retraining for the recommender.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartRecommender service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartRecommender service method, as returned by Personalize.</returns>
+        /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
+        /// Could not find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/StartRecommender">REST API Reference for StartRecommender Operation</seealso>
+        Task<StartRecommenderResponse> StartRecommenderAsync(StartRecommenderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  StopRecommender
+
+
+
+        /// <summary>
+        /// Stops a recommender that is ACTIVE. Stopping a recommender halts billing and automatic
+        /// retraining for the recommender.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopRecommender service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopRecommender service method, as returned by Personalize.</returns>
+        /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
+        /// Could not find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/StopRecommender">REST API Reference for StopRecommender Operation</seealso>
+        Task<StopRecommenderResponse> StopRecommenderAsync(StopRecommenderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  StopSolutionVersionCreation
 
 
@@ -2375,8 +2431,10 @@ namespace Amazon.Personalize
         /// </para>
         ///  <note> 
         /// <para>
-        /// You must wait until the <code>status</code> of the updated campaign is <code>ACTIVE</code>
-        /// before asking the campaign for recommendations.
+        /// You can still get recommendations from a campaign while an update is in progress.
+        /// The campaign will use the previous solution version and campaign configuration to
+        /// generate recommendations until the latest campaign update status is <code>Active</code>.
+        /// 
         /// </para>
         ///  </note> 
         /// <para>

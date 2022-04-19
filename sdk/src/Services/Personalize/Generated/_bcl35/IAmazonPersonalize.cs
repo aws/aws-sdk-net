@@ -3411,6 +3411,106 @@ namespace Amazon.Personalize
 
         #endregion
         
+        #region  StartRecommender
+
+
+        /// <summary>
+        /// Starts a recommender that is INACTIVE. Starting a recommender does not create any
+        /// new models, but resumes billing and automatic retraining for the recommender.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartRecommender service method.</param>
+        /// 
+        /// <returns>The response from the StartRecommender service method, as returned by Personalize.</returns>
+        /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
+        /// Could not find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/StartRecommender">REST API Reference for StartRecommender Operation</seealso>
+        StartRecommenderResponse StartRecommender(StartRecommenderRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartRecommender operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartRecommender operation on AmazonPersonalizeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartRecommender
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/StartRecommender">REST API Reference for StartRecommender Operation</seealso>
+        IAsyncResult BeginStartRecommender(StartRecommenderRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartRecommender operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartRecommender.</param>
+        /// 
+        /// <returns>Returns a  StartRecommenderResult from Personalize.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/StartRecommender">REST API Reference for StartRecommender Operation</seealso>
+        StartRecommenderResponse EndStartRecommender(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  StopRecommender
+
+
+        /// <summary>
+        /// Stops a recommender that is ACTIVE. Stopping a recommender halts billing and automatic
+        /// retraining for the recommender.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopRecommender service method.</param>
+        /// 
+        /// <returns>The response from the StopRecommender service method, as returned by Personalize.</returns>
+        /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
+        /// Could not find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/StopRecommender">REST API Reference for StopRecommender Operation</seealso>
+        StopRecommenderResponse StopRecommender(StopRecommenderRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopRecommender operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopRecommender operation on AmazonPersonalizeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopRecommender
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/StopRecommender">REST API Reference for StopRecommender Operation</seealso>
+        IAsyncResult BeginStopRecommender(StopRecommenderRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StopRecommender operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopRecommender.</param>
+        /// 
+        /// <returns>Returns a  StopRecommenderResult from Personalize.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/StopRecommender">REST API Reference for StopRecommender Operation</seealso>
+        StopRecommenderResponse EndStopRecommender(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  StopSolutionVersionCreation
 
 
@@ -3608,8 +3708,10 @@ namespace Amazon.Personalize
         /// </para>
         ///  <note> 
         /// <para>
-        /// You must wait until the <code>status</code> of the updated campaign is <code>ACTIVE</code>
-        /// before asking the campaign for recommendations.
+        /// You can still get recommendations from a campaign while an update is in progress.
+        /// The campaign will use the previous solution version and campaign configuration to
+        /// generate recommendations until the latest campaign update status is <code>Active</code>.
+        /// 
         /// </para>
         ///  </note> 
         /// <para>
