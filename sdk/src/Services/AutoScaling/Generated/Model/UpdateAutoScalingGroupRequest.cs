@@ -98,6 +98,7 @@ namespace Amazon.AutoScaling.Model
         private bool? _capacityRebalance;
         private string _context;
         private int? _defaultCooldown;
+        private int? _defaultInstanceWarmup;
         private int? _desiredCapacity;
         private string _desiredCapacityType;
         private int? _healthCheckGracePeriod;
@@ -191,10 +192,12 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property DefaultCooldown. 
         /// <para>
-        /// The amount of time, in seconds, after a scaling activity completes before another
-        /// scaling activity can start. The default value is <code>300</code>. This setting applies
-        /// when using simple scaling policies, but not when using other scaling policies or scheduled
-        /// scaling. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
+        ///  <i>Only needed if you use simple scaling policies.</i> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The amount of time, in seconds, between one scaling activity ending and another one
+        /// starting due to simple scaling policies. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
         /// cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
@@ -208,6 +211,45 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetDefaultCooldown()
         {
             return this._defaultCooldown.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DefaultInstanceWarmup. 
+        /// <para>
+        /// The amount of time, in seconds, until a newly launched instance can contribute to
+        /// the Amazon CloudWatch metrics. This delay lets an instance finish initializing before
+        /// Amazon EC2 Auto Scaling aggregates instance metrics, resulting in more reliable usage
+        /// data. Set this value equal to the amount of time that it takes for resource consumption
+        /// to become stable after an instance reaches the <code>InService</code> state. For more
+        /// information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-default-instance-warmup.html">Set
+        /// the default instance warmup for an Auto Scaling group</a> in the <i>Amazon EC2 Auto
+        /// Scaling User Guide</i>.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// To manage your warm-up settings at the group level, we recommend that you set the
+        /// default instance warmup, <i>even if its value is set to 0 seconds</i>. This also optimizes
+        /// the performance of scaling policies that scale continuously, such as target tracking
+        /// and step scaling policies. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you need to remove a value that you previously set, include the property but specify
+        /// <code>-1</code> for the value. However, we strongly recommend keeping the default
+        /// instance warmup enabled by specifying a minimum value of <code>0</code>.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        public int DefaultInstanceWarmup
+        {
+            get { return this._defaultInstanceWarmup.GetValueOrDefault(); }
+            set { this._defaultInstanceWarmup = value; }
+        }
+
+        // Check to see if DefaultInstanceWarmup property is set
+        internal bool IsSetDefaultInstanceWarmup()
+        {
+            return this._defaultInstanceWarmup.HasValue; 
         }
 
         /// <summary>
@@ -268,13 +310,10 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before checking
         /// the health status of an EC2 instance that has come into service and marking it unhealthy
-        /// due to a failed health check. The default value is <code>0</code>. For more information,
-        /// see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health
+        /// due to a failed Elastic Load Balancing or custom health check. This is useful if your
+        /// instances do not immediately pass these health checks after they enter the <code>InService</code>
+        /// state. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health
         /// check grace period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
-        /// </para>
-        ///  
-        /// <para>
-        /// Required if you are adding an <code>ELB</code> health check.
         /// </para>
         /// </summary>
         public int HealthCheckGracePeriod
@@ -464,12 +503,17 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property PlacementGroup. 
         /// <para>
-        /// The name of an existing placement group into which to launch your instances, if any.
-        /// A placement group is a logical grouping of instances within a single Availability
-        /// Zone. You cannot specify multiple Availability Zones and a placement group. For more
+        /// The name of an existing placement group into which to launch your instances. For more
         /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-        /// Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+        /// groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// A <i>cluster</i> placement group is a logical grouping of instances within a single
+        /// Availability Zone. You cannot specify multiple Availability Zones and a cluster placement
+        /// group. 
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
         public string PlacementGroup

@@ -97,10 +97,12 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property ClassicLinkVPCId. 
         /// <para>
-        /// The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to. For more
-        /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-        /// in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
-        /// EC2-Classic instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+        ///  <i>EC2-Classic retires on August 15, 2022. This parameter is not supported after
+        /// that date.</i> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -119,13 +121,12 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property ClassicLinkVPCSecurityGroups. 
         /// <para>
-        /// The IDs of one or more security groups for the VPC specified in <code>ClassicLinkVPCId</code>.
+        ///  <i>EC2-Classic retires on August 15, 2022. This parameter is not supported after
+        /// that date.</i> 
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-        /// in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
-        /// EC2-Classic instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+        /// The IDs of one or more security groups for the VPC specified in <code>ClassicLinkVPCId</code>.
         /// </para>
         /// </summary>
         public List<string> ClassicLinkVPCSecurityGroups

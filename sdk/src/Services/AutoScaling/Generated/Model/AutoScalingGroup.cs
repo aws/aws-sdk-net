@@ -40,6 +40,7 @@ namespace Amazon.AutoScaling.Model
         private string _context;
         private DateTime? _createdTime;
         private int? _defaultCooldown;
+        private int? _defaultInstanceWarmup;
         private int? _desiredCapacity;
         private string _desiredCapacityType;
         private List<EnabledMetric> _enabledMetrics = new List<EnabledMetric>();
@@ -198,6 +199,24 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DefaultInstanceWarmup. 
+        /// <para>
+        /// The duration of the default instance warmup, in seconds.
+        /// </para>
+        /// </summary>
+        public int DefaultInstanceWarmup
+        {
+            get { return this._defaultInstanceWarmup.GetValueOrDefault(); }
+            set { this._defaultInstanceWarmup = value; }
+        }
+
+        // Check to see if DefaultInstanceWarmup property is set
+        internal bool IsSetDefaultInstanceWarmup()
+        {
+            return this._defaultInstanceWarmup.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property DesiredCapacity. 
         /// <para>
         /// The desired size of the group.
@@ -221,18 +240,7 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// The unit of measurement for the value specified for desired capacity. Amazon EC2 Auto
         /// Scaling supports <code>DesiredCapacityType</code> for attribute-based instance type
-        /// selection only. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-instance-type-requirements.html">Creating
-        /// an Auto Scaling group using attribute-based instance type selection</a> in the <i>Amazon
-        /// EC2 Auto Scaling User Guide</i>.
-        /// </para>
-        ///  
-        /// <para>
-        /// By default, Amazon EC2 Auto Scaling specifies <code>units</code>, which translates
-        /// into number of instances.
-        /// </para>
-        ///  
-        /// <para>
-        /// Valid values: <code>units</code> | <code>vcpu</code> | <code>memory-mib</code> 
+        /// selection only.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -269,9 +277,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property HealthCheckGracePeriod. 
         /// <para>
-        /// The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before checking
-        /// the health status of an EC2 instance that has come into service and marking it unhealthy
-        /// due to a failed health check.
+        /// The duration of the health check grace period, in seconds.
         /// </para>
         /// </summary>
         public int HealthCheckGracePeriod

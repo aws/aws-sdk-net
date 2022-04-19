@@ -126,14 +126,14 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property ClassicLinkVPCId. 
         /// <para>
-        /// The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to. For more
-        /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-        /// in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
-        /// EC2-Classic instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+        ///  <i>EC2-Classic retires on August 15, 2022. This parameter is not supported after
+        /// that date.</i> 
         /// </para>
         ///  
         /// <para>
-        /// This parameter can only be used if you are launching EC2-Classic instances.
+        /// The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
+        /// in the <i>Amazon EC2 User Guide for Linux Instances</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -152,10 +152,14 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property ClassicLinkVPCSecurityGroups. 
         /// <para>
+        ///  <i>EC2-Classic retires on August 15, 2022. This parameter is not supported after
+        /// that date.</i> 
+        /// </para>
+        ///  
+        /// <para>
         /// The IDs of one or more security groups for the specified ClassicLink-enabled VPC.
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-        /// in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
-        /// EC2-Classic instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+        /// in the <i>Amazon EC2 User Guide for Linux Instances</i>.
         /// </para>
         ///  
         /// <para>

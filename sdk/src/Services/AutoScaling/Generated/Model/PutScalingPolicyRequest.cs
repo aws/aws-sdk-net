@@ -118,15 +118,18 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Cooldown. 
         /// <para>
-        /// The duration of the policy's cooldown period, in seconds. When a cooldown period is
-        /// specified here, it overrides the default cooldown period defined for the Auto Scaling
-        /// group.
+        /// A cooldown period, in seconds, that applies to a specific simple scaling policy. When
+        /// a cooldown period is specified here, it overrides the default cooldown.
         /// </para>
         ///  
         /// <para>
         /// Valid only if the policy type is <code>SimpleScaling</code>. For more information,
         /// see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
         /// cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: None
         /// </para>
         /// </summary>
         public int Cooldown
@@ -165,14 +168,26 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property EstimatedInstanceWarmup. 
         /// <para>
+        ///  <i>Not needed if the default instance warmup is defined for the group.</i> 
+        /// </para>
+        ///  
+        /// <para>
         /// The estimated time, in seconds, until a newly launched instance can contribute to
-        /// the CloudWatch metrics. If not provided, the default is to use the value from the
-        /// default cooldown period for the Auto Scaling group.
+        /// the CloudWatch metrics. This warm-up period applies to instances launched due to a
+        /// specific target tracking or step scaling policy. When a warm-up period is specified
+        /// here, it overrides the default instance warmup.
         /// </para>
         ///  
         /// <para>
         /// Valid only if the policy type is <code>TargetTrackingScaling</code> or <code>StepScaling</code>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The default is to use the value for the default instance warmup defined for the group.
+        /// If default instance warmup is null, then <code>EstimatedInstanceWarmup</code> falls
+        /// back to the value of default cooldown.
+        /// </para>
+        ///  </note>
         /// </summary>
         public int EstimatedInstanceWarmup
         {
