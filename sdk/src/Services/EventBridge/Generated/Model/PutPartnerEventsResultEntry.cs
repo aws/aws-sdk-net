@@ -79,6 +79,7 @@ namespace Amazon.EventBridge.Model
         /// The ID of the event.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=64)]
         public string EventId
         {
             get { return this._eventId; }
