@@ -111,6 +111,17 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetQuipConfiguration())
+            {
+                context.Writer.WritePropertyName("QuipConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = QuipConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.QuipConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetS3Configuration())
             {
                 context.Writer.WritePropertyName("S3Configuration");

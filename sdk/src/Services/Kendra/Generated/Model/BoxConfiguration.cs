@@ -310,7 +310,7 @@ namespace Amazon.Kendra.Model
         /// Gets and sets the property VpcConfiguration. 
         /// <para>
         /// Configuration information for an Amazon VPC to connect to your Box. For more information,
-        /// see <a href="https://docs.aws.amazon.com/endra/latest/dg/vpc-configuration.html">Configuring
+        /// see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring
         /// a VPC</a>.
         /// </para>
         /// </summary>

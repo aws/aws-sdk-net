@@ -39,6 +39,7 @@ namespace Amazon.Kendra.Model
         private FsxConfiguration _fsxConfiguration;
         private GoogleDriveConfiguration _googleDriveConfiguration;
         private OneDriveConfiguration _oneDriveConfiguration;
+        private QuipConfiguration _quipConfiguration;
         private S3DataSourceConfiguration _s3Configuration;
         private SalesforceConfiguration _salesforceConfiguration;
         private ServiceNowConfiguration _serviceNowConfiguration;
@@ -154,6 +155,24 @@ namespace Amazon.Kendra.Model
         internal bool IsSetOneDriveConfiguration()
         {
             return this._oneDriveConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property QuipConfiguration. 
+        /// <para>
+        /// Provides the configuration information to connect to Quip as your data source.
+        /// </para>
+        /// </summary>
+        public QuipConfiguration QuipConfiguration
+        {
+            get { return this._quipConfiguration; }
+            set { this._quipConfiguration = value; }
+        }
+
+        // Check to see if QuipConfiguration property is set
+        internal bool IsSetQuipConfiguration()
+        {
+            return this._quipConfiguration != null;
         }
 
         /// <summary>

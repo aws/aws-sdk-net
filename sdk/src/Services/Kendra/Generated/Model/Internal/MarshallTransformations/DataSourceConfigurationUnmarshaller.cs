@@ -100,6 +100,12 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                     unmarshalledObject.OneDriveConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("QuipConfiguration", targetDepth))
+                {
+                    var unmarshaller = QuipConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.QuipConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("S3Configuration", targetDepth))
                 {
                     var unmarshaller = S3DataSourceConfigurationUnmarshaller.Instance;

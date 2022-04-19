@@ -805,6 +805,10 @@ namespace Amazon.Kendra
         /// </summary>
         public static readonly DataSourceType ONEDRIVE = new DataSourceType("ONEDRIVE");
         /// <summary>
+        /// Constant QUIP for DataSourceType
+        /// </summary>
+        public static readonly DataSourceType QUIP = new DataSourceType("QUIP");
+        /// <summary>
         /// Constant S3 for DataSourceType
         /// </summary>
         public static readonly DataSourceType S3 = new DataSourceType("S3");
