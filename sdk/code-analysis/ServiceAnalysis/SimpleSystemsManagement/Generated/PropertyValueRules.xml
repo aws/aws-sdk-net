@@ -89,6 +89,11 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.CreateAssociationRequest.ScheduleOffset</property>
+    <min>1</min>
+    <max>6</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.CreateDocumentRequest.Content</property>
     <min>1</min>
   </property-value-rule>
@@ -1710,6 +1715,11 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.UpdateAssociationRequest.ScheduleOffset</property>
+    <min>1</min>
+    <max>6</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.UpdateAssociationStatusRequest.InstanceId</property>
     <pattern>(^i-(\w{8}|\w{17})$)|(^mi-\w{17}$)</pattern>
   </property-value-rule>
@@ -2154,6 +2164,11 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.Association.ScheduleOffset</property>
+    <min>1</min>
+    <max>6</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.AssociationDescription.AssociationId</property>
     <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
   </property-value-rule>
@@ -2198,6 +2213,11 @@
     <property>Amazon.SimpleSystemsManagement.Model.AssociationDescription.ScheduleExpression</property>
     <min>1</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.AssociationDescription.ScheduleOffset</property>
+    <min>1</min>
+    <max>6</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.AssociationExecution.AssociationId</property>
@@ -2290,6 +2310,11 @@
     <property>Amazon.SimpleSystemsManagement.Model.AssociationVersionInfo.ScheduleExpression</property>
     <min>1</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.AssociationVersionInfo.ScheduleOffset</property>
+    <min>1</min>
+    <max>6</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.AttachmentContent.Hash</property>
@@ -2591,6 +2616,11 @@
     <property>Amazon.SimpleSystemsManagement.Model.CreateAssociationBatchRequestEntry.ScheduleExpression</property>
     <min>1</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.CreateAssociationBatchRequestEntry.ScheduleOffset</property>
+    <min>1</min>
+    <max>6</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.DocumentDefaultVersionDescription.DefaultVersion</property>

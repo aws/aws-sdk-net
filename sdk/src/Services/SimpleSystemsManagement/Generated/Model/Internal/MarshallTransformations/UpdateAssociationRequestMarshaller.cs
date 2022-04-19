@@ -174,6 +174,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ScheduleExpression);
                 }
 
+                if(publicRequest.IsSetScheduleOffset())
+                {
+                    context.Writer.WritePropertyName("ScheduleOffset");
+                    context.Writer.Write(publicRequest.ScheduleOffset);
+                }
+
                 if(publicRequest.IsSetSyncCompliance())
                 {
                     context.Writer.WritePropertyName("SyncCompliance");

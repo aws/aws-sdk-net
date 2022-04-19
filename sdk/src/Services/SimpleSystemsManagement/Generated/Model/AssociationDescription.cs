@@ -53,6 +53,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         private AssociationOverview _overview;
         private Dictionary<string, List<string>> _parameters = new Dictionary<string, List<string>>();
         private string _scheduleExpression;
+        private int? _scheduleOffset;
         private AssociationStatus _status;
         private AssociationSyncCompliance _syncCompliance;
         private List<TargetLocation> _targetLocations = new List<TargetLocation>();
@@ -451,6 +452,25 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetScheduleExpression()
         {
             return this._scheduleExpression != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScheduleOffset. 
+        /// <para>
+        /// Number of days to wait after the scheduled day to run an association.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=6)]
+        public int ScheduleOffset
+        {
+            get { return this._scheduleOffset.GetValueOrDefault(); }
+            set { this._scheduleOffset = value; }
+        }
+
+        // Check to see if ScheduleOffset property is set
+        internal bool IsSetScheduleOffset()
+        {
+            return this._scheduleOffset.HasValue; 
         }
 
         /// <summary>

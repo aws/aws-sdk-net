@@ -57,6 +57,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         private InstanceAssociationOutputLocation _outputLocation;
         private Dictionary<string, List<string>> _parameters = new Dictionary<string, List<string>>();
         private string _scheduleExpression;
+        private int? _scheduleOffset;
         private AssociationSyncCompliance _syncCompliance;
         private List<TargetLocation> _targetLocations = new List<TargetLocation>();
         private List<Target> _targets = new List<Target>();
@@ -400,6 +401,37 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetScheduleExpression()
         {
             return this._scheduleExpression != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScheduleOffset. 
+        /// <para>
+        /// Number of days to wait after the scheduled day to run an association. For example,
+        /// if you specified a cron schedule of <code>cron(0 0 ? * THU#2 *)</code>, you could
+        /// specify an offset of 3 to run the association each Sunday after the second Thursday
+        /// of the month. For more information about cron schedules for associations, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/reference-cron-and-rate-expressions.html">Reference:
+        /// Cron and rate expressions for Systems Manager</a> in the <i>Amazon Web Services Systems
+        /// Manager User Guide</i>. 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// To use offsets, you must specify the <code>ApplyOnlyAtCronInterval</code> parameter.
+        /// This option tells the system not to run an association immediately after you create
+        /// it. 
+        /// </para>
+        ///  </note>
+        /// </summary>
+        [AWSProperty(Min=1, Max=6)]
+        public int ScheduleOffset
+        {
+            get { return this._scheduleOffset.GetValueOrDefault(); }
+            set { this._scheduleOffset = value; }
+        }
+
+        // Check to see if ScheduleOffset property is set
+        internal bool IsSetScheduleOffset()
+        {
+            return this._scheduleOffset.HasValue; 
         }
 
         /// <summary>

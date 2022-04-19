@@ -148,6 +148,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     unmarshalledObject.ScheduleExpression = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ScheduleOffset", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.ScheduleOffset = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SyncCompliance", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

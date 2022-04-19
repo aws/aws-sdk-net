@@ -218,7 +218,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// To add tags to an existing patch baseline, use the <a>AddTagsToResource</a> operation.
+        /// To add tags to an existing automation, use the <a>AddTagsToResource</a> operation.
         /// </para>
         ///  </note>
         /// </summary>

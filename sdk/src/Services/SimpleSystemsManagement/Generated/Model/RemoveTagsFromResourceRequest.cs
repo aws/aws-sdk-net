@@ -53,6 +53,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  
         /// <para>
+        ///  <code>Automation</code>: <code>example-c160-4567-8519-012345abcde</code> 
+        /// </para>
+        ///  
+        /// <para>
         /// PatchBaseline: pb-012345abcde
         /// </para>
         ///  
