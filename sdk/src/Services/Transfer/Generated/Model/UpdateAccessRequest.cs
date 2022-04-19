@@ -141,7 +141,7 @@ namespace Amazon.Transfer.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> 
+        ///  <code>[ { "Entry": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

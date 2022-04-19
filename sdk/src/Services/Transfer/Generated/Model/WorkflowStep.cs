@@ -144,19 +144,19 @@ namespace Amazon.Transfer.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <i>Copy</i>: copy the file to another location
+        ///  <i>COPY</i>: copy the file to another location
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <i>Custom</i>: custom step with a lambda target
+        ///  <i>CUSTOM</i>: custom step with a lambda target
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <i>Delete</i>: delete the file
+        ///  <i>DELETE</i>: delete the file
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <i>Tag</i>: add a tag to the file
+        ///  <i>TAG</i>: add a tag to the file
         /// </para>
         ///  </li> </ul>
         /// </summary>

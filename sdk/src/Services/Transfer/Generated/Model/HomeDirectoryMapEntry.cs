@@ -37,7 +37,7 @@ namespace Amazon.Transfer.Model
     /// </para>
     ///  
     /// <para>
-    ///  <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> 
+    ///  <code>[ { "Entry": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> 
     /// </para>
     /// </summary>
     public partial class HomeDirectoryMapEntry
