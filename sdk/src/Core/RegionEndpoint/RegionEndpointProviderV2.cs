@@ -188,10 +188,11 @@ namespace Amazon.Internal
                 if (string.Equals(authRegion, this.SystemName, StringComparison.OrdinalIgnoreCase))
                     authRegion = null;
 
-                // v2 doesn't support the 'deprecated' property
+                // v2 doesn't support the 'deprecated' and 'dnsSuffix' property
                 var deprecated = false;
+                string dnsSuffix = null;
 
-                return new Amazon.RegionEndpoint.Endpoint(hostName, authRegion, signatureVersion, deprecated);
+                return new Amazon.RegionEndpoint.Endpoint(hostName, authRegion, signatureVersion, dnsSuffix, deprecated);
             }
 
             JsonData GetEndpointRule(string serviceName)

@@ -232,7 +232,7 @@ namespace Amazon.EventBridge
         /// </summary>
         protected override AbstractAWSSigner CreateSigner()
         {
-            return new AWS4Signer();
+            return new EventBridgeSigner();
         }
 
         /// <summary>

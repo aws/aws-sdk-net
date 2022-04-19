@@ -120,11 +120,12 @@ namespace Amazon.Internal
         {
             string template = (string)_partitionJsonData["defaults"]["hostname"];
 
+            string dnsSuffix = (string)_partitionJsonData["dnsSuffix"];
             string hostname = template.Replace("{service}", serviceName)
                                  .Replace("{region}", RegionName)
-                                 .Replace("{dnsSuffix}", (string)_partitionJsonData["dnsSuffix"]);
+                                 .Replace("{dnsSuffix}", dnsSuffix);
 
-            return new RegionEndpoint.Endpoint(hostname, null, null, deprecated: false);
+            return new RegionEndpoint.Endpoint(hostname, null, null, dnsSuffix, deprecated: false);
         }
 
         private void ParseAllServices()
@@ -219,9 +220,10 @@ namespace Amazon.Internal
         private void AddNormalEndpointToServiceMap(JsonData mergedEndpoint, string regionName, string serviceName)
         {
             string template = (string)mergedEndpoint["hostname"];
+            string dnsSuffix = (string)_partitionJsonData["dnsSuffix"];
             string hostname = template.Replace("{service}", serviceName)
                                  .Replace("{region}", regionName)
-                                 .Replace("{dnsSuffix}", (string)_partitionJsonData["dnsSuffix"]);
+                                 .Replace("{dnsSuffix}", dnsSuffix);
 
 
             string authRegion = null;
@@ -236,7 +238,7 @@ namespace Amazon.Internal
 
             var signatureOverride = DetermineSignatureOverride(mergedEndpoint, serviceName);
 
-            RegionEndpoint.Endpoint endpoint = new RegionEndpoint.Endpoint(hostname, authRegion, signatureOverride, deprecated);
+            RegionEndpoint.Endpoint endpoint = new RegionEndpoint.Endpoint(hostname, authRegion, signatureOverride, dnsSuffix, deprecated);
             _serviceMap.Add(serviceName, endpoint);
 
         }
@@ -278,7 +280,7 @@ namespace Amazon.Internal
                                      .Replace("{region}", regionName)
                                      .Replace("{dnsSuffix}", variantDnsSuffix);
 
-                _serviceMap.Add(serviceName, new RegionEndpoint.Endpoint(variantHostname, authRegion, signatureOverride, deprecated), tagsKey);
+                _serviceMap.Add(serviceName, new RegionEndpoint.Endpoint(variantHostname, authRegion, signatureOverride, variantDnsSuffix, deprecated), tagsKey);
             }
         }
 
