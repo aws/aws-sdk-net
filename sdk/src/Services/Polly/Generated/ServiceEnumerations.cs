@@ -151,6 +151,10 @@ namespace Amazon.Polly
         /// </summary>
         public static readonly LanguageCode DaDK = new LanguageCode("da-DK");
         /// <summary>
+        /// Constant DeAT for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode DeAT = new LanguageCode("de-AT");
+        /// <summary>
         /// Constant DeDE for LanguageCode
         /// </summary>
         public static readonly LanguageCode DeDE = new LanguageCode("de-DE");
@@ -620,6 +624,10 @@ namespace Amazon.Polly
         /// Constant Gwyneth for VoiceId
         /// </summary>
         public static readonly VoiceId Gwyneth = new VoiceId("Gwyneth");
+        /// <summary>
+        /// Constant Hannah for VoiceId
+        /// </summary>
+        public static readonly VoiceId Hannah = new VoiceId("Hannah");
         /// <summary>
         /// Constant Hans for VoiceId
         /// </summary>
