@@ -61,8 +61,8 @@ namespace Amazon.PI.Model
         /// Additional metrics for the top <code>N</code> dimension keys. If the specified dimension
         /// group in the <code>GroupBy</code> parameter is <code>db.sql_tokenized</code>, you
         /// can specify per-SQL metrics to get the values for the top <code>N</code> SQL digests.
-        /// The response syntax is <code>"AdditionalMetrics" : { "<i>string</i>" : "<i>string</i>"
-        /// }</code>. 
+        /// The response syntax is as follows: <code>"AdditionalMetrics" : { "<i>string</i>" :
+        /// "<i>string</i>" }</code>. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=30)]
@@ -211,12 +211,12 @@ namespace Amazon.PI.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>db.load.avg</code> - a scaled representation of the number of active sessions
+        ///  <code>db.load.avg</code> - A scaled representation of the number of active sessions
         /// for the database engine. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>db.sampledload.avg</code> - the raw number of active sessions for the database
+        ///  <code>db.sampledload.avg</code> - The raw number of active sessions for the database
         /// engine. 
         /// </para>
         ///  </li> </ul> 
@@ -248,7 +248,7 @@ namespace Amazon.PI.Model
         /// <para>
         /// An optional pagination token provided by a previous request. If this parameter is
         /// specified, the response includes only records beyond the token, up to the value specified
-        /// by <code>MaxRecords</code>. 
+        /// by <code>MaxRecords</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=8192)]
@@ -333,8 +333,17 @@ namespace Amazon.PI.Model
         /// Gets and sets the property ServiceType. 
         /// <para>
         /// The Amazon Web Services service for which Performance Insights will return metrics.
-        /// The only valid value for <i>ServiceType</i> is <code>RDS</code>. 
+        /// Valid values are as follows:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>RDS</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DOCDB</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public ServiceType ServiceType

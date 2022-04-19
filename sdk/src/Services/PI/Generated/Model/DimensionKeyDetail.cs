@@ -41,8 +41,17 @@ namespace Amazon.PI.Model
         /// Gets and sets the property Dimension. 
         /// <para>
         /// The full name of the dimension. The full name includes the group name and key name.
-        /// The only valid value is <code>db.sql.statement</code>. 
+        /// The following values are valid:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>db.query.statement</code> (Amazon DocumentDB)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>db.sql.statement</code> (Amazon RDS and Aurora)
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Min=0, Max=256)]
         public string Dimension
@@ -69,9 +78,8 @@ namespace Amazon.PI.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>PROCESSING</code> - The dimension detail data isn't ready to be retrieved because
-        /// more processing time is required. If the requested detail data for <code>db.sql.statement</code>
-        /// has the status <code>PROCESSING</code>, Performance Insights returns the truncated
-        /// query.
+        /// more processing time is required. If the requested detail data has the status <code>PROCESSING</code>,
+        /// Performance Insights returns the truncated query.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -94,9 +102,18 @@ namespace Amazon.PI.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The value of the dimension detail data. For the <code>db.sql.statement</code> dimension,
-        /// this value is either the full or truncated SQL query, depending on the return status.
+        /// The value of the dimension detail data. Depending on the return status, this value
+        /// is either the full or truncated SQL query for the following dimensions:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>db.query.statement</code> (Amazon DocumentDB)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>db.sql.statement</code> (Amazon RDS and Aurora)
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Min=0, Max=256)]
         public string Value

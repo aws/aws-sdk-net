@@ -66,13 +66,18 @@ namespace Amazon.PI.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>db.load.avg</code> - a scaled representation of the number of active sessions
+        ///  <code>db.load.avg</code> - A scaled representation of the number of active sessions
         /// for the database engine.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>db.sampledload.avg</code> - the raw number of active sessions for the database
+        ///  <code>db.sampledload.avg</code> - The raw number of active sessions for the database
         /// engine.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The counter metrics listed in <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_PerfInsights_Counters.html#USER_PerfInsights_Counters.OS">Performance
+        /// Insights operating system counters</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
