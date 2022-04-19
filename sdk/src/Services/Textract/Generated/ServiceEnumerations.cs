@@ -51,6 +51,14 @@ namespace Amazon.Textract
         /// </summary>
         public static readonly BlockType PAGE = new BlockType("PAGE");
         /// <summary>
+        /// Constant QUERY for BlockType
+        /// </summary>
+        public static readonly BlockType QUERY = new BlockType("QUERY");
+        /// <summary>
+        /// Constant QUERY_RESULT for BlockType
+        /// </summary>
+        public static readonly BlockType QUERY_RESULT = new BlockType("QUERY_RESULT");
+        /// <summary>
         /// Constant SELECTION_ELEMENT for BlockType
         /// </summary>
         public static readonly BlockType SELECTION_ELEMENT = new BlockType("SELECTION_ELEMENT");
@@ -217,6 +225,10 @@ namespace Amazon.Textract
         /// </summary>
         public static readonly FeatureType FORMS = new FeatureType("FORMS");
         /// <summary>
+        /// Constant QUERIES for FeatureType
+        /// </summary>
+        public static readonly FeatureType QUERIES = new FeatureType("QUERIES");
+        /// <summary>
         /// Constant TABLES for FeatureType
         /// </summary>
         public static readonly FeatureType TABLES = new FeatureType("TABLES");
@@ -320,6 +332,10 @@ namespace Amazon.Textract
     public class RelationshipType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant ANSWER for RelationshipType
+        /// </summary>
+        public static readonly RelationshipType ANSWER = new RelationshipType("ANSWER");
         /// <summary>
         /// Constant CHILD for RelationshipType
         /// </summary>

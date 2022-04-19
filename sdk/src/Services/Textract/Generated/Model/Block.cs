@@ -59,6 +59,7 @@ namespace Amazon.Textract.Model
         private Geometry _geometry;
         private string _id;
         private int? _page;
+        private Query _query;
         private List<Relationship> _relationships = new List<Relationship>();
         private int? _rowIndex;
         private int? _rowSpan;
@@ -129,6 +130,17 @@ namespace Amazon.Textract.Model
         ///  <i>SELECTION_ELEMENT</i> - A selection element such as an option button (radio button)
         /// or a check box that's detected on a document page. Use the value of <code>SelectionStatus</code>
         /// to determine the status of the selection element.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <i>QUERY</i> - A question asked during the call of AnalyzeDocument. Contains an alias
+        /// and an ID that attachs it to its answer.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <i>QUERY_RESULT</i> - A response to a question asked during the call of analyze document.
+        /// Comes with an alias and ID for ease of locating in a response. Also contains location
+        /// and confidence score.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -297,6 +309,21 @@ namespace Amazon.Textract.Model
         internal bool IsSetPage()
         {
             return this._page.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Query.
+        /// </summary>
+        public Query Query
+        {
+            get { return this._query; }
+            set { this._query = value; }
+        }
+
+        // Check to see if Query property is set
+        internal bool IsSetQuery()
+        {
+            return this._query != null;
         }
 
         /// <summary>

@@ -70,6 +70,12 @@ namespace Amazon.Textract
         /// are returned (including text that doesn't have a relationship with the value of <code>FeatureTypes</code>).
         /// 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Queries.A QUERIES_RESULT Block object contains the answer to the query, the alias
+        /// associated and an ID that connect it to the query asked. This Block also contains
+        /// a location and attached confidence score.
+        /// </para>
         ///  </li> </ul> 
         /// <para>
         /// Selection elements such as check boxes and option buttons (radio buttons) can be detected
@@ -139,9 +145,8 @@ namespace Amazon.Textract
         /// Amazon Textract is temporarily unable to process the request. Try your call again.
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.UnsupportedDocumentException">
-        /// The format of the input document isn't supported. Documents for synchronous operations
-        /// can be in PNG or JPEG format only. Documents for asynchronous operations can be in
-        /// PDF format.
+        /// The format of the input document isn't supported. Documents for operations can be
+        /// in PNG, JPEG, PDF, or TIFF format.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/AnalyzeDocument">REST API Reference for AnalyzeDocument Operation</seealso>
         AnalyzeDocumentResponse AnalyzeDocument(AnalyzeDocumentRequest request);
@@ -175,6 +180,12 @@ namespace Amazon.Textract
         /// <code>Block</code> objects. All lines and words that are detected in the document
         /// are returned (including text that doesn't have a relationship with the value of <code>FeatureTypes</code>).
         /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Queries.A QUERIES_RESULT Block object contains the answer to the query, the alias
+        /// associated and an ID that connect it to the query asked. This Block also contains
+        /// a location and attached confidence score.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -248,9 +259,8 @@ namespace Amazon.Textract
         /// Amazon Textract is temporarily unable to process the request. Try your call again.
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.UnsupportedDocumentException">
-        /// The format of the input document isn't supported. Documents for synchronous operations
-        /// can be in PNG or JPEG format only. Documents for asynchronous operations can be in
-        /// PDF format.
+        /// The format of the input document isn't supported. Documents for operations can be
+        /// in PNG, JPEG, PDF, or TIFF format.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/AnalyzeDocument">REST API Reference for AnalyzeDocument Operation</seealso>
         Task<AnalyzeDocumentResponse> AnalyzeDocumentAsync(AnalyzeDocumentRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -320,9 +330,8 @@ namespace Amazon.Textract
         /// Amazon Textract is temporarily unable to process the request. Try your call again.
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.UnsupportedDocumentException">
-        /// The format of the input document isn't supported. Documents for synchronous operations
-        /// can be in PNG or JPEG format only. Documents for asynchronous operations can be in
-        /// PDF format.
+        /// The format of the input document isn't supported. Documents for operations can be
+        /// in PNG, JPEG, PDF, or TIFF format.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/AnalyzeExpense">REST API Reference for AnalyzeExpense Operation</seealso>
         AnalyzeExpenseResponse AnalyzeExpense(AnalyzeExpenseRequest request);
@@ -392,9 +401,8 @@ namespace Amazon.Textract
         /// Amazon Textract is temporarily unable to process the request. Try your call again.
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.UnsupportedDocumentException">
-        /// The format of the input document isn't supported. Documents for synchronous operations
-        /// can be in PNG or JPEG format only. Documents for asynchronous operations can be in
-        /// PDF format.
+        /// The format of the input document isn't supported. Documents for operations can be
+        /// in PNG, JPEG, PDF, or TIFF format.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/AnalyzeExpense">REST API Reference for AnalyzeExpense Operation</seealso>
         Task<AnalyzeExpenseResponse> AnalyzeExpenseAsync(AnalyzeExpenseRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -407,7 +415,8 @@ namespace Amazon.Textract
         /// <summary>
         /// Analyzes identity documents for relevant information. This information is extracted
         /// and returned as <code>IdentityDocumentFields</code>, which records both the normalized
-        /// field and value of the extracted text.
+        /// field and value of the extracted text.Unlike other Amazon Textract operations, <code>AnalyzeID</code>
+        /// doesn't return any Geometry data.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AnalyzeID service method.</param>
         /// 
@@ -448,9 +457,8 @@ namespace Amazon.Textract
         /// Amazon Textract is temporarily unable to process the request. Try your call again.
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.UnsupportedDocumentException">
-        /// The format of the input document isn't supported. Documents for synchronous operations
-        /// can be in PNG or JPEG format only. Documents for asynchronous operations can be in
-        /// PDF format.
+        /// The format of the input document isn't supported. Documents for operations can be
+        /// in PNG, JPEG, PDF, or TIFF format.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/AnalyzeID">REST API Reference for AnalyzeID Operation</seealso>
         AnalyzeIDResponse AnalyzeID(AnalyzeIDRequest request);
@@ -460,7 +468,8 @@ namespace Amazon.Textract
         /// <summary>
         /// Analyzes identity documents for relevant information. This information is extracted
         /// and returned as <code>IdentityDocumentFields</code>, which records both the normalized
-        /// field and value of the extracted text.
+        /// field and value of the extracted text.Unlike other Amazon Textract operations, <code>AnalyzeID</code>
+        /// doesn't return any Geometry data.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AnalyzeID service method.</param>
         /// <param name="cancellationToken">
@@ -504,9 +513,8 @@ namespace Amazon.Textract
         /// Amazon Textract is temporarily unable to process the request. Try your call again.
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.UnsupportedDocumentException">
-        /// The format of the input document isn't supported. Documents for synchronous operations
-        /// can be in PNG or JPEG format only. Documents for asynchronous operations can be in
-        /// PDF format.
+        /// The format of the input document isn't supported. Documents for operations can be
+        /// in PNG, JPEG, PDF, or TIFF format.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/AnalyzeID">REST API Reference for AnalyzeID Operation</seealso>
         Task<AnalyzeIDResponse> AnalyzeIDAsync(AnalyzeIDRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -518,9 +526,9 @@ namespace Amazon.Textract
 
         /// <summary>
         /// Detects text in the input document. Amazon Textract can detect lines of text and the
-        /// words that make up a line of text. The input document must be an image in JPEG or
-        /// PNG format. <code>DetectDocumentText</code> returns the detected text in an array
-        /// of <a>Block</a> objects. 
+        /// words that make up a line of text. The input document must be an image in JPEG, PNG,
+        /// PDF, or TIFF format. <code>DetectDocumentText</code> returns the detected text in
+        /// an array of <a>Block</a> objects. 
         /// 
         ///  
         /// <para>
@@ -580,9 +588,8 @@ namespace Amazon.Textract
         /// Amazon Textract is temporarily unable to process the request. Try your call again.
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.UnsupportedDocumentException">
-        /// The format of the input document isn't supported. Documents for synchronous operations
-        /// can be in PNG or JPEG format only. Documents for asynchronous operations can be in
-        /// PDF format.
+        /// The format of the input document isn't supported. Documents for operations can be
+        /// in PNG, JPEG, PDF, or TIFF format.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/DetectDocumentText">REST API Reference for DetectDocumentText Operation</seealso>
         DetectDocumentTextResponse DetectDocumentText(DetectDocumentTextRequest request);
@@ -591,9 +598,9 @@ namespace Amazon.Textract
 
         /// <summary>
         /// Detects text in the input document. Amazon Textract can detect lines of text and the
-        /// words that make up a line of text. The input document must be an image in JPEG or
-        /// PNG format. <code>DetectDocumentText</code> returns the detected text in an array
-        /// of <a>Block</a> objects. 
+        /// words that make up a line of text. The input document must be an image in JPEG, PNG,
+        /// PDF, or TIFF format. <code>DetectDocumentText</code> returns the detected text in
+        /// an array of <a>Block</a> objects. 
         /// 
         ///  
         /// <para>
@@ -656,9 +663,8 @@ namespace Amazon.Textract
         /// Amazon Textract is temporarily unable to process the request. Try your call again.
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.UnsupportedDocumentException">
-        /// The format of the input document isn't supported. Documents for synchronous operations
-        /// can be in PNG or JPEG format only. Documents for asynchronous operations can be in
-        /// PDF format.
+        /// The format of the input document isn't supported. Documents for operations can be
+        /// in PNG, JPEG, PDF, or TIFF format.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/DetectDocumentText">REST API Reference for DetectDocumentText Operation</seealso>
         Task<DetectDocumentTextResponse> DetectDocumentTextAsync(DetectDocumentTextRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -707,6 +713,12 @@ namespace Amazon.Textract
         /// <code>Block</code> objects. All lines and words that are detected in the document
         /// are returned (including text that doesn't have a relationship with the value of the
         /// <code>StartDocumentAnalysis</code> <code>FeatureTypes</code> input parameter). 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Queries. A QUERIES_RESULT Block object contains the answer to the query, the alias
+        /// associated and an ID that connect it to the query asked. This Block also contains
+        /// a location and attached confidence score
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -809,6 +821,12 @@ namespace Amazon.Textract
         /// <code>Block</code> objects. All lines and words that are detected in the document
         /// are returned (including text that doesn't have a relationship with the value of the
         /// <code>StartDocumentAnalysis</code> <code>FeatureTypes</code> input parameter). 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Queries. A QUERIES_RESULT Block object contains the answer to the query, the alias
+        /// associated and an ID that connect it to the query asked. This Block also contains
+        /// a location and attached confidence score
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -1280,9 +1298,8 @@ namespace Amazon.Textract
         /// Amazon Textract is temporarily unable to process the request. Try your call again.
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.UnsupportedDocumentException">
-        /// The format of the input document isn't supported. Documents for synchronous operations
-        /// can be in PNG or JPEG format only. Documents for asynchronous operations can be in
-        /// PDF format.
+        /// The format of the input document isn't supported. Documents for operations can be
+        /// in PNG, JPEG, PDF, or TIFF format.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/StartDocumentAnalysis">REST API Reference for StartDocumentAnalysis Operation</seealso>
         StartDocumentAnalysisResponse StartDocumentAnalysis(StartDocumentAnalysisRequest request);
@@ -1372,9 +1389,8 @@ namespace Amazon.Textract
         /// Amazon Textract is temporarily unable to process the request. Try your call again.
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.UnsupportedDocumentException">
-        /// The format of the input document isn't supported. Documents for synchronous operations
-        /// can be in PNG or JPEG format only. Documents for asynchronous operations can be in
-        /// PDF format.
+        /// The format of the input document isn't supported. Documents for operations can be
+        /// in PNG, JPEG, PDF, or TIFF format.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/StartDocumentAnalysis">REST API Reference for StartDocumentAnalysis Operation</seealso>
         Task<StartDocumentAnalysisResponse> StartDocumentAnalysisAsync(StartDocumentAnalysisRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1465,9 +1481,8 @@ namespace Amazon.Textract
         /// Amazon Textract is temporarily unable to process the request. Try your call again.
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.UnsupportedDocumentException">
-        /// The format of the input document isn't supported. Documents for synchronous operations
-        /// can be in PNG or JPEG format only. Documents for asynchronous operations can be in
-        /// PDF format.
+        /// The format of the input document isn't supported. Documents for operations can be
+        /// in PNG, JPEG, PDF, or TIFF format.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/StartDocumentTextDetection">REST API Reference for StartDocumentTextDetection Operation</seealso>
         StartDocumentTextDetectionResponse StartDocumentTextDetection(StartDocumentTextDetectionRequest request);
@@ -1558,9 +1573,8 @@ namespace Amazon.Textract
         /// Amazon Textract is temporarily unable to process the request. Try your call again.
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.UnsupportedDocumentException">
-        /// The format of the input document isn't supported. Documents for synchronous operations
-        /// can be in PNG or JPEG format only. Documents for asynchronous operations can be in
-        /// PDF format.
+        /// The format of the input document isn't supported. Documents for operations can be
+        /// in PNG, JPEG, PDF, or TIFF format.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/StartDocumentTextDetection">REST API Reference for StartDocumentTextDetection Operation</seealso>
         Task<StartDocumentTextDetectionResponse> StartDocumentTextDetectionAsync(StartDocumentTextDetectionRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1653,9 +1667,8 @@ namespace Amazon.Textract
         /// Amazon Textract is temporarily unable to process the request. Try your call again.
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.UnsupportedDocumentException">
-        /// The format of the input document isn't supported. Documents for synchronous operations
-        /// can be in PNG or JPEG format only. Documents for asynchronous operations can be in
-        /// PDF format.
+        /// The format of the input document isn't supported. Documents for operations can be
+        /// in PNG, JPEG, PDF, or TIFF format.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/StartExpenseAnalysis">REST API Reference for StartExpenseAnalysis Operation</seealso>
         StartExpenseAnalysisResponse StartExpenseAnalysis(StartExpenseAnalysisRequest request);
@@ -1748,9 +1761,8 @@ namespace Amazon.Textract
         /// Amazon Textract is temporarily unable to process the request. Try your call again.
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.UnsupportedDocumentException">
-        /// The format of the input document isn't supported. Documents for synchronous operations
-        /// can be in PNG or JPEG format only. Documents for asynchronous operations can be in
-        /// PDF format.
+        /// The format of the input document isn't supported. Documents for operations can be
+        /// in PNG, JPEG, PDF, or TIFF format.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/StartExpenseAnalysis">REST API Reference for StartExpenseAnalysis Operation</seealso>
         Task<StartExpenseAnalysisResponse> StartExpenseAnalysisAsync(StartExpenseAnalysisRequest request, CancellationToken cancellationToken = default(CancellationToken));

@@ -112,6 +112,12 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
                     unmarshalledObject.Page = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Query", targetDepth))
+                {
+                    var unmarshaller = QueryUnmarshaller.Instance;
+                    unmarshalledObject.Query = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Relationships", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<Relationship, RelationshipUnmarshaller>(RelationshipUnmarshaller.Instance);

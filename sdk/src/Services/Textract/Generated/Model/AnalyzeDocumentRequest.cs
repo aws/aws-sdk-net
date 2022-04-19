@@ -57,6 +57,12 @@ namespace Amazon.Textract.Model
     /// are returned (including text that doesn't have a relationship with the value of <code>FeatureTypes</code>).
     /// 
     /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Queries.A QUERIES_RESULT Block object contains the answer to the query, the alias
+    /// associated and an ID that connect it to the query asked. This Block also contains
+    /// a location and attached confidence score.
+    /// </para>
     ///  </li> </ul> 
     /// <para>
     /// Selection elements such as check boxes and option buttons (radio buttons) can be detected
@@ -88,13 +94,14 @@ namespace Amazon.Textract.Model
         private Document _document;
         private List<string> _featureTypes = new List<string>();
         private HumanLoopConfig _humanLoopConfig;
+        private QueriesConfig _queriesConfig;
 
         /// <summary>
         /// Gets and sets the property Document. 
         /// <para>
         /// The input document as base64-encoded bytes or an Amazon S3 object. If you use the
         /// AWS CLI to call Amazon Textract operations, you can't pass image bytes. The document
-        /// must be an image in JPEG or PNG format.
+        /// must be an image in JPEG, PNG, PDF, or TIFF format.
         /// </para>
         ///  
         /// <para>
@@ -154,6 +161,24 @@ namespace Amazon.Textract.Model
         internal bool IsSetHumanLoopConfig()
         {
             return this._humanLoopConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property QueriesConfig. 
+        /// <para>
+        /// Contains Queries and the alias for those Queries, as determined by the input. 
+        /// </para>
+        /// </summary>
+        public QueriesConfig QueriesConfig
+        {
+            get { return this._queriesConfig; }
+            set { this._queriesConfig = value; }
+        }
+
+        // Check to see if QueriesConfig property is set
+        internal bool IsSetQueriesConfig()
+        {
+            return this._queriesConfig != null;
         }
 
     }
