@@ -1,3 +1,22 @@
+### 3.7.248.0 (2022-04-19 01:07 UTC)
+* APIGateway (3.7.3.0)
+	* ApiGateway CLI command get-usage now includes usagePlanId, startDate, and endDate fields in the output to match documentation.
+* DocDB (3.7.3.0)
+	* Added support to enable/disable performance insights when creating or modifying db instances
+* EventBridge (3.7.5.0)
+	* Updated to use new Core, version 3.7.10.5
+	* Adds new EventBridge Endpoint resources for disaster recovery, multi-region failover, and cross-region replication capabilities to help you build resilient event-driven applications.
+* Personalize (3.7.8.0)
+	* This release provides tagging support in AWS Personalize.
+* PI (3.7.2.31)
+	* Adds support for DocumentDB to the Performance Insights API.
+* SageMaker (3.7.30.0)
+	* Amazon Sagemaker Notebook Instances now supports G5 instance types
+* Core 3.7.10.5
+	* Update Core to support EventBridge feature
+
+	* All services packages updated to require new Core
+
 ### 3.7.247.0 (2022-04-06 18:18 UTC)
 * ConfigService (3.7.9.0)
 	* Add resourceType enums for AWS::EMR::SecurityConfiguration and AWS::SageMaker::CodeRepository
