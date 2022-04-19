@@ -31,7 +31,7 @@ namespace Amazon.DocDB.Model
     /// <summary>
     /// Container for the parameters to the DescribeCertificates operation.
     /// Returns a list of certificate authority (CA) certificates provided by Amazon DocumentDB
-    /// for this account.
+    /// for this Amazon Web Services account.
     /// </summary>
     public partial class DescribeCertificatesRequest : AmazonDocDBRequest
     {
