@@ -30,7 +30,7 @@ namespace Amazon.Personalize.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeSchema operation.
-    /// Describes a schema. For more information on schemas, see <a>CreateSchema</a>.
+    /// Describes a schema. For more information on schemas, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSchema.html">CreateSchema</a>.
     /// </summary>
     public partial class DescribeSchemaRequest : AmazonPersonalizeRequest
     {

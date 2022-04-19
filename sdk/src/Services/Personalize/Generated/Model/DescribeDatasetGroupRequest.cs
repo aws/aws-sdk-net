@@ -30,7 +30,8 @@ namespace Amazon.Personalize.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeDatasetGroup operation.
-    /// Describes the given dataset group. For more information on dataset groups, see <a>CreateDatasetGroup</a>.
+    /// Describes the given dataset group. For more information on dataset groups, see <a
+    /// href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDatasetGroup.html">CreateDatasetGroup</a>.
     /// </summary>
     public partial class DescribeDatasetGroupRequest : AmazonPersonalizeRequest
     {

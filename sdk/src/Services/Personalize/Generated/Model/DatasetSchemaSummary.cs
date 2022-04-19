@@ -30,7 +30,8 @@ namespace Amazon.Personalize.Model
 {
     /// <summary>
     /// Provides a summary of the properties of a dataset schema. For a complete listing,
-    /// call the <a>DescribeSchema</a> API.
+    /// call the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeSchema.html">DescribeSchema</a>
+    /// API.
     /// </summary>
     public partial class DatasetSchemaSummary
     {

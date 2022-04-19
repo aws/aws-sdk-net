@@ -62,8 +62,8 @@ namespace Amazon.Personalize.Model
         /// <summary>
         /// Gets and sets the property AutoMLConfig. 
         /// <para>
-        /// The <a>AutoMLConfig</a> object containing a list of recipes to search when AutoML
-        /// is performed.
+        /// The <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_AutoMLConfig.html">AutoMLConfig</a>
+        /// object containing a list of recipes to search when AutoML is performed.
         /// </para>
         /// </summary>
         public AutoMLConfig AutoMLConfig

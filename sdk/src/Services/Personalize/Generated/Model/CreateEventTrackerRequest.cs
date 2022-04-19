@@ -61,7 +61,7 @@ namespace Amazon.Personalize.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// To get the status of the event tracker, call <a>DescribeEventTracker</a>.
+    /// To get the status of the event tracker, call <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeEventTracker.html">DescribeEventTracker</a>.
     /// </para>
     ///  <note> 
     /// <para>
@@ -71,15 +71,18 @@ namespace Amazon.Personalize.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>ListEventTrackers</a> 
+    ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListEventTrackers.html">ListEventTrackers</a>
+    /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DescribeEventTracker</a> 
+    ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeEventTracker.html">DescribeEventTracker</a>
+    /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DeleteEventTracker</a> 
+    ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DeleteEventTracker.html">DeleteEventTracker</a>
+    /// 
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -87,6 +90,7 @@ namespace Amazon.Personalize.Model
     {
         private string _datasetGroupArn;
         private string _name;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property DatasetGroupArn. 
@@ -124,6 +128,26 @@ namespace Amazon.Personalize.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+        /// to apply to the event tracker.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=200)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

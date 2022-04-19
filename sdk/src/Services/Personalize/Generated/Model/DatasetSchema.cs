@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Personalize.Model
 {
     /// <summary>
-    /// Describes the schema for a dataset. For more information on schemas, see <a>CreateSchema</a>.
+    /// Describes the schema for a dataset. For more information on schemas, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSchema.html">CreateSchema</a>.
     /// </summary>
     public partial class DatasetSchema
     {
