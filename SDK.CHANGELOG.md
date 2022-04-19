@@ -1,3 +1,13 @@
+### 3.7.254.1 (2022-04-19 14:08 UTC)
+* DynamoDBv2 (3.7.3.24)
+	* Fixed an issue in DynamoDBv2 to allow lists and maps to be mapped even if null is set to false.
+* Kinesis (3.7.1.45)
+	* Update service-specific solution file with full integration test dependencies
+* S3 (3.7.8.21)
+	* Update service-specific solution file with full integration test dependencies
+* Core 3.7.10.9
+	* Fixed signature mismatch error by ensuring service url returned from client config has trailing slash.
+
 ### 3.7.254.0 (2022-04-15 18:16 UTC)
 * Athena (3.7.6.0)
 	* This release adds subfields, ErrorMessage, Retryable, to the AthenaError response object in the GetQueryExecution API when a query fails.
