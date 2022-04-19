@@ -1,3 +1,29 @@
+### 3.7.255.0 (2022-04-19 18:21 UTC)
+* AutoScaling (3.7.10.0)
+	* EC2 Auto Scaling now adds default instance warm-up times for all scaling activities, health check replacements, and other replacement events in the Auto Scaling instance lifecycle.
+* Kendra (3.7.17.0)
+	* Amazon Kendra now provides a data source connector for Quip. For more information, see https://docs.aws.amazon.com/kendra/latest/dg/data-source-quip.html
+* KeyManagementService (3.7.3.0)
+	* Adds support for KMS keys and APIs that generate and verify HMAC codes
+* Personalize (3.7.9.0)
+	* Adding StartRecommender and StopRecommender APIs for Personalize.
+* Polly (3.7.5.0)
+	* Amazon Polly adds new Austrian German voice - Hannah. Hannah is available as Neural voice only.
+* Redshift (3.7.14.0)
+	* Introduces new fields for LogDestinationType and LogExports on EnableLogging requests and Enable/Disable/DescribeLogging responses. Customers can now select CloudWatch Logs as a destination for their Audit Logs.
+* SimpleSystemsManagement (3.7.15.0)
+	* Added offset support for specifying the number of days to wait after the date and time specified by a CRON expression when creating SSM association.
+* Textract (3.7.5.0)
+	* This release adds support for specifying and extracting information from documents using the Queries feature within Analyze Document API
+* Transfer (3.7.10.14)
+	* This release contains corrected HomeDirectoryMappings examples for several API functions: CreateAccess, UpdateAccess, CreateUser, and UpdateUser,.
+* WorkLink (3.7.1.0)
+	* Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.
+* Core 3.7.10.10
+	* Updating endpoints.json file.
+
+	* All services packages updated to require new Core
+
 ### 3.7.254.1 (2022-04-19 14:08 UTC)
 * DynamoDBv2 (3.7.3.24)
 	* Fixed an issue in DynamoDBv2 to allow lists and maps to be mapped even if null is set to false.
