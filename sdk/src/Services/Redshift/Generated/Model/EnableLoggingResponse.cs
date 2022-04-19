@@ -37,6 +37,8 @@ namespace Amazon.Redshift.Model
         private string _lastFailureMessage;
         private DateTime? _lastFailureTime;
         private DateTime? _lastSuccessfulDeliveryTime;
+        private LogDestinationType _logDestinationType;
+        private List<string> _logExports = new List<string>();
         private bool? _loggingEnabled;
         private string _s3KeyPrefix;
 
@@ -112,6 +114,43 @@ namespace Amazon.Redshift.Model
         internal bool IsSetLastSuccessfulDeliveryTime()
         {
             return this._lastSuccessfulDeliveryTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LogDestinationType. 
+        /// <para>
+        /// The log destination type. An enum with possible values of <code>s3</code> and <code>cloudwatch</code>.
+        /// </para>
+        /// </summary>
+        public LogDestinationType LogDestinationType
+        {
+            get { return this._logDestinationType; }
+            set { this._logDestinationType = value; }
+        }
+
+        // Check to see if LogDestinationType property is set
+        internal bool IsSetLogDestinationType()
+        {
+            return this._logDestinationType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LogExports. 
+        /// <para>
+        /// The collection of exported log types. Log types include the connection log, user log
+        /// and user activity log.
+        /// </para>
+        /// </summary>
+        public List<string> LogExports
+        {
+            get { return this._logExports; }
+            set { this._logExports = value; }
+        }
+
+        // Check to see if LogExports property is set
+        internal bool IsSetLogExports()
+        {
+            return this._logExports != null && this._logExports.Count > 0; 
         }
 
         /// <summary>

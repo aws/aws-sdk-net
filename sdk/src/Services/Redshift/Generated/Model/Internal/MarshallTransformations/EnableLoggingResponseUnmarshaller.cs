@@ -105,6 +105,19 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                         response.LastSuccessfulDeliveryTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("LogDestinationType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.LogDestinationType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("LogExports/member", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        response.LogExports.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("LoggingEnabled", targetDepth))
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;
