@@ -641,6 +641,55 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  AssociatePhoneNumberContactFlow
+
+        internal virtual AssociatePhoneNumberContactFlowResponse AssociatePhoneNumberContactFlow(AssociatePhoneNumberContactFlowRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociatePhoneNumberContactFlowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociatePhoneNumberContactFlowResponseUnmarshaller.Instance;
+
+            return Invoke<AssociatePhoneNumberContactFlowResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Associates a contact flow with a phone number claimed to your Amazon Connect instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociatePhoneNumberContactFlow service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociatePhoneNumberContactFlow service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociatePhoneNumberContactFlow">REST API Reference for AssociatePhoneNumberContactFlow Operation</seealso>
+        public virtual Task<AssociatePhoneNumberContactFlowResponse> AssociatePhoneNumberContactFlowAsync(AssociatePhoneNumberContactFlowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociatePhoneNumberContactFlowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociatePhoneNumberContactFlowResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AssociatePhoneNumberContactFlowResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  AssociateQueueQuickConnects
 
         internal virtual AssociateQueueQuickConnectsResponse AssociateQueueQuickConnects(AssociateQueueQuickConnectsRequest request)
@@ -803,6 +852,58 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = AssociateSecurityKeyResponseUnmarshaller.Instance;
 
             return InvokeAsync<AssociateSecurityKeyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ClaimPhoneNumber
+
+        internal virtual ClaimPhoneNumberResponse ClaimPhoneNumber(ClaimPhoneNumberRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ClaimPhoneNumberRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ClaimPhoneNumberResponseUnmarshaller.Instance;
+
+            return Invoke<ClaimPhoneNumberResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Claims an available phone number to your Amazon Connect instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ClaimPhoneNumber service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ClaimPhoneNumber service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.IdempotencyException">
+        /// An entity with the same name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ClaimPhoneNumber">REST API Reference for ClaimPhoneNumber Operation</seealso>
+        public virtual Task<ClaimPhoneNumberResponse> ClaimPhoneNumberAsync(ClaimPhoneNumberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ClaimPhoneNumberRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ClaimPhoneNumberResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ClaimPhoneNumberResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2643,6 +2744,55 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  DescribePhoneNumber
+
+        internal virtual DescribePhoneNumberResponse DescribePhoneNumber(DescribePhoneNumberRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribePhoneNumberRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribePhoneNumberResponseUnmarshaller.Instance;
+
+            return Invoke<DescribePhoneNumberResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets details and status of a phone number that’s claimed to your Amazon Connect instance
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribePhoneNumber service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribePhoneNumber service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribePhoneNumber">REST API Reference for DescribePhoneNumber Operation</seealso>
+        public virtual Task<DescribePhoneNumberResponse> DescribePhoneNumberAsync(DescribePhoneNumberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribePhoneNumberRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribePhoneNumberResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribePhoneNumberResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeQueue
 
         internal virtual DescribeQueueResponse DescribeQueue(DescribeQueueRequest request)
@@ -3314,6 +3464,56 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = DisassociateLexBotResponseUnmarshaller.Instance;
 
             return InvokeAsync<DisassociateLexBotResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DisassociatePhoneNumberContactFlow
+
+        internal virtual DisassociatePhoneNumberContactFlowResponse DisassociatePhoneNumberContactFlow(DisassociatePhoneNumberContactFlowRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociatePhoneNumberContactFlowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociatePhoneNumberContactFlowResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociatePhoneNumberContactFlowResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Removes the contact flow association from a phone number claimed to your Amazon Connect
+        /// instance, if a contact flow association exists.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociatePhoneNumberContactFlow service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociatePhoneNumberContactFlow service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociatePhoneNumberContactFlow">REST API Reference for DisassociatePhoneNumberContactFlow Operation</seealso>
+        public virtual Task<DisassociatePhoneNumberContactFlowResponse> DisassociatePhoneNumberContactFlowAsync(DisassociatePhoneNumberContactFlowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociatePhoneNumberContactFlowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociatePhoneNumberContactFlowResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DisassociatePhoneNumberContactFlowResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4492,6 +4692,62 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  ListPhoneNumbersV2
+
+        internal virtual ListPhoneNumbersV2Response ListPhoneNumbersV2(ListPhoneNumbersV2Request request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPhoneNumbersV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPhoneNumbersV2ResponseUnmarshaller.Instance;
+
+            return Invoke<ListPhoneNumbersV2Response>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists phone numbers claimed to your Amazon Connect instance. 
+        /// 
+        ///  
+        /// <para>
+        /// For more information about phone numbers, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-center-phone-number.html">Set
+        /// Up Phone Numbers for Your Contact Center</a> in the <i>Amazon Connect Administrator
+        /// Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPhoneNumbersV2 service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListPhoneNumbersV2 service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListPhoneNumbersV2">REST API Reference for ListPhoneNumbersV2 Operation</seealso>
+        public virtual Task<ListPhoneNumbersV2Response> ListPhoneNumbersV2Async(ListPhoneNumbersV2Request request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPhoneNumbersV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPhoneNumbersV2ResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListPhoneNumbersV2Response>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListPrompts
 
         internal virtual ListPromptsResponse ListPrompts(ListPromptsRequest request)
@@ -5182,6 +5438,61 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  ReleasePhoneNumber
+
+        internal virtual ReleasePhoneNumberResponse ReleasePhoneNumber(ReleasePhoneNumberRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ReleasePhoneNumberRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ReleasePhoneNumberResponseUnmarshaller.Instance;
+
+            return Invoke<ReleasePhoneNumberResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Releases a phone number previously claimed to an Amazon Connect instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ReleasePhoneNumber service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ReleasePhoneNumber service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.IdempotencyException">
+        /// An entity with the same name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
+        /// That resource is already in use. Please try another.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ReleasePhoneNumber">REST API Reference for ReleasePhoneNumber Operation</seealso>
+        public virtual Task<ReleasePhoneNumberResponse> ReleasePhoneNumberAsync(ReleasePhoneNumberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ReleasePhoneNumberRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ReleasePhoneNumberResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ReleasePhoneNumberResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ResumeContactRecording
 
         internal virtual ResumeContactRecordingResponse ResumeContactRecording(ResumeContactRecordingRequest request)
@@ -5227,6 +5538,52 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = ResumeContactRecordingResponseUnmarshaller.Instance;
 
             return InvokeAsync<ResumeContactRecordingResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  SearchAvailablePhoneNumbers
+
+        internal virtual SearchAvailablePhoneNumbersResponse SearchAvailablePhoneNumbers(SearchAvailablePhoneNumbersRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchAvailablePhoneNumbersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchAvailablePhoneNumbersResponseUnmarshaller.Instance;
+
+            return Invoke<SearchAvailablePhoneNumbersResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Searches for available phone numbers that you can claim to your Amazon Connect instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchAvailablePhoneNumbers service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SearchAvailablePhoneNumbers service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchAvailablePhoneNumbers">REST API Reference for SearchAvailablePhoneNumbers Operation</seealso>
+        public virtual Task<SearchAvailablePhoneNumbersResponse> SearchAvailablePhoneNumbersAsync(SearchAvailablePhoneNumbersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchAvailablePhoneNumbersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchAvailablePhoneNumbersResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SearchAvailablePhoneNumbersResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5864,7 +6221,7 @@ namespace Amazon.Connect
         ///  
         /// <para>
         /// The supported resource types are users, routing profiles, queues, quick connects,
-        /// contact flows, agent status, and hours of operation.
+        /// contact flows, agent status, hours of operation, and phone number.
         /// </para>
         ///  
         /// <para>
@@ -6637,6 +6994,62 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = UpdateInstanceStorageConfigResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateInstanceStorageConfigResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdatePhoneNumber
+
+        internal virtual UpdatePhoneNumberResponse UpdatePhoneNumber(UpdatePhoneNumberRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdatePhoneNumberRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePhoneNumberResponseUnmarshaller.Instance;
+
+            return Invoke<UpdatePhoneNumberResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates your claimed phone number from its current Amazon Connect instance to another
+        /// Amazon Connect instance in the same Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePhoneNumber service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdatePhoneNumber service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.IdempotencyException">
+        /// An entity with the same name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
+        /// That resource is already in use. Please try another.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdatePhoneNumber">REST API Reference for UpdatePhoneNumber Operation</seealso>
+        public virtual Task<UpdatePhoneNumberResponse> UpdatePhoneNumberAsync(UpdatePhoneNumberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdatePhoneNumberRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePhoneNumberResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdatePhoneNumberResponse>(request, options, cancellationToken);
         }
 
         #endregion

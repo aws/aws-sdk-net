@@ -50,6 +50,15 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.AssociatePhoneNumberContactFlowRequest.ContactFlowId</property>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.AssociatePhoneNumberContactFlowRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.AssociateQueueQuickConnectsRequest.InstanceId</property>
     <min>1</min>
     <max>100</max>
@@ -73,6 +82,20 @@
     <property>Amazon.Connect.Model.AssociateSecurityKeyResponse.AssociationId</property>
     <min>1</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ClaimPhoneNumberRequest.ClientToken</property>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ClaimPhoneNumberRequest.PhoneNumber</property>
+    <pattern>\\+[1-9]\\d{1,14}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ClaimPhoneNumberRequest.PhoneNumberDescription</property>
+    <min>0</min>
+    <max>500</max>
+    <pattern>^[\W\S_]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.CreateAgentStatusRequest.Description</property>
@@ -553,6 +576,11 @@
     <max>60</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.DisassociatePhoneNumberContactFlowRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.DisassociateQueueQuickConnectsRequest.InstanceId</property>
     <min>1</min>
     <max>100</max>
@@ -765,6 +793,25 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.ListPhoneNumbersV2Request.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ListPhoneNumbersV2Request.NextToken</property>
+    <min>1</min>
+    <max>100000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ListPhoneNumbersV2Request.PhoneNumberPrefix</property>
+    <pattern>\\+?[0-9]{1,11}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ListPhoneNumbersV2Response.NextToken</property>
+    <min>1</min>
+    <max>100000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.ListPromptsRequest.InstanceId</property>
     <min>1</min>
     <max>100</max>
@@ -890,6 +937,10 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.ReleasePhoneNumberRequest.ClientToken</property>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.ResumeContactRecordingRequest.ContactId</property>
     <min>1</min>
     <max>256</max>
@@ -903,6 +954,25 @@
     <property>Amazon.Connect.Model.ResumeContactRecordingRequest.InstanceId</property>
     <min>1</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.SearchAvailablePhoneNumbersRequest.MaxResults</property>
+    <min>1</min>
+    <max>10</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.SearchAvailablePhoneNumbersRequest.NextToken</property>
+    <min>1</min>
+    <max>100000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.SearchAvailablePhoneNumbersRequest.PhoneNumberPrefix</property>
+    <pattern>\\+?[0-9]{1,11}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.SearchAvailablePhoneNumbersResponse.NextToken</property>
+    <min>1</min>
+    <max>100000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.SearchVocabulariesRequest.InstanceId</property>
@@ -1013,9 +1083,17 @@
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.StartOutboundVoiceContactRequest.DestinationPhoneNumber</property>
+    <pattern>\\+[1-9]\\d{1,14}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.StartOutboundVoiceContactRequest.InstanceId</property>
     <min>1</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.StartOutboundVoiceContactRequest.SourcePhoneNumber</property>
+    <pattern>\\+[1-9]\\d{1,14}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.StartOutboundVoiceContactResponse.ContactId</property>
@@ -1278,6 +1356,10 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.UpdatePhoneNumberRequest.ClientToken</property>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.UpdateQueueHoursOfOperationRequest.InstanceId</property>
     <min>1</min>
     <max>100</max>
@@ -1451,6 +1533,10 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.AvailableNumberSummary.PhoneNumber</property>
+    <pattern>\\+[1-9]\\d{1,14}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.ChatMessage.Content</property>
     <min>1</min>
     <max>1024</max>
@@ -1464,6 +1550,16 @@
     <property>Amazon.Connect.Model.ChatStreamingConfiguration.StreamingEndpointArn</property>
     <min>1</min>
     <max>350</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ClaimedPhoneNumberSummary.PhoneNumber</property>
+    <pattern>\\+[1-9]\\d{1,14}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ClaimedPhoneNumberSummary.PhoneNumberDescription</property>
+    <min>0</min>
+    <max>500</max>
+    <pattern>^[\W\S_]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.Contact.Description</property>
@@ -1652,6 +1748,10 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.ListPhoneNumbersSummary.PhoneNumber</property>
+    <pattern>\\+[1-9]\\d{1,14}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.MediaConcurrency.Concurrency</property>
     <min>1</min>
     <max>10</max>
@@ -1669,6 +1769,20 @@
     <property>Amazon.Connect.Model.ParticipantDetails.DisplayName</property>
     <min>1</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.PhoneNumberQuickConnectConfig.PhoneNumber</property>
+    <pattern>\\+[1-9]\\d{1,14}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.PhoneNumberStatus.Message</property>
+    <min>0</min>
+    <max>255</max>
+    <pattern>^[\W\S_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.PhoneNumberSummary.PhoneNumber</property>
+    <pattern>\\+[1-9]\\d{1,14}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ProblemDetail.Message</property>
@@ -1835,6 +1949,10 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.UserPhoneConfig.AfterContactWorkTimeLimit</property>
     <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.UserPhoneConfig.DeskPhoneNumber</property>
+    <pattern>\\+[1-9]\\d{1,14}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.UserQuickConnectConfig.ContactFlowId</property>

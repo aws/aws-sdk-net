@@ -172,6 +172,14 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Paginator for ListPhoneNumbersV2 operation
+        ///</summary>
+        public IListPhoneNumbersV2Paginator ListPhoneNumbersV2(ListPhoneNumbersV2Request request) 
+        {
+            return new ListPhoneNumbersV2Paginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListPrompts operation
         ///</summary>
         public IListPromptsPaginator ListPrompts(ListPromptsRequest request) 
@@ -265,6 +273,14 @@ namespace Amazon.Connect.Model
         public IListUsersPaginator ListUsers(ListUsersRequest request) 
         {
             return new ListUsersPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for SearchAvailablePhoneNumbers operation
+        ///</summary>
+        public ISearchAvailablePhoneNumbersPaginator SearchAvailablePhoneNumbers(SearchAvailablePhoneNumbersRequest request) 
+        {
+            return new SearchAvailablePhoneNumbersPaginator(this.client, request);
         }
 
         /// <summary>

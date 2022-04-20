@@ -111,6 +111,11 @@ namespace Amazon.Connect.Model
         IListPhoneNumbersPaginator ListPhoneNumbers(ListPhoneNumbersRequest request);
 
         /// <summary>
+        /// Paginator for ListPhoneNumbersV2 operation
+        ///</summary>
+        IListPhoneNumbersV2Paginator ListPhoneNumbersV2(ListPhoneNumbersV2Request request);
+
+        /// <summary>
         /// Paginator for ListPrompts operation
         ///</summary>
         IListPromptsPaginator ListPrompts(ListPromptsRequest request);
@@ -169,6 +174,11 @@ namespace Amazon.Connect.Model
         /// Paginator for ListUsers operation
         ///</summary>
         IListUsersPaginator ListUsers(ListUsersRequest request);
+
+        /// <summary>
+        /// Paginator for SearchAvailablePhoneNumbers operation
+        ///</summary>
+        ISearchAvailablePhoneNumbersPaginator SearchAvailablePhoneNumbers(SearchAvailablePhoneNumbersRequest request);
 
         /// <summary>
         /// Paginator for SearchVocabularies operation
