@@ -122,6 +122,7 @@ namespace Amazon.RDS.Model
         private List<string> _readReplicaIdentifiers = new List<string>();
         private string _replicationSourceIdentifier;
         private ScalingConfigurationInfo _scalingConfigurationInfo;
+        private ServerlessV2ScalingConfigurationInfo _serverlessV2ScalingConfiguration;
         private string _status;
         private bool? _storageEncrypted;
         private string _storageType;
@@ -1382,6 +1383,21 @@ namespace Amazon.RDS.Model
         internal bool IsSetScalingConfigurationInfo()
         {
             return this._scalingConfigurationInfo != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServerlessV2ScalingConfiguration.
+        /// </summary>
+        public ServerlessV2ScalingConfigurationInfo ServerlessV2ScalingConfiguration
+        {
+            get { return this._serverlessV2ScalingConfiguration; }
+            set { this._serverlessV2ScalingConfiguration = value; }
+        }
+
+        // Check to see if ServerlessV2ScalingConfiguration property is set
+        internal bool IsSetServerlessV2ScalingConfiguration()
+        {
+            return this._serverlessV2ScalingConfiguration != null;
         }
 
         /// <summary>

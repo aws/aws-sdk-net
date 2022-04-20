@@ -83,6 +83,7 @@ namespace Amazon.RDS.Model
         private string _s3BucketName;
         private string _s3IngestionRoleArn;
         private string _s3Prefix;
+        private ServerlessV2ScalingConfiguration _serverlessV2ScalingConfiguration;
         private string _sourceEngine;
         private string _sourceEngineVersion;
         private bool? _storageEncrypted;
@@ -824,6 +825,21 @@ namespace Amazon.RDS.Model
         internal bool IsSetS3Prefix()
         {
             return this._s3Prefix != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServerlessV2ScalingConfiguration.
+        /// </summary>
+        public ServerlessV2ScalingConfiguration ServerlessV2ScalingConfiguration
+        {
+            get { return this._serverlessV2ScalingConfiguration; }
+            set { this._serverlessV2ScalingConfiguration = value; }
+        }
+
+        // Check to see if ServerlessV2ScalingConfiguration property is set
+        internal bool IsSetServerlessV2ScalingConfiguration()
+        {
+            return this._serverlessV2ScalingConfiguration != null;
         }
 
         /// <summary>

@@ -166,6 +166,17 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         request.Parameters.Add("ScalingConfiguration" + "." + "TimeoutAction", StringUtils.FromString(publicRequest.ScalingConfiguration.TimeoutAction));
                     }
                 }
+                if(publicRequest.IsSetServerlessV2ScalingConfiguration())
+                {
+                    if(publicRequest.ServerlessV2ScalingConfiguration.IsSetMaxCapacity())
+                    {
+                        request.Parameters.Add("ServerlessV2ScalingConfiguration" + "." + "MaxCapacity", StringUtils.FromDouble(publicRequest.ServerlessV2ScalingConfiguration.MaxCapacity));
+                    }
+                    if(publicRequest.ServerlessV2ScalingConfiguration.IsSetMinCapacity())
+                    {
+                        request.Parameters.Add("ServerlessV2ScalingConfiguration" + "." + "MinCapacity", StringUtils.FromDouble(publicRequest.ServerlessV2ScalingConfiguration.MinCapacity));
+                    }
+                }
                 if(publicRequest.IsSetSourceDBClusterIdentifier())
                 {
                     request.Parameters.Add("SourceDBClusterIdentifier", StringUtils.FromString(publicRequest.SourceDBClusterIdentifier));
