@@ -29,14 +29,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie2.Model
 {
     /// <summary>
-    /// Provides information about a sensitive data finding, including the classification
-    /// job that produced the finding.
+    /// Provides information about a sensitive data finding and the details of the finding.
     /// </summary>
     public partial class ClassificationDetails
     {
         private string _detailedResultsLocation;
         private string _jobArn;
         private string _jobId;
+        private OriginType _originType;
         private ClassificationResult _result;
 
         /// <summary>
@@ -94,6 +94,25 @@ namespace Amazon.Macie2.Model
         internal bool IsSetJobId()
         {
             return this._jobId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OriginType. 
+        /// <para>
+        /// Specifies how Amazon Macie found the sensitive data that produced the finding: SENSITIVE_DATA_DISCOVERY_JOB,
+        /// for a classification job.
+        /// </para>
+        /// </summary>
+        public OriginType OriginType
+        {
+            get { return this._originType; }
+            set { this._originType = value; }
+        }
+
+        // Check to see if OriginType property is set
+        internal bool IsSetOriginType()
+        {
+            return this._originType != null;
         }
 
         /// <summary>

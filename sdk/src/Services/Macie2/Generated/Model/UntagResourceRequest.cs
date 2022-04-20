@@ -61,9 +61,9 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property TagKeys. 
         /// <para>
-        /// The key of the tag to remove from the resource. To remove multiple tags, append the
-        /// tagKeys parameter and argument for each additional tag to remove, separated by an
-        /// ampersand (&amp;).
+        /// One or more tags (keys) to remove from the resource. In an HTTP request to remove
+        /// multiple tags, append the tagKeys parameter and argument for each tag to remove, and
+        /// separate them with an ampersand (&amp;).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

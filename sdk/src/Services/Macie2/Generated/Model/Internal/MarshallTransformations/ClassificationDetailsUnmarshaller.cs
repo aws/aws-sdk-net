@@ -82,6 +82,12 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
                     unmarshalledObject.JobId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("originType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.OriginType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("result", targetDepth))
                 {
                     var unmarshaller = ClassificationResultUnmarshaller.Instance;
