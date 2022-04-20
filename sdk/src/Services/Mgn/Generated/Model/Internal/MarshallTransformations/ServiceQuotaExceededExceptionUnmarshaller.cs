@@ -76,6 +76,12 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
                     unmarshalledObject.QuotaCode = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("quotaValue", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.QuotaValue = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("resourceId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

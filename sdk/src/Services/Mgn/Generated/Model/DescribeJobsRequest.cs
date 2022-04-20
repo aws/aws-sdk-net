@@ -49,7 +49,6 @@ namespace Amazon.Mgn.Model
         /// Request to describe Job log filters.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public DescribeJobsRequestFilters Filters
         {
             get { return this._filters; }

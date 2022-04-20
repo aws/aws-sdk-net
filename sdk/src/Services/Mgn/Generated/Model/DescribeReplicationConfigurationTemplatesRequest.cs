@@ -82,7 +82,7 @@ namespace Amazon.Mgn.Model
         /// Request to describe Replication Configuration template by template IDs.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=200)]
+        [AWSProperty(Min=0, Max=200)]
         public List<string> ReplicationConfigurationTemplateIDs
         {
             get { return this._replicationConfigurationTemplateIDs; }

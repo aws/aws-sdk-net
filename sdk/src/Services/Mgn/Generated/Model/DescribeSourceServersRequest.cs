@@ -44,7 +44,6 @@ namespace Amazon.Mgn.Model
         /// Request to filter Source Servers list.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public DescribeSourceServersRequestFilters Filters
         {
             get { return this._filters; }

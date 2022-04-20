@@ -864,6 +864,10 @@
     <max>65536</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Mgn.Model.ServiceQuotaExceededException.QuotaValue</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Mgn.Model.ServiceQuotaExceededException.ResourceId</property>
     <min>0</min>
     <max>65536</max>
