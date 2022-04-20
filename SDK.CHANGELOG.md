@@ -1,3 +1,17 @@
+### 3.7.256.0 (2022-04-20 18:16 UTC)
+* Connect (3.7.17.0)
+	* This release adds APIs to search, claim, release, list, update, and describe phone numbers. You can also use them to associate and disassociate contact flows to phone numbers.
+* Macie2 (3.7.8.0)
+	* Sensitive data findings in Amazon Macie now indicate how Macie found the sensitive data that produced a finding (originType).
+* Mgn (3.7.4.0)
+	* Removed required annotation from input fields in Describe operations requests. Added quotaValue to ServiceQuotaExceededException
+* RDS (3.7.12.0)
+	* Added a new cluster-level attribute to set the capacity range for Aurora Serverless v2 instances.
+* Core 3.7.10.11
+	* Updating endpoints.json file.
+
+	* All services packages updated to require new Core
+
 ### 3.7.255.0 (2022-04-19 18:21 UTC)
 * AutoScaling (3.7.10.0)
 	* EC2 Auto Scaling now adds default instance warm-up times for all scaling activities, health check replacements, and other replacement events in the Auto Scaling instance lifecycle.
