@@ -33,7 +33,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             "a/b/c",
             "a/b/d",
             "a/e",
-            "a/f"
+            "a/f",
+            "a/g\rh",
+            "a/g\ni",
+            "a/g&j",
         };
 
         [ClassInitialize()]
@@ -61,7 +64,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             AmazonS3Util.DeleteS3BucketWithObjects(Client, bucketName);
             BaseClean();
         }
-
 
         [TestMethod]
         [TestCategory("S3")]
@@ -93,6 +95,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             Assert.AreEqual(keys.Count - 1, response.S3Objects.Count);
             Assert.IsNull(response.ContinuationToken);
             Assert.IsNotNull(response.S3Objects[0].Owner);
+            Assert.IsTrue(response.S3Objects.Any(o => o.Key.Contains("\r")));
+            Assert.IsTrue(response.S3Objects.Any(o => o.Key.Contains("\n")));
+            Assert.IsTrue(response.S3Objects.Any(o => o.Key.Contains("&")));
 
             response = Client.ListObjectsV2(new ListObjectsV2Request
             {
@@ -126,7 +131,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             Assert.IsNotNull(response.S3Objects[0].Owner);
             Assert.AreEqual(response.S3Objects[0].BucketName, bucketName);
 
-
             response = Client.ListObjectsV2(new ListObjectsV2Request
             {
                 BucketName = bucketName,
@@ -156,6 +160,5 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             Assert.IsNull(response.S3Objects[0].Owner);
             Assert.AreEqual(response.S3Objects[0].BucketName, bucketName);
         }
-
     }
 }

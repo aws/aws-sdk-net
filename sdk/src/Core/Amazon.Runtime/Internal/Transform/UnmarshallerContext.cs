@@ -330,11 +330,6 @@ namespace Amazon.Runtime.Internal.Transform
     {
         #region Private members
 
-#if BCL35
-        private static readonly XmlReaderSettings READER_SETTINGS = new XmlReaderSettings() { ProhibitDtd = false, IgnoreWhitespace = true };
-#else
-        private static readonly XmlReaderSettings READER_SETTINGS = new XmlReaderSettings() { DtdProcessing = DtdProcessing.Ignore, IgnoreWhitespace = true };
-#endif
         private static HashSet<XmlNodeType> nodesToSkip = new HashSet<XmlNodeType>
         {
             XmlNodeType.None,
@@ -344,7 +339,7 @@ namespace Amazon.Runtime.Internal.Transform
         };
 
         private StreamReader streamReader;
-        private XmlReader _xmlReader;
+        private XmlTextReader _xmlTextReader;
         private Stack<string> stack = new Stack<string>();
         private string stackString = "";
         private Dictionary<string, string> attributeValues;
@@ -367,16 +362,28 @@ namespace Amazon.Runtime.Internal.Transform
         /// Lookup of element names that are not skipped if empty within the XML response structure.
         /// </summary>
         public HashSet<string> AllowEmptyElementLookup { get; private set; }
-        
-        private XmlReader XmlReader
+
+        /// <remarks>
+        /// Despite Microsoft's recommendation to use XmlReader for .NET Framework 2.0 or greater 
+        /// (https://docs.microsoft.com/en-us/dotnet/api/system.xml.xmltextreader#remarks), this class
+        /// intentionally uses XmlTextReader to handle the XML related object key constraints 
+        /// for S3 (https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html).
+        /// </remarks>
+        private XmlTextReader XmlReader
         {
             get
             {
-                if (_xmlReader == null)
+                if (_xmlTextReader == null)
                 {
-                    _xmlReader = XmlReader.Create(streamReader, READER_SETTINGS);
+                    _xmlTextReader = new XmlTextReader(streamReader);
+                    _xmlTextReader.WhitespaceHandling = WhitespaceHandling.None;
+#if BCL35
+                    _xmlTextReader.ProhibitDtd = false;
+#else
+                    _xmlTextReader.DtdProcessing = DtdProcessing.Ignore;
+#endif
                 }
-                return _xmlReader;
+                return _xmlTextReader;
             }
         }
 
@@ -637,14 +644,14 @@ namespace Amazon.Runtime.Internal.Transform
                         streamReader.Dispose();
                         streamReader = null;
                     }
-                    if (_xmlReader != null)
+                    if (_xmlTextReader != null)
                     {
 #if NETSTANDARD
-                        _xmlReader.Dispose();
+                        _xmlTextReader.Dispose();
 #else
-                        _xmlReader.Close();
+                        _xmlTextReader.Close();
 #endif
-                        _xmlReader = null;
+                        _xmlTextReader = null;
                     }
                 }
                 disposed = true;
