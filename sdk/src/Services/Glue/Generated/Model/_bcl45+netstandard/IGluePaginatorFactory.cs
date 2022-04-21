@@ -141,6 +141,11 @@ namespace Amazon.Glue.Model
         IListCrawlersPaginator ListCrawlers(ListCrawlersRequest request);
 
         /// <summary>
+        /// Paginator for ListCustomEntityTypes operation
+        ///</summary>
+        IListCustomEntityTypesPaginator ListCustomEntityTypes(ListCustomEntityTypesRequest request);
+
+        /// <summary>
         /// Paginator for ListDevEndpoints operation
         ///</summary>
         IListDevEndpointsPaginator ListDevEndpoints(ListDevEndpointsRequest request);

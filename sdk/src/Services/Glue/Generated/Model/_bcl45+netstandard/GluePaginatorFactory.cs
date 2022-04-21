@@ -220,6 +220,14 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
+        /// Paginator for ListCustomEntityTypes operation
+        ///</summary>
+        public IListCustomEntityTypesPaginator ListCustomEntityTypes(ListCustomEntityTypesRequest request) 
+        {
+            return new ListCustomEntityTypesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListDevEndpoints operation
         ///</summary>
         public IListDevEndpointsPaginator ListDevEndpoints(ListDevEndpointsRequest request) 

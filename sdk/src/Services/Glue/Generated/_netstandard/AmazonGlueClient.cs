@@ -600,6 +600,49 @@ namespace Amazon.Glue
 
         #endregion
         
+        #region  BatchGetCustomEntityTypes
+
+        internal virtual BatchGetCustomEntityTypesResponse BatchGetCustomEntityTypes(BatchGetCustomEntityTypesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetCustomEntityTypesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetCustomEntityTypesResponseUnmarshaller.Instance;
+
+            return Invoke<BatchGetCustomEntityTypesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetCustomEntityTypes service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchGetCustomEntityTypes service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchGetCustomEntityTypes">REST API Reference for BatchGetCustomEntityTypes Operation</seealso>
+        public virtual Task<BatchGetCustomEntityTypesResponse> BatchGetCustomEntityTypesAsync(BatchGetCustomEntityTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetCustomEntityTypesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetCustomEntityTypesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<BatchGetCustomEntityTypesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  BatchGetDevEndpoints
 
         internal virtual BatchGetDevEndpointsResponse BatchGetDevEndpoints(BatchGetDevEndpointsRequest request)
@@ -1264,6 +1307,61 @@ namespace Amazon.Glue
             options.ResponseUnmarshaller = CreateCrawlerResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateCrawlerResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateCustomEntityType
+
+        internal virtual CreateCustomEntityTypeResponse CreateCustomEntityType(CreateCustomEntityTypeRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateCustomEntityTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCustomEntityTypeResponseUnmarshaller.Instance;
+
+            return Invoke<CreateCustomEntityTypeResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCustomEntityType service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateCustomEntityType service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.AlreadyExistsException">
+        /// A resource to be created or added already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.IdempotentParameterMismatchException">
+        /// The same unique identifier was associated with two different records.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNumberLimitExceededException">
+        /// A resource numerical limit was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateCustomEntityType">REST API Reference for CreateCustomEntityType Operation</seealso>
+        public virtual Task<CreateCustomEntityTypeResponse> CreateCustomEntityTypeAsync(CreateCustomEntityTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateCustomEntityTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCustomEntityTypeResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateCustomEntityTypeResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2395,6 +2493,55 @@ namespace Amazon.Glue
             options.ResponseUnmarshaller = DeleteCrawlerResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteCrawlerResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteCustomEntityType
+
+        internal virtual DeleteCustomEntityTypeResponse DeleteCustomEntityType(DeleteCustomEntityTypeRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCustomEntityTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCustomEntityTypeResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteCustomEntityTypeResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCustomEntityType service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteCustomEntityType service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteCustomEntityType">REST API Reference for DeleteCustomEntityType Operation</seealso>
+        public virtual Task<DeleteCustomEntityTypeResponse> DeleteCustomEntityTypeAsync(DeleteCustomEntityTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCustomEntityTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCustomEntityTypeResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteCustomEntityTypeResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3833,6 +3980,55 @@ namespace Amazon.Glue
             options.ResponseUnmarshaller = GetCrawlersResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetCrawlersResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetCustomEntityType
+
+        internal virtual GetCustomEntityTypeResponse GetCustomEntityType(GetCustomEntityTypeRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCustomEntityTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCustomEntityTypeResponseUnmarshaller.Instance;
+
+            return Invoke<GetCustomEntityTypeResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCustomEntityType service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetCustomEntityType service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetCustomEntityType">REST API Reference for GetCustomEntityType Operation</seealso>
+        public virtual Task<GetCustomEntityTypeResponse> GetCustomEntityTypeAsync(GetCustomEntityTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCustomEntityTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCustomEntityTypeResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetCustomEntityTypeResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -6241,6 +6437,49 @@ namespace Amazon.Glue
             options.ResponseUnmarshaller = ListCrawlersResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListCrawlersResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListCustomEntityTypes
+
+        internal virtual ListCustomEntityTypesResponse ListCustomEntityTypes(ListCustomEntityTypesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCustomEntityTypesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCustomEntityTypesResponseUnmarshaller.Instance;
+
+            return Invoke<ListCustomEntityTypesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCustomEntityTypes service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListCustomEntityTypes service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListCustomEntityTypes">REST API Reference for ListCustomEntityTypes Operation</seealso>
+        public virtual Task<ListCustomEntityTypesResponse> ListCustomEntityTypesAsync(ListCustomEntityTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCustomEntityTypesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCustomEntityTypesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListCustomEntityTypesResponse>(request, options, cancellationToken);
         }
 
         #endregion

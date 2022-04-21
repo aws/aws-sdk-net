@@ -191,6 +191,21 @@
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.CreateCustomEntityTypeRequest.Name</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.CreateCustomEntityTypeRequest.RegexString</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.CreateCustomEntityTypeResponse.Name</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.CreateDatabaseRequest.CatalogId</property>
     <min>1</min>
     <max>255</max>
@@ -583,6 +598,16 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.DeleteCustomEntityTypeRequest.Name</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.DeleteCustomEntityTypeResponse.Name</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.DeleteDatabaseRequest.CatalogId</property>
     <min>1</min>
     <max>255</max>
@@ -890,6 +915,21 @@
     <property>Amazon.Glue.Model.GetCrawlersRequest.MaxResults</property>
     <min>1</min>
     <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.GetCustomEntityTypeRequest.Name</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.GetCustomEntityTypeResponse.Name</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.GetCustomEntityTypeResponse.RegexString</property>
+    <min>1</min>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.GetDatabaseRequest.CatalogId</property>
@@ -1488,6 +1528,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.ListCrawlersRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.ListCustomEntityTypesRequest.MaxResults</property>
     <min>1</min>
     <max>1000</max>
   </property-value-rule>
@@ -2576,6 +2621,16 @@
     <min>1</min>
     <max>1</max>
     <pattern>[^\r\n]</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.CustomEntityType.Name</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.CustomEntityType.RegexString</property>
+    <min>1</min>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.Database.CatalogId</property>
