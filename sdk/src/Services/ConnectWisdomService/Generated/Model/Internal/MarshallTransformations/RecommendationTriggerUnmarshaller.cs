@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ConnectWisdomService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for RecommendationData Object
+    /// Response Unmarshaller for RecommendationTrigger Object
     /// </summary>  
-    public class RecommendationDataUnmarshaller : IUnmarshaller<RecommendationData, XmlUnmarshallerContext>, IUnmarshaller<RecommendationData, JsonUnmarshallerContext>
+    public class RecommendationTriggerUnmarshaller : IUnmarshaller<RecommendationTrigger, XmlUnmarshallerContext>, IUnmarshaller<RecommendationTrigger, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        RecommendationData IUnmarshaller<RecommendationData, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        RecommendationTrigger IUnmarshaller<RecommendationTrigger, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,39 @@ namespace Amazon.ConnectWisdomService.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public RecommendationData Unmarshall(JsonUnmarshallerContext context)
+        public RecommendationTrigger Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            RecommendationData unmarshalledObject = new RecommendationData();
+            RecommendationTrigger unmarshalledObject = new RecommendationTrigger();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("document", targetDepth))
+                if (context.TestExpression("data", targetDepth))
                 {
-                    var unmarshaller = DocumentUnmarshaller.Instance;
-                    unmarshalledObject.Document = unmarshaller.Unmarshall(context);
+                    var unmarshaller = RecommendationTriggerDataUnmarshaller.Instance;
+                    unmarshalledObject.Data = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("recommendationId", targetDepth))
+                if (context.TestExpression("id", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RecommendationId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Id = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("relevanceLevel", targetDepth))
+                if (context.TestExpression("recommendationIds", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.RecommendationIds = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("source", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RelevanceLevel = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("relevanceScore", targetDepth))
-                {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
-                    unmarshalledObject.RelevanceScore = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Source = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("type", targetDepth))
@@ -100,12 +100,12 @@ namespace Amazon.ConnectWisdomService.Model.Internal.MarshallTransformations
         }
 
 
-        private static RecommendationDataUnmarshaller _instance = new RecommendationDataUnmarshaller();        
+        private static RecommendationTriggerUnmarshaller _instance = new RecommendationTriggerUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RecommendationDataUnmarshaller Instance
+        public static RecommendationTriggerUnmarshaller Instance
         {
             get
             {

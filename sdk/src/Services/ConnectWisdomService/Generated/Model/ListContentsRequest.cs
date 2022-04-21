@@ -41,7 +41,7 @@ namespace Amazon.ConnectWisdomService.Model
         /// <summary>
         /// Gets and sets the property KnowledgeBaseId. 
         /// <para>
-        /// The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot
+        /// The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot
         /// contain the ARN.
         /// </para>
         /// </summary>

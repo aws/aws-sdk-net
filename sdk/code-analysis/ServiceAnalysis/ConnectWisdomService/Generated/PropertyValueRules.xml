@@ -319,7 +319,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectWisdomService.Model.StartContentUploadRequest.ContentType</property>
-    <pattern>^(text/(plain|html))|(application/x\.wisdom-json;source=(salesforce|servicenow))$</pattern>
+    <pattern>^(text/(plain|html))|(application/x\.wisdom-json;source=(salesforce|servicenow|zendesk))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectWisdomService.Model.StartContentUploadRequest.KnowledgeBaseId</property>
@@ -472,7 +472,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectWisdomService.Model.ContentData.ContentType</property>
-    <pattern>^(text/(plain|html))|(application/x\.wisdom-json;source=(salesforce|servicenow))$</pattern>
+    <pattern>^(text/(plain|html))|(application/x\.wisdom-json;source=(salesforce|servicenow|zendesk))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectWisdomService.Model.ContentData.KnowledgeBaseArn</property>
@@ -534,7 +534,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectWisdomService.Model.ContentSummary.ContentType</property>
-    <pattern>^(text/(plain|html))|(application/x\.wisdom-json;source=(salesforce|servicenow))$</pattern>
+    <pattern>^(text/(plain|html))|(application/x\.wisdom-json;source=(salesforce|servicenow|zendesk))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectWisdomService.Model.ContentSummary.KnowledgeBaseArn</property>
@@ -616,6 +616,10 @@
   <property-value-rule>
     <property>Amazon.ConnectWisdomService.Model.RecommendationData.RelevanceScore</property>
     <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectWisdomService.Model.RecommendationTrigger.Id</property>
+    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectWisdomService.Model.RenderingConfiguration.TemplateUri</property>

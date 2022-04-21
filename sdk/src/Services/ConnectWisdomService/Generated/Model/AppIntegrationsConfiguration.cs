@@ -77,8 +77,8 @@ namespace Amazon.ConnectWisdomService.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Make sure to include additional field(s); these are indexed and used to source recommendations.
-        /// 
+        /// Make sure to include additional fields. These fields are indexed and used to source
+        /// recommendations. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

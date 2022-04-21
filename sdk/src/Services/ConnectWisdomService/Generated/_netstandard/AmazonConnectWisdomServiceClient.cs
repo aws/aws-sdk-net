@@ -38,12 +38,11 @@ namespace Amazon.ConnectWisdomService
     /// <summary>
     /// Implementation for accessing ConnectWisdomService
     ///
-    /// All Amazon Connect Wisdom functionality is accessible using the API. For example,
-    /// you can create an assistant and a knowledge base.
-    /// 
-    ///  <pre><code> &lt;p&gt;Some more advanced features are only accessible using the Wisdom
-    /// API. For example, you can manually manage content by uploading custom files and control
-    /// their lifecycle. &lt;/p&gt; </code></pre>
+    /// Amazon Connect Wisdom delivers agents the information they need to solve customer
+    /// issues as they're actively speaking with customers. Agents can search across connected
+    /// repositories from within their agent desktop to find answers quickly. Use the Amazon
+    /// Connect Wisdom APIs to create an assistant and a knowledge base, for example, or manage
+    /// content by uploading custom files.
     /// </summary>
     public partial class AmazonConnectWisdomServiceClient : AmazonServiceClient, IAmazonConnectWisdomService
     {
@@ -299,7 +298,7 @@ namespace Amazon.ConnectWisdomService
         /// the relevant resources, or use service quotas to request a service quota increase.
         /// </exception>
         /// <exception cref="Amazon.ConnectWisdomService.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by a service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/CreateAssistant">REST API Reference for CreateAssistant Operation</seealso>
         public virtual Task<CreateAssistantResponse> CreateAssistantAsync(CreateAssistantRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -354,7 +353,7 @@ namespace Amazon.ConnectWisdomService
         /// the relevant resources, or use service quotas to request a service quota increase.
         /// </exception>
         /// <exception cref="Amazon.ConnectWisdomService.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by a service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/CreateAssistantAssociation">REST API Reference for CreateAssistantAssociation Operation</seealso>
         public virtual Task<CreateAssistantAssociationResponse> CreateAssistantAssociationAsync(CreateAssistantAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -408,7 +407,7 @@ namespace Amazon.ConnectWisdomService
         /// the relevant resources, or use service quotas to request a service quota increase.
         /// </exception>
         /// <exception cref="Amazon.ConnectWisdomService.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by a service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/CreateContent">REST API Reference for CreateContent Operation</seealso>
         public virtual Task<CreateContentResponse> CreateContentAsync(CreateContentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -475,7 +474,7 @@ namespace Amazon.ConnectWisdomService
         /// the relevant resources, or use service quotas to request a service quota increase.
         /// </exception>
         /// <exception cref="Amazon.ConnectWisdomService.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by a service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/CreateKnowledgeBase">REST API Reference for CreateKnowledgeBase Operation</seealso>
         public virtual Task<CreateKnowledgeBaseResponse> CreateKnowledgeBaseAsync(CreateKnowledgeBaseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -522,7 +521,7 @@ namespace Amazon.ConnectWisdomService
         /// The specified resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.ConnectWisdomService.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by a service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/CreateSession">REST API Reference for CreateSession Operation</seealso>
         public virtual Task<CreateSessionResponse> CreateSessionAsync(CreateSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -565,7 +564,7 @@ namespace Amazon.ConnectWisdomService
         /// The specified resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.ConnectWisdomService.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by a service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/DeleteAssistant">REST API Reference for DeleteAssistant Operation</seealso>
         public virtual Task<DeleteAssistantResponse> DeleteAssistantAsync(DeleteAssistantRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -608,7 +607,7 @@ namespace Amazon.ConnectWisdomService
         /// The specified resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.ConnectWisdomService.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by a service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/DeleteAssistantAssociation">REST API Reference for DeleteAssistantAssociation Operation</seealso>
         public virtual Task<DeleteAssistantAssociationResponse> DeleteAssistantAssociationAsync(DeleteAssistantAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -651,7 +650,7 @@ namespace Amazon.ConnectWisdomService
         /// The specified resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.ConnectWisdomService.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by a service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/DeleteContent">REST API Reference for DeleteContent Operation</seealso>
         public virtual Task<DeleteContentResponse> DeleteContentAsync(DeleteContentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -711,6 +710,9 @@ namespace Amazon.ConnectWisdomService
         /// <exception cref="Amazon.ConnectWisdomService.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
         /// </exception>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/DeleteKnowledgeBase">REST API Reference for DeleteKnowledgeBase Operation</seealso>
         public virtual Task<DeleteKnowledgeBaseResponse> DeleteKnowledgeBaseAsync(DeleteKnowledgeBaseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -752,7 +754,7 @@ namespace Amazon.ConnectWisdomService
         /// The specified resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.ConnectWisdomService.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by a service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/GetAssistant">REST API Reference for GetAssistant Operation</seealso>
         public virtual Task<GetAssistantResponse> GetAssistantAsync(GetAssistantRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -795,7 +797,7 @@ namespace Amazon.ConnectWisdomService
         /// The specified resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.ConnectWisdomService.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by a service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/GetAssistantAssociation">REST API Reference for GetAssistantAssociation Operation</seealso>
         public virtual Task<GetAssistantAssociationResponse> GetAssistantAssociationAsync(GetAssistantAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -838,7 +840,7 @@ namespace Amazon.ConnectWisdomService
         /// The specified resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.ConnectWisdomService.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by a service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/GetContent">REST API Reference for GetContent Operation</seealso>
         public virtual Task<GetContentResponse> GetContentAsync(GetContentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -881,7 +883,7 @@ namespace Amazon.ConnectWisdomService
         /// The specified resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.ConnectWisdomService.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by a service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/GetContentSummary">REST API Reference for GetContentSummary Operation</seealso>
         public virtual Task<GetContentSummaryResponse> GetContentSummaryAsync(GetContentSummaryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -924,7 +926,7 @@ namespace Amazon.ConnectWisdomService
         /// The specified resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.ConnectWisdomService.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by a service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/GetKnowledgeBase">REST API Reference for GetKnowledgeBase Operation</seealso>
         public virtual Task<GetKnowledgeBaseResponse> GetKnowledgeBaseAsync(GetKnowledgeBaseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -971,7 +973,7 @@ namespace Amazon.ConnectWisdomService
         /// The specified resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.ConnectWisdomService.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by a service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/GetRecommendations">REST API Reference for GetRecommendations Operation</seealso>
         public virtual Task<GetRecommendationsResponse> GetRecommendationsAsync(GetRecommendationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1014,7 +1016,7 @@ namespace Amazon.ConnectWisdomService
         /// The specified resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.ConnectWisdomService.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by a service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/GetSession">REST API Reference for GetSession Operation</seealso>
         public virtual Task<GetSessionResponse> GetSessionAsync(GetSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1057,7 +1059,7 @@ namespace Amazon.ConnectWisdomService
         /// The specified resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.ConnectWisdomService.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by a service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/ListAssistantAssociations">REST API Reference for ListAssistantAssociations Operation</seealso>
         public virtual Task<ListAssistantAssociationsResponse> ListAssistantAssociationsAsync(ListAssistantAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1097,7 +1099,7 @@ namespace Amazon.ConnectWisdomService
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.ConnectWisdomService.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by a service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/ListAssistants">REST API Reference for ListAssistants Operation</seealso>
         public virtual Task<ListAssistantsResponse> ListAssistantsAsync(ListAssistantsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1140,7 +1142,7 @@ namespace Amazon.ConnectWisdomService
         /// The specified resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.ConnectWisdomService.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by a service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/ListContents">REST API Reference for ListContents Operation</seealso>
         public virtual Task<ListContentsResponse> ListContentsAsync(ListContentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1180,7 +1182,7 @@ namespace Amazon.ConnectWisdomService
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.ConnectWisdomService.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by a service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/ListKnowledgeBases">REST API Reference for ListKnowledgeBases Operation</seealso>
         public virtual Task<ListKnowledgeBasesResponse> ListKnowledgeBasesAsync(ListKnowledgeBasesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1263,7 +1265,7 @@ namespace Amazon.ConnectWisdomService
         /// The specified resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.ConnectWisdomService.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by a service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/NotifyRecommendationsReceived">REST API Reference for NotifyRecommendationsReceived Operation</seealso>
         public virtual Task<NotifyRecommendationsReceivedResponse> NotifyRecommendationsReceivedAsync(NotifyRecommendationsReceivedRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1307,7 +1309,7 @@ namespace Amazon.ConnectWisdomService
         /// The specified resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.ConnectWisdomService.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by a service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/QueryAssistant">REST API Reference for QueryAssistant Operation</seealso>
         public virtual Task<QueryAssistantResponse> QueryAssistantAsync(QueryAssistantRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1350,7 +1352,7 @@ namespace Amazon.ConnectWisdomService
         /// The specified resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.ConnectWisdomService.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by a service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/RemoveKnowledgeBaseTemplateUri">REST API Reference for RemoveKnowledgeBaseTemplateUri Operation</seealso>
         public virtual Task<RemoveKnowledgeBaseTemplateUriResponse> RemoveKnowledgeBaseTemplateUriAsync(RemoveKnowledgeBaseTemplateUriRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1394,7 +1396,7 @@ namespace Amazon.ConnectWisdomService
         /// The specified resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.ConnectWisdomService.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by a service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/SearchContent">REST API Reference for SearchContent Operation</seealso>
         public virtual Task<SearchContentResponse> SearchContentAsync(SearchContentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1437,7 +1439,7 @@ namespace Amazon.ConnectWisdomService
         /// The specified resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.ConnectWisdomService.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by a service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/SearchSessions">REST API Reference for SearchSessions Operation</seealso>
         public virtual Task<SearchSessionsResponse> SearchSessionsAsync(SearchSessionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1485,7 +1487,7 @@ namespace Amazon.ConnectWisdomService
         /// The specified resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.ConnectWisdomService.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by a service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/StartContentUpload">REST API Reference for StartContentUpload Operation</seealso>
         public virtual Task<StartContentUploadResponse> StartContentUploadAsync(StartContentUploadRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1610,7 +1612,7 @@ namespace Amazon.ConnectWisdomService
         /// The specified resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.ConnectWisdomService.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by a service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/UpdateContent">REST API Reference for UpdateContent Operation</seealso>
         public virtual Task<UpdateContentResponse> UpdateContentAsync(UpdateContentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1656,7 +1658,7 @@ namespace Amazon.ConnectWisdomService
         /// The specified resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.ConnectWisdomService.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by a service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/UpdateKnowledgeBaseTemplateUri">REST API Reference for UpdateKnowledgeBaseTemplateUri Operation</seealso>
         public virtual Task<UpdateKnowledgeBaseTemplateUriResponse> UpdateKnowledgeBaseTemplateUriAsync(UpdateKnowledgeBaseTemplateUriRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))

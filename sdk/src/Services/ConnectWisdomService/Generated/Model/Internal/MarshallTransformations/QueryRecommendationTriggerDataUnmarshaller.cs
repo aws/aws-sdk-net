@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ConnectWisdomService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for RecommendationData Object
+    /// Response Unmarshaller for QueryRecommendationTriggerData Object
     /// </summary>  
-    public class RecommendationDataUnmarshaller : IUnmarshaller<RecommendationData, XmlUnmarshallerContext>, IUnmarshaller<RecommendationData, JsonUnmarshallerContext>
+    public class QueryRecommendationTriggerDataUnmarshaller : IUnmarshaller<QueryRecommendationTriggerData, XmlUnmarshallerContext>, IUnmarshaller<QueryRecommendationTriggerData, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        RecommendationData IUnmarshaller<RecommendationData, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        QueryRecommendationTriggerData IUnmarshaller<QueryRecommendationTriggerData, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,21 @@ namespace Amazon.ConnectWisdomService.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public RecommendationData Unmarshall(JsonUnmarshallerContext context)
+        public QueryRecommendationTriggerData Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            RecommendationData unmarshalledObject = new RecommendationData();
+            QueryRecommendationTriggerData unmarshalledObject = new QueryRecommendationTriggerData();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("document", targetDepth))
-                {
-                    var unmarshaller = DocumentUnmarshaller.Instance;
-                    unmarshalledObject.Document = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("recommendationId", targetDepth))
+                if (context.TestExpression("text", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RecommendationId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("relevanceLevel", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RelevanceLevel = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("relevanceScore", targetDepth))
-                {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
-                    unmarshalledObject.RelevanceScore = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("type", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Text = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +76,12 @@ namespace Amazon.ConnectWisdomService.Model.Internal.MarshallTransformations
         }
 
 
-        private static RecommendationDataUnmarshaller _instance = new RecommendationDataUnmarshaller();        
+        private static QueryRecommendationTriggerDataUnmarshaller _instance = new QueryRecommendationTriggerDataUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RecommendationDataUnmarshaller Instance
+        public static QueryRecommendationTriggerDataUnmarshaller Instance
         {
             get
             {

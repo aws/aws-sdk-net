@@ -29,12 +29,11 @@ namespace Amazon.ConnectWisdomService
     /// <summary>
     /// Interface for accessing ConnectWisdomService
     ///
-    /// All Amazon Connect Wisdom functionality is accessible using the API. For example,
-    /// you can create an assistant and a knowledge base.
-    /// 
-    ///  <pre><code> &lt;p&gt;Some more advanced features are only accessible using the Wisdom
-    /// API. For example, you can manually manage content by uploading custom files and control
-    /// their lifecycle. &lt;/p&gt; </code></pre>
+    /// Amazon Connect Wisdom delivers agents the information they need to solve customer
+    /// issues as they're actively speaking with customers. Agents can search across connected
+    /// repositories from within their agent desktop to find answers quickly. Use the Amazon
+    /// Connect Wisdom APIs to create an assistant and a knowledge base, for example, or manage
+    /// content by uploading custom files.
     /// </summary>
     public partial interface IAmazonConnectWisdomService : IAmazonService, IDisposable
     {
@@ -72,7 +71,7 @@ namespace Amazon.ConnectWisdomService
         /// the relevant resources, or use service quotas to request a service quota increase.
         /// </exception>
         /// <exception cref="Amazon.ConnectWisdomService.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by a service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/CreateAssistant">REST API Reference for CreateAssistant Operation</seealso>
         CreateAssistantResponse CreateAssistant(CreateAssistantRequest request);
@@ -133,7 +132,7 @@ namespace Amazon.ConnectWisdomService
         /// the relevant resources, or use service quotas to request a service quota increase.
         /// </exception>
         /// <exception cref="Amazon.ConnectWisdomService.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by a service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/CreateAssistantAssociation">REST API Reference for CreateAssistantAssociation Operation</seealso>
         CreateAssistantAssociationResponse CreateAssistantAssociation(CreateAssistantAssociationRequest request);
@@ -193,7 +192,7 @@ namespace Amazon.ConnectWisdomService
         /// the relevant resources, or use service quotas to request a service quota increase.
         /// </exception>
         /// <exception cref="Amazon.ConnectWisdomService.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by a service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/CreateContent">REST API Reference for CreateContent Operation</seealso>
         CreateContentResponse CreateContent(CreateContentRequest request);
@@ -266,7 +265,7 @@ namespace Amazon.ConnectWisdomService
         /// the relevant resources, or use service quotas to request a service quota increase.
         /// </exception>
         /// <exception cref="Amazon.ConnectWisdomService.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by a service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/CreateKnowledgeBase">REST API Reference for CreateKnowledgeBase Operation</seealso>
         CreateKnowledgeBaseResponse CreateKnowledgeBase(CreateKnowledgeBaseRequest request);
@@ -319,7 +318,7 @@ namespace Amazon.ConnectWisdomService
         /// The specified resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.ConnectWisdomService.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by a service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/CreateSession">REST API Reference for CreateSession Operation</seealso>
         CreateSessionResponse CreateSession(CreateSessionRequest request);
@@ -368,7 +367,7 @@ namespace Amazon.ConnectWisdomService
         /// The specified resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.ConnectWisdomService.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by a service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/DeleteAssistant">REST API Reference for DeleteAssistant Operation</seealso>
         DeleteAssistantResponse DeleteAssistant(DeleteAssistantRequest request);
@@ -417,7 +416,7 @@ namespace Amazon.ConnectWisdomService
         /// The specified resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.ConnectWisdomService.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by a service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/DeleteAssistantAssociation">REST API Reference for DeleteAssistantAssociation Operation</seealso>
         DeleteAssistantAssociationResponse DeleteAssistantAssociation(DeleteAssistantAssociationRequest request);
@@ -466,7 +465,7 @@ namespace Amazon.ConnectWisdomService
         /// The specified resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.ConnectWisdomService.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by a service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/DeleteContent">REST API Reference for DeleteContent Operation</seealso>
         DeleteContentResponse DeleteContent(DeleteContentRequest request);
@@ -532,6 +531,9 @@ namespace Amazon.ConnectWisdomService
         /// <exception cref="Amazon.ConnectWisdomService.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
         /// </exception>
+        /// <exception cref="Amazon.ConnectWisdomService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/DeleteKnowledgeBase">REST API Reference for DeleteKnowledgeBase Operation</seealso>
         DeleteKnowledgeBaseResponse DeleteKnowledgeBase(DeleteKnowledgeBaseRequest request);
 
@@ -579,7 +581,7 @@ namespace Amazon.ConnectWisdomService
         /// The specified resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.ConnectWisdomService.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by a service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/GetAssistant">REST API Reference for GetAssistant Operation</seealso>
         GetAssistantResponse GetAssistant(GetAssistantRequest request);
@@ -628,7 +630,7 @@ namespace Amazon.ConnectWisdomService
         /// The specified resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.ConnectWisdomService.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by a service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/GetAssistantAssociation">REST API Reference for GetAssistantAssociation Operation</seealso>
         GetAssistantAssociationResponse GetAssistantAssociation(GetAssistantAssociationRequest request);
@@ -677,7 +679,7 @@ namespace Amazon.ConnectWisdomService
         /// The specified resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.ConnectWisdomService.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by a service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/GetContent">REST API Reference for GetContent Operation</seealso>
         GetContentResponse GetContent(GetContentRequest request);
@@ -726,7 +728,7 @@ namespace Amazon.ConnectWisdomService
         /// The specified resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.ConnectWisdomService.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by a service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/GetContentSummary">REST API Reference for GetContentSummary Operation</seealso>
         GetContentSummaryResponse GetContentSummary(GetContentSummaryRequest request);
@@ -775,7 +777,7 @@ namespace Amazon.ConnectWisdomService
         /// The specified resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.ConnectWisdomService.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by a service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/GetKnowledgeBase">REST API Reference for GetKnowledgeBase Operation</seealso>
         GetKnowledgeBaseResponse GetKnowledgeBase(GetKnowledgeBaseRequest request);
@@ -828,7 +830,7 @@ namespace Amazon.ConnectWisdomService
         /// The specified resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.ConnectWisdomService.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by a service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/GetRecommendations">REST API Reference for GetRecommendations Operation</seealso>
         GetRecommendationsResponse GetRecommendations(GetRecommendationsRequest request);
@@ -877,7 +879,7 @@ namespace Amazon.ConnectWisdomService
         /// The specified resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.ConnectWisdomService.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by a service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/GetSession">REST API Reference for GetSession Operation</seealso>
         GetSessionResponse GetSession(GetSessionRequest request);
@@ -926,7 +928,7 @@ namespace Amazon.ConnectWisdomService
         /// The specified resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.ConnectWisdomService.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by a service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/ListAssistantAssociations">REST API Reference for ListAssistantAssociations Operation</seealso>
         ListAssistantAssociationsResponse ListAssistantAssociations(ListAssistantAssociationsRequest request);
@@ -972,7 +974,7 @@ namespace Amazon.ConnectWisdomService
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.ConnectWisdomService.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by a service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/ListAssistants">REST API Reference for ListAssistants Operation</seealso>
         ListAssistantsResponse ListAssistants(ListAssistantsRequest request);
@@ -1021,7 +1023,7 @@ namespace Amazon.ConnectWisdomService
         /// The specified resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.ConnectWisdomService.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by a service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/ListContents">REST API Reference for ListContents Operation</seealso>
         ListContentsResponse ListContents(ListContentsRequest request);
@@ -1067,7 +1069,7 @@ namespace Amazon.ConnectWisdomService
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.ConnectWisdomService.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by a service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/ListKnowledgeBases">REST API Reference for ListKnowledgeBases Operation</seealso>
         ListKnowledgeBasesResponse ListKnowledgeBases(ListKnowledgeBasesRequest request);
@@ -1162,7 +1164,7 @@ namespace Amazon.ConnectWisdomService
         /// The specified resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.ConnectWisdomService.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by a service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/NotifyRecommendationsReceived">REST API Reference for NotifyRecommendationsReceived Operation</seealso>
         NotifyRecommendationsReceivedResponse NotifyRecommendationsReceived(NotifyRecommendationsReceivedRequest request);
@@ -1212,7 +1214,7 @@ namespace Amazon.ConnectWisdomService
         /// The specified resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.ConnectWisdomService.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by a service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/QueryAssistant">REST API Reference for QueryAssistant Operation</seealso>
         QueryAssistantResponse QueryAssistant(QueryAssistantRequest request);
@@ -1261,7 +1263,7 @@ namespace Amazon.ConnectWisdomService
         /// The specified resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.ConnectWisdomService.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by a service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/RemoveKnowledgeBaseTemplateUri">REST API Reference for RemoveKnowledgeBaseTemplateUri Operation</seealso>
         RemoveKnowledgeBaseTemplateUriResponse RemoveKnowledgeBaseTemplateUri(RemoveKnowledgeBaseTemplateUriRequest request);
@@ -1311,7 +1313,7 @@ namespace Amazon.ConnectWisdomService
         /// The specified resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.ConnectWisdomService.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by a service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/SearchContent">REST API Reference for SearchContent Operation</seealso>
         SearchContentResponse SearchContent(SearchContentRequest request);
@@ -1360,7 +1362,7 @@ namespace Amazon.ConnectWisdomService
         /// The specified resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.ConnectWisdomService.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by a service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/SearchSessions">REST API Reference for SearchSessions Operation</seealso>
         SearchSessionsResponse SearchSessions(SearchSessionsRequest request);
@@ -1414,7 +1416,7 @@ namespace Amazon.ConnectWisdomService
         /// The specified resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.ConnectWisdomService.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by a service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/StartContentUpload">REST API Reference for StartContentUpload Operation</seealso>
         StartContentUploadResponse StartContentUpload(StartContentUploadRequest request);
@@ -1557,7 +1559,7 @@ namespace Amazon.ConnectWisdomService
         /// The specified resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.ConnectWisdomService.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by a service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/UpdateContent">REST API Reference for UpdateContent Operation</seealso>
         UpdateContentResponse UpdateContent(UpdateContentRequest request);
@@ -1609,7 +1611,7 @@ namespace Amazon.ConnectWisdomService
         /// The specified resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.ConnectWisdomService.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by a service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/UpdateKnowledgeBaseTemplateUri">REST API Reference for UpdateKnowledgeBaseTemplateUri Operation</seealso>
         UpdateKnowledgeBaseTemplateUriResponse UpdateKnowledgeBaseTemplateUri(UpdateKnowledgeBaseTemplateUriRequest request);

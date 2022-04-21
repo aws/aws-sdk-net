@@ -34,6 +34,7 @@ namespace Amazon.ConnectWisdomService.Model
     public partial class GetRecommendationsResponse : AmazonWebServiceResponse
     {
         private List<RecommendationData> _recommendations = new List<RecommendationData>();
+        private List<RecommendationTrigger> _triggers = new List<RecommendationTrigger>();
 
         /// <summary>
         /// Gets and sets the property Recommendations. 
@@ -52,6 +53,24 @@ namespace Amazon.ConnectWisdomService.Model
         internal bool IsSetRecommendations()
         {
             return this._recommendations != null && this._recommendations.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Triggers. 
+        /// <para>
+        /// The triggers corresponding to recommendations.
+        /// </para>
+        /// </summary>
+        public List<RecommendationTrigger> Triggers
+        {
+            get { return this._triggers; }
+            set { this._triggers = value; }
+        }
+
+        // Check to see if Triggers property is set
+        internal bool IsSetTriggers()
+        {
+            return this._triggers != null && this._triggers.Count > 0; 
         }
 
     }

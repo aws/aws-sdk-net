@@ -29,28 +29,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConnectWisdomService.Model
 {
     /// <summary>
-    /// The data that is input into Wisdom as a result of the assistant association.
+    /// Data associated with the QUERY RecommendationTriggerType.
     /// </summary>
-    public partial class AssistantAssociationInputData
+    public partial class QueryRecommendationTriggerData
     {
-        private string _knowledgeBaseId;
+        private string _text;
 
         /// <summary>
-        /// Gets and sets the property KnowledgeBaseId. 
+        /// Gets and sets the property Text. 
         /// <para>
-        /// The identifier of the knowledge base.
+        /// The text associated with the recommendation trigger.
         /// </para>
         /// </summary>
-        public string KnowledgeBaseId
+        public string Text
         {
-            get { return this._knowledgeBaseId; }
-            set { this._knowledgeBaseId = value; }
+            get { return this._text; }
+            set { this._text = value; }
         }
 
-        // Check to see if KnowledgeBaseId property is set
-        internal bool IsSetKnowledgeBaseId()
+        // Check to see if Text property is set
+        internal bool IsSetText()
         {
-            return this._knowledgeBaseId != null;
+            return this._text != null;
         }
 
     }

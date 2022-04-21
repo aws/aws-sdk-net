@@ -66,7 +66,7 @@ namespace Amazon.ConnectWisdomService.Model
         /// <summary>
         /// Gets and sets the property KnowledgeBaseId. 
         /// <para>
-        /// The the identifier of the knowledge base. Can be either the ID or the ARN
+        /// The identifier of the knowledge base. Can be either the ID or the ARN
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -90,6 +90,7 @@ namespace Amazon.ConnectWisdomService.Model
         /// store an external version identifier as metadata to utilize for determining drift.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=10)]
         public Dictionary<string, string> Metadata
         {
             get { return this._metadata; }

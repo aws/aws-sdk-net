@@ -37,6 +37,7 @@ namespace Amazon.ConnectWisdomService.Model
         private string _recommendationId;
         private RelevanceLevel _relevanceLevel;
         private double? _relevanceScore;
+        private RecommendationType _type;
 
         /// <summary>
         /// Gets and sets the property Document. 
@@ -111,6 +112,24 @@ namespace Amazon.ConnectWisdomService.Model
         internal bool IsSetRelevanceScore()
         {
             return this._relevanceScore.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The type of recommendation.
+        /// </para>
+        /// </summary>
+        public RecommendationType Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
         }
 
     }

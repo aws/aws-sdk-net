@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConnectWisdomService.Model
 {
     /// <summary>
-    /// The input fails to satisfy the constraints specified by an AWS service.
+    /// The input fails to satisfy the constraints specified by a service.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
