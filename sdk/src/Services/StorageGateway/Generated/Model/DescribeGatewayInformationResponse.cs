@@ -59,7 +59,8 @@ namespace Amazon.StorageGateway.Model
         /// Gets and sets the property CloudWatchLogGroupARN. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is used to
-        /// monitor events in the gateway.
+        /// monitor events in the gateway. This field only only exist and returns once it have
+        /// been chosen and set by the SGW service, based on the OS version of the gateway VM
         /// </para>
         /// </summary>
         [AWSProperty(Max=562)]
@@ -345,7 +346,9 @@ namespace Amazon.StorageGateway.Model
         /// Gets and sets the property LastSoftwareUpdate. 
         /// <para>
         /// The date on which the last software update was applied to the gateway. If the gateway
-        /// has never been updated, this field does not return a value in the response.
+        /// has never been updated, this field does not return a value in the response. This only
+        /// only exist and returns once it have been chosen and set by the SGW service, based
+        /// on the OS version of the gateway VM
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=25)]

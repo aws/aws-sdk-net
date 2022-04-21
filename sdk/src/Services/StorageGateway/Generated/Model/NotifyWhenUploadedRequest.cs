@@ -31,7 +31,7 @@ namespace Amazon.StorageGateway.Model
     /// <summary>
     /// Container for the parameters to the NotifyWhenUploaded operation.
     /// Sends you notification through CloudWatch Events when all files written to your file
-    /// share have been uploaded to Amazon S3.
+    /// share have been uploaded to S3. Amazon S3.
     /// 
     ///  
     /// <para>

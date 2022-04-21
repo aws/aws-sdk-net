@@ -89,10 +89,6 @@ namespace Amazon.StorageGateway.Model
         /// the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the
         /// pool.
         /// </para>
-        ///  
-        /// <para>
-        /// Valid Values: <code>GLACIER</code> | <code>DEEP_ARCHIVE</code> 
-        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
         public string PoolId
@@ -150,7 +146,7 @@ namespace Amazon.StorageGateway.Model
         /// The barcode that identifies a specific virtual tape.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=7, Max=16)]
+        [AWSProperty(Min=5, Max=16)]
         public string TapeBarcode
         {
             get { return this._tapeBarcode; }

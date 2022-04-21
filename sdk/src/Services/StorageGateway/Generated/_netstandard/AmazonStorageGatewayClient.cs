@@ -635,11 +635,6 @@ namespace Amazon.StorageGateway
         /// in the S3 storage class that is associated with the pool. When you use your backup
         /// application to eject the tape, the tape is archived directly into the S3 storage class
         /// (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.
-        /// 
-        ///  
-        /// <para>
-        /// Valid Values: <code>GLACIER</code> | <code>DEEP_ARCHIVE</code> 
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssignTapePool service method.</param>
         /// <param name="cancellationToken">
@@ -1646,7 +1641,7 @@ namespace Amazon.StorageGateway
         /// see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/backing-up-volumes.html">Backing
         /// up your volumes</a>. In the <code>DeleteSnapshotSchedule</code> request, you identify
         /// the volume by providing its Amazon Resource Name (ARN). This operation is only supported
-        /// in stored and cached volume gateway types.
+        /// for cached volume gateway types.
         /// </para>
         ///  <note> 
         /// <para>
@@ -3649,7 +3644,7 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Sends you notification through CloudWatch Events when all files written to your file
-        /// share have been uploaded to Amazon S3.
+        /// share have been uploaded to S3. Amazon S3.
         /// 
         ///  
         /// <para>
@@ -3737,13 +3732,27 @@ namespace Amazon.StorageGateway
         /// notification before issuing additional requests. For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-notification">Getting
         /// notified about file operations</a> in the <i>Storage Gateway User Guide</i>.
         /// </para>
-        ///  
+        ///  <important> <ul> <li> 
+        /// <para>
+        /// Wait at least 60 seconds between consecutive RefreshCache API requests.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// RefreshCache does not evict cache entries if invoked consecutively within 60 seconds
+        /// of a previous RefreshCache request.
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         /// If you invoke the RefreshCache API when two requests are already being processed,
         /// any new request will cause an <code>InvalidGatewayRequestException</code> error because
         /// too many requests were sent to the server.
         /// </para>
-        ///  
+        ///  </li> </ul> </important> <note> 
+        /// <para>
+        /// The S3 bucket name does not need to be included when entering the list of folders
+        /// in the FolderList parameter.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-notification">Getting
         /// notified about file operations</a> in the <i>Storage Gateway User Guide</i>.

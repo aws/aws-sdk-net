@@ -113,10 +113,6 @@ namespace Amazon.StorageGateway.Model
         /// The ID of the pool that was used to archive the tape. The tapes in this pool are archived
         /// in the S3 storage class that is associated with the pool.
         /// </para>
-        ///  
-        /// <para>
-        /// Valid Values: <code>GLACIER</code> | <code>DEEP_ARCHIVE</code> 
-        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
         public string PoolId
@@ -199,7 +195,7 @@ namespace Amazon.StorageGateway.Model
         /// The barcode that identifies the archived virtual tape.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=7, Max=16)]
+        [AWSProperty(Min=5, Max=16)]
         public string TapeBarcode
         {
             get { return this._tapeBarcode; }

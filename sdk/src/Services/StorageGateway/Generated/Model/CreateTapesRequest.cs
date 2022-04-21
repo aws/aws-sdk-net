@@ -171,10 +171,6 @@ namespace Amazon.StorageGateway.Model
         /// the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the
         /// pool.
         /// </para>
-        ///  
-        /// <para>
-        /// Valid Values: <code>GLACIER</code> | <code>DEEP_ARCHIVE</code> 
-        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
         public string PoolId
