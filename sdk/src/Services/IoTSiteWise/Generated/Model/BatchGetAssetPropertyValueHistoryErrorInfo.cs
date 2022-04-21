@@ -29,50 +29,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTSiteWise.Model
 {
     /// <summary>
-    /// Contains a timestamp with optional nanosecond granularity.
+    /// The error information, such as the error code and the timestamp.
     /// </summary>
-    public partial class TimeInNanos
+    public partial class BatchGetAssetPropertyValueHistoryErrorInfo
     {
-        private int? _offsetInNanos;
-        private long? _timeInSeconds;
+        private BatchGetAssetPropertyValueHistoryErrorCode _errorCode;
+        private DateTime? _errorTimestamp;
 
         /// <summary>
-        /// Gets and sets the property OffsetInNanos. 
+        /// Gets and sets the property ErrorCode. 
         /// <para>
-        /// The nanosecond offset from <code>timeInSeconds</code>.
+        /// The error code.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=999999999)]
-        public int OffsetInNanos
+        [AWSProperty(Required=true)]
+        public BatchGetAssetPropertyValueHistoryErrorCode ErrorCode
         {
-            get { return this._offsetInNanos.GetValueOrDefault(); }
-            set { this._offsetInNanos = value; }
+            get { return this._errorCode; }
+            set { this._errorCode = value; }
         }
 
-        // Check to see if OffsetInNanos property is set
-        internal bool IsSetOffsetInNanos()
+        // Check to see if ErrorCode property is set
+        internal bool IsSetErrorCode()
         {
-            return this._offsetInNanos.HasValue; 
+            return this._errorCode != null;
         }
 
         /// <summary>
-        /// Gets and sets the property TimeInSeconds. 
+        /// Gets and sets the property ErrorTimestamp. 
         /// <para>
-        /// The timestamp date, in seconds, in the Unix epoch format. Fractional nanosecond data
-        /// is provided by <code>offsetInNanos</code>.
+        /// The date the error occurred, in Unix epoch time.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=9223372036854774)]
-        public long TimeInSeconds
+        [AWSProperty(Required=true)]
+        public DateTime ErrorTimestamp
         {
-            get { return this._timeInSeconds.GetValueOrDefault(); }
-            set { this._timeInSeconds = value; }
+            get { return this._errorTimestamp.GetValueOrDefault(); }
+            set { this._errorTimestamp = value; }
         }
 
-        // Check to see if TimeInSeconds property is set
-        internal bool IsSetTimeInSeconds()
+        // Check to see if ErrorTimestamp property is set
+        internal bool IsSetErrorTimestamp()
         {
-            return this._timeInSeconds.HasValue; 
+            return this._errorTimestamp.HasValue; 
         }
 
     }

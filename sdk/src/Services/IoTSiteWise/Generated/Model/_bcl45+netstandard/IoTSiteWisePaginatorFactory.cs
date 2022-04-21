@@ -36,6 +36,30 @@ namespace Amazon.IoTSiteWise.Model
         }
 
         /// <summary>
+        /// Paginator for BatchGetAssetPropertyAggregates operation
+        ///</summary>
+        public IBatchGetAssetPropertyAggregatesPaginator BatchGetAssetPropertyAggregates(BatchGetAssetPropertyAggregatesRequest request) 
+        {
+            return new BatchGetAssetPropertyAggregatesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for BatchGetAssetPropertyValue operation
+        ///</summary>
+        public IBatchGetAssetPropertyValuePaginator BatchGetAssetPropertyValue(BatchGetAssetPropertyValueRequest request) 
+        {
+            return new BatchGetAssetPropertyValuePaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for BatchGetAssetPropertyValueHistory operation
+        ///</summary>
+        public IBatchGetAssetPropertyValueHistoryPaginator BatchGetAssetPropertyValueHistory(BatchGetAssetPropertyValueHistoryRequest request) 
+        {
+            return new BatchGetAssetPropertyValueHistoryPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for GetAssetPropertyAggregates operation
         ///</summary>
         public IGetAssetPropertyAggregatesPaginator GetAssetPropertyAggregates(GetAssetPropertyAggregatesRequest request) 
