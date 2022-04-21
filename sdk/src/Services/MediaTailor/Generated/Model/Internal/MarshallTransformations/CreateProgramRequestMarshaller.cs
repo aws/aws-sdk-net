@@ -87,6 +87,12 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetLiveSourceName())
+                {
+                    context.Writer.WritePropertyName("LiveSourceName");
+                    context.Writer.Write(publicRequest.LiveSourceName);
+                }
+
                 if(publicRequest.IsSetScheduleConfiguration())
                 {
                     context.Writer.WritePropertyName("ScheduleConfiguration");

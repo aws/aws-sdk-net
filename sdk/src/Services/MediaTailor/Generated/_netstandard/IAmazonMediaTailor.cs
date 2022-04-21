@@ -91,6 +91,24 @@ namespace Amazon.MediaTailor
 
         #endregion
                 
+        #region  CreateLiveSource
+
+
+
+        /// <summary>
+        /// Creates name for a specific live source in a source location.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLiveSource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateLiveSource service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/CreateLiveSource">REST API Reference for CreateLiveSource Operation</seealso>
+        Task<CreateLiveSourceResponse> CreateLiveSourceAsync(CreateLiveSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreatePrefetchSchedule
 
 
@@ -196,6 +214,24 @@ namespace Amazon.MediaTailor
         /// <returns>The response from the DeleteChannelPolicy service method, as returned by MediaTailor.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DeleteChannelPolicy">REST API Reference for DeleteChannelPolicy Operation</seealso>
         Task<DeleteChannelPolicyResponse> DeleteChannelPolicyAsync(DeleteChannelPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteLiveSource
+
+
+
+        /// <summary>
+        /// Deletes a specific live source in a specific source location.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLiveSource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteLiveSource service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DeleteLiveSource">REST API Reference for DeleteLiveSource Operation</seealso>
+        Task<DeleteLiveSourceResponse> DeleteLiveSourceAsync(DeleteLiveSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -305,6 +341,24 @@ namespace Amazon.MediaTailor
         /// <returns>The response from the DescribeChannel service method, as returned by MediaTailor.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DescribeChannel">REST API Reference for DescribeChannel Operation</seealso>
         Task<DescribeChannelResponse> DescribeChannelAsync(DescribeChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeLiveSource
+
+
+
+        /// <summary>
+        /// Provides details about a specific live source in a specific source location.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeLiveSource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeLiveSource service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DescribeLiveSource">REST API Reference for DescribeLiveSource Operation</seealso>
+        Task<DescribeLiveSourceResponse> DescribeLiveSourceAsync(DescribeLiveSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -469,6 +523,24 @@ namespace Amazon.MediaTailor
         /// <returns>The response from the ListChannels service method, as returned by MediaTailor.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListChannels">REST API Reference for ListChannels Operation</seealso>
         Task<ListChannelsResponse> ListChannelsAsync(ListChannelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListLiveSources
+
+
+
+        /// <summary>
+        /// lists all the live sources in a source location.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListLiveSources service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListLiveSources service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListLiveSources">REST API Reference for ListLiveSources Operation</seealso>
+        Task<ListLiveSourcesResponse> ListLiveSourcesAsync(ListLiveSourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -700,6 +772,24 @@ namespace Amazon.MediaTailor
         /// <returns>The response from the UpdateChannel service method, as returned by MediaTailor.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/UpdateChannel">REST API Reference for UpdateChannel Operation</seealso>
         Task<UpdateChannelResponse> UpdateChannelAsync(UpdateChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateLiveSource
+
+
+
+        /// <summary>
+        /// Updates a specific live source in a specific source location.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLiveSource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateLiveSource service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/UpdateLiveSource">REST API Reference for UpdateLiveSource Operation</seealso>
+        Task<UpdateLiveSourceResponse> UpdateLiveSourceAsync(UpdateLiveSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

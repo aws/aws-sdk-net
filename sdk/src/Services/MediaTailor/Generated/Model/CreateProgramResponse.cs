@@ -37,6 +37,7 @@ namespace Amazon.MediaTailor.Model
         private string _arn;
         private string _channelName;
         private DateTime? _creationTime;
+        private string _liveSourceName;
         private string _programName;
         private DateTime? _scheduledStartTime;
         private string _sourceLocationName;
@@ -112,6 +113,24 @@ namespace Amazon.MediaTailor.Model
         internal bool IsSetCreationTime()
         {
             return this._creationTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LiveSourceName. 
+        /// <para>
+        /// The name of the LiveSource for this Program.
+        /// </para>
+        /// </summary>
+        public string LiveSourceName
+        {
+            get { return this._liveSourceName; }
+            set { this._liveSourceName = value; }
+        }
+
+        // Check to see if LiveSourceName property is set
+        internal bool IsSetLiveSourceName()
+        {
+            return this._liveSourceName != null;
         }
 
         /// <summary>

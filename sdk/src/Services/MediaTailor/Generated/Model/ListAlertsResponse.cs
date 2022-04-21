@@ -39,7 +39,7 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property Items. 
         /// <para>
-        /// An array of alerts that are associated with this resource.
+        /// A list of alerts that are associated with this resource.
         /// </para>
         /// </summary>
         public List<Alert> Items

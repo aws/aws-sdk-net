@@ -60,6 +60,14 @@ namespace Amazon.MediaTailor.Model
         }
 
         /// <summary>
+        /// Paginator for ListLiveSources operation
+        ///</summary>
+        public IListLiveSourcesPaginator ListLiveSources(ListLiveSourcesRequest request) 
+        {
+            return new ListLiveSourcesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListPlaybackConfigurations operation
         ///</summary>
         public IListPlaybackConfigurationsPaginator ListPlaybackConfigurations(ListPlaybackConfigurationsRequest request) 

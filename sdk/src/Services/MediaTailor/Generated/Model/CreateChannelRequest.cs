@@ -39,6 +39,7 @@ namespace Amazon.MediaTailor.Model
         private List<RequestOutputItem> _outputs = new List<RequestOutputItem>();
         private PlaybackMode _playbackMode;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Tier _tier;
 
         /// <summary>
         /// Gets and sets the property ChannelName. 
@@ -143,6 +144,24 @@ namespace Amazon.MediaTailor.Model
         internal bool IsSetTags()
         {
             return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tier. 
+        /// <para>
+        /// The tier of the channel.
+        /// </para>
+        /// </summary>
+        public Tier Tier
+        {
+            get { return this._tier; }
+            set { this._tier = value; }
+        }
+
+        // Check to see if Tier property is set
+        internal bool IsSetTier()
+        {
+            return this._tier != null;
         }
 
     }

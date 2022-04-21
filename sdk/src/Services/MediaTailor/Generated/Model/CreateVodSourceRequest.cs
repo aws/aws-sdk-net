@@ -42,7 +42,7 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property HttpPackageConfigurations. 
         /// <para>
-        /// An array of HTTP package configuration parameters for this VOD source.
+        /// A list of HTTP package configuration parameters for this VOD source.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

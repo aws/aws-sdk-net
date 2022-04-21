@@ -36,6 +36,7 @@ namespace Amazon.MediaTailor.Model
     {
         private List<AdBreak> _adBreaks = new List<AdBreak>();
         private string _channelName;
+        private string _liveSourceName;
         private string _programName;
         private ScheduleConfiguration _scheduleConfiguration;
         private string _sourceLocationName;
@@ -76,6 +77,24 @@ namespace Amazon.MediaTailor.Model
         internal bool IsSetChannelName()
         {
             return this._channelName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LiveSourceName. 
+        /// <para>
+        /// The name of the LiveSource for this Program.
+        /// </para>
+        /// </summary>
+        public string LiveSourceName
+        {
+            get { return this._liveSourceName; }
+            set { this._liveSourceName = value; }
+        }
+
+        // Check to see if LiveSourceName property is set
+        internal bool IsSetLiveSourceName()
+        {
+            return this._liveSourceName != null;
         }
 
         /// <summary>
@@ -141,7 +160,6 @@ namespace Amazon.MediaTailor.Model
         /// The name that's used to refer to a VOD source.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string VodSourceName
         {
             get { return this._vodSourceName; }

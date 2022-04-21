@@ -43,9 +43,9 @@ namespace Amazon.MediaTailor.Model
         /// A non-default content delivery network (CDN) to serve ad segments. By default, AWS
         /// Elemental MediaTailor uses Amazon CloudFront with default cache settings as its CDN
         /// for ad segments. To set up an alternate CDN, create a rule in your CDN for the origin
-        /// ads.mediatailor.&amp;lt;region&gt;.amazonaws.com. Then specify the rule's name in
-        /// this AdSegmentUrlPrefix. When AWS Elemental MediaTailor serves a manifest, it reports
-        /// your CDN as the source for ad segments.
+        /// ads.mediatailor.&amp;lt;region>.amazonaws.com. Then specify the rule's name in this
+        /// AdSegmentUrlPrefix. When AWS Elemental MediaTailor serves a manifest, it reports your
+        /// CDN as the source for ad segments.
         /// </para>
         /// </summary>
         public string AdSegmentUrlPrefix

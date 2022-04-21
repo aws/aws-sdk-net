@@ -154,7 +154,10 @@ namespace Amazon.MediaTailor.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SegmentDeliveryConfigurations.
+        /// Gets and sets the property SegmentDeliveryConfigurations. 
+        /// <para>
+        /// The segment delivery configurations for the source location.
+        /// </para>
         /// </summary>
         public List<SegmentDeliveryConfiguration> SegmentDeliveryConfigurations
         {

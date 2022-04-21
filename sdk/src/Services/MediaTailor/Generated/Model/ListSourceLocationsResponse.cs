@@ -39,7 +39,7 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property Items. 
         /// <para>
-        /// An array of source locations.
+        /// A list of source locations.
         /// </para>
         /// </summary>
         public List<SourceLocation> Items

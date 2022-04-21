@@ -98,7 +98,7 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property LastModifiedTime. 
         /// <para>
-        /// The ARN for the VOD source.
+        /// The last modified time of the VOD source.
         /// </para>
         /// </summary>
         public DateTime LastModifiedTime

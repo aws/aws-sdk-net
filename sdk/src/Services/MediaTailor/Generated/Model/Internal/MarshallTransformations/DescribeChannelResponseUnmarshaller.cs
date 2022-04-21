@@ -105,6 +105,12 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                     response.Tags = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Tier", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Tier = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

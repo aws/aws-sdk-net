@@ -39,7 +39,7 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property Items. 
         /// <para>
-        /// An array of schedule entries for the channel.
+        /// A list of schedule entries for the channel.
         /// </para>
         /// </summary>
         public List<ScheduleEntry> Items

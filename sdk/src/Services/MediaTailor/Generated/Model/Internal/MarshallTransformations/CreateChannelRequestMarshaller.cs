@@ -115,6 +115,12 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetTier())
+                {
+                    context.Writer.WritePropertyName("Tier");
+                    context.Writer.Write(publicRequest.Tier);
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

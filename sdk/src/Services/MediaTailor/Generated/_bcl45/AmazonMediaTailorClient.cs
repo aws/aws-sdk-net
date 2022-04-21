@@ -349,6 +349,47 @@ namespace Amazon.MediaTailor
 
         #endregion
         
+        #region  CreateLiveSource
+
+
+        /// <summary>
+        /// Creates name for a specific live source in a source location.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLiveSource service method.</param>
+        /// 
+        /// <returns>The response from the CreateLiveSource service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/CreateLiveSource">REST API Reference for CreateLiveSource Operation</seealso>
+        public virtual CreateLiveSourceResponse CreateLiveSource(CreateLiveSourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLiveSourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLiveSourceResponseUnmarshaller.Instance;
+
+            return Invoke<CreateLiveSourceResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates name for a specific live source in a source location.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLiveSource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateLiveSource service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/CreateLiveSource">REST API Reference for CreateLiveSource Operation</seealso>
+        public virtual Task<CreateLiveSourceResponse> CreateLiveSourceAsync(CreateLiveSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLiveSourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLiveSourceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateLiveSourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreatePrefetchSchedule
 
 
@@ -591,6 +632,47 @@ namespace Amazon.MediaTailor
             options.ResponseUnmarshaller = DeleteChannelPolicyResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteChannelPolicyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteLiveSource
+
+
+        /// <summary>
+        /// Deletes a specific live source in a specific source location.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLiveSource service method.</param>
+        /// 
+        /// <returns>The response from the DeleteLiveSource service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DeleteLiveSource">REST API Reference for DeleteLiveSource Operation</seealso>
+        public virtual DeleteLiveSourceResponse DeleteLiveSource(DeleteLiveSourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteLiveSourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLiveSourceResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteLiveSourceResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes a specific live source in a specific source location.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLiveSource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteLiveSource service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DeleteLiveSource">REST API Reference for DeleteLiveSource Operation</seealso>
+        public virtual Task<DeleteLiveSourceResponse> DeleteLiveSourceAsync(DeleteLiveSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteLiveSourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLiveSourceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteLiveSourceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -839,6 +921,47 @@ namespace Amazon.MediaTailor
             options.ResponseUnmarshaller = DescribeChannelResponseUnmarshaller.Instance;
             
             return InvokeAsync<DescribeChannelResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeLiveSource
+
+
+        /// <summary>
+        /// Provides details about a specific live source in a specific source location.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeLiveSource service method.</param>
+        /// 
+        /// <returns>The response from the DescribeLiveSource service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DescribeLiveSource">REST API Reference for DescribeLiveSource Operation</seealso>
+        public virtual DescribeLiveSourceResponse DescribeLiveSource(DescribeLiveSourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeLiveSourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeLiveSourceResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeLiveSourceResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Provides details about a specific live source in a specific source location.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeLiveSource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeLiveSource service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DescribeLiveSource">REST API Reference for DescribeLiveSource Operation</seealso>
+        public virtual Task<DescribeLiveSourceResponse> DescribeLiveSourceAsync(DescribeLiveSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeLiveSourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeLiveSourceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeLiveSourceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1212,6 +1335,47 @@ namespace Amazon.MediaTailor
             options.ResponseUnmarshaller = ListChannelsResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListChannelsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListLiveSources
+
+
+        /// <summary>
+        /// lists all the live sources in a source location.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListLiveSources service method.</param>
+        /// 
+        /// <returns>The response from the ListLiveSources service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListLiveSources">REST API Reference for ListLiveSources Operation</seealso>
+        public virtual ListLiveSourcesResponse ListLiveSources(ListLiveSourcesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListLiveSourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListLiveSourcesResponseUnmarshaller.Instance;
+
+            return Invoke<ListLiveSourcesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// lists all the live sources in a source location.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListLiveSources service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListLiveSources service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListLiveSources">REST API Reference for ListLiveSources Operation</seealso>
+        public virtual Task<ListLiveSourcesResponse> ListLiveSourcesAsync(ListLiveSourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListLiveSourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListLiveSourcesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListLiveSourcesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1734,6 +1898,47 @@ namespace Amazon.MediaTailor
             options.ResponseUnmarshaller = UpdateChannelResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateChannelResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateLiveSource
+
+
+        /// <summary>
+        /// Updates a specific live source in a specific source location.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLiveSource service method.</param>
+        /// 
+        /// <returns>The response from the UpdateLiveSource service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/UpdateLiveSource">REST API Reference for UpdateLiveSource Operation</seealso>
+        public virtual UpdateLiveSourceResponse UpdateLiveSource(UpdateLiveSourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateLiveSourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateLiveSourceResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateLiveSourceResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates a specific live source in a specific source location.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLiveSource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateLiveSource service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/UpdateLiveSource">REST API Reference for UpdateLiveSource Operation</seealso>
+        public virtual Task<UpdateLiveSourceResponse> UpdateLiveSourceAsync(UpdateLiveSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateLiveSourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateLiveSourceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateLiveSourceResponse>(request, options, cancellationToken);
         }
 
         #endregion

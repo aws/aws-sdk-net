@@ -105,6 +105,36 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("MediaTailor")]
+        public void CreateLiveSourceMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateLiveSource");
+
+            var request = InstantiateClassGenerator.Execute<CreateLiveSourceRequest>();
+            var marshaller = new CreateLiveSourceRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("CreateLiveSource", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = CreateLiveSourceResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as CreateLiveSourceResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("MediaTailor")]
         public void CreatePrefetchScheduleMarshallTest()
         {
             var operation = service_model.FindOperation("CreatePrefetchSchedule");
@@ -285,6 +315,36 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("MediaTailor")]
+        public void DeleteLiveSourceMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteLiveSource");
+
+            var request = InstantiateClassGenerator.Execute<DeleteLiveSourceRequest>();
+            var marshaller = new DeleteLiveSourceRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("DeleteLiveSource", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = DeleteLiveSourceResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as DeleteLiveSourceResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("MediaTailor")]
         public void DeletePlaybackConfigurationMarshallTest()
         {
             var operation = service_model.FindOperation("DeletePlaybackConfiguration");
@@ -458,6 +518,36 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = DescribeChannelResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context) as DescribeChannelResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("MediaTailor")]
+        public void DescribeLiveSourceMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeLiveSource");
+
+            var request = InstantiateClassGenerator.Execute<DescribeLiveSourceRequest>();
+            var marshaller = new DescribeLiveSourceRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("DescribeLiveSource", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = DescribeLiveSourceResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as DescribeLiveSourceResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -728,6 +818,36 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = ListChannelsResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context) as ListChannelsResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("MediaTailor")]
+        public void ListLiveSourcesMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListLiveSources");
+
+            var request = InstantiateClassGenerator.Execute<ListLiveSourcesRequest>();
+            var marshaller = new ListLiveSourcesRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("ListLiveSources", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = ListLiveSourcesResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as ListLiveSourcesResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -1156,6 +1276,36 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = UpdateChannelResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context) as UpdateChannelResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("MediaTailor")]
+        public void UpdateLiveSourceMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateLiveSource");
+
+            var request = InstantiateClassGenerator.Execute<UpdateLiveSourceRequest>();
+            var marshaller = new UpdateLiveSourceRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("UpdateLiveSource", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = UpdateLiveSourceResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as UpdateLiveSourceResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 

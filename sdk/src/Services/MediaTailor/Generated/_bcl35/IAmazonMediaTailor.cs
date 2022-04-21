@@ -137,6 +137,46 @@ namespace Amazon.MediaTailor
 
         #endregion
         
+        #region  CreateLiveSource
+
+
+        /// <summary>
+        /// Creates name for a specific live source in a source location.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLiveSource service method.</param>
+        /// 
+        /// <returns>The response from the CreateLiveSource service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/CreateLiveSource">REST API Reference for CreateLiveSource Operation</seealso>
+        CreateLiveSourceResponse CreateLiveSource(CreateLiveSourceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateLiveSource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateLiveSource operation on AmazonMediaTailorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateLiveSource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/CreateLiveSource">REST API Reference for CreateLiveSource Operation</seealso>
+        IAsyncResult BeginCreateLiveSource(CreateLiveSourceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateLiveSource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateLiveSource.</param>
+        /// 
+        /// <returns>Returns a  CreateLiveSourceResult from MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/CreateLiveSource">REST API Reference for CreateLiveSource Operation</seealso>
+        CreateLiveSourceResponse EndCreateLiveSource(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreatePrefetchSchedule
 
 
@@ -374,6 +414,46 @@ namespace Amazon.MediaTailor
         /// <returns>Returns a  DeleteChannelPolicyResult from MediaTailor.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DeleteChannelPolicy">REST API Reference for DeleteChannelPolicy Operation</seealso>
         DeleteChannelPolicyResponse EndDeleteChannelPolicy(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteLiveSource
+
+
+        /// <summary>
+        /// Deletes a specific live source in a specific source location.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLiveSource service method.</param>
+        /// 
+        /// <returns>The response from the DeleteLiveSource service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DeleteLiveSource">REST API Reference for DeleteLiveSource Operation</seealso>
+        DeleteLiveSourceResponse DeleteLiveSource(DeleteLiveSourceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteLiveSource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLiveSource operation on AmazonMediaTailorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteLiveSource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DeleteLiveSource">REST API Reference for DeleteLiveSource Operation</seealso>
+        IAsyncResult BeginDeleteLiveSource(DeleteLiveSourceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteLiveSource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteLiveSource.</param>
+        /// 
+        /// <returns>Returns a  DeleteLiveSourceResult from MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DeleteLiveSource">REST API Reference for DeleteLiveSource Operation</seealso>
+        DeleteLiveSourceResponse EndDeleteLiveSource(IAsyncResult asyncResult);
 
         #endregion
         
@@ -615,6 +695,46 @@ namespace Amazon.MediaTailor
         /// <returns>Returns a  DescribeChannelResult from MediaTailor.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DescribeChannel">REST API Reference for DescribeChannel Operation</seealso>
         DescribeChannelResponse EndDescribeChannel(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeLiveSource
+
+
+        /// <summary>
+        /// Provides details about a specific live source in a specific source location.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeLiveSource service method.</param>
+        /// 
+        /// <returns>The response from the DescribeLiveSource service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DescribeLiveSource">REST API Reference for DescribeLiveSource Operation</seealso>
+        DescribeLiveSourceResponse DescribeLiveSource(DescribeLiveSourceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeLiveSource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeLiveSource operation on AmazonMediaTailorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeLiveSource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DescribeLiveSource">REST API Reference for DescribeLiveSource Operation</seealso>
+        IAsyncResult BeginDescribeLiveSource(DescribeLiveSourceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeLiveSource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeLiveSource.</param>
+        /// 
+        /// <returns>Returns a  DescribeLiveSourceResult from MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DescribeLiveSource">REST API Reference for DescribeLiveSource Operation</seealso>
+        DescribeLiveSourceResponse EndDescribeLiveSource(IAsyncResult asyncResult);
 
         #endregion
         
@@ -977,6 +1097,46 @@ namespace Amazon.MediaTailor
         /// <returns>Returns a  ListChannelsResult from MediaTailor.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListChannels">REST API Reference for ListChannels Operation</seealso>
         ListChannelsResponse EndListChannels(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListLiveSources
+
+
+        /// <summary>
+        /// lists all the live sources in a source location.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListLiveSources service method.</param>
+        /// 
+        /// <returns>The response from the ListLiveSources service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListLiveSources">REST API Reference for ListLiveSources Operation</seealso>
+        ListLiveSourcesResponse ListLiveSources(ListLiveSourcesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListLiveSources operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListLiveSources operation on AmazonMediaTailorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListLiveSources
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListLiveSources">REST API Reference for ListLiveSources Operation</seealso>
+        IAsyncResult BeginListLiveSources(ListLiveSourcesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListLiveSources operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListLiveSources.</param>
+        /// 
+        /// <returns>Returns a  ListLiveSourcesResult from MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListLiveSources">REST API Reference for ListLiveSources Operation</seealso>
+        ListLiveSourcesResponse EndListLiveSources(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1472,6 +1632,46 @@ namespace Amazon.MediaTailor
         /// <returns>Returns a  UpdateChannelResult from MediaTailor.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/UpdateChannel">REST API Reference for UpdateChannel Operation</seealso>
         UpdateChannelResponse EndUpdateChannel(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateLiveSource
+
+
+        /// <summary>
+        /// Updates a specific live source in a specific source location.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLiveSource service method.</param>
+        /// 
+        /// <returns>The response from the UpdateLiveSource service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/UpdateLiveSource">REST API Reference for UpdateLiveSource Operation</seealso>
+        UpdateLiveSourceResponse UpdateLiveSource(UpdateLiveSourceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateLiveSource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLiveSource operation on AmazonMediaTailorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateLiveSource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/UpdateLiveSource">REST API Reference for UpdateLiveSource Operation</seealso>
+        IAsyncResult BeginUpdateLiveSource(UpdateLiveSourceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateLiveSource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateLiveSource.</param>
+        /// 
+        /// <returns>Returns a  UpdateLiveSourceResult from MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/UpdateLiveSource">REST API Reference for UpdateLiveSource Operation</seealso>
+        UpdateLiveSourceResponse EndUpdateLiveSource(IAsyncResult asyncResult);
 
         #endregion
         

@@ -29,7 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaTailor.Model
 {
     /// <summary>
-    /// 
+    /// The base URL of the host or path of the segment delivery server that you're using
+    /// to serve segments. This is typically a content delivery network (CDN). The URL can
+    /// be absolute or relative. To use an absolute URL include the protocol, such as https://example.com/some/path.
+    /// To use a relative URL specify the relative path, such as /some/path*.
     /// </summary>
     public partial class SegmentDeliveryConfiguration
     {
@@ -37,7 +40,13 @@ namespace Amazon.MediaTailor.Model
         private string _name;
 
         /// <summary>
-        /// Gets and sets the property BaseUrl.
+        /// Gets and sets the property BaseUrl. 
+        /// <para>
+        /// The base URL of the host or path of the segment delivery server that you're using
+        /// to serve segments. This is typically a content delivery network (CDN). The URL can
+        /// be absolute or relative. To use an absolute URL include the protocol, such as https://example.com/some/path.
+        /// To use a relative URL specify the relative path, such as /some/path*.
+        /// </para>
         /// </summary>
         public string BaseUrl
         {
@@ -52,7 +61,11 @@ namespace Amazon.MediaTailor.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name.
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// A unique identifier used to distinguish between multiple segment delivery configurations
+        /// in a source location.
+        /// </para>
         /// </summary>
         public string Name
         {

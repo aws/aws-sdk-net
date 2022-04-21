@@ -75,6 +75,12 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                     response.CreationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("LiveSourceName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.LiveSourceName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ProgramName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

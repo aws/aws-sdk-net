@@ -33,10 +33,29 @@ namespace Amazon.MediaTailor.Model
     /// </summary>
     public partial class Transition
     {
+        private long? _durationMillis;
         private RelativePosition _relativePosition;
         private string _relativeProgram;
         private long? _scheduledStartTimeMillis;
         private string _type;
+
+        /// <summary>
+        /// Gets and sets the property DurationMillis. 
+        /// <para>
+        /// The duration of the live program in seconds.
+        /// </para>
+        /// </summary>
+        public long DurationMillis
+        {
+            get { return this._durationMillis.GetValueOrDefault(); }
+            set { this._durationMillis = value; }
+        }
+
+        // Check to see if DurationMillis property is set
+        internal bool IsSetDurationMillis()
+        {
+            return this._durationMillis.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property RelativePosition. 

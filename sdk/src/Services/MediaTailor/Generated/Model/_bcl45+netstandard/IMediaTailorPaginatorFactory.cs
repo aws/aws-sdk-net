@@ -41,6 +41,11 @@ namespace Amazon.MediaTailor.Model
         IListChannelsPaginator ListChannels(ListChannelsRequest request);
 
         /// <summary>
+        /// Paginator for ListLiveSources operation
+        ///</summary>
+        IListLiveSourcesPaginator ListLiveSources(ListLiveSourcesRequest request);
+
+        /// <summary>
         /// Paginator for ListPlaybackConfigurations operation
         ///</summary>
         IListPlaybackConfigurationsPaginator ListPlaybackConfigurations(ListPlaybackConfigurationsRequest request);
