@@ -1,3 +1,23 @@
+### 3.7.257.0 (2022-04-21 18:19 UTC)
+* ConnectWisdomService (3.7.1.0)
+	* This release updates the GetRecommendations API to include a trigger event list for classifying and grouping recommendations.
+* ElastiCache (3.7.5.37)
+	* Doc only update for ElastiCache
+* Glue (3.7.17.0)
+	* This release adds APIs to create, read, delete, list, and batch read of Glue custom entity types
+* IoTSiteWise (3.7.10.0)
+	* This release adds 3 new batch data query APIs : BatchGetAssetPropertyValue, BatchGetAssetPropertyValueHistory and BatchGetAssetPropertyAggregates
+* IoTTwinMaker (3.7.2.0)
+	* General availability (GA) for AWS IoT TwinMaker. For more information, see https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/Welcome.html
+* LookoutMetrics (3.7.8.0)
+	* Added DetectMetricSetConfig API for detecting configuration required for creating metric set from provided S3 data source.
+* MediaTailor (3.7.9.0)
+	* This release introduces tiered channels and adds support for live sources. Customers using a STANDARD channel can now create programs using live sources.
+* SecretsManager (3.7.2.33)
+	* Documentation updates for Secrets Manager
+* StorageGateway (3.7.5.0)
+	* This release adds support for minimum of 5 character length virtual tape barcodes.
+
 ### 3.7.256.0 (2022-04-20 18:16 UTC)
 * Connect (3.7.17.0)
 	* This release adds APIs to search, claim, release, list, update, and describe phone numbers. You can also use them to associate and disassociate contact flows to phone numbers.
