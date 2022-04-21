@@ -44,6 +44,11 @@ namespace Amazon.IoTTwinMaker.Model
         /// <para>
         /// A list of objects that filter the request.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Only one object is accepted as a valid input.
+        /// </para>
+        ///  </note>
         /// </summary>
         public List<ListEntitiesFilter> Filters
         {

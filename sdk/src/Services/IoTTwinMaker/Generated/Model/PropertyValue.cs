@@ -38,7 +38,55 @@ namespace Amazon.IoTTwinMaker.Model
         private DataValue _value;
 
         /// <summary>
-        /// Gets and sets the property Time.
+        /// Gets and sets the property Time. 
+        /// <para>
+        /// ISO8601 DateTime of a value for a time series property.
+        /// </para>
+        ///  
+        /// <para>
+        /// The time for when the property value was recorded in ISO 8601 format: <i>YYYY-MM-DDThh:mm:ss[.SSSSSSSSS][Z/±HH:mm]</i>.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <i>[YYYY]</i>: year
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <i>[MM]</i>: month
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <i>[DD]</i>: day
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <i>[hh]</i>: hour
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <i>[mm]</i>: minute
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <i>[ss]</i>: seconds
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <i>[.SSSSSSSSS]</i>: additional precision, where precedence is maintained. For example:
+        /// [.573123] is equal to 573123000 nanoseconds.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <i>Z</i>: default timezone UTC
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <i>± HH:mm</i>: time zone offset in Hours and Minutes.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <i>Required sub-fields</i>: YYYY-MM-DDThh:mm:ss and [Z/±HH:mm]
+        /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=35)]
         public string Time

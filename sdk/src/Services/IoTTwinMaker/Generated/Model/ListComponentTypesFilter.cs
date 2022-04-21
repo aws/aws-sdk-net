@@ -30,6 +30,12 @@ namespace Amazon.IoTTwinMaker.Model
 {
     /// <summary>
     /// An object that filters items in a list of component types.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// Only one object is accepted as a valid input.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class ListComponentTypesFilter
     {
