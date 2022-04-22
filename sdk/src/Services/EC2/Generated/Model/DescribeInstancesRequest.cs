@@ -111,6 +111,11 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>capacity-reservation-id</code> - The ID of the Capacity Reservation into which
+        /// the instance was launched.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>client-token</code> - The idempotency token you provided when you launched
         /// the instance.
         /// </para>

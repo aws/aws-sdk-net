@@ -266,11 +266,10 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property PrivateDnsHostnameTypeOnLaunch. 
         /// <para>
-        /// The type of hostnames to assign to instances in the subnet at launch. For IPv4 only
-        /// subnets, an instance DNS name must be based on the instance IPv4 address. For IPv6
-        /// only subnets, an instance DNS name must be based on the instance ID. For dual-stack
-        /// subnets, you can specify whether DNS names use the instance IPv4 address or the instance
-        /// ID.
+        /// The type of hostname to assign to instances in the subnet at launch. For IPv4-only
+        /// and dual-stack (IPv4 and IPv6) subnets, an instance DNS name can be based on the instance
+        /// IPv4 address (ip-name) or the instance ID (resource-name). For IPv6 only subnets,
+        /// an instance DNS name must be based on the instance ID (resource-name).
         /// </para>
         /// </summary>
         public HostnameType PrivateDnsHostnameTypeOnLaunch

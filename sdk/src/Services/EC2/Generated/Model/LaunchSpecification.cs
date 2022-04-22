@@ -170,7 +170,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
-        /// The instance type.
+        /// The instance type. Only one instance type can be specified.
         /// </para>
         /// </summary>
         public InstanceType InstanceType

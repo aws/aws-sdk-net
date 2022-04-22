@@ -47,7 +47,7 @@ namespace Amazon.EC2.Model
         ///  <ul> <li> 
         /// <para>
         /// For RSA key pairs, the key fingerprint is the SHA-1 digest of the DER encoded private
-        /// key. 
+        /// key.
         /// </para>
         ///  </li> <li> 
         /// <para>

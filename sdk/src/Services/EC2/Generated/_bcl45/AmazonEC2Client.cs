@@ -30216,6 +30216,14 @@ namespace Amazon.EC2
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html">Spot
         /// Fleet requests</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// We strongly discourage using the RequestSpotFleet API because it is a legacy API with
+        /// no planned investment. For options for requesting Spot Instances, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-best-practices.html#which-spot-request-method-to-use">Which
+        /// is the best Spot request method to use?</a> in the <i>Amazon EC2 User Guide for Linux
+        /// Instances</i>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RequestSpotFleet service method.</param>
         /// 
@@ -30269,6 +30277,14 @@ namespace Amazon.EC2
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html">Spot
         /// Fleet requests</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// We strongly discourage using the RequestSpotFleet API because it is a legacy API with
+        /// no planned investment. For options for requesting Spot Instances, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-best-practices.html#which-spot-request-method-to-use">Which
+        /// is the best Spot request method to use?</a> in the <i>Amazon EC2 User Guide for Linux
+        /// Instances</i>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RequestSpotFleet service method.</param>
         /// <param name="cancellationToken">
@@ -30299,6 +30315,14 @@ namespace Amazon.EC2
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot
         /// Instance requests</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// We strongly discourage using the RequestSpotInstances API because it is a legacy API
+        /// with no planned investment. For options for requesting Spot Instances, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-best-practices.html#which-spot-request-method-to-use">Which
+        /// is the best Spot request method to use?</a> in the <i>Amazon EC2 User Guide for Linux
+        /// Instances</i>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RequestSpotInstances service method.</param>
         /// 
@@ -30322,6 +30346,14 @@ namespace Amazon.EC2
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot
         /// Instance requests</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// We strongly discourage using the RequestSpotInstances API because it is a legacy API
+        /// with no planned investment. For options for requesting Spot Instances, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-best-practices.html#which-spot-request-method-to-use">Which
+        /// is the best Spot request method to use?</a> in the <i>Amazon EC2 User Guide for Linux
+        /// Instances</i>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RequestSpotInstances service method.</param>
         /// <param name="cancellationToken">

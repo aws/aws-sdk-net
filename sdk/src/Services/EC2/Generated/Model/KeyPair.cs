@@ -40,10 +40,17 @@ namespace Amazon.EC2.Model
         private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
-        /// Gets and sets the property KeyFingerprint. 
+        /// Gets and sets the property KeyFingerprint. <ul> <li> 
         /// <para>
-        /// The SHA-1 digest of the DER encoded private key.
+        /// For RSA key pairs, the key fingerprint is the SHA-1 digest of the DER encoded private
+        /// key.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For ED25519 key pairs, the key fingerprint is the base64-encoded SHA-256 digest, which
+        /// is the default for OpenSSH, starting with OpenSSH 6.8.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string KeyFingerprint
         {
