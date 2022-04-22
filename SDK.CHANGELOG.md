@@ -1,3 +1,9 @@
+### 3.7.258.0 (2022-04-22 18:17 UTC)
+* ChimeSDKMeetings (3.7.6.0)
+	* Include additional exceptions types.
+* EC2 (3.7.65.0)
+	* Adds support for waiters that automatically poll for a deleted NAT Gateway until it reaches the deleted state.
+
 ### 3.7.257.0 (2022-04-21 18:19 UTC)
 * ConnectWisdomService (3.7.1.0)
 	* This release updates the GetRecommendations API to include a trigger event list for classifying and grouping recommendations.
