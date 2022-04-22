@@ -280,11 +280,27 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ChimeSDKMeetings.Model.ServiceFailureException.Code</property>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMeetings.Model.ServiceFailureException.RequestId</property>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ChimeSDKMeetings.Model.ServiceUnavailableException.Code</property>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKMeetings.Model.ServiceUnavailableException.RequestId</property>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMeetings.Model.ThrottlingException.Code</property>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMeetings.Model.ThrottlingException.RequestId</property>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
