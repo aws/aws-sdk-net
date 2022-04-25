@@ -33,6 +33,7 @@ namespace Amazon.MQ.Model
     /// </summary>
     public partial class DescribeBrokerResponse : AmazonWebServiceResponse
     {
+        private List<ActionRequired> _actionsRequired = new List<ActionRequired>();
         private AuthenticationStrategy _authenticationStrategy;
         private bool? _autoMinorVersionUpgrade;
         private string _brokerArn;
@@ -61,6 +62,24 @@ namespace Amazon.MQ.Model
         private List<string> _subnetIds = new List<string>();
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private List<UserSummary> _users = new List<UserSummary>();
+
+        /// <summary>
+        /// Gets and sets the property ActionsRequired. 
+        /// <para>
+        /// A list of actions required for a broker.
+        /// </para>
+        /// </summary>
+        public List<ActionRequired> ActionsRequired
+        {
+            get { return this._actionsRequired; }
+            set { this._actionsRequired = value; }
+        }
+
+        // Check to see if ActionsRequired property is set
+        internal bool IsSetActionsRequired()
+        {
+            return this._actionsRequired != null && this._actionsRequired.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property AuthenticationStrategy. 

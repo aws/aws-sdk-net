@@ -89,6 +89,10 @@ namespace Amazon.MQ
         /// </summary>
         public static readonly BrokerState CREATION_IN_PROGRESS = new BrokerState("CREATION_IN_PROGRESS");
         /// <summary>
+        /// Constant CRITICAL_ACTION_REQUIRED for BrokerState
+        /// </summary>
+        public static readonly BrokerState CRITICAL_ACTION_REQUIRED = new BrokerState("CRITICAL_ACTION_REQUIRED");
+        /// <summary>
         /// Constant DELETION_IN_PROGRESS for BrokerState
         /// </summary>
         public static readonly BrokerState DELETION_IN_PROGRESS = new BrokerState("DELETION_IN_PROGRESS");

@@ -51,6 +51,12 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("actionsRequired", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ActionRequired, ActionRequiredUnmarshaller>(ActionRequiredUnmarshaller.Instance);
+                    response.ActionsRequired = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("authenticationStrategy", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
