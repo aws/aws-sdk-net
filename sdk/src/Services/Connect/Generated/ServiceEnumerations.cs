@@ -767,6 +767,56 @@ namespace Amazon.Connect
 
 
     /// <summary>
+    /// Constants used for properties of type HierarchyGroupMatchType.
+    /// </summary>
+    public class HierarchyGroupMatchType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EXACT for HierarchyGroupMatchType
+        /// </summary>
+        public static readonly HierarchyGroupMatchType EXACT = new HierarchyGroupMatchType("EXACT");
+        /// <summary>
+        /// Constant WITH_CHILD_GROUPS for HierarchyGroupMatchType
+        /// </summary>
+        public static readonly HierarchyGroupMatchType WITH_CHILD_GROUPS = new HierarchyGroupMatchType("WITH_CHILD_GROUPS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HierarchyGroupMatchType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HierarchyGroupMatchType FindValue(string value)
+        {
+            return FindValue<HierarchyGroupMatchType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HierarchyGroupMatchType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type HistoricalMetricName.
     /// </summary>
     public class HistoricalMetricName : ConstantClass
@@ -2912,6 +2962,60 @@ namespace Amazon.Connect
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator StorageType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type StringComparisonType.
+    /// </summary>
+    public class StringComparisonType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CONTAINS for StringComparisonType
+        /// </summary>
+        public static readonly StringComparisonType CONTAINS = new StringComparisonType("CONTAINS");
+        /// <summary>
+        /// Constant EXACT for StringComparisonType
+        /// </summary>
+        public static readonly StringComparisonType EXACT = new StringComparisonType("EXACT");
+        /// <summary>
+        /// Constant STARTS_WITH for StringComparisonType
+        /// </summary>
+        public static readonly StringComparisonType STARTS_WITH = new StringComparisonType("STARTS_WITH");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StringComparisonType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StringComparisonType FindValue(string value)
+        {
+            return FindValue<StringComparisonType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StringComparisonType(string value)
         {
             return FindValue(value);
         }

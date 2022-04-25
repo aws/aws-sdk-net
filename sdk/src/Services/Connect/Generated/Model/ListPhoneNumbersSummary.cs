@@ -98,7 +98,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property PhoneNumberId. 
         /// <para>
-        /// The identifier of the phone number.
+        /// A unique identifier for the phone number.
         /// </para>
         /// </summary>
         public string PhoneNumberId

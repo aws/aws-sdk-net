@@ -29,30 +29,48 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribePhoneNumber operation.
-    /// Gets details and status of a phone number that’s claimed to your Amazon Connect instance
+    /// A leaf node condition which can be used to specify a tag condition, for example, <code>HAVE
+    /// BPO = 123</code>.
     /// </summary>
-    public partial class DescribePhoneNumberRequest : AmazonConnectRequest
+    public partial class TagCondition
     {
-        private string _phoneNumberId;
+        private string _tagKey;
+        private string _tagValue;
 
         /// <summary>
-        /// Gets and sets the property PhoneNumberId. 
+        /// Gets and sets the property TagKey. 
         /// <para>
-        /// A unique identifier for the phone number.
+        /// The tag key in the tag condition.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public string PhoneNumberId
+        public string TagKey
         {
-            get { return this._phoneNumberId; }
-            set { this._phoneNumberId = value; }
+            get { return this._tagKey; }
+            set { this._tagKey = value; }
         }
 
-        // Check to see if PhoneNumberId property is set
-        internal bool IsSetPhoneNumberId()
+        // Check to see if TagKey property is set
+        internal bool IsSetTagKey()
         {
-            return this._phoneNumberId != null;
+            return this._tagKey != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TagValue. 
+        /// <para>
+        /// The tag value in the tag condition.
+        /// </para>
+        /// </summary>
+        public string TagValue
+        {
+            get { return this._tagValue; }
+            set { this._tagValue = value; }
+        }
+
+        // Check to see if TagValue property is set
+        internal bool IsSetTagValue()
+        {
+            return this._tagValue != null;
         }
 
     }

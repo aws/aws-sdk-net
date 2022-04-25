@@ -39,7 +39,6 @@ namespace Amazon.Connect.Model
         /// Gets and sets the property ClaimedPhoneNumberSummary. 
         /// <para>
         /// Information about a phone number that's been claimed to your Amazon Connect instance.
-        /// 
         /// </para>
         /// </summary>
         public ClaimedPhoneNumberSummary ClaimedPhoneNumberSummary

@@ -284,6 +284,14 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Paginator for SearchUsers operation
+        ///</summary>
+        public ISearchUsersPaginator SearchUsers(SearchUsersRequest request) 
+        {
+            return new SearchUsersPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for SearchVocabularies operation
         ///</summary>
         public ISearchVocabulariesPaginator SearchVocabularies(SearchVocabulariesRequest request) 

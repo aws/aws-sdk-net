@@ -29,47 +29,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// This is the response object from the UpdatePhoneNumber operation.
+    /// A leaf node condition which can be used to specify a hierarchy group condition.
     /// </summary>
-    public partial class UpdatePhoneNumberResponse : AmazonWebServiceResponse
+    public partial class HierarchyGroupCondition
     {
-        private string _phoneNumberArn;
-        private string _phoneNumberId;
+        private HierarchyGroupMatchType _hierarchyGroupMatchType;
+        private string _value;
 
         /// <summary>
-        /// Gets and sets the property PhoneNumberArn. 
+        /// Gets and sets the property HierarchyGroupMatchType. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the phone number.
+        /// The type of hierarchy group match.
         /// </para>
         /// </summary>
-        public string PhoneNumberArn
+        public HierarchyGroupMatchType HierarchyGroupMatchType
         {
-            get { return this._phoneNumberArn; }
-            set { this._phoneNumberArn = value; }
+            get { return this._hierarchyGroupMatchType; }
+            set { this._hierarchyGroupMatchType = value; }
         }
 
-        // Check to see if PhoneNumberArn property is set
-        internal bool IsSetPhoneNumberArn()
+        // Check to see if HierarchyGroupMatchType property is set
+        internal bool IsSetHierarchyGroupMatchType()
         {
-            return this._phoneNumberArn != null;
+            return this._hierarchyGroupMatchType != null;
         }
 
         /// <summary>
-        /// Gets and sets the property PhoneNumberId. 
+        /// Gets and sets the property Value. 
         /// <para>
-        /// A unique identifier for the phone number.
+        /// The value in the hierarchy group condition.
         /// </para>
         /// </summary>
-        public string PhoneNumberId
+        public string Value
         {
-            get { return this._phoneNumberId; }
-            set { this._phoneNumberId = value; }
+            get { return this._value; }
+            set { this._value = value; }
         }
 
-        // Check to see if PhoneNumberId property is set
-        internal bool IsSetPhoneNumberId()
+        // Check to see if Value property is set
+        internal bool IsSetValue()
         {
-            return this._phoneNumberId != null;
+            return this._value != null;
         }
 
     }

@@ -29,30 +29,25 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribePhoneNumber operation.
-    /// Gets details and status of a phone number that’s claimed to your Amazon Connect instance
+    /// Filters to be applied to search results.
     /// </summary>
-    public partial class DescribePhoneNumberRequest : AmazonConnectRequest
+    public partial class UserSearchFilter
     {
-        private string _phoneNumberId;
+        private ControlPlaneTagFilter _tagFilter;
 
         /// <summary>
-        /// Gets and sets the property PhoneNumberId. 
-        /// <para>
-        /// A unique identifier for the phone number.
-        /// </para>
+        /// Gets and sets the property TagFilter.
         /// </summary>
-        [AWSProperty(Required=true)]
-        public string PhoneNumberId
+        public ControlPlaneTagFilter TagFilter
         {
-            get { return this._phoneNumberId; }
-            set { this._phoneNumberId = value; }
+            get { return this._tagFilter; }
+            set { this._tagFilter = value; }
         }
 
-        // Check to see if PhoneNumberId property is set
-        internal bool IsSetPhoneNumberId()
+        // Check to see if TagFilter property is set
+        internal bool IsSetTagFilter()
         {
-            return this._phoneNumberId != null;
+            return this._tagFilter != null;
         }
 
     }

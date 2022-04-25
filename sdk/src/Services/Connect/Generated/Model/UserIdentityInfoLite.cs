@@ -29,30 +29,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribePhoneNumber operation.
-    /// Gets details and status of a phone number that’s claimed to your Amazon Connect instance
+    /// The user's first name and last name.
     /// </summary>
-    public partial class DescribePhoneNumberRequest : AmazonConnectRequest
+    public partial class UserIdentityInfoLite
     {
-        private string _phoneNumberId;
+        private string _firstName;
+        private string _lastName;
 
         /// <summary>
-        /// Gets and sets the property PhoneNumberId. 
+        /// Gets and sets the property FirstName. 
         /// <para>
-        /// A unique identifier for the phone number.
+        /// The user's first name.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public string PhoneNumberId
+        [AWSProperty(Min=1, Max=100)]
+        public string FirstName
         {
-            get { return this._phoneNumberId; }
-            set { this._phoneNumberId = value; }
+            get { return this._firstName; }
+            set { this._firstName = value; }
         }
 
-        // Check to see if PhoneNumberId property is set
-        internal bool IsSetPhoneNumberId()
+        // Check to see if FirstName property is set
+        internal bool IsSetFirstName()
         {
-            return this._phoneNumberId != null;
+            return this._firstName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastName. 
+        /// <para>
+        /// The user's last name.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=100)]
+        public string LastName
+        {
+            get { return this._lastName; }
+            set { this._lastName = value; }
+        }
+
+        // Check to see if LastName property is set
+        internal bool IsSetLastName()
+        {
+            return this._lastName != null;
         }
 
     }

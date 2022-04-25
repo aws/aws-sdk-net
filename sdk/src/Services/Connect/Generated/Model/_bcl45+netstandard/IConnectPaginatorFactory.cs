@@ -181,6 +181,11 @@ namespace Amazon.Connect.Model
         ISearchAvailablePhoneNumbersPaginator SearchAvailablePhoneNumbers(SearchAvailablePhoneNumbersRequest request);
 
         /// <summary>
+        /// Paginator for SearchUsers operation
+        ///</summary>
+        ISearchUsersPaginator SearchUsers(SearchUsersRequest request);
+
+        /// <summary>
         /// Paginator for SearchVocabularies operation
         ///</summary>
         ISearchVocabulariesPaginator SearchVocabularies(SearchVocabulariesRequest request);
