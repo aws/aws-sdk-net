@@ -238,8 +238,14 @@ namespace Amazon.S3.Transfer.Internal
                 ServerSideEncryptionCustomerProvidedKey = this._fileTransporterRequest.ServerSideEncryptionCustomerProvidedKey,
                 ServerSideEncryptionCustomerProvidedKeyMD5 = this._fileTransporterRequest.ServerSideEncryptionCustomerProvidedKeyMD5,
                 TagSet = this._fileTransporterRequest.TagSet,
-                ChecksumAlgorithm = this._fileTransporterRequest.ChecksumAlgorithm
+                ChecksumAlgorithm = this._fileTransporterRequest.ChecksumAlgorithm,
+                ObjectLockLegalHoldStatus = this._fileTransporterRequest.ObjectLockLegalHoldStatus,
+                ObjectLockMode = this._fileTransporterRequest.ObjectLockMode
             };
+
+            if (this._fileTransporterRequest.IsSetObjectLockRetainUntilDate())
+                initRequest.ObjectLockRetainUntilDate = this._fileTransporterRequest.ObjectLockRetainUntilDate;
+
             ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)initRequest).AddBeforeRequestHandler(this.RequestEventHandler);
 
             if (this._fileTransporterRequest.Metadata != null && this._fileTransporterRequest.Metadata.Count > 0)

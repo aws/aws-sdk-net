@@ -52,6 +52,9 @@ namespace Amazon.S3.Transfer
         string serverSideEncryptionKeyManagementServiceKeyId;
         private List<Tag> tagset;
         private bool calculateContentMD5Header = false;
+        private ObjectLockLegalHoldStatus objectLockLegalHoldStatus;
+        private ObjectLockMode objectLockMode;
+        private DateTime? objectLockRetainUntilDate;
 
         /// <summary>
         /// 	Gets or sets the directory where files are uploaded from.
@@ -266,6 +269,50 @@ namespace Amazon.S3.Transfer
         {
             get { return this.calculateContentMD5Header; }
             set { this.calculateContentMD5Header = value; }
+        }
+
+        /// <summary>
+        /// Gets and sets the property ObjectLockLegalHoldStatus. 
+        /// <para>
+        /// Specifies whether a legal hold will be applied to this object. For more information
+        /// about S3 Object Lock, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Object
+        /// Lock</a>.
+        /// </para>
+        /// </summary>
+        public ObjectLockLegalHoldStatus ObjectLockLegalHoldStatus
+        {
+            get { return this.objectLockLegalHoldStatus; }
+            set { this.objectLockLegalHoldStatus = value; }
+        }
+
+        /// <summary>
+        /// Gets and sets the property ObjectLockMode. 
+        /// <para>
+        /// The Object Lock mode that you want to apply to this object.
+        /// </para>
+        /// </summary>
+        public ObjectLockMode ObjectLockMode
+        {
+            get { return this.objectLockMode; }
+            set { this.objectLockMode = value; }
+        }
+
+        /// <summary>
+        /// Gets and sets the property ObjectLockRetainUntilDate. 
+        /// <para>
+        /// The date and time when you want this object's Object Lock to expire.
+        /// </para>
+        /// </summary>
+        public DateTime ObjectLockRetainUntilDate
+        {
+            get { return this.objectLockRetainUntilDate.GetValueOrDefault(); }
+            set { this.objectLockRetainUntilDate = value; }
+        }
+
+        // Check to see if ObjectLockRetainUntilDate property is set
+        internal bool IsSetObjectLockRetainUntilDate()
+        {
+            return this.objectLockRetainUntilDate.HasValue;
         }
 
         /// <summary>

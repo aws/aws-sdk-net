@@ -88,6 +88,11 @@ namespace Amazon.S3.Transfer.Internal
 
             putRequest.InputStream = this._fileTransporterRequest.InputStream;
             putRequest.CalculateContentMD5Header = this._fileTransporterRequest.CalculateContentMD5Header;
+            putRequest.ObjectLockLegalHoldStatus = this._fileTransporterRequest.ObjectLockLegalHoldStatus;
+            putRequest.ObjectLockMode = this._fileTransporterRequest.ObjectLockMode;
+
+            if (this._fileTransporterRequest.IsSetObjectLockRetainUntilDate())
+                putRequest.ObjectLockRetainUntilDate = this._fileTransporterRequest.ObjectLockRetainUntilDate;
 
             return putRequest;
         }

@@ -71,10 +71,16 @@ namespace Amazon.S3.Transfer.Internal
                 ServerSideEncryptionKeyManagementServiceKeyId = this._request.ServerSideEncryptionKeyManagementServiceKeyId,
                 TagSet = this._request.TagSet,
                 CalculateContentMD5Header = this._request.CalculateContentMD5Header,
+                ObjectLockLegalHoldStatus = this._request.ObjectLockLegalHoldStatus,
+                ObjectLockMode = this._request.ObjectLockMode,
 #if (BCL && !BCL45)
                 Timeout = ClientConfig.GetTimeoutValue(this._config.DefaultTimeout, this._request.Timeout)
 #endif
             };
+            
+            if (this._request.IsSetObjectLockRetainUntilDate())
+                uploadRequest.ObjectLockRetainUntilDate = this._request.ObjectLockRetainUntilDate;
+
             uploadRequest.UploadProgressEvent += new EventHandler<UploadProgressArgs>(UploadProgressEventCallback);
 
             // Raise event to allow subscribers to modify request
