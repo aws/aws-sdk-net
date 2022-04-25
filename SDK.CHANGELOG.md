@@ -1,3 +1,15 @@
+### 3.7.259.0 (2022-04-25 18:15 UTC)
+* Connect (3.7.18.0)
+	* This release adds SearchUsers API which can be used to search for users with a Connect Instance
+* GameLift (3.7.1.66)
+	* Documentation updates for Amazon GameLift.
+* MQ (3.7.2.0)
+	* This release adds the CRITICAL_ACTION_REQUIRED broker state and the ActionRequired API property. CRITICAL_ACTION_REQUIRED informs you when your broker is degraded. ActionRequired provides you with a code which you can use to find instructions in the Developer Guide on how to resolve the issue.
+* RDSDataService (3.7.1.0)
+	* Support to receive SQL query results in the form of a simplified JSON string. This enables developers using the new JSON string format to more easily convert it to an object using popular JSON string parsing libraries.
+* SecurityHub (3.7.11.0)
+	* Security Hub now lets you opt-out of auto-enabling the defaults standards (CIS and FSBP) in accounts that are auto-enabled with Security Hub via Security Hub's integration with AWS Organizations.
+
 ### 3.7.258.0 (2022-04-22 18:17 UTC)
 * ChimeSDKMeetings (3.7.6.0)
 	* Include additional exceptions types.
