@@ -30,7 +30,7 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Represents an authorization for a VPC peering connection between the VPC for an Amazon
-    /// Web Services fleet and another VPC on an account you have access to. This authorization
+    /// GameLift fleet and another VPC on an account you have access to. This authorization
     /// must exist and be valid for the peering connection to be established. Authorizations
     /// are valid for 24 hours after they are issued.
     /// 

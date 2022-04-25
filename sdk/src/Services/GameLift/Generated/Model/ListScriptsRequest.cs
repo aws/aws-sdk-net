@@ -40,7 +40,7 @@ namespace Amazon.GameLift.Model
     ///  
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/realtime-intro.html">Amazon
-    /// Web Services Realtime Servers</a> 
+    /// GameLift Realtime Servers</a> 
     /// </para>
     ///  
     /// <para>

@@ -190,8 +190,8 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property TicketId. 
         /// <para>
         /// A unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon
-        /// Web Services will generate one in the form of a UUID. Use this identifier to track
-        /// the match backfill ticket status and retrieve match results.
+        /// GameLift will generate one in the form of a UUID. Use this identifier to track the
+        /// match backfill ticket status and retrieve match results.
         /// </para>
         /// </summary>
         [AWSProperty(Max=128)]

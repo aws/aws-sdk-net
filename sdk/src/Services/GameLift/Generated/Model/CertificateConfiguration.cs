@@ -61,10 +61,7 @@ namespace Amazon.GameLift.Model
         ///  <b>DISABLED</b> - (default) Do not generate a TLS/SSL certificate for this fleet.
         /// 
         /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        ///  
-        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public CertificateType CertificateType

@@ -30,9 +30,8 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateBuild operation.
-    /// Creates a new Amazon Web Services build resource for your game server binary files.
-    /// Game server binaries must be combined into a zip file for use with Amazon Web Services.
-    /// 
+    /// Creates a new Amazon GameLift build resource for your game server binary files. Game
+    /// server binaries must be combined into a zip file for use with Amazon GameLift. 
     /// 
     ///  <important> 
     /// <para>
@@ -50,9 +49,9 @@ namespace Amazon.GameLift.Model
     /// <para>
     /// To create a new game build with build files that are in an Amazon S3 location under
     /// an Amazon Web Services account that you control. To use this option, you must first
-    /// give Amazon Web Services access to the Amazon S3 bucket. With permissions in place,
-    /// call <code>CreateBuild</code> and specify a build name, operating system, and the
-    /// Amazon S3 storage location of your game build.
+    /// give Amazon GameLift access to the Amazon S3 bucket. With permissions in place, call
+    /// <code>CreateBuild</code> and specify a build name, operating system, and the Amazon
+    /// S3 storage location of your game build.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -152,14 +151,14 @@ namespace Amazon.GameLift.Model
         /// Information indicating where your game build files are stored. Use this parameter
         /// only when creating a build with files stored in an Amazon S3 bucket that you own.
         /// The storage location must specify an Amazon S3 bucket name and key. The location must
-        /// also specify a role ARN that you set up to allow Amazon Web Services to access your
-        /// Amazon S3 bucket. The S3 bucket and your new build must be in the same Region.
+        /// also specify a role ARN that you set up to allow Amazon GameLift to access your Amazon
+        /// S3 bucket. The S3 bucket and your new build must be in the same Region.
         /// </para>
         ///  
         /// <para>
         /// If a <code>StorageLocation</code> is specified, the size of your file can be found
-        /// in your Amazon S3 bucket. Amazon Web Services will report a <code>SizeOnDisk</code>
-        /// of 0. 
+        /// in your Amazon S3 bucket. Amazon GameLift will report a <code>SizeOnDisk</code> of
+        /// 0. 
         /// </para>
         /// </summary>
         public S3Location StorageLocation

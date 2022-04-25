@@ -33,9 +33,9 @@ namespace Amazon.GameLift.Model
     /// 
     ///  
     /// <para>
-    /// An Amazon EC2 launch template that contains configuration settings and game server
-    /// code to be deployed to all instances in a game server group. The launch template is
-    /// specified when creating a new game server group with <a>CreateGameServerGroup</a>.
+    /// An Amazon Elastic Compute Cloud launch template that contains configuration settings
+    /// and game server code to be deployed to all instances in a game server group. The launch
+    /// template is specified when creating a new game server group with <a>CreateGameServerGroup</a>.
     /// 
     /// </para>
     /// </summary>
@@ -87,9 +87,8 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property Version. 
         /// <para>
         /// The version of the Amazon EC2 launch template to use. If no version is specified,
-        /// the default version will be used. With Amazon Elastic Compute Cloud, you can specify
-        /// a default version for a launch template. If none is set, the default is the first
-        /// version created.
+        /// the default version will be used. With Amazon EC2, you can specify a default version
+        /// for a launch template. If none is set, the default is the first version created.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

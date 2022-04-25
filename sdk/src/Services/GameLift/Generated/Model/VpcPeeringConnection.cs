@@ -30,8 +30,8 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Represents a peering connection between a VPC on one of your Amazon Web Services accounts
-    /// and the VPC for your Amazon Web Services fleets. This record may be for an active
-    /// peering connection or a pending connection that has not yet been established.
+    /// and the VPC for your Amazon GameLift fleets. This record may be for an active peering
+    /// connection or a pending connection that has not yet been established.
     /// 
     ///  
     /// <para>
@@ -77,7 +77,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property FleetId. 
         /// <para>
-        /// A unique identifier for the fleet. This ID determines the ID of the Amazon Web Services
+        /// A unique identifier for the fleet. This ID determines the ID of the Amazon GameLift
         /// VPC for your fleet.
         /// </para>
         /// </summary>
@@ -96,9 +96,9 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property GameLiftVpcId. 
         /// <para>
-        /// A unique identifier for the VPC that contains the Amazon Web Services fleet for this
-        /// connection. This VPC is managed by Amazon Web Services and does not appear in your
-        /// Amazon Web Services account. 
+        /// A unique identifier for the VPC that contains the Amazon GameLift fleet for this connection.
+        /// This VPC is managed by Amazon GameLift and does not appear in your Amazon Web Services
+        /// account. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

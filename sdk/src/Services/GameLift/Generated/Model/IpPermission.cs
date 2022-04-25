@@ -58,8 +58,7 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  
         /// <para>
-        /// For fleets using Linux builds, only port 22, 443, 1026-60000 are valid. For fleets
-        /// using Windows builds, only port 443, 1026-60000 are valid.
+        /// For fleets using Windows and Linux builds, only ports 1026-60000 are valid.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=60000)]
@@ -123,8 +122,7 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  
         /// <para>
-        /// For fleets using Linux builds, only port 22, 443, 1026-60000 are valid. For fleets
-        /// using Windows builds, only port 443, 1026-60000 are valid.
+        /// For fleets using Windows and Linux builds, only ports 1026-60000 are valid.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=60000)]

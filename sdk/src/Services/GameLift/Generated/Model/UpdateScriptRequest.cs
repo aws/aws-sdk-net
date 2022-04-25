@@ -47,9 +47,9 @@ namespace Amazon.GameLift.Model
     ///  
     /// <para>
     /// If the call is successful, the updated metadata is stored in the script record and
-    /// a revised script is uploaded to the Amazon Web Services service. Once the script is
-    /// updated and acquired by a fleet instance, the new version is used for all new game
-    /// sessions. 
+    /// a revised script is uploaded to the Amazon GameLift service. Once the script is updated
+    /// and acquired by a fleet instance, the new version is used for all new game sessions.
+    /// 
     /// </para>
     ///  
     /// <para>
@@ -58,7 +58,7 @@ namespace Amazon.GameLift.Model
     ///  
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/realtime-intro.html">Amazon
-    /// Web Services Realtime Servers</a> 
+    /// GameLift Realtime Servers</a> 
     /// </para>
     ///  
     /// <para>
@@ -124,10 +124,10 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// The location of the Amazon S3 bucket where a zipped file containing your Realtime
         /// scripts is stored. The storage location must specify the Amazon S3 bucket name, the
-        /// zip file name (the "key"), and a role ARN that allows Amazon Web Services to access
-        /// the Amazon S3 storage location. The S3 bucket must be in the same Region where you
-        /// want to create a new script. By default, Amazon Web Services uploads the latest version
-        /// of the zip file; if you have S3 object versioning turned on, you can use the <code>ObjectVersion</code>
+        /// zip file name (the "key"), and a role ARN that allows Amazon GameLift to access the
+        /// Amazon S3 storage location. The S3 bucket must be in the same Region where you want
+        /// to create a new script. By default, Amazon GameLift uploads the latest version of
+        /// the zip file; if you have S3 object versioning turned on, you can use the <code>ObjectVersion</code>
         /// parameter to specify an earlier version. 
         /// </para>
         /// </summary>

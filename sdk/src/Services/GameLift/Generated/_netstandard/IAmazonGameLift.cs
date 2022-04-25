@@ -136,11 +136,11 @@ namespace Amazon.GameLift
         /// <para>
         /// If any player rejects the match, or if acceptances are not received before a specified
         /// timeout, the proposed match is dropped. The matchmaking tickets are then handled in
-        /// one of two ways: For tickets where one or more players rejected the match, the ticket
-        /// status is returned to <code>SEARCHING</code> to find a new match. For tickets where
-        /// one or more players failed to respond, the ticket status is set to <code>CANCELLED</code>,
-        /// and processing is terminated. A new matchmaking request for these players can be submitted
-        /// as needed. 
+        /// one of two ways: For tickets where one or more players rejected the match or failed
+        /// to respond, the ticket status is set to <code>CANCELLED</code>, and processing is
+        /// terminated. For tickets where players have accepted or not yet responded, the ticket
+        /// status is returned to <code>SEARCHING</code> to find a new match. A new matchmaking
+        /// request for these players can be submitted as needed. 
         /// </para>
         ///  
         /// <para>
@@ -312,11 +312,11 @@ namespace Amazon.GameLift
         /// 
         ///  
         /// <para>
-        /// Amazon Web Services supports two types of routing strategies for aliases: simple and
-        /// terminal. A simple alias points to an active fleet. A terminal alias is used to display
-        /// messaging or link to a URL instead of routing players to an active fleet. For example,
-        /// you might use a terminal alias when a game version is no longer supported and you
-        /// want to direct players to an upgrade site. 
+        /// Amazon GameLift supports two types of routing strategies for aliases: simple and terminal.
+        /// A simple alias points to an active fleet. A terminal alias is used to display messaging
+        /// or link to a URL instead of routing players to an active fleet. For example, you might
+        /// use a terminal alias when a game version is no longer supported and you want to direct
+        /// players to an upgrade site. 
         /// </para>
         ///  
         /// <para>
@@ -375,9 +375,8 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// Creates a new Amazon Web Services build resource for your game server binary files.
-        /// Game server binaries must be combined into a zip file for use with Amazon Web Services.
-        /// 
+        /// Creates a new Amazon GameLift build resource for your game server binary files. Game
+        /// server binaries must be combined into a zip file for use with Amazon GameLift. 
         /// 
         ///  <important> 
         /// <para>
@@ -395,9 +394,9 @@ namespace Amazon.GameLift
         /// <para>
         /// To create a new game build with build files that are in an Amazon S3 location under
         /// an Amazon Web Services account that you control. To use this option, you must first
-        /// give Amazon Web Services access to the Amazon S3 bucket. With permissions in place,
-        /// call <code>CreateBuild</code> and specify a build name, operating system, and the
-        /// Amazon S3 storage location of your game build.
+        /// give Amazon GameLift access to the Amazon S3 bucket. With permissions in place, call
+        /// <code>CreateBuild</code> and specify a build name, operating system, and the Amazon
+        /// S3 storage location of your game build.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -837,7 +836,7 @@ namespace Amazon.GameLift
         /// </para>
         ///  
         /// <para>
-        ///  <i>Available in Amazon Web Services Local.</i> 
+        ///  <i>Available in Amazon GameLift Local.</i> 
         /// </para>
         ///  
         /// <para>
@@ -1218,7 +1217,7 @@ namespace Amazon.GameLift
         /// </para>
         ///  
         /// <para>
-        ///  <i>Available in Amazon Web Services Local.</i> 
+        ///  <i>Available in Amazon GameLift Local.</i> 
         /// </para>
         ///  
         /// <para>
@@ -1297,7 +1296,7 @@ namespace Amazon.GameLift
         /// </para>
         ///  
         /// <para>
-        ///  <i>Available in Amazon Web Services Local.</i> 
+        ///  <i>Available in Amazon GameLift Local.</i> 
         /// </para>
         ///  
         /// <para>
@@ -1379,7 +1378,7 @@ namespace Amazon.GameLift
         /// </para>
         ///  
         /// <para>
-        ///  <i>Available in Amazon Web Services Local.</i> 
+        ///  <i>Available in Amazon GameLift Local.</i> 
         /// </para>
         ///  
         /// <para>
@@ -1458,7 +1457,7 @@ namespace Amazon.GameLift
         /// </para>
         ///  
         /// <para>
-        ///  <i>Available in Amazon Web Services Local.</i> 
+        ///  <i>Available in Amazon GameLift Local.</i> 
         /// </para>
         ///  
         /// <para>
@@ -1536,16 +1535,16 @@ namespace Amazon.GameLift
         /// <para>
         /// An Amazon Simple Storage Service (Amazon S3) bucket under your Amazon Web Services
         /// account. Use the <i>StorageLocation</i> parameter for this option. You'll need to
-        /// have an Identity Access Management (IAM) role that allows the Amazon Web Services
-        /// service to access your S3 bucket. 
+        /// have an Identity Access Management (IAM) role that allows the Amazon GameLift service
+        /// to access your S3 bucket. 
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// If the call is successful, a new script record is created with a unique script ID.
         /// If the script file is provided as a local file, the file is uploaded to an Amazon
-        /// Web Services-owned S3 bucket and the script record's storage location reflects this
-        /// location. If the script file is provided as an S3 bucket, Amazon Web Services accesses
-        /// the file at this storage location as needed for deployment.
+        /// GameLift-owned S3 bucket and the script record's storage location reflects this location.
+        /// If the script file is provided as an S3 bucket, Amazon GameLift accesses the file
+        /// at this storage location as needed for deployment.
         /// </para>
         ///  
         /// <para>
@@ -1554,12 +1553,12 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/realtime-intro.html">Amazon
-        /// Web Services Realtime Servers</a> 
+        /// GameLift Realtime Servers</a> 
         /// </para>
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/setting-up-role.html">Set
-        /// Up a Role for Amazon Web Services Access</a> 
+        /// Up a Role for Amazon GameLift Access</a> 
         /// </para>
         ///  
         /// <para>
@@ -1608,36 +1607,36 @@ namespace Amazon.GameLift
 
         /// <summary>
         /// Requests authorization to create or delete a peer connection between the VPC for your
-        /// Amazon Web Services fleet and a virtual private cloud (VPC) in your Amazon Web Services
+        /// Amazon GameLift fleet and a virtual private cloud (VPC) in your Amazon Web Services
         /// account. VPC peering enables the game servers on your fleet to communicate directly
         /// with other Amazon Web Services resources. Once you've received authorization, call
         /// <a>CreateVpcPeeringConnection</a> to establish the peering connection. For more information,
         /// see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
-        /// Peering with Amazon Web Services Fleets</a>.
+        /// Peering with Amazon GameLift Fleets</a>.
         /// 
         ///  
         /// <para>
         /// You can peer with VPCs that are owned by any Amazon Web Services account you have
-        /// access to, including the account that you use to manage your Amazon Web Services fleets.
+        /// access to, including the account that you use to manage your Amazon GameLift fleets.
         /// You cannot peer with VPCs that are in different Regions.
         /// </para>
         ///  
         /// <para>
         /// To request authorization to create a connection, call this operation from the Amazon
-        /// Web Services account with the VPC that you want to peer to your Amazon Web Services
-        /// fleet. For example, to enable your game servers to retrieve data from a DynamoDB table,
-        /// use the account that manages that DynamoDB resource. Identify the following values:
-        /// (1) The ID of the VPC that you want to peer with, and (2) the ID of the Amazon Web
-        /// Services account that you use to manage Amazon Web Services. If successful, VPC peering
-        /// is authorized for the specified VPC. 
+        /// Web Services account with the VPC that you want to peer to your Amazon GameLift fleet.
+        /// For example, to enable your game servers to retrieve data from a DynamoDB table, use
+        /// the account that manages that DynamoDB resource. Identify the following values: (1)
+        /// The ID of the VPC that you want to peer with, and (2) the ID of the Amazon Web Services
+        /// account that you use to manage Amazon GameLift. If successful, VPC peering is authorized
+        /// for the specified VPC. 
         /// </para>
         ///  
         /// <para>
         /// To request authorization to delete a connection, call this operation from the Amazon
-        /// Web Services account with the VPC that is peered with your Amazon Web Services fleet.
+        /// Web Services account with the VPC that is peered with your Amazon GameLift fleet.
         /// Identify the following values: (1) VPC ID that you want to delete the peering connection
-        /// for, and (2) ID of the Amazon Web Services account that you use to manage Amazon Web
-        /// Services. 
+        /// for, and (2) ID of the Amazon Web Services account that you use to manage Amazon GameLift.
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -1689,13 +1688,13 @@ namespace Amazon.GameLift
 
         /// <summary>
         /// Establishes a VPC peering connection between a virtual private cloud (VPC) in an Amazon
-        /// Web Services account with the VPC for your Amazon Web Services fleet. VPC peering
-        /// enables the game servers on your fleet to communicate directly with other Amazon Web
-        /// Services resources. You can peer with VPCs in any Amazon Web Services account that
-        /// you have access to, including the account that you use to manage your Amazon Web Services
-        /// fleets. You cannot peer with VPCs that are in different Regions. For more information,
-        /// see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
-        /// Peering with Amazon Web Services Fleets</a>.
+        /// Web Services account with the VPC for your Amazon GameLift fleet. VPC peering enables
+        /// the game servers on your fleet to communicate directly with other Amazon Web Services
+        /// resources. You can peer with VPCs in any Amazon Web Services account that you have
+        /// access to, including the account that you use to manage your Amazon GameLift fleets.
+        /// You cannot peer with VPCs that are in different Regions. For more information, see
+        /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
+        /// Peering with Amazon GameLift Fleets</a>.
         /// 
         ///  
         /// <para>
@@ -1708,7 +1707,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         /// To establish the connection, call this operation from the Amazon Web Services account
-        /// that is used to manage the Amazon Web Services fleets. Identify the following values:
+        /// that is used to manage the Amazon GameLift fleets. Identify the following values:
         /// (1) The ID of the fleet you want to be enable a VPC peering connection for; (2) The
         /// Amazon Web Services account with the VPC that you want to peer with; and (3) The ID
         /// of the VPC you want to peer with. This operation is asynchronous. If successful, a
@@ -2533,7 +2532,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/realtime-intro.html">Amazon
-        /// Web Services Realtime Servers</a> 
+        /// GameLift Realtime Servers</a> 
         /// </para>
         ///  
         /// <para>
@@ -2636,7 +2635,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         /// Once a valid authorization exists, call this operation from the Amazon Web Services
-        /// account that is used to manage the Amazon Web Services fleets. Identify the connection
+        /// account that is used to manage the Amazon GameLift fleets. Identify the connection
         /// to delete by the connection ID and fleet ID. If successful, the connection is removed.
         /// 
         /// </para>
@@ -4373,7 +4372,7 @@ namespace Amazon.GameLift
         /// </para>
         ///  
         /// <para>
-        ///  <i>Available in Amazon Web Services Local.</i> 
+        ///  <i>Available in Amazon GameLift Local.</i> 
         /// </para>
         ///  
         /// <para>
@@ -4749,7 +4748,7 @@ namespace Amazon.GameLift
         /// </para>
         ///  
         /// <para>
-        ///  <i>Available in Amazon Web Services Local.</i> 
+        ///  <i>Available in Amazon GameLift Local.</i> 
         /// </para>
         ///  
         /// <para>
@@ -4940,7 +4939,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/realtime-intro.html">Amazon
-        /// Web Services Realtime Servers</a> 
+        /// GameLift Realtime Servers</a> 
         /// </para>
         ///  
         /// <para>
@@ -5033,10 +5032,10 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         /// To retrieve connection information, call this operation from the Amazon Web Services
-        /// account that is used to manage the Amazon Web Services fleets. Specify a fleet ID
-        /// or leave the parameter empty to retrieve all connection records. If successful, the
-        /// retrieved information includes both active and pending connections. Active connections
-        /// identify the IpV4 CIDR block that the VPC uses to connect. 
+        /// account that is used to manage the Amazon GameLift fleets. Specify a fleet ID or leave
+        /// the parameter empty to retrieve all connection records. If successful, the retrieved
+        /// information includes both active and pending connections. Active connections identify
+        /// the IpV4 CIDR block that the VPC uses to connect. 
         /// </para>
         ///  
         /// <para>
@@ -5576,7 +5575,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/realtime-intro.html">Amazon
-        /// Web Services Realtime Servers</a> 
+        /// GameLift Realtime Servers</a> 
         /// </para>
         ///  
         /// <para>
@@ -5712,7 +5711,7 @@ namespace Amazon.GameLift
         /// <summary>
         /// Creates or updates a scaling policy for a fleet. Scaling policies are used to automatically
         /// scale a fleet's hosting capacity to meet player demand. An active scaling policy instructs
-        /// Amazon Web Services to track a fleet metric and automatically change the fleet's capacity
+        /// Amazon GameLift to track a fleet metric and automatically change the fleet's capacity
         /// when a certain threshold is reached. There are two types of scaling policies: target-based
         /// and rule-based. Use a target-based policy to quickly and efficiently manage fleet
         /// scaling; this option is the most commonly used. Use rule-based policies when you need
@@ -5747,16 +5746,16 @@ namespace Amazon.GameLift
         /// tells us how much of a fleet's hosting capacity is ready to host game sessions but
         /// is not currently in use. This is the fleet's buffer; it measures the additional player
         /// demand that the fleet could handle at current capacity. With a target-based policy,
-        /// you set your ideal buffer size and leave it to Amazon Web Services to take whatever
-        /// action is needed to maintain that target. 
+        /// you set your ideal buffer size and leave it to Amazon GameLift to take whatever action
+        /// is needed to maintain that target. 
         /// </para>
         ///  
         /// <para>
         /// For example, you might choose to maintain a 10% buffer for a fleet that has the capacity
-        /// to host 100 simultaneous game sessions. This policy tells Amazon Web Services to take
+        /// to host 100 simultaneous game sessions. This policy tells Amazon GameLift to take
         /// action whenever the fleet's available capacity falls below or rises above 10 game
-        /// sessions. Amazon Web Services will start new instances or stop unused instances in
-        /// order to return to the 10% buffer. 
+        /// sessions. Amazon GameLift will start new instances or stop unused instances in order
+        /// to return to the 10% buffer. 
         /// </para>
         ///  
         /// <para>
@@ -5937,8 +5936,8 @@ namespace Amazon.GameLift
 
         /// <summary>
         /// Retrieves a fresh set of credentials for use when uploading a new set of game build
-        /// files to Amazon Web Services's Amazon S3. This is done as part of the build creation
-        /// process; see <a>CreateBuild</a>.
+        /// files to Amazon GameLift's Amazon S3. This is done as part of the build creation process;
+        /// see <a>CreateBuild</a>.
         /// 
         ///  
         /// <para>
@@ -5993,8 +5992,8 @@ namespace Amazon.GameLift
 
         /// <summary>
         /// Retrieves a fresh set of credentials for use when uploading a new set of game build
-        /// files to Amazon Web Services's Amazon S3. This is done as part of the build creation
-        /// process; see <a>CreateBuild</a>.
+        /// files to Amazon GameLift's Amazon S3. This is done as part of the build creation process;
+        /// see <a>CreateBuild</a>.
         /// 
         ///  
         /// <para>
@@ -6449,31 +6448,31 @@ namespace Amazon.GameLift
 
         /// <summary>
         /// Places a request for a new game session in a queue (see <a>CreateGameSessionQueue</a>).
-        /// When processing a placement request, Amazon Web Services searches for available resources
+        /// When processing a placement request, Amazon GameLift searches for available resources
         /// on the queue's destinations, scanning each until it finds resources or the placement
         /// request times out.
         /// 
         ///  
         /// <para>
         /// A game session placement request can also request player sessions. When a new game
-        /// session is successfully created, Amazon Web Services creates a player session for
-        /// each player included in the request.
+        /// session is successfully created, Amazon GameLift creates a player session for each
+        /// player included in the request.
         /// </para>
         ///  
         /// <para>
-        /// When placing a game session, by default Amazon Web Services tries each fleet in the
-        /// order they are listed in the queue configuration. Ideally, a queue's destinations
-        /// are listed in preference order.
+        /// When placing a game session, by default Amazon GameLift tries each fleet in the order
+        /// they are listed in the queue configuration. Ideally, a queue's destinations are listed
+        /// in preference order.
         /// </para>
         ///  
         /// <para>
         /// Alternatively, when requesting a game session with players, you can also provide latency
         /// data for each player in relevant Regions. Latency data indicates the performance lag
-        /// a player experiences when connected to a fleet in the Region. Amazon Web Services
-        /// uses latency data to reorder the list of destinations to place the game session in
-        /// a Region with minimal lag. If latency data is provided for multiple players, Amazon
-        /// Web Services calculates each Region's average lag for all players and reorders to
-        /// get the best game play across all players. 
+        /// a player experiences when connected to a fleet in the Region. Amazon GameLift uses
+        /// latency data to reorder the list of destinations to place the game session in a Region
+        /// with minimal lag. If latency data is provided for multiple players, Amazon GameLift
+        /// calculates each Region's average lag for all players and reorders to get the best
+        /// game play across all players. 
         /// </para>
         ///  
         /// <para>
@@ -8009,9 +8008,9 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         /// If the call is successful, the updated metadata is stored in the script record and
-        /// a revised script is uploaded to the Amazon Web Services service. Once the script is
-        /// updated and acquired by a fleet instance, the new version is used for all new game
-        /// sessions. 
+        /// a revised script is uploaded to the Amazon GameLift service. Once the script is updated
+        /// and acquired by a fleet instance, the new version is used for all new game sessions.
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -8020,7 +8019,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/realtime-intro.html">Amazon
-        /// Web Services Realtime Servers</a> 
+        /// GameLift Realtime Servers</a> 
         /// </para>
         ///  
         /// <para>
