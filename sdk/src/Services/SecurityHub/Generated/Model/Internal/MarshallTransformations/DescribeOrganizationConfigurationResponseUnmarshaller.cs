@@ -57,6 +57,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     response.AutoEnable = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("AutoEnableStandards", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.AutoEnableStandards = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("MemberAccountLimitReached", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;

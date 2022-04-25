@@ -34,7 +34,7 @@ namespace Amazon.SecurityHub.Model
     /// 
     ///  
     /// <para>
-    /// For more details about cross-Region replication, see <a href="securityhub/latest/userguide/finding-aggregation.html">Configuring
+    /// For more details about cross-Region replication, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/finding-aggregation.html">Configuring
     /// finding aggregation</a> in the <i>Security Hub User Guide</i>. 
     /// </para>
     /// </summary>

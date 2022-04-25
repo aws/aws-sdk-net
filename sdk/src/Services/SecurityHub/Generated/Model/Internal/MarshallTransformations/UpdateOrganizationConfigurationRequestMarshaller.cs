@@ -71,6 +71,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.AutoEnable);
                 }
 
+                if(publicRequest.IsSetAutoEnableStandards())
+                {
+                    context.Writer.WritePropertyName("AutoEnableStandards");
+                    context.Writer.Write(publicRequest.AutoEnableStandards);
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

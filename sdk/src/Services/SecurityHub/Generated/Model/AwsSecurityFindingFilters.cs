@@ -160,12 +160,6 @@ namespace Amazon.SecurityHub.Model
         /// The name of the findings provider (company) that owns the solution (product) that
         /// generates findings.
         /// </para>
-        ///  
-        /// <para>
-        /// Note that this is a filter against the <code>aws/securityhub/CompanyName</code> field
-        /// in <code>ProductFields</code>. It is not a filter for the top-level <code>CompanyName</code>
-        /// field.
-        /// </para>
         /// </summary>
         public List<StringFilter> CompanyName
         {
@@ -1000,12 +994,6 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property ProductName. 
         /// <para>
         /// The name of the solution (product) that generates findings.
-        /// </para>
-        ///  
-        /// <para>
-        /// Note that this is a filter against the <code>aws/securityhub/ProductName</code> field
-        /// in <code>ProductFields</code>. It is not a filter for the top-level <code>ProductName</code>
-        /// field.
         /// </para>
         /// </summary>
         public List<StringFilter> ProductName

@@ -127,23 +127,14 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// Security Hub populates this attribute automatically for each finding. You cannot be
-        /// updated using <code>BatchImportFindings</code> or <code>BatchUpdateFindings</code>.
-        /// The exception to this is when you use a custom integration.
+        /// Security Hub populates this attribute automatically for each finding. You cannot update
+        /// this attribute with <code>BatchImportFindings</code> or <code>BatchUpdateFindings</code>.
+        /// The exception to this is a custom integration.
         /// </para>
         ///  
         /// <para>
-        /// When you use the Security Hub console to filter findings by company name, you use
-        /// this attribute.
-        /// </para>
-        ///  
-        /// <para>
-        /// When you use the Security Hub API to filter findings by company name, you use the
-        /// <code>aws/securityhub/CompanyName</code> attribute under <code>ProductFields</code>.
-        /// </para>
-        ///  
-        /// <para>
-        /// Security Hub does not synchronize those two attributes.
+        /// When you use the Security Hub console or API to filter findings by company name, you
+        /// use this attribute.
         /// </para>
         /// </summary>
         public string CompanyName
@@ -548,22 +539,13 @@ namespace Amazon.SecurityHub.Model
         ///  
         /// <para>
         /// Security Hub populates this attribute automatically for each finding. You cannot update
-        /// it using <code>BatchImportFindings</code> or <code>BatchUpdateFindings</code>. The
-        /// exception to this is when you use a custom integration.
+        /// this attribute with <code>BatchImportFindings</code> or <code>BatchUpdateFindings</code>.
+        /// The exception to this is a custom integration.
         /// </para>
         ///  
         /// <para>
-        /// When you use the Security Hub console to filter findings by product name, you use
-        /// this attribute.
-        /// </para>
-        ///  
-        /// <para>
-        /// When you use the Security Hub API to filter findings by product name, you use the
-        /// <code>aws/securityhub/ProductName</code> attribute under <code>ProductFields</code>.
-        /// </para>
-        ///  
-        /// <para>
-        /// Security Hub does not synchronize those two attributes.
+        /// When you use the Security Hub console or API to filter findings by product name, you
+        /// use this attribute.
         /// </para>
         /// </summary>
         public string ProductName
