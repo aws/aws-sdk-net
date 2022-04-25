@@ -35,6 +35,7 @@ namespace Amazon.RDSDataService.Model
     public partial class ExecuteStatementResponse : AmazonWebServiceResponse
     {
         private List<ColumnMetadata> _columnMetadata = new List<ColumnMetadata>();
+        private string _formattedRecords;
         private List<Field> _generatedFields = new List<Field>();
         private long? _numberOfRecordsUpdated;
         private List<List<Field>> _records = new List<List<Field>>();
@@ -42,7 +43,8 @@ namespace Amazon.RDSDataService.Model
         /// <summary>
         /// Gets and sets the property ColumnMetadata. 
         /// <para>
-        /// Metadata for the columns included in the results.
+        /// Metadata for the columns included in the results. This field is blank if the <code>formatRecordsAs</code>
+        /// parameter is set to <code>JSON</code>.
         /// </para>
         /// </summary>
         public List<ColumnMetadata> ColumnMetadata
@@ -58,9 +60,34 @@ namespace Amazon.RDSDataService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property FormattedRecords. 
+        /// <para>
+        /// A string value that represents the result set of a <code>SELECT</code> statement in
+        /// JSON format. This value is only present when the <code>formatRecordsAs</code> parameter
+        /// is set to <code>JSON</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The size limit for this field is currently 10 MB. If the JSON-formatted string representing
+        /// the result set requires more than 10 MB, the call returns an error.
+        /// </para>
+        /// </summary>
+        public string FormattedRecords
+        {
+            get { return this._formattedRecords; }
+            set { this._formattedRecords = value; }
+        }
+
+        // Check to see if FormattedRecords property is set
+        internal bool IsSetFormattedRecords()
+        {
+            return this._formattedRecords != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property GeneratedFields. 
         /// <para>
-        /// Values for fields generated during the request.
+        /// Values for fields generated during a DML request.
         /// </para>
         ///  <pre><code> &lt;note&gt; &lt;p&gt;The &lt;code&gt;generatedFields&lt;/code&gt; data
         /// isn't supported by Aurora PostgreSQL. To get the values of generated fields, use the
@@ -101,7 +128,8 @@ namespace Amazon.RDSDataService.Model
         /// <summary>
         /// Gets and sets the property Records. 
         /// <para>
-        /// The records returned by the SQL statement.
+        /// The records returned by the SQL statement. This field is blank if the <code>formatRecordsAs</code>
+        /// parameter is set to <code>JSON</code>.
         /// </para>
         /// </summary>
         public List<List<Field>> Records

@@ -77,6 +77,12 @@ namespace Amazon.RDSDataService.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Database);
                 }
 
+                if(publicRequest.IsSetFormatRecordsAs())
+                {
+                    context.Writer.WritePropertyName("formatRecordsAs");
+                    context.Writer.Write(publicRequest.FormatRecordsAs);
+                }
+
                 if(publicRequest.IsSetIncludeResultMetadata())
                 {
                     context.Writer.WritePropertyName("includeResultMetadata");

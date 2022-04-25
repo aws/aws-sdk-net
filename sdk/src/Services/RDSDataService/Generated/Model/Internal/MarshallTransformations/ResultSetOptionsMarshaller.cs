@@ -51,6 +51,12 @@ namespace Amazon.RDSDataService.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.DecimalReturnType);
             }
 
+            if(requestObject.IsSetLongReturnType())
+            {
+                context.Writer.WritePropertyName("longReturnType");
+                context.Writer.Write(requestObject.LongReturnType);
+            }
+
         }
 
         /// <summary>

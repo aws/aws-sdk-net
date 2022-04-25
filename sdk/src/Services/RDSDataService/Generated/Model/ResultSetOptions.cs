@@ -34,6 +34,7 @@ namespace Amazon.RDSDataService.Model
     public partial class ResultSetOptions
     {
         private DecimalReturnType _decimalReturnType;
+        private LongReturnType _longReturnType;
 
         /// <summary>
         /// Gets and sets the property DecimalReturnType. 
@@ -60,6 +61,27 @@ namespace Amazon.RDSDataService.Model
         internal bool IsSetDecimalReturnType()
         {
             return this._decimalReturnType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LongReturnType. 
+        /// <para>
+        /// A value that indicates how a field of <code>LONG</code> type is represented. Allowed
+        /// values are <code>LONG</code> and <code>STRING</code>. The default is <code>LONG</code>.
+        /// Specify <code>STRING</code> if the length or precision of numeric values might cause
+        /// truncation or rounding errors. 
+        /// </para>
+        /// </summary>
+        public LongReturnType LongReturnType
+        {
+            get { return this._longReturnType; }
+            set { this._longReturnType = value; }
+        }
+
+        // Check to see if LongReturnType property is set
+        internal bool IsSetLongReturnType()
+        {
+            return this._longReturnType != null;
         }
 
     }

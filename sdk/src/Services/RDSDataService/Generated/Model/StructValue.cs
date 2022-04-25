@@ -30,6 +30,14 @@ namespace Amazon.RDSDataService.Model
 {
     /// <summary>
     /// A structure value returned by a call.
+    /// 
+    ///  <important> 
+    /// <para>
+    /// This data structure is only used with the deprecated <code>ExecuteSql</code> operation.
+    /// Use the <code>BatchExecuteStatement</code> or <code>ExecuteStatement</code> operation
+    /// instead.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class StructValue
     {

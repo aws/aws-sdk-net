@@ -39,14 +39,14 @@ namespace Amazon.RDSDataService.Model
     /// </para>
     ///  </important> 
     /// <para>
-    /// The response size limit is 1 MB. If the call returns more than 1 MB of response data,
-    /// the call is terminated.
+    /// If the binary response data from the database is more than 1 MB, the call is terminated.
     /// </para>
     /// </summary>
     public partial class ExecuteStatementRequest : AmazonRDSDataServiceRequest
     {
         private bool? _continueAfterTimeout;
         private string _database;
+        private RecordsFormatType _formatRecordsAs;
         private bool? _includeResultMetadata;
         private List<SqlParameter> _parameters = new List<SqlParameter>();
         private string _resourceArn;
@@ -99,6 +99,33 @@ namespace Amazon.RDSDataService.Model
         internal bool IsSetDatabase()
         {
             return this._database != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FormatRecordsAs. 
+        /// <para>
+        /// A value that indicates whether to format the result set as a single JSON string. This
+        /// parameter only applies to <code>SELECT</code> statements and is ignored for other
+        /// types of statements. Allowed values are <code>NONE</code> and <code>JSON</code>. The
+        /// default value is <code>NONE</code>. The result is returned in the <code>formattedRecords</code>
+        /// field.
+        /// </para>
+        ///  
+        /// <para>
+        /// For usage information about the JSON format for result sets, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using
+        /// the Data API</a> in the <i>Amazon Aurora User Guide</i>.
+        /// </para>
+        /// </summary>
+        public RecordsFormatType FormatRecordsAs
+        {
+            get { return this._formatRecordsAs; }
+            set { this._formatRecordsAs = value; }
+        }
+
+        // Check to see if FormatRecordsAs property is set
+        internal bool IsSetFormatRecordsAs()
+        {
+            return this._formatRecordsAs != null;
         }
 
         /// <summary>

@@ -75,6 +75,106 @@ namespace Amazon.RDSDataService
 
 
     /// <summary>
+    /// Constants used for properties of type LongReturnType.
+    /// </summary>
+    public class LongReturnType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant LONG for LongReturnType
+        /// </summary>
+        public static readonly LongReturnType LONG = new LongReturnType("LONG");
+        /// <summary>
+        /// Constant STRING for LongReturnType
+        /// </summary>
+        public static readonly LongReturnType STRING = new LongReturnType("STRING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LongReturnType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LongReturnType FindValue(string value)
+        {
+            return FindValue<LongReturnType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LongReturnType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RecordsFormatType.
+    /// </summary>
+    public class RecordsFormatType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant JSON for RecordsFormatType
+        /// </summary>
+        public static readonly RecordsFormatType JSON = new RecordsFormatType("JSON");
+        /// <summary>
+        /// Constant NONE for RecordsFormatType
+        /// </summary>
+        public static readonly RecordsFormatType NONE = new RecordsFormatType("NONE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RecordsFormatType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RecordsFormatType FindValue(string value)
+        {
+            return FindValue<RecordsFormatType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RecordsFormatType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type TypeHint.
     /// </summary>
     public class TypeHint : ConstantClass

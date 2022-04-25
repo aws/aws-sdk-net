@@ -43,7 +43,7 @@ namespace Amazon.RDSDataService
     ///  
     /// <para>
     /// For more information about the Data Service API, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using
-    /// the Data API for Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.
+    /// the Data API</a> in the <i>Amazon Aurora User Guide</i>.
     /// </para>
     /// 
     /// </para>
@@ -269,6 +269,9 @@ namespace Amazon.RDSDataService
         /// <param name="request">Container for the necessary parameters to execute the BatchExecuteStatement service method.</param>
         /// 
         /// <returns>The response from the BatchExecuteStatement service method, as returned by RDSDataService.</returns>
+        /// <exception cref="Amazon.RDSDataService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
         /// <exception cref="Amazon.RDSDataService.Model.BadRequestException">
         /// There is an error in the call or in a SQL statement.
         /// </exception>
@@ -347,6 +350,9 @@ namespace Amazon.RDSDataService
         /// <param name="request">Container for the necessary parameters to execute the BeginTransaction service method.</param>
         /// 
         /// <returns>The response from the BeginTransaction service method, as returned by RDSDataService.</returns>
+        /// <exception cref="Amazon.RDSDataService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
         /// <exception cref="Amazon.RDSDataService.Model.BadRequestException">
         /// There is an error in the call or in a SQL statement.
         /// </exception>
@@ -417,6 +423,9 @@ namespace Amazon.RDSDataService
         /// <param name="request">Container for the necessary parameters to execute the CommitTransaction service method.</param>
         /// 
         /// <returns>The response from the CommitTransaction service method, as returned by RDSDataService.</returns>
+        /// <exception cref="Amazon.RDSDataService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
         /// <exception cref="Amazon.RDSDataService.Model.BadRequestException">
         /// There is an error in the call or in a SQL statement.
         /// </exception>
@@ -497,6 +506,9 @@ namespace Amazon.RDSDataService
         /// <param name="request">Container for the necessary parameters to execute the ExecuteSql service method.</param>
         /// 
         /// <returns>The response from the ExecuteSql service method, as returned by RDSDataService.</returns>
+        /// <exception cref="Amazon.RDSDataService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
         /// <exception cref="Amazon.RDSDataService.Model.BadRequestException">
         /// There is an error in the call or in a SQL statement.
         /// </exception>
@@ -570,13 +582,15 @@ namespace Amazon.RDSDataService
         /// </para>
         ///  </important> 
         /// <para>
-        /// The response size limit is 1 MB. If the call returns more than 1 MB of response data,
-        /// the call is terminated.
+        /// If the binary response data from the database is more than 1 MB, the call is terminated.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ExecuteStatement service method.</param>
         /// 
         /// <returns>The response from the ExecuteStatement service method, as returned by RDSDataService.</returns>
+        /// <exception cref="Amazon.RDSDataService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
         /// <exception cref="Amazon.RDSDataService.Model.BadRequestException">
         /// There is an error in the call or in a SQL statement.
         /// </exception>
@@ -646,6 +660,9 @@ namespace Amazon.RDSDataService
         /// <param name="request">Container for the necessary parameters to execute the RollbackTransaction service method.</param>
         /// 
         /// <returns>The response from the RollbackTransaction service method, as returned by RDSDataService.</returns>
+        /// <exception cref="Amazon.RDSDataService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
         /// <exception cref="Amazon.RDSDataService.Model.BadRequestException">
         /// There is an error in the call or in a SQL statement.
         /// </exception>
