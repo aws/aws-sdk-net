@@ -386,18 +386,28 @@ namespace Amazon
         /// </summary>
         public class Endpoint
         {
-            internal Endpoint(string hostname, string authregion, string signatureVersionOverride, bool deprecated)
+            internal Endpoint(string hostname, string authregion, string signatureVersionOverride, string dnsSuffix, bool deprecated)
             {
                 this.Hostname = hostname;
                 this.AuthRegion = authregion;
                 this.SignatureVersionOverride = signatureVersionOverride;
                 this.Deprecated = deprecated;
+                this.DnsSuffix = dnsSuffix;
             }
 
             /// <summary>
             /// Gets the hostname for the service.
             /// </summary>
             public string Hostname
+            {
+                get;
+                private set;
+            }
+
+            /// <summary>
+            /// Gets the DNS suffix for the service.
+            /// </summary>
+            public string DnsSuffix
             {
                 get;
                 private set;
