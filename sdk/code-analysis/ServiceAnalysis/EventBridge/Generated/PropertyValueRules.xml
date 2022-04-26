@@ -68,6 +68,10 @@
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EventBridge.Model.CreateArchiveRequest.EventPattern</property>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EventBridge.Model.CreateArchiveRequest.EventSourceArn</property>
     <min>1</min>
     <max>1600</max>
@@ -103,6 +107,41 @@
     <min>1</min>
     <max>1600</max>
     <pattern>^arn:aws([a-z]|\-)*:events:([a-z]|\d|\-)*:([0-9]{12})?:connection\/[\.\-_A-Za-z0-9]+\/[\-A-Za-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EventBridge.Model.CreateEndpointRequest.Description</property>
+    <max>512</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EventBridge.Model.CreateEndpointRequest.Name</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[\.\-_A-Za-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EventBridge.Model.CreateEndpointRequest.RoleArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^arn:aws[a-z-]*:iam::\d{12}:role\/[\w+=,.@/-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EventBridge.Model.CreateEndpointResponse.Arn</property>
+    <min>1</min>
+    <max>1600</max>
+    <pattern>^arn:aws([a-z]|\-)*:events:([a-z]|\d|\-)*:([0-9]{12})?:endpoint\/[/\.\-_A-Za-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EventBridge.Model.CreateEndpointResponse.Name</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[\.\-_A-Za-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EventBridge.Model.CreateEndpointResponse.RoleArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^arn:aws[a-z-]*:iam::\d{12}:role\/[\w+=,.@/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EventBridge.Model.CreateEventBusRequest.EventSourceName</property>
@@ -169,6 +208,12 @@
     <min>1</min>
     <max>1600</max>
     <pattern>^arn:aws([a-z]|\-)*:events:([a-z]|\d|\-)*:([0-9]{12})?:connection\/[\.\-_A-Za-z0-9]+\/[\-A-Za-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EventBridge.Model.DeleteEndpointRequest.Name</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[\.\-_A-Za-z0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EventBridge.Model.DeleteEventBusRequest.Name</property>
@@ -263,6 +308,10 @@
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EventBridge.Model.DescribeArchiveResponse.EventPattern</property>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EventBridge.Model.DescribeArchiveResponse.EventSourceArn</property>
     <min>1</min>
     <max>1600</max>
@@ -307,6 +356,59 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EventBridge.Model.DescribeConnectionResponse.StateReason</property>
+    <max>512</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EventBridge.Model.DescribeEndpointRequest.HomeRegion</property>
+    <min>9</min>
+    <max>20</max>
+    <pattern>^[\-a-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EventBridge.Model.DescribeEndpointRequest.Name</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[\.\-_A-Za-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EventBridge.Model.DescribeEndpointResponse.Arn</property>
+    <min>1</min>
+    <max>1600</max>
+    <pattern>^arn:aws([a-z]|\-)*:events:([a-z]|\d|\-)*:([0-9]{12})?:endpoint\/[/\.\-_A-Za-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EventBridge.Model.DescribeEndpointResponse.Description</property>
+    <max>512</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EventBridge.Model.DescribeEndpointResponse.EndpointId</property>
+    <min>1</min>
+    <max>50</max>
+    <pattern>^[A-Za-z0-9\-]+[\.][A-Za-z0-9\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EventBridge.Model.DescribeEndpointResponse.EndpointUrl</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^(https://)?[\.\-a-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EventBridge.Model.DescribeEndpointResponse.Name</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[\.\-_A-Za-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EventBridge.Model.DescribeEndpointResponse.RoleArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^arn:aws[a-z-]*:iam::\d{12}:role\/[\w+=,.@/-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EventBridge.Model.DescribeEndpointResponse.StateReason</property>
+    <min>1</min>
     <max>512</max>
     <pattern>.*</pattern>
   </property-value-rule>
@@ -392,6 +494,10 @@
     <min>1</min>
     <max>256</max>
     <pattern>[/\.\-_A-Za-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EventBridge.Model.DescribeRuleResponse.EventPattern</property>
+    <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EventBridge.Model.DescribeRuleResponse.ManagedBy</property>
@@ -508,6 +614,33 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EventBridge.Model.ListConnectionsResponse.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EventBridge.Model.ListEndpointsRequest.HomeRegion</property>
+    <min>9</min>
+    <max>20</max>
+    <pattern>^[\-a-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EventBridge.Model.ListEndpointsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EventBridge.Model.ListEndpointsRequest.NamePrefix</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[\.\-_A-Za-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EventBridge.Model.ListEndpointsRequest.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EventBridge.Model.ListEndpointsResponse.NextToken</property>
     <min>1</min>
     <max>2048</max>
   </property-value-rule>
@@ -707,6 +840,12 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EventBridge.Model.PutEventsRequest.EndpointId</property>
+    <min>1</min>
+    <max>50</max>
+    <pattern>^[A-Za-z0-9\-]+[\.][A-Za-z0-9\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EventBridge.Model.PutPermissionRequest.Action</property>
     <min>1</min>
     <max>64</max>
@@ -739,6 +878,10 @@
     <min>1</min>
     <max>1600</max>
     <pattern>(arn:aws[\w-]*:events:[a-z]{2}-[a-z]+-[\w-]+:[0-9]{12}:event-bus\/)?[/\.\-_A-Za-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EventBridge.Model.PutRuleRequest.EventPattern</property>
+    <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EventBridge.Model.PutRuleRequest.Name</property>
@@ -829,6 +972,10 @@
     <max>1600</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EventBridge.Model.TestEventPatternRequest.EventPattern</property>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EventBridge.Model.UntagResourceRequest.ResourceARN</property>
     <min>1</min>
     <max>1600</max>
@@ -878,6 +1025,10 @@
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EventBridge.Model.UpdateArchiveRequest.EventPattern</property>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EventBridge.Model.UpdateArchiveRequest.RetentionDays</property>
     <min>0</min>
   </property-value-rule>
@@ -908,6 +1059,53 @@
     <min>1</min>
     <max>1600</max>
     <pattern>^arn:aws([a-z]|\-)*:events:([a-z]|\d|\-)*:([0-9]{12})?:connection\/[\.\-_A-Za-z0-9]+\/[\-A-Za-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EventBridge.Model.UpdateEndpointRequest.Description</property>
+    <max>512</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EventBridge.Model.UpdateEndpointRequest.Name</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[\.\-_A-Za-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EventBridge.Model.UpdateEndpointRequest.RoleArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^arn:aws[a-z-]*:iam::\d{12}:role\/[\w+=,.@/-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EventBridge.Model.UpdateEndpointResponse.Arn</property>
+    <min>1</min>
+    <max>1600</max>
+    <pattern>^arn:aws([a-z]|\-)*:events:([a-z]|\d|\-)*:([0-9]{12})?:endpoint\/[/\.\-_A-Za-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EventBridge.Model.UpdateEndpointResponse.EndpointId</property>
+    <min>1</min>
+    <max>50</max>
+    <pattern>^[A-Za-z0-9\-]+[\.][A-Za-z0-9\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EventBridge.Model.UpdateEndpointResponse.EndpointUrl</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^(https://)?[\.\-a-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EventBridge.Model.UpdateEndpointResponse.Name</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[\.\-_A-Za-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EventBridge.Model.UpdateEndpointResponse.RoleArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^arn:aws[a-z-]*:iam::\d{12}:role\/[\w+=,.@/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EventBridge.Model.ApiDestination.ApiDestinationArn</property>
@@ -1094,6 +1292,53 @@
     <max>1600</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EventBridge.Model.Endpoint.Arn</property>
+    <min>1</min>
+    <max>1600</max>
+    <pattern>^arn:aws([a-z]|\-)*:events:([a-z]|\d|\-)*:([0-9]{12})?:endpoint\/[/\.\-_A-Za-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EventBridge.Model.Endpoint.Description</property>
+    <max>512</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EventBridge.Model.Endpoint.EndpointId</property>
+    <min>1</min>
+    <max>50</max>
+    <pattern>^[A-Za-z0-9\-]+[\.][A-Za-z0-9\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EventBridge.Model.Endpoint.EndpointUrl</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^(https://)?[\.\-a-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EventBridge.Model.Endpoint.Name</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[\.\-_A-Za-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EventBridge.Model.Endpoint.RoleArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^arn:aws[a-z-]*:iam::\d{12}:role\/[\w+=,.@/-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EventBridge.Model.Endpoint.StateReason</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EventBridge.Model.EndpointEventBus.EventBusArn</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>^arn:aws[a-z-]*:events:[a-z]{2}-[a-z-]+-\d+:\d{12}:event-bus/[\w.-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EventBridge.Model.InputTransformer.InputTemplate</property>
     <min>1</min>
     <max>8192</max>
@@ -1117,6 +1362,12 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EventBridge.Model.Primary.HealthCheck</property>
+    <min>1</min>
+    <max>1600</max>
+    <pattern>^arn:aws([a-z]|\-)*:route53:::healthcheck/[\-a-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EventBridge.Model.PutEventsRequestEntry.EventBusName</property>
     <min>1</min>
     <max>1600</max>
@@ -1128,10 +1379,18 @@
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EventBridge.Model.PutEventsResultEntry.EventId</property>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EventBridge.Model.PutPartnerEventsRequestEntry.Source</property>
     <min>1</min>
     <max>256</max>
     <pattern>aws\.partner(/[\.\-_A-Za-z0-9]+){2,}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EventBridge.Model.PutPartnerEventsResultEntry.EventId</property>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EventBridge.Model.PutTargetsResultEntry.TargetId</property>
@@ -1218,6 +1477,10 @@
     <pattern>[/\.\-_A-Za-z0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EventBridge.Model.Rule.EventPattern</property>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EventBridge.Model.Rule.ManagedBy</property>
     <min>1</min>
     <max>128</max>
@@ -1252,6 +1515,16 @@
   <property-value-rule>
     <property>Amazon.EventBridge.Model.SageMakerPipelineParameter.Value</property>
     <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EventBridge.Model.Secondary.Route</property>
+    <min>9</min>
+    <max>20</max>
+    <pattern>^[\-a-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EventBridge.Model.SqsParameters.MessageGroupId</property>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EventBridge.Model.Tag.Key</property>

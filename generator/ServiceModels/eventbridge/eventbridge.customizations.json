@@ -1,0 +1,7 @@
+{
+    "runtimePipelineOverride": {
+        "overrides": [
+            { "operation": "addAfter", "newType": "Amazon.EventBridge.Internal.AmazonEventBridgePostMarshallHandler", "targetType": "Amazon.Runtime.Internal.Marshaller" }
+        ]
+    }
+}

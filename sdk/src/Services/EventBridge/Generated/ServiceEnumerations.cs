@@ -439,6 +439,76 @@ namespace Amazon.EventBridge
 
 
     /// <summary>
+    /// Constants used for properties of type EndpointState.
+    /// </summary>
+    public class EndpointState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for EndpointState
+        /// </summary>
+        public static readonly EndpointState ACTIVE = new EndpointState("ACTIVE");
+        /// <summary>
+        /// Constant CREATE_FAILED for EndpointState
+        /// </summary>
+        public static readonly EndpointState CREATE_FAILED = new EndpointState("CREATE_FAILED");
+        /// <summary>
+        /// Constant CREATING for EndpointState
+        /// </summary>
+        public static readonly EndpointState CREATING = new EndpointState("CREATING");
+        /// <summary>
+        /// Constant DELETE_FAILED for EndpointState
+        /// </summary>
+        public static readonly EndpointState DELETE_FAILED = new EndpointState("DELETE_FAILED");
+        /// <summary>
+        /// Constant DELETING for EndpointState
+        /// </summary>
+        public static readonly EndpointState DELETING = new EndpointState("DELETING");
+        /// <summary>
+        /// Constant UPDATE_FAILED for EndpointState
+        /// </summary>
+        public static readonly EndpointState UPDATE_FAILED = new EndpointState("UPDATE_FAILED");
+        /// <summary>
+        /// Constant UPDATING for EndpointState
+        /// </summary>
+        public static readonly EndpointState UPDATING = new EndpointState("UPDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EndpointState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EndpointState FindValue(string value)
+        {
+            return FindValue<EndpointState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EndpointState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EventSourceState.
     /// </summary>
     public class EventSourceState : ConstantClass
@@ -756,6 +826,56 @@ namespace Amazon.EventBridge
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ReplayState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ReplicationState.
+    /// </summary>
+    public class ReplicationState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for ReplicationState
+        /// </summary>
+        public static readonly ReplicationState DISABLED = new ReplicationState("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for ReplicationState
+        /// </summary>
+        public static readonly ReplicationState ENABLED = new ReplicationState("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ReplicationState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ReplicationState FindValue(string value)
+        {
+            return FindValue<ReplicationState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ReplicationState(string value)
         {
             return FindValue(value);
         }

@@ -67,6 +67,12 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetEndpointId())
+                {
+                    context.Writer.WritePropertyName("EndpointId");
+                    context.Writer.Write(publicRequest.EndpointId);
+                }
+
                 if(publicRequest.IsSetEntries())
                 {
                     context.Writer.WritePropertyName("Entries");
