@@ -160,9 +160,9 @@ namespace Amazon.DocDB.Model
         ///  
         /// <para>
         /// The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key.
-        /// If you are restoring a cluster with the same account that owns the KMS encryption
-        /// key used to encrypt the new cluster, then you can use the KMS key alias instead of
-        /// the ARN for the KMS encryption key.
+        /// If you are restoring a cluster with the same Amazon Web Services account that owns
+        /// the KMS encryption key used to encrypt the new cluster, then you can use the KMS key
+        /// alias instead of the ARN for the KMS encryption key.
         /// </para>
         ///  
         /// <para>

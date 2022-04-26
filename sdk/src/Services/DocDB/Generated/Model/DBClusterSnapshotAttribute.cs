@@ -33,8 +33,8 @@ namespace Amazon.DocDB.Model
     /// 
     ///  
     /// <para>
-    /// Manual cluster snapshot attributes are used to authorize other accounts to restore
-    /// a manual cluster snapshot.
+    /// Manual cluster snapshot attributes are used to authorize other Amazon Web Services
+    /// accounts to restore a manual cluster snapshot.
     /// </para>
     /// </summary>
     public partial class DBClusterSnapshotAttribute
@@ -49,8 +49,8 @@ namespace Amazon.DocDB.Model
         /// </para>
         ///  
         /// <para>
-        /// The attribute named <code>restore</code> refers to the list of accounts that have
-        /// permission to copy or restore the manual cluster snapshot.
+        /// The attribute named <code>restore</code> refers to the list of Amazon Web Services
+        /// accounts that have permission to copy or restore the manual cluster snapshot.
         /// </para>
         /// </summary>
         public string AttributeName
@@ -73,9 +73,10 @@ namespace Amazon.DocDB.Model
         ///  
         /// <para>
         /// If the <code>AttributeName</code> field is set to <code>restore</code>, then this
-        /// element returns a list of IDs of the accounts that are authorized to copy or restore
-        /// the manual cluster snapshot. If a value of <code>all</code> is in the list, then the
-        /// manual cluster snapshot is public and available for any account to copy or restore.
+        /// element returns a list of IDs of the Amazon Web Services accounts that are authorized
+        /// to copy or restore the manual cluster snapshot. If a value of <code>all</code> is
+        /// in the list, then the manual cluster snapshot is public and available for any Amazon
+        /// Web Services account to copy or restore.
         /// </para>
         /// </summary>
         public List<string> AttributeValues

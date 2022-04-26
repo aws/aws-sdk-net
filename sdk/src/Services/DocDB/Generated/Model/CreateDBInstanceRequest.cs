@@ -39,7 +39,9 @@ namespace Amazon.DocDB.Model
         private string _dbClusterIdentifier;
         private string _dbInstanceClass;
         private string _dbInstanceIdentifier;
+        private bool? _enablePerformanceInsights;
         private string _engine;
+        private string _performanceInsightsKMSKeyId;
         private string _preferredMaintenanceWindow;
         private int? _promotionTier;
         private List<Tag> _tags = new List<Tag>();
@@ -74,7 +76,8 @@ namespace Amazon.DocDB.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: A random, system-chosen Availability Zone in the endpoint's Region.
+        /// Default: A random, system-chosen Availability Zone in the endpoint's Amazon Web Services
+        /// Region.
         /// </para>
         ///  
         /// <para>
@@ -172,6 +175,26 @@ namespace Amazon.DocDB.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EnablePerformanceInsights. 
+        /// <para>
+        /// A value that indicates whether to enable Performance Insights for the DB Instance.
+        /// For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/performance-insights.html">Using
+        /// Amazon Performance Insights</a>.
+        /// </para>
+        /// </summary>
+        public bool EnablePerformanceInsights
+        {
+            get { return this._enablePerformanceInsights.GetValueOrDefault(); }
+            set { this._enablePerformanceInsights = value; }
+        }
+
+        // Check to see if EnablePerformanceInsights property is set
+        internal bool IsSetEnablePerformanceInsights()
+        {
+            return this._enablePerformanceInsights.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Engine. 
         /// <para>
         /// The name of the database engine to be used for this instance.
@@ -195,6 +218,36 @@ namespace Amazon.DocDB.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PerformanceInsightsKMSKeyId. 
+        /// <para>
+        /// The KMS key identifier for encryption of Performance Insights data.
+        /// </para>
+        ///  
+        /// <para>
+        /// The KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS
+        /// key.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you do not specify a value for PerformanceInsightsKMSKeyId, then Amazon DocumentDB
+        /// uses your default KMS key. There is a default KMS key for your Amazon Web Services
+        /// account. Your Amazon Web Services account has a different default KMS key for each
+        /// Amazon Web Services region.
+        /// </para>
+        /// </summary>
+        public string PerformanceInsightsKMSKeyId
+        {
+            get { return this._performanceInsightsKMSKeyId; }
+            set { this._performanceInsightsKMSKeyId = value; }
+        }
+
+        // Check to see if PerformanceInsightsKMSKeyId property is set
+        internal bool IsSetPerformanceInsightsKMSKeyId()
+        {
+            return this._performanceInsightsKMSKeyId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property PreferredMaintenanceWindow. 
         /// <para>
         /// The time range each week during which system maintenance can occur, in Universal Coordinated
@@ -207,7 +260,7 @@ namespace Amazon.DocDB.Model
         ///  
         /// <para>
         /// The default is a 30-minute window selected at random from an 8-hour block of time
-        /// for each Region, occurring on a random day of the week. 
+        /// for each Amazon Web Services Region, occurring on a random day of the week. 
         /// </para>
         ///  
         /// <para>
