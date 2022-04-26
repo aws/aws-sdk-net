@@ -1,7 +1,7 @@
 
 {
-    "ProductVersion" : "3.7.247.0",
-    "CoreVersion"    : "3.7.10.4",
+    "ProductVersion" : "3.7.248.0",
+    "CoreVersion"    : "3.7.10.5",
     "OverrideCoreVersion" : "3.3",
     "DefaultToPreview"    : false,
     "ServiceVersions"     : {
@@ -482,7 +482,7 @@
             "InPreview"               : false
         },
         "APIGateway"                      : {
-            "Version" : "3.7.2.91",
+            "Version" : "3.7.3.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.10.4"
@@ -946,7 +946,7 @@
             "InPreview"               : false
         },
         "SageMaker"                       : {
-            "Version" : "3.7.29.23",
+            "Version" : "3.7.30.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.10.4"
@@ -1114,7 +1114,7 @@
             "InPreview"               : false
         },
         "PI"                              : {
-            "Version" : "3.7.2.30",
+            "Version" : "3.7.2.31",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.10.4"
@@ -1354,7 +1354,7 @@
             "InPreview"               : false
         },
         "DocDB"                           : {
-            "Version" : "3.7.2.116",
+            "Version" : "3.7.3.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.10.4"
@@ -1442,7 +1442,7 @@
             "InPreview"               : false
         },
         "Personalize"                     : {
-            "Version" : "3.7.7.25",
+            "Version" : "3.7.8.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.10.4"
@@ -1482,10 +1482,10 @@
             "InPreview"               : false
         },
         "EventBridge"                     : {
-            "Version" : "3.7.4.90",
+            "Version" : "3.7.5.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
-                "Core" : "3.7.10.4"
+                "Core" : "3.7.10.5"
             },
             "InPreview"               : false
         },
