@@ -46,6 +46,7 @@ namespace Amazon.CloudFront.Model
         private ResponseHeadersPolicyCustomHeadersConfig _customHeadersConfig;
         private string _name;
         private ResponseHeadersPolicySecurityHeadersConfig _securityHeadersConfig;
+        private ResponseHeadersPolicyServerTimingHeadersConfig _serverTimingHeadersConfig;
 
         /// <summary>
         /// Gets and sets the property Comment. 
@@ -146,6 +147,25 @@ namespace Amazon.CloudFront.Model
         internal bool IsSetSecurityHeadersConfig()
         {
             return this._securityHeadersConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServerTimingHeadersConfig. 
+        /// <para>
+        /// A configuration for enabling the <code>Server-Timing</code> header in HTTP responses
+        /// sent from CloudFront.
+        /// </para>
+        /// </summary>
+        public ResponseHeadersPolicyServerTimingHeadersConfig ServerTimingHeadersConfig
+        {
+            get { return this._serverTimingHeadersConfig; }
+            set { this._serverTimingHeadersConfig = value; }
+        }
+
+        // Check to see if ServerTimingHeadersConfig property is set
+        internal bool IsSetServerTimingHeadersConfig()
+        {
+            return this._serverTimingHeadersConfig != null;
         }
 
     }

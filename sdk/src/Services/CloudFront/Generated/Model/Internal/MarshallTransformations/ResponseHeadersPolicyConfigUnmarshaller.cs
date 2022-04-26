@@ -85,6 +85,12 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         unmarshalledObject.SecurityHeadersConfig = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("ServerTimingHeadersConfig", targetDepth))
+                    {
+                        var unmarshaller = ResponseHeadersPolicyServerTimingHeadersConfigUnmarshaller.Instance;
+                        unmarshalledObject.ServerTimingHeadersConfig = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {

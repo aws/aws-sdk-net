@@ -297,6 +297,18 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         }
                         xmlWriter.WriteEndElement();
                     }
+                    
+                    if (publicRequest.ResponseHeadersPolicyConfig.ServerTimingHeadersConfig != null) 
+                    {
+                        xmlWriter.WriteStartElement("ServerTimingHeadersConfig", "http://cloudfront.amazonaws.com/doc/2020-05-31/");            
+                        if(publicRequest.ResponseHeadersPolicyConfig.ServerTimingHeadersConfig.IsSetEnabled())
+                            xmlWriter.WriteElementString("Enabled", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromBool(publicRequest.ResponseHeadersPolicyConfig.ServerTimingHeadersConfig.Enabled));                 
+        
+                        if(publicRequest.ResponseHeadersPolicyConfig.ServerTimingHeadersConfig.IsSetSamplingRate())
+                            xmlWriter.WriteElementString("SamplingRate", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromDouble(publicRequest.ResponseHeadersPolicyConfig.ServerTimingHeadersConfig.SamplingRate));                 
+        
+                        xmlWriter.WriteEndElement();
+                    }
     
                     xmlWriter.WriteEndElement();
                 }

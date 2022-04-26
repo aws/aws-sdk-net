@@ -67,6 +67,11 @@
     <pattern>[a-z]{2}-[a-z]+-\d</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudFront.Model.ResponseHeadersPolicyServerTimingHeadersConfig.SamplingRate</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudFront.Model.Tag.Key</property>
     <min>1</min>
     <max>128</max>
