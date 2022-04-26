@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// 
+    /// Specifies AWS Lake Formation configuration settings for the crawler.
     /// </summary>
     public partial class LakeFormationConfiguration
     {
@@ -37,7 +37,11 @@ namespace Amazon.Glue.Model
         private bool? _useLakeFormationCredentials;
 
         /// <summary>
-        /// Gets and sets the property AccountId.
+        /// Gets and sets the property AccountId. 
+        /// <para>
+        /// Required for cross account crawls. For same account crawls as the target data, this
+        /// can be left as null.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=12)]
         public string AccountId
@@ -53,7 +57,11 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
-        /// Gets and sets the property UseLakeFormationCredentials.
+        /// Gets and sets the property UseLakeFormationCredentials. 
+        /// <para>
+        /// Specifies whether to use AWS Lake Formation credentials for the crawler instead of
+        /// the IAM role credentials.
+        /// </para>
         /// </summary>
         public bool UseLakeFormationCredentials
         {

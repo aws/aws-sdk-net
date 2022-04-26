@@ -750,7 +750,7 @@ namespace Amazon.Glue
 
 
         /// <summary>
-        /// 
+        /// Retrieves the details for the custom patterns specified by a list of names.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchGetCustomEntityTypes service method.</param>
         /// 
@@ -776,7 +776,7 @@ namespace Amazon.Glue
 
 
         /// <summary>
-        /// 
+        /// Retrieves the details for the custom patterns specified by a list of names.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchGetCustomEntityTypes service method.</param>
         /// <param name="cancellationToken">
@@ -1767,7 +1767,14 @@ namespace Amazon.Glue
 
 
         /// <summary>
+        /// Creates a custom pattern that is used to detect sensitive data across the columns
+        /// and rows of your structured data.
         /// 
+        ///  
+        /// <para>
+        /// Each custom pattern you create specifies a regular expression and an optional list
+        /// of context words. If no context words are passed only a regular expression is checked.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCustomEntityType service method.</param>
         /// 
@@ -1805,7 +1812,14 @@ namespace Amazon.Glue
 
 
         /// <summary>
+        /// Creates a custom pattern that is used to detect sensitive data across the columns
+        /// and rows of your structured data.
         /// 
+        ///  
+        /// <para>
+        /// Each custom pattern you create specifies a regular expression and an optional list
+        /// of context words. If no context words are passed only a regular expression is checked.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCustomEntityType service method.</param>
         /// <param name="cancellationToken">
@@ -3545,7 +3559,7 @@ namespace Amazon.Glue
 
 
         /// <summary>
-        /// 
+        /// Deletes a custom pattern by specifying its name.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteCustomEntityType service method.</param>
         /// 
@@ -3577,7 +3591,7 @@ namespace Amazon.Glue
 
 
         /// <summary>
-        /// 
+        /// Deletes a custom pattern by specifying its name.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteCustomEntityType service method.</param>
         /// <param name="cancellationToken">
@@ -5682,7 +5696,7 @@ namespace Amazon.Glue
 
 
         /// <summary>
-        /// 
+        /// Retrieves the details of a custom pattern by specifying its name.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCustomEntityType service method.</param>
         /// 
@@ -5714,7 +5728,7 @@ namespace Amazon.Glue
 
 
         /// <summary>
-        /// 
+        /// Retrieves the details of a custom pattern by specifying its name.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCustomEntityType service method.</param>
         /// <param name="cancellationToken">
@@ -9219,7 +9233,7 @@ namespace Amazon.Glue
 
 
         /// <summary>
-        /// 
+        /// Lists all the custom patterns that have been created.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListCustomEntityTypes service method.</param>
         /// 
@@ -9245,7 +9259,7 @@ namespace Amazon.Glue
 
 
         /// <summary>
-        /// 
+        /// Lists all the custom patterns that have been created.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListCustomEntityTypes service method.</param>
         /// <param name="cancellationToken">

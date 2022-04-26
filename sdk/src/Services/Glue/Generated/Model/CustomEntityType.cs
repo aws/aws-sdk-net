@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// 
+    /// An object representing a custom pattern for detecting sensitive data across the columns
+    /// and rows of your structured data.
     /// </summary>
     public partial class CustomEntityType
     {
@@ -38,7 +39,15 @@ namespace Amazon.Glue.Model
         private string _regexString;
 
         /// <summary>
-        /// Gets and sets the property ContextWords.
+        /// Gets and sets the property ContextWords. 
+        /// <para>
+        /// A list of context words. If none of these context words are found within the vicinity
+        /// of the regular expression the data will not be detected as sensitive data.
+        /// </para>
+        ///  
+        /// <para>
+        /// If no context words are passed only a regular expression is checked.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=20)]
         public List<string> ContextWords
@@ -54,7 +63,11 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name.
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// A name for the custom pattern that allows it to be retrieved or deleted later. This
+        /// name must be unique per Amazon Web Services account.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
         public string Name
@@ -70,7 +83,11 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RegexString.
+        /// Gets and sets the property RegexString. 
+        /// <para>
+        /// A regular expression string that is used for detecting sensitive data in a custom
+        /// pattern.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
         public string RegexString

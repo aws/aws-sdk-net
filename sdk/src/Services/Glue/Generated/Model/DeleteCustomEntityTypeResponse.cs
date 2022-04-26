@@ -36,7 +36,10 @@ namespace Amazon.Glue.Model
         private string _name;
 
         /// <summary>
-        /// Gets and sets the property Name.
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name of the custom pattern you deleted.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
         public string Name

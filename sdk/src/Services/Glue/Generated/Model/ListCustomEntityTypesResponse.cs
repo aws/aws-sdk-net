@@ -37,7 +37,10 @@ namespace Amazon.Glue.Model
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property CustomEntityTypes.
+        /// Gets and sets the property CustomEntityTypes. 
+        /// <para>
+        /// A list of <code>CustomEntityType</code> objects representing custom patterns.
+        /// </para>
         /// </summary>
         public List<CustomEntityType> CustomEntityTypes
         {
@@ -52,7 +55,10 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// A pagination token, if more results are available.
+        /// </para>
         /// </summary>
         public string NextToken
         {

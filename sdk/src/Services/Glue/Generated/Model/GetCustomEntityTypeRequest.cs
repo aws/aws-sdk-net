@@ -30,14 +30,17 @@ namespace Amazon.Glue.Model
 {
     /// <summary>
     /// Container for the parameters to the GetCustomEntityType operation.
-    /// 
+    /// Retrieves the details of a custom pattern by specifying its name.
     /// </summary>
     public partial class GetCustomEntityTypeRequest : AmazonGlueRequest
     {
         private string _name;
 
         /// <summary>
-        /// Gets and sets the property Name.
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name of the custom pattern that you want to retrieve.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
         public string Name

@@ -30,7 +30,7 @@ namespace Amazon.Glue.Model
 {
     /// <summary>
     /// Container for the parameters to the ListCustomEntityTypes operation.
-    /// 
+    /// Lists all the custom patterns that have been created.
     /// </summary>
     public partial class ListCustomEntityTypesRequest : AmazonGlueRequest
     {
@@ -38,7 +38,10 @@ namespace Amazon.Glue.Model
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property MaxResults.
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// The maximum number of results to return.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
         public int MaxResults
@@ -54,7 +57,10 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// A paginated token to offset the results.
+        /// </para>
         /// </summary>
         public string NextToken
         {

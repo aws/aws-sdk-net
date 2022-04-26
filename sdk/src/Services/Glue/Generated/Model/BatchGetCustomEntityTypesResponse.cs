@@ -37,7 +37,11 @@ namespace Amazon.Glue.Model
         private List<string> _customEntityTypesNotFound = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property CustomEntityTypes.
+        /// Gets and sets the property CustomEntityTypes. 
+        /// <para>
+        /// A list of <code>CustomEntityType</code> objects representing the custom patterns that
+        /// have been created.
+        /// </para>
         /// </summary>
         public List<CustomEntityType> CustomEntityTypes
         {
@@ -52,7 +56,10 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CustomEntityTypesNotFound.
+        /// Gets and sets the property CustomEntityTypesNotFound. 
+        /// <para>
+        /// A list of the names of custom patterns that were not found.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
         public List<string> CustomEntityTypesNotFound

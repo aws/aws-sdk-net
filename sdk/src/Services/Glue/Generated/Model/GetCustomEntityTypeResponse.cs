@@ -38,7 +38,12 @@ namespace Amazon.Glue.Model
         private string _regexString;
 
         /// <summary>
-        /// Gets and sets the property ContextWords.
+        /// Gets and sets the property ContextWords. 
+        /// <para>
+        /// A list of context words if specified when you created the custom pattern. If none
+        /// of these context words are found within the vicinity of the regular expression the
+        /// data will not be detected as sensitive data.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=20)]
         public List<string> ContextWords
@@ -54,7 +59,10 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name.
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name of the custom pattern that you retrieved.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
         public string Name
@@ -70,7 +78,11 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RegexString.
+        /// Gets and sets the property RegexString. 
+        /// <para>
+        /// A regular expression string that is used for detecting sensitive data in a custom
+        /// pattern.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
         public string RegexString

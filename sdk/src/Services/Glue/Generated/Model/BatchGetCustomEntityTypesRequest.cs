@@ -30,14 +30,17 @@ namespace Amazon.Glue.Model
 {
     /// <summary>
     /// Container for the parameters to the BatchGetCustomEntityTypes operation.
-    /// 
+    /// Retrieves the details for the custom patterns specified by a list of names.
     /// </summary>
     public partial class BatchGetCustomEntityTypesRequest : AmazonGlueRequest
     {
         private List<string> _names = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property Names.
+        /// Gets and sets the property Names. 
+        /// <para>
+        /// A list of names of the custom patterns that you want to retrieve.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=50)]
         public List<string> Names
