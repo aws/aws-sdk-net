@@ -33,7 +33,7 @@ namespace Amazon.Personalize.Model
     /// Returns a list of campaigns that use the given solution. When a solution is not specified,
     /// all the campaigns associated with the account are listed. The response provides the
     /// properties for each campaign, including the Amazon Resource Name (ARN). For more information
-    /// on campaigns, see <a>CreateCampaign</a>.
+    /// on campaigns, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateCampaign.html">CreateCampaign</a>.
     /// </summary>
     public partial class ListCampaignsRequest : AmazonPersonalizeRequest
     {
@@ -63,8 +63,8 @@ namespace Amazon.Personalize.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A token returned from the previous call to <code>ListCampaigns</code> for getting
-        /// the next set of campaigns (if they exist).
+        /// A token returned from the previous call to <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListCampaigns.html">ListCampaigns</a>
+        /// for getting the next set of campaigns (if they exist).
         /// </para>
         /// </summary>
         [AWSProperty(Max=1500)]

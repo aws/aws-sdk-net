@@ -30,7 +30,7 @@ namespace Amazon.Personalize.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDataset operation.
-    /// Creates an empty dataset and adds it to the specified dataset group. Use <a>CreateDatasetImportJob</a>
+    /// Creates an empty dataset and adds it to the specified dataset group. Use <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a>
     /// to import your training data to a dataset.
     /// 
     ///  
@@ -68,25 +68,29 @@ namespace Amazon.Personalize.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// To get the status of the dataset, call <a>DescribeDataset</a>.
+    /// To get the status of the dataset, call <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeDataset.html">DescribeDataset</a>.
     /// </para>
     ///  <p class="title"> <b>Related APIs</b> 
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>CreateDatasetGroup</a> 
+    ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDatasetGroup.html">CreateDatasetGroup</a>
+    /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>ListDatasets</a> 
+    ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListDatasets.html">ListDatasets</a>
+    /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DescribeDataset</a> 
+    ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeDataset.html">DescribeDataset</a>
+    /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DeleteDataset</a> 
+    ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DeleteDataset.html">DeleteDataset</a>
+    /// 
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -96,6 +100,7 @@ namespace Amazon.Personalize.Model
         private string _datasetType;
         private string _name;
         private string _schemaArn;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property DatasetGroupArn. 
@@ -189,6 +194,26 @@ namespace Amazon.Personalize.Model
         internal bool IsSetSchemaArn()
         {
             return this._schemaArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+        /// to apply to the dataset.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=200)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

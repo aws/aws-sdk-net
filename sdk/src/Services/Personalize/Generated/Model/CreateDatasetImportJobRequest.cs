@@ -56,10 +56,11 @@ namespace Amazon.Personalize.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// To get the status of the import job, call <a>DescribeDatasetImportJob</a>, providing
-    /// the Amazon Resource Name (ARN) of the dataset import job. The dataset import is complete
-    /// when the status shows as ACTIVE. If the status shows as CREATE FAILED, the response
-    /// includes a <code>failureReason</code> key, which describes why the job failed.
+    /// To get the status of the import job, call <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeDatasetImportJob.html">DescribeDatasetImportJob</a>,
+    /// providing the Amazon Resource Name (ARN) of the dataset import job. The dataset import
+    /// is complete when the status shows as ACTIVE. If the status shows as CREATE FAILED,
+    /// the response includes a <code>failureReason</code> key, which describes why the job
+    /// failed.
     /// </para>
     ///  <note> 
     /// <para>
@@ -70,11 +71,13 @@ namespace Amazon.Personalize.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>ListDatasetImportJobs</a> 
+    ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListDatasetImportJobs.html">ListDatasetImportJobs</a>
+    /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DescribeDatasetImportJob</a> 
+    ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeDatasetImportJob.html">DescribeDatasetImportJob</a>
+    /// 
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -84,6 +87,7 @@ namespace Amazon.Personalize.Model
         private DataSource _dataSource;
         private string _jobName;
         private string _roleArn;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property DatasetArn. 
@@ -159,6 +163,26 @@ namespace Amazon.Personalize.Model
         internal bool IsSetRoleArn()
         {
             return this._roleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+        /// to apply to the dataset import job.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=200)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

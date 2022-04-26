@@ -30,7 +30,8 @@ namespace Amazon.Personalize.Model
 {
     /// <summary>
     /// Provides a summary of the properties of a campaign update. For a complete listing,
-    /// call the <a>DescribeCampaign</a> API.
+    /// call the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeCampaign.html">DescribeCampaign</a>
+    /// API.
     /// </summary>
     public partial class CampaignUpdateSummary
     {

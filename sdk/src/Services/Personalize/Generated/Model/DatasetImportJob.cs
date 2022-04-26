@@ -30,7 +30,7 @@ namespace Amazon.Personalize.Model
 {
     /// <summary>
     /// Describes a job that imports training data from a data source (Amazon S3 bucket) to
-    /// an Amazon Personalize dataset. For more information, see <a>CreateDatasetImportJob</a>.
+    /// an Amazon Personalize dataset. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a>.
     /// 
     ///  
     /// <para>
