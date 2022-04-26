@@ -29,37 +29,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lightsail.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetDistributions operation.
-    /// Returns information about one or more of your Amazon Lightsail content delivery network
-    /// (CDN) distributions.
+    /// Container for the parameters to the GetLoadBalancerTlsPolicies operation.
+    /// Returns a list of TLS security policies that you can apply to Lightsail load balancers.
+    /// 
+    ///  
+    /// <para>
+    /// For more information about load balancer TLS security policies, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configure-load-balancer-tls-security-policy">Load
+    /// balancer TLS security policies</a> in the <i>Amazon Lightsail Developer Guide</i>.
+    /// </para>
     /// </summary>
-    public partial class GetDistributionsRequest : AmazonLightsailRequest
+    public partial class GetLoadBalancerTlsPoliciesRequest : AmazonLightsailRequest
     {
-        private string _distributionName;
         private string _pageToken;
-
-        /// <summary>
-        /// Gets and sets the property DistributionName. 
-        /// <para>
-        /// The name of the distribution for which to return information.
-        /// </para>
-        ///  
-        /// <para>
-        /// When omitted, the response includes all of your distributions in the Amazon Web Services
-        /// Region where the request is made.
-        /// </para>
-        /// </summary>
-        public string DistributionName
-        {
-            get { return this._distributionName; }
-            set { this._distributionName = value; }
-        }
-
-        // Check to see if DistributionName property is set
-        internal bool IsSetDistributionName()
-        {
-            return this._distributionName != null;
-        }
 
         /// <summary>
         /// Gets and sets the property PageToken. 
@@ -68,9 +49,9 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  
         /// <para>
-        /// To get a page token, perform an initial <code>GetDistributions</code> request. If
-        /// your results are paginated, the response will return a next page token that you can
-        /// specify as the page token in a subsequent request.
+        /// To get a page token, perform an initial <code>GetLoadBalancerTlsPolicies</code> request.
+        /// If your results are paginated, the response will return a next page token that you
+        /// can specify as the page token in a subsequent request.
         /// </para>
         /// </summary>
         public string PageToken

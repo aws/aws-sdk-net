@@ -2085,6 +2085,10 @@ namespace Amazon.Lightsail
         /// </summary>
         public static readonly LoadBalancerAttributeName HealthCheckPath = new LoadBalancerAttributeName("HealthCheckPath");
         /// <summary>
+        /// Constant HttpsRedirectionEnabled for LoadBalancerAttributeName
+        /// </summary>
+        public static readonly LoadBalancerAttributeName HttpsRedirectionEnabled = new LoadBalancerAttributeName("HttpsRedirectionEnabled");
+        /// <summary>
         /// Constant SessionStickiness_LB_CookieDurationSeconds for LoadBalancerAttributeName
         /// </summary>
         public static readonly LoadBalancerAttributeName SessionStickiness_LB_CookieDurationSeconds = new LoadBalancerAttributeName("SessionStickiness_LB_CookieDurationSeconds");
@@ -2092,6 +2096,10 @@ namespace Amazon.Lightsail
         /// Constant SessionStickinessEnabled for LoadBalancerAttributeName
         /// </summary>
         public static readonly LoadBalancerAttributeName SessionStickinessEnabled = new LoadBalancerAttributeName("SessionStickinessEnabled");
+        /// <summary>
+        /// Constant TlsPolicyName for LoadBalancerAttributeName
+        /// </summary>
+        public static readonly LoadBalancerAttributeName TlsPolicyName = new LoadBalancerAttributeName("TlsPolicyName");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

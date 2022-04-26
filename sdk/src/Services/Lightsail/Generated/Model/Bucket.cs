@@ -58,7 +58,8 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  
         /// <para>
-        /// You can update a bucket's bundle only one time within a monthly AWS billing cycle.
+        /// You can update a bucket's bundle only one time within a monthly Amazon Web Services
+        /// billing cycle.
         /// </para>
         ///  
         /// <para>
@@ -179,7 +180,11 @@ namespace Amazon.Lightsail.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Location.
+        /// Gets and sets the property Location. 
+        /// <para>
+        /// An object that describes the location of the bucket, such as the Amazon Web Services
+        /// Region and Availability Zone.
+        /// </para>
         /// </summary>
         public ResourceLocation Location
         {
@@ -251,8 +256,8 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property ReadonlyAccessAccounts. 
         /// <para>
-        /// An array of strings that specify the AWS account IDs that have read-only access to
-        /// the bucket.
+        /// An array of strings that specify the Amazon Web Services account IDs that have read-only
+        /// access to the bucket.
         /// </para>
         /// </summary>
         [AWSProperty(Max=10)]

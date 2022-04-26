@@ -35,10 +35,10 @@ namespace Amazon.Lightsail.Model
     ///  
     /// <para>
     /// A contact method is used to send you notifications about your Amazon Lightsail resources.
-    /// You can add one email address and one mobile phone number contact method in each AWS
-    /// Region. However, SMS text messaging is not supported in some AWS Regions, and SMS
-    /// text messages cannot be sent to some countries/regions. For more information, see
-    /// <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications
+    /// You can add one email address and one mobile phone number contact method in each Amazon
+    /// Web Services Region. However, SMS text messaging is not supported in some Amazon Web
+    /// Services Regions, and SMS text messages cannot be sent to some countries/regions.
+    /// For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications
     /// in Amazon Lightsail</a>.
     /// </para>
     /// </summary>
@@ -84,7 +84,8 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  
         /// <para>
-        /// The <code>SMS</code> protocol is supported only in the following AWS Regions.
+        /// The <code>SMS</code> protocol is supported only in the following Amazon Web Services
+        /// Regions.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -113,7 +114,7 @@ namespace Amazon.Lightsail.Model
         ///  </li> </ul> 
         /// <para>
         /// For a list of countries/regions where SMS text messages can be sent, and the latest
-        /// AWS Regions where SMS text messaging is supported, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-supported-regions-countries.html">Supported
+        /// Amazon Web Services Regions where SMS text messaging is supported, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-supported-regions-countries.html">Supported
         /// Regions and Countries</a> in the <i>Amazon SNS Developer Guide</i>.
         /// </para>
         ///  

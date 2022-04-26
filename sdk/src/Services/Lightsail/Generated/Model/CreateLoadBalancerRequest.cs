@@ -58,6 +58,7 @@ namespace Amazon.Lightsail.Model
         private IpAddressType _ipAddressType;
         private string _loadBalancerName;
         private List<Tag> _tags = new List<Tag>();
+        private string _tlsPolicyName;
 
         /// <summary>
         /// Gets and sets the property CertificateAlternativeNames. 
@@ -234,6 +235,34 @@ namespace Amazon.Lightsail.Model
         internal bool IsSetTags()
         {
             return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TlsPolicyName. 
+        /// <para>
+        /// The name of the TLS policy to apply to the load balancer.
+        /// </para>
+        ///  
+        /// <para>
+        /// Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetLoadBalancerTlsPolicies.html">GetLoadBalancerTlsPolicies</a>
+        /// action to get a list of TLS policy names that you can specify.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about load balancer TLS policies, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configure-load-balancer-tls-security-policy">Load
+        /// balancer TLS security policies</a> in the <i>Amazon Lightsail Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        public string TlsPolicyName
+        {
+            get { return this._tlsPolicyName; }
+            set { this._tlsPolicyName = value; }
+        }
+
+        // Check to see if TlsPolicyName property is set
+        internal bool IsSetTlsPolicyName()
+        {
+            return this._tlsPolicyName != null;
         }
 
     }

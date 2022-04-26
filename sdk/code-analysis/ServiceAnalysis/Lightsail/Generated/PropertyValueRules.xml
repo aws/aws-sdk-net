@@ -1096,6 +1096,10 @@
     <pattern>\w[\w\-]*\w</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Lightsail.Model.LoadBalancer.TlsPolicyName</property>
+    <pattern>\w[\w\-]*\w</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Lightsail.Model.LoadBalancerTlsCertificate.Arn</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
@@ -1141,6 +1145,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.LoadBalancerTlsCertificateSummary.Name</property>
+    <pattern>\w[\w\-]*\w</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.LoadBalancerTlsPolicy.Name</property>
     <pattern>\w[\w\-]*\w</pattern>
   </property-value-rule>
   <property-value-rule>

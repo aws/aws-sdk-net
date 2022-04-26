@@ -120,13 +120,13 @@ namespace Amazon.Lightsail.Model
         ///  
         /// <para>
         /// A notification is not sent if a contact protocol is not specified, if the specified
-        /// contact protocol is not configured in the AWS Region, or if notifications are not
-        /// enabled for the alarm using the <code>notificationEnabled</code> paramater.
+        /// contact protocol is not configured in the Amazon Web Services Region, or if notifications
+        /// are not enabled for the alarm using the <code>notificationEnabled</code> paramater.
         /// </para>
         ///  
         /// <para>
         /// Use the <code>CreateContactMethod</code> action to configure a contact protocol in
-        /// an AWS Region.
+        /// an Amazon Web Services Region.
         /// </para>
         /// </summary>
         public List<string> ContactProtocols

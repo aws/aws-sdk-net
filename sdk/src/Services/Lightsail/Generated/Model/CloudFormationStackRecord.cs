@@ -108,8 +108,8 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property Location. 
         /// <para>
-        /// A list of objects describing the Availability Zone and AWS Region of the CloudFormation
-        /// stack record.
+        /// A list of objects describing the Availability Zone and Amazon Web Services Region
+        /// of the CloudFormation stack record.
         /// </para>
         /// </summary>
         public ResourceLocation Location

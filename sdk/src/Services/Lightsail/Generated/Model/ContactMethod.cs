@@ -106,7 +106,11 @@ namespace Amazon.Lightsail.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Location.
+        /// Gets and sets the property Location. 
+        /// <para>
+        /// An object that describes the location of the contact method, such as the Amazon Web
+        /// Services Region and Availability Zone.
+        /// </para>
         /// </summary>
         public ResourceLocation Location
         {

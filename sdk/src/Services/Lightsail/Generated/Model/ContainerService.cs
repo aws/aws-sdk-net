@@ -146,8 +146,8 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property Location. 
         /// <para>
-        /// An object that describes the location of the container service, such as the AWS Region
-        /// and Availability Zone.
+        /// An object that describes the location of the container service, such as the Amazon
+        /// Web Services Region and Availability Zone.
         /// </para>
         /// </summary>
         public ResourceLocation Location
@@ -234,8 +234,9 @@ namespace Amazon.Lightsail.Model
         ///  
         /// <para>
         /// The principal ARN can be used to create a trust relationship between your standard
-        /// AWS account and your Lightsail container service. This allows you to give your service
-        /// permission to access resources in your standard AWS account.
+        /// Amazon Web Services account and your Lightsail container service. This allows you
+        /// to give your service permission to access resources in your standard Amazon Web Services
+        /// account.
         /// </para>
         /// </summary>
         public string PrincipalArn

@@ -194,7 +194,7 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Must be unique within each AWS Region in your Lightsail account.
+        /// Must be unique within each Amazon Web Services Region in your Lightsail account.
         /// </para>
         ///  </li> <li> 
         /// <para>

@@ -100,8 +100,8 @@ namespace Amazon.Lightsail.Model
         ///  <note> 
         /// <para>
         /// Distribution-related APIs are available only in the N. Virginia (<code>us-east-1</code>)
-        /// AWS Region. Set your AWS Region configuration to <code>us-east-1</code> to create,
-        /// view, or edit distributions.
+        /// Amazon Web Services Region. Set your Amazon Web Services Region configuration to <code>us-east-1</code>
+        /// to create, view, or edit distributions.
         /// </para>
         ///  </note>
         /// </summary>

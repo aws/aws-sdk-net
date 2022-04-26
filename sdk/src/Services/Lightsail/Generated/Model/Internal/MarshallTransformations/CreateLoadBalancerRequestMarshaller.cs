@@ -130,6 +130,12 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetTlsPolicyName())
+                {
+                    context.Writer.WritePropertyName("tlsPolicyName");
+                    context.Writer.Write(publicRequest.TlsPolicyName);
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

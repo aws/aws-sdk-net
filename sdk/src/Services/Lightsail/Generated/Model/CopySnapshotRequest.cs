@@ -33,7 +33,7 @@ namespace Amazon.Lightsail.Model
     /// Copies a manual snapshot of an instance or disk as another manual snapshot, or copies
     /// an automatic snapshot of an instance or disk as a manual snapshot. This operation
     /// can also be used to copy a manual or automatic snapshot of an instance or a disk from
-    /// one AWS Region to another in Amazon Lightsail.
+    /// one Amazon Web Services Region to another in Amazon Lightsail.
     /// 
     ///  
     /// <para>
@@ -100,7 +100,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property SourceRegion. 
         /// <para>
-        /// The AWS Region where the source manual or automatic snapshot is located.
+        /// The Amazon Web Services Region where the source manual or automatic snapshot is located.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

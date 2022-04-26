@@ -36,7 +36,11 @@ namespace Amazon.Lightsail.Model
         private ContainerImage _containerImage;
 
         /// <summary>
-        /// Gets and sets the property ContainerImage.
+        /// Gets and sets the property ContainerImage. 
+        /// <para>
+        /// An object that describes a container image that is registered to a Lightsail container
+        /// service
+        /// </para>
         /// </summary>
         public ContainerImage ContainerImage
         {
