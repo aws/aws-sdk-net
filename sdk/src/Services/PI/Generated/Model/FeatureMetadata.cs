@@ -40,33 +40,32 @@ namespace Amazon.PI.Model
         /// Gets and sets the property Status. 
         /// <para>
         /// The status of the feature on the DB instance. Possible values include the following:
-        /// 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ENABLED</code>: the feature is enabled on the instance.
+        ///  <code>ENABLED</code> - The feature is enabled on the instance.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DISABLED</code>: the feature is disabled on the instance.
+        ///  <code>DISABLED</code> - The feature is disabled on the instance.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UNSUPPORTED</code>: the feature isn't supported on the instance.
+        ///  <code>UNSUPPORTED</code> - The feature isn't supported on the instance.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ENABLED_PENDING_REBOOT</code>: the feature is enabled on the instance but requires
-        /// a reboot to take effect.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>DISABLED_PENDING_REBOOT</code>: the feature is disabled on the instance but
+        ///  <code>ENABLED_PENDING_REBOOT</code> - The feature is enabled on the instance but
         /// requires a reboot to take effect.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UNKNOWN</code>: the feature status couldn't be determined.
+        ///  <code>DISABLED_PENDING_REBOOT</code> - The feature is disabled on the instance but
+        /// requires a reboot to take effect.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>UNKNOWN</code> - The feature status couldn't be determined.
         /// </para>
         ///  </li> </ul>
         /// </summary>

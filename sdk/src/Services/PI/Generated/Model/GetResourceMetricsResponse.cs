@@ -82,13 +82,10 @@ namespace Amazon.PI.Model
         /// <summary>
         /// Gets and sets the property Identifier. 
         /// <para>
-        /// An immutable, Amazon Web Services Region-unique identifier for a data source. Performance
-        /// Insights gathers metrics from this data source. 
-        /// </para>
-        ///  
-        /// <para>
-        /// To use a DB instance as a data source, you specify its <code>DbiResourceId</code>
-        /// value - for example: <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code> 
+        /// An immutable identifier for a data source that is unique for an Amazon Web Services
+        /// Region. Performance Insights gathers metrics from this data source. In the console,
+        /// the identifier is shown as <i>ResourceID</i>. When you call <code>DescribeDBInstances</code>,
+        /// the identifier is returned as <code>DbiResourceId</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=256)]
@@ -107,7 +104,7 @@ namespace Amazon.PI.Model
         /// <summary>
         /// Gets and sets the property MetricList. 
         /// <para>
-        /// An array of metric results,, where each array element contains all of the data points
+        /// An array of metric results, where each array element contains all of the data points
         /// for a particular dimension.
         /// </para>
         /// </summary>
