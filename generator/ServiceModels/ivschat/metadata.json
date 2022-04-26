@@ -1,0 +1,5 @@
+{
+  "active": true,
+  "synopsis": "Adds new APIs for IVS Chat, a feature for building interactive chat experiences alongside an IVS broadcast.",
+  "generate-client-constructors": true
+}

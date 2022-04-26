@@ -676,6 +676,10 @@
       <Project>{F432AF25-9775-41B8-A42E-7890CD7189BB}</Project>
       <Name>AWSSDK.IVS.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/Ivschat/AWSSDK.Ivschat.CodeAnalysis.csproj">
+      <Project>{708C1DF5-2E31-45B3-AE8D-9B95058C4A15}</Project>
+      <Name>AWSSDK.Ivschat.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/Kafka/AWSSDK.Kafka.CodeAnalysis.csproj">
       <Project>{EAAA00EB-81EC-4E9B-9246-D6801277824E}</Project>
       <Name>AWSSDK.Kafka.CodeAnalysis</Name>
