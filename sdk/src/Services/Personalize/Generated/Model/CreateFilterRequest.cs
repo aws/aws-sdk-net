@@ -30,13 +30,15 @@ namespace Amazon.Personalize.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateFilter operation.
-    /// Creates a recommendation filter. For more information, see <a>filter</a>.
+    /// Creates a recommendation filter. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering
+    /// recommendations and user segments</a>.
     /// </summary>
     public partial class CreateFilterRequest : AmazonPersonalizeRequest
     {
         private string _datasetGroupArn;
         private string _filterExpression;
         private string _name;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property DatasetGroupArn. 
@@ -62,7 +64,8 @@ namespace Amazon.Personalize.Model
         /// <para>
         /// The filter expression defines which items are included or excluded from recommendations.
         /// Filter expression must follow specific format rules. For information about filter
-        /// expression structure and syntax, see <a>filter-expressions</a>.
+        /// expression structure and syntax, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter-expressions.html">Filter
+        /// expressions</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2500)]
@@ -95,6 +98,26 @@ namespace Amazon.Personalize.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+        /// to apply to the filter.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=200)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

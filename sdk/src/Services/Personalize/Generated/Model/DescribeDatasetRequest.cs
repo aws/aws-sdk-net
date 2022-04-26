@@ -30,7 +30,7 @@ namespace Amazon.Personalize.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeDataset operation.
-    /// Describes the given dataset. For more information on datasets, see <a>CreateDataset</a>.
+    /// Describes the given dataset. For more information on datasets, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDataset.html">CreateDataset</a>.
     /// </summary>
     public partial class DescribeDatasetRequest : AmazonPersonalizeRequest
     {

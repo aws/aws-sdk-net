@@ -32,7 +32,7 @@ namespace Amazon.Personalize.Model
     /// Container for the parameters to the ListEventTrackers operation.
     /// Returns the list of event trackers associated with the account. The response provides
     /// the properties for each event tracker, including the Amazon Resource Name (ARN) and
-    /// tracking ID. For more information on event trackers, see <a>CreateEventTracker</a>.
+    /// tracking ID. For more information on event trackers, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateEventTracker.html">CreateEventTracker</a>.
     /// </summary>
     public partial class ListEventTrackersRequest : AmazonPersonalizeRequest
     {

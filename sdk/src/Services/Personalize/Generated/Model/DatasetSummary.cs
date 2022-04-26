@@ -30,7 +30,8 @@ namespace Amazon.Personalize.Model
 {
     /// <summary>
     /// Provides a summary of the properties of a dataset. For a complete listing, call the
-    /// <a>DescribeDataset</a> API.
+    /// <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeDataset.html">DescribeDataset</a>
+    /// API.
     /// </summary>
     public partial class DatasetSummary
     {

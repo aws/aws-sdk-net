@@ -79,7 +79,7 @@ namespace Amazon.Personalize.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// To get the campaign status, call <a>DescribeCampaign</a>.
+    /// To get the campaign status, call <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeCampaign.html">DescribeCampaign</a>.
     /// </para>
     ///  <note> 
     /// <para>
@@ -90,19 +90,23 @@ namespace Amazon.Personalize.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>ListCampaigns</a> 
+    ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListCampaigns.html">ListCampaigns</a>
+    /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DescribeCampaign</a> 
+    ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeCampaign.html">DescribeCampaign</a>
+    /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>UpdateCampaign</a> 
+    ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_UpdateCampaign.html">UpdateCampaign</a>
+    /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DeleteCampaign</a> 
+    ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DeleteCampaign.html">DeleteCampaign</a>
+    /// 
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -112,6 +116,7 @@ namespace Amazon.Personalize.Model
         private int? _minProvisionedTPS;
         private string _name;
         private string _solutionVersionArn;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property CampaignConfig. 
@@ -187,6 +192,26 @@ namespace Amazon.Personalize.Model
         internal bool IsSetSolutionVersionArn()
         {
             return this._solutionVersionArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+        /// to apply to the campaign.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=200)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

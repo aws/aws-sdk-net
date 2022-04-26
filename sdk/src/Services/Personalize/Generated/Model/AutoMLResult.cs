@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Personalize.Model
 {
     /// <summary>
-    /// When the solution performs AutoML (<code>performAutoML</code> is true in <a>CreateSolution</a>),
+    /// When the solution performs AutoML (<code>performAutoML</code> is true in <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolution.html">CreateSolution</a>),
     /// specifies the recipe that best optimized the specified metric.
     /// </summary>
     public partial class AutoMLResult

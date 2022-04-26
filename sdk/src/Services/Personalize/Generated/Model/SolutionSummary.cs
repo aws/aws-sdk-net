@@ -30,7 +30,8 @@ namespace Amazon.Personalize.Model
 {
     /// <summary>
     /// Provides a summary of the properties of a solution. For a complete listing, call the
-    /// <a>DescribeSolution</a> API.
+    /// <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeSolution.html">DescribeSolution</a>
+    /// API.
     /// </summary>
     public partial class SolutionSummary
     {
