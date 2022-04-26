@@ -31,10 +31,42 @@ namespace Amazon.EventBridge.Model
     /// <summary>
     /// Container for the parameters to the PutEvents operation.
     /// Sends custom events to Amazon EventBridge so that they can be matched to rules.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// PutEvents will only process nested JSON up to 1100 levels deep.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class PutEventsRequest : AmazonEventBridgeRequest
     {
+        private string _endpointId;
         private List<PutEventsRequestEntry> _entries = new List<PutEventsRequestEntry>();
+
+        /// <summary>
+        /// Gets and sets the property EndpointId. 
+        /// <para>
+        /// The URL subdomain of the endpoint. For example, if the URL for Endpoint is abcde.veo.endpoints.event.amazonaws.com,
+        /// then the EndpointId is <code>abcde.veo</code>.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// When using Java, you must include <code>auth-crt</code> on the class path.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        [AWSProperty(Min=1, Max=50)]
+        public string EndpointId
+        {
+            get { return this._endpointId; }
+            set { this._endpointId = value; }
+        }
+
+        // Check to see if EndpointId property is set
+        internal bool IsSetEndpointId()
+        {
+            return this._endpointId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Entries. 
