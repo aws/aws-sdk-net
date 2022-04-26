@@ -216,8 +216,9 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property DbClusterResourceId. 
         /// <para>
-        /// The Region-unique, immutable identifier for the cluster. This identifier is found
-        /// in CloudTrail log entries whenever the KMS key for the cluster is accessed.
+        /// The Amazon Web Services Region-unique, immutable identifier for the cluster. This
+        /// identifier is found in CloudTrail log entries whenever the KMS key for the cluster
+        /// is accessed.
         /// </para>
         /// </summary>
         public string DbClusterResourceId

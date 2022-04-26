@@ -31,7 +31,7 @@ namespace Amazon.DocDB.Model
     /// <summary>
     /// Container for the parameters to the ModifyDBSubnetGroup operation.
     /// Modifies an existing subnet group. subnet groups must contain at least one subnet
-    /// in at least two Availability Zones in the Region.
+    /// in at least two Availability Zones in the Amazon Web Services Region.
     /// </summary>
     public partial class ModifyDBSubnetGroupRequest : AmazonDocDBRequest
     {
