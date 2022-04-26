@@ -44,7 +44,7 @@ namespace Amazon.Pricing
     ///  
     /// <para>
     /// Use <code>GetServices</code> without a service code to retrieve the service codes
-    /// for all AWS services, then <code>GetServices</code> with a service code to retreive
+    /// for all AWS services, then <code>GetServices</code> with a service code to retrieve
     /// the attribute names for that service. After you have the service code and attribute
     /// names, you can use <code>GetAttributeValues</code> to see what values are available
     /// for an attribute. With the service code and an attribute name and value, you can use
@@ -121,7 +121,7 @@ namespace Amazon.Pricing
 
 
         /// <summary>
-        /// Returns a list of attribute values. Attibutes are similar to the details in a Price
+        /// Returns a list of attribute values. Attributes are similar to the details in a Price
         /// List API offer file. For a list of available attributes, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/reading-an-offer.html#pps-defs">Offer
         /// File Definitions</a> in the <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-what-is.html">Amazon
         /// Web Services Billing and Cost Management User Guide</a>.
