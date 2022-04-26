@@ -29,9 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.NetworkFirewall.Model
 {
     /// <summary>
-    /// The firewall defines the configuration settings for an AWS Network Firewall firewall.
+    /// The firewall defines the configuration settings for an Network Firewall firewall.
     /// These settings include the firewall policy, the subnets in your VPC to use for the
-    /// firewall endpoints, and any tags that are attached to the firewall AWS resource. 
+    /// firewall endpoints, and any tags that are attached to the firewall Amazon Web Services
+    /// resource. 
     /// 
     ///  
     /// <para>
@@ -44,6 +45,7 @@ namespace Amazon.NetworkFirewall.Model
     {
         private bool? _deleteProtection;
         private string _description;
+        private EncryptionConfiguration _encryptionConfiguration;
         private string _firewallArn;
         private string _firewallId;
         private string _firewallName;
@@ -92,6 +94,25 @@ namespace Amazon.NetworkFirewall.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EncryptionConfiguration. 
+        /// <para>
+        /// A complex type that contains the Amazon Web Services KMS encryption configuration
+        /// settings for your firewall.
+        /// </para>
+        /// </summary>
+        public EncryptionConfiguration EncryptionConfiguration
+        {
+            get { return this._encryptionConfiguration; }
+            set { this._encryptionConfiguration = value; }
+        }
+
+        // Check to see if EncryptionConfiguration property is set
+        internal bool IsSetEncryptionConfiguration()
+        {
+            return this._encryptionConfiguration != null;
         }
 
         /// <summary>

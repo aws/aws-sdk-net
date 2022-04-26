@@ -78,8 +78,8 @@ namespace Amazon.NetworkFirewall.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-strict-rule-evaluation-order.html">Strict
-        /// evaluation order</a> in the <i>AWS Network Firewall Developer Guide</i>. 
+        /// For more information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html#suricata-strict-rule-evaluation-order.html">Strict
+        /// evaluation order</a> in the <i>Network Firewall Developer Guide</i>. 
         /// </para>
         /// </summary>
         public List<string> StatefulDefaultActions

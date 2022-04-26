@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// UpdateRuleGroup Request Marshaller
+    /// UpdateFirewallEncryptionConfiguration Request Marshaller
     /// </summary>       
-    public class UpdateRuleGroupRequestMarshaller : IMarshaller<IRequest, UpdateRuleGroupRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class UpdateFirewallEncryptionConfigurationRequestMarshaller : IMarshaller<IRequest, UpdateFirewallEncryptionConfigurationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((UpdateRuleGroupRequest)input);
+            return this.Marshall((UpdateFirewallEncryptionConfigurationRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(UpdateRuleGroupRequest publicRequest)
+        public IRequest Marshall(UpdateFirewallEncryptionConfigurationRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.NetworkFirewall");
-            string target = "NetworkFirewall_20201112.UpdateRuleGroup";
+            string target = "NetworkFirewall_20201112.UpdateFirewallEncryptionConfiguration";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.0";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-11-12";
@@ -67,18 +67,6 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetDryRun())
-                {
-                    context.Writer.WritePropertyName("DryRun");
-                    context.Writer.Write(publicRequest.DryRun);
-                }
-
                 if(publicRequest.IsSetEncryptionConfiguration())
                 {
                     context.Writer.WritePropertyName("EncryptionConfiguration");
@@ -90,39 +78,16 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetRuleGroup())
+                if(publicRequest.IsSetFirewallArn())
                 {
-                    context.Writer.WritePropertyName("RuleGroup");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = RuleGroupMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.RuleGroup, context);
-
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WritePropertyName("FirewallArn");
+                    context.Writer.Write(publicRequest.FirewallArn);
                 }
 
-                if(publicRequest.IsSetRuleGroupArn())
+                if(publicRequest.IsSetFirewallName())
                 {
-                    context.Writer.WritePropertyName("RuleGroupArn");
-                    context.Writer.Write(publicRequest.RuleGroupArn);
-                }
-
-                if(publicRequest.IsSetRuleGroupName())
-                {
-                    context.Writer.WritePropertyName("RuleGroupName");
-                    context.Writer.Write(publicRequest.RuleGroupName);
-                }
-
-                if(publicRequest.IsSetRules())
-                {
-                    context.Writer.WritePropertyName("Rules");
-                    context.Writer.Write(publicRequest.Rules);
-                }
-
-                if(publicRequest.IsSetType())
-                {
-                    context.Writer.WritePropertyName("Type");
-                    context.Writer.Write(publicRequest.Type);
+                    context.Writer.WritePropertyName("FirewallName");
+                    context.Writer.Write(publicRequest.FirewallName);
                 }
 
                 if(publicRequest.IsSetUpdateToken())
@@ -139,9 +104,9 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static UpdateRuleGroupRequestMarshaller _instance = new UpdateRuleGroupRequestMarshaller();        
+        private static UpdateFirewallEncryptionConfigurationRequestMarshaller _instance = new UpdateFirewallEncryptionConfigurationRequestMarshaller();        
 
-        internal static UpdateRuleGroupRequestMarshaller GetInstance()
+        internal static UpdateFirewallEncryptionConfigurationRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -149,7 +114,7 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdateRuleGroupRequestMarshaller Instance
+        public static UpdateFirewallEncryptionConfigurationRequestMarshaller Instance
         {
             get
             {

@@ -30,15 +30,15 @@ namespace Amazon.NetworkFirewall.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateFirewall operation.
-    /// Creates an AWS Network Firewall <a>Firewall</a> and accompanying <a>FirewallStatus</a>
+    /// Creates an Network Firewall <a>Firewall</a> and accompanying <a>FirewallStatus</a>
     /// for a VPC. 
     /// 
     ///  
     /// <para>
-    /// The firewall defines the configuration settings for an AWS Network Firewall firewall.
+    /// The firewall defines the configuration settings for an Network Firewall firewall.
     /// The settings that you can define at creation include the firewall policy, the subnets
     /// in your VPC to use for the firewall endpoints, and any tags that are attached to the
-    /// firewall AWS resource. 
+    /// firewall Amazon Web Services resource. 
     /// </para>
     ///  
     /// <para>
@@ -53,8 +53,8 @@ namespace Amazon.NetworkFirewall.Model
     /// </para>
     ///  
     /// <para>
-    /// To manage a firewall's tags, use the standard AWS resource tagging operations, <a>ListTagsForResource</a>,
-    /// <a>TagResource</a>, and <a>UntagResource</a>.
+    /// To manage a firewall's tags, use the standard Amazon Web Services resource tagging
+    /// operations, <a>ListTagsForResource</a>, <a>TagResource</a>, and <a>UntagResource</a>.
     /// </para>
     ///  
     /// <para>
@@ -65,6 +65,7 @@ namespace Amazon.NetworkFirewall.Model
     {
         private bool? _deleteProtection;
         private string _description;
+        private EncryptionConfiguration _encryptionConfiguration;
         private string _firewallName;
         private string _firewallPolicyArn;
         private bool? _firewallPolicyChangeProtection;
@@ -111,6 +112,24 @@ namespace Amazon.NetworkFirewall.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EncryptionConfiguration. 
+        /// <para>
+        /// A complex type that contains settings for encryption of your firewall resources.
+        /// </para>
+        /// </summary>
+        public EncryptionConfiguration EncryptionConfiguration
+        {
+            get { return this._encryptionConfiguration; }
+            set { this._encryptionConfiguration = value; }
+        }
+
+        // Check to see if EncryptionConfiguration property is set
+        internal bool IsSetEncryptionConfiguration()
+        {
+            return this._encryptionConfiguration != null;
         }
 
         /// <summary>

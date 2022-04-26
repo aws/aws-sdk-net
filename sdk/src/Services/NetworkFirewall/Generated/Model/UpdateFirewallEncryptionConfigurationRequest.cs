@@ -29,33 +29,35 @@ using Amazon.Runtime.Internal;
 namespace Amazon.NetworkFirewall.Model
 {
     /// <summary>
-    /// Container for the parameters to the AssociateSubnets operation.
-    /// Associates the specified subnets in the Amazon VPC to the firewall. You can specify
-    /// one subnet for each of the Availability Zones that the VPC spans. 
-    /// 
-    ///  
-    /// <para>
-    /// This request creates an Network Firewall firewall endpoint in each of the subnets.
-    /// To enable the firewall's protections, you must also modify the VPC's route tables
-    /// for each subnet's Availability Zone, to redirect the traffic that's coming into and
-    /// going out of the zone through the firewall endpoint. 
-    /// </para>
+    /// Container for the parameters to the UpdateFirewallEncryptionConfiguration operation.
+    /// A complex type that contains settings for encryption of your firewall resources.
     /// </summary>
-    public partial class AssociateSubnetsRequest : AmazonNetworkFirewallRequest
+    public partial class UpdateFirewallEncryptionConfigurationRequest : AmazonNetworkFirewallRequest
     {
+        private EncryptionConfiguration _encryptionConfiguration;
         private string _firewallArn;
         private string _firewallName;
-        private List<SubnetMapping> _subnetMappings = new List<SubnetMapping>();
         private string _updateToken;
+
+        /// <summary>
+        /// Gets and sets the property EncryptionConfiguration.
+        /// </summary>
+        public EncryptionConfiguration EncryptionConfiguration
+        {
+            get { return this._encryptionConfiguration; }
+            set { this._encryptionConfiguration = value; }
+        }
+
+        // Check to see if EncryptionConfiguration property is set
+        internal bool IsSetEncryptionConfiguration()
+        {
+            return this._encryptionConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property FirewallArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the firewall.
-        /// </para>
-        ///  
-        /// <para>
-        /// You must specify the ARN or the name, and you can specify both. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -77,10 +79,6 @@ namespace Amazon.NetworkFirewall.Model
         /// The descriptive name of the firewall. You can't change the name of a firewall after
         /// you create it.
         /// </para>
-        ///  
-        /// <para>
-        /// You must specify the ARN or the name, and you can specify both. 
-        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
         public string FirewallName
@@ -93,25 +91,6 @@ namespace Amazon.NetworkFirewall.Model
         internal bool IsSetFirewallName()
         {
             return this._firewallName != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property SubnetMappings. 
-        /// <para>
-        /// The IDs of the subnets that you want to associate with the firewall. 
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public List<SubnetMapping> SubnetMappings
-        {
-            get { return this._subnetMappings; }
-            set { this._subnetMappings = value; }
-        }
-
-        // Check to see if SubnetMappings property is set
-        internal bool IsSetSubnetMappings()
-        {
-            return this._subnetMappings != null && this._subnetMappings.Count > 0; 
         }
 
         /// <summary>

@@ -76,6 +76,12 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("EncryptionConfiguration", targetDepth))
+                {
+                    var unmarshaller = EncryptionConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.EncryptionConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("FirewallArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

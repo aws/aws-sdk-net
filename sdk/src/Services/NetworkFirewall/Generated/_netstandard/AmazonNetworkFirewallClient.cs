@@ -38,16 +38,16 @@ namespace Amazon.NetworkFirewall
     /// <summary>
     /// Implementation for accessing NetworkFirewall
     ///
-    /// This is the API Reference for AWS Network Firewall. This guide is for developers who
-    /// need detailed information about the Network Firewall API actions, data types, and
-    /// errors. 
+    /// This is the API Reference for Network Firewall. This guide is for developers who need
+    /// detailed information about the Network Firewall API actions, data types, and errors.
+    /// 
     /// 
     ///  <ul> <li> 
     /// <para>
     /// The REST API requires you to handle connection details, such as calculating signatures,
     /// handling request retries, and error handling. For general information about using
-    /// the AWS REST APIs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-apis.html">AWS
-    /// APIs</a>. 
+    /// the Amazon Web Services REST APIs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-apis.html">Amazon
+    /// Web Services APIs</a>. 
     /// </para>
     ///  
     /// <para>
@@ -56,9 +56,9 @@ namespace Amazon.NetworkFirewall
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Alternatively, you can use one of the AWS SDKs to access an API that's tailored to
-    /// the programming language or platform that you're using. For more information, see
-    /// <a href="http://aws.amazon.com/tools/#SDKs">AWS SDKs</a>.
+    /// Alternatively, you can use one of the Amazon Web Services SDKs to access an API that's
+    /// tailored to the programming language or platform that you're using. For more information,
+    /// see <a href="http://aws.amazon.com/tools/#SDKs">Amazon Web Services SDKs</a>.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -72,9 +72,9 @@ namespace Amazon.NetworkFirewall
     /// and prevention service for Amazon Virtual Private Cloud (Amazon VPC). With Network
     /// Firewall, you can filter traffic at the perimeter of your VPC. This includes filtering
     /// traffic going to and coming from an internet gateway, NAT gateway, or over VPN or
-    /// AWS Direct Connect. Network Firewall uses rules that are compatible with Suricata,
-    /// a free, open source intrusion detection system (IDS) engine. AWS Network Firewall
-    /// supports Suricata version 5.0.2. For information about Suricata, see the <a href="https://suricata-ids.org/">Suricata
+    /// Direct Connect. Network Firewall uses rules that are compatible with Suricata, a free,
+    /// open source intrusion detection system (IDS) engine. Network Firewall supports Suricata
+    /// version 5.0.2. For information about Suricata, see the <a href="https://suricata-ids.org/">Suricata
     /// website</a>.
     /// </para>
     ///  
@@ -84,8 +84,8 @@ namespace Amazon.NetworkFirewall
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Allow domains or IP addresses for known AWS service endpoints, such as Amazon S3,
-    /// and block all other forms of traffic.
+    /// Allow domains or IP addresses for known Amazon Web Services service endpoints, such
+    /// as Amazon S3, and block all other forms of traffic.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -458,7 +458,7 @@ namespace Amazon.NetworkFirewall
         /// 
         ///  
         /// <para>
-        /// This request creates an AWS Network Firewall firewall endpoint in each of the subnets.
+        /// This request creates an Network Firewall firewall endpoint in each of the subnets.
         /// To enable the firewall's protections, you must also modify the VPC's route tables
         /// for each subnet's Availability Zone, to redirect the traffic that's coming into and
         /// going out of the zone through the firewall endpoint. 
@@ -471,8 +471,8 @@ namespace Amazon.NetworkFirewall
         /// 
         /// <returns>The response from the AssociateSubnets service method, as returned by NetworkFirewall.</returns>
         /// <exception cref="Amazon.NetworkFirewall.Model.InsufficientCapacityException">
-        /// AWS doesn't currently have enough available capacity to fulfill your request. Try
-        /// your request later.
+        /// Amazon Web Services doesn't currently have enough available capacity to fulfill your
+        /// request. Try your request later.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
         /// Your request is valid, but Network Firewall couldn’t perform the operation because
@@ -535,15 +535,15 @@ namespace Amazon.NetworkFirewall
 
 
         /// <summary>
-        /// Creates an AWS Network Firewall <a>Firewall</a> and accompanying <a>FirewallStatus</a>
+        /// Creates an Network Firewall <a>Firewall</a> and accompanying <a>FirewallStatus</a>
         /// for a VPC. 
         /// 
         ///  
         /// <para>
-        /// The firewall defines the configuration settings for an AWS Network Firewall firewall.
+        /// The firewall defines the configuration settings for an Network Firewall firewall.
         /// The settings that you can define at creation include the firewall policy, the subnets
         /// in your VPC to use for the firewall endpoints, and any tags that are attached to the
-        /// firewall AWS resource. 
+        /// firewall Amazon Web Services resource. 
         /// </para>
         ///  
         /// <para>
@@ -558,8 +558,8 @@ namespace Amazon.NetworkFirewall
         /// </para>
         ///  
         /// <para>
-        /// To manage a firewall's tags, use the standard AWS resource tagging operations, <a>ListTagsForResource</a>,
-        /// <a>TagResource</a>, and <a>UntagResource</a>.
+        /// To manage a firewall's tags, use the standard Amazon Web Services resource tagging
+        /// operations, <a>ListTagsForResource</a>, <a>TagResource</a>, and <a>UntagResource</a>.
         /// </para>
         ///  
         /// <para>
@@ -573,8 +573,8 @@ namespace Amazon.NetworkFirewall
         /// 
         /// <returns>The response from the CreateFirewall service method, as returned by NetworkFirewall.</returns>
         /// <exception cref="Amazon.NetworkFirewall.Model.InsufficientCapacityException">
-        /// AWS doesn't currently have enough available capacity to fulfill your request. Try
-        /// your request later.
+        /// Amazon Web Services doesn't currently have enough available capacity to fulfill your
+        /// request. Try your request later.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
         /// Your request is valid, but Network Firewall couldn’t perform the operation because
@@ -638,7 +638,7 @@ namespace Amazon.NetworkFirewall
         /// 
         ///  
         /// <para>
-        /// An AWS Network Firewall firewall policy defines the behavior of a firewall, in a collection
+        /// An Network Firewall firewall policy defines the behavior of a firewall, in a collection
         /// of stateless and stateful rule groups and other settings. You can use one firewall
         /// policy for multiple firewalls. 
         /// </para>
@@ -650,8 +650,8 @@ namespace Amazon.NetworkFirewall
         /// 
         /// <returns>The response from the CreateFirewallPolicy service method, as returned by NetworkFirewall.</returns>
         /// <exception cref="Amazon.NetworkFirewall.Model.InsufficientCapacityException">
-        /// AWS doesn't currently have enough available capacity to fulfill your request. Try
-        /// your request later.
+        /// Amazon Web Services doesn't currently have enough available capacity to fulfill your
+        /// request. Try your request later.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
         /// Your request is valid, but Network Firewall couldn’t perform the operation because
@@ -723,8 +723,8 @@ namespace Amazon.NetworkFirewall
         /// 
         /// <returns>The response from the CreateRuleGroup service method, as returned by NetworkFirewall.</returns>
         /// <exception cref="Amazon.NetworkFirewall.Model.InsufficientCapacityException">
-        /// AWS doesn't currently have enough available capacity to fulfill your request. Try
-        /// your request later.
+        /// Amazon Web Services doesn't currently have enough available capacity to fulfill your
+        /// request. Try your request later.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
         /// Your request is valid, but Network Firewall couldn’t perform the operation because
@@ -1705,13 +1705,13 @@ namespace Amazon.NetworkFirewall
         /// Retrieves the tags associated with the specified resource. Tags are key:value pairs
         /// that you can use to categorize and manage your resources, for purposes like billing.
         /// For example, you might set the tag key to "customer" and the value to the customer
-        /// name or ID. You can specify one or more tags to add to each AWS resource, up to 50
-        /// tags for a resource.
+        /// name or ID. You can specify one or more tags to add to each Amazon Web Services resource,
+        /// up to 50 tags for a resource.
         /// 
         ///  
         /// <para>
-        /// You can tag the AWS resources that you manage through AWS Network Firewall: firewalls,
-        /// firewall policies, and rule groups. 
+        /// You can tag the Amazon Web Services resources that you manage through Network Firewall:
+        /// firewalls, firewall policies, and rule groups. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
@@ -1774,9 +1774,9 @@ namespace Amazon.NetworkFirewall
 
 
         /// <summary>
-        /// Creates or updates an AWS Identity and Access Management policy for your rule group
-        /// or firewall policy. Use this to share rule groups and firewall policies between accounts.
-        /// This operation works in conjunction with the AWS Resource Access Manager (RAM) service
+        /// Creates or updates an IAM policy for your rule group or firewall policy. Use this
+        /// to share rule groups and firewall policies between accounts. This operation works
+        /// in conjunction with the Amazon Web Services Resource Access Manager (RAM) service
         /// to manage resource sharing for Network Firewall. 
         /// 
         ///  
@@ -1803,8 +1803,8 @@ namespace Amazon.NetworkFirewall
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For additional information about resource sharing using RAM, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/what-is.html">AWS
-        /// Resource Access Manager User Guide</a>.
+        /// For additional information about resource sharing using RAM, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/what-is.html">Resource
+        /// Access Manager User Guide</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutResourcePolicy service method.</param>
@@ -1873,13 +1873,13 @@ namespace Amazon.NetworkFirewall
         /// Adds the specified tags to the specified resource. Tags are key:value pairs that you
         /// can use to categorize and manage your resources, for purposes like billing. For example,
         /// you might set the tag key to "customer" and the value to the customer name or ID.
-        /// You can specify one or more tags to add to each AWS resource, up to 50 tags for a
-        /// resource.
+        /// You can specify one or more tags to add to each Amazon Web Services resource, up to
+        /// 50 tags for a resource.
         /// 
         ///  
         /// <para>
-        /// You can tag the AWS resources that you manage through AWS Network Firewall: firewalls,
-        /// firewall policies, and rule groups. 
+        /// You can tag the Amazon Web Services resources that you manage through Network Firewall:
+        /// firewalls, firewall policies, and rule groups. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
@@ -1945,13 +1945,13 @@ namespace Amazon.NetworkFirewall
         /// Removes the tags with the specified keys from the specified resource. Tags are key:value
         /// pairs that you can use to categorize and manage your resources, for purposes like
         /// billing. For example, you might set the tag key to "customer" and the value to the
-        /// customer name or ID. You can specify one or more tags to add to each AWS resource,
-        /// up to 50 tags for a resource.
+        /// customer name or ID. You can specify one or more tags to add to each Amazon Web Services
+        /// resource, up to 50 tags for a resource.
         /// 
         ///  
         /// <para>
-        /// You can manage tags for the AWS resources that you manage through AWS Network Firewall:
-        /// firewalls, firewall policies, and rule groups. 
+        /// You can manage tags for the Amazon Web Services resources that you manage through
+        /// Network Firewall: firewalls, firewall policies, and rule groups. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
@@ -2133,6 +2133,74 @@ namespace Amazon.NetworkFirewall
             options.ResponseUnmarshaller = UpdateFirewallDescriptionResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateFirewallDescriptionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateFirewallEncryptionConfiguration
+
+        internal virtual UpdateFirewallEncryptionConfigurationResponse UpdateFirewallEncryptionConfiguration(UpdateFirewallEncryptionConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateFirewallEncryptionConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateFirewallEncryptionConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateFirewallEncryptionConfigurationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// A complex type that contains settings for encryption of your firewall resources.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFirewallEncryptionConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateFirewallEncryptionConfiguration service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn’t perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidTokenException">
+        /// The token you provided is stale or isn't valid for the operation.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
+        /// Unable to locate a resource using the parameters that you provided.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceOwnerCheckException">
+        /// Unable to change the resource because your account doesn't own it.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateFirewallEncryptionConfiguration">REST API Reference for UpdateFirewallEncryptionConfiguration Operation</seealso>
+        public virtual Task<UpdateFirewallEncryptionConfigurationResponse> UpdateFirewallEncryptionConfigurationAsync(UpdateFirewallEncryptionConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateFirewallEncryptionConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateFirewallEncryptionConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateFirewallEncryptionConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion

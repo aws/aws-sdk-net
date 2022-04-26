@@ -518,6 +518,42 @@
     <pattern>^([0-9a-f]{8})-([0-9a-f]{4}-){3}([0-9a-f]{12})$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.UpdateFirewallEncryptionConfigurationRequest.FirewallArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^arn:aws.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.UpdateFirewallEncryptionConfigurationRequest.FirewallName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.UpdateFirewallEncryptionConfigurationRequest.UpdateToken</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^([0-9a-f]{8})-([0-9a-f]{4}-){3}([0-9a-f]{12})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.UpdateFirewallEncryptionConfigurationResponse.FirewallArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^arn:aws.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.UpdateFirewallEncryptionConfigurationResponse.FirewallName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.UpdateFirewallEncryptionConfigurationResponse.UpdateToken</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^([0-9a-f]{8})-([0-9a-f]{4}-){3}([0-9a-f]{12})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.NetworkFirewall.Model.UpdateFirewallPolicyRequest.Description</property>
     <max>512</max>
     <pattern>^.*$</pattern>
@@ -699,6 +735,12 @@
     <min>1</min>
     <max>128</max>
     <pattern>^[a-zA-Z0-9-_ ]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.EncryptionConfiguration.KeyId</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkFirewall.Model.Firewall.Description</property>

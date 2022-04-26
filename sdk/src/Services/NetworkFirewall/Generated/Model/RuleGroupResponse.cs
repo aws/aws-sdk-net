@@ -37,6 +37,7 @@ namespace Amazon.NetworkFirewall.Model
         private int? _capacity;
         private int? _consumedCapacity;
         private string _description;
+        private EncryptionConfiguration _encryptionConfiguration;
         private int? _numberOfAssociations;
         private string _ruleGroupArn;
         private string _ruleGroupId;
@@ -107,6 +108,25 @@ namespace Amazon.NetworkFirewall.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EncryptionConfiguration. 
+        /// <para>
+        /// A complex type that contains the Amazon Web Services KMS encryption configuration
+        /// settings for your rule group.
+        /// </para>
+        /// </summary>
+        public EncryptionConfiguration EncryptionConfiguration
+        {
+            get { return this._encryptionConfiguration; }
+            set { this._encryptionConfiguration = value; }
+        }
+
+        // Check to see if EncryptionConfiguration property is set
+        internal bool IsSetEncryptionConfiguration()
+        {
+            return this._encryptionConfiguration != null;
         }
 
         /// <summary>

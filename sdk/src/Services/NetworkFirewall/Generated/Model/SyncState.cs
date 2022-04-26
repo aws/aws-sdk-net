@@ -34,8 +34,8 @@ namespace Amazon.NetworkFirewall.Model
     /// 
     ///  
     /// <para>
-    /// For each VPC subnet that you associate with a firewall, AWS Network Firewall does
-    /// the following: 
+    /// For each VPC subnet that you associate with a firewall, Network Firewall does the
+    /// following: 
     /// </para>
     ///  <ul> <li> 
     /// <para>

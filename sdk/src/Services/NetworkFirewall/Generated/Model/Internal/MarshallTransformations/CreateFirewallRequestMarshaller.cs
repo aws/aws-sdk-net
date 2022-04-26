@@ -79,6 +79,17 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Description);
                 }
 
+                if(publicRequest.IsSetEncryptionConfiguration())
+                {
+                    context.Writer.WritePropertyName("EncryptionConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = EncryptionConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.EncryptionConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetFirewallName())
                 {
                     context.Writer.WritePropertyName("FirewallName");

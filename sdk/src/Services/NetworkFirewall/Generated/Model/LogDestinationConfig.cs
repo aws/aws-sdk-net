@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.NetworkFirewall.Model
 {
     /// <summary>
-    /// Defines where AWS Network Firewall sends logs for the firewall for one log type. This
+    /// Defines where Network Firewall sends logs for the firewall for one log type. This
     /// is used in <a>LoggingConfiguration</a>. You can send each type of log to an Amazon
     /// S3 bucket, a CloudWatch log group, or a Kinesis Data Firehose delivery stream.
     /// 

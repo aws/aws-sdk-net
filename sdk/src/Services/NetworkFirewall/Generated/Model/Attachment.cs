@@ -30,7 +30,7 @@ namespace Amazon.NetworkFirewall.Model
 {
     /// <summary>
     /// The configuration and status for a single subnet that you've specified for use by
-    /// the AWS Network Firewall firewall. This is part of the <a>FirewallStatus</a>.
+    /// the Network Firewall firewall. This is part of the <a>FirewallStatus</a>.
     /// </summary>
     public partial class Attachment
     {

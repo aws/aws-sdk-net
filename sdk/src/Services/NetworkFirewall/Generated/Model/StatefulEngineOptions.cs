@@ -43,7 +43,7 @@ namespace Amazon.NetworkFirewall.Model
         /// is the default behavior. Stateful rules are provided to the rule engine as Suricata
         /// compatible strings, and Suricata evaluates them based on certain settings. For more
         /// information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html">Evaluation
-        /// order for stateful rules</a> in the <i>AWS Network Firewall Developer Guide</i>. 
+        /// order for stateful rules</a> in the <i>Network Firewall Developer Guide</i>. 
         /// </para>
         /// </summary>
         public RuleOrder RuleOrder

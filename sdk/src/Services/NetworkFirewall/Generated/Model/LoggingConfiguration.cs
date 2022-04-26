@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.NetworkFirewall.Model
 {
     /// <summary>
-    /// Defines how AWS Network Firewall performs logging for a <a>Firewall</a>.
+    /// Defines how Network Firewall performs logging for a <a>Firewall</a>.
     /// </summary>
     public partial class LoggingConfiguration
     {

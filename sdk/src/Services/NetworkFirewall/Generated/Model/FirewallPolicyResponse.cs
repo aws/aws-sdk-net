@@ -37,6 +37,7 @@ namespace Amazon.NetworkFirewall.Model
         private int? _consumedStatefulRuleCapacity;
         private int? _consumedStatelessRuleCapacity;
         private string _description;
+        private EncryptionConfiguration _encryptionConfiguration;
         private string _firewallPolicyArn;
         private string _firewallPolicyId;
         private string _firewallPolicyName;
@@ -97,6 +98,25 @@ namespace Amazon.NetworkFirewall.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EncryptionConfiguration. 
+        /// <para>
+        /// A complex type that contains the Amazon Web Services KMS encryption configuration
+        /// settings for your firewall policy.
+        /// </para>
+        /// </summary>
+        public EncryptionConfiguration EncryptionConfiguration
+        {
+            get { return this._encryptionConfiguration; }
+            set { this._encryptionConfiguration = value; }
+        }
+
+        // Check to see if EncryptionConfiguration property is set
+        internal bool IsSetEncryptionConfiguration()
+        {
+            return this._encryptionConfiguration != null;
         }
 
         /// <summary>
