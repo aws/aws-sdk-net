@@ -50,7 +50,7 @@ namespace Amazon.SageMaker.Model
         /// The maximum number of concurrent invocations your serverless endpoint can process.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=50)]
+        [AWSProperty(Required=true, Min=1, Max=200)]
         public int MaxConcurrency
         {
             get { return this._maxConcurrency.GetValueOrDefault(); }

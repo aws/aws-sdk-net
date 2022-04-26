@@ -95,6 +95,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetVolumeKmsKeyId())
+            {
+                context.Writer.WritePropertyName("VolumeKmsKeyId");
+                context.Writer.Write(requestObject.VolumeKmsKeyId);
+            }
+
         }
 
         /// <summary>

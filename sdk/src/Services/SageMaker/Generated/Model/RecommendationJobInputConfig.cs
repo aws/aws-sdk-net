@@ -38,6 +38,7 @@ namespace Amazon.SageMaker.Model
         private string _modelPackageVersionArn;
         private RecommendationJobResourceLimit _resourceLimit;
         private TrafficPattern _trafficPattern;
+        private string _volumeKmsKeyId;
 
         /// <summary>
         /// Gets and sets the property EndpointConfigurations. 
@@ -130,6 +131,80 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetTrafficPattern()
         {
             return this._trafficPattern != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VolumeKmsKeyId. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service (Amazon
+        /// Web Services KMS) key that Amazon SageMaker uses to encrypt data on the storage volume
+        /// attached to the ML compute instance that hosts the endpoint. This key will be passed
+        /// to SageMaker Hosting for endpoint creation. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The SageMaker execution role must have <code>kms:CreateGrant</code> permission in
+        /// order to encrypt data on the storage volume of the endpoints created for inference
+        /// recommendation. The inference recommendation job will fail asynchronously during endpoint
+        /// configuration creation if the role passed does not have <code>kms:CreateGrant</code>
+        /// permission.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <code>KmsKeyId</code> can be any of the following formats:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// // KMS Key ID
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// // Amazon Resource Name (ARN) of a KMS Key
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>"arn:aws:kms:&lt;region&gt;:&lt;account&gt;:key/&lt;key-id-12ab-34cd-56ef-1234567890ab&gt;"</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// // KMS Key Alias
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>"alias/ExampleAlias"</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// // Amazon Resource Name (ARN) of a KMS Key Alias
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>"arn:aws:kms:&lt;region&gt;:&lt;account&gt;:alias/&lt;ExampleAlias&gt;"</code>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information about key identifiers, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-id">Key
+        /// identifiers (KeyID)</a> in the Amazon Web Services Key Management Service (Amazon
+        /// Web Services KMS) documentation.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=2048)]
+        public string VolumeKmsKeyId
+        {
+            get { return this._volumeKmsKeyId; }
+            set { this._volumeKmsKeyId = value; }
+        }
+
+        // Check to see if VolumeKmsKeyId property is set
+        internal bool IsSetVolumeKmsKeyId()
+        {
+            return this._volumeKmsKeyId != null;
         }
 
     }

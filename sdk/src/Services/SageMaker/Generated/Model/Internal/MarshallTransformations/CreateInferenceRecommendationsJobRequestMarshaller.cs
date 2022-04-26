@@ -96,6 +96,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.JobType);
                 }
 
+                if(publicRequest.IsSetOutputConfig())
+                {
+                    context.Writer.WritePropertyName("OutputConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = RecommendationJobOutputConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.OutputConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetRoleArn())
                 {
                     context.Writer.WritePropertyName("RoleArn");

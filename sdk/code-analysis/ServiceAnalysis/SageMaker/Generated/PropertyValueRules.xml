@@ -7439,7 +7439,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ProductionVariantServerlessConfig.MaxConcurrency</property>
     <min>1</min>
-    <max>50</max>
+    <max>200</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ProductionVariantServerlessConfig.MemorySizeInMB</property>
@@ -7624,6 +7624,11 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.RecommendationJobCompiledOutputConfig.S3OutputUri</property>
+    <max>1024</max>
+    <pattern>^(https|s3)://([^/]+)/?(.*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.RecommendationJobInputConfig.JobDurationInSeconds</property>
     <min>1</min>
   </property-value-rule>
@@ -7632,6 +7637,16 @@
     <min>1</min>
     <max>2048</max>
     <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:model-package/.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.RecommendationJobInputConfig.VolumeKmsKeyId</property>
+    <max>2048</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.RecommendationJobOutputConfig.KmsKeyId</property>
+    <max>2048</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.RecommendationJobResourceLimit.MaxNumberOfTests</property>

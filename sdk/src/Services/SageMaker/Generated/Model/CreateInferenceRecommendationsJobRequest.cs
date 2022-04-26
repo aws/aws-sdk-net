@@ -39,6 +39,7 @@ namespace Amazon.SageMaker.Model
         private string _jobDescription;
         private string _jobName;
         private RecommendationJobType _jobType;
+        private RecommendationJobOutputConfig _outputConfig;
         private string _roleArn;
         private RecommendationJobStoppingConditions _stoppingConditions;
         private List<Tag> _tags = new List<Tag>();
@@ -122,6 +123,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetJobType()
         {
             return this._jobType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OutputConfig. 
+        /// <para>
+        /// Provides information about the output artifacts and the KMS key to use for Amazon
+        /// S3 server-side encryption.
+        /// </para>
+        /// </summary>
+        public RecommendationJobOutputConfig OutputConfig
+        {
+            get { return this._outputConfig; }
+            set { this._outputConfig = value; }
+        }
+
+        // Check to see if OutputConfig property is set
+        internal bool IsSetOutputConfig()
+        {
+            return this._outputConfig != null;
         }
 
         /// <summary>
