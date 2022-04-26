@@ -236,6 +236,11 @@ namespace Amazon.Runtime
         string DetermineServiceURL();
 
         /// <summary>
+        /// Given this client configuration, return a DNS suffix for service endpoint url.
+        /// </summary>
+        string DetermineDnsSuffix();
+
+        /// <summary>
         /// Performs validation on this config object.
         /// Throws exception if any of the required values are missing/invalid.
         /// </summary>

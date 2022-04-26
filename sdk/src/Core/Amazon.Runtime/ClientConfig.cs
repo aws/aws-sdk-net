@@ -246,6 +246,15 @@ namespace Amazon.Runtime
             return url;
         }
 
+        /// <summary>
+        /// Given this client configuration, return a DNS suffix for service endpoint url.
+        /// </summary>
+        public virtual string DetermineDnsSuffix()
+        {
+            var endpoint = regionEndpoint.GetEndpointForService(this);
+            return endpoint.DnsSuffix;
+        }
+
         internal static string GetUrl(IClientConfig config, RegionEndpoint regionEndpoint)
         {
             var endpoint = 
