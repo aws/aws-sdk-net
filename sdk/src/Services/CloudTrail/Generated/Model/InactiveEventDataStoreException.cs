@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudTrail.Model
 {
     /// <summary>
-    /// The event data store against which you ran your query is inactive.
+    /// The event data store is inactive.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

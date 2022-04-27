@@ -29,8 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudTrail.Model
 {
     /// <summary>
-    /// A date range for the query was specified that is not valid. For more information about
-    /// writing a query, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-create-edit-query.html">Create
+    /// A date range for the query was specified that is not valid. Be sure that the start
+    /// time is chronologically before the end time. For more information about writing a
+    /// query, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-create-edit-query.html">Create
     /// or edit a query</a> in the <i>CloudTrail User Guide</i>.
     /// </summary>
     #if !NETSTANDARD

@@ -27,7 +27,7 @@
   <property-value-rule>
     <property>Amazon.CloudTrail.Model.CreateEventDataStoreRequest.RetentionPeriod</property>
     <min>7</min>
-    <max>2555</max>
+    <max>2557</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudTrail.Model.CreateEventDataStoreResponse.EventDataStoreArn</property>
@@ -44,7 +44,7 @@
   <property-value-rule>
     <property>Amazon.CloudTrail.Model.CreateEventDataStoreResponse.RetentionPeriod</property>
     <min>7</min>
-    <max>2555</max>
+    <max>2557</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudTrail.Model.DeleteEventDataStoreRequest.EventDataStore</property>
@@ -103,7 +103,7 @@
   <property-value-rule>
     <property>Amazon.CloudTrail.Model.GetEventDataStoreResponse.RetentionPeriod</property>
     <min>7</min>
-    <max>2555</max>
+    <max>2557</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudTrail.Model.GetQueryResultsRequest.EventDataStore</property>
@@ -206,7 +206,7 @@
   <property-value-rule>
     <property>Amazon.CloudTrail.Model.RestoreEventDataStoreResponse.RetentionPeriod</property>
     <min>7</min>
-    <max>2555</max>
+    <max>2557</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudTrail.Model.StartQueryRequest.QueryStatement</property>
@@ -235,7 +235,7 @@
   <property-value-rule>
     <property>Amazon.CloudTrail.Model.UpdateEventDataStoreRequest.RetentionPeriod</property>
     <min>7</min>
-    <max>2555</max>
+    <max>2557</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudTrail.Model.UpdateEventDataStoreResponse.EventDataStoreArn</property>
@@ -252,7 +252,7 @@
   <property-value-rule>
     <property>Amazon.CloudTrail.Model.UpdateEventDataStoreResponse.RetentionPeriod</property>
     <min>7</min>
-    <max>2555</max>
+    <max>2557</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudTrail.Model.AdvancedEventSelector.Name</property>
@@ -281,7 +281,7 @@
   <property-value-rule>
     <property>Amazon.CloudTrail.Model.EventDataStore.RetentionPeriod</property>
     <min>7</min>
-    <max>2555</max>
+    <max>2557</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudTrail.Model.Query.QueryId</property>

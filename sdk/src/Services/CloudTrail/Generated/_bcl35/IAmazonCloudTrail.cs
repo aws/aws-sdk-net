@@ -76,12 +76,13 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
-        /// Adds one or more tags to a trail, up to a limit of 50. Overwrites an existing tag's
-        /// value when a new value is specified for an existing tag key. Tag key names must be
-        /// unique for a trail; you cannot have two keys with the same name but different values.
-        /// If you specify a key without a value, the tag will be created with the specified key
-        /// and a value of null. You can tag a trail that applies to all Amazon Web Services Regions
-        /// only from the Region in which the trail was created (also known as its home region).
+        /// Adds one or more tags to a trail or event data store, up to a limit of 50. Overwrites
+        /// an existing tag's value when a new value is specified for an existing tag key. Tag
+        /// key names must be unique for a trail; you cannot have two keys with the same name
+        /// but different values. If you specify a key without a value, the tag will be created
+        /// with the specified key and a value of null. You can tag a trail or event data store
+        /// that applies to all Amazon Web Services Regions only from the Region in which the
+        /// trail or event data store was created (also known as its home region).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AddTags service method.</param>
         /// 
@@ -97,15 +98,15 @@ namespace Amazon.CloudTrail
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.ConflictException">
         /// This exception is thrown when the specified resource is not ready for an operation.
-        /// This can occur when you try to run an operation on a trail before CloudTrail has time
-        /// to fully load the trail. If this exception occurs, wait a few minutes, and then try
-        /// the operation again.
+        /// This can occur when you try to run an operation on a resource before CloudTrail has
+        /// time to fully load the resource. If this exception occurs, wait a few minutes, and
+        /// then try the operation again.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.EventDataStoreNotFoundException">
         /// The specified event data store was not found.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InactiveEventDataStoreException">
-        /// The event data store against which you ran your query is inactive.
+        /// The event data store is inactive.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidTagParameterException">
         /// This exception is thrown when the specified tag key or values are not valid. It can
@@ -141,9 +142,10 @@ namespace Amazon.CloudTrail
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.NotOrganizationMasterAccountException">
         /// This exception is thrown when the Amazon Web Services account making the request to
-        /// create or update an organization trail is not the management account for an organization
-        /// in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
-        /// For Creating a Trail For Your Organization</a>.
+        /// create or update an organization trail or event data store is not the management account
+        /// for an organization in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
+        /// For Creating a Trail For Your Organization</a> or <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-event-data-store.html">Create
+        /// an event data store</a>.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
         /// This exception is thrown when the requested operation is not permitted.
@@ -207,9 +209,9 @@ namespace Amazon.CloudTrail
         /// <returns>The response from the CancelQuery service method, as returned by CloudTrail.</returns>
         /// <exception cref="Amazon.CloudTrail.Model.ConflictException">
         /// This exception is thrown when the specified resource is not ready for an operation.
-        /// This can occur when you try to run an operation on a trail before CloudTrail has time
-        /// to fully load the trail. If this exception occurs, wait a few minutes, and then try
-        /// the operation again.
+        /// This can occur when you try to run an operation on a resource before CloudTrail has
+        /// time to fully load the resource. If this exception occurs, wait a few minutes, and
+        /// then try the operation again.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.EventDataStoreARNInvalidException">
         /// The specified event data store ARN is not valid or does not map to an event data store
@@ -219,7 +221,7 @@ namespace Amazon.CloudTrail
         /// The specified event data store was not found.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InactiveEventDataStoreException">
-        /// The event data store against which you ran your query is inactive.
+        /// The event data store is inactive.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InactiveQueryException">
         /// The specified query cannot be canceled because it is in the <code>FINISHED</code>,
@@ -285,9 +287,9 @@ namespace Amazon.CloudTrail
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.ConflictException">
         /// This exception is thrown when the specified resource is not ready for an operation.
-        /// This can occur when you try to run an operation on a trail before CloudTrail has time
-        /// to fully load the trail. If this exception occurs, wait a few minutes, and then try
-        /// the operation again.
+        /// This can occur when you try to run an operation on a resource before CloudTrail has
+        /// time to fully load the resource. If this exception occurs, wait a few minutes, and
+        /// then try the operation again.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.EventDataStoreAlreadyExistsException">
         /// An event data store with that name already exists.
@@ -297,9 +299,8 @@ namespace Amazon.CloudTrail
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InsufficientDependencyServiceAccessPermissionException">
         /// This exception is thrown when the IAM user or role that is used to create the organization
-        /// trail is lacking one or more required permissions for creating an organization trail
-        /// in a required service. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
-        /// For Creating a Trail For Your Organization</a>.
+        /// resource lacks one or more required permissions for creating an organization resource
+        /// in a required service.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidParameterException">
         /// The request includes a parameter that is not valid.
@@ -310,9 +311,10 @@ namespace Amazon.CloudTrail
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.NotOrganizationMasterAccountException">
         /// This exception is thrown when the Amazon Web Services account making the request to
-        /// create or update an organization trail is not the management account for an organization
-        /// in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
-        /// For Creating a Trail For Your Organization</a>.
+        /// create or update an organization trail or event data store is not the management account
+        /// for an organization in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
+        /// For Creating a Trail For Your Organization</a> or <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-event-data-store.html">Create
+        /// an event data store</a>.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
         /// This exception is thrown when the requested operation is not permitted.
@@ -320,8 +322,7 @@ namespace Amazon.CloudTrail
         /// <exception cref="Amazon.CloudTrail.Model.OrganizationNotInAllFeaturesModeException">
         /// This exception is thrown when Organizations is not configured to support all features.
         /// All features must be enabled in Organizations to support creating an organization
-        /// trail. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
-        /// For Creating a Trail For Your Organization</a>.
+        /// trail or event data store.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.OrganizationsNotInUseException">
         /// This exception is thrown when the request is made from an Amazon Web Services account
@@ -388,15 +389,14 @@ namespace Amazon.CloudTrail
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.ConflictException">
         /// This exception is thrown when the specified resource is not ready for an operation.
-        /// This can occur when you try to run an operation on a trail before CloudTrail has time
-        /// to fully load the trail. If this exception occurs, wait a few minutes, and then try
-        /// the operation again.
+        /// This can occur when you try to run an operation on a resource before CloudTrail has
+        /// time to fully load the resource. If this exception occurs, wait a few minutes, and
+        /// then try the operation again.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InsufficientDependencyServiceAccessPermissionException">
         /// This exception is thrown when the IAM user or role that is used to create the organization
-        /// trail is lacking one or more required permissions for creating an organization trail
-        /// in a required service. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
-        /// For Creating a Trail For Your Organization</a>.
+        /// resource lacks one or more required permissions for creating an organization resource
+        /// in a required service.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InsufficientEncryptionPolicyException">
         /// This exception is thrown when the policy on the S3 bucket or KMS key is not sufficient.
@@ -477,9 +477,10 @@ namespace Amazon.CloudTrail
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.NotOrganizationMasterAccountException">
         /// This exception is thrown when the Amazon Web Services account making the request to
-        /// create or update an organization trail is not the management account for an organization
-        /// in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
-        /// For Creating a Trail For Your Organization</a>.
+        /// create or update an organization trail or event data store is not the management account
+        /// for an organization in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
+        /// For Creating a Trail For Your Organization</a> or <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-event-data-store.html">Create
+        /// an event data store</a>.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
         /// This exception is thrown when the requested operation is not permitted.
@@ -487,8 +488,7 @@ namespace Amazon.CloudTrail
         /// <exception cref="Amazon.CloudTrail.Model.OrganizationNotInAllFeaturesModeException">
         /// This exception is thrown when Organizations is not configured to support all features.
         /// All features must be enabled in Organizations to support creating an organization
-        /// trail. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
-        /// For Creating a Trail For Your Organization</a>.
+        /// trail or event data store.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.OrganizationsNotInUseException">
         /// This exception is thrown when the request is made from an Amazon Web Services account
@@ -573,18 +573,18 @@ namespace Amazon.CloudTrail
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InsufficientDependencyServiceAccessPermissionException">
         /// This exception is thrown when the IAM user or role that is used to create the organization
-        /// trail is lacking one or more required permissions for creating an organization trail
-        /// in a required service. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
-        /// For Creating a Trail For Your Organization</a>.
+        /// resource lacks one or more required permissions for creating an organization resource
+        /// in a required service.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidParameterException">
         /// The request includes a parameter that is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.NotOrganizationMasterAccountException">
         /// This exception is thrown when the Amazon Web Services account making the request to
-        /// create or update an organization trail is not the management account for an organization
-        /// in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
-        /// For Creating a Trail For Your Organization</a>.
+        /// create or update an organization trail or event data store is not the management account
+        /// for an organization in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
+        /// For Creating a Trail For Your Organization</a> or <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-event-data-store.html">Create
+        /// an event data store</a>.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
         /// This exception is thrown when the requested operation is not permitted.
@@ -636,15 +636,14 @@ namespace Amazon.CloudTrail
         /// <returns>The response from the DeleteTrail service method, as returned by CloudTrail.</returns>
         /// <exception cref="Amazon.CloudTrail.Model.ConflictException">
         /// This exception is thrown when the specified resource is not ready for an operation.
-        /// This can occur when you try to run an operation on a trail before CloudTrail has time
-        /// to fully load the trail. If this exception occurs, wait a few minutes, and then try
-        /// the operation again.
+        /// This can occur when you try to run an operation on a resource before CloudTrail has
+        /// time to fully load the resource. If this exception occurs, wait a few minutes, and
+        /// then try the operation again.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InsufficientDependencyServiceAccessPermissionException">
         /// This exception is thrown when the IAM user or role that is used to create the organization
-        /// trail is lacking one or more required permissions for creating an organization trail
-        /// in a required service. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
-        /// For Creating a Trail For Your Organization</a>.
+        /// resource lacks one or more required permissions for creating an organization resource
+        /// in a required service.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidHomeRegionException">
         /// This exception is thrown when an operation is called on a trail from a region other
@@ -680,9 +679,10 @@ namespace Amazon.CloudTrail
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.NotOrganizationMasterAccountException">
         /// This exception is thrown when the Amazon Web Services account making the request to
-        /// create or update an organization trail is not the management account for an organization
-        /// in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
-        /// For Creating a Trail For Your Organization</a>.
+        /// create or update an organization trail or event data store is not the management account
+        /// for an organization in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
+        /// For Creating a Trail For Your Organization</a> or <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-event-data-store.html">Create
+        /// an event data store</a>.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
         /// This exception is thrown when the requested operation is not permitted.
@@ -743,7 +743,7 @@ namespace Amazon.CloudTrail
         /// The specified event data store was not found.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InactiveEventDataStoreException">
-        /// The event data store against which you ran your query is inactive.
+        /// The event data store is inactive.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidParameterException">
         /// The request includes a parameter that is not valid.
@@ -1170,7 +1170,7 @@ namespace Amazon.CloudTrail
         /// The specified event data store was not found.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InactiveEventDataStoreException">
-        /// The event data store against which you ran your query is inactive.
+        /// The event data store is inactive.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidMaxResultsException">
         /// This exception is thrown if the limit specified is not valid.
@@ -1518,11 +1518,12 @@ namespace Amazon.CloudTrail
         /// The specified event data store was not found.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InactiveEventDataStoreException">
-        /// The event data store against which you ran your query is inactive.
+        /// The event data store is inactive.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidDateRangeException">
-        /// A date range for the query was specified that is not valid. For more information about
-        /// writing a query, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-create-edit-query.html">Create
+        /// A date range for the query was specified that is not valid. Be sure that the start
+        /// time is chronologically before the end time. For more information about writing a
+        /// query, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-create-edit-query.html">Create
         /// or edit a query</a> in the <i>CloudTrail User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidMaxResultsException">
@@ -1579,7 +1580,7 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
-        /// Lists the tags for the trail in the current region.
+        /// Lists the tags for the trail or event data store in the current region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTags service method.</param>
         /// 
@@ -1597,7 +1598,7 @@ namespace Amazon.CloudTrail
         /// The specified event data store was not found.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InactiveEventDataStoreException">
-        /// The event data store against which you ran your query is inactive.
+        /// The event data store is inactive.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidTokenException">
         /// Reserved for future use.
@@ -1919,9 +1920,8 @@ namespace Amazon.CloudTrail
         /// <returns>The response from the PutEventSelectors service method, as returned by CloudTrail.</returns>
         /// <exception cref="Amazon.CloudTrail.Model.InsufficientDependencyServiceAccessPermissionException">
         /// This exception is thrown when the IAM user or role that is used to create the organization
-        /// trail is lacking one or more required permissions for creating an organization trail
-        /// in a required service. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
-        /// For Creating a Trail For Your Organization</a>.
+        /// resource lacks one or more required permissions for creating an organization resource
+        /// in a required service.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidEventSelectorsException">
         /// This exception is thrown when the <code>PutEventSelectors</code> operation is called
@@ -1994,9 +1994,10 @@ namespace Amazon.CloudTrail
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.NotOrganizationMasterAccountException">
         /// This exception is thrown when the Amazon Web Services account making the request to
-        /// create or update an organization trail is not the management account for an organization
-        /// in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
-        /// For Creating a Trail For Your Organization</a>.
+        /// create or update an organization trail or event data store is not the management account
+        /// for an organization in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
+        /// For Creating a Trail For Your Organization</a> or <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-event-data-store.html">Create
+        /// an event data store</a>.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
         /// This exception is thrown when the requested operation is not permitted.
@@ -2101,9 +2102,10 @@ namespace Amazon.CloudTrail
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.NotOrganizationMasterAccountException">
         /// This exception is thrown when the Amazon Web Services account making the request to
-        /// create or update an organization trail is not the management account for an organization
-        /// in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
-        /// For Creating a Trail For Your Organization</a>.
+        /// create or update an organization trail or event data store is not the management account
+        /// for an organization in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
+        /// For Creating a Trail For Your Organization</a> or <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-event-data-store.html">Create
+        /// an event data store</a>.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
         /// This exception is thrown when the requested operation is not permitted.
@@ -2152,7 +2154,7 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
-        /// Removes the specified tags from a trail.
+        /// Removes the specified tags from a trail or event data store.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RemoveTags service method.</param>
         /// 
@@ -2170,7 +2172,7 @@ namespace Amazon.CloudTrail
         /// The specified event data store was not found.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InactiveEventDataStoreException">
-        /// The event data store against which you ran your query is inactive.
+        /// The event data store is inactive.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidTagParameterException">
         /// This exception is thrown when the specified tag key or values are not valid. It can
@@ -2206,9 +2208,10 @@ namespace Amazon.CloudTrail
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.NotOrganizationMasterAccountException">
         /// This exception is thrown when the Amazon Web Services account making the request to
-        /// create or update an organization trail is not the management account for an organization
-        /// in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
-        /// For Creating a Trail For Your Organization</a>.
+        /// create or update an organization trail or event data store is not the management account
+        /// for an organization in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
+        /// For Creating a Trail For Your Organization</a> or <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-event-data-store.html">Create
+        /// an event data store</a>.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
         /// This exception is thrown when the requested operation is not permitted.
@@ -2283,9 +2286,8 @@ namespace Amazon.CloudTrail
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InsufficientDependencyServiceAccessPermissionException">
         /// This exception is thrown when the IAM user or role that is used to create the organization
-        /// trail is lacking one or more required permissions for creating an organization trail
-        /// in a required service. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
-        /// For Creating a Trail For Your Organization</a>.
+        /// resource lacks one or more required permissions for creating an organization resource
+        /// in a required service.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidEventDataStoreStatusException">
         /// The event data store is not in a status that supports the operation.
@@ -2295,9 +2297,10 @@ namespace Amazon.CloudTrail
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.NotOrganizationMasterAccountException">
         /// This exception is thrown when the Amazon Web Services account making the request to
-        /// create or update an organization trail is not the management account for an organization
-        /// in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
-        /// For Creating a Trail For Your Organization</a>.
+        /// create or update an organization trail or event data store is not the management account
+        /// for an organization in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
+        /// For Creating a Trail For Your Organization</a> or <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-event-data-store.html">Create
+        /// an event data store</a>.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
         /// This exception is thrown when the requested operation is not permitted.
@@ -2305,8 +2308,7 @@ namespace Amazon.CloudTrail
         /// <exception cref="Amazon.CloudTrail.Model.OrganizationNotInAllFeaturesModeException">
         /// This exception is thrown when Organizations is not configured to support all features.
         /// All features must be enabled in Organizations to support creating an organization
-        /// trail. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
-        /// For Creating a Trail For Your Organization</a>.
+        /// trail or event data store.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.OrganizationsNotInUseException">
         /// This exception is thrown when the request is made from an Amazon Web Services account
@@ -2362,9 +2364,8 @@ namespace Amazon.CloudTrail
         /// <returns>The response from the StartLogging service method, as returned by CloudTrail.</returns>
         /// <exception cref="Amazon.CloudTrail.Model.InsufficientDependencyServiceAccessPermissionException">
         /// This exception is thrown when the IAM user or role that is used to create the organization
-        /// trail is lacking one or more required permissions for creating an organization trail
-        /// in a required service. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
-        /// For Creating a Trail For Your Organization</a>.
+        /// resource lacks one or more required permissions for creating an organization resource
+        /// in a required service.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidHomeRegionException">
         /// This exception is thrown when an operation is called on a trail from a region other
@@ -2400,9 +2401,10 @@ namespace Amazon.CloudTrail
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.NotOrganizationMasterAccountException">
         /// This exception is thrown when the Amazon Web Services account making the request to
-        /// create or update an organization trail is not the management account for an organization
-        /// in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
-        /// For Creating a Trail For Your Organization</a>.
+        /// create or update an organization trail or event data store is not the management account
+        /// for an organization in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
+        /// For Creating a Trail For Your Organization</a> or <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-event-data-store.html">Create
+        /// an event data store</a>.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
         /// This exception is thrown when the requested operation is not permitted.
@@ -2462,7 +2464,7 @@ namespace Amazon.CloudTrail
         /// The specified event data store was not found.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InactiveEventDataStoreException">
-        /// The event data store against which you ran your query is inactive.
+        /// The event data store is inactive.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidParameterException">
         /// The request includes a parameter that is not valid.
@@ -2530,9 +2532,8 @@ namespace Amazon.CloudTrail
         /// <returns>The response from the StopLogging service method, as returned by CloudTrail.</returns>
         /// <exception cref="Amazon.CloudTrail.Model.InsufficientDependencyServiceAccessPermissionException">
         /// This exception is thrown when the IAM user or role that is used to create the organization
-        /// trail is lacking one or more required permissions for creating an organization trail
-        /// in a required service. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
-        /// For Creating a Trail For Your Organization</a>.
+        /// resource lacks one or more required permissions for creating an organization resource
+        /// in a required service.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidHomeRegionException">
         /// This exception is thrown when an operation is called on a trail from a region other
@@ -2568,9 +2569,10 @@ namespace Amazon.CloudTrail
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.NotOrganizationMasterAccountException">
         /// This exception is thrown when the Amazon Web Services account making the request to
-        /// create or update an organization trail is not the management account for an organization
-        /// in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
-        /// For Creating a Trail For Your Organization</a>.
+        /// create or update an organization trail or event data store is not the management account
+        /// for an organization in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
+        /// For Creating a Trail For Your Organization</a> or <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-event-data-store.html">Create
+        /// an event data store</a>.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
         /// This exception is thrown when the requested operation is not permitted.
@@ -2641,22 +2643,22 @@ namespace Amazon.CloudTrail
         /// The specified event data store was not found.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InactiveEventDataStoreException">
-        /// The event data store against which you ran your query is inactive.
+        /// The event data store is inactive.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InsufficientDependencyServiceAccessPermissionException">
         /// This exception is thrown when the IAM user or role that is used to create the organization
-        /// trail is lacking one or more required permissions for creating an organization trail
-        /// in a required service. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
-        /// For Creating a Trail For Your Organization</a>.
+        /// resource lacks one or more required permissions for creating an organization resource
+        /// in a required service.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidParameterException">
         /// The request includes a parameter that is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.NotOrganizationMasterAccountException">
         /// This exception is thrown when the Amazon Web Services account making the request to
-        /// create or update an organization trail is not the management account for an organization
-        /// in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
-        /// For Creating a Trail For Your Organization</a>.
+        /// create or update an organization trail or event data store is not the management account
+        /// for an organization in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
+        /// For Creating a Trail For Your Organization</a> or <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-event-data-store.html">Create
+        /// an event data store</a>.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
         /// This exception is thrown when the requested operation is not permitted.
@@ -2664,8 +2666,7 @@ namespace Amazon.CloudTrail
         /// <exception cref="Amazon.CloudTrail.Model.OrganizationNotInAllFeaturesModeException">
         /// This exception is thrown when Organizations is not configured to support all features.
         /// All features must be enabled in Organizations to support creating an organization
-        /// trail. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
-        /// For Creating a Trail For Your Organization</a>.
+        /// trail or event data store.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.OrganizationsNotInUseException">
         /// This exception is thrown when the request is made from an Amazon Web Services account
@@ -2736,9 +2737,8 @@ namespace Amazon.CloudTrail
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InsufficientDependencyServiceAccessPermissionException">
         /// This exception is thrown when the IAM user or role that is used to create the organization
-        /// trail is lacking one or more required permissions for creating an organization trail
-        /// in a required service. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
-        /// For Creating a Trail For Your Organization</a>.
+        /// resource lacks one or more required permissions for creating an organization resource
+        /// in a required service.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InsufficientEncryptionPolicyException">
         /// This exception is thrown when the policy on the S3 bucket or KMS key is not sufficient.
@@ -2853,9 +2853,10 @@ namespace Amazon.CloudTrail
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.NotOrganizationMasterAccountException">
         /// This exception is thrown when the Amazon Web Services account making the request to
-        /// create or update an organization trail is not the management account for an organization
-        /// in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
-        /// For Creating a Trail For Your Organization</a>.
+        /// create or update an organization trail or event data store is not the management account
+        /// for an organization in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
+        /// For Creating a Trail For Your Organization</a> or <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-event-data-store.html">Create
+        /// an event data store</a>.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
         /// This exception is thrown when the requested operation is not permitted.
@@ -2863,8 +2864,7 @@ namespace Amazon.CloudTrail
         /// <exception cref="Amazon.CloudTrail.Model.OrganizationNotInAllFeaturesModeException">
         /// This exception is thrown when Organizations is not configured to support all features.
         /// All features must be enabled in Organizations to support creating an organization
-        /// trail. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
-        /// For Creating a Trail For Your Organization</a>.
+        /// trail or event data store.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.OrganizationsNotInUseException">
         /// This exception is thrown when the request is made from an Amazon Web Services account

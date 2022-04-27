@@ -51,9 +51,11 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property AdvancedEventSelectors. 
         /// <para>
-        /// The advanced event selectors that were used to select events for the data store.
+        /// This field is being deprecated. The advanced event selectors that were used to select
+        /// events for the data store.
         /// </para>
         /// </summary>
+        [Obsolete("AdvancedEventSelectors is no longer returned by ListEventDataStores")]
         public List<AdvancedEventSelector> AdvancedEventSelectors
         {
             get { return this._advancedEventSelectors; }
@@ -69,9 +71,10 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property CreatedTimestamp. 
         /// <para>
-        /// The timestamp of the event data store's creation.
+        /// This field is being deprecated. The timestamp of the event data store's creation.
         /// </para>
         /// </summary>
+        [Obsolete("CreatedTimestamp is no longer returned by ListEventDataStores")]
         public DateTime CreatedTimestamp
         {
             get { return this._createdTimestamp.GetValueOrDefault(); }
@@ -106,10 +109,11 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property MultiRegionEnabled. 
         /// <para>
-        /// Indicates whether the event data store includes events from all regions, or only from
-        /// the region in which it was created.
+        /// This field is being deprecated. Indicates whether the event data store includes events
+        /// from all regions, or only from the region in which it was created.
         /// </para>
         /// </summary>
+        [Obsolete("MultiRegionEnabled is no longer returned by ListEventDataStores")]
         public bool MultiRegionEnabled
         {
             get { return this._multiRegionEnabled.GetValueOrDefault(); }
@@ -144,9 +148,11 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property OrganizationEnabled. 
         /// <para>
-        /// Indicates that an event data store is collecting logged events for an organization.
+        /// This field is being deprecated. Indicates that an event data store is collecting logged
+        /// events for an organization.
         /// </para>
         /// </summary>
+        [Obsolete("OrganizationEnabled is no longer returned by ListEventDataStores")]
         public bool OrganizationEnabled
         {
             get { return this._organizationEnabled.GetValueOrDefault(); }
@@ -162,10 +168,11 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property RetentionPeriod. 
         /// <para>
-        /// The retention period, in days.
+        /// This field is being deprecated. The retention period, in days.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=7, Max=2555)]
+        [Obsolete("RetentionPeriod is no longer returned by ListEventDataStores")]
+        [AWSProperty(Min=7, Max=2557)]
         public int RetentionPeriod
         {
             get { return this._retentionPeriod.GetValueOrDefault(); }
@@ -181,9 +188,11 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of an event data store. Values are <code>ENABLED</code> and <code>PENDING_DELETION</code>.
+        /// This field is being deprecated. The status of an event data store. Values are <code>ENABLED</code>
+        /// and <code>PENDING_DELETION</code>.
         /// </para>
         /// </summary>
+        [Obsolete("Status is no longer returned by ListEventDataStores")]
         public EventDataStoreStatus Status
         {
             get { return this._status; }
@@ -199,9 +208,11 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property TerminationProtectionEnabled. 
         /// <para>
-        /// Indicates whether the event data store is protected from termination.
+        /// This field is being deprecated. Indicates whether the event data store is protected
+        /// from termination.
         /// </para>
         /// </summary>
+        [Obsolete("TerminationProtectionEnabled is no longer returned by ListEventDataStores")]
         public bool TerminationProtectionEnabled
         {
             get { return this._terminationProtectionEnabled.GetValueOrDefault(); }
@@ -217,10 +228,12 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property UpdatedTimestamp. 
         /// <para>
-        /// The timestamp showing when an event data store was updated, if applicable. <code>UpdatedTimestamp</code>
-        /// is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.
+        /// This field is being deprecated. The timestamp showing when an event data store was
+        /// updated, if applicable. <code>UpdatedTimestamp</code> is always either the same or
+        /// newer than the time shown in <code>CreatedTimestamp</code>.
         /// </para>
         /// </summary>
+        [Obsolete("UpdatedTimestamp is no longer returned by ListEventDataStores")]
         public DateTime UpdatedTimestamp
         {
             get { return this._updatedTimestamp.GetValueOrDefault(); }

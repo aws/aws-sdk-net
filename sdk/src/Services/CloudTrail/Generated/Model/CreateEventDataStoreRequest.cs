@@ -126,7 +126,7 @@ namespace Amazon.CloudTrail.Model
         /// of up to 2555 days, the equivalent of seven years.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=7, Max=2555)]
+        [AWSProperty(Min=7, Max=2557)]
         public int RetentionPeriod
         {
             get { return this._retentionPeriod.GetValueOrDefault(); }
