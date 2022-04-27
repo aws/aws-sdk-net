@@ -30,30 +30,30 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateEndpointConfig operation.
-    /// Creates an endpoint configuration that Amazon SageMaker hosting services uses to deploy
-    /// models. In the configuration, you identify one or more models, created using the <code>CreateModel</code>
-    /// API, to deploy and the resources that you want Amazon SageMaker to provision. Then
-    /// you call the <a>CreateEndpoint</a> API.
+    /// Creates an endpoint configuration that SageMaker hosting services uses to deploy models.
+    /// In the configuration, you identify one or more models, created using the <code>CreateModel</code>
+    /// API, to deploy and the resources that you want SageMaker to provision. Then you call
+    /// the <a>CreateEndpoint</a> API.
     /// 
     ///  <note> 
     /// <para>
-    ///  Use this API if you want to use Amazon SageMaker hosting services to deploy models
-    /// into production. 
+    ///  Use this API if you want to use SageMaker hosting services to deploy models into
+    /// production. 
     /// </para>
     ///  </note> 
     /// <para>
     /// In the request, you define a <code>ProductionVariant</code>, for each model that you
     /// want to deploy. Each <code>ProductionVariant</code> parameter also describes the resources
-    /// that you want Amazon SageMaker to provision. This includes the number and type of
-    /// ML compute instances to deploy. 
+    /// that you want SageMaker to provision. This includes the number and type of ML compute
+    /// instances to deploy. 
     /// </para>
     ///  
     /// <para>
     /// If you are hosting multiple models, you also assign a <code>VariantWeight</code> to
     /// specify how much traffic you want to allocate to each model. For example, suppose
     /// that you want to host two models, A and B, and you assign traffic weight 2 for model
-    /// A and 1 for model B. Amazon SageMaker distributes two-thirds of the traffic to Model
-    /// A, and one-third to model B. 
+    /// A and 1 for model B. SageMaker distributes two-thirds of the traffic to Model A, and
+    /// one-third to model B. 
     /// </para>
     ///  <note> 
     /// <para>
@@ -137,8 +137,8 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property KmsKeyId. 
         /// <para>
         /// The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key
-        /// that Amazon SageMaker uses to encrypt data on the storage volume attached to the ML
-        /// compute instance that hosts the endpoint.
+        /// that SageMaker uses to encrypt data on the storage volume attached to the ML compute
+        /// instance that hosts the endpoint.
         /// </para>
         ///  
         /// <para>

@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Configures the behavior of the client used by Amazon SageMaker to interact with the
-    /// model container during asynchronous inference.
+    /// Configures the behavior of the client used by SageMaker to interact with the model
+    /// container during asynchronous inference.
     /// </summary>
     public partial class AsyncInferenceClientConfig
     {
@@ -40,8 +40,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property MaxConcurrentInvocationsPerInstance. 
         /// <para>
         /// The maximum number of concurrent requests sent by the SageMaker client to the model
-        /// container. If no value is provided, Amazon SageMaker will choose an optimal value
-        /// for you.
+        /// container. If no value is provided, SageMaker chooses an optimal value.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]

@@ -81,8 +81,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property OutputDataConfig. 
         /// <para>
-        /// the path to the S3 bucket where you want to store model artifacts. Amazon SageMaker
-        /// creates subfolders for the artifacts.
+        /// the path to the S3 bucket where you want to store model artifacts. SageMaker creates
+        /// subfolders for the artifacts.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -123,13 +123,13 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// Specifies a limit to how long a model training job can run. It also specifies how
         /// long a managed Spot training job has to complete. When the job reaches the time limit,
-        /// Amazon SageMaker ends the training job. Use this API to cap model training costs.
+        /// SageMaker ends the training job. Use this API to cap model training costs.
         /// </para>
         ///  
         /// <para>
-        /// To stop a job, Amazon SageMaker sends the algorithm the SIGTERM signal, which delays
-        /// job termination for 120 seconds. Algorithms can use this 120-second window to save
-        /// the model artifacts.
+        /// To stop a job, SageMaker sends the algorithm the SIGTERM signal, which delays job
+        /// termination for 120 seconds. Algorithms can use this 120-second window to save the
+        /// model artifacts.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

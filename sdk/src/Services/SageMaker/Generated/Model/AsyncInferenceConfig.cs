@@ -39,8 +39,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ClientConfig. 
         /// <para>
-        /// Configures the behavior of the client used by Amazon SageMaker to interact with the
-        /// model container during asynchronous inference.
+        /// Configures the behavior of the client used by SageMaker to interact with the model
+        /// container during asynchronous inference.
         /// </para>
         /// </summary>
         public AsyncInferenceClientConfig ClientConfig

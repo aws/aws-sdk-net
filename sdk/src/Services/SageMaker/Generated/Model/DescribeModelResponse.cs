@@ -159,7 +159,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ModelName. 
         /// <para>
-        /// Name of the Amazon SageMaker model.
+        /// Name of the SageMaker model.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=63)]

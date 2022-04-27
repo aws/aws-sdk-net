@@ -81,8 +81,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property VolumeKmsKeyId. 
         /// <para>
-        /// The Amazon Web Services KMS key that Amazon SageMaker uses to encrypt data on the
-        /// storage volume attached to the ML compute instance(s) that run the training job.
+        /// The Amazon Web Services KMS key that SageMaker uses to encrypt data on the storage
+        /// volume attached to the ML compute instance(s) that run the training job.
         /// </para>
         ///  <note> 
         /// <para>
@@ -154,15 +154,14 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <note> 
         /// <para>
-        ///  Amazon SageMaker supports only the General Purpose SSD (gp2) ML storage volume type.
-        /// 
+        ///  SageMaker supports only the General Purpose SSD (gp2) ML storage volume type. 
         /// </para>
         ///  </note> <note> 
         /// <para>
         /// Certain Nitro-based instances include local storage with a fixed total size, dependent
-        /// on the instance type. When using these instances for training, Amazon SageMaker mounts
-        /// the local instance storage instead of Amazon EBS gp2 storage. You can't request a
-        /// <code>VolumeSizeInGB</code> greater than the total size of the local instance storage.
+        /// on the instance type. When using these instances for training, SageMaker mounts the
+        /// local instance storage instead of Amazon EBS gp2 storage. You can't request a <code>VolumeSizeInGB</code>
+        /// greater than the total size of the local instance storage.
         /// </para>
         ///  
         /// <para>

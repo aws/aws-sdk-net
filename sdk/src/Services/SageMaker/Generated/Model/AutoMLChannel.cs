@@ -29,15 +29,43 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// A channel is a named input source that training algorithms can consume. For more information,
-    /// see .
+    /// A channel is a named input source that training algorithms can consume. The validation
+    /// dataset size is limited to less than 2 GB. The training dataset size must be less
+    /// than 100 GB. For more information, see .
+    /// 
+    ///  <note> 
+    /// <para>
+    /// A validation dataset must contain the same headers as the training dataset.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class AutoMLChannel
     {
+        private AutoMLChannelType _channelType;
         private CompressionType _compressionType;
         private string _contentType;
         private AutoMLDataSource _dataSource;
         private string _targetAttributeName;
+
+        /// <summary>
+        /// Gets and sets the property ChannelType. 
+        /// <para>
+        /// The channel type (optional) is an enum string. The default value is <code>training</code>.
+        /// Channels for training and validation must share the same <code>ContentType</code>
+        /// and <code>TargetAttributeName</code>.
+        /// </para>
+        /// </summary>
+        public AutoMLChannelType ChannelType
+        {
+            get { return this._channelType; }
+            set { this._channelType = value; }
+        }
+
+        // Check to see if ChannelType property is set
+        internal bool IsSetChannelType()
+        {
+            return this._channelType != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CompressionType. 

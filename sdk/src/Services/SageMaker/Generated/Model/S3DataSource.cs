@@ -61,16 +61,16 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property S3DataDistributionType. 
         /// <para>
-        /// If you want Amazon SageMaker to replicate the entire dataset on each ML compute instance
+        /// If you want SageMaker to replicate the entire dataset on each ML compute instance
         /// that is launched for model training, specify <code>FullyReplicated</code>. 
         /// </para>
         ///  
         /// <para>
-        /// If you want Amazon SageMaker to replicate a subset of data on each ML compute instance
-        /// that is launched for model training, specify <code>ShardedByS3Key</code>. If there
-        /// are <i>n</i> ML compute instances launched for a training job, each instance gets
-        /// approximately 1/<i>n</i> of the number of S3 objects. In this case, model training
-        /// on each machine uses only the subset of training data. 
+        /// If you want SageMaker to replicate a subset of data on each ML compute instance that
+        /// is launched for model training, specify <code>ShardedByS3Key</code>. If there are
+        /// <i>n</i> ML compute instances launched for a training job, each instance gets approximately
+        /// 1/<i>n</i> of the number of S3 objects. In this case, model training on each machine
+        /// uses only the subset of training data. 
         /// </para>
         ///  
         /// <para>
@@ -103,14 +103,14 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property S3DataType. 
         /// <para>
         /// If you choose <code>S3Prefix</code>, <code>S3Uri</code> identifies a key name prefix.
-        /// Amazon SageMaker uses all objects that match the specified key name prefix for model
-        /// training. 
+        /// SageMaker uses all objects that match the specified key name prefix for model training.
+        /// 
         /// </para>
         ///  
         /// <para>
         /// If you choose <code>ManifestFile</code>, <code>S3Uri</code> identifies an object that
-        /// is a manifest file containing a list of object keys that you want Amazon SageMaker
-        /// to use for model training. 
+        /// is a manifest file containing a list of object keys that you want SageMaker to use
+        /// for model training. 
         /// </para>
         ///  
         /// <para>
@@ -209,8 +209,7 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// The complete set of <code>S3Uri</code> in this manifest is the input data for the
         /// channel for this data source. The object that each <code>S3Uri</code> points to must
-        /// be readable by the IAM role that Amazon SageMaker uses to perform tasks on your behalf.
-        /// 
+        /// be readable by the IAM role that SageMaker uses to perform tasks on your behalf. 
         /// </para>
         ///  </li> </ul>
         /// </summary>

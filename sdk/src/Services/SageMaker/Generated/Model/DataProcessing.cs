@@ -49,7 +49,7 @@ namespace Amazon.SageMaker.Model
         /// A <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators">JSONPath</a>
         /// expression used to select a portion of the input data to pass to the algorithm. Use
         /// the <code>InputFilter</code> parameter to exclude fields, such as an ID column, from
-        /// the input. If you want Amazon SageMaker to pass the entire input dataset to the algorithm,
+        /// the input. If you want SageMaker to pass the entire input dataset to the algorithm,
         /// accept the default value <code>$</code>.
         /// </para>
         ///  
@@ -119,9 +119,9 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// A <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators">JSONPath</a>
         /// expression used to select a portion of the joined dataset to save in the output file
-        /// for a batch transform job. If you want Amazon SageMaker to store the entire input
-        /// dataset in the output file, leave the default value, <code>$</code>. If you specify
-        /// indexes that aren't within the dimension size of the joined dataset, you get an error.
+        /// for a batch transform job. If you want SageMaker to store the entire input dataset
+        /// in the output file, leave the default value, <code>$</code>. If you specify indexes
+        /// that aren't within the dimension size of the joined dataset, you get an error.
         /// </para>
         ///  
         /// <para>

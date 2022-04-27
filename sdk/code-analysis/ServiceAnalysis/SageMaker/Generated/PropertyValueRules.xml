@@ -4977,6 +4977,11 @@
     <pattern>^(https|s3)://([^/]+)/?(.*)$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.AutoMLDataSplitConfig.ValidationFraction</property>
+    <min>0</min>
+    <max>1</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.AutoMLJobArtifacts.CandidateDefinitionNotebookLocation</property>
     <min>1</min>
   </property-value-rule>

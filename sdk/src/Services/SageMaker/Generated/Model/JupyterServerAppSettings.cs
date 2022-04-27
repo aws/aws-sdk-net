@@ -40,7 +40,8 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property DefaultResourceSpec. 
         /// <para>
         /// The default instance type and the Amazon Resource Name (ARN) of the default SageMaker
-        /// image used by the JupyterServer app.
+        /// image used by the JupyterServer app. If you use the <code>LifecycleConfigArns</code>
+        /// parameter, then this parameter is also required.
         /// </para>
         /// </summary>
         public ResourceSpec DefaultResourceSpec
@@ -59,7 +60,15 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property LifecycleConfigArns. 
         /// <para>
         ///  The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to the JupyterServerApp.
+        /// If you use this parameter, the <code>DefaultResourceSpec</code> parameter is also
+        /// required.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// To remove a Lifecycle Config, you must set <code>LifecycleConfigArns</code> to an
+        /// empty list.
+        /// </para>
+        ///  </note>
         /// </summary>
         public List<string> LifecycleConfigArns
         {

@@ -85,7 +85,7 @@ namespace Amazon.SageMaker.Model
         /// Web Services CodeCommit</a> or in any other Git repository. These repositories are
         /// cloned at the same level as the default repository of your notebook instance. For
         /// more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
-        /// Git Repositories with Amazon SageMaker Notebook Instances</a>.
+        /// Git Repositories with SageMaker Notebook Instances</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=3)]
@@ -129,7 +129,7 @@ namespace Amazon.SageMaker.Model
         /// Web Services CodeCommit</a> or in any other Git repository. When you open a notebook
         /// instance, it opens in the directory that contains this repository. For more information,
         /// see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
-        /// Git Repositories with Amazon SageMaker Notebook Instances</a>.
+        /// Git Repositories with SageMaker Notebook Instances</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -148,9 +148,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property DirectInternetAccess. 
         /// <para>
-        /// Describes whether Amazon SageMaker provides internet access to the notebook instance.
-        /// If this value is set to <i>Disabled</i>, the notebook instance does not have internet
-        /// access, and cannot connect to Amazon SageMaker training and endpoint services.
+        /// Describes whether SageMaker provides internet access to the notebook instance. If
+        /// this value is set to <i>Disabled</i>, the notebook instance does not have internet
+        /// access, and cannot connect to SageMaker training and endpoint services.
         /// </para>
         ///  
         /// <para>
@@ -210,8 +210,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The Amazon Web Services KMS key ID Amazon SageMaker uses to encrypt data when storing
-        /// it on the ML storage volume attached to the instance. 
+        /// The Amazon Web Services KMS key ID SageMaker uses to encrypt data when storing it
+        /// on the ML storage volume attached to the instance. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=2048)]
@@ -249,8 +249,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property NetworkInterfaceId. 
         /// <para>
-        /// The network interface IDs that Amazon SageMaker created at the time of creating the
-        /// instance. 
+        /// The network interface IDs that SageMaker created at the time of creating the instance.
+        /// 
         /// </para>
         /// </summary>
         public string NetworkInterfaceId
@@ -311,7 +311,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property NotebookInstanceName. 
         /// <para>
-        /// The name of the Amazon SageMaker notebook instance. 
+        /// The name of the SageMaker notebook instance. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=63)]

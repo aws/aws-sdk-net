@@ -34,6 +34,7 @@ namespace Amazon.SageMaker.Model
     public partial class AutoMLJobConfig
     {
         private AutoMLJobCompletionCriteria _completionCriteria;
+        private AutoMLDataSplitConfig _dataSplitConfig;
         private AutoMLSecurityConfig _securityConfig;
 
         /// <summary>
@@ -53,6 +54,28 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetCompletionCriteria()
         {
             return this._completionCriteria != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DataSplitConfig. 
+        /// <para>
+        /// The configuration for splitting the input training dataset.
+        /// </para>
+        ///  
+        /// <para>
+        /// Type: AutoMLDataSplitConfig
+        /// </para>
+        /// </summary>
+        public AutoMLDataSplitConfig DataSplitConfig
+        {
+            get { return this._dataSplitConfig; }
+            set { this._dataSplitConfig = value; }
+        }
+
+        // Check to see if DataSplitConfig property is set
+        internal bool IsSetDataSplitConfig()
+        {
+            return this._dataSplitConfig != null;
         }
 
         /// <summary>

@@ -29,15 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// <important> 
-    /// <para>
-    /// Serverless Inference is in preview release for Amazon SageMaker and is subject to
-    /// change. We do not recommend using this feature in production environments.
-    /// </para>
-    ///  </important> 
-    /// <para>
     /// Specifies the serverless configuration for an endpoint variant.
-    /// </para>
     /// </summary>
     public partial class ProductionVariantServerlessConfig
     {

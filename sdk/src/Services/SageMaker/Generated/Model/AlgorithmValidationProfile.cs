@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Defines a training job and a batch transform job that Amazon SageMaker runs to validate
-    /// your algorithm.
+    /// Defines a training job and a batch transform job that SageMaker runs to validate your
+    /// algorithm.
     /// 
     ///  
     /// <para>
@@ -68,7 +68,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property TrainingJobDefinition. 
         /// <para>
         /// The <code>TrainingJobDefinition</code> object that describes the training job that
-        /// Amazon SageMaker runs to validate your algorithm.
+        /// SageMaker runs to validate your algorithm.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -88,7 +88,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property TransformJobDefinition. 
         /// <para>
         /// The <code>TransformJobDefinition</code> object that describes the transform job that
-        /// Amazon SageMaker runs to validate your algorithm.
+        /// SageMaker runs to validate your algorithm.
         /// </para>
         /// </summary>
         public TransformJobDefinition TransformJobDefinition

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Specifies batch transform jobs that Amazon SageMaker runs to validate your model package.
+    /// Specifies batch transform jobs that SageMaker runs to validate your model package.
     /// </summary>
     public partial class ModelPackageValidationSpecification
     {
@@ -40,7 +40,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property ValidationProfiles. 
         /// <para>
         /// An array of <code>ModelPackageValidationProfile</code> objects, each of which specifies
-        /// a batch transform job that Amazon SageMaker runs to validate your model package.
+        /// a batch transform job that SageMaker runs to validate your model package.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1)]

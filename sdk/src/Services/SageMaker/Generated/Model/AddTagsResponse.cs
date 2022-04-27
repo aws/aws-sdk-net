@@ -38,7 +38,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A list of tags associated with the Amazon SageMaker resource.
+        /// A list of tags associated with the SageMaker resource.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]

@@ -224,6 +224,12 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
+        /// The value of <code>MaxPayloadInMB</code> cannot be greater than 100 MB. If you specify
+        /// the <code>MaxConcurrentTransforms</code> parameter, the value of <code>(MaxConcurrentTransforms
+        /// * MaxPayloadInMB)</code> also cannot exceed 100 MB.
+        /// </para>
+        ///  
+        /// <para>
         /// For cases where the payload might be arbitrarily large and is transmitted using HTTP
         /// chunked encoding, set the value to <code>0</code>. This feature works only in supported
         /// algorithms. Currently, Amazon SageMaker built-in algorithms do not support HTTP chunked

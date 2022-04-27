@@ -36,7 +36,7 @@ namespace Amazon.SageMaker.Model
     /// 
     ///  
     /// <para>
-    /// When Amazon SageMaker receives the request, it sets the endpoint status to <code>Updating</code>.
+    /// When SageMaker receives the request, it sets the endpoint status to <code>Updating</code>.
     /// After updating the endpoint, it sets the status to <code>InService</code>. To check
     /// the status of an endpoint, use the <a>DescribeEndpoint</a> API. 
     /// </para>

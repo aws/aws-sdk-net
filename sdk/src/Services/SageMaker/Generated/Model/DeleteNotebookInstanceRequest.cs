@@ -30,12 +30,12 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteNotebookInstance operation.
-    /// Deletes an Amazon SageMaker notebook instance. Before you can delete a notebook instance,
+    /// Deletes an SageMaker notebook instance. Before you can delete a notebook instance,
     /// you must call the <code>StopNotebookInstance</code> API. 
     /// 
     ///  <important> 
     /// <para>
-    /// When you delete a notebook instance, you lose all of your data. Amazon SageMaker removes
+    /// When you delete a notebook instance, you lose all of your data. SageMaker removes
     /// the ML compute instance, and deletes the ML storage volume and the network interface
     /// associated with the notebook instance. 
     /// </para>
@@ -48,7 +48,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property NotebookInstanceName. 
         /// <para>
-        /// The name of the Amazon SageMaker notebook instance to delete.
+        /// The name of the SageMaker notebook instance to delete.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=63)]

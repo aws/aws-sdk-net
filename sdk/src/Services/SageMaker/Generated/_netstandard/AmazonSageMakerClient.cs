@@ -38,7 +38,7 @@ namespace Amazon.SageMaker
     /// <summary>
     /// Implementation for accessing SageMaker
     ///
-    /// Provides APIs for creating and managing Amazon SageMaker resources. 
+    /// Provides APIs for creating and managing SageMaker resources. 
     /// 
     ///  
     /// <para>
@@ -46,8 +46,8 @@ namespace Amazon.SageMaker
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html#first-time-user">Amazon
-    /// SageMaker Developer Guide</a> 
+    ///  <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html#first-time-user">SageMaker
+    /// Developer Guide</a> 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -301,8 +301,8 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the AddAssociation service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
-        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
-        /// too many training jobs created.
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
         /// Resource being access is not found.
@@ -333,9 +333,9 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Adds or overwrites one or more tags for the specified Amazon SageMaker resource. You
-        /// can add tags to notebook instances, training jobs, hyperparameter tuning jobs, batch
-        /// transform jobs, models, labeling jobs, work teams, endpoint configurations, and endpoints.
+        /// Adds or overwrites one or more tags for the specified SageMaker resource. You can
+        /// add tags to notebook instances, training jobs, hyperparameter tuning jobs, batch transform
+        /// jobs, models, labeling jobs, work teams, endpoint configurations, and endpoints.
         /// 
         ///  
         /// <para>
@@ -408,8 +408,8 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the AssociateTrialComponent service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
-        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
-        /// too many training jobs created.
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
         /// Resource being access is not found.
@@ -486,8 +486,8 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the CreateAction service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
-        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
-        /// too many training jobs created.
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateAction">REST API Reference for CreateAction Operation</seealso>
         public virtual Task<CreateActionResponse> CreateActionAsync(CreateActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -515,8 +515,8 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Create a machine learning algorithm that you can use in Amazon SageMaker and list
-        /// in the Amazon Web Services Marketplace.
+        /// Create a machine learning algorithm that you can use in SageMaker and list in the
+        /// Amazon Web Services Marketplace.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAlgorithm service method.</param>
         /// <param name="cancellationToken">
@@ -565,8 +565,8 @@ namespace Amazon.SageMaker
         /// Resource being accessed is in use.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
-        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
-        /// too many training jobs created.
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateApp">REST API Reference for CreateApp Operation</seealso>
         public virtual Task<CreateAppResponse> CreateAppAsync(CreateAppRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -645,8 +645,8 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the CreateArtifact service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
-        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
-        /// too many training jobs created.
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateArtifact">REST API Reference for CreateArtifact Operation</seealso>
         public virtual Task<CreateArtifactResponse> CreateArtifactAsync(CreateArtifactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -696,8 +696,8 @@ namespace Amazon.SageMaker
         /// Resource being accessed is in use.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
-        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
-        /// too many training jobs created.
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateAutoMLJob">REST API Reference for CreateAutoMLJob Operation</seealso>
         public virtual Task<CreateAutoMLJobResponse> CreateAutoMLJobAsync(CreateAutoMLJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -725,11 +725,11 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Creates a Git repository as a resource in your Amazon SageMaker account. You can associate
+        /// Creates a Git repository as a resource in your SageMaker account. You can associate
         /// the repository with notebook instances so that you can use Git source control for
-        /// the notebooks you create. The Git repository is a resource in your Amazon SageMaker
-        /// account, so it can be associated with more than one notebook instance, and it persists
-        /// independently from the lifecycle of any notebook instances it is associated with.
+        /// the notebooks you create. The Git repository is a resource in your SageMaker account,
+        /// so it can be associated with more than one notebook instance, and it persists independently
+        /// from the lifecycle of any notebook instances it is associated with.
         /// 
         ///  
         /// <para>
@@ -824,8 +824,8 @@ namespace Amazon.SageMaker
         /// Resource being accessed is in use.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
-        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
-        /// too many training jobs created.
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateCompilationJob">REST API Reference for CreateCompilationJob Operation</seealso>
         public virtual Task<CreateCompilationJobResponse> CreateCompilationJobAsync(CreateCompilationJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -865,8 +865,8 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the CreateContext service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
-        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
-        /// too many training jobs created.
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateContext">REST API Reference for CreateContext Operation</seealso>
         public virtual Task<CreateContextResponse> CreateContextAsync(CreateContextRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -908,8 +908,8 @@ namespace Amazon.SageMaker
         /// Resource being accessed is in use.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
-        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
-        /// too many training jobs created.
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateDataQualityJobDefinition">REST API Reference for CreateDataQualityJobDefinition Operation</seealso>
         public virtual Task<CreateDataQualityJobDefinitionResponse> CreateDataQualityJobDefinitionAsync(CreateDataQualityJobDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -949,8 +949,8 @@ namespace Amazon.SageMaker
         /// Resource being accessed is in use.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
-        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
-        /// too many training jobs created.
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateDeviceFleet">REST API Reference for CreateDeviceFleet Operation</seealso>
         public virtual Task<CreateDeviceFleetResponse> CreateDeviceFleetAsync(CreateDeviceFleetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1051,8 +1051,8 @@ namespace Amazon.SageMaker
         /// Resource being accessed is in use.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
-        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
-        /// too many training jobs created.
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateDomain">REST API Reference for CreateDomain Operation</seealso>
         public virtual Task<CreateDomainResponse> CreateDomainAsync(CreateDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1092,8 +1092,8 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the CreateEdgePackagingJob service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
-        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
-        /// too many training jobs created.
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateEdgePackagingJob">REST API Reference for CreateEdgePackagingJob Operation</seealso>
         public virtual Task<CreateEdgePackagingJobResponse> CreateEdgePackagingJobAsync(CreateEdgePackagingJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1121,17 +1121,17 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Creates an endpoint using the endpoint configuration specified in the request. Amazon
-        /// SageMaker uses the endpoint to provision resources and deploy models. You create the
-        /// endpoint configuration with the <a>CreateEndpointConfig</a> API. 
+        /// Creates an endpoint using the endpoint configuration specified in the request. SageMaker
+        /// uses the endpoint to provision resources and deploy models. You create the endpoint
+        /// configuration with the <a>CreateEndpointConfig</a> API. 
         /// 
         ///  
         /// <para>
-        ///  Use this API to deploy models using Amazon SageMaker hosting services. 
+        ///  Use this API to deploy models using SageMaker hosting services. 
         /// </para>
         ///  
         /// <para>
-        /// For an example that calls this method when deploying a model to Amazon SageMaker hosting
+        /// For an example that calls this method when deploying a model to SageMaker hosting
         /// services, see the <a href="https://github.com/aws/amazon-sagemaker-examples/blob/master/sagemaker-fundamentals/create-endpoint/create_endpoint.ipynb">Create
         /// Endpoint example notebook.</a> 
         /// </para>
@@ -1149,8 +1149,8 @@ namespace Amazon.SageMaker
         /// </para>
         ///  
         /// <para>
-        /// When it receives the request, Amazon SageMaker creates the endpoint, launches the
-        /// resources (ML compute instances), and deploys the model(s) on them. 
+        /// When it receives the request, SageMaker creates the endpoint, launches the resources
+        /// (ML compute instances), and deploys the model(s) on them. 
         /// </para>
         ///  <note> 
         /// <para>
@@ -1167,19 +1167,19 @@ namespace Amazon.SageMaker
         /// </para>
         ///  </note> 
         /// <para>
-        /// When Amazon SageMaker receives the request, it sets the endpoint status to <code>Creating</code>.
-        /// After it creates the endpoint, it sets the status to <code>InService</code>. Amazon
-        /// SageMaker can then process incoming requests for inferences. To check the status of
-        /// an endpoint, use the <a>DescribeEndpoint</a> API.
+        /// When SageMaker receives the request, it sets the endpoint status to <code>Creating</code>.
+        /// After it creates the endpoint, it sets the status to <code>InService</code>. SageMaker
+        /// can then process incoming requests for inferences. To check the status of an endpoint,
+        /// use the <a>DescribeEndpoint</a> API.
         /// </para>
         ///  
         /// <para>
         /// If any of the models hosted at this endpoint get model data from an Amazon S3 location,
-        /// Amazon SageMaker uses Amazon Web Services Security Token Service to download model
-        /// artifacts from the S3 path you provided. Amazon Web Services STS is activated in your
-        /// IAM user account by default. If you previously deactivated Amazon Web Services STS
-        /// for a region, you need to reactivate Amazon Web Services STS for that region. For
-        /// more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
+        /// SageMaker uses Amazon Web Services Security Token Service to download model artifacts
+        /// from the S3 path you provided. Amazon Web Services STS is activated in your IAM user
+        /// account by default. If you previously deactivated Amazon Web Services STS for a region,
+        /// you need to reactivate Amazon Web Services STS for that region. For more information,
+        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
         /// and Deactivating Amazon Web Services STS in an Amazon Web Services Region</a> in the
         /// <i>Amazon Web Services Identity and Access Management User Guide</i>.
         /// </para>
@@ -1236,8 +1236,8 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the CreateEndpoint service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
-        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
-        /// too many training jobs created.
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateEndpoint">REST API Reference for CreateEndpoint Operation</seealso>
         public virtual Task<CreateEndpointResponse> CreateEndpointAsync(CreateEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1265,30 +1265,30 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Creates an endpoint configuration that Amazon SageMaker hosting services uses to deploy
-        /// models. In the configuration, you identify one or more models, created using the <code>CreateModel</code>
-        /// API, to deploy and the resources that you want Amazon SageMaker to provision. Then
-        /// you call the <a>CreateEndpoint</a> API.
+        /// Creates an endpoint configuration that SageMaker hosting services uses to deploy models.
+        /// In the configuration, you identify one or more models, created using the <code>CreateModel</code>
+        /// API, to deploy and the resources that you want SageMaker to provision. Then you call
+        /// the <a>CreateEndpoint</a> API.
         /// 
         ///  <note> 
         /// <para>
-        ///  Use this API if you want to use Amazon SageMaker hosting services to deploy models
-        /// into production. 
+        ///  Use this API if you want to use SageMaker hosting services to deploy models into
+        /// production. 
         /// </para>
         ///  </note> 
         /// <para>
         /// In the request, you define a <code>ProductionVariant</code>, for each model that you
         /// want to deploy. Each <code>ProductionVariant</code> parameter also describes the resources
-        /// that you want Amazon SageMaker to provision. This includes the number and type of
-        /// ML compute instances to deploy. 
+        /// that you want SageMaker to provision. This includes the number and type of ML compute
+        /// instances to deploy. 
         /// </para>
         ///  
         /// <para>
         /// If you are hosting multiple models, you also assign a <code>VariantWeight</code> to
         /// specify how much traffic you want to allocate to each model. For example, suppose
         /// that you want to host two models, A and B, and you assign traffic weight 2 for model
-        /// A and 1 for model B. Amazon SageMaker distributes two-thirds of the traffic to Model
-        /// A, and one-third to model B. 
+        /// A and 1 for model B. SageMaker distributes two-thirds of the traffic to Model A, and
+        /// one-third to model B. 
         /// </para>
         ///  <note> 
         /// <para>
@@ -1312,8 +1312,8 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the CreateEndpointConfig service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
-        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
-        /// too many training jobs created.
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateEndpointConfig">REST API Reference for CreateEndpointConfig Operation</seealso>
         public virtual Task<CreateEndpointConfigResponse> CreateEndpointConfigAsync(CreateEndpointConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1384,8 +1384,8 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the CreateExperiment service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
-        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
-        /// too many training jobs created.
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateExperiment">REST API Reference for CreateExperiment Operation</seealso>
         public virtual Task<CreateExperimentResponse> CreateExperimentAsync(CreateExperimentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1444,8 +1444,8 @@ namespace Amazon.SageMaker
         /// Resource being accessed is in use.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
-        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
-        /// too many training jobs created.
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateFeatureGroup">REST API Reference for CreateFeatureGroup Operation</seealso>
         public virtual Task<CreateFeatureGroupResponse> CreateFeatureGroupAsync(CreateFeatureGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1485,8 +1485,8 @@ namespace Amazon.SageMaker
         /// Resource being accessed is in use.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
-        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
-        /// too many training jobs created.
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateFlowDefinition">REST API Reference for CreateFlowDefinition Operation</seealso>
         public virtual Task<CreateFlowDefinitionResponse> CreateFlowDefinitionAsync(CreateFlowDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1528,8 +1528,8 @@ namespace Amazon.SageMaker
         /// Resource being accessed is in use.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
-        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
-        /// too many training jobs created.
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateHumanTaskUi">REST API Reference for CreateHumanTaskUi Operation</seealso>
         public virtual Task<CreateHumanTaskUiResponse> CreateHumanTaskUiAsync(CreateHumanTaskUiRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1573,8 +1573,8 @@ namespace Amazon.SageMaker
         /// Resource being accessed is in use.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
-        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
-        /// too many training jobs created.
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateHyperParameterTuningJob">REST API Reference for CreateHyperParameterTuningJob Operation</seealso>
         public virtual Task<CreateHyperParameterTuningJobResponse> CreateHyperParameterTuningJobAsync(CreateHyperParameterTuningJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1603,8 +1603,8 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// Creates a custom SageMaker image. A SageMaker image is a set of image versions. Each
-        /// image version represents a container image stored in Amazon Container Registry (ECR).
-        /// For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/studio-byoi.html">Bring
+        /// image version represents a container image stored in Amazon Elastic Container Registry
+        /// (ECR). For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/studio-byoi.html">Bring
         /// your own SageMaker image</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateImage service method.</param>
@@ -1617,8 +1617,8 @@ namespace Amazon.SageMaker
         /// Resource being accessed is in use.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
-        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
-        /// too many training jobs created.
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateImage">REST API Reference for CreateImage Operation</seealso>
         public virtual Task<CreateImageResponse> CreateImageAsync(CreateImageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1647,8 +1647,8 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// Creates a version of the SageMaker image specified by <code>ImageName</code>. The
-        /// version represents the Amazon Container Registry (ECR) container image specified by
-        /// <code>BaseImage</code>.
+        /// version represents the Amazon Elastic Container Registry (ECR) container image specified
+        /// by <code>BaseImage</code>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateImageVersion service method.</param>
         /// <param name="cancellationToken">
@@ -1660,8 +1660,8 @@ namespace Amazon.SageMaker
         /// Resource being accessed is in use.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
-        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
-        /// too many training jobs created.
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
         /// Resource being access is not found.
@@ -1705,8 +1705,8 @@ namespace Amazon.SageMaker
         /// Resource being accessed is in use.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
-        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
-        /// too many training jobs created.
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateInferenceRecommendationsJob">REST API Reference for CreateInferenceRecommendationsJob Operation</seealso>
         public virtual Task<CreateInferenceRecommendationsJobResponse> CreateInferenceRecommendationsJobAsync(CreateInferenceRecommendationsJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1801,8 +1801,8 @@ namespace Amazon.SageMaker
         /// Resource being accessed is in use.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
-        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
-        /// too many training jobs created.
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateLabelingJob">REST API Reference for CreateLabelingJob Operation</seealso>
         public virtual Task<CreateLabelingJobResponse> CreateLabelingJobAsync(CreateLabelingJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1830,26 +1830,26 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Creates a model in Amazon SageMaker. In the request, you name the model and describe
-        /// a primary container. For the primary container, you specify the Docker image that
-        /// contains inference code, artifacts (from prior training), and a custom environment
-        /// map that the inference code uses when you deploy the model for predictions.
+        /// Creates a model in SageMaker. In the request, you name the model and describe a primary
+        /// container. For the primary container, you specify the Docker image that contains inference
+        /// code, artifacts (from prior training), and a custom environment map that the inference
+        /// code uses when you deploy the model for predictions.
         /// 
         ///  
         /// <para>
-        /// Use this API to create a model if you want to use Amazon SageMaker hosting services
-        /// or run a batch transform job.
+        /// Use this API to create a model if you want to use SageMaker hosting services or run
+        /// a batch transform job.
         /// </para>
         ///  
         /// <para>
         /// To host your model, you create an endpoint configuration with the <code>CreateEndpointConfig</code>
-        /// API, and then create an endpoint with the <code>CreateEndpoint</code> API. Amazon
-        /// SageMaker then deploys all of the containers that you defined for the model in the
-        /// hosting environment. 
+        /// API, and then create an endpoint with the <code>CreateEndpoint</code> API. SageMaker
+        /// then deploys all of the containers that you defined for the model in the hosting environment.
+        /// 
         /// </para>
         ///  
         /// <para>
-        /// For an example that calls this method when deploying a model to Amazon SageMaker hosting
+        /// For an example that calls this method when deploying a model to SageMaker hosting
         /// services, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/ex1-deploy-model.html#ex1-deploy-model-boto">Deploy
         /// the Model to Amazon SageMaker Hosting Services (Amazon Web Services SDK for Python
         /// (Boto 3)).</a> 
@@ -1857,21 +1857,16 @@ namespace Amazon.SageMaker
         ///  
         /// <para>
         /// To run a batch transform using your model, you start a job with the <code>CreateTransformJob</code>
-        /// API. Amazon SageMaker uses your model and your dataset to get inferences which are
-        /// then saved to a specified S3 location.
+        /// API. SageMaker uses your model and your dataset to get inferences which are then saved
+        /// to a specified S3 location.
         /// </para>
         ///  
         /// <para>
-        /// In the <code>CreateModel</code> request, you must define a container with the <code>PrimaryContainer</code>
-        /// parameter.
-        /// </para>
-        ///  
-        /// <para>
-        /// In the request, you also provide an IAM role that Amazon SageMaker can assume to access
-        /// model artifacts and docker image for deployment on ML compute hosting instances or
-        /// for batch transform jobs. In addition, you also use the IAM role to manage permissions
-        /// the inference code needs. For example, if the inference code access any other Amazon
-        /// Web Services resources, you grant necessary permissions via this role.
+        /// In the request, you also provide an IAM role that SageMaker can assume to access model
+        /// artifacts and docker image for deployment on ML compute hosting instances or for batch
+        /// transform jobs. In addition, you also use the IAM role to manage permissions the inference
+        /// code needs. For example, if the inference code access any other Amazon Web Services
+        /// resources, you grant necessary permissions via this role.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateModel service method.</param>
@@ -1881,8 +1876,8 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the CreateModel service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
-        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
-        /// too many training jobs created.
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateModel">REST API Reference for CreateModel Operation</seealso>
         public virtual Task<CreateModelResponse> CreateModelAsync(CreateModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1922,8 +1917,8 @@ namespace Amazon.SageMaker
         /// Resource being accessed is in use.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
-        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
-        /// too many training jobs created.
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateModelBiasJobDefinition">REST API Reference for CreateModelBiasJobDefinition Operation</seealso>
         public virtual Task<CreateModelBiasJobDefinitionResponse> CreateModelBiasJobDefinitionAsync(CreateModelBiasJobDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1963,8 +1958,8 @@ namespace Amazon.SageMaker
         /// Resource being accessed is in use.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
-        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
-        /// too many training jobs created.
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateModelExplainabilityJobDefinition">REST API Reference for CreateModelExplainabilityJobDefinition Operation</seealso>
         public virtual Task<CreateModelExplainabilityJobDefinitionResponse> CreateModelExplainabilityJobDefinitionAsync(CreateModelExplainabilityJobDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1992,10 +1987,10 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Creates a model package that you can use to create Amazon SageMaker models or list
-        /// on Amazon Web Services Marketplace, or a versioned model that is part of a model group.
-        /// Buyers can subscribe to model packages listed on Amazon Web Services Marketplace to
-        /// create models in Amazon SageMaker.
+        /// Creates a model package that you can use to create SageMaker models or list on Amazon
+        /// Web Services Marketplace, or a versioned model that is part of a model group. Buyers
+        /// can subscribe to model packages listed on Amazon Web Services Marketplace to create
+        /// models in SageMaker.
         /// 
         ///  
         /// <para>
@@ -2029,8 +2024,8 @@ namespace Amazon.SageMaker
         /// or <code>Artifact</code>.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
-        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
-        /// too many training jobs created.
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateModelPackage">REST API Reference for CreateModelPackage Operation</seealso>
         public virtual Task<CreateModelPackageResponse> CreateModelPackageAsync(CreateModelPackageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2067,8 +2062,8 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the CreateModelPackageGroup service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
-        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
-        /// too many training jobs created.
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateModelPackageGroup">REST API Reference for CreateModelPackageGroup Operation</seealso>
         public virtual Task<CreateModelPackageGroupResponse> CreateModelPackageGroupAsync(CreateModelPackageGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2110,8 +2105,8 @@ namespace Amazon.SageMaker
         /// Resource being accessed is in use.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
-        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
-        /// too many training jobs created.
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateModelQualityJobDefinition">REST API Reference for CreateModelQualityJobDefinition Operation</seealso>
         public virtual Task<CreateModelQualityJobDefinitionResponse> CreateModelQualityJobDefinitionAsync(CreateModelQualityJobDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2152,8 +2147,8 @@ namespace Amazon.SageMaker
         /// Resource being accessed is in use.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
-        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
-        /// too many training jobs created.
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateMonitoringSchedule">REST API Reference for CreateMonitoringSchedule Operation</seealso>
         public virtual Task<CreateMonitoringScheduleResponse> CreateMonitoringScheduleAsync(CreateMonitoringScheduleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2181,57 +2176,54 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Creates an Amazon SageMaker notebook instance. A notebook instance is a machine learning
+        /// Creates an SageMaker notebook instance. A notebook instance is a machine learning
         /// (ML) compute instance running on a Jupyter notebook. 
         /// 
         ///  
         /// <para>
         /// In a <code>CreateNotebookInstance</code> request, specify the type of ML compute instance
-        /// that you want to run. Amazon SageMaker launches the instance, installs common libraries
-        /// that you can use to explore datasets for model training, and attaches an ML storage
-        /// volume to the notebook instance. 
+        /// that you want to run. SageMaker launches the instance, installs common libraries that
+        /// you can use to explore datasets for model training, and attaches an ML storage volume
+        /// to the notebook instance. 
         /// </para>
         ///  
         /// <para>
-        /// Amazon SageMaker also provides a set of example notebooks. Each notebook demonstrates
-        /// how to use Amazon SageMaker with a specific algorithm or with a machine learning framework.
-        /// 
+        /// SageMaker also provides a set of example notebooks. Each notebook demonstrates how
+        /// to use SageMaker with a specific algorithm or with a machine learning framework. 
         /// </para>
         ///  
         /// <para>
-        /// After receiving the request, Amazon SageMaker does the following:
+        /// After receiving the request, SageMaker does the following:
         /// </para>
         ///  <ol> <li> 
         /// <para>
-        /// Creates a network interface in the Amazon SageMaker VPC.
+        /// Creates a network interface in the SageMaker VPC.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// (Option) If you specified <code>SubnetId</code>, Amazon SageMaker creates a network
-        /// interface in your own VPC, which is inferred from the subnet ID that you provide in
-        /// the input. When creating this network interface, Amazon SageMaker attaches the security
-        /// group that you specified in the request to the network interface that it creates in
-        /// your VPC.
+        /// (Option) If you specified <code>SubnetId</code>, SageMaker creates a network interface
+        /// in your own VPC, which is inferred from the subnet ID that you provide in the input.
+        /// When creating this network interface, SageMaker attaches the security group that you
+        /// specified in the request to the network interface that it creates in your VPC.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Launches an EC2 instance of the type specified in the request in the Amazon SageMaker
-        /// VPC. If you specified <code>SubnetId</code> of your VPC, Amazon SageMaker specifies
-        /// both network interfaces when launching this instance. This enables inbound traffic
-        /// from your own VPC to the notebook instance, assuming that the security groups allow
-        /// it.
+        /// Launches an EC2 instance of the type specified in the request in the SageMaker VPC.
+        /// If you specified <code>SubnetId</code> of your VPC, SageMaker specifies both network
+        /// interfaces when launching this instance. This enables inbound traffic from your own
+        /// VPC to the notebook instance, assuming that the security groups allow it.
         /// </para>
         ///  </li> </ol> 
         /// <para>
-        /// After creating the notebook instance, Amazon SageMaker returns its Amazon Resource
-        /// Name (ARN). You can't change the name of a notebook instance after you create it.
+        /// After creating the notebook instance, SageMaker returns its Amazon Resource Name (ARN).
+        /// You can't change the name of a notebook instance after you create it.
         /// </para>
         ///  
         /// <para>
-        /// After Amazon SageMaker creates the notebook instance, you can connect to the Jupyter
-        /// server and work in Jupyter notebooks. For example, you can write code to explore a
-        /// dataset that you can use for model training, train a model, host models by creating
-        /// Amazon SageMaker endpoints, and validate hosted models. 
+        /// After SageMaker creates the notebook instance, you can connect to the Jupyter server
+        /// and work in Jupyter notebooks. For example, you can write code to explore a dataset
+        /// that you can use for model training, train a model, host models by creating SageMaker
+        /// endpoints, and validate hosted models. 
         /// </para>
         ///  
         /// <para>
@@ -2246,8 +2238,8 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the CreateNotebookInstance service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
-        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
-        /// too many training jobs created.
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateNotebookInstance">REST API Reference for CreateNotebookInstance Operation</seealso>
         public virtual Task<CreateNotebookInstanceResponse> CreateNotebookInstanceAsync(CreateNotebookInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2312,8 +2304,8 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the CreateNotebookInstanceLifecycleConfig service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
-        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
-        /// too many training jobs created.
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateNotebookInstanceLifecycleConfig">REST API Reference for CreateNotebookInstanceLifecycleConfig Operation</seealso>
         public virtual Task<CreateNotebookInstanceLifecycleConfigResponse> CreateNotebookInstanceLifecycleConfigAsync(CreateNotebookInstanceLifecycleConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2350,8 +2342,8 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the CreatePipeline service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
-        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
-        /// too many training jobs created.
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
         /// Resource being access is not found.
@@ -2447,9 +2439,9 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// Returns a URL that you can use to connect to the Jupyter server from a notebook instance.
-        /// In the Amazon SageMaker console, when you choose <code>Open</code> next to a notebook
-        /// instance, Amazon SageMaker opens a new tab showing the Jupyter server home page from
-        /// the notebook instance. The console uses this API to get the URL and show the page.
+        /// In the SageMaker console, when you choose <code>Open</code> next to a notebook instance,
+        /// SageMaker opens a new tab showing the Jupyter server home page from the notebook instance.
+        /// The console uses this API to get the URL and show the page.
         /// 
         ///  
         /// <para>
@@ -2520,8 +2512,8 @@ namespace Amazon.SageMaker
         /// Resource being accessed is in use.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
-        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
-        /// too many training jobs created.
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
         /// Resource being access is not found.
@@ -2562,8 +2554,8 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the CreateProject service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
-        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
-        /// too many training jobs created.
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateProject">REST API Reference for CreateProject Operation</seealso>
         public virtual Task<CreateProjectResponse> CreateProjectAsync(CreateProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2628,15 +2620,15 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Starts a model training job. After training completes, Amazon SageMaker saves the
-        /// resulting model artifacts to an Amazon S3 location that you specify. 
+        /// Starts a model training job. After training completes, SageMaker saves the resulting
+        /// model artifacts to an Amazon S3 location that you specify. 
         /// 
         ///  
         /// <para>
-        /// If you choose to host your model using Amazon SageMaker hosting services, you can
-        /// use the resulting model artifacts as part of the model. You can also use the artifacts
-        /// in a machine learning service other than Amazon SageMaker, provided that you know
-        /// how to use them for inference. 
+        /// If you choose to host your model using SageMaker hosting services, you can use the
+        /// resulting model artifacts as part of the model. You can also use the artifacts in
+        /// a machine learning service other than SageMaker, provided that you know how to use
+        /// them for inference. 
         /// </para>
         ///  
         /// <para>
@@ -2651,7 +2643,7 @@ namespace Amazon.SageMaker
         ///  <code>HyperParameters</code> - Specify these algorithm-specific parameters to enable
         /// the estimation of model parameters during training. Hyperparameters can be tuned to
         /// optimize this learning process. For a list of hyperparameters for each training algorithm
-        /// provided by Amazon SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
+        /// provided by SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
         /// 
         /// </para>
         ///  </li> <li> 
@@ -2661,8 +2653,8 @@ namespace Amazon.SageMaker
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>OutputDataConfig</code> - Identifies the Amazon S3 bucket where you want Amazon
-        /// SageMaker to save the results of model training. 
+        ///  <code>OutputDataConfig</code> - Identifies the Amazon S3 bucket where you want SageMaker
+        /// to save the results of model training. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2679,10 +2671,9 @@ namespace Amazon.SageMaker
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>RoleArn</code> - The Amazon Resource Name (ARN) that Amazon SageMaker assumes
-        /// to perform tasks on your behalf during model training. You must grant this role the
-        /// necessary permissions so that Amazon SageMaker can successfully complete model training.
-        /// 
+        ///  <code>RoleArn</code> - The Amazon Resource Name (ARN) that SageMaker assumes to perform
+        /// tasks on your behalf during model training. You must grant this role the necessary
+        /// permissions so that SageMaker can successfully complete model training. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2701,7 +2692,7 @@ namespace Amazon.SageMaker
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  For more information about Amazon SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works.html">How
+        ///  For more information about SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works.html">How
         /// It Works</a>. 
         /// </para>
         /// </summary>
@@ -2715,8 +2706,8 @@ namespace Amazon.SageMaker
         /// Resource being accessed is in use.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
-        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
-        /// too many training jobs created.
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
         /// Resource being access is not found.
@@ -2801,8 +2792,8 @@ namespace Amazon.SageMaker
         /// Resource being accessed is in use.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
-        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
-        /// too many training jobs created.
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
         /// Resource being access is not found.
@@ -2861,8 +2852,8 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the CreateTrial service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
-        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
-        /// too many training jobs created.
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
         /// Resource being access is not found.
@@ -2921,8 +2912,8 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the CreateTrialComponent service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
-        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
-        /// too many training jobs created.
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateTrialComponent">REST API Reference for CreateTrialComponent Operation</seealso>
         public virtual Task<CreateTrialComponentResponse> CreateTrialComponentAsync(CreateTrialComponentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2968,8 +2959,8 @@ namespace Amazon.SageMaker
         /// Resource being accessed is in use.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
-        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
-        /// too many training jobs created.
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateUserProfile">REST API Reference for CreateUserProfile Operation</seealso>
         public virtual Task<CreateUserProfileResponse> CreateUserProfileAsync(CreateUserProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3075,8 +3066,8 @@ namespace Amazon.SageMaker
         /// Resource being accessed is in use.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
-        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
-        /// too many training jobs created.
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateWorkteam">REST API Reference for CreateWorkteam Operation</seealso>
         public virtual Task<CreateWorkteamResponse> CreateWorkteamAsync(CreateWorkteamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3514,14 +3505,22 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Deletes an endpoint. Amazon SageMaker frees up all of the resources that were deployed
-        /// when the endpoint was created. 
+        /// Deletes an endpoint. SageMaker frees up all of the resources that were deployed when
+        /// the endpoint was created. 
         /// 
         ///  
         /// <para>
-        /// Amazon SageMaker retires any custom KMS key grants associated with the endpoint, meaning
+        /// SageMaker retires any custom KMS key grants associated with the endpoint, meaning
         /// you don't need to use the <a href="http://docs.aws.amazon.com/kms/latest/APIReference/API_RevokeGrant.html">RevokeGrant</a>
         /// API call.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you delete your endpoint, SageMaker asynchronously deletes associated endpoint
+        /// resources such as KMS key grants. You might still see these resources in your account
+        /// for a few minutes after deleting your endpoint. Do not delete or revoke the permissions
+        /// for your <code> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateModel.html#sagemaker-CreateModel-request-ExecutionRoleArn">ExecutionRoleArn</a>
+        /// </code>, otherwise SageMaker cannot delete these resources.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteEndpoint service method.</param>
@@ -3853,9 +3852,9 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// Deletes a model. The <code>DeleteModel</code> API deletes only the model entry that
-        /// was created in Amazon SageMaker when you called the <code>CreateModel</code> API.
-        /// It does not delete model artifacts, inference code, or the IAM role that you specified
-        /// when creating the model.
+        /// was created in SageMaker when you called the <code>CreateModel</code> API. It does
+        /// not delete model artifacts, inference code, or the IAM role that you specified when
+        /// creating the model.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteModel service method.</param>
         /// <param name="cancellationToken">
@@ -3967,9 +3966,9 @@ namespace Amazon.SageMaker
         /// 
         ///  
         /// <para>
-        /// A model package is used to create Amazon SageMaker models or list on Amazon Web Services
+        /// A model package is used to create SageMaker models or list on Amazon Web Services
         /// Marketplace. Buyers can subscribe to model packages listed on Amazon Web Services
-        /// Marketplace to create models in Amazon SageMaker.
+        /// Marketplace to create models in SageMaker.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteModelPackage service method.</param>
@@ -4155,12 +4154,12 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Deletes an Amazon SageMaker notebook instance. Before you can delete a notebook instance,
+        /// Deletes an SageMaker notebook instance. Before you can delete a notebook instance,
         /// you must call the <code>StopNotebookInstance</code> API. 
         /// 
         ///  <important> 
         /// <para>
-        /// When you delete a notebook instance, you lose all of your data. Amazon SageMaker removes
+        /// When you delete a notebook instance, you lose all of your data. SageMaker removes
         /// the ML compute instance, and deletes the ML storage volume and the network interface
         /// associated with the notebook instance. 
         /// </para>
@@ -4351,7 +4350,7 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Deletes the specified tags from an Amazon SageMaker resource.
+        /// Deletes the specified tags from an SageMaker resource.
         /// 
         ///  
         /// <para>
@@ -4579,8 +4578,8 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the DeleteWorkteam service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
-        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
-        /// too many training jobs created.
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteWorkteam">REST API Reference for DeleteWorkteam Operation</seealso>
         public virtual Task<DeleteWorkteamResponse> DeleteWorkteamAsync(DeleteWorkteamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -8124,8 +8123,8 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Returns a list of the Amazon SageMaker notebook instances in the requester's account
-        /// in an Amazon Web Services Region.
+        /// Returns a list of the SageMaker notebook instances in the requester's account in an
+        /// Amazon Web Services Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListNotebookInstances service method.</param>
         /// <param name="cancellationToken">
@@ -8445,7 +8444,7 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Returns the tags for the specified Amazon SageMaker resource.
+        /// Returns the tags for the specified SageMaker resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTags service method.</param>
         /// <param name="cancellationToken">
@@ -8902,8 +8901,8 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the RegisterDevices service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
-        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
-        /// too many training jobs created.
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/RegisterDevices">REST API Reference for RegisterDevices Operation</seealso>
         public virtual Task<RegisterDevicesResponse> RegisterDevicesAsync(RegisterDevicesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -8981,8 +8980,8 @@ namespace Amazon.SageMaker
         /// or <code>Artifact</code>.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
-        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
-        /// too many training jobs created.
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
         /// Resource being access is not found.
@@ -9065,8 +9064,8 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the SendPipelineExecutionStepFailure service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
-        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
-        /// too many training jobs created.
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
         /// Resource being access is not found.
@@ -9109,8 +9108,8 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the SendPipelineExecutionStepSuccess service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
-        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
-        /// too many training jobs created.
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
         /// Resource being access is not found.
@@ -9186,9 +9185,9 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// Launches an ML compute instance with the latest version of the libraries and attaches
-        /// your ML storage volume. After configuring the notebook instance, Amazon SageMaker
-        /// sets the notebook instance status to <code>InService</code>. A notebook instance's
-        /// status must be <code>InService</code> before you can connect to your Jupyter notebook.
+        /// your ML storage volume. After configuring the notebook instance, SageMaker sets the
+        /// notebook instance status to <code>InService</code>. A notebook instance's status must
+        /// be <code>InService</code> before you can connect to your Jupyter notebook.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartNotebookInstance service method.</param>
         /// <param name="cancellationToken">
@@ -9197,8 +9196,8 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the StartNotebookInstance service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
-        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
-        /// too many training jobs created.
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StartNotebookInstance">REST API Reference for StartNotebookInstance Operation</seealso>
         public virtual Task<StartNotebookInstanceResponse> StartNotebookInstanceAsync(StartNotebookInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -9235,8 +9234,8 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the StartPipelineExecution service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
-        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
-        /// too many training jobs created.
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
         /// Resource being access is not found.
@@ -9546,10 +9545,9 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Terminates the ML compute instance. Before terminating the instance, Amazon SageMaker
-        /// disconnects the ML storage volume from it. Amazon SageMaker preserves the ML storage
-        /// volume. Amazon SageMaker stops charging you for the ML compute instance when you call
-        /// <code>StopNotebookInstance</code>.
+        /// Terminates the ML compute instance. Before terminating the instance, SageMaker disconnects
+        /// the ML storage volume from it. SageMaker preserves the ML storage volume. SageMaker
+        /// stops charging you for the ML compute instance when you call <code>StopNotebookInstance</code>.
         /// 
         ///  
         /// <para>
@@ -9701,15 +9699,15 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Stops a training job. To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code>
+        /// Stops a training job. To stop a job, SageMaker sends the algorithm the <code>SIGTERM</code>
         /// signal, which delays job termination for 120 seconds. Algorithms might use this 120-second
         /// window to save the model artifacts, so the results of the training is not lost. 
         /// 
         ///  
         /// <para>
-        /// When it receives a <code>StopTrainingJob</code> request, Amazon SageMaker changes
-        /// the status of the job to <code>Stopping</code>. After Amazon SageMaker stops the job,
-        /// it sets the status to <code>Stopped</code>.
+        /// When it receives a <code>StopTrainingJob</code> request, SageMaker changes the status
+        /// of the job to <code>Stopping</code>. After SageMaker stops the job, it sets the status
+        /// to <code>Stopped</code>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopTrainingJob service method.</param>
@@ -10069,8 +10067,8 @@ namespace Amazon.SageMaker
         /// Resource being accessed is in use.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
-        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
-        /// too many training jobs created.
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
         /// Resource being access is not found.
@@ -10107,7 +10105,7 @@ namespace Amazon.SageMaker
         /// 
         ///  
         /// <para>
-        /// When Amazon SageMaker receives the request, it sets the endpoint status to <code>Updating</code>.
+        /// When SageMaker receives the request, it sets the endpoint status to <code>Updating</code>.
         /// After updating the endpoint, it sets the status to <code>InService</code>. To check
         /// the status of an endpoint, use the <a>DescribeEndpoint</a> API. 
         /// </para>
@@ -10133,8 +10131,8 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the UpdateEndpoint service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
-        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
-        /// too many training jobs created.
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateEndpoint">REST API Reference for UpdateEndpoint Operation</seealso>
         public virtual Task<UpdateEndpointResponse> UpdateEndpointAsync(UpdateEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -10164,9 +10162,9 @@ namespace Amazon.SageMaker
         /// <summary>
         /// Updates variant weight of one or more variants associated with an existing endpoint,
         /// or capacity of one variant associated with an existing endpoint. When it receives
-        /// the request, Amazon SageMaker sets the endpoint status to <code>Updating</code>. After
-        /// updating the endpoint, it sets the status to <code>InService</code>. To check the
-        /// status of an endpoint, use the <a>DescribeEndpoint</a> API.
+        /// the request, SageMaker sets the endpoint status to <code>Updating</code>. After updating
+        /// the endpoint, it sets the status to <code>InService</code>. To check the status of
+        /// an endpoint, use the <a>DescribeEndpoint</a> API.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateEndpointWeightsAndCapacities service method.</param>
         /// <param name="cancellationToken">
@@ -10175,8 +10173,8 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the UpdateEndpointWeightsAndCapacities service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
-        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
-        /// too many training jobs created.
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateEndpointWeightsAndCapacities">REST API Reference for UpdateEndpointWeightsAndCapacities Operation</seealso>
         public virtual Task<UpdateEndpointWeightsAndCapacitiesResponse> UpdateEndpointWeightsAndCapacitiesAsync(UpdateEndpointWeightsAndCapacitiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -10330,8 +10328,8 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the UpdateMonitoringSchedule service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
-        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
-        /// too many training jobs created.
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
         /// Resource being access is not found.
@@ -10373,8 +10371,8 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the UpdateNotebookInstance service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
-        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
-        /// too many training jobs created.
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateNotebookInstance">REST API Reference for UpdateNotebookInstance Operation</seealso>
         public virtual Task<UpdateNotebookInstanceResponse> UpdateNotebookInstanceAsync(UpdateNotebookInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -10412,8 +10410,8 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the UpdateNotebookInstanceLifecycleConfig service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
-        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
-        /// too many training jobs created.
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateNotebookInstanceLifecycleConfig">REST API Reference for UpdateNotebookInstanceLifecycleConfig Operation</seealso>
         public virtual Task<UpdateNotebookInstanceLifecycleConfigResponse> UpdateNotebookInstanceLifecycleConfigAsync(UpdateNotebookInstanceLifecycleConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -10689,8 +10687,8 @@ namespace Amazon.SageMaker
         /// Resource being accessed is in use.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
-        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
-        /// too many training jobs created.
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
         /// </exception>
         /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
         /// Resource being access is not found.
@@ -10797,8 +10795,8 @@ namespace Amazon.SageMaker
         /// 
         /// <returns>The response from the UpdateWorkteam service method, as returned by SageMaker.</returns>
         /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
-        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
-        /// too many training jobs created.
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateWorkteam">REST API Reference for UpdateWorkteam Operation</seealso>
         public virtual Task<UpdateWorkteamResponse> UpdateWorkteamAsync(UpdateWorkteamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))

@@ -40,7 +40,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property InvocationsMaxRetries. 
         /// <para>
-        /// The maximum number of retries when invocation requests are failing.
+        /// The maximum number of retries when invocation requests are failing. The default value
+        /// is 3.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=3)]
@@ -59,7 +60,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property InvocationsTimeoutInSeconds. 
         /// <para>
-        /// The timeout value in seconds for an invocation request.
+        /// The timeout value in seconds for an invocation request. The default value is 600.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=3600)]

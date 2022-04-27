@@ -116,7 +116,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property EndpointConfigName. 
         /// <para>
-        /// Name of the Amazon SageMaker endpoint configuration.
+        /// Name of the SageMaker endpoint configuration.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=63)]

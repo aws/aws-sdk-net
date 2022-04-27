@@ -56,6 +56,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetDataSplitConfig())
+            {
+                context.Writer.WritePropertyName("DataSplitConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AutoMLDataSplitConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.DataSplitConfig, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetSecurityConfig())
             {
                 context.Writer.WritePropertyName("SecurityConfig");

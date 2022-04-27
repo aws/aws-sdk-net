@@ -236,8 +236,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ValidationSpecification. 
         /// <para>
-        /// Details about configurations for one or more training jobs that Amazon SageMaker runs
-        /// to test the algorithm.
+        /// Details about configurations for one or more training jobs that SageMaker runs to
+        /// test the algorithm.
         /// </para>
         /// </summary>
         public AlgorithmValidationSpecification ValidationSpecification

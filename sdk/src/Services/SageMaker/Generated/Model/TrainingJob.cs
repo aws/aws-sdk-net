@@ -445,7 +445,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property OutputDataConfig. 
         /// <para>
         /// The S3 path where model artifacts that you configured when creating the job are stored.
-        /// Amazon SageMaker creates subfolders for model artifacts.
+        /// SageMaker creates subfolders for model artifacts.
         /// </para>
         /// </summary>
         public OutputDataConfig OutputDataConfig
@@ -526,8 +526,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        /// Amazon SageMaker provides primary statuses and secondary statuses that apply to each
-        /// of them:
+        /// SageMaker provides primary statuses and secondary statuses that apply to each of them:
         /// </para>
         ///  <dl> <dt>InProgress</dt> <dd> <ul> <li> 
         /// <para>
@@ -628,12 +627,12 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// Specifies a limit to how long a model training job can run. It also specifies how
         /// long a managed Spot training job has to complete. When the job reaches the time limit,
-        /// Amazon SageMaker ends the training job. Use this API to cap model training costs.
+        /// SageMaker ends the training job. Use this API to cap model training costs.
         /// </para>
         ///  
         /// <para>
-        /// To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal,
-        /// which delays job termination for 120 seconds. Algorithms can use this 120-second window
+        /// To stop a job, SageMaker sends the algorithm the <code>SIGTERM</code> signal, which
+        /// delays job termination for 120 seconds. Algorithms can use this 120-second window
         /// to save the model artifacts, so the results of training are not lost. 
         /// </para>
         /// </summary>
@@ -692,8 +691,7 @@ namespace Amazon.SageMaker.Model
         /// Indicates the time when the training job ends on training instances. You are billed
         /// for the time interval between the value of <code>TrainingStartTime</code> and this
         /// time. For successful jobs and stopped jobs, this is the time after model artifacts
-        /// are uploaded. For failed jobs, this is the time when Amazon SageMaker detects a job
-        /// failure.
+        /// are uploaded. For failed jobs, this is the time when SageMaker detects a job failure.
         /// </para>
         /// </summary>
         public DateTime TrainingEndTime

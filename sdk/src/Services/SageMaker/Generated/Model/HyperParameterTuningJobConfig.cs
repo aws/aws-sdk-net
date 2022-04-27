@@ -133,9 +133,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </dd> <dt>AUTO</dt> <dd> 
         /// <para>
-        /// Amazon SageMaker stops training jobs launched by the hyperparameter tuning job when
-        /// they are unlikely to perform better than previously completed training jobs. For more
-        /// information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-early-stopping.html">Stop
+        /// SageMaker stops training jobs launched by the hyperparameter tuning job when they
+        /// are unlikely to perform better than previously completed training jobs. For more information,
+        /// see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-early-stopping.html">Stop
         /// Training Jobs Early</a>.
         /// </para>
         ///  </dd> </dl>

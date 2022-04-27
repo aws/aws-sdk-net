@@ -34,9 +34,9 @@ namespace Amazon.SageMaker.Model
     /// 
     ///  
     /// <para>
-    /// A model package is used to create Amazon SageMaker models or list on Amazon Web Services
+    /// A model package is used to create SageMaker models or list on Amazon Web Services
     /// Marketplace. Buyers can subscribe to model packages listed on Amazon Web Services
-    /// Marketplace to create models in Amazon SageMaker.
+    /// Marketplace to create models in SageMaker.
     /// </para>
     /// </summary>
     public partial class DeleteModelPackageRequest : AmazonSageMakerRequest

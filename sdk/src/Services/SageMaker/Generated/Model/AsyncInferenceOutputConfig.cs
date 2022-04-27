@@ -41,7 +41,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property KmsKeyId. 
         /// <para>
         /// The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that
-        /// Amazon SageMaker uses to encrypt the asynchronous inference output in Amazon S3.
+        /// SageMaker uses to encrypt the asynchronous inference output in Amazon S3.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2048)]

@@ -62,6 +62,14 @@ namespace Amazon.SageMaker.Model
         /// The default instance type and the Amazon Resource Name (ARN) of the default SageMaker
         /// image used by the KernelGateway app.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The Amazon SageMaker Studio UI does not use the default instance type value set here.
+        /// The default instance type set here is used when Apps are created using the Amazon
+        /// Web Services Command Line Interface or Amazon Web Services CloudFormation and the
+        /// instance type parameter value is not passed.
+        /// </para>
+        ///  </note>
         /// </summary>
         public ResourceSpec DefaultResourceSpec
         {
@@ -81,6 +89,12 @@ namespace Amazon.SageMaker.Model
         ///  The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to the the
         /// user profile or domain.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// To remove a Lifecycle Config, you must set <code>LifecycleConfigArns</code> to an
+        /// empty list.
+        /// </para>
+        ///  </note>
         /// </summary>
         public List<string> LifecycleConfigArns
         {

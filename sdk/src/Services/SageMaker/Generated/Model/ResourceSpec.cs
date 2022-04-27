@@ -44,6 +44,13 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// The instance type that the image version runs on.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// JupyterServer Apps only support the <code>system</code> value. KernelGateway Apps
+        /// do not support the <code>system</code> value, but support all other values for available
+        /// instance types.
+        /// </para>
+        ///  </note>
         /// </summary>
         public AppInstanceType InstanceType
         {

@@ -30,8 +30,8 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Identifies a model that you want to host and the resources chosen to deploy for hosting
-    /// it. If you are deploying multiple models, tell Amazon SageMaker how to distribute
-    /// traffic among the models by specifying variant weights.
+    /// it. If you are deploying multiple models, tell SageMaker how to distribute traffic
+    /// among the models by specifying variant weights.
     /// </summary>
     public partial class ProductionVariant
     {
@@ -169,12 +169,6 @@ namespace Amazon.SageMaker.Model
         /// The serverless configuration for an endpoint. Specifies a serverless endpoint configuration
         /// instead of an instance-based endpoint configuration.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// Serverless Inference is in preview release for Amazon SageMaker and is subject to
-        /// change. We do not recommend using this feature in production environments.
-        /// </para>
-        ///  </note>
         /// </summary>
         public ProductionVariantServerlessConfig ServerlessConfig
         {

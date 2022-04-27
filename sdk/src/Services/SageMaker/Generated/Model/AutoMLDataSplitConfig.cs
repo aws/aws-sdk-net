@@ -29,30 +29,33 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeModelPackageGroup operation.
-    /// Gets a description for the specified model group.
+    /// This structure specifies how to split the data into train and test datasets. The validation
+    /// and training datasets must contain the same headers. The validation dataset must be
+    /// less than 2 GB in size.
     /// </summary>
-    public partial class DescribeModelPackageGroupRequest : AmazonSageMakerRequest
+    public partial class AutoMLDataSplitConfig
     {
-        private string _modelPackageGroupName;
+        private float? _validationFraction;
 
         /// <summary>
-        /// Gets and sets the property ModelPackageGroupName. 
+        /// Gets and sets the property ValidationFraction. 
         /// <para>
-        /// The name of gthe model group to describe.
+        /// The validation fraction (optional) is a float that specifies the portion of the training
+        /// dataset to be used for validation. The default value is 0.2, and values can range
+        /// from 0 to 1. We recommend setting this value to be less than 0.5.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=170)]
-        public string ModelPackageGroupName
+        [AWSProperty(Min=0, Max=1)]
+        public float ValidationFraction
         {
-            get { return this._modelPackageGroupName; }
-            set { this._modelPackageGroupName = value; }
+            get { return this._validationFraction.GetValueOrDefault(); }
+            set { this._validationFraction = value; }
         }
 
-        // Check to see if ModelPackageGroupName property is set
-        internal bool IsSetModelPackageGroupName()
+        // Check to see if ValidationFraction property is set
+        internal bool IsSetValidationFraction()
         {
-            return this._modelPackageGroupName != null;
+            return this._validationFraction.HasValue; 
         }
 
     }

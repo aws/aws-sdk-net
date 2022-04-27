@@ -39,8 +39,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property FinalActiveLearningModelArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) for the most recent Amazon SageMaker model trained
-        /// as part of automated data labeling. 
+        /// The Amazon Resource Name (ARN) for the most recent SageMaker model trained as part
+        /// of automated data labeling. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]

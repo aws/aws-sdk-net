@@ -93,12 +93,6 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// The serverless configuration for the endpoint.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// Serverless Inference is in preview release for Amazon SageMaker and is subject to
-        /// change. We do not recommend using this feature in production environments.
-        /// </para>
-        ///  </note>
         /// </summary>
         public ProductionVariantServerlessConfig CurrentServerlessConfig
         {
@@ -177,12 +171,6 @@ namespace Amazon.SageMaker.Model
         /// The serverless configuration requested for this deployment, as specified in the endpoint
         /// configuration for the endpoint.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// Serverless Inference is in preview release for Amazon SageMaker and is subject to
-        /// change. We do not recommend using this feature in production environments.
-        /// </para>
-        ///  </note>
         /// </summary>
         public ProductionVariantServerlessConfig DesiredServerlessConfig
         {
