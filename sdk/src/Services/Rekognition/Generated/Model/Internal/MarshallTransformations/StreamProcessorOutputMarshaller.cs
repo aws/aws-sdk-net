@@ -56,6 +56,17 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetS3Destination())
+            {
+                context.Writer.WritePropertyName("S3Destination");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = S3DestinationMarshaller.Instance;
+                marshaller.Marshall(requestObject.S3Destination, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

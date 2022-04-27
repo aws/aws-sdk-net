@@ -38,7 +38,7 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property StreamProcessorArn. 
         /// <para>
-        /// ARN for the newly create stream processor.
+        /// Amazon Resource Number for the newly created stream processor.
         /// </para>
         /// </summary>
         public string StreamProcessorArn

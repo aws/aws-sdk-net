@@ -48,8 +48,8 @@ namespace Amazon.Rekognition.Model
     /// </para>
     ///  
     /// <para>
-    /// We don't recommend using gender binary predictions to make decisions that impact&#x2028;
-    /// an individual's rights, privacy, or access to services.
+    /// We don't recommend using gender binary predictions to make decisions that impact an
+    /// individual's rights, privacy, or access to services.
     /// </para>
     /// </summary>
     public partial class Gender

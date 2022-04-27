@@ -45,6 +45,17 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(StreamProcessorSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetConnectedHome())
+            {
+                context.Writer.WritePropertyName("ConnectedHome");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ConnectedHomeSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.ConnectedHome, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetFaceSearch())
             {
                 context.Writer.WritePropertyName("FaceSearch");

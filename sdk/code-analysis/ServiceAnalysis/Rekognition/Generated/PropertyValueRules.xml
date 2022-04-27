@@ -64,6 +64,12 @@
     <pattern>(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/version\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Rekognition.Model.CreateStreamProcessorRequest.KmsKeyId</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,2048}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Rekognition.Model.CreateStreamProcessorRequest.Name</property>
     <min>1</min>
     <max>128</max>
@@ -170,6 +176,12 @@
     <min>1</min>
     <max>128</max>
     <pattern>[a-zA-Z0-9_.\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Rekognition.Model.DescribeStreamProcessorResponse.KmsKeyId</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,2048}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.DescribeStreamProcessorResponse.Name</property>
@@ -722,6 +734,12 @@
     <pattern>(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/dataset\/(train|test)\/[0-9]+$)</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Rekognition.Model.UpdateStreamProcessorRequest.Name</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9_.\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Rekognition.Model.AgeRange.High</property>
     <min>0</min>
   </property-value-rule>
@@ -786,6 +804,16 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.CompareFacesMatch.Similarity</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Rekognition.Model.ConnectedHomeSettings.MinConfidence</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Rekognition.Model.ConnectedHomeSettingsForUpdate.MinConfidence</property>
     <min>0</min>
     <max>100</max>
   </property-value-rule>
@@ -973,6 +1001,16 @@
     <pattern>(^arn:([a-z\d-]+):kinesisvideo:([a-z\d-]+):\d{12}:.+$)</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Rekognition.Model.KinesisVideoStreamStartSelector.FragmentNumber</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Rekognition.Model.KinesisVideoStreamStartSelector.ProducerTimestamp</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Rekognition.Model.Label.Confidence</property>
     <min>0</min>
     <max>100</max>
@@ -1071,6 +1109,16 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Rekognition.Model.S3Destination.Bucket</property>
+    <min>3</min>
+    <max>255</max>
+    <pattern>[0-9A-Za-z\.\-_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Rekognition.Model.S3Destination.KeyPrefix</property>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Rekognition.Model.S3Object.Bucket</property>
     <min>3</min>
     <max>255</max>
@@ -1127,10 +1175,19 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Rekognition.Model.StreamProcessingStopSelector.MaxDurationInSeconds</property>
+    <min>1</min>
+    <max>120</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Rekognition.Model.StreamProcessor.Name</property>
     <min>1</min>
     <max>128</max>
     <pattern>[a-zA-Z0-9_.\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Rekognition.Model.StreamProcessorNotificationChannel.SNSTopicArn</property>
+    <pattern>(^arn:aws:sns:.*:\w{12}:.+$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.Sunglasses.Confidence</property>

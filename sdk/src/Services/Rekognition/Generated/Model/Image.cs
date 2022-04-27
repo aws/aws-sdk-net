@@ -64,8 +64,8 @@ namespace Amazon.Rekognition.Model
     ///  
     /// <para>
     /// For Amazon Rekognition to process an S3 object, the user must have permission to access
-    /// the S3 object. For more information, see Resource Based Policies in the Amazon Rekognition
-    /// Developer Guide. 
+    /// the S3 object. For more information, see How Amazon Rekognition works with IAM in
+    /// the Amazon Rekognition Developer Guide. 
     /// </para>
     /// </summary>
     public partial class Image

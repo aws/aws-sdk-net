@@ -103,7 +103,7 @@ namespace Amazon.Rekognition.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see Model Versioning in the Amazon Rekognition Developer Guide.
+        /// For more information, see Model versioning in the Amazon Rekognition Developer Guide.
         /// </para>
         /// </summary>
         public string FaceModelVersion

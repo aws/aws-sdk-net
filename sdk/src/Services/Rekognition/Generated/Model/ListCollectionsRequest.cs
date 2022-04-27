@@ -36,7 +36,7 @@ namespace Amazon.Rekognition.Model
     /// 
     ///  
     /// <para>
-    /// For an example, see Listing Collections in the Amazon Rekognition Developer Guide.
+    /// For an example, see Listing collections in the Amazon Rekognition Developer Guide.
     /// </para>
     ///  
     /// <para>

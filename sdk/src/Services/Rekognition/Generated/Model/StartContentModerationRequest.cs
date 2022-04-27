@@ -52,7 +52,7 @@ namespace Amazon.Rekognition.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information, see Content moderation in the Amazon Rekognition Developer Guide.
+    /// For more information, see Moderating content in the Amazon Rekognition Developer Guide.
     /// </para>
     /// </summary>
     public partial class StartContentModerationRequest : AmazonRekognitionRequest

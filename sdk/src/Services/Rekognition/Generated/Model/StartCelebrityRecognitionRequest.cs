@@ -47,7 +47,7 @@ namespace Amazon.Rekognition.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information, see Recognizing Celebrities in the Amazon Rekognition Developer
+    /// For more information, see Recognizing celebrities in the Amazon Rekognition Developer
     /// Guide.
     /// </para>
     /// </summary>

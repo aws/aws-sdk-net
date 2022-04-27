@@ -31,27 +31,39 @@ namespace Amazon.Rekognition.Model
     /// <summary>
     /// Container for the parameters to the CreateStreamProcessor operation.
     /// Creates an Amazon Rekognition stream processor that you can use to detect and recognize
-    /// faces in a streaming video.
+    /// faces or to detect labels in a streaming video.
     /// 
     ///  
     /// <para>
     /// Amazon Rekognition Video is a consumer of live video from Amazon Kinesis Video Streams.
-    /// Amazon Rekognition Video sends analysis results to Amazon Kinesis Data Streams.
+    /// There are two different settings for stream processors in Amazon Rekognition: detecting
+    /// faces and detecting labels.
     /// </para>
-    ///  
+    ///  <ul> <li> 
     /// <para>
-    /// You provide as input a Kinesis video stream (<code>Input</code>) and a Kinesis data
-    /// stream (<code>Output</code>) stream. You also specify the face recognition criteria
-    /// in <code>Settings</code>. For example, the collection containing faces that you want
-    /// to recognize. Use <code>Name</code> to assign an identifier for the stream processor.
-    /// You use <code>Name</code> to manage the stream processor. For example, you can start
-    /// processing the source video by calling <a>StartStreamProcessor</a> with the <code>Name</code>
-    /// field. 
+    /// If you are creating a stream processor for detecting faces, you provide as input a
+    /// Kinesis video stream (<code>Input</code>) and a Kinesis data stream (<code>Output</code>)
+    /// stream. You also specify the face recognition criteria in <code>Settings</code>. For
+    /// example, the collection containing faces that you want to recognize. After you have
+    /// finished analyzing a streaming video, use <a>StopStreamProcessor</a> to stop processing.
     /// </para>
-    ///  
+    ///  </li> <li> 
     /// <para>
-    /// After you have finished analyzing a streaming video, use <a>StopStreamProcessor</a>
-    /// to stop processing. You can delete the stream processor by calling <a>DeleteStreamProcessor</a>.
+    /// If you are creating a stream processor to detect labels, you provide as input a Kinesis
+    /// video stream (<code>Input</code>), Amazon S3 bucket information (<code>Output</code>),
+    /// and an Amazon SNS topic ARN (<code>NotificationChannel</code>). You can also provide
+    /// a KMS key ID to encrypt the data sent to your Amazon S3 bucket. You specify what you
+    /// want to detect in <code>ConnectedHomeSettings</code>, such as people, packages and
+    /// people, or pets, people, and packages. You can also specify where in the frame you
+    /// want Amazon Rekognition to monitor with <code>RegionsOfInterest</code>. When you run
+    /// the <a>StartStreamProcessor</a> operation on a label detection stream processor, you
+    /// input start and stop information to determine the length of the processing time.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    ///  Use <code>Name</code> to assign an identifier for the stream processor. You use <code>Name</code>
+    /// to manage the stream processor. For example, you can start processing the source video
+    /// by calling <a>StartStreamProcessor</a> with the <code>Name</code> field. 
     /// </para>
     ///  
     /// <para>
@@ -62,18 +74,44 @@ namespace Amazon.Rekognition.Model
     /// </summary>
     public partial class CreateStreamProcessorRequest : AmazonRekognitionRequest
     {
+        private StreamProcessorDataSharingPreference _dataSharingPreference;
         private StreamProcessorInput _input;
+        private string _kmsKeyId;
         private string _name;
+        private StreamProcessorNotificationChannel _notificationChannel;
         private StreamProcessorOutput _output;
+        private List<RegionOfInterest> _regionsOfInterest = new List<RegionOfInterest>();
         private string _roleArn;
         private StreamProcessorSettings _settings;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
+        /// Gets and sets the property DataSharingPreference. 
+        /// <para>
+        ///  Shows whether you are sharing data with Rekognition to improve model performance.
+        /// You can choose this option at the account level or on a per-stream basis. Note that
+        /// if you opt out at the account level this setting is ignored on individual streams.
+        /// 
+        /// </para>
+        /// </summary>
+        public StreamProcessorDataSharingPreference DataSharingPreference
+        {
+            get { return this._dataSharingPreference; }
+            set { this._dataSharingPreference = value; }
+        }
+
+        // Check to see if DataSharingPreference property is set
+        internal bool IsSetDataSharingPreference()
+        {
+            return this._dataSharingPreference != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Input. 
         /// <para>
         /// Kinesis video stream stream that provides the source streaming video. If you are using
-        /// the AWS CLI, the parameter name is <code>StreamProcessorInput</code>.
+        /// the AWS CLI, the parameter name is <code>StreamProcessorInput</code>. This is required
+        /// for both face search and label detection stream processors.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -90,12 +128,40 @@ namespace Amazon.Rekognition.Model
         }
 
         /// <summary>
+        /// Gets and sets the property KmsKeyId. 
+        /// <para>
+        ///  The identifier for your AWS Key Management Service key (AWS KMS key). This is an
+        /// optional parameter for label detection stream processors and should not be used to
+        /// create a face search stream processor. You can supply the Amazon Resource Name (ARN)
+        /// of your KMS key, the ID of your KMS key, an alias for your KMS key, or an alias ARN.
+        /// The key is used to encrypt results and data published to your Amazon S3 bucket, which
+        /// includes image frames and hero images. Your source images are unaffected. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string KmsKeyId
+        {
+            get { return this._kmsKeyId; }
+            set { this._kmsKeyId = value; }
+        }
+
+        // Check to see if KmsKeyId property is set
+        internal bool IsSetKmsKeyId()
+        {
+            return this._kmsKeyId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
         /// An identifier you assign to the stream processor. You can use <code>Name</code> to
         /// manage the stream processor. For example, you can get the current status of the stream
         /// processor by calling <a>DescribeStreamProcessor</a>. <code>Name</code> is idempotent.
-        /// 
+        /// This is required for both face search and label detection stream processors. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -112,10 +178,28 @@ namespace Amazon.Rekognition.Model
         }
 
         /// <summary>
+        /// Gets and sets the property NotificationChannel.
+        /// </summary>
+        public StreamProcessorNotificationChannel NotificationChannel
+        {
+            get { return this._notificationChannel; }
+            set { this._notificationChannel = value; }
+        }
+
+        // Check to see if NotificationChannel property is set
+        internal bool IsSetNotificationChannel()
+        {
+            return this._notificationChannel != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Output. 
         /// <para>
-        /// Kinesis data stream stream to which Amazon Rekognition Video puts the analysis results.
-        /// If you are using the AWS CLI, the parameter name is <code>StreamProcessorOutput</code>.
+        /// Kinesis data stream stream or Amazon S3 bucket location to which Amazon Rekognition
+        /// Video puts the analysis results. If you are using the AWS CLI, the parameter name
+        /// is <code>StreamProcessorOutput</code>. This must be a <a>S3Destination</a> of an Amazon
+        /// S3 bucket that you own for a label detection stream processor or a Kinesis data stream
+        /// ARN for a face search stream processor.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -132,9 +216,35 @@ namespace Amazon.Rekognition.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RegionsOfInterest. 
+        /// <para>
+        ///  Specifies locations in the frames where Amazon Rekognition checks for objects or
+        /// people. You can specify up to 10 regions of interest. This is an optional parameter
+        /// for label detection stream processors and should not be used to create a face search
+        /// stream processor. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=10)]
+        public List<RegionOfInterest> RegionsOfInterest
+        {
+            get { return this._regionsOfInterest; }
+            set { this._regionsOfInterest = value; }
+        }
+
+        // Check to see if RegionsOfInterest property is set
+        internal bool IsSetRegionsOfInterest()
+        {
+            return this._regionsOfInterest != null && this._regionsOfInterest.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// ARN of the IAM role that allows access to the stream processor.
+        /// The Amazon Resource Number (ARN) of the IAM role that allows access to the stream
+        /// processor. The IAM role provides Rekognition read permissions for a Kinesis stream.
+        /// It also provides write permissions to an Amazon S3 bucket and Amazon Simple Notification
+        /// Service topic for a label detection stream processor. This is required for both face
+        /// search and label detection stream processors.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -153,8 +263,9 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property Settings. 
         /// <para>
-        /// Face recognition input parameters to be used by the stream processor. Includes the
-        /// collection to use for face recognition and the face attributes to detect.
+        /// Input parameters used in a streaming video analyzed by a stream processor. You can
+        /// use <code>FaceSearch</code> to recognize faces in a streaming video, or you can use
+        /// <code>ConnectedHome</code> to detect labels.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

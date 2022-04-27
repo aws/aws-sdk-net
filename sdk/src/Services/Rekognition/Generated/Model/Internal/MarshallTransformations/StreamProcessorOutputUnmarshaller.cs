@@ -70,6 +70,12 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                     unmarshalledObject.KinesisDataStream = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("S3Destination", targetDepth))
+                {
+                    var unmarshaller = S3DestinationUnmarshaller.Instance;
+                    unmarshalledObject.S3Destination = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;
