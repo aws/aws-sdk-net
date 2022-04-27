@@ -51,10 +51,22 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("ConnectionStatus", targetDepth))
+                {
+                    var unmarshaller = ConnectionStatusEventConfigurationUnmarshaller.Instance;
+                    response.ConnectionStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DeviceRegistrationState", targetDepth))
                 {
                     var unmarshaller = DeviceRegistrationStateEventConfigurationUnmarshaller.Instance;
                     response.DeviceRegistrationState = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Join", targetDepth))
+                {
+                    var unmarshaller = JoinEventConfigurationUnmarshaller.Instance;
+                    response.Join = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Proximity", targetDepth))

@@ -33,8 +33,28 @@ namespace Amazon.IoTWireless.Model
     /// </summary>
     public partial class GetResourceEventConfigurationResponse : AmazonWebServiceResponse
     {
+        private ConnectionStatusEventConfiguration _connectionStatus;
         private DeviceRegistrationStateEventConfiguration _deviceRegistrationState;
+        private JoinEventConfiguration _join;
         private ProximityEventConfiguration _proximity;
+
+        /// <summary>
+        /// Gets and sets the property ConnectionStatus. 
+        /// <para>
+        /// Event configuration for the connection status event.
+        /// </para>
+        /// </summary>
+        public ConnectionStatusEventConfiguration ConnectionStatus
+        {
+            get { return this._connectionStatus; }
+            set { this._connectionStatus = value; }
+        }
+
+        // Check to see if ConnectionStatus property is set
+        internal bool IsSetConnectionStatus()
+        {
+            return this._connectionStatus != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DeviceRegistrationState. 
@@ -52,6 +72,24 @@ namespace Amazon.IoTWireless.Model
         internal bool IsSetDeviceRegistrationState()
         {
             return this._deviceRegistrationState != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Join. 
+        /// <para>
+        /// Event configuration for the join event.
+        /// </para>
+        /// </summary>
+        public JoinEventConfiguration Join
+        {
+            get { return this._join; }
+            set { this._join = value; }
+        }
+
+        // Check to see if Join property is set
+        internal bool IsSetJoin()
+        {
+            return this._join != null;
         }
 
         /// <summary>

@@ -35,6 +35,7 @@ namespace Amazon.IoTWireless.Model
     public partial class DeviceRegistrationStateEventConfiguration
     {
         private SidewalkEventNotificationConfigurations _sidewalk;
+        private EventNotificationTopicStatus _wirelessDeviceIdEventTopic;
 
         /// <summary>
         /// Gets and sets the property Sidewalk. 
@@ -53,6 +54,25 @@ namespace Amazon.IoTWireless.Model
         internal bool IsSetSidewalk()
         {
             return this._sidewalk != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WirelessDeviceIdEventTopic. 
+        /// <para>
+        /// Enum to denote whether the wireless device id device registration state event topic
+        /// is enabled or disabled.
+        /// </para>
+        /// </summary>
+        public EventNotificationTopicStatus WirelessDeviceIdEventTopic
+        {
+            get { return this._wirelessDeviceIdEventTopic; }
+            set { this._wirelessDeviceIdEventTopic = value; }
+        }
+
+        // Check to see if WirelessDeviceIdEventTopic property is set
+        internal bool IsSetWirelessDeviceIdEventTopic()
+        {
+            return this._wirelessDeviceIdEventTopic != null;
         }
 
     }

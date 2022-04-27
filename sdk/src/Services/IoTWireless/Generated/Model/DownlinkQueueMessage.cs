@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTWireless.Model
 {
     /// <summary>
-    /// The message in downlink queue.
+    /// The message in the downlink queue.
     /// </summary>
     public partial class DownlinkQueueMessage
     {
@@ -56,7 +56,8 @@ namespace Amazon.IoTWireless.Model
         /// <summary>
         /// Gets and sets the property MessageId. 
         /// <para>
-        ///  The messageId allocated by IoT Wireless for tracing purpose
+        ///  The message ID assigned by IoT Wireless to each downlink message, which helps identify
+        /// the message.
         /// </para>
         /// </summary>
         public string MessageId
@@ -74,7 +75,7 @@ namespace Amazon.IoTWireless.Model
         /// <summary>
         /// Gets and sets the property ReceivedAt. 
         /// <para>
-        /// The timestamp that Iot Wireless received the message.
+        /// The time at which Iot Wireless received the downlink message.
         /// </para>
         /// </summary>
         public string ReceivedAt
@@ -92,7 +93,7 @@ namespace Amazon.IoTWireless.Model
         /// <summary>
         /// Gets and sets the property TransmitMode. 
         /// <para>
-        /// The transmit mode to use to send data to the wireless device. Can be: <code>0</code>
+        /// The transmit mode to use for sending data to the wireless device. This can be <code>0</code>
         /// for UM (unacknowledge mode) or <code>1</code> for AM (acknowledge mode).
         /// </para>
         /// </summary>

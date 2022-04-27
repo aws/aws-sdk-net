@@ -30,7 +30,7 @@ namespace Amazon.IoTWireless.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteQueuedMessages operation.
-    /// The operation to delete queued messages.
+    /// Remove queued messages from the downlink queue.
     /// </summary>
     public partial class DeleteQueuedMessagesRequest : AmazonIoTWirelessRequest
     {
@@ -41,7 +41,7 @@ namespace Amazon.IoTWireless.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// Id of a given wireless device which messages will be deleted 
+        /// The ID of a given wireless device for which downlink messages will be deleted.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=256)]
@@ -60,8 +60,9 @@ namespace Amazon.IoTWireless.Model
         /// <summary>
         /// Gets and sets the property MessageId. 
         /// <para>
-        /// if messageID=="*", the queue for a particular wireless deviceId will be purged, otherwise,
-        /// the specific message with messageId will be deleted 
+        /// If message ID is <code>"*"</code>, it cleares the entire downlink queue for a given
+        /// device, specified by the wireless device ID. Otherwise, the downlink message with
+        /// the specified message ID will be deleted.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -80,7 +81,7 @@ namespace Amazon.IoTWireless.Model
         /// <summary>
         /// Gets and sets the property WirelessDeviceType. 
         /// <para>
-        /// The wireless device type, it is either Sidewalk or LoRaWAN. 
+        /// The wireless device type, which can be either Sidewalk or LoRaWAN.
         /// </para>
         /// </summary>
         public WirelessDeviceType WirelessDeviceType

@@ -70,6 +70,12 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                     unmarshalledObject.DevAddr = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("FCntStart", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.FCntStart = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SessionKeys", targetDepth))
                 {
                     var unmarshaller = SessionKeysAbpV1_0_xUnmarshaller.Instance;

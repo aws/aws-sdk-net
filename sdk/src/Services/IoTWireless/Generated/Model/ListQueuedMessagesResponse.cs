@@ -39,7 +39,7 @@ namespace Amazon.IoTWireless.Model
         /// <summary>
         /// Gets and sets the property DownlinkQueueMessagesList. 
         /// <para>
-        /// The messages in downlink queue.
+        /// The messages in the downlink queue.
         /// </para>
         /// </summary>
         public List<DownlinkQueueMessage> DownlinkQueueMessagesList

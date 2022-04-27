@@ -345,6 +345,60 @@ namespace Amazon.IoTWireless
 
 
     /// <summary>
+    /// Constants used for properties of type EventNotificationResourceType.
+    /// </summary>
+    public class EventNotificationResourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SidewalkAccount for EventNotificationResourceType
+        /// </summary>
+        public static readonly EventNotificationResourceType SidewalkAccount = new EventNotificationResourceType("SidewalkAccount");
+        /// <summary>
+        /// Constant WirelessDevice for EventNotificationResourceType
+        /// </summary>
+        public static readonly EventNotificationResourceType WirelessDevice = new EventNotificationResourceType("WirelessDevice");
+        /// <summary>
+        /// Constant WirelessGateway for EventNotificationResourceType
+        /// </summary>
+        public static readonly EventNotificationResourceType WirelessGateway = new EventNotificationResourceType("WirelessGateway");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EventNotificationResourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EventNotificationResourceType FindValue(string value)
+        {
+            return FindValue<EventNotificationResourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EventNotificationResourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EventNotificationTopicStatus.
     /// </summary>
     public class EventNotificationTopicStatus : ConstantClass
@@ -599,9 +653,25 @@ namespace Amazon.IoTWireless
     {
 
         /// <summary>
+        /// Constant DevEui for IdentifierType
+        /// </summary>
+        public static readonly IdentifierType DevEui = new IdentifierType("DevEui");
+        /// <summary>
+        /// Constant GatewayEui for IdentifierType
+        /// </summary>
+        public static readonly IdentifierType GatewayEui = new IdentifierType("GatewayEui");
+        /// <summary>
         /// Constant PartnerAccountId for IdentifierType
         /// </summary>
         public static readonly IdentifierType PartnerAccountId = new IdentifierType("PartnerAccountId");
+        /// <summary>
+        /// Constant WirelessDeviceId for IdentifierType
+        /// </summary>
+        public static readonly IdentifierType WirelessDeviceId = new IdentifierType("WirelessDeviceId");
+        /// <summary>
+        /// Constant WirelessGatewayId for IdentifierType
+        /// </summary>
+        public static readonly IdentifierType WirelessGatewayId = new IdentifierType("WirelessGatewayId");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

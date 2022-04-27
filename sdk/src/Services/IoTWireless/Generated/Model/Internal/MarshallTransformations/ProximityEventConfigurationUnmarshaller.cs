@@ -70,6 +70,12 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                     unmarshalledObject.Sidewalk = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("WirelessDeviceIdEventTopic", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.WirelessDeviceIdEventTopic = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

@@ -45,6 +45,28 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(LoRaWANUpdateDevice requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAbpV1_0_x())
+            {
+                context.Writer.WritePropertyName("AbpV1_0_x");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = UpdateAbpV1_0_xMarshaller.Instance;
+                marshaller.Marshall(requestObject.AbpV1_0_x, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetAbpV1_1())
+            {
+                context.Writer.WritePropertyName("AbpV1_1");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = UpdateAbpV1_1Marshaller.Instance;
+                marshaller.Marshall(requestObject.AbpV1_1, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetDeviceProfileId())
             {
                 context.Writer.WritePropertyName("DeviceProfileId");

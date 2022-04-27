@@ -30,7 +30,7 @@ namespace Amazon.IoTWireless.Model
 {
     /// <summary>
     /// Container for the parameters to the ListQueuedMessages operation.
-    /// The operation to list queued messages.
+    /// List queued messages in the downlink queue.
     /// </summary>
     public partial class ListQueuedMessagesRequest : AmazonIoTWirelessRequest
     {
@@ -42,7 +42,7 @@ namespace Amazon.IoTWireless.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// Id of a given wireless device which the downlink packets are targeted 
+        /// The ID of a given wireless device which the downlink message packets are being sent.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=256)]
@@ -100,7 +100,7 @@ namespace Amazon.IoTWireless.Model
         /// <summary>
         /// Gets and sets the property WirelessDeviceType. 
         /// <para>
-        /// The wireless device type, it is either Sidewalk or LoRaWAN.
+        /// The wireless device type, whic can be either Sidewalk or LoRaWAN.
         /// </para>
         /// </summary>
         public WirelessDeviceType WirelessDeviceType

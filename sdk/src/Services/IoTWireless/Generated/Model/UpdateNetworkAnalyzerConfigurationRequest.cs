@@ -30,11 +30,12 @@ namespace Amazon.IoTWireless.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateNetworkAnalyzerConfiguration operation.
-    /// Update NetworkAnalyzer configuration.
+    /// Update network analyzer configuration.
     /// </summary>
     public partial class UpdateNetworkAnalyzerConfigurationRequest : AmazonIoTWirelessRequest
     {
         private string _configurationName;
+        private string _description;
         private TraceContent _traceContent;
         private List<string> _wirelessDevicesToAdd = new List<string>();
         private List<string> _wirelessDevicesToRemove = new List<string>();
@@ -58,6 +59,22 @@ namespace Amazon.IoTWireless.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Description.
+        /// </summary>
+        [AWSProperty(Max=2048)]
+        public string Description
+        {
+            get { return this._description; }
+            set { this._description = value; }
+        }
+
+        // Check to see if Description property is set
+        internal bool IsSetDescription()
+        {
+            return this._description != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property TraceContent.
         /// </summary>
         public TraceContent TraceContent
@@ -75,7 +92,8 @@ namespace Amazon.IoTWireless.Model
         /// <summary>
         /// Gets and sets the property WirelessDevicesToAdd. 
         /// <para>
-        /// WirelessDevices to add into NetworkAnalyzerConfiguration.
+        /// Wireless device resources to add to the network analyzer configuration. Provide the
+        /// <code>WirelessDeviceId</code> of the resource to add in the input array.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=250)]
@@ -94,7 +112,8 @@ namespace Amazon.IoTWireless.Model
         /// <summary>
         /// Gets and sets the property WirelessDevicesToRemove. 
         /// <para>
-        /// WirelessDevices to remove from NetworkAnalyzerConfiguration.
+        /// Wireless device resources to remove from the network analyzer configuration. Provide
+        /// the <code>WirelessDeviceId</code> of the resources to remove in the input array.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=250)]
@@ -113,7 +132,8 @@ namespace Amazon.IoTWireless.Model
         /// <summary>
         /// Gets and sets the property WirelessGatewaysToAdd. 
         /// <para>
-        /// WirelessGateways to add into NetworkAnalyzerConfiguration.
+        /// Wireless gateway resources to add to the network analyzer configuration. Provide the
+        /// <code>WirelessGatewayId</code> of the resource to add in the input array.
         /// </para>
         /// </summary>
         public List<string> WirelessGatewaysToAdd
@@ -131,7 +151,8 @@ namespace Amazon.IoTWireless.Model
         /// <summary>
         /// Gets and sets the property WirelessGatewaysToRemove. 
         /// <para>
-        /// WirelessGateways to remove from NetworkAnalyzerConfiguration.
+        /// Wireless gateway resources to remove from the network analyzer configuration. Provide
+        /// the <code>WirelessGatewayId</code> of the resources to remove in the input array.
         /// </para>
         /// </summary>
         public List<string> WirelessGatewaysToRemove

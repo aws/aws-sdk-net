@@ -34,6 +34,7 @@ namespace Amazon.IoTWireless.Model
     public partial class AbpV1_0_x
     {
         private string _devAddr;
+        private int? _fCntStart;
         private SessionKeysAbpV1_0_x _sessionKeys;
 
         /// <summary>
@@ -52,6 +53,25 @@ namespace Amazon.IoTWireless.Model
         internal bool IsSetDevAddr()
         {
             return this._devAddr != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FCntStart. 
+        /// <para>
+        /// The FCnt init value.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=65535)]
+        public int FCntStart
+        {
+            get { return this._fCntStart.GetValueOrDefault(); }
+            set { this._fCntStart = value; }
+        }
+
+        // Check to see if FCntStart property is set
+        internal bool IsSetFCntStart()
+        {
+            return this._fCntStart.HasValue; 
         }
 
         /// <summary>
