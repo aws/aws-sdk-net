@@ -457,12 +457,16 @@ namespace Amazon.Amplify.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RepositoryCloneMethod. 
+        /// Gets and sets the property RepositoryCloneMethod. <note> 
         /// <para>
-        /// The authentication protocol to use to access the Git repository for an Amplify app.
-        /// For a GitHub repository, specify <code>TOKEN</code>. For an Amazon Web Services CodeCommit
-        /// repository, specify <code>SIGV4</code>. For GitLab and Bitbucket repositories, specify
-        /// <code>SSH</code>.
+        /// This is for internal use.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// The Amplify service uses this parameter to specify the authentication protocol to
+        /// use to access the Git repository for an Amplify app. Amplify specifies <code>TOKEN</code>
+        /// for a GitHub repository, <code>SIGV4</code> for an Amazon Web Services CodeCommit
+        /// repository, and <code>SSH</code> for GitLab and Bitbucket repositories.
         /// </para>
         /// </summary>
         public RepositoryCloneMethod RepositoryCloneMethod
