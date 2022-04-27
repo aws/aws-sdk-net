@@ -187,6 +187,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* The Amazon Chime API (application programming interface) is designed for administrators to use to perform key tasks, such as creating and managing Amazon Chime accounts and users.
 * [AWSSDK.ChimeSDKIdentity](https://www.nuget.org/packages/AWSSDK.ChimeSDKIdentity/)
 	* The Amazon Chime SDK Identity APIs allow software developers to create and manage unique instances of their messaging applications.
+* [AWSSDK.ChimeSDKMediaPipelines](https://www.nuget.org/packages/AWSSDK.ChimeSDKMediaPipelines/)
+	* For Amazon Chime SDK meetings, the Amazon Chime Media Pipelines SDK allows builders to capture audio, video, and content share streams. You can also capture meeting events, live transcripts, and data messages. The pipelines save the artifacts to an Amazon S3 bucket that you designate.
 * [AWSSDK.ChimeSDKMeetings](https://www.nuget.org/packages/AWSSDK.ChimeSDKMeetings/)
 	* The Amazon Chime SDK Meetings APIs allow software developers to create meetings and attendees for interactive audio, video, screen and content sharing in custom meeting applications which use the Amazon Chime SDK.
 * [AWSSDK.ChimeSDKMessaging](https://www.nuget.org/packages/AWSSDK.ChimeSDKMessaging/)

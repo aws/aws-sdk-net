@@ -216,6 +216,10 @@
       <Project>{D3539FAA-7CBB-4BFE-8F32-56097DB9C7C1}</Project>
       <Name>AWSSDK.ChimeSDKIdentity.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/ChimeSDKMediaPipelines/AWSSDK.ChimeSDKMediaPipelines.CodeAnalysis.csproj">
+      <Project>{467B3EDB-F8C3-4785-8E04-256224A5023F}</Project>
+      <Name>AWSSDK.ChimeSDKMediaPipelines.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/ChimeSDKMeetings/AWSSDK.ChimeSDKMeetings.CodeAnalysis.csproj">
       <Project>{9D076F08-72A4-4586-816C-B47F4F0D7E66}</Project>
       <Name>AWSSDK.ChimeSDKMeetings.CodeAnalysis</Name>
