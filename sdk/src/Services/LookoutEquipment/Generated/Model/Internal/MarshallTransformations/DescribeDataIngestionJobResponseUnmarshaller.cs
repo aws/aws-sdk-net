@@ -57,16 +57,46 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
                     response.CreatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DataEndTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    response.DataEndTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("DataQualitySummary", targetDepth))
+                {
+                    var unmarshaller = DataQualitySummaryUnmarshaller.Instance;
+                    response.DataQualitySummary = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DatasetArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.DatasetArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DataStartTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    response.DataStartTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("FailedReason", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.FailedReason = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("IngestedDataSize", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    response.IngestedDataSize = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("IngestedFilesSummary", targetDepth))
+                {
+                    var unmarshaller = IngestedFilesSummaryUnmarshaller.Instance;
+                    response.IngestedFilesSummary = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("IngestionInputConfiguration", targetDepth))
@@ -91,6 +121,12 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Status = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("StatusDetail", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.StatusDetail = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

@@ -51,6 +51,12 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Bucket);
             }
 
+            if(requestObject.IsSetKeyPattern())
+            {
+                context.Writer.WritePropertyName("KeyPattern");
+                context.Writer.Write(requestObject.KeyPattern);
+            }
+
             if(requestObject.IsSetPrefix())
             {
                 context.Writer.WritePropertyName("Prefix");

@@ -737,7 +737,7 @@ namespace Amazon.LookoutEquipment
 
         /// <summary>
         /// Provides information on a specific data ingestion job such as creation time, dataset
-        /// ARN, status, and so on.
+        /// ARN, and status.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDataIngestionJob service method.</param>
         /// 
@@ -808,8 +808,8 @@ namespace Amazon.LookoutEquipment
         #region  DescribeDataset
 
         /// <summary>
-        /// Provides a JSON description of the data that is in each time series dataset, including
-        /// names, column names, and data types.
+        /// Provides a JSON description of the data in each time series dataset, including names,
+        /// column names, and data types.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDataset service method.</param>
         /// 
@@ -1359,6 +1359,79 @@ namespace Amazon.LookoutEquipment
         public virtual ListModelsResponse EndListModels(IAsyncResult asyncResult)
         {
             return EndInvoke<ListModelsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListSensorStatistics
+
+        /// <summary>
+        /// Lists statistics about the data collected for each of the sensors that have been
+        /// successfully ingested in the particular dataset. Can also be used to retreive Sensor
+        /// Statistics for a previous ingestion job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSensorStatistics service method.</param>
+        /// 
+        /// <returns>The response from the ListSensorStatistics service method, as returned by LookoutEquipment.</returns>
+        /// <exception cref="Amazon.LookoutEquipment.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have access to the resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.InternalServerException">
+        /// Processing of the request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ResourceNotFoundException">
+        /// The resource requested could not be found. Verify the resource ID and retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
+        /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
+        /// or a related AWS service that's being utilized.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListSensorStatistics">REST API Reference for ListSensorStatistics Operation</seealso>
+        public virtual ListSensorStatisticsResponse ListSensorStatistics(ListSensorStatisticsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSensorStatisticsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSensorStatisticsResponseUnmarshaller.Instance;
+
+            return Invoke<ListSensorStatisticsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListSensorStatistics operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListSensorStatistics operation on AmazonLookoutEquipmentClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListSensorStatistics
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListSensorStatistics">REST API Reference for ListSensorStatistics Operation</seealso>
+        public virtual IAsyncResult BeginListSensorStatistics(ListSensorStatisticsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSensorStatisticsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSensorStatisticsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListSensorStatistics operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListSensorStatistics.</param>
+        /// 
+        /// <returns>Returns a  ListSensorStatisticsResult from LookoutEquipment.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListSensorStatistics">REST API Reference for ListSensorStatistics Operation</seealso>
+        public virtual ListSensorStatisticsResponse EndListSensorStatistics(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListSensorStatisticsResponse>(asyncResult);
         }
 
         #endregion

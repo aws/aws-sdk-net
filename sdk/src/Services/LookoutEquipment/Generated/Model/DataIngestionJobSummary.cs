@@ -82,7 +82,7 @@ namespace Amazon.LookoutEquipment.Model
         /// Gets and sets the property IngestionInputConfiguration. 
         /// <para>
         ///  Specifies information for the input data for the data inference job, including data
-        /// S3 location parameters. 
+        /// Amazon S3 location parameters. 
         /// </para>
         /// </summary>
         public IngestionInputConfiguration IngestionInputConfiguration

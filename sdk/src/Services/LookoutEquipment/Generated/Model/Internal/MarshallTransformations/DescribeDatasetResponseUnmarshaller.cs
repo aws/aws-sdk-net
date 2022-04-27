@@ -57,6 +57,18 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
                     response.CreatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DataEndTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    response.DataEndTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("DataQualitySummary", targetDepth))
+                {
+                    var unmarshaller = DataQualitySummaryUnmarshaller.Instance;
+                    response.DataQualitySummary = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DatasetArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -69,6 +81,18 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
                     response.DatasetName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DataStartTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    response.DataStartTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("IngestedFilesSummary", targetDepth))
+                {
+                    var unmarshaller = IngestedFilesSummaryUnmarshaller.Instance;
+                    response.IngestedFilesSummary = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("IngestionInputConfiguration", targetDepth))
                 {
                     var unmarshaller = IngestionInputConfigurationUnmarshaller.Instance;
@@ -79,6 +103,12 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
                     response.LastUpdatedAt = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RoleArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.RoleArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Schema", targetDepth))

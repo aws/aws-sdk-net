@@ -31,7 +31,7 @@ namespace Amazon.LookoutEquipment.Model
     /// <summary>
     /// Container for the parameters to the DescribeDataIngestionJob operation.
     /// Provides information on a specific data ingestion job such as creation time, dataset
-    /// ARN, status, and so on.
+    /// ARN, and status.
     /// </summary>
     public partial class DescribeDataIngestionJobRequest : AmazonLookoutEquipmentRequest
     {

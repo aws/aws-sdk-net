@@ -361,6 +361,110 @@ namespace Amazon.LookoutEquipment
 
 
     /// <summary>
+    /// Constants used for properties of type Monotonicity.
+    /// </summary>
+    public class Monotonicity : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DECREASING for Monotonicity
+        /// </summary>
+        public static readonly Monotonicity DECREASING = new Monotonicity("DECREASING");
+        /// <summary>
+        /// Constant INCREASING for Monotonicity
+        /// </summary>
+        public static readonly Monotonicity INCREASING = new Monotonicity("INCREASING");
+        /// <summary>
+        /// Constant STATIC for Monotonicity
+        /// </summary>
+        public static readonly Monotonicity STATIC = new Monotonicity("STATIC");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Monotonicity(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Monotonicity FindValue(string value)
+        {
+            return FindValue<Monotonicity>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Monotonicity(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type StatisticalIssueStatus.
+    /// </summary>
+    public class StatisticalIssueStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NO_ISSUE_DETECTED for StatisticalIssueStatus
+        /// </summary>
+        public static readonly StatisticalIssueStatus NO_ISSUE_DETECTED = new StatisticalIssueStatus("NO_ISSUE_DETECTED");
+        /// <summary>
+        /// Constant POTENTIAL_ISSUE_DETECTED for StatisticalIssueStatus
+        /// </summary>
+        public static readonly StatisticalIssueStatus POTENTIAL_ISSUE_DETECTED = new StatisticalIssueStatus("POTENTIAL_ISSUE_DETECTED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StatisticalIssueStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StatisticalIssueStatus FindValue(string value)
+        {
+            return FindValue<StatisticalIssueStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StatisticalIssueStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type TargetSamplingRate.
     /// </summary>
     public class TargetSamplingRate : ConstantClass

@@ -34,12 +34,18 @@ namespace Amazon.LookoutEquipment.Model
     public partial class DescribeDataIngestionJobResponse : AmazonWebServiceResponse
     {
         private DateTime? _createdAt;
+        private DateTime? _dataEndTime;
+        private DataQualitySummary _dataQualitySummary;
         private string _datasetArn;
+        private DateTime? _dataStartTime;
         private string _failedReason;
+        private long? _ingestedDataSize;
+        private IngestedFilesSummary _ingestedFilesSummary;
         private IngestionInputConfiguration _ingestionInputConfiguration;
         private string _jobId;
         private string _roleArn;
         private IngestionJobStatus _status;
+        private string _statusDetail;
 
         /// <summary>
         /// Gets and sets the property CreatedAt. 
@@ -57,6 +63,45 @@ namespace Amazon.LookoutEquipment.Model
         internal bool IsSetCreatedAt()
         {
             return this._createdAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DataEndTime. 
+        /// <para>
+        ///  Indicates the latest timestamp corresponding to data that was successfully ingested
+        /// during this specific ingestion job. 
+        /// </para>
+        /// </summary>
+        public DateTime DataEndTime
+        {
+            get { return this._dataEndTime.GetValueOrDefault(); }
+            set { this._dataEndTime = value; }
+        }
+
+        // Check to see if DataEndTime property is set
+        internal bool IsSetDataEndTime()
+        {
+            return this._dataEndTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DataQualitySummary. 
+        /// <para>
+        ///  Gives statistics about a completed ingestion job. These statistics primarily relate
+        /// to quantifying incorrect data such as MissingCompleteSensorData, MissingSensorData,
+        /// UnsupportedDateFormats, InsufficientSensorData, and DuplicateTimeStamps. 
+        /// </para>
+        /// </summary>
+        public DataQualitySummary DataQualitySummary
+        {
+            get { return this._dataQualitySummary; }
+            set { this._dataQualitySummary = value; }
+        }
+
+        // Check to see if DataQualitySummary property is set
+        internal bool IsSetDataQualitySummary()
+        {
+            return this._dataQualitySummary != null;
         }
 
         /// <summary>
@@ -80,6 +125,25 @@ namespace Amazon.LookoutEquipment.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DataStartTime. 
+        /// <para>
+        ///  Indicates the earliest timestamp corresponding to data that was successfully ingested
+        /// during this specific ingestion job. 
+        /// </para>
+        /// </summary>
+        public DateTime DataStartTime
+        {
+            get { return this._dataStartTime.GetValueOrDefault(); }
+            set { this._dataStartTime = value; }
+        }
+
+        // Check to see if DataStartTime property is set
+        internal bool IsSetDataStartTime()
+        {
+            return this._dataStartTime.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property FailedReason. 
         /// <para>
         /// Specifies the reason for failure when a data ingestion job has failed. 
@@ -96,6 +160,40 @@ namespace Amazon.LookoutEquipment.Model
         internal bool IsSetFailedReason()
         {
             return this._failedReason != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IngestedDataSize. 
+        /// <para>
+        ///  Indicates the size of the ingested dataset. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0)]
+        public long IngestedDataSize
+        {
+            get { return this._ingestedDataSize.GetValueOrDefault(); }
+            set { this._ingestedDataSize = value; }
+        }
+
+        // Check to see if IngestedDataSize property is set
+        internal bool IsSetIngestedDataSize()
+        {
+            return this._ingestedDataSize.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IngestedFilesSummary.
+        /// </summary>
+        public IngestedFilesSummary IngestedFilesSummary
+        {
+            get { return this._ingestedFilesSummary; }
+            set { this._ingestedFilesSummary = value; }
+        }
+
+        // Check to see if IngestedFilesSummary property is set
+        internal bool IsSetIngestedFilesSummary()
+        {
+            return this._ingestedFilesSummary != null;
         }
 
         /// <summary>
@@ -172,6 +270,26 @@ namespace Amazon.LookoutEquipment.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StatusDetail. 
+        /// <para>
+        ///  Provides details about status of the ingestion job that is currently in progress.
+        /// 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=5000)]
+        public string StatusDetail
+        {
+            get { return this._statusDetail; }
+            set { this._statusDetail = value; }
+        }
+
+        // Check to see if StatusDetail property is set
+        internal bool IsSetStatusDetail()
+        {
+            return this._statusDetail != null;
         }
 
     }

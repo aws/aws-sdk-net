@@ -34,10 +34,15 @@ namespace Amazon.LookoutEquipment.Model
     public partial class DescribeDatasetResponse : AmazonWebServiceResponse
     {
         private DateTime? _createdAt;
+        private DateTime? _dataEndTime;
+        private DataQualitySummary _dataQualitySummary;
         private string _datasetArn;
         private string _datasetName;
+        private DateTime? _dataStartTime;
+        private IngestedFilesSummary _ingestedFilesSummary;
         private IngestionInputConfiguration _ingestionInputConfiguration;
         private DateTime? _lastUpdatedAt;
+        private string _roleArn;
         private string _schema;
         private string _serverSideKmsKeyId;
         private DatasetStatus _status;
@@ -58,6 +63,46 @@ namespace Amazon.LookoutEquipment.Model
         internal bool IsSetCreatedAt()
         {
             return this._createdAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DataEndTime. 
+        /// <para>
+        ///  Indicates the latest timestamp corresponding to data that was successfully ingested
+        /// during the most recent ingestion of this particular dataset. 
+        /// </para>
+        /// </summary>
+        public DateTime DataEndTime
+        {
+            get { return this._dataEndTime.GetValueOrDefault(); }
+            set { this._dataEndTime = value; }
+        }
+
+        // Check to see if DataEndTime property is set
+        internal bool IsSetDataEndTime()
+        {
+            return this._dataEndTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DataQualitySummary. 
+        /// <para>
+        ///  Gives statistics associated with the given dataset for the latest successful associated
+        /// ingestion job id. These statistics primarily relate to quantifying incorrect data
+        /// such as MissingCompleteSensorData, MissingSensorData, UnsupportedDateFormats, InsufficientSensorData,
+        /// and DuplicateTimeStamps. 
+        /// </para>
+        /// </summary>
+        public DataQualitySummary DataQualitySummary
+        {
+            get { return this._dataQualitySummary; }
+            set { this._dataQualitySummary = value; }
+        }
+
+        // Check to see if DataQualitySummary property is set
+        internal bool IsSetDataQualitySummary()
+        {
+            return this._dataQualitySummary != null;
         }
 
         /// <summary>
@@ -99,6 +144,44 @@ namespace Amazon.LookoutEquipment.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DataStartTime. 
+        /// <para>
+        ///  Indicates the earliest timestamp corresponding to data that was successfully ingested
+        /// during the most recent ingestion of this particular dataset. 
+        /// </para>
+        /// </summary>
+        public DateTime DataStartTime
+        {
+            get { return this._dataStartTime.GetValueOrDefault(); }
+            set { this._dataStartTime = value; }
+        }
+
+        // Check to see if DataStartTime property is set
+        internal bool IsSetDataStartTime()
+        {
+            return this._dataStartTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IngestedFilesSummary. 
+        /// <para>
+        ///  IngestedFilesSummary associated with the given dataset for the latest successful
+        /// associated ingestion job id. 
+        /// </para>
+        /// </summary>
+        public IngestedFilesSummary IngestedFilesSummary
+        {
+            get { return this._ingestedFilesSummary; }
+            set { this._ingestedFilesSummary = value; }
+        }
+
+        // Check to see if IngestedFilesSummary property is set
+        internal bool IsSetIngestedFilesSummary()
+        {
+            return this._ingestedFilesSummary != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property IngestionInputConfiguration. 
         /// <para>
         /// Specifies the S3 location configuration for the data input for the data ingestion
@@ -133,6 +216,26 @@ namespace Amazon.LookoutEquipment.Model
         internal bool IsSetLastUpdatedAt()
         {
             return this._lastUpdatedAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RoleArn. 
+        /// <para>
+        ///  The Amazon Resource Name (ARN) of the IAM role that you are using for this the data
+        /// ingestion job. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string RoleArn
+        {
+            get { return this._roleArn; }
+            set { this._roleArn = value; }
+        }
+
+        // Check to see if RoleArn property is set
+        internal bool IsSetRoleArn()
+        {
+            return this._roleArn != null;
         }
 
         /// <summary>

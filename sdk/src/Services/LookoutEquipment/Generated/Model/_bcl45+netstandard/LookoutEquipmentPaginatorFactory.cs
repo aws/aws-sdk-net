@@ -74,5 +74,13 @@ namespace Amazon.LookoutEquipment.Model
         {
             return new ListModelsPaginator(this.client, request);
         }
+
+        /// <summary>
+        /// Paginator for ListSensorStatistics operation
+        ///</summary>
+        public IListSensorStatisticsPaginator ListSensorStatistics(ListSensorStatisticsRequest request) 
+        {
+            return new ListSensorStatisticsPaginator(this.client, request);
+        }
     }
 }

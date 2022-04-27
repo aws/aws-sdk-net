@@ -30,8 +30,8 @@ namespace Amazon.LookoutEquipment.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeDataset operation.
-    /// Provides a JSON description of the data that is in each time series dataset, including
-    /// names, column names, and data types.
+    /// Provides a JSON description of the data in each time series dataset, including names,
+    /// column names, and data types.
     /// </summary>
     public partial class DescribeDatasetRequest : AmazonLookoutEquipmentRequest
     {

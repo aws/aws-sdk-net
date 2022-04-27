@@ -631,7 +631,7 @@ namespace Amazon.LookoutEquipment
 
         /// <summary>
         /// Provides information on a specific data ingestion job such as creation time, dataset
-        /// ARN, status, and so on.
+        /// ARN, and status.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDataIngestionJob service method.</param>
         /// <param name="cancellationToken">
@@ -682,8 +682,8 @@ namespace Amazon.LookoutEquipment
 
 
         /// <summary>
-        /// Provides a JSON description of the data that is in each time series dataset, including
-        /// names, column names, and data types.
+        /// Provides a JSON description of the data in each time series dataset, including names,
+        /// column names, and data types.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDataset service method.</param>
         /// <param name="cancellationToken">
@@ -1062,6 +1062,59 @@ namespace Amazon.LookoutEquipment
             options.ResponseUnmarshaller = ListModelsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListModelsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListSensorStatistics
+
+        internal virtual ListSensorStatisticsResponse ListSensorStatistics(ListSensorStatisticsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSensorStatisticsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSensorStatisticsResponseUnmarshaller.Instance;
+
+            return Invoke<ListSensorStatisticsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists statistics about the data collected for each of the sensors that have been
+        /// successfully ingested in the particular dataset. Can also be used to retreive Sensor
+        /// Statistics for a previous ingestion job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSensorStatistics service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListSensorStatistics service method, as returned by LookoutEquipment.</returns>
+        /// <exception cref="Amazon.LookoutEquipment.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have access to the resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.InternalServerException">
+        /// Processing of the request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ResourceNotFoundException">
+        /// The resource requested could not be found. Verify the resource ID and retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
+        /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
+        /// or a related AWS service that's being utilized.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListSensorStatistics">REST API Reference for ListSensorStatistics Operation</seealso>
+        public virtual Task<ListSensorStatisticsResponse> ListSensorStatisticsAsync(ListSensorStatisticsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSensorStatisticsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSensorStatisticsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListSensorStatisticsResponse>(request, options, cancellationToken);
         }
 
         #endregion
