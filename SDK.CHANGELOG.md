@@ -1,3 +1,17 @@
+### 3.7.262.0 (2022-04-28 18:17 UTC)
+* AuditManager (3.7.9.12)
+	* This release adds documentation updates for Audit Manager. We provided examples of how to use the Custom_ prefix for the keywordValue attribute. We also provided more details about the DeleteAssessmentReport operation.
+* Braket (3.7.3.0)
+	* This release enables Braket Hybrid Jobs with Embedded Simulators to have multiple instances.
+* Connect (3.7.19.0)
+	* This release introduces an API for changing the current agent status of a user in Connect.
+* EC2 (3.7.66.0)
+	* This release adds support to query the public key and creation date of EC2 Key Pairs. Additionally, the format (pem or ppk) of a key pair can be specified when creating a new key pair.
+* GuardDuty (3.7.2.33)
+	* Documentation update for API description.
+* NetworkFirewall (3.7.4.0)
+	* AWS Network Firewall adds support for stateful threat signature AWS managed rule groups.
+
 ### 3.7.261.0 (2022-04-27 18:19 UTC)
 * Amplify (3.7.1.21)
 	* Documentation only update to support the Amplify GitHub App feature launch
