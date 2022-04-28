@@ -171,7 +171,10 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property UserAgent.
+        /// Gets and sets the property UserAgent. 
+        /// <para>
+        /// The agent through which the API request was made.
+        /// </para>
         /// </summary>
         public string UserAgent
         {

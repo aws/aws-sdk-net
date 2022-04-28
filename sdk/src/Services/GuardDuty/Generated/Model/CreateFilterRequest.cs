@@ -239,6 +239,10 @@ namespace Amazon.GuardDuty.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// service.action.awsApiCallAction.userAgent
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// service.action.awsApiCallAction.remoteIpDetails.city.cityName
         /// </para>
         ///  </li> <li> 
