@@ -119,6 +119,17 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Rules);
                 }
 
+                if(publicRequest.IsSetSourceMetadata())
+                {
+                    context.Writer.WritePropertyName("SourceMetadata");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = SourceMetadataMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.SourceMetadata, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("Tags");

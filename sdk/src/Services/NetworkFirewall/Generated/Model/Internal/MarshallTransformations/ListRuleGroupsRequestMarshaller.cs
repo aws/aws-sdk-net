@@ -67,6 +67,12 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetManagedType())
+                {
+                    context.Writer.WritePropertyName("ManagedType");
+                    context.Writer.Write(publicRequest.ManagedType);
+                }
+
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("MaxResults");
@@ -83,6 +89,12 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("Scope");
                     context.Writer.Write(publicRequest.Scope);
+                }
+
+                if(publicRequest.IsSetType())
+                {
+                    context.Writer.WritePropertyName("Type");
+                    context.Writer.Write(publicRequest.Type);
                 }
 
                 writer.WriteObjectEnd();

@@ -42,6 +42,7 @@ namespace Amazon.NetworkFirewall.Model
         private string _firewallPolicyId;
         private string _firewallPolicyName;
         private ResourceStatus _firewallPolicyStatus;
+        private DateTime? _lastModifiedTime;
         private int? _numberOfAssociations;
         private List<Tag> _tags = new List<Tag>();
 
@@ -201,6 +202,24 @@ namespace Amazon.NetworkFirewall.Model
         internal bool IsSetFirewallPolicyStatus()
         {
             return this._firewallPolicyStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastModifiedTime. 
+        /// <para>
+        /// The last time that the firewall policy was changed.
+        /// </para>
+        /// </summary>
+        public DateTime LastModifiedTime
+        {
+            get { return this._lastModifiedTime.GetValueOrDefault(); }
+            set { this._lastModifiedTime = value; }
+        }
+
+        // Check to see if LastModifiedTime property is set
+        internal bool IsSetLastModifiedTime()
+        {
+            return this._lastModifiedTime.HasValue; 
         }
 
         /// <summary>

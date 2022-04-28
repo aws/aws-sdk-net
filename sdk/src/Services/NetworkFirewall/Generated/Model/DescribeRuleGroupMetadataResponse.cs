@@ -35,6 +35,7 @@ namespace Amazon.NetworkFirewall.Model
     {
         private int? _capacity;
         private string _description;
+        private DateTime? _lastModifiedTime;
         private string _ruleGroupArn;
         private string _ruleGroupName;
         private StatefulRuleOptions _statefulRuleOptions;
@@ -84,6 +85,24 @@ namespace Amazon.NetworkFirewall.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastModifiedTime. 
+        /// <para>
+        /// The last time that the rule group was changed.
+        /// </para>
+        /// </summary>
+        public DateTime LastModifiedTime
+        {
+            get { return this._lastModifiedTime.GetValueOrDefault(); }
+            set { this._lastModifiedTime = value; }
+        }
+
+        // Check to see if LastModifiedTime property is set
+        internal bool IsSetLastModifiedTime()
+        {
+            return this._lastModifiedTime.HasValue; 
         }
 
         /// <summary>

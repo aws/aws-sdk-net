@@ -63,6 +63,12 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
                     response.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("LastModifiedTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    response.LastModifiedTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("RuleGroupArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

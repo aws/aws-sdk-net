@@ -36,9 +36,29 @@ namespace Amazon.NetworkFirewall.Model
     /// </summary>
     public partial class ListRuleGroupsRequest : AmazonNetworkFirewallRequest
     {
+        private ResourceManagedType _managedType;
         private int? _maxResults;
         private string _nextToken;
         private ResourceManagedStatus _scope;
+        private RuleGroupType _type;
+
+        /// <summary>
+        /// Gets and sets the property ManagedType. 
+        /// <para>
+        /// Indicates the general category of the Amazon Web Services managed rule group.
+        /// </para>
+        /// </summary>
+        public ResourceManagedType ManagedType
+        {
+            get { return this._managedType; }
+            set { this._managedType = value; }
+        }
+
+        // Check to see if ManagedType property is set
+        internal bool IsSetManagedType()
+        {
+            return this._managedType != null;
+        }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
@@ -102,6 +122,25 @@ namespace Amazon.NetworkFirewall.Model
         internal bool IsSetScope()
         {
             return this._scope != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// Indicates whether the rule group is stateless or stateful. If the rule group is stateless,
+        /// it contains stateless rules. If it is stateful, it contains stateful rules.
+        /// </para>
+        /// </summary>
+        public RuleGroupType Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
         }
 
     }

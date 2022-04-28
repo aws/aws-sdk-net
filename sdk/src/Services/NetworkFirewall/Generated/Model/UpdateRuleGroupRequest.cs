@@ -50,6 +50,7 @@ namespace Amazon.NetworkFirewall.Model
         private string _ruleGroupArn;
         private string _ruleGroupName;
         private string _rules;
+        private SourceMetadata _sourceMetadata;
         private RuleGroupType _type;
         private string _updateToken;
 
@@ -224,6 +225,26 @@ namespace Amazon.NetworkFirewall.Model
         internal bool IsSetRules()
         {
             return this._rules != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceMetadata. 
+        /// <para>
+        /// A complex type that contains metadata about the rule group that your own rule group
+        /// is copied from. You can use the metadata to keep track of updates made to the originating
+        /// rule group.
+        /// </para>
+        /// </summary>
+        public SourceMetadata SourceMetadata
+        {
+            get { return this._sourceMetadata; }
+            set { this._sourceMetadata = value; }
+        }
+
+        // Check to see if SourceMetadata property is set
+        internal bool IsSetSourceMetadata()
+        {
+            return this._sourceMetadata != null;
         }
 
         /// <summary>

@@ -73,6 +73,7 @@ namespace Amazon.NetworkFirewall.Model
         /// resources.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public EncryptionType Type
         {
             get { return this._type; }
