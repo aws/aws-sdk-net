@@ -5438,6 +5438,66 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  PutUserStatus
+
+        internal virtual PutUserStatusResponse PutUserStatus(PutUserStatusRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutUserStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutUserStatusResponseUnmarshaller.Instance;
+
+            return Invoke<PutUserStatusResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Changes the current status of a user or agent in Amazon Connect. If the agent is currently
+        /// handling a contact, this sets the agent's next status.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-agent-status.html">Agent
+        /// status</a> and <a href="https://docs.aws.amazon.com/connect/latest/adminguide/set-next-status.html">Set
+        /// your next status</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutUserStatus service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutUserStatus service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/PutUserStatus">REST API Reference for PutUserStatus Operation</seealso>
+        public virtual Task<PutUserStatusResponse> PutUserStatusAsync(PutUserStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutUserStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutUserStatusResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutUserStatusResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ReleasePhoneNumber
 
         internal virtual ReleasePhoneNumberResponse ReleasePhoneNumber(ReleasePhoneNumberRequest request)
