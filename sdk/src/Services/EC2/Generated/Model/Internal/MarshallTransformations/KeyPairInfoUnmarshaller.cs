@@ -54,6 +54,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("createTime", targetDepth))
+                    {
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.CreateTime = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("keyFingerprint", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -76,6 +82,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.KeyType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("publicKey", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.PublicKey = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("tagSet/item", targetDepth))
