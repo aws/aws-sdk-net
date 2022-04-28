@@ -40,7 +40,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property KeywordInputType. 
         /// <para>
-        ///  The method of input for the keyword. 
+        ///  The input method for the keyword. 
         /// </para>
         /// </summary>
         public KeywordInputType KeywordInputType
@@ -58,10 +58,80 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property KeywordValue. 
         /// <para>
-        ///  The value of the keyword that's used to search CloudTrail logs, Config rules, Security
-        /// Hub checks, and Amazon Web Services API names when mapping a control data source.
+        ///  The value of the keyword that's used when mapping a control data source. For example,
+        /// this can be a CloudTrail event name, a rule name for Config, a Security Hub control,
+        /// or the name of an Amazon Web Services API call. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you’re mapping a data source to a rule in Config, the <code>keywordValue</code>
+        /// that you specify depends on the type of rule:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">managed
+        /// rules</a>, you can use the rule identifier as the <code>keywordValue</code>. You can
+        /// find the rule identifier from the <a href="https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html">list
+        /// of Config managed rules</a>.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Managed rule name: <a href="https://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-acl-prohibited.html">s3-bucket-acl-prohibited</a>
         /// 
         /// </para>
+        ///  
+        /// <para>
+        ///  <code>keywordValue</code>: <code>S3_BUCKET_ACL_PROHIBITED</code> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_develop-rules.html">custom
+        /// rules</a>, you form the <code>keywordValue</code> by adding the <code>Custom_</code>
+        /// prefix to the rule name. This prefix distinguishes the rule from a managed rule.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Custom rule name: my-custom-config-rule
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>keywordValue</code>: <code>Custom_my-custom-config-rule</code> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/developerguide/service-linked-awsconfig-rules.html">service-linked
+        /// rules</a>, you form the <code>keywordValue</code> by adding the <code>Custom_</code>
+        /// prefix to the rule name. In addition, you remove the suffix ID that appears at the
+        /// end of the rule name.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Service-linked rule name: CustomRuleForAccount-conformance-pack-szsm1uv0w
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>keywordValue</code>: <code>Custom_CustomRuleForAccount-conformance-pack</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Service-linked rule name: securityhub-api-gw-cache-encrypted-101104e1
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>keywordValue</code>: <code>Custom_securityhub-api-gw-cache-encrypted</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Service-linked rule name: OrgConfigRule-s3-bucket-versioning-enabled-dbgzf8ba
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>keywordValue</code>: <code>Custom_OrgConfigRule-s3-bucket-versioning-enabled</code>
+        /// 
+        /// </para>
+        ///  </li> </ul> </li> </ul>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
         public string KeywordValue
