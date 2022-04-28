@@ -34,8 +34,29 @@ namespace Amazon.Braket.Model
     /// </summary>
     public partial class InstanceConfig
     {
+        private int? _instanceCount;
         private InstanceType _instanceType;
         private int? _volumeSizeInGb;
+
+        /// <summary>
+        /// Gets and sets the property InstanceCount. 
+        /// <para>
+        /// Configures the number of resource instances to use while running an Amazon Braket
+        /// job on Amazon Braket. The default value is 1.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public int InstanceCount
+        {
+            get { return this._instanceCount.GetValueOrDefault(); }
+            set { this._instanceCount = value; }
+        }
+
+        // Check to see if InstanceCount property is set
+        internal bool IsSetInstanceCount()
+        {
+            return this._instanceCount.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property InstanceType. 

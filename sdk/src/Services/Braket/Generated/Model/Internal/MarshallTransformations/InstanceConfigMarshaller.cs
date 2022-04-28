@@ -45,6 +45,12 @@ namespace Amazon.Braket.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(InstanceConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetInstanceCount())
+            {
+                context.Writer.WritePropertyName("instanceCount");
+                context.Writer.Write(requestObject.InstanceCount);
+            }
+
             if(requestObject.IsSetInstanceType())
             {
                 context.Writer.WritePropertyName("instanceType");
