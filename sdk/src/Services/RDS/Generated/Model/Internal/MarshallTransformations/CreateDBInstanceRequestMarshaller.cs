@@ -204,6 +204,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("NcharCharacterSetName", StringUtils.FromString(publicRequest.NcharCharacterSetName));
                 }
+                if(publicRequest.IsSetNetworkType())
+                {
+                    request.Parameters.Add("NetworkType", StringUtils.FromString(publicRequest.NetworkType));
+                }
                 if(publicRequest.IsSetOptionGroupName())
                 {
                     request.Parameters.Add("OptionGroupName", StringUtils.FromString(publicRequest.OptionGroupName));

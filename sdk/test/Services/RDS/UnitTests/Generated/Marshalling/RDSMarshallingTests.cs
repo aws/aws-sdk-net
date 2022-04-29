@@ -2655,6 +2655,29 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("RDS")]
+        public void CreateDBInstance_NetworkTypeNotSupportedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateDBInstance");
+
+            var request = InstantiateClassGenerator.Execute<CreateDBInstanceRequest>();
+            var marshaller = new CreateDBInstanceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("NetworkTypeNotSupportedException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = CreateDBInstanceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
         public void CreateDBInstance_OptionGroupNotFoundExceptionMarshallTest()
         {
             var operation = service_model.FindOperation("CreateDBInstance");
@@ -3103,6 +3126,29 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             validator.Validate();
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("KMSKeyNotAccessibleException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = CreateDBInstanceReadReplicaResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
+        public void CreateDBInstanceReadReplica_NetworkTypeNotSupportedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateDBInstanceReadReplica");
+
+            var request = InstantiateClassGenerator.Execute<CreateDBInstanceReadReplicaRequest>();
+            var marshaller = new CreateDBInstanceReadReplicaRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("NetworkTypeNotSupportedException"));
             var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
             var response = CreateDBInstanceReadReplicaResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
@@ -8855,6 +8901,29 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("RDS")]
+        public void ModifyDBInstance_NetworkTypeNotSupportedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ModifyDBInstance");
+
+            var request = InstantiateClassGenerator.Execute<ModifyDBInstanceRequest>();
+            var marshaller = new ModifyDBInstanceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("NetworkTypeNotSupportedException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = ModifyDBInstanceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
         public void ModifyDBInstance_OptionGroupNotFoundExceptionMarshallTest()
         {
             var operation = service_model.FindOperation("ModifyDBInstance");
@@ -12723,6 +12792,29 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("RDS")]
+        public void RestoreDBInstanceFromDBSnapshot_NetworkTypeNotSupportedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("RestoreDBInstanceFromDBSnapshot");
+
+            var request = InstantiateClassGenerator.Execute<RestoreDBInstanceFromDBSnapshotRequest>();
+            var marshaller = new RestoreDBInstanceFromDBSnapshotRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("NetworkTypeNotSupportedException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = RestoreDBInstanceFromDBSnapshotResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
         public void RestoreDBInstanceFromDBSnapshot_OptionGroupNotFoundExceptionMarshallTest()
         {
             var operation = service_model.FindOperation("RestoreDBInstanceFromDBSnapshot");
@@ -13125,6 +13217,29 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             validator.Validate();
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("KMSKeyNotAccessibleException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = RestoreDBInstanceFromS3ResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
+        public void RestoreDBInstanceFromS3_NetworkTypeNotSupportedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("RestoreDBInstanceFromS3");
+
+            var request = InstantiateClassGenerator.Execute<RestoreDBInstanceFromS3Request>();
+            var marshaller = new RestoreDBInstanceFromS3RequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("NetworkTypeNotSupportedException"));
             var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
             var response = RestoreDBInstanceFromS3ResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
@@ -13630,6 +13745,29 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             validator.Validate();
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("KMSKeyNotAccessibleException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = RestoreDBInstanceToPointInTimeResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
+        public void RestoreDBInstanceToPointInTime_NetworkTypeNotSupportedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("RestoreDBInstanceToPointInTime");
+
+            var request = InstantiateClassGenerator.Execute<RestoreDBInstanceToPointInTimeRequest>();
+            var marshaller = new RestoreDBInstanceToPointInTimeRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("NetworkTypeNotSupportedException"));
             var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
             var response = RestoreDBInstanceToPointInTimeResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);

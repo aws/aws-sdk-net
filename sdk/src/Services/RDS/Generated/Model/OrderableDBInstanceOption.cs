@@ -58,6 +58,7 @@ namespace Amazon.RDS.Model
         private string _storageType;
         private List<string> _supportedActivityStreamModes = new List<string>();
         private List<string> _supportedEngineModes = new List<string>();
+        private List<string> _supportedNetworkTypes = new List<string>();
         private bool? _supportsClusters;
         private bool? _supportsEnhancedMonitoring;
         private bool? _supportsGlobalDatabases;
@@ -416,6 +417,34 @@ namespace Amazon.RDS.Model
         internal bool IsSetSupportedEngineModes()
         {
             return this._supportedEngineModes != null && this._supportedEngineModes.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportedNetworkTypes. 
+        /// <para>
+        /// The network types supported by the DB instance (<code>IPV4</code> or <code>DUAL</code>).
+        /// </para>
+        ///  
+        /// <para>
+        /// A DB instance can support only the IPv4 protocol or the IPv4 and the IPv6 protocols
+        /// (<code>DUAL</code>).
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+        /// Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> 
+        /// </para>
+        /// </summary>
+        public List<string> SupportedNetworkTypes
+        {
+            get { return this._supportedNetworkTypes; }
+            set { this._supportedNetworkTypes = value; }
+        }
+
+        // Check to see if SupportedNetworkTypes property is set
+        internal bool IsSetSupportedNetworkTypes()
+        {
+            return this._supportedNetworkTypes != null && this._supportedNetworkTypes.Count > 0; 
         }
 
         /// <summary>

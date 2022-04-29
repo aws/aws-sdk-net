@@ -2268,6 +2268,10 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
         /// An error occurred accessing an Amazon Web Services KMS key.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.NetworkTypeNotSupportedException">
+        /// The network type is invalid for the DB instance. Valid nework type values are <code>IPV4</code>
+        /// and <code>DUAL</code>.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.OptionGroupNotFoundException">
         /// The specified option group could not be found.
         /// </exception>
@@ -2355,6 +2359,10 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
         /// An error occurred accessing an Amazon Web Services KMS key.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.NetworkTypeNotSupportedException">
+        /// The network type is invalid for the DB instance. Valid nework type values are <code>IPV4</code>
+        /// and <code>DUAL</code>.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.OptionGroupNotFoundException">
         /// The specified option group could not be found.
@@ -2461,6 +2469,10 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
         /// An error occurred accessing an Amazon Web Services KMS key.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.NetworkTypeNotSupportedException">
+        /// The network type is invalid for the DB instance. Valid nework type values are <code>IPV4</code>
+        /// and <code>DUAL</code>.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.OptionGroupNotFoundException">
         /// The specified option group could not be found.
         /// </exception>
@@ -2564,6 +2576,10 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
         /// An error occurred accessing an Amazon Web Services KMS key.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.NetworkTypeNotSupportedException">
+        /// The network type is invalid for the DB instance. Valid nework type values are <code>IPV4</code>
+        /// and <code>DUAL</code>.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.OptionGroupNotFoundException">
         /// The specified option group could not be found.
@@ -8626,6 +8642,10 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
         /// An error occurred accessing an Amazon Web Services KMS key.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.NetworkTypeNotSupportedException">
+        /// The network type is invalid for the DB instance. Valid nework type values are <code>IPV4</code>
+        /// and <code>DUAL</code>.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.OptionGroupNotFoundException">
         /// The specified option group could not be found.
         /// </exception>
@@ -8714,6 +8734,10 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
         /// An error occurred accessing an Amazon Web Services KMS key.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.NetworkTypeNotSupportedException">
+        /// The network type is invalid for the DB instance. Valid nework type values are <code>IPV4</code>
+        /// and <code>DUAL</code>.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.OptionGroupNotFoundException">
         /// The specified option group could not be found.
@@ -11244,6 +11268,10 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
         /// An error occurred accessing an Amazon Web Services KMS key.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.NetworkTypeNotSupportedException">
+        /// The network type is invalid for the DB instance. Valid nework type values are <code>IPV4</code>
+        /// and <code>DUAL</code>.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.OptionGroupNotFoundException">
         /// The specified option group could not be found.
         /// </exception>
@@ -11362,6 +11390,10 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
         /// An error occurred accessing an Amazon Web Services KMS key.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.NetworkTypeNotSupportedException">
+        /// The network type is invalid for the DB instance. Valid nework type values are <code>IPV4</code>
+        /// and <code>DUAL</code>.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.OptionGroupNotFoundException">
         /// The specified option group could not be found.
         /// </exception>
@@ -11457,6 +11489,10 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
         /// An error occurred accessing an Amazon Web Services KMS key.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.NetworkTypeNotSupportedException">
+        /// The network type is invalid for the DB instance. Valid nework type values are <code>IPV4</code>
+        /// and <code>DUAL</code>.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.OptionGroupNotFoundException">
         /// The specified option group could not be found.
         /// </exception>
@@ -11550,6 +11586,10 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
         /// An error occurred accessing an Amazon Web Services KMS key.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.NetworkTypeNotSupportedException">
+        /// The network type is invalid for the DB instance. Valid nework type values are <code>IPV4</code>
+        /// and <code>DUAL</code>.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.OptionGroupNotFoundException">
         /// The specified option group could not be found.
@@ -11663,6 +11703,10 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
         /// An error occurred accessing an Amazon Web Services KMS key.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.NetworkTypeNotSupportedException">
+        /// The network type is invalid for the DB instance. Valid nework type values are <code>IPV4</code>
+        /// and <code>DUAL</code>.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.OptionGroupNotFoundException">
         /// The specified option group could not be found.
@@ -11779,6 +11823,10 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
         /// An error occurred accessing an Amazon Web Services KMS key.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.NetworkTypeNotSupportedException">
+        /// The network type is invalid for the DB instance. Valid nework type values are <code>IPV4</code>
+        /// and <code>DUAL</code>.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.OptionGroupNotFoundException">
         /// The specified option group could not be found.

@@ -85,6 +85,13 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.Subnets.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("SupportedNetworkTypes/member", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.SupportedNetworkTypes.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("VpcId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

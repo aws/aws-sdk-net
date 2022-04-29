@@ -72,6 +72,7 @@ namespace Amazon.RDS.Model
         private string _licenseModel;
         private int? _maxAllocatedStorage;
         private bool? _multiAZ;
+        private string _networkType;
         private string _optionGroupName;
         private int? _port;
         private List<ProcessorFeature> _processorFeatures = new List<ProcessorFeature>();
@@ -735,6 +736,47 @@ namespace Amazon.RDS.Model
         internal bool IsSetMultiAZ()
         {
             return this._multiAZ.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkType. 
+        /// <para>
+        /// The network type of the DB instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>IPV4</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DUAL</code> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The network type is determined by the <code>DBSubnetGroup</code> specified for the
+        /// DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the
+        /// IPv4 and the IPv6 protocols (<code>DUAL</code>).
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+        /// Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> 
+        /// </para>
+        /// </summary>
+        public string NetworkType
+        {
+            get { return this._networkType; }
+            set { this._networkType = value; }
+        }
+
+        // Check to see if NetworkType property is set
+        internal bool IsSetNetworkType()
+        {
+            return this._networkType != null;
         }
 
         /// <summary>

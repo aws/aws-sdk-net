@@ -366,6 +366,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.NcharCharacterSetName = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("NetworkType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.NetworkType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("OptionGroupMemberships/OptionGroupMembership", targetDepth))
                     {
                         var unmarshaller = OptionGroupMembershipUnmarshaller.Instance;

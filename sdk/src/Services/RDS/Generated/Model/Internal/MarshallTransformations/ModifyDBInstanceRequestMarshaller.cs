@@ -204,6 +204,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("MultiAZ", StringUtils.FromBool(publicRequest.MultiAZ));
                 }
+                if(publicRequest.IsSetNetworkType())
+                {
+                    request.Parameters.Add("NetworkType", StringUtils.FromString(publicRequest.NetworkType));
+                }
                 if(publicRequest.IsSetNewDBInstanceIdentifier())
                 {
                     request.Parameters.Add("NewDBInstanceIdentifier", StringUtils.FromString(publicRequest.NewDBInstanceIdentifier));
