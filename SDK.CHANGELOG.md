@@ -1,3 +1,15 @@
+### 3.7.263.0 (2022-04-29 18:13 UTC)
+* CodeGuruReviewer (3.7.6.0)
+	* Amazon CodeGuru Reviewer now supports suppressing recommendations from being generated on specific files and directories.
+* MediaConvert (3.7.15.0)
+	* AWS Elemental MediaConvert SDK nows supports creation of Dolby Vision profile 8.1, the ability to generate black frames of video, and introduces audio-only DASH and CMAF support.
+* RDS (3.7.13.0)
+	* Feature - Adds support for Internet Protocol Version 6 (IPv6) on RDS database instances.
+* SimpleSystemsManagement (3.7.16.0)
+	* Update the StartChangeRequestExecution, adding TargetMaps to the Runbook parameter
+* WAFV2 (3.7.11.0)
+	* You can now inspect all request headers and all cookies. You can now specify how to handle oversize body contents in your rules that inspect the body.
+
 ### 3.7.262.0 (2022-04-28 18:17 UTC)
 * AuditManager (3.7.9.12)
 	* This release adds documentation updates for Audit Manager. We provided examples of how to use the Custom_ prefix for the keywordValue attribute. We also provided more details about the DeleteAssessmentReport operation.
