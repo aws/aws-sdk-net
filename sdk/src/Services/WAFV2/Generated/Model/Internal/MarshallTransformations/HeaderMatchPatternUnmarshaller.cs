@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for JsonBody Object
+    /// Response Unmarshaller for HeaderMatchPattern Object
     /// </summary>  
-    public class JsonBodyUnmarshaller : IUnmarshaller<JsonBody, XmlUnmarshallerContext>, IUnmarshaller<JsonBody, JsonUnmarshallerContext>
+    public class HeaderMatchPatternUnmarshaller : IUnmarshaller<HeaderMatchPattern, XmlUnmarshallerContext>, IUnmarshaller<HeaderMatchPattern, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        JsonBody IUnmarshaller<JsonBody, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        HeaderMatchPattern IUnmarshaller<HeaderMatchPattern, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,33 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public JsonBody Unmarshall(JsonUnmarshallerContext context)
+        public HeaderMatchPattern Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            JsonBody unmarshalledObject = new JsonBody();
+            HeaderMatchPattern unmarshalledObject = new HeaderMatchPattern();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("InvalidFallbackBehavior", targetDepth))
+                if (context.TestExpression("All", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InvalidFallbackBehavior = unmarshaller.Unmarshall(context);
+                    var unmarshaller = AllUnmarshaller.Instance;
+                    unmarshalledObject.All = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("MatchPattern", targetDepth))
+                if (context.TestExpression("ExcludedHeaders", targetDepth))
                 {
-                    var unmarshaller = JsonMatchPatternUnmarshaller.Instance;
-                    unmarshalledObject.MatchPattern = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.ExcludedHeaders = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("MatchScope", targetDepth))
+                if (context.TestExpression("IncludedHeaders", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MatchScope = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("OversizeHandling", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OversizeHandling = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.IncludedHeaders = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +88,12 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         }
 
 
-        private static JsonBodyUnmarshaller _instance = new JsonBodyUnmarshaller();        
+        private static HeaderMatchPatternUnmarshaller _instance = new HeaderMatchPatternUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static JsonBodyUnmarshaller Instance
+        public static HeaderMatchPatternUnmarshaller Instance
         {
             get
             {

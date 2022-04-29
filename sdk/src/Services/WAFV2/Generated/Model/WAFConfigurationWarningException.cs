@@ -29,42 +29,57 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
-    /// WAF couldn’t retrieve a resource that you specified for this operation. Verify the
-    /// resources that you are specifying in your request parameters and then retry the operation.
+    /// The operation failed because you are inspecting the web request body, headers, or
+    /// cookies without specifying how to handle oversize components. Rules that inspect the
+    /// body must either provide an <code>OversizeHandling</code> configuration or they must
+    /// be preceded by a <code>SizeConstraintStatement</code> that blocks the body content
+    /// from being too large. Rules that inspect the headers or cookies must provide an <code>OversizeHandling</code>
+    /// configuration. 
+    /// 
+    ///  
+    /// <para>
+    /// Provide the handling configuration and retry your operation.
+    /// </para>
+    ///  
+    /// <para>
+    /// Alternately, you can suppress this warning by adding the following tag to the resource
+    /// that you provide to this operation: <code>Tag</code> (key:<code>WAF:OversizeFieldsHandlingConstraintOptOut</code>,
+    /// value:<code>true</code>).
+    /// </para>
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
-    public partial class WAFUnavailableEntityException : AmazonWAFV2Exception
+    public partial class WAFConfigurationWarningException : AmazonWAFV2Exception
     {
 
         /// <summary>
-        /// Constructs a new WAFUnavailableEntityException with the specified error
+        /// Constructs a new WAFConfigurationWarningException with the specified error
         /// message.
         /// </summary>
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        public WAFUnavailableEntityException(string message) 
+        public WAFConfigurationWarningException(string message) 
             : base(message) {}
 
         /// <summary>
-        /// Construct instance of WAFUnavailableEntityException
+        /// Construct instance of WAFConfigurationWarningException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
-        public WAFUnavailableEntityException(string message, Exception innerException) 
+        public WAFConfigurationWarningException(string message, Exception innerException) 
             : base(message, innerException) {}
 
         /// <summary>
-        /// Construct instance of WAFUnavailableEntityException
+        /// Construct instance of WAFConfigurationWarningException
         /// </summary>
         /// <param name="innerException"></param>
-        public WAFUnavailableEntityException(Exception innerException) 
+        public WAFConfigurationWarningException(Exception innerException) 
             : base(innerException) {}
 
         /// <summary>
-        /// Construct instance of WAFUnavailableEntityException
+        /// Construct instance of WAFConfigurationWarningException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
@@ -72,30 +87,30 @@ namespace Amazon.WAFV2.Model
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public WAFUnavailableEntityException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+        public WAFConfigurationWarningException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, requestId, statusCode) {}
 
         /// <summary>
-        /// Construct instance of WAFUnavailableEntityException
+        /// Construct instance of WAFConfigurationWarningException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="errorType"></param>
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public WAFUnavailableEntityException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+        public WAFConfigurationWarningException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
 #if !NETSTANDARD
         /// <summary>
-        /// Constructs a new instance of the WAFUnavailableEntityException class with serialized data.
+        /// Constructs a new instance of the WAFConfigurationWarningException class with serialized data.
         /// </summary>
         /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
         /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
         /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is null. </exception>
         /// <exception cref="T:System.Runtime.Serialization.SerializationException">The class name is null or <see cref="P:System.Exception.HResult" /> is zero (0). </exception>
-        protected WAFUnavailableEntityException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        protected WAFConfigurationWarningException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
         }

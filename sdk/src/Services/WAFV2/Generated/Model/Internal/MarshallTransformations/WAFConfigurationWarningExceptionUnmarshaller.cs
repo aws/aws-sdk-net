@@ -34,72 +34,47 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for JsonBody Object
+    /// Response Unmarshaller for WAFConfigurationWarningException Object
     /// </summary>  
-    public class JsonBodyUnmarshaller : IUnmarshaller<JsonBody, XmlUnmarshallerContext>, IUnmarshaller<JsonBody, JsonUnmarshallerContext>
+    public class WAFConfigurationWarningExceptionUnmarshaller : IErrorResponseUnmarshaller<WAFConfigurationWarningException, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        JsonBody IUnmarshaller<JsonBody, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        public WAFConfigurationWarningException Unmarshall(JsonUnmarshallerContext context)
         {
-            throw new NotImplementedException();
+            return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse());
         }
 
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
+        /// <param name="errorResponse"></param>
         /// <returns></returns>
-        public JsonBody Unmarshall(JsonUnmarshallerContext context)
+        public WAFConfigurationWarningException Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
-                return null;
 
-            JsonBody unmarshalledObject = new JsonBody();
+            WAFConfigurationWarningException unmarshalledObject = new WAFConfigurationWarningException(errorResponse.Message, errorResponse.InnerException,
+                errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("InvalidFallbackBehavior", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InvalidFallbackBehavior = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("MatchPattern", targetDepth))
-                {
-                    var unmarshaller = JsonMatchPatternUnmarshaller.Instance;
-                    unmarshalledObject.MatchPattern = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("MatchScope", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MatchScope = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("OversizeHandling", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OversizeHandling = unmarshaller.Unmarshall(context);
-                    continue;
-                }
             }
           
             return unmarshalledObject;
         }
 
-
-        private static JsonBodyUnmarshaller _instance = new JsonBodyUnmarshaller();        
+        private static WAFConfigurationWarningExceptionUnmarshaller _instance = new WAFConfigurationWarningExceptionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static JsonBodyUnmarshaller Instance
+        public static WAFConfigurationWarningExceptionUnmarshaller Instance
         {
             get
             {

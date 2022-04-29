@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for JsonBody Object
+    /// Response Unmarshaller for Cookies Object
     /// </summary>  
-    public class JsonBodyUnmarshaller : IUnmarshaller<JsonBody, XmlUnmarshallerContext>, IUnmarshaller<JsonBody, JsonUnmarshallerContext>
+    public class CookiesUnmarshaller : IUnmarshaller<Cookies, XmlUnmarshallerContext>, IUnmarshaller<Cookies, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        JsonBody IUnmarshaller<JsonBody, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        Cookies IUnmarshaller<Cookies, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,26 +53,20 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public JsonBody Unmarshall(JsonUnmarshallerContext context)
+        public Cookies Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            JsonBody unmarshalledObject = new JsonBody();
+            Cookies unmarshalledObject = new Cookies();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("InvalidFallbackBehavior", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InvalidFallbackBehavior = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("MatchPattern", targetDepth))
                 {
-                    var unmarshaller = JsonMatchPatternUnmarshaller.Instance;
+                    var unmarshaller = CookieMatchPatternUnmarshaller.Instance;
                     unmarshalledObject.MatchPattern = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -94,12 +88,12 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         }
 
 
-        private static JsonBodyUnmarshaller _instance = new JsonBodyUnmarshaller();        
+        private static CookiesUnmarshaller _instance = new CookiesUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static JsonBodyUnmarshaller Instance
+        public static CookiesUnmarshaller Instance
         {
             get
             {

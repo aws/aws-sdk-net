@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// JsonBody Marshaller
+    /// HeaderMatchPattern Marshaller
     /// </summary>
-    public class JsonBodyMarshaller : IRequestMarshaller<JsonBody, JsonMarshallerContext> 
+    public class HeaderMatchPatternMarshaller : IRequestMarshaller<HeaderMatchPattern, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,35 +43,39 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(JsonBody requestObject, JsonMarshallerContext context)
+        public void Marshall(HeaderMatchPattern requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetInvalidFallbackBehavior())
+            if(requestObject.IsSetAll())
             {
-                context.Writer.WritePropertyName("InvalidFallbackBehavior");
-                context.Writer.Write(requestObject.InvalidFallbackBehavior);
-            }
-
-            if(requestObject.IsSetMatchPattern())
-            {
-                context.Writer.WritePropertyName("MatchPattern");
+                context.Writer.WritePropertyName("All");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = JsonMatchPatternMarshaller.Instance;
-                marshaller.Marshall(requestObject.MatchPattern, context);
+                var marshaller = AllMarshaller.Instance;
+                marshaller.Marshall(requestObject.All, context);
 
                 context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetMatchScope())
+            if(requestObject.IsSetExcludedHeaders())
             {
-                context.Writer.WritePropertyName("MatchScope");
-                context.Writer.Write(requestObject.MatchScope);
+                context.Writer.WritePropertyName("ExcludedHeaders");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectExcludedHeadersListValue in requestObject.ExcludedHeaders)
+                {
+                        context.Writer.Write(requestObjectExcludedHeadersListValue);
+                }
+                context.Writer.WriteArrayEnd();
             }
 
-            if(requestObject.IsSetOversizeHandling())
+            if(requestObject.IsSetIncludedHeaders())
             {
-                context.Writer.WritePropertyName("OversizeHandling");
-                context.Writer.Write(requestObject.OversizeHandling);
+                context.Writer.WritePropertyName("IncludedHeaders");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectIncludedHeadersListValue in requestObject.IncludedHeaders)
+                {
+                        context.Writer.Write(requestObjectIncludedHeadersListValue);
+                }
+                context.Writer.WriteArrayEnd();
             }
 
         }
@@ -79,7 +83,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static JsonBodyMarshaller Instance = new JsonBodyMarshaller();
+        public readonly static HeaderMatchPatternMarshaller Instance = new HeaderMatchPatternMarshaller();
 
     }
 }

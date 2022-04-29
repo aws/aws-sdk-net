@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for JsonBody Object
+    /// Response Unmarshaller for CookieMatchPattern Object
     /// </summary>  
-    public class JsonBodyUnmarshaller : IUnmarshaller<JsonBody, XmlUnmarshallerContext>, IUnmarshaller<JsonBody, JsonUnmarshallerContext>
+    public class CookieMatchPatternUnmarshaller : IUnmarshaller<CookieMatchPattern, XmlUnmarshallerContext>, IUnmarshaller<CookieMatchPattern, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        JsonBody IUnmarshaller<JsonBody, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        CookieMatchPattern IUnmarshaller<CookieMatchPattern, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,33 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public JsonBody Unmarshall(JsonUnmarshallerContext context)
+        public CookieMatchPattern Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            JsonBody unmarshalledObject = new JsonBody();
+            CookieMatchPattern unmarshalledObject = new CookieMatchPattern();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("InvalidFallbackBehavior", targetDepth))
+                if (context.TestExpression("All", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InvalidFallbackBehavior = unmarshaller.Unmarshall(context);
+                    var unmarshaller = AllUnmarshaller.Instance;
+                    unmarshalledObject.All = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("MatchPattern", targetDepth))
+                if (context.TestExpression("ExcludedCookies", targetDepth))
                 {
-                    var unmarshaller = JsonMatchPatternUnmarshaller.Instance;
-                    unmarshalledObject.MatchPattern = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.ExcludedCookies = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("MatchScope", targetDepth))
+                if (context.TestExpression("IncludedCookies", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MatchScope = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("OversizeHandling", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OversizeHandling = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.IncludedCookies = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +88,12 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         }
 
 
-        private static JsonBodyUnmarshaller _instance = new JsonBodyUnmarshaller();        
+        private static CookieMatchPatternUnmarshaller _instance = new CookieMatchPatternUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static JsonBodyUnmarshaller Instance
+        public static CookieMatchPatternUnmarshaller Instance
         {
             get
             {

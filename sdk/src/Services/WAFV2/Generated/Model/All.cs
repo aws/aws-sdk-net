@@ -30,13 +30,12 @@ namespace Amazon.WAFV2.Model
 {
     /// <summary>
     /// Inspect all of the elements that WAF has parsed and extracted from the web request
-    /// JSON body that are within the <a>JsonBody</a> <code>MatchScope</code>. This is used
-    /// with the <a>FieldToMatch</a> option <code>JsonBody</code>. 
+    /// component that you've identified in your <a>FieldToMatch</a> specifications. 
     /// 
     ///  
     /// <para>
-    /// This is used only to indicate the web request component for WAF to inspect, in the
-    /// <a>FieldToMatch</a> specification. 
+    /// This is used only in the <a>FieldToMatch</a> specification for some web request component
+    /// types. 
     /// </para>
     ///  
     /// <para>

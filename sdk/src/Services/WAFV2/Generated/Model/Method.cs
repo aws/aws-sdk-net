@@ -29,13 +29,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
-    /// The HTTP method of a web request. The method indicates the type of operation that
-    /// the request is asking the origin to perform. 
+    /// Inspect the HTTP method of the web request. The method indicates the type of operation
+    /// that the request is asking the origin to perform. 
     /// 
     ///  
     /// <para>
-    /// This is used only to indicate the web request component for WAF to inspect, in the
-    /// <a>FieldToMatch</a> specification. 
+    /// This is used only in the <a>FieldToMatch</a> specification for some web request component
+    /// types. 
     /// </para>
     ///  
     /// <para>

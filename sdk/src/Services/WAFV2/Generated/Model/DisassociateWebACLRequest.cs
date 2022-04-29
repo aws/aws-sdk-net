@@ -30,7 +30,8 @@ namespace Amazon.WAFV2.Model
 {
     /// <summary>
     /// Container for the parameters to the DisassociateWebACL operation.
-    /// Disassociates a web ACL from a regional application resource. A regional application
+    /// Disassociates the specified regional application resource from any existing web ACL
+    /// association. A resource can have at most one web ACL association. A regional application
     /// can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync
     /// GraphQL API. 
     /// 

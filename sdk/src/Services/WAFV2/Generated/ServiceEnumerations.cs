@@ -1189,6 +1189,10 @@ namespace Amazon.WAFV2
         /// </summary>
         public static readonly CountryCode WS = new CountryCode("WS");
         /// <summary>
+        /// Constant XK for CountryCode
+        /// </summary>
+        public static readonly CountryCode XK = new CountryCode("XK");
+        /// <summary>
         /// Constant YE for CountryCode
         /// </summary>
         public static readonly CountryCode YE = new CountryCode("YE");
@@ -1653,6 +1657,114 @@ namespace Amazon.WAFV2
 
 
     /// <summary>
+    /// Constants used for properties of type MapMatchScope.
+    /// </summary>
+    public class MapMatchScope : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALL for MapMatchScope
+        /// </summary>
+        public static readonly MapMatchScope ALL = new MapMatchScope("ALL");
+        /// <summary>
+        /// Constant KEY for MapMatchScope
+        /// </summary>
+        public static readonly MapMatchScope KEY = new MapMatchScope("KEY");
+        /// <summary>
+        /// Constant VALUE for MapMatchScope
+        /// </summary>
+        public static readonly MapMatchScope VALUE = new MapMatchScope("VALUE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MapMatchScope(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MapMatchScope FindValue(string value)
+        {
+            return FindValue<MapMatchScope>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MapMatchScope(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OversizeHandling.
+    /// </summary>
+    public class OversizeHandling : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CONTINUE for OversizeHandling
+        /// </summary>
+        public static readonly OversizeHandling CONTINUE = new OversizeHandling("CONTINUE");
+        /// <summary>
+        /// Constant MATCH for OversizeHandling
+        /// </summary>
+        public static readonly OversizeHandling MATCH = new OversizeHandling("MATCH");
+        /// <summary>
+        /// Constant NO_MATCH for OversizeHandling
+        /// </summary>
+        public static readonly OversizeHandling NO_MATCH = new OversizeHandling("NO_MATCH");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OversizeHandling(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OversizeHandling FindValue(string value)
+        {
+            return FindValue<OversizeHandling>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OversizeHandling(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ParameterExceptionField.
     /// </summary>
     public class ParameterExceptionField : ConstantClass
@@ -1678,6 +1790,10 @@ namespace Amazon.WAFV2
         /// Constant CHANGE_PROPAGATION_STATUS for ParameterExceptionField
         /// </summary>
         public static readonly ParameterExceptionField CHANGE_PROPAGATION_STATUS = new ParameterExceptionField("CHANGE_PROPAGATION_STATUS");
+        /// <summary>
+        /// Constant COOKIE_MATCH_PATTERN for ParameterExceptionField
+        /// </summary>
+        public static readonly ParameterExceptionField COOKIE_MATCH_PATTERN = new ParameterExceptionField("COOKIE_MATCH_PATTERN");
         /// <summary>
         /// Constant CUSTOM_REQUEST_HANDLING for ParameterExceptionField
         /// </summary>
@@ -1730,6 +1846,10 @@ namespace Amazon.WAFV2
         /// Constant GEO_MATCH_STATEMENT for ParameterExceptionField
         /// </summary>
         public static readonly ParameterExceptionField GEO_MATCH_STATEMENT = new ParameterExceptionField("GEO_MATCH_STATEMENT");
+        /// <summary>
+        /// Constant HEADER_MATCH_PATTERN for ParameterExceptionField
+        /// </summary>
+        public static readonly ParameterExceptionField HEADER_MATCH_PATTERN = new ParameterExceptionField("HEADER_MATCH_PATTERN");
         /// <summary>
         /// Constant HEADER_NAME for ParameterExceptionField
         /// </summary>
@@ -1787,6 +1907,10 @@ namespace Amazon.WAFV2
         /// </summary>
         public static readonly ParameterExceptionField MANAGED_RULE_SET_STATEMENT = new ParameterExceptionField("MANAGED_RULE_SET_STATEMENT");
         /// <summary>
+        /// Constant MAP_MATCH_SCOPE for ParameterExceptionField
+        /// </summary>
+        public static readonly ParameterExceptionField MAP_MATCH_SCOPE = new ParameterExceptionField("MAP_MATCH_SCOPE");
+        /// <summary>
         /// Constant METRIC_NAME for ParameterExceptionField
         /// </summary>
         public static readonly ParameterExceptionField METRIC_NAME = new ParameterExceptionField("METRIC_NAME");
@@ -1802,6 +1926,10 @@ namespace Amazon.WAFV2
         /// Constant OVERRIDE_ACTION for ParameterExceptionField
         /// </summary>
         public static readonly ParameterExceptionField OVERRIDE_ACTION = new ParameterExceptionField("OVERRIDE_ACTION");
+        /// <summary>
+        /// Constant OVERSIZE_HANDLING for ParameterExceptionField
+        /// </summary>
+        public static readonly ParameterExceptionField OVERSIZE_HANDLING = new ParameterExceptionField("OVERSIZE_HANDLING");
         /// <summary>
         /// Constant PAYLOAD_TYPE for ParameterExceptionField
         /// </summary>

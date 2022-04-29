@@ -29,9 +29,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
-    /// The body of a web request, inspected as JSON. The body immediately follows the request
-    /// headers. This is used in the <a>FieldToMatch</a> specification.
+    /// Inspect the body of the web request as JSON. The body immediately follows the request
+    /// headers. 
     /// 
+    ///  
+    /// <para>
+    /// This is used to indicate the web request component for WAF to inspect, in the <a>FieldToMatch</a>
+    /// specification. 
+    /// </para>
     ///  
     /// <para>
     /// Use the specifications in this object to indicate which parts of the JSON body to
@@ -49,6 +54,7 @@ namespace Amazon.WAFV2.Model
         private BodyParsingFallbackBehavior _invalidFallbackBehavior;
         private JsonMatchPattern _matchPattern;
         private JsonMatchScope _matchScope;
+        private OversizeHandling _oversizeHandling;
 
         /// <summary>
         /// Gets and sets the property InvalidFallbackBehavior. 
@@ -150,6 +156,55 @@ namespace Amazon.WAFV2.Model
         internal bool IsSetMatchScope()
         {
             return this._matchScope != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OversizeHandling. 
+        /// <para>
+        /// What WAF should do if the body is larger than WAF can inspect. WAF does not support
+        /// inspecting the entire contents of the body of a web request when the body exceeds
+        /// 8 KB (8192 bytes). Only the first 8 KB of the request body are forwarded to WAF by
+        /// the underlying host service. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The options for oversize handling are the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>CONTINUE</code> - Inspect the body normally, according to the rule inspection
+        /// criteria. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies
+        /// the rule action to the request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>NO_MATCH</code> - Treat the web request as not matching the rule statement.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// You can combine the <code>MATCH</code> or <code>NO_MATCH</code> settings for oversize
+        /// handling with your rule and web ACL action settings, so that you block any request
+        /// whose body is over 8 KB. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <code>CONTINUE</code> 
+        /// </para>
+        /// </summary>
+        public OversizeHandling OversizeHandling
+        {
+            get { return this._oversizeHandling; }
+            set { this._oversizeHandling = value; }
+        }
+
+        // Check to see if OversizeHandling property is set
+        internal bool IsSetOversizeHandling()
+        {
+            return this._oversizeHandling != null;
         }
 
     }

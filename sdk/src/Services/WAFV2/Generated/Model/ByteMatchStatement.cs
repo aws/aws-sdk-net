@@ -45,7 +45,7 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property FieldToMatch. 
         /// <para>
-        /// The part of a web request that you want WAF to inspect. For more information, see
+        /// The part of the web request that you want WAF to inspect. For more information, see
         /// <a>FieldToMatch</a>. 
         /// </para>
         /// </summary>
@@ -65,7 +65,7 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property PositionalConstraint. 
         /// <para>
-        /// The area within the portion of a web request that you want WAF to search for <code>SearchString</code>.
+        /// The area within the portion of the web request that you want WAF to search for <code>SearchString</code>.
         /// Valid values include the following:
         /// </para>
         ///  

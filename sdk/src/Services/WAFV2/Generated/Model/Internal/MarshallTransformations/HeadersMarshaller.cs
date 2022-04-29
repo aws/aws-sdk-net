@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Body Marshaller
+    /// Headers Marshaller
     /// </summary>
-    public class BodyMarshaller : IRequestMarshaller<Body, JsonMarshallerContext> 
+    public class HeadersMarshaller : IRequestMarshaller<Headers, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,8 +43,25 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(Body requestObject, JsonMarshallerContext context)
+        public void Marshall(Headers requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetMatchPattern())
+            {
+                context.Writer.WritePropertyName("MatchPattern");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = HeaderMatchPatternMarshaller.Instance;
+                marshaller.Marshall(requestObject.MatchPattern, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetMatchScope())
+            {
+                context.Writer.WritePropertyName("MatchScope");
+                context.Writer.Write(requestObject.MatchScope);
+            }
+
             if(requestObject.IsSetOversizeHandling())
             {
                 context.Writer.WritePropertyName("OversizeHandling");
@@ -56,7 +73,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static BodyMarshaller Instance = new BodyMarshaller();
+        public readonly static HeadersMarshaller Instance = new HeadersMarshaller();
 
     }
 }

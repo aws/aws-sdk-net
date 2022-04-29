@@ -29,13 +29,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
-    /// The query string of a web request. This is the part of a URL that appears after a
-    /// <code>?</code> character, if any.
+    /// Inspect the query string of the web request. This is the part of a URL that appears
+    /// after a <code>?</code> character, if any.
     /// 
     ///  
     /// <para>
-    /// This is used only to indicate the web request component for WAF to inspect, in the
-    /// <a>FieldToMatch</a> specification. 
+    /// This is used only in the <a>FieldToMatch</a> specification for some web request component
+    /// types. 
     /// </para>
     ///  
     /// <para>

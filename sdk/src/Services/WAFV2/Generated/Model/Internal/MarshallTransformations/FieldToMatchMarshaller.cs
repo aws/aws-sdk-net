@@ -67,6 +67,28 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetCookies())
+            {
+                context.Writer.WritePropertyName("Cookies");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = CookiesMarshaller.Instance;
+                marshaller.Marshall(requestObject.Cookies, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetHeaders())
+            {
+                context.Writer.WritePropertyName("Headers");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = HeadersMarshaller.Instance;
+                marshaller.Marshall(requestObject.Headers, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetJsonBody())
             {
                 context.Writer.WritePropertyName("JsonBody");

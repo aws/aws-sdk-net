@@ -30,7 +30,14 @@ namespace Amazon.WAFV2.Model
 {
     /// <summary>
     /// WAF couldn’t perform the operation because your resource is being used by another
-    /// resource or it’s associated with another resource.
+    /// resource or it’s associated with another resource. 
+    /// 
+    ///  
+    /// <para>
+    /// For <code>DeleteWebACL</code>, you will only get this exception if the web ACL is
+    /// still associated with a regional resource. Deleting a web ACL that is still associated
+    /// with an Amazon CloudFront distribution won't get this exception. 
+    /// </para>
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
