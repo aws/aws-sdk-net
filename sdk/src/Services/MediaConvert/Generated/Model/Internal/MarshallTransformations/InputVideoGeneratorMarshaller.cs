@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// DolbyVision Marshaller
+    /// InputVideoGenerator Marshaller
     /// </summary>
-    public class DolbyVisionMarshaller : IRequestMarshaller<DolbyVision, JsonMarshallerContext> 
+    public class InputVideoGeneratorMarshaller : IRequestMarshaller<InputVideoGenerator, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,35 +43,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(DolbyVision requestObject, JsonMarshallerContext context)
+        public void Marshall(InputVideoGenerator requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetL6Metadata())
+            if(requestObject.IsSetDuration())
             {
-                context.Writer.WritePropertyName("l6Metadata");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = DolbyVisionLevel6MetadataMarshaller.Instance;
-                marshaller.Marshall(requestObject.L6Metadata, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetL6Mode())
-            {
-                context.Writer.WritePropertyName("l6Mode");
-                context.Writer.Write(requestObject.L6Mode);
-            }
-
-            if(requestObject.IsSetMapping())
-            {
-                context.Writer.WritePropertyName("mapping");
-                context.Writer.Write(requestObject.Mapping);
-            }
-
-            if(requestObject.IsSetProfile())
-            {
-                context.Writer.WritePropertyName("profile");
-                context.Writer.Write(requestObject.Profile);
+                context.Writer.WritePropertyName("duration");
+                context.Writer.Write(requestObject.Duration);
             }
 
         }
@@ -79,7 +56,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static DolbyVisionMarshaller Instance = new DolbyVisionMarshaller();
+        public readonly static InputVideoGeneratorMarshaller Instance = new InputVideoGeneratorMarshaller();
 
     }
 }

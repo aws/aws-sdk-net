@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DolbyVision Object
+    /// Response Unmarshaller for InputVideoGenerator Object
     /// </summary>  
-    public class DolbyVisionUnmarshaller : IUnmarshaller<DolbyVision, XmlUnmarshallerContext>, IUnmarshaller<DolbyVision, JsonUnmarshallerContext>
+    public class InputVideoGeneratorUnmarshaller : IUnmarshaller<InputVideoGenerator, XmlUnmarshallerContext>, IUnmarshaller<InputVideoGenerator, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        DolbyVision IUnmarshaller<DolbyVision, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        InputVideoGenerator IUnmarshaller<InputVideoGenerator, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,21 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public DolbyVision Unmarshall(JsonUnmarshallerContext context)
+        public InputVideoGenerator Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            DolbyVision unmarshalledObject = new DolbyVision();
+            InputVideoGenerator unmarshalledObject = new InputVideoGenerator();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("l6Metadata", targetDepth))
+                if (context.TestExpression("duration", targetDepth))
                 {
-                    var unmarshaller = DolbyVisionLevel6MetadataUnmarshaller.Instance;
-                    unmarshalledObject.L6Metadata = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("l6Mode", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.L6Mode = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("mapping", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Mapping = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("profile", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Profile = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.Duration = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +76,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         }
 
 
-        private static DolbyVisionUnmarshaller _instance = new DolbyVisionUnmarshaller();        
+        private static InputVideoGeneratorUnmarshaller _instance = new InputVideoGeneratorUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DolbyVisionUnmarshaller Instance
+        public static InputVideoGeneratorUnmarshaller Instance
         {
             get
             {

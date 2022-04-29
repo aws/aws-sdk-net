@@ -983,6 +983,11 @@
     <pattern>^((([0-1]\d)|(2[0-3]))(:[0-5]\d){2}([:;][0-5]\d))$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaConvert.Model.InputVideoGenerator.Duration</property>
+    <min>50</min>
+    <max>86400000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaConvert.Model.InsertableImage.Duration</property>
     <min>0</min>
     <max>2147483647</max>

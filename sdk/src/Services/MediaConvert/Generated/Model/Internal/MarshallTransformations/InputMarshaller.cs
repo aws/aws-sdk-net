@@ -239,6 +239,17 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.TimecodeStart);
             }
 
+            if(requestObject.IsSetVideoGenerator())
+            {
+                context.Writer.WritePropertyName("videoGenerator");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = InputVideoGeneratorMarshaller.Instance;
+                marshaller.Marshall(requestObject.VideoGenerator, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetVideoSelector())
             {
                 context.Writer.WritePropertyName("videoSelector");

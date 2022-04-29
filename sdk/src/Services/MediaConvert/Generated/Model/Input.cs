@@ -56,6 +56,7 @@ namespace Amazon.MediaConvert.Model
         private List<string> _supplementalImps = new List<string>();
         private InputTimecodeSource _timecodeSource;
         private string _timecodeStart;
+        private InputVideoGenerator _videoGenerator;
         private VideoSelector _videoSelector;
 
         /// <summary>
@@ -440,6 +441,25 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetTimecodeStart()
         {
             return this._timecodeStart != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VideoGenerator. Use this setting if you do not have a video
+        /// input or if you want to add black video frames before, or after, other inputs. When
+        /// you include Video generator, MediaConvert creates a video input with black frames
+        /// and without an audio track. You can specify a value for Video generator, or you can
+        /// specify an Input file, but you cannot specify both.
+        /// </summary>
+        public InputVideoGenerator VideoGenerator
+        {
+            get { return this._videoGenerator; }
+            set { this._videoGenerator = value; }
+        }
+
+        // Check to see if VideoGenerator property is set
+        internal bool IsSetVideoGenerator()
+        {
+            return this._videoGenerator != null;
         }
 
         /// <summary>

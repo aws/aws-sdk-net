@@ -39,6 +39,7 @@ namespace Amazon.MediaConvert.Model
         private ColorSpaceUsage _colorSpaceUsage;
         private EmbeddedTimecodeOverride _embeddedTimecodeOverride;
         private Hdr10Metadata _hdr10Metadata;
+        private PadVideo _padVideo;
         private int? _pid;
         private int? _programNumber;
         private InputRotate _rotate;
@@ -151,6 +152,27 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetHdr10Metadata()
         {
             return this._hdr10Metadata != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PadVideo. Use this setting if your input has video and
+        /// audio durations that don't align, and your output or player has strict alignment requirements.
+        /// Examples: Input audio track has a delayed start. Input video track ends before audio
+        /// ends. When you set Pad video (padVideo) to Black (BLACK), MediaConvert generates black
+        /// video frames so that output video and audio durations match. Black video frames are
+        /// added at the beginning or end, depending on your input. To keep the default behavior
+        /// and not generate black video, set Pad video to Disabled (DISABLED) or leave blank.
+        /// </summary>
+        public PadVideo PadVideo
+        {
+            get { return this._padVideo; }
+            set { this._padVideo = value; }
+        }
+
+        // Check to see if PadVideo property is set
+        internal bool IsSetPadVideo()
+        {
+            return this._padVideo != null;
         }
 
         /// <summary>

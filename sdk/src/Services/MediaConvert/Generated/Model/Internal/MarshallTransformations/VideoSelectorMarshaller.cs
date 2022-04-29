@@ -80,6 +80,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetPadVideo())
+            {
+                context.Writer.WritePropertyName("padVideo");
+                context.Writer.Write(requestObject.PadVideo);
+            }
+
             if(requestObject.IsSetPid())
             {
                 context.Writer.WritePropertyName("pid");

@@ -94,6 +94,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.Hdr10Metadata = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("padVideo", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PadVideo = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("pid", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
