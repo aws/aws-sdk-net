@@ -89,23 +89,18 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property PluginName. 
         /// <para>
-        /// The name of the plugin for which you want detailed results. If the document contains
-        /// only one plugin, you can omit the name and details for that plugin. If the document
-        /// contains more than one plugin, you must specify the name of the plugin for which you
-        /// want to view details.
-        /// </para>
-        ///  
-        /// <para>
-        /// Plugin names are also referred to as <i>step names</i> in Systems Manager documents
-        /// (SSM documents). For example, <code>aws:RunShellScript</code> is a plugin.
+        /// The name of the step for which you want detailed results. If the document contains
+        /// only one step, you can omit the name and details for that step. If the document contains
+        /// more than one step, you must specify the name of the step for which you want to view
+        /// details. Be sure to specify the name of the step, not the name of a plugin like <code>aws:RunShellScript</code>.
         /// </para>
         ///  
         /// <para>
         /// To find the <code>PluginName</code>, check the document content and find the name
-        /// of the plugin. Alternatively, use <a>ListCommandInvocations</a> with the <code>CommandId</code>
-        /// and <code>Details</code> parameters. The <code>PluginName</code> is the <code>Name</code>
-        /// attribute of the <code>CommandPlugin</code> object in the <code>CommandPlugins</code>
-        /// list.
+        /// of the step you want details for. Alternatively, use <a>ListCommandInvocations</a>
+        /// with the <code>CommandId</code> and <code>Details</code> parameters. The <code>PluginName</code>
+        /// is the <code>Name</code> attribute of the <code>CommandPlugin</code> object in the
+        /// <code>CommandPlugins</code> list.
         /// </para>
         /// </summary>
         [AWSProperty(Min=4)]
