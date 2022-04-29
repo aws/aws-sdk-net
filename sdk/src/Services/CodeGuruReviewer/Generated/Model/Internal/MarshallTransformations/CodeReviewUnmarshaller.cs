@@ -82,6 +82,12 @@ namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
                     unmarshalledObject.CodeReviewArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ConfigFileState", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ConfigFileState = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CreatedTimeStamp", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

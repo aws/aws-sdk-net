@@ -37,6 +37,7 @@ namespace Amazon.CodeGuruReviewer.Model
         private List<string> _analysisTypes = new List<string>();
         private string _associationArn;
         private string _codeReviewArn;
+        private ConfigFileState _configFileState;
         private DateTime? _createdTimeStamp;
         private DateTime? _lastUpdatedTimeStamp;
         private Metrics _metrics;
@@ -53,7 +54,7 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property AnalysisTypes. 
         /// <para>
-        /// They types of analysis performed during a repository analysis or a pull request review.
+        /// The types of analysis performed during a repository analysis or a pull request review.
         /// You can specify either <code>Security</code>, <code>CodeQuality</code>, or both.
         /// </para>
         /// </summary>
@@ -109,6 +110,26 @@ namespace Amazon.CodeGuruReviewer.Model
         internal bool IsSetCodeReviewArn()
         {
             return this._codeReviewArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConfigFileState. 
+        /// <para>
+        /// The state of the <code>aws-codeguru-reviewer.yml</code> configuration file that allows
+        /// the configuration of the CodeGuru Reviewer analysis. The file either exists, doesn't
+        /// exist, or exists with errors at the root directory of your repository.
+        /// </para>
+        /// </summary>
+        public ConfigFileState ConfigFileState
+        {
+            get { return this._configFileState; }
+            set { this._configFileState = value; }
+        }
+
+        // Check to see if ConfigFileState property is set
+        internal bool IsSetConfigFileState()
+        {
+            return this._configFileState != null;
         }
 
         /// <summary>
