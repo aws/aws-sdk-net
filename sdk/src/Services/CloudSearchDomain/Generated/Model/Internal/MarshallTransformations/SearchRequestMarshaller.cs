@@ -56,7 +56,7 @@ namespace Amazon.CloudSearchDomain.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudSearchDomain");
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2013-01-01";
-            request.HttpMethod = "GET";
+            request.HttpMethod = "POST";
 
             request.AddSubResource("format", "sdk");
             request.AddSubResource("pretty", "true");
