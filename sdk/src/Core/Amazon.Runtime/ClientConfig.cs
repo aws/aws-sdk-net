@@ -211,8 +211,30 @@ namespace Amazon.Runtime
             {
                 this.regionEndpoint = null;
                 this.probeForRegionEndpoint = false;
+                
+                if(!string.IsNullOrEmpty(value))
+                {
+                    // If the URL passed in only has a host name make sure there is an ending "/" to avoid signature mismatch issues.
+                    // If there is a resource path do not add a "/" because the marshallers are relying on the URL to be in format without the "/".
+                    // API Gateway Management API is an example of a service that vends its own URL that users have to set which has a resource path.
+                    // The marshallers add new segments to the resource path with the "/".
+                    try
+                    {
+                        var path = new Uri(value).PathAndQuery;
+                        if (string.IsNullOrEmpty(path) || path == "/")
+                        {
+                            if (!string.IsNullOrEmpty(value) && !value.EndsWith("/"))
+                            {
+                                value += "/";
+                            }
+                        }
+                    }
+                    catch(UriFormatException)
+                    {
+                        throw new AmazonClientException("Value for ServiceURL is not a valid URL: " + value);
+                    }
+                }
 
-                if (!string.IsNullOrEmpty(value) && !value.EndsWith("/")) value += "/";
                 this.serviceURL = value;
             }
         }
