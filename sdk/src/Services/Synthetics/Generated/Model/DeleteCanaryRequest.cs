@@ -34,16 +34,16 @@ namespace Amazon.Synthetics.Model
     /// 
     ///  
     /// <para>
-    /// When you delete a canary, resources used and created by the canary are not automatically
-    /// deleted. After you delete a canary that you do not intend to use again, you should
-    /// also delete the following:
+    /// If you specify <code>DeleteLambda</code> to <code>true</code>, CloudWatch Synthetics
+    /// also deletes the Lambda functions and layers that are used by the canary.
+    /// </para>
+    ///  
+    /// <para>
+    /// Other esources used and created by the canary are not automatically deleted. After
+    /// you delete a canary that you do not intend to use again, you should also delete the
+    /// following:
     /// </para>
     ///  <ul> <li> 
-    /// <para>
-    /// The Lambda functions and layers used by this canary. These have the prefix <code>cwsyn-<i>MyCanaryName</i>
-    /// </code>.
-    /// </para>
-    ///  </li> <li> 
     /// <para>
     /// The CloudWatch alarms created for this canary. These alarms have a name of <code>Synthetics-SharpDrop-Alarm-<i>MyCanaryName</i>
     /// </code>.
@@ -72,7 +72,31 @@ namespace Amazon.Synthetics.Model
     /// </summary>
     public partial class DeleteCanaryRequest : AmazonSyntheticsRequest
     {
+        private bool? _deleteLambda;
         private string _name;
+
+        /// <summary>
+        /// Gets and sets the property DeleteLambda. 
+        /// <para>
+        /// Specifies whether to also delete the Lambda functions and layers used by this canary.
+        /// The default is false.
+        /// </para>
+        ///  
+        /// <para>
+        /// Type: Boolean
+        /// </para>
+        /// </summary>
+        public bool DeleteLambda
+        {
+            get { return this._deleteLambda.GetValueOrDefault(); }
+            set { this._deleteLambda = value; }
+        }
+
+        // Check to see if DeleteLambda property is set
+        internal bool IsSetDeleteLambda()
+        {
+            return this._deleteLambda.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Name. 

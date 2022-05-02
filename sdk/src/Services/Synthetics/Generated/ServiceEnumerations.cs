@@ -213,9 +213,53 @@ namespace Amazon.Synthetics
     {
 
         /// <summary>
+        /// Constant CREATE_FAILED for CanaryStateReasonCode
+        /// </summary>
+        public static readonly CanaryStateReasonCode CREATE_FAILED = new CanaryStateReasonCode("CREATE_FAILED");
+        /// <summary>
+        /// Constant CREATE_IN_PROGRESS for CanaryStateReasonCode
+        /// </summary>
+        public static readonly CanaryStateReasonCode CREATE_IN_PROGRESS = new CanaryStateReasonCode("CREATE_IN_PROGRESS");
+        /// <summary>
+        /// Constant CREATE_PENDING for CanaryStateReasonCode
+        /// </summary>
+        public static readonly CanaryStateReasonCode CREATE_PENDING = new CanaryStateReasonCode("CREATE_PENDING");
+        /// <summary>
+        /// Constant DELETE_FAILED for CanaryStateReasonCode
+        /// </summary>
+        public static readonly CanaryStateReasonCode DELETE_FAILED = new CanaryStateReasonCode("DELETE_FAILED");
+        /// <summary>
+        /// Constant DELETE_IN_PROGRESS for CanaryStateReasonCode
+        /// </summary>
+        public static readonly CanaryStateReasonCode DELETE_IN_PROGRESS = new CanaryStateReasonCode("DELETE_IN_PROGRESS");
+        /// <summary>
         /// Constant INVALID_PERMISSIONS for CanaryStateReasonCode
         /// </summary>
         public static readonly CanaryStateReasonCode INVALID_PERMISSIONS = new CanaryStateReasonCode("INVALID_PERMISSIONS");
+        /// <summary>
+        /// Constant ROLLBACK_COMPLETE for CanaryStateReasonCode
+        /// </summary>
+        public static readonly CanaryStateReasonCode ROLLBACK_COMPLETE = new CanaryStateReasonCode("ROLLBACK_COMPLETE");
+        /// <summary>
+        /// Constant ROLLBACK_FAILED for CanaryStateReasonCode
+        /// </summary>
+        public static readonly CanaryStateReasonCode ROLLBACK_FAILED = new CanaryStateReasonCode("ROLLBACK_FAILED");
+        /// <summary>
+        /// Constant SYNC_DELETE_IN_PROGRESS for CanaryStateReasonCode
+        /// </summary>
+        public static readonly CanaryStateReasonCode SYNC_DELETE_IN_PROGRESS = new CanaryStateReasonCode("SYNC_DELETE_IN_PROGRESS");
+        /// <summary>
+        /// Constant UPDATE_COMPLETE for CanaryStateReasonCode
+        /// </summary>
+        public static readonly CanaryStateReasonCode UPDATE_COMPLETE = new CanaryStateReasonCode("UPDATE_COMPLETE");
+        /// <summary>
+        /// Constant UPDATE_IN_PROGRESS for CanaryStateReasonCode
+        /// </summary>
+        public static readonly CanaryStateReasonCode UPDATE_IN_PROGRESS = new CanaryStateReasonCode("UPDATE_IN_PROGRESS");
+        /// <summary>
+        /// Constant UPDATE_PENDING for CanaryStateReasonCode
+        /// </summary>
+        public static readonly CanaryStateReasonCode UPDATE_PENDING = new CanaryStateReasonCode("UPDATE_PENDING");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

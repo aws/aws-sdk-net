@@ -61,7 +61,11 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetName())
                 throw new AmazonSyntheticsException("Request object does not have required field Name set");
             request.AddPathResource("{name}", StringUtils.FromString(publicRequest.Name));
+            
+            if (publicRequest.IsSetDeleteLambda())
+                request.Parameters.Add("deleteLambda", StringUtils.FromBool(publicRequest.DeleteLambda));
             request.ResourcePath = "/canary/{name}";
+            request.UseQueryString = true;
 
             return request;
         }
