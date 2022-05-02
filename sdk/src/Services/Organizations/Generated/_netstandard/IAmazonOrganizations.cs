@@ -552,10 +552,27 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// CANNOT_CLOSE_MANAGEMENT_ACCOUNT: You attempted to close the management account. To
+        /// close the management account for the organization, you must first either remove or
+        /// close all member accounts in the organization. Follow standard account closure process
+        /// using root credentials.​ 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: You attempted to remove an account
         /// that is registered as a delegated administrator for a service integrated with your
         /// organization. To complete this operation, you must first deregister this account as
         /// a delegated administrator. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CLOSE_ACCOUNT_QUOTA_EXCEEDED: You have exceeded close account quota for the past 30
+        /// days. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CLOSE_ACCOUNT_REQUESTS_LIMIT_EXCEEDED: You attempted to exceed the number of accounts
+        /// that you can close at a time. ​ 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -578,6 +595,14 @@ namespace Amazon.Organizations
         /// <para>
         /// HANDSHAKE_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of handshakes that
         /// you can send in one day.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_PAYMENT_INSTRUMENT: You cannot remove an account because no supported payment
+        /// method is associated with the account. Amazon Web Services does not support cards
+        /// issued by financial institutions in Russia or Belarus. For more information, see <a
+        /// href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-general.html">Managing
+        /// your Amazon Web Services payments</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1043,8 +1068,55 @@ namespace Amazon.Organizations
 
 
         /// <summary>
-        /// Closes an Amazon Web Services account that is now a part of an Organizations, either
-        /// created within the organization, or invited to join the organization.
+        /// Closes an Amazon Web Services member account within an organization. You can't close
+        /// the management account with this API. This is an asynchronous request that Amazon
+        /// Web Services performs in the background. Because <code>CloseAccount</code> operates
+        /// asynchronously, it can return a successful completion message even though account
+        /// closure might still be in progress. You need to wait a few minutes before the account
+        /// is fully closed. To check the status of the request, do one of the following:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Use the <code>AccountId</code> that you sent in the <code>CloseAccount</code> request
+        /// to provide as a parameter to the <a>DescribeAccount</a> operation. 
+        /// </para>
+        ///  
+        /// <para>
+        /// While the close account request is in progress, Account status will indicate PENDING_CLOSURE.
+        /// When the close account request completes, the status will change to SUSPENDED. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Check the CloudTrail log for the <code>CloseAccountResult</code> event that gets published
+        /// after the account closes successfully. For information on using CloudTrail with Organizations,
+        /// see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_security_incident-response.html#orgs_cloudtrail-integration">Logging
+        /// and monitoring in Organizations</a> in the <i>Organizations User Guide.</i> 
+        /// </para>
+        ///  </li> </ul> <note> <ul> <li> 
+        /// <para>
+        /// You can only close 10% of active member accounts within a rolling 30 day period. This
+        /// quota is not bound by a calendar month, but starts when you close an account. Within
+        /// 30 days of that initial account closure, you can't exceed the 10% account closure
+        /// limit.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To reinstate a closed account, contact Amazon Web Services Support within the 90-day
+        /// grace period while the account is in SUSPENDED status. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the Amazon Web Services account you attempt to close is linked to an Amazon Web
+        /// Services GovCloud (US) account, the <code>CloseAccount</code> request will close both
+        /// accounts. To learn important pre-closure details, see <a href="https://docs.aws.amazon.com/govcloud-us/latest/UserGuide/Closing-govcloud-account.html">
+        /// Closing an Amazon Web Services GovCloud (US) account</a> in the <i> Amazon Web Services
+        /// GovCloud User Guide</i>.
+        /// </para>
+        ///  </li> </ul> </note> 
+        /// <para>
+        /// For more information about closing accounts, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_close.html">Closing
+        /// an Amazon Web Services account</a> in the <i>Organizations User Guide.</i> 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CloseAccount service method.</param>
         /// <param name="cancellationToken">
@@ -1141,10 +1213,27 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// CANNOT_CLOSE_MANAGEMENT_ACCOUNT: You attempted to close the management account. To
+        /// close the management account for the organization, you must first either remove or
+        /// close all member accounts in the organization. Follow standard account closure process
+        /// using root credentials.​ 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: You attempted to remove an account
         /// that is registered as a delegated administrator for a service integrated with your
         /// organization. To complete this operation, you must first deregister this account as
         /// a delegated administrator. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CLOSE_ACCOUNT_QUOTA_EXCEEDED: You have exceeded close account quota for the past 30
+        /// days. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CLOSE_ACCOUNT_REQUESTS_LIMIT_EXCEEDED: You attempted to exceed the number of accounts
+        /// that you can close at a time. ​ 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1167,6 +1256,14 @@ namespace Amazon.Organizations
         /// <para>
         /// HANDSHAKE_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of handshakes that
         /// you can send in one day.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_PAYMENT_INSTRUMENT: You cannot remove an account because no supported payment
+        /// method is associated with the account. Amazon Web Services does not support cards
+        /// issued by financial institutions in Russia or Belarus. For more information, see <a
+        /// href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-general.html">Managing
+        /// your Amazon Web Services payments</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1600,10 +1697,27 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// CANNOT_CLOSE_MANAGEMENT_ACCOUNT: You attempted to close the management account. To
+        /// close the management account for the organization, you must first either remove or
+        /// close all member accounts in the organization. Follow standard account closure process
+        /// using root credentials.​ 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: You attempted to remove an account
         /// that is registered as a delegated administrator for a service integrated with your
         /// organization. To complete this operation, you must first deregister this account as
         /// a delegated administrator. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CLOSE_ACCOUNT_QUOTA_EXCEEDED: You have exceeded close account quota for the past 30
+        /// days. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CLOSE_ACCOUNT_REQUESTS_LIMIT_EXCEEDED: You attempted to exceed the number of accounts
+        /// that you can close at a time. ​ 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1626,6 +1740,14 @@ namespace Amazon.Organizations
         /// <para>
         /// HANDSHAKE_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of handshakes that
         /// you can send in one day.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_PAYMENT_INSTRUMENT: You cannot remove an account because no supported payment
+        /// method is associated with the account. Amazon Web Services does not support cards
+        /// issued by financial institutions in Russia or Belarus. For more information, see <a
+        /// href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-general.html">Managing
+        /// your Amazon Web Services payments</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2125,10 +2247,27 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// CANNOT_CLOSE_MANAGEMENT_ACCOUNT: You attempted to close the management account. To
+        /// close the management account for the organization, you must first either remove or
+        /// close all member accounts in the organization. Follow standard account closure process
+        /// using root credentials.​ 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: You attempted to remove an account
         /// that is registered as a delegated administrator for a service integrated with your
         /// organization. To complete this operation, you must first deregister this account as
         /// a delegated administrator. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CLOSE_ACCOUNT_QUOTA_EXCEEDED: You have exceeded close account quota for the past 30
+        /// days. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CLOSE_ACCOUNT_REQUESTS_LIMIT_EXCEEDED: You attempted to exceed the number of accounts
+        /// that you can close at a time. ​ 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2151,6 +2290,14 @@ namespace Amazon.Organizations
         /// <para>
         /// HANDSHAKE_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of handshakes that
         /// you can send in one day.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_PAYMENT_INSTRUMENT: You cannot remove an account because no supported payment
+        /// method is associated with the account. Amazon Web Services does not support cards
+        /// issued by financial institutions in Russia or Belarus. For more information, see <a
+        /// href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-general.html">Managing
+        /// your Amazon Web Services payments</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2523,10 +2670,27 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// CANNOT_CLOSE_MANAGEMENT_ACCOUNT: You attempted to close the management account. To
+        /// close the management account for the organization, you must first either remove or
+        /// close all member accounts in the organization. Follow standard account closure process
+        /// using root credentials.​ 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: You attempted to remove an account
         /// that is registered as a delegated administrator for a service integrated with your
         /// organization. To complete this operation, you must first deregister this account as
         /// a delegated administrator. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CLOSE_ACCOUNT_QUOTA_EXCEEDED: You have exceeded close account quota for the past 30
+        /// days. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CLOSE_ACCOUNT_REQUESTS_LIMIT_EXCEEDED: You attempted to exceed the number of accounts
+        /// that you can close at a time. ​ 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2549,6 +2713,14 @@ namespace Amazon.Organizations
         /// <para>
         /// HANDSHAKE_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of handshakes that
         /// you can send in one day.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_PAYMENT_INSTRUMENT: You cannot remove an account because no supported payment
+        /// method is associated with the account. Amazon Web Services does not support cards
+        /// issued by financial institutions in Russia or Belarus. For more information, see <a
+        /// href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-general.html">Managing
+        /// your Amazon Web Services payments</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2908,10 +3080,27 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// CANNOT_CLOSE_MANAGEMENT_ACCOUNT: You attempted to close the management account. To
+        /// close the management account for the organization, you must first either remove or
+        /// close all member accounts in the organization. Follow standard account closure process
+        /// using root credentials.​ 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: You attempted to remove an account
         /// that is registered as a delegated administrator for a service integrated with your
         /// organization. To complete this operation, you must first deregister this account as
         /// a delegated administrator. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CLOSE_ACCOUNT_QUOTA_EXCEEDED: You have exceeded close account quota for the past 30
+        /// days. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CLOSE_ACCOUNT_REQUESTS_LIMIT_EXCEEDED: You attempted to exceed the number of accounts
+        /// that you can close at a time. ​ 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2934,6 +3123,14 @@ namespace Amazon.Organizations
         /// <para>
         /// HANDSHAKE_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of handshakes that
         /// you can send in one day.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_PAYMENT_INSTRUMENT: You cannot remove an account because no supported payment
+        /// method is associated with the account. Amazon Web Services does not support cards
+        /// issued by financial institutions in Russia or Belarus. For more information, see <a
+        /// href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-general.html">Managing
+        /// your Amazon Web Services payments</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3296,10 +3493,27 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// CANNOT_CLOSE_MANAGEMENT_ACCOUNT: You attempted to close the management account. To
+        /// close the management account for the organization, you must first either remove or
+        /// close all member accounts in the organization. Follow standard account closure process
+        /// using root credentials.​ 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: You attempted to remove an account
         /// that is registered as a delegated administrator for a service integrated with your
         /// organization. To complete this operation, you must first deregister this account as
         /// a delegated administrator. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CLOSE_ACCOUNT_QUOTA_EXCEEDED: You have exceeded close account quota for the past 30
+        /// days. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CLOSE_ACCOUNT_REQUESTS_LIMIT_EXCEEDED: You attempted to exceed the number of accounts
+        /// that you can close at a time. ​ 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3322,6 +3536,14 @@ namespace Amazon.Organizations
         /// <para>
         /// HANDSHAKE_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of handshakes that
         /// you can send in one day.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_PAYMENT_INSTRUMENT: You cannot remove an account because no supported payment
+        /// method is associated with the account. Amazon Web Services does not support cards
+        /// issued by financial institutions in Russia or Belarus. For more information, see <a
+        /// href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-general.html">Managing
+        /// your Amazon Web Services payments</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4434,10 +4656,27 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// CANNOT_CLOSE_MANAGEMENT_ACCOUNT: You attempted to close the management account. To
+        /// close the management account for the organization, you must first either remove or
+        /// close all member accounts in the organization. Follow standard account closure process
+        /// using root credentials.​ 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: You attempted to remove an account
         /// that is registered as a delegated administrator for a service integrated with your
         /// organization. To complete this operation, you must first deregister this account as
         /// a delegated administrator. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CLOSE_ACCOUNT_QUOTA_EXCEEDED: You have exceeded close account quota for the past 30
+        /// days. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CLOSE_ACCOUNT_REQUESTS_LIMIT_EXCEEDED: You attempted to exceed the number of accounts
+        /// that you can close at a time. ​ 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4460,6 +4699,14 @@ namespace Amazon.Organizations
         /// <para>
         /// HANDSHAKE_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of handshakes that
         /// you can send in one day.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_PAYMENT_INSTRUMENT: You cannot remove an account because no supported payment
+        /// method is associated with the account. Amazon Web Services does not support cards
+        /// issued by financial institutions in Russia or Belarus. For more information, see <a
+        /// href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-general.html">Managing
+        /// your Amazon Web Services payments</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5168,10 +5415,27 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// CANNOT_CLOSE_MANAGEMENT_ACCOUNT: You attempted to close the management account. To
+        /// close the management account for the organization, you must first either remove or
+        /// close all member accounts in the organization. Follow standard account closure process
+        /// using root credentials.​ 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: You attempted to remove an account
         /// that is registered as a delegated administrator for a service integrated with your
         /// organization. To complete this operation, you must first deregister this account as
         /// a delegated administrator. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CLOSE_ACCOUNT_QUOTA_EXCEEDED: You have exceeded close account quota for the past 30
+        /// days. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CLOSE_ACCOUNT_REQUESTS_LIMIT_EXCEEDED: You attempted to exceed the number of accounts
+        /// that you can close at a time. ​ 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5194,6 +5458,14 @@ namespace Amazon.Organizations
         /// <para>
         /// HANDSHAKE_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of handshakes that
         /// you can send in one day.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_PAYMENT_INSTRUMENT: You cannot remove an account because no supported payment
+        /// method is associated with the account. Amazon Web Services does not support cards
+        /// issued by financial institutions in Russia or Belarus. For more information, see <a
+        /// href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-general.html">Managing
+        /// your Amazon Web Services payments</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -6154,10 +6426,27 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// CANNOT_CLOSE_MANAGEMENT_ACCOUNT: You attempted to close the management account. To
+        /// close the management account for the organization, you must first either remove or
+        /// close all member accounts in the organization. Follow standard account closure process
+        /// using root credentials.​ 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: You attempted to remove an account
         /// that is registered as a delegated administrator for a service integrated with your
         /// organization. To complete this operation, you must first deregister this account as
         /// a delegated administrator. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CLOSE_ACCOUNT_QUOTA_EXCEEDED: You have exceeded close account quota for the past 30
+        /// days. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CLOSE_ACCOUNT_REQUESTS_LIMIT_EXCEEDED: You attempted to exceed the number of accounts
+        /// that you can close at a time. ​ 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -6180,6 +6469,14 @@ namespace Amazon.Organizations
         /// <para>
         /// HANDSHAKE_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of handshakes that
         /// you can send in one day.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_PAYMENT_INSTRUMENT: You cannot remove an account because no supported payment
+        /// method is associated with the account. Amazon Web Services does not support cards
+        /// issued by financial institutions in Russia or Belarus. For more information, see <a
+        /// href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-general.html">Managing
+        /// your Amazon Web Services payments</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -6609,10 +6906,27 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// CANNOT_CLOSE_MANAGEMENT_ACCOUNT: You attempted to close the management account. To
+        /// close the management account for the organization, you must first either remove or
+        /// close all member accounts in the organization. Follow standard account closure process
+        /// using root credentials.​ 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: You attempted to remove an account
         /// that is registered as a delegated administrator for a service integrated with your
         /// organization. To complete this operation, you must first deregister this account as
         /// a delegated administrator. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CLOSE_ACCOUNT_QUOTA_EXCEEDED: You have exceeded close account quota for the past 30
+        /// days. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CLOSE_ACCOUNT_REQUESTS_LIMIT_EXCEEDED: You attempted to exceed the number of accounts
+        /// that you can close at a time. ​ 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -6635,6 +6949,14 @@ namespace Amazon.Organizations
         /// <para>
         /// HANDSHAKE_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of handshakes that
         /// you can send in one day.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_PAYMENT_INSTRUMENT: You cannot remove an account because no supported payment
+        /// method is associated with the account. Amazon Web Services does not support cards
+        /// issued by financial institutions in Russia or Belarus. For more information, see <a
+        /// href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-general.html">Managing
+        /// your Amazon Web Services payments</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -7000,10 +7322,27 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// CANNOT_CLOSE_MANAGEMENT_ACCOUNT: You attempted to close the management account. To
+        /// close the management account for the organization, you must first either remove or
+        /// close all member accounts in the organization. Follow standard account closure process
+        /// using root credentials.​ 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: You attempted to remove an account
         /// that is registered as a delegated administrator for a service integrated with your
         /// organization. To complete this operation, you must first deregister this account as
         /// a delegated administrator. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CLOSE_ACCOUNT_QUOTA_EXCEEDED: You have exceeded close account quota for the past 30
+        /// days. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CLOSE_ACCOUNT_REQUESTS_LIMIT_EXCEEDED: You attempted to exceed the number of accounts
+        /// that you can close at a time. ​ 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -7026,6 +7365,14 @@ namespace Amazon.Organizations
         /// <para>
         /// HANDSHAKE_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of handshakes that
         /// you can send in one day.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_PAYMENT_INSTRUMENT: You cannot remove an account because no supported payment
+        /// method is associated with the account. Amazon Web Services does not support cards
+        /// issued by financial institutions in Russia or Belarus. For more information, see <a
+        /// href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-general.html">Managing
+        /// your Amazon Web Services payments</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -7680,10 +8027,27 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// CANNOT_CLOSE_MANAGEMENT_ACCOUNT: You attempted to close the management account. To
+        /// close the management account for the organization, you must first either remove or
+        /// close all member accounts in the organization. Follow standard account closure process
+        /// using root credentials.​ 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: You attempted to remove an account
         /// that is registered as a delegated administrator for a service integrated with your
         /// organization. To complete this operation, you must first deregister this account as
         /// a delegated administrator. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CLOSE_ACCOUNT_QUOTA_EXCEEDED: You have exceeded close account quota for the past 30
+        /// days. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CLOSE_ACCOUNT_REQUESTS_LIMIT_EXCEEDED: You attempted to exceed the number of accounts
+        /// that you can close at a time. ​ 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -7706,6 +8070,14 @@ namespace Amazon.Organizations
         /// <para>
         /// HANDSHAKE_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of handshakes that
         /// you can send in one day.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_PAYMENT_INSTRUMENT: You cannot remove an account because no supported payment
+        /// method is associated with the account. Amazon Web Services does not support cards
+        /// issued by financial institutions in Russia or Belarus. For more information, see <a
+        /// href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-general.html">Managing
+        /// your Amazon Web Services payments</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -8068,10 +8440,27 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// CANNOT_CLOSE_MANAGEMENT_ACCOUNT: You attempted to close the management account. To
+        /// close the management account for the organization, you must first either remove or
+        /// close all member accounts in the organization. Follow standard account closure process
+        /// using root credentials.​ 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: You attempted to remove an account
         /// that is registered as a delegated administrator for a service integrated with your
         /// organization. To complete this operation, you must first deregister this account as
         /// a delegated administrator. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CLOSE_ACCOUNT_QUOTA_EXCEEDED: You have exceeded close account quota for the past 30
+        /// days. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CLOSE_ACCOUNT_REQUESTS_LIMIT_EXCEEDED: You attempted to exceed the number of accounts
+        /// that you can close at a time. ​ 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -8094,6 +8483,14 @@ namespace Amazon.Organizations
         /// <para>
         /// HANDSHAKE_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of handshakes that
         /// you can send in one day.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_PAYMENT_INSTRUMENT: You cannot remove an account because no supported payment
+        /// method is associated with the account. Amazon Web Services does not support cards
+        /// issued by financial institutions in Russia or Belarus. For more information, see <a
+        /// href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-general.html">Managing
+        /// your Amazon Web Services payments</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -8489,10 +8886,27 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// CANNOT_CLOSE_MANAGEMENT_ACCOUNT: You attempted to close the management account. To
+        /// close the management account for the organization, you must first either remove or
+        /// close all member accounts in the organization. Follow standard account closure process
+        /// using root credentials.​ 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: You attempted to remove an account
         /// that is registered as a delegated administrator for a service integrated with your
         /// organization. To complete this operation, you must first deregister this account as
         /// a delegated administrator. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CLOSE_ACCOUNT_QUOTA_EXCEEDED: You have exceeded close account quota for the past 30
+        /// days. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CLOSE_ACCOUNT_REQUESTS_LIMIT_EXCEEDED: You attempted to exceed the number of accounts
+        /// that you can close at a time. ​ 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -8515,6 +8929,14 @@ namespace Amazon.Organizations
         /// <para>
         /// HANDSHAKE_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of handshakes that
         /// you can send in one day.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_PAYMENT_INSTRUMENT: You cannot remove an account because no supported payment
+        /// method is associated with the account. Amazon Web Services does not support cards
+        /// issued by financial institutions in Russia or Belarus. For more information, see <a
+        /// href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-general.html">Managing
+        /// your Amazon Web Services payments</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -9010,10 +9432,27 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// CANNOT_CLOSE_MANAGEMENT_ACCOUNT: You attempted to close the management account. To
+        /// close the management account for the organization, you must first either remove or
+        /// close all member accounts in the organization. Follow standard account closure process
+        /// using root credentials.​ 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: You attempted to remove an account
         /// that is registered as a delegated administrator for a service integrated with your
         /// organization. To complete this operation, you must first deregister this account as
         /// a delegated administrator. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CLOSE_ACCOUNT_QUOTA_EXCEEDED: You have exceeded close account quota for the past 30
+        /// days. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CLOSE_ACCOUNT_REQUESTS_LIMIT_EXCEEDED: You attempted to exceed the number of accounts
+        /// that you can close at a time. ​ 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -9036,6 +9475,14 @@ namespace Amazon.Organizations
         /// <para>
         /// HANDSHAKE_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of handshakes that
         /// you can send in one day.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_PAYMENT_INSTRUMENT: You cannot remove an account because no supported payment
+        /// method is associated with the account. Amazon Web Services does not support cards
+        /// issued by financial institutions in Russia or Belarus. For more information, see <a
+        /// href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-general.html">Managing
+        /// your Amazon Web Services payments</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -9754,10 +10201,27 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// CANNOT_CLOSE_MANAGEMENT_ACCOUNT: You attempted to close the management account. To
+        /// close the management account for the organization, you must first either remove or
+        /// close all member accounts in the organization. Follow standard account closure process
+        /// using root credentials.​ 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: You attempted to remove an account
         /// that is registered as a delegated administrator for a service integrated with your
         /// organization. To complete this operation, you must first deregister this account as
         /// a delegated administrator. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CLOSE_ACCOUNT_QUOTA_EXCEEDED: You have exceeded close account quota for the past 30
+        /// days. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CLOSE_ACCOUNT_REQUESTS_LIMIT_EXCEEDED: You attempted to exceed the number of accounts
+        /// that you can close at a time. ​ 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -9780,6 +10244,14 @@ namespace Amazon.Organizations
         /// <para>
         /// HANDSHAKE_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of handshakes that
         /// you can send in one day.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_PAYMENT_INSTRUMENT: You cannot remove an account because no supported payment
+        /// method is associated with the account. Amazon Web Services does not support cards
+        /// issued by financial institutions in Russia or Belarus. For more information, see <a
+        /// href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-general.html">Managing
+        /// your Amazon Web Services payments</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -10489,10 +10961,27 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// CANNOT_CLOSE_MANAGEMENT_ACCOUNT: You attempted to close the management account. To
+        /// close the management account for the organization, you must first either remove or
+        /// close all member accounts in the organization. Follow standard account closure process
+        /// using root credentials.​ 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: You attempted to remove an account
         /// that is registered as a delegated administrator for a service integrated with your
         /// organization. To complete this operation, you must first deregister this account as
         /// a delegated administrator. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CLOSE_ACCOUNT_QUOTA_EXCEEDED: You have exceeded close account quota for the past 30
+        /// days. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CLOSE_ACCOUNT_REQUESTS_LIMIT_EXCEEDED: You attempted to exceed the number of accounts
+        /// that you can close at a time. ​ 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -10515,6 +11004,14 @@ namespace Amazon.Organizations
         /// <para>
         /// HANDSHAKE_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of handshakes that
         /// you can send in one day.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_PAYMENT_INSTRUMENT: You cannot remove an account because no supported payment
+        /// method is associated with the account. Amazon Web Services does not support cards
+        /// issued by financial institutions in Russia or Belarus. For more information, see <a
+        /// href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-general.html">Managing
+        /// your Amazon Web Services payments</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -10870,10 +11367,27 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// CANNOT_CLOSE_MANAGEMENT_ACCOUNT: You attempted to close the management account. To
+        /// close the management account for the organization, you must first either remove or
+        /// close all member accounts in the organization. Follow standard account closure process
+        /// using root credentials.​ 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: You attempted to remove an account
         /// that is registered as a delegated administrator for a service integrated with your
         /// organization. To complete this operation, you must first deregister this account as
         /// a delegated administrator. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CLOSE_ACCOUNT_QUOTA_EXCEEDED: You have exceeded close account quota for the past 30
+        /// days. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CLOSE_ACCOUNT_REQUESTS_LIMIT_EXCEEDED: You attempted to exceed the number of accounts
+        /// that you can close at a time. ​ 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -10896,6 +11410,14 @@ namespace Amazon.Organizations
         /// <para>
         /// HANDSHAKE_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of handshakes that
         /// you can send in one day.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_PAYMENT_INSTRUMENT: You cannot remove an account because no supported payment
+        /// method is associated with the account. Amazon Web Services does not support cards
+        /// issued by financial institutions in Russia or Belarus. For more information, see <a
+        /// href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-general.html">Managing
+        /// your Amazon Web Services payments</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -13122,10 +13644,27 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// CANNOT_CLOSE_MANAGEMENT_ACCOUNT: You attempted to close the management account. To
+        /// close the management account for the organization, you must first either remove or
+        /// close all member accounts in the organization. Follow standard account closure process
+        /// using root credentials.​ 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: You attempted to remove an account
         /// that is registered as a delegated administrator for a service integrated with your
         /// organization. To complete this operation, you must first deregister this account as
         /// a delegated administrator. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CLOSE_ACCOUNT_QUOTA_EXCEEDED: You have exceeded close account quota for the past 30
+        /// days. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CLOSE_ACCOUNT_REQUESTS_LIMIT_EXCEEDED: You attempted to exceed the number of accounts
+        /// that you can close at a time. ​ 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -13148,6 +13687,14 @@ namespace Amazon.Organizations
         /// <para>
         /// HANDSHAKE_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of handshakes that
         /// you can send in one day.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_PAYMENT_INSTRUMENT: You cannot remove an account because no supported payment
+        /// method is associated with the account. Amazon Web Services does not support cards
+        /// issued by financial institutions in Russia or Belarus. For more information, see <a
+        /// href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-general.html">Managing
+        /// your Amazon Web Services payments</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -13538,10 +14085,27 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// CANNOT_CLOSE_MANAGEMENT_ACCOUNT: You attempted to close the management account. To
+        /// close the management account for the organization, you must first either remove or
+        /// close all member accounts in the organization. Follow standard account closure process
+        /// using root credentials.​ 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: You attempted to remove an account
         /// that is registered as a delegated administrator for a service integrated with your
         /// organization. To complete this operation, you must first deregister this account as
         /// a delegated administrator. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CLOSE_ACCOUNT_QUOTA_EXCEEDED: You have exceeded close account quota for the past 30
+        /// days. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CLOSE_ACCOUNT_REQUESTS_LIMIT_EXCEEDED: You attempted to exceed the number of accounts
+        /// that you can close at a time. ​ 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -13564,6 +14128,14 @@ namespace Amazon.Organizations
         /// <para>
         /// HANDSHAKE_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of handshakes that
         /// you can send in one day.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_PAYMENT_INSTRUMENT: You cannot remove an account because no supported payment
+        /// method is associated with the account. Amazon Web Services does not support cards
+        /// issued by financial institutions in Russia or Belarus. For more information, see <a
+        /// href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-general.html">Managing
+        /// your Amazon Web Services payments</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -13934,10 +14506,27 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// CANNOT_CLOSE_MANAGEMENT_ACCOUNT: You attempted to close the management account. To
+        /// close the management account for the organization, you must first either remove or
+        /// close all member accounts in the organization. Follow standard account closure process
+        /// using root credentials.​ 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: You attempted to remove an account
         /// that is registered as a delegated administrator for a service integrated with your
         /// organization. To complete this operation, you must first deregister this account as
         /// a delegated administrator. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CLOSE_ACCOUNT_QUOTA_EXCEEDED: You have exceeded close account quota for the past 30
+        /// days. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CLOSE_ACCOUNT_REQUESTS_LIMIT_EXCEEDED: You attempted to exceed the number of accounts
+        /// that you can close at a time. ​ 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -13960,6 +14549,14 @@ namespace Amazon.Organizations
         /// <para>
         /// HANDSHAKE_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of handshakes that
         /// you can send in one day.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_PAYMENT_INSTRUMENT: You cannot remove an account because no supported payment
+        /// method is associated with the account. Amazon Web Services does not support cards
+        /// issued by financial institutions in Russia or Belarus. For more information, see <a
+        /// href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-general.html">Managing
+        /// your Amazon Web Services payments</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -14329,10 +14926,27 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// CANNOT_CLOSE_MANAGEMENT_ACCOUNT: You attempted to close the management account. To
+        /// close the management account for the organization, you must first either remove or
+        /// close all member accounts in the organization. Follow standard account closure process
+        /// using root credentials.​ 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: You attempted to remove an account
         /// that is registered as a delegated administrator for a service integrated with your
         /// organization. To complete this operation, you must first deregister this account as
         /// a delegated administrator. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CLOSE_ACCOUNT_QUOTA_EXCEEDED: You have exceeded close account quota for the past 30
+        /// days. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CLOSE_ACCOUNT_REQUESTS_LIMIT_EXCEEDED: You attempted to exceed the number of accounts
+        /// that you can close at a time. ​ 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -14355,6 +14969,14 @@ namespace Amazon.Organizations
         /// <para>
         /// HANDSHAKE_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of handshakes that
         /// you can send in one day.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_PAYMENT_INSTRUMENT: You cannot remove an account because no supported payment
+        /// method is associated with the account. Amazon Web Services does not support cards
+        /// issued by financial institutions in Russia or Belarus. For more information, see <a
+        /// href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-general.html">Managing
+        /// your Amazon Web Services payments</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -14884,10 +15506,27 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// CANNOT_CLOSE_MANAGEMENT_ACCOUNT: You attempted to close the management account. To
+        /// close the management account for the organization, you must first either remove or
+        /// close all member accounts in the organization. Follow standard account closure process
+        /// using root credentials.​ 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: You attempted to remove an account
         /// that is registered as a delegated administrator for a service integrated with your
         /// organization. To complete this operation, you must first deregister this account as
         /// a delegated administrator. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CLOSE_ACCOUNT_QUOTA_EXCEEDED: You have exceeded close account quota for the past 30
+        /// days. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CLOSE_ACCOUNT_REQUESTS_LIMIT_EXCEEDED: You attempted to exceed the number of accounts
+        /// that you can close at a time. ​ 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -14910,6 +15549,14 @@ namespace Amazon.Organizations
         /// <para>
         /// HANDSHAKE_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of handshakes that
         /// you can send in one day.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_PAYMENT_INSTRUMENT: You cannot remove an account because no supported payment
+        /// method is associated with the account. Amazon Web Services does not support cards
+        /// issued by financial institutions in Russia or Belarus. For more information, see <a
+        /// href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-general.html">Managing
+        /// your Amazon Web Services payments</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>

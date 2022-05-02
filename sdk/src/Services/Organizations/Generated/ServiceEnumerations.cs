@@ -345,6 +345,10 @@ namespace Amazon.Organizations
         /// </summary>
         public static readonly ConstraintViolationExceptionReason HANDSHAKE_RATE_LIMIT_EXCEEDED = new ConstraintViolationExceptionReason("HANDSHAKE_RATE_LIMIT_EXCEEDED");
         /// <summary>
+        /// Constant INVALID_PAYMENT_INSTRUMENT for ConstraintViolationExceptionReason
+        /// </summary>
+        public static readonly ConstraintViolationExceptionReason INVALID_PAYMENT_INSTRUMENT = new ConstraintViolationExceptionReason("INVALID_PAYMENT_INSTRUMENT");
+        /// <summary>
         /// Constant MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE for ConstraintViolationExceptionReason
         /// </summary>
         public static readonly ConstraintViolationExceptionReason MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE = new ConstraintViolationExceptionReason("MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE");
@@ -494,6 +498,10 @@ namespace Amazon.Organizations
         /// Constant INVALID_IDENTITY_FOR_BUSINESS_VALIDATION for CreateAccountFailureReason
         /// </summary>
         public static readonly CreateAccountFailureReason INVALID_IDENTITY_FOR_BUSINESS_VALIDATION = new CreateAccountFailureReason("INVALID_IDENTITY_FOR_BUSINESS_VALIDATION");
+        /// <summary>
+        /// Constant INVALID_PAYMENT_INSTRUMENT for CreateAccountFailureReason
+        /// </summary>
+        public static readonly CreateAccountFailureReason INVALID_PAYMENT_INSTRUMENT = new CreateAccountFailureReason("INVALID_PAYMENT_INSTRUMENT");
         /// <summary>
         /// Constant MISSING_BUSINESS_VALIDATION for CreateAccountFailureReason
         /// </summary>

@@ -193,7 +193,12 @@ namespace Amazon.Organizations.Model
         /// <summary>
         /// Gets and sets the property AccountName. 
         /// <para>
-        /// The friendly name of the member account.
+        /// The friendly name of the member account. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The account name can consist of only the characters [a-z],[A-Z],[0-9], hyphen (-),
+        /// or dot (.) You can't separate characters with a dash (–).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=50)]
