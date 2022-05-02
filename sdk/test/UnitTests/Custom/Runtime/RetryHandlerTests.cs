@@ -463,11 +463,7 @@ namespace AWSSDK.UnitTests
             var credentials = new BasicAWSCredentials("access_key", "secret_key");
 
             //Test that DefaultRetryPolicy is selected for no specified RetryMode which defaults to Legacy
-            client = new MockServicePipelineValueClient(credentials,
-                new AmazonS3Config
-                {
-                    ServiceURL = "Test"                    
-                });
+            client = new MockServicePipelineValueClient(credentials, new AmazonS3Config());
 
             handler = (RetryHandler)client.Pipeline.Handlers.Find(h => h is RetryHandler);
             Assert.IsTrue(handler.RetryPolicy is DefaultRetryPolicy);
@@ -476,7 +472,6 @@ namespace AWSSDK.UnitTests
             client = new MockServicePipelineValueClient(credentials,
                 new AmazonS3Config
                 {
-                    ServiceURL = "Test",
                     RetryMode = RequestRetryMode.Legacy
                 });
 
@@ -487,7 +482,6 @@ namespace AWSSDK.UnitTests
             client = new MockServicePipelineValueClient(credentials,
                 new AmazonS3Config
                 {
-                    ServiceURL = "Test",
                     RetryMode = RequestRetryMode.Standard
                 });
 
@@ -498,7 +492,6 @@ namespace AWSSDK.UnitTests
             client = new MockServicePipelineValueClient(credentials,
                 new AmazonS3Config
                 {
-                    ServiceURL = "Test",
                     RetryMode = RequestRetryMode.Adaptive
                 });
 

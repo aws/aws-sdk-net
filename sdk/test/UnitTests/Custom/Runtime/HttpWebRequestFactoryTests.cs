@@ -164,6 +164,7 @@ namespace AWSSDK.UnitTests
                 .With(config => config.MaxIdleTime, maxIdleTime)
                 .With(config => config.UseNagleAlgorithm, useNagleAlgorithm)
                 .With(config => config.ConnectionLimit, 10)
+                .With(config => config.ServiceURL, "")
             );
 
             _fixture.Customize<RequestContext>(cc => cc
