@@ -894,7 +894,7 @@ namespace Amazon.Outposts
 
 
         /// <summary>
-        /// Lists the instance types for the specified Outpost.
+        /// Gets the instance types for the specified Outpost.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetOutpostInstanceTypes service method.</param>
         /// 
@@ -923,7 +923,7 @@ namespace Amazon.Outposts
 
 
         /// <summary>
-        /// Lists the instance types for the specified Outpost.
+        /// Gets the instance types for the specified Outpost.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetOutpostInstanceTypes service method.</param>
         /// <param name="cancellationToken">
@@ -1085,13 +1085,82 @@ namespace Amazon.Outposts
 
         #endregion
         
+        #region  ListAssets
+
+
+        /// <summary>
+        /// Lists the hardware assets in an Outpost. If you are using Dedicated Hosts on Amazon
+        /// Web Services Outposts, you can filter your request by host ID to return a list of
+        /// hardware assets that allocate resources for Dedicated Hosts.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAssets service method.</param>
+        /// 
+        /// <returns>The response from the ListAssets service method, as returned by Outposts.</returns>
+        /// <exception cref="Amazon.Outposts.Model.AccessDeniedException">
+        /// You do not have permission to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.InternalServerException">
+        /// An internal error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.NotFoundException">
+        /// The specified request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.ValidationException">
+        /// A parameter is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/ListAssets">REST API Reference for ListAssets Operation</seealso>
+        public virtual ListAssetsResponse ListAssets(ListAssetsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAssetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAssetsResponseUnmarshaller.Instance;
+
+            return Invoke<ListAssetsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists the hardware assets in an Outpost. If you are using Dedicated Hosts on Amazon
+        /// Web Services Outposts, you can filter your request by host ID to return a list of
+        /// hardware assets that allocate resources for Dedicated Hosts.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAssets service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAssets service method, as returned by Outposts.</returns>
+        /// <exception cref="Amazon.Outposts.Model.AccessDeniedException">
+        /// You do not have permission to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.InternalServerException">
+        /// An internal error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.NotFoundException">
+        /// The specified request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.ValidationException">
+        /// A parameter is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/ListAssets">REST API Reference for ListAssets Operation</seealso>
+        public virtual Task<ListAssetsResponse> ListAssetsAsync(ListAssetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAssetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAssetsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListAssetsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListCatalogItems
 
 
         /// <summary>
-        /// Use to create a list of every item in the catalog. Add filters to your request to
-        /// return a more specific list of results. Use filters to match an item class, storage
-        /// option, or EC2 family. 
+        /// Lists the items in the catalog. Add filters to your request to return a more specific
+        /// list of results. Use filters to match an item class, storage option, or EC2 family.
+        /// 
         /// 
         ///  
         /// <para>
@@ -1123,9 +1192,9 @@ namespace Amazon.Outposts
 
 
         /// <summary>
-        /// Use to create a list of every item in the catalog. Add filters to your request to
-        /// return a more specific list of results. Use filters to match an item class, storage
-        /// option, or EC2 family. 
+        /// Lists the items in the catalog. Add filters to your request to return a more specific
+        /// list of results. Use filters to match an item class, storage option, or EC2 family.
+        /// 
         /// 
         ///  
         /// <para>
@@ -1164,8 +1233,8 @@ namespace Amazon.Outposts
 
 
         /// <summary>
-        /// Create a list of the Outpost orders for your Amazon Web Services account. You can
-        /// filter your request by Outpost to return a more specific list of results.
+        /// Lists the Outpost orders for your Amazon Web Services account. You can filter your
+        /// request by Outpost to return a more specific list of results.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListOrders service method.</param>
         /// 
@@ -1194,8 +1263,8 @@ namespace Amazon.Outposts
 
 
         /// <summary>
-        /// Create a list of the Outpost orders for your Amazon Web Services account. You can
-        /// filter your request by Outpost to return a more specific list of results.
+        /// Lists the Outpost orders for your Amazon Web Services account. You can filter your
+        /// request by Outpost to return a more specific list of results.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListOrders service method.</param>
         /// <param name="cancellationToken">
@@ -1231,9 +1300,9 @@ namespace Amazon.Outposts
 
 
         /// <summary>
-        /// Create a list of the Outposts for your Amazon Web Services account. Add filters to
-        /// your request to return a more specific list of results. Use filters to match an Outpost
-        /// lifecycle status, Availability Zone (<code>us-east-1a</code>), and AZ ID (<code>use1-az1</code>).
+        /// Lists the Outposts for your Amazon Web Services account. Add filters to your request
+        /// to return a more specific list of results. Use filters to match an Outpost lifecycle
+        /// status, Availability Zone (<code>us-east-1a</code>), and AZ ID (<code>use1-az1</code>).
         /// 
         /// 
         ///  
@@ -1266,9 +1335,9 @@ namespace Amazon.Outposts
 
 
         /// <summary>
-        /// Create a list of the Outposts for your Amazon Web Services account. Add filters to
-        /// your request to return a more specific list of results. Use filters to match an Outpost
-        /// lifecycle status, Availability Zone (<code>us-east-1a</code>), and AZ ID (<code>use1-az1</code>).
+        /// Lists the Outposts for your Amazon Web Services account. Add filters to your request
+        /// to return a more specific list of results. Use filters to match an Outpost lifecycle
+        /// status, Availability Zone (<code>us-east-1a</code>), and AZ ID (<code>use1-az1</code>).
         /// 
         /// 
         ///  
@@ -1308,9 +1377,9 @@ namespace Amazon.Outposts
 
 
         /// <summary>
-        /// Create a list of the Outpost sites for your Amazon Web Services account. Add operating
-        /// address filters to your request to return a more specific list of results. Use filters
-        /// to match site city, country code, or state/region of the operating address. 
+        /// Lists the Outpost sites for your Amazon Web Services account. Add operating address
+        /// filters to your request to return a more specific list of results. Use filters to
+        /// match site city, country code, or state/region of the operating address. 
         /// 
         ///  
         /// <para>
@@ -1342,9 +1411,9 @@ namespace Amazon.Outposts
 
 
         /// <summary>
-        /// Create a list of the Outpost sites for your Amazon Web Services account. Add operating
-        /// address filters to your request to return a more specific list of results. Use filters
-        /// to match site city, country code, or state/region of the operating address. 
+        /// Lists the Outpost sites for your Amazon Web Services account. Add operating address
+        /// filters to your request to return a more specific list of results. Use filters to
+        /// match site city, country code, or state/region of the operating address. 
         /// 
         ///  
         /// <para>

@@ -29,14 +29,41 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Outposts.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetOutpostInstanceTypes operation.
-    /// Gets the instance types for the specified Outpost.
+    /// Container for the parameters to the ListAssets operation.
+    /// Lists the hardware assets in an Outpost. If you are using Dedicated Hosts on Amazon
+    /// Web Services Outposts, you can filter your request by host ID to return a list of
+    /// hardware assets that allocate resources for Dedicated Hosts.
     /// </summary>
-    public partial class GetOutpostInstanceTypesRequest : AmazonOutpostsRequest
+    public partial class ListAssetsRequest : AmazonOutpostsRequest
     {
+        private List<string> _hostIdFilter = new List<string>();
         private int? _maxResults;
         private string _nextToken;
-        private string _outpostId;
+        private string _outpostIdentifier;
+
+        /// <summary>
+        /// Gets and sets the property HostIdFilter. 
+        /// <para>
+        ///  A filter for the host ID of Dedicated Hosts on the Outpost. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Filter values are case sensitive. If you specify multiple values for a filter, the
+        /// values are joined with an <code>OR</code>, and the request returns all results that
+        /// match any of the specified values.
+        /// </para>
+        /// </summary>
+        public List<string> HostIdFilter
+        {
+            get { return this._hostIdFilter; }
+            set { this._hostIdFilter = value; }
+        }
+
+        // Check to see if HostIdFilter property is set
+        internal bool IsSetHostIdFilter()
+        {
+            return this._hostIdFilter != null && this._hostIdFilter.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property MaxResults.
@@ -71,22 +98,22 @@ namespace Amazon.Outposts.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OutpostId. 
+        /// Gets and sets the property OutpostIdentifier. 
         /// <para>
         ///  The ID or the Amazon Resource Name (ARN) of the Outpost. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=180)]
-        public string OutpostId
+        public string OutpostIdentifier
         {
-            get { return this._outpostId; }
-            set { this._outpostId = value; }
+            get { return this._outpostIdentifier; }
+            set { this._outpostIdentifier = value; }
         }
 
-        // Check to see if OutpostId property is set
-        internal bool IsSetOutpostId()
+        // Check to see if OutpostIdentifier property is set
+        internal bool IsSetOutpostIdentifier()
         {
-            return this._outpostId != null;
+            return this._outpostIdentifier != null;
         }
 
     }

@@ -144,6 +144,29 @@
     <pattern>^(arn:aws([a-z-]+)?:outposts:[a-z\d-]+:\d{12}:site/)?(os-[a-f0-9]{17})$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Outposts.Model.ListAssetsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Outposts.Model.ListAssetsRequest.NextToken</property>
+    <min>1</min>
+    <max>1005</max>
+    <pattern>^(\d+)##(\S+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Outposts.Model.ListAssetsRequest.OutpostIdentifier</property>
+    <min>1</min>
+    <max>180</max>
+    <pattern>^(arn:aws([a-z-]+)?:outposts:[a-z\d-]+:\d{12}:outpost/)?op-[a-f0-9]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Outposts.Model.ListAssetsResponse.NextToken</property>
+    <min>1</min>
+    <max>1005</max>
+    <pattern>^(\d+)##(\S+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Outposts.Model.ListCatalogItemsRequest.MaxResults</property>
     <min>1</min>
     <max>1000</max>
@@ -353,10 +376,28 @@
     <pattern>^\S[\S ]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Outposts.Model.AssetInfo.AssetId</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^(\w+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Outposts.Model.AssetInfo.RackId</property>
+    <min>5</min>
+    <max>20</max>
+    <pattern>^[\S \n]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Outposts.Model.CatalogItem.CatalogItemId</property>
     <min>1</min>
     <max>10</max>
     <pattern>OR-[A-Z0-9]{7}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Outposts.Model.ComputeAttributes.HostId</property>
+    <min>1</min>
+    <max>50</max>
+    <pattern>^[A-Za-z0-9-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Outposts.Model.ConflictException.ResourceId</property>

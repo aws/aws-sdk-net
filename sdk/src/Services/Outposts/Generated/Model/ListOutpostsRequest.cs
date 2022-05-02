@@ -30,9 +30,9 @@ namespace Amazon.Outposts.Model
 {
     /// <summary>
     /// Container for the parameters to the ListOutposts operation.
-    /// Create a list of the Outposts for your Amazon Web Services account. Add filters to
-    /// your request to return a more specific list of results. Use filters to match an Outpost
-    /// lifecycle status, Availability Zone (<code>us-east-1a</code>), and AZ ID (<code>use1-az1</code>).
+    /// Lists the Outposts for your Amazon Web Services account. Add filters to your request
+    /// to return a more specific list of results. Use filters to match an Outpost lifecycle
+    /// status, Availability Zone (<code>us-east-1a</code>), and AZ ID (<code>use1-az1</code>).
     /// 
     /// 
     ///  

@@ -29,29 +29,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Outposts.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetOutpostInstanceTypes operation.
-    /// Gets the instance types for the specified Outpost.
+    /// This is the response object from the ListAssets operation.
     /// </summary>
-    public partial class GetOutpostInstanceTypesRequest : AmazonOutpostsRequest
+    public partial class ListAssetsResponse : AmazonWebServiceResponse
     {
-        private int? _maxResults;
+        private List<AssetInfo> _assets = new List<AssetInfo>();
         private string _nextToken;
-        private string _outpostId;
 
         /// <summary>
-        /// Gets and sets the property MaxResults.
+        /// Gets and sets the property Assets. 
+        /// <para>
+        ///  Information about hardware assets. 
+        /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1000)]
-        public int MaxResults
+        public List<AssetInfo> Assets
         {
-            get { return this._maxResults.GetValueOrDefault(); }
-            set { this._maxResults = value; }
+            get { return this._assets; }
+            set { this._assets = value; }
         }
 
-        // Check to see if MaxResults property is set
-        internal bool IsSetMaxResults()
+        // Check to see if Assets property is set
+        internal bool IsSetAssets()
         {
-            return this._maxResults.HasValue; 
+            return this._assets != null && this._assets.Count > 0; 
         }
 
         /// <summary>
@@ -68,25 +68,6 @@ namespace Amazon.Outposts.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property OutpostId. 
-        /// <para>
-        ///  The ID or the Amazon Resource Name (ARN) of the Outpost. 
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=180)]
-        public string OutpostId
-        {
-            get { return this._outpostId; }
-            set { this._outpostId = value; }
-        }
-
-        // Check to see if OutpostId property is set
-        internal bool IsSetOutpostId()
-        {
-            return this._outpostId != null;
         }
 
     }
