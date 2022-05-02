@@ -1,3 +1,15 @@
+### 3.7.264.0 (2022-05-02 18:14 UTC)
+* Organizations (3.7.2.0)
+	* This release adds the INVALID_PAYMENT_INSTRUMENT as a fail reason and an error message.
+* Outposts (3.7.8.0)
+	* This release adds a new API called ListAssets to the Outposts SDK, which lists the hardware assets in an Outpost.
+* Synthetics (3.7.5.0)
+	* CloudWatch Synthetics has introduced a new feature to provide customers with an option to delete the underlying resources that Synthetics canary creates when the user chooses to delete the canary.
+* Core 3.7.10.12
+	* Updating endpoints.json file.
+
+	* All services packages updated to require new Core
+
 ### 3.7.263.0 (2022-04-29 18:13 UTC)
 * CodeGuruReviewer (3.7.6.0)
 	* Amazon CodeGuru Reviewer now supports suppressing recommendations from being generated on specific files and directories.
