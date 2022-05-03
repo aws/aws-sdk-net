@@ -329,6 +329,102 @@ namespace Amazon.KinesisVideoArchivedMedia
 
 
     /// <summary>
+    /// Constants used for properties of type Format.
+    /// </summary>
+    public class Format : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant JPEG for Format
+        /// </summary>
+        public static readonly Format JPEG = new Format("JPEG");
+        /// <summary>
+        /// Constant PNG for Format
+        /// </summary>
+        public static readonly Format PNG = new Format("PNG");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Format(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Format FindValue(string value)
+        {
+            return FindValue<Format>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Format(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FormatConfigKey.
+    /// </summary>
+    public class FormatConfigKey : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant JPEGQuality for FormatConfigKey
+        /// </summary>
+        public static readonly FormatConfigKey JPEGQuality = new FormatConfigKey("JPEGQuality");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FormatConfigKey(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FormatConfigKey FindValue(string value)
+        {
+            return FindValue<FormatConfigKey>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FormatConfigKey(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type FragmentSelectorType.
     /// </summary>
     public class FragmentSelectorType : ConstantClass
@@ -580,6 +676,106 @@ namespace Amazon.KinesisVideoArchivedMedia
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator HLSPlaybackMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ImageError.
+    /// </summary>
+    public class ImageError : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MEDIA_ERROR for ImageError
+        /// </summary>
+        public static readonly ImageError MEDIA_ERROR = new ImageError("MEDIA_ERROR");
+        /// <summary>
+        /// Constant NO_MEDIA for ImageError
+        /// </summary>
+        public static readonly ImageError NO_MEDIA = new ImageError("NO_MEDIA");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ImageError(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ImageError FindValue(string value)
+        {
+            return FindValue<ImageError>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ImageError(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ImageSelectorType.
+    /// </summary>
+    public class ImageSelectorType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PRODUCER_TIMESTAMP for ImageSelectorType
+        /// </summary>
+        public static readonly ImageSelectorType PRODUCER_TIMESTAMP = new ImageSelectorType("PRODUCER_TIMESTAMP");
+        /// <summary>
+        /// Constant SERVER_TIMESTAMP for ImageSelectorType
+        /// </summary>
+        public static readonly ImageSelectorType SERVER_TIMESTAMP = new ImageSelectorType("SERVER_TIMESTAMP");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ImageSelectorType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ImageSelectorType FindValue(string value)
+        {
+            return FindValue<ImageSelectorType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ImageSelectorType(string value)
         {
             return FindValue(value);
         }

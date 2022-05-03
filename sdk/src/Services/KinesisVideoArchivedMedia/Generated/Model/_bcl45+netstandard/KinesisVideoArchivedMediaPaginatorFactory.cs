@@ -36,6 +36,14 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         }
 
         /// <summary>
+        /// Paginator for GetImages operation
+        ///</summary>
+        public IGetImagesPaginator GetImages(GetImagesRequest request) 
+        {
+            return new GetImagesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListFragments operation
         ///</summary>
         public IListFragmentsPaginator ListFragments(ListFragmentsRequest request) 

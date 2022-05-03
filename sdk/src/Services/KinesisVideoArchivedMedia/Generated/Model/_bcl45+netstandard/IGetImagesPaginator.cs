@@ -16,23 +16,23 @@
 /*
  * Do not modify this file. This file is generated from the kinesis-video-archived-media-2017-09-30.normal.json service model.
  */
+using Amazon.Runtime;
 
 namespace Amazon.KinesisVideoArchivedMedia.Model
 {
     /// <summary>
-    /// Paginators for the KinesisVideoArchivedMedia service
+    /// Paginator for the GetImages operation
     ///</summary>
-    public interface IKinesisVideoArchivedMediaPaginatorFactory
+    public interface IGetImagesPaginator
     {
+        /// <summary>
+        /// Enumerable containing all full responses for the operation
+        /// </summary>
+        IPaginatedEnumerable<GetImagesResponse> Responses { get; }
 
         /// <summary>
-        /// Paginator for GetImages operation
-        ///</summary>
-        IGetImagesPaginator GetImages(GetImagesRequest request);
-
-        /// <summary>
-        /// Paginator for ListFragments operation
-        ///</summary>
-        IListFragmentsPaginator ListFragments(ListFragmentsRequest request);
+        /// Enumerable containing all of the Images
+        /// </summary>
+        IPaginatedEnumerable<Image> Images { get; }
     }
 }
