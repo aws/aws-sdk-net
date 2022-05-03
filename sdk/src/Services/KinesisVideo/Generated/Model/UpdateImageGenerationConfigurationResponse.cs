@@ -29,32 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisVideo.Model
 {
     /// <summary>
-    /// A structure that contains the configuration for the <code>SINGLE_MASTER</code> channel
-    /// type.
+    /// This is the response object from the UpdateImageGenerationConfiguration operation.
     /// </summary>
-    public partial class SingleMasterConfiguration
+    public partial class UpdateImageGenerationConfigurationResponse : AmazonWebServiceResponse
     {
-        private int? _messageTtlSeconds;
-
-        /// <summary>
-        /// Gets and sets the property MessageTtlSeconds. 
-        /// <para>
-        /// The period of time a signaling channel retains undelivered messages before they are
-        /// discarded.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=5, Max=120)]
-        public int MessageTtlSeconds
-        {
-            get { return this._messageTtlSeconds.GetValueOrDefault(); }
-            set { this._messageTtlSeconds = value; }
-        }
-
-        // Check to see if MessageTtlSeconds property is set
-        internal bool IsSetMessageTtlSeconds()
-        {
-            return this._messageTtlSeconds.HasValue; 
-        }
 
     }
 }

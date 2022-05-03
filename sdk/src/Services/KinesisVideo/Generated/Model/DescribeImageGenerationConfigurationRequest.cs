@@ -29,38 +29,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisVideo.Model
 {
     /// <summary>
-    /// Container for the parameters to the TagStream operation.
-    /// Adds one or more tags to a stream. A <i>tag</i> is a key-value pair (the value is
-    /// optional) that you can define and assign to Amazon Web Services resources. If you
-    /// specify a tag that already exists, the tag value is replaced with the value that you
-    /// specify in the request. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
-    /// Cost Allocation Tags</a> in the <i>Billing and Cost Management and Cost Management
-    /// User Guide</i>. 
-    /// 
-    ///  
-    /// <para>
-    /// You must provide either the <code>StreamName</code> or the <code>StreamARN</code>.
-    /// </para>
-    ///  
-    /// <para>
-    /// This operation requires permission for the <code>KinesisVideo:TagStream</code> action.
-    /// </para>
-    ///  
-    /// <para>
-    /// A Kinesis video stream can support up to 50 tags.
-    /// </para>
+    /// Container for the parameters to the DescribeImageGenerationConfiguration operation.
+    /// Gets the <code>ImageGenerationConfiguration</code> for a given Kinesis video stream.
     /// </summary>
-    public partial class TagStreamRequest : AmazonKinesisVideoRequest
+    public partial class DescribeImageGenerationConfigurationRequest : AmazonKinesisVideoRequest
     {
         private string _streamARN;
         private string _streamName;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
         /// Gets and sets the property StreamARN. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the resource that you want to add the tag or tags
-        /// to.
+        /// The Amazon Resource Name (ARN) of the Kinesis video stream from which to retrieve
+        /// the image generation configuration. You must specify either the <code>StreamName</code>
+        /// or the <code>StreamARN</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -79,7 +61,9 @@ namespace Amazon.KinesisVideo.Model
         /// <summary>
         /// Gets and sets the property StreamName. 
         /// <para>
-        /// The name of the stream that you want to add the tag or tags to.
+        /// The name of the stream from which to retrieve the image generation configuration.
+        /// You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -93,26 +77,6 @@ namespace Amazon.KinesisVideo.Model
         internal bool IsSetStreamName()
         {
             return this._streamName != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Tags. 
-        /// <para>
-        /// A list of tags to associate with the specified stream. Each tag is a key-value pair
-        /// (the value is optional).
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=50)]
-        public Dictionary<string, string> Tags
-        {
-            get { return this._tags; }
-            set { this._tags = value; }
-        }
-
-        // Check to see if Tags property is set
-        internal bool IsSetTags()
-        {
-            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

@@ -289,8 +289,8 @@ namespace Amazon.KinesisVideo
         /// You do not have required permissions to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisVideo.Model.AccountChannelLimitExceededException">
-        /// You have reached the maximum limit of active signaling channels for this AWS account
-        /// in this region.
+        /// You have reached the maximum limit of active signaling channels for this Amazon Web
+        /// Services account in this region.
         /// </exception>
         /// <exception cref="Amazon.KinesisVideo.Model.ClientLimitExceededException">
         /// Kinesis Video Streams has throttled the request because you have exceeded the limit
@@ -300,11 +300,20 @@ namespace Amazon.KinesisVideo
         /// The value for this input parameter is invalid.
         /// </exception>
         /// <exception cref="Amazon.KinesisVideo.Model.ResourceInUseException">
-        /// The signaling channel is currently not available for this operation.
+        /// The resource is currently not available for this operation. New resources cannot be
+        /// created with the same name as existing resources. Also, resources cannot be updated
+        /// or deleted unless they are in an <code>ACTIVE</code> state.
+        /// 
+        ///  
+        /// <para>
+        /// If this exception is returned, do not use it to determine whether the requested resource
+        /// already exists. Instead, it is recommended you use the resource-specific describe
+        /// API, for example, <code>DescribeStream</code> for video streams.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.KinesisVideo.Model.TagsPerResourceExceededLimitException">
-        /// You have exceeded the limit of tags that you can associate with the resource. Kinesis
-        /// video streams support up to 50 tags.
+        /// You have exceeded the limit of tags that you can associate with the resource. A Kinesis
+        /// video stream can support up to 50 tags.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/CreateSignalingChannel">REST API Reference for CreateSignalingChannel Operation</seealso>
         public virtual Task<CreateSignalingChannelResponse> CreateSignalingChannelAsync(CreateSignalingChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -376,11 +385,20 @@ namespace Amazon.KinesisVideo
         /// Not implemented.
         /// </exception>
         /// <exception cref="Amazon.KinesisVideo.Model.ResourceInUseException">
-        /// The signaling channel is currently not available for this operation.
+        /// The resource is currently not available for this operation. New resources cannot be
+        /// created with the same name as existing resources. Also, resources cannot be updated
+        /// or deleted unless they are in an <code>ACTIVE</code> state.
+        /// 
+        ///  
+        /// <para>
+        /// If this exception is returned, do not use it to determine whether the requested resource
+        /// already exists. Instead, it is recommended you use the resource-specific describe
+        /// API, for example, <code>DescribeStream</code> for video streams.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.KinesisVideo.Model.TagsPerResourceExceededLimitException">
-        /// You have exceeded the limit of tags that you can associate with the resource. Kinesis
-        /// video streams support up to 50 tags.
+        /// You have exceeded the limit of tags that you can associate with the resource. A Kinesis
+        /// video stream can support up to 50 tags.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/CreateStream">REST API Reference for CreateStream Operation</seealso>
         public virtual Task<CreateStreamResponse> CreateStreamAsync(CreateStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -429,7 +447,16 @@ namespace Amazon.KinesisVideo
         /// The value for this input parameter is invalid.
         /// </exception>
         /// <exception cref="Amazon.KinesisVideo.Model.ResourceInUseException">
-        /// The signaling channel is currently not available for this operation.
+        /// The resource is currently not available for this operation. New resources cannot be
+        /// created with the same name as existing resources. Also, resources cannot be updated
+        /// or deleted unless they are in an <code>ACTIVE</code> state.
+        /// 
+        ///  
+        /// <para>
+        /// If this exception is returned, do not use it to determine whether the requested resource
+        /// already exists. Instead, it is recommended you use the resource-specific describe
+        /// API, for example, <code>DescribeStream</code> for video streams.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.KinesisVideo.Model.ResourceNotFoundException">
         /// Amazon Kinesis Video Streams can't find the stream that you specified.
@@ -506,7 +533,16 @@ namespace Amazon.KinesisVideo
         /// The caller is not authorized to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisVideo.Model.ResourceInUseException">
-        /// The signaling channel is currently not available for this operation.
+        /// The resource is currently not available for this operation. New resources cannot be
+        /// created with the same name as existing resources. Also, resources cannot be updated
+        /// or deleted unless they are in an <code>ACTIVE</code> state.
+        /// 
+        ///  
+        /// <para>
+        /// If this exception is returned, do not use it to determine whether the requested resource
+        /// already exists. Instead, it is recommended you use the resource-specific describe
+        /// API, for example, <code>DescribeStream</code> for video streams.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.KinesisVideo.Model.ResourceNotFoundException">
         /// Amazon Kinesis Video Streams can't find the stream that you specified.
@@ -524,6 +560,100 @@ namespace Amazon.KinesisVideo
             options.ResponseUnmarshaller = DeleteStreamResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteStreamResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeImageGenerationConfiguration
+
+        internal virtual DescribeImageGenerationConfigurationResponse DescribeImageGenerationConfiguration(DescribeImageGenerationConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeImageGenerationConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeImageGenerationConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeImageGenerationConfigurationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets the <code>ImageGenerationConfiguration</code> for a given Kinesis video stream.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeImageGenerationConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeImageGenerationConfiguration service method, as returned by KinesisVideo.</returns>
+        /// <exception cref="Amazon.KinesisVideo.Model.AccessDeniedException">
+        /// You do not have required permissions to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideo.Model.ClientLimitExceededException">
+        /// Kinesis Video Streams has throttled the request because you have exceeded the limit
+        /// of allowed client calls. Try making the call later.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideo.Model.InvalidArgumentException">
+        /// The value for this input parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideo.Model.ResourceNotFoundException">
+        /// Amazon Kinesis Video Streams can't find the stream that you specified.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DescribeImageGenerationConfiguration">REST API Reference for DescribeImageGenerationConfiguration Operation</seealso>
+        public virtual Task<DescribeImageGenerationConfigurationResponse> DescribeImageGenerationConfigurationAsync(DescribeImageGenerationConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeImageGenerationConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeImageGenerationConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeImageGenerationConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeNotificationConfiguration
+
+        internal virtual DescribeNotificationConfigurationResponse DescribeNotificationConfiguration(DescribeNotificationConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeNotificationConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeNotificationConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeNotificationConfigurationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets the <code>NotificationConfiguration</code> for a given Kinesis video stream.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeNotificationConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeNotificationConfiguration service method, as returned by KinesisVideo.</returns>
+        /// <exception cref="Amazon.KinesisVideo.Model.AccessDeniedException">
+        /// You do not have required permissions to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideo.Model.ClientLimitExceededException">
+        /// Kinesis Video Streams has throttled the request because you have exceeded the limit
+        /// of allowed client calls. Try making the call later.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideo.Model.InvalidArgumentException">
+        /// The value for this input parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideo.Model.ResourceNotFoundException">
+        /// Amazon Kinesis Video Streams can't find the stream that you specified.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DescribeNotificationConfiguration">REST API Reference for DescribeNotificationConfiguration Operation</seealso>
+        public virtual Task<DescribeNotificationConfigurationResponse> DescribeNotificationConfigurationAsync(DescribeNotificationConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeNotificationConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeNotificationConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeNotificationConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -736,7 +866,16 @@ namespace Amazon.KinesisVideo
         /// The value for this input parameter is invalid.
         /// </exception>
         /// <exception cref="Amazon.KinesisVideo.Model.ResourceInUseException">
-        /// The signaling channel is currently not available for this operation.
+        /// The resource is currently not available for this operation. New resources cannot be
+        /// created with the same name as existing resources. Also, resources cannot be updated
+        /// or deleted unless they are in an <code>ACTIVE</code> state.
+        /// 
+        ///  
+        /// <para>
+        /// If this exception is returned, do not use it to determine whether the requested resource
+        /// already exists. Instead, it is recommended you use the resource-specific describe
+        /// API, for example, <code>DescribeStream</code> for video streams.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.KinesisVideo.Model.ResourceNotFoundException">
         /// Amazon Kinesis Video Streams can't find the stream that you specified.
@@ -959,10 +1098,11 @@ namespace Amazon.KinesisVideo
 
         /// <summary>
         /// Adds one or more tags to a signaling channel. A <i>tag</i> is a key-value pair (the
-        /// value is optional) that you can define and assign to AWS resources. If you specify
-        /// a tag that already exists, the tag value is replaced with the value that you specify
-        /// in the request. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
-        /// Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+        /// value is optional) that you can define and assign to Amazon Web Services resources.
+        /// If you specify a tag that already exists, the tag value is replaced with the value
+        /// that you specify in the request. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
+        /// Cost Allocation Tags</a> in the <i>Billing and Cost Management and Cost Management
+        /// User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// <param name="cancellationToken">
@@ -984,8 +1124,8 @@ namespace Amazon.KinesisVideo
         /// Amazon Kinesis Video Streams can't find the stream that you specified.
         /// </exception>
         /// <exception cref="Amazon.KinesisVideo.Model.TagsPerResourceExceededLimitException">
-        /// You have exceeded the limit of tags that you can associate with the resource. Kinesis
-        /// video streams support up to 50 tags.
+        /// You have exceeded the limit of tags that you can associate with the resource. A Kinesis
+        /// video stream can support up to 50 tags.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1014,11 +1154,11 @@ namespace Amazon.KinesisVideo
 
         /// <summary>
         /// Adds one or more tags to a stream. A <i>tag</i> is a key-value pair (the value is
-        /// optional) that you can define and assign to AWS resources. If you specify a tag that
-        /// already exists, the tag value is replaced with the value that you specify in the request.
-        /// For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
-        /// Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
-        /// 
+        /// optional) that you can define and assign to Amazon Web Services resources. If you
+        /// specify a tag that already exists, the tag value is replaced with the value that you
+        /// specify in the request. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
+        /// Cost Allocation Tags</a> in the <i>Billing and Cost Management and Cost Management
+        /// User Guide</i>. 
         /// 
         ///  
         /// <para>
@@ -1030,7 +1170,7 @@ namespace Amazon.KinesisVideo
         /// </para>
         ///  
         /// <para>
-        /// Kinesis video streams support up to 50 tags.
+        /// A Kinesis video stream can support up to 50 tags.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagStream service method.</param>
@@ -1056,8 +1196,8 @@ namespace Amazon.KinesisVideo
         /// Amazon Kinesis Video Streams can't find the stream that you specified.
         /// </exception>
         /// <exception cref="Amazon.KinesisVideo.Model.TagsPerResourceExceededLimitException">
-        /// You have exceeded the limit of tags that you can associate with the resource. Kinesis
-        /// video streams support up to 50 tags.
+        /// You have exceeded the limit of tags that you can associate with the resource. A Kinesis
+        /// video stream can support up to 50 tags.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/TagStream">REST API Reference for TagStream Operation</seealso>
         public virtual Task<TagStreamResponse> TagStreamAsync(TagStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1241,7 +1381,16 @@ namespace Amazon.KinesisVideo
         /// The caller is not authorized to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisVideo.Model.ResourceInUseException">
-        /// The signaling channel is currently not available for this operation.
+        /// The resource is currently not available for this operation. New resources cannot be
+        /// created with the same name as existing resources. Also, resources cannot be updated
+        /// or deleted unless they are in an <code>ACTIVE</code> state.
+        /// 
+        ///  
+        /// <para>
+        /// If this exception is returned, do not use it to determine whether the requested resource
+        /// already exists. Instead, it is recommended you use the resource-specific describe
+        /// API, for example, <code>DescribeStream</code> for video streams.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.KinesisVideo.Model.ResourceNotFoundException">
         /// Amazon Kinesis Video Streams can't find the stream that you specified.
@@ -1259,6 +1408,131 @@ namespace Amazon.KinesisVideo
             options.ResponseUnmarshaller = UpdateDataRetentionResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateDataRetentionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateImageGenerationConfiguration
+
+        internal virtual UpdateImageGenerationConfigurationResponse UpdateImageGenerationConfiguration(UpdateImageGenerationConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateImageGenerationConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateImageGenerationConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateImageGenerationConfigurationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates the <code>StreamInfo</code> and <code>ImageProcessingConfiguration</code>
+        /// fields.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateImageGenerationConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateImageGenerationConfiguration service method, as returned by KinesisVideo.</returns>
+        /// <exception cref="Amazon.KinesisVideo.Model.AccessDeniedException">
+        /// You do not have required permissions to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideo.Model.ClientLimitExceededException">
+        /// Kinesis Video Streams has throttled the request because you have exceeded the limit
+        /// of allowed client calls. Try making the call later.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideo.Model.InvalidArgumentException">
+        /// The value for this input parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideo.Model.NoDataRetentionException">
+        /// The Stream data retention in hours is equal to zero.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideo.Model.ResourceInUseException">
+        /// The resource is currently not available for this operation. New resources cannot be
+        /// created with the same name as existing resources. Also, resources cannot be updated
+        /// or deleted unless they are in an <code>ACTIVE</code> state.
+        /// 
+        ///  
+        /// <para>
+        /// If this exception is returned, do not use it to determine whether the requested resource
+        /// already exists. Instead, it is recommended you use the resource-specific describe
+        /// API, for example, <code>DescribeStream</code> for video streams.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideo.Model.ResourceNotFoundException">
+        /// Amazon Kinesis Video Streams can't find the stream that you specified.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/UpdateImageGenerationConfiguration">REST API Reference for UpdateImageGenerationConfiguration Operation</seealso>
+        public virtual Task<UpdateImageGenerationConfigurationResponse> UpdateImageGenerationConfigurationAsync(UpdateImageGenerationConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateImageGenerationConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateImageGenerationConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateImageGenerationConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateNotificationConfiguration
+
+        internal virtual UpdateNotificationConfigurationResponse UpdateNotificationConfiguration(UpdateNotificationConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateNotificationConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateNotificationConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateNotificationConfigurationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates the notification information for a stream.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateNotificationConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateNotificationConfiguration service method, as returned by KinesisVideo.</returns>
+        /// <exception cref="Amazon.KinesisVideo.Model.AccessDeniedException">
+        /// You do not have required permissions to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideo.Model.ClientLimitExceededException">
+        /// Kinesis Video Streams has throttled the request because you have exceeded the limit
+        /// of allowed client calls. Try making the call later.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideo.Model.InvalidArgumentException">
+        /// The value for this input parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideo.Model.NoDataRetentionException">
+        /// The Stream data retention in hours is equal to zero.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideo.Model.ResourceInUseException">
+        /// The resource is currently not available for this operation. New resources cannot be
+        /// created with the same name as existing resources. Also, resources cannot be updated
+        /// or deleted unless they are in an <code>ACTIVE</code> state.
+        /// 
+        ///  
+        /// <para>
+        /// If this exception is returned, do not use it to determine whether the requested resource
+        /// already exists. Instead, it is recommended you use the resource-specific describe
+        /// API, for example, <code>DescribeStream</code> for video streams.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.KinesisVideo.Model.ResourceNotFoundException">
+        /// Amazon Kinesis Video Streams can't find the stream that you specified.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/UpdateNotificationConfiguration">REST API Reference for UpdateNotificationConfiguration Operation</seealso>
+        public virtual Task<UpdateNotificationConfigurationResponse> UpdateNotificationConfigurationAsync(UpdateNotificationConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateNotificationConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateNotificationConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateNotificationConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1304,7 +1578,16 @@ namespace Amazon.KinesisVideo
         /// The value for this input parameter is invalid.
         /// </exception>
         /// <exception cref="Amazon.KinesisVideo.Model.ResourceInUseException">
-        /// The signaling channel is currently not available for this operation.
+        /// The resource is currently not available for this operation. New resources cannot be
+        /// created with the same name as existing resources. Also, resources cannot be updated
+        /// or deleted unless they are in an <code>ACTIVE</code> state.
+        /// 
+        ///  
+        /// <para>
+        /// If this exception is returned, do not use it to determine whether the requested resource
+        /// already exists. Instead, it is recommended you use the resource-specific describe
+        /// API, for example, <code>DescribeStream</code> for video streams.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.KinesisVideo.Model.ResourceNotFoundException">
         /// Amazon Kinesis Video Streams can't find the stream that you specified.
@@ -1375,7 +1658,16 @@ namespace Amazon.KinesisVideo
         /// The caller is not authorized to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisVideo.Model.ResourceInUseException">
-        /// The signaling channel is currently not available for this operation.
+        /// The resource is currently not available for this operation. New resources cannot be
+        /// created with the same name as existing resources. Also, resources cannot be updated
+        /// or deleted unless they are in an <code>ACTIVE</code> state.
+        /// 
+        ///  
+        /// <para>
+        /// If this exception is returned, do not use it to determine whether the requested resource
+        /// already exists. Instead, it is recommended you use the resource-specific describe
+        /// API, for example, <code>DescribeStream</code> for video streams.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.KinesisVideo.Model.ResourceNotFoundException">
         /// Amazon Kinesis Video Streams can't find the stream that you specified.

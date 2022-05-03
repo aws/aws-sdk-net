@@ -29,31 +29,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisVideo.Model
 {
     /// <summary>
-    /// A structure that contains the configuration for the <code>SINGLE_MASTER</code> channel
-    /// type.
+    /// This is the response object from the DescribeNotificationConfiguration operation.
     /// </summary>
-    public partial class SingleMasterConfiguration
+    public partial class DescribeNotificationConfigurationResponse : AmazonWebServiceResponse
     {
-        private int? _messageTtlSeconds;
+        private NotificationConfiguration _notificationConfiguration;
 
         /// <summary>
-        /// Gets and sets the property MessageTtlSeconds. 
+        /// Gets and sets the property NotificationConfiguration. 
         /// <para>
-        /// The period of time a signaling channel retains undelivered messages before they are
-        /// discarded.
+        /// The structure that contains the information required for notifications. If the structure
+        /// is null, the configuration will be deleted from the stream.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=5, Max=120)]
-        public int MessageTtlSeconds
+        public NotificationConfiguration NotificationConfiguration
         {
-            get { return this._messageTtlSeconds.GetValueOrDefault(); }
-            set { this._messageTtlSeconds = value; }
+            get { return this._notificationConfiguration; }
+            set { this._notificationConfiguration = value; }
         }
 
-        // Check to see if MessageTtlSeconds property is set
-        internal bool IsSetMessageTtlSeconds()
+        // Check to see if NotificationConfiguration property is set
+        internal bool IsSetNotificationConfiguration()
         {
-            return this._messageTtlSeconds.HasValue; 
+            return this._notificationConfiguration != null;
         }
 
     }

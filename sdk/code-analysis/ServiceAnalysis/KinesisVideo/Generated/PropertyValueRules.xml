@@ -10,7 +10,7 @@
     <property>Amazon.KinesisVideo.Model.CreateSignalingChannelResponse.ChannelARN</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+</pattern>
+    <pattern>arn:[a-z\d-]+:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisVideo.Model.CreateStreamRequest.DataRetentionInHours</property>
@@ -44,13 +44,13 @@
     <property>Amazon.KinesisVideo.Model.CreateStreamResponse.StreamARN</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+</pattern>
+    <pattern>arn:[a-z\d-]+:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisVideo.Model.DeleteSignalingChannelRequest.ChannelARN</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+</pattern>
+    <pattern>arn:[a-z\d-]+:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisVideo.Model.DeleteSignalingChannelRequest.CurrentVersion</property>
@@ -68,13 +68,37 @@
     <property>Amazon.KinesisVideo.Model.DeleteStreamRequest.StreamARN</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+</pattern>
+    <pattern>arn:[a-z\d-]+:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisVideo.Model.DescribeImageGenerationConfigurationRequest.StreamARN</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>arn:[a-z\d-]+:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisVideo.Model.DescribeImageGenerationConfigurationRequest.StreamName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9_.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisVideo.Model.DescribeNotificationConfigurationRequest.StreamARN</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>arn:[a-z\d-]+:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisVideo.Model.DescribeNotificationConfigurationRequest.StreamName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9_.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisVideo.Model.DescribeSignalingChannelRequest.ChannelARN</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+</pattern>
+    <pattern>arn:[a-z\d-]+:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisVideo.Model.DescribeSignalingChannelRequest.ChannelName</property>
@@ -86,7 +110,7 @@
     <property>Amazon.KinesisVideo.Model.DescribeStreamRequest.StreamARN</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+</pattern>
+    <pattern>arn:[a-z\d-]+:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisVideo.Model.DescribeStreamRequest.StreamName</property>
@@ -98,7 +122,7 @@
     <property>Amazon.KinesisVideo.Model.GetDataEndpointRequest.StreamARN</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+</pattern>
+    <pattern>arn:[a-z\d-]+:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisVideo.Model.GetDataEndpointRequest.StreamName</property>
@@ -110,7 +134,7 @@
     <property>Amazon.KinesisVideo.Model.GetSignalingChannelEndpointRequest.ChannelARN</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+</pattern>
+    <pattern>arn:[a-z\d-]+:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisVideo.Model.ListSignalingChannelsRequest.MaxResults</property>
@@ -156,7 +180,7 @@
     <property>Amazon.KinesisVideo.Model.ListTagsForResourceRequest.ResourceARN</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+</pattern>
+    <pattern>arn:[a-z\d-]+:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisVideo.Model.ListTagsForResourceResponse.NextToken</property>
@@ -174,7 +198,7 @@
     <property>Amazon.KinesisVideo.Model.ListTagsForStreamRequest.StreamARN</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+</pattern>
+    <pattern>arn:[a-z\d-]+:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisVideo.Model.ListTagsForStreamRequest.StreamName</property>
@@ -192,13 +216,13 @@
     <property>Amazon.KinesisVideo.Model.TagResourceRequest.ResourceARN</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+</pattern>
+    <pattern>arn:[a-z\d-]+:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisVideo.Model.TagStreamRequest.StreamARN</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+</pattern>
+    <pattern>arn:[a-z\d-]+:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisVideo.Model.TagStreamRequest.StreamName</property>
@@ -210,13 +234,13 @@
     <property>Amazon.KinesisVideo.Model.UntagResourceRequest.ResourceARN</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+</pattern>
+    <pattern>arn:[a-z\d-]+:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisVideo.Model.UntagStreamRequest.StreamARN</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+</pattern>
+    <pattern>arn:[a-z\d-]+:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisVideo.Model.UntagStreamRequest.StreamName</property>
@@ -238,7 +262,7 @@
     <property>Amazon.KinesisVideo.Model.UpdateDataRetentionRequest.StreamARN</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+</pattern>
+    <pattern>arn:[a-z\d-]+:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisVideo.Model.UpdateDataRetentionRequest.StreamName</property>
@@ -247,10 +271,34 @@
     <pattern>[a-zA-Z0-9_.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.KinesisVideo.Model.UpdateImageGenerationConfigurationRequest.StreamARN</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>arn:[a-z\d-]+:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisVideo.Model.UpdateImageGenerationConfigurationRequest.StreamName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9_.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisVideo.Model.UpdateNotificationConfigurationRequest.StreamARN</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>arn:[a-z\d-]+:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisVideo.Model.UpdateNotificationConfigurationRequest.StreamName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9_.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.KinesisVideo.Model.UpdateSignalingChannelRequest.ChannelARN</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+</pattern>
+    <pattern>arn:[a-z\d-]+:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisVideo.Model.UpdateSignalingChannelRequest.CurrentVersion</property>
@@ -280,7 +328,7 @@
     <property>Amazon.KinesisVideo.Model.UpdateStreamRequest.StreamARN</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+</pattern>
+    <pattern>arn:[a-z\d-]+:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisVideo.Model.UpdateStreamRequest.StreamName</property>
@@ -292,7 +340,7 @@
     <property>Amazon.KinesisVideo.Model.ChannelInfo.ChannelARN</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+</pattern>
+    <pattern>arn:[a-z\d-]+:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisVideo.Model.ChannelInfo.ChannelName</property>
@@ -311,6 +359,39 @@
     <min>1</min>
     <max>256</max>
     <pattern>[a-zA-Z0-9_.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisVideo.Model.ImageGenerationConfiguration.HeightPixels</property>
+    <min>1</min>
+    <max>2160</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisVideo.Model.ImageGenerationConfiguration.SamplingInterval</property>
+    <min>3000</min>
+    <max>20000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisVideo.Model.ImageGenerationConfiguration.WidthPixels</property>
+    <min>1</min>
+    <max>3840</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisVideo.Model.ImageGenerationDestinationConfig.DestinationRegion</property>
+    <min>9</min>
+    <max>14</max>
+    <pattern>^[a-z]+(-[a-z]+)?-[a-z]+-[0-9]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisVideo.Model.ImageGenerationDestinationConfig.Uri</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[a-zA-Z_0-9]+:(//)?([^/]+)/?([^*]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisVideo.Model.NotificationDestinationConfig.Uri</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[a-zA-Z_0-9]+:(//)?([^/]+)/?([^*]*)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisVideo.Model.SingleMasterConfiguration.MessageTtlSeconds</property>
@@ -343,7 +424,7 @@
     <property>Amazon.KinesisVideo.Model.StreamInfo.StreamARN</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+</pattern>
+    <pattern>arn:[a-z\d-]+:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisVideo.Model.StreamInfo.StreamName</property>

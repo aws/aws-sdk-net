@@ -29,31 +29,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisVideo.Model
 {
     /// <summary>
-    /// A structure that contains the configuration for the <code>SINGLE_MASTER</code> channel
-    /// type.
+    /// This is the response object from the DescribeImageGenerationConfiguration operation.
     /// </summary>
-    public partial class SingleMasterConfiguration
+    public partial class DescribeImageGenerationConfigurationResponse : AmazonWebServiceResponse
     {
-        private int? _messageTtlSeconds;
+        private ImageGenerationConfiguration _imageGenerationConfiguration;
 
         /// <summary>
-        /// Gets and sets the property MessageTtlSeconds. 
+        /// Gets and sets the property ImageGenerationConfiguration. 
         /// <para>
-        /// The period of time a signaling channel retains undelivered messages before they are
-        /// discarded.
+        /// The structure that contains the information required for the Kinesis video stream
+        /// (KVS) images delivery. If this structure is null, the configuration will be deleted
+        /// from the stream.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=5, Max=120)]
-        public int MessageTtlSeconds
+        public ImageGenerationConfiguration ImageGenerationConfiguration
         {
-            get { return this._messageTtlSeconds.GetValueOrDefault(); }
-            set { this._messageTtlSeconds = value; }
+            get { return this._imageGenerationConfiguration; }
+            set { this._imageGenerationConfiguration = value; }
         }
 
-        // Check to see if MessageTtlSeconds property is set
-        internal bool IsSetMessageTtlSeconds()
+        // Check to see if ImageGenerationConfiguration property is set
+        internal bool IsSetImageGenerationConfiguration()
         {
-            return this._messageTtlSeconds.HasValue; 
+            return this._imageGenerationConfiguration != null;
         }
 
     }

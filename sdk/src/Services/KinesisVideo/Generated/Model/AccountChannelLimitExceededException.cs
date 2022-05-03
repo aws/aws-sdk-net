@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisVideo.Model
 {
     /// <summary>
-    /// You have reached the maximum limit of active signaling channels for this AWS account
-    /// in this region.
+    /// You have reached the maximum limit of active signaling channels for this Amazon Web
+    /// Services account in this region.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -29,31 +29,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisVideo.Model
 {
     /// <summary>
-    /// A structure that contains the configuration for the <code>SINGLE_MASTER</code> channel
-    /// type.
+    /// The structure that contains the information required to deliver a notification to
+    /// a customer.
     /// </summary>
-    public partial class SingleMasterConfiguration
+    public partial class NotificationDestinationConfig
     {
-        private int? _messageTtlSeconds;
+        private string _uri;
 
         /// <summary>
-        /// Gets and sets the property MessageTtlSeconds. 
+        /// Gets and sets the property Uri. 
         /// <para>
-        /// The period of time a signaling channel retains undelivered messages before they are
-        /// discarded.
+        /// The Uniform Resource Idenifier (URI) that identifies where the images will be delivered.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=5, Max=120)]
-        public int MessageTtlSeconds
+        [AWSProperty(Required=true, Min=1, Max=255)]
+        public string Uri
         {
-            get { return this._messageTtlSeconds.GetValueOrDefault(); }
-            set { this._messageTtlSeconds = value; }
+            get { return this._uri; }
+            set { this._uri = value; }
         }
 
-        // Check to see if MessageTtlSeconds property is set
-        internal bool IsSetMessageTtlSeconds()
+        // Check to see if Uri property is set
+        internal bool IsSetUri()
         {
-            return this._messageTtlSeconds.HasValue; 
+            return this._uri != null;
         }
 
     }
