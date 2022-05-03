@@ -35,6 +35,7 @@ namespace Amazon.SageMaker.Model
     {
         private AutoMLMetricEnum _metricName;
         private MetricSetSource _set;
+        private AutoMLMetricExtendedEnum _standardMetricName;
         private float? _value;
 
         /// <summary>
@@ -71,6 +72,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetSet()
         {
             return this._set != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StandardMetricName. 
+        /// <para>
+        /// The name of the standard metric.
+        /// </para>
+        /// </summary>
+        public AutoMLMetricExtendedEnum StandardMetricName
+        {
+            get { return this._standardMetricName; }
+            set { this._standardMetricName = value; }
+        }
+
+        // Check to see if StandardMetricName property is set
+        internal bool IsSetStandardMetricName()
+        {
+            return this._standardMetricName != null;
         }
 
         /// <summary>
