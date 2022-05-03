@@ -82,6 +82,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("InstanceType", StringUtils.FromString(publicRequest.InstanceType));
                 }
+                if(publicRequest.IsSetOutpostArn())
+                {
+                    request.Parameters.Add("OutpostArn", StringUtils.FromString(publicRequest.OutpostArn));
+                }
                 if(publicRequest.IsSetQuantity())
                 {
                     request.Parameters.Add("Quantity", StringUtils.FromInt(publicRequest.Quantity));

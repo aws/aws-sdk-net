@@ -46,6 +46,7 @@ namespace Amazon.EC2.Model
         private string _hostReservationId;
         private List<HostInstance> _instances = new List<HostInstance>();
         private bool? _memberOfServiceLinkedResourceGroup;
+        private string _outpostArn;
         private string _ownerId;
         private DateTime? _releaseTime;
         private AllocationState _state;
@@ -290,6 +291,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetMemberOfServiceLinkedResourceGroup()
         {
             return this._memberOfServiceLinkedResourceGroup.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OutpostArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the Amazon Web Services Outpost on which the Dedicated
+        /// Host is allocated.
+        /// </para>
+        /// </summary>
+        public string OutpostArn
+        {
+            get { return this._outpostArn; }
+            set { this._outpostArn = value; }
+        }
+
+        // Check to see if OutpostArn property is set
+        internal bool IsSetOutpostArn()
+        {
+            return this._outpostArn != null;
         }
 
         /// <summary>

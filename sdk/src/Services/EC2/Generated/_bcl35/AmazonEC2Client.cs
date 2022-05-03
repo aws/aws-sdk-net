@@ -33231,7 +33231,8 @@ namespace Amazon.EC2
         #region  StopInstances
 
         /// <summary>
-        /// Stops an Amazon EBS-backed instance.
+        /// Stops an Amazon EBS-backed instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html">Stop
+        /// and start your instance</a> in the <i>Amazon EC2 User Guide</i>.
         /// 
         ///  
         /// <para>

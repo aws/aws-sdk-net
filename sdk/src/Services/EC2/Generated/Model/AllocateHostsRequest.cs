@@ -42,6 +42,7 @@ namespace Amazon.EC2.Model
         private HostRecovery _hostRecovery;
         private string _instanceFamily;
         private string _instanceType;
+        private string _outpostArn;
         private int? _quantity;
         private List<TagSpecification> _tagSpecifications = new List<TagSpecification>();
 
@@ -183,6 +184,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetInstanceType()
         {
             return this._instanceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OutpostArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the Amazon Web Services Outpost on which to allocate
+        /// the Dedicated Host.
+        /// </para>
+        /// </summary>
+        public string OutpostArn
+        {
+            get { return this._outpostArn; }
+            set { this._outpostArn = value; }
+        }
+
+        // Check to see if OutpostArn property is set
+        internal bool IsSetOutpostArn()
+        {
+            return this._outpostArn != null;
         }
 
         /// <summary>
