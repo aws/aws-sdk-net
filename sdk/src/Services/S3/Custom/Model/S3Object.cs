@@ -77,7 +77,9 @@ namespace Amazon.S3.Model
         ///  </li> <li> 
         /// <para>
         /// If an object is created by either the Multipart Upload or Part Copy operation, the
-        /// ETag is not an MD5 digest, regardless of the method of encryption.
+        /// ETag is not an MD5 digest, regardless of the method of encryption. If an object is
+        /// larger than 16 MB, the Amazon Web Services Management Console will upload or copy
+        /// that object as a Multipart Upload, and therefore the ETag will not be an MD5 digest.
         /// </para>
         ///  </li> </ul>
         /// </summary>
