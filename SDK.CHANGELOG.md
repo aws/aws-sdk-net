@@ -1,3 +1,8 @@
+### 3.7.264.1 (2022-05-03 00:01 UTC)
+* Core 3.7.10.13
+	* Fix issue with Service URL property adding trailing slash on URL with resource paths causing signature mismatch errors.
+	* All services packages updated to require new Core
+
 ### 3.7.264.0 (2022-05-02 18:14 UTC)
 * Organizations (3.7.2.0)
 	* This release adds the INVALID_PAYMENT_INSTRUMENT as a fail reason and an error message.
