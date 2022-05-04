@@ -69,6 +69,9 @@ namespace Amazon.S3.Transfer.Internal
                 StorageClass = this._request.StorageClass,
                 ServerSideEncryptionMethod = this._request.ServerSideEncryptionMethod,
                 ServerSideEncryptionKeyManagementServiceKeyId = this._request.ServerSideEncryptionKeyManagementServiceKeyId,
+                ServerSideEncryptionCustomerMethod = this._request.ServerSideEncryptionCustomerMethod,
+                ServerSideEncryptionCustomerProvidedKey = this._request.ServerSideEncryptionCustomerProvidedKey,
+                ServerSideEncryptionCustomerProvidedKeyMD5 = this._request.ServerSideEncryptionCustomerProvidedKeyMD5,
                 TagSet = this._request.TagSet,
                 CalculateContentMD5Header = this._request.CalculateContentMD5Header,
 #if (BCL && !BCL45)
