@@ -402,19 +402,6 @@ namespace Amazon.Lightsail.Model
         /// <para>
         /// The name of the TLS security policy for the load balancer.
         /// </para>
-        ///  
-        /// <para>
-        /// The following TLS security policy names are possible:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>TLS-2016-08</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>TLS-FS-Res-1-2-2019-08</code> 
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public string TlsPolicyName
         {

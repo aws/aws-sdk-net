@@ -33,8 +33,9 @@ namespace Amazon.Lightsail.Model
     /// 
     ///  
     /// <para>
-    /// For more information about load balancer TLS security policies, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configure-load-balancer-tls-security-policy">Load
-    /// balancer TLS security policies</a> in the <i>Amazon Lightsail Developer Guide</i>.
+    /// For more information about load balancer TLS security policies, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configure-load-balancer-tls-security-policy">Configuring
+    /// TLS security policies on your Amazon Lightsail load balancers</a> in the <i>Amazon
+    /// Lightsail Developer Guide</i>.
     /// </para>
     /// </summary>
     public partial class LoadBalancerTlsPolicy
@@ -108,25 +109,6 @@ namespace Amazon.Lightsail.Model
         /// <para>
         /// The name of the TLS security policy.
         /// </para>
-        ///  
-        /// <para>
-        /// The following TLS security policy names are possible:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>TLS-2016-08</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>TLS-FS-Res-1-2-2019-08</code> 
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// You can specify either of these values for the <code>tlsSecurityPolicyName</code>
-        /// request parameter in the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateLoadBalancer.html">CreateLoadBalancer</a>
-        /// action, and the <code>attributeValue</code> request parameter in the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateLoadBalancerAttribute.html">UpdateLoadBalancerAttribute</a>
-        /// action.
-        /// </para>
         /// </summary>
         public string Name
         {
@@ -145,23 +127,6 @@ namespace Amazon.Lightsail.Model
         /// <para>
         /// The protocols used in a given TLS security policy.
         /// </para>
-        ///  
-        /// <para>
-        /// The following protocols are possible:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>Protocol-TLSv1</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>Protocol-TLSv1.1</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>Protocol-TLSv1.2</code> 
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public List<string> Protocols
         {
