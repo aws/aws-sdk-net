@@ -1,3 +1,17 @@
+### 3.7.266.0 (2022-05-04 18:17 UTC)
+* Backup (3.7.7.0)
+	* Adds support to 2 new filters about job complete time for 3 list jobs APIs in AWS Backup
+* IoTSecureTunneling (3.7.1.0)
+	* This release introduces a new API RotateTunnelAccessToken that allow revoking the existing tokens and generate new tokens
+* Lightsail (3.7.7.4)
+	* Documentation updates for Lightsail
+* SimpleSystemsManagement (3.7.17.0)
+	* This release adds the TargetMaps parameter in SSM State Manager API.
+* Core 3.7.10.15
+	* Updating endpoints.json file.
+
+	* All services packages updated to require new Core
+
 ### 3.7.265.0 (2022-05-03 21:11 UTC)
 * EC2 (3.7.67.0)
 	* Adds support for allocating Dedicated Hosts on AWS  Outposts. The AllocateHosts API now accepts an OutpostArn request  parameter, and the DescribeHosts API now includes an OutpostArn response parameter.
