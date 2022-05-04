@@ -617,6 +617,9 @@ namespace Amazon.SimpleSystemsManagement
         /// The target isn't valid or doesn't exist. It might not be configured for Systems Manager
         /// or you might not have permission to perform the operation.
         /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidTargetMapsException">
+        /// TargetMap parameter isn't valid.
+        /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.UnsupportedPlatformTypeException">
         /// The document doesn't support the platform type of the given managed node ID(s). For
         /// example, you sent an document for a Windows managed node to a Linux node.
@@ -693,6 +696,9 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidTargetException">
         /// The target isn't valid or doesn't exist. It might not be configured for Systems Manager
         /// or you might not have permission to perform the operation.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidTargetMapsException">
+        /// TargetMap parameter isn't valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.UnsupportedPlatformTypeException">
         /// The document doesn't support the platform type of the given managed node ID(s). For
@@ -804,6 +810,9 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidTargetException">
         /// The target isn't valid or doesn't exist. It might not be configured for Systems Manager
         /// or you might not have permission to perform the operation.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidTargetMapsException">
+        /// TargetMap parameter isn't valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.UnsupportedPlatformTypeException">
         /// The document doesn't support the platform type of the given managed node ID(s). For
@@ -8354,6 +8363,9 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidTargetException">
         /// The target isn't valid or doesn't exist. It might not be configured for Systems Manager
         /// or you might not have permission to perform the operation.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidTargetMapsException">
+        /// TargetMap parameter isn't valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidUpdateException">
         /// The update isn't valid.

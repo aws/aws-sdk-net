@@ -120,6 +120,10 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 {
                     return InvalidTargetExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidTargetMaps"))
+                {
+                    return InvalidTargetMapsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("UnsupportedPlatformType"))
                 {
                     return UnsupportedPlatformTypeExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
