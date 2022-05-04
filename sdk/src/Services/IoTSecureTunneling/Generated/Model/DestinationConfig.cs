@@ -39,10 +39,10 @@ namespace Amazon.IoTSecureTunneling.Model
         /// <summary>
         /// Gets and sets the property Services. 
         /// <para>
-        /// A list of service names that identity the target application. The AWS IoT client running
+        /// A list of service names that identify the target application. The IoT client running
         /// on the destination device reads this value and uses it to look up a port or an IP
-        /// address and a port. The AWS IoT client instantiates the local proxy which uses this
-        /// information to connect to the destination application.
+        /// address and a port. The IoT client instantiates the local proxy, which uses this information
+        /// to connect to the destination application.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]

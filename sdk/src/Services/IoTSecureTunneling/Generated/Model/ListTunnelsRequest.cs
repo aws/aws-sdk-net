@@ -30,8 +30,14 @@ namespace Amazon.IoTSecureTunneling.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTunnels operation.
-    /// List all tunnels for an AWS account. Tunnels are listed by creation time in descending
-    /// order, newer tunnels will be listed before older tunnels.
+    /// List all tunnels for an Amazon Web Services account. Tunnels are listed by creation
+    /// time in descending order, newer tunnels will be listed before older tunnels.
+    /// 
+    ///  
+    /// <para>
+    /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListTunnels</a>
+    /// action.
+    /// </para>
     /// </summary>
     public partial class ListTunnelsRequest : AmazonIoTSecureTunnelingRequest
     {
@@ -61,7 +67,8 @@ namespace Amazon.IoTSecureTunneling.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A token to retrieve the next set of results.
+        /// To retrieve the next set of results, the nextToken value from a previous response;
+        /// otherwise null to receive the first set of results.
         /// </para>
         /// </summary>
         public string NextToken

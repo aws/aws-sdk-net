@@ -29,19 +29,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTSecureTunneling.Model
 {
     /// <summary>
-    /// This is the response object from the OpenTunnel operation.
+    /// This is the response object from the RotateTunnelAccessToken operation.
     /// </summary>
-    public partial class OpenTunnelResponse : AmazonWebServiceResponse
+    public partial class RotateTunnelAccessTokenResponse : AmazonWebServiceResponse
     {
         private string _destinationAccessToken;
         private string _sourceAccessToken;
         private string _tunnelArn;
-        private string _tunnelId;
 
         /// <summary>
         /// Gets and sets the property DestinationAccessToken. 
         /// <para>
-        /// The access token the destination local proxy uses to connect to IoT Secure Tunneling.
+        /// The client access token that the destination local proxy uses to connect to IoT Secure
+        /// Tunneling.
         /// </para>
         /// </summary>
         public string DestinationAccessToken
@@ -59,7 +59,8 @@ namespace Amazon.IoTSecureTunneling.Model
         /// <summary>
         /// Gets and sets the property SourceAccessToken. 
         /// <para>
-        /// The access token the source local proxy uses to connect to IoT Secure Tunneling.
+        /// The client access token that the source local proxy uses to connect to IoT Secure
+        /// Tunneling.
         /// </para>
         /// </summary>
         public string SourceAccessToken
@@ -91,24 +92,6 @@ namespace Amazon.IoTSecureTunneling.Model
         internal bool IsSetTunnelArn()
         {
             return this._tunnelArn != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property TunnelId. 
-        /// <para>
-        /// A unique alpha-numeric tunnel ID.
-        /// </para>
-        /// </summary>
-        public string TunnelId
-        {
-            get { return this._tunnelId; }
-            set { this._tunnelId = value; }
-        }
-
-        // Check to see if TunnelId property is set
-        internal bool IsSetTunnelId()
-        {
-            return this._tunnelId != null;
         }
 
     }
