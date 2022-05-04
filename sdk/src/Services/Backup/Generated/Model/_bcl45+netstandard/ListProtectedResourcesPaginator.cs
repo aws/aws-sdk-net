@@ -41,6 +41,12 @@ namespace Amazon.Backup.Model
         /// </summary>
         public IPaginatedEnumerable<ListProtectedResourcesResponse> Responses => new PaginatedResponse<ListProtectedResourcesResponse>(this);
 
+        /// <summary>
+        /// Enumerable containing all of the Results
+        /// </summary>
+        public IPaginatedEnumerable<ProtectedResource> Results => 
+            new PaginatedResultKeyResponse<ListProtectedResourcesResponse, ProtectedResource>(this, (i) => i.Results);
+
         internal ListProtectedResourcesPaginator(IAmazonBackup client, ListProtectedResourcesRequest request)
         {
             this._client = client;

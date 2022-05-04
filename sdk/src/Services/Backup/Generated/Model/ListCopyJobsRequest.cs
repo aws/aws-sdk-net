@@ -35,6 +35,8 @@ namespace Amazon.Backup.Model
     public partial class ListCopyJobsRequest : AmazonBackupRequest
     {
         private string _byAccountId;
+        private DateTime? _byCompleteAfter;
+        private DateTime? _byCompleteBefore;
         private DateTime? _byCreatedAfter;
         private DateTime? _byCreatedBefore;
         private string _byDestinationVaultArn;
@@ -61,6 +63,44 @@ namespace Amazon.Backup.Model
         internal bool IsSetByAccountId()
         {
             return this._byAccountId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ByCompleteAfter. 
+        /// <para>
+        /// Returns only copy jobs completed after a date expressed in Unix format and Coordinated
+        /// Universal Time (UTC).
+        /// </para>
+        /// </summary>
+        public DateTime ByCompleteAfter
+        {
+            get { return this._byCompleteAfter.GetValueOrDefault(); }
+            set { this._byCompleteAfter = value; }
+        }
+
+        // Check to see if ByCompleteAfter property is set
+        internal bool IsSetByCompleteAfter()
+        {
+            return this._byCompleteAfter.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ByCompleteBefore. 
+        /// <para>
+        /// Returns only copy jobs completed before a date expressed in Unix format and Coordinated
+        /// Universal Time (UTC).
+        /// </para>
+        /// </summary>
+        public DateTime ByCompleteBefore
+        {
+            get { return this._byCompleteBefore.GetValueOrDefault(); }
+            set { this._byCompleteBefore = value; }
+        }
+
+        // Check to see if ByCompleteBefore property is set
+        internal bool IsSetByCompleteBefore()
+        {
+            return this._byCompleteBefore.HasValue; 
         }
 
         /// <summary>
