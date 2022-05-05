@@ -265,7 +265,6 @@ namespace Amazon.S3.Transfer
 
         /// <summary>
         /// The Server-side encryption algorithm to be used with the customer provided key.
-        ///  
         /// </summary>
         public ServerSideEncryptionCustomerMethod ServerSideEncryptionCustomerMethod
         {
