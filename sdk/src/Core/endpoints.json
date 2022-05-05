@@ -351,6 +351,7 @@
             "ap-south-1": {},
             "ap-southeast-1": {},
             "ap-southeast-2": {},
+            "ap-southeast-3": {},
             "ca-central-1": {
               "variants": [
                 {
@@ -1777,6 +1778,7 @@
             "eu-central-1": {},
             "eu-north-1": {},
             "eu-west-1": {},
+            "eu-west-2": {},
             "us-east-1": {},
             "us-east-2": {},
             "us-west-2": {}
@@ -2392,7 +2394,6 @@
         },
         "cloudhsm": {
           "endpoints": {
-            "eu-west-1": {},
             "us-east-1": {}
           }
         },
@@ -15697,6 +15698,20 @@
                 }
               ]
             },
+            "ap-southeast-3": {
+              "credentialScope": {
+                "region": "ap-southeast-3"
+              },
+              "hostname": "waf-regional.ap-southeast-3.amazonaws.com",
+              "variants": [
+                {
+                  "hostname": "waf-regional-fips.ap-southeast-3.amazonaws.com",
+                  "tags": [
+                    "fips"
+                  ]
+                }
+              ]
+            },
             "ca-central-1": {
               "credentialScope": {
                 "region": "ca-central-1"
@@ -15850,6 +15865,13 @@
               },
               "deprecated": true,
               "hostname": "waf-regional-fips.ap-southeast-2.amazonaws.com"
+            },
+            "fips-ap-southeast-3": {
+              "credentialScope": {
+                "region": "ap-southeast-3"
+              },
+              "deprecated": true,
+              "hostname": "waf-regional-fips.ap-southeast-3.amazonaws.com"
             },
             "fips-ca-central-1": {
               "credentialScope": {
@@ -20632,6 +20654,11 @@
             }
           }
         },
+        "robomaker": {
+          "endpoints": {
+            "us-gov-west-1": {}
+          }
+        },
         "route53": {
           "endpoints": {
             "aws-us-gov-global": {
@@ -22770,6 +22797,27 @@
         "elasticache": {
           "endpoints": {
             "us-isob-east-1": {}
+          }
+        },
+        "elasticfilesystem": {
+          "endpoints": {
+            "fips-us-isob-east-1": {
+              "credentialScope": {
+                "region": "us-isob-east-1"
+              },
+              "deprecated": true,
+              "hostname": "elasticfilesystem-fips.us-isob-east-1.sc2s.sgov.gov"
+            },
+            "us-isob-east-1": {
+              "variants": [
+                {
+                  "hostname": "elasticfilesystem-fips.us-isob-east-1.sc2s.sgov.gov",
+                  "tags": [
+                    "fips"
+                  ]
+                }
+              ]
+            }
           }
         },
         "elasticloadbalancing": {
