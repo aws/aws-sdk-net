@@ -7595,6 +7595,34 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType I3Xlarge = new InstanceType("i3.xlarge");
         /// <summary>
+        /// Constant I4i16xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType I4i16xlarge = new InstanceType("i4i.16xlarge");
+        /// <summary>
+        /// Constant I4i2xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType I4i2xlarge = new InstanceType("i4i.2xlarge");
+        /// <summary>
+        /// Constant I4i32xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType I4i32xlarge = new InstanceType("i4i.32xlarge");
+        /// <summary>
+        /// Constant I4i4xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType I4i4xlarge = new InstanceType("i4i.4xlarge");
+        /// <summary>
+        /// Constant I4i8xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType I4i8xlarge = new InstanceType("i4i.8xlarge");
+        /// <summary>
+        /// Constant I4iLarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType I4iLarge = new InstanceType("i4i.large");
+        /// <summary>
+        /// Constant I4iXlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType I4iXlarge = new InstanceType("i4i.xlarge");
+        /// <summary>
         /// Constant Im4gn16xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType Im4gn16xlarge = new InstanceType("im4gn.16xlarge");
