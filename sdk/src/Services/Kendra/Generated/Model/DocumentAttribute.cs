@@ -29,13 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kendra.Model
 {
     /// <summary>
-    /// A custom attribute value assigned to a document.
-    /// 
-    ///  
-    /// <para>
-    /// For more information on how to create custom document attributes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-attributes.html">Custom
-    /// Attributes</a>.
-    /// </para>
+    /// A document attribute or metadata field. To create custom document attributes, see
+    /// <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-attributes.html">Custom
+    /// attributes</a>.
     /// </summary>
     public partial class DocumentAttribute
     {

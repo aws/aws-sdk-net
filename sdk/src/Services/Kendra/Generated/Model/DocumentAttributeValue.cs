@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kendra.Model
 {
     /// <summary>
-    /// The value of a custom document attribute. You can only provide one value for a custom
-    /// attribute.
+    /// The value of a document attribute. You can only provide one value for a document attribute.
     /// </summary>
     public partial class DocumentAttributeValue
     {

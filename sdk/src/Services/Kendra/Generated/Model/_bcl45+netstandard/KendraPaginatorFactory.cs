@@ -84,11 +84,43 @@ namespace Amazon.Kendra.Model
         }
 
         /// <summary>
+        /// Paginator for ListFaqs operation
+        ///</summary>
+        public IListFaqsPaginator ListFaqs(ListFaqsRequest request) 
+        {
+            return new ListFaqsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListGroupsOlderThanOrderingId operation
+        ///</summary>
+        public IListGroupsOlderThanOrderingIdPaginator ListGroupsOlderThanOrderingId(ListGroupsOlderThanOrderingIdRequest request) 
+        {
+            return new ListGroupsOlderThanOrderingIdPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListIndices operation
         ///</summary>
         public IListIndicesPaginator ListIndices(ListIndicesRequest request) 
         {
             return new ListIndicesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListQuerySuggestionsBlockLists operation
+        ///</summary>
+        public IListQuerySuggestionsBlockListsPaginator ListQuerySuggestionsBlockLists(ListQuerySuggestionsBlockListsRequest request) 
+        {
+            return new ListQuerySuggestionsBlockListsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListThesauri operation
+        ///</summary>
+        public IListThesauriPaginator ListThesauri(ListThesauriRequest request) 
+        {
+            return new ListThesauriPaginator(this.client, request);
         }
     }
 }

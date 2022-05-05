@@ -49,7 +49,11 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property AttachmentFieldMappings. 
         /// <para>
-        /// A list of field mappings to apply when indexing Quip attachments.
+        /// A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or
+        /// field names of Quip attachments to Amazon Kendra index field names. To create custom
+        /// fields, use the <code>UpdateIndex</code> API before you map to Quip fields. For more
+        /// information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
+        /// data source fields</a>. The Quip field names must exist in your Quip custom metadata.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -68,8 +72,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property CrawlAttachments. 
         /// <para>
-        /// Specify whether to crawl attachments in your Quip data source. You can specify one
-        /// or more of these options.
+        /// Specify whether to crawl attachments in Quip. You can specify one or more of these
+        /// options.
         /// </para>
         /// </summary>
         public bool CrawlAttachments
@@ -87,8 +91,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property CrawlChatRooms. 
         /// <para>
-        /// Specify whether to crawl chat rooms in your Quip data source. You can specify one
-        /// or more of these options.
+        /// Specify whether to crawl chat rooms in Quip. You can specify one or more of these
+        /// options.
         /// </para>
         /// </summary>
         public bool CrawlChatRooms
@@ -106,8 +110,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property CrawlFileComments. 
         /// <para>
-        /// Specify whether to crawl file comments in your Quip data source. You can specify one
-        /// or more of these options.
+        /// Specify whether to crawl file comments in Quip. You can specify one or more of these
+        /// options.
         /// </para>
         /// </summary>
         public bool CrawlFileComments
@@ -125,7 +129,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Domain. 
         /// <para>
-        /// The configuration information to connect to your Quip data source domain.
+        /// The Quip site domain.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=63)]
@@ -208,7 +212,11 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property MessageFieldMappings. 
         /// <para>
-        /// A list of field mappings to apply when indexing Quip messages.
+        /// A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or
+        /// field names of Quip messages to Amazon Kendra index field names. To create custom
+        /// fields, use the <code>UpdateIndex</code> API before you map to Quip fields. For more
+        /// information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
+        /// data source fields</a>. The Quip field names must exist in your Quip custom metadata.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -228,20 +236,13 @@ namespace Amazon.Kendra.Model
         /// Gets and sets the property SecretArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value
-        /// pairs that are required to connect to your Quip file system. Windows is currently
-        /// the only supported type. The secret must contain a JSON structure with the following
-        /// keys:
+        /// pairs that are required to connect to your Quip. The secret must contain a JSON structure
+        /// with the following keys:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// username—The Active Directory user name, along with the Domain Name System (DNS) domain
-        /// name. For example, <i>user@corp.example.com</i>. The Active Directory user account
-        /// must have read and mounting access to the Quip file system for Windows.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// password—The password of the Active Directory user account with read and mounting
-        /// access to the Quip Windows file system.
+        /// accessToken—The token created in Quip. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-slack.html#quip-authentication">Authentication
+        /// for a Quip data source</a>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -261,7 +262,11 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property ThreadFieldMappings. 
         /// <para>
-        /// A list of field mappings to apply when indexing Quip threads.
+        /// A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or
+        /// field names of Quip threads to Amazon Kendra index field names. To create custom fields,
+        /// use the <code>UpdateIndex</code> API before you map to Quip fields. For more information,
+        /// see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
+        /// data source fields</a>. The Quip field names must exist in your Quip custom metadata.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -280,8 +285,9 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property VpcConfiguration. 
         /// <para>
-        /// Configuration information for connecting to an Amazon Virtual Private Cloud (VPC)
-        /// for your Quip. Your Quip instance must reside inside your VPC.
+        /// Configuration information for an Amazon Virtual Private Cloud (VPC) to connect to
+        /// your Quip. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring
+        /// a VPC</a>.
         /// </para>
         /// </summary>
         public DataSourceVpcConfiguration VpcConfiguration

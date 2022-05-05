@@ -56,8 +56,28 @@ namespace Amazon.Kendra.Model
         IListExperiencesPaginator ListExperiences(ListExperiencesRequest request);
 
         /// <summary>
+        /// Paginator for ListFaqs operation
+        ///</summary>
+        IListFaqsPaginator ListFaqs(ListFaqsRequest request);
+
+        /// <summary>
+        /// Paginator for ListGroupsOlderThanOrderingId operation
+        ///</summary>
+        IListGroupsOlderThanOrderingIdPaginator ListGroupsOlderThanOrderingId(ListGroupsOlderThanOrderingIdRequest request);
+
+        /// <summary>
         /// Paginator for ListIndices operation
         ///</summary>
         IListIndicesPaginator ListIndices(ListIndicesRequest request);
+
+        /// <summary>
+        /// Paginator for ListQuerySuggestionsBlockLists operation
+        ///</summary>
+        IListQuerySuggestionsBlockListsPaginator ListQuerySuggestionsBlockLists(ListQuerySuggestionsBlockListsRequest request);
+
+        /// <summary>
+        /// Paginator for ListThesauri operation
+        ///</summary>
+        IListThesauriPaginator ListThesauri(ListThesauriRequest request);
     }
 }

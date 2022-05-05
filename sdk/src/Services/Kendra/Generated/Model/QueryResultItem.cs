@@ -72,8 +72,9 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property DocumentAttributes. 
         /// <para>
-        /// An array of document attributes for the document that the query result maps to. For
-        /// example, the document author (Author) or the source URI (SourceUri) of the document.
+        /// An array of document attributes assigned to a document in the search results. For
+        /// example, the document author (<code>_author</code>) or the source URI (<code>_source_uri</code>)
+        /// of the document.
         /// </para>
         /// </summary>
         public List<DocumentAttribute> DocumentAttributes
