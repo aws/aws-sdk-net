@@ -106,6 +106,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     unmarshalledObject.ForceCanceled = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("isConcurrent", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.IsConcurrent = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("jobArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

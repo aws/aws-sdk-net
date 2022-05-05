@@ -40,6 +40,7 @@ namespace Amazon.IoT.Model
         private string _description;
         private Dictionary<string, string> _documentParameters = new Dictionary<string, string>();
         private bool? _forceCanceled;
+        private bool? _isConcurrent;
         private string _jobArn;
         private JobExecutionsRetryConfig _jobExecutionsRetryConfig;
         private JobExecutionsRolloutConfig _jobExecutionsRolloutConfig;
@@ -184,6 +185,21 @@ namespace Amazon.IoT.Model
         internal bool IsSetForceCanceled()
         {
             return this._forceCanceled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsConcurrent.
+        /// </summary>
+        public bool IsConcurrent
+        {
+            get { return this._isConcurrent.GetValueOrDefault(); }
+            set { this._isConcurrent = value; }
+        }
+
+        // Check to see if IsConcurrent property is set
+        internal bool IsSetIsConcurrent()
+        {
+            return this._isConcurrent.HasValue; 
         }
 
         /// <summary>

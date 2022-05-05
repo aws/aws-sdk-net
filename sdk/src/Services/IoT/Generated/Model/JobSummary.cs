@@ -35,6 +35,7 @@ namespace Amazon.IoT.Model
     {
         private DateTime? _completedAt;
         private DateTime? _createdAt;
+        private bool? _isConcurrent;
         private string _jobArn;
         private string _jobId;
         private DateTime? _lastUpdatedAt;
@@ -76,6 +77,21 @@ namespace Amazon.IoT.Model
         internal bool IsSetCreatedAt()
         {
             return this._createdAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsConcurrent.
+        /// </summary>
+        public bool IsConcurrent
+        {
+            get { return this._isConcurrent.GetValueOrDefault(); }
+            set { this._isConcurrent = value; }
+        }
+
+        // Check to see if IsConcurrent property is set
+        internal bool IsSetIsConcurrent()
+        {
+            return this._isConcurrent.HasValue; 
         }
 
         /// <summary>
