@@ -75,6 +75,12 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Mtime);
             }
 
+            if(requestObject.IsSetObjectTags())
+            {
+                context.Writer.WritePropertyName("ObjectTags");
+                context.Writer.Write(requestObject.ObjectTags);
+            }
+
             if(requestObject.IsSetOverwriteMode())
             {
                 context.Writer.WritePropertyName("OverwriteMode");

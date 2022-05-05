@@ -64,6 +64,12 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("datasyncErrorCode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DatasyncErrorCode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("errorCode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

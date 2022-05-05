@@ -715,6 +715,56 @@ namespace Amazon.DataSync
 
 
     /// <summary>
+    /// Constants used for properties of type ObjectTags.
+    /// </summary>
+    public class ObjectTags : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NONE for ObjectTags
+        /// </summary>
+        public static readonly ObjectTags NONE = new ObjectTags("NONE");
+        /// <summary>
+        /// Constant PRESERVE for ObjectTags
+        /// </summary>
+        public static readonly ObjectTags PRESERVE = new ObjectTags("PRESERVE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ObjectTags(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ObjectTags FindValue(string value)
+        {
+            return FindValue<ObjectTags>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ObjectTags(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Operator.
     /// </summary>
     public class Operator : ConstantClass

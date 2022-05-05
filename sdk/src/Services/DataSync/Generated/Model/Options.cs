@@ -49,6 +49,7 @@ namespace Amazon.DataSync.Model
         private Gid _gid;
         private LogLevel _logLevel;
         private Mtime _mtime;
+        private ObjectTags _objectTags;
         private OverwriteMode _overwriteMode;
         private PosixPermissions _posixPermissions;
         private PreserveDeletedFiles _preserveDeletedFiles;
@@ -189,7 +190,7 @@ namespace Amazon.DataSync.Model
         /// </para>
         ///  
         /// <para>
-        /// Default value: PRESERVE. 
+        /// Default Value: <code>PRESERVE</code> 
         /// </para>
         ///  
         /// <para>
@@ -220,6 +221,30 @@ namespace Amazon.DataSync.Model
         internal bool IsSetMtime()
         {
             return this._mtime != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ObjectTags. 
+        /// <para>
+        /// Specifies whether object tags are maintained when transferring between object storage
+        /// systems. If you want your DataSync task to ignore object tags, specify the <code>NONE</code>
+        /// value.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default Value: <code>PRESERVE</code> 
+        /// </para>
+        /// </summary>
+        public ObjectTags ObjectTags
+        {
+            get { return this._objectTags; }
+            set { this._objectTags = value; }
+        }
+
+        // Check to see if ObjectTags property is set
+        internal bool IsSetObjectTags()
+        {
+            return this._objectTags != null;
         }
 
         /// <summary>
@@ -551,8 +576,8 @@ namespace Amazon.DataSync.Model
         /// <para>
         /// POINT_IN_TIME_CONSISTENT: Scan the entire source and entire destination at the end
         /// of the transfer to verify that source and destination are fully synchronized. This
-        /// option isn't supported when transferring to S3 Glacier or S3 Glacier Deep Archive
-        /// storage classes.
+        /// option isn't supported when transferring to S3 Glacier Flexible Retrieval or S3 Glacier
+        /// Deep Archive storage classes.
         /// </para>
         ///  
         /// <para>
