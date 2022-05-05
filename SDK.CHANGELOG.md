@@ -1,3 +1,16 @@
+### 3.7.267.0 (2022-05-05 18:41 UTC)
+* DataSync (3.7.6.0)
+	* AWS DataSync now supports a new ObjectTags Task API option that can be used to control whether Object Tags are transferred.
+* EC2 (3.7.68.0)
+	* Amazon EC2 I4i instances are powered by 3rd generation Intel Xeon Scalable processors and feature up to 30 TB of local AWS Nitro SSD storage
+* IoT (3.7.13.0)
+	* AWS IoT Jobs now allows you to create up to 100,000 active continuous and snapshot jobs by using concurrency control.
+* Kendra (3.7.18.0)
+	* AWS Kendra now supports hierarchical facets for a query. For more information, see https://docs.aws.amazon.com/kendra/latest/dg/filtering.html
+* Core 3.7.10.16
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.266.0 (2022-05-04 18:17 UTC)
 * Backup (3.7.7.0)
 	* Adds support to 2 new filters about job complete time for 3 list jobs APIs in AWS Backup
