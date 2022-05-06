@@ -563,6 +563,10 @@ namespace Amazon.MediaPackage
     {
 
         /// <summary>
+        /// Constant DVB_DASH_2014 for Profile
+        /// </summary>
+        public static readonly Profile DVB_DASH_2014 = new Profile("DVB_DASH_2014");
+        /// <summary>
         /// Constant HBBTV_1_5 for Profile
         /// </summary>
         public static readonly Profile HBBTV_1_5 = new Profile("HBBTV_1_5");
@@ -786,6 +790,10 @@ namespace Amazon.MediaPackage
         /// Constant HTTPISO for UtcTiming
         /// </summary>
         public static readonly UtcTiming HTTPISO = new UtcTiming("HTTP-ISO");
+        /// <summary>
+        /// Constant HTTPXSDATE for UtcTiming
+        /// </summary>
+        public static readonly UtcTiming HTTPXSDATE = new UtcTiming("HTTP-XSDATE");
         /// <summary>
         /// Constant NONE for UtcTiming
         /// </summary>

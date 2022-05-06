@@ -182,7 +182,8 @@ namespace Amazon.MediaPackage.Model
 
         /// <summary>
         /// Gets and sets the property Profile. The Dynamic Adaptive Streaming over HTTP (DASH)
-        /// profile type.  When set to "HBBTV_1_5", HbbTV 1.5 compliant output is enabled.
+        /// profile type.  When set to "HBBTV_1_5", HbbTV 1.5 compliant output is enabled. When
+        /// set to "DVB-DASH_2014", DVB-DASH 2014 compliant output is enabled.
         /// </summary>
         public Profile Profile
         {
@@ -281,7 +282,7 @@ namespace Amazon.MediaPackage.Model
 
         /// <summary>
         /// Gets and sets the property UtcTimingUri. Specifies the value attribute of the UTCTiming
-        /// field when utcTiming is set to HTTP-ISO or HTTP-HEAD
+        /// field when utcTiming is set to HTTP-ISO, HTTP-HEAD or HTTP-XSDATE
         /// </summary>
         public string UtcTimingUri
         {
