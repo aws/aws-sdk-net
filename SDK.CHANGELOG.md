@@ -1,3 +1,10 @@
+### 3.7.268.0 (2022-05-06 13:31 UTC)
+* S3 (3.7.9.0)
+	* Added ability in TransferUtility to specify ObjectLock settings for upload requests; Add SSE-C properties to TransferUtilityUploadDirectoryRequest
+* Core 3.7.11.0
+	* Update unmarshallers to use XmlTextReader
+	* All services packages updated to require new Core
+
 ### 3.7.267.0 (2022-05-05 18:41 UTC)
 * DataSync (3.7.6.0)
 	* AWS DataSync now supports a new ObjectTags Task API option that can be used to control whether Object Tags are transferred.
