@@ -82,7 +82,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property DataShareAssociations. 
         /// <para>
-        /// A value that specifies when the datashare has an association between a producer and
+        /// A value that specifies when the datashare has an association between producer and
         /// data consumers.
         /// </para>
         /// </summary>

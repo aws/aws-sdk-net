@@ -32,7 +32,7 @@ namespace Amazon.Redshift.Model
     /// Container for the parameters to the AuthorizeDataShare operation.
     /// From a data producer account, authorizes the sharing of a datashare with one or more
     /// consumer accounts or managing entities. To authorize a datashare for a data consumer,
-    /// the producer account must have the correct access privileges.
+    /// the producer account must have the correct access permissions.
     /// </summary>
     public partial class AuthorizeDataShareRequest : AmazonRedshiftRequest
     {

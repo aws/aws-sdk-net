@@ -30,7 +30,7 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Container for the parameters to the DeauthorizeDataShare operation.
-    /// From the producer account, removes authorization from the specified datashare.
+    /// From a datashare producer account, removes authorization from the specified datashare.
     /// </summary>
     public partial class DeauthorizeDataShareRequest : AmazonRedshiftRequest
     {

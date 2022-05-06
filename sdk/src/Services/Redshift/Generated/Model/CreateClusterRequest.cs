@@ -64,6 +64,7 @@ namespace Amazon.Redshift.Model
         private string _hsmConfigurationIdentifier;
         private List<string> _iamRoles = new List<string>();
         private string _kmsKeyId;
+        private string _loadSampleData;
         private string _maintenanceTrackName;
         private int? _manualSnapshotRetentionPeriod;
         private string _masterUsername;
@@ -680,6 +681,25 @@ namespace Amazon.Redshift.Model
         internal bool IsSetKmsKeyId()
         {
             return this._kmsKeyId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LoadSampleData. 
+        /// <para>
+        /// A flag that specifies whether to load sample data once the cluster is created.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=2147483647)]
+        public string LoadSampleData
+        {
+            get { return this._loadSampleData; }
+            set { this._loadSampleData = value; }
+        }
+
+        // Check to see if LoadSampleData property is set
+        internal bool IsSetLoadSampleData()
+        {
+            return this._loadSampleData != null;
         }
 
         /// <summary>

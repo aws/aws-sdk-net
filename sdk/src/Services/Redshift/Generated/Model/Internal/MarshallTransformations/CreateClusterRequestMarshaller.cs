@@ -152,6 +152,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("KmsKeyId", StringUtils.FromString(publicRequest.KmsKeyId));
                 }
+                if(publicRequest.IsSetLoadSampleData())
+                {
+                    request.Parameters.Add("LoadSampleData", StringUtils.FromString(publicRequest.LoadSampleData));
+                }
                 if(publicRequest.IsSetMaintenanceTrackName())
                 {
                     request.Parameters.Add("MaintenanceTrackName", StringUtils.FromString(publicRequest.MaintenanceTrackName));

@@ -30,7 +30,7 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Container for the parameters to the RejectDataShare operation.
-    /// From the consumer account, rejects the specified datashare.
+    /// From a datashare consumer account, rejects the specified datashare.
     /// </summary>
     public partial class RejectDataShareRequest : AmazonRedshiftRequest
     {

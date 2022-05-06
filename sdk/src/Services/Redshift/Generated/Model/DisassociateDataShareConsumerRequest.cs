@@ -30,7 +30,7 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Container for the parameters to the DisassociateDataShareConsumer operation.
-    /// From a consumer account, remove association for the specified datashare.
+    /// From a datashare consumer account, remove association for the specified datashare.
     /// </summary>
     public partial class DisassociateDataShareConsumerRequest : AmazonRedshiftRequest
     {

@@ -56,7 +56,7 @@ namespace Amazon.Redshift.Model
     ///  
     /// <para>
     /// In addition, if the <code>AutoCreate</code> parameter is set to <code>True</code>,
-    /// then the policy must include the <code>redshift:CreateClusterUser</code> privilege.
+    /// then the policy must include the <code>redshift:CreateClusterUser</code> permission.
     /// </para>
     ///  
     /// <para>

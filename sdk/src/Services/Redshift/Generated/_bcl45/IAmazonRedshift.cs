@@ -352,7 +352,7 @@ namespace Amazon.Redshift
         /// <summary>
         /// From a data producer account, authorizes the sharing of a datashare with one or more
         /// consumer accounts or managing entities. To authorize a datashare for a data consumer,
-        /// the producer account must have the correct access privileges.
+        /// the producer account must have the correct access permissions.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AuthorizeDataShare service method.</param>
         /// 
@@ -368,7 +368,7 @@ namespace Amazon.Redshift
         /// <summary>
         /// From a data producer account, authorizes the sharing of a datashare with one or more
         /// consumer accounts or managing entities. To authorize a datashare for a data consumer,
-        /// the producer account must have the correct access privileges.
+        /// the producer account must have the correct access permissions.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AuthorizeDataShare service method.</param>
         /// <param name="cancellationToken">
@@ -2148,7 +2148,7 @@ namespace Amazon.Redshift
 
 
         /// <summary>
-        /// From the producer account, removes authorization from the specified datashare.
+        /// From a datashare producer account, removes authorization from the specified datashare.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeauthorizeDataShare service method.</param>
         /// 
@@ -2162,7 +2162,7 @@ namespace Amazon.Redshift
 
 
         /// <summary>
-        /// From the producer account, removes authorization from the specified datashare.
+        /// From a datashare producer account, removes authorization from the specified datashare.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeauthorizeDataShare service method.</param>
         /// <param name="cancellationToken">
@@ -5840,7 +5840,7 @@ namespace Amazon.Redshift
 
 
         /// <summary>
-        /// From a consumer account, remove association for the specified datashare.
+        /// From a datashare consumer account, remove association for the specified datashare.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateDataShareConsumer service method.</param>
         /// 
@@ -5857,7 +5857,7 @@ namespace Amazon.Redshift
 
 
         /// <summary>
-        /// From a consumer account, remove association for the specified datashare.
+        /// From a datashare consumer account, remove association for the specified datashare.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateDataShareConsumer service method.</param>
         /// <param name="cancellationToken">
@@ -6090,7 +6090,7 @@ namespace Amazon.Redshift
         ///  
         /// <para>
         /// In addition, if the <code>AutoCreate</code> parameter is set to <code>True</code>,
-        /// then the policy must include the <code>redshift:CreateClusterUser</code> privilege.
+        /// then the policy must include the <code>redshift:CreateClusterUser</code> permission.
         /// </para>
         ///  
         /// <para>
@@ -6139,7 +6139,7 @@ namespace Amazon.Redshift
         ///  
         /// <para>
         /// In addition, if the <code>AutoCreate</code> parameter is set to <code>True</code>,
-        /// then the policy must include the <code>redshift:CreateClusterUser</code> privilege.
+        /// then the policy must include the <code>redshift:CreateClusterUser</code> permission.
         /// </para>
         ///  
         /// <para>
@@ -7552,7 +7552,7 @@ namespace Amazon.Redshift
 
 
         /// <summary>
-        /// From the consumer account, rejects the specified datashare.
+        /// From a datashare consumer account, rejects the specified datashare.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RejectDataShare service method.</param>
         /// 
@@ -7566,7 +7566,7 @@ namespace Amazon.Redshift
 
 
         /// <summary>
-        /// From the consumer account, rejects the specified datashare.
+        /// From a datashare consumer account, rejects the specified datashare.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RejectDataShare service method.</param>
         /// <param name="cancellationToken">
