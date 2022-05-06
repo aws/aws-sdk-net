@@ -153,8 +153,8 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property DeparturePosition. 
         /// <para>
-        /// The start position for the route. Defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS
-        /// 84</a> format: <code>[longitude, latitude]</code>.
+        /// The start position for the route. Defined in <a href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">World
+        /// Geodetic System (WGS 84)</a> format: <code>[longitude, latitude]</code>.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -220,8 +220,8 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property DestinationPosition. 
         /// <para>
-        /// The finish position for the route. Defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS
-        /// 84</a> format: <code>[longitude, latitude]</code>.
+        /// The finish position for the route. Defined in <a href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">World
+        /// Geodetic System (WGS 84)</a> format: <code>[longitude, latitude]</code>.
         /// </para>
         ///  <ul> <li> 
         /// <para>

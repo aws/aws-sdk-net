@@ -67,9 +67,25 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  
         /// <para>
-        /// This setting affects the languages used in the results. It does not change which results
-        /// are returned. If the language is not specified, or not supported for a particular
-        /// result, the partner automatically chooses a language for the result.
+        /// This setting affects the languages used in the results, but not the results themselves.
+        /// If no language is specified, or not supported for a particular result, the partner
+        /// automatically chooses a language for the result.
+        /// </para>
+        ///  
+        /// <para>
+        /// For an example, we'll use the Greek language. You search for a location around Athens,
+        /// Greece, with the <code>language</code> parameter set to <code>en</code>. The <code>city</code>
+        /// in the results will most likely be returned as <code>Athens</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you set the <code>language</code> parameter to <code>el</code>, for Greek, then
+        /// the <code>city</code> in the results will more likely be returned as <code>Αθήνα</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the data provider does not have a value for Greek, the result will be in a language
+        /// that the provider does support.
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=35)]

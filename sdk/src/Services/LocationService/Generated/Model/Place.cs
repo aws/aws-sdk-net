@@ -30,6 +30,12 @@ namespace Amazon.LocationService.Model
 {
     /// <summary>
     /// Contains details about addresses or points of interest that match the search criteria.
+    /// 
+    ///  
+    /// <para>
+    /// Not all details are included with all responses. Some details may only be returned
+    /// by specific data partners.
+    /// </para>
     /// </summary>
     public partial class Place
     {
