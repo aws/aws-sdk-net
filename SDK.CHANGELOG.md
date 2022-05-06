@@ -1,3 +1,20 @@
+### 3.7.269.0 (2022-05-06 18:16 UTC)
+* EC2 (3.7.69.0)
+	* Add new state values for IPAMs, IPAM Scopes, and IPAM Pools.
+* LocationService (3.7.10.0)
+	* Amazon Location Service now includes a MaxResults parameter for ListGeofences requests.
+* MediaPackage (3.7.6.0)
+	* This release adds Dvb Dash 2014 as an available profile option for Dash Origin Endpoints.
+* RDS (3.7.13.7)
+	* Various documentation improvements.
+* Redshift (3.7.15.0)
+	* Introduces new field 'LoadSampleData' in CreateCluster operation. Customers can now specify 'LoadSampleData' option during creation of a cluster, which results in loading of sample data in the cluster that is created.
+* SecurityHub (3.7.11.7)
+	* Documentation updates for Security Hub API reference
+* Core 3.7.11.1
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.268.0 (2022-05-06 13:31 UTC)
 * S3 (3.7.9.0)
 	* Added ability in TransferUtility to specify ObjectLock settings for upload requests; Add SSE-C properties to TransferUtilityUploadDirectoryRequest
