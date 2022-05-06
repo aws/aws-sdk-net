@@ -9575,6 +9575,14 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly IpamPoolState DeleteInProgress = new IpamPoolState("delete-in-progress");
         /// <summary>
+        /// Constant IsolateComplete for IpamPoolState
+        /// </summary>
+        public static readonly IpamPoolState IsolateComplete = new IpamPoolState("isolate-complete");
+        /// <summary>
+        /// Constant IsolateInProgress for IpamPoolState
+        /// </summary>
+        public static readonly IpamPoolState IsolateInProgress = new IpamPoolState("isolate-in-progress");
+        /// <summary>
         /// Constant ModifyComplete for IpamPoolState
         /// </summary>
         public static readonly IpamPoolState ModifyComplete = new IpamPoolState("modify-complete");
@@ -9586,6 +9594,10 @@ namespace Amazon.EC2
         /// Constant ModifyInProgress for IpamPoolState
         /// </summary>
         public static readonly IpamPoolState ModifyInProgress = new IpamPoolState("modify-in-progress");
+        /// <summary>
+        /// Constant RestoreInProgress for IpamPoolState
+        /// </summary>
+        public static readonly IpamPoolState RestoreInProgress = new IpamPoolState("restore-in-progress");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -9715,6 +9727,14 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly IpamScopeState DeleteInProgress = new IpamScopeState("delete-in-progress");
         /// <summary>
+        /// Constant IsolateComplete for IpamScopeState
+        /// </summary>
+        public static readonly IpamScopeState IsolateComplete = new IpamScopeState("isolate-complete");
+        /// <summary>
+        /// Constant IsolateInProgress for IpamScopeState
+        /// </summary>
+        public static readonly IpamScopeState IsolateInProgress = new IpamScopeState("isolate-in-progress");
+        /// <summary>
         /// Constant ModifyComplete for IpamScopeState
         /// </summary>
         public static readonly IpamScopeState ModifyComplete = new IpamScopeState("modify-complete");
@@ -9726,6 +9746,10 @@ namespace Amazon.EC2
         /// Constant ModifyInProgress for IpamScopeState
         /// </summary>
         public static readonly IpamScopeState ModifyInProgress = new IpamScopeState("modify-in-progress");
+        /// <summary>
+        /// Constant RestoreInProgress for IpamScopeState
+        /// </summary>
+        public static readonly IpamScopeState RestoreInProgress = new IpamScopeState("restore-in-progress");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -9843,6 +9867,14 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly IpamState DeleteInProgress = new IpamState("delete-in-progress");
         /// <summary>
+        /// Constant IsolateComplete for IpamState
+        /// </summary>
+        public static readonly IpamState IsolateComplete = new IpamState("isolate-complete");
+        /// <summary>
+        /// Constant IsolateInProgress for IpamState
+        /// </summary>
+        public static readonly IpamState IsolateInProgress = new IpamState("isolate-in-progress");
+        /// <summary>
         /// Constant ModifyComplete for IpamState
         /// </summary>
         public static readonly IpamState ModifyComplete = new IpamState("modify-complete");
@@ -9854,6 +9886,10 @@ namespace Amazon.EC2
         /// Constant ModifyInProgress for IpamState
         /// </summary>
         public static readonly IpamState ModifyInProgress = new IpamState("modify-in-progress");
+        /// <summary>
+        /// Constant RestoreInProgress for IpamState
+        /// </summary>
+        public static readonly IpamState RestoreInProgress = new IpamState("restore-in-progress");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
