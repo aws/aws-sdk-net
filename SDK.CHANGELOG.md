@@ -1,3 +1,14 @@
+### 3.7.270.0 (2022-05-09 18:14 UTC)
+* CloudControlApi (3.7.2.0)
+	* SDK release for Cloud Control API to include paginators for Python SDK.
+* CloudWatchEvidently (3.7.2.0)
+	* Add detail message inside GetExperimentResults API response to indicate experiment result availability
+* SSMContacts (3.7.2.111)
+	* Fixed an error in the DescribeEngagement example for AWS Incident Manager.
+* Core 3.7.11.2
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.269.0 (2022-05-06 18:16 UTC)
 * EC2 (3.7.69.0)
 	* Add new state values for IPAMs, IPAM Scopes, and IPAM Pools.
