@@ -97,7 +97,7 @@ namespace Amazon.CloudControlApi.Model
         /// The resource model to use to select the resources to return.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=16384)]
+        [AWSProperty(Min=1, Max=65536)]
         public string ResourceModel
         {
             get { return this._resourceModel; }
