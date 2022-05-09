@@ -1610,7 +1610,10 @@ namespace Amazon.SSMContacts
         #region  PutContactPolicy
 
         /// <summary>
-        /// Adds a resource to the specified contact or escalation plan.
+        /// Adds a resource policy to the specified contact or escalation plan. The resource policy
+        /// is used to share the contact or escalation plan using Resource Access Manager (RAM).
+        /// For more information about cross-account sharing, see <a href="https://docs.aws.amazon.com/incident-manager/latest/userguide/xa.html">Setting
+        /// up cross-account functionality</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutContactPolicy service method.</param>
         /// 
