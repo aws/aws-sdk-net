@@ -41,7 +41,8 @@ namespace Amazon.CloudWatchEvidently.Model
         /// <summary>
         /// Gets and sets the property AnalysisCompleteTime. 
         /// <para>
-        /// The date and time to end the experiment.
+        /// The date and time to end the experiment. This must be no more than 30 days after the
+        /// experiment starts.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -30,7 +30,15 @@ namespace Amazon.CloudWatchEvidently.Model
 {
     /// <summary>
     /// Container for the parameters to the GetExperimentResults operation.
-    /// Retrieves the results of a running or completed experiment.
+    /// Retrieves the results of a running or completed experiment. No results are available
+    /// until there have been 100 events for each variation and at least 10 minutes have passed
+    /// since the start of the experiment.
+    /// 
+    ///  
+    /// <para>
+    /// Experiment results are available up to 63 days after the start of the experiment.
+    /// They are not available after that because of CloudWatch data retention policies.
+    /// </para>
     /// </summary>
     public partial class GetExperimentResultsRequest : AmazonCloudWatchEvidentlyRequest
     {
@@ -67,7 +75,8 @@ namespace Amazon.CloudWatchEvidently.Model
         /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
-        /// The date and time that the experiment ended, if it is completed.
+        /// The date and time that the experiment ended, if it is completed. This must be no longer
+        /// than 30 days after the experiment start time.
         /// </para>
         /// </summary>
         public DateTime EndTime

@@ -33,9 +33,30 @@ namespace Amazon.CloudWatchEvidently.Model
     /// </summary>
     public partial class GetExperimentResultsResponse : AmazonWebServiceResponse
     {
+        private string _details;
         private List<ExperimentReport> _reports = new List<ExperimentReport>();
         private List<ExperimentResultsData> _resultsData = new List<ExperimentResultsData>();
         private List<DateTime> _timestamps = new List<DateTime>();
+
+        /// <summary>
+        /// Gets and sets the property Details. 
+        /// <para>
+        /// If the experiment doesn't yet have enough events to provide valid results, this field
+        /// is returned with the message <code>Not enough events to generate results</code>. If
+        /// there are enough events to provide valid results, this field is not returned.
+        /// </para>
+        /// </summary>
+        public string Details
+        {
+            get { return this._details; }
+            set { this._details = value; }
+        }
+
+        // Check to see if Details property is set
+        internal bool IsSetDetails()
+        {
+            return this._details != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Reports. 
