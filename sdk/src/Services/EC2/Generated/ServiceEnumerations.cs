@@ -5854,6 +5854,14 @@ namespace Amazon.EC2
         /// Constant SriovNetSupport for ImageAttributeName
         /// </summary>
         public static readonly ImageAttributeName SriovNetSupport = new ImageAttributeName("sriovNetSupport");
+        /// <summary>
+        /// Constant TpmSupport for ImageAttributeName
+        /// </summary>
+        public static readonly ImageAttributeName TpmSupport = new ImageAttributeName("tpmSupport");
+        /// <summary>
+        /// Constant UefiData for ImageAttributeName
+        /// </summary>
+        public static readonly ImageAttributeName UefiData = new ImageAttributeName("uefiData");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -15102,6 +15110,52 @@ namespace Amazon.EC2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator TieringOperationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TpmSupportValues.
+    /// </summary>
+    public class TpmSupportValues : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant V20 for TpmSupportValues
+        /// </summary>
+        public static readonly TpmSupportValues V20 = new TpmSupportValues("v2.0");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TpmSupportValues(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TpmSupportValues FindValue(string value)
+        {
+            return FindValue<TpmSupportValues>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TpmSupportValues(string value)
         {
             return FindValue(value);
         }

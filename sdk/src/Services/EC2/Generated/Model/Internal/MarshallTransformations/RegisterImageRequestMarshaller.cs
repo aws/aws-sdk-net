@@ -166,6 +166,14 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("SriovNetSupport", StringUtils.FromString(publicRequest.SriovNetSupport));
                 }
+                if(publicRequest.IsSetTpmSupport())
+                {
+                    request.Parameters.Add("TpmSupport", StringUtils.FromString(publicRequest.TpmSupport));
+                }
+                if(publicRequest.IsSetUefiData())
+                {
+                    request.Parameters.Add("UefiData", StringUtils.FromString(publicRequest.UefiData));
+                }
                 if(publicRequest.IsSetVirtualizationType())
                 {
                     request.Parameters.Add("VirtualizationType", StringUtils.FromString(publicRequest.VirtualizationType));

@@ -17146,6 +17146,58 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  GetInstanceUefiData
+
+        internal virtual GetInstanceUefiDataResponse GetInstanceUefiData(GetInstanceUefiDataRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetInstanceUefiDataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetInstanceUefiDataResponseUnmarshaller.Instance;
+
+            return Invoke<GetInstanceUefiDataResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// A binary representation of the UEFI variable store. Only non-volatile variables are
+        /// stored. This is a base64 encoded and zlib compressed binary value that must be properly
+        /// encoded.
+        /// 
+        ///  
+        /// <para>
+        /// When you use <a href="https://docs.aws.amazon.com/cli/latest/reference/ec2/register-image.html">register-image</a>
+        /// to create an AMI, you can create an exact copy of your variable store by passing the
+        /// UEFI data in the <code>UefiData</code> parameter. You can modify the UEFI data by
+        /// using the <a href="https://github.com/awslabs/python-uefivars">python-uefivars tool</a>
+        /// on GitHub. You can use the tool to convert the UEFI data into a human-readable format
+        /// (JSON), which you can inspect and modify, and then convert back into the binary format
+        /// to use with register-image.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/uefi-secure-boot.html">UEFI
+        /// Secure Boot</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetInstanceUefiData service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetInstanceUefiData service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetInstanceUefiData">REST API Reference for GetInstanceUefiData Operation</seealso>
+        public virtual Task<GetInstanceUefiDataResponse> GetInstanceUefiDataAsync(GetInstanceUefiDataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetInstanceUefiDataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetInstanceUefiDataResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetInstanceUefiDataResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetIpamAddressHistory
 
         internal virtual GetIpamAddressHistoryResponse GetIpamAddressHistory(GetIpamAddressHistoryRequest request)

@@ -117,6 +117,18 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.SriovNetSupport = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("tpmSupport/value", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.TpmSupport = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("uefiData/value", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.UefiData = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {

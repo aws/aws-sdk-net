@@ -368,6 +368,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.Tags.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("tpmSupport", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.TpmSupport = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("usageOperation", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

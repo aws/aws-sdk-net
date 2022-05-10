@@ -8817,6 +8817,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void GetInstanceUefiDataMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetInstanceUefiData");
+
+            var request = InstantiateClassGenerator.Execute<GetInstanceUefiDataRequest>();
+            var marshaller = new GetInstanceUefiDataRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = GetInstanceUefiDataResponseUnmarshaller.Instance.Unmarshall(context)
+                as GetInstanceUefiDataResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void GetIpamAddressHistoryMarshallTest()
         {
             var operation = service_model.FindOperation("GetIpamAddressHistory");

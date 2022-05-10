@@ -59,6 +59,7 @@ namespace Amazon.EC2.Model
         private ImageState _state;
         private StateReason _stateReason;
         private List<Tag> _tags = new List<Tag>();
+        private TpmSupportValues _tpmSupport;
         private string _usageOperation;
         private VirtualizationType _virtualizationType;
 
@@ -539,6 +540,26 @@ namespace Amazon.EC2.Model
         internal bool IsSetTags()
         {
             return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TpmSupport. 
+        /// <para>
+        /// If the image is configured for NitroTPM support, the value is <code>v2.0</code>. For
+        /// more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a>
+        /// in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        /// </summary>
+        public TpmSupportValues TpmSupport
+        {
+            get { return this._tpmSupport; }
+            set { this._tpmSupport = value; }
+        }
+
+        // Check to see if TpmSupport property is set
+        internal bool IsSetTpmSupport()
+        {
+            return this._tpmSupport != null;
         }
 
         /// <summary>

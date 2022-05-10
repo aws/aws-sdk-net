@@ -119,6 +119,8 @@ namespace Amazon.EC2.Model
         private string _ramdiskId;
         private string _rootDeviceName;
         private string _sriovNetSupport;
+        private TpmSupportValues _tpmSupport;
+        private string _uefiData;
         private string _virtualizationType;
 
         /// <summary>
@@ -397,6 +399,49 @@ namespace Amazon.EC2.Model
         internal bool IsSetSriovNetSupport()
         {
             return this._sriovNetSupport != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TpmSupport. 
+        /// <para>
+        /// Set to <code>v2.0</code> to enable Trusted Platform Module (TPM) support. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a>
+        /// in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        /// </summary>
+        public TpmSupportValues TpmSupport
+        {
+            get { return this._tpmSupport; }
+            set { this._tpmSupport = value; }
+        }
+
+        // Check to see if TpmSupport property is set
+        internal bool IsSetTpmSupport()
+        {
+            return this._tpmSupport != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UefiData. 
+        /// <para>
+        /// Base64 representation of the non-volatile UEFI variable store. To retrieve the UEFI
+        /// data, use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceUefiData">GetInstanceUefiData</a>
+        /// command. You can inspect and modify the UEFI data by using the <a href="https://github.com/awslabs/python-uefivars">python-uefivars
+        /// tool</a> on GitHub. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/uefi-secure-boot.html">UEFI
+        /// Secure Boot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=64000)]
+        public string UefiData
+        {
+            get { return this._uefiData; }
+            set { this._uefiData = value; }
+        }
+
+        // Check to see if UefiData property is set
+        internal bool IsSetUefiData()
+        {
+            return this._uefiData != null;
         }
 
         /// <summary>

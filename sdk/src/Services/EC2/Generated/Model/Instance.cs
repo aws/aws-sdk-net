@@ -84,6 +84,7 @@ namespace Amazon.EC2.Model
         private string _stateTransitionReason;
         private string _subnetId;
         private List<Tag> _tags = new List<Tag>();
+        private string _tpmSupport;
         private string _usageOperation;
         private DateTime? _usageOperationUpdateTime;
         private VirtualizationType _virtualizationType;
@@ -1029,6 +1030,26 @@ namespace Amazon.EC2.Model
         internal bool IsSetTags()
         {
             return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TpmSupport. 
+        /// <para>
+        /// If the instance is configured for NitroTPM support, the value is <code>v2.0</code>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a>
+        /// in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        public string TpmSupport
+        {
+            get { return this._tpmSupport; }
+            set { this._tpmSupport = value; }
+        }
+
+        // Check to see if TpmSupport property is set
+        internal bool IsSetTpmSupport()
+        {
+            return this._tpmSupport != null;
         }
 
         /// <summary>

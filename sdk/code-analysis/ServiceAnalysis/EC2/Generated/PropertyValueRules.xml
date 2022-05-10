@@ -622,6 +622,11 @@
     <pattern>[a-zA-Z0-9\(\)\.\-/_]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.RegisterImageRequest.UefiData</property>
+    <min>0</min>
+    <max>64000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.SearchTransitGatewayMulticastGroupsRequest.MaxResults</property>
     <min>5</min>
     <max>1000</max>
