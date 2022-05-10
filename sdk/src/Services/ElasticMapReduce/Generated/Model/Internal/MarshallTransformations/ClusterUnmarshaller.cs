@@ -160,6 +160,12 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                     unmarshalledObject.NormalizedInstanceHours = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("OSReleaseLabel", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.OSReleaseLabel = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("OutpostArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

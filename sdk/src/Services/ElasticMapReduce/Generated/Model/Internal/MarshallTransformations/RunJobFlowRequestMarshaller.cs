@@ -229,6 +229,12 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetOSReleaseLabel())
+                {
+                    context.Writer.WritePropertyName("OSReleaseLabel");
+                    context.Writer.Write(publicRequest.OSReleaseLabel);
+                }
+
                 if(publicRequest.IsSetPlacementGroupConfigs())
                 {
                     context.Writer.WritePropertyName("PlacementGroupConfigs");

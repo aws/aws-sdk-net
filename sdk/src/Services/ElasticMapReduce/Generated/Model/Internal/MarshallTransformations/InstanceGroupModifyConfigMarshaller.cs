@@ -84,6 +84,12 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.InstanceGroupId);
             }
 
+            if(requestObject.IsSetReconfigurationType())
+            {
+                context.Writer.WritePropertyName("ReconfigurationType");
+                context.Writer.Write(requestObject.ReconfigurationType);
+            }
+
             if(requestObject.IsSetShrinkPolicy())
             {
                 context.Writer.WritePropertyName("ShrinkPolicy");

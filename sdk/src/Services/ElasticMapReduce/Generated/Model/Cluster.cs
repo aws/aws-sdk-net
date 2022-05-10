@@ -49,6 +49,7 @@ namespace Amazon.ElasticMapReduce.Model
         private string _masterPublicDnsName;
         private string _name;
         private int? _normalizedInstanceHours;
+        private string _osReleaseLabel;
         private string _outpostArn;
         private List<PlacementGroupConfig> _placementGroups = new List<PlacementGroupConfig>();
         private string _releaseLabel;
@@ -374,6 +375,25 @@ namespace Amazon.ElasticMapReduce.Model
         internal bool IsSetNormalizedInstanceHours()
         {
             return this._normalizedInstanceHours.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OSReleaseLabel. 
+        /// <para>
+        /// The Amazon Linux release specified in a cluster launch RunJobFlow request. If no Amazon
+        /// Linux release was specified, the default Amazon Linux release is shown in the response.
+        /// </para>
+        /// </summary>
+        public string OSReleaseLabel
+        {
+            get { return this._osReleaseLabel; }
+            set { this._osReleaseLabel = value; }
+        }
+
+        // Check to see if OSReleaseLabel property is set
+        internal bool IsSetOSReleaseLabel()
+        {
+            return this._osReleaseLabel != null;
         }
 
         /// <summary>

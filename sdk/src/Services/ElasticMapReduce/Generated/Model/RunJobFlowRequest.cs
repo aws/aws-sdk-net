@@ -87,6 +87,7 @@ namespace Amazon.ElasticMapReduce.Model
         private ManagedScalingPolicy _managedScalingPolicy;
         private string _name;
         private List<SupportedProductConfig> _newSupportedProducts = new List<SupportedProductConfig>();
+        private string _osReleaseLabel;
         private List<PlacementGroupConfig> _placementGroupConfigs = new List<PlacementGroupConfig>();
         private string _releaseLabel;
         private RepoUpgradeOnBoot _repoUpgradeOnBoot;
@@ -495,6 +496,27 @@ namespace Amazon.ElasticMapReduce.Model
         internal bool IsSetNewSupportedProducts()
         {
             return this._newSupportedProducts != null && this._newSupportedProducts.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OSReleaseLabel. 
+        /// <para>
+        /// Specifies a particular Amazon Linux release for all nodes in a cluster launch RunJobFlow
+        /// request. If a release is not specified, Amazon EMR uses the latest validated Amazon
+        /// Linux release for cluster launch.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=256)]
+        public string OSReleaseLabel
+        {
+            get { return this._osReleaseLabel; }
+            set { this._osReleaseLabel = value; }
+        }
+
+        // Check to see if OSReleaseLabel property is set
+        internal bool IsSetOSReleaseLabel()
+        {
+            return this._osReleaseLabel != null;
         }
 
         /// <summary>

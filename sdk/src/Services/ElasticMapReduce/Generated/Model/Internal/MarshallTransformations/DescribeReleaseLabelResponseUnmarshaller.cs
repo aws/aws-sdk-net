@@ -57,6 +57,12 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                     response.Applications = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("AvailableOSReleases", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<OSRelease, OSReleaseUnmarshaller>(OSReleaseUnmarshaller.Instance);
+                    response.AvailableOSReleases = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("NextToken", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
