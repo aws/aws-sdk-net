@@ -77,6 +77,22 @@ namespace Amazon.S3.Util
             if (string.IsNullOrEmpty(uri.Host))
                 throw new ArgumentException("Invalid URI - no hostname present");
 
+            if (uri.Scheme == "s3")
+            {
+                this.Region = null;
+                this.IsPathStyle = false;
+                this.Bucket = uri.Authority;
+
+                if (this.Bucket == null)
+                {
+                    throw new ArgumentException("Invalid S3 URI - no bucket present");
+                }
+
+                this.Key = uri.AbsolutePath.Equals("/") ? null : Decode(uri.AbsolutePath.Substring(1));
+
+                return;
+            }
+
             var match = EndpointRegexMatch.Match(uri.Host);
             if (!match.Success)
                 throw new ArgumentException("Invalid S3 URI - hostname does not appear to be a valid S3 endpoint");
@@ -155,7 +171,6 @@ namespace Amazon.S3.Util
                         this.Region = null;
                     }
                 }
-                    
             }
         }
 
@@ -255,6 +270,10 @@ namespace Amazon.S3.Util
             if (uri.IsAbsoluteUri && (uri.Host.EndsWith("amazonaws.com", StringComparison.OrdinalIgnoreCase) || uri.Host.EndsWith("amazonaws.com.cn", StringComparison.OrdinalIgnoreCase)))
             {
                 return EndpointRegexMatch.Match(uri.Host).Success;
+            }
+            else if (uri.IsAbsoluteUri && uri.Scheme == "s3") // For S3 scheme URI, URI Authority is bucket name
+            {
+                return !string.IsNullOrEmpty(uri.Authority);
             }
             else
             {
