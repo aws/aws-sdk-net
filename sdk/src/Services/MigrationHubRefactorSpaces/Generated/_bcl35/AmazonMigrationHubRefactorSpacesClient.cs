@@ -42,7 +42,7 @@ namespace Amazon.MigrationHubRefactorSpaces
     /// Hub Refactor Spaces (Refactor Spaces). The topic for each action shows the API request
     /// parameters and the response. Alternatively, you can use one of the Amazon Web Services
     /// SDKs to access an API that is tailored to the programming language or platform that
-    /// you're using. For more information, see &lt;a href=&quot;http://aws.amazon.com/tools/#SDKs&quot;&gt;Amazon
+    /// you're using. For more information, see &lt;a href=&quot;https://aws.amazon.com/tools/#SDKs&quot;&gt;Amazon
     /// Web Services SDKs&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;To share Refactor Spaces environments
     /// with other Amazon Web Services accounts or with Organizations and their OUs, use Resource
     /// Access Manager's &lt;code&gt;CreateResourceShare&lt;/code&gt; API. See &lt;a href=&quot;https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html&quot;&gt;CreateResourceShare&lt;/a&gt;
