@@ -143,6 +143,8 @@ namespace Amazon.EKS.Model
         /// Gets and sets the property Taints. 
         /// <para>
         /// The Kubernetes taints to be applied to the nodes in the node group after the update.
+        /// For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node
+        /// taints on managed node groups</a>.
         /// </para>
         /// </summary>
         public UpdateTaintsPayload Taints

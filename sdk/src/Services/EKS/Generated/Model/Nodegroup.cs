@@ -451,7 +451,8 @@ namespace Amazon.EKS.Model
         /// The Kubernetes taints to be applied to the nodes in the node group when they are created.
         /// Effect is one of <code>No_Schedule</code>, <code>Prefer_No_Schedule</code>, or <code>No_Execute</code>.
         /// Kubernetes taints can be used together with tolerations to control how workloads are
-        /// scheduled to your nodes.
+        /// scheduled to your nodes. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node
+        /// taints on managed node groups</a>.
         /// </para>
         /// </summary>
         public List<Taint> Taints

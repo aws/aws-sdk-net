@@ -39,7 +39,7 @@ namespace Amazon.EKS.Model
     /// fail. For more information about launch templates, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html">
     /// <code>CreateLaunchTemplate</code> </a> in the Amazon EC2 API Reference. For more information
     /// about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
-    /// template support</a> in the Amazon EKS User Guide.
+    /// template support</a> in the <i>Amazon EKS User Guide</i>.
     /// 
     ///  
     /// <para>

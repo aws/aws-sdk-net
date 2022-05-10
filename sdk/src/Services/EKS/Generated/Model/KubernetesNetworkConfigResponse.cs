@@ -41,9 +41,9 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property IpFamily. 
         /// <para>
-        /// The IP family used to assign Kubernetes Pod and Service IP addresses. The IP family
+        /// The IP family used to assign Kubernetes pod and service IP addresses. The IP family
         /// is always <code>ipv4</code>, unless you have a <code>1.21</code> or later cluster
-        /// running version 1.10.0 or later of the Amazon VPC CNI add-on and specified <code>ipv6</code>
+        /// running version 1.10.1 or later of the Amazon VPC CNI add-on and specified <code>ipv6</code>
         /// when you created the cluster. 
         /// </para>
         /// </summary>
@@ -62,7 +62,7 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property ServiceIpv4Cidr. 
         /// <para>
-        /// The CIDR block that Kubernetes Pod and Service IP addresses are assigned from. Kubernetes
+        /// The CIDR block that Kubernetes pod and service IP addresses are assigned from. Kubernetes
         /// assigns addresses from an IPv4 CIDR block assigned to a subnet that the node is in.
         /// If you didn't specify a CIDR block when you created the cluster, then Kubernetes assigns
         /// addresses from either the 10.100.0.0/16 or 172.20.0.0/16 CIDR blocks. If this was
@@ -84,10 +84,11 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property ServiceIpv6Cidr. 
         /// <para>
-        /// The CIDR block that Kubernetes Pod and Service IP addresses are assigned from if you
-        /// created a 1.21 or later cluster with version 1.10.0 or later of the Amazon VPC CNI
+        /// The CIDR block that Kubernetes pod and service IP addresses are assigned from if you
+        /// created a 1.21 or later cluster with version 1.10.1 or later of the Amazon VPC CNI
         /// add-on and specified <code>ipv6</code> for <b>ipFamily</b> when you created the cluster.
-        /// Kubernetes assigns addresses from the unique local address range (fc00::/7).
+        /// Kubernetes assigns service addresses from the unique local address range (<code>fc00::/7</code>)
+        /// because you can't specify a custom IPv6 CIDR block when you create the cluster.
         /// </para>
         /// </summary>
         public string ServiceIpv6Cidr

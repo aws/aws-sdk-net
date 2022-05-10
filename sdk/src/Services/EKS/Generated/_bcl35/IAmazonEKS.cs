@@ -1249,7 +1249,7 @@ namespace Amazon.EKS
 
         /// <summary>
         /// Returns descriptive information about an update against your Amazon EKS cluster or
-        /// associated managed node group.
+        /// associated managed node group or Amazon EKS add-on.
         /// 
         ///  
         /// <para>
@@ -1824,7 +1824,7 @@ namespace Amazon.EKS
         /// You have encountered a service limit on the specified resource.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourcePropagationDelayException">
-        /// Required resources (such as Service Linked Roles) were created and are still propagating.
+        /// Required resources (such as service-linked roles) were created and are still propagating.
         /// Retry later.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">

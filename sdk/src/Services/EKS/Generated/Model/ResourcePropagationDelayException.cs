@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EKS.Model
 {
     /// <summary>
-    /// Required resources (such as Service Linked Roles) were created and are still propagating.
+    /// Required resources (such as service-linked roles) were created and are still propagating.
     /// Retry later.
     /// </summary>
     #if !NETSTANDARD
