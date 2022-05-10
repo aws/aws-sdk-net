@@ -1,3 +1,15 @@
+### 3.7.271.0 (2022-05-10 18:14 UTC)
+* ComputeOptimizer (3.7.5.46)
+	* Documentation updates for Compute Optimizer
+* EC2 (3.7.70.0)
+	* Added support for using NitroTPM and UEFI Secure Boot on EC2 instances.
+* EKS (3.7.14.0)
+	* Adds BOTTLEROCKET_ARM_64_NVIDIA and BOTTLEROCKET_x86_64_NVIDIA AMI types to EKS managed nodegroups
+* ElasticMapReduce (3.7.5.0)
+	* This release updates the Amazon EMR ModifyInstanceGroups API to support "MERGE" type cluster reconfiguration. Also, added the ability to specify a particular Amazon Linux release for all nodes in a cluster launch request.
+* MigrationHubRefactorSpaces (3.7.0.57)
+	* AWS Migration Hub Refactor Spaces documentation only update to fix a formatting issue.
+
 ### 3.7.270.0 (2022-05-09 18:14 UTC)
 * CloudControlApi (3.7.2.0)
 	* SDK release for Cloud Control API to include paginators for Python SDK.
