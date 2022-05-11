@@ -80,6 +80,15 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+                if(publicRequest.IsSetAddSupportedIpAddressTypes())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.AddSupportedIpAddressTypes)
+                    {
+                        request.Parameters.Add("AddSupportedIpAddressType" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
+                }
                 if(publicRequest.IsSetPrivateDnsName())
                 {
                     request.Parameters.Add("PrivateDnsName", StringUtils.FromString(publicRequest.PrivateDnsName));
@@ -105,6 +114,15 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetRemovePrivateDnsName())
                 {
                     request.Parameters.Add("RemovePrivateDnsName", StringUtils.FromBool(publicRequest.RemovePrivateDnsName));
+                }
+                if(publicRequest.IsSetRemoveSupportedIpAddressTypes())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.RemoveSupportedIpAddressTypes)
+                    {
+                        request.Parameters.Add("RemoveSupportedIpAddressType" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
                 }
                 if(publicRequest.IsSetServiceId())
                 {

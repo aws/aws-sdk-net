@@ -39,6 +39,8 @@ namespace Amazon.EC2.Model
     public partial class CreateVpcEndpointRequest : AmazonEC2Request
     {
         private string _clientToken;
+        private DnsOptionsSpecification _dnsOptions;
+        private IpAddressType _ipAddressType;
         private string _policyDocument;
         private bool? _privateDnsEnabled;
         private List<string> _routeTableIds = new List<string>();
@@ -67,6 +69,42 @@ namespace Amazon.EC2.Model
         internal bool IsSetClientToken()
         {
             return this._clientToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DnsOptions. 
+        /// <para>
+        /// The DNS options for the endpoint.
+        /// </para>
+        /// </summary>
+        public DnsOptionsSpecification DnsOptions
+        {
+            get { return this._dnsOptions; }
+            set { this._dnsOptions = value; }
+        }
+
+        // Check to see if DnsOptions property is set
+        internal bool IsSetDnsOptions()
+        {
+            return this._dnsOptions != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IpAddressType. 
+        /// <para>
+        /// The IP address type for the endpoint.
+        /// </para>
+        /// </summary>
+        public IpAddressType IpAddressType
+        {
+            get { return this._ipAddressType; }
+            set { this._ipAddressType = value; }
+        }
+
+        // Check to see if IpAddressType property is set
+        internal bool IsSetIpAddressType()
+        {
+            return this._ipAddressType != null;
         }
 
         /// <summary>

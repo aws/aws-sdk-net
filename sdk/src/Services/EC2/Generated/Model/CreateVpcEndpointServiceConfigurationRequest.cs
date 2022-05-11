@@ -67,6 +67,7 @@ namespace Amazon.EC2.Model
         private List<string> _gatewayLoadBalancerArns = new List<string>();
         private List<string> _networkLoadBalancerArns = new List<string>();
         private string _privateDnsName;
+        private List<string> _supportedIpAddressTypes = new List<string>();
         private List<TagSpecification> _tagSpecifications = new List<TagSpecification>();
 
         /// <summary>
@@ -161,6 +162,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetPrivateDnsName()
         {
             return this._privateDnsName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportedIpAddressTypes. 
+        /// <para>
+        /// The supported IP address types. The possible values are <code>ipv4</code> and <code>ipv6</code>.
+        /// </para>
+        /// </summary>
+        public List<string> SupportedIpAddressTypes
+        {
+            get { return this._supportedIpAddressTypes; }
+            set { this._supportedIpAddressTypes = value; }
+        }
+
+        // Check to see if SupportedIpAddressTypes property is set
+        internal bool IsSetSupportedIpAddressTypes()
+        {
+            return this._supportedIpAddressTypes != null && this._supportedIpAddressTypes.Count > 0; 
         }
 
         /// <summary>

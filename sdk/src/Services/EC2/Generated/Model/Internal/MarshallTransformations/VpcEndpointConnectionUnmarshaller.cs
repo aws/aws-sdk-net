@@ -74,6 +74,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.GatewayLoadBalancerArns.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("ipAddressType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.IpAddressType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("networkLoadBalancerArnSet/item", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

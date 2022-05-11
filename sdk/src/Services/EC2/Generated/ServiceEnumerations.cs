@@ -3635,6 +3635,64 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type DnsRecordIpType.
+    /// </summary>
+    public class DnsRecordIpType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Dualstack for DnsRecordIpType
+        /// </summary>
+        public static readonly DnsRecordIpType Dualstack = new DnsRecordIpType("dualstack");
+        /// <summary>
+        /// Constant Ipv4 for DnsRecordIpType
+        /// </summary>
+        public static readonly DnsRecordIpType Ipv4 = new DnsRecordIpType("ipv4");
+        /// <summary>
+        /// Constant Ipv6 for DnsRecordIpType
+        /// </summary>
+        public static readonly DnsRecordIpType Ipv6 = new DnsRecordIpType("ipv6");
+        /// <summary>
+        /// Constant ServiceDefined for DnsRecordIpType
+        /// </summary>
+        public static readonly DnsRecordIpType ServiceDefined = new DnsRecordIpType("service-defined");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DnsRecordIpType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DnsRecordIpType FindValue(string value)
+        {
+            return FindValue<DnsRecordIpType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DnsRecordIpType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DnsSupportValue.
     /// </summary>
     public class DnsSupportValue : ConstantClass
@@ -9101,6 +9159,60 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type IpAddressType.
+    /// </summary>
+    public class IpAddressType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Dualstack for IpAddressType
+        /// </summary>
+        public static readonly IpAddressType Dualstack = new IpAddressType("dualstack");
+        /// <summary>
+        /// Constant Ipv4 for IpAddressType
+        /// </summary>
+        public static readonly IpAddressType Ipv4 = new IpAddressType("ipv4");
+        /// <summary>
+        /// Constant Ipv6 for IpAddressType
+        /// </summary>
+        public static readonly IpAddressType Ipv6 = new IpAddressType("ipv6");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IpAddressType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IpAddressType FindValue(string value)
+        {
+            return FindValue<IpAddressType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IpAddressType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type IpamAddressHistoryResourceType.
     /// </summary>
     public class IpamAddressHistoryResourceType : ConstantClass
@@ -13766,6 +13878,56 @@ namespace Amazon.EC2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SelfServicePortal(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ServiceConnectivityType.
+    /// </summary>
+    public class ServiceConnectivityType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Ipv4 for ServiceConnectivityType
+        /// </summary>
+        public static readonly ServiceConnectivityType Ipv4 = new ServiceConnectivityType("ipv4");
+        /// <summary>
+        /// Constant Ipv6 for ServiceConnectivityType
+        /// </summary>
+        public static readonly ServiceConnectivityType Ipv6 = new ServiceConnectivityType("ipv6");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ServiceConnectivityType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ServiceConnectivityType FindValue(string value)
+        {
+            return FindValue<ServiceConnectivityType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ServiceConnectivityType(string value)
         {
             return FindValue(value);
         }

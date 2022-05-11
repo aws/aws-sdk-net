@@ -40,6 +40,8 @@ namespace Amazon.EC2.Model
         private List<string> _addRouteTableIds = new List<string>();
         private List<string> _addSecurityGroupIds = new List<string>();
         private List<string> _addSubnetIds = new List<string>();
+        private DnsOptionsSpecification _dnsOptions;
+        private IpAddressType _ipAddressType;
         private string _policyDocument;
         private bool? _privateDnsEnabled;
         private List<string> _removeRouteTableIds = new List<string>();
@@ -103,6 +105,42 @@ namespace Amazon.EC2.Model
         internal bool IsSetAddSubnetIds()
         {
             return this._addSubnetIds != null && this._addSubnetIds.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DnsOptions. 
+        /// <para>
+        /// The DNS options for the endpoint.
+        /// </para>
+        /// </summary>
+        public DnsOptionsSpecification DnsOptions
+        {
+            get { return this._dnsOptions; }
+            set { this._dnsOptions = value; }
+        }
+
+        // Check to see if DnsOptions property is set
+        internal bool IsSetDnsOptions()
+        {
+            return this._dnsOptions != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IpAddressType. 
+        /// <para>
+        /// The IP address type for the endpoint.
+        /// </para>
+        /// </summary>
+        public IpAddressType IpAddressType
+        {
+            get { return this._ipAddressType; }
+            set { this._ipAddressType = value; }
+        }
+
+        // Check to see if IpAddressType property is set
+        internal bool IsSetIpAddressType()
+        {
+            return this._ipAddressType != null;
         }
 
         /// <summary>

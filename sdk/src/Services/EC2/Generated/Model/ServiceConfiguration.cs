@@ -46,6 +46,7 @@ namespace Amazon.EC2.Model
         private string _serviceName;
         private ServiceState _serviceState;
         private List<ServiceTypeDetail> _serviceType = new List<ServiceTypeDetail>();
+        private List<string> _supportedIpAddressTypes = new List<string>();
         private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
@@ -282,6 +283,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetServiceType()
         {
             return this._serviceType != null && this._serviceType.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportedIpAddressTypes. 
+        /// <para>
+        /// The supported IP address types.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=2)]
+        public List<string> SupportedIpAddressTypes
+        {
+            get { return this._supportedIpAddressTypes; }
+            set { this._supportedIpAddressTypes = value; }
+        }
+
+        // Check to see if SupportedIpAddressTypes property is set
+        internal bool IsSetSupportedIpAddressTypes()
+        {
+            return this._supportedIpAddressTypes != null && this._supportedIpAddressTypes.Count > 0; 
         }
 
         /// <summary>

@@ -36,6 +36,7 @@ namespace Amazon.EC2.Model
         private DateTime? _creationTimestamp;
         private List<DnsEntry> _dnsEntries = new List<DnsEntry>();
         private List<string> _gatewayLoadBalancerArns = new List<string>();
+        private IpAddressType _ipAddressType;
         private List<string> _networkLoadBalancerArns = new List<string>();
         private string _serviceId;
         private string _vpcEndpointId;
@@ -94,6 +95,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetGatewayLoadBalancerArns()
         {
             return this._gatewayLoadBalancerArns != null && this._gatewayLoadBalancerArns.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IpAddressType. 
+        /// <para>
+        /// The IP address type for the endpoint.
+        /// </para>
+        /// </summary>
+        public IpAddressType IpAddressType
+        {
+            get { return this._ipAddressType; }
+            set { this._ipAddressType = value; }
+        }
+
+        // Check to see if IpAddressType property is set
+        internal bool IsSetIpAddressType()
+        {
+            return this._ipAddressType != null;
         }
 
         /// <summary>

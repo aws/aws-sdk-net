@@ -46,10 +46,12 @@ namespace Amazon.EC2.Model
         private bool? _acceptanceRequired;
         private List<string> _addGatewayLoadBalancerArns = new List<string>();
         private List<string> _addNetworkLoadBalancerArns = new List<string>();
+        private List<string> _addSupportedIpAddressTypes = new List<string>();
         private string _privateDnsName;
         private List<string> _removeGatewayLoadBalancerArns = new List<string>();
         private List<string> _removeNetworkLoadBalancerArns = new List<string>();
         private bool? _removePrivateDnsName;
+        private List<string> _removeSupportedIpAddressTypes = new List<string>();
         private string _serviceId;
 
         /// <summary>
@@ -106,6 +108,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetAddNetworkLoadBalancerArns()
         {
             return this._addNetworkLoadBalancerArns != null && this._addNetworkLoadBalancerArns.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AddSupportedIpAddressTypes. 
+        /// <para>
+        /// The IP address types to add to your service configuration.
+        /// </para>
+        /// </summary>
+        public List<string> AddSupportedIpAddressTypes
+        {
+            get { return this._addSupportedIpAddressTypes; }
+            set { this._addSupportedIpAddressTypes = value; }
+        }
+
+        // Check to see if AddSupportedIpAddressTypes property is set
+        internal bool IsSetAddSupportedIpAddressTypes()
+        {
+            return this._addSupportedIpAddressTypes != null && this._addSupportedIpAddressTypes.Count > 0; 
         }
 
         /// <summary>
@@ -181,6 +201,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetRemovePrivateDnsName()
         {
             return this._removePrivateDnsName.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RemoveSupportedIpAddressTypes. 
+        /// <para>
+        /// The IP address types to remove from your service configuration.
+        /// </para>
+        /// </summary>
+        public List<string> RemoveSupportedIpAddressTypes
+        {
+            get { return this._removeSupportedIpAddressTypes; }
+            set { this._removeSupportedIpAddressTypes = value; }
+        }
+
+        // Check to see if RemoveSupportedIpAddressTypes property is set
+        internal bool IsSetRemoveSupportedIpAddressTypes()
+        {
+            return this._removeSupportedIpAddressTypes != null && this._removeSupportedIpAddressTypes.Count > 0; 
         }
 
         /// <summary>
