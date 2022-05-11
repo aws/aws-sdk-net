@@ -1,3 +1,9 @@
+### 3.7.272.0 (2022-05-11 18:13 UTC)
+* EC2 (3.7.71.0)
+	* This release updates AWS PrivateLink APIs to support IPv6 for PrivateLink Services and Endpoints of type 'Interface'.
+* SecretsManager (3.7.2.42)
+	* Doc only update for Secrets Manager that fixes several customer-reported issues.
+
 ### 3.7.271.0 (2022-05-10 18:14 UTC)
 * ComputeOptimizer (3.7.5.46)
 	* Documentation updates for Compute Optimizer
