@@ -45,8 +45,8 @@ namespace Amazon.SecretsManager.Model
     /// </para>
     ///  
     /// <para>
-    /// For information about finding secrets in the console, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/manage_search-secret.html">Enhanced
-    /// search capabilities for secrets in Secrets Manager</a>.
+    /// For information about finding secrets in the console, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/manage_search-secret.html">Find
+    /// secrets in Secrets Manager</a>.
     /// </para>
     ///  
     /// <para>

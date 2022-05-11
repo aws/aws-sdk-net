@@ -326,18 +326,20 @@ namespace Amazon.SecretsManager
         /// 
         ///  
         /// <para>
+        /// If you cancel a rotation in progress, it can leave the <code>VersionStage</code> labels
+        /// in an unexpected state. You might need to remove the staging label <code>AWSPENDING</code>
+        /// from the partially created version. You also need to determine whether to roll back
+        /// to the previous version of the secret by moving the staging label <code>AWSCURRENT</code>
+        /// to the version that has <code>AWSPENDING</code>. To determine which version has a
+        /// specific staging label, call <a>ListSecretVersionIds</a>. Then use <a>UpdateSecretVersionStage</a>
+        /// to change staging labels. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_how.html">How
+        /// rotation works</a>.
+        /// </para>
+        ///  
+        /// <para>
         /// To turn on automatic rotation again, call <a>RotateSecret</a>.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// If you cancel a rotation in progress, it can leave the <code>VersionStage</code> labels
-        /// in an unexpected state. Depending on the step of the rotation in progress, you might
-        /// need to remove the staging label <code>AWSPENDING</code> from the partially created
-        /// version, specified by the <code>VersionId</code> response value. We recommend you
-        /// also evaluate the partially rotated new version to see if it should be deleted. You
-        /// can delete a version by removing all staging labels from it.
-        /// </para>
-        ///  </note> 
+        ///  
         /// <para>
         ///  <b>Required permissions: </b> <code>secretsmanager:CancelRotateSecret</code>. For
         /// more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
@@ -619,8 +621,22 @@ namespace Amazon.SecretsManager
         /// 
         ///  
         /// <para>
-        /// For information about deleting a secret in the console, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/manage_delete-secret.html">https://docs.aws.amazon.com/secretsmanager/latest/userguide/manage_delete-secret.html</a>.
-        /// 
+        /// You can't delete a primary secret that is replicated to other Regions. You must first
+        /// delete the replicas using <a>RemoveRegionsFromReplication</a>, and then delete the
+        /// primary secret. When you delete a replica, it is deleted immediately.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can't directly delete a version of a secret. Instead, you remove all staging labels
+        /// from the version using <a>UpdateSecretVersionStage</a>. This marks the version as
+        /// deprecated, and then Secrets Manager can automatically delete the version in the background.
+        /// </para>
+        ///  
+        /// <para>
+        /// To determine whether an application still uses a secret, you can create an Amazon
+        /// CloudWatch alarm to alert you to any attempts to access a secret during the recovery
+        /// window. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/monitoring_cloudwatch_deleted-secrets.html">
+        /// Monitor secrets scheduled for deletion</a>.
         /// </para>
         ///  
         /// <para>
@@ -635,9 +651,9 @@ namespace Amazon.SecretsManager
         /// </para>
         ///  
         /// <para>
-        /// In a secret scheduled for deletion, you cannot access the encrypted secret value.
-        /// To access that information, first cancel the deletion with <a>RestoreSecret</a> and
-        /// then retrieve the information.
+        /// When a secret is scheduled for deletion, you cannot retrieve the secret value. You
+        /// must first cancel the deletion with <a>RestoreSecret</a> and then you can retrieve
+        /// the secret.
         /// </para>
         ///  
         /// <para>
@@ -993,8 +1009,8 @@ namespace Amazon.SecretsManager
         /// </para>
         ///  
         /// <para>
-        /// For information about finding secrets in the console, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/manage_search-secret.html">Enhanced
-        /// search capabilities for secrets in Secrets Manager</a>.
+        /// For information about finding secrets in the console, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/manage_search-secret.html">Find
+        /// secrets in Secrets Manager</a>.
         /// </para>
         ///  
         /// <para>
@@ -1045,16 +1061,13 @@ namespace Amazon.SecretsManager
 
 
         /// <summary>
-        /// Lists the versions for a secret. 
+        /// Lists the versions of a secret. Secrets Manager uses staging labels to indicate the
+        /// different versions of a secret. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/getting-started.html#term_version">
+        /// Secrets Manager concepts: Versions</a>.
         /// 
         ///  
         /// <para>
         /// To list the secrets in the account, use <a>ListSecrets</a>.
-        /// </para>
-        ///  
-        /// <para>
-        /// To get the secret value from <code>SecretString</code> or <code>SecretBinary</code>,
-        /// call <a>GetSecretValue</a>.
         /// </para>
         ///  
         /// <para>

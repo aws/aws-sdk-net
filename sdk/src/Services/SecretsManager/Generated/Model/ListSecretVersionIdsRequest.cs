@@ -30,16 +30,13 @@ namespace Amazon.SecretsManager.Model
 {
     /// <summary>
     /// Container for the parameters to the ListSecretVersionIds operation.
-    /// Lists the versions for a secret. 
+    /// Lists the versions of a secret. Secrets Manager uses staging labels to indicate the
+    /// different versions of a secret. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/getting-started.html#term_version">
+    /// Secrets Manager concepts: Versions</a>.
     /// 
     ///  
     /// <para>
     /// To list the secrets in the account, use <a>ListSecrets</a>.
-    /// </para>
-    ///  
-    /// <para>
-    /// To get the secret value from <code>SecretString</code> or <code>SecretBinary</code>,
-    /// call <a>GetSecretValue</a>.
     /// </para>
     ///  
     /// <para>

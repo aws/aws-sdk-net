@@ -288,6 +288,9 @@ namespace AWSSDKDocSamples.Amazon.SecretsManager.Generated
                 SecretId = "MyTestDatabaseSecret"
             });
 
+            string arn = response.ARN;
+            string name = response.Name;
+            string versionId = response.VersionId;
 
             #endregion
         }
