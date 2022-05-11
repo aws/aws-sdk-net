@@ -44,7 +44,7 @@ namespace Amazon.Runtime
 
         private const string _receivedExpiredCredentialsFromIMDS =
             "Attempting credential expiration extension due to a credential service availability issue. " +
-            "A refresh of these credentials will be attempted again in 5-15 minutes.";
+            "A refresh of these credentials will be attempted again in 5-10 minutes.";
 
         private Logger _logger;
 
@@ -107,7 +107,7 @@ namespace Amazon.Runtime
                 // use a custom refresh time
 
                 #pragma warning disable CS0612 // Type or member is obsolete
-                var newExpiryTime = AWSSDKUtils.CorrectedUtcNow.ToLocalTime() + TimeSpan.FromMinutes(new Random().Next(5, 16));
+                var newExpiryTime = AWSSDKUtils.CorrectedUtcNow.ToLocalTime() + TimeSpan.FromMinutes(new Random().Next(5, 11));
                 #pragma warning restore CS0612 // Type or member is obsolete
 
                 _currentRefreshState = new CredentialsRefreshState(newState.Credentials.Copy(), newExpiryTime);

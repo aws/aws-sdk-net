@@ -41,9 +41,15 @@ namespace Amazon.Runtime
         private const string FailedToGetCredentialsMessage = "Failed to retrieve credentials from EC2 Instance Metadata Service.";
         private static readonly TimeSpan _credentialsLockTimeout = TimeSpan.FromSeconds(5);
 
+        /// <summary>
+        /// Control flag: in the event IMDS returns an expired credential, a refresh must be immediately
+        /// retried, if it continues to fail, then retry every 5-10 minutes.
+        /// </summary>
+        private static volatile bool _imdsRefreshFailed = false;
+
         private const string _usingExpiredCredentialsFromIMDS =
             "Attempting credential expiration extension due to a credential service availability issue. " +
-            "A refresh of these credentials will be attempted again in 5-15 minutes.";
+            "A refresh of these credentials will be attempted again in 5-10 minutes.";
 
         private static DefaultInstanceProfileAWSCredentials _instance;
 
@@ -94,11 +100,23 @@ namespace Amazon.Runtime
                 {
                     if (null != _lastRetrievedCredentials)
                     {
+                        if (_lastRetrievedCredentials.IsExpiredWithin(TimeSpan.Zero) &&
+                            !_imdsRefreshFailed)
+                        {
+                            // this is the first failure - immediately try to renew
+                            _imdsRefreshFailed = true;
+                            _lastRetrievedCredentials = FetchCredentials();
+                        }
+
                         // if credentials are expired, we'll still return them, but log a message about
                         // them being expired.
                         if (_lastRetrievedCredentials.IsExpiredWithin(TimeSpan.Zero))
                         {
                             _logger.InfoFormat(_usingExpiredCredentialsFromIMDS);
+                        }
+                        else
+                        {
+                            _imdsRefreshFailed = false;
                         }
 
                         return _lastRetrievedCredentials?.Credentials.Copy();
@@ -121,11 +139,23 @@ namespace Amazon.Runtime
                         _lastRetrievedCredentials = FetchCredentials();
                     }
 
+                    if (_lastRetrievedCredentials.IsExpiredWithin(TimeSpan.Zero) && 
+                         !_imdsRefreshFailed)
+                    {
+                        // this is the first failure - immediately try to renew
+                        _imdsRefreshFailed = true;
+                        _lastRetrievedCredentials = FetchCredentials();
+                    }
+                    
                     // if credentials are expired, we'll still return them, but log a message about
                     // them being expired.
                     if (_lastRetrievedCredentials.IsExpiredWithin(TimeSpan.Zero))
                     {
                         _logger.InfoFormat(_usingExpiredCredentialsFromIMDS);
+                    }
+                    else
+                    {
+                        _imdsRefreshFailed = false;
                     }
 
                     credentials = _lastRetrievedCredentials.Credentials?.Copy();
@@ -169,10 +199,24 @@ namespace Amazon.Runtime
                 // would remain unchanged and would continue to be returned in GetCredentials()
                 _lastRetrievedCredentials = FetchCredentials();
 
+                // check for a first time failure
+                if (!_imdsRefreshFailed &&
+                    _lastRetrievedCredentials.IsExpiredWithin(TimeSpan.Zero))
+                {
+                    // this is the first failure - immediately try to renew
+                    _imdsRefreshFailed = true;
+                    _lastRetrievedCredentials = FetchCredentials();
+                }
+
+                // first failure refresh failed OR subsequent refresh failed.
                 if (_lastRetrievedCredentials.IsExpiredWithin(TimeSpan.Zero))
                 {
                     // relax the refresh rate to at least 5 minutes
-                    refreshRate = TimeSpan.FromMinutes(new Random().Next(5, 16));
+                    refreshRate = TimeSpan.FromMinutes(new Random().Next(5, 11));
+                }
+                else
+                {
+                    _imdsRefreshFailed = false;
                 }
             }
             catch (OperationCanceledException e)
