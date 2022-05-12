@@ -59,7 +59,11 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property HashAlgorithm. 
         /// <para>
-        /// The hash algorithm used to code sign the file.
+        /// The hash algorithm used to code sign the file. You can use a string as the algorithm
+        /// name if the target over-the-air (OTA) update devices are able to verify the signature
+        /// that was generated using the same signature algorithm. For example, FreeRTOS uses
+        /// <code>SHA256</code> or <code>SHA1</code>, so you can pass either of them based on
+        /// which was used for generating the signature.
         /// </para>
         /// </summary>
         public string HashAlgorithm
@@ -95,7 +99,11 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property SignatureAlgorithm. 
         /// <para>
-        /// The signature algorithm used to code sign the file.
+        /// The signature algorithm used to code sign the file. You can use a string as the algorithm
+        /// name if the target over-the-air (OTA) update devices are able to verify the signature
+        /// that was generated using the same signature algorithm. For example, FreeRTOS uses
+        /// <code>ECDSA</code> or <code>RSA</code>, so you can pass either of them based on which
+        /// was used for generating the signature.
         /// </para>
         /// </summary>
         public string SignatureAlgorithm

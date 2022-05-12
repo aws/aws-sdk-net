@@ -155,6 +155,13 @@ namespace Amazon.IoT.Model
         /// job document schema. You can use the description of each key as a guidance to specify
         /// the inputs during runtime when creating a job.
         /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <code>documentParameters</code> can only be used when creating jobs from Amazon Web
+        /// Services managed templates. This parameter can't be used with custom job templates
+        /// or to create jobs from them.
+        /// </para>
+        ///  </note>
         /// </summary>
         public Dictionary<string, string> DocumentParameters
         {
@@ -448,6 +455,13 @@ namespace Amazon.IoT.Model
         /// a job will run on a device when the thing representing the device is added to a target
         /// group, even after the job was completed by all things originally in the group. 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing
+        /// group targets. By using continuous jobs, devices that join the group receive the job
+        /// execution even after the job has been created.
+        /// </para>
+        ///  </note>
         /// </summary>
         public TargetSelection TargetSelection
         {

@@ -115,8 +115,16 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property DocumentParameters. 
         /// <para>
-        /// Parameters of a managed template that you can specify to create the job document.
+        /// Parameters of an Amazon Web Services managed template that you can specify to create
+        /// the job document.
         /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <code>documentParameters</code> can only be used when creating jobs from Amazon Web
+        /// Services managed templates. This parameter can't be used with custom job templates
+        /// or to create jobs from them.
+        /// </para>
+        ///  </note>
         /// </summary>
         public Dictionary<string, string> DocumentParameters
         {
@@ -342,6 +350,13 @@ namespace Amazon.IoT.Model
         /// a job will run on a thing when the thing is added to a target group, even after the
         /// job was completed by all things originally in the group.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing
+        /// group targets. By using continuous jobs, devices that join the group receive the job
+        /// execution even after the job has been created.
+        /// </para>
+        ///  </note>
         /// </summary>
         public TargetSelection TargetSelection
         {
