@@ -36,6 +36,7 @@ namespace Amazon.SSMIncidents.Model
     {
         private string _documentName;
         private string _documentVersion;
+        private Dictionary<string, DynamicSsmParameterValue> _dynamicParameters = new Dictionary<string, DynamicSsmParameterValue>();
         private Dictionary<string, List<string>> _parameters = new Dictionary<string, List<string>>();
         private string _roleArn;
         private SsmTargetAccount _targetAccount;
@@ -76,6 +77,26 @@ namespace Amazon.SSMIncidents.Model
         internal bool IsSetDocumentVersion()
         {
             return this._documentVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DynamicParameters. 
+        /// <para>
+        /// The key-value pair to resolve dynamic parameter values when processing a Systems Manager
+        /// Automation runbook.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=200)]
+        public Dictionary<string, DynamicSsmParameterValue> DynamicParameters
+        {
+            get { return this._dynamicParameters; }
+            set { this._dynamicParameters = value; }
+        }
+
+        // Check to see if DynamicParameters property is set
+        internal bool IsSetDynamicParameters()
+        {
+            return this._dynamicParameters != null && this._dynamicParameters.Count > 0; 
         }
 
         /// <summary>

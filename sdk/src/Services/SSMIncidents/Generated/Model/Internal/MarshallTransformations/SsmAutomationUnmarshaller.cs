@@ -76,6 +76,12 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
                     unmarshalledObject.DocumentVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("dynamicParameters", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, DynamicSsmParameterValue, StringUnmarshaller, DynamicSsmParameterValueUnmarshaller>(StringUnmarshaller.Instance, DynamicSsmParameterValueUnmarshaller.Instance);
+                    unmarshalledObject.DynamicParameters = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("parameters", targetDepth))
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, List<string>, StringUnmarshaller, ListUnmarshaller<string, StringUnmarshaller>>(StringUnmarshaller.Instance, new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance));

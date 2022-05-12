@@ -1100,7 +1100,10 @@ namespace Amazon.SSMIncidents
 
 
         /// <summary>
-        /// Adds a resource policy to the specified response plan.
+        /// Adds a resource policy to the specified response plan. The resource policy is used
+        /// to share the response plan using Resource Access Manager (RAM). For more information
+        /// about cross-account sharing, see <a href="https://docs.aws.amazon.com/incident-manager/latest/userguide/xa.html">Setting
+        /// up cross-account functionality</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutResourcePolicy service method.</param>
         /// 
@@ -1514,6 +1517,9 @@ namespace Amazon.SSMIncidents
         /// <returns>The response from the UpdateReplicationSet service method, as returned by SSMIncidents.</returns>
         /// <exception cref="Amazon.SSMIncidents.Model.AccessDeniedException">
         /// You don't have sufficient access to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.SSMIncidents.Model.ConflictException">
+        /// Updating or deleting a resource causes an inconsistent state.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception or failure.

@@ -57,6 +57,25 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.DocumentVersion);
             }
 
+            if(requestObject.IsSetDynamicParameters())
+            {
+                context.Writer.WritePropertyName("dynamicParameters");
+                context.Writer.WriteObjectStart();
+                foreach (var requestObjectDynamicParametersKvp in requestObject.DynamicParameters)
+                {
+                    context.Writer.WritePropertyName(requestObjectDynamicParametersKvp.Key);
+                    var requestObjectDynamicParametersValue = requestObjectDynamicParametersKvp.Value;
+
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DynamicSsmParameterValueMarshaller.Instance;
+                    marshaller.Marshall(requestObjectDynamicParametersValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetParameters())
             {
                 context.Writer.WritePropertyName("parameters");

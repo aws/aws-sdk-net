@@ -97,6 +97,10 @@ namespace Amazon.SSMIncidents
         /// </summary>
         public static readonly ItemType INCIDENT = new ItemType("INCIDENT");
         /// <summary>
+        /// Constant INVOLVED_RESOURCE for ItemType
+        /// </summary>
+        public static readonly ItemType INVOLVED_RESOURCE = new ItemType("INVOLVED_RESOURCE");
+        /// <summary>
         /// Constant METRIC for ItemType
         /// </summary>
         public static readonly ItemType METRIC = new ItemType("METRIC");
@@ -512,6 +516,56 @@ namespace Amazon.SSMIncidents
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator TimelineEventSort(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type VariableType.
+    /// </summary>
+    public class VariableType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INCIDENT_RECORD_ARN for VariableType
+        /// </summary>
+        public static readonly VariableType INCIDENT_RECORD_ARN = new VariableType("INCIDENT_RECORD_ARN");
+        /// <summary>
+        /// Constant INVOLVED_RESOURCES for VariableType
+        /// </summary>
+        public static readonly VariableType INVOLVED_RESOURCES = new VariableType("INVOLVED_RESOURCES");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VariableType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VariableType FindValue(string value)
+        {
+            return FindValue<VariableType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VariableType(string value)
         {
             return FindValue(value);
         }

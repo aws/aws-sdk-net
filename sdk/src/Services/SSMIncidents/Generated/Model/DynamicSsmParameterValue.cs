@@ -29,49 +29,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SSMIncidents.Model
 {
     /// <summary>
-    /// Details and type of a related item.
+    /// The dynamic SSM parameter value.
     /// </summary>
-    public partial class ItemIdentifier
+    public partial class DynamicSsmParameterValue
     {
-        private ItemType _type;
-        private ItemValue _value;
+        private VariableType _variable;
 
         /// <summary>
-        /// Gets and sets the property Type. 
+        /// Gets and sets the property Variable. 
         /// <para>
-        /// The type of related item. 
+        /// Variable dynamic parameters. A parameter value is determined when an incident is created.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public ItemType Type
+        public VariableType Variable
         {
-            get { return this._type; }
-            set { this._type = value; }
+            get { return this._variable; }
+            set { this._variable = value; }
         }
 
-        // Check to see if Type property is set
-        internal bool IsSetType()
+        // Check to see if Variable property is set
+        internal bool IsSetVariable()
         {
-            return this._type != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Value. 
-        /// <para>
-        /// Details about the related item.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public ItemValue Value
-        {
-            get { return this._value; }
-            set { this._value = value; }
-        }
-
-        // Check to see if Value property is set
-        internal bool IsSetValue()
-        {
-            return this._value != null;
+            return this._variable != null;
         }
 
     }
