@@ -51,7 +51,7 @@ namespace Amazon.Lightsail.Model
         /// Gets and sets the property IncludeInactive. 
         /// <para>
         /// A Boolean value that indicates whether to include inactive (unavailable) bundles in
-        /// the response.
+        /// the response of your request.
         /// </para>
         /// </summary>
         public bool IncludeInactive

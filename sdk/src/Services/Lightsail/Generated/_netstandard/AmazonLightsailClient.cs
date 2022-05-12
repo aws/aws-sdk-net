@@ -5263,8 +5263,20 @@ namespace Amazon.Lightsail
 
 
         /// <summary>
-        /// Returns the list of bundles that are available for purchase. A bundle describes the
-        /// specs for your virtual private server (or <i>instance</i>).
+        /// Returns the bundles that you can apply to an Amazon Lightsail instance when you create
+        /// it.
+        /// 
+        ///  
+        /// <para>
+        /// A bundle describes the specifications of an instance, such as the monthly cost, amount
+        /// of memory, the number of vCPUs, amount of storage space, and monthly network data
+        /// transfer quota.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Bundles are referred to as <i>instance plans</i> in the Lightsail console.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBundles service method.</param>
         /// <param name="cancellationToken">

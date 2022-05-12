@@ -52,7 +52,8 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property IncludeInactive. 
         /// <para>
-        /// A Boolean value indicating whether to include inactive results in your request.
+        /// A Boolean value that indicates whether to include inactive (unavailable) blueprints
+        /// in the response of your request.
         /// </para>
         /// </summary>
         public bool IncludeInactive
