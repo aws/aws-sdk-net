@@ -1,3 +1,27 @@
+### 3.7.273.0 (2022-05-12 18:22 UTC)
+* EC2 (3.7.72.0)
+	* This release introduces a target type Gateway Load Balancer Endpoint for mirrored traffic. Customers can now specify GatewayLoadBalancerEndpoint option during the creation of a traffic mirror target.
+* FinSpaceData (3.7.3.29)
+	* We've now deprecated CreateSnapshot permission for creating a data view, instead use CreateDataView permission.
+* IoT (3.7.13.4)
+	* Documentation update for China region ListMetricValues for IoT
+* Ivschat (3.7.0.9)
+	* Documentation-only updates for IVS Chat API Reference.
+* Kendra (3.7.19.0)
+	* Amazon Kendra now provides a data source connector for Jira. For more information, see https://docs.aws.amazon.com/kendra/latest/dg/data-source-jira.html
+* Lambda (3.7.13.0)
+	* Lambda releases NodeJs 16 managed runtime to be available in all commercial regions.
+* Lightsail (3.7.8.0)
+	* This release adds support to include inactive database bundles in the response of the GetRelationalDatabaseBundles request.
+* Outposts (3.7.8.8)
+	* Documentation updates for AWS Outposts.
+* SSMIncidents (3.7.5.0)
+	* Adding support for dynamic SSM Runbook parameter values. Updating validation pattern for engagements. Adding ConflictException to UpdateReplicationSet API contract.
+* Transfer (3.7.10.24)
+	* AWS Transfer Family now accepts ECDSA keys for server host keys
+* WorkSpaces (3.7.6.0)
+	* Increased the character limit of the login message from 600 to 850 characters.
+
 ### 3.7.272.0 (2022-05-11 18:13 UTC)
 * EC2 (3.7.71.0)
 	* This release updates AWS PrivateLink APIs to support IPv6 for PrivateLink Services and Endpoints of type 'Interface'.
