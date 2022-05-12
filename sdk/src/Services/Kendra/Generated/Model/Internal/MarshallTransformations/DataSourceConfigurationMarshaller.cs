@@ -100,6 +100,17 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetJiraConfiguration())
+            {
+                context.Writer.WritePropertyName("JiraConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = JiraConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.JiraConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetOneDriveConfiguration())
             {
                 context.Writer.WritePropertyName("OneDriveConfiguration");

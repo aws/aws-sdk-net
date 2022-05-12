@@ -1795,6 +1795,18 @@
     <pattern>[a-zA-Z0-9][a-zA-Z0-9_-]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Kendra.Model.JiraConfiguration.JiraAccountUrl</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^https:\/\/[a-zA-Z0-9_\-\.]+(\.atlassian\.net\/)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.JiraConfiguration.SecretArn</property>
+    <min>1</min>
+    <max>1284</max>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Kendra.Model.JsonTokenTypeConfiguration.GroupAttributeField</property>
     <min>1</min>
     <max>2048</max>

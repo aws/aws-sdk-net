@@ -94,6 +94,12 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                     unmarshalledObject.GoogleDriveConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("JiraConfiguration", targetDepth))
+                {
+                    var unmarshaller = JiraConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.JiraConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("OneDriveConfiguration", targetDepth))
                 {
                     var unmarshaller = OneDriveConfigurationUnmarshaller.Instance;

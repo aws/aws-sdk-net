@@ -38,6 +38,7 @@ namespace Amazon.Kendra.Model
         private DatabaseConfiguration _databaseConfiguration;
         private FsxConfiguration _fsxConfiguration;
         private GoogleDriveConfiguration _googleDriveConfiguration;
+        private JiraConfiguration _jiraConfiguration;
         private OneDriveConfiguration _oneDriveConfiguration;
         private QuipConfiguration _quipConfiguration;
         private S3DataSourceConfiguration _s3Configuration;
@@ -136,6 +137,24 @@ namespace Amazon.Kendra.Model
         internal bool IsSetGoogleDriveConfiguration()
         {
             return this._googleDriveConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property JiraConfiguration. 
+        /// <para>
+        /// Provides the configuration information to connect to Jira as your data source.
+        /// </para>
+        /// </summary>
+        public JiraConfiguration JiraConfiguration
+        {
+            get { return this._jiraConfiguration; }
+            set { this._jiraConfiguration = value; }
+        }
+
+        // Check to see if JiraConfiguration property is set
+        internal bool IsSetJiraConfiguration()
+        {
+            return this._jiraConfiguration != null;
         }
 
         /// <summary>
