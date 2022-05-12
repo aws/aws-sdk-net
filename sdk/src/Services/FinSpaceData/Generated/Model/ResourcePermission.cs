@@ -51,7 +51,7 @@ namespace Amazon.FinSpaceData.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>CreateSnapshot</code> 
+    ///  <code>CreateDataView</code> 
     /// </para>
     ///  </li> <li> 
     /// <para>
