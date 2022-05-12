@@ -167,7 +167,7 @@ namespace Amazon.Lambda.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Amazon DynamoDB Streams</b> - Default 100. Max 1,000.
+        ///  <b>Amazon DynamoDB Streams</b> - Default 100. Max 10,000.
         /// </para>
         ///  </li> <li> 
         /// <para>
