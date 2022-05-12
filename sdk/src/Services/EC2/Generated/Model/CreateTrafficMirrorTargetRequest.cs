@@ -40,7 +40,8 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  
     /// <para>
-    /// A Traffic Mirror target can be a network interface, or a Network Load Balancer.
+    /// A Traffic Mirror target can be a network interface, a Network Load Balancer, or a
+    /// Gateway Load Balancer endpoint.
     /// </para>
     ///  
     /// <para>
@@ -51,6 +52,7 @@ namespace Amazon.EC2.Model
     {
         private string _clientToken;
         private string _description;
+        private string _gatewayLoadBalancerEndpointId;
         private string _networkInterfaceId;
         private string _networkLoadBalancerArn;
         private List<TagSpecification> _tagSpecifications = new List<TagSpecification>();
@@ -91,6 +93,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GatewayLoadBalancerEndpointId. 
+        /// <para>
+        /// The ID of the Gateway Load Balancer endpoint.
+        /// </para>
+        /// </summary>
+        public string GatewayLoadBalancerEndpointId
+        {
+            get { return this._gatewayLoadBalancerEndpointId; }
+            set { this._gatewayLoadBalancerEndpointId = value; }
+        }
+
+        // Check to see if GatewayLoadBalancerEndpointId property is set
+        internal bool IsSetGatewayLoadBalancerEndpointId()
+        {
+            return this._gatewayLoadBalancerEndpointId != null;
         }
 
         /// <summary>

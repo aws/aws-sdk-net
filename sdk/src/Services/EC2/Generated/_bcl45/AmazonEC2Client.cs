@@ -7029,7 +7029,8 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// A Traffic Mirror target can be a network interface, or a Network Load Balancer.
+        /// A Traffic Mirror target can be a network interface, a Network Load Balancer, or a
+        /// Gateway Load Balancer endpoint.
         /// </para>
         ///  
         /// <para>
@@ -7061,7 +7062,8 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// A Traffic Mirror target can be a network interface, or a Network Load Balancer.
+        /// A Traffic Mirror target can be a network interface, a Network Load Balancer, or a
+        /// Gateway Load Balancer endpoint.
         /// </para>
         ///  
         /// <para>

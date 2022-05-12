@@ -15589,6 +15589,10 @@ namespace Amazon.EC2
     {
 
         /// <summary>
+        /// Constant GatewayLoadBalancerEndpoint for TrafficMirrorTargetType
+        /// </summary>
+        public static readonly TrafficMirrorTargetType GatewayLoadBalancerEndpoint = new TrafficMirrorTargetType("gateway-load-balancer-endpoint");
+        /// <summary>
         /// Constant NetworkInterface for TrafficMirrorTargetType
         /// </summary>
         public static readonly TrafficMirrorTargetType NetworkInterface = new TrafficMirrorTargetType("network-interface");

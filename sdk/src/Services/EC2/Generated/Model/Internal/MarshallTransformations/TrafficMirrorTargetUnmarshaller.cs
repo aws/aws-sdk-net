@@ -60,6 +60,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("gatewayLoadBalancerEndpointId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.GatewayLoadBalancerEndpointId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("networkInterfaceId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
