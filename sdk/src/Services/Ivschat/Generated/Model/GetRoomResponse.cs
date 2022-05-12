@@ -125,8 +125,8 @@ namespace Amazon.Ivschat.Model
         /// <summary>
         /// Gets and sets the property MaximumMessageRatePerSecond. 
         /// <para>
-        /// Maximum number of messages per second that a client can send to the room. Default:
-        /// 10.
+        /// Maximum number of messages per second that can be sent to the room (by all clients).
+        /// Default: 10.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
