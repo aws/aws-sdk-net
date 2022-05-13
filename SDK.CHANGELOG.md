@@ -1,3 +1,7 @@
+### 3.7.274.0 (2022-05-13 18:13 UTC)
+* ManagedGrafana (3.7.2.0)
+	* This release adds APIs for creating and deleting API keys in an Amazon Managed Grafana workspace.
+
 ### 3.7.273.0 (2022-05-12 18:22 UTC)
 * EC2 (3.7.72.0)
 	* This release introduces a target type Gateway Load Balancer Endpoint for mirrored traffic. Customers can now specify GatewayLoadBalancerEndpoint option during the creation of a traffic mirror target.
