@@ -358,6 +358,10 @@ namespace Amazon.ManagedGrafana
         /// Constant EDITOR for Role
         /// </summary>
         public static readonly Role EDITOR = new Role("EDITOR");
+        /// <summary>
+        /// Constant VIEWER for Role
+        /// </summary>
+        public static readonly Role VIEWER = new Role("VIEWER");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
