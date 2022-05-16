@@ -386,7 +386,8 @@ namespace Amazon.DynamoDBv2.DataModel
                 {
                     return output;
                 }
-
+                if (entry is DynamoDBNull)
+                    return null;
                 throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture,
                     "Unable to convert DynamoDB entry [{0}] of type {1} to property {2} of type {3}",
                     entry, entry.GetType().FullName, propertyStorage.PropertyName, propertyStorage.MemberType.FullName));
