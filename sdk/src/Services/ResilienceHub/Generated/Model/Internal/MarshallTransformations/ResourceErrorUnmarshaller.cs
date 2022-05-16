@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ResourceMapping Object
+    /// Response Unmarshaller for ResourceError Object
     /// </summary>  
-    public class ResourceMappingUnmarshaller : IUnmarshaller<ResourceMapping, XmlUnmarshallerContext>, IUnmarshaller<ResourceMapping, JsonUnmarshallerContext>
+    public class ResourceErrorUnmarshaller : IUnmarshaller<ResourceError, XmlUnmarshallerContext>, IUnmarshaller<ResourceError, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ResourceMapping IUnmarshaller<ResourceMapping, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ResourceError IUnmarshaller<ResourceError, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,57 +53,33 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ResourceMapping Unmarshall(JsonUnmarshallerContext context)
+        public ResourceError Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ResourceMapping unmarshalledObject = new ResourceMapping();
+            ResourceError unmarshalledObject = new ResourceError();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("appRegistryAppName", targetDepth))
+                if (context.TestExpression("logicalResourceId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AppRegistryAppName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("logicalStackName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LogicalStackName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("mappingType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MappingType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LogicalResourceId = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("physicalResourceId", targetDepth))
                 {
-                    var unmarshaller = PhysicalResourceIdUnmarshaller.Instance;
+                    var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PhysicalResourceId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("resourceGroupName", targetDepth))
+                if (context.TestExpression("reason", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResourceGroupName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("resourceName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResourceName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("terraformSourceName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TerraformSourceName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Reason = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -112,12 +88,12 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
         }
 
 
-        private static ResourceMappingUnmarshaller _instance = new ResourceMappingUnmarshaller();        
+        private static ResourceErrorUnmarshaller _instance = new ResourceErrorUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ResourceMappingUnmarshaller Instance
+        public static ResourceErrorUnmarshaller Instance
         {
             get
             {

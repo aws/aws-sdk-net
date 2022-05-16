@@ -39,11 +39,12 @@ namespace Amazon.ResilienceHub.Model
         private List<string> _logicalStackNames = new List<string>();
         private List<string> _resourceGroupNames = new List<string>();
         private List<string> _resourceNames = new List<string>();
+        private List<string> _terraformSourceNames = new List<string>();
 
         /// <summary>
         /// Gets and sets the property AppArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
+        /// The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
         /// For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
         /// Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
         /// </para>
@@ -131,6 +132,23 @@ namespace Amazon.ResilienceHub.Model
         internal bool IsSetResourceNames()
         {
             return this._resourceNames != null && this._resourceNames.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TerraformSourceNames. 
+        /// <para>
+        ///  <pre><code>&lt;/p&gt; </code></pre>
+        /// </summary>
+        public List<string> TerraformSourceNames
+        {
+            get { return this._terraformSourceNames; }
+            set { this._terraformSourceNames = value; }
+        }
+
+        // Check to see if TerraformSourceNames property is set
+        internal bool IsSetTerraformSourceNames()
+        {
+            return this._terraformSourceNames != null && this._terraformSourceNames.Count > 0; 
         }
 
     }

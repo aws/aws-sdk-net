@@ -65,6 +65,12 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAssessmentSchedule())
+                {
+                    context.Writer.WritePropertyName("assessmentSchedule");
+                    context.Writer.Write(publicRequest.AssessmentSchedule);
+                }
+
                 if(publicRequest.IsSetClientToken())
                 {
                     context.Writer.WritePropertyName("clientToken");

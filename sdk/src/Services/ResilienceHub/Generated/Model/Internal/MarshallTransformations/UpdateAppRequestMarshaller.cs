@@ -71,6 +71,12 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.AppArn);
                 }
 
+                if(publicRequest.IsSetAssessmentSchedule())
+                {
+                    context.Writer.WritePropertyName("assessmentSchedule");
+                    context.Writer.Write(publicRequest.AssessmentSchedule);
+                }
+
                 if(publicRequest.IsSetClearResiliencyPolicyArn())
                 {
                     context.Writer.WritePropertyName("clearResiliencyPolicyArn");

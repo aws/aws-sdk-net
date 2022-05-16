@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for LogicalResourceId Object
+    /// Response Unmarshaller for ResourceErrorsDetails Object
     /// </summary>  
-    public class LogicalResourceIdUnmarshaller : IUnmarshaller<LogicalResourceId, XmlUnmarshallerContext>, IUnmarshaller<LogicalResourceId, JsonUnmarshallerContext>
+    public class ResourceErrorsDetailsUnmarshaller : IUnmarshaller<ResourceErrorsDetails, XmlUnmarshallerContext>, IUnmarshaller<ResourceErrorsDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        LogicalResourceId IUnmarshaller<LogicalResourceId, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ResourceErrorsDetails IUnmarshaller<ResourceErrorsDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,27 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public LogicalResourceId Unmarshall(JsonUnmarshallerContext context)
+        public ResourceErrorsDetails Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            LogicalResourceId unmarshalledObject = new LogicalResourceId();
+            ResourceErrorsDetails unmarshalledObject = new ResourceErrorsDetails();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("identifier", targetDepth))
+                if (context.TestExpression("hasMoreErrors", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Identifier = unmarshaller.Unmarshall(context);
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.HasMoreErrors = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("logicalStackName", targetDepth))
+                if (context.TestExpression("resourceErrors", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LogicalStackName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("resourceGroupName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResourceGroupName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("terraformSourceName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TerraformSourceName = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<ResourceError, ResourceErrorUnmarshaller>(ResourceErrorUnmarshaller.Instance);
+                    unmarshalledObject.ResourceErrors = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +82,12 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
         }
 
 
-        private static LogicalResourceIdUnmarshaller _instance = new LogicalResourceIdUnmarshaller();        
+        private static ResourceErrorsDetailsUnmarshaller _instance = new ResourceErrorsDetailsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static LogicalResourceIdUnmarshaller Instance
+        public static ResourceErrorsDetailsUnmarshaller Instance
         {
             get
             {

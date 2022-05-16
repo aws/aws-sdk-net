@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for LogicalResourceId Object
+    /// Response Unmarshaller for TerraformSource Object
     /// </summary>  
-    public class LogicalResourceIdUnmarshaller : IUnmarshaller<LogicalResourceId, XmlUnmarshallerContext>, IUnmarshaller<LogicalResourceId, JsonUnmarshallerContext>
+    public class TerraformSourceUnmarshaller : IUnmarshaller<TerraformSource, XmlUnmarshallerContext>, IUnmarshaller<TerraformSource, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        LogicalResourceId IUnmarshaller<LogicalResourceId, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        TerraformSource IUnmarshaller<TerraformSource, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,21 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public LogicalResourceId Unmarshall(JsonUnmarshallerContext context)
+        public TerraformSource Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            LogicalResourceId unmarshalledObject = new LogicalResourceId();
+            TerraformSource unmarshalledObject = new TerraformSource();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("identifier", targetDepth))
+                if (context.TestExpression("s3StateFileUrl", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Identifier = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("logicalStackName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LogicalStackName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("resourceGroupName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResourceGroupName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("terraformSourceName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TerraformSourceName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.S3StateFileUrl = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +76,12 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
         }
 
 
-        private static LogicalResourceIdUnmarshaller _instance = new LogicalResourceIdUnmarshaller();        
+        private static TerraformSourceUnmarshaller _instance = new TerraformSourceUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static LogicalResourceIdUnmarshaller Instance
+        public static TerraformSourceUnmarshaller Instance
         {
             get
             {

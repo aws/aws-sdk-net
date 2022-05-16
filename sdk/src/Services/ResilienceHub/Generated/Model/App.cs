@@ -34,6 +34,7 @@ namespace Amazon.ResilienceHub.Model
     public partial class App
     {
         private string _appArn;
+        private AppAssessmentScheduleType _assessmentSchedule;
         private AppComplianceStatusType _complianceStatus;
         private DateTime? _creationTime;
         private string _description;
@@ -48,7 +49,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property AppArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
+        /// The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
         /// For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
         /// Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
         /// </para>
@@ -64,6 +65,24 @@ namespace Amazon.ResilienceHub.Model
         internal bool IsSetAppArn()
         {
             return this._appArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AssessmentSchedule. 
+        /// <para>
+        ///  Assessment execution schedule with 'Daily' or 'Disabled' values. 
+        /// </para>
+        /// </summary>
+        public AppAssessmentScheduleType AssessmentSchedule
+        {
+            get { return this._assessmentSchedule; }
+            set { this._assessmentSchedule = value; }
+        }
+
+        // Check to see if AssessmentSchedule property is set
+        internal bool IsSetAssessmentSchedule()
+        {
+            return this._assessmentSchedule != null;
         }
 
         /// <summary>
@@ -181,7 +200,7 @@ namespace Amazon.ResilienceHub.Model
         /// Gets and sets the property PolicyArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>.
+        /// arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>.
         /// For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
         /// Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
         /// </para>

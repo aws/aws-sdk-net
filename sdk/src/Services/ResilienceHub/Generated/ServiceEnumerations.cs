@@ -87,6 +87,56 @@ namespace Amazon.ResilienceHub
 
 
     /// <summary>
+    /// Constants used for properties of type AppAssessmentScheduleType.
+    /// </summary>
+    public class AppAssessmentScheduleType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Daily for AppAssessmentScheduleType
+        /// </summary>
+        public static readonly AppAssessmentScheduleType Daily = new AppAssessmentScheduleType("Daily");
+        /// <summary>
+        /// Constant Disabled for AppAssessmentScheduleType
+        /// </summary>
+        public static readonly AppAssessmentScheduleType Disabled = new AppAssessmentScheduleType("Disabled");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AppAssessmentScheduleType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AppAssessmentScheduleType FindValue(string value)
+        {
+            return FindValue<AppAssessmentScheduleType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AppAssessmentScheduleType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AppComplianceStatusType.
     /// </summary>
     public class AppComplianceStatusType : ConstantClass
@@ -1062,6 +1112,10 @@ namespace Amazon.ResilienceHub
         /// Constant ResourceGroup for ResourceMappingType
         /// </summary>
         public static readonly ResourceMappingType ResourceGroup = new ResourceMappingType("ResourceGroup");
+        /// <summary>
+        /// Constant Terraform for ResourceMappingType
+        /// </summary>
+        public static readonly ResourceMappingType Terraform = new ResourceMappingType("Terraform");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

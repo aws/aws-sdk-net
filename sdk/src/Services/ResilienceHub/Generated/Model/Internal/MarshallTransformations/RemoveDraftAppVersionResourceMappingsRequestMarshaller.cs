@@ -115,6 +115,17 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetTerraformSourceNames())
+                {
+                    context.Writer.WritePropertyName("terraformSourceNames");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestTerraformSourceNamesListValue in publicRequest.TerraformSourceNames)
+                    {
+                            context.Writer.Write(publicRequestTerraformSourceNamesListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

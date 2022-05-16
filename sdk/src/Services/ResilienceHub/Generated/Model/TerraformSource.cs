@@ -29,32 +29,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ResilienceHub.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeApp operation.
-    /// Describes an AWS Resilience Hub application.
+    /// The Terraform s3 state file you need to import.
     /// </summary>
-    public partial class DescribeAppRequest : AmazonResilienceHubRequest
+    public partial class TerraformSource
     {
-        private string _appArn;
+        private string _s3StateFileUrl;
 
         /// <summary>
-        /// Gets and sets the property AppArn. 
+        /// Gets and sets the property S3StateFileUrl. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
-        /// For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
+        ///  The Terraform s3 state file you need to import. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public string AppArn
+        [AWSProperty(Required=true, Min=0, Max=2000)]
+        public string S3StateFileUrl
         {
-            get { return this._appArn; }
-            set { this._appArn = value; }
+            get { return this._s3StateFileUrl; }
+            set { this._s3StateFileUrl = value; }
         }
 
-        // Check to see if AppArn property is set
-        internal bool IsSetAppArn()
+        // Check to see if S3StateFileUrl property is set
+        internal bool IsSetS3StateFileUrl()
         {
-            return this._appArn != null;
+            return this._s3StateFileUrl != null;
         }
 
     }

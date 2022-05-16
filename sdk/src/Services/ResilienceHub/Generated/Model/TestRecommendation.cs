@@ -34,6 +34,7 @@ namespace Amazon.ResilienceHub.Model
     public partial class TestRecommendation
     {
         private string _appComponentName;
+        private List<string> _dependsOnAlarms = new List<string>();
         private string _description;
         private string _intent;
         private List<RecommendationItem> _items = new List<RecommendationItem>();
@@ -60,6 +61,26 @@ namespace Amazon.ResilienceHub.Model
         internal bool IsSetAppComponentName()
         {
             return this._appComponentName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DependsOnAlarms. 
+        /// <para>
+        ///  A list of recommended alarms that are used in the test and must be exported before
+        /// or with the test. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=200)]
+        public List<string> DependsOnAlarms
+        {
+            get { return this._dependsOnAlarms; }
+            set { this._dependsOnAlarms = value; }
+        }
+
+        // Check to see if DependsOnAlarms property is set
+        internal bool IsSetDependsOnAlarms()
+        {
+            return this._dependsOnAlarms != null && this._dependsOnAlarms.Count > 0; 
         }
 
         /// <summary>

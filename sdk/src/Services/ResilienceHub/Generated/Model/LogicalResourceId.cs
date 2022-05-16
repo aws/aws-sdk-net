@@ -36,6 +36,7 @@ namespace Amazon.ResilienceHub.Model
         private string _identifier;
         private string _logicalStackName;
         private string _resourceGroupName;
+        private string _terraformSourceName;
 
         /// <summary>
         /// Gets and sets the property Identifier. 
@@ -91,6 +92,25 @@ namespace Amazon.ResilienceHub.Model
         internal bool IsSetResourceGroupName()
         {
             return this._resourceGroupName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TerraformSourceName. 
+        /// <para>
+        ///  The name of the Terraform S3 state file this resource belongs to. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string TerraformSourceName
+        {
+            get { return this._terraformSourceName; }
+            set { this._terraformSourceName = value; }
+        }
+
+        // Check to see if TerraformSourceName property is set
+        internal bool IsSetTerraformSourceName()
+        {
+            return this._terraformSourceName != null;
         }
 
     }

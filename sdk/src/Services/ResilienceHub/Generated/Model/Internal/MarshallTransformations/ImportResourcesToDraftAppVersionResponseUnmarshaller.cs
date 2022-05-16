@@ -75,6 +75,12 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
                     response.Status = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("terraformSources", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<TerraformSource, TerraformSourceUnmarshaller>(TerraformSourceUnmarshaller.Instance);
+                    response.TerraformSources = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

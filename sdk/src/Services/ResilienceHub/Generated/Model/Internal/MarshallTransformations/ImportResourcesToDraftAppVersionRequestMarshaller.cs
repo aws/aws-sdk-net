@@ -82,6 +82,22 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetTerraformSources())
+                {
+                    context.Writer.WritePropertyName("terraformSources");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestTerraformSourcesListValue in publicRequest.TerraformSources)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = TerraformSourceMarshaller.Instance;
+                        marshaller.Marshall(publicRequestTerraformSourcesListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
