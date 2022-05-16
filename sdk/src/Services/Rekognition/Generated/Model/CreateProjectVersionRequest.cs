@@ -42,7 +42,7 @@ namespace Amazon.Rekognition.Model
     /// </para>
     ///  <note> 
     /// <para>
-    /// You can train a modelin a project that doesn't have associated datasets by specifying
+    /// You can train a model in a project that doesn't have associated datasets by specifying
     /// manifest files in the <code>TrainingData</code> and <code>TestingData</code> fields.
     /// 
     /// </para>
