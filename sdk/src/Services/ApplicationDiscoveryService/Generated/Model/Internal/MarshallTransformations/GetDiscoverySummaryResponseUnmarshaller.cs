@@ -69,6 +69,12 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
                     response.ConnectorSummary = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("meCollectorSummary", targetDepth))
+                {
+                    var unmarshaller = CustomerMeCollectorInfoUnmarshaller.Instance;
+                    response.MeCollectorSummary = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("servers", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;

@@ -45,6 +45,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// The agent/connector ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=10000)]
         public string AgentId
         {
             get { return this._agentId; }
@@ -63,6 +64,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// A description of the operation performed.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=10000)]
         public string Description
         {
             get { return this._description; }

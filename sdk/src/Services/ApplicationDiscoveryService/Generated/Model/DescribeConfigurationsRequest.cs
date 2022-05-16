@@ -61,8 +61,8 @@ namespace Amazon.ApplicationDiscoveryService.Model
     ///  
     /// <para>
     /// For a complete list of outputs for each asset type, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#DescribeConfigurations">Using
-    /// the DescribeConfigurations Action</a> in the <i>AWS Application Discovery Service
-    /// User Guide</i>.
+    /// the DescribeConfigurations Action</a> in the <i>Amazon Web Services Application Discovery
+    /// Service User Guide</i>.
     /// </para>
     ///  </note>
     /// </summary>

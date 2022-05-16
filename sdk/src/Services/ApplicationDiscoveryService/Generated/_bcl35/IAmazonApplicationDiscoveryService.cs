@@ -29,13 +29,14 @@ namespace Amazon.ApplicationDiscoveryService
     /// <summary>
     /// Interface for accessing ApplicationDiscoveryService
     ///
-    /// AWS Application Discovery Service 
+    /// Amazon Web Services Application Discovery Service 
     /// <para>
-    /// AWS Application Discovery Service helps you plan application migration projects. It
-    /// automatically identifies servers, virtual machines (VMs), and network dependencies
-    /// in your on-premises data centers. For more information, see the <a href="http://aws.amazon.com/application-discovery/faqs/">AWS
-    /// Application Discovery Service FAQ</a>. Application Discovery Service offers three
-    /// ways of performing discovery and collecting data about your on-premises servers:
+    /// Amazon Web Services Application Discovery Service helps you plan application migration
+    /// projects. It automatically identifies servers, virtual machines (VMs), and network
+    /// dependencies in your on-premises data centers. For more information, see the <a href="http://aws.amazon.com/application-discovery/faqs/">Amazon
+    /// Web Services Application Discovery Service FAQ</a>. Application Discovery Service
+    /// offers three ways of performing discovery and collecting data about your on-premises
+    /// servers:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -56,8 +57,8 @@ namespace Amazon.ApplicationDiscoveryService
     ///  </li> </ul> </li> </ul> <ul> <li> 
     /// <para>
     ///  <b>Agent-based discovery</b> collects a richer set of data than agentless discovery
-    /// by using the AWS Application Discovery Agent, which you install on one or more hosts
-    /// in your data center.
+    /// by using the Amazon Web Services Application Discovery Agent, which you install on
+    /// one or more hosts in your data center.
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -72,15 +73,15 @@ namespace Amazon.ApplicationDiscoveryService
     /// </para>
     ///  </li> </ul> </li> </ul> <ul> <li> 
     /// <para>
-    ///  <b>AWS Partner Network (APN) solutions</b> integrate with Application Discovery Service,
-    /// enabling you to import details of your on-premises environment directly into Migration
-    /// Hub without using the discovery connector or discovery agent.
+    ///  <b>Amazon Web Services Partner Network (APN) solutions</b> integrate with Application
+    /// Discovery Service, enabling you to import details of your on-premises environment
+    /// directly into Migration Hub without using the discovery connector or discovery agent.
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Third-party application discovery tools can query AWS Application Discovery Service,
-    /// and they can write to the Application Discovery Service database using the public
-    /// API.
+    /// Third-party application discovery tools can query Amazon Web Services Application
+    /// Discovery Service, and they can write to the Application Discovery Service database
+    /// using the public API.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -108,9 +109,9 @@ namespace Amazon.ApplicationDiscoveryService
     /// This API reference provides descriptions, syntax, and usage examples for each of the
     /// actions and data types for Application Discovery Service. The topic for each action
     /// shows the API request parameters and the response. Alternatively, you can use one
-    /// of the AWS SDKs to access an API that is tailored to the programming language or platform
-    /// that you're using. For more information, see <a href="http://aws.amazon.com/tools/#SDKs">AWS
-    /// SDKs</a>.
+    /// of the Amazon Web Services SDKs to access an API that is tailored to the programming
+    /// language or platform that you're using. For more information, see <a href="http://aws.amazon.com/tools/#SDKs">Amazon
+    /// Web Services SDKs</a>.
     /// </para>
     ///  <note> <ul> <li> 
     /// <para>
@@ -139,14 +140,14 @@ namespace Amazon.ApplicationDiscoveryService
     /// </para>
     ///  </li> </ul> </note> 
     /// <para>
-    /// This guide is intended for use with the <a href="http://docs.aws.amazon.com/application-discovery/latest/userguide/">AWS
-    /// Application Discovery Service User Guide</a>.
+    /// This guide is intended for use with the <a href="http://docs.aws.amazon.com/application-discovery/latest/userguide/">Amazon
+    /// Web Services Application Discovery Service User Guide</a>.
     /// </para>
     ///  <important> 
     /// <para>
-    /// All data is handled according to the <a href="http://aws.amazon.com/privacy/">AWS
-    /// Privacy Policy</a>. You can operate Application Discovery Service offline to inspect
-    /// collected data before it is shared with the service.
+    /// All data is handled according to the <a href="http://aws.amazon.com/privacy/">Amazon
+    /// Web Services Privacy Policy</a>. You can operate Application Discovery Service offline
+    /// to inspect collected data before it is shared with the service.
     /// </para>
     ///  </important>
     /// </summary>
@@ -173,8 +174,8 @@ namespace Amazon.ApplicationDiscoveryService
         /// 
         /// <returns>The response from the AssociateConfigurationItemsToApplication service method, as returned by ApplicationDiscoveryService.</returns>
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.AuthorizationErrorException">
-        /// The AWS user account does not have permission to perform the action. Check the IAM
-        /// policy associated with this account.
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
         /// </exception>
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.HomeRegionNotSetException">
         /// The home region is not set. Set the home region to continue.
@@ -229,19 +230,20 @@ namespace Amazon.ApplicationDiscoveryService
         /// 
         ///  
         /// <para>
-        /// AWS Application Discovery Service has built-in matching logic that will identify when
-        /// discovered servers match existing entries that you've previously discovered, the information
-        /// for the already-existing discovered server is updated. When you delete an import task
-        /// that contains records that were used to match, the information in those matched records
-        /// that comes from the deleted records will also be deleted.
+        /// Amazon Web Services Application Discovery Service has built-in matching logic that
+        /// will identify when discovered servers match existing entries that you've previously
+        /// discovered, the information for the already-existing discovered server is updated.
+        /// When you delete an import task that contains records that were used to match, the
+        /// information in those matched records that comes from the deleted records will also
+        /// be deleted.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchDeleteImportData service method.</param>
         /// 
         /// <returns>The response from the BatchDeleteImportData service method, as returned by ApplicationDiscoveryService.</returns>
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.AuthorizationErrorException">
-        /// The AWS user account does not have permission to perform the action. Check the IAM
-        /// policy associated with this account.
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
         /// </exception>
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.HomeRegionNotSetException">
         /// The home region is not set. Set the home region to continue.
@@ -297,8 +299,8 @@ namespace Amazon.ApplicationDiscoveryService
         /// 
         /// <returns>The response from the CreateApplication service method, as returned by ApplicationDiscoveryService.</returns>
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.AuthorizationErrorException">
-        /// The AWS user account does not have permission to perform the action. Check the IAM
-        /// policy associated with this account.
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
         /// </exception>
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.HomeRegionNotSetException">
         /// The home region is not set. Set the home region to continue.
@@ -350,13 +352,19 @@ namespace Amazon.ApplicationDiscoveryService
         /// <summary>
         /// Creates one or more tags for configuration items. Tags are metadata that help you
         /// categorize IT assets. This API accepts a list of multiple configuration items.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Do not store sensitive information (like personal data) in tags.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTags service method.</param>
         /// 
         /// <returns>The response from the CreateTags service method, as returned by ApplicationDiscoveryService.</returns>
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.AuthorizationErrorException">
-        /// The AWS user account does not have permission to perform the action. Check the IAM
-        /// policy associated with this account.
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
         /// </exception>
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.HomeRegionNotSetException">
         /// The home region is not set. Set the home region to continue.
@@ -416,8 +424,8 @@ namespace Amazon.ApplicationDiscoveryService
         /// 
         /// <returns>The response from the DeleteApplications service method, as returned by ApplicationDiscoveryService.</returns>
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.AuthorizationErrorException">
-        /// The AWS user account does not have permission to perform the action. Check the IAM
-        /// policy associated with this account.
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
         /// </exception>
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.HomeRegionNotSetException">
         /// The home region is not set. Set the home region to continue.
@@ -474,8 +482,8 @@ namespace Amazon.ApplicationDiscoveryService
         /// 
         /// <returns>The response from the DeleteTags service method, as returned by ApplicationDiscoveryService.</returns>
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.AuthorizationErrorException">
-        /// The AWS user account does not have permission to perform the action. Check the IAM
-        /// policy associated with this account.
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
         /// </exception>
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.HomeRegionNotSetException">
         /// The home region is not set. Set the home region to continue.
@@ -537,8 +545,8 @@ namespace Amazon.ApplicationDiscoveryService
         /// 
         /// <returns>The response from the DescribeAgents service method, as returned by ApplicationDiscoveryService.</returns>
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.AuthorizationErrorException">
-        /// The AWS user account does not have permission to perform the action. Check the IAM
-        /// policy associated with this account.
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
         /// </exception>
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.HomeRegionNotSetException">
         /// The home region is not set. Set the home region to continue.
@@ -619,8 +627,8 @@ namespace Amazon.ApplicationDiscoveryService
         ///  
         /// <para>
         /// For a complete list of outputs for each asset type, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#DescribeConfigurations">Using
-        /// the DescribeConfigurations Action</a> in the <i>AWS Application Discovery Service
-        /// User Guide</i>.
+        /// the DescribeConfigurations Action</a> in the <i>Amazon Web Services Application Discovery
+        /// Service User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -628,8 +636,8 @@ namespace Amazon.ApplicationDiscoveryService
         /// 
         /// <returns>The response from the DescribeConfigurations service method, as returned by ApplicationDiscoveryService.</returns>
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.AuthorizationErrorException">
-        /// The AWS user account does not have permission to perform the action. Check the IAM
-        /// policy associated with this account.
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
         /// </exception>
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.HomeRegionNotSetException">
         /// The home region is not set. Set the home region to continue.
@@ -687,8 +695,8 @@ namespace Amazon.ApplicationDiscoveryService
         /// 
         /// <returns>The response from the DescribeContinuousExports service method, as returned by ApplicationDiscoveryService.</returns>
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.AuthorizationErrorException">
-        /// The AWS user account does not have permission to perform the action. Check the IAM
-        /// policy associated with this account.
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
         /// </exception>
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.HomeRegionNotSetException">
         /// The home region is not set. Set the home region to continue.
@@ -745,15 +753,15 @@ namespace Amazon.ApplicationDiscoveryService
 
 
         /// <summary>
-        /// <code>DescribeExportConfigurations</code> is deprecated. Use <a href="https://docs.aws.amazon.com/application-discovery/latest/APIReference/API_DescribeExportTasks.html">DescribeImportTasks</a>,
+        /// <code>DescribeExportConfigurations</code> is deprecated. Use <a href="https://docs.aws.amazon.com/application-discovery/latest/APIReference/API_DescribeExportTasks.html">DescribeExportTasks</a>,
         /// instead.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeExportConfigurations service method.</param>
         /// 
         /// <returns>The response from the DescribeExportConfigurations service method, as returned by ApplicationDiscoveryService.</returns>
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.AuthorizationErrorException">
-        /// The AWS user account does not have permission to perform the action. Check the IAM
-        /// policy associated with this account.
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
         /// </exception>
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.HomeRegionNotSetException">
         /// The home region is not set. Set the home region to continue.
@@ -817,8 +825,8 @@ namespace Amazon.ApplicationDiscoveryService
         /// 
         /// <returns>The response from the DescribeExportTasks service method, as returned by ApplicationDiscoveryService.</returns>
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.AuthorizationErrorException">
-        /// The AWS user account does not have permission to perform the action. Check the IAM
-        /// policy associated with this account.
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
         /// </exception>
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.HomeRegionNotSetException">
         /// The home region is not set. Set the home region to continue.
@@ -875,8 +883,8 @@ namespace Amazon.ApplicationDiscoveryService
         /// 
         /// <returns>The response from the DescribeImportTasks service method, as returned by ApplicationDiscoveryService.</returns>
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.AuthorizationErrorException">
-        /// The AWS user account does not have permission to perform the action. Check the IAM
-        /// policy associated with this account.
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
         /// </exception>
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.HomeRegionNotSetException">
         /// The home region is not set. Set the home region to continue.
@@ -955,8 +963,8 @@ namespace Amazon.ApplicationDiscoveryService
         /// 
         /// <returns>The response from the DescribeTags service method, as returned by ApplicationDiscoveryService.</returns>
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.AuthorizationErrorException">
-        /// The AWS user account does not have permission to perform the action. Check the IAM
-        /// policy associated with this account.
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
         /// </exception>
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.HomeRegionNotSetException">
         /// The home region is not set. Set the home region to continue.
@@ -1016,8 +1024,8 @@ namespace Amazon.ApplicationDiscoveryService
         /// 
         /// <returns>The response from the DisassociateConfigurationItemsFromApplication service method, as returned by ApplicationDiscoveryService.</returns>
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.AuthorizationErrorException">
-        /// The AWS user account does not have permission to perform the action. Check the IAM
-        /// policy associated with this account.
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
         /// </exception>
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.HomeRegionNotSetException">
         /// The home region is not set. Set the home region to continue.
@@ -1082,8 +1090,8 @@ namespace Amazon.ApplicationDiscoveryService
         /// 
         /// <returns>The response from the ExportConfigurations service method, as returned by ApplicationDiscoveryService.</returns>
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.AuthorizationErrorException">
-        /// The AWS user account does not have permission to perform the action. Check the IAM
-        /// policy associated with this account.
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
         /// </exception>
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.HomeRegionNotSetException">
         /// The home region is not set. Set the home region to continue.
@@ -1151,8 +1159,8 @@ namespace Amazon.ApplicationDiscoveryService
         /// 
         /// <returns>The response from the GetDiscoverySummary service method, as returned by ApplicationDiscoveryService.</returns>
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.AuthorizationErrorException">
-        /// The AWS user account does not have permission to perform the action. Check the IAM
-        /// policy associated with this account.
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
         /// </exception>
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.HomeRegionNotSetException">
         /// The home region is not set. Set the home region to continue.
@@ -1210,8 +1218,8 @@ namespace Amazon.ApplicationDiscoveryService
         /// 
         /// <returns>The response from the ListConfigurations service method, as returned by ApplicationDiscoveryService.</returns>
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.AuthorizationErrorException">
-        /// The AWS user account does not have permission to perform the action. Check the IAM
-        /// policy associated with this account.
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
         /// </exception>
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.HomeRegionNotSetException">
         /// The home region is not set. Set the home region to continue.
@@ -1271,8 +1279,8 @@ namespace Amazon.ApplicationDiscoveryService
         /// 
         /// <returns>The response from the ListServerNeighbors service method, as returned by ApplicationDiscoveryService.</returns>
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.AuthorizationErrorException">
-        /// The AWS user account does not have permission to perform the action. Check the IAM
-        /// policy associated with this account.
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
         /// </exception>
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.HomeRegionNotSetException">
         /// The home region is not set. Set the home region to continue.
@@ -1328,8 +1336,8 @@ namespace Amazon.ApplicationDiscoveryService
         /// 
         /// <returns>The response from the StartContinuousExport service method, as returned by ApplicationDiscoveryService.</returns>
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.AuthorizationErrorException">
-        /// The AWS user account does not have permission to perform the action. Check the IAM
-        /// policy associated with this account.
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
         /// </exception>
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ConflictErrorException">
         /// 
@@ -1398,8 +1406,8 @@ namespace Amazon.ApplicationDiscoveryService
         /// 
         /// <returns>The response from the StartDataCollectionByAgentIds service method, as returned by ApplicationDiscoveryService.</returns>
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.AuthorizationErrorException">
-        /// The AWS user account does not have permission to perform the action. Check the IAM
-        /// policy associated with this account.
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
         /// </exception>
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.HomeRegionNotSetException">
         /// The home region is not set. Set the home region to continue.
@@ -1462,16 +1470,17 @@ namespace Amazon.ApplicationDiscoveryService
         ///  
         /// <para>
         ///  If you do not include an <code>agentIds</code> filter, summary data is exported that
-        /// includes both AWS Agentless Discovery Connector data and summary data from AWS Discovery
-        /// Agents. Export of summary data is limited to two exports per day. 
+        /// includes both Amazon Web Services Agentless Discovery Connector data and summary data
+        /// from Amazon Web Services Discovery Agents. Export of summary data is limited to two
+        /// exports per day. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartExportTask service method.</param>
         /// 
         /// <returns>The response from the StartExportTask service method, as returned by ApplicationDiscoveryService.</returns>
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.AuthorizationErrorException">
-        /// The AWS user account does not have permission to perform the action. Check the IAM
-        /// policy associated with this account.
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
         /// </exception>
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.HomeRegionNotSetException">
         /// The home region is not set. Set the home region to continue.
@@ -1525,11 +1534,11 @@ namespace Amazon.ApplicationDiscoveryService
 
         /// <summary>
         /// Starts an import task, which allows you to import details of your on-premises environment
-        /// directly into AWS Migration Hub without having to use the Application Discovery Service
-        /// (ADS) tools such as the Discovery Connector or Discovery Agent. This gives you the
-        /// option to perform migration assessment and planning directly from your imported data,
-        /// including the ability to group your devices as applications and track their migration
-        /// status.
+        /// directly into Amazon Web Services Migration Hub without having to use the Application
+        /// Discovery Service (ADS) tools such as the Discovery Connector or Discovery Agent.
+        /// This gives you the option to perform migration assessment and planning directly from
+        /// your imported data, including the ability to group your devices as applications and
+        /// track their migration status.
         /// 
         ///  
         /// <para>
@@ -1538,7 +1547,7 @@ namespace Amazon.ApplicationDiscoveryService
         ///  <ol> <li> 
         /// <para>
         /// Download the specially formatted comma separated value (CSV) import template, which
-        /// you can find here: <a href="https://s3-us-west-2.amazonaws.com/templates-7cffcf56-bd96-4b1c-b45b-a5b42f282e46/import_template.csv">https://s3-us-west-2.amazonaws.com/templates-7cffcf56-bd96-4b1c-b45b-a5b42f282e46/import_template.csv</a>.
+        /// you can find here: <a href="https://s3.us-west-2.amazonaws.com/templates-7cffcf56-bd96-4b1c-b45b-a5b42f282e46/import_template.csv">https://s3.us-west-2.amazonaws.com/templates-7cffcf56-bd96-4b1c-b45b-a5b42f282e46/import_template.csv</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1551,20 +1560,20 @@ namespace Amazon.ApplicationDiscoveryService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use the console or the <code>StartImportTask</code> command with the AWS CLI or one
-        /// of the AWS SDKs to import the records from your file.
+        /// Use the console or the <code>StartImportTask</code> command with the Amazon Web Services
+        /// CLI or one of the Amazon Web Services SDKs to import the records from your file.
         /// </para>
         ///  </li> </ol> 
         /// <para>
         /// For more information, including step-by-step procedures, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-import.html">Migration
-        /// Hub Import</a> in the <i>AWS Application Discovery Service User Guide</i>.
+        /// Hub Import</a> in the <i>Amazon Web Services Application Discovery Service User Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
-        /// There are limits to the number of import tasks you can create (and delete) in an AWS
-        /// account. For more information, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/ads_service_limits.html">AWS
-        /// Application Discovery Service Limits</a> in the <i>AWS Application Discovery Service
-        /// User Guide</i>.
+        /// There are limits to the number of import tasks you can create (and delete) in an Amazon
+        /// Web Services account. For more information, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/ads_service_limits.html">Amazon
+        /// Web Services Application Discovery Service Limits</a> in the <i>Amazon Web Services
+        /// Application Discovery Service User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1572,8 +1581,8 @@ namespace Amazon.ApplicationDiscoveryService
         /// 
         /// <returns>The response from the StartImportTask service method, as returned by ApplicationDiscoveryService.</returns>
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.AuthorizationErrorException">
-        /// The AWS user account does not have permission to perform the action. Check the IAM
-        /// policy associated with this account.
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
         /// </exception>
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.HomeRegionNotSetException">
         /// The home region is not set. Set the home region to continue.
@@ -1636,8 +1645,8 @@ namespace Amazon.ApplicationDiscoveryService
         /// 
         /// <returns>The response from the StopContinuousExport service method, as returned by ApplicationDiscoveryService.</returns>
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.AuthorizationErrorException">
-        /// The AWS user account does not have permission to perform the action. Check the IAM
-        /// policy associated with this account.
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
         /// </exception>
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.HomeRegionNotSetException">
         /// The home region is not set. Set the home region to continue.
@@ -1707,8 +1716,8 @@ namespace Amazon.ApplicationDiscoveryService
         /// 
         /// <returns>The response from the StopDataCollectionByAgentIds service method, as returned by ApplicationDiscoveryService.</returns>
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.AuthorizationErrorException">
-        /// The AWS user account does not have permission to perform the action. Check the IAM
-        /// policy associated with this account.
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
         /// </exception>
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.HomeRegionNotSetException">
         /// The home region is not set. Set the home region to continue.
@@ -1764,8 +1773,8 @@ namespace Amazon.ApplicationDiscoveryService
         /// 
         /// <returns>The response from the UpdateApplication service method, as returned by ApplicationDiscoveryService.</returns>
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.AuthorizationErrorException">
-        /// The AWS user account does not have permission to perform the action. Check the IAM
-        /// policy associated with this account.
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
         /// </exception>
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.HomeRegionNotSetException">
         /// The home region is not set. Set the home region to continue.

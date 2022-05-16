@@ -29,10 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ApplicationDiscoveryService.Model
 {
     /// <summary>
-    /// Information about agents or connectors associated with the user’s AWS account. Information
-    /// includes agent or connector IDs, IP addresses, media access control (MAC) addresses,
-    /// agent or connector health, hostname where the agent or connector resides, and agent
-    /// version for each agent.
+    /// Information about agents or connectors associated with the user’s Amazon Web Services
+    /// account. Information includes agent or connector IDs, IP addresses, media access control
+    /// (MAC) addresses, agent or connector health, hostname where the agent or connector
+    /// resides, and agent version for each agent.
     /// </summary>
     public partial class AgentInfo
     {
@@ -53,6 +53,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// The agent or connector ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=10, Max=20)]
         public string AgentId
         {
             get { return this._agentId; }
@@ -89,6 +90,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// Type of agent.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=10000)]
         public string AgentType
         {
             get { return this._agentType; }
@@ -107,6 +109,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// Status of the collection process for an agent or connector.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=10000)]
         public string CollectionStatus
         {
             get { return this._collectionStatus; }
@@ -125,6 +128,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// The ID of the connector.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=10000)]
         public string ConnectorId
         {
             get { return this._connectorId; }
@@ -162,6 +166,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// or virtual machine.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=10000)]
         public string HostName
         {
             get { return this._hostName; }
@@ -180,6 +185,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// Time since agent or connector health was reported.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=10000)]
         public string LastHealthPingTime
         {
             get { return this._lastHealthPingTime; }
@@ -198,6 +204,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// Agent's first registration timestamp in UTC.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=10000)]
         public string RegisteredTime
         {
             get { return this._registeredTime; }
@@ -216,6 +223,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// The agent or connector version.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=10000)]
         public string Version
         {
             get { return this._version; }

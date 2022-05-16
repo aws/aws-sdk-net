@@ -46,7 +46,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// Configuration ID of the server for which neighbors are being listed.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=200)]
         public string ConfigurationId
         {
             get { return this._configurationId; }
@@ -104,6 +104,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// results along with a token. Use that token in this query to get the next set of 10.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=10000)]
         public string NextToken
         {
             get { return this._nextToken; }

@@ -41,6 +41,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// A unique identifier that you can use to query the export status.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=200)]
         public string ExportId
         {
             get { return this._exportId; }

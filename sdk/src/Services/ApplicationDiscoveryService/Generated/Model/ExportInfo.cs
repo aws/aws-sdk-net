@@ -68,7 +68,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// A unique identifier used to query an export.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=200)]
         public string ExportId
         {
             get { return this._exportId; }

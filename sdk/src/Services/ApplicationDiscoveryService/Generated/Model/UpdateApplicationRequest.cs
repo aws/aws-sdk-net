@@ -44,7 +44,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// Configuration ID of the application to be updated.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=200)]
         public string ConfigurationId
         {
             get { return this._configurationId; }
@@ -63,6 +63,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// New description of the application to be updated.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1000)]
         public string Description
         {
             get { return this._description; }
@@ -81,6 +82,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// New name of the application to be updated.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=127)]
         public string Name
         {
             get { return this._name; }

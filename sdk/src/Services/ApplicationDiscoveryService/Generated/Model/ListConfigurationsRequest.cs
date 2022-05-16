@@ -75,8 +75,8 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <para>
         /// For a complete list of filter options and guidance about using them with this action,
         /// see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using
-        /// the ListConfigurations Action</a> in the <i>AWS Application Discovery Service User
-        /// Guide</i>.
+        /// the ListConfigurations Action</a> in the <i>Amazon Web Services Application Discovery
+        /// Service User Guide</i>.
         /// </para>
         /// </summary>
         public List<Filter> Filters
@@ -135,8 +135,8 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <para>
         /// Certain filter criteria return output that can be sorted in ascending or descending
         /// order. For a list of output characteristics for each filter, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using
-        /// the ListConfigurations Action</a> in the <i>AWS Application Discovery Service User
-        /// Guide</i>.
+        /// the ListConfigurations Action</a> in the <i>Amazon Web Services Application Discovery
+        /// Service User Guide</i>.
         /// </para>
         /// </summary>
         public List<OrderByElement> OrderBy

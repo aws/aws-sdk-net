@@ -30,6 +30,12 @@ namespace Amazon.ApplicationDiscoveryService.Model
 {
     /// <summary>
     /// Metadata that help you categorize IT assets.
+    /// 
+    ///  <important> 
+    /// <para>
+    /// Do not store sensitive information (like personal data) in tags.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class Tag
     {

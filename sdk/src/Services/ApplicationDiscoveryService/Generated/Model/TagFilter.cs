@@ -42,7 +42,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// A name of the tag filter.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=1000)]
         public string Name
         {
             get { return this._name; }

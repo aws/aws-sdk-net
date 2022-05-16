@@ -42,6 +42,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// The IP address for the host where the agent/connector resides.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=10000)]
         public string IpAddress
         {
             get { return this._ipAddress; }
@@ -60,6 +61,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// The MAC address for the host where the agent/connector resides.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=10000)]
         public string MacAddress
         {
             get { return this._macAddress; }

@@ -45,6 +45,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// The configuration ID for the item to tag. You can specify a list of keys and values.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=200)]
         public string ConfigurationId
         {
             get { return this._configurationId; }

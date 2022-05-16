@@ -198,9 +198,10 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// Gets and sets the property ImportTaskId. 
         /// <para>
         /// The unique ID for a specific import task. These IDs aren't globally unique, but they
-        /// are unique within an AWS account.
+        /// are unique within an Amazon Web Services account.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=200)]
         public string ImportTaskId
         {
             get { return this._importTaskId; }

@@ -43,7 +43,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// The configuration ID of an application with which items are to be associated.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=200)]
         public string ApplicationConfigurationId
         {
             get { return this._applicationConfigurationId; }

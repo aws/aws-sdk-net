@@ -34,8 +34,8 @@ namespace Amazon.ApplicationDiscoveryService.Model
     ///  
     /// <para>
     /// For more information about filters, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html">Querying
-    /// Discovered Configuration Items</a> in the <i>AWS Application Discovery Service User
-    /// Guide</i>. 
+    /// Discovered Configuration Items</a> in the <i>Amazon Web Services Application Discovery
+    /// Service User Guide</i>. 
     /// </para>
     /// </summary>
     public partial class Filter
@@ -54,7 +54,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// or <i>ListConfigurations</i> returns attributes of matching configuration items.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=200)]
         public string Condition
         {
             get { return this._condition; }
@@ -73,7 +73,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// The name of the filter.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=10000)]
         public string Name
         {
             get { return this._name; }

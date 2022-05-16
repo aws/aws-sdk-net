@@ -43,8 +43,9 @@ namespace Amazon.ApplicationDiscoveryService.Model
     ///  
     /// <para>
     ///  If you do not include an <code>agentIds</code> filter, summary data is exported that
-    /// includes both AWS Agentless Discovery Connector data and summary data from AWS Discovery
-    /// Agents. Export of summary data is limited to two exports per day. 
+    /// includes both Amazon Web Services Agentless Discovery Connector data and summary data
+    /// from Amazon Web Services Discovery Agents. Export of summary data is limited to two
+    /// exports per day. 
     /// </para>
     /// </summary>
     public partial class StartExportTaskRequest : AmazonApplicationDiscoveryServiceRequest

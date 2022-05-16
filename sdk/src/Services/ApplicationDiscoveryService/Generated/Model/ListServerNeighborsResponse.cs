@@ -83,6 +83,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// next query to retrieve the next set of 10.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=10000)]
         public string NextToken
         {
             get { return this._nextToken; }

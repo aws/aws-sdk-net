@@ -45,8 +45,8 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// Gets and sets the property AgentIds. 
         /// <para>
         /// The agent or the Connector IDs for which you want information. If you specify no IDs,
-        /// the system returns information about all agents/Connectors associated with your AWS
-        /// user account.
+        /// the system returns information about all agents/Connectors associated with your Amazon
+        /// Web Services user account.
         /// </para>
         /// </summary>
         public List<string> AgentIds

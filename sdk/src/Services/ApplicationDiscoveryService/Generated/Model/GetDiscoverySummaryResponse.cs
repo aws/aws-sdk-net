@@ -36,6 +36,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         private CustomerAgentInfo _agentSummary;
         private long? _applications;
         private CustomerConnectorInfo _connectorSummary;
+        private CustomerMeCollectorInfo _meCollectorSummary;
         private long? _servers;
         private long? _serversMappedToApplications;
         private long? _serversMappedtoTags;
@@ -92,6 +93,25 @@ namespace Amazon.ApplicationDiscoveryService.Model
         internal bool IsSetConnectorSummary()
         {
             return this._connectorSummary != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MeCollectorSummary. 
+        /// <para>
+        ///  Details about Migration Evaluator collectors, including collector status and health.
+        /// 
+        /// </para>
+        /// </summary>
+        public CustomerMeCollectorInfo MeCollectorSummary
+        {
+            get { return this._meCollectorSummary; }
+            set { this._meCollectorSummary = value; }
+        }
+
+        // Check to see if MeCollectorSummary property is set
+        internal bool IsSetMeCollectorSummary()
+        {
+            return this._meCollectorSummary != null;
         }
 
         /// <summary>
