@@ -186,7 +186,7 @@ namespace Amazon.WorkSpacesWeb.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>IDPSignout</code> <i>optional</i> 
+        ///  <code>IDPSignout</code> (boolean) <i>optional</i> 
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </summary>

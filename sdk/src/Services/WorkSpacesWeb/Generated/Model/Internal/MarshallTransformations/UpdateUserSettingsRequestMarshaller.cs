@@ -85,10 +85,22 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.CopyAllowed);
                 }
 
+                if(publicRequest.IsSetDisconnectTimeoutInMinutes())
+                {
+                    context.Writer.WritePropertyName("disconnectTimeoutInMinutes");
+                    context.Writer.Write(publicRequest.DisconnectTimeoutInMinutes);
+                }
+
                 if(publicRequest.IsSetDownloadAllowed())
                 {
                     context.Writer.WritePropertyName("downloadAllowed");
                     context.Writer.Write(publicRequest.DownloadAllowed);
+                }
+
+                if(publicRequest.IsSetIdleDisconnectTimeoutInMinutes())
+                {
+                    context.Writer.WritePropertyName("idleDisconnectTimeoutInMinutes");
+                    context.Writer.Write(publicRequest.IdleDisconnectTimeoutInMinutes);
                 }
 
                 if(publicRequest.IsSetPasteAllowed())

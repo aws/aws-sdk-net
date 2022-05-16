@@ -205,6 +205,16 @@
     <max>512</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkSpacesWeb.Model.CreateUserSettingsRequest.DisconnectTimeoutInMinutes</property>
+    <min>1</min>
+    <max>600</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpacesWeb.Model.CreateUserSettingsRequest.IdleDisconnectTimeoutInMinutes</property>
+    <min>0</min>
+    <max>60</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkSpacesWeb.Model.CreateUserSettingsResponse.UserSettingsArn</property>
     <min>20</min>
     <max>2048</max>
@@ -581,6 +591,16 @@
     <max>512</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkSpacesWeb.Model.UpdateUserSettingsRequest.DisconnectTimeoutInMinutes</property>
+    <min>1</min>
+    <max>600</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpacesWeb.Model.UpdateUserSettingsRequest.IdleDisconnectTimeoutInMinutes</property>
+    <min>0</min>
+    <max>60</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkSpacesWeb.Model.UpdateUserSettingsRequest.UserSettingsArn</property>
     <min>20</min>
     <max>2048</max>
@@ -809,10 +829,30 @@
     <pattern>^arn:[\w+=\/,.@-]+:[a-zA-Z0-9\-]+:[a-zA-Z0-9\-]*:[a-zA-Z0-9]{1,12}:[a-zA-Z]+(\/[a-fA-F0-9\-]{36})+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkSpacesWeb.Model.UserSettings.DisconnectTimeoutInMinutes</property>
+    <min>1</min>
+    <max>600</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpacesWeb.Model.UserSettings.IdleDisconnectTimeoutInMinutes</property>
+    <min>0</min>
+    <max>60</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkSpacesWeb.Model.UserSettings.UserSettingsArn</property>
     <min>20</min>
     <max>2048</max>
     <pattern>^arn:[\w+=\/,.@-]+:[a-zA-Z0-9\-]+:[a-zA-Z0-9\-]*:[a-zA-Z0-9]{1,12}:[a-zA-Z]+(\/[a-fA-F0-9\-]{36})+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpacesWeb.Model.UserSettingsSummary.DisconnectTimeoutInMinutes</property>
+    <min>1</min>
+    <max>600</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpacesWeb.Model.UserSettingsSummary.IdleDisconnectTimeoutInMinutes</property>
+    <min>0</min>
+    <max>60</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpacesWeb.Model.UserSettingsSummary.UserSettingsArn</property>
