@@ -30,7 +30,9 @@ namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
     /// Container for the parameters to the ListAcceptedPortfolioShares operation.
-    /// Lists all portfolios for which sharing was accepted by this account.
+    /// Lists all imported portfolios for which account-to-account shares were accepted by
+    /// this account. By specifying the <code>PortfolioShareType</code>, you can list portfolios
+    /// for which organizational shares were accepted by this account.
     /// </summary>
     public partial class ListAcceptedPortfolioSharesRequest : AmazonServiceCatalogRequest
     {
@@ -117,16 +119,17 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>AWS_ORGANIZATIONS</code> - List portfolios shared by the management account
-        /// of your organization
+        ///  <code>AWS_ORGANIZATIONS</code> - List portfolios accepted and shared via organizational
+        /// sharing by the management account or delegated administrator of your organization.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AWS_SERVICECATALOG</code> - List default portfolios
+        ///  <code>AWS_SERVICECATALOG</code> - Deprecated type.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>IMPORTED</code> - List imported portfolios
+        ///  <code>IMPORTED</code> - List imported portfolios that have been accepted and shared
+        /// through account-to-account sharing.
         /// </para>
         ///  </li> </ul>
         /// </summary>

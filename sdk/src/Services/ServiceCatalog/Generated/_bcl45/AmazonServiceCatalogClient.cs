@@ -3802,7 +3802,9 @@ namespace Amazon.ServiceCatalog
 
 
         /// <summary>
-        /// Lists all portfolios for which sharing was accepted by this account.
+        /// Lists all imported portfolios for which account-to-account shares were accepted by
+        /// this account. By specifying the <code>PortfolioShareType</code>, you can list portfolios
+        /// for which organizational shares were accepted by this account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAcceptedPortfolioShares service method.</param>
         /// 
@@ -3825,7 +3827,9 @@ namespace Amazon.ServiceCatalog
 
 
         /// <summary>
-        /// Lists all portfolios for which sharing was accepted by this account.
+        /// Lists all imported portfolios for which account-to-account shares were accepted by
+        /// this account. By specifying the <code>PortfolioShareType</code>, you can list portfolios
+        /// for which organizational shares were accepted by this account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAcceptedPortfolioShares service method.</param>
         /// <param name="cancellationToken">
