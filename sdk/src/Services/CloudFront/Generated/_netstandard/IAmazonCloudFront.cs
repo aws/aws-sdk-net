@@ -1168,6 +1168,16 @@ namespace Amazon.CloudFront
         /// A response headers policy with this name already exists. You must provide a unique
         /// name. To modify an existing response headers policy, use <code>UpdateResponseHeadersPolicy</code>.
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooLongCSPInResponseHeadersPolicyException">
+        /// The length of the <code>Content-Security-Policy</code> header value in the response
+        /// headers policy exceeds the maximum.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyCustomHeadersInResponseHeadersPolicyException">
         /// The number of custom headers in the response headers policy exceeds the maximum.
         /// 
@@ -4607,6 +4617,16 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.ResponseHeadersPolicyAlreadyExistsException">
         /// A response headers policy with this name already exists. You must provide a unique
         /// name. To modify an existing response headers policy, use <code>UpdateResponseHeadersPolicy</code>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooLongCSPInResponseHeadersPolicyException">
+        /// The length of the <code>Content-Security-Policy</code> header value in the response
+        /// headers policy exceeds the maximum.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyCustomHeadersInResponseHeadersPolicyException">
         /// The number of custom headers in the response headers policy exceeds the maximum.
