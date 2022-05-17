@@ -34,6 +34,7 @@ namespace Amazon.Glue.Model
     public partial class Job
     {
         private int? _allocatedCapacity;
+        private Dictionary<string, CodeGenConfigurationNode> _codeGenConfigurationNodes = new Dictionary<string, CodeGenConfigurationNode>();
         private JobCommand _command;
         private ConnectionsList _connections;
         private DateTime? _createdOn;
@@ -79,6 +80,25 @@ namespace Amazon.Glue.Model
         internal bool IsSetAllocatedCapacity()
         {
             return this._allocatedCapacity.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CodeGenConfigurationNodes. 
+        /// <para>
+        /// The representation of a directed acyclic graph on which both the Glue Studio visual
+        /// component and Glue Studio code generation is based.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, CodeGenConfigurationNode> CodeGenConfigurationNodes
+        {
+            get { return this._codeGenConfigurationNodes; }
+            set { this._codeGenConfigurationNodes = value; }
+        }
+
+        // Check to see if CodeGenConfigurationNodes property is set
+        internal bool IsSetCodeGenConfigurationNodes()
+        {
+            return this._codeGenConfigurationNodes != null && this._codeGenConfigurationNodes.Count > 0; 
         }
 
         /// <summary>

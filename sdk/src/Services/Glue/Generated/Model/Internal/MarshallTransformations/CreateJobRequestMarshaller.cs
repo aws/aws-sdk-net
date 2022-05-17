@@ -73,6 +73,25 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.AllocatedCapacity);
                 }
 
+                if(publicRequest.IsSetCodeGenConfigurationNodes())
+                {
+                    context.Writer.WritePropertyName("CodeGenConfigurationNodes");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestCodeGenConfigurationNodesKvp in publicRequest.CodeGenConfigurationNodes)
+                    {
+                        context.Writer.WritePropertyName(publicRequestCodeGenConfigurationNodesKvp.Key);
+                        var publicRequestCodeGenConfigurationNodesValue = publicRequestCodeGenConfigurationNodesKvp.Value;
+
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = CodeGenConfigurationNodeMarshaller.Instance;
+                        marshaller.Marshall(publicRequestCodeGenConfigurationNodesValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetCommand())
                 {
                     context.Writer.WritePropertyName("Command");

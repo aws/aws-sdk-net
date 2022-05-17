@@ -70,6 +70,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.AllocatedCapacity = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("CodeGenConfigurationNodes", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, CodeGenConfigurationNode, StringUnmarshaller, CodeGenConfigurationNodeUnmarshaller>(StringUnmarshaller.Instance, CodeGenConfigurationNodeUnmarshaller.Instance);
+                    unmarshalledObject.CodeGenConfigurationNodes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Command", targetDepth))
                 {
                     var unmarshaller = JobCommandUnmarshaller.Instance;
