@@ -190,6 +190,7 @@ namespace Amazon.KeyManagementService.Model
         /// Specifies the symmetric encryption KMS key that encrypts the private key in the data
         /// key pair. You cannot specify an asymmetric KMS key or a KMS key in a custom key store.
         /// To get the type and origin of your KMS key, use the <a>DescribeKey</a> operation.
+        /// 
         /// </para>
         ///  
         /// <para>

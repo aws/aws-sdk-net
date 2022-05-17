@@ -153,9 +153,9 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  
         /// <para>
-        /// If the KMS key is a multi-Region primary key with replicas, the waiting period begins
-        /// when the last of its replica keys is deleted. Otherwise, the waiting period begins
-        /// immediately.
+        /// If the KMS key is a multi-Region primary key with replica keys, the waiting period
+        /// begins when the last of its replica keys is deleted. Otherwise, the waiting period
+        /// begins immediately.
         /// </para>
         ///  
         /// <para>

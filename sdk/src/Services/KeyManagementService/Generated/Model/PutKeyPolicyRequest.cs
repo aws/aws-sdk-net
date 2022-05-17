@@ -171,10 +171,28 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The key policy cannot exceed 32 kilobytes (32768 bytes). For more information, see
-        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/resource-limits.html">Resource
-        /// Quotas</a> in the <i>Key Management Service Developer Guide</i>.
+        /// A key policy document must conform to the following rules.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Up to 32 kilobytes (32768 bytes)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Must be UTF-8 encoded
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The only Unicode characters that are permitted in a key policy document are the horizontal
+        /// tab (U+0009), linefeed (U+000A), carriage return (U+000D), and characters in the range
+        /// U+0020 to U+00FF.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <code>Sid</code> element in a key policy statement can include spaces. (Spaces
+        /// are prohibited in the <code>Sid</code> element of an IAM policy document.)
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=131072)]
         public string Policy

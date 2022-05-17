@@ -67,10 +67,11 @@ namespace Amazon.KeyManagementService
     /// </para>
     ///  
     /// <para>
-    /// Clients must support TLS (Transport Layer Security) 1.0. We recommend TLS 1.2. Clients
-    /// must also support cipher suites with Perfect Forward Secrecy (PFS) such as Ephemeral
-    /// Diffie-Hellman (DHE) or Elliptic Curve Ephemeral Diffie-Hellman (ECDHE). Most modern
-    /// systems such as Java 7 and later support these modes.
+    /// All KMS API calls must be signed and be transmitted using Transport Layer Security
+    /// (TLS). KMS recommends you always use the latest supported TLS version. Clients must
+    /// also support cipher suites with Perfect Forward Secrecy (PFS) such as Ephemeral Diffie-Hellman
+    /// (DHE) or Elliptic Curve Ephemeral Diffie-Hellman (ECDHE). Most modern systems such
+    /// as Java 7 and later support these modes.
     /// </para>
     ///  
     /// <para>
@@ -1164,7 +1165,7 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Creates a unique customer managed <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#kms-keys">KMS
-        /// key</a> in your Amazon Web Services account and Region. 
+        /// key</a> in your Amazon Web Services account and Region.
         /// 
         ///  
         /// <para>
@@ -1211,12 +1212,12 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         /// Asymmetric KMS keys contain an RSA key pair or an Elliptic Curve (ECC) key pair. The
-        /// private key in an asymmetric KMS key never leaves AWS KMS unencrypted. However, you
-        /// can use the <a>GetPublicKey</a> operation to download the public key so it can be
-        /// used outside of AWS KMS. KMS keys with RSA key pairs can be used to encrypt or decrypt
-        /// data or sign and verify messages (but not both). KMS keys with ECC key pairs can be
-        /// used only to sign and verify messages. For information about asymmetric KMS keys,
-        /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Asymmetric
+        /// private key in an asymmetric KMS key never leaves KMS unencrypted. However, you can
+        /// use the <a>GetPublicKey</a> operation to download the public key so it can be used
+        /// outside of KMS. KMS keys with RSA key pairs can be used to encrypt or decrypt data
+        /// or sign and verify messages (but not both). KMS keys with ECC key pairs can be used
+        /// only to sign and verify messages. For information about asymmetric KMS keys, see <a
+        /// href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Asymmetric
         /// KMS keys</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  
@@ -1529,7 +1530,7 @@ namespace Amazon.KeyManagementService
         /// <para>
         /// The <code>Decrypt</code> operation also decrypts ciphertext that was encrypted outside
         /// of KMS by the public key in an KMS asymmetric KMS key. However, it cannot decrypt
-        /// symmetric ciphertext produced by other libraries, such as the <a href="https://docs.aws.amazon.com/encryption-sdk/latest/developer-guide/">Amazon
+        /// ciphertext produced by other libraries, such as the <a href="https://docs.aws.amazon.com/encryption-sdk/latest/developer-guide/">Amazon
         /// Web Services Encryption SDK</a> or <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon
         /// S3 client-side encryption</a>. These libraries return a ciphertext format that is
         /// incompatible with KMS.
@@ -1616,9 +1617,9 @@ namespace Amazon.KeyManagementService
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.IncorrectKeyException">
         /// The request was rejected because the specified KMS key cannot decrypt the data. The
-        /// <code>KeyId</code> in a <code>Decrypt</code> request and the <code>SourceKeyId</code>
-        /// in a <code>ReEncrypt</code> request must identify the same KMS key that was used to
-        /// encrypt the ciphertext.
+        /// <code>KeyId</code> in a <a>Decrypt</a> request and the <code>SourceKeyId</code> in
+        /// a <a>ReEncrypt</a> request must identify the same KMS key that was used to encrypt
+        /// the ciphertext.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidCiphertextException">
         /// From the <a>Decrypt</a> or <a>ReEncrypt</a> operation, the request was rejected because
@@ -2728,18 +2729,34 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Disables <a href="https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html">automatic
-        /// rotation of the key material</a> for the specified symmetric encryption KMS key.
+        /// rotation of the key material</a> of the specified symmetric encryption KMS key.
         /// 
         ///  
         /// <para>
-        ///  You cannot enable automatic rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">asymmetric
+        /// Automatic key rotation is supported only on symmetric encryption KMS keys. You cannot
+        /// enable or disable automatic rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">asymmetric
         /// KMS keys</a>, <a href="https://docs.aws.amazon.com/kms/latest/developerguide/hmac.html">HMAC
         /// KMS keys</a>, KMS keys with <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">imported
         /// key material</a>, or KMS keys in a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
-        /// key store</a>. To enable or disable automatic rotation of a set of related <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-manage.html#multi-region-rotate">multi-Region
-        /// keys</a>, set the property on the primary key. 
+        /// key store</a>. The key rotation status of these KMS keys is always <code>false</code>.
+        /// To enable or disable automatic rotation of a set of related <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-manage.html#multi-region-rotate">multi-Region
+        /// keys</a>, set the property on the primary key.
         /// </para>
         ///  
+        /// <para>
+        /// You can enable (<a>EnableKeyRotation</a>) and disable automatic rotation of the key
+        /// material in <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
+        /// managed KMS keys</a>. Key material rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+        /// Web Services managed KMS keys</a> is not configurable. KMS always rotates the key
+        /// material for every year. Rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-cmk">Amazon
+        /// Web Services owned KMS keys</a> varies.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// In May 2022, KMS changed the rotation schedule for Amazon Web Services managed keys
+        /// from every three years to every year. For details, see <a>EnableKeyRotation</a>.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// The KMS key that you use for this operation must be in a compatible key state. For
         /// details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
@@ -2808,18 +2825,34 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Disables <a href="https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html">automatic
-        /// rotation of the key material</a> for the specified symmetric encryption KMS key.
+        /// rotation of the key material</a> of the specified symmetric encryption KMS key.
         /// 
         ///  
         /// <para>
-        ///  You cannot enable automatic rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">asymmetric
+        /// Automatic key rotation is supported only on symmetric encryption KMS keys. You cannot
+        /// enable or disable automatic rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">asymmetric
         /// KMS keys</a>, <a href="https://docs.aws.amazon.com/kms/latest/developerguide/hmac.html">HMAC
         /// KMS keys</a>, KMS keys with <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">imported
         /// key material</a>, or KMS keys in a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
-        /// key store</a>. To enable or disable automatic rotation of a set of related <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-manage.html#multi-region-rotate">multi-Region
-        /// keys</a>, set the property on the primary key. 
+        /// key store</a>. The key rotation status of these KMS keys is always <code>false</code>.
+        /// To enable or disable automatic rotation of a set of related <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-manage.html#multi-region-rotate">multi-Region
+        /// keys</a>, set the property on the primary key.
         /// </para>
         ///  
+        /// <para>
+        /// You can enable (<a>EnableKeyRotation</a>) and disable automatic rotation of the key
+        /// material in <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
+        /// managed KMS keys</a>. Key material rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+        /// Web Services managed KMS keys</a> is not configurable. KMS always rotates the key
+        /// material for every year. Rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-cmk">Amazon
+        /// Web Services owned KMS keys</a> varies.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// In May 2022, KMS changed the rotation schedule for Amazon Web Services managed keys
+        /// from every three years to every year. For details, see <a>EnableKeyRotation</a>.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// The KMS key that you use for this operation must be in a compatible key state. For
         /// details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
@@ -3210,18 +3243,52 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Enables <a href="https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html">automatic
-        /// rotation of the key material</a> for the specified symmetric encryption KMS key.
+        /// rotation of the key material</a> of the specified symmetric encryption KMS key. 
         /// 
         ///  
         /// <para>
-        /// You cannot enable automatic rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">asymmetric
+        /// When you enable automatic rotation of a<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
+        /// managed KMS key</a>, KMS rotates the key material of the KMS key one year (approximately
+        /// 365 days) from the enable date and every year thereafter. You can monitor rotation
+        /// of the key material for your KMS keys in CloudTrail and Amazon CloudWatch. To disable
+        /// rotation of the key material in a customer managed KMS key, use the <a>DisableKeyRotation</a>
+        /// operation.
+        /// </para>
+        ///  
+        /// <para>
+        /// Automatic key rotation is supported only on <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#symmetric-cmks">symmetric
+        /// encryption KMS keys</a>. You cannot enable or disable automatic rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">asymmetric
         /// KMS keys</a>, <a href="https://docs.aws.amazon.com/kms/latest/developerguide/hmac.html">HMAC
         /// KMS keys</a>, KMS keys with <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">imported
         /// key material</a>, or KMS keys in a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
-        /// key store</a>. To enable or disable automatic rotation of a set of related <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-manage.html#multi-region-rotate">multi-Region
-        /// keys</a>, set the property on the primary key.
+        /// key store</a>. The key rotation status of these KMS keys is always <code>false</code>.
+        /// To enable or disable automatic rotation of a set of related <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-manage.html#multi-region-rotate">multi-Region
+        /// keys</a>, set the property on the primary key. 
         /// </para>
         ///  
+        /// <para>
+        /// You cannot enable or disable automatic rotation <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+        /// Web Services managed KMS keys</a>. KMS always rotates the key material of Amazon Web
+        /// Services managed keys every year. Rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-cmk">Amazon
+        /// Web Services owned KMS keys</a> varies.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// In May 2022, KMS changed the rotation schedule for Amazon Web Services managed keys
+        /// from every three years (approximately 1,095 days) to every year (approximately 365
+        /// days).
+        /// </para>
+        ///  
+        /// <para>
+        /// New Amazon Web Services managed keys are automatically rotated one year after they
+        /// are created, and approximately every year thereafter. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Existing Amazon Web Services managed keys are automatically rotated one year after
+        /// their most recent rotation, and every year thereafter.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// The KMS key that you use for this operation must be in a compatible key state. For
         /// details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
@@ -3251,7 +3318,7 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="keyId">Identifies a symmetric encryption KMS key. You cannot enable automatic rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">asymmetric KMS keys</a>, <a href="https://docs.aws.amazon.com/kms/latest/developerguide/hmac.html">HMAC KMS keys</a>, KMS keys with <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">imported key material</a>, or KMS keys in a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>. To enable or disable automatic rotation of a set of related <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-manage.html#multi-region-rotate">multi-Region keys</a>, set the property on the primary key. Specify the key ID or key ARN of the KMS key. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
+        /// <param name="keyId">Identifies a symmetric encryption KMS key. You cannot enable or disable automatic rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">asymmetric KMS keys</a>, <a href="https://docs.aws.amazon.com/kms/latest/developerguide/hmac.html">HMAC KMS keys</a>, KMS keys with <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">imported key material</a>, or KMS keys in a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>. The key rotation status of these KMS keys is always <code>false</code>. To enable or disable automatic rotation of a set of related <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-manage.html#multi-region-rotate">multi-Region keys</a>, set the property on the primary key. Specify the key ID or key ARN of the KMS key. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
         /// 
         /// <returns>The response from the EnableKeyRotation service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
@@ -3290,18 +3357,52 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Enables <a href="https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html">automatic
-        /// rotation of the key material</a> for the specified symmetric encryption KMS key.
+        /// rotation of the key material</a> of the specified symmetric encryption KMS key. 
         /// 
         ///  
         /// <para>
-        /// You cannot enable automatic rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">asymmetric
+        /// When you enable automatic rotation of a<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
+        /// managed KMS key</a>, KMS rotates the key material of the KMS key one year (approximately
+        /// 365 days) from the enable date and every year thereafter. You can monitor rotation
+        /// of the key material for your KMS keys in CloudTrail and Amazon CloudWatch. To disable
+        /// rotation of the key material in a customer managed KMS key, use the <a>DisableKeyRotation</a>
+        /// operation.
+        /// </para>
+        ///  
+        /// <para>
+        /// Automatic key rotation is supported only on <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#symmetric-cmks">symmetric
+        /// encryption KMS keys</a>. You cannot enable or disable automatic rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">asymmetric
         /// KMS keys</a>, <a href="https://docs.aws.amazon.com/kms/latest/developerguide/hmac.html">HMAC
         /// KMS keys</a>, KMS keys with <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">imported
         /// key material</a>, or KMS keys in a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
-        /// key store</a>. To enable or disable automatic rotation of a set of related <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-manage.html#multi-region-rotate">multi-Region
-        /// keys</a>, set the property on the primary key.
+        /// key store</a>. The key rotation status of these KMS keys is always <code>false</code>.
+        /// To enable or disable automatic rotation of a set of related <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-manage.html#multi-region-rotate">multi-Region
+        /// keys</a>, set the property on the primary key. 
         /// </para>
         ///  
+        /// <para>
+        /// You cannot enable or disable automatic rotation <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+        /// Web Services managed KMS keys</a>. KMS always rotates the key material of Amazon Web
+        /// Services managed keys every year. Rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-cmk">Amazon
+        /// Web Services owned KMS keys</a> varies.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// In May 2022, KMS changed the rotation schedule for Amazon Web Services managed keys
+        /// from every three years (approximately 1,095 days) to every year (approximately 365
+        /// days).
+        /// </para>
+        ///  
+        /// <para>
+        /// New Amazon Web Services managed keys are automatically rotated one year after they
+        /// are created, and approximately every year thereafter. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Existing Amazon Web Services managed keys are automatically rotated one year after
+        /// their most recent rotation, and every year thereafter.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// The KMS key that you use for this operation must be in a compatible key state. For
         /// details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
@@ -4235,13 +4336,17 @@ namespace Amazon.KeyManagementService
         /// <para>
         /// This operation is useful for systems that need to encrypt data at some point, but
         /// not immediately. When you need to encrypt the data, you call the <a>Decrypt</a> operation
-        /// on the encrypted copy of the key. It's also useful in distributed systems with different
-        /// levels of trust. For example, you might store encrypted data in containers. One component
-        /// of your system creates new containers and stores an encrypted data key with each container.
-        /// Then, a different component puts the data into the containers. That component first
-        /// decrypts the data key, uses the plaintext data key to encrypt data, puts the encrypted
-        /// data into the container, and then destroys the plaintext data key. In this system,
-        /// the component that creates the containers never sees the plaintext data key.
+        /// on the encrypted copy of the key.
+        /// </para>
+        ///  
+        /// <para>
+        /// It's also useful in distributed systems with different levels of trust. For example,
+        /// you might store encrypted data in containers. One component of your system creates
+        /// new containers and stores an encrypted data key with each container. Then, a different
+        /// component puts the data into the containers. That component first decrypts the data
+        /// key, uses the plaintext data key to encrypt data, puts the encrypted data into the
+        /// container, and then destroys the plaintext data key. In this system, the component
+        /// that creates the containers never sees the plaintext data key.
         /// </para>
         ///  
         /// <para>
@@ -4420,7 +4525,15 @@ namespace Amazon.KeyManagementService
         /// For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/hmac.html">HMAC
         /// keys in KMS</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// Best practices recommend that you limit the time during which any signing mechanism,
+        /// including an HMAC, is effective. This deters an attack where the actor uses a signed
+        /// message to establish validity repeatedly or long after the message is superseded.
+        /// HMAC tags do not include a timestamp, but you can include a timestamp in the token
+        /// or message to help you detect when its time to refresh the HMAC. 
+        /// </para>
+        ///  </note> 
         /// <para>
         /// The KMS key that you use for this operation must be in a compatible key state. For
         /// details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
@@ -4847,15 +4960,36 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// You cannot enable automatic rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">asymmetric
+        /// When you enable automatic rotation for <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
+        /// managed KMS keys</a>, KMS rotates the key material of the KMS key one year (approximately
+        /// 365 days) from the enable date and every year thereafter. You can monitor rotation
+        /// of the key material for your KMS keys in CloudTrail and Amazon CloudWatch.
+        /// </para>
+        ///  
+        /// <para>
+        /// Automatic key rotation is supported only on <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#symmetric-cmks">symmetric
+        /// encryption KMS keys</a>. You cannot enable or disable automatic rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">asymmetric
         /// KMS keys</a>, <a href="https://docs.aws.amazon.com/kms/latest/developerguide/hmac.html">HMAC
         /// KMS keys</a>, KMS keys with <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">imported
         /// key material</a>, or KMS keys in a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
-        /// key store</a>. To enable or disable automatic rotation of a set of related <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-manage.html#multi-region-rotate">multi-Region
-        /// keys</a>, set the property on the primary key. The key rotation status for these KMS
-        /// keys is always <code>false</code>.
+        /// key store</a>. The key rotation status of these KMS keys is always <code>false</code>.
+        /// To enable or disable automatic rotation of a set of related <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-manage.html#multi-region-rotate">multi-Region
+        /// keys</a>, set the property on the primary key..
         /// </para>
         ///  
+        /// <para>
+        /// You can enable (<a>EnableKeyRotation</a>) and disable automatic rotation (<a>DisableKeyRotation</a>)
+        /// of the key material in customer managed KMS keys. Key material rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+        /// Web Services managed KMS keys</a> is not configurable. KMS always rotates the key
+        /// material in Amazon Web Services managed KMS keys every year. The key rotation status
+        /// for Amazon Web Services managed KMS keys is always <code>true</code>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// In May 2022, KMS changed the rotation schedule for Amazon Web Services managed keys
+        /// from every three years to every year. For details, see <a>EnableKeyRotation</a>.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// The KMS key that you use for this operation must be in a compatible key state. For
         /// details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
@@ -4864,13 +4998,17 @@ namespace Amazon.KeyManagementService
         ///  <ul> <li> 
         /// <para>
         /// Disabled: The key rotation status does not change when you disable a KMS key. However,
-        /// while the KMS key is disabled, KMS does not rotate the key material.
+        /// while the KMS key is disabled, KMS does not rotate the key material. When you re-enable
+        /// the KMS key, rotation resumes. If the key material in the re-enabled KMS key hasn't
+        /// been rotated in one year, KMS rotates it immediately, and every year thereafter. If
+        /// it's been less than a year since the key material in the re-enabled KMS key was rotated,
+        /// the KMS key resumes its prior rotation schedule.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// Pending deletion: While a KMS key is pending deletion, its key rotation status is
         /// <code>false</code> and KMS does not rotate the key material. If you cancel the deletion,
-        /// the original key rotation status is restored.
+        /// the original key rotation status returns to <code>true</code>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -4937,15 +5075,36 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// You cannot enable automatic rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">asymmetric
+        /// When you enable automatic rotation for <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
+        /// managed KMS keys</a>, KMS rotates the key material of the KMS key one year (approximately
+        /// 365 days) from the enable date and every year thereafter. You can monitor rotation
+        /// of the key material for your KMS keys in CloudTrail and Amazon CloudWatch.
+        /// </para>
+        ///  
+        /// <para>
+        /// Automatic key rotation is supported only on <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#symmetric-cmks">symmetric
+        /// encryption KMS keys</a>. You cannot enable or disable automatic rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">asymmetric
         /// KMS keys</a>, <a href="https://docs.aws.amazon.com/kms/latest/developerguide/hmac.html">HMAC
         /// KMS keys</a>, KMS keys with <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">imported
         /// key material</a>, or KMS keys in a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
-        /// key store</a>. To enable or disable automatic rotation of a set of related <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-manage.html#multi-region-rotate">multi-Region
-        /// keys</a>, set the property on the primary key. The key rotation status for these KMS
-        /// keys is always <code>false</code>.
+        /// key store</a>. The key rotation status of these KMS keys is always <code>false</code>.
+        /// To enable or disable automatic rotation of a set of related <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-manage.html#multi-region-rotate">multi-Region
+        /// keys</a>, set the property on the primary key..
         /// </para>
         ///  
+        /// <para>
+        /// You can enable (<a>EnableKeyRotation</a>) and disable automatic rotation (<a>DisableKeyRotation</a>)
+        /// of the key material in customer managed KMS keys. Key material rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+        /// Web Services managed KMS keys</a> is not configurable. KMS always rotates the key
+        /// material in Amazon Web Services managed KMS keys every year. The key rotation status
+        /// for Amazon Web Services managed KMS keys is always <code>true</code>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// In May 2022, KMS changed the rotation schedule for Amazon Web Services managed keys
+        /// from every three years to every year. For details, see <a>EnableKeyRotation</a>.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// The KMS key that you use for this operation must be in a compatible key state. For
         /// details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
@@ -4954,13 +5113,17 @@ namespace Amazon.KeyManagementService
         ///  <ul> <li> 
         /// <para>
         /// Disabled: The key rotation status does not change when you disable a KMS key. However,
-        /// while the KMS key is disabled, KMS does not rotate the key material.
+        /// while the KMS key is disabled, KMS does not rotate the key material. When you re-enable
+        /// the KMS key, rotation resumes. If the key material in the re-enabled KMS key hasn't
+        /// been rotated in one year, KMS rotates it immediately, and every year thereafter. If
+        /// it's been less than a year since the key material in the re-enabled KMS key was rotated,
+        /// the KMS key resumes its prior rotation schedule.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// Pending deletion: While a KMS key is pending deletion, its key rotation status is
         /// <code>false</code> and KMS does not rotate the key material. If you cancel the deletion,
-        /// the original key rotation status is restored.
+        /// the original key rotation status returns to <code>true</code>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -6323,7 +6486,7 @@ namespace Amazon.KeyManagementService
         /// </para>
         /// </summary>
         /// <param name="keyId">Sets the key policy on the specified KMS key. Specify the key ID or key ARN of the KMS key. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
-        /// <param name="policy">The key policy to attach to the KMS key. The key policy must meet the following criteria: <ul> <li> If you don't set <code>BypassPolicyLockoutSafetyCheck</code> to true, the key policy must allow the principal that is making the <code>PutKeyPolicy</code> request to make a subsequent <code>PutKeyPolicy</code> request on the KMS key. This reduces the risk that the KMS key becomes unmanageable. For more information, refer to the scenario in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default Key Policy</a> section of the <i>Key Management Service Developer Guide</i>. </li> <li> Each statement in the key policy must contain one or more principals. The principals in the key policy must exist and be visible to KMS. When you create a new Amazon Web Services principal (for example, an IAM user or role), you might need to enforce a delay before including the new principal in a key policy because the new principal might not be immediately visible to KMS. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes that I make are not always immediately visible</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>. </li> </ul> The key policy cannot exceed 32 kilobytes (32768 bytes). For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/resource-limits.html">Resource Quotas</a> in the <i>Key Management Service Developer Guide</i>.</param>
+        /// <param name="policy">The key policy to attach to the KMS key. The key policy must meet the following criteria: <ul> <li> If you don't set <code>BypassPolicyLockoutSafetyCheck</code> to true, the key policy must allow the principal that is making the <code>PutKeyPolicy</code> request to make a subsequent <code>PutKeyPolicy</code> request on the KMS key. This reduces the risk that the KMS key becomes unmanageable. For more information, refer to the scenario in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default Key Policy</a> section of the <i>Key Management Service Developer Guide</i>. </li> <li> Each statement in the key policy must contain one or more principals. The principals in the key policy must exist and be visible to KMS. When you create a new Amazon Web Services principal (for example, an IAM user or role), you might need to enforce a delay before including the new principal in a key policy because the new principal might not be immediately visible to KMS. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes that I make are not always immediately visible</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>. </li> </ul> A key policy document must conform to the following rules. <ul> <li> Up to 32 kilobytes (32768 bytes) </li> <li> Must be UTF-8 encoded </li> <li> The only Unicode characters that are permitted in a key policy document are the horizontal tab (U+0009), linefeed (U+000A), carriage return (U+000D), and characters in the range U+0020 to U+00FF. </li> <li> The <code>Sid</code> element in a key policy statement can include spaces. (Spaces are prohibited in the <code>Sid</code> element of an IAM policy document.) </li> </ul></param>
         /// <param name="policyName">The name of the key policy. The only valid value is <code>default</code>.</param>
         /// 
         /// <returns>The response from the PutKeyPolicy service method, as returned by KeyManagementService.</returns>
@@ -6603,9 +6766,9 @@ namespace Amazon.KeyManagementService
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.IncorrectKeyException">
         /// The request was rejected because the specified KMS key cannot decrypt the data. The
-        /// <code>KeyId</code> in a <code>Decrypt</code> request and the <code>SourceKeyId</code>
-        /// in a <code>ReEncrypt</code> request must identify the same KMS key that was used to
-        /// encrypt the ciphertext.
+        /// <code>KeyId</code> in a <a>Decrypt</a> request and the <code>SourceKeyId</code> in
+        /// a <a>ReEncrypt</a> request must identify the same KMS key that was used to encrypt
+        /// the ciphertext.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidCiphertextException">
         /// From the <a>Decrypt</a> or <a>ReEncrypt</a> operation, the request was rejected because
@@ -7488,7 +7651,7 @@ namespace Amazon.KeyManagementService
         ///  </li> </ul>
         /// </summary>
         /// <param name="keyId">The unique identifier of the KMS key to delete. Specify the key ID or key ARN of the KMS key. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
-        /// <param name="pendingWindowInDays">The waiting period, specified in number of days. After the waiting period ends, KMS deletes the KMS key. If the KMS key is a multi-Region primary key with replicas, the waiting period begins when the last of its replica keys is deleted. Otherwise, the waiting period begins immediately. This value is optional. If you include a value, it must be between 7 and 30, inclusive. If you do not include a value, it defaults to 30.</param>
+        /// <param name="pendingWindowInDays">The waiting period, specified in number of days. After the waiting period ends, KMS deletes the KMS key. If the KMS key is a multi-Region primary key with replica keys, the waiting period begins when the last of its replica keys is deleted. Otherwise, the waiting period begins immediately. This value is optional. If you include a value, it must be between 7 and 30, inclusive. If you do not include a value, it defaults to 30.</param>
         /// 
         /// <returns>The response from the ScheduleKeyDeletion service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
@@ -7694,7 +7857,15 @@ namespace Amazon.KeyManagementService
         /// When signing a message, be sure to record the KMS key and the signing algorithm. This
         /// information is required to verify the signature.
         /// </para>
-        ///  </important> 
+        ///  </important> <note> 
+        /// <para>
+        /// Best practices recommend that you limit the time during which any signature is effective.
+        /// This deters an attack where the actor uses a signed message to establish validity
+        /// repeatedly or long after the message is superseded. Signatures do not include a timestamp,
+        /// but you can include a timestamp in the signed message to help you detect when its
+        /// time to refresh the signature. 
+        /// </para>
+        ///  </note> 
         /// <para>
         /// To verify the signature that this operation generates, use the <a>Verify</a> operation.
         /// Or use the <a>GetPublicKey</a> operation to download the public key and then use the
