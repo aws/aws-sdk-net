@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// MeshSpec Marshaller
+    /// MeshServiceDiscovery Marshaller
     /// </summary>
-    public class MeshSpecMarshaller : IRequestMarshaller<MeshSpec, JsonMarshallerContext> 
+    public class MeshServiceDiscoveryMarshaller : IRequestMarshaller<MeshServiceDiscovery, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,28 +43,12 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(MeshSpec requestObject, JsonMarshallerContext context)
+        public void Marshall(MeshServiceDiscovery requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetEgressFilter())
+            if(requestObject.IsSetIpPreference())
             {
-                context.Writer.WritePropertyName("egressFilter");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = EgressFilterMarshaller.Instance;
-                marshaller.Marshall(requestObject.EgressFilter, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetServiceDiscovery())
-            {
-                context.Writer.WritePropertyName("serviceDiscovery");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = MeshServiceDiscoveryMarshaller.Instance;
-                marshaller.Marshall(requestObject.ServiceDiscovery, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("ipPreference");
+                context.Writer.Write(requestObject.IpPreference);
             }
 
         }
@@ -72,7 +56,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static MeshSpecMarshaller Instance = new MeshSpecMarshaller();
+        public readonly static MeshServiceDiscoveryMarshaller Instance = new MeshServiceDiscoveryMarshaller();
 
     }
 }

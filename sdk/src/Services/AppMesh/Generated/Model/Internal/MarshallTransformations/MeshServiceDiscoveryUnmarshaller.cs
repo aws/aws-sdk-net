@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DnsServiceDiscovery Object
+    /// Response Unmarshaller for MeshServiceDiscovery Object
     /// </summary>  
-    public class DnsServiceDiscoveryUnmarshaller : IUnmarshaller<DnsServiceDiscovery, XmlUnmarshallerContext>, IUnmarshaller<DnsServiceDiscovery, JsonUnmarshallerContext>
+    public class MeshServiceDiscoveryUnmarshaller : IUnmarshaller<MeshServiceDiscovery, XmlUnmarshallerContext>, IUnmarshaller<MeshServiceDiscovery, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        DnsServiceDiscovery IUnmarshaller<DnsServiceDiscovery, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        MeshServiceDiscovery IUnmarshaller<MeshServiceDiscovery, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,21 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public DnsServiceDiscovery Unmarshall(JsonUnmarshallerContext context)
+        public MeshServiceDiscovery Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            DnsServiceDiscovery unmarshalledObject = new DnsServiceDiscovery();
+            MeshServiceDiscovery unmarshalledObject = new MeshServiceDiscovery();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("hostname", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Hostname = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("ipPreference", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.IpPreference = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("responseType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResponseType = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +76,12 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         }
 
 
-        private static DnsServiceDiscoveryUnmarshaller _instance = new DnsServiceDiscoveryUnmarshaller();        
+        private static MeshServiceDiscoveryUnmarshaller _instance = new MeshServiceDiscoveryUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DnsServiceDiscoveryUnmarshaller Instance
+        public static MeshServiceDiscoveryUnmarshaller Instance
         {
             get
             {

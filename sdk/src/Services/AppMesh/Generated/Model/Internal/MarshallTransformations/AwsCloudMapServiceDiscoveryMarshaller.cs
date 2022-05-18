@@ -61,6 +61,12 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetIpPreference())
+            {
+                context.Writer.WritePropertyName("ipPreference");
+                context.Writer.Write(requestObject.IpPreference);
+            }
+
             if(requestObject.IsSetNamespaceName())
             {
                 context.Writer.WritePropertyName("namespaceName");

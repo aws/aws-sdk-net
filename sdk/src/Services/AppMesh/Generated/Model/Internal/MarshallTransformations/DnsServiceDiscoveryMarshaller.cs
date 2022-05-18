@@ -51,6 +51,12 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Hostname);
             }
 
+            if(requestObject.IsSetIpPreference())
+            {
+                context.Writer.WritePropertyName("ipPreference");
+                context.Writer.Write(requestObject.IpPreference);
+            }
+
             if(requestObject.IsSetResponseType())
             {
                 context.Writer.WritePropertyName("responseType");

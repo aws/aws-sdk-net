@@ -41,6 +41,7 @@ namespace Amazon.AppMesh.Model
     public partial class AwsCloudMapServiceDiscovery
     {
         private List<AwsCloudMapInstanceAttribute> _attributes = new List<AwsCloudMapInstanceAttribute>();
+        private IpPreference _ipPreference;
         private string _namespaceName;
         private string _serviceName;
 
@@ -62,6 +63,24 @@ namespace Amazon.AppMesh.Model
         internal bool IsSetAttributes()
         {
             return this._attributes != null && this._attributes.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IpPreference. 
+        /// <para>
+        /// The IP version to use to control traffic within the mesh.
+        /// </para>
+        /// </summary>
+        public IpPreference IpPreference
+        {
+            get { return this._ipPreference; }
+            set { this._ipPreference = value; }
+        }
+
+        // Check to see if IpPreference property is set
+        internal bool IsSetIpPreference()
+        {
+            return this._ipPreference != null;
         }
 
         /// <summary>

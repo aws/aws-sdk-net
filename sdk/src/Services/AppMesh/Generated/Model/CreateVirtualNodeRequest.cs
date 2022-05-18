@@ -68,7 +68,7 @@ namespace Amazon.AppMesh.Model
     /// nodes</a>. You must be using <code>1.15.0</code> or later of the Envoy image when
     /// setting these variables. For more information aboutApp Mesh Envoy variables, see <a
     /// href="https://docs.aws.amazon.com/app-mesh/latest/userguide/envoy.html">Envoy image</a>
-    /// in the AWS App Mesh User Guide.
+    /// in the App Mesh User Guide.
     /// </para>
     /// </summary>
     public partial class CreateVirtualNodeRequest : AmazonAppMeshRequest
@@ -121,10 +121,10 @@ namespace Amazon.AppMesh.Model
         /// <summary>
         /// Gets and sets the property MeshOwner. 
         /// <para>
-        /// The AWS IAM account ID of the service mesh owner. If the account ID is not your own,
-        /// then the account that you specify must share the mesh with your account before you
-        /// can create the resource in the service mesh. For more information about mesh sharing,
-        /// see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
+        /// The Amazon Web Services IAM account ID of the service mesh owner. If the account ID
+        /// is not your own, then the account that you specify must share the mesh with your account
+        /// before you can create the resource in the service mesh. For more information about
+        /// mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
         /// with shared meshes</a>.
         /// </para>
         /// </summary>

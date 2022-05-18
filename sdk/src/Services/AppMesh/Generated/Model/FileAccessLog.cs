@@ -44,12 +44,9 @@ namespace Amazon.AppMesh.Model
         /// as Amazon CloudWatch Logs. You can also specify a path in the Envoy container's file
         /// system to write the files to disk.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// The Envoy process must have write permissions to the path that you specify here. Otherwise,
-        /// Envoy fails to bootstrap properly.
-        /// </para>
-        ///  </note>
+        ///  <pre><code> &lt;note&gt; &lt;p&gt;The Envoy process must have write permissions to
+        /// the path that you specify here. Otherwise, Envoy fails to bootstrap properly.&lt;/p&gt;
+        /// &lt;/note&gt; </code></pre>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
         public string Path

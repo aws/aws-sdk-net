@@ -103,7 +103,7 @@ namespace Amazon.AppMesh
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.LimitExceededException">
         /// You have exceeded a service limit for your account. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service-quotas.html">Service
-        /// Limits</a> in the <i>AWS App Mesh User Guide</i>.
+        /// Limits</a> in the <i>App Mesh User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.NotFoundException">
         /// The specified resource doesn't exist. Check your request syntax and try again.
@@ -161,7 +161,7 @@ namespace Amazon.AppMesh
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.LimitExceededException">
         /// You have exceeded a service limit for your account. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service-quotas.html">Service
-        /// Limits</a> in the <i>AWS App Mesh User Guide</i>.
+        /// Limits</a> in the <i>App Mesh User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.NotFoundException">
         /// The specified resource doesn't exist. Check your request syntax and try again.
@@ -216,7 +216,7 @@ namespace Amazon.AppMesh
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.LimitExceededException">
         /// You have exceeded a service limit for your account. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service-quotas.html">Service
-        /// Limits</a> in the <i>AWS App Mesh User Guide</i>.
+        /// Limits</a> in the <i>App Mesh User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.NotFoundException">
         /// The specified resource doesn't exist. Check your request syntax and try again.
@@ -275,7 +275,7 @@ namespace Amazon.AppMesh
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.LimitExceededException">
         /// You have exceeded a service limit for your account. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service-quotas.html">Service
-        /// Limits</a> in the <i>AWS App Mesh User Guide</i>.
+        /// Limits</a> in the <i>App Mesh User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.NotFoundException">
         /// The specified resource doesn't exist. Check your request syntax and try again.
@@ -335,7 +335,7 @@ namespace Amazon.AppMesh
         /// nodes</a>. You must be using <code>1.15.0</code> or later of the Envoy image when
         /// setting these variables. For more information aboutApp Mesh Envoy variables, see <a
         /// href="https://docs.aws.amazon.com/app-mesh/latest/userguide/envoy.html">Envoy image</a>
-        /// in the AWS App Mesh User Guide.
+        /// in the App Mesh User Guide.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateVirtualNode service method.</param>
@@ -359,7 +359,7 @@ namespace Amazon.AppMesh
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.LimitExceededException">
         /// You have exceeded a service limit for your account. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service-quotas.html">Service
-        /// Limits</a> in the <i>AWS App Mesh User Guide</i>.
+        /// Limits</a> in the <i>App Mesh User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.NotFoundException">
         /// The specified resource doesn't exist. Check your request syntax and try again.
@@ -418,7 +418,7 @@ namespace Amazon.AppMesh
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.LimitExceededException">
         /// You have exceeded a service limit for your account. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service-quotas.html">Service
-        /// Limits</a> in the <i>AWS App Mesh User Guide</i>.
+        /// Limits</a> in the <i>App Mesh User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.NotFoundException">
         /// The specified resource doesn't exist. Check your request syntax and try again.
@@ -477,7 +477,7 @@ namespace Amazon.AppMesh
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.LimitExceededException">
         /// You have exceeded a service limit for your account. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service-quotas.html">Service
-        /// Limits</a> in the <i>AWS App Mesh User Guide</i>.
+        /// Limits</a> in the <i>App Mesh User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.NotFoundException">
         /// The specified resource doesn't exist. Check your request syntax and try again.
@@ -1466,7 +1466,7 @@ namespace Amazon.AppMesh
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.LimitExceededException">
         /// You have exceeded a service limit for your account. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service-quotas.html">Service
-        /// Limits</a> in the <i>AWS App Mesh User Guide</i>.
+        /// Limits</a> in the <i>App Mesh User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.NotFoundException">
         /// The specified resource doesn't exist. Check your request syntax and try again.
@@ -1552,7 +1552,7 @@ namespace Amazon.AppMesh
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.LimitExceededException">
         /// You have exceeded a service limit for your account. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service-quotas.html">Service
-        /// Limits</a> in the <i>AWS App Mesh User Guide</i>.
+        /// Limits</a> in the <i>App Mesh User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.NotFoundException">
         /// The specified resource doesn't exist. Check your request syntax and try again.
@@ -1597,7 +1597,7 @@ namespace Amazon.AppMesh
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.LimitExceededException">
         /// You have exceeded a service limit for your account. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service-quotas.html">Service
-        /// Limits</a> in the <i>AWS App Mesh User Guide</i>.
+        /// Limits</a> in the <i>App Mesh User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.NotFoundException">
         /// The specified resource doesn't exist. Check your request syntax and try again.
@@ -1642,7 +1642,7 @@ namespace Amazon.AppMesh
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.LimitExceededException">
         /// You have exceeded a service limit for your account. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service-quotas.html">Service
-        /// Limits</a> in the <i>AWS App Mesh User Guide</i>.
+        /// Limits</a> in the <i>App Mesh User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.NotFoundException">
         /// The specified resource doesn't exist. Check your request syntax and try again.
@@ -1687,7 +1687,7 @@ namespace Amazon.AppMesh
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.LimitExceededException">
         /// You have exceeded a service limit for your account. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service-quotas.html">Service
-        /// Limits</a> in the <i>AWS App Mesh User Guide</i>.
+        /// Limits</a> in the <i>App Mesh User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.NotFoundException">
         /// The specified resource doesn't exist. Check your request syntax and try again.
@@ -1732,7 +1732,7 @@ namespace Amazon.AppMesh
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.LimitExceededException">
         /// You have exceeded a service limit for your account. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service-quotas.html">Service
-        /// Limits</a> in the <i>AWS App Mesh User Guide</i>.
+        /// Limits</a> in the <i>App Mesh User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.AppMesh.Model.NotFoundException">
         /// The specified resource doesn't exist. Check your request syntax and try again.

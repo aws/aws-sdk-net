@@ -42,7 +42,6 @@ namespace Amazon.AppMesh.Model
         /// You can specify one listener.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1)]
         public List<VirtualRouterListener> Listeners
         {
             get { return this._listeners; }

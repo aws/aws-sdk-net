@@ -29,44 +29,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppMesh.Model
 {
     /// <summary>
-    /// An object that represents the specification of a service mesh.
+    /// An object that represents the service discovery information for a service mesh.
     /// </summary>
-    public partial class MeshSpec
+    public partial class MeshServiceDiscovery
     {
-        private EgressFilter _egressFilter;
-        private MeshServiceDiscovery _serviceDiscovery;
+        private IpPreference _ipPreference;
 
         /// <summary>
-        /// Gets and sets the property EgressFilter. 
+        /// Gets and sets the property IpPreference. 
         /// <para>
-        /// The egress filter rules for the service mesh.
+        /// The IP version to use to control traffic within the mesh.
         /// </para>
         /// </summary>
-        public EgressFilter EgressFilter
+        public IpPreference IpPreference
         {
-            get { return this._egressFilter; }
-            set { this._egressFilter = value; }
+            get { return this._ipPreference; }
+            set { this._ipPreference = value; }
         }
 
-        // Check to see if EgressFilter property is set
-        internal bool IsSetEgressFilter()
+        // Check to see if IpPreference property is set
+        internal bool IsSetIpPreference()
         {
-            return this._egressFilter != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property ServiceDiscovery.
-        /// </summary>
-        public MeshServiceDiscovery ServiceDiscovery
-        {
-            get { return this._serviceDiscovery; }
-            set { this._serviceDiscovery = value; }
-        }
-
-        // Check to see if ServiceDiscovery property is set
-        internal bool IsSetServiceDiscovery()
-        {
-            return this._serviceDiscovery != null;
+            return this._ipPreference != null;
         }
 
     }

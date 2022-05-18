@@ -469,6 +469,64 @@ namespace Amazon.AppMesh
 
 
     /// <summary>
+    /// Constants used for properties of type IpPreference.
+    /// </summary>
+    public class IpPreference : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant IPv4_ONLY for IpPreference
+        /// </summary>
+        public static readonly IpPreference IPv4_ONLY = new IpPreference("IPv4_ONLY");
+        /// <summary>
+        /// Constant IPv4_PREFERRED for IpPreference
+        /// </summary>
+        public static readonly IpPreference IPv4_PREFERRED = new IpPreference("IPv4_PREFERRED");
+        /// <summary>
+        /// Constant IPv6_ONLY for IpPreference
+        /// </summary>
+        public static readonly IpPreference IPv6_ONLY = new IpPreference("IPv6_ONLY");
+        /// <summary>
+        /// Constant IPv6_PREFERRED for IpPreference
+        /// </summary>
+        public static readonly IpPreference IPv6_PREFERRED = new IpPreference("IPv6_PREFERRED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IpPreference(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IpPreference FindValue(string value)
+        {
+            return FindValue<IpPreference>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IpPreference(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ListenerTlsMode.
     /// </summary>
     public class ListenerTlsMode : ConstantClass
