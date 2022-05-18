@@ -51,6 +51,12 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.PassiveIp);
             }
 
+            if(requestObject.IsSetSetStatOption())
+            {
+                context.Writer.WritePropertyName("SetStatOption");
+                context.Writer.Write(requestObject.SetStatOption);
+            }
+
             if(requestObject.IsSetTlsSessionResumptionMode())
             {
                 context.Writer.WritePropertyName("TlsSessionResumptionMode");
