@@ -1,3 +1,20 @@
+### 3.7.277.0 (2022-05-18 18:15 UTC)
+* AppMesh (3.7.2.0)
+	* This release updates the existing Create and Update APIs for meshes and virtual nodes by adding a new IP preference field. This new IP preference field can be used to control the IP versions being used with the mesh and allows for IPv6 support within App Mesh.
+* Batch (3.7.5.11)
+	* Documentation updates for AWS Batch.
+* GreengrassV2 (3.7.5.0)
+	* This release adds the new DeleteDeployment API operation that you can use to delete deployment resources. This release also adds support for discontinued AWS-provided components, so AWS can communicate when a component has any issues that you should consider before you deploy it.
+* IoTEventsData (3.7.2.0)
+	* Introducing new API for deleting detectors: BatchDeleteDetector.
+* QuickSight (3.7.11.0)
+	* API UpdatePublicSharingSettings enables IAM admins to enable/disable account level setting for public access of dashboards. When enabled, owners/co-owners for dashboards can enable public access on their dashboards. These dashboards can only be accessed through share link or embedding.
+* Transfer (3.7.11.0)
+	* AWS Transfer Family now supports SetStat server configuration option, which provides the ability to ignore SetStat command issued by file transfer clients, enabling customers to upload files without any errors.
+* Core 3.7.11.3
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.276.0 (2022-05-17 18:11 UTC)
 * Glue (3.7.18.0)
 	* This release adds a new optional parameter called codeGenNodeConfiguration to CRUD job APIs that allows users to manage visual jobs via APIs. The updated CreateJob and UpdateJob will create jobs that can be viewed in Glue Studio as a visual graph. GetJob can be used to get codeGenNodeConfiguration.
