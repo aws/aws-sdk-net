@@ -371,12 +371,13 @@ namespace Amazon.Batch
         /// </para>
         ///  <note> 
         /// <para>
-        /// Batch doesn't upgrade the AMIs in a compute environment after the environment is created.
-        /// For example, it doesn't update the AMIs when a newer version of the Amazon ECS optimized
-        /// AMI is available. Therefore, you're responsible for managing the guest operating system
-        /// (including its updates and security patches) and any additional application software
-        /// or utilities that you install on the compute resources. To use a new AMI for your
-        /// Batch jobs, complete these steps:
+        /// Batch doesn't automatically upgrade the AMIs in a compute environment after it's created.
+        /// For example, it also doesn't update the AMIs in your compute environment when a newer
+        /// version of the Amazon ECS optimized AMI is available. You're responsible for the management
+        /// of the guest operating system. This includes any updates and security patches. You're
+        /// also responsible for any additional application software or utilities that you install
+        /// on the compute resources. There are two ways to use a new AMI for your Batch jobs.
+        /// The original method is to complete these steps:
         /// </para>
         ///  <ol> <li> 
         /// <para>
@@ -394,7 +395,54 @@ namespace Amazon.Batch
         /// <para>
         /// Delete the earlier compute environment.
         /// </para>
-        ///  </li> </ol> </note>
+        ///  </li> </ol> 
+        /// <para>
+        /// In April 2022, Batch added enhanced support for updating compute environments. For
+        /// more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
+        /// compute environments</a>. To use the enhanced updating of compute environments to
+        /// update AMIs, follow these rules:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Either do not set the service role (<code>serviceRole</code>) parameter or set it
+        /// to the <b>AWSBatchServiceRole</b> service-linked role.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Set the allocation strategy (<code>allocationStrategy</code>) parameter to <code>BEST_FIT_PROGRESSIVE</code>
+        /// or <code>SPOT_CAPACITY_OPTIMIZED</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Set the update to latest image version (<code>updateToLatestImageVersion</code>) parameter
+        /// to <code>true</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Do not specify an AMI ID in <code>imageId</code>, <code>imageIdOverride</code> (in
+        /// <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_Ec2Configuration.html">
+        /// <code>ec2Configuration</code> </a>), or in the launch template (<code>launchTemplate</code>).
+        /// In that case Batch will select the latest Amazon ECS optimized AMI supported by Batch
+        /// at the time the infrastructure update is initiated. Alternatively you can specify
+        /// the AMI ID in the <code>imageId</code> or <code>imageIdOverride</code> parameters,
+        /// or the launch template identified by the <code>LaunchTemplate</code> properties. Changing
+        /// any of these properties will trigger an infrastructure update. If the AMI ID is specified
+        /// in the launch template, it can not be replaced by specifying an AMI ID in either the
+        /// <code>imageId</code> or <code>imageIdOverride</code> parameters. It can only be replaced
+        /// by specifying a different launch template, or if the launch template version is set
+        /// to <code>$Default</code> or <code>$Latest</code>, by setting either a new default
+        /// version for the launch template (if <code>$Default</code>)or by adding a new version
+        /// to the launch template (if <code>$Latest</code>).
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// If these rules are followed, any update that triggers an infrastructure update will
+        /// cause the AMI ID to be re-selected. If the <code>version</code> setting in the launch
+        /// template (<code>launchTemplate</code>) is set to <code>$Latest</code> or <code>$Default</code>,
+        /// the latest or default version of the launch template will be evaluated up at the time
+        /// of the infrastructure update, even if the <code>launchTemplate</code> was not updated.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateComputeEnvironment service method.</param>
         /// <param name="cancellationToken">

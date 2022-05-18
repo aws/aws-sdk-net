@@ -528,10 +528,10 @@ namespace Amazon.Batch.Model
         /// environment. For Batch, these take the form of "String1": "String2", where String1
         /// is the tag key and String2 is the tag value−for example, <code>{ "Name": "Batch Instance
         /// - C4OnDemand" }</code>. This is helpful for recognizing your Batch instances in the
-        /// Amazon EC2 console. These tags can't be updated or removed after the compute environment
-        /// is created. Any changes to these tags require that you create a new compute environment
-        /// and remove the old compute environment. These tags aren't seen when using the Batch
-        /// <code>ListTagsForResource</code> API operation.
+        /// Amazon EC2 console. Updating these tags requires an infrastructure update to the compute
+        /// environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
+        /// compute environments</a> in the <i>Batch User Guide</i>. These tags aren't seen when
+        /// using the Batch <code>ListTagsForResource</code> API operation.
         /// </para>
         ///  <note> 
         /// <para>
