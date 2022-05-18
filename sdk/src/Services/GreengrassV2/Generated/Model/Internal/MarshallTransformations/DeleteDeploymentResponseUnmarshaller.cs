@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ListComponents operation
+    /// Response Unmarshaller for DeleteDeployment operation
     /// </summary>  
-    public class ListComponentsResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DeleteDeploymentResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,25 +45,8 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            ListComponentsResponse response = new ListComponentsResponse();
+            DeleteDeploymentResponse response = new DeleteDeploymentResponse();
 
-            context.Read();
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
-            {
-                if (context.TestExpression("components", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<Component, ComponentUnmarshaller>(ComponentUnmarshaller.Instance);
-                    response.Components = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("nextToken", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.NextToken = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-            }
 
             return response;
         }
@@ -90,6 +73,10 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
                 {
                     return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
+                {
+                    return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerException"))
                 {
                     return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -110,9 +97,9 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
             return new AmazonGreengrassV2Exception(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static ListComponentsResponseUnmarshaller _instance = new ListComponentsResponseUnmarshaller();        
+        private static DeleteDeploymentResponseUnmarshaller _instance = new DeleteDeploymentResponseUnmarshaller();        
 
-        internal static ListComponentsResponseUnmarshaller GetInstance()
+        internal static DeleteDeploymentResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -120,7 +107,7 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ListComponentsResponseUnmarshaller Instance
+        public static DeleteDeploymentResponseUnmarshaller Instance
         {
             get
             {

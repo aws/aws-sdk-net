@@ -29,18 +29,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GreengrassV2.Model
 {
     /// <summary>
-    /// Contains the status of a component in the IoT Greengrass service.
+    /// Contains the status of a component version in the IoT Greengrass service.
     /// </summary>
     public partial class CloudComponentStatus
     {
         private CloudComponentState _componentState;
         private Dictionary<string, string> _errors = new Dictionary<string, string>();
         private string _message;
+        private VendorGuidance _vendorGuidance;
+        private string _vendorGuidanceMessage;
 
         /// <summary>
         /// Gets and sets the property ComponentState. 
         /// <para>
-        /// The state of the component.
+        /// The state of the component version.
         /// </para>
         /// </summary>
         public CloudComponentState ComponentState
@@ -58,10 +60,10 @@ namespace Amazon.GreengrassV2.Model
         /// <summary>
         /// Gets and sets the property Errors. 
         /// <para>
-        /// A dictionary of errors that communicate why the component is in an error state. For
-        /// example, if IoT Greengrass can't access an artifact for the component, then <code>errors</code>
-        /// contains the artifact's URI as a key, and the error message as the value for that
-        /// key.
+        /// A dictionary of errors that communicate why the component version is in an error state.
+        /// For example, if IoT Greengrass can't access an artifact for the component version,
+        /// then <code>errors</code> contains the artifact's URI as a key, and the error message
+        /// as the value for that key.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Errors
@@ -79,7 +81,8 @@ namespace Amazon.GreengrassV2.Model
         /// <summary>
         /// Gets and sets the property Message. 
         /// <para>
-        /// A message that communicates details, such as errors, about the status of the component.
+        /// A message that communicates details, such as errors, about the status of the component
+        /// version.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -93,6 +96,63 @@ namespace Amazon.GreengrassV2.Model
         internal bool IsSetMessage()
         {
             return this._message != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VendorGuidance. 
+        /// <para>
+        /// The vendor guidance state for the component version. This state indicates whether
+        /// the component version has any issues that you should consider before you deploy it.
+        /// The vendor guidance state can be:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>ACTIVE</code> – This component version is available and recommended for use.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DISCONTINUED</code> – This component version has been discontinued by its publisher.
+        /// You can deploy this component version, but we recommend that you use a different version
+        /// of this component.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DELETED</code> – This component version has been deleted by its publisher,
+        /// so you can't deploy it. If you have any existing deployments that specify this component
+        /// version, those deployments will fail.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public VendorGuidance VendorGuidance
+        {
+            get { return this._vendorGuidance; }
+            set { this._vendorGuidance = value; }
+        }
+
+        // Check to see if VendorGuidance property is set
+        internal bool IsSetVendorGuidance()
+        {
+            return this._vendorGuidance != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VendorGuidanceMessage. 
+        /// <para>
+        /// A message that communicates details about the vendor guidance state of the component
+        /// version. This message communicates why a component version is discontinued or deleted.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public string VendorGuidanceMessage
+        {
+            get { return this._vendorGuidanceMessage; }
+            set { this._vendorGuidanceMessage = value; }
+        }
+
+        // Check to see if VendorGuidanceMessage property is set
+        internal bool IsSetVendorGuidanceMessage()
+        {
+            return this._vendorGuidanceMessage != null;
         }
 
     }

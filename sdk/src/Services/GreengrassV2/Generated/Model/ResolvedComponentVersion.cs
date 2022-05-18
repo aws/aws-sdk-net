@@ -37,7 +37,9 @@ namespace Amazon.GreengrassV2.Model
         private string _arn;
         private string _componentName;
         private string _componentVersion;
+        private string _message;
         private MemoryStream _recipe;
+        private VendorGuidance _vendorGuidance;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -97,6 +99,26 @@ namespace Amazon.GreengrassV2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Message. 
+        /// <para>
+        /// A message that communicates details about the vendor guidance state of the component
+        /// version. This message communicates why a component version is discontinued or deleted.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public string Message
+        {
+            get { return this._message; }
+            set { this._message = value; }
+        }
+
+        // Check to see if Message property is set
+        internal bool IsSetMessage()
+        {
+            return this._message != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Recipe. 
         /// <para>
         /// The recipe of the component version.
@@ -112,6 +134,43 @@ namespace Amazon.GreengrassV2.Model
         internal bool IsSetRecipe()
         {
             return this._recipe != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VendorGuidance. 
+        /// <para>
+        /// The vendor guidance state for the component version. This state indicates whether
+        /// the component version has any issues that you should consider before you deploy it.
+        /// The vendor guidance state can be:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>ACTIVE</code> – This component version is available and recommended for use.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DISCONTINUED</code> – This component version has been discontinued by its publisher.
+        /// You can deploy this component version, but we recommend that you use a different version
+        /// of this component.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DELETED</code> – This component version has been deleted by its publisher,
+        /// so you can't deploy it. If you have any existing deployments that specify this component
+        /// version, those deployments will fail.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public VendorGuidance VendorGuidance
+        {
+            get { return this._vendorGuidance; }
+            set { this._vendorGuidance = value; }
+        }
+
+        // Check to see if VendorGuidance property is set
+        internal bool IsSetVendorGuidance()
+        {
+            return this._vendorGuidance != null;
         }
 
     }

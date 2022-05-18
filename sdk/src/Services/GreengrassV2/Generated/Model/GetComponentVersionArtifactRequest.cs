@@ -30,8 +30,9 @@ namespace Amazon.GreengrassV2.Model
 {
     /// <summary>
     /// Container for the parameters to the GetComponentVersionArtifact operation.
-    /// Gets the pre-signed URL to download a public component artifact. Core devices call
-    /// this operation to identify the URL that they can use to download an artifact to install.
+    /// Gets the pre-signed URL to download a public or a Lambda component artifact. Core
+    /// devices call this operation to identify the URL that they can use to download an artifact
+    /// to install.
     /// </summary>
     public partial class GetComponentVersionArtifactRequest : AmazonGreengrassV2Request
     {
@@ -42,7 +43,7 @@ namespace Amazon.GreengrassV2.Model
         /// Gets and sets the property Arn. 
         /// <para>
         /// The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-        /// of the component version. Specify the ARN of a public component version.
+        /// of the component version. Specify the ARN of a public or a Lambda component version.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

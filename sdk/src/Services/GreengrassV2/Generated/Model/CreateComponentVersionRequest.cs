@@ -84,7 +84,15 @@ namespace Amazon.GreengrassV2.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
+    /// Python 3.9 – <code>python3.9</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     /// Java 8 – <code>java8</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Java 11 – <code>java11</code> 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -93,6 +101,10 @@ namespace Amazon.GreengrassV2.Model
     ///  </li> <li> 
     /// <para>
     /// Node.js 12 – <code>nodejs12.x</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Node.js 14 – <code>nodejs14.x</code> 
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -189,7 +201,7 @@ namespace Amazon.GreengrassV2.Model
         /// your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=50)]
+        [AWSProperty(Min=1, Max=200)]
         public Dictionary<string, string> Tags
         {
             get { return this._tags; }

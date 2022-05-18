@@ -42,7 +42,7 @@ namespace Amazon.GreengrassV2.Model
         /// name of the IoT thing that failed to associate.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
+        [AWSProperty(Max=100)]
         public List<AssociateClientDeviceWithCoreDeviceErrorEntry> ErrorEntries
         {
             get { return this._errorEntries; }

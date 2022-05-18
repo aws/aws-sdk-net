@@ -566,7 +566,15 @@ namespace Amazon.GreengrassV2
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// Python 3.9 – <code>python3.9</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// Java 8 – <code>java8</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Java 11 – <code>java11</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -575,6 +583,10 @@ namespace Amazon.GreengrassV2
         ///  </li> <li> 
         /// <para>
         /// Node.js 12 – <code>nodejs12.x</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Node.js 14 – <code>nodejs14.x</code> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -676,6 +688,10 @@ namespace Amazon.GreengrassV2
         /// <returns>The response from the CreateDeployment service method, as returned by GreengrassV2.</returns>
         /// <exception cref="Amazon.GreengrassV2.Model.AccessDeniedException">
         /// You don't have permission to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.GreengrassV2.Model.ConflictException">
+        /// Your request has conflicting operations. This can occur if you're trying to perform
+        /// more than one operation on the same resource at the same time.
         /// </exception>
         /// <exception cref="Amazon.GreengrassV2.Model.InternalServerException">
         /// IoT Greengrass can't process your request right now. Try again later.
@@ -826,6 +842,69 @@ namespace Amazon.GreengrassV2
             options.ResponseUnmarshaller = DeleteCoreDeviceResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteCoreDeviceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteDeployment
+
+        internal virtual DeleteDeploymentResponse DeleteDeployment(DeleteDeploymentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDeploymentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDeploymentResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDeploymentResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a deployment. To delete an active deployment, you must first cancel it. For
+        /// more information, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_CancelDeployment.html">CancelDeployment</a>.
+        /// 
+        ///  
+        /// <para>
+        /// Deleting a deployment doesn't affect core devices that run that deployment, because
+        /// core devices store the deployment's configuration on the device. Additionally, core
+        /// devices can roll back to a previous deployment that has been deleted.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDeployment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteDeployment service method, as returned by GreengrassV2.</returns>
+        /// <exception cref="Amazon.GreengrassV2.Model.AccessDeniedException">
+        /// You don't have permission to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.GreengrassV2.Model.ConflictException">
+        /// Your request has conflicting operations. This can occur if you're trying to perform
+        /// more than one operation on the same resource at the same time.
+        /// </exception>
+        /// <exception cref="Amazon.GreengrassV2.Model.InternalServerException">
+        /// IoT Greengrass can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.GreengrassV2.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.GreengrassV2.Model.ThrottlingException">
+        /// Your request exceeded a request rate quota. For example, you might have exceeded the
+        /// amount of times that you can retrieve device or deployment status per second.
+        /// </exception>
+        /// <exception cref="Amazon.GreengrassV2.Model.ValidationException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/DeleteDeployment">REST API Reference for DeleteDeployment Operation</seealso>
+        public virtual Task<DeleteDeploymentResponse> DeleteDeploymentAsync(DeleteDeploymentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDeploymentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDeploymentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteDeploymentResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -988,8 +1067,9 @@ namespace Amazon.GreengrassV2
 
 
         /// <summary>
-        /// Gets the pre-signed URL to download a public component artifact. Core devices call
-        /// this operation to identify the URL that they can use to download an artifact to install.
+        /// Gets the pre-signed URL to download a public or a Lambda component artifact. Core
+        /// devices call this operation to identify the URL that they can use to download an artifact
+        /// to install.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetComponentVersionArtifact service method.</param>
         /// <param name="cancellationToken">
@@ -1092,6 +1172,37 @@ namespace Amazon.GreengrassV2
 
         /// <summary>
         /// Retrieves metadata for a Greengrass core device.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// IoT Greengrass relies on individual devices to send status updates to the Amazon Web
+        /// Services Cloud. If the IoT Greengrass Core software isn't running on the device, or
+        /// if device isn't connected to the Amazon Web Services Cloud, then the reported status
+        /// of that device might not reflect its current status. The status timestamp indicates
+        /// when the device status was last updated.
+        /// </para>
+        ///  
+        /// <para>
+        /// Core devices send status updates at the following times:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// When the IoT Greengrass Core software starts
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When the core device receives a deployment from the Amazon Web Services Cloud
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When the status of any component on the core device becomes <code>BROKEN</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// At a <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html#greengrass-nucleus-component-configuration-fss">regular
+        /// interval that you can configure</a>, which defaults to 24 hours
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCoreDevice service method.</param>
         /// <param name="cancellationToken">
@@ -1300,6 +1411,9 @@ namespace Amazon.GreengrassV2
         /// <exception cref="Amazon.GreengrassV2.Model.InternalServerException">
         /// IoT Greengrass can't process your request right now. Try again later.
         /// </exception>
+        /// <exception cref="Amazon.GreengrassV2.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
         /// <exception cref="Amazon.GreengrassV2.Model.ThrottlingException">
         /// Your request exceeded a request rate quota. For example, you might have exceeded the
         /// amount of times that you can retrieve device or deployment status per second.
@@ -1387,6 +1501,37 @@ namespace Amazon.GreengrassV2
 
         /// <summary>
         /// Retrieves a paginated list of Greengrass core devices.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// IoT Greengrass relies on individual devices to send status updates to the Amazon Web
+        /// Services Cloud. If the IoT Greengrass Core software isn't running on the device, or
+        /// if device isn't connected to the Amazon Web Services Cloud, then the reported status
+        /// of that device might not reflect its current status. The status timestamp indicates
+        /// when the device status was last updated.
+        /// </para>
+        ///  
+        /// <para>
+        /// Core devices send status updates at the following times:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// When the IoT Greengrass Core software starts
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When the core device receives a deployment from the Amazon Web Services Cloud
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When the status of any component on the core device becomes <code>BROKEN</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// At a <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html#greengrass-nucleus-component-configuration-fss">regular
+        /// interval that you can configure</a>, which defaults to 24 hours
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListCoreDevices service method.</param>
         /// <param name="cancellationToken">
@@ -1534,7 +1679,40 @@ namespace Amazon.GreengrassV2
 
 
         /// <summary>
-        /// Retrieves a paginated list of the components that a Greengrass core device runs.
+        /// Retrieves a paginated list of the components that a Greengrass core device runs. This
+        /// list doesn't include components that are deployed from local deployments or components
+        /// that are deployed as dependencies of other components.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// IoT Greengrass relies on individual devices to send status updates to the Amazon Web
+        /// Services Cloud. If the IoT Greengrass Core software isn't running on the device, or
+        /// if device isn't connected to the Amazon Web Services Cloud, then the reported status
+        /// of that device might not reflect its current status. The status timestamp indicates
+        /// when the device status was last updated.
+        /// </para>
+        ///  
+        /// <para>
+        /// Core devices send status updates at the following times:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// When the IoT Greengrass Core software starts
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When the core device receives a deployment from the Amazon Web Services Cloud
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When the status of any component on the core device becomes <code>BROKEN</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// At a <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html#greengrass-nucleus-component-configuration-fss">regular
+        /// interval that you can configure</a>, which defaults to 24 hours
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListInstalledComponents service method.</param>
         /// <param name="cancellationToken">

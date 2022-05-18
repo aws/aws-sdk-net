@@ -43,7 +43,7 @@ namespace Amazon.GreengrassV2.Model
         /// Gets and sets the property Arn. 
         /// <para>
         /// The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-        /// of the component version.
+        /// of the component.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
