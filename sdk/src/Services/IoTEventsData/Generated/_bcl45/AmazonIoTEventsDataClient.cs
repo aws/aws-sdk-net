@@ -313,6 +313,77 @@ namespace Amazon.IoTEventsData
 
         #endregion
         
+        #region  BatchDeleteDetector
+
+
+        /// <summary>
+        /// Deletes one or more detectors that were created. When a detector is deleted, its state
+        /// will be cleared and the detector will be removed from the list of detectors. The deleted
+        /// detector will no longer appear if referenced in the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_ListDetectors.html">ListDetectors</a>
+        /// API call.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDeleteDetector service method.</param>
+        /// 
+        /// <returns>The response from the BatchDeleteDetector service method, as returned by IoTEventsData.</returns>
+        /// <exception cref="Amazon.IoTEventsData.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEventsData.Model.InvalidRequestException">
+        /// The request was invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEventsData.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEventsData.Model.ThrottlingException">
+        /// The request could not be completed due to throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/BatchDeleteDetector">REST API Reference for BatchDeleteDetector Operation</seealso>
+        public virtual BatchDeleteDetectorResponse BatchDeleteDetector(BatchDeleteDetectorRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchDeleteDetectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDeleteDetectorResponseUnmarshaller.Instance;
+
+            return Invoke<BatchDeleteDetectorResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes one or more detectors that were created. When a detector is deleted, its state
+        /// will be cleared and the detector will be removed from the list of detectors. The deleted
+        /// detector will no longer appear if referenced in the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_ListDetectors.html">ListDetectors</a>
+        /// API call.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDeleteDetector service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchDeleteDetector service method, as returned by IoTEventsData.</returns>
+        /// <exception cref="Amazon.IoTEventsData.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEventsData.Model.InvalidRequestException">
+        /// The request was invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEventsData.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTEventsData.Model.ThrottlingException">
+        /// The request could not be completed due to throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/BatchDeleteDetector">REST API Reference for BatchDeleteDetector Operation</seealso>
+        public virtual Task<BatchDeleteDetectorResponse> BatchDeleteDetectorAsync(BatchDeleteDetectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchDeleteDetectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDeleteDetectorResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<BatchDeleteDetectorResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  BatchDisableAlarm
 
 
