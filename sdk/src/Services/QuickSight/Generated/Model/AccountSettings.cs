@@ -37,6 +37,7 @@ namespace Amazon.QuickSight.Model
         private string _defaultNamespace;
         private Edition _edition;
         private string _notificationEmail;
+        private bool? _publicSharingEnabled;
 
         /// <summary>
         /// Gets and sets the property AccountName. 
@@ -112,6 +113,25 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetNotificationEmail()
         {
             return this._notificationEmail != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PublicSharingEnabled. 
+        /// <para>
+        /// A boolean that indicates whether or not public sharing is enabled on an Amazon QuickSight
+        /// account. For more information about enabling public sharing, see <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdatePublicSharingSettings.html">UpdatePublicSharingSettings</a>.
+        /// </para>
+        /// </summary>
+        public bool PublicSharingEnabled
+        {
+            get { return this._publicSharingEnabled.GetValueOrDefault(); }
+            set { this._publicSharingEnabled = value; }
+        }
+
+        // Check to see if PublicSharingEnabled property is set
+        internal bool IsSetPublicSharingEnabled()
+        {
+            return this._publicSharingEnabled.HasValue; 
         }
 
     }

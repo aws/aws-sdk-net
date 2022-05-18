@@ -51,7 +51,8 @@ namespace Amazon.QuickSight.Model
     /// </para>
     ///  
     /// <para>
-    /// The resulting user session is valid for 15 minutes (default) to 10 hours (maximum).
+    /// The resulting user session is valid for 15 minutes (minimum) to 10 hours (maximum).
+    /// The default session duration is 10 hours. 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -84,7 +85,8 @@ namespace Amazon.QuickSight.Model
         /// The Amazon Resource Names for the Amazon QuickSight resources that the user is authorized
         /// to access during the lifetime of the session. If you choose <code>Dashboard</code>
         /// embedding experience, pass the list of dashboard ARNs in the account that you want
-        /// the user to be able to view.
+        /// the user to be able to view. Currently, you can pass up to 25 dashboard ARNs in each
+        /// API call.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -4991,7 +4991,8 @@ namespace Amazon.QuickSight
         /// </para>
         ///  
         /// <para>
-        /// The resulting user session is valid for 15 minutes (default) to 10 hours (maximum).
+        /// The resulting user session is valid for 15 minutes (minimum) to 10 hours (maximum).
+        /// The default session duration is 10 hours. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5080,7 +5081,8 @@ namespace Amazon.QuickSight
         /// </para>
         ///  
         /// <para>
-        /// The resulting user session is valid for 15 minutes (default) to 10 hours (maximum).
+        /// The resulting user session is valid for 15 minutes (minimum) to 10 hours (maximum).
+        /// The default session duration is 10 hours. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5176,7 +5178,8 @@ namespace Amazon.QuickSight
         /// </para>
         ///  
         /// <para>
-        /// The resulting user session is valid for 15 minutes (default) to 10 hours (maximum).
+        /// The resulting user session is valid for 15 minutes (minimum) to 10 hours (maximum).
+        /// The default session duration is 10 hours.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5271,7 +5274,8 @@ namespace Amazon.QuickSight
         /// </para>
         ///  
         /// <para>
-        /// The resulting user session is valid for 15 minutes (default) to 10 hours (maximum).
+        /// The resulting user session is valid for 15 minutes (minimum) to 10 hours (maximum).
+        /// The default session duration is 10 hours.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -9289,6 +9293,122 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateIpRestriction">REST API Reference for UpdateIpRestriction Operation</seealso>
         Task<UpdateIpRestrictionResponse> UpdateIpRestrictionAsync(UpdateIpRestrictionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdatePublicSharingSettings
+
+
+        /// <summary>
+        /// Use the UpdatePublicSharingSettings operation to enable or disable the public sharing
+        /// settings of an Amazon QuickSight dashboard.
+        /// 
+        ///  
+        /// <para>
+        /// To use this operation, enable session capacity pricing on your Amazon QuickSight account.
+        /// </para>
+        ///  
+        /// <para>
+        /// Before you can enable public sharing on your account, you need to allow public sharing
+        /// permissions to an administrative user in the IAM console. For more information on
+        /// using IAM with Amazon QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/security_iam_service-with-iam.html">Using
+        /// Amazon QuickSight with IAM</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePublicSharingSettings service method.</param>
+        /// 
+        /// <returns>The response from the UpdatePublicSharingSettings service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.UnsupportedPricingPlanException">
+        /// This error indicates that you are calling an embedding operation in Amazon QuickSight
+        /// without the required pricing plan on your Amazon Web Services account. Before you
+        /// can use embedding for anonymous users, a QuickSight administrator needs to add capacity
+        /// pricing to Amazon QuickSight. You can do this on the <b>Manage Amazon QuickSight</b>
+        /// page. 
+        /// 
+        ///  
+        /// <para>
+        /// After capacity pricing is added, you can use the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GetDashboardEmbedUrl.html">GetDashboardEmbedUrl</a>
+        /// </code> API operation with the <code>--identity-type ANONYMOUS</code> option.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdatePublicSharingSettings">REST API Reference for UpdatePublicSharingSettings Operation</seealso>
+        UpdatePublicSharingSettingsResponse UpdatePublicSharingSettings(UpdatePublicSharingSettingsRequest request);
+
+
+
+        /// <summary>
+        /// Use the UpdatePublicSharingSettings operation to enable or disable the public sharing
+        /// settings of an Amazon QuickSight dashboard.
+        /// 
+        ///  
+        /// <para>
+        /// To use this operation, enable session capacity pricing on your Amazon QuickSight account.
+        /// </para>
+        ///  
+        /// <para>
+        /// Before you can enable public sharing on your account, you need to allow public sharing
+        /// permissions to an administrative user in the IAM console. For more information on
+        /// using IAM with Amazon QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/security_iam_service-with-iam.html">Using
+        /// Amazon QuickSight with IAM</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePublicSharingSettings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdatePublicSharingSettings service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.UnsupportedPricingPlanException">
+        /// This error indicates that you are calling an embedding operation in Amazon QuickSight
+        /// without the required pricing plan on your Amazon Web Services account. Before you
+        /// can use embedding for anonymous users, a QuickSight administrator needs to add capacity
+        /// pricing to Amazon QuickSight. You can do this on the <b>Manage Amazon QuickSight</b>
+        /// page. 
+        /// 
+        ///  
+        /// <para>
+        /// After capacity pricing is added, you can use the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GetDashboardEmbedUrl.html">GetDashboardEmbedUrl</a>
+        /// </code> API operation with the <code>--identity-type ANONYMOUS</code> option.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdatePublicSharingSettings">REST API Reference for UpdatePublicSharingSettings Operation</seealso>
+        Task<UpdatePublicSharingSettingsResponse> UpdatePublicSharingSettingsAsync(UpdatePublicSharingSettingsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
