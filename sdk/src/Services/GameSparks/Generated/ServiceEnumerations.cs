@@ -295,6 +295,60 @@ namespace Amazon.GameSparks
 
 
     /// <summary>
+    /// Constants used for properties of type ResultCode.
+    /// </summary>
+    public class ResultCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INVALID_ROLE_FAILURE for ResultCode
+        /// </summary>
+        public static readonly ResultCode INVALID_ROLE_FAILURE = new ResultCode("INVALID_ROLE_FAILURE");
+        /// <summary>
+        /// Constant SUCCESS for ResultCode
+        /// </summary>
+        public static readonly ResultCode SUCCESS = new ResultCode("SUCCESS");
+        /// <summary>
+        /// Constant UNSPECIFIED_FAILURE for ResultCode
+        /// </summary>
+        public static readonly ResultCode UNSPECIFIED_FAILURE = new ResultCode("UNSPECIFIED_FAILURE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResultCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResultCode FindValue(string value)
+        {
+            return FindValue<ResultCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResultCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type StageState.
     /// </summary>
     public class StageState : ConstantClass

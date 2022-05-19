@@ -82,6 +82,12 @@ namespace Amazon.GameSparks.Model.Internal.MarshallTransformations
                     unmarshalledObject.DeploymentId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DeploymentResult", targetDepth))
+                {
+                    var unmarshaller = DeploymentResultUnmarshaller.Instance;
+                    unmarshalledObject.DeploymentResult = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DeploymentState", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

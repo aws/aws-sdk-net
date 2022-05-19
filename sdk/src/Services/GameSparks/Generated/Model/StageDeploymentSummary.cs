@@ -35,6 +35,7 @@ namespace Amazon.GameSparks.Model
     {
         private DeploymentAction _deploymentAction;
         private string _deploymentId;
+        private DeploymentResult _deploymentResult;
         private DeploymentState _deploymentState;
         private DateTime? _lastUpdated;
         private string _snapshotId;
@@ -74,6 +75,24 @@ namespace Amazon.GameSparks.Model
         internal bool IsSetDeploymentId()
         {
             return this._deploymentId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeploymentResult. 
+        /// <para>
+        /// The result of the deployment.
+        /// </para>
+        /// </summary>
+        public DeploymentResult DeploymentResult
+        {
+            get { return this._deploymentResult; }
+            set { this._deploymentResult = value; }
+        }
+
+        // Check to see if DeploymentResult property is set
+        internal bool IsSetDeploymentResult()
+        {
+            return this._deploymentResult != null;
         }
 
         /// <summary>

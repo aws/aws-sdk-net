@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.GameSparks.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for StageDeploymentSummary Object
+    /// Response Unmarshaller for DeploymentResult Object
     /// </summary>  
-    public class StageDeploymentSummaryUnmarshaller : IUnmarshaller<StageDeploymentSummary, XmlUnmarshallerContext>, IUnmarshaller<StageDeploymentSummary, JsonUnmarshallerContext>
+    public class DeploymentResultUnmarshaller : IUnmarshaller<DeploymentResult, XmlUnmarshallerContext>, IUnmarshaller<DeploymentResult, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        StageDeploymentSummary IUnmarshaller<StageDeploymentSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        DeploymentResult IUnmarshaller<DeploymentResult, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,51 +53,27 @@ namespace Amazon.GameSparks.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public StageDeploymentSummary Unmarshall(JsonUnmarshallerContext context)
+        public DeploymentResult Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            StageDeploymentSummary unmarshalledObject = new StageDeploymentSummary();
+            DeploymentResult unmarshalledObject = new DeploymentResult();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("DeploymentAction", targetDepth))
+                if (context.TestExpression("Message", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DeploymentAction = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Message = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("DeploymentId", targetDepth))
+                if (context.TestExpression("ResultCode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DeploymentId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("DeploymentResult", targetDepth))
-                {
-                    var unmarshaller = DeploymentResultUnmarshaller.Instance;
-                    unmarshalledObject.DeploymentResult = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("DeploymentState", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DeploymentState = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("LastUpdated", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LastUpdated = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SnapshotId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SnapshotId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ResultCode = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -106,12 +82,12 @@ namespace Amazon.GameSparks.Model.Internal.MarshallTransformations
         }
 
 
-        private static StageDeploymentSummaryUnmarshaller _instance = new StageDeploymentSummaryUnmarshaller();        
+        private static DeploymentResultUnmarshaller _instance = new DeploymentResultUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static StageDeploymentSummaryUnmarshaller Instance
+        public static DeploymentResultUnmarshaller Instance
         {
             get
             {
