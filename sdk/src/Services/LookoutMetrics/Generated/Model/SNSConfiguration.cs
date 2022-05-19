@@ -35,6 +35,7 @@ namespace Amazon.LookoutMetrics.Model
     public partial class SNSConfiguration
     {
         private string _roleArn;
+        private SnsFormat _snsFormat;
         private string _snsTopicArn;
 
         /// <summary>
@@ -54,6 +55,24 @@ namespace Amazon.LookoutMetrics.Model
         internal bool IsSetRoleArn()
         {
             return this._roleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SnsFormat. 
+        /// <para>
+        /// The text format for alerts.
+        /// </para>
+        /// </summary>
+        public SnsFormat SnsFormat
+        {
+            get { return this._snsFormat; }
+            set { this._snsFormat = value; }
+        }
+
+        // Check to see if SnsFormat property is set
+        internal bool IsSetSnsFormat()
+        {
+            return this._snsFormat != null;
         }
 
         /// <summary>

@@ -51,6 +51,12 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.RoleArn);
             }
 
+            if(requestObject.IsSetSnsFormat())
+            {
+                context.Writer.WritePropertyName("SnsFormat");
+                context.Writer.Write(requestObject.SnsFormat);
+            }
+
             if(requestObject.IsSetSnsTopicArn())
             {
                 context.Writer.WritePropertyName("SnsTopicArn");
