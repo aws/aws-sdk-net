@@ -1,3 +1,12 @@
+### 3.7.278.0 (2022-05-19 18:27 UTC)
+* GameSparks (3.7.1.0)
+	* This release adds an optional DeploymentResult field in the responses of GetStageDeploymentIntegrationTests and ListStageDeploymentIntegrationTests APIs.
+* LookoutMetrics (3.7.9.0)
+	* In this release we added SnsFormat to SNSConfiguration to support human readable alert.
+* Core 3.7.11.4
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.277.0 (2022-05-18 18:15 UTC)
 * AppMesh (3.7.2.0)
 	* This release updates the existing Create and Update APIs for meshes and virtual nodes by adding a new IP preference field. This new IP preference field can be used to control the IP versions being used with the mesh and allows for IPv6 support within App Mesh.

@@ -32,7 +32,7 @@ namespace Amazon.MobileAnalytics
     public partial class AmazonMobileAnalyticsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.159");
+            InternalSDKUtils.BuildUserAgentString("3.7.0.160");
 
         private string _userAgent = UserAgentString;
 
