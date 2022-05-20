@@ -1,3 +1,9 @@
+### 3.7.279.0 (2022-05-20 18:22 UTC)
+* CloudWatchLogs (3.7.2.55)
+	* Doc-only update to publish the new valid values for log retention
+* Comprehend (3.7.7.0)
+	* Comprehend releases 14 new entity types for DetectPiiEntities and ContainsPiiEntities APIs.
+
 ### 3.7.278.0 (2022-05-19 18:27 UTC)
 * GameSparks (3.7.1.0)
 	* This release adds an optional DeploymentResult field in the responses of GetStageDeploymentIntegrationTests and ListStageDeploymentIntegrationTests APIs.
