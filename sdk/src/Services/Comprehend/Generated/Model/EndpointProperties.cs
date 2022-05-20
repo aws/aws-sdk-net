@@ -29,7 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Comprehend.Model
 {
     /// <summary>
-    /// Specifies information about the specified endpoint.
+    /// Specifies information about the specified endpoint. For information about endpoints,
+    /// see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing
+    /// endpoints</a>.
     /// </summary>
     public partial class EndpointProperties
     {

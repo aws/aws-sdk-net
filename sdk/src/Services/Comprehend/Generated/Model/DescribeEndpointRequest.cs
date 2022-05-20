@@ -31,7 +31,8 @@ namespace Amazon.Comprehend.Model
     /// <summary>
     /// Container for the parameters to the DescribeEndpoint operation.
     /// Gets the properties associated with a specific endpoint. Use this operation to get
-    /// the status of an endpoint.
+    /// the status of an endpoint. For information about endpoints, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing
+    /// endpoints</a>.
     /// </summary>
     public partial class DescribeEndpointRequest : AmazonComprehendRequest
     {

@@ -51,6 +51,11 @@ namespace Amazon.Comprehend.Model
         /// If you specify an endpoint, Amazon Comprehend uses the language of your custom model,
         /// and it ignores any language code that you provide in your request.
         /// </para>
+        ///  
+        /// <para>
+        /// For information about endpoints, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing
+        /// endpoints</a>.
+        /// </para>
         /// </summary>
         [AWSProperty(Max=256)]
         public string EndpointArn

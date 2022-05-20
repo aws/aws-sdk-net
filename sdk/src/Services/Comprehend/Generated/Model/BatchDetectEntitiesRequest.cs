@@ -66,7 +66,7 @@ namespace Amazon.Comprehend.Model
         /// characters.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1)]
         public List<string> TextList
         {
             get { return this._textList; }

@@ -1039,6 +1039,14 @@ namespace Amazon.Comprehend
         /// </summary>
         public static readonly PiiEntityType BANK_ROUTING = new PiiEntityType("BANK_ROUTING");
         /// <summary>
+        /// Constant CA_HEALTH_NUMBER for PiiEntityType
+        /// </summary>
+        public static readonly PiiEntityType CA_HEALTH_NUMBER = new PiiEntityType("CA_HEALTH_NUMBER");
+        /// <summary>
+        /// Constant CA_SOCIAL_INSURANCE_NUMBER for PiiEntityType
+        /// </summary>
+        public static readonly PiiEntityType CA_SOCIAL_INSURANCE_NUMBER = new PiiEntityType("CA_SOCIAL_INSURANCE_NUMBER");
+        /// <summary>
         /// Constant CREDIT_DEBIT_CVV for PiiEntityType
         /// </summary>
         public static readonly PiiEntityType CREDIT_DEBIT_CVV = new PiiEntityType("CREDIT_DEBIT_CVV");
@@ -1063,9 +1071,33 @@ namespace Amazon.Comprehend
         /// </summary>
         public static readonly PiiEntityType EMAIL = new PiiEntityType("EMAIL");
         /// <summary>
+        /// Constant IN_AADHAAR for PiiEntityType
+        /// </summary>
+        public static readonly PiiEntityType IN_AADHAAR = new PiiEntityType("IN_AADHAAR");
+        /// <summary>
+        /// Constant IN_NREGA for PiiEntityType
+        /// </summary>
+        public static readonly PiiEntityType IN_NREGA = new PiiEntityType("IN_NREGA");
+        /// <summary>
+        /// Constant IN_PERMANENT_ACCOUNT_NUMBER for PiiEntityType
+        /// </summary>
+        public static readonly PiiEntityType IN_PERMANENT_ACCOUNT_NUMBER = new PiiEntityType("IN_PERMANENT_ACCOUNT_NUMBER");
+        /// <summary>
+        /// Constant IN_VOTER_NUMBER for PiiEntityType
+        /// </summary>
+        public static readonly PiiEntityType IN_VOTER_NUMBER = new PiiEntityType("IN_VOTER_NUMBER");
+        /// <summary>
+        /// Constant INTERNATIONAL_BANK_ACCOUNT_NUMBER for PiiEntityType
+        /// </summary>
+        public static readonly PiiEntityType INTERNATIONAL_BANK_ACCOUNT_NUMBER = new PiiEntityType("INTERNATIONAL_BANK_ACCOUNT_NUMBER");
+        /// <summary>
         /// Constant IP_ADDRESS for PiiEntityType
         /// </summary>
         public static readonly PiiEntityType IP_ADDRESS = new PiiEntityType("IP_ADDRESS");
+        /// <summary>
+        /// Constant LICENSE_PLATE for PiiEntityType
+        /// </summary>
+        public static readonly PiiEntityType LICENSE_PLATE = new PiiEntityType("LICENSE_PLATE");
         /// <summary>
         /// Constant MAC_ADDRESS for PiiEntityType
         /// </summary>
@@ -1095,13 +1127,37 @@ namespace Amazon.Comprehend
         /// </summary>
         public static readonly PiiEntityType SSN = new PiiEntityType("SSN");
         /// <summary>
+        /// Constant SWIFT_CODE for PiiEntityType
+        /// </summary>
+        public static readonly PiiEntityType SWIFT_CODE = new PiiEntityType("SWIFT_CODE");
+        /// <summary>
+        /// Constant UK_NATIONAL_HEALTH_SERVICE_NUMBER for PiiEntityType
+        /// </summary>
+        public static readonly PiiEntityType UK_NATIONAL_HEALTH_SERVICE_NUMBER = new PiiEntityType("UK_NATIONAL_HEALTH_SERVICE_NUMBER");
+        /// <summary>
+        /// Constant UK_NATIONAL_INSURANCE_NUMBER for PiiEntityType
+        /// </summary>
+        public static readonly PiiEntityType UK_NATIONAL_INSURANCE_NUMBER = new PiiEntityType("UK_NATIONAL_INSURANCE_NUMBER");
+        /// <summary>
+        /// Constant UK_UNIQUE_TAXPAYER_REFERENCE_NUMBER for PiiEntityType
+        /// </summary>
+        public static readonly PiiEntityType UK_UNIQUE_TAXPAYER_REFERENCE_NUMBER = new PiiEntityType("UK_UNIQUE_TAXPAYER_REFERENCE_NUMBER");
+        /// <summary>
         /// Constant URL for PiiEntityType
         /// </summary>
         public static readonly PiiEntityType URL = new PiiEntityType("URL");
         /// <summary>
+        /// Constant US_INDIVIDUAL_TAX_IDENTIFICATION_NUMBER for PiiEntityType
+        /// </summary>
+        public static readonly PiiEntityType US_INDIVIDUAL_TAX_IDENTIFICATION_NUMBER = new PiiEntityType("US_INDIVIDUAL_TAX_IDENTIFICATION_NUMBER");
+        /// <summary>
         /// Constant USERNAME for PiiEntityType
         /// </summary>
         public static readonly PiiEntityType USERNAME = new PiiEntityType("USERNAME");
+        /// <summary>
+        /// Constant VEHICLE_IDENTIFICATION_NUMBER for PiiEntityType
+        /// </summary>
+        public static readonly PiiEntityType VEHICLE_IDENTIFICATION_NUMBER = new PiiEntityType("VEHICLE_IDENTIFICATION_NUMBER");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

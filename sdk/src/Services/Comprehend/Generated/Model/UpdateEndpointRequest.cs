@@ -30,7 +30,9 @@ namespace Amazon.Comprehend.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateEndpoint operation.
-    /// Updates information about the specified endpoint.
+    /// Updates information about the specified endpoint. For information about endpoints,
+    /// see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing
+    /// endpoints</a>.
     /// </summary>
     public partial class UpdateEndpointRequest : AmazonComprehendRequest
     {

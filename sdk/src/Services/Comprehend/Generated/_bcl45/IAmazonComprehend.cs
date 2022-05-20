@@ -584,7 +584,8 @@ namespace Amazon.Comprehend
 
         /// <summary>
         /// Creates a model-specific endpoint for synchronous inference for a previously trained
-        /// custom model
+        /// custom model For information about endpoints, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing
+        /// endpoints</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateEndpoint service method.</param>
         /// 
@@ -624,7 +625,8 @@ namespace Amazon.Comprehend
 
         /// <summary>
         /// Creates a model-specific endpoint for synchronous inference for a previously trained
-        /// custom model
+        /// custom model For information about endpoints, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing
+        /// endpoints</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateEndpoint service method.</param>
         /// <param name="cancellationToken">
@@ -854,7 +856,9 @@ namespace Amazon.Comprehend
 
         /// <summary>
         /// Deletes a model-specific endpoint for a previously-trained custom model. All endpoints
-        /// must be deleted in order for the model to be deleted.
+        /// must be deleted in order for the model to be deleted. For information about endpoints,
+        /// see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing
+        /// endpoints</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteEndpoint service method.</param>
         /// 
@@ -882,7 +886,9 @@ namespace Amazon.Comprehend
 
         /// <summary>
         /// Deletes a model-specific endpoint for a previously-trained custom model. All endpoints
-        /// must be deleted in order for the model to be deleted.
+        /// must be deleted in order for the model to be deleted. For information about endpoints,
+        /// see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing
+        /// endpoints</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteEndpoint service method.</param>
         /// <param name="cancellationToken">
@@ -1214,7 +1220,8 @@ namespace Amazon.Comprehend
 
         /// <summary>
         /// Gets the properties associated with a specific endpoint. Use this operation to get
-        /// the status of an endpoint.
+        /// the status of an endpoint. For information about endpoints, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing
+        /// endpoints</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEndpoint service method.</param>
         /// 
@@ -1238,7 +1245,8 @@ namespace Amazon.Comprehend
 
         /// <summary>
         /// Gets the properties associated with a specific endpoint. Use this operation to get
-        /// the status of an endpoint.
+        /// the status of an endpoint. For information about endpoints, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing
+        /// endpoints</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEndpoint service method.</param>
         /// <param name="cancellationToken">
@@ -2407,7 +2415,9 @@ namespace Amazon.Comprehend
 
 
         /// <summary>
-        /// Gets a list of all existing endpoints that you've created.
+        /// Gets a list of all existing endpoints that you've created. For information about endpoints,
+        /// see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing
+        /// endpoints</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListEndpoints service method.</param>
         /// 
@@ -2427,7 +2437,9 @@ namespace Amazon.Comprehend
 
 
         /// <summary>
-        /// Gets a list of all existing endpoints that you've created.
+        /// Gets a list of all existing endpoints that you've created. For information about endpoints,
+        /// see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing
+        /// endpoints</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListEndpoints service method.</param>
         /// <param name="cancellationToken">
@@ -4001,7 +4013,7 @@ namespace Amazon.Comprehend
         /// 
         ///  
         /// <para>
-        /// If the job state is <code>IN_PROGRESS</code> the job is marked for termination and
+        /// If the job state is <code>IN_PROGRESS</code>, the job is marked for termination and
         /// put into the <code>STOP_REQUESTED</code> state. If the job completes before it can
         /// be stopped, it is put into the <code>COMPLETED</code> state; otherwise the job is
         /// be stopped and put into the <code>STOPPED</code> state.
@@ -4039,7 +4051,7 @@ namespace Amazon.Comprehend
         /// 
         ///  
         /// <para>
-        /// If the job state is <code>IN_PROGRESS</code> the job is marked for termination and
+        /// If the job state is <code>IN_PROGRESS</code>, the job is marked for termination and
         /// put into the <code>STOP_REQUESTED</code> state. If the job completes before it can
         /// be stopped, it is put into the <code>COMPLETED</code> state; otherwise the job is
         /// be stopped and put into the <code>STOPPED</code> state.
@@ -4083,7 +4095,7 @@ namespace Amazon.Comprehend
         /// 
         ///  
         /// <para>
-        /// If the job state is <code>IN_PROGRESS</code> the job is marked for termination and
+        /// If the job state is <code>IN_PROGRESS</code>, the job is marked for termination and
         /// put into the <code>STOP_REQUESTED</code> state. If the job completes before it can
         /// be stopped, it is put into the <code>COMPLETED</code> state; otherwise the job is
         /// be stopped and put into the <code>STOPPED</code> state.
@@ -4121,7 +4133,7 @@ namespace Amazon.Comprehend
         /// 
         ///  
         /// <para>
-        /// If the job state is <code>IN_PROGRESS</code> the job is marked for termination and
+        /// If the job state is <code>IN_PROGRESS</code>, the job is marked for termination and
         /// put into the <code>STOP_REQUESTED</code> state. If the job completes before it can
         /// be stopped, it is put into the <code>COMPLETED</code> state; otherwise the job is
         /// be stopped and put into the <code>STOPPED</code> state.
@@ -4433,7 +4445,9 @@ namespace Amazon.Comprehend
 
 
         /// <summary>
-        /// Updates information about the specified endpoint.
+        /// Updates information about the specified endpoint. For information about endpoints,
+        /// see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing
+        /// endpoints</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateEndpoint service method.</param>
         /// 
@@ -4467,7 +4481,9 @@ namespace Amazon.Comprehend
 
 
         /// <summary>
-        /// Updates information about the specified endpoint.
+        /// Updates information about the specified endpoint. For information about endpoints,
+        /// see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing
+        /// endpoints</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateEndpoint service method.</param>
         /// <param name="cancellationToken">

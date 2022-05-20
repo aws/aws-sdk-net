@@ -33,7 +33,7 @@ namespace Amazon.Comprehend.Model
     /// 
     ///  
     /// <para>
-    /// For more information on how the input file is formatted, see <a>how-document-classification-training-data</a>.
+    /// For more information on how the input file is formatted, see <a>prep-classifier-data</a>.
     /// 
     /// </para>
     /// </summary>

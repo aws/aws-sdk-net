@@ -41,7 +41,9 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property EndpointArn. 
         /// <para>
-        /// The Amazon Resource Number (ARN) of the endpoint.
+        /// The Amazon Resource Number (ARN) of the endpoint. For information about endpoints,
+        /// see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing
+        /// endpoints</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=256)]
