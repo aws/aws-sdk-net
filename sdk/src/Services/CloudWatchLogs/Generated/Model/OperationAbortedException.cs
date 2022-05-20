@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
-    /// Multiple requests to update the same resource were in conflict.
+    /// Multiple concurrent requests to update the same resource were in conflict.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

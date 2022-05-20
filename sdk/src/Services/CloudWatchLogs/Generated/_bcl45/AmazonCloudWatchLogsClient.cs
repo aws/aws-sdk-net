@@ -327,7 +327,7 @@ namespace Amazon.CloudWatchLogs
         /// A parameter is specified incorrectly.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
-        /// Multiple requests to update the same resource were in conflict.
+        /// Multiple concurrent requests to update the same resource were in conflict.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
@@ -384,7 +384,7 @@ namespace Amazon.CloudWatchLogs
         /// A parameter is specified incorrectly.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
-        /// Multiple requests to update the same resource were in conflict.
+        /// Multiple concurrent requests to update the same resource were in conflict.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
@@ -488,7 +488,17 @@ namespace Amazon.CloudWatchLogs
         /// you must use credentials that have permission to write to the S3 bucket that you specify
         /// as the destination.
         /// 
+        ///  <important> 
+        /// <para>
+        /// Exporting log data to Amazon S3 buckets that are encrypted by KMS is not supported.
+        /// Exporting log data to Amazon S3 buckets that have S3 Object Lock enabled with a retention
+        /// period is not supported.
+        /// </para>
         ///  
+        /// <para>
+        /// Exporting to S3 buckets that are encrypted with AES-256 is supported. 
+        /// </para>
+        ///  </important> 
         /// <para>
         /// This is an asynchronous call. If all the required information is provided, this operation
         /// initiates an export task and responds with the ID of the task. After the task has
@@ -502,11 +512,12 @@ namespace Amazon.CloudWatchLogs
         /// bucket. To separate out log data for each export task, you can specify a prefix to
         /// be used as the Amazon S3 key prefix for all exported objects.
         /// </para>
-        ///  
+        ///  <note> 
         /// <para>
-        /// Exporting to S3 buckets that are encrypted with AES-256 is supported. Exporting to
-        /// S3 buckets encrypted with SSE-KMS is not supported. 
+        /// Time-based sorting on chunks of log data inside an exported file is not guaranteed.
+        /// You can sort the exported log fild data by using Linux utilities.
         /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateExportTask service method.</param>
         /// 
@@ -518,7 +529,7 @@ namespace Amazon.CloudWatchLogs
         /// You have reached the maximum number of resources that can be created.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
-        /// Multiple requests to update the same resource were in conflict.
+        /// Multiple concurrent requests to update the same resource were in conflict.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceAlreadyExistsException">
         /// The specified resource already exists.
@@ -546,7 +557,17 @@ namespace Amazon.CloudWatchLogs
         /// you must use credentials that have permission to write to the S3 bucket that you specify
         /// as the destination.
         /// 
+        ///  <important> 
+        /// <para>
+        /// Exporting log data to Amazon S3 buckets that are encrypted by KMS is not supported.
+        /// Exporting log data to Amazon S3 buckets that have S3 Object Lock enabled with a retention
+        /// period is not supported.
+        /// </para>
         ///  
+        /// <para>
+        /// Exporting to S3 buckets that are encrypted with AES-256 is supported. 
+        /// </para>
+        ///  </important> 
         /// <para>
         /// This is an asynchronous call. If all the required information is provided, this operation
         /// initiates an export task and responds with the ID of the task. After the task has
@@ -560,11 +581,12 @@ namespace Amazon.CloudWatchLogs
         /// bucket. To separate out log data for each export task, you can specify a prefix to
         /// be used as the Amazon S3 key prefix for all exported objects.
         /// </para>
-        ///  
+        ///  <note> 
         /// <para>
-        /// Exporting to S3 buckets that are encrypted with AES-256 is supported. Exporting to
-        /// S3 buckets encrypted with SSE-KMS is not supported. 
+        /// Time-based sorting on chunks of log data inside an exported file is not guaranteed.
+        /// You can sort the exported log fild data by using Linux utilities.
         /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateExportTask service method.</param>
         /// <param name="cancellationToken">
@@ -579,7 +601,7 @@ namespace Amazon.CloudWatchLogs
         /// You have reached the maximum number of resources that can be created.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
-        /// Multiple requests to update the same resource were in conflict.
+        /// Multiple concurrent requests to update the same resource were in conflict.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceAlreadyExistsException">
         /// The specified resource already exists.
@@ -663,7 +685,7 @@ namespace Amazon.CloudWatchLogs
         /// You have reached the maximum number of resources that can be created.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
-        /// Multiple requests to update the same resource were in conflict.
+        /// Multiple concurrent requests to update the same resource were in conflict.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceAlreadyExistsException">
         /// The specified resource already exists.
@@ -743,7 +765,7 @@ namespace Amazon.CloudWatchLogs
         /// You have reached the maximum number of resources that can be created.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
-        /// Multiple requests to update the same resource were in conflict.
+        /// Multiple concurrent requests to update the same resource were in conflict.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceAlreadyExistsException">
         /// The specified resource already exists.
@@ -895,7 +917,7 @@ namespace Amazon.CloudWatchLogs
         /// A parameter is specified incorrectly.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
-        /// Multiple requests to update the same resource were in conflict.
+        /// Multiple concurrent requests to update the same resource were in conflict.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
@@ -929,7 +951,7 @@ namespace Amazon.CloudWatchLogs
         /// A parameter is specified incorrectly.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
-        /// Multiple requests to update the same resource were in conflict.
+        /// Multiple concurrent requests to update the same resource were in conflict.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
@@ -963,7 +985,7 @@ namespace Amazon.CloudWatchLogs
         /// A parameter is specified incorrectly.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
-        /// Multiple requests to update the same resource were in conflict.
+        /// Multiple concurrent requests to update the same resource were in conflict.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
@@ -996,7 +1018,7 @@ namespace Amazon.CloudWatchLogs
         /// A parameter is specified incorrectly.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
-        /// Multiple requests to update the same resource were in conflict.
+        /// Multiple concurrent requests to update the same resource were in conflict.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
@@ -1030,7 +1052,7 @@ namespace Amazon.CloudWatchLogs
         /// A parameter is specified incorrectly.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
-        /// Multiple requests to update the same resource were in conflict.
+        /// Multiple concurrent requests to update the same resource were in conflict.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
@@ -1063,7 +1085,7 @@ namespace Amazon.CloudWatchLogs
         /// A parameter is specified incorrectly.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
-        /// Multiple requests to update the same resource were in conflict.
+        /// Multiple concurrent requests to update the same resource were in conflict.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
@@ -1096,7 +1118,7 @@ namespace Amazon.CloudWatchLogs
         /// A parameter is specified incorrectly.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
-        /// Multiple requests to update the same resource were in conflict.
+        /// Multiple concurrent requests to update the same resource were in conflict.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
@@ -1128,7 +1150,7 @@ namespace Amazon.CloudWatchLogs
         /// A parameter is specified incorrectly.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
-        /// Multiple requests to update the same resource were in conflict.
+        /// Multiple concurrent requests to update the same resource were in conflict.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
@@ -1308,7 +1330,7 @@ namespace Amazon.CloudWatchLogs
         /// A parameter is specified incorrectly.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
-        /// Multiple requests to update the same resource were in conflict.
+        /// Multiple concurrent requests to update the same resource were in conflict.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
@@ -1345,7 +1367,7 @@ namespace Amazon.CloudWatchLogs
         /// A parameter is specified incorrectly.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
-        /// Multiple requests to update the same resource were in conflict.
+        /// Multiple concurrent requests to update the same resource were in conflict.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
@@ -1378,7 +1400,7 @@ namespace Amazon.CloudWatchLogs
         /// A parameter is specified incorrectly.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
-        /// Multiple requests to update the same resource were in conflict.
+        /// Multiple concurrent requests to update the same resource were in conflict.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
@@ -1410,7 +1432,7 @@ namespace Amazon.CloudWatchLogs
         /// A parameter is specified incorrectly.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
-        /// Multiple requests to update the same resource were in conflict.
+        /// Multiple concurrent requests to update the same resource were in conflict.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
@@ -2079,7 +2101,7 @@ namespace Amazon.CloudWatchLogs
         /// A parameter is specified incorrectly.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
-        /// Multiple requests to update the same resource were in conflict.
+        /// Multiple concurrent requests to update the same resource were in conflict.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
@@ -2124,7 +2146,7 @@ namespace Amazon.CloudWatchLogs
         /// A parameter is specified incorrectly.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
-        /// Multiple requests to update the same resource were in conflict.
+        /// Multiple concurrent requests to update the same resource were in conflict.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
@@ -2670,7 +2692,7 @@ namespace Amazon.CloudWatchLogs
         /// A parameter is specified incorrectly.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
-        /// Multiple requests to update the same resource were in conflict.
+        /// Multiple concurrent requests to update the same resource were in conflict.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
@@ -2720,7 +2742,7 @@ namespace Amazon.CloudWatchLogs
         /// A parameter is specified incorrectly.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
-        /// Multiple requests to update the same resource were in conflict.
+        /// Multiple concurrent requests to update the same resource were in conflict.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
@@ -2761,7 +2783,7 @@ namespace Amazon.CloudWatchLogs
         /// A parameter is specified incorrectly.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
-        /// Multiple requests to update the same resource were in conflict.
+        /// Multiple concurrent requests to update the same resource were in conflict.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
@@ -2801,7 +2823,7 @@ namespace Amazon.CloudWatchLogs
         /// A parameter is specified incorrectly.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
-        /// Multiple requests to update the same resource were in conflict.
+        /// Multiple concurrent requests to update the same resource were in conflict.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
@@ -3056,7 +3078,7 @@ namespace Amazon.CloudWatchLogs
         /// You have reached the maximum number of resources that can be created.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
-        /// Multiple requests to update the same resource were in conflict.
+        /// Multiple concurrent requests to update the same resource were in conflict.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
@@ -3124,7 +3146,7 @@ namespace Amazon.CloudWatchLogs
         /// You have reached the maximum number of resources that can be created.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
-        /// Multiple requests to update the same resource were in conflict.
+        /// Multiple concurrent requests to update the same resource were in conflict.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
@@ -3322,7 +3344,7 @@ namespace Amazon.CloudWatchLogs
         /// A parameter is specified incorrectly.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
-        /// Multiple requests to update the same resource were in conflict.
+        /// Multiple concurrent requests to update the same resource were in conflict.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
@@ -3355,7 +3377,7 @@ namespace Amazon.CloudWatchLogs
         /// A parameter is specified incorrectly.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
-        /// Multiple requests to update the same resource were in conflict.
+        /// Multiple concurrent requests to update the same resource were in conflict.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
@@ -3430,7 +3452,7 @@ namespace Amazon.CloudWatchLogs
         /// You have reached the maximum number of resources that can be created.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
-        /// Multiple requests to update the same resource were in conflict.
+        /// Multiple concurrent requests to update the same resource were in conflict.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
@@ -3504,7 +3526,7 @@ namespace Amazon.CloudWatchLogs
         /// You have reached the maximum number of resources that can be created.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
-        /// Multiple requests to update the same resource were in conflict.
+        /// Multiple concurrent requests to update the same resource were in conflict.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
