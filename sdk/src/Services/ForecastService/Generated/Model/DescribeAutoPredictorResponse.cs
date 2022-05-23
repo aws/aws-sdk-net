@@ -45,6 +45,7 @@ namespace Amazon.ForecastService.Model
         private List<string> _forecastTypes = new List<string>();
         private DateTime? _lastModificationTime;
         private string _message;
+        private MonitorInfo _monitorInfo;
         private OptimizationMetric _optimizationMetric;
         private string _predictorArn;
         private string _predictorName;
@@ -296,6 +297,24 @@ namespace Amazon.ForecastService.Model
         internal bool IsSetMessage()
         {
             return this._message != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MonitorInfo. 
+        /// <para>
+        /// A object with the Amazon Resource Name (ARN) and status of the monitor resource.
+        /// </para>
+        /// </summary>
+        public MonitorInfo MonitorInfo
+        {
+            get { return this._monitorInfo; }
+            set { this._monitorInfo = value; }
+        }
+
+        // Check to see if MonitorInfo property is set
+        internal bool IsSetMonitorInfo()
+        {
+            return this._monitorInfo != null;
         }
 
         /// <summary>

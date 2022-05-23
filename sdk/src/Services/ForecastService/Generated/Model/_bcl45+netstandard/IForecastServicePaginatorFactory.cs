@@ -41,6 +41,16 @@ namespace Amazon.ForecastService.Model
         IListDatasetsPaginator ListDatasets(ListDatasetsRequest request);
 
         /// <summary>
+        /// Paginator for ListExplainabilities operation
+        ///</summary>
+        IListExplainabilitiesPaginator ListExplainabilities(ListExplainabilitiesRequest request);
+
+        /// <summary>
+        /// Paginator for ListExplainabilityExports operation
+        ///</summary>
+        IListExplainabilityExportsPaginator ListExplainabilityExports(ListExplainabilityExportsRequest request);
+
+        /// <summary>
         /// Paginator for ListForecastExportJobs operation
         ///</summary>
         IListForecastExportJobsPaginator ListForecastExportJobs(ListForecastExportJobsRequest request);
@@ -49,6 +59,16 @@ namespace Amazon.ForecastService.Model
         /// Paginator for ListForecasts operation
         ///</summary>
         IListForecastsPaginator ListForecasts(ListForecastsRequest request);
+
+        /// <summary>
+        /// Paginator for ListMonitorEvaluations operation
+        ///</summary>
+        IListMonitorEvaluationsPaginator ListMonitorEvaluations(ListMonitorEvaluationsRequest request);
+
+        /// <summary>
+        /// Paginator for ListMonitors operation
+        ///</summary>
+        IListMonitorsPaginator ListMonitors(ListMonitorsRequest request);
 
         /// <summary>
         /// Paginator for ListPredictorBacktestExportJobs operation

@@ -129,6 +129,17 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetMonitorConfig())
+                {
+                    context.Writer.WritePropertyName("MonitorConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = MonitorConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.MonitorConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetOptimizationMetric())
                 {
                     context.Writer.WritePropertyName("OptimizationMetric");

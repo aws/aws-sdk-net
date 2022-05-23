@@ -141,6 +141,20 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ForecastService.Model.CreateMonitorRequest.MonitorName</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-zA-Z][a-zA-Z0-9_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastService.Model.CreateMonitorRequest.ResourceArn</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastService.Model.CreateMonitorResponse.MonitorArn</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ForecastService.Model.CreatePredictorRequest.AlgorithmArn</property>
     <max>256</max>
   </property-value-rule>
@@ -194,6 +208,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ForecastService.Model.DeleteForecastExportJobRequest.ForecastExportJobArn</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastService.Model.DeleteMonitorRequest.MonitorArn</property>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
@@ -413,6 +431,32 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ForecastService.Model.DescribeMonitorRequest.MonitorArn</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastService.Model.DescribeMonitorResponse.LastEvaluationState</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastService.Model.DescribeMonitorResponse.MonitorArn</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastService.Model.DescribeMonitorResponse.MonitorName</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-zA-Z][a-zA-Z0-9_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastService.Model.DescribeMonitorResponse.ResourceArn</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastService.Model.DescribeMonitorResponse.Status</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ForecastService.Model.DescribePredictorRequest.PredictorArn</property>
     <max>256</max>
   </property-value-rule>
@@ -582,6 +626,44 @@
     <pattern>.+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ForecastService.Model.ListMonitorEvaluationsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastService.Model.ListMonitorEvaluationsRequest.MonitorArn</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastService.Model.ListMonitorEvaluationsRequest.NextToken</property>
+    <min>1</min>
+    <max>3000</max>
+    <pattern>.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastService.Model.ListMonitorEvaluationsResponse.NextToken</property>
+    <min>1</min>
+    <max>3000</max>
+    <pattern>.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastService.Model.ListMonitorsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastService.Model.ListMonitorsRequest.NextToken</property>
+    <min>1</min>
+    <max>3000</max>
+    <pattern>.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastService.Model.ListMonitorsResponse.NextToken</property>
+    <min>1</min>
+    <max>3000</max>
+    <pattern>.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ForecastService.Model.ListPredictorBacktestExportJobsRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
@@ -620,6 +702,10 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ForecastService.Model.ResumeResourceRequest.ResourceArn</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ForecastService.Model.StopResourceRequest.ResourceArn</property>
     <max>256</max>
   </property-value-rule>
@@ -643,6 +729,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ForecastService.Model.AttributeConfig.AttributeName</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-zA-Z][a-zA-Z0-9_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastService.Model.BaselineMetric.Name</property>
     <min>1</min>
     <max>63</max>
     <pattern>^[a-zA-Z][a-zA-Z0-9_]*</pattern>
@@ -823,6 +915,54 @@
     <pattern>^[a-zA-Z][a-zA-Z0-9_]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ForecastService.Model.MetricResult.MetricName</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastService.Model.MonitorConfig.MonitorName</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-zA-Z][a-zA-Z0-9_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastService.Model.MonitorDataSource.DatasetImportJobArn</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastService.Model.MonitorDataSource.ForecastArn</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastService.Model.MonitorDataSource.PredictorArn</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastService.Model.MonitorInfo.MonitorArn</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastService.Model.MonitorInfo.Status</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastService.Model.MonitorSummary.MonitorArn</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastService.Model.MonitorSummary.MonitorName</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-zA-Z][a-zA-Z0-9_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastService.Model.MonitorSummary.ResourceArn</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastService.Model.MonitorSummary.Status</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ForecastService.Model.PredictorBacktestExportJobSummary.PredictorBacktestExportJobArn</property>
     <max>256</max>
   </property-value-rule>
@@ -837,7 +977,23 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ForecastService.Model.PredictorEvent.Detail</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ForecastService.Model.PredictorExecution.AlgorithmArn</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastService.Model.PredictorMonitorEvaluation.EvaluationState</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastService.Model.PredictorMonitorEvaluation.MonitorArn</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastService.Model.PredictorMonitorEvaluation.ResourceArn</property>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>

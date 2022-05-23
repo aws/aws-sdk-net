@@ -60,6 +60,22 @@ namespace Amazon.ForecastService.Model
         }
 
         /// <summary>
+        /// Paginator for ListExplainabilities operation
+        ///</summary>
+        public IListExplainabilitiesPaginator ListExplainabilities(ListExplainabilitiesRequest request) 
+        {
+            return new ListExplainabilitiesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListExplainabilityExports operation
+        ///</summary>
+        public IListExplainabilityExportsPaginator ListExplainabilityExports(ListExplainabilityExportsRequest request) 
+        {
+            return new ListExplainabilityExportsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListForecastExportJobs operation
         ///</summary>
         public IListForecastExportJobsPaginator ListForecastExportJobs(ListForecastExportJobsRequest request) 
@@ -73,6 +89,22 @@ namespace Amazon.ForecastService.Model
         public IListForecastsPaginator ListForecasts(ListForecastsRequest request) 
         {
             return new ListForecastsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListMonitorEvaluations operation
+        ///</summary>
+        public IListMonitorEvaluationsPaginator ListMonitorEvaluations(ListMonitorEvaluationsRequest request) 
+        {
+            return new ListMonitorEvaluationsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListMonitors operation
+        ///</summary>
+        public IListMonitorsPaginator ListMonitors(ListMonitorsRequest request) 
+        {
+            return new ListMonitorsPaginator(this.client, request);
         }
 
         /// <summary>

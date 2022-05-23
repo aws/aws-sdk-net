@@ -36,10 +36,11 @@ namespace Amazon.ForecastService.Model
     /// 
     ///  
     /// <para>
-    /// You must specify a <a>DataSource</a> object that includes an AWS Identity and Access
-    /// Management (IAM) role that Amazon Forecast can assume to access the data, as Amazon
-    /// Forecast makes a copy of your data and processes it in an internal AWS system. For
-    /// more information, see <a>aws-forecast-iam-roles</a>.
+    /// You must specify a <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_DataSource.html">DataSource</a>
+    /// object that includes an AWS Identity and Access Management (IAM) role that Amazon
+    /// Forecast can assume to access the data, as Amazon Forecast makes a copy of your data
+    /// and processes it in an internal AWS system. For more information, see <a href="https://docs.aws.amazon.com/forecast/latest/dg/aws-forecast-iam-roles.html">Set
+    /// up permissions</a>.
     /// </para>
     ///  
     /// <para>
@@ -61,7 +62,8 @@ namespace Amazon.ForecastService.Model
     ///  
     /// <para>
     /// To get a list of all your dataset import jobs, filtered by specified criteria, use
-    /// the <a>ListDatasetImportJobs</a> operation.
+    /// the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_ListDatasetImportJobs.html">ListDatasetImportJobs</a>
+    /// operation.
     /// </para>
     /// </summary>
     public partial class CreateDatasetImportJobRequest : AmazonForecastServiceRequest
@@ -128,7 +130,8 @@ namespace Amazon.ForecastService.Model
         /// If encryption is used, <code>DataSource</code> must include an AWS Key Management
         /// Service (KMS) key and the IAM role must allow Amazon Forecast permission to access
         /// the key. The KMS key and IAM role must match those specified in the <code>EncryptionConfig</code>
-        /// parameter of the <a>CreateDataset</a> operation.
+        /// parameter of the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDataset.html">CreateDataset</a>
+        /// operation.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

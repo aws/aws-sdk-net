@@ -185,7 +185,7 @@ namespace Amazon.ForecastService.Model
         /// <para>
         /// When you create a dataset, <code>LastModificationTime</code> is the same as <code>CreationTime</code>.
         /// While data is being imported to the dataset, <code>LastModificationTime</code> is
-        /// the current time of the <code>DescribeDataset</code> call. After a <a>CreateDatasetImportJob</a>
+        /// the current time of the <code>DescribeDataset</code> call. After a <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a>
         /// operation has finished, <code>LastModificationTime</code> is when the import job completed
         /// or failed.
         /// </para>
@@ -248,9 +248,10 @@ namespace Amazon.ForecastService.Model
         ///  </li> </ul> 
         /// <para>
         /// The <code>UPDATE</code> states apply while data is imported to the dataset from a
-        /// call to the <a>CreateDatasetImportJob</a> operation and reflect the status of the
-        /// dataset import job. For example, when the import job status is <code>CREATE_IN_PROGRESS</code>,
-        /// the status of the dataset is <code>UPDATE_IN_PROGRESS</code>.
+        /// call to the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a>
+        /// operation and reflect the status of the dataset import job. For example, when the
+        /// import job status is <code>CREATE_IN_PROGRESS</code>, the status of the dataset is
+        /// <code>UPDATE_IN_PROGRESS</code>.
         /// </para>
         ///  <note> 
         /// <para>

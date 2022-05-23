@@ -123,6 +123,12 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
                     response.Message = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("MonitorInfo", targetDepth))
+                {
+                    var unmarshaller = MonitorInfoUnmarshaller.Instance;
+                    response.MonitorInfo = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("OptimizationMetric", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

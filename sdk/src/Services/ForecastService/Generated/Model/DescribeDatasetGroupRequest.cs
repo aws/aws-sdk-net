@@ -30,7 +30,8 @@ namespace Amazon.ForecastService.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeDatasetGroup operation.
-    /// Describes a dataset group created using the <a>CreateDatasetGroup</a> operation.
+    /// Describes a dataset group created using the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetGroup.html">CreateDatasetGroup</a>
+    /// operation.
     /// 
     ///  
     /// <para>

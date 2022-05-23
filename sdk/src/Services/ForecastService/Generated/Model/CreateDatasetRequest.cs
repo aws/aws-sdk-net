@@ -56,11 +56,13 @@ namespace Amazon.ForecastService.Model
     /// <para>
     /// After creating a dataset, you import your training data into it and add the dataset
     /// to a dataset group. You use the dataset group to create a predictor. For more information,
-    /// see <a>howitworks-datasets-groups</a>.
+    /// see <a href="https://docs.aws.amazon.com/forecast/latest/dg/howitworks-datasets-groups.html">Importing
+    /// datasets</a>.
     /// </para>
     ///  
     /// <para>
-    /// To get a list of all your datasets, use the <a>ListDatasets</a> operation.
+    /// To get a list of all your datasets, use the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_ListDatasets.html">ListDatasets</a>
+    /// operation.
     /// </para>
     ///  
     /// <para>
@@ -70,7 +72,8 @@ namespace Amazon.ForecastService.Model
     ///  <note> 
     /// <para>
     /// The <code>Status</code> of a dataset must be <code>ACTIVE</code> before you can import
-    /// training data. Use the <a>DescribeDataset</a> operation to get the status.
+    /// training data. Use the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeDataset.html">DescribeDataset</a>
+    /// operation to get the status.
     /// </para>
     ///  </note>
     /// </summary>
@@ -152,7 +155,8 @@ namespace Amazon.ForecastService.Model
         /// Gets and sets the property Domain. 
         /// <para>
         /// The domain associated with the dataset. When you add a dataset to a dataset group,
-        /// this value and the value specified for the <code>Domain</code> parameter of the <a>CreateDatasetGroup</a>
+        /// this value and the value specified for the <code>Domain</code> parameter of the <a
+        /// href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetGroup.html">CreateDatasetGroup</a>
         /// operation must match.
         /// </para>
         ///  
@@ -162,7 +166,8 @@ namespace Amazon.ForecastService.Model
         /// example, if you choose the <code>RETAIL</code> domain and <code>TARGET_TIME_SERIES</code>
         /// as the <code>DatasetType</code>, Amazon Forecast requires <code>item_id</code>, <code>timestamp</code>,
         /// and <code>demand</code> fields to be present in your data. For more information, see
-        /// <a>howitworks-datasets-groups</a>.
+        /// <a href="https://docs.aws.amazon.com/forecast/latest/dg/howitworks-datasets-groups.html">Importing
+        /// datasets</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -203,7 +208,8 @@ namespace Amazon.ForecastService.Model
         /// The schema for the dataset. The schema attributes and their order must match the fields
         /// in your data. The dataset <code>Domain</code> and <code>DatasetType</code> that you
         /// choose determine the minimum required fields in your training data. For information
-        /// about the required fields for a specific dataset domain and type, see <a>howitworks-domains-ds-types</a>.
+        /// about the required fields for a specific dataset domain and type, see <a href="https://docs.aws.amazon.com/forecast/latest/dg/howitworks-domains-ds-types.html">Dataset
+        /// Domains and Dataset Types</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

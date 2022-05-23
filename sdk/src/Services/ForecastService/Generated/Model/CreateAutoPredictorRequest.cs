@@ -61,7 +61,8 @@ namespace Amazon.ForecastService.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>ForecastHorizon</code> - The number of time steps being forecasted.
+    ///  <code>ForecastHorizon</code> - The number of time-steps that the model predicts.
+    /// The forecast horizon is also called the prediction length.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -98,6 +99,7 @@ namespace Amazon.ForecastService.Model
         private string _forecastFrequency;
         private int? _forecastHorizon;
         private List<string> _forecastTypes = new List<string>();
+        private MonitorConfig _monitorConfig;
         private OptimizationMetric _optimizationMetric;
         private string _predictorName;
         private string _referencePredictorArn;
@@ -219,6 +221,19 @@ namespace Amazon.ForecastService.Model
         /// The number of time-steps that the model predicts. The forecast horizon is also called
         /// the prediction length.
         /// </para>
+        ///  
+        /// <para>
+        /// The maximum forecast horizon is the lesser of 500 time-steps or 1/4 of the TARGET_TIME_SERIES
+        /// dataset length. If you are retraining an existing AutoPredictor, then the maximum
+        /// forecast horizon is the lesser of 500 time-steps or 1/3 of the TARGET_TIME_SERIES
+        /// dataset length.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you are upgrading to an AutoPredictor or retraining an existing AutoPredictor,
+        /// you cannot update the forecast horizon parameter. You can meet this requirement by
+        /// providing longer time-series in the dataset.
+        /// </para>
         /// </summary>
         public int ForecastHorizon
         {
@@ -251,6 +266,31 @@ namespace Amazon.ForecastService.Model
         internal bool IsSetForecastTypes()
         {
             return this._forecastTypes != null && this._forecastTypes.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MonitorConfig. 
+        /// <para>
+        /// The configuration details for predictor monitoring. Provide a name for the monitor
+        /// resource to enable predictor monitoring.
+        /// </para>
+        ///  
+        /// <para>
+        /// Predictor monitoring allows you to see how your predictor's performance changes over
+        /// time. For more information, see <a href="https://docs.aws.amazon.com/forecast/latest/dg/predictor-monitoring.html">Predictor
+        /// Monitoring</a>.
+        /// </para>
+        /// </summary>
+        public MonitorConfig MonitorConfig
+        {
+            get { return this._monitorConfig; }
+            set { this._monitorConfig = value; }
+        }
+
+        // Check to see if MonitorConfig property is set
+        internal bool IsSetMonitorConfig()
+        {
+            return this._monitorConfig != null;
         }
 
         /// <summary>

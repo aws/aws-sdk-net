@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ForecastService.Model
 {
     /// <summary>
-    /// Provides a summary of the dataset import job properties used in the <a>ListDatasetImportJobs</a>
-    /// operation. To get the complete set of properties, call the <a>DescribeDatasetImportJob</a>
+    /// Provides a summary of the dataset import job properties used in the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_ListDatasetImportJobs.html">ListDatasetImportJobs</a>
+    /// operation. To get the complete set of properties, call the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeDatasetImportJob.html">DescribeDatasetImportJob</a>
     /// operation, and provide the <code>DatasetImportJobArn</code>.
     /// </summary>
     public partial class DatasetImportJobSummary

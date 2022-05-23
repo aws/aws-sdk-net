@@ -79,7 +79,8 @@ namespace Amazon.ForecastService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ForecastHorizon</code> - The number of time steps being forecasted.
+        ///  <code>ForecastHorizon</code> - The number of time-steps that the model predicts.
+        /// The forecast horizon is also called the prediction length.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -188,11 +189,13 @@ namespace Amazon.ForecastService
         /// <para>
         /// After creating a dataset, you import your training data into it and add the dataset
         /// to a dataset group. You use the dataset group to create a predictor. For more information,
-        /// see <a>howitworks-datasets-groups</a>.
+        /// see <a href="https://docs.aws.amazon.com/forecast/latest/dg/howitworks-datasets-groups.html">Importing
+        /// datasets</a>.
         /// </para>
         ///  
         /// <para>
-        /// To get a list of all your datasets, use the <a>ListDatasets</a> operation.
+        /// To get a list of all your datasets, use the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_ListDatasets.html">ListDatasets</a>
+        /// operation.
         /// </para>
         ///  
         /// <para>
@@ -202,7 +205,8 @@ namespace Amazon.ForecastService
         ///  <note> 
         /// <para>
         /// The <code>Status</code> of a dataset must be <code>ACTIVE</code> before you can import
-        /// training data. Use the <a>DescribeDataset</a> operation to get the status.
+        /// training data. Use the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeDataset.html">DescribeDataset</a>
+        /// operation to get the status.
         /// </para>
         ///  </note>
         /// </summary>
@@ -256,21 +260,24 @@ namespace Amazon.ForecastService
         /// <summary>
         /// Creates a dataset group, which holds a collection of related datasets. You can add
         /// datasets to the dataset group when you create the dataset group, or later by using
-        /// the <a>UpdateDatasetGroup</a> operation.
+        /// the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_UpdateDatasetGroup.html">UpdateDatasetGroup</a>
+        /// operation.
         /// 
         ///  
         /// <para>
         /// After creating a dataset group and adding datasets, you use the dataset group when
-        /// you create a predictor. For more information, see <a>howitworks-datasets-groups</a>.
+        /// you create a predictor. For more information, see <a href="https://docs.aws.amazon.com/forecast/latest/dg/howitworks-datasets-groups.html">Dataset
+        /// groups</a>.
         /// </para>
         ///  
         /// <para>
-        /// To get a list of all your datasets groups, use the <a>ListDatasetGroups</a> operation.
+        /// To get a list of all your datasets groups, use the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_ListDatasetGroups.html">ListDatasetGroups</a>
+        /// operation.
         /// </para>
         ///  <note> 
         /// <para>
         /// The <code>Status</code> of a dataset group must be <code>ACTIVE</code> before you
-        /// can use the dataset group to create a predictor. To get the status, use the <a>DescribeDatasetGroup</a>
+        /// can use the dataset group to create a predictor. To get the status, use the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeDatasetGroup.html">DescribeDatasetGroup</a>
         /// operation.
         /// </para>
         ///  </note>
@@ -336,10 +343,11 @@ namespace Amazon.ForecastService
         /// 
         ///  
         /// <para>
-        /// You must specify a <a>DataSource</a> object that includes an AWS Identity and Access
-        /// Management (IAM) role that Amazon Forecast can assume to access the data, as Amazon
-        /// Forecast makes a copy of your data and processes it in an internal AWS system. For
-        /// more information, see <a>aws-forecast-iam-roles</a>.
+        /// You must specify a <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_DataSource.html">DataSource</a>
+        /// object that includes an AWS Identity and Access Management (IAM) role that Amazon
+        /// Forecast can assume to access the data, as Amazon Forecast makes a copy of your data
+        /// and processes it in an internal AWS system. For more information, see <a href="https://docs.aws.amazon.com/forecast/latest/dg/aws-forecast-iam-roles.html">Set
+        /// up permissions</a>.
         /// </para>
         ///  
         /// <para>
@@ -361,7 +369,8 @@ namespace Amazon.ForecastService
         ///  
         /// <para>
         /// To get a list of all your dataset import jobs, filtered by specified criteria, use
-        /// the <a>ListDatasetImportJobs</a> operation.
+        /// the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_ListDatasetImportJobs.html">ListDatasetImportJobs</a>
+        /// operation.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDatasetImportJob service method.</param>
@@ -854,6 +863,66 @@ namespace Amazon.ForecastService
 
         #endregion
         
+        #region  CreateMonitor
+
+
+        /// <summary>
+        /// Creates a predictor monitor resource for an existing auto predictor. Predictor monitoring
+        /// allows you to see how your predictor's performance changes over time. For more information,
+        /// see <a href="https://docs.aws.amazon.com/forecast/latest/dg/predictor-monitoring.html">Predictor
+        /// Monitoring</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateMonitor service method.</param>
+        /// 
+        /// <returns>The response from the CreateMonitor service method, as returned by ForecastService.</returns>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidInputException">
+        /// We can't process the request because it includes an invalid value or a value that
+        /// exceeds the valid range.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.LimitExceededException">
+        /// The limit on the number of resources per account has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceAlreadyExistsException">
+        /// There is already a resource with this name. Try again with a different name.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceNotFoundException">
+        /// We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
+        /// again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreateMonitor">REST API Reference for CreateMonitor Operation</seealso>
+        CreateMonitorResponse CreateMonitor(CreateMonitorRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateMonitor operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateMonitor operation on AmazonForecastServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateMonitor
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreateMonitor">REST API Reference for CreateMonitor Operation</seealso>
+        IAsyncResult BeginCreateMonitor(CreateMonitorRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateMonitor operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateMonitor.</param>
+        /// 
+        /// <returns>Returns a  CreateMonitorResult from ForecastService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreateMonitor">REST API Reference for CreateMonitor Operation</seealso>
+        CreateMonitorResponse EndCreateMonitor(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreatePredictor
 
 
@@ -1088,15 +1157,16 @@ namespace Amazon.ForecastService
 
 
         /// <summary>
-        /// Deletes an Amazon Forecast dataset that was created using the <a>CreateDataset</a>
+        /// Deletes an Amazon Forecast dataset that was created using the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDataset.html">CreateDataset</a>
         /// operation. You can only delete datasets that have a status of <code>ACTIVE</code>
-        /// or <code>CREATE_FAILED</code>. To get the status use the <a>DescribeDataset</a> operation.
+        /// or <code>CREATE_FAILED</code>. To get the status use the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeDataset.html">DescribeDataset</a>
+        /// operation.
         /// 
         ///  <note> 
         /// <para>
         /// Forecast does not automatically update any dataset groups that contain the deleted
-        /// dataset. In order to update the dataset group, use the operation, omitting the deleted
-        /// dataset's ARN.
+        /// dataset. In order to update the dataset group, use the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_UpdateDatasetGroup.html">UpdateDatasetGroup</a>
+        /// operation, omitting the deleted dataset's ARN.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1149,9 +1219,10 @@ namespace Amazon.ForecastService
 
 
         /// <summary>
-        /// Deletes a dataset group created using the <a>CreateDatasetGroup</a> operation. You
-        /// can only delete dataset groups that have a status of <code>ACTIVE</code>, <code>CREATE_FAILED</code>,
-        /// or <code>UPDATE_FAILED</code>. To get the status, use the <a>DescribeDatasetGroup</a>
+        /// Deletes a dataset group created using the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetGroup.html">CreateDatasetGroup</a>
+        /// operation. You can only delete dataset groups that have a status of <code>ACTIVE</code>,
+        /// <code>CREATE_FAILED</code>, or <code>UPDATE_FAILED</code>. To get the status, use
+        /// the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeDatasetGroup.html">DescribeDatasetGroup</a>
         /// operation.
         /// 
         ///  
@@ -1208,9 +1279,9 @@ namespace Amazon.ForecastService
 
 
         /// <summary>
-        /// Deletes a dataset import job created using the <a>CreateDatasetImportJob</a> operation.
-        /// You can delete only dataset import jobs that have a status of <code>ACTIVE</code>
-        /// or <code>CREATE_FAILED</code>. To get the status, use the <a>DescribeDatasetImportJob</a>
+        /// Deletes a dataset import job created using the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a>
+        /// operation. You can delete only dataset import jobs that have a status of <code>ACTIVE</code>
+        /// or <code>CREATE_FAILED</code>. To get the status, use the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeDatasetImportJob.html">DescribeDatasetImportJob</a>
         /// operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDatasetImportJob service method.</param>
@@ -1478,6 +1549,58 @@ namespace Amazon.ForecastService
 
         #endregion
         
+        #region  DeleteMonitor
+
+
+        /// <summary>
+        /// Deletes a monitor resource. You can only delete a monitor resource with a status of
+        /// <code>ACTIVE</code>, <code>ACTIVE_STOPPED</code>, <code>CREATE_FAILED</code>, or <code>CREATE_STOPPED</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMonitor service method.</param>
+        /// 
+        /// <returns>The response from the DeleteMonitor service method, as returned by ForecastService.</returns>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidInputException">
+        /// We can't process the request because it includes an invalid value or a value that
+        /// exceeds the valid range.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceNotFoundException">
+        /// We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
+        /// again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DeleteMonitor">REST API Reference for DeleteMonitor Operation</seealso>
+        DeleteMonitorResponse DeleteMonitor(DeleteMonitorRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteMonitor operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMonitor operation on AmazonForecastServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteMonitor
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DeleteMonitor">REST API Reference for DeleteMonitor Operation</seealso>
+        IAsyncResult BeginDeleteMonitor(DeleteMonitorRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteMonitor operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteMonitor.</param>
+        /// 
+        /// <returns>Returns a  DeleteMonitorResult from ForecastService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DeleteMonitor">REST API Reference for DeleteMonitor Operation</seealso>
+        DeleteMonitorResponse EndDeleteMonitor(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeletePredictor
 
 
@@ -1721,7 +1844,8 @@ namespace Amazon.ForecastService
 
 
         /// <summary>
-        /// Describes an Amazon Forecast dataset created using the <a>CreateDataset</a> operation.
+        /// Describes an Amazon Forecast dataset created using the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDataset.html">CreateDataset</a>
+        /// operation.
         /// 
         ///  
         /// <para>
@@ -1788,7 +1912,8 @@ namespace Amazon.ForecastService
 
 
         /// <summary>
-        /// Describes a dataset group created using the <a>CreateDatasetGroup</a> operation.
+        /// Describes a dataset group created using the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetGroup.html">CreateDatasetGroup</a>
+        /// operation.
         /// 
         ///  
         /// <para>
@@ -1859,7 +1984,8 @@ namespace Amazon.ForecastService
 
 
         /// <summary>
-        /// Describes a dataset import job created using the <a>CreateDatasetImportJob</a> operation.
+        /// Describes a dataset import job created using the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a>
+        /// operation.
         /// 
         ///  
         /// <para>
@@ -2178,6 +2304,85 @@ namespace Amazon.ForecastService
 
         #endregion
         
+        #region  DescribeMonitor
+
+
+        /// <summary>
+        /// Describes a monitor resource. In addition to listing the properties provided in the
+        /// <a>CreateMonitor</a> request, this operation lists the following properties:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>Baseline</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>CreationTime</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>LastEvaluationTime</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>LastEvaluationState</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>LastModificationTime</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Message</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Status</code> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMonitor service method.</param>
+        /// 
+        /// <returns>The response from the DescribeMonitor service method, as returned by ForecastService.</returns>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidInputException">
+        /// We can't process the request because it includes an invalid value or a value that
+        /// exceeds the valid range.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceNotFoundException">
+        /// We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
+        /// again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DescribeMonitor">REST API Reference for DescribeMonitor Operation</seealso>
+        DescribeMonitorResponse DescribeMonitor(DescribeMonitorRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeMonitor operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMonitor operation on AmazonForecastServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeMonitor
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DescribeMonitor">REST API Reference for DescribeMonitor Operation</seealso>
+        IAsyncResult BeginDescribeMonitor(DescribeMonitorRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeMonitor operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeMonitor.</param>
+        /// 
+        /// <returns>Returns a  DescribeMonitorResult from ForecastService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DescribeMonitor">REST API Reference for DescribeMonitor Operation</seealso>
+        DescribeMonitorResponse EndDescribeMonitor(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribePredictor
 
 
@@ -2419,10 +2624,11 @@ namespace Amazon.ForecastService
 
 
         /// <summary>
-        /// Returns a list of dataset groups created using the <a>CreateDatasetGroup</a> operation.
-        /// For each dataset group, this operation returns a summary of its properties, including
-        /// its Amazon Resource Name (ARN). You can retrieve the complete set of properties by
-        /// using the dataset group ARN with the <a>DescribeDatasetGroup</a> operation.
+        /// Returns a list of dataset groups created using the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetGroup.html">CreateDatasetGroup</a>
+        /// operation. For each dataset group, this operation returns a summary of its properties,
+        /// including its Amazon Resource Name (ARN). You can retrieve the complete set of properties
+        /// by using the dataset group ARN with the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeDatasetGroup.html">DescribeDatasetGroup</a>
+        /// operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDatasetGroups service method.</param>
         /// 
@@ -2465,11 +2671,12 @@ namespace Amazon.ForecastService
 
 
         /// <summary>
-        /// Returns a list of dataset import jobs created using the <a>CreateDatasetImportJob</a>
+        /// Returns a list of dataset import jobs created using the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a>
         /// operation. For each import job, this operation returns a summary of its properties,
         /// including its Amazon Resource Name (ARN). You can retrieve the complete set of properties
-        /// by using the ARN with the <a>DescribeDatasetImportJob</a> operation. You can filter
-        /// the list by providing an array of <a>Filter</a> objects.
+        /// by using the ARN with the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeDatasetImportJob.html">DescribeDatasetImportJob</a>
+        /// operation. You can filter the list by providing an array of <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_Filter.html">Filter</a>
+        /// objects.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDatasetImportJobs service method.</param>
         /// 
@@ -2516,9 +2723,10 @@ namespace Amazon.ForecastService
 
 
         /// <summary>
-        /// Returns a list of datasets created using the <a>CreateDataset</a> operation. For each
-        /// dataset, a summary of its properties, including its Amazon Resource Name (ARN), is
-        /// returned. To retrieve the complete set of properties, use the ARN with the <a>DescribeDataset</a>
+        /// Returns a list of datasets created using the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDataset.html">CreateDataset</a>
+        /// operation. For each dataset, a summary of its properties, including its Amazon Resource
+        /// Name (ARN), is returned. To retrieve the complete set of properties, use the ARN with
+        /// the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeDataset.html">DescribeDataset</a>
         /// operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDatasets service method.</param>
@@ -2770,6 +2978,116 @@ namespace Amazon.ForecastService
 
         #endregion
         
+        #region  ListMonitorEvaluations
+
+
+        /// <summary>
+        /// Returns a list of the monitoring evaluation results and predictor events collected
+        /// by the monitor resource during different windows of time.
+        /// 
+        ///  
+        /// <para>
+        /// For information about monitoring see <a href="https://docs.aws.amazon.com/forecast/latest/dg/predictor-monitoring-results.html">Viewing
+        /// Monitoring Results</a>. For more information about retrieving monitoring results see
+        /// <a href="https://docs.aws.amazon.com/forecast/latest/dg/predictor-monitoring-results.html">Viewing
+        /// Monitoring Results</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMonitorEvaluations service method.</param>
+        /// 
+        /// <returns>The response from the ListMonitorEvaluations service method, as returned by ForecastService.</returns>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidInputException">
+        /// We can't process the request because it includes an invalid value or a value that
+        /// exceeds the valid range.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidNextTokenException">
+        /// The token is not valid. Tokens expire after 24 hours.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceNotFoundException">
+        /// We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
+        /// again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListMonitorEvaluations">REST API Reference for ListMonitorEvaluations Operation</seealso>
+        ListMonitorEvaluationsResponse ListMonitorEvaluations(ListMonitorEvaluationsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListMonitorEvaluations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListMonitorEvaluations operation on AmazonForecastServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListMonitorEvaluations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListMonitorEvaluations">REST API Reference for ListMonitorEvaluations Operation</seealso>
+        IAsyncResult BeginListMonitorEvaluations(ListMonitorEvaluationsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListMonitorEvaluations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListMonitorEvaluations.</param>
+        /// 
+        /// <returns>Returns a  ListMonitorEvaluationsResult from ForecastService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListMonitorEvaluations">REST API Reference for ListMonitorEvaluations Operation</seealso>
+        ListMonitorEvaluationsResponse EndListMonitorEvaluations(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListMonitors
+
+
+        /// <summary>
+        /// Returns a list of monitors created with the <a>CreateMonitor</a> operation and <a>CreateAutoPredictor</a>
+        /// operation. For each monitor resource, this operation returns of a summary of its properties,
+        /// including its Amazon Resource Name (ARN). You can retrieve a complete set of properties
+        /// of a monitor resource by specify the monitor's ARN in the <a>DescribeMonitor</a> operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMonitors service method.</param>
+        /// 
+        /// <returns>The response from the ListMonitors service method, as returned by ForecastService.</returns>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidInputException">
+        /// We can't process the request because it includes an invalid value or a value that
+        /// exceeds the valid range.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidNextTokenException">
+        /// The token is not valid. Tokens expire after 24 hours.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListMonitors">REST API Reference for ListMonitors Operation</seealso>
+        ListMonitorsResponse ListMonitors(ListMonitorsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListMonitors operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListMonitors operation on AmazonForecastServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListMonitors
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListMonitors">REST API Reference for ListMonitors Operation</seealso>
+        IAsyncResult BeginListMonitors(ListMonitorsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListMonitors operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListMonitors.</param>
+        /// 
+        /// <returns>Returns a  ListMonitorsResult from ForecastService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListMonitors">REST API Reference for ListMonitors Operation</seealso>
+        ListMonitorsResponse EndListMonitors(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListPredictorBacktestExportJobs
 
 
@@ -2926,6 +3244,60 @@ namespace Amazon.ForecastService
         /// <returns>Returns a  ListTagsForResourceResult from ForecastService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ResumeResource
+
+
+        /// <summary>
+        /// Resumes a stopped monitor resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ResumeResource service method.</param>
+        /// 
+        /// <returns>The response from the ResumeResource service method, as returned by ForecastService.</returns>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidInputException">
+        /// We can't process the request because it includes an invalid value or a value that
+        /// exceeds the valid range.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.LimitExceededException">
+        /// The limit on the number of resources per account has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceNotFoundException">
+        /// We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
+        /// again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ResumeResource">REST API Reference for ResumeResource Operation</seealso>
+        ResumeResourceResponse ResumeResource(ResumeResourceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ResumeResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ResumeResource operation on AmazonForecastServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndResumeResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ResumeResource">REST API Reference for ResumeResource Operation</seealso>
+        IAsyncResult BeginResumeResource(ResumeResourceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ResumeResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginResumeResource.</param>
+        /// 
+        /// <returns>Returns a  ResumeResourceResult from ForecastService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ResumeResource">REST API Reference for ResumeResource Operation</seealso>
+        ResumeResourceResponse EndResumeResource(IAsyncResult asyncResult);
 
         #endregion
         
@@ -3131,7 +3503,7 @@ namespace Amazon.ForecastService
         ///  <note> 
         /// <para>
         /// The <code>Status</code> of the dataset group must be <code>ACTIVE</code> before you
-        /// can use the dataset group to create a predictor. Use the <a>DescribeDatasetGroup</a>
+        /// can use the dataset group to create a predictor. Use the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeDatasetGroup.html">DescribeDatasetGroup</a>
         /// operation to get the status.
         /// </para>
         ///  </note>
