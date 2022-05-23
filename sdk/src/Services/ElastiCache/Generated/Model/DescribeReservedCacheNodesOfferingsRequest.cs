@@ -104,8 +104,7 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Previous generation: (not recommended. Existing clusters are still supported but creation
-        /// of new clusters is not supported for these types.)
+        /// Previous generation: (not recommended)
         /// </para>
         ///  
         /// <para>
@@ -127,8 +126,7 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Previous generation: (not recommended. Existing clusters are still supported but creation
-        /// of new clusters is not supported for these types.)
+        /// Previous generation: (not recommended)
         /// </para>
         ///  
         /// <para>
@@ -190,8 +188,7 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Previous generation: (not recommended. Existing clusters are still supported but creation
-        /// of new clusters is not supported for these types.)
+        /// Previous generation: (not recommended)
         /// </para>
         ///  
         /// <para>

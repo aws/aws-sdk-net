@@ -240,6 +240,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+                if(publicRequest.IsSetTransitEncryptionEnabled())
+                {
+                    request.Parameters.Add("TransitEncryptionEnabled", StringUtils.FromBool(publicRequest.TransitEncryptionEnabled));
+                }
             }
             return request;
         }
