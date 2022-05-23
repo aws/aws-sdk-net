@@ -94,6 +94,12 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
                     unmarshalledObject.LatestRecommenderUpdate = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("modelMetrics", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, double, StringUnmarshaller, DoubleUnmarshaller>(StringUnmarshaller.Instance, DoubleUnmarshaller.Instance);
+                    unmarshalledObject.ModelMetrics = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

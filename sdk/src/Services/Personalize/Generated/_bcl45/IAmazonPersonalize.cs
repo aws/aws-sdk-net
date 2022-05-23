@@ -1376,6 +1376,11 @@ namespace Amazon.Personalize
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// STOP PENDING &gt; STOP IN_PROGRESS &gt; INACTIVE &gt; START PENDING &gt; START IN_PROGRESS
+        /// &gt; ACTIVE
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// DELETE PENDING &gt; DELETE IN_PROGRESS
         /// </para>
         ///  </li> </ul> 
@@ -1422,6 +1427,9 @@ namespace Amazon.Personalize
         /// </exception>
         /// <exception cref="Amazon.Personalize.Model.ResourceAlreadyExistsException">
         /// The specified resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceInUseException">
+        /// The specified resource is in use.
         /// </exception>
         /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
         /// Could not find the specified resource.
@@ -1484,6 +1492,11 @@ namespace Amazon.Personalize
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// STOP PENDING &gt; STOP IN_PROGRESS &gt; INACTIVE &gt; START PENDING &gt; START IN_PROGRESS
+        /// &gt; ACTIVE
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// DELETE PENDING &gt; DELETE IN_PROGRESS
         /// </para>
         ///  </li> </ul> 
@@ -1533,6 +1546,9 @@ namespace Amazon.Personalize
         /// </exception>
         /// <exception cref="Amazon.Personalize.Model.ResourceAlreadyExistsException">
         /// The specified resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceInUseException">
+        /// The specified resource is in use.
         /// </exception>
         /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
         /// Could not find the specified resource.
@@ -3119,12 +3135,22 @@ namespace Amazon.Personalize
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// STOP PENDING &gt; STOP IN_PROGRESS &gt; INACTIVE &gt; START PENDING &gt; START IN_PROGRESS
+        /// &gt; ACTIVE
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// DELETE PENDING &gt; DELETE IN_PROGRESS
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// When the <code>status</code> is <code>CREATE FAILED</code>, the response includes
         /// the <code>failureReason</code> key, which describes why.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <code>modelMetrics</code> key is null when the recommender is being created or
+        /// deleted.
         /// </para>
         ///  
         /// <para>
@@ -3158,12 +3184,22 @@ namespace Amazon.Personalize
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// STOP PENDING &gt; STOP IN_PROGRESS &gt; INACTIVE &gt; START PENDING &gt; START IN_PROGRESS
+        /// &gt; ACTIVE
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// DELETE PENDING &gt; DELETE IN_PROGRESS
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// When the <code>status</code> is <code>CREATE FAILED</code>, the response includes
         /// the <code>failureReason</code> key, which describes why.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <code>modelMetrics</code> key is null when the recommender is being created or
+        /// deleted.
         /// </para>
         ///  
         /// <para>
