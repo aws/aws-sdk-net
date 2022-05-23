@@ -1,3 +1,14 @@
+### 3.7.280.0 (2022-05-23 18:15 UTC)
+* ElastiCache (3.7.6.0)
+	* Added support for encryption in transit for Memcached clusters. Customers can now launch Memcached cluster with encryption in transit enabled when using Memcached version 1.6.12 or later.
+* ForecastService (3.7.8.0)
+	* New APIs for Monitor that help you understand how your predictors perform over time.
+* Personalize (3.7.10.0)
+	* Adding modelMetrics as part of DescribeRecommender API response for Personalize.
+* Core 3.7.11.5
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.279.0 (2022-05-20 18:22 UTC)
 * CloudWatchLogs (3.7.2.55)
 	* Doc-only update to publish the new valid values for log retention
