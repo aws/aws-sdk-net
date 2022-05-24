@@ -42,8 +42,8 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property Code. 
         /// <para>
         /// The error code that indicates why the parameter or parameter combination is not valid.
-        /// For more information about error codes, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html.html">Error
-        /// Codes</a>.
+        /// For more information about error codes, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error
+        /// codes</a>.
         /// </para>
         /// </summary>
         public string Code
@@ -62,8 +62,8 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property Message. 
         /// <para>
         /// The error message that describes why the parameter or parameter combination is not
-        /// valid. For more information about error messages, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html.html">Error
-        /// Codes</a>.
+        /// valid. For more information about error messages, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error
+        /// codes</a>.
         /// </para>
         /// </summary>
         public string Message

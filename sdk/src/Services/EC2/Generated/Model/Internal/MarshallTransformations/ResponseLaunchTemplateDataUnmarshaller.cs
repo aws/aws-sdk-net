@@ -79,6 +79,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.CreditSpecification = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("disableApiStop", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.DisableApiStop = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("disableApiTermination", targetDepth))
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;

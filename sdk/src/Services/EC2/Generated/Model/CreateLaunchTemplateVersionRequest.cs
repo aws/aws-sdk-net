@@ -40,8 +40,15 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#manage-launch-template-versions">Managing
-    /// launch template versions</a>in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// Launch templates are immutable; after you create a launch template, you can't modify
+    /// it. Instead, you can create a new version of the launch template that includes any
+    /// changes you require.
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#manage-launch-template-versions">Modify
+    /// a launch template (manage launch template versions)</a>in the <i>Amazon Elastic Compute
+    /// Cloud User Guide</i>.
     /// </para>
     /// </summary>
     public partial class CreateLaunchTemplateVersionRequest : AmazonEC2Request
@@ -58,7 +65,7 @@ namespace Amazon.EC2.Model
         /// <para>
         /// Unique, case-sensitive identifier you provide to ensure the idempotency of the request.
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-        /// Idempotency</a>.
+        /// idempotency</a>.
         /// </para>
         ///  
         /// <para>

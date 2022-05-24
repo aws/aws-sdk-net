@@ -37,6 +37,7 @@ namespace Amazon.EC2.Model
         private LaunchTemplateCapacityReservationSpecificationResponse _capacityReservationSpecification;
         private LaunchTemplateCpuOptions _cpuOptions;
         private CreditSpecification _creditSpecification;
+        private bool? _disableApiStop;
         private bool? _disableApiTermination;
         private bool? _ebsOptimized;
         private List<ElasticGpuSpecificationResponse> _elasticGpuSpecifications = new List<ElasticGpuSpecificationResponse>();
@@ -135,6 +136,26 @@ namespace Amazon.EC2.Model
         internal bool IsSetCreditSpecification()
         {
             return this._creditSpecification != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DisableApiStop. 
+        /// <para>
+        /// Indicates whether the instance is enabled for stop protection. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop
+        /// Protection</a>.
+        /// </para>
+        /// </summary>
+        public bool DisableApiStop
+        {
+            get { return this._disableApiStop.GetValueOrDefault(); }
+            set { this._disableApiStop = value; }
+        }
+
+        // Check to see if DisableApiStop property is set
+        internal bool IsSetDisableApiStop()
+        {
+            return this._disableApiStop.HasValue; 
         }
 
         /// <summary>

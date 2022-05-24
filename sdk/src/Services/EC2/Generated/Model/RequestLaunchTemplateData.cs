@@ -43,6 +43,7 @@ namespace Amazon.EC2.Model
         private LaunchTemplateCapacityReservationSpecificationRequest _capacityReservationSpecification;
         private LaunchTemplateCpuOptionsRequest _cpuOptions;
         private CreditSpecificationRequest _creditSpecification;
+        private bool? _disableApiStop;
         private bool? _disableApiTermination;
         private bool? _ebsOptimized;
         private List<ElasticGpuSpecification> _elasticGpuSpecifications = new List<ElasticGpuSpecification>();
@@ -145,6 +146,26 @@ namespace Amazon.EC2.Model
         internal bool IsSetCreditSpecification()
         {
             return this._creditSpecification != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DisableApiStop. 
+        /// <para>
+        /// Indicates whether to enable the instance for stop protection. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop
+        /// Protection</a>.
+        /// </para>
+        /// </summary>
+        public bool DisableApiStop
+        {
+            get { return this._disableApiStop.GetValueOrDefault(); }
+            set { this._disableApiStop = value; }
+        }
+
+        // Check to see if DisableApiStop property is set
+        internal bool IsSetDisableApiStop()
+        {
+            return this._disableApiStop.HasValue; 
         }
 
         /// <summary>
@@ -255,7 +276,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property HibernationOptions. 
         /// <para>
         /// Indicates whether an instance is enabled for hibernation. This parameter is valid
-        /// only if the instance meets the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#hibernating-prerequisites">hibernation
+        /// only if the instance meets the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/hibernating-prerequisites.html">hibernation
         /// prerequisites</a>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
         /// your instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
@@ -376,7 +397,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property InstanceType. 
         /// <para>
         /// The instance type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-        /// Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -404,7 +425,7 @@ namespace Amazon.EC2.Model
         /// <para>
         /// We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information,
         /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">User
-        /// Provided Kernels</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// provided kernels</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  </important>
         /// </summary>
@@ -582,7 +603,7 @@ namespace Amazon.EC2.Model
         /// <para>
         /// We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information,
         /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">User
-        /// Provided Kernels</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// provided kernels</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  </important>
         /// </summary>
@@ -661,9 +682,10 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property UserData. 
         /// <para>
         /// The user data to make available to the instance. You must provide base64-encoded text.
-        /// User data is limited to 16 KB. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running
-        /// Commands on Your Linux Instance at Launch</a> (Linux) or <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data">Adding
-        /// User Data</a> (Windows).
+        /// User data is limited to 16 KB. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Run
+        /// commands on your Linux instance at launch</a> (Linux) or <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/instancedata-add-user-data.html">Work
+        /// with instance user data</a> (Windows) in the <i>Amazon Elastic Compute Cloud User
+        /// Guide</i>.
         /// </para>
         ///  
         /// <para>

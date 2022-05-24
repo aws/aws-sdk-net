@@ -165,6 +165,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         request.Parameters.Add("CreditSpecification" + "." + "CpuCredits", StringUtils.FromString(publicRequest.CreditSpecification.CpuCredits));
                     }
                 }
+                if(publicRequest.IsSetDisableApiStop())
+                {
+                    request.Parameters.Add("DisableApiStop", StringUtils.FromBool(publicRequest.DisableApiStop));
+                }
                 if(publicRequest.IsSetDisableApiTermination())
                 {
                     request.Parameters.Add("DisableApiTermination", StringUtils.FromBool(publicRequest.DisableApiTermination));

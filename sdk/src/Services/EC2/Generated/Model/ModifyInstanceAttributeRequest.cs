@@ -52,6 +52,7 @@ namespace Amazon.EC2.Model
     {
         private InstanceAttributeName _attribute;
         private List<InstanceBlockDeviceMappingSpecification> _blockDeviceMappings = new List<InstanceBlockDeviceMappingSpecification>();
+        private bool? _disableApiStop;
         private bool? _disableApiTermination;
         private bool? _ebsOptimized;
         private bool? _enaSupport;
@@ -125,6 +126,26 @@ namespace Amazon.EC2.Model
         internal bool IsSetBlockDeviceMappings()
         {
             return this._blockDeviceMappings != null && this._blockDeviceMappings.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DisableApiStop. 
+        /// <para>
+        /// Indicates whether an instance is enabled for stop protection. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop
+        /// Protection</a>.
+        /// </para>
+        /// </summary>
+        public bool DisableApiStop
+        {
+            get { return this._disableApiStop.GetValueOrDefault(); }
+            set { this._disableApiStop = value; }
+        }
+
+        // Check to see if DisableApiStop property is set
+        internal bool IsSetDisableApiStop()
+        {
+            return this._disableApiStop.HasValue; 
         }
 
         /// <summary>

@@ -6091,6 +6091,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceAttributeName BlockDeviceMapping = new InstanceAttributeName("blockDeviceMapping");
         /// <summary>
+        /// Constant DisableApiStop for InstanceAttributeName
+        /// </summary>
+        public static readonly InstanceAttributeName DisableApiStop = new InstanceAttributeName("disableApiStop");
+        /// <summary>
         /// Constant DisableApiTermination for InstanceAttributeName
         /// </summary>
         public static readonly InstanceAttributeName DisableApiTermination = new InstanceAttributeName("disableApiTermination");

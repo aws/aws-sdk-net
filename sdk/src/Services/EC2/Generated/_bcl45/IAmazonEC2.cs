@@ -3829,7 +3829,7 @@ namespace Amazon.EC2
         /// <para>
         /// A launch template contains the parameters to launch an instance. When you launch an
         /// instance using <a>RunInstances</a>, you can specify a launch template instead of providing
-        /// the launch parameters in the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html">Launching
+        /// the launch parameters in the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html">Launch
         /// an instance from a launch template</a> in the <i>Amazon Elastic Compute Cloud User
         /// Guide</i>.
         /// </para>
@@ -3857,7 +3857,7 @@ namespace Amazon.EC2
         /// <para>
         /// A launch template contains the parameters to launch an instance. When you launch an
         /// instance using <a>RunInstances</a>, you can specify a launch template instead of providing
-        /// the launch parameters in the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html">Launching
+        /// the launch parameters in the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html">Launch
         /// an instance from a launch template</a> in the <i>Amazon Elastic Compute Cloud User
         /// Guide</i>.
         /// </para>
@@ -3895,8 +3895,15 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#manage-launch-template-versions">Managing
-        /// launch template versions</a>in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// Launch templates are immutable; after you create a launch template, you can't modify
+        /// it. Instead, you can create a new version of the launch template that includes any
+        /// changes you require.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#manage-launch-template-versions">Modify
+        /// a launch template (manage launch template versions)</a>in the <i>Amazon Elastic Compute
+        /// Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLaunchTemplateVersion service method.</param>
@@ -3918,8 +3925,15 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#manage-launch-template-versions">Managing
-        /// launch template versions</a>in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// Launch templates are immutable; after you create a launch template, you can't modify
+        /// it. Instead, you can create a new version of the launch template that includes any
+        /// changes you require.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#manage-launch-template-versions">Modify
+        /// a launch template (manage launch template versions)</a>in the <i>Amazon Elastic Compute
+        /// Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLaunchTemplateVersion service method.</param>

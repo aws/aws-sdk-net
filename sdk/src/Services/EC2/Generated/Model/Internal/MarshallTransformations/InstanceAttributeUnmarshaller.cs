@@ -61,6 +61,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.BlockDeviceMappings.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("disableApiStop/value", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.DisableApiStop = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("disableApiTermination/value", targetDepth))
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;
