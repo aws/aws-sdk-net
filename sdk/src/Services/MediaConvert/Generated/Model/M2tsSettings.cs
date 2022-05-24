@@ -387,8 +387,10 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property KlvMetadata. Applies to MPEG-TS outputs. Use this setting
-        /// to specify whether the service inserts the KLV metadata from the input in this output.
+        /// Gets and sets the property KlvMetadata. To include key-length-value metadata in this
+        /// output: Set KLV metadata insertion to Passthrough. MediaConvert reads KLV metadata
+        /// present in your input and passes it through to the output transport stream. To exclude
+        /// this KLV metadata: Set KLV metadata insertion to None or leave blank.
         /// </summary>
         public M2tsKlvMetadata KlvMetadata
         {
@@ -731,8 +733,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TimedMetadataPid. Specify the packet identifier (PID) for
-        /// timed metadata in this output. Default is 502.
+        /// Gets and sets the property TimedMetadataPid. Packet Identifier (PID) of the ID3 metadata
+        /// stream in the transport stream.
         /// </summary>
         [AWSProperty(Min=32, Max=8182)]
         public int TimedMetadataPid

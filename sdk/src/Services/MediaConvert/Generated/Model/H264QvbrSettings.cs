@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
-    /// Settings for quality-defined variable bitrate encoding with the H.265 codec. Use these
+    /// Settings for quality-defined variable bitrate encoding with the H.264 codec. Use these
     /// settings only when you set QVBR for Rate control mode (RateControlMode).
     /// </summary>
     public partial class H264QvbrSettings

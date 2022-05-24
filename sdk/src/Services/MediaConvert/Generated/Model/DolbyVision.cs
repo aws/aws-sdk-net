@@ -29,9 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
-    /// With AWS Elemental MediaConvert, you can create profile 5 Dolby Vision outputs from
-    /// MXF and IMF sources that contain mastering information as frame-interleaved Dolby
-    /// Vision metadata.
+    /// With AWS Elemental MediaConvert, you can create profile 5 or 8.1 Dolby Vision outputs
+    /// from MXF and IMF sources.
     /// </summary>
     public partial class DolbyVision
     {
@@ -73,15 +72,14 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Mapping. Required when you set Dolby Vision Profile (Profile)
-        /// to Profile 8.1 (PROFILE_8_1). When you set Content mapping (Mapping) to None (HDR10_NOMAP),
-        /// content mapping is not applied to the HDR10-compatible signal. Depending on the source
-        /// peak nit level, clipping might occur on HDR devices without Dolby Vision. When you
-        /// set Content mapping to Static (HDR10_1000), the transcoder creates a 1,000 nits peak
-        /// HDR10-compatible signal by applying static content mapping to the source. This mode
-        /// is speed-optimized for PQ10 sources with metadata that is created from analysis. For
-        /// graded Dolby Vision content, be aware that creative intent might not be guaranteed
-        /// with extreme 1,000 nits trims.
+        /// Gets and sets the property Mapping. Required when you set Dolby Vision Profile to
+        /// Profile 8.1. When you set Content mapping to None, content mapping is not applied
+        /// to the HDR10-compatible signal. Depending on the source peak nit level, clipping might
+        /// occur on HDR devices without Dolby Vision. When you set Content mapping to HDR10 1000,
+        /// the transcoder creates a 1,000 nits peak HDR10-compatible signal by applying static
+        /// content mapping to the source. This mode is speed-optimized for PQ10 sources with
+        /// metadata that is created from analysis. For graded Dolby Vision content, be aware
+        /// that creative intent might not be guaranteed with extreme 1,000 nits trims.
         /// </summary>
         public DolbyVisionMapping Mapping
         {
@@ -96,11 +94,10 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Profile. Required when you use Dolby Vision (DolbyVision)
-        /// processing. Set Profile (DolbyVisionProfile) to Profile 5 (Profile_5) to only include
-        /// frame-interleaved Dolby Vision metadata in your output. Set Profile to Profile 8.1
-        /// (Profile_8_1) to include both frame-interleaved Dolby Vision metadata and HDR10 metadata
-        /// in your output.
+        /// Gets and sets the property Profile. Required when you use Dolby Vision processing.
+        /// Set Profile to Profile 5 to only include frame-interleaved Dolby Vision metadata in
+        /// your output. Set Profile to Profile 8.1 to include both frame-interleaved Dolby Vision
+        /// metadata and HDR10 metadata in your output.
         /// </summary>
         public DolbyVisionProfile Profile
         {

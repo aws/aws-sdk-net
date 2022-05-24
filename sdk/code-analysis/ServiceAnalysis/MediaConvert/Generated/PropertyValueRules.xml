@@ -76,6 +76,16 @@
     <max>192000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaConvert.Model.AllowedRenditionSize.Height</property>
+    <min>32</min>
+    <max>8192</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.AllowedRenditionSize.Width</property>
+    <min>32</min>
+    <max>8192</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaConvert.Model.AncillarySourceSettings.SourceAncillaryChannelNumber</property>
     <min>1</min>
     <max>4</max>
@@ -576,6 +586,16 @@
     <property>Amazon.MediaConvert.Model.FileSourceSettings.TimeDelta</property>
     <min>-2147483648</min>
     <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.ForceIncludeRenditionSize.Height</property>
+    <min>32</min>
+    <max>8192</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.ForceIncludeRenditionSize.Width</property>
+    <min>32</min>
+    <max>8192</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.FrameCaptureSettings.FramerateDenominator</property>
@@ -1260,6 +1280,26 @@
     <property>Amazon.MediaConvert.Model.M3u8Settings.VideoPid</property>
     <min>32</min>
     <max>8182</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.MinBottomRenditionSize.Height</property>
+    <min>32</min>
+    <max>8192</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.MinBottomRenditionSize.Width</property>
+    <min>32</min>
+    <max>8192</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.MinTopRenditionSize.Height</property>
+    <min>32</min>
+    <max>8192</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.MinTopRenditionSize.Width</property>
+    <min>32</min>
+    <max>8192</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.MotionImageInserter.Input</property>

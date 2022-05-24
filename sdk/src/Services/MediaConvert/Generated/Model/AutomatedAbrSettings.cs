@@ -38,6 +38,7 @@ namespace Amazon.MediaConvert.Model
         private int? _maxAbrBitrate;
         private int? _maxRenditions;
         private int? _minAbrBitrate;
+        private List<AutomatedAbrRule> _rules = new List<AutomatedAbrRule>();
 
         /// <summary>
         /// Gets and sets the property MaxAbrBitrate. Optional. The maximum target bit rate used
@@ -96,6 +97,24 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetMinAbrBitrate()
         {
             return this._minAbrBitrate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Rules. Optional. Use Automated ABR rules to specify restrictions
+        /// for the rendition sizes MediaConvert will create in your ABR stack. You can use these
+        /// rules if your ABR workflow has specific rendition size requirements, but you still
+        /// want MediaConvert to optimize for video quality and overall file size.
+        /// </summary>
+        public List<AutomatedAbrRule> Rules
+        {
+            get { return this._rules; }
+            set { this._rules = value; }
+        }
+
+        // Check to see if Rules property is set
+        internal bool IsSetRules()
+        {
+            return this._rules != null && this._rules.Count > 0; 
         }
 
     }

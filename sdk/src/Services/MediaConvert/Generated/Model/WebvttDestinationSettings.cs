@@ -42,14 +42,13 @@ namespace Amazon.MediaConvert.Model
         private WebvttStylePassthrough _stylePassthrough;
 
         /// <summary>
-        /// Gets and sets the property Accessibility. Set Accessibility subtitles (Accessibility)
-        /// to Enabled (ENABLED) if the ISMC or WebVTT captions track is intended to provide accessibility
-        /// for people who are deaf or hard of hearing. When you enable this feature, MediaConvert
-        /// adds the following attributes under EXT-X-MEDIA in the HLS or CMAF manifest for this
-        /// track: CHARACTERISTICS="public.accessibility.describes-spoken-dialog,public.accessibility.describes-music-and-sound"
-        /// and AUTOSELECT="YES". Keep the default value, Disabled (DISABLED), if the captions
-        /// track is not intended to provide such accessibility. MediaConvert will not add the
-        /// above attributes.
+        /// Gets and sets the property Accessibility. Set Accessibility subtitles to Enabled if
+        /// the ISMC or WebVTT captions track is intended to provide accessibility for people
+        /// who are deaf or hard of hearing. When you enable this feature, MediaConvert adds the
+        /// following attributes under EXT-X-MEDIA in the HLS or CMAF manifest for this track:
+        /// CHARACTERISTICS="public.accessibility.describes-spoken-dialog,public.accessibility.describes-music-and-sound"
+        /// and AUTOSELECT="YES". Keep the default value, Disabled, if the captions track is not
+        /// intended to provide such accessibility. MediaConvert will not add the above attributes.
         /// </summary>
         public WebvttAccessibilitySubs Accessibility
         {

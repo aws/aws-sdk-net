@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// AutomatedAbrSettings Marshaller
+    /// ForceIncludeRenditionSize Marshaller
     /// </summary>
-    public class AutomatedAbrSettingsMarshaller : IRequestMarshaller<AutomatedAbrSettings, JsonMarshallerContext> 
+    public class ForceIncludeRenditionSizeMarshaller : IRequestMarshaller<ForceIncludeRenditionSize, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,40 +43,18 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(AutomatedAbrSettings requestObject, JsonMarshallerContext context)
+        public void Marshall(ForceIncludeRenditionSize requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetMaxAbrBitrate())
+            if(requestObject.IsSetHeight())
             {
-                context.Writer.WritePropertyName("maxAbrBitrate");
-                context.Writer.Write(requestObject.MaxAbrBitrate);
+                context.Writer.WritePropertyName("height");
+                context.Writer.Write(requestObject.Height);
             }
 
-            if(requestObject.IsSetMaxRenditions())
+            if(requestObject.IsSetWidth())
             {
-                context.Writer.WritePropertyName("maxRenditions");
-                context.Writer.Write(requestObject.MaxRenditions);
-            }
-
-            if(requestObject.IsSetMinAbrBitrate())
-            {
-                context.Writer.WritePropertyName("minAbrBitrate");
-                context.Writer.Write(requestObject.MinAbrBitrate);
-            }
-
-            if(requestObject.IsSetRules())
-            {
-                context.Writer.WritePropertyName("rules");
-                context.Writer.WriteArrayStart();
-                foreach(var requestObjectRulesListValue in requestObject.Rules)
-                {
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = AutomatedAbrRuleMarshaller.Instance;
-                    marshaller.Marshall(requestObjectRulesListValue, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WritePropertyName("width");
+                context.Writer.Write(requestObject.Width);
             }
 
         }
@@ -84,7 +62,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static AutomatedAbrSettingsMarshaller Instance = new AutomatedAbrSettingsMarshaller();
+        public readonly static ForceIncludeRenditionSizeMarshaller Instance = new ForceIncludeRenditionSizeMarshaller();
 
     }
 }

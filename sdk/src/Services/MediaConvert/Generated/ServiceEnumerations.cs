@@ -18421,6 +18421,56 @@ namespace Amazon.MediaConvert
 
 
     /// <summary>
+    /// Constants used for properties of type RequiredFlag.
+    /// </summary>
+    public class RequiredFlag : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for RequiredFlag
+        /// </summary>
+        public static readonly RequiredFlag DISABLED = new RequiredFlag("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for RequiredFlag
+        /// </summary>
+        public static readonly RequiredFlag ENABLED = new RequiredFlag("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RequiredFlag(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RequiredFlag FindValue(string value)
+        {
+            return FindValue<RequiredFlag>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RequiredFlag(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ReservationPlanStatus.
     /// </summary>
     public class ReservationPlanStatus : ConstantClass
@@ -18518,6 +18568,64 @@ namespace Amazon.MediaConvert
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator RespondToAfd(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RuleType.
+    /// </summary>
+    public class RuleType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALLOWED_RENDITIONS for RuleType
+        /// </summary>
+        public static readonly RuleType ALLOWED_RENDITIONS = new RuleType("ALLOWED_RENDITIONS");
+        /// <summary>
+        /// Constant FORCE_INCLUDE_RENDITIONS for RuleType
+        /// </summary>
+        public static readonly RuleType FORCE_INCLUDE_RENDITIONS = new RuleType("FORCE_INCLUDE_RENDITIONS");
+        /// <summary>
+        /// Constant MIN_BOTTOM_RENDITION_SIZE for RuleType
+        /// </summary>
+        public static readonly RuleType MIN_BOTTOM_RENDITION_SIZE = new RuleType("MIN_BOTTOM_RENDITION_SIZE");
+        /// <summary>
+        /// Constant MIN_TOP_RENDITION_SIZE for RuleType
+        /// </summary>
+        public static readonly RuleType MIN_TOP_RENDITION_SIZE = new RuleType("MIN_TOP_RENDITION_SIZE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RuleType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RuleType FindValue(string value)
+        {
+            return FindValue<RuleType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RuleType(string value)
         {
             return FindValue(value);
         }

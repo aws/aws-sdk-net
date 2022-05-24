@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AutomatedAbrSettings Object
+    /// Response Unmarshaller for AutomatedAbrRule Object
     /// </summary>  
-    public class AutomatedAbrSettingsUnmarshaller : IUnmarshaller<AutomatedAbrSettings, XmlUnmarshallerContext>, IUnmarshaller<AutomatedAbrSettings, JsonUnmarshallerContext>
+    public class AutomatedAbrRuleUnmarshaller : IUnmarshaller<AutomatedAbrRule, XmlUnmarshallerContext>, IUnmarshaller<AutomatedAbrRule, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AutomatedAbrSettings IUnmarshaller<AutomatedAbrSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AutomatedAbrRule IUnmarshaller<AutomatedAbrRule, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,45 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public AutomatedAbrSettings Unmarshall(JsonUnmarshallerContext context)
+        public AutomatedAbrRule Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AutomatedAbrSettings unmarshalledObject = new AutomatedAbrSettings();
+            AutomatedAbrRule unmarshalledObject = new AutomatedAbrRule();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("maxAbrBitrate", targetDepth))
+                if (context.TestExpression("allowedRenditions", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.MaxAbrBitrate = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<AllowedRenditionSize, AllowedRenditionSizeUnmarshaller>(AllowedRenditionSizeUnmarshaller.Instance);
+                    unmarshalledObject.AllowedRenditions = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("maxRenditions", targetDepth))
+                if (context.TestExpression("forceIncludeRenditions", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.MaxRenditions = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<ForceIncludeRenditionSize, ForceIncludeRenditionSizeUnmarshaller>(ForceIncludeRenditionSizeUnmarshaller.Instance);
+                    unmarshalledObject.ForceIncludeRenditions = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("minAbrBitrate", targetDepth))
+                if (context.TestExpression("minBottomRenditionSize", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.MinAbrBitrate = unmarshaller.Unmarshall(context);
+                    var unmarshaller = MinBottomRenditionSizeUnmarshaller.Instance;
+                    unmarshalledObject.MinBottomRenditionSize = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("rules", targetDepth))
+                if (context.TestExpression("minTopRenditionSize", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<AutomatedAbrRule, AutomatedAbrRuleUnmarshaller>(AutomatedAbrRuleUnmarshaller.Instance);
-                    unmarshalledObject.Rules = unmarshaller.Unmarshall(context);
+                    var unmarshaller = MinTopRenditionSizeUnmarshaller.Instance;
+                    unmarshalledObject.MinTopRenditionSize = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("type", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +100,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         }
 
 
-        private static AutomatedAbrSettingsUnmarshaller _instance = new AutomatedAbrSettingsUnmarshaller();        
+        private static AutomatedAbrRuleUnmarshaller _instance = new AutomatedAbrRuleUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AutomatedAbrSettingsUnmarshaller Instance
+        public static AutomatedAbrRuleUnmarshaller Instance
         {
             get
             {

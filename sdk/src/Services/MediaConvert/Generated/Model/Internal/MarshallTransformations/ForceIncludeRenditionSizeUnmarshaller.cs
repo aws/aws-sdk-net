@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AutomatedAbrSettings Object
+    /// Response Unmarshaller for ForceIncludeRenditionSize Object
     /// </summary>  
-    public class AutomatedAbrSettingsUnmarshaller : IUnmarshaller<AutomatedAbrSettings, XmlUnmarshallerContext>, IUnmarshaller<AutomatedAbrSettings, JsonUnmarshallerContext>
+    public class ForceIncludeRenditionSizeUnmarshaller : IUnmarshaller<ForceIncludeRenditionSize, XmlUnmarshallerContext>, IUnmarshaller<ForceIncludeRenditionSize, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AutomatedAbrSettings IUnmarshaller<AutomatedAbrSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ForceIncludeRenditionSize IUnmarshaller<ForceIncludeRenditionSize, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,27 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public AutomatedAbrSettings Unmarshall(JsonUnmarshallerContext context)
+        public ForceIncludeRenditionSize Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AutomatedAbrSettings unmarshalledObject = new AutomatedAbrSettings();
+            ForceIncludeRenditionSize unmarshalledObject = new ForceIncludeRenditionSize();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("maxAbrBitrate", targetDepth))
+                if (context.TestExpression("height", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.MaxAbrBitrate = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Height = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("maxRenditions", targetDepth))
+                if (context.TestExpression("width", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.MaxRenditions = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("minAbrBitrate", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.MinAbrBitrate = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("rules", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<AutomatedAbrRule, AutomatedAbrRuleUnmarshaller>(AutomatedAbrRuleUnmarshaller.Instance);
-                    unmarshalledObject.Rules = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Width = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +82,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         }
 
 
-        private static AutomatedAbrSettingsUnmarshaller _instance = new AutomatedAbrSettingsUnmarshaller();        
+        private static ForceIncludeRenditionSizeUnmarshaller _instance = new ForceIncludeRenditionSizeUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AutomatedAbrSettingsUnmarshaller Instance
+        public static ForceIncludeRenditionSizeUnmarshaller Instance
         {
             get
             {
