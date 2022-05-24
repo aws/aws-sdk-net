@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// The Amazon Pinpoint analytics configuration for collecting metrics for a user pool.
+    /// The Amazon Pinpoint analytics configuration necessary to collect metrics for a user
+    /// pool.
     /// 
     ///  <note> 
     /// <para>
@@ -52,7 +53,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <para>
         /// The Amazon Resource Name (ARN) of an Amazon Pinpoint project. You can use the Amazon
         /// Pinpoint project to integrate with the chosen user pool Client. Amazon Cognito publishes
-        /// events to the Amazon Pinpointproject declared by the app ARN.
+        /// events to the Amazon Pinpoint project that the app ARN declares.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -127,8 +128,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UserDataShared. 
         /// <para>
-        /// If <code>UserDataShared</code> is <code>true</code>, Amazon Cognito will include user
-        /// data in the events it publishes to Amazon Pinpoint analytics.
+        /// If <code>UserDataShared</code> is <code>true</code>, Amazon Cognito includes user
+        /// data in the events that it publishes to Amazon Pinpoint analytics.
         /// </para>
         /// </summary>
         public bool UserDataShared

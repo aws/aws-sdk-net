@@ -112,47 +112,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// the FROM address, provide the Amazon Resource Name (ARN) of an Amazon SES verified
         /// email address for the <code>SourceArn</code> parameter.
         /// </para>
-        ///  
-        /// <para>
-        ///  If EmailSendingAccount is COGNITO_DEFAULT, you can't use the following parameters:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// EmailVerificationMessage
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// EmailVerificationSubject
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// InviteMessageTemplate.EmailMessage
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// InviteMessageTemplate.EmailSubject
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// VerificationMessageTemplate.EmailMessage
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// VerificationMessageTemplate.EmailMessageByLink
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// VerificationMessageTemplate.EmailSubject,
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// VerificationMessageTemplate.EmailSubjectByLink
-        /// </para>
-        ///  </li> </ul> <note> 
-        /// <para>
-        /// DEVELOPER EmailSendingAccount is required.
-        /// </para>
-        ///  </note> </dd> <dt>DEVELOPER</dt> <dd> 
+        ///  </dd> <dt>DEVELOPER</dt> <dd> 
         /// <para>
         /// When Amazon Cognito emails your users, it uses your Amazon SES configuration. Amazon
         /// Cognito calls Amazon SES on your behalf to send email from your verified email address.
@@ -161,8 +121,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  
         /// <para>
-        /// If you use this option, you must provide the ARN of an Amazon SES verified email address
-        /// for the <code>SourceArn</code> parameter.
+        /// If you use this option, provide the ARN of an Amazon SES verified email address for
+        /// the <code>SourceArn</code> parameter.
         /// </para>
         ///  
         /// <para>

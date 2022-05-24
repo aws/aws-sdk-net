@@ -38,8 +38,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property CaseSensitive. 
         /// <para>
-        /// Specifies whether username case sensitivity will be applied for all users in the user
-        /// pool through Amazon Cognito APIs.
+        /// Specifies whether user name case sensitivity will be applied for all users in the
+        /// user pool through Amazon Cognito APIs.
         /// </para>
         ///  
         /// <para>

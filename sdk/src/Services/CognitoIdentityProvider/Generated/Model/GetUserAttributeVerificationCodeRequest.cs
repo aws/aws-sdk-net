@@ -31,7 +31,8 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the GetUserAttributeVerificationCode operation.
-    /// Gets the user attribute verification code for the specified attribute name.
+    /// Generates a user attribute verification code for the specified attribute name. Sends
+    /// a message to a user with a code that they must return in a VerifyUserAttribute request.
     /// 
     ///  <note> 
     /// <para>
@@ -65,8 +66,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AccessToken. 
         /// <para>
-        /// The access token returned by the server response to get the user attribute verification
-        /// code.
+        /// A non-expired access token for the user whose attribute verification code you want
+        /// to generate.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

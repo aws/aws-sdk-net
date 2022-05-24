@@ -69,7 +69,21 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AccessTokenValidity. 
         /// <para>
-        /// The time limit after which the access token is no longer valid and can't be used.
+        /// The access token time limit. After this limit expires, your user can't use their access
+        /// token. To specify the time unit for <code>AccessTokenValidity</code> as <code>seconds</code>,
+        /// <code>minutes</code>, <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code>
+        /// value in your API request.
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, when you set <code>AccessTokenValidity</code> to <code>10</code> and
+        /// <code>TokenValidityUnits</code> to <code>hours</code>, your user can authorize access
+        /// with their access token for 10 hours.
+        /// </para>
+        ///  
+        /// <para>
+        /// The default time unit for <code>AccessTokenValidity</code> in an API request is hours.
+        /// <i>Valid range</i> is displayed below in seconds.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=86400)]
@@ -90,23 +104,22 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <para>
         /// The allowed OAuth flows.
         /// </para>
-        ///  
+        ///  <dl> <dt>code</dt> <dd> 
         /// <para>
-        /// Set to <code>code</code> to initiate a code grant flow, which provides an authorization
-        /// code as the response. This code can be exchanged for access tokens with the token
-        /// endpoint.
+        /// Use a code grant flow, which provides an authorization code as the response. This
+        /// code can be exchanged for access tokens with the <code>/oauth2/token</code> endpoint.
         /// </para>
-        ///  
+        ///  </dd> <dt>implicit</dt> <dd> 
         /// <para>
-        /// Set to <code>implicit</code> to specify that the client should get the access token
-        /// (and, optionally, ID token, based on scopes) directly.
+        /// Issue the access token (and, optionally, ID token, based on scopes) directly to your
+        /// user.
         /// </para>
-        ///  
+        ///  </dd> <dt>client_credentials</dt> <dd> 
         /// <para>
-        /// Set to <code>client_credentials</code> to specify that the client should get the access
-        /// token (and, optionally, ID token, based on scopes) from the token endpoint using a
-        /// combination of client and client_secret.
+        /// Issue the access token from the <code>/oauth2/token</code> endpoint directly to a
+        /// non-person user using a combination of the client ID and client secret.
         /// </para>
+        ///  </dd> </dl>
         /// </summary>
         [AWSProperty(Min=0, Max=3)]
         public List<string> AllowedOAuthFlows
@@ -143,9 +156,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AllowedOAuthScopes. 
         /// <para>
-        /// The allowed OAuth scopes. Possible values provided by OAuth are: <code>phone</code>,
+        /// The allowed OAuth scopes. Possible values provided by OAuth are <code>phone</code>,
         /// <code>email</code>, <code>openid</code>, and <code>profile</code>. Possible values
-        /// provided by Amazon Web Services are: <code>aws.cognito.signin.user.admin</code>. Custom
+        /// provided by Amazon Web Services are <code>aws.cognito.signin.user.admin</code>. Custom
         /// scopes created in Resource Servers are also supported.
         /// </para>
         /// </summary>
@@ -165,7 +178,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AnalyticsConfiguration. 
         /// <para>
-        /// The Amazon Pinpoint analytics configuration for collecting metrics for this user pool.
+        /// The Amazon Pinpoint analytics configuration necessary to collect metrics for this
+        /// user pool.
         /// </para>
         ///  <note> 
         /// <para>
@@ -191,7 +205,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property CallbackURLs. 
         /// <para>
-        /// A list of allowed redirect (callback) URLs for the identity providers.
+        /// A list of allowed redirect (callback) URLs for the IdPs.
         /// </para>
         ///  
         /// <para>
@@ -397,7 +411,21 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property IdTokenValidity. 
         /// <para>
-        /// The time limit after which the ID token is no longer valid and can't be used.
+        /// The ID token time limit. After this limit expires, your user can't use their ID token.
+        /// To specify the time unit for <code>IdTokenValidity</code> as <code>seconds</code>,
+        /// <code>minutes</code>, <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code>
+        /// value in your API request.
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, when you set <code>IdTokenValidity</code> as <code>10</code> and <code>TokenValidityUnits</code>
+        /// as <code>hours</code>, your user can authenticate their session with their ID token
+        /// for 10 hours.
+        /// </para>
+        ///  
+        /// <para>
+        /// The default time unit for <code>AccessTokenValidity</code> in an API request is hours.
+        /// <i>Valid range</i> is displayed below in seconds.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=86400)]
@@ -416,7 +444,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property LogoutURLs. 
         /// <para>
-        /// A list of allowed logout URLs for the identity providers.
+        /// A list of allowed logout URLs for the IdPs.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
@@ -491,8 +519,23 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property RefreshTokenValidity. 
         /// <para>
-        /// The time limit, in days, after which the refresh token is no longer valid and can't
-        /// be used.
+        /// The refresh token time limit. After this limit expires, your user can't use their
+        /// refresh token. To specify the time unit for <code>RefreshTokenValidity</code> as <code>seconds</code>,
+        /// <code>minutes</code>, <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code>
+        /// value in your API request.
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, when you set <code>RefreshTokenValidity</code> as <code>10</code> and
+        /// <code>TokenValidityUnits</code> as <code>days</code>, your user can refresh their
+        /// session and retrieve new access and ID tokens for 10 days.
+        /// </para>
+        ///  
+        /// <para>
+        /// The default time unit for <code>RefreshTokenValidity</code> in an API request is days.
+        /// You can't set <code>RefreshTokenValidity</code> to 0. If you do, Amazon Cognito overrides
+        /// the value with the default value of 30 days. <i>Valid range</i> is displayed below
+        /// in seconds.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=315360000)]
@@ -511,7 +554,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property SupportedIdentityProviders. 
         /// <para>
-        /// A list of provider names for the identity providers that are supported on this client.
+        /// A list of provider names for the IdPs that this client supports. The following are
+        /// supported: <code>COGNITO</code>, <code>Facebook</code>, <code>Google</code> <code>LoginWithAmazon</code>,
+        /// and the names of your own SAML and OIDC providers.
         /// </para>
         /// </summary>
         public List<string> SupportedIdentityProviders
@@ -529,8 +574,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property TokenValidityUnits. 
         /// <para>
-        /// The units in which the validity times are represented. Default for RefreshToken is
-        /// days, and default for ID and access tokens is hours.
+        /// The units in which the validity times are represented. The default unit for RefreshToken
+        /// is days, and the default for ID and access tokens is hours.
         /// </para>
         /// </summary>
         public TokenValidityUnitsType TokenValidityUnits

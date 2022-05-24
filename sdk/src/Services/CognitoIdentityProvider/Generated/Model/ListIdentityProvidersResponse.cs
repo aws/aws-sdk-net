@@ -58,7 +58,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Providers. 
         /// <para>
-        /// A list of identity provider objects.
+        /// A list of IdP objects.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=50)]

@@ -89,9 +89,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// A non-negative integer value that specifies the precedence of this group relative
         /// to the other groups that a user can belong to in the user pool. Zero is the highest
         /// precedence value. Groups with lower <code>Precedence</code> values take precedence
-        /// over groups with higher ornull <code>Precedence</code> values. If a user belongs to
-        /// two or more groups, it is the group with the lowest precedence value whose role ARN
-        /// is given in the user's tokens for the <code>cognito:roles</code> and <code>cognito:preferred_role</code>
+        /// over groups with higher or null <code>Precedence</code> values. If a user belongs
+        /// to two or more groups, it is the group with the lowest precedence value whose role
+        /// ARN is given in the user's tokens for the <code>cognito:roles</code> and <code>cognito:preferred_role</code>
         /// claims.
         /// </para>
         ///  
@@ -104,7 +104,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  
         /// <para>
-        /// The default <code>Precedence</code> value is null.
+        /// The default <code>Precedence</code> value is null. The maximum <code>Precedence</code>
+        /// value is <code>2^31-1</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// A container for information about an identity provider.
+    /// A container for information about an IdP.
     /// </summary>
     public partial class IdentityProviderType
     {
@@ -45,7 +45,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AttributeMapping. 
         /// <para>
-        /// A mapping of identity provider attributes to standard and custom user pool attributes.
+        /// A mapping of IdP attributes to standard and custom user pool attributes.
         /// </para>
         /// </summary>
         public Dictionary<string, string> AttributeMapping
@@ -63,7 +63,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property CreationDate. 
         /// <para>
-        /// The date the identity provider was created.
+        /// The date the IdP was created.
         /// </para>
         /// </summary>
         public DateTime CreationDate
@@ -81,7 +81,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property IdpIdentifiers. 
         /// <para>
-        /// A list of identity provider identifiers.
+        /// A list of IdP identifiers.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]
@@ -100,7 +100,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property LastModifiedDate. 
         /// <para>
-        /// The date the identity provider was last modified.
+        /// The date the IdP was last modified.
         /// </para>
         /// </summary>
         public DateTime LastModifiedDate
@@ -118,8 +118,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property ProviderDetails. 
         /// <para>
-        /// The identity provider details. The following list describes the provider detail keys
-        /// for each identity provider type.
+        /// The IdP details. The following list describes the provider detail keys for each IdP
+        /// type.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -177,6 +177,11 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <para>
         /// private_key
         /// </para>
+        ///  
+        /// <para>
+        ///  <i>You can submit a private_key when you add or update an IdP. Describe operations
+        /// don't return the private key.</i> 
+        /// </para>
         ///  </li> <li> 
         /// <para>
         /// authorize_scopes
@@ -207,29 +212,34 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// authorize_url <i>if not available from discovery URL specified by oidc_issuer key</i>
-        /// 
+        /// The following keys are only present if Amazon Cognito didn't discover them at the
+        /// <code>oidc_issuer</code> URL.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// authorize_url 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// token_url <i>if not available from discovery URL specified by oidc_issuer key</i>
-        /// 
+        /// token_url 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// attributes_url <i>if not available from discovery URL specified by oidc_issuer key</i>
-        /// 
+        /// attributes_url 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// jwks_uri <i>if not available from discovery URL specified by oidc_issuer key</i> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// attributes_url_add_attributes <i>a read-only property that is set automatically</i>
-        /// 
+        /// jwks_uri 
         /// </para>
         ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Amazon Cognito sets the value of the following keys automatically. They are read-only.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// attributes_url_add_attributes 
+        /// </para>
+        ///  </li> </ul> </li> </ul> </li> <li> 
         /// <para>
         /// For SAML providers:
         /// </para>
@@ -239,7 +249,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// IDPSignOut <i>optional</i> 
+        /// IDPSignout <i>optional</i> 
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </summary>
@@ -258,7 +268,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property ProviderName. 
         /// <para>
-        /// The identity provider name.
+        /// The IdP name.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=32)]
@@ -277,7 +287,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property ProviderType. 
         /// <para>
-        /// The identity provider type.
+        /// The IdP type.
         /// </para>
         /// </summary>
         public IdentityProviderTypeType ProviderType

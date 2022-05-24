@@ -65,7 +65,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AccessToken. 
         /// <para>
-        /// The access token for the request to update user attributes.
+        /// A valid access token that Amazon Cognito issued to the user whose user attributes
+        /// you want to update.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -146,6 +147,14 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <para>
         /// For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute
         /// name.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you have set an attribute to require verification before Amazon Cognito updates
+        /// its value, this request doesn’t immediately update the value of that attribute. After
+        /// your user receives and responds to a verification message to verify the new value,
+        /// Amazon Cognito updates the attribute value. Your user can sign in and receive messages
+        /// with the original attribute value until they verify the new value.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

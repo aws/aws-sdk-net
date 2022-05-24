@@ -59,6 +59,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         private string _smsConfigurationFailure;
         private string _smsVerificationMessage;
         private StatusType _status;
+        private UserAttributeUpdateSettingsType _userAttributeUpdateSettings;
         private List<string> _usernameAttributes = new List<string>();
         private UsernameConfigurationType _usernameConfiguration;
         private UserPoolAddOnsType _userPoolAddOns;
@@ -594,6 +595,21 @@ namespace Amazon.CognitoIdentityProvider.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UserAttributeUpdateSettings.
+        /// </summary>
+        public UserAttributeUpdateSettingsType UserAttributeUpdateSettings
+        {
+            get { return this._userAttributeUpdateSettings; }
+            set { this._userAttributeUpdateSettings = value; }
+        }
+
+        // Check to see if UserAttributeUpdateSettings property is set
+        internal bool IsSetUserAttributeUpdateSettings()
+        {
+            return this._userAttributeUpdateSettings != null;
         }
 
         /// <summary>

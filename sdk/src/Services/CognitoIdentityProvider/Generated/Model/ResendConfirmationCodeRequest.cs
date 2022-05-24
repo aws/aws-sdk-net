@@ -69,7 +69,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AnalyticsMetadata. 
         /// <para>
-        /// The Amazon Pinpoint analytics metadata for collecting metrics for <code>ResendConfirmationCode</code>
+        /// The Amazon Pinpoint analytics metadata that contributes to your metrics for <code>ResendConfirmationCode</code>
         /// calls.
         /// </para>
         /// </summary>

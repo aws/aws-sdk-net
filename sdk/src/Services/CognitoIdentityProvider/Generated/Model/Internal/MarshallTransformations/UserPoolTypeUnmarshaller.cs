@@ -220,6 +220,12 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("UserAttributeUpdateSettings", targetDepth))
+                {
+                    var unmarshaller = UserAttributeUpdateSettingsTypeUnmarshaller.Instance;
+                    unmarshalledObject.UserAttributeUpdateSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("UsernameAttributes", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);

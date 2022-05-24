@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// The data type for TokenValidityUnits that specifics the time measurements for token
-    /// validity.
+    /// The data type TokenValidityUnits specifies the time units you use when you set the
+    /// duration of ID, access, and refresh tokens.
     /// </summary>
     public partial class TokenValidityUnitsType
     {

@@ -30,7 +30,7 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteIdentityProvider operation.
-    /// Deletes an identity provider for a user pool.
+    /// Deletes an IdP for a user pool.
     /// </summary>
     public partial class DeleteIdentityProviderRequest : AmazonCognitoIdentityProviderRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property ProviderName. 
         /// <para>
-        /// The identity provider name.
+        /// The IdP name.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=32)]

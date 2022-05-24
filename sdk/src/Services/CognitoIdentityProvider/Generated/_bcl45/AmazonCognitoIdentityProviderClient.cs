@@ -997,12 +997,12 @@ namespace Amazon.CognitoIdentityProvider
 
         /// <summary>
         /// Prevents the user from signing in with the specified external (SAML or social) identity
-        /// provider. If the user that you want to deactivate is a Amazon Cognito user pools native
-        /// username + password user, they can't use their password to sign in. If the user to
-        /// deactivate is a linked external identity provider (IdP) user, any link between that
-        /// user and an existing user is removed. When the external user signs in again, and the
-        /// user is no longer attached to the previously linked <code>DestinationUser</code>,
-        /// the user must create a new user account. See <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminLinkProviderForUser.html">AdminLinkProviderForUser</a>.
+        /// provider (IdP). If the user that you want to deactivate is a Amazon Cognito user pools
+        /// native username + password user, they can't use their password to sign in. If the
+        /// user to deactivate is a linked external IdP user, any link between that user and an
+        /// existing user is removed. When the external user signs in again, and the user is no
+        /// longer attached to the previously linked <code>DestinationUser</code>, the user must
+        /// create a new user account. See <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminLinkProviderForUser.html">AdminLinkProviderForUser</a>.
         /// 
         ///  
         /// <para>
@@ -1023,9 +1023,8 @@ namespace Amazon.CognitoIdentityProvider
         ///  
         /// <para>
         /// The <code>ProviderAttributeName</code> must always be <code>Cognito_Subject</code>
-        /// for social identity providers. The <code>ProviderAttributeValue</code> must always
-        /// be the exact subject that was used when the user was originally linked as a source
-        /// user.
+        /// for social IdPs. The <code>ProviderAttributeValue</code> must always be the exact
+        /// subject that was used when the user was originally linked as a source user.
         /// </para>
         ///  
         /// <para>
@@ -1043,9 +1042,11 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         /// <returns>The response from the AdminDisableProviderForUser service method, as returned by CognitoIdentityProvider.</returns>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.AliasExistsException">
-        /// This exception is thrown when a user tries to confirm the account with an email or
-        /// phone number that has already been supplied as an alias from a different account.
-        /// This exception tells user that an account with this email or phone already exists.
+        /// This exception is thrown when a user tries to confirm the account with an email address
+        /// or phone number that has already been supplied as an alias from a different account.
+        /// This exception indicates that an account with this email address or phone already
+        /// exists in a user pool that you've configured to use email address or phone number
+        /// as a sign-in alias.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
@@ -1079,12 +1080,12 @@ namespace Amazon.CognitoIdentityProvider
 
         /// <summary>
         /// Prevents the user from signing in with the specified external (SAML or social) identity
-        /// provider. If the user that you want to deactivate is a Amazon Cognito user pools native
-        /// username + password user, they can't use their password to sign in. If the user to
-        /// deactivate is a linked external identity provider (IdP) user, any link between that
-        /// user and an existing user is removed. When the external user signs in again, and the
-        /// user is no longer attached to the previously linked <code>DestinationUser</code>,
-        /// the user must create a new user account. See <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminLinkProviderForUser.html">AdminLinkProviderForUser</a>.
+        /// provider (IdP). If the user that you want to deactivate is a Amazon Cognito user pools
+        /// native username + password user, they can't use their password to sign in. If the
+        /// user to deactivate is a linked external IdP user, any link between that user and an
+        /// existing user is removed. When the external user signs in again, and the user is no
+        /// longer attached to the previously linked <code>DestinationUser</code>, the user must
+        /// create a new user account. See <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminLinkProviderForUser.html">AdminLinkProviderForUser</a>.
         /// 
         ///  
         /// <para>
@@ -1105,9 +1106,8 @@ namespace Amazon.CognitoIdentityProvider
         ///  
         /// <para>
         /// The <code>ProviderAttributeName</code> must always be <code>Cognito_Subject</code>
-        /// for social identity providers. The <code>ProviderAttributeValue</code> must always
-        /// be the exact subject that was used when the user was originally linked as a source
-        /// user.
+        /// for social IdPs. The <code>ProviderAttributeValue</code> must always be the exact
+        /// subject that was used when the user was originally linked as a source user.
         /// </para>
         ///  
         /// <para>
@@ -1128,9 +1128,11 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         /// <returns>The response from the AdminDisableProviderForUser service method, as returned by CognitoIdentityProvider.</returns>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.AliasExistsException">
-        /// This exception is thrown when a user tries to confirm the account with an email or
-        /// phone number that has already been supplied as an alias from a different account.
-        /// This exception tells user that an account with this email or phone already exists.
+        /// This exception is thrown when a user tries to confirm the account with an email address
+        /// or phone number that has already been supplied as an alias from a different account.
+        /// This exception indicates that an account with this email address or phone already
+        /// exists in a user pool that you've configured to use email address or phone number
+        /// as a sign-in alias.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
@@ -1820,11 +1822,11 @@ namespace Amazon.CognitoIdentityProvider
 
         /// <summary>
         /// Links an existing user account in a user pool (<code>DestinationUser</code>) to an
-        /// identity from an external identity provider (<code>SourceUser</code>) based on a specified
-        /// attribute name and value from the external identity provider. This allows you to create
-        /// a link from the existing user account to an external federated user identity that
-        /// has not yet been used to sign in. You can then use the federated user identity to
-        /// sign in as the existing user account. 
+        /// identity from an external IdP (<code>SourceUser</code>) based on a specified attribute
+        /// name and value from the external IdP. This allows you to create a link from the existing
+        /// user account to an external federated user identity that has not yet been used to
+        /// sign in. You can then use the federated user identity to sign in as the existing user
+        /// account. 
         /// 
         ///  
         /// <para>
@@ -1834,14 +1836,13 @@ namespace Amazon.CognitoIdentityProvider
         /// </para>
         ///  <note> 
         /// <para>
-        /// The maximum number of federated identities linked to a user is 5.
+        /// The maximum number of federated identities linked to a user is five.
         /// </para>
         ///  </note> <important> 
         /// <para>
         /// Because this API allows a user with an external federated identity to sign in as an
         /// existing user in the user pool, it is critical that it only be used with external
-        /// identity providers and provider attributes that have been trusted by the application
-        /// owner.
+        /// IdPs and provider attributes that have been trusted by the application owner.
         /// </para>
         ///  </important> 
         /// <para>
@@ -1852,9 +1853,11 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         /// <returns>The response from the AdminLinkProviderForUser service method, as returned by CognitoIdentityProvider.</returns>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.AliasExistsException">
-        /// This exception is thrown when a user tries to confirm the account with an email or
-        /// phone number that has already been supplied as an alias from a different account.
-        /// This exception tells user that an account with this email or phone already exists.
+        /// This exception is thrown when a user tries to confirm the account with an email address
+        /// or phone number that has already been supplied as an alias from a different account.
+        /// This exception indicates that an account with this email address or phone already
+        /// exists in a user pool that you've configured to use email address or phone number
+        /// as a sign-in alias.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
@@ -1892,11 +1895,11 @@ namespace Amazon.CognitoIdentityProvider
 
         /// <summary>
         /// Links an existing user account in a user pool (<code>DestinationUser</code>) to an
-        /// identity from an external identity provider (<code>SourceUser</code>) based on a specified
-        /// attribute name and value from the external identity provider. This allows you to create
-        /// a link from the existing user account to an external federated user identity that
-        /// has not yet been used to sign in. You can then use the federated user identity to
-        /// sign in as the existing user account. 
+        /// identity from an external IdP (<code>SourceUser</code>) based on a specified attribute
+        /// name and value from the external IdP. This allows you to create a link from the existing
+        /// user account to an external federated user identity that has not yet been used to
+        /// sign in. You can then use the federated user identity to sign in as the existing user
+        /// account. 
         /// 
         ///  
         /// <para>
@@ -1906,14 +1909,13 @@ namespace Amazon.CognitoIdentityProvider
         /// </para>
         ///  <note> 
         /// <para>
-        /// The maximum number of federated identities linked to a user is 5.
+        /// The maximum number of federated identities linked to a user is five.
         /// </para>
         ///  </note> <important> 
         /// <para>
         /// Because this API allows a user with an external federated identity to sign in as an
         /// existing user in the user pool, it is critical that it only be used with external
-        /// identity providers and provider attributes that have been trusted by the application
-        /// owner.
+        /// IdPs and provider attributes that have been trusted by the application owner.
         /// </para>
         ///  </important> 
         /// <para>
@@ -1927,9 +1929,11 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         /// <returns>The response from the AdminLinkProviderForUser service method, as returned by CognitoIdentityProvider.</returns>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.AliasExistsException">
-        /// This exception is thrown when a user tries to confirm the account with an email or
-        /// phone number that has already been supplied as an alias from a different account.
-        /// This exception tells user that an account with this email or phone already exists.
+        /// This exception is thrown when a user tries to confirm the account with an email address
+        /// or phone number that has already been supplied as an alias from a different account.
+        /// This exception indicates that an account with this email address or phone already
+        /// exists in a user pool that you've configured to use email address or phone number
+        /// as a sign-in alias.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
@@ -2567,9 +2571,11 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         /// <returns>The response from the AdminRespondToAuthChallenge service method, as returned by CognitoIdentityProvider.</returns>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.AliasExistsException">
-        /// This exception is thrown when a user tries to confirm the account with an email or
-        /// phone number that has already been supplied as an alias from a different account.
-        /// This exception tells user that an account with this email or phone already exists.
+        /// This exception is thrown when a user tries to confirm the account with an email address
+        /// or phone number that has already been supplied as an alias from a different account.
+        /// This exception indicates that an account with this email address or phone already
+        /// exists in a user pool that you've configured to use email address or phone number
+        /// as a sign-in alias.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.CodeMismatchException">
         /// This exception is thrown if the provided code doesn't match what the server was expecting.
@@ -2684,9 +2690,11 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         /// <returns>The response from the AdminRespondToAuthChallenge service method, as returned by CognitoIdentityProvider.</returns>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.AliasExistsException">
-        /// This exception is thrown when a user tries to confirm the account with an email or
-        /// phone number that has already been supplied as an alias from a different account.
-        /// This exception tells user that an account with this email or phone already exists.
+        /// This exception is thrown when a user tries to confirm the account with an email address
+        /// or phone number that has already been supplied as an alias from a different account.
+        /// This exception indicates that an account with this email address or phone already
+        /// exists in a user pool that you've configured to use email address or phone number
+        /// as a sign-in alias.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.CodeMismatchException">
         /// This exception is thrown if the provided code doesn't match what the server was expecting.
@@ -3284,9 +3292,11 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         /// <returns>The response from the AdminUpdateUserAttributes service method, as returned by CognitoIdentityProvider.</returns>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.AliasExistsException">
-        /// This exception is thrown when a user tries to confirm the account with an email or
-        /// phone number that has already been supplied as an alias from a different account.
-        /// This exception tells user that an account with this email or phone already exists.
+        /// This exception is thrown when a user tries to confirm the account with an email address
+        /// or phone number that has already been supplied as an alias from a different account.
+        /// This exception indicates that an account with this email address or phone already
+        /// exists in a user pool that you've configured to use email address or phone number
+        /// as a sign-in alias.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
@@ -3390,9 +3400,11 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         /// <returns>The response from the AdminUpdateUserAttributes service method, as returned by CognitoIdentityProvider.</returns>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.AliasExistsException">
-        /// This exception is thrown when a user tries to confirm the account with an email or
-        /// phone number that has already been supplied as an alias from a different account.
-        /// This exception tells user that an account with this email or phone already exists.
+        /// This exception is thrown when a user tries to confirm the account with an email address
+        /// or phone number that has already been supplied as an alias from a different account.
+        /// This exception indicates that an account with this email address or phone already
+        /// exists in a user pool that you've configured to use email address or phone number
+        /// as a sign-in alias.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
@@ -3454,9 +3466,12 @@ namespace Amazon.CognitoIdentityProvider
 
 
         /// <summary>
-        /// Signs out users from all devices, as an administrator. It also invalidates all refresh
-        /// tokens issued to a user. The user's current access and Id tokens remain valid until
-        /// their expiry. Access and Id tokens expire one hour after they're issued.
+        /// Signs out a user from all devices. You must sign <code>AdminUserGlobalSignOut</code>
+        /// requests with Amazon Web Services credentials. It also invalidates all refresh tokens
+        /// that Amazon Cognito has issued to a user. The user's current access and ID tokens
+        /// remain valid until they expire. By default, access and ID tokens expire one hour after
+        /// they're issued. A user can still use a hosted UI cookie to retrieve new tokens for
+        /// the duration of the cookie validity period of 1 hour.
         /// 
         ///  
         /// <para>
@@ -3497,9 +3512,12 @@ namespace Amazon.CognitoIdentityProvider
 
 
         /// <summary>
-        /// Signs out users from all devices, as an administrator. It also invalidates all refresh
-        /// tokens issued to a user. The user's current access and Id tokens remain valid until
-        /// their expiry. Access and Id tokens expire one hour after they're issued.
+        /// Signs out a user from all devices. You must sign <code>AdminUserGlobalSignOut</code>
+        /// requests with Amazon Web Services credentials. It also invalidates all refresh tokens
+        /// that Amazon Cognito has issued to a user. The user's current access and ID tokens
+        /// remain valid until they expire. By default, access and ID tokens expire one hour after
+        /// they're issued. A user can still use a hosted UI cookie to retrieve new tokens for
+        /// the duration of the cookie validity period of 1 hour.
         /// 
         ///  
         /// <para>
@@ -4015,15 +4033,17 @@ namespace Amazon.CognitoIdentityProvider
 
 
         /// <summary>
-        /// Confirms registration of a user and handles the existing alias from a previous user.
+        /// Confirms registration of a new user.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ConfirmSignUp service method.</param>
         /// 
         /// <returns>The response from the ConfirmSignUp service method, as returned by CognitoIdentityProvider.</returns>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.AliasExistsException">
-        /// This exception is thrown when a user tries to confirm the account with an email or
-        /// phone number that has already been supplied as an alias from a different account.
-        /// This exception tells user that an account with this email or phone already exists.
+        /// This exception is thrown when a user tries to confirm the account with an email address
+        /// or phone number that has already been supplied as an alias from a different account.
+        /// This exception indicates that an account with this email address or phone already
+        /// exists in a user pool that you've configured to use email address or phone number
+        /// as a sign-in alias.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.CodeMismatchException">
         /// This exception is thrown if the provided code doesn't match what the server was expecting.
@@ -4081,7 +4101,7 @@ namespace Amazon.CognitoIdentityProvider
 
 
         /// <summary>
-        /// Confirms registration of a user and handles the existing alias from a previous user.
+        /// Confirms registration of a new user.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ConfirmSignUp service method.</param>
         /// <param name="cancellationToken">
@@ -4090,9 +4110,11 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         /// <returns>The response from the ConfirmSignUp service method, as returned by CognitoIdentityProvider.</returns>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.AliasExistsException">
-        /// This exception is thrown when a user tries to confirm the account with an email or
-        /// phone number that has already been supplied as an alias from a different account.
-        /// This exception tells user that an account with this email or phone already exists.
+        /// This exception is thrown when a user tries to confirm the account with an email address
+        /// or phone number that has already been supplied as an alias from a different account.
+        /// This exception indicates that an account with this email address or phone already
+        /// exists in a user pool that you've configured to use email address or phone number
+        /// as a sign-in alias.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.CodeMismatchException">
         /// This exception is thrown if the provided code doesn't match what the server was expecting.
@@ -4253,7 +4275,7 @@ namespace Amazon.CognitoIdentityProvider
 
 
         /// <summary>
-        /// Creates an identity provider for a user pool.
+        /// Creates an IdP for a user pool.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateIdentityProvider service method.</param>
         /// 
@@ -4293,7 +4315,7 @@ namespace Amazon.CognitoIdentityProvider
 
 
         /// <summary>
-        /// Creates an identity provider for a user pool.
+        /// Creates an IdP for a user pool.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateIdentityProvider service method.</param>
         /// <param name="cancellationToken">
@@ -4924,7 +4946,7 @@ namespace Amazon.CognitoIdentityProvider
 
 
         /// <summary>
-        /// Deletes an identity provider for a user pool.
+        /// Deletes an IdP for a user pool.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteIdentityProvider service method.</param>
         /// 
@@ -4960,7 +4982,7 @@ namespace Amazon.CognitoIdentityProvider
 
 
         /// <summary>
-        /// Deletes an identity provider for a user pool.
+        /// Deletes an IdP for a user pool.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteIdentityProvider service method.</param>
         /// <param name="cancellationToken">
@@ -5479,7 +5501,7 @@ namespace Amazon.CognitoIdentityProvider
 
 
         /// <summary>
-        /// Gets information about a specific identity provider.
+        /// Gets information about a specific IdP.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeIdentityProvider service method.</param>
         /// 
@@ -5512,7 +5534,7 @@ namespace Amazon.CognitoIdentityProvider
 
 
         /// <summary>
-        /// Gets information about a specific identity provider.
+        /// Gets information about a specific IdP.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeIdentityProvider service method.</param>
         /// <param name="cancellationToken">
@@ -6555,7 +6577,7 @@ namespace Amazon.CognitoIdentityProvider
 
 
         /// <summary>
-        /// Gets the specified identity provider.
+        /// Gets the specified IdP.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetIdentityProviderByIdentifier service method.</param>
         /// 
@@ -6588,7 +6610,7 @@ namespace Amazon.CognitoIdentityProvider
 
 
         /// <summary>
-        /// Gets the specified identity provider.
+        /// Gets the specified IdP.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetIdentityProviderByIdentifier service method.</param>
         /// <param name="cancellationToken">
@@ -6861,7 +6883,8 @@ namespace Amazon.CognitoIdentityProvider
 
 
         /// <summary>
-        /// Gets the user attribute verification code for the specified attribute name.
+        /// Generates a user attribute verification code for the specified attribute name. Sends
+        /// a message to a user with a code that they must return in a VerifyUserAttribute request.
         /// 
         ///  <note> 
         /// <para>
@@ -6958,7 +6981,8 @@ namespace Amazon.CognitoIdentityProvider
 
 
         /// <summary>
-        /// Gets the user attribute verification code for the specified attribute name.
+        /// Generates a user attribute verification code for the specified attribute name. Sends
+        /// a message to a user with a code that they must return in a VerifyUserAttribute request.
         /// 
         ///  <note> 
         /// <para>
@@ -7135,9 +7159,11 @@ namespace Amazon.CognitoIdentityProvider
 
 
         /// <summary>
-        /// Signs out users from all devices. It also invalidates all refresh tokens issued to
-        /// a user. The user's current access and ID tokens remain valid until their expiry. Access
-        /// and Id tokens expire one hour after they're issued.
+        /// Signs out users from all devices. It also invalidates all refresh tokens that Amazon
+        /// Cognito has issued to a user. The user's current access and ID tokens remain valid
+        /// until their expiry. By default, access and ID tokens expire one hour after Amazon
+        /// Cognito issues them. A user can still use a hosted UI cookie to retrieve new tokens
+        /// for the duration of the cookie validity period of 1 hour.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GlobalSignOut service method.</param>
         /// 
@@ -7176,9 +7202,11 @@ namespace Amazon.CognitoIdentityProvider
 
 
         /// <summary>
-        /// Signs out users from all devices. It also invalidates all refresh tokens issued to
-        /// a user. The user's current access and ID tokens remain valid until their expiry. Access
-        /// and Id tokens expire one hour after they're issued.
+        /// Signs out users from all devices. It also invalidates all refresh tokens that Amazon
+        /// Cognito has issued to a user. The user's current access and ID tokens remain valid
+        /// until their expiry. By default, access and ID tokens expire one hour after Amazon
+        /// Cognito issues them. A user can still use a hosted UI cookie to retrieve new tokens
+        /// for the duration of the cookie validity period of 1 hour.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GlobalSignOut service method.</param>
         /// <param name="cancellationToken">
@@ -7224,7 +7252,10 @@ namespace Amazon.CognitoIdentityProvider
 
 
         /// <summary>
-        /// Initiates the authentication flow.
+        /// Initiates sign-in for a user in the Amazon Cognito user directory. You can't sign
+        /// in a user with a federated IdP with <code>InitiateAuth</code>. For more information,
+        /// see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-identity-federation.html">
+        /// Adding user pool sign-in through a third party</a>.
         /// 
         ///  <note> 
         /// <para>
@@ -7313,7 +7344,10 @@ namespace Amazon.CognitoIdentityProvider
 
 
         /// <summary>
-        /// Initiates the authentication flow.
+        /// Initiates sign-in for a user in the Amazon Cognito user directory. You can't sign
+        /// in a user with a federated IdP with <code>InitiateAuth</code>. For more information,
+        /// see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-identity-federation.html">
+        /// Adding user pool sign-in through a third party</a>.
         /// 
         ///  <note> 
         /// <para>
@@ -7409,7 +7443,7 @@ namespace Amazon.CognitoIdentityProvider
 
 
         /// <summary>
-        /// Lists the devices.
+        /// Lists the sign-in devices that Amazon Cognito has registered to the current user.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDevices service method.</param>
         /// 
@@ -7454,7 +7488,7 @@ namespace Amazon.CognitoIdentityProvider
 
 
         /// <summary>
-        /// Lists the devices.
+        /// Lists the sign-in devices that Amazon Cognito has registered to the current user.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDevices service method.</param>
         /// <param name="cancellationToken">
@@ -7589,7 +7623,7 @@ namespace Amazon.CognitoIdentityProvider
 
 
         /// <summary>
-        /// Lists information about all identity providers for a user pool.
+        /// Lists information about all IdPs for a user pool.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListIdentityProviders service method.</param>
         /// 
@@ -7622,7 +7656,7 @@ namespace Amazon.CognitoIdentityProvider
 
 
         /// <summary>
-        /// Lists information about all identity providers for a user pool.
+        /// Lists information about all IdPs for a user pool.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListIdentityProviders service method.</param>
         /// <param name="cancellationToken">
@@ -8415,9 +8449,11 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         /// <returns>The response from the RespondToAuthChallenge service method, as returned by CognitoIdentityProvider.</returns>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.AliasExistsException">
-        /// This exception is thrown when a user tries to confirm the account with an email or
-        /// phone number that has already been supplied as an alias from a different account.
-        /// This exception tells user that an account with this email or phone already exists.
+        /// This exception is thrown when a user tries to confirm the account with an email address
+        /// or phone number that has already been supplied as an alias from a different account.
+        /// This exception indicates that an account with this email address or phone already
+        /// exists in a user pool that you've configured to use email address or phone number
+        /// as a sign-in alias.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.CodeMismatchException">
         /// This exception is thrown if the provided code doesn't match what the server was expecting.
@@ -8529,9 +8565,11 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         /// <returns>The response from the RespondToAuthChallenge service method, as returned by CognitoIdentityProvider.</returns>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.AliasExistsException">
-        /// This exception is thrown when a user tries to confirm the account with an email or
-        /// phone number that has already been supplied as an alias from a different account.
-        /// This exception tells user that an account with this email or phone already exists.
+        /// This exception is thrown when a user tries to confirm the account with an email address
+        /// or phone number that has already been supplied as an alias from a different account.
+        /// This exception indicates that an account with this email address or phone already
+        /// exists in a user pool that you've configured to use email address or phone number
+        /// as a sign-in alias.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.CodeMismatchException">
         /// This exception is thrown if the provided code doesn't match what the server was expecting.
@@ -10057,7 +10095,7 @@ namespace Amazon.CognitoIdentityProvider
 
 
         /// <summary>
-        /// Updates identity provider information for a user pool.
+        /// Updates IdP information for a user pool.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateIdentityProvider service method.</param>
         /// 
@@ -10093,7 +10131,7 @@ namespace Amazon.CognitoIdentityProvider
 
 
         /// <summary>
-        /// Updates identity provider information for a user pool.
+        /// Updates IdP information for a user pool.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateIdentityProvider service method.</param>
         /// <param name="cancellationToken">
@@ -10250,9 +10288,11 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         /// <returns>The response from the UpdateUserAttributes service method, as returned by CognitoIdentityProvider.</returns>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.AliasExistsException">
-        /// This exception is thrown when a user tries to confirm the account with an email or
-        /// phone number that has already been supplied as an alias from a different account.
-        /// This exception tells user that an account with this email or phone already exists.
+        /// This exception is thrown when a user tries to confirm the account with an email address
+        /// or phone number that has already been supplied as an alias from a different account.
+        /// This exception indicates that an account with this email address or phone already
+        /// exists in a user pool that you've configured to use email address or phone number
+        /// as a sign-in alias.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.CodeDeliveryFailureException">
         /// This exception is thrown when a verification code fails to deliver successfully.
@@ -10357,9 +10397,11 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         /// <returns>The response from the UpdateUserAttributes service method, as returned by CognitoIdentityProvider.</returns>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.AliasExistsException">
-        /// This exception is thrown when a user tries to confirm the account with an email or
-        /// phone number that has already been supplied as an alias from a different account.
-        /// This exception tells user that an account with this email or phone already exists.
+        /// This exception is thrown when a user tries to confirm the account with an email address
+        /// or phone number that has already been supplied as an alias from a different account.
+        /// This exception indicates that an account with this email address or phone already
+        /// exists in a user pool that you've configured to use email address or phone number
+        /// as a sign-in alias.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.CodeDeliveryFailureException">
         /// This exception is thrown when a verification code fails to deliver successfully.
@@ -10439,6 +10481,7 @@ namespace Amazon.CognitoIdentityProvider
         /// Updates the specified user pool with the specified attributes. You can get a list
         /// of the current user pool settings using <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPool.html">DescribeUserPool</a>.
         /// If you don't provide a value for an attribute, it will be set to the default value.
+        /// 
         /// 
         ///  <note> 
         /// <para>
@@ -10521,6 +10564,7 @@ namespace Amazon.CognitoIdentityProvider
         /// Updates the specified user pool with the specified attributes. You can get a list
         /// of the current user pool settings using <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPool.html">DescribeUserPool</a>.
         /// If you don't provide a value for an attribute, it will be set to the default value.
+        /// 
         /// 
         ///  <note> 
         /// <para>
@@ -10999,10 +11043,25 @@ namespace Amazon.CognitoIdentityProvider
 
         /// <summary>
         /// Verifies the specified user attributes in the user pool.
+        /// 
+        ///  
+        /// <para>
+        ///  If your user pool requires verification before Amazon Cognito updates the attribute
+        /// value, VerifyUserAttribute updates the affected attribute to its pending value. For
+        /// more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UserAttributeUpdateSettingsType.html">
+        /// UserAttributeUpdateSettingsType</a>. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the VerifyUserAttribute service method.</param>
         /// 
         /// <returns>The response from the VerifyUserAttribute service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.AliasExistsException">
+        /// This exception is thrown when a user tries to confirm the account with an email address
+        /// or phone number that has already been supplied as an alias from a different account.
+        /// This exception indicates that an account with this email address or phone already
+        /// exists in a user pool that you've configured to use email address or phone number
+        /// as a sign-in alias.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.CodeMismatchException">
         /// This exception is thrown if the provided code doesn't match what the server was expecting.
         /// </exception>
@@ -11051,6 +11110,14 @@ namespace Amazon.CognitoIdentityProvider
 
         /// <summary>
         /// Verifies the specified user attributes in the user pool.
+        /// 
+        ///  
+        /// <para>
+        ///  If your user pool requires verification before Amazon Cognito updates the attribute
+        /// value, VerifyUserAttribute updates the affected attribute to its pending value. For
+        /// more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UserAttributeUpdateSettingsType.html">
+        /// UserAttributeUpdateSettingsType</a>. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the VerifyUserAttribute service method.</param>
         /// <param name="cancellationToken">
@@ -11058,6 +11125,13 @@ namespace Amazon.CognitoIdentityProvider
         /// </param>
         /// 
         /// <returns>The response from the VerifyUserAttribute service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.AliasExistsException">
+        /// This exception is thrown when a user tries to confirm the account with an email address
+        /// or phone number that has already been supplied as an alias from a different account.
+        /// This exception indicates that an account with this email address or phone already
+        /// exists in a user pool that you've configured to use email address or phone number
+        /// as a sign-in alias.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.CodeMismatchException">
         /// This exception is thrown if the provided code doesn't match what the server was expecting.
         /// </exception>

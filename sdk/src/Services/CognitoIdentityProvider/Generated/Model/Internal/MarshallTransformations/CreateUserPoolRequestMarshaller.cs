@@ -218,6 +218,17 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.SmsVerificationMessage);
                 }
 
+                if(publicRequest.IsSetUserAttributeUpdateSettings())
+                {
+                    context.Writer.WritePropertyName("UserAttributeUpdateSettings");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = UserAttributeUpdateSettingsTypeMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.UserAttributeUpdateSettings, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetUsernameAttributes())
                 {
                     context.Writer.WritePropertyName("UsernameAttributes");

@@ -31,7 +31,7 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the ConfirmSignUp operation.
-    /// Confirms registration of a user and handles the existing alias from a previous user.
+    /// Confirms registration of a new user.
     /// </summary>
     public partial class ConfirmSignUpRequest : AmazonCognitoIdentityProviderRequest
     {

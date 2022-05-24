@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// The user type.
+    /// A user profile in a Amazon Cognito user pool.
     /// </summary>
     public partial class UserType
     {
@@ -162,6 +162,10 @@ namespace Amazon.CognitoIdentityProvider.Model
         ///  </li> <li> 
         /// <para>
         /// CONFIRMED - User has been confirmed.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// EXTERNAL_PROVIDER - User signed in with a third-party IdP.
         /// </para>
         ///  </li> <li> 
         /// <para>

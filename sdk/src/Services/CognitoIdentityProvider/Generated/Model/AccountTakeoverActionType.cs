@@ -39,7 +39,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property EventAction. 
         /// <para>
-        /// The action to take in response to the account takeover action. Valid values are:
+        /// The action to take in response to the account takeover action. Valid values are as
+        /// follows:
         /// </para>
         ///  <ul> <li> 
         /// <para>

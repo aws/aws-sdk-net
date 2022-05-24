@@ -31,7 +31,10 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the InitiateAuth operation.
-    /// Initiates the authentication flow.
+    /// Initiates sign-in for a user in the Amazon Cognito user directory. You can't sign
+    /// in a user with a federated IdP with <code>InitiateAuth</code>. For more information,
+    /// see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-identity-federation.html">
+    /// Adding user pool sign-in through a third party</a>.
     /// 
     ///  <note> 
     /// <para>
@@ -68,7 +71,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AnalyticsMetadata. 
         /// <para>
-        /// The Amazon Pinpoint analytics metadata for collecting metrics for <code>InitiateAuth</code>
+        /// The Amazon Pinpoint analytics metadata that contributes to your metrics for <code>InitiateAuth</code>
         /// calls.
         /// </para>
         /// </summary>
@@ -124,9 +127,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>USER_PASSWORD_AUTH</code>: Non-SRP authentication flow; USERNAME and PASSWORD
+        ///  <code>USER_PASSWORD_AUTH</code>: Non-SRP authentication flow; user name and password
         /// are passed directly. If a user migration Lambda trigger is set, this flow will invoke
-        /// the user migration Lambda if it doesn't find the USERNAME in the user pool. 
+        /// the user migration Lambda if it doesn't find the user name in the user pool. 
         /// </para>
         ///  </li> </ul> 
         /// <para>

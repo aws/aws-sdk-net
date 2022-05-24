@@ -34,6 +34,7 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// of the current user pool settings using <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPool.html">DescribeUserPool</a>.
     /// If you don't provide a value for an attribute, it will be set to the default value.
     /// 
+    /// 
     ///  <note> 
     /// <para>
     /// This action might generate an SMS text message. Starting June 1, 2021, US telecom
@@ -72,6 +73,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         private string _smsAuthenticationMessage;
         private SmsConfigurationType _smsConfiguration;
         private string _smsVerificationMessage;
+        private UserAttributeUpdateSettingsType _userAttributeUpdateSettings;
         private UserPoolAddOnsType _userPoolAddOns;
         private string _userPoolId;
         private Dictionary<string, string> _userPoolTags = new Dictionary<string, string>();
@@ -234,7 +236,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property MfaConfiguration. 
         /// <para>
-        /// Can be one of the following values:
+        /// Possible values include:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -341,6 +343,21 @@ namespace Amazon.CognitoIdentityProvider.Model
         internal bool IsSetSmsVerificationMessage()
         {
             return this._smsVerificationMessage != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UserAttributeUpdateSettings.
+        /// </summary>
+        public UserAttributeUpdateSettingsType UserAttributeUpdateSettings
+        {
+            get { return this._userAttributeUpdateSettings; }
+            set { this._userAttributeUpdateSettings = value; }
+        }
+
+        // Check to see if UserAttributeUpdateSettings property is set
+        internal bool IsSetUserAttributeUpdateSettings()
+        {
+            return this._userAttributeUpdateSettings != null;
         }
 
         /// <summary>

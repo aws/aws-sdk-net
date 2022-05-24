@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// The code delivery details being returned from the server.
+    /// The delivery details for an email or SMS message that Amazon Cognito sent for authentication
+    /// or verification.
     /// </summary>
     public partial class CodeDeliveryDetailsType
     {
@@ -40,7 +41,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AttributeName. 
         /// <para>
-        /// The attribute name.
+        /// The name of the attribute that Amazon Cognito verifies with the code.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=32)]
@@ -59,7 +60,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property DeliveryMedium. 
         /// <para>
-        /// The delivery medium (email message or phone number).
+        /// The method that Amazon Cognito used to send the code.
         /// </para>
         /// </summary>
         public DeliveryMediumType DeliveryMedium
@@ -77,7 +78,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Destination. 
         /// <para>
-        /// The destination for the code delivery details.
+        /// The email address or phone number destination where Amazon Cognito sent the code.
         /// </para>
         /// </summary>
         public string Destination

@@ -145,8 +145,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         ///  <note> 
         /// <para>
         /// When you set <code>TemporaryPasswordValidityDays</code> for a user pool, you can no
-        /// longer set the deprecated <code>UnusedAccountValidityDays</code> value for that user
-        /// pool.
+        /// longer set a value for the legacy <code>UnusedAccountValidityDays</code> parameter
+        /// in that user pool.
         /// </para>
         ///  </note>
         /// </summary>

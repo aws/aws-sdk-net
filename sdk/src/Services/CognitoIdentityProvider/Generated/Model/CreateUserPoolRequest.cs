@@ -73,6 +73,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         private string _smsAuthenticationMessage;
         private SmsConfigurationType _smsConfiguration;
         private string _smsVerificationMessage;
+        private UserAttributeUpdateSettingsType _userAttributeUpdateSettings;
         private List<string> _usernameAttributes = new List<string>();
         private UsernameConfigurationType _usernameConfiguration;
         private UserPoolAddOnsType _userPoolAddOns;
@@ -405,6 +406,21 @@ namespace Amazon.CognitoIdentityProvider.Model
         internal bool IsSetSmsVerificationMessage()
         {
             return this._smsVerificationMessage != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UserAttributeUpdateSettings.
+        /// </summary>
+        public UserAttributeUpdateSettingsType UserAttributeUpdateSettings
+        {
+            get { return this._userAttributeUpdateSettings; }
+            set { this._userAttributeUpdateSettings = value; }
+        }
+
+        // Check to see if UserAttributeUpdateSettings property is set
+        internal bool IsSetUserAttributeUpdateSettings()
+        {
+            return this._userAttributeUpdateSettings != null;
         }
 
         /// <summary>

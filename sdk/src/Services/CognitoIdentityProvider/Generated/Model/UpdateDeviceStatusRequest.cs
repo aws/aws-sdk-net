@@ -41,7 +41,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AccessToken. 
         /// <para>
-        /// The access token.
+        /// A valid access token that Amazon Cognito issued to the user whose device status you
+        /// want to update.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

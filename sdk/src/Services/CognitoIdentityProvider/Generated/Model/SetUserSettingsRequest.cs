@@ -44,7 +44,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AccessToken. 
         /// <para>
-        /// The access token for the set user settings request.
+        /// A valid access token that Amazon Cognito issued to the user whose user settings you
+        /// want to configure.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// A container for information about an identity provider for a user pool.
+    /// A container for information about an IdP for a user pool.
     /// </summary>
     public partial class ProviderUserIdentifierType
     {

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// A container for identity provider details.
+    /// A container for IdP details.
     /// </summary>
     public partial class ProviderDescription
     {
@@ -77,7 +77,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property ProviderName. 
         /// <para>
-        /// The identity provider name.
+        /// The IdP name.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=32)]
@@ -96,7 +96,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property ProviderType. 
         /// <para>
-        /// The identity provider type.
+        /// The IdP type.
         /// </para>
         /// </summary>
         public IdentityProviderTypeType ProviderType

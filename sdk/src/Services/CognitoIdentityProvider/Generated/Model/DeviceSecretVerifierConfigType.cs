@@ -57,7 +57,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Salt. 
         /// <para>
-        /// The salt.
+        /// The <a href="https://en.wikipedia.org/wiki/Salt_(cryptography)">salt</a> 
         /// </para>
         /// </summary>
         public string Salt

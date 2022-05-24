@@ -535,7 +535,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.CreateIdentityProviderRequest.ProviderName</property>
-    <min>1</min>
+    <min>3</min>
     <max>32</max>
     <pattern>[^_][\p{L}\p{M}\p{S}\p{N}\p{P}][^_]+</pattern>
   </property-value-rule>

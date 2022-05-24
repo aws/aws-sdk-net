@@ -30,7 +30,7 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateIdentityProvider operation.
-    /// Updates identity provider information for a user pool.
+    /// Updates IdP information for a user pool.
     /// </summary>
     public partial class UpdateIdentityProviderRequest : AmazonCognitoIdentityProviderRequest
     {
@@ -43,7 +43,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AttributeMapping. 
         /// <para>
-        /// The identity provider attribute mapping to be changed.
+        /// The IdP attribute mapping to be changed.
         /// </para>
         /// </summary>
         public Dictionary<string, string> AttributeMapping
@@ -61,7 +61,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property IdpIdentifiers. 
         /// <para>
-        /// A list of identity provider identifiers.
+        /// A list of IdP identifiers.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]
@@ -80,8 +80,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property ProviderDetails. 
         /// <para>
-        /// The identity provider details to be updated, such as <code>MetadataURL</code> and
-        /// <code>MetadataFile</code>.
+        /// The IdP details to be updated, such as <code>MetadataURL</code> and <code>MetadataFile</code>.
         /// </para>
         /// </summary>
         public Dictionary<string, string> ProviderDetails
@@ -99,7 +98,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property ProviderName. 
         /// <para>
-        /// The identity provider name.
+        /// The IdP name.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=32)]
