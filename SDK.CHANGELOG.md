@@ -1,3 +1,18 @@
+### 3.7.281.0 (2022-05-24 18:15 UTC)
+* CognitoIdentityProvider (3.7.3.0)
+	* Amazon Cognito now supports requiring attribute verification (ex. email and phone number) before update.
+* EC2 (3.7.73.0)
+	* Stop Protection feature enables customers to protect their instances from accidental stop actions.
+* Ivschat (3.7.0.13)
+	* Doc-only update. For MessageReviewHandler structure, added timeout period in the description of the fallbackResult field
+* MediaConvert (3.7.16.0)
+	* AWS Elemental MediaConvert SDK has added support for rules that constrain Automatic-ABR rendition selection when generating ABR package ladders.
+* NetworkManager (3.7.3.0)
+	* This release adds Multi Account API support for a TGW Global Network, to enable and disable AWSServiceAccess with AwsOrganizations for Network Manager service and dependency CloudFormation StackSets service.
+* Core 3.7.11.6
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.280.0 (2022-05-23 18:15 UTC)
 * ElastiCache (3.7.6.0)
 	* Added support for encryption in transit for Memcached clusters. Customers can now launch Memcached cluster with encryption in transit enabled when using Memcached version 1.6.12 or later.
