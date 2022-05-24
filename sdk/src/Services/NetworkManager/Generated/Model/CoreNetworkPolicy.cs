@@ -141,6 +141,7 @@ namespace Amazon.NetworkManager.Model
         /// Describes a core network policy.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=10000000)]
         public string PolicyDocument
         {
             get { return this._policyDocument; }

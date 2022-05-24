@@ -29,29 +29,27 @@ using Amazon.Runtime.Internal;
 namespace Amazon.NetworkManager.Model
 {
     /// <summary>
-    /// This is the response object from the GetResourcePolicy operation.
+    /// Container for the parameters to the StartOrganizationServiceAccessUpdate operation.
+    /// 
     /// </summary>
-    public partial class GetResourcePolicyResponse : AmazonWebServiceResponse
+    public partial class StartOrganizationServiceAccessUpdateRequest : AmazonNetworkManagerRequest
     {
-        private string _policyDocument;
+        private string _action;
 
         /// <summary>
-        /// Gets and sets the property PolicyDocument. 
-        /// <para>
-        /// The resource policy document.
-        /// </para>
+        /// Gets and sets the property Action.
         /// </summary>
-        [AWSProperty(Min=0, Max=10000000)]
-        public string PolicyDocument
+        [AWSProperty(Required=true, Min=0, Max=50)]
+        public string Action
         {
-            get { return this._policyDocument; }
-            set { this._policyDocument = value; }
+            get { return this._action; }
+            set { this._action = value; }
         }
 
-        // Check to see if PolicyDocument property is set
-        internal bool IsSetPolicyDocument()
+        // Check to see if Action property is set
+        internal bool IsSetAction()
         {
-            return this._policyDocument != null;
+            return this._action != null;
         }
 
     }

@@ -138,7 +138,7 @@ namespace Amazon.NetworkManager.Model
         /// The limit code.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=0, Max=10000000)]
         public string LimitCode
         {
             get { return this._limitCode; }
@@ -157,6 +157,7 @@ namespace Amazon.NetworkManager.Model
         /// The ID of the resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=10000000)]
         public string ResourceId
         {
             get { return this._resourceId; }
@@ -175,6 +176,7 @@ namespace Amazon.NetworkManager.Model
         /// The resource type.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=10000000)]
         public string ResourceType
         {
             get { return this._resourceType; }
@@ -193,7 +195,7 @@ namespace Amazon.NetworkManager.Model
         /// The service code.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=0, Max=10000000)]
         public string ServiceCode
         {
             get { return this._serviceCode; }

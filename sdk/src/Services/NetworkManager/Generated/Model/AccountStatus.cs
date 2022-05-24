@@ -29,29 +29,43 @@ using Amazon.Runtime.Internal;
 namespace Amazon.NetworkManager.Model
 {
     /// <summary>
-    /// This is the response object from the GetResourcePolicy operation.
+    /// 
     /// </summary>
-    public partial class GetResourcePolicyResponse : AmazonWebServiceResponse
+    public partial class AccountStatus
     {
-        private string _policyDocument;
+        private string _accountId;
+        private string _slrDeploymentStatus;
 
         /// <summary>
-        /// Gets and sets the property PolicyDocument. 
-        /// <para>
-        /// The resource policy document.
-        /// </para>
+        /// Gets and sets the property AccountId.
         /// </summary>
-        [AWSProperty(Min=0, Max=10000000)]
-        public string PolicyDocument
+        [AWSProperty(Min=0, Max=50)]
+        public string AccountId
         {
-            get { return this._policyDocument; }
-            set { this._policyDocument = value; }
+            get { return this._accountId; }
+            set { this._accountId = value; }
         }
 
-        // Check to see if PolicyDocument property is set
-        internal bool IsSetPolicyDocument()
+        // Check to see if AccountId property is set
+        internal bool IsSetAccountId()
         {
-            return this._policyDocument != null;
+            return this._accountId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SLRDeploymentStatus.
+        /// </summary>
+        [AWSProperty(Min=0, Max=50)]
+        public string SLRDeploymentStatus
+        {
+            get { return this._slrDeploymentStatus; }
+            set { this._slrDeploymentStatus = value; }
+        }
+
+        // Check to see if SLRDeploymentStatus property is set
+        internal bool IsSetSLRDeploymentStatus()
+        {
+            return this._slrDeploymentStatus != null;
         }
 
     }

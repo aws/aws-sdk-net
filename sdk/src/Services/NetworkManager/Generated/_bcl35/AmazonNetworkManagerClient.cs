@@ -35,9 +35,9 @@ namespace Amazon.NetworkManager
     /// <summary>
     /// Implementation for accessing NetworkManager
     ///
-    /// Transit Gateway Network Manager (Network Manager) enables you to create a global network,
-    /// in which you can monitor your Amazon Web Services and on-premises networks that are
-    /// built around transit gateways.
+    /// Amazon Web Services enables you to centrally manage your Amazon Web Services Cloud
+    /// WAN core network and your Transit Gateway network across Amazon Web Services accounts,
+    /// Regions, and on-premises locations.
     /// </summary>
     public partial class AmazonNetworkManagerClient : AmazonServiceClient, IAmazonNetworkManager
     {
@@ -429,8 +429,8 @@ namespace Amazon.NetworkManager
         ///  
         /// <para>
         /// You can only associate customer gateways that are connected to a VPN attachment on
-        /// a transit gateway. The transit gateway must be registered in your global network.
-        /// When you register a transit gateway, customer gateways that are connected to the transit
+        /// a transit gateway or core network registered in your global network. When you register
+        /// a transit gateway or core network, customer gateways that are connected to the transit
         /// gateway are automatically included in the global network. To list customer gateways
         /// that are connected to a transit gateway, use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVpnConnections.html">DescribeVpnConnections</a>
         /// EC2 API and filter by <code>transit-gateway-id</code>.
@@ -836,7 +836,7 @@ namespace Amazon.NetworkManager
         #region  CreateConnectPeer
 
         /// <summary>
-        /// Creates a core network connect peer for a specified core network connect attachment
+        /// Creates a core network Connect peer for a specified core network connect attachment
         /// between a core network and an appliance. The peer address and transit gateway address
         /// must be the same IP address family (IPv4 or IPv6).
         /// </summary>
@@ -1290,7 +1290,8 @@ namespace Amazon.NetworkManager
         #region  CreateSiteToSiteVpnAttachment
 
         /// <summary>
-        /// Creates a site-to-site VPN attachment on an edge location of a core network.
+        /// Creates an Amazon Web Services site-to-site VPN attachment on an edge location of
+        /// a core network.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSiteToSiteVpnAttachment service method.</param>
         /// 
@@ -1877,7 +1878,8 @@ namespace Amazon.NetworkManager
 
         /// <summary>
         /// Deletes an existing global network. You must first delete all global network objects
-        /// (devices, links, and sites) and deregister all transit gateways.
+        /// (devices, links, and sites), deregister all transit gateways, and delete any core
+        /// networks.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteGlobalNetwork service method.</param>
         /// 
@@ -2961,7 +2963,7 @@ namespace Amazon.NetworkManager
         #region  GetCoreNetwork
 
         /// <summary>
-        /// Returns information about a core network. By default it returns the LIVE policy.
+        /// Returns information about the LIVE policy for a core network.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCoreNetwork service method.</param>
         /// 
@@ -4554,6 +4556,60 @@ namespace Amazon.NetworkManager
 
         #endregion
         
+        #region  ListOrganizationServiceAccessStatus
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListOrganizationServiceAccessStatus service method.</param>
+        /// 
+        /// <returns>The response from the ListOrganizationServiceAccessStatus service method, as returned by NetworkManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListOrganizationServiceAccessStatus">REST API Reference for ListOrganizationServiceAccessStatus Operation</seealso>
+        public virtual ListOrganizationServiceAccessStatusResponse ListOrganizationServiceAccessStatus(ListOrganizationServiceAccessStatusRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListOrganizationServiceAccessStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListOrganizationServiceAccessStatusResponseUnmarshaller.Instance;
+
+            return Invoke<ListOrganizationServiceAccessStatusResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListOrganizationServiceAccessStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListOrganizationServiceAccessStatus operation on AmazonNetworkManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListOrganizationServiceAccessStatus
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListOrganizationServiceAccessStatus">REST API Reference for ListOrganizationServiceAccessStatus Operation</seealso>
+        public virtual IAsyncResult BeginListOrganizationServiceAccessStatus(ListOrganizationServiceAccessStatusRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListOrganizationServiceAccessStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListOrganizationServiceAccessStatusResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListOrganizationServiceAccessStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListOrganizationServiceAccessStatus.</param>
+        /// 
+        /// <returns>Returns a  ListOrganizationServiceAccessStatusResult from NetworkManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListOrganizationServiceAccessStatus">REST API Reference for ListOrganizationServiceAccessStatus Operation</seealso>
+        public virtual ListOrganizationServiceAccessStatusResponse EndListOrganizationServiceAccessStatus(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListOrganizationServiceAccessStatusResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListTagsForResource
 
         /// <summary>
@@ -4993,6 +5049,79 @@ namespace Amazon.NetworkManager
         public virtual RestoreCoreNetworkPolicyVersionResponse EndRestoreCoreNetworkPolicyVersion(IAsyncResult asyncResult)
         {
             return EndInvoke<RestoreCoreNetworkPolicyVersionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StartOrganizationServiceAccessUpdate
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartOrganizationServiceAccessUpdate service method.</param>
+        /// 
+        /// <returns>The response from the StartOrganizationServiceAccessUpdate service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ServiceQuotaExceededException">
+        /// A service limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/StartOrganizationServiceAccessUpdate">REST API Reference for StartOrganizationServiceAccessUpdate Operation</seealso>
+        public virtual StartOrganizationServiceAccessUpdateResponse StartOrganizationServiceAccessUpdate(StartOrganizationServiceAccessUpdateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartOrganizationServiceAccessUpdateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartOrganizationServiceAccessUpdateResponseUnmarshaller.Instance;
+
+            return Invoke<StartOrganizationServiceAccessUpdateResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartOrganizationServiceAccessUpdate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartOrganizationServiceAccessUpdate operation on AmazonNetworkManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartOrganizationServiceAccessUpdate
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/StartOrganizationServiceAccessUpdate">REST API Reference for StartOrganizationServiceAccessUpdate Operation</seealso>
+        public virtual IAsyncResult BeginStartOrganizationServiceAccessUpdate(StartOrganizationServiceAccessUpdateRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartOrganizationServiceAccessUpdateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartOrganizationServiceAccessUpdateResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartOrganizationServiceAccessUpdate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartOrganizationServiceAccessUpdate.</param>
+        /// 
+        /// <returns>Returns a  StartOrganizationServiceAccessUpdateResult from NetworkManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/StartOrganizationServiceAccessUpdate">REST API Reference for StartOrganizationServiceAccessUpdate Operation</seealso>
+        public virtual StartOrganizationServiceAccessUpdateResponse EndStartOrganizationServiceAccessUpdate(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartOrganizationServiceAccessUpdateResponse>(asyncResult);
         }
 
         #endregion

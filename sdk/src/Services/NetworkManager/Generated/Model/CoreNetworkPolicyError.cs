@@ -43,7 +43,7 @@ namespace Amazon.NetworkManager.Model
         /// The error code associated with a core network policy error.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=0, Max=10000000)]
         public string ErrorCode
         {
             get { return this._errorCode; }
@@ -62,7 +62,7 @@ namespace Amazon.NetworkManager.Model
         /// The message associated with a core network policy error code.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=0, Max=10000000)]
         public string Message
         {
             get { return this._message; }
@@ -81,6 +81,7 @@ namespace Amazon.NetworkManager.Model
         /// The JSON path where the error was discovered in the policy document.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=10000000)]
         public string Path
         {
             get { return this._path; }

@@ -133,7 +133,7 @@ namespace Amazon.NetworkManager.Model
         /// The ID of the resource.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=0, Max=10000000)]
         public string ResourceId
         {
             get { return this._resourceId; }
@@ -152,7 +152,7 @@ namespace Amazon.NetworkManager.Model
         /// The resource type.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=0, Max=10000000)]
         public string ResourceType
         {
             get { return this._resourceType; }

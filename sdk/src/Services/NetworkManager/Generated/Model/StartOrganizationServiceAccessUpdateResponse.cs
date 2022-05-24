@@ -29,29 +29,25 @@ using Amazon.Runtime.Internal;
 namespace Amazon.NetworkManager.Model
 {
     /// <summary>
-    /// This is the response object from the GetResourcePolicy operation.
+    /// This is the response object from the StartOrganizationServiceAccessUpdate operation.
     /// </summary>
-    public partial class GetResourcePolicyResponse : AmazonWebServiceResponse
+    public partial class StartOrganizationServiceAccessUpdateResponse : AmazonWebServiceResponse
     {
-        private string _policyDocument;
+        private OrganizationStatus _organizationStatus;
 
         /// <summary>
-        /// Gets and sets the property PolicyDocument. 
-        /// <para>
-        /// The resource policy document.
-        /// </para>
+        /// Gets and sets the property OrganizationStatus.
         /// </summary>
-        [AWSProperty(Min=0, Max=10000000)]
-        public string PolicyDocument
+        public OrganizationStatus OrganizationStatus
         {
-            get { return this._policyDocument; }
-            set { this._policyDocument = value; }
+            get { return this._organizationStatus; }
+            set { this._organizationStatus = value; }
         }
 
-        // Check to see if PolicyDocument property is set
-        internal bool IsSetPolicyDocument()
+        // Check to see if OrganizationStatus property is set
+        internal bool IsSetOrganizationStatus()
         {
-            return this._policyDocument != null;
+            return this._organizationStatus != null;
         }
 
     }

@@ -29,49 +29,42 @@ using Amazon.Runtime.Internal;
 namespace Amazon.NetworkManager.Model
 {
     /// <summary>
-    /// Describes a validation exception for a field.
+    /// This is the response object from the ListOrganizationServiceAccessStatus operation.
     /// </summary>
-    public partial class ValidationExceptionField
+    public partial class ListOrganizationServiceAccessStatusResponse : AmazonWebServiceResponse
     {
-        private string _message;
-        private string _name;
+        private string _nextToken;
+        private OrganizationStatus _organizationStatus;
 
         /// <summary>
-        /// Gets and sets the property Message. 
-        /// <para>
-        /// The message for the field.
-        /// </para>
+        /// Gets and sets the property NextToken.
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=10000000)]
-        public string Message
+        [AWSProperty(Min=0, Max=2048)]
+        public string NextToken
         {
-            get { return this._message; }
-            set { this._message = value; }
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
         }
 
-        // Check to see if Message property is set
-        internal bool IsSetMessage()
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
         {
-            return this._message != null;
+            return this._nextToken != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Name. 
-        /// <para>
-        /// The name of the field.
-        /// </para>
+        /// Gets and sets the property OrganizationStatus.
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=10000000)]
-        public string Name
+        public OrganizationStatus OrganizationStatus
         {
-            get { return this._name; }
-            set { this._name = value; }
+            get { return this._organizationStatus; }
+            set { this._organizationStatus = value; }
         }
 
-        // Check to see if Name property is set
-        internal bool IsSetName()
+        // Check to see if OrganizationStatus property is set
+        internal bool IsSetOrganizationStatus()
         {
-            return this._name != null;
+            return this._organizationStatus != null;
         }
 
     }

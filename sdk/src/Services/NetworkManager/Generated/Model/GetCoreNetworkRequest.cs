@@ -30,7 +30,7 @@ namespace Amazon.NetworkManager.Model
 {
     /// <summary>
     /// Container for the parameters to the GetCoreNetwork operation.
-    /// Returns information about a core network. By default it returns the LIVE policy.
+    /// Returns information about the LIVE policy for a core network.
     /// </summary>
     public partial class GetCoreNetworkRequest : AmazonNetworkManagerRequest
     {

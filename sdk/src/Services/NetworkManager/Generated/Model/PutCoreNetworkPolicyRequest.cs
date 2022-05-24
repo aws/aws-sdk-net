@@ -122,7 +122,7 @@ namespace Amazon.NetworkManager.Model
         /// The policy document.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=0, Max=10000000)]
         public string PolicyDocument
         {
             get { return this._policyDocument; }
