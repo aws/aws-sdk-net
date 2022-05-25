@@ -42,6 +42,11 @@ namespace Amazon.AppRunner.Model
         /// <para>
         /// Configuration for building and running the service from a source code repository.
         /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <code>CodeConfiguration</code> is required only for <code>CreateService</code> request.
+        /// </para>
+        ///  </note>
         /// </summary>
         public CodeConfiguration CodeConfiguration
         {

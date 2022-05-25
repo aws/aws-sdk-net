@@ -69,6 +69,11 @@ namespace Amazon.AppRunner.Model
         /// with a custom Amazon VPC. Specify IDs of subnets of a single Amazon VPC. App Runner
         /// determines the Amazon VPC from the subnets you specify.
         /// </para>
+        ///  <note> 
+        /// <para>
+        ///  App Runner currently only provides support for IPv4. 
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true)]
         public List<string> Subnets
