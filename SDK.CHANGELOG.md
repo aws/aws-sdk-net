@@ -1,3 +1,24 @@
+### 3.7.282.0 (2022-05-25 18:20 UTC)
+* APIGateway (3.7.3.18)
+	* Documentation updates for Amazon API Gateway
+* AppRunner (3.7.4.17)
+	* Documentation-only update added for CodeConfiguration.
+* CloudFormation (3.7.10.0)
+	* Add a new parameter statusReason to DescribeStackSetOperation output for additional details
+* FSx (3.7.13.0)
+	* This release adds root squash support to FSx for Lustre to restrict root level access from clients by mapping root users to a less-privileged user/group with limited permissions.
+* LookoutMetrics (3.7.10.0)
+	* Adding AthenaSourceConfig for MetricSet APIs to support Athena as a data source.
+* SageMaker (3.7.34.0)
+	* Amazon SageMaker Autopilot adds support for manually selecting features from the input dataset using the CreateAutoMLJob API.
+* SecretsManager (3.7.2.47)
+	* Documentation updates for Secrets Manager
+* VoiceID (3.7.1.0)
+	* VoiceID will now automatically expire Speakers if they haven't been accessed for Enrollment, Re-enrollment or Successful Auth for three years. The Speaker APIs now return a "LastAccessedAt" time for Speakers, and the EvaluateSession API returns "SPEAKER_EXPIRED" Auth Decision for EXPIRED Speakers.
+* Core 3.7.11.7
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.281.0 (2022-05-24 18:15 UTC)
 * CognitoIdentityProvider (3.7.3.0)
 	* Amazon Cognito now supports requiring attribute verification (ex. email and phone number) before update.
