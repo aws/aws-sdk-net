@@ -39,6 +39,7 @@ namespace Amazon.FSx.Model
         private string _dailyAutomaticBackupStartTime;
         private DataCompressionType _dataCompressionType;
         private LustreLogCreateConfiguration _logConfiguration;
+        private LustreRootSquashConfiguration _rootSquashConfiguration;
         private string _weeklyMaintenanceStartTime;
 
         /// <summary>
@@ -181,6 +182,26 @@ namespace Amazon.FSx.Model
         internal bool IsSetLogConfiguration()
         {
             return this._logConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RootSquashConfiguration. 
+        /// <para>
+        /// The Lustre root squash configuration used when updating an Amazon FSx for Lustre file
+        /// system. When enabled, root squash restricts root-level access from clients that try
+        /// to access your file system as a root user.
+        /// </para>
+        /// </summary>
+        public LustreRootSquashConfiguration RootSquashConfiguration
+        {
+            get { return this._rootSquashConfiguration; }
+            set { this._rootSquashConfiguration = value; }
+        }
+
+        // Check to see if RootSquashConfiguration property is set
+        internal bool IsSetRootSquashConfiguration()
+        {
+            return this._rootSquashConfiguration != null;
         }
 
         /// <summary>

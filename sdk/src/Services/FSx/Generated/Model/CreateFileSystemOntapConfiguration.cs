@@ -94,8 +94,8 @@ namespace Amazon.FSx.Model
         ///  </li> </ul> 
         /// <para>
         /// For information about the use cases for Multi-AZ and Single-AZ deployments, refer
-        /// to <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-multiAZ.html">Choosing
-        /// Multi-AZ or Single-AZ file system deployment</a>. 
+        /// to <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-AZ.html">Choosing
+        /// a file system deployment type</a>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
