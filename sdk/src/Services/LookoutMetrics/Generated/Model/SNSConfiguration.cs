@@ -60,7 +60,7 @@ namespace Amazon.LookoutMetrics.Model
         /// <summary>
         /// Gets and sets the property SnsFormat. 
         /// <para>
-        /// The text format for alerts.
+        /// The format of the SNS topic.
         /// </para>
         /// </summary>
         public SnsFormat SnsFormat

@@ -29,11 +29,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LookoutMetrics.Model
 {
     /// <summary>
-    /// Contains information about source data used to generate a metric.
+    /// Contains information about source data used to generate metrics.
     /// </summary>
     public partial class MetricSource
     {
         private AppFlowConfig _appFlowConfig;
+        private AthenaSourceConfig _athenaSourceConfig;
         private CloudWatchConfig _cloudWatchConfig;
         private RDSSourceConfig _rdsSourceConfig;
         private RedshiftSourceConfig _redshiftSourceConfig;
@@ -42,7 +43,7 @@ namespace Amazon.LookoutMetrics.Model
         /// <summary>
         /// Gets and sets the property AppFlowConfig. 
         /// <para>
-        /// An object containing information about the AppFlow configuration.
+        /// Details about an AppFlow datasource.
         /// </para>
         /// </summary>
         public AppFlowConfig AppFlowConfig
@@ -58,9 +59,27 @@ namespace Amazon.LookoutMetrics.Model
         }
 
         /// <summary>
+        /// Gets and sets the property AthenaSourceConfig. 
+        /// <para>
+        /// Details about an Amazon Athena datasource.
+        /// </para>
+        /// </summary>
+        public AthenaSourceConfig AthenaSourceConfig
+        {
+            get { return this._athenaSourceConfig; }
+            set { this._athenaSourceConfig = value; }
+        }
+
+        // Check to see if AthenaSourceConfig property is set
+        internal bool IsSetAthenaSourceConfig()
+        {
+            return this._athenaSourceConfig != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property CloudWatchConfig. 
         /// <para>
-        /// An object containing information about the Amazon CloudWatch monitoring configuration.
+        /// Details about an Amazon CloudWatch monitoring datasource.
         /// </para>
         /// </summary>
         public CloudWatchConfig CloudWatchConfig
@@ -78,8 +97,7 @@ namespace Amazon.LookoutMetrics.Model
         /// <summary>
         /// Gets and sets the property RDSSourceConfig. 
         /// <para>
-        /// An object containing information about the Amazon Relational Database Service (RDS)
-        /// configuration.
+        /// Details about an Amazon Relational Database Service (RDS) datasource.
         /// </para>
         /// </summary>
         public RDSSourceConfig RDSSourceConfig
@@ -97,7 +115,7 @@ namespace Amazon.LookoutMetrics.Model
         /// <summary>
         /// Gets and sets the property RedshiftSourceConfig. 
         /// <para>
-        /// An object containing information about the Amazon Redshift database configuration.
+        /// Details about an Amazon Redshift database datasource.
         /// </para>
         /// </summary>
         public RedshiftSourceConfig RedshiftSourceConfig

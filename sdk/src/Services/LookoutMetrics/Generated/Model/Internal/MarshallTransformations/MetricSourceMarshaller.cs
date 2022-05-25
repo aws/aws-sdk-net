@@ -56,6 +56,17 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetAthenaSourceConfig())
+            {
+                context.Writer.WritePropertyName("AthenaSourceConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AthenaSourceConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.AthenaSourceConfig, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetCloudWatchConfig())
             {
                 context.Writer.WritePropertyName("CloudWatchConfig");

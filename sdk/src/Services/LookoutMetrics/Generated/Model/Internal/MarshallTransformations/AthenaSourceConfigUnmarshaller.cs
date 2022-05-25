@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for MetricSource Object
+    /// Response Unmarshaller for AthenaSourceConfig Object
     /// </summary>  
-    public class MetricSourceUnmarshaller : IUnmarshaller<MetricSource, XmlUnmarshallerContext>, IUnmarshaller<MetricSource, JsonUnmarshallerContext>
+    public class AthenaSourceConfigUnmarshaller : IUnmarshaller<AthenaSourceConfig, XmlUnmarshallerContext>, IUnmarshaller<AthenaSourceConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        MetricSource IUnmarshaller<MetricSource, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AthenaSourceConfig IUnmarshaller<AthenaSourceConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,51 +53,57 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public MetricSource Unmarshall(JsonUnmarshallerContext context)
+        public AthenaSourceConfig Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            MetricSource unmarshalledObject = new MetricSource();
+            AthenaSourceConfig unmarshalledObject = new AthenaSourceConfig();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("AppFlowConfig", targetDepth))
+                if (context.TestExpression("BackTestConfiguration", targetDepth))
                 {
-                    var unmarshaller = AppFlowConfigUnmarshaller.Instance;
-                    unmarshalledObject.AppFlowConfig = unmarshaller.Unmarshall(context);
+                    var unmarshaller = BackTestConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.BackTestConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("AthenaSourceConfig", targetDepth))
+                if (context.TestExpression("DatabaseName", targetDepth))
                 {
-                    var unmarshaller = AthenaSourceConfigUnmarshaller.Instance;
-                    unmarshalledObject.AthenaSourceConfig = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DatabaseName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("CloudWatchConfig", targetDepth))
+                if (context.TestExpression("DataCatalog", targetDepth))
                 {
-                    var unmarshaller = CloudWatchConfigUnmarshaller.Instance;
-                    unmarshalledObject.CloudWatchConfig = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DataCatalog = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("RDSSourceConfig", targetDepth))
+                if (context.TestExpression("RoleArn", targetDepth))
                 {
-                    var unmarshaller = RDSSourceConfigUnmarshaller.Instance;
-                    unmarshalledObject.RDSSourceConfig = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RoleArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("RedshiftSourceConfig", targetDepth))
+                if (context.TestExpression("S3ResultsPath", targetDepth))
                 {
-                    var unmarshaller = RedshiftSourceConfigUnmarshaller.Instance;
-                    unmarshalledObject.RedshiftSourceConfig = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.S3ResultsPath = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("S3SourceConfig", targetDepth))
+                if (context.TestExpression("TableName", targetDepth))
                 {
-                    var unmarshaller = S3SourceConfigUnmarshaller.Instance;
-                    unmarshalledObject.S3SourceConfig = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TableName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("WorkGroupName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.WorkGroupName = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -106,12 +112,12 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
         }
 
 
-        private static MetricSourceUnmarshaller _instance = new MetricSourceUnmarshaller();        
+        private static AthenaSourceConfigUnmarshaller _instance = new AthenaSourceConfigUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static MetricSourceUnmarshaller Instance
+        public static AthenaSourceConfigUnmarshaller Instance
         {
             get
             {

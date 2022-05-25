@@ -608,6 +608,39 @@
     <pattern>arn:([a-z\d-]+):.*:.*:.*:.+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LookoutMetrics.Model.AthenaSourceConfig.DatabaseName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[a-zA-Z0-9_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutMetrics.Model.AthenaSourceConfig.DataCatalog</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutMetrics.Model.AthenaSourceConfig.RoleArn</property>
+    <max>256</max>
+    <pattern>arn:([a-z\d-]+):.*:.*:.*:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutMetrics.Model.AthenaSourceConfig.S3ResultsPath</property>
+    <max>1024</max>
+    <pattern>^s3://[a-z0-9].+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutMetrics.Model.AthenaSourceConfig.TableName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutMetrics.Model.AthenaSourceConfig.WorkGroupName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9._-]{1,128}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LookoutMetrics.Model.CloudWatchConfig.RoleArn</property>
     <max>256</max>
     <pattern>arn:([a-z\d-]+):.*:.*:.*:.+</pattern>
