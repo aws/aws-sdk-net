@@ -88,6 +88,12 @@ namespace Amazon.VoiceID.Model.Internal.MarshallTransformations
                     unmarshalledObject.GeneratedSpeakerId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("LastAccessedAt", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.LastAccessedAt = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

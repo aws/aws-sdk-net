@@ -43,6 +43,10 @@ namespace Amazon.VoiceID
         /// </summary>
         public static readonly AuthenticationDecision REJECT = new AuthenticationDecision("REJECT");
         /// <summary>
+        /// Constant SPEAKER_EXPIRED for AuthenticationDecision
+        /// </summary>
+        public static readonly AuthenticationDecision SPEAKER_EXPIRED = new AuthenticationDecision("SPEAKER_EXPIRED");
+        /// <summary>
         /// Constant SPEAKER_ID_NOT_PROVIDED for AuthenticationDecision
         /// </summary>
         public static readonly AuthenticationDecision SPEAKER_ID_NOT_PROVIDED = new AuthenticationDecision("SPEAKER_ID_NOT_PROVIDED");

@@ -41,6 +41,12 @@ namespace Amazon.VoiceID.Model
         /// </summary>
         public IPaginatedEnumerable<ListDomainsResponse> Responses => new PaginatedResponse<ListDomainsResponse>(this);
 
+        /// <summary>
+        /// Enumerable containing all of the DomainSummaries
+        /// </summary>
+        public IPaginatedEnumerable<DomainSummary> DomainSummaries => 
+            new PaginatedResultKeyResponse<ListDomainsResponse, DomainSummary>(this, (i) => i.DomainSummaries);
+
         internal ListDomainsPaginator(IAmazonVoiceID client, ListDomainsRequest request)
         {
             this._client = client;
