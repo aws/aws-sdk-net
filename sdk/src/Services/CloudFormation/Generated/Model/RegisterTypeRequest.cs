@@ -48,7 +48,7 @@ namespace Amazon.CloudFormation.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// For more information on how to develop extensions and ready them for registration,
+    /// For more information about how to develop extensions and ready them for registration,
     /// see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-types.html">Creating
     /// Resource Providers</a> in the <i>CloudFormation CLI User Guide</i>.
     /// </para>
@@ -113,7 +113,7 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// For CloudFormation to assume the specified execution role, the role must contain a
         /// trust relationship with the CloudFormation service principle (<code>resources.cloudformation.amazonaws.com</code>).
-        /// For more information on adding trust relationships, see <a href="IAM/latest/UserGuide/roles-managingrole-editing-console.html#roles-managingrole_edit-trust-policy">Modifying
+        /// For more information about adding trust relationships, see <a href="IAM/latest/UserGuide/roles-managingrole-editing-console.html#roles-managingrole_edit-trust-policy">Modifying
         /// a role trust policy</a> in the <i>Identity and Access Management User Guide</i>.
         /// </para>
         ///  
@@ -166,7 +166,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// For information on generating a schema handler package for the extension you want
+        /// For information about generating a schema handler package for the extension you want
         /// to register, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-cli-submit.html">submit</a>
         /// in the <i>CloudFormation CLI User Guide</i>.
         /// </para>
@@ -218,7 +218,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// We recommend that extension names adhere to the following patterns:
+        /// We suggest that extension names adhere to the following patterns:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -227,6 +227,10 @@ namespace Amazon.CloudFormation.Model
         ///  </li> <li> 
         /// <para>
         /// For modules, <i>company_or_organization</i>::<i>service</i>::<i>type</i>::MODULE.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For hooks, <i>MyCompany</i>::<i>Testing</i>::<i>MyTestHook</i>.
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>

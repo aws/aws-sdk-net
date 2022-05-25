@@ -254,7 +254,7 @@ namespace Amazon.CloudFormation
         /// 
         ///  
         /// <para>
-        /// For information on resource and stack limitations, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">CloudFormation
+        /// For information about resource and stack limitations, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">CloudFormation
         /// quotas</a> in the <i>CloudFormation User Guide</i>.
         /// </para>
         /// </exception>
@@ -289,7 +289,7 @@ namespace Amazon.CloudFormation
         /// 
         ///  
         /// <para>
-        /// For information on resource and stack limitations, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">CloudFormation
+        /// For information about resource and stack limitations, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">CloudFormation
         /// quotas</a> in the <i>CloudFormation User Guide</i>.
         /// </para>
         /// </exception>
@@ -325,7 +325,7 @@ namespace Amazon.CloudFormation
         /// 
         ///  
         /// <para>
-        /// For information on resource and stack limitations, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">CloudFormation
+        /// For information about resource and stack limitations, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">CloudFormation
         /// quotas</a> in the <i>CloudFormation User Guide</i>.
         /// </para>
         /// </exception>
@@ -369,7 +369,7 @@ namespace Amazon.CloudFormation
         /// 
         ///  
         /// <para>
-        /// For information on resource and stack limitations, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">CloudFormation
+        /// For information about resource and stack limitations, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">CloudFormation
         /// quotas</a> in the <i>CloudFormation User Guide</i>.
         /// </para>
         /// </exception>
@@ -514,8 +514,8 @@ namespace Amazon.CloudFormation
 
 
         /// <summary>
-        /// Deletes a stack set. Before you can delete a stack set, all of its member stack instances
-        /// must be deleted. For more information about how to do this, see <a>DeleteStackInstances</a>.
+        /// Deletes a stack set. Before you can delete a stack set, all its member stack instances
+        /// must be deleted. For more information about how to complete this, see <a>DeleteStackInstances</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteStackSet service method.</param>
         /// <param name="cancellationToken">
@@ -663,7 +663,7 @@ namespace Amazon.CloudFormation
         /// </para>
         ///  
         /// <para>
-        /// For more information on registering as a publisher, see:
+        /// For more information about registering as a publisher, see:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -701,8 +701,8 @@ namespace Amazon.CloudFormation
         /// operation detects whether a stack's actual configuration differs, or has <i>drifted</i>,
         /// from it's expected configuration, as defined in the stack template and any values
         /// specified as template parameters. A stack is considered to have drifted if one or
-        /// more of its resources have drifted. For more information on stack and resource drift,
-        /// see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
+        /// more of its resources have drifted. For more information about stack and resource
+        /// drift, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
         /// Unregulated Configuration Changes to Stacks and Resources</a>.
         /// 
         ///  
@@ -1170,8 +1170,8 @@ namespace Amazon.CloudFormation
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information on performing a drift detection operation on a stack set, see
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting
+        /// For more information about performing a drift detection operation on a stack set,
+        /// see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting
         /// unmanaged changes in stack sets</a>.
         /// </para>
         ///  
@@ -1396,7 +1396,7 @@ namespace Amazon.CloudFormation
         /// 
         ///  
         /// <para>
-        /// For information on resource and stack limitations, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">CloudFormation
+        /// For information about resource and stack limitations, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">CloudFormation
         /// quotas</a> in the <i>CloudFormation User Guide</i>.
         /// </para>
         /// </exception>
@@ -1732,7 +1732,7 @@ namespace Amazon.CloudFormation
         /// <summary>
         /// Publishes the specified extension to the CloudFormation registry as a public extension
         /// in this region. Public extensions are available for use by all CloudFormation users.
-        /// For more information on publishing extensions, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html">Publishing
+        /// For more information about publishing extensions, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html">Publishing
         /// extensions to make them available for public use</a> in the <i>CloudFormation CLI
         /// User Guide</i>.
         /// 
@@ -1802,8 +1802,8 @@ namespace Amazon.CloudFormation
         /// 
         ///  
         /// <para>
-        /// For information on requirements for registering as a public extension publisher, see
-        /// <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html#publish-extension-prereqs">Registering
+        /// For information about requirements for registering as a public extension publisher,
+        /// see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html#publish-extension-prereqs">Registering
         /// your account to publish CloudFormation extensions</a> in the <i>CloudFormation CLI
         /// User Guide</i>.
         /// </para>
@@ -1845,7 +1845,7 @@ namespace Amazon.CloudFormation
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information on how to develop extensions and ready them for registration,
+        /// For more information about how to develop extensions and ready them for registration,
         /// see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-types.html">Creating
         /// Resource Providers</a> in the <i>CloudFormation CLI User Guide</i>.
         /// </para>

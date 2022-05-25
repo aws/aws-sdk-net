@@ -34,7 +34,7 @@ namespace Amazon.CloudFormation.Model
     /// 
     ///  
     /// <para>
-    /// For more information on modules, see <a href="AWSCloudFormation/latest/UserGuide/modules.html">Using
+    /// For more information about modules, see <a href="AWSCloudFormation/latest/UserGuide/modules.html">Using
     /// modules to encapsulate and reuse resource configurations</a> in the <i>CloudFormation
     /// User Guide</i>.
     /// </para>

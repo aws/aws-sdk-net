@@ -103,8 +103,8 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If your stack template contains these resources, we recommend that you review all
-        /// permissions associated with them and edit their permissions if necessary.
+        /// If your stack template contains these resources, we suggest that you review all permissions
+        /// associated with them and edit their permissions if necessary.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -429,8 +429,8 @@ namespace Amazon.CloudFormation.Model
         ///  
         /// <para>
         /// If you want to update protected resources, specify a temporary overriding stack policy
-        /// during this update. If you do not specify a stack policy, the current policy that
-        /// is associated with the stack will be used.
+        /// during this update. If you don't specify a stack policy, the current policy that is
+        /// associated with the stack will be used.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=16384)]
@@ -457,8 +457,8 @@ namespace Amazon.CloudFormation.Model
         ///  
         /// <para>
         /// If you want to update protected resources, specify a temporary overriding stack policy
-        /// during this update. If you do not specify a stack policy, the current policy that
-        /// is associated with the stack will be used.
+        /// during this update. If you don't specify a stack policy, the current policy that is
+        /// associated with the stack will be used.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1350)]

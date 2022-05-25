@@ -179,7 +179,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property DriftInformation. 
         /// <para>
-        /// Information on whether a stack's actual configuration differs, or has <i>drifted</i>,
+        /// Information about whether a stack's actual configuration differs, or has <i>drifted</i>,
         /// from it's expected configuration, as defined in the stack template and any values
         /// specified as template parameters. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
         /// Unregulated Configuration Changes to Stacks and Resources</a>.
@@ -205,8 +205,8 @@ namespace Amazon.CloudFormation.Model
         ///  
         /// <para>
         /// For <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested
-        /// stacks</a>, termination protection is set on the root stack and cannot be changed
-        /// directly on the nested stack. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting
+        /// stacks</a>, termination protection is set on the root stack and can't be changed directly
+        /// on the nested stack. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting
         /// a Stack From Being Deleted</a> in the <i>CloudFormation User Guide</i>.
         /// </para>
         /// </summary>

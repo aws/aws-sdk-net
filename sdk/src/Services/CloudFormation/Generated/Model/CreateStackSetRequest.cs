@@ -53,7 +53,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property AdministrationRoleARN. 
         /// <para>
-        /// The Amazon Resource Number (ARN) of the IAM role to use to create this stack set.
+        /// The Amazon Resource Name (ARN) of the IAM role to use to create this stack set.
         /// </para>
         ///  
         /// <para>
@@ -404,7 +404,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property StackId. 
         /// <para>
-        /// The stack ID you are importing into a new stack set. Specify the Amazon Resource Number
+        /// The stack ID you are importing into a new stack set. Specify the Amazon Resource Name
         /// (ARN) of the stack.
         /// </para>
         /// </summary>

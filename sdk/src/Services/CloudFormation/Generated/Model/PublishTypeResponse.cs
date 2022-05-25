@@ -38,7 +38,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property PublicTypeArn. 
         /// <para>
-        /// The Amazon Resource Number (ARN) assigned to the public extension upon publication.
+        /// The Amazon Resource Name (ARN) assigned to the public extension upon publication.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]

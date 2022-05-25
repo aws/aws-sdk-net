@@ -115,7 +115,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property IsDefaultConfiguration. 
         /// <para>
-        /// Whether or not this configuration data is the default configuration for the extension.
+        /// Whether this configuration data is the default configuration for the extension.
         /// </para>
         /// </summary>
         public bool IsDefaultConfiguration

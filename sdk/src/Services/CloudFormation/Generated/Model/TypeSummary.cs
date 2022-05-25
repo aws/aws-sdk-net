@@ -100,7 +100,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property IsActivated. 
         /// <para>
-        /// Whether or not the extension is activated for this account and region.
+        /// Whether the extension is activated for this account and region.
         /// </para>
         ///  
         /// <para>

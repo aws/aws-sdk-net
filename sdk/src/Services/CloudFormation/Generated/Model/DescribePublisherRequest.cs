@@ -40,7 +40,7 @@ namespace Amazon.CloudFormation.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information on registering as a publisher, see:
+    /// For more information about registering as a publisher, see:
     /// </para>
     ///  <ul> <li> 
     /// <para>

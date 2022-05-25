@@ -45,6 +45,7 @@ namespace Amazon.CloudFormation.Model
         private StackSetDriftDetectionDetails _stackSetDriftDetectionDetails;
         private string _stackSetId;
         private StackSetOperationStatus _status;
+        private string _statusReason;
 
         /// <summary>
         /// Gets and sets the property Action. 
@@ -70,7 +71,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property AdministrationRoleARN. 
         /// <para>
-        /// The Amazon Resource Number (ARN) of the IAM role used to perform this stack set operation.
+        /// The Amazon Resource Name (ARN) of the IAM role used to perform this stack set operation.
         /// </para>
         ///  
         /// <para>
@@ -332,6 +333,24 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StatusReason. 
+        /// <para>
+        /// The status of the operation in details.
+        /// </para>
+        /// </summary>
+        public string StatusReason
+        {
+            get { return this._statusReason; }
+            set { this._statusReason = value; }
+        }
+
+        // Check to see if StatusReason property is set
+        internal bool IsSetStatusReason()
+        {
+            return this._statusReason != null;
         }
 
     }

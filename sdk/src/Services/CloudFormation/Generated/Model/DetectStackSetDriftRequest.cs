@@ -66,8 +66,8 @@ namespace Amazon.CloudFormation.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// For more information on performing a drift detection operation on a stack set, see
-    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting
+    /// For more information about performing a drift detection operation on a stack set,
+    /// see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting
     /// unmanaged changes in stack sets</a>.
     /// </para>
     ///  

@@ -102,7 +102,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property AdministrationRoleARN. 
         /// <para>
-        /// The Amazon Resource Number (ARN) of the IAM role to use to update this stack set.
+        /// The Amazon Resource Name (ARN) of the IAM role to use to update this stack set.
         /// </para>
         ///  
         /// <para>

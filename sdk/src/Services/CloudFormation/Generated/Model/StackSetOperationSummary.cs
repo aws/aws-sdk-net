@@ -38,6 +38,7 @@ namespace Amazon.CloudFormation.Model
         private DateTime? _endTimestamp;
         private string _operationId;
         private StackSetOperationStatus _status;
+        private string _statusReason;
 
         /// <summary>
         /// Gets and sets the property Action. 
@@ -172,6 +173,24 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StatusReason. 
+        /// <para>
+        /// The status of the operation in details.
+        /// </para>
+        /// </summary>
+        public string StatusReason
+        {
+            get { return this._statusReason; }
+            set { this._statusReason = value; }
+        }
+
+        // Check to see if StatusReason property is set
+        internal bool IsSetStatusReason()
+        {
+            return this._statusReason != null;
         }
 
     }

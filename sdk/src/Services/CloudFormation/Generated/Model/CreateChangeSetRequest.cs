@@ -119,8 +119,8 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If your stack template contains these resources, we recommend that you review all
-        /// permissions associated with them and edit their permissions if necessary.
+        /// If your stack template contains these resources, we suggest that you review all permissions
+        /// associated with them and edit their permissions if necessary.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -192,7 +192,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  </note> 
         /// <para>
-        /// For more information on macros, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
+        /// For more information about macros, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
         /// CloudFormation macros to perform custom processing on templates</a>.
         /// </para>
         ///  </li> </ul>

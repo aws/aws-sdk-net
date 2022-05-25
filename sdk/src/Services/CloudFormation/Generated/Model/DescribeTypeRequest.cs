@@ -98,7 +98,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// Extensions provided by Amazon are not assigned a publisher ID.
+        /// Extensions provided by Amazon Web Services are not assigned a publisher ID.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=40)]

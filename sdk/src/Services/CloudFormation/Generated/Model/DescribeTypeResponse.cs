@@ -136,8 +136,8 @@ namespace Amazon.CloudFormation.Model
         ///  
         /// <para>
         /// This applies only to private extensions you have registered in your account. For public
-        /// extensions, both those provided by Amazon and published by third parties, CloudFormation
-        /// returns <code>null</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.
+        /// extensions, both those provided by Amazon Web Services and published by third parties,
+        /// CloudFormation returns <code>null</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.
         /// </para>
         ///  
         /// <para>
@@ -239,7 +239,7 @@ namespace Amazon.CloudFormation.Model
         /// This applies only to private extensions you have registered in your account. For more
         /// information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.
         /// </para>
-        ///   
+        ///  
         /// <para>
         /// If the registered extension calls any Amazon Web Services APIs, you must create an
         /// <i> <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM execution
@@ -264,7 +264,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property IsActivated. 
         /// <para>
-        /// Whether or not the extension is activated in the account and region.
+        /// Whether the extension is activated in the account and region.
         /// </para>
         ///  
         /// <para>
@@ -292,8 +292,8 @@ namespace Amazon.CloudFormation.Model
         ///  
         /// <para>
         /// This applies only to private extensions you have registered in your account, and extensions
-        /// published by Amazon. For public third-party extensions, whether or not they are activated
-        /// in your account, CloudFormation returns <code>null</code>.
+        /// published by Amazon Web Services. For public third-party extensions, whether they
+        /// are activated in your account, CloudFormation returns <code>null</code>.
         /// </para>
         /// </summary>
         public bool IsDefaultVersion
@@ -366,8 +366,8 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// Contains logging configuration information for private extensions. This applies only
         /// to private extensions you have registered in your account. For public extensions,
-        /// both those provided by Amazon and published by third parties, CloudFormation returns
-        /// <code>null</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.
+        /// both those provided by Amazon Web Services and published by third parties, CloudFormation
+        /// returns <code>null</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.
         /// </para>
         /// </summary>
         public LoggingConfig LoggingConfig
@@ -557,7 +557,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information on extension schemas, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">Resource
+        /// For more information about extension schemas, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">Resource
         /// Provider Schema</a> in the <i>CloudFormation CLI User Guide</i>.
         /// </para>
         /// </summary>
@@ -662,8 +662,8 @@ namespace Amazon.CloudFormation.Model
         ///  
         /// <para>
         /// This applies only to registered private extension versions. CloudFormation doesn't
-        /// return this information for public extensions, whether or not they are activated in
-        /// your account.
+        /// return this information for public extensions, whether they are activated in your
+        /// account.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -711,8 +711,8 @@ namespace Amazon.CloudFormation.Model
         ///  
         /// <para>
         /// This applies only to registered private extension versions. CloudFormation doesn't
-        /// return this information for public extensions, whether or not they are activated in
-        /// your account.
+        /// return this information for public extensions, whether they are activated in your
+        /// account.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -745,7 +745,7 @@ namespace Amazon.CloudFormation.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>PUBLIC</code>: The extension is publicly visible and usable within any Amazon
-        /// account.
+        /// Web Services account.
         /// </para>
         ///  </li> </ul>
         /// </summary>
