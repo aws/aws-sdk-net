@@ -30,7 +30,7 @@ namespace Amazon.APIGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteDomainName operation.
-    /// Deletes the <a>DomainName</a> resource.
+    /// Deletes the DomainName resource.
     /// </summary>
     public partial class DeleteDomainNameRequest : AmazonAPIGatewayRequest
     {
@@ -39,7 +39,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property DomainName. 
         /// <para>
-        /// [Required] The name of the <a>DomainName</a> resource to be deleted.
+        /// The name of the DomainName resource to be deleted.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

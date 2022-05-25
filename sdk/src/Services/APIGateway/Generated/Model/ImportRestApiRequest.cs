@@ -42,9 +42,9 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Body. 
         /// <para>
-        /// [Required] The POST request body containing external API definitions. Currently, only
-        /// OpenAPI definition JSON/YAML files are supported. The maximum size of the API definition
-        /// file is 6MB.
+        /// The POST request body containing external API definitions. Currently, only OpenAPI
+        /// definition JSON/YAML files are supported. The maximum size of the API definition file
+        /// is 6MB.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -88,8 +88,7 @@ namespace Amazon.APIGateway.Model
         /// </para>
         ///  
         /// <para>
-        ///  To exclude <a>DocumentationParts</a> from the import, set <code>parameters</code>
-        /// as <code>ignore=documentation</code>.
+        ///  To exclude DocumentationParts from the import, set <code>parameters</code> as <code>ignore=documentation</code>.
         /// </para>
         ///  
         /// <para>
@@ -106,13 +105,10 @@ namespace Amazon.APIGateway.Model
         /// <para>
         /// For example, the AWS CLI command to exclude documentation from the imported API is:
         /// </para>
-        ///  <pre><code>aws apigateway import-rest-api --parameters ignore=documentation --body
-        /// 'file:///path/to/imported-api-body.json'</code></pre> 
+        ///  
         /// <para>
         /// The AWS CLI command to set the regional endpoint on the imported API is:
         /// </para>
-        ///  <pre><code>aws apigateway import-rest-api --parameters endpointConfigurationTypes=REGIONAL
-        /// --body 'file:///path/to/imported-api-body.json'</code></pre>
         /// </summary>
         public Dictionary<string, string> Parameters
         {

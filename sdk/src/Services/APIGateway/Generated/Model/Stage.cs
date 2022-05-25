@@ -29,11 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.APIGateway.Model
 {
     /// <summary>
-    /// Represents a unique identifier for a version of a deployed <a>RestApi</a> that is
-    /// callable by users.
-    /// 
-    ///  <div class="seeAlso"> <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-deploy-api.html">Deploy
-    /// an API</a> </div>
+    /// Represents a unique identifier for a version of a deployed RestApi that is callable
+    /// by users.
     /// </summary>
     public partial class Stage
     {
@@ -184,7 +181,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property DeploymentId. 
         /// <para>
-        /// The identifier of the <a>Deployment</a> that the stage points to.
+        /// The identifier of the Deployment that the stage points to.
         /// </para>
         /// </summary>
         public string DeploymentId
@@ -256,10 +253,10 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property MethodSettings. 
         /// <para>
-        /// A map that defines the method settings for a <a>Stage</a> resource. Keys (designated
-        /// as <code>/{method_setting_key</code> below) are method paths defined as <code>{resource_path}/{http_method}</code>
-        /// for an individual method override, or <code>/\*/\*</code> for overriding all methods
-        /// in the stage. 
+        /// A map that defines the method settings for a Stage resource. Keys (designated as <code>/{method_setting_key</code>
+        /// below) are method paths defined as <code>{resource_path}/{http_method}</code> for
+        /// an individual method override, or <code>/\*/\*</code> for overriding all methods in
+        /// the stage. 
         /// </para>
         /// </summary>
         public Dictionary<string, MethodSetting> MethodSettings
@@ -315,7 +312,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property TracingEnabled. 
         /// <para>
-        /// Specifies whether active tracing with X-ray is enabled for the <a>Stage</a>.
+        /// Specifies whether active tracing with X-ray is enabled for the Stage.
         /// </para>
         /// </summary>
         public bool TracingEnabled
@@ -333,8 +330,8 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Variables. 
         /// <para>
-        /// A map that defines the stage variables for a <a>Stage</a> resource. Variable names
-        /// can have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
+        /// A map that defines the stage variables for a Stage resource. Variable names can have
+        /// alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Variables
@@ -352,7 +349,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property WebAclArn. 
         /// <para>
-        /// The ARN of the WebAcl associated with the <a>Stage</a>.
+        /// The ARN of the WebAcl associated with the Stage.
         /// </para>
         /// </summary>
         public string WebAclArn

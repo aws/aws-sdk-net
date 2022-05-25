@@ -41,7 +41,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property KeyId. 
         /// <para>
-        /// [Required] The Id of the <a>UsagePlanKey</a> resource to be deleted.
+        /// The Id of the UsagePlanKey resource to be deleted.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -60,8 +60,8 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property UsagePlanId. 
         /// <para>
-        /// [Required] The Id of the <a>UsagePlan</a> resource representing the usage plan containing
-        /// the to-be-deleted <a>UsagePlanKey</a> resource representing a plan customer.
+        /// The Id of the UsagePlan resource representing the usage plan containing the to-be-deleted
+        /// UsagePlanKey resource representing a plan customer.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

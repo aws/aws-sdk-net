@@ -30,7 +30,7 @@ namespace Amazon.APIGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDocumentationVersion operation.
-    /// 
+    /// Creates a documentation version
     /// </summary>
     public partial class CreateDocumentationVersionRequest : AmazonAPIGatewayRequest
     {
@@ -60,7 +60,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property DocumentationVersion. 
         /// <para>
-        /// [Required] The version identifier of the new snapshot.
+        /// The version identifier of the new snapshot.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -79,7 +79,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property RestApiId. 
         /// <para>
-        /// [Required] The string identifier of the associated <a>RestApi</a>.
+        /// The string identifier of the associated RestApi.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

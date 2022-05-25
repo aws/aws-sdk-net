@@ -30,7 +30,7 @@ namespace Amazon.APIGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the GetRestApis operation.
-    /// Lists the <a>RestApis</a> resources for your collection.
+    /// Lists the RestApis resources for your collection.
     /// </summary>
     public partial class GetRestApisRequest : AmazonAPIGatewayRequest
     {

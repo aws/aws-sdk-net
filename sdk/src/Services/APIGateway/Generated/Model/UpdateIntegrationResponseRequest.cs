@@ -43,7 +43,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property HttpMethod. 
         /// <para>
-        /// [Required] Specifies an update integration response request's HTTP method.
+        /// Specifies an update integration response request's HTTP method.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -62,8 +62,8 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property PatchOperations. 
         /// <para>
-        /// A list of update operations to be applied to the specified resource and in the order
-        /// specified in this list.
+        /// For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch
+        /// Operations</a>.
         /// </para>
         /// </summary>
         public List<PatchOperation> PatchOperations
@@ -81,7 +81,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property ResourceId. 
         /// <para>
-        /// [Required] Specifies an update integration response request's resource identifier.
+        /// Specifies an update integration response request's resource identifier.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -100,7 +100,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property RestApiId. 
         /// <para>
-        /// [Required] The string identifier of the associated <a>RestApi</a>.
+        /// The string identifier of the associated RestApi.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -119,7 +119,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property StatusCode. 
         /// <para>
-        /// [Required] Specifies an update integration response request's status code.
+        /// Specifies an update integration response request's status code.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

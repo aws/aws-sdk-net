@@ -40,7 +40,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// [Required] The ARN of a resource that can be tagged.
+        /// The ARN of a resource that can be tagged.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -59,9 +59,9 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// [Required] The key-value map of strings. The valid character set is [a-zA-Z+-=._:/].
-        /// The tag key can be up to 128 characters and must not start with <code>aws:</code>.
-        /// The tag value can be up to 256 characters.
+        /// The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag
+        /// key can be up to 128 characters and must not start with <code>aws:</code>. The tag
+        /// value can be up to 256 characters.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

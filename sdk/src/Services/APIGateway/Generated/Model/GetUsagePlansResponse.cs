@@ -30,9 +30,6 @@ namespace Amazon.APIGateway.Model
 {
     /// <summary>
     /// Represents a collection of usage plans for an AWS account.
-    /// 
-    ///  <div class="seeAlso"> <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-api-usage-plans.html">Create
-    /// and Use Usage Plans</a> </div>
     /// </summary>
     public partial class GetUsagePlansResponse : AmazonWebServiceResponse
     {

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.APIGateway.Model
 {
     /// <summary>
-    /// The collection of <a>SdkType</a> instances.
+    /// The collection of SdkType instances.
     /// </summary>
     public partial class GetSdkTypesResponse : AmazonWebServiceResponse
     {

@@ -30,7 +30,7 @@ namespace Amazon.APIGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateRequestValidator operation.
-    /// Updates a <a>RequestValidator</a> of a given <a>RestApi</a>.
+    /// Updates a RequestValidator of a given RestApi.
     /// </summary>
     public partial class UpdateRequestValidatorRequest : AmazonAPIGatewayRequest
     {
@@ -41,8 +41,8 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property PatchOperations. 
         /// <para>
-        /// A list of update operations to be applied to the specified resource and in the order
-        /// specified in this list.
+        /// For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch
+        /// Operations</a>.
         /// </para>
         /// </summary>
         public List<PatchOperation> PatchOperations
@@ -60,7 +60,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property RequestValidatorId. 
         /// <para>
-        /// [Required] The identifier of <a>RequestValidator</a> to be updated.
+        /// The identifier of RequestValidator to be updated.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -79,7 +79,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property RestApiId. 
         /// <para>
-        /// [Required] The string identifier of the associated <a>RestApi</a>.
+        /// The string identifier of the associated RestApi.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

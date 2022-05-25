@@ -30,10 +30,7 @@ namespace Amazon.APIGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the GetAuthorizers operation.
-    /// Describe an existing <a>Authorizers</a> resource.
-    /// 
-    ///  <div class="seeAlso"><a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-authorizers.html">AWS
-    /// CLI</a></div>
+    /// Describe an existing Authorizers resource.
     /// </summary>
     public partial class GetAuthorizersRequest : AmazonAPIGatewayRequest
     {
@@ -81,7 +78,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property RestApiId. 
         /// <para>
-        /// [Required] The string identifier of the associated <a>RestApi</a>.
+        /// The string identifier of the associated RestApi.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -40,7 +40,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// [Required] The ARN of a resource that can be tagged.
+        /// The ARN of a resource that can be tagged.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -59,7 +59,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property TagKeys. 
         /// <para>
-        /// [Required] The Tag keys to delete.
+        /// The Tag keys to delete.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

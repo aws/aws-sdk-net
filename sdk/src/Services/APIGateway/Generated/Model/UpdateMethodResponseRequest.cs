@@ -30,7 +30,7 @@ namespace Amazon.APIGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateMethodResponse operation.
-    /// Updates an existing <a>MethodResponse</a> resource.
+    /// Updates an existing MethodResponse resource.
     /// </summary>
     public partial class UpdateMethodResponseRequest : AmazonAPIGatewayRequest
     {
@@ -43,7 +43,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property HttpMethod. 
         /// <para>
-        /// [Required] The HTTP verb of the <a>Method</a> resource.
+        /// The HTTP verb of the Method resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -62,8 +62,8 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property PatchOperations. 
         /// <para>
-        /// A list of update operations to be applied to the specified resource and in the order
-        /// specified in this list.
+        /// For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch
+        /// Operations</a>.
         /// </para>
         /// </summary>
         public List<PatchOperation> PatchOperations
@@ -81,7 +81,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property ResourceId. 
         /// <para>
-        /// [Required] The <a>Resource</a> identifier for the <a>MethodResponse</a> resource.
+        /// The Resource identifier for the MethodResponse resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -100,7 +100,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property RestApiId. 
         /// <para>
-        /// [Required] The string identifier of the associated <a>RestApi</a>.
+        /// The string identifier of the associated RestApi.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -119,7 +119,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property StatusCode. 
         /// <para>
-        /// [Required] The status code for the <a>MethodResponse</a> resource.
+        /// The status code for the MethodResponse resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

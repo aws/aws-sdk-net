@@ -30,7 +30,7 @@ namespace Amazon.APIGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteClientCertificate operation.
-    /// Deletes the <a>ClientCertificate</a> resource.
+    /// Deletes the ClientCertificate resource.
     /// </summary>
     public partial class DeleteClientCertificateRequest : AmazonAPIGatewayRequest
     {
@@ -39,7 +39,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property ClientCertificateId. 
         /// <para>
-        /// [Required] The identifier of the <a>ClientCertificate</a> resource to be deleted.
+        /// The identifier of the ClientCertificate resource to be deleted.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

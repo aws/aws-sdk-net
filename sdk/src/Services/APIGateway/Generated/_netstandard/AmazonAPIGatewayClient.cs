@@ -286,10 +286,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// Create an <a>ApiKey</a> resource. 
-        /// 
-        ///  <div class="seeAlso"><a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/create-api-key.html">AWS
-        /// CLI</a></div>
+        /// Create an ApiKey resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateApiKey service method.</param>
         /// <param name="cancellationToken">
@@ -342,10 +339,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// Adds a new <a>Authorizer</a> resource to an existing <a>RestApi</a> resource.
-        /// 
-        ///  <div class="seeAlso"><a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/create-authorizer.html">AWS
-        /// CLI</a></div>
+        /// Adds a new Authorizer resource to an existing RestApi resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAuthorizer service method.</param>
         /// <param name="cancellationToken">
@@ -398,7 +392,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// Creates a new <a>BasePathMapping</a> resource.
+        /// Creates a new BasePathMapping resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateBasePathMapping service method.</param>
         /// <param name="cancellationToken">
@@ -451,8 +445,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// Creates a <a>Deployment</a> resource, which makes a specified <a>RestApi</a> callable
-        /// over the internet.
+        /// Creates a Deployment resource, which makes a specified RestApi callable over the internet.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDeployment service method.</param>
         /// <param name="cancellationToken">
@@ -509,7 +502,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// 
+        /// Creates a documentation part.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDocumentationPart service method.</param>
         /// <param name="cancellationToken">
@@ -562,7 +555,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// 
+        /// Creates a documentation version
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDocumentationVersion service method.</param>
         /// <param name="cancellationToken">
@@ -665,7 +658,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// Adds a new <a>Model</a> resource to an existing <a>RestApi</a> resource.
+        /// Adds a new Model resource to an existing RestApi resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateModel service method.</param>
         /// <param name="cancellationToken">
@@ -718,7 +711,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// Creates a <a>ReqeustValidator</a> of a given <a>RestApi</a>.
+        /// Creates a RequestValidator of a given RestApi.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateRequestValidator service method.</param>
         /// <param name="cancellationToken">
@@ -771,7 +764,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// Creates a <a>Resource</a> resource.
+        /// Creates a Resource resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateResource service method.</param>
         /// <param name="cancellationToken">
@@ -824,7 +817,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// Creates a new <a>RestApi</a> resource.
+        /// Creates a new RestApi resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateRestApi service method.</param>
         /// <param name="cancellationToken">
@@ -874,8 +867,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// Creates a new <a>Stage</a> resource that references a pre-existing <a>Deployment</a>
-        /// for the API.
+        /// Creates a new Stage resource that references a pre-existing Deployment for the API.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateStage service method.</param>
         /// <param name="cancellationToken">
@@ -1087,7 +1079,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// Deletes the <a>ApiKey</a> resource.
+        /// Deletes the ApiKey resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteApiKey service method.</param>
         /// <param name="cancellationToken">
@@ -1137,10 +1129,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// Deletes an existing <a>Authorizer</a> resource.
-        /// 
-        ///  <div class="seeAlso"><a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/delete-authorizer.html">AWS
-        /// CLI</a></div>
+        /// Deletes an existing Authorizer resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAuthorizer service method.</param>
         /// <param name="cancellationToken">
@@ -1190,7 +1179,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// Deletes the <a>BasePathMapping</a> resource.
+        /// Deletes the BasePathMapping resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteBasePathMapping service method.</param>
         /// <param name="cancellationToken">
@@ -1240,7 +1229,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// Deletes the <a>ClientCertificate</a> resource.
+        /// Deletes the ClientCertificate resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteClientCertificate service method.</param>
         /// <param name="cancellationToken">
@@ -1290,8 +1279,8 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// Deletes a <a>Deployment</a> resource. Deleting a deployment will only succeed if there
-        /// are no <a>Stage</a> resources associated with it.
+        /// Deletes a Deployment resource. Deleting a deployment will only succeed if there are
+        /// no Stage resources associated with it.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDeployment service method.</param>
         /// <param name="cancellationToken">
@@ -1344,7 +1333,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// 
+        /// Deletes a documentation part
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDocumentationPart service method.</param>
         /// <param name="cancellationToken">
@@ -1394,7 +1383,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// 
+        /// Deletes a documentation version.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDocumentationVersion service method.</param>
         /// <param name="cancellationToken">
@@ -1444,7 +1433,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// Deletes the <a>DomainName</a> resource.
+        /// Deletes the DomainName resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDomainName service method.</param>
         /// <param name="cancellationToken">
@@ -1494,8 +1483,8 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// Clears any customization of a <a>GatewayResponse</a> of a specified response type
-        /// on the given <a>RestApi</a> and resets it with the default settings.
+        /// Clears any customization of a GatewayResponse of a specified response type on the
+        /// given RestApi and resets it with the default settings.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteGatewayResponse service method.</param>
         /// <param name="cancellationToken">
@@ -1645,7 +1634,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// Deletes an existing <a>Method</a> resource.
+        /// Deletes an existing Method resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteMethod service method.</param>
         /// <param name="cancellationToken">
@@ -1691,7 +1680,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// Deletes an existing <a>MethodResponse</a> resource.
+        /// Deletes an existing MethodResponse resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteMethodResponse service method.</param>
         /// <param name="cancellationToken">
@@ -1791,7 +1780,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// Deletes a <a>RequestValidator</a> of a given <a>RestApi</a>.
+        /// Deletes a RequestValidator of a given RestApi.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteRequestValidator service method.</param>
         /// <param name="cancellationToken">
@@ -1841,7 +1830,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// Deletes a <a>Resource</a> resource.
+        /// Deletes a Resource resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteResource service method.</param>
         /// <param name="cancellationToken">
@@ -1941,7 +1930,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// Deletes a <a>Stage</a> resource.
+        /// Deletes a Stage resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteStage service method.</param>
         /// <param name="cancellationToken">
@@ -2095,7 +2084,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// Deletes an existing <a>VpcLink</a> of a specified identifier.
+        /// Deletes an existing VpcLink of a specified identifier.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteVpcLink service method.</param>
         /// <param name="cancellationToken">
@@ -2251,7 +2240,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// Generates a <a>ClientCertificate</a> resource.
+        /// Generates a ClientCertificate resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GenerateClientCertificate service method.</param>
         /// <param name="cancellationToken">
@@ -2301,7 +2290,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// Gets information about the current <a>Account</a> resource.
+        /// Gets information about the current Account resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAccount service method.</param>
         /// <param name="cancellationToken">
@@ -2348,7 +2337,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// Gets information about the current <a>ApiKey</a> resource.
+        /// Gets information about the current ApiKey resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetApiKey service method.</param>
         /// <param name="cancellationToken">
@@ -2395,7 +2384,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// Gets information about the current <a>ApiKeys</a> resource.
+        /// Gets information about the current ApiKeys resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetApiKeys service method.</param>
         /// <param name="cancellationToken">
@@ -2442,10 +2431,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// Describe an existing <a>Authorizer</a> resource.
-        /// 
-        ///  <div class="seeAlso"><a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-authorizer.html">AWS
-        /// CLI</a></div>
+        /// Describe an existing Authorizer resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAuthorizer service method.</param>
         /// <param name="cancellationToken">
@@ -2492,10 +2478,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// Describe an existing <a>Authorizers</a> resource.
-        /// 
-        ///  <div class="seeAlso"><a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-authorizers.html">AWS
-        /// CLI</a></div>
+        /// Describe an existing Authorizers resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAuthorizers service method.</param>
         /// <param name="cancellationToken">
@@ -2542,7 +2525,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// Describe a <a>BasePathMapping</a> resource.
+        /// Describe a BasePathMapping resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBasePathMapping service method.</param>
         /// <param name="cancellationToken">
@@ -2589,7 +2572,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// Represents a collection of <a>BasePathMapping</a> resources.
+        /// Represents a collection of BasePathMapping resources.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBasePathMappings service method.</param>
         /// <param name="cancellationToken">
@@ -2636,7 +2619,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// Gets information about the current <a>ClientCertificate</a> resource.
+        /// Gets information about the current ClientCertificate resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetClientCertificate service method.</param>
         /// <param name="cancellationToken">
@@ -2683,7 +2666,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// Gets a collection of <a>ClientCertificate</a> resources.
+        /// Gets a collection of ClientCertificate resources.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetClientCertificates service method.</param>
         /// <param name="cancellationToken">
@@ -2730,7 +2713,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// Gets information about a <a>Deployment</a> resource.
+        /// Gets information about a Deployment resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDeployment service method.</param>
         /// <param name="cancellationToken">
@@ -2781,7 +2764,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// Gets information about a <a>Deployments</a> collection.
+        /// Gets information about a Deployments collection.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDeployments service method.</param>
         /// <param name="cancellationToken">
@@ -2832,7 +2815,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// 
+        /// Gets a documentation part.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDocumentationPart service method.</param>
         /// <param name="cancellationToken">
@@ -2879,7 +2862,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// 
+        /// Gets documentation parts.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDocumentationParts service method.</param>
         /// <param name="cancellationToken">
@@ -2926,7 +2909,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// 
+        /// Gets a documentation version.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDocumentationVersion service method.</param>
         /// <param name="cancellationToken">
@@ -2969,7 +2952,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// 
+        /// Gets documentation versions.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDocumentationVersions service method.</param>
         /// <param name="cancellationToken">
@@ -3064,7 +3047,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// Represents a collection of <a>DomainName</a> resources.
+        /// Represents a collection of DomainName resources.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDomainNames service method.</param>
         /// <param name="cancellationToken">
@@ -3111,7 +3094,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// Exports a deployed version of a <a>RestApi</a> in a specified format.
+        /// Exports a deployed version of a RestApi in a specified format.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetExport service method.</param>
         /// <param name="cancellationToken">
@@ -3164,7 +3147,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// Gets a <a>GatewayResponse</a> of a specified response type on the given <a>RestApi</a>.
+        /// Gets a GatewayResponse of a specified response type on the given RestApi.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetGatewayResponse service method.</param>
         /// <param name="cancellationToken">
@@ -3211,10 +3194,9 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// Gets the <a>GatewayResponses</a> collection on the given <a>RestApi</a>. If an API
-        /// developer has not added any definitions for gateway responses, the result will be
-        /// the API Gateway-generated default <a>GatewayResponses</a> collection for the supported
-        /// response types.
+        /// Gets the GatewayResponses collection on the given RestApi. If an API developer has
+        /// not added any definitions for gateway responses, the result will be the API Gateway-generated
+        /// default GatewayResponses collection for the supported response types.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetGatewayResponses service method.</param>
         /// <param name="cancellationToken">
@@ -3355,7 +3337,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// Describe an existing <a>Method</a> resource.
+        /// Describe an existing Method resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMethod service method.</param>
         /// <param name="cancellationToken">
@@ -3398,7 +3380,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// Describes a <a>MethodResponse</a> resource.
+        /// Describes a MethodResponse resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMethodResponse service method.</param>
         /// <param name="cancellationToken">
@@ -3441,7 +3423,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// Describes an existing model defined for a <a>RestApi</a> resource.
+        /// Describes an existing model defined for a RestApi resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetModel service method.</param>
         /// <param name="cancellationToken">
@@ -3488,7 +3470,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// Describes existing <a>Models</a> defined for a <a>RestApi</a> resource.
+        /// Describes existing Models defined for a RestApi resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetModels service method.</param>
         /// <param name="cancellationToken">
@@ -3583,7 +3565,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// Gets a <a>RequestValidator</a> of a given <a>RestApi</a>.
+        /// Gets a RequestValidator of a given RestApi.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetRequestValidator service method.</param>
         /// <param name="cancellationToken">
@@ -3630,7 +3612,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// Gets the <a>RequestValidators</a> collection of a given <a>RestApi</a>.
+        /// Gets the RequestValidators collection of a given RestApi.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetRequestValidators service method.</param>
         /// <param name="cancellationToken">
@@ -3720,7 +3702,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// Lists information about a collection of <a>Resource</a> resources.
+        /// Lists information about a collection of Resource resources.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetResources service method.</param>
         /// <param name="cancellationToken">
@@ -3767,7 +3749,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// Lists the <a>RestApi</a> resource in the collection.
+        /// Lists the RestApi resource in the collection.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetRestApi service method.</param>
         /// <param name="cancellationToken">
@@ -3814,7 +3796,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// Lists the <a>RestApis</a> resources for your collection.
+        /// Lists the RestApis resources for your collection.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetRestApis service method.</param>
         /// <param name="cancellationToken">
@@ -3861,7 +3843,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// Generates a client SDK for a <a>RestApi</a> and <a>Stage</a>.
+        /// Generates a client SDK for a RestApi and Stage.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetSdk service method.</param>
         /// <param name="cancellationToken">
@@ -3914,7 +3896,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// 
+        /// Gets an SDK type.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetSdkType service method.</param>
         /// <param name="cancellationToken">
@@ -3961,7 +3943,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// 
+        /// Gets SDK types
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetSdkTypes service method.</param>
         /// <param name="cancellationToken">
@@ -4008,7 +3990,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// Gets information about a <a>Stage</a> resource.
+        /// Gets information about a Stage resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetStage service method.</param>
         /// <param name="cancellationToken">
@@ -4061,7 +4043,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// Gets information about one or more <a>Stage</a> resources.
+        /// Gets information about one or more Stage resources.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetStages service method.</param>
         /// <param name="cancellationToken">
@@ -4114,7 +4096,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// Gets the <a>Tags</a> collection for a given resource.
+        /// Gets the Tags collection for a given resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetTags service method.</param>
         /// <param name="cancellationToken">
@@ -4444,7 +4426,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// Gets the <a>VpcLinks</a> collection under the caller's account in a selected region.
+        /// Gets the VpcLinks collection under the caller's account in a selected region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetVpcLinks service method.</param>
         /// <param name="cancellationToken">
@@ -4544,7 +4526,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// 
+        /// Imports documentation parts
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ImportDocumentationParts service method.</param>
         /// <param name="cancellationToken">
@@ -4651,8 +4633,8 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// Creates a customization of a <a>GatewayResponse</a> of a specified response type and
-        /// status code on the given <a>RestApi</a>.
+        /// Creates a customization of a GatewayResponse of a specified response type and status
+        /// code on the given RestApi.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutGatewayResponse service method.</param>
         /// <param name="cancellationToken">
@@ -4811,7 +4793,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// Add a method to an existing <a>Resource</a> resource.
+        /// Add a method to an existing Resource resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutMethod service method.</param>
         /// <param name="cancellationToken">
@@ -4864,7 +4846,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// Adds a <a>MethodResponse</a> to an existing <a>Method</a> resource.
+        /// Adds a MethodResponse to an existing Method resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutMethodResponse service method.</param>
         /// <param name="cancellationToken">
@@ -5025,12 +5007,8 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// Simulate the execution of an <a>Authorizer</a> in your <a>RestApi</a> with headers,
-        /// parameters, and an incoming request body.
-        /// 
-        ///  <div class="seeAlso"> <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-use-lambda-authorizer.html">Use
-        /// Lambda Function as Authorizer</a> <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-integrate-with-cognito.html">Use
-        /// Cognito User Pool as Authorizer</a> </div>
+        /// Simulate the execution of an Authorizer in your RestApi with headers, parameters,
+        /// and an incoming request body.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TestInvokeAuthorizer service method.</param>
         /// <param name="cancellationToken">
@@ -5077,8 +5055,8 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// Simulate the execution of a <a>Method</a> in your <a>RestApi</a> with headers, parameters,
-        /// and an incoming request body.
+        /// Simulate the invocation of a Method in your RestApi with headers, parameters, and
+        /// an incoming request body.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TestInvokeMethod service method.</param>
         /// <param name="cancellationToken">
@@ -5178,7 +5156,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// Changes information about the current <a>Account</a> resource.
+        /// Changes information about the current Account resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAccount service method.</param>
         /// <param name="cancellationToken">
@@ -5231,7 +5209,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// Changes information about an <a>ApiKey</a> resource.
+        /// Changes information about an ApiKey resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateApiKey service method.</param>
         /// <param name="cancellationToken">
@@ -5284,10 +5262,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// Updates an existing <a>Authorizer</a> resource.
-        /// 
-        ///  <div class="seeAlso"><a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/update-authorizer.html">AWS
-        /// CLI</a></div>
+        /// Updates an existing Authorizer resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAuthorizer service method.</param>
         /// <param name="cancellationToken">
@@ -5340,7 +5315,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// Changes information about the <a>BasePathMapping</a> resource.
+        /// Changes information about the BasePathMapping resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateBasePathMapping service method.</param>
         /// <param name="cancellationToken">
@@ -5393,7 +5368,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// Changes information about an <a>ClientCertificate</a> resource.
+        /// Changes information about an ClientCertificate resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateClientCertificate service method.</param>
         /// <param name="cancellationToken">
@@ -5446,7 +5421,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// Changes information about a <a>Deployment</a> resource.
+        /// Changes information about a Deployment resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDeployment service method.</param>
         /// <param name="cancellationToken">
@@ -5503,7 +5478,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// 
+        /// Updates a documentation part.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDocumentationPart service method.</param>
         /// <param name="cancellationToken">
@@ -5556,7 +5531,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// 
+        /// Updates a documentation version.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDocumentationVersion service method.</param>
         /// <param name="cancellationToken">
@@ -5609,7 +5584,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// Changes information about the <a>DomainName</a> resource.
+        /// Changes information about the DomainName resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDomainName service method.</param>
         /// <param name="cancellationToken">
@@ -5662,7 +5637,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// Updates a <a>GatewayResponse</a> of a specified response type on the given <a>RestApi</a>.
+        /// Updates a GatewayResponse of a specified response type on the given RestApi.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateGatewayResponse service method.</param>
         /// <param name="cancellationToken">
@@ -5821,7 +5796,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// Updates an existing <a>Method</a> resource.
+        /// Updates an existing Method resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateMethod service method.</param>
         /// <param name="cancellationToken">
@@ -5871,7 +5846,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// Updates an existing <a>MethodResponse</a> resource.
+        /// Updates an existing MethodResponse resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateMethodResponse service method.</param>
         /// <param name="cancellationToken">
@@ -5977,7 +5952,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// Updates a <a>RequestValidator</a> of a given <a>RestApi</a>.
+        /// Updates a RequestValidator of a given RestApi.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateRequestValidator service method.</param>
         /// <param name="cancellationToken">
@@ -6030,7 +6005,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// Changes information about a <a>Resource</a> resource.
+        /// Changes information about a Resource resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateResource service method.</param>
         /// <param name="cancellationToken">
@@ -6133,7 +6108,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// Changes information about a <a>Stage</a> resource.
+        /// Changes information about a Stage resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateStage service method.</param>
         /// <param name="cancellationToken">
@@ -6293,7 +6268,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// Updates an existing <a>VpcLink</a> of a specified identifier.
+        /// Updates an existing VpcLink of a specified identifier.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateVpcLink service method.</param>
         /// <param name="cancellationToken">

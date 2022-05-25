@@ -30,7 +30,7 @@ namespace Amazon.APIGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the PutMethodResponse operation.
-    /// Adds a <a>MethodResponse</a> to an existing <a>Method</a> resource.
+    /// Adds a MethodResponse to an existing Method resource.
     /// </summary>
     public partial class PutMethodResponseRequest : AmazonAPIGatewayRequest
     {
@@ -44,7 +44,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property HttpMethod. 
         /// <para>
-        /// [Required] The HTTP verb of the <a>Method</a> resource.
+        /// The HTTP verb of the Method resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -63,7 +63,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property ResourceId. 
         /// <para>
-        /// [Required] The <a>Resource</a> identifier for the <a>Method</a> resource.
+        /// The Resource identifier for the Method resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -82,9 +82,9 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property ResponseModels. 
         /// <para>
-        /// Specifies the <a>Model</a> resources used for the response's content type. Response
-        /// models are represented as a key/value map, with a content type as the key and a <a>Model</a>
-        /// name as the value.
+        /// Specifies the Model resources used for the response's content type. Response models
+        /// are represented as a key/value map, with a content type as the key and a Model name
+        /// as the value.
         /// </para>
         /// </summary>
         public Dictionary<string, string> ResponseModels
@@ -130,7 +130,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property RestApiId. 
         /// <para>
-        /// [Required] The string identifier of the associated <a>RestApi</a>.
+        /// The string identifier of the associated RestApi.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -149,7 +149,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property StatusCode. 
         /// <para>
-        /// [Required] The method response's status code.
+        /// The method response's status code.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

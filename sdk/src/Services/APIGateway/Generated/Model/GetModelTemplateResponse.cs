@@ -30,9 +30,6 @@ namespace Amazon.APIGateway.Model
 {
     /// <summary>
     /// Represents a mapping template used to transform a payload.
-    /// 
-    ///  <div class="seeAlso"> <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/models-mappings.html#models-mappings-mappings">Mapping
-    /// Templates</a> </div>
     /// </summary>
     public partial class GetModelTemplateResponse : AmazonWebServiceResponse
     {
@@ -41,8 +38,8 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The Apache <a href="https://velocity.apache.org/engine/devel/vtl-reference.html" target="_blank">Velocity
-        /// Template Language (VTL)</a> template content used for the template resource.
+        /// The Apache Velocity Template Language (VTL) template content used for the template
+        /// resource.
         /// </para>
         /// </summary>
         public string Value

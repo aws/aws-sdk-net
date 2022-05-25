@@ -30,7 +30,7 @@ namespace Amazon.APIGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the GetResources operation.
-    /// Lists information about a collection of <a>Resource</a> resources.
+    /// Lists information about a collection of Resource resources.
     /// </summary>
     public partial class GetResourcesRequest : AmazonAPIGatewayRequest
     {
@@ -43,11 +43,10 @@ namespace Amazon.APIGateway.Model
         /// Gets and sets the property Embed. 
         /// <para>
         /// A query parameter used to retrieve the specified resources embedded in the returned
-        /// <a>Resources</a> resource in the response. This <code>embed</code> parameter value
-        /// is a list of comma-separated strings. Currently, the request supports only retrieval
-        /// of the embedded <a>Method</a> resources this way. The query parameter value must be
-        /// a single-valued list and contain the <code>"methods"</code> string. For example, <code>GET
-        /// /restapis/{restapi_id}/resources?embed=methods</code>.
+        /// Resources resource in the response. This <code>embed</code> parameter value is a list
+        /// of comma-separated strings. Currently, the request supports only retrieval of the
+        /// embedded Method resources this way. The query parameter value must be a single-valued
+        /// list and contain the <code>"methods"</code> string. For example, <code>GET /restapis/{restapi_id}/resources?embed=methods</code>.
         /// </para>
         /// </summary>
         public List<string> Embed
@@ -102,7 +101,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property RestApiId. 
         /// <para>
-        /// [Required] The string identifier of the associated <a>RestApi</a>.
+        /// The string identifier of the associated RestApi.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

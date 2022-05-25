@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.APIGateway.Model
 {
     /// <summary>
-    /// Represents the response of the test invoke request for a custom <a>Authorizer</a>
+    /// Represents the response of the test invoke request for a custom Authorizer
     /// </summary>
     public partial class TestInvokeAuthorizerResponse : AmazonWebServiceResponse
     {
@@ -42,7 +42,10 @@ namespace Amazon.APIGateway.Model
         private string _principalId;
 
         /// <summary>
-        /// Gets and sets the property Authorization.
+        /// Gets and sets the property Authorization. 
+        /// <para>
+        /// The authorization response.
+        /// </para>
         /// </summary>
         public Dictionary<string, List<string>> Authorization
         {
@@ -59,9 +62,8 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Claims. 
         /// <para>
-        /// The <a href="https://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">open
-        /// identity claims</a>, with any supported custom attributes, returned from the Cognito
-        /// Your User Pool configured for the API.
+        /// The open identity claims, with any supported custom attributes, returned from the
+        /// Cognito Your User Pool configured for the API.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Claims
@@ -134,7 +136,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Policy. 
         /// <para>
-        /// The JSON policy document returned by the <a>Authorizer</a>
+        /// The JSON policy document returned by the Authorizer
         /// </para>
         /// </summary>
         public string Policy
@@ -152,7 +154,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property PrincipalId. 
         /// <para>
-        /// The principal identity returned by the <a>Authorizer</a>
+        /// The principal identity returned by the Authorizer
         /// </para>
         /// </summary>
         public string PrincipalId

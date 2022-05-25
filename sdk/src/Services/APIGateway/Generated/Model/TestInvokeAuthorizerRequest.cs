@@ -30,12 +30,8 @@ namespace Amazon.APIGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the TestInvokeAuthorizer operation.
-    /// Simulate the execution of an <a>Authorizer</a> in your <a>RestApi</a> with headers,
-    /// parameters, and an incoming request body.
-    /// 
-    ///  <div class="seeAlso"> <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-use-lambda-authorizer.html">Use
-    /// Lambda Function as Authorizer</a> <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-integrate-with-cognito.html">Use
-    /// Cognito User Pool as Authorizer</a> </div>
+    /// Simulate the execution of an Authorizer in your RestApi with headers, parameters,
+    /// and an incoming request body.
     /// </summary>
     public partial class TestInvokeAuthorizerRequest : AmazonAPIGatewayRequest
     {
@@ -51,7 +47,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property AdditionalContext. 
         /// <para>
-        /// [Optional] A key-value map of additional context variables.
+        /// A key-value map of additional context variables.
         /// </para>
         /// </summary>
         public Dictionary<string, string> AdditionalContext
@@ -69,7 +65,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property AuthorizerId. 
         /// <para>
-        /// [Required] Specifies a test invoke authorizer request's <a>Authorizer</a> ID.
+        /// Specifies a test invoke authorizer request's Authorizer ID.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -88,7 +84,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Body. 
         /// <para>
-        /// [Optional] The simulated request body of an incoming invocation request.
+        /// The simulated request body of an incoming invocation request.
         /// </para>
         /// </summary>
         public string Body
@@ -106,8 +102,8 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Headers. 
         /// <para>
-        /// [Required] A key-value map of headers to simulate an incoming invocation request.
-        /// This is where the incoming authorization token, or identity source, should be specified.
+        /// A key-value map of headers to simulate an incoming invocation request. This is where
+        /// the incoming authorization token, or identity source, should be specified.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Headers
@@ -125,9 +121,9 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property MultiValueHeaders. 
         /// <para>
-        /// [Optional] The headers as a map from string to list of values to simulate an incoming
-        /// invocation request. This is where the incoming authorization token, or identity source,
-        /// may be specified.
+        /// The headers as a map from string to list of values to simulate an incoming invocation
+        /// request. This is where the incoming authorization token, or identity source, may be
+        /// specified.
         /// </para>
         /// </summary>
         public Dictionary<string, List<string>> MultiValueHeaders
@@ -145,8 +141,8 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property PathWithQueryString. 
         /// <para>
-        /// [Optional] The URI path, including query string, of the simulated invocation request.
-        /// Use this to specify path parameters and query string parameters.
+        /// The URI path, including query string, of the simulated invocation request. Use this
+        /// to specify path parameters and query string parameters.
         /// </para>
         /// </summary>
         public string PathWithQueryString
@@ -164,7 +160,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property RestApiId. 
         /// <para>
-        /// [Required] The string identifier of the associated <a>RestApi</a>.
+        /// The string identifier of the associated RestApi.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -183,7 +179,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property StageVariables. 
         /// <para>
-        /// A key-value map of stage variables to simulate an invocation on a deployed <a>Stage</a>.
+        /// A key-value map of stage variables to simulate an invocation on a deployed Stage.
         /// </para>
         /// </summary>
         public Dictionary<string, string> StageVariables

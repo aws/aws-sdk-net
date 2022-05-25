@@ -30,7 +30,7 @@ namespace Amazon.APIGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateVpcLink operation.
-    /// Updates an existing <a>VpcLink</a> of a specified identifier.
+    /// Updates an existing VpcLink of a specified identifier.
     /// </summary>
     public partial class UpdateVpcLinkRequest : AmazonAPIGatewayRequest
     {
@@ -40,8 +40,8 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property PatchOperations. 
         /// <para>
-        /// A list of update operations to be applied to the specified resource and in the order
-        /// specified in this list.
+        /// For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch
+        /// Operations</a>.
         /// </para>
         /// </summary>
         public List<PatchOperation> PatchOperations
@@ -59,8 +59,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property VpcLinkId. 
         /// <para>
-        /// [Required] The identifier of the <a>VpcLink</a>. It is used in an <a>Integration</a>
-        /// to reference this <a>VpcLink</a>.
+        /// The identifier of the VpcLink. It is used in an Integration to reference this VpcLink.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

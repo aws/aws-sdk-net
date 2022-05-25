@@ -29,11 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.APIGateway.Model
 {
     /// <summary>
-    /// Represents a collection of <a>Authorizer</a> resources.
-    /// 
-    ///  <div class="seeAlso"> <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-use-lambda-authorizer.html">Use
-    /// Lambda Function as Authorizer</a> <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-integrate-with-cognito.html">Use
-    /// Cognito User Pool as Authorizer</a> </div>
+    /// Represents a collection of Authorizer resources.
     /// </summary>
     public partial class GetAuthorizersResponse : AmazonWebServiceResponse
     {

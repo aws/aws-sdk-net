@@ -30,7 +30,7 @@ namespace Amazon.APIGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the GetApiKeys operation.
-    /// Gets information about the current <a>ApiKeys</a> resource.
+    /// Gets information about the current ApiKeys resource.
     /// </summary>
     public partial class GetApiKeysRequest : AmazonAPIGatewayRequest
     {

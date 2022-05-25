@@ -30,8 +30,8 @@ namespace Amazon.APIGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the TestInvokeMethod operation.
-    /// Simulate the execution of a <a>Method</a> in your <a>RestApi</a> with headers, parameters,
-    /// and an incoming request body.
+    /// Simulate the invocation of a Method in your RestApi with headers, parameters, and
+    /// an incoming request body.
     /// </summary>
     public partial class TestInvokeMethodRequest : AmazonAPIGatewayRequest
     {
@@ -66,8 +66,8 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property ClientCertificateId. 
         /// <para>
-        /// A <a>ClientCertificate</a> identifier to use in the test invocation. API Gateway will
-        /// use the certificate when making the HTTPS request to the defined back-end endpoint.
+        /// A ClientCertificate identifier to use in the test invocation. API Gateway will use
+        /// the certificate when making the HTTPS request to the defined back-end endpoint.
         /// </para>
         /// </summary>
         public string ClientCertificateId
@@ -103,7 +103,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property HttpMethod. 
         /// <para>
-        /// [Required] Specifies a test invoke method request's HTTP method.
+        /// Specifies a test invoke method request's HTTP method.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -160,7 +160,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property ResourceId. 
         /// <para>
-        /// [Required] Specifies a test invoke method request's resource ID.
+        /// Specifies a test invoke method request's resource ID.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -179,7 +179,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property RestApiId. 
         /// <para>
-        /// [Required] The string identifier of the associated <a>RestApi</a>.
+        /// The string identifier of the associated RestApi.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -198,7 +198,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property StageVariables. 
         /// <para>
-        /// A key-value map of stage variables to simulate an invocation on a deployed <a>Stage</a>.
+        /// A key-value map of stage variables to simulate an invocation on a deployed Stage.
         /// </para>
         /// </summary>
         public Dictionary<string, string> StageVariables

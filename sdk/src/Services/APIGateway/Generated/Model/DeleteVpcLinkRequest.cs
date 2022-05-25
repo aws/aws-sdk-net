@@ -30,7 +30,7 @@ namespace Amazon.APIGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteVpcLink operation.
-    /// Deletes an existing <a>VpcLink</a> of a specified identifier.
+    /// Deletes an existing VpcLink of a specified identifier.
     /// </summary>
     public partial class DeleteVpcLinkRequest : AmazonAPIGatewayRequest
     {
@@ -39,8 +39,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property VpcLinkId. 
         /// <para>
-        /// [Required] The identifier of the <a>VpcLink</a>. It is used in an <a>Integration</a>
-        /// to reference this <a>VpcLink</a>.
+        /// The identifier of the VpcLink. It is used in an Integration to reference this VpcLink.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -29,10 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.APIGateway.Model
 {
     /// <summary>
-    /// Represents a collection of <a>Resource</a> resources.
-    /// 
-    ///  <div class="seeAlso"> <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Create
-    /// an API</a> </div>
+    /// Represents a collection of Resource resources.
     /// </summary>
     public partial class GetResourcesResponse : AmazonWebServiceResponse
     {

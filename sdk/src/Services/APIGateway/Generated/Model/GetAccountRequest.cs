@@ -30,7 +30,7 @@ namespace Amazon.APIGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the GetAccount operation.
-    /// Gets information about the current <a>Account</a> resource.
+    /// Gets information about the current Account resource.
     /// </summary>
     public partial class GetAccountRequest : AmazonAPIGatewayRequest
     {

@@ -30,7 +30,7 @@ namespace Amazon.APIGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDocumentationPart operation.
-    /// 
+    /// Creates a documentation part.
     /// </summary>
     public partial class CreateDocumentationPartRequest : AmazonAPIGatewayRequest
     {
@@ -41,8 +41,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Location. 
         /// <para>
-        /// [Required] The location of the targeted API entity of the to-be-created documentation
-        /// part.
+        /// The location of the targeted API entity of the to-be-created documentation part.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -61,9 +60,9 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Properties. 
         /// <para>
-        /// [Required] The new documentation content map of the targeted API entity. Enclosed
-        /// key-value pairs are API-specific, but only OpenAPI-compliant key-value pairs can be
-        /// exported and, hence, published.
+        /// The new documentation content map of the targeted API entity. Enclosed key-value pairs
+        /// are API-specific, but only OpenAPI-compliant key-value pairs can be exported and,
+        /// hence, published.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -82,7 +81,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property RestApiId. 
         /// <para>
-        /// [Required] The string identifier of the associated <a>RestApi</a>.
+        /// The string identifier of the associated RestApi.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

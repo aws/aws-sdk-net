@@ -29,11 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.APIGateway.Model
 {
     /// <summary>
-    /// Represents an integration response. The status code must map to an existing <a>MethodResponse</a>,
+    /// Represents an integration response. The status code must map to an existing MethodResponse,
     /// and parameters and templates can be used to transform the back-end response.
-    /// 
-    ///  <div class="seeAlso"> <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Creating
-    /// an API</a> </div>
     /// </summary>
     public partial class GetIntegrationResponseResponse : AmazonWebServiceResponse
     {
@@ -50,17 +47,7 @@ namespace Amazon.APIGateway.Model
         /// are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following
         /// behaviors:
         /// </para>
-        ///  <ul> <li>
-        /// <para>
-        /// <code>CONVERT_TO_BINARY</code>: Converts a response payload from a Base64-encoded
-        /// string to the corresponding binary blob.
-        /// </para>
-        /// </li> <li>
-        /// <para>
-        /// <code>CONVERT_TO_TEXT</code>: Converts a response payload from a binary blob to a
-        /// Base64-encoded string.
-        /// </para>
-        /// </li> </ul> 
+        ///  
         /// <para>
         /// If this property is not defined, the response payload will be passed through from
         /// the integration response to the method response without modification.
@@ -152,7 +139,7 @@ namespace Amazon.APIGateway.Model
         /// Gets and sets the property StatusCode. 
         /// <para>
         /// Specifies the status code that is used to map the integration response to an existing
-        /// <a>MethodResponse</a>.
+        /// MethodResponse.
         /// </para>
         /// </summary>
         public string StatusCode

@@ -41,7 +41,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property KeyId. 
         /// <para>
-        /// [Required] The identifier of a <a>UsagePlanKey</a> resource for a plan customer.
+        /// The identifier of a UsagePlanKey resource for a plan customer.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -60,7 +60,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property KeyType. 
         /// <para>
-        /// [Required] The type of a <a>UsagePlanKey</a> resource for a plan customer.
+        /// The type of a UsagePlanKey resource for a plan customer.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -79,8 +79,8 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property UsagePlanId. 
         /// <para>
-        /// [Required] The Id of the <a>UsagePlan</a> resource representing the usage plan containing
-        /// the to-be-created <a>UsagePlanKey</a> resource representing a plan customer.
+        /// The Id of the UsagePlan resource representing the usage plan containing the to-be-created
+        /// UsagePlanKey resource representing a plan customer.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

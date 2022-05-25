@@ -40,8 +40,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property KeyId. 
         /// <para>
-        /// [Required] The key Id of the to-be-retrieved <a>UsagePlanKey</a> resource representing
-        /// a plan customer.
+        /// The key Id of the to-be-retrieved UsagePlanKey resource representing a plan customer.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -60,8 +59,8 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property UsagePlanId. 
         /// <para>
-        /// [Required] The Id of the <a>UsagePlan</a> resource representing the usage plan containing
-        /// the to-be-retrieved <a>UsagePlanKey</a> resource representing a plan customer.
+        /// The Id of the UsagePlan resource representing the usage plan containing the to-be-retrieved
+        /// UsagePlanKey resource representing a plan customer.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

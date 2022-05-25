@@ -42,7 +42,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property DefaultValue. 
         /// <para>
-        /// The default value of an <a>SdkType</a> configuration property.
+        /// The default value of an SdkType configuration property.
         /// </para>
         /// </summary>
         public string DefaultValue
@@ -60,7 +60,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description of an <a>SdkType</a> configuration property.
+        /// The description of an SdkType configuration property.
         /// </para>
         /// </summary>
         public string Description
@@ -78,7 +78,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property FriendlyName. 
         /// <para>
-        /// The user-friendly name of an <a>SdkType</a> configuration property.
+        /// The user-friendly name of an SdkType configuration property.
         /// </para>
         /// </summary>
         public string FriendlyName
@@ -96,7 +96,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of a an <a>SdkType</a> configuration property.
+        /// The name of a an SdkType configuration property.
         /// </para>
         /// </summary>
         public string Name
@@ -114,7 +114,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Required. 
         /// <para>
-        /// A boolean flag of an <a>SdkType</a> configuration property to indicate if the associated
+        /// A boolean flag of an SdkType configuration property to indicate if the associated
         /// SDK configuration property is required (<code>true</code>) or not (<code>false</code>).
         /// </para>
         /// </summary>

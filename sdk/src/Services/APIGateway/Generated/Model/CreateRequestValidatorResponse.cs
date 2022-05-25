@@ -29,16 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.APIGateway.Model
 {
     /// <summary>
-    /// A set of validation rules for incoming <a>Method</a> requests.
-    /// 
-    ///  <div class="remarks"> 
-    /// <para>
-    /// In OpenAPI, a <a>RequestValidator</a> of an API is defined by the <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-swagger-extensions.html#api-gateway-swagger-extensions-request-validators.requestValidator.html">x-amazon-apigateway-request-validators.requestValidator</a>
-    /// object. It the referenced using the <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-swagger-extensions.html#api-gateway-swagger-extensions-request-validator">x-amazon-apigateway-request-validator</a>
-    /// property.
-    /// </para>
-    ///  </div> <div class="seeAlso"><a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-method-request-validation.html">Enable
-    /// Basic Request Validation in API Gateway</a></div>
+    /// A set of validation rules for incoming Method requests.
     /// </summary>
     public partial class CreateRequestValidatorResponse : AmazonWebServiceResponse
     {
@@ -50,7 +41,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The identifier of this <a>RequestValidator</a>.
+        /// The identifier of this RequestValidator.
         /// </para>
         /// </summary>
         public string Id
@@ -68,7 +59,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of this <a>RequestValidator</a>
+        /// The name of this RequestValidator
         /// </para>
         /// </summary>
         public string Name
@@ -87,7 +78,7 @@ namespace Amazon.APIGateway.Model
         /// Gets and sets the property ValidateRequestBody. 
         /// <para>
         /// A Boolean flag to indicate whether to validate a request body according to the configured
-        /// <a>Model</a> schema.
+        /// Model schema.
         /// </para>
         /// </summary>
         public bool ValidateRequestBody

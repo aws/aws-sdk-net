@@ -30,7 +30,7 @@ namespace Amazon.APIGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateRequestValidator operation.
-    /// Creates a <a>ReqeustValidator</a> of a given <a>RestApi</a>.
+    /// Creates a RequestValidator of a given RestApi.
     /// </summary>
     public partial class CreateRequestValidatorRequest : AmazonAPIGatewayRequest
     {
@@ -42,7 +42,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the to-be-created <a>RequestValidator</a>.
+        /// The name of the to-be-created RequestValidator.
         /// </para>
         /// </summary>
         public string Name
@@ -60,7 +60,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property RestApiId. 
         /// <para>
-        /// [Required] The string identifier of the associated <a>RestApi</a>.
+        /// The string identifier of the associated RestApi.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

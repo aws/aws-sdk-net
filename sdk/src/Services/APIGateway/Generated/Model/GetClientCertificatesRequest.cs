@@ -30,7 +30,7 @@ namespace Amazon.APIGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the GetClientCertificates operation.
-    /// Gets a collection of <a>ClientCertificate</a> resources.
+    /// Gets a collection of ClientCertificate resources.
     /// </summary>
     public partial class GetClientCertificatesRequest : AmazonAPIGatewayRequest
     {

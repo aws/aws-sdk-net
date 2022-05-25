@@ -32,17 +32,9 @@ namespace Amazon.APIGateway.Model
     /// Represents a usage plan used to specify who can assess associated API stages. Optionally,
     /// target request rate and quota limits can be set. In some cases clients can exceed
     /// the targets that you set. Don’t rely on usage plans to control costs. Consider using
-    /// <a href="https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-managing-costs.html">AWS
-    /// Budgets</a> to monitor costs and <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-    /// WAF</a> to manage API requests.
-    /// 
-    ///  <div class="remarks"> 
-    /// <para>
-    /// In a usage plan, you associate an API by specifying the API's Id and a stage name
-    /// of the specified API. You add plan customers by adding API keys to the plan. 
-    /// </para>
-    ///  </div> <div class="seeAlso"> <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-api-usage-plans.html">Create
-    /// and Use Usage Plans</a> </div>
+    /// <a href="https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-managing-costs.html">Amazon
+    /// Web Services Budgets</a> to monitor costs and <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF</a>
+    /// to manage API requests.
     /// </summary>
     public partial class GetUsagePlanResponse : AmazonWebServiceResponse
     {
@@ -94,7 +86,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The identifier of a <a>UsagePlan</a> resource.
+        /// The identifier of a UsagePlan resource.
         /// </para>
         /// </summary>
         public string Id
@@ -185,7 +177,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Throttle. 
         /// <para>
-        /// Map containing method level throttling information for API stage in a usage plan.
+        /// A map containing method level throttling information for API stage in a usage plan.
         /// </para>
         /// </summary>
         public ThrottleSettings Throttle

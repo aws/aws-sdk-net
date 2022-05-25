@@ -39,8 +39,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property VpcLinkId. 
         /// <para>
-        /// [Required] The identifier of the <a>VpcLink</a>. It is used in an <a>Integration</a>
-        /// to reference this <a>VpcLink</a>.
+        /// The identifier of the VpcLink. It is used in an Integration to reference this VpcLink.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

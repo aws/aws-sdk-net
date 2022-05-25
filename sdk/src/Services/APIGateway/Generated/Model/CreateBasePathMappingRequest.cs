@@ -30,7 +30,7 @@ namespace Amazon.APIGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateBasePathMapping operation.
-    /// Creates a new <a>BasePathMapping</a> resource.
+    /// Creates a new BasePathMapping resource.
     /// </summary>
     public partial class CreateBasePathMappingRequest : AmazonAPIGatewayRequest
     {
@@ -63,7 +63,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property DomainName. 
         /// <para>
-        /// [Required] The domain name of the <a>BasePathMapping</a> resource to create.
+        /// The domain name of the BasePathMapping resource to create.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -82,7 +82,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property RestApiId. 
         /// <para>
-        /// [Required] The string identifier of the associated <a>RestApi</a>.
+        /// The string identifier of the associated RestApi.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.APIGateway.Model
 {
     /// <summary>
-    /// The identifier of an <a>ApiKey</a> used in a <a>UsagePlan</a>.
+    /// The identifier of an ApiKey used in a UsagePlan.
     /// </summary>
     public partial class ImportApiKeysResponse : AmazonWebServiceResponse
     {
@@ -39,7 +39,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Ids. 
         /// <para>
-        /// A list of all the <a>ApiKey</a> identifiers.
+        /// A list of all the ApiKey identifiers.
         /// </para>
         /// </summary>
         public List<string> Ids

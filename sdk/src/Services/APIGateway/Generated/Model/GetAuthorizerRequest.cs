@@ -30,10 +30,7 @@ namespace Amazon.APIGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the GetAuthorizer operation.
-    /// Describe an existing <a>Authorizer</a> resource.
-    /// 
-    ///  <div class="seeAlso"><a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-authorizer.html">AWS
-    /// CLI</a></div>
+    /// Describe an existing Authorizer resource.
     /// </summary>
     public partial class GetAuthorizerRequest : AmazonAPIGatewayRequest
     {
@@ -43,7 +40,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property AuthorizerId. 
         /// <para>
-        /// [Required] The identifier of the <a>Authorizer</a> resource.
+        /// The identifier of the Authorizer resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -62,7 +59,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property RestApiId. 
         /// <para>
-        /// [Required] The string identifier of the associated <a>RestApi</a>.
+        /// The string identifier of the associated RestApi.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -41,7 +41,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property ConfigurationProperties. 
         /// <para>
-        /// A list of configuration properties of an <a>SdkType</a>.
+        /// A list of configuration properties of an SdkType.
         /// </para>
         /// </summary>
         public List<SdkConfigurationProperty> ConfigurationProperties
@@ -59,7 +59,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description of an <a>SdkType</a>.
+        /// The description of an SdkType.
         /// </para>
         /// </summary>
         public string Description
@@ -77,7 +77,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property FriendlyName. 
         /// <para>
-        /// The user-friendly name of an <a>SdkType</a> instance.
+        /// The user-friendly name of an SdkType instance.
         /// </para>
         /// </summary>
         public string FriendlyName
@@ -95,7 +95,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The identifier of an <a>SdkType</a> instance.
+        /// The identifier of an SdkType instance.
         /// </para>
         /// </summary>
         public string Id

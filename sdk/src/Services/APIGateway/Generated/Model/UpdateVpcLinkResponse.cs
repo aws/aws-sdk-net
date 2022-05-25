@@ -29,24 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.APIGateway.Model
 {
     /// <summary>
-    /// An API Gateway VPC link for a <a>RestApi</a> to access resources in an Amazon Virtual
-    /// Private Cloud (VPC).
-    /// 
-    ///  <div class="remarks"> 
-    /// <para>
-    /// 
-    /// <para>
-    /// To enable access to a resource in an Amazon Virtual Private Cloud through Amazon API
-    /// Gateway, you, as an API developer, create a <a>VpcLink</a> resource targeted for one
-    /// or more network load balancers of the VPC and then integrate an API method with a
-    /// private integration that uses the <a>VpcLink</a>. The private integration has an integration
-    /// type of <code>HTTP</code> or <code>HTTP_PROXY</code> and has a connection type of
-    /// <code>VPC_LINK</code>. The integration uses the <code>connectionId</code> property
-    /// to identify the <a>VpcLink</a> used.
-    /// </para>
-    /// 
-    /// </para>
-    ///  </div>
+    /// An API Gateway VPC link for a RestApi to access resources in an Amazon Virtual Private
+    /// Cloud (VPC).
     /// </summary>
     public partial class UpdateVpcLinkResponse : AmazonWebServiceResponse
     {
@@ -79,8 +63,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The identifier of the <a>VpcLink</a>. It is used in an <a>Integration</a> to reference
-        /// this <a>VpcLink</a>.
+        /// The identifier of the VpcLink. It is used in an Integration to reference this VpcLink.
         /// </para>
         /// </summary>
         public string Id
@@ -118,7 +101,7 @@ namespace Amazon.APIGateway.Model
         /// <para>
         /// The status of the VPC link. The valid values are <code>AVAILABLE</code>, <code>PENDING</code>,
         /// <code>DELETING</code>, or <code>FAILED</code>. Deploying an API will wait if the status
-        /// is <code>PENDING</code> and will fail if the status is <code>DELETING</code>.
+        /// is <code>PENDING</code> and will fail if the status is <code>DELETING</code>. 
         /// </para>
         /// </summary>
         public VpcLinkStatus Status

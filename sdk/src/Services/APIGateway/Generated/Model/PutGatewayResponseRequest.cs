@@ -30,8 +30,8 @@ namespace Amazon.APIGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the PutGatewayResponse operation.
-    /// Creates a customization of a <a>GatewayResponse</a> of a specified response type and
-    /// status code on the given <a>RestApi</a>.
+    /// Creates a customization of a GatewayResponse of a specified response type and status
+    /// code on the given RestApi.
     /// </summary>
     public partial class PutGatewayResponseRequest : AmazonAPIGatewayRequest
     {
@@ -44,12 +44,8 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property ResponseParameters. 
         /// <para>
-        /// 
-        /// <para>
-        /// Response parameters (paths, query strings and headers) of the <a>GatewayResponse</a>
-        /// as a string-to-string map of key-value pairs.
-        /// </para>
-        /// 
+        /// Response parameters (paths, query strings and headers) of the GatewayResponse as a
+        /// string-to-string map of key-value pairs.
         /// </para>
         /// </summary>
         public Dictionary<string, string> ResponseParameters
@@ -67,12 +63,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property ResponseTemplates. 
         /// <para>
-        /// 
-        /// <para>
-        /// Response templates of the <a>GatewayResponse</a> as a string-to-string map of key-value
-        /// pairs.
-        /// </para>
-        /// 
+        /// Response templates of the GatewayResponse as a string-to-string map of key-value pairs.
         /// </para>
         /// </summary>
         public Dictionary<string, string> ResponseTemplates
@@ -90,11 +81,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property ResponseType. 
         /// <para>
-        /// [Required] 
-        /// <para>
-        /// The response type of the associated <a>GatewayResponse</a>.
-        /// </para>
-        /// 
+        /// The response type of the associated GatewayResponse
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -113,7 +100,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property RestApiId. 
         /// <para>
-        /// [Required] The string identifier of the associated <a>RestApi</a>.
+        /// The string identifier of the associated RestApi.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -130,7 +117,10 @@ namespace Amazon.APIGateway.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StatusCode. The HTTP status code of the <a>GatewayResponse</a>.
+        /// Gets and sets the property StatusCode. 
+        /// <para>
+        /// The HTTP status code of the GatewayResponse.
+        /// </para>
         /// </summary>
         public string StatusCode
         {

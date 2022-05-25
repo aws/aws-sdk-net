@@ -29,10 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.APIGateway.Model
 {
     /// <summary>
-    /// Represents a collection of <a>Model</a> resources.
-    /// 
-    ///  <div class="seeAlso"> <a>Method</a>, <a>MethodResponse</a>, <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/models-mappings.html">Models
-    /// and Mappings</a> </div>
+    /// Represents a collection of Model resources.
     /// </summary>
     public partial class GetModelsResponse : AmazonWebServiceResponse
     {

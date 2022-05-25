@@ -41,9 +41,8 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Body. 
         /// <para>
-        /// The payload of the POST request to import API keys. For the payload format, see <a
-        /// href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-key-file-format.html">API
-        /// Key File Format</a>.
+        /// The payload of the POST request to import API keys. For the payload format, see API
+        /// Key File Format.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -62,7 +61,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property FailOnWarnings. 
         /// <para>
-        /// A query parameter to indicate whether to rollback <a>ApiKey</a> importation (<code>true</code>)
+        /// A query parameter to indicate whether to rollback ApiKey importation (<code>true</code>)
         /// or not (<code>false</code>) when error is encountered.
         /// </para>
         /// </summary>

@@ -30,7 +30,7 @@ namespace Amazon.APIGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the GetSdk operation.
-    /// Generates a client SDK for a <a>RestApi</a> and <a>Stage</a>.
+    /// Generates a client SDK for a RestApi and Stage.
     /// </summary>
     public partial class GetSdkRequest : AmazonAPIGatewayRequest
     {
@@ -66,7 +66,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property RestApiId. 
         /// <para>
-        /// [Required] The string identifier of the associated <a>RestApi</a>.
+        /// The string identifier of the associated RestApi.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -85,7 +85,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property SdkType. 
         /// <para>
-        /// [Required] The language for the generated SDK. Currently <code>java</code>, <code>javascript</code>,
+        /// The language for the generated SDK. Currently <code>java</code>, <code>javascript</code>,
         /// <code>android</code>, <code>objectivec</code> (for iOS), <code>swift</code> (for iOS),
         /// and <code>ruby</code> are supported.
         /// </para>
@@ -106,7 +106,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property StageName. 
         /// <para>
-        /// [Required] The name of the <a>Stage</a> that the SDK will use.
+        /// The name of the Stage that the SDK will use.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
