@@ -283,7 +283,7 @@ namespace Amazon.SageMaker.Model
         /// Returns the input data configuration for the AutoML job..
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=20)]
+        [AWSProperty(Required=true, Min=1, Max=2)]
         public List<AutoMLChannel> InputDataConfig
         {
             get { return this._inputDataConfig; }

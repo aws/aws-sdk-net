@@ -45,6 +45,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AutoMLJobConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetCandidateGenerationConfig())
+            {
+                context.Writer.WritePropertyName("CandidateGenerationConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AutoMLCandidateGenerationConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.CandidateGenerationConfig, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetCompletionCriteria())
             {
                 context.Writer.WritePropertyName("CompletionCriteria");

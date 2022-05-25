@@ -33,9 +33,28 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class AutoMLJobConfig
     {
+        private AutoMLCandidateGenerationConfig _candidateGenerationConfig;
         private AutoMLJobCompletionCriteria _completionCriteria;
         private AutoMLDataSplitConfig _dataSplitConfig;
         private AutoMLSecurityConfig _securityConfig;
+
+        /// <summary>
+        /// Gets and sets the property CandidateGenerationConfig. 
+        /// <para>
+        /// The configuration for generating a candidate for an AutoML job (optional). 
+        /// </para>
+        /// </summary>
+        public AutoMLCandidateGenerationConfig CandidateGenerationConfig
+        {
+            get { return this._candidateGenerationConfig; }
+            set { this._candidateGenerationConfig = value; }
+        }
+
+        // Check to see if CandidateGenerationConfig property is set
+        internal bool IsSetCandidateGenerationConfig()
+        {
+            return this._candidateGenerationConfig != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CompletionCriteria. 

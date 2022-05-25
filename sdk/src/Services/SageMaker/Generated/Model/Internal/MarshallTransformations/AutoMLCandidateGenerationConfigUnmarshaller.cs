@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AutoMLJobConfig Object
+    /// Response Unmarshaller for AutoMLCandidateGenerationConfig Object
     /// </summary>  
-    public class AutoMLJobConfigUnmarshaller : IUnmarshaller<AutoMLJobConfig, XmlUnmarshallerContext>, IUnmarshaller<AutoMLJobConfig, JsonUnmarshallerContext>
+    public class AutoMLCandidateGenerationConfigUnmarshaller : IUnmarshaller<AutoMLCandidateGenerationConfig, XmlUnmarshallerContext>, IUnmarshaller<AutoMLCandidateGenerationConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AutoMLJobConfig IUnmarshaller<AutoMLJobConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AutoMLCandidateGenerationConfig IUnmarshaller<AutoMLCandidateGenerationConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,21 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public AutoMLJobConfig Unmarshall(JsonUnmarshallerContext context)
+        public AutoMLCandidateGenerationConfig Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AutoMLJobConfig unmarshalledObject = new AutoMLJobConfig();
+            AutoMLCandidateGenerationConfig unmarshalledObject = new AutoMLCandidateGenerationConfig();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("CandidateGenerationConfig", targetDepth))
+                if (context.TestExpression("FeatureSpecificationS3Uri", targetDepth))
                 {
-                    var unmarshaller = AutoMLCandidateGenerationConfigUnmarshaller.Instance;
-                    unmarshalledObject.CandidateGenerationConfig = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("CompletionCriteria", targetDepth))
-                {
-                    var unmarshaller = AutoMLJobCompletionCriteriaUnmarshaller.Instance;
-                    unmarshalledObject.CompletionCriteria = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("DataSplitConfig", targetDepth))
-                {
-                    var unmarshaller = AutoMLDataSplitConfigUnmarshaller.Instance;
-                    unmarshalledObject.DataSplitConfig = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SecurityConfig", targetDepth))
-                {
-                    var unmarshaller = AutoMLSecurityConfigUnmarshaller.Instance;
-                    unmarshalledObject.SecurityConfig = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FeatureSpecificationS3Uri = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +76,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         }
 
 
-        private static AutoMLJobConfigUnmarshaller _instance = new AutoMLJobConfigUnmarshaller();        
+        private static AutoMLCandidateGenerationConfigUnmarshaller _instance = new AutoMLCandidateGenerationConfigUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AutoMLJobConfigUnmarshaller Instance
+        public static AutoMLCandidateGenerationConfigUnmarshaller Instance
         {
             get
             {

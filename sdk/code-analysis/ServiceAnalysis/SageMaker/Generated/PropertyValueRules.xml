@@ -4947,6 +4947,11 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.AutoMLCandidateGenerationConfig.FeatureSpecificationS3Uri</property>
+    <max>1024</max>
+    <pattern>^(https|s3)://([^/]+)/?(.*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.AutoMLCandidateStep.CandidateStepArn</property>
     <min>1</min>
     <max>256</max>

@@ -50,9 +50,11 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ChannelType. 
         /// <para>
-        /// The channel type (optional) is an enum string. The default value is <code>training</code>.
+        /// The channel type (optional) is an <code>enum</code> string. The default value is <code>training</code>.
         /// Channels for training and validation must share the same <code>ContentType</code>
-        /// and <code>TargetAttributeName</code>.
+        /// and <code>TargetAttributeName</code>. For information on specifying training and validation
+        /// channel types, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-data-sources-training-or-validation">
+        /// <code>How to specify training and validation datasets</code> </a>.
         /// </para>
         /// </summary>
         public AutoMLChannelType ChannelType

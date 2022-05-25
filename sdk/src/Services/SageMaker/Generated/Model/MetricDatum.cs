@@ -77,8 +77,14 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property StandardMetricName. 
         /// <para>
-        /// The name of the standard metric.
+        /// The name of the standard metric. 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// For definitions of the standard metrics, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-metrics">
+        /// <code>Autopilot candidate metrics</code> </a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         public AutoMLMetricExtendedEnum StandardMetricName
         {

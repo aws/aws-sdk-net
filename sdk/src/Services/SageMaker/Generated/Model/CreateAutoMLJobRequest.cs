@@ -58,8 +58,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property AutoMLJobConfig. 
         /// <para>
-        /// Contains <code>CompletionCriteria</code> and <code>SecurityConfig</code> settings
-        /// for the AutoML job.
+        /// A collection of settings used to configure an AutoML job.
         /// </para>
         /// </summary>
         public AutoMLJobConfig AutoMLJobConfig
@@ -137,10 +136,11 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// An array of channel objects that describes the input data and its location. Each channel
         /// is a named input source. Similar to <code>InputDataConfig</code> supported by . Format(s)
-        /// supported: CSV. Minimum of 500 rows.
+        /// supported: CSV, Parquet. A minimum of 500 rows is required for the training dataset.
+        /// There is not a minimum number of rows required for the validation dataset.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=20)]
+        [AWSProperty(Required=true, Min=1, Max=2)]
         public List<AutoMLChannel> InputDataConfig
         {
             get { return this._inputDataConfig; }
@@ -195,9 +195,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ProblemType. 
         /// <para>
-        /// Defines the type of supervised learning available for the candidates. Options include:
-        /// <code>BinaryClassification</code>, <code>MulticlassClassification</code>, and <code>Regression</code>.
-        /// For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-problem-types.html">
+        /// Defines the type of supervised learning available for the candidates. For more information,
+        /// see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-problem-types.html">
         /// Amazon SageMaker Autopilot problem types and algorithm support</a>.
         /// </para>
         /// </summary>
