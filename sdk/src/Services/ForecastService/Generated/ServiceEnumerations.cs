@@ -191,6 +191,76 @@ namespace Amazon.ForecastService
 
 
     /// <summary>
+    /// Constants used for properties of type DayOfWeek.
+    /// </summary>
+    public class DayOfWeek : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FRIDAY for DayOfWeek
+        /// </summary>
+        public static readonly DayOfWeek FRIDAY = new DayOfWeek("FRIDAY");
+        /// <summary>
+        /// Constant MONDAY for DayOfWeek
+        /// </summary>
+        public static readonly DayOfWeek MONDAY = new DayOfWeek("MONDAY");
+        /// <summary>
+        /// Constant SATURDAY for DayOfWeek
+        /// </summary>
+        public static readonly DayOfWeek SATURDAY = new DayOfWeek("SATURDAY");
+        /// <summary>
+        /// Constant SUNDAY for DayOfWeek
+        /// </summary>
+        public static readonly DayOfWeek SUNDAY = new DayOfWeek("SUNDAY");
+        /// <summary>
+        /// Constant THURSDAY for DayOfWeek
+        /// </summary>
+        public static readonly DayOfWeek THURSDAY = new DayOfWeek("THURSDAY");
+        /// <summary>
+        /// Constant TUESDAY for DayOfWeek
+        /// </summary>
+        public static readonly DayOfWeek TUESDAY = new DayOfWeek("TUESDAY");
+        /// <summary>
+        /// Constant WEDNESDAY for DayOfWeek
+        /// </summary>
+        public static readonly DayOfWeek WEDNESDAY = new DayOfWeek("WEDNESDAY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DayOfWeek(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DayOfWeek FindValue(string value)
+        {
+            return FindValue<DayOfWeek>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DayOfWeek(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Domain.
     /// </summary>
     public class Domain : ConstantClass
@@ -400,6 +470,96 @@ namespace Amazon.ForecastService
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator FilterConditionString(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Month.
+    /// </summary>
+    public class Month : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant APRIL for Month
+        /// </summary>
+        public static readonly Month APRIL = new Month("APRIL");
+        /// <summary>
+        /// Constant AUGUST for Month
+        /// </summary>
+        public static readonly Month AUGUST = new Month("AUGUST");
+        /// <summary>
+        /// Constant DECEMBER for Month
+        /// </summary>
+        public static readonly Month DECEMBER = new Month("DECEMBER");
+        /// <summary>
+        /// Constant FEBRUARY for Month
+        /// </summary>
+        public static readonly Month FEBRUARY = new Month("FEBRUARY");
+        /// <summary>
+        /// Constant JANUARY for Month
+        /// </summary>
+        public static readonly Month JANUARY = new Month("JANUARY");
+        /// <summary>
+        /// Constant JULY for Month
+        /// </summary>
+        public static readonly Month JULY = new Month("JULY");
+        /// <summary>
+        /// Constant JUNE for Month
+        /// </summary>
+        public static readonly Month JUNE = new Month("JUNE");
+        /// <summary>
+        /// Constant MARCH for Month
+        /// </summary>
+        public static readonly Month MARCH = new Month("MARCH");
+        /// <summary>
+        /// Constant MAY for Month
+        /// </summary>
+        public static readonly Month MAY = new Month("MAY");
+        /// <summary>
+        /// Constant NOVEMBER for Month
+        /// </summary>
+        public static readonly Month NOVEMBER = new Month("NOVEMBER");
+        /// <summary>
+        /// Constant OCTOBER for Month
+        /// </summary>
+        public static readonly Month OCTOBER = new Month("OCTOBER");
+        /// <summary>
+        /// Constant SEPTEMBER for Month
+        /// </summary>
+        public static readonly Month SEPTEMBER = new Month("SEPTEMBER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Month(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Month FindValue(string value)
+        {
+            return FindValue<Month>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Month(string value)
         {
             return FindValue(value);
         }

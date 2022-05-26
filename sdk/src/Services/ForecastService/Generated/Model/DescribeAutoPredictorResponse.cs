@@ -51,6 +51,7 @@ namespace Amazon.ForecastService.Model
         private string _predictorName;
         private ReferencePredictorSummary _referencePredictorSummary;
         private string _status;
+        private TimeAlignmentBoundary _timeAlignmentBoundary;
 
         /// <summary>
         /// Gets and sets the property CreationTime. 
@@ -428,6 +429,24 @@ namespace Amazon.ForecastService.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TimeAlignmentBoundary. 
+        /// <para>
+        /// The time boundary Forecast uses when aggregating data.
+        /// </para>
+        /// </summary>
+        public TimeAlignmentBoundary TimeAlignmentBoundary
+        {
+            get { return this._timeAlignmentBoundary; }
+            set { this._timeAlignmentBoundary = value; }
+        }
+
+        // Check to see if TimeAlignmentBoundary property is set
+        internal bool IsSetTimeAlignmentBoundary()
+        {
+            return this._timeAlignmentBoundary != null;
         }
 
     }

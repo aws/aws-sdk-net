@@ -174,6 +174,17 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetTimeAlignmentBoundary())
+                {
+                    context.Writer.WritePropertyName("TimeAlignmentBoundary");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = TimeAlignmentBoundaryMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.TimeAlignmentBoundary, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

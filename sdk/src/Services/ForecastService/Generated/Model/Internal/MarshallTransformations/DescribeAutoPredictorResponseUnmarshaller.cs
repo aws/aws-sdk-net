@@ -159,6 +159,12 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
                     response.Status = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("TimeAlignmentBoundary", targetDepth))
+                {
+                    var unmarshaller = TimeAlignmentBoundaryUnmarshaller.Instance;
+                    response.TimeAlignmentBoundary = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

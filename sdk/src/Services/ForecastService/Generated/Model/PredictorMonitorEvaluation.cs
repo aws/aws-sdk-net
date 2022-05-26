@@ -121,7 +121,10 @@ namespace Amazon.ForecastService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MonitorArn.
+        /// Gets and sets the property MonitorArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the monitor resource.
+        /// </para>
         /// </summary>
         [AWSProperty(Max=256)]
         public string MonitorArn
@@ -191,7 +194,10 @@ namespace Amazon.ForecastService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ResourceArn.
+        /// Gets and sets the property ResourceArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the resource to monitor.
+        /// </para>
         /// </summary>
         [AWSProperty(Max=256)]
         public string ResourceArn

@@ -104,6 +104,7 @@ namespace Amazon.ForecastService.Model
         private string _predictorName;
         private string _referencePredictorArn;
         private List<Tag> _tags = new List<Tag>();
+        private TimeAlignmentBoundary _timeAlignmentBoundary;
 
         /// <summary>
         /// Gets and sets the property DataConfig. 
@@ -412,6 +413,29 @@ namespace Amazon.ForecastService.Model
         internal bool IsSetTags()
         {
             return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TimeAlignmentBoundary. 
+        /// <para>
+        /// The time boundary Forecast uses to align and aggregate any data that doesn't align
+        /// with your forecast frequency. Provide the unit of time and the time boundary as a
+        /// key value pair. For more information on specifying a time boundary, see <a href="https://docs.aws.amazon.com/forecast/latest/dg/data-aggregation.html#specifying-time-boundary">Specifying
+        /// a Time Boundary</a>. If you don't provide a time boundary, Forecast uses a set of
+        /// <a href="https://docs.aws.amazon.com/forecast/latest/dg/data-aggregation.html#default-time-boundaries">Default
+        /// Time Boundaries</a>.
+        /// </para>
+        /// </summary>
+        public TimeAlignmentBoundary TimeAlignmentBoundary
+        {
+            get { return this._timeAlignmentBoundary; }
+            set { this._timeAlignmentBoundary = value; }
+        }
+
+        // Check to see if TimeAlignmentBoundary property is set
+        internal bool IsSetTimeAlignmentBoundary()
+        {
+            return this._timeAlignmentBoundary != null;
         }
 
     }
