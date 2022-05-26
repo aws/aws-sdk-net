@@ -1,3 +1,16 @@
+### 3.7.283.0 (2022-05-26 18:15 UTC)
+* EC2 (3.7.74.0)
+	* C7g instances, powered by the latest generation AWS Graviton3 processors, provide the best price performance in Amazon EC2 for compute-intensive workloads.
+* EMRServerlessWebService (3.7.0.0)
+	* This release adds support for Amazon EMR Serverless, a serverless runtime environment that simplifies running analytics applications using the latest open source frameworks such as Apache Spark and Apache Hive.
+* ForecastService (3.7.9.0)
+	* Introduced a new field in Auto Predictor as Time Alignment Boundary. It helps in aligning the timestamps generated during Forecast exports
+* Lightsail (3.7.9.0)
+	* Amazon Lightsail now supports the ability to configure a Lightsail Container Service to pull images from Amazon ECR private repositories in your account.
+* Core 3.7.11.9
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.282.1 (2022-05-26 14:17 UTC)
 * S3 (3.7.9.8)
 	* Added support for S3 schemed URI in AmazonS3Uri class.
