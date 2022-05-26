@@ -79,6 +79,17 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Power);
                 }
 
+                if(publicRequest.IsSetPrivateRegistryAccess())
+                {
+                    context.Writer.WritePropertyName("privateRegistryAccess");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = PrivateRegistryAccessRequestMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.PrivateRegistryAccess, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetPublicDomainNames())
                 {
                     context.Writer.WritePropertyName("publicDomainNames");

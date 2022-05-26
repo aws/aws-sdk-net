@@ -44,6 +44,7 @@ namespace Amazon.Lightsail.Model
         private string _powerId;
         private string _principalArn;
         private string _privateDomainName;
+        private PrivateRegistryAccess _privateRegistryAccess;
         private Dictionary<string, List<string>> _publicDomainNames = new Dictionary<string, List<string>>();
         private ResourceType _resourceType;
         private int? _scale;
@@ -272,6 +273,32 @@ namespace Amazon.Lightsail.Model
         internal bool IsSetPrivateDomainName()
         {
             return this._privateDomainName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PrivateRegistryAccess. 
+        /// <para>
+        /// An object that describes the configuration for the container service to access private
+        /// container image repositories, such as Amazon Elastic Container Registry (Amazon ECR)
+        /// private repositories.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-service-ecr-private-repo-access">Configuring
+        /// access to an Amazon ECR private repository for an Amazon Lightsail container service</a>
+        /// in the <i>Amazon Lightsail Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        public PrivateRegistryAccess PrivateRegistryAccess
+        {
+            get { return this._privateRegistryAccess; }
+            set { this._privateRegistryAccess = value; }
+        }
+
+        // Check to see if PrivateRegistryAccess property is set
+        internal bool IsSetPrivateRegistryAccess()
+        {
+            return this._privateRegistryAccess != null;
         }
 
         /// <summary>
