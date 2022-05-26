@@ -1,3 +1,10 @@
+### 3.7.282.1 (2022-05-26 14:17 UTC)
+* S3 (3.7.9.8)
+	* Added support for S3 schemed URI in AmazonS3Uri class.
+* Core 3.7.11.8
+	* Correct fallback logic for STS region when using AssumeRoleWithWebIdentityCredentials; Change IMDS credential refresh window to 5-10 minutes. Adjust refresh strategy to immediately refresh the first time expired IMDS credentials are encountered.
+	* All services packages updated to require new Core
+
 ### 3.7.282.0 (2022-05-25 18:20 UTC)
 * APIGateway (3.7.3.18)
 	* Documentation updates for Amazon API Gateway
