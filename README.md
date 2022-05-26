@@ -333,6 +333,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* Amazon Elastic Transcoder is media transcoding in the cloud. It is designed to be a highly scalable, easy to use and a cost effective way for developers and businesses to convert (or 'transcode') media files from their source format into versions that will playback on devices like smartphones, tablets and PCs.
 * [AWSSDK.EMRContainers](https://www.nuget.org/packages/AWSSDK.EMRContainers/)
 	* This release adds support for Amazon EMR on EKS, a simple way to run Spark on Kubernetes.
+* [AWSSDK.EMRServerlessWebService](https://www.nuget.org/packages/AWSSDK.EMRServerlessWebService/)
+	* This release adds support for Amazon EMR Serverless, a serverless runtime environment that simplifies running analytics applications using the latest open source frameworks such as Apache Spark and Apache Hive.
 * [AWSSDK.EventBridge](https://www.nuget.org/packages/AWSSDK.EventBridge/)
 	* Amazon EventBridge is a serverless event bus service that makes it easy to connect your applications with data from a variety of sources, including AWS services, partner applications, and your own applications.
 * [AWSSDK.Finspace](https://www.nuget.org/packages/AWSSDK.Finspace/)
