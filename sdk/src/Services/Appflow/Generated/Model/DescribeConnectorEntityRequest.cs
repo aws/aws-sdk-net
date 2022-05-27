@@ -31,7 +31,7 @@ namespace Amazon.Appflow.Model
     /// <summary>
     /// Container for the parameters to the DescribeConnectorEntity operation.
     /// Provides details regarding the entity used with the connector, with a description
-    /// of the data model for each entity.
+    /// of the data model for each field in that entity.
     /// </summary>
     public partial class DescribeConnectorEntityRequest : AmazonAppflowRequest
     {

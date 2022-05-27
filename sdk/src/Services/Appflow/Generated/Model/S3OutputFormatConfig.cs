@@ -37,6 +37,7 @@ namespace Amazon.Appflow.Model
         private AggregationConfig _aggregationConfig;
         private FileType _fileType;
         private PrefixConfig _prefixConfig;
+        private bool? _preserveSourceDataTyping;
 
         /// <summary>
         /// Gets and sets the property AggregationConfig.
@@ -88,6 +89,39 @@ namespace Amazon.Appflow.Model
         internal bool IsSetPrefixConfig()
         {
             return this._prefixConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PreserveSourceDataTyping. 
+        /// <para>
+        /// If your file output format is Parquet, use this parameter to set whether Amazon AppFlow
+        /// preserves the data types in your source data when it writes the output to Amazon S3.
+        /// 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>true</code>: Amazon AppFlow preserves the data types when it writes to Amazon
+        /// S3. For example, an integer or <code>1</code> in your source data is still an integer
+        /// in your output.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>false</code>: Amazon AppFlow converts all of the source data into strings when
+        /// it writes to Amazon S3. For example, an integer of <code>1</code> in your source data
+        /// becomes the string <code>"1"</code> in the output.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public bool PreserveSourceDataTyping
+        {
+            get { return this._preserveSourceDataTyping.GetValueOrDefault(); }
+            set { this._preserveSourceDataTyping = value; }
+        }
+
+        // Check to see if PreserveSourceDataTyping property is set
+        internal bool IsSetPreserveSourceDataTyping()
+        {
+            return this._preserveSourceDataTyping.HasValue; 
         }
 
     }

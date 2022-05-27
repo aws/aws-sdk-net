@@ -99,7 +99,9 @@ namespace Amazon.Appflow
         /// Creates a new connector profile associated with your Amazon Web Services account.
         /// There is a soft quota of 100 connector profiles per Amazon Web Services account. If
         /// you need more connector profiles than this quota allows, you can submit a request
-        /// to the Amazon AppFlow team through the Amazon AppFlow support channel.
+        /// to the Amazon AppFlow team through the Amazon AppFlow support channel. In each connector
+        /// profile that you create, you can provide the credentials and properties for only one
+        /// connector.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateConnectorProfile service method.</param>
         /// 
@@ -388,7 +390,7 @@ namespace Amazon.Appflow
 
         /// <summary>
         /// Provides details regarding the entity used with the connector, with a description
-        /// of the data model for each entity.
+        /// of the data model for each field in that entity.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeConnectorEntity service method.</param>
         /// 

@@ -44,7 +44,7 @@ namespace Amazon.Appflow.Model
         ///  The credentials used to access protected Zendesk resources. 
         /// </para>
         /// </summary>
-        [AWSProperty(Max=2048)]
+        [AWSProperty(Max=4096)]
         public string AccessToken
         {
             get { return this._accessToken; }

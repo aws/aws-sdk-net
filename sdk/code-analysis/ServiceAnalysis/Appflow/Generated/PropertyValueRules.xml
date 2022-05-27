@@ -661,7 +661,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.GoogleAnalyticsConnectorProfileCredentials.AccessToken</property>
-    <max>2048</max>
+    <max>4096</max>
     <pattern>\S+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -676,7 +676,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.GoogleAnalyticsConnectorProfileCredentials.RefreshToken</property>
-    <max>1024</max>
+    <max>2048</max>
     <pattern>\S+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -686,12 +686,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.HoneycodeConnectorProfileCredentials.AccessToken</property>
-    <max>2048</max>
+    <max>4096</max>
     <pattern>\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.HoneycodeConnectorProfileCredentials.RefreshToken</property>
-    <max>1024</max>
+    <max>2048</max>
     <pattern>\S+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -741,7 +741,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.MarketoConnectorProfileCredentials.AccessToken</property>
-    <max>2048</max>
+    <max>4096</max>
     <pattern>\S+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -771,7 +771,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.OAuth2Credentials.AccessToken</property>
-    <max>2048</max>
+    <max>4096</max>
     <pattern>\S+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -786,7 +786,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.OAuth2Credentials.RefreshToken</property>
-    <max>1024</max>
+    <max>2048</max>
     <pattern>\S+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -811,7 +811,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.OAuthCredentials.AccessToken</property>
-    <max>2048</max>
+    <max>4096</max>
     <pattern>\S+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -826,7 +826,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.OAuthCredentials.RefreshToken</property>
-    <max>1024</max>
+    <max>2048</max>
     <pattern>\S+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -915,7 +915,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.SalesforceConnectorProfileCredentials.AccessToken</property>
-    <max>2048</max>
+    <max>4096</max>
     <pattern>\S+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -926,7 +926,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.SalesforceConnectorProfileCredentials.RefreshToken</property>
-    <max>1024</max>
+    <max>2048</max>
     <pattern>\S+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -986,6 +986,11 @@
     <pattern>\S+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Appflow.Model.ScheduledTriggerProperties.FlowErrorDeactivationThreshold</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Appflow.Model.ScheduledTriggerProperties.ScheduleExpression</property>
     <max>256</max>
     <pattern>.*</pattern>
@@ -1032,7 +1037,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.SlackConnectorProfileCredentials.AccessToken</property>
-    <max>2048</max>
+    <max>4096</max>
     <pattern>\S+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1191,7 +1196,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.ZendeskConnectorProfileCredentials.AccessToken</property>
-    <max>2048</max>
+    <max>4096</max>
     <pattern>\S+</pattern>
   </property-value-rule>
   <property-value-rule>

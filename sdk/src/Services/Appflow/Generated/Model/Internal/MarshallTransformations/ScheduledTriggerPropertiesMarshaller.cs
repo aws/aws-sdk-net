@@ -57,6 +57,12 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.FirstExecutionFrom);
             }
 
+            if(requestObject.IsSetFlowErrorDeactivationThreshold())
+            {
+                context.Writer.WritePropertyName("flowErrorDeactivationThreshold");
+                context.Writer.Write(requestObject.FlowErrorDeactivationThreshold);
+            }
+
             if(requestObject.IsSetScheduleEndTime())
             {
                 context.Writer.WritePropertyName("scheduleEndTime");

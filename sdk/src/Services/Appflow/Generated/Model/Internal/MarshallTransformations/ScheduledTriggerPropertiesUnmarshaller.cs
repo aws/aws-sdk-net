@@ -76,6 +76,12 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
                     unmarshalledObject.FirstExecutionFrom = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("flowErrorDeactivationThreshold", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.FlowErrorDeactivationThreshold = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("scheduleEndTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

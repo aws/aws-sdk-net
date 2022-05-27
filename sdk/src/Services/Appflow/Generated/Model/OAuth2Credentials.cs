@@ -45,7 +45,7 @@ namespace Amazon.Appflow.Model
         /// The access token used to access the connector on your behalf.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=2048)]
+        [AWSProperty(Max=4096)]
         public string AccessToken
         {
             get { return this._accessToken; }
@@ -117,7 +117,7 @@ namespace Amazon.Appflow.Model
         /// The refresh token used to refresh an expired access token.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Max=2048)]
         public string RefreshToken
         {
             get { return this._refreshToken; }
