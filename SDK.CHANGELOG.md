@@ -1,3 +1,16 @@
+### 3.7.284.0 (2022-05-27 18:15 UTC)
+* Appflow (3.7.9.0)
+	* Adding the following features/changes: Parquet output that preserves typing from the source connector, Failed executions threshold before deactivation for scheduled flows, increasing max size of access and refresh token from 2048 to 4096
+* DataSync (3.7.7.0)
+	* AWS DataSync now supports TLS encryption in transit, file system policies and access points for EFS locations.
+* EMRServerless (3.7.0.0)
+	* This release adds support for Amazon EMR Serverless, a serverless runtime environment that simplifies running analytics applications using the latest open source frameworks such as Apache Spark and Apache Hive.
+* SageMaker (3.7.35.0)
+	* Amazon SageMaker Notebook Instances now allows configuration of Instance Metadata Service version and Amazon SageMaker Studio now supports G5 instance types.
+* Core 3.7.11.10
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.283.0 (2022-05-26 18:15 UTC)
 * EC2 (3.7.74.0)
 	* C7g instances, powered by the latest generation AWS Graviton3 processors, provide the best price performance in Amazon EC2 for compute-intensive workloads.
