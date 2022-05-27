@@ -6220,6 +6220,11 @@
     <pattern>^(https|s3)://([^/]+)/?(.*)$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.InstanceMetadataServiceConfiguration.MinimumInstanceMetadataServiceVersion</property>
+    <max>1</max>
+    <pattern>1|2</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.IntegerParameterRange.MaxValue</property>
     <max>256</max>
     <pattern>.*</pattern>

@@ -101,6 +101,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DirectInternetAccess);
                 }
 
+                if(publicRequest.IsSetInstanceMetadataServiceConfiguration())
+                {
+                    context.Writer.WritePropertyName("InstanceMetadataServiceConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = InstanceMetadataServiceConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.InstanceMetadataServiceConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetInstanceType())
                 {
                     context.Writer.WritePropertyName("InstanceType");

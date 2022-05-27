@@ -43,6 +43,7 @@ namespace Amazon.SageMaker.Model
         private bool? _disassociateAdditionalCodeRepositories;
         private bool? _disassociateDefaultCodeRepository;
         private bool? _disassociateLifecycleConfig;
+        private InstanceMetadataServiceConfiguration _instanceMetadataServiceConfiguration;
         private InstanceType _instanceType;
         private string _lifecycleConfigName;
         private string _notebookInstanceName;
@@ -201,6 +202,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetDisassociateLifecycleConfig()
         {
             return this._disassociateLifecycleConfig.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceMetadataServiceConfiguration. 
+        /// <para>
+        /// Information on the IMDS configuration of the notebook instance
+        /// </para>
+        /// </summary>
+        public InstanceMetadataServiceConfiguration InstanceMetadataServiceConfiguration
+        {
+            get { return this._instanceMetadataServiceConfiguration; }
+            set { this._instanceMetadataServiceConfiguration = value; }
+        }
+
+        // Check to see if InstanceMetadataServiceConfiguration property is set
+        internal bool IsSetInstanceMetadataServiceConfiguration()
+        {
+            return this._instanceMetadataServiceConfiguration != null;
         }
 
         /// <summary>

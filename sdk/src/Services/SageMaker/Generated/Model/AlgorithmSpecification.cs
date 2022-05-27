@@ -50,9 +50,26 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property AlgorithmName. 
         /// <para>
         /// The name of the algorithm resource to use for the training job. This must be an algorithm
-        /// resource that you created or subscribe to on Amazon Web Services Marketplace. If you
-        /// specify a value for this parameter, you can't specify a value for <code>TrainingImage</code>.
+        /// resource that you created or subscribe to on Amazon Web Services Marketplace.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// You must specify either the algorithm name to the <code>AlgorithmName</code> parameter
+        /// or the image URI of the algorithm container to the <code>TrainingImage</code> parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// Note that the <code>AlgorithmName</code> parameter is mutually exclusive with the
+        /// <code>TrainingImage</code> parameter. If you specify a value for the <code>AlgorithmName</code>
+        /// parameter, you can't specify a value for <code>TrainingImage</code>, and vice versa.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify values for both parameters, the training job might break; if you don't
+        /// specify any value for both parameters, the training job might raise a <code>null</code>
+        /// error.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=1, Max=170)]
         public string AlgorithmName
@@ -138,12 +155,23 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property TrainingImage. 
         /// <para>
         /// The registry path of the Docker image that contains the training algorithm. For information
-        /// about docker registry paths for built-in algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Algorithms
-        /// Provided by Amazon SageMaker: Common Parameters</a>. SageMaker supports both <code>registry/repository[:tag]</code>
-        /// and <code>registry/repository[@digest]</code> image path formats. For more information,
+        /// about docker registry paths for SageMaker built-in algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Docker
+        /// Registry Paths and Example Code</a> in the <i>Amazon SageMaker developer guide</i>.
+        /// SageMaker supports both <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code>
+        /// image path formats. For more information about using your custom training container,
         /// see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
         /// Your Own Algorithms with Amazon SageMaker</a>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// You must specify either the algorithm name to the <code>AlgorithmName</code> parameter
+        /// or the image URI of the algorithm container to the <code>TrainingImage</code> parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see the note in the <code>AlgorithmName</code> parameter description.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Max=255)]
         public string TrainingImage

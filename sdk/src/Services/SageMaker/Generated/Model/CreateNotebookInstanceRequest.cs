@@ -91,6 +91,7 @@ namespace Amazon.SageMaker.Model
         private List<string> _additionalCodeRepositories = new List<string>();
         private string _defaultCodeRepository;
         private DirectInternetAccess _directInternetAccess;
+        private InstanceMetadataServiceConfiguration _instanceMetadataServiceConfiguration;
         private InstanceType _instanceType;
         private string _kmsKeyId;
         private string _lifecycleConfigName;
@@ -199,6 +200,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetDirectInternetAccess()
         {
             return this._directInternetAccess != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceMetadataServiceConfiguration. 
+        /// <para>
+        /// Information on the IMDS configuration of the notebook instance
+        /// </para>
+        /// </summary>
+        public InstanceMetadataServiceConfiguration InstanceMetadataServiceConfiguration
+        {
+            get { return this._instanceMetadataServiceConfiguration; }
+            set { this._instanceMetadataServiceConfiguration = value; }
+        }
+
+        // Check to see if InstanceMetadataServiceConfiguration property is set
+        internal bool IsSetInstanceMetadataServiceConfiguration()
+        {
+            return this._instanceMetadataServiceConfiguration != null;
         }
 
         /// <summary>

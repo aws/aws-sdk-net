@@ -87,6 +87,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     response.FailureReason = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("InstanceMetadataServiceConfiguration", targetDepth))
+                {
+                    var unmarshaller = InstanceMetadataServiceConfigurationUnmarshaller.Instance;
+                    response.InstanceMetadataServiceConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("InstanceType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
