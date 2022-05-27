@@ -29,5 +29,10 @@ namespace Amazon.DataSync.Model
         /// Enumerable containing all full responses for the operation
         /// </summary>
         IPaginatedEnumerable<ListAgentsResponse> Responses { get; }
+
+        /// <summary>
+        /// Enumerable containing all of the Agents
+        /// </summary>
+        IPaginatedEnumerable<AgentListEntry> Agents { get; }
     }
 }

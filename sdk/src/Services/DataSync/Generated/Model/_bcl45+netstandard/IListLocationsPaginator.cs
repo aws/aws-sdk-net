@@ -29,5 +29,10 @@ namespace Amazon.DataSync.Model
         /// Enumerable containing all full responses for the operation
         /// </summary>
         IPaginatedEnumerable<ListLocationsResponse> Responses { get; }
+
+        /// <summary>
+        /// Enumerable containing all of the Locations
+        /// </summary>
+        IPaginatedEnumerable<LocationListEntry> Locations { get; }
     }
 }

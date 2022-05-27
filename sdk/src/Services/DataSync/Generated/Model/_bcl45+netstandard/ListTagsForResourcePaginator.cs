@@ -41,6 +41,12 @@ namespace Amazon.DataSync.Model
         /// </summary>
         public IPaginatedEnumerable<ListTagsForResourceResponse> Responses => new PaginatedResponse<ListTagsForResourceResponse>(this);
 
+        /// <summary>
+        /// Enumerable containing all of the Tags
+        /// </summary>
+        public IPaginatedEnumerable<TagListEntry> Tags => 
+            new PaginatedResultKeyResponse<ListTagsForResourceResponse, TagListEntry>(this, (i) => i.Tags);
+
         internal ListTagsForResourcePaginator(IAmazonDataSync client, ListTagsForResourceRequest request)
         {
             this._client = client;

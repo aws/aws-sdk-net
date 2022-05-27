@@ -125,6 +125,56 @@ namespace Amazon.DataSync
 
 
     /// <summary>
+    /// Constants used for properties of type EfsInTransitEncryption.
+    /// </summary>
+    public class EfsInTransitEncryption : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NONE for EfsInTransitEncryption
+        /// </summary>
+        public static readonly EfsInTransitEncryption NONE = new EfsInTransitEncryption("NONE");
+        /// <summary>
+        /// Constant TLS1_2 for EfsInTransitEncryption
+        /// </summary>
+        public static readonly EfsInTransitEncryption TLS1_2 = new EfsInTransitEncryption("TLS1_2");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EfsInTransitEncryption(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EfsInTransitEncryption FindValue(string value)
+        {
+            return FindValue<EfsInTransitEncryption>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EfsInTransitEncryption(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EndpointType.
     /// </summary>
     public class EndpointType : ConstantClass

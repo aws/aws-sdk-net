@@ -67,6 +67,12 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAccessPointArn())
+                {
+                    context.Writer.WritePropertyName("AccessPointArn");
+                    context.Writer.Write(publicRequest.AccessPointArn);
+                }
+
                 if(publicRequest.IsSetEc2Config())
                 {
                     context.Writer.WritePropertyName("Ec2Config");
@@ -82,6 +88,18 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("EfsFilesystemArn");
                     context.Writer.Write(publicRequest.EfsFilesystemArn);
+                }
+
+                if(publicRequest.IsSetFileSystemAccessRoleArn())
+                {
+                    context.Writer.WritePropertyName("FileSystemAccessRoleArn");
+                    context.Writer.Write(publicRequest.FileSystemAccessRoleArn);
+                }
+
+                if(publicRequest.IsSetInTransitEncryption())
+                {
+                    context.Writer.WritePropertyName("InTransitEncryption");
+                    context.Writer.Write(publicRequest.InTransitEncryption);
                 }
 
                 if(publicRequest.IsSetSubdirectory())

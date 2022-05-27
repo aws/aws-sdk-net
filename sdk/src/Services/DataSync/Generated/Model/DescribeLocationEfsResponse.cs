@@ -33,15 +33,37 @@ namespace Amazon.DataSync.Model
     /// </summary>
     public partial class DescribeLocationEfsResponse : AmazonWebServiceResponse
     {
+        private string _accessPointArn;
         private DateTime? _creationTime;
         private Ec2Config _ec2Config;
+        private string _fileSystemAccessRoleArn;
+        private EfsInTransitEncryption _inTransitEncryption;
         private string _locationArn;
         private string _locationUri;
 
         /// <summary>
+        /// Gets and sets the property AccessPointArn. 
+        /// <para>
+        /// The ARN of the access point that DataSync uses to access the Amazon EFS file system.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=128)]
+        public string AccessPointArn
+        {
+            get { return this._accessPointArn; }
+            set { this._accessPointArn = value; }
+        }
+
+        // Check to see if AccessPointArn property is set
+        internal bool IsSetAccessPointArn()
+        {
+            return this._accessPointArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        /// The time that the EFS location was created.
+        /// The time that the location was created.
         /// </para>
         /// </summary>
         public DateTime CreationTime
@@ -72,9 +94,48 @@ namespace Amazon.DataSync.Model
         }
 
         /// <summary>
+        /// Gets and sets the property FileSystemAccessRoleArn. 
+        /// <para>
+        /// The Identity and Access Management (IAM) role that DataSync assumes when mounting
+        /// the Amazon EFS file system.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=2048)]
+        public string FileSystemAccessRoleArn
+        {
+            get { return this._fileSystemAccessRoleArn; }
+            set { this._fileSystemAccessRoleArn = value; }
+        }
+
+        // Check to see if FileSystemAccessRoleArn property is set
+        internal bool IsSetFileSystemAccessRoleArn()
+        {
+            return this._fileSystemAccessRoleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InTransitEncryption. 
+        /// <para>
+        /// Whether DataSync uses TLS encryption when transferring data to or from your Amazon
+        /// EFS file system.
+        /// </para>
+        /// </summary>
+        public EfsInTransitEncryption InTransitEncryption
+        {
+            get { return this._inTransitEncryption; }
+            set { this._inTransitEncryption = value; }
+        }
+
+        // Check to see if InTransitEncryption property is set
+        internal bool IsSetInTransitEncryption()
+        {
+            return this._inTransitEncryption != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property LocationArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the EFS location that was described.
+        /// The ARN of the Amazon EFS file system location.
         /// </para>
         /// </summary>
         [AWSProperty(Max=128)]
@@ -93,7 +154,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property LocationUri. 
         /// <para>
-        /// The URL of the EFS location that was described.
+        /// The URL of the Amazon EFS file system location.
         /// </para>
         /// </summary>
         [AWSProperty(Max=4356)]

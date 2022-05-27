@@ -41,6 +41,12 @@ namespace Amazon.DataSync.Model
         /// </summary>
         public IPaginatedEnumerable<ListAgentsResponse> Responses => new PaginatedResponse<ListAgentsResponse>(this);
 
+        /// <summary>
+        /// Enumerable containing all of the Agents
+        /// </summary>
+        public IPaginatedEnumerable<AgentListEntry> Agents => 
+            new PaginatedResultKeyResponse<ListAgentsResponse, AgentListEntry>(this, (i) => i.Agents);
+
         internal ListAgentsPaginator(IAmazonDataSync client, ListAgentsRequest request)
         {
             this._client = client;

@@ -396,7 +396,9 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Creates an endpoint for an Amazon EFS file system.
+        /// Creates an endpoint for an Amazon EFS file system that DataSync can access for a transfer.
+        /// For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-efs-location.html">Creating
+        /// a location for Amazon EFS</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLocationEfs service method.</param>
         /// <param name="cancellationToken">
@@ -1000,7 +1002,7 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Returns metadata, such as the path information about an Amazon EFS location.
+        /// Returns metadata about your DataSync location for an Amazon EFS file system.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeLocationEfs service method.</param>
         /// <param name="cancellationToken">
