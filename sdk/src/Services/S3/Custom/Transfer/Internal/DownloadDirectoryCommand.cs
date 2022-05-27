@@ -109,8 +109,12 @@ namespace Amazon.S3.Transfer.Internal
             listRequest.Prefix = this._request.S3Directory;
 
             listRequest.Prefix = listRequest.Prefix.Replace('\\', '/');
-            if (!listRequest.Prefix.EndsWith("/", StringComparison.Ordinal))
-                listRequest.Prefix += "/";
+
+            if (!this._request.DisableSlashCorrection)
+            {
+                if (!listRequest.Prefix.EndsWith("/", StringComparison.Ordinal))
+                    listRequest.Prefix += "/";
+            }
 
             if (listRequest.Prefix.StartsWith("/", StringComparison.Ordinal))
             {
