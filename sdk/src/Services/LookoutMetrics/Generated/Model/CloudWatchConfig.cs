@@ -33,7 +33,26 @@ namespace Amazon.LookoutMetrics.Model
     /// </summary>
     public partial class CloudWatchConfig
     {
+        private BackTestConfiguration _backTestConfiguration;
         private string _roleArn;
+
+        /// <summary>
+        /// Gets and sets the property BackTestConfiguration. 
+        /// <para>
+        /// Settings for backtest mode.
+        /// </para>
+        /// </summary>
+        public BackTestConfiguration BackTestConfiguration
+        {
+            get { return this._backTestConfiguration; }
+            set { this._backTestConfiguration = value; }
+        }
+
+        // Check to see if BackTestConfiguration property is set
+        internal bool IsSetBackTestConfiguration()
+        {
+            return this._backTestConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property RoleArn. 
