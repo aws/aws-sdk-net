@@ -29,7 +29,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// The settings for updates to user attributes.
+    /// The settings for updates to user attributes. These settings include the property <code>AttributesRequireVerificationBeforeUpdate</code>,
+    /// a user-pool setting that tells Amazon Cognito how to handle changes to the value of
+    /// your users' email address and phone number attributes. For more information, see <a
+    /// href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html#user-pool-settings-verifications-verify-attribute-updates">
+    /// Verifying updates to to email addresses and phone numbers</a>.
     /// </summary>
     public partial class UserAttributeUpdateSettingsType
     {

@@ -54,6 +54,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         private string _clientId;
         private string _clientName;
         private string _defaultRedirectURI;
+        private bool? _enablePropagateAdditionalUserContextData;
         private bool? _enableTokenRevocation;
         private List<string> _explicitAuthFlows = new List<string>();
         private int? _idTokenValidity;
@@ -336,6 +337,29 @@ namespace Amazon.CognitoIdentityProvider.Model
         internal bool IsSetDefaultRedirectURI()
         {
             return this._defaultRedirectURI != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnablePropagateAdditionalUserContextData. 
+        /// <para>
+        /// Activates the propagation of additional user context data. For more information about
+        /// propagation of user context data, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html">
+        /// Adding advanced security to a user pool</a>. If you don’t include this parameter,
+        /// you can't send device fingerprint information, including source IP address, to Amazon
+        /// Cognito advanced security. You can only activate <code>EnablePropagateAdditionalUserContextData</code>
+        /// in an app client that has a client secret.
+        /// </para>
+        /// </summary>
+        public bool EnablePropagateAdditionalUserContextData
+        {
+            get { return this._enablePropagateAdditionalUserContextData.GetValueOrDefault(); }
+            set { this._enablePropagateAdditionalUserContextData = value; }
+        }
+
+        // Check to see if EnablePropagateAdditionalUserContextData property is set
+        internal bool IsSetEnablePropagateAdditionalUserContextData()
+        {
+            return this._enablePropagateAdditionalUserContextData.HasValue; 
         }
 
         /// <summary>

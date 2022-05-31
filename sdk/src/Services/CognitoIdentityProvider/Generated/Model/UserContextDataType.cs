@@ -29,19 +29,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// Information that your app generates about a user's <code>AdminInitiateAuth</code>
-    /// or <code>AdminRespondToAuthChallenge</code> session. Amazon Cognito advanced security
-    /// features calculate risk levels for user sessions based on this context data.
+    /// Contextual data, such as the user's device fingerprint, IP address, or location, used
+    /// for evaluating the risk of an unexpected event by Amazon Cognito advanced security.
     /// </summary>
     public partial class UserContextDataType
     {
         private string _encodedData;
+        private string _ipAddress;
 
         /// <summary>
         /// Gets and sets the property EncodedData. 
         /// <para>
-        /// Contextual data, such as the user's device fingerprint, IP address, or location, used
-        /// for evaluating the risk of an unexpected event by Amazon Cognito advanced security.
+        /// Encoded device-fingerprint details that your app collected with the Amazon Cognito
+        /// context data collection library. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-adaptive-authentication.html#user-pool-settings-adaptive-authentication-device-fingerprint">Adding
+        /// user device and session data to API requests</a>.
         /// </para>
         /// </summary>
         public string EncodedData
@@ -54,6 +55,24 @@ namespace Amazon.CognitoIdentityProvider.Model
         internal bool IsSetEncodedData()
         {
             return this._encodedData != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IpAddress. 
+        /// <para>
+        /// The source IP address of your user's device.
+        /// </para>
+        /// </summary>
+        public string IpAddress
+        {
+            get { return this._ipAddress; }
+            set { this._ipAddress = value; }
+        }
+
+        // Check to see if IpAddress property is set
+        internal bool IsSetIpAddress()
+        {
+            return this._ipAddress != null;
         }
 
     }

@@ -96,7 +96,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property IpAddress. 
         /// <para>
-        /// The user's IP address.
+        /// The source IP address of your user's device.
         /// </para>
         /// </summary>
         public string IpAddress
