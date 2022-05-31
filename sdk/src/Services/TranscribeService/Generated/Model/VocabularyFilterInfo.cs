@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.TranscribeService.Model
 {
     /// <summary>
-    /// Provides information about a vocabulary filter.
+    /// Provides information about a vocabulary filter, including the language of the filter,
+    /// when it was last modified, and its name.
     /// </summary>
     public partial class VocabularyFilterInfo
     {
@@ -40,7 +41,20 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property LanguageCode. 
         /// <para>
-        /// The language code of the words in the vocabulary filter.
+        /// The language code that represents the language of the entries in your vocabulary filter.
+        /// Each vocabulary filter must contain terms in only one language.
+        /// </para>
+        ///  
+        /// <para>
+        /// A vocabulary filter can only be used to transcribe files in the same language as the
+        /// filter. For example, if you create a vocabulary filter using US English (<code>en-US</code>),
+        /// you can only apply this filter to files that contain English audio.
+        /// </para>
+        ///  
+        /// <para>
+        /// For a list of supported languages and their associated language codes, refer to the
+        /// <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported
+        /// languages</a> table.
         /// </para>
         /// </summary>
         public LanguageCode LanguageCode
@@ -58,7 +72,13 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property LastModifiedTime. 
         /// <para>
-        /// The date and time that the vocabulary was last updated.
+        /// The date and time the specified vocabulary filter was last modified.
+        /// </para>
+        ///  
+        /// <para>
+        /// Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+        /// <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4,
+        /// 2022.
         /// </para>
         /// </summary>
         public DateTime LastModifiedTime
@@ -76,8 +96,9 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property VocabularyFilterName. 
         /// <para>
-        /// The name of the vocabulary filter. The name must be unique in the account that holds
-        /// the filter.
+        /// A unique name, chosen by you, for your custom vocabulary filter. This name is case
+        /// sensitive, cannot contain spaces, and must be unique within an Amazon Web Services
+        /// account.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]

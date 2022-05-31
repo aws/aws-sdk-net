@@ -30,7 +30,13 @@ namespace Amazon.TranscribeService.Model
 {
     /// <summary>
     /// Container for the parameters to the ListCallAnalyticsJobs operation.
-    /// List call analytics jobs with a specified status or substring that matches their names.
+    /// Provides a list of Call Analytics jobs that match the specified criteria. If no criteria
+    /// are specified, all Call Analytics jobs are returned.
+    /// 
+    ///  
+    /// <para>
+    /// To get detailed information about a specific Call Analytics job, use the operation.
+    /// </para>
     /// </summary>
     public partial class ListCallAnalyticsJobsRequest : AmazonTranscribeServiceRequest
     {
@@ -42,8 +48,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property JobNameContains. 
         /// <para>
-        /// When specified, the jobs returned in the list are limited to jobs whose name contains
-        /// the specified string.
+        /// Returns only the Call Analytics jobs that contain the specified string. The search
+        /// is not case sensitive.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
@@ -62,9 +68,9 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        ///  The maximum number of call analytics jobs to return in each page of results. If there
+        /// The maximum number of Call Analytics jobs to return in each page of results. If there
         /// are fewer results than the value you specify, only the actual results are returned.
-        /// If you do not specify a value, the default of 5 is used. 
+        /// If you don't specify a value, a default of 5 is used.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -83,8 +89,11 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If you receive a truncated result in the previous request of , include <code>NextToken</code>
-        /// to fetch the next set of jobs.
+        /// If your <code>ListCallAnalyticsJobs</code> request returns more results than can be
+        /// displayed, <code>NextToken</code> is displayed in the response with an associated
+        /// string. To get the next page of results, copy this string and repeat your request,
+        /// including <code>NextToken</code> with the value of the copied string. Repeat as needed
+        /// to view all your results.
         /// </para>
         /// </summary>
         [AWSProperty(Max=8192)]
@@ -103,9 +112,9 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// When specified, returns only call analytics jobs with the specified status. Jobs are
-        /// ordered by creation date, with the most recent jobs returned first. If you don't specify
-        /// a status, Amazon Transcribe returns all analytics jobs ordered by creation date.
+        /// Returns only Call Analytics jobs with the specified status. Jobs are ordered by creation
+        /// date, with the newest job first. If you don't include <code>Status</code>, all Call
+        /// Analytics jobs are returned.
         /// </para>
         /// </summary>
         public CallAnalyticsJobStatus Status

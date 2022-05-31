@@ -30,8 +30,8 @@ namespace Amazon.TranscribeService.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteTranscriptionJob operation.
-    /// Deletes a transcription job, along with any related information. To use this operation,
-    /// specify the name of the job you want to delete using <code>TranscriptionJobName</code>.
+    /// Deletes a transcription job. To use this operation, specify the name of the job you
+    /// want to delete using <code>TranscriptionJobName</code>. Job names are case sensitive.
     /// </summary>
     public partial class DeleteTranscriptionJobRequest : AmazonTranscribeServiceRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property TranscriptionJobName. 
         /// <para>
-        /// The name of the transcription job you want to delete. Job names are case-sensitive.
+        /// The name of the transcription job you want to delete. Job names are case sensitive.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=200)]

@@ -41,8 +41,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property DownloadUri. 
         /// <para>
-        /// The URI of the list of words in the vocabulary filter. You can use this URI to get
-        /// the list of words.
+        /// The Amazon S3 location where the vocabulary filter is stored; use this URI to view
+        /// or download the vocabulary filter.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2000)]
@@ -61,7 +61,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property LanguageCode. 
         /// <para>
-        /// The language code of the words in the vocabulary filter.
+        /// The language code you selected for your vocabulary filter.
         /// </para>
         /// </summary>
         public LanguageCode LanguageCode
@@ -79,7 +79,13 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property LastModifiedTime. 
         /// <para>
-        /// The date and time that the contents of the vocabulary filter were updated.
+        /// The date and time the specified vocabulary filter was last modified.
+        /// </para>
+        ///  
+        /// <para>
+        /// Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+        /// <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4,
+        /// 2022.
         /// </para>
         /// </summary>
         public DateTime LastModifiedTime
@@ -97,7 +103,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property VocabularyFilterName. 
         /// <para>
-        /// The name of the vocabulary filter.
+        /// The name of the custom vocabulary filter you requested information about.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]

@@ -38,7 +38,19 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property LanguageModel. 
         /// <para>
-        /// The name of the custom language model you requested more information about.
+        /// Provides information about the specified custom language model.
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter also shows if the base language model you used to create your custom
+        /// language model has been updated. If Amazon Transcribe has updated the base model,
+        /// you can create a new custom language model using the updated base model.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you tried to create a new custom language model and the request wasn't successful,
+        /// you can use this <code>DescribeLanguageModel</code> to help identify the reason for
+        /// this failure.
         /// </para>
         /// </summary>
         public LanguageModel LanguageModel

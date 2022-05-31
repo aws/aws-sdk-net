@@ -84,6 +84,12 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.IdentifyLanguage);
                 }
 
+                if(publicRequest.IsSetIdentifyMultipleLanguages())
+                {
+                    context.Writer.WritePropertyName("IdentifyMultipleLanguages");
+                    context.Writer.Write(publicRequest.IdentifyMultipleLanguages);
+                }
+
                 if(publicRequest.IsSetJobExecutionSettings())
                 {
                     context.Writer.WritePropertyName("JobExecutionSettings");

@@ -30,7 +30,12 @@ namespace Amazon.TranscribeService.Model
 {
     /// <summary>
     /// Container for the parameters to the GetCallAnalyticsCategory operation.
-    /// Retrieves information about a call analytics category.
+    /// Provides information about the specified Call Analytics category.
+    /// 
+    ///  
+    /// <para>
+    /// To get a list of your Call Analytics categories, use the operation.
+    /// </para>
     /// </summary>
     public partial class GetCallAnalyticsCategoryRequest : AmazonTranscribeServiceRequest
     {
@@ -39,7 +44,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property CategoryName. 
         /// <para>
-        /// The name of the category you want information about. Category names are case sensitive.
+        /// The name of the Call Analytics category you want information about. Category names
+        /// are case sensitive.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=200)]

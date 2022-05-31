@@ -30,9 +30,9 @@ namespace Amazon.TranscribeService.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateVocabulary operation.
-    /// Updates an existing vocabulary with new values. The <code>UpdateVocabulary</code>
-    /// operation overwrites all of the existing information with the values that you provide
-    /// in the request.
+    /// Updates an existing custom vocabulary with new values. This operation overwrites all
+    /// existing information with your new values; you cannot append new terms onto an existing
+    /// vocabulary.
     /// </summary>
     public partial class UpdateVocabularyRequest : AmazonTranscribeServiceRequest
     {
@@ -44,9 +44,20 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property LanguageCode. 
         /// <para>
-        /// The language code of the vocabulary entries. For a list of languages and their corresponding
-        /// language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported
-        /// languages</a>.
+        /// The language code that represents the language of the entries in the custom vocabulary
+        /// you want to update. Each vocabulary must contain terms in only one language.
+        /// </para>
+        ///  
+        /// <para>
+        /// A custom vocabulary can only be used to transcribe files in the same language as the
+        /// vocabulary. For example, if you create a vocabulary using US English (<code>en-US</code>),
+        /// you can only apply this vocabulary to files that contain English audio.
+        /// </para>
+        ///  
+        /// <para>
+        /// For a list of supported languages and their associated language codes, refer to the
+        /// <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported
+        /// languages</a> table.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -65,7 +76,23 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property Phrases. 
         /// <para>
-        /// An array of strings containing the vocabulary entries.
+        /// Use this parameter if you want to update your vocabulary by including all desired
+        /// terms, as comma-separated values, within your request. The other option for updating
+        /// your vocabulary is to save your entries in a text file and upload them to an Amazon
+        /// S3 bucket, then specify the location of your file using the <code>VocabularyFileUri</code>
+        /// parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// Note that if you include <code>Phrases</code> in your request, you cannot use <code>VocabularyFileUri</code>;
+        /// you must choose one or the other.
+        /// </para>
+        ///  
+        /// <para>
+        /// Each language has a character set that contains all allowed characters for that specific
+        /// language. If you use unsupported characters, your vocabulary filter request fails.
+        /// Refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character
+        /// Sets for Custom Vocabularies</a> to get the character set for your language.
         /// </para>
         /// </summary>
         public List<string> Phrases
@@ -83,32 +110,19 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property VocabularyFileUri. 
         /// <para>
-        /// The S3 location of the text file that contains the definition of the custom vocabulary.
-        /// The URI must be in the same region as the API endpoint that you are calling. The general
-        /// form is:
+        /// The Amazon S3 location of the text file that contains your custom vocabulary. The
+        /// URI must be located in the same Amazon Web Services Region as the resource you're
+        /// calling.
         /// </para>
         ///  
         /// <para>
-        ///  <code>https://s3.aws-region.amazonaws.com/bucket-name/keyprefix/objectkey</code>
+        /// Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-vocab-file.txt</code>
         /// 
         /// </para>
         ///  
         /// <para>
-        /// For example:
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>https://s3.us-east-1.amazonaws.com/DOC-EXAMPLE-BUCKET/vocab.txt</code> 
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information about S3 object names, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
-        /// Keys</a> in the <i>Amazon S3 Developer Guide</i>.
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information about custom vocabularies, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html">Custom
-        /// Vocabularies</a>.
+        /// Note that if you include <code>VocabularyFileUri</code> in your request, you cannot
+        /// use the <code>Phrases</code> flag; you must choose one or the other.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2000)]
@@ -127,9 +141,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property VocabularyName. 
         /// <para>
-        /// The name of the vocabulary to update. The name is case sensitive. If you try to update
-        /// a vocabulary with the same name as a previous vocabulary you will receive a <code>ConflictException</code>
-        /// error.
+        /// The name of the custom vocabulary you want to update. Vocabulary names are case sensitive.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=200)]

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.TranscribeService.Model
 {
     /// <summary>
-    /// Provides summary information about a transcription job.
+    /// Provides detailed information about a specific medical transcription job.
     /// </summary>
     public partial class MedicalTranscriptionJobSummary
     {
@@ -48,7 +48,13 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property CompletionTime. 
         /// <para>
-        /// A timestamp that shows when the job was completed.
+        /// The date and time the specified medical transcription job finished processing.
+        /// </para>
+        ///  
+        /// <para>
+        /// Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+        /// <code>2022-05-04T12:33:13.922000-07:00</code> represents a transcription job that
+        /// started processing at 12:33 PM UTC-7 on May 4, 2022.
         /// </para>
         /// </summary>
         public DateTime CompletionTime
@@ -66,9 +72,9 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property ContentIdentificationType. 
         /// <para>
-        /// Shows the type of information you've configured Amazon Transcribe Medical to identify
-        /// in a transcription job. If the value is <code>PHI</code>, you've configured the transcription
-        /// job to identify personal health information (PHI).
+        /// Labels all personal health information (PHI) identified in your transcript. For more
+        /// information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/phi-id.html">Identifying
+        /// personal health information (PHI) in a transcription</a>.
         /// </para>
         /// </summary>
         public MedicalContentIdentificationType ContentIdentificationType
@@ -86,7 +92,13 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        /// A timestamp that shows when the medical transcription job was created.
+        /// The date and time the specified medical transcription job request was made.
+        /// </para>
+        ///  
+        /// <para>
+        /// Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+        /// <code>2022-05-04T12:32:58.761000-07:00</code> represents a transcription job that
+        /// started processing at 12:32 PM UTC-7 on May 4, 2022.
         /// </para>
         /// </summary>
         public DateTime CreationTime
@@ -104,8 +116,9 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property FailureReason. 
         /// <para>
-        /// If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, a description
-        /// of the error.
+        /// If <code>TranscriptionJobStatus</code> is <code>FAILED</code>, <code>FailureReason</code>
+        /// contains information about why the transcription job failed. See also: <a href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common
+        /// Errors</a>.
         /// </para>
         /// </summary>
         public string FailureReason
@@ -123,7 +136,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property LanguageCode. 
         /// <para>
-        /// The language of the transcript in the source audio file.
+        /// The language code used to create your medical transcription. US English (<code>en-US</code>)
+        /// is the only supported language for medical transcriptions.
         /// </para>
         /// </summary>
         public LanguageCode LanguageCode
@@ -141,7 +155,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property MedicalTranscriptionJobName. 
         /// <para>
-        /// The name of a medical transcription job.
+        /// The name of the medical transcription job. Job names are case sensitive and must be
+        /// unique within an Amazon Web Services account.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
@@ -160,9 +175,20 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property OutputLocationType. 
         /// <para>
-        /// Indicates the location of the transcription job's output. This field must be the path
-        /// of an S3 bucket; if you don't already have an S3 bucket, one is created based on the
-        /// path you add.
+        /// Indicates where the specified medical transcription output is stored.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the value is <code>CUSTOMER_BUCKET</code>, the location is the Amazon S3 bucket
+        /// you specified using the <code>OutputBucketName</code> parameter in your request. If
+        /// you also included <code>OutputKey</code> in your request, your output is located in
+        /// the path you specified in your request.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the value is <code>SERVICE_BUCKET</code>, the location is a service-managed Amazon
+        /// S3 bucket. To access a transcript stored in a service-managed bucket, use the URI
+        /// shown in the <code>TranscriptFileUri</code> field.
         /// </para>
         /// </summary>
         public OutputLocationType OutputLocationType
@@ -180,8 +206,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property Specialty. 
         /// <para>
-        /// The medical specialty of the transcription job. Refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-medical-conversation.html">Transcribing
-        /// a medical conversation</a>for a list of supported specialties.
+        /// Provides the medical specialty represented in your media.
         /// </para>
         /// </summary>
         public Specialty Specialty
@@ -199,7 +224,13 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        /// A timestamp that shows when the job began processing.
+        /// The date and time your medical transcription job began processing.
+        /// </para>
+        ///  
+        /// <para>
+        /// Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+        /// <code>2022-05-04T12:32:58.789000-07:00</code> represents a transcription job that
+        /// started processing at 12:32 PM UTC-7 on May 4, 2022.
         /// </para>
         /// </summary>
         public DateTime StartTime
@@ -217,7 +248,14 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property TranscriptionJobStatus. 
         /// <para>
-        /// The status of the medical transcription job.
+        /// Provides the status of your medical transcription job.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the status is <code>COMPLETED</code>, the job is finished and you can find the
+        /// results at the location specified in <code>TranscriptFileUri</code>. If the status
+        /// is <code>FAILED</code>, <code>FailureReason</code> provides details on why your transcription
+        /// job failed.
         /// </para>
         /// </summary>
         public TranscriptionJobStatus TranscriptionJobStatus
@@ -235,7 +273,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The speech of the clinician in the input audio.
+        /// Indicates whether the input media is a dictation or a conversation, as specified in
+        /// the <code>StartMedicalTranscriptionJob</code> request.
         /// </para>
         /// </summary>
         public Type Type

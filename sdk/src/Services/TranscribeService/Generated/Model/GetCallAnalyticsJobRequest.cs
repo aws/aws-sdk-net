@@ -30,15 +30,28 @@ namespace Amazon.TranscribeService.Model
 {
     /// <summary>
     /// Container for the parameters to the GetCallAnalyticsJob operation.
-    /// Retrieves information about a call analytics job.
+    /// Provides information about the specified Call Analytics job.
     /// 
     ///  
     /// <para>
-    /// To view the job's status, refer to the <code>CallAnalyticsJobStatus</code> field.
-    /// If the status is <code>COMPLETED</code>, the job is finished. You can then find your
-    /// transcript at the URI specified in the <code>TranscriptFileUri</code> field. If you
-    /// enabled personally identifiable information (PII) redaction, the redacted transcript
-    /// appears in the <code>RedactedTranscriptFileUri</code> field.
+    /// To view the job's status, refer to <code>CallAnalyticsJobStatus</code>. If the status
+    /// is <code>COMPLETED</code>, the job is finished. You can find your completed transcript
+    /// at the URI specified in <code>TranscriptFileUri</code>. If the status is <code>FAILED</code>,
+    /// <code>FailureReason</code> provides details on why your transcription job failed.
+    /// </para>
+    ///  
+    /// <para>
+    /// If you enabled personally identifiable information (PII) redaction, the redacted transcript
+    /// appears at the location specified in <code>RedactedTranscriptFileUri</code>.
+    /// </para>
+    ///  
+    /// <para>
+    /// If you chose to redact the audio in your media file, you can find your redacted media
+    /// file at the location specified in <code>RedactedMediaFileUri</code>.
+    /// </para>
+    ///  
+    /// <para>
+    /// To get a list of your Call Analytics jobs, use the operation.
     /// </para>
     /// </summary>
     public partial class GetCallAnalyticsJobRequest : AmazonTranscribeServiceRequest
@@ -48,7 +61,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property CallAnalyticsJobName. 
         /// <para>
-        /// The name of the analytics job you want information about. This value is case sensitive.
+        /// The name of the Call Analytics job you want information about. Job names are case
+        /// sensitive.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=200)]

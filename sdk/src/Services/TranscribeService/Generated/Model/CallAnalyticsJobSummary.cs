@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.TranscribeService.Model
 {
     /// <summary>
-    /// Provides summary information about a call analytics job.
+    /// Provides detailed information about a specific Call Analytics job.
     /// </summary>
     public partial class CallAnalyticsJobSummary
     {
@@ -44,7 +44,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property CallAnalyticsJobName. 
         /// <para>
-        /// The name of the call analytics job.
+        /// The name of the Call Analytics job. Job names are case sensitive and must be unique
+        /// within an Amazon Web Services account.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
@@ -63,7 +64,14 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property CallAnalyticsJobStatus. 
         /// <para>
-        /// The status of the call analytics job.
+        /// Provides the status of your Call Analytics job.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the status is <code>COMPLETED</code>, the job is finished and you can find the
+        /// results at the location specified in <code>TranscriptFileUri</code> (or <code>RedactedTranscriptFileUri</code>,
+        /// if you requested transcript redaction). If the status is <code>FAILED</code>, <code>FailureReason</code>
+        /// provides details on why your transcription job failed.
         /// </para>
         /// </summary>
         public CallAnalyticsJobStatus CallAnalyticsJobStatus
@@ -81,7 +89,13 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property CompletionTime. 
         /// <para>
-        /// A timestamp that shows when the job was completed.
+        /// The date and time the specified Call Analytics job finished processing.
+        /// </para>
+        ///  
+        /// <para>
+        /// Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+        /// <code>2022-05-04T12:33:13.922000-07:00</code> represents a transcription job that
+        /// started processing at 12:33 PM UTC-7 on May 4, 2022.
         /// </para>
         /// </summary>
         public DateTime CompletionTime
@@ -99,7 +113,13 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        /// A timestamp that shows when the call analytics job was created.
+        /// The date and time the specified Call Analytics job request was made.
+        /// </para>
+        ///  
+        /// <para>
+        /// Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+        /// <code>2022-05-04T12:32:58.761000-07:00</code> represents a transcription job that
+        /// started processing at 12:32 PM UTC-7 on May 4, 2022.
         /// </para>
         /// </summary>
         public DateTime CreationTime
@@ -117,8 +137,9 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property FailureReason. 
         /// <para>
-        /// If the <code>CallAnalyticsJobStatus</code> is <code>FAILED</code>, a description of
-        /// the error.
+        /// If <code>CallAnalyticsJobStatus</code> is <code>FAILED</code>, <code>FailureReason</code>
+        /// contains information about why the Call Analytics job failed. See also: <a href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common
+        /// Errors</a>.
         /// </para>
         /// </summary>
         public string FailureReason
@@ -136,7 +157,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property LanguageCode. 
         /// <para>
-        /// The language of the transcript in the source audio file.
+        /// The language code used to create your Call Analytics transcription.
         /// </para>
         /// </summary>
         public LanguageCode LanguageCode
@@ -154,7 +175,13 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        /// A timestamp that shows when the job began processing.
+        /// The date and time your Call Analytics job began processing.
+        /// </para>
+        ///  
+        /// <para>
+        /// Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+        /// <code>2022-05-04T12:32:58.789000-07:00</code> represents a transcription job that
+        /// started processing at 12:32 PM UTC-7 on May 4, 2022.
         /// </para>
         /// </summary>
         public DateTime StartTime

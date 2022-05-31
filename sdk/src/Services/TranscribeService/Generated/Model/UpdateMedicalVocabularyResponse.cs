@@ -41,8 +41,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property LanguageCode. 
         /// <para>
-        /// The language code for the language of the text file used to update the custom vocabulary.
-        /// US English (en-US) is the only language supported in Amazon Transcribe Medical.
+        /// The language code you selected for your medical vocabulary. US English (<code>en-US</code>)
+        /// is the only language supported with Amazon Transcribe Medical.
         /// </para>
         /// </summary>
         public LanguageCode LanguageCode
@@ -60,7 +60,13 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property LastModifiedTime. 
         /// <para>
-        /// The date and time that the vocabulary was updated.
+        /// The date and time the specified custom medical vocabulary was last updated.
+        /// </para>
+        ///  
+        /// <para>
+        /// Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+        /// <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4,
+        /// 2022.
         /// </para>
         /// </summary>
         public DateTime LastModifiedTime
@@ -78,7 +84,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property VocabularyName. 
         /// <para>
-        /// The name of the updated vocabulary.
+        /// The name of the updated custom medical vocabulary.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
@@ -97,9 +103,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property VocabularyState. 
         /// <para>
-        /// The processing state of the update to the vocabulary. When the <code>VocabularyState</code>
-        /// field is <code>READY</code>, the vocabulary is ready to be used in a <code>StartMedicalTranscriptionJob</code>
-        /// request.
+        /// The processing state of your custom medical vocabulary. If the state is <code>READY</code>,
+        /// you can use the vocabulary in a <code>StartMedicalTranscriptionJob</code> request.
         /// </para>
         /// </summary>
         public VocabularyState VocabularyState

@@ -30,12 +30,53 @@ namespace Amazon.TranscribeService.Model
 {
     /// <summary>
     /// Container for the parameters to the StartTranscriptionJob operation.
-    /// Starts an asynchronous job to transcribe speech to text.
+    /// Transcribes the audio from a media file and applies any additional Request Parameters
+    /// you choose to include in your request.
+    /// 
+    ///  
+    /// <para>
+    /// To make a <code>StartTranscriptionJob</code> request, you must first upload your media
+    /// file into an Amazon S3 bucket; you can then specify the Amazon S3 location of the
+    /// file using the <code>Media</code> parameter.
+    /// </para>
+    ///  
+    /// <para>
+    /// You must include the following parameters in your <code>StartTranscriptionJob</code>
+    /// request:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <code>region</code>: The Amazon Web Services Region where you are making your request.
+    /// For a list of Amazon Web Services Regions supported with Amazon Transcribe, refer
+    /// to <a href="https://docs.aws.amazon.com/general/latest/gr/transcribe.html">Amazon
+    /// Transcribe endpoints and quotas</a>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>TranscriptionJobName</code>: A custom name you create for your transcription
+    /// job that is unique within your Amazon Web Services account.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>Media</code> (<code>MediaFileUri</code>): The Amazon S3 location of your media
+    /// file.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// One of <code>LanguageCode</code>, <code>IdentifyLanguage</code>, or <code>IdentifyMultipleLanguages</code>:
+    /// If you know the language of your media file, specify it using the <code>LanguageCode</code>
+    /// parameter; you can find all valid language codes in the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported
+    /// languages</a> table. If you don't know the languages spoken in your media, use either
+    /// <code>IdentifyLanguage</code> or <code>IdentifyMultipleLanguages</code> and let Amazon
+    /// Transcribe identify the languages for you.
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class StartTranscriptionJobRequest : AmazonTranscribeServiceRequest
     {
         private ContentRedaction _contentRedaction;
         private bool? _identifyLanguage;
+        private bool? _identifyMultipleLanguages;
         private JobExecutionSettings _jobExecutionSettings;
         private Dictionary<string, string> _kmsEncryptionContext = new Dictionary<string, string>();
         private LanguageCode _languageCode;
@@ -56,7 +97,9 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property ContentRedaction. 
         /// <para>
-        /// An object that contains the request parameters for content redaction.
+        /// Allows you to redact or flag specified personally identifiable information (PII) in
+        /// your transcript. If you use <code>ContentRedaction</code>, you must also include the
+        /// sub-parameters: <code>PiiEntityTypes</code>, <code>RedactionOutput</code>, and <code>RedactionType</code>.
         /// </para>
         /// </summary>
         public ContentRedaction ContentRedaction
@@ -74,14 +117,26 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property IdentifyLanguage. 
         /// <para>
-        /// Set this field to <code>true</code> to enable automatic language identification. Automatic
-        /// language identification is disabled by default. You receive a <code>BadRequestException</code>
-        /// error if you enter a value for a <code>LanguageCode</code>.
+        /// Enables automatic language identification in your transcription job request.
         /// </para>
         ///  
         /// <para>
-        /// You must include either <code>LanguageCode</code> or <code>IdentifyLanguage</code>
-        /// in your request.
+        /// If you include <code>IdentifyLanguage</code>, you can optionally include a list of
+        /// language codes, using <code>LanguageOptions</code>, that you think may be present
+        /// in your media file. Including language options can improve transcription accuracy.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you want to apply a custom language model, a custom vocabulary, or a custom vocabulary
+        /// filter to your automatic language identification request, include <code>LanguageIdSettings</code>
+        /// with the relevant sub-parameters (<code>VocabularyName</code>, <code>LanguageModelName</code>,
+        /// and <code>VocabularyFilterName</code>).
+        /// </para>
+        ///  
+        /// <para>
+        /// Note that you must include one of <code>LanguageCode</code>, <code>IdentifyLanguage</code>,
+        /// or <code>IdentifyMultipleLanguages</code> in your request. If you include more than
+        /// one of these parameters, your transcription job fails.
         /// </para>
         /// </summary>
         public bool IdentifyLanguage
@@ -97,11 +152,53 @@ namespace Amazon.TranscribeService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IdentifyMultipleLanguages. 
+        /// <para>
+        /// Enables automatic multi-language identification in your transcription job request.
+        /// Use this parameter if your media file contains more than one language.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you include <code>IdentifyMultipleLanguages</code>, you can optionally include
+        /// a list of language codes, using <code>LanguageOptions</code>, that you think may be
+        /// present in your media file. Including language options can improve transcription accuracy.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you want to apply a custom vocabulary or a custom vocabulary filter to your automatic
+        /// language identification request, include <code>LanguageIdSettings</code> with the
+        /// relevant sub-parameters (<code>VocabularyName</code> and <code>VocabularyFilterName</code>).
+        /// </para>
+        ///  
+        /// <para>
+        /// Note that you must include one of <code>LanguageCode</code>, <code>IdentifyLanguage</code>,
+        /// or <code>IdentifyMultipleLanguages</code> in your request. If you include more than
+        /// one of these parameters, your transcription job fails.
+        /// </para>
+        /// </summary>
+        public bool IdentifyMultipleLanguages
+        {
+            get { return this._identifyMultipleLanguages.GetValueOrDefault(); }
+            set { this._identifyMultipleLanguages = value; }
+        }
+
+        // Check to see if IdentifyMultipleLanguages property is set
+        internal bool IsSetIdentifyMultipleLanguages()
+        {
+            return this._identifyMultipleLanguages.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property JobExecutionSettings. 
         /// <para>
-        /// Provides information about how a transcription job is executed. Use this field to
-        /// indicate that the job can be queued for deferred execution if the concurrency limit
-        /// is reached and there are no slots available to immediately run the job.
+        /// Allows you to control how your transcription job is processed. Currently, the only
+        /// <code>JobExecutionSettings</code> modification you can choose is enabling job queueing
+        /// using the <code>AllowDeferredExecution</code> sub-parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you include <code>JobExecutionSettings</code> in your request, you must also include
+        /// the sub-parameters: <code>AllowDeferredExecution</code> and <code>DataAccessRoleArn</code>.
         /// </para>
         /// </summary>
         public JobExecutionSettings JobExecutionSettings
@@ -120,7 +217,10 @@ namespace Amazon.TranscribeService.Model
         /// Gets and sets the property KMSEncryptionContext. 
         /// <para>
         /// A map of plain text, non-secret key:value pairs, known as encryption context pairs,
-        /// that provide an added layer of security for your data.
+        /// that provide an added layer of security for your data. For more information, see <a
+        /// href="https://docs.aws.amazon.com/transcribe/latest/dg/key-management.html#kms-context">KMS
+        /// encryption context</a> and <a href="https://docs.aws.amazon.com/transcribe/latest/dg/symmetric-asymmetric.html">Asymmetric
+        /// keys in KMS</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
@@ -139,14 +239,31 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property LanguageCode. 
         /// <para>
-        /// The language code for the language used in the input media file. You must include
-        /// either <code>LanguageCode</code> or <code>IdentifyLanguage</code> in your request.
+        /// The language code that represents the language spoken in the input media file.
         /// </para>
         ///  
         /// <para>
-        /// To transcribe speech in Modern Standard Arabic (ar-SA), your audio or video file must
-        /// be encoded at a sample rate of 16,000 Hz or higher.
+        /// If you're unsure of the language spoken in your media file, consider using <code>IdentifyLanguage</code>
+        /// or <code>IdentifyMultipleLanguages</code> to enable automatic language identification.
         /// </para>
+        ///  
+        /// <para>
+        /// Note that you must include one of <code>LanguageCode</code>, <code>IdentifyLanguage</code>,
+        /// or <code>IdentifyMultipleLanguages</code> in your request. If you include more than
+        /// one of these parameters, your transcription job fails.
+        /// </para>
+        ///  
+        /// <para>
+        /// For a list of supported languages and their associated language codes, refer to the
+        /// <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported
+        /// languages</a> table.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// To transcribe speech in Modern Standard Arabic (<code>ar-SA</code>), your media file
+        /// must be encoded at a sample rate of 16,000 Hz or higher.
+        /// </para>
+        ///  </note>
         /// </summary>
         public LanguageCode LanguageCode
         {
@@ -163,9 +280,38 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property LanguageIdSettings. 
         /// <para>
-        /// The language identification settings associated with your transcription job. These
-        /// settings include <code>VocabularyName</code>, <code>VocabularyFilterName</code>, and
-        /// <code>LanguageModelName</code>.
+        /// If using automatic language identification (<code>IdentifyLanguage</code>) in your
+        /// request and you want to apply a custom language model, a custom vocabulary, or a custom
+        /// vocabulary filter, include <code>LanguageIdSettings</code> with the relevant sub-parameters
+        /// (<code>VocabularyName</code>, <code>LanguageModelName</code>, and <code>VocabularyFilterName</code>).
+        /// </para>
+        ///  
+        /// <para>
+        /// You can specify two or more language codes that represent the languages you think
+        /// may be present in your media; including more than five is not recommended. Each language
+        /// code you include can have an associated custom language model, custom vocabulary,
+        /// and custom vocabulary filter. The languages you specify must match the languages of
+        /// the specified custom language models, custom vocabularies, and custom vocabulary filters.
+        /// </para>
+        ///  
+        /// <para>
+        /// To include language options using <code>IdentifyLanguage</code> <b>without</b> including
+        /// a custom language model, a custom vocabulary, or a custom vocabulary filter, use <code>LanguageOptions</code>
+        /// instead of <code>LanguageIdSettings</code>. Including language options can improve
+        /// the accuracy of automatic language identification.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you want to include a custom language model with your request but <b>do not</b>
+        /// want to use automatic language identification, use instead the <code/> parameter with
+        /// the <code>LanguageModelName</code> sub-parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you want to include a custom vocabulary or a custom vocabulary filter (or both)
+        /// with your request but <b>do not</b> want to use automatic language identification,
+        /// use instead the <code/> parameter with the <code>VocabularyName</code> or <code>VocabularyFilterName</code>
+        /// (or both) sub-parameter.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=5)]
@@ -184,14 +330,24 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property LanguageOptions. 
         /// <para>
-        /// An object containing a list of languages that might be present in your collection
-        /// of audio files. Automatic language identification chooses a language that best matches
-        /// the source audio from that list.
+        /// You can specify two or more language codes that represent the languages you think
+        /// may be present in your media; including more than five is not recommended. If you're
+        /// unsure what languages are present, do not include this parameter.
         /// </para>
         ///  
         /// <para>
-        /// To transcribe speech in Modern Standard Arabic (ar-SA), your audio or video file must
-        /// be encoded at a sample rate of 16,000 Hz or higher.
+        /// If you include <code>LanguageOptions</code> in your request, you must also include
+        /// <code>IdentifyLanguage</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported
+        /// languages</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To transcribe speech in Modern Standard Arabic (<code>ar-SA</code>), your media file
+        /// must be encoded at a sample rate of 16,000 Hz or higher.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -210,7 +366,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property Media. 
         /// <para>
-        /// An object that describes the input media for a transcription job.
+        /// Describes the Amazon S3 location of the media file you want to use in your request.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -229,7 +385,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property MediaFormat. 
         /// <para>
-        /// The format of the input media file.
+        /// Specify the format of your input media file.
         /// </para>
         /// </summary>
         public MediaFormat MediaFormat
@@ -247,14 +403,15 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property MediaSampleRateHertz. 
         /// <para>
-        /// The sample rate, in Hertz, of the audio track in the input media file. 
+        /// The sample rate, in Hertz, of the audio track in your input media file.
         /// </para>
         ///  
         /// <para>
-        /// If you do not specify the media sample rate, Amazon Transcribe determines the sample
-        /// rate. If you specify the sample rate, it must match the sample rate detected by Amazon
-        /// Transcribe. In most cases, you should leave the <code>MediaSampleRateHertz</code>
-        /// field blank and let Amazon Transcribe determine the sample rate.
+        /// If you don't specify the media sample rate, Amazon Transcribe determines it for you.
+        /// If you specify the sample rate, it must match the rate detected by Amazon Transcribe;
+        /// if there's a mismatch between the value you specify and the value detected, your job
+        /// fails. Therefore, in most cases, it's advised to omit <code>MediaSampleRateHertz</code>
+        /// and let Amazon Transcribe determine the sample rate.
         /// </para>
         /// </summary>
         [AWSProperty(Min=8000, Max=48000)]
@@ -273,7 +430,14 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property ModelSettings. 
         /// <para>
-        /// Choose the custom language model you use for your transcription job in this parameter.
+        /// Specify the custom language model you want to include with your transcription job.
+        /// If you include <code>ModelSettings</code> in your request, you must include the <code>LanguageModelName</code>
+        /// sub-parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-language-models.html">Custom
+        /// language models</a>.
         /// </para>
         /// </summary>
         public ModelSettings ModelSettings
@@ -291,33 +455,34 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property OutputBucketName. 
         /// <para>
-        /// The location where the transcription is stored.
+        /// The name of the Amazon S3 bucket where you want your transcription output stored.
+        /// Do not include the <code>S3://</code> prefix of the specified bucket.
         /// </para>
         ///  
         /// <para>
-        /// If you set the <code>OutputBucketName</code>, Amazon Transcribe puts the transcript
-        /// in the specified S3 bucket. When you call the <a>GetTranscriptionJob</a> operation,
-        /// the operation returns this location in the <code>TranscriptFileUri</code> field. If
-        /// you enable content redaction, the redacted transcript appears in <code>RedactedTranscriptFileUri</code>.
-        /// If you enable content redaction and choose to output an unredacted transcript, that
-        /// transcript's location still appears in the <code>TranscriptFileUri</code>. The S3
-        /// bucket must have permissions that allow Amazon Transcribe to put files in the bucket.
-        /// For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/security_iam_id-based-policy-examples.html#auth-role-iam-user">Permissions
+        /// If you want your output to go to a sub-folder of this bucket, specify it using the
+        /// <code>OutputKey</code> parameter; <code>OutputBucketName</code> only accepts the name
+        /// of a bucket.
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, if you want your output stored in <code>S3://DOC-EXAMPLE-BUCKET</code>,
+        /// set <code>OutputBucketName</code> to <code>DOC-EXAMPLE-BUCKET</code>. However, if
+        /// you want your output stored in <code>S3://DOC-EXAMPLE-BUCKET/test-files/</code>, set
+        /// <code>OutputBucketName</code> to <code>DOC-EXAMPLE-BUCKET</code> and <code>OutputKey</code>
+        /// to <code>test-files/</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Note that Amazon Transcribe must have permission to use the specified location. You
+        /// can change Amazon S3 permissions using the <a href="https://console.aws.amazon.com/s3">Amazon
+        /// Web Services Management Console</a>. See also <a href="https://docs.aws.amazon.com/transcribe/latest/dg/security_iam_id-based-policy-examples.html#auth-role-iam-user">Permissions
         /// Required for IAM User Roles</a>.
         /// </para>
         ///  
         /// <para>
-        /// You can specify an Amazon Web Services Key Management Service (KMS) key to encrypt
-        /// the output of your transcription using the <code>OutputEncryptionKMSKeyId</code> parameter.
-        /// If you don't specify a KMS key, Amazon Transcribe uses the default Amazon S3 key for
-        /// server-side encryption of transcripts that are placed in your S3 bucket.
-        /// </para>
-        ///  
-        /// <para>
-        /// If you don't set the <code>OutputBucketName</code>, Amazon Transcribe generates a
-        /// pre-signed URL, a shareable URL that provides secure access to your transcription,
-        /// and returns it in the <code>TranscriptFileUri</code> field. Use this URL to download
-        /// the transcription.
+        /// If you don't specify <code>OutputBucketName</code>, your transcript is placed in a
+        /// service-managed Amazon S3 bucket and you are provided with a URI to access your transcript.
         /// </para>
         /// </summary>
         [AWSProperty(Max=64)]
@@ -336,44 +501,56 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property OutputEncryptionKMSKeyId. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Amazon Web Services Key Management Service (KMS)
-        /// key used to encrypt the output of the transcription job. The user calling the <code>StartTranscriptionJob</code>
-        /// operation must have permission to use the specified KMS key.
+        /// The KMS key you want to use to encrypt your transcription output.
         /// </para>
         ///  
         /// <para>
-        /// You can use either of the following to identify a KMS key in the current account:
+        /// If using a key located in the <b>current</b> Amazon Web Services account, you can
+        /// specify your KMS key in one of four ways:
         /// </para>
-        ///  <ul> <li> 
+        ///  <ol> <li> 
         /// <para>
-        /// KMS Key ID: "1234abcd-12ab-34cd-56ef-1234567890ab"
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// KMS Key Alias: "alias/ExampleAlias"
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// You can use either of the following to identify a KMS key in the current account or
-        /// another account:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Amazon Resource Name (ARN) of a KMS Key: "arn:aws:kms:region:account ID:key/1234abcd-12ab-34cd-56ef-1234567890ab"
+        /// Use the KMS key ID itself. For example, <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// ARN of a KMS Key Alias: "arn:aws:kms:region:account-ID:alias/ExampleAlias"
+        /// Use an alias for the KMS key ID. For example, <code>alias/ExampleAlias</code>.
         /// </para>
-        ///  </li> </ul> 
+        ///  </li> <li> 
         /// <para>
-        /// If you don't specify an encryption key, the output of the transcription job is encrypted
-        /// with the default Amazon S3 key (SSE-S3).
+        /// Use the Amazon Resource Name (ARN) for the KMS key ID. For example, <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use the ARN for the KMS key alias. For example, <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.
+        /// </para>
+        ///  </li> </ol> 
+        /// <para>
+        /// If using a key located in a <b>different</b> Amazon Web Services account than the
+        /// current Amazon Web Services account, you can specify your KMS key in one of two ways:
+        /// </para>
+        ///  <ol> <li> 
+        /// <para>
+        /// Use the ARN for the KMS key ID. For example, <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use the ARN for the KMS key alias. For example, <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.
+        /// </para>
+        ///  </li> </ol> 
+        /// <para>
+        /// If you don't specify an encryption key, your output is encrypted with the default
+        /// Amazon S3 key (SSE-S3).
         /// </para>
         ///  
         /// <para>
         /// If you specify a KMS key to encrypt your output, you must also specify an output location
-        /// in the <code>OutputBucketName</code> parameter.
+        /// using the <code>OutputLocation</code> parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// Note that the user making the request must have permission to use the specified KMS
+        /// key.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -392,27 +569,41 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property OutputKey. 
         /// <para>
-        /// You can specify a location in an Amazon S3 bucket to store the output of your transcription
-        /// job.
+        /// Use in combination with <code>OutputBucketName</code> to specify the output location
+        /// of your transcript and, optionally, a unique name for your output file. The default
+        /// name for your transcription output is the same as the name you specified for your
+        /// transcription job (<code>TranscriptionJobName</code>).
         /// </para>
         ///  
         /// <para>
-        /// If you don't specify an output key, Amazon Transcribe stores the output of your transcription
-        /// job in the Amazon S3 bucket you specified. By default, the object key is "your-transcription-job-name.json".
+        /// Here are some examples of how you can use <code>OutputKey</code>:
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// You can use output keys to specify the Amazon S3 prefix and file name of the transcription
-        /// output. For example, specifying the Amazon S3 prefix, "folder1/folder2/", as an output
-        /// key would lead to the output being stored as "folder1/folder2/your-transcription-job-name.json".
-        /// If you specify "my-other-job-name.json" as the output key, the object key is changed
-        /// to "my-other-job-name.json". You can use an output key to change both the prefix and
-        /// the file name, for example "folder/my-other-job-name.json".
+        /// If you specify 'DOC-EXAMPLE-BUCKET' as the <code>OutputBucketName</code> and 'my-transcript.json'
+        /// as the <code>OutputKey</code>, your transcription output path is <code>s3://DOC-EXAMPLE-BUCKET/my-transcript.json</code>.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// If you specify an output key, you must also specify an S3 bucket in the <code>OutputBucketName</code>
-        /// parameter.
+        /// If you specify 'my-first-transcription' as the <code>TranscriptionJobName</code>,
+        /// 'DOC-EXAMPLE-BUCKET' as the <code>OutputBucketName</code>, and 'my-transcript' as
+        /// the <code>OutputKey</code>, your transcription output path is <code>s3://DOC-EXAMPLE-BUCKET/my-transcript/my-first-transcription.json</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you specify 'DOC-EXAMPLE-BUCKET' as the <code>OutputBucketName</code> and 'test-files/my-transcript.json'
+        /// as the <code>OutputKey</code>, your transcription output path is <code>s3://DOC-EXAMPLE-BUCKET/test-files/my-transcript.json</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you specify 'my-first-transcription' as the <code>TranscriptionJobName</code>,
+        /// 'DOC-EXAMPLE-BUCKET' as the <code>OutputBucketName</code>, and 'test-files/my-transcript'
+        /// as the <code>OutputKey</code>, your transcription output path is <code>s3://DOC-EXAMPLE-BUCKET/test-files/my-transcript/my-first-transcription.json</code>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// If you specify the name of an Amazon S3 bucket sub-folder that doesn't exist, one
+        /// is created for you.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -431,8 +622,23 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property Settings. 
         /// <para>
-        /// A <code>Settings</code> object that provides optional settings for a transcription
-        /// job.
+        /// Specify additional optional settings in your request, including channel identification,
+        /// alternative transcriptions, speaker labeling; allows you to apply custom vocabularies
+        /// and vocabulary filters.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you want to include a custom vocabulary or a custom vocabulary filter (or both)
+        /// with your request but <b>do not</b> want to use automatic language identification,
+        /// use <code>Settings</code> with the <code>VocabularyName</code> or <code>VocabularyFilterName</code>
+        /// (or both) sub-parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you're using automatic language identification with your request and want to include
+        /// a custom language model, a custom vocabulary, or a custom vocabulary filter, use instead
+        /// the <code/> parameter with the <code>LanguageModelName</code>, <code>VocabularyName</code>
+        /// or <code>VocabularyFilterName</code> sub-parameters.
         /// </para>
         /// </summary>
         public Settings Settings
@@ -450,7 +656,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property Subtitles. 
         /// <para>
-        /// Add subtitles to your batch transcription job.
+        /// Produces subtitle files for your input media. You can specify WebVTT (*.vtt) and SubRip
+        /// (*.srt) formats.
         /// </para>
         /// </summary>
         public Subtitles Subtitles
@@ -468,7 +675,13 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Add tags to an Amazon Transcribe transcription job.
+        /// Adds one or more custom tags, each in the form of a key:value pair, to a new transcription
+        /// job at the time you start this new job.
+        /// </para>
+        ///  
+        /// <para>
+        /// To learn more about using tags with Amazon Transcribe, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging
+        /// resources</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
@@ -487,10 +700,15 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property TranscriptionJobName. 
         /// <para>
-        /// The name of the job. You can't use the strings "<code>.</code>" or "<code>..</code>"
-        /// by themselves as the job name. The name must also be unique within an Amazon Web Services
-        /// account. If you try to create a transcription job with the same name as a previous
-        /// transcription job, you get a <code>ConflictException</code> error.
+        /// A unique name, chosen by you, for your transcription job. The name you specify is
+        /// also used as the default name of your transcription output file. If you want to specify
+        /// a different name for your transcription output, use the <code>OutputKey</code> parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// This name is case sensitive, cannot contain spaces, and must be unique within an Amazon
+        /// Web Services account. If you try to create a new job with the same name as an existing
+        /// job, you get a <code>ConflictException</code> error.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=200)]

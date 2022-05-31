@@ -38,7 +38,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property CallAnalyticsJob. 
         /// <para>
-        /// An object containing the details of the asynchronous call analytics job.
+        /// Provides detailed information about the current Call Analytics job, including job
+        /// status and, if applicable, failure reason.
         /// </para>
         /// </summary>
         public CallAnalyticsJob CallAnalyticsJob

@@ -40,7 +40,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property MedicalTranscriptionJobSummaries. 
         /// <para>
-        /// A list of objects containing summary information for a transcription job.
+        /// Provides a summary of information about each result.
         /// </para>
         /// </summary>
         public List<MedicalTranscriptionJobSummary> MedicalTranscriptionJobSummaries
@@ -58,11 +58,11 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The <code>ListMedicalTranscriptionJobs</code> operation returns a page of jobs at
-        /// a time. The maximum size of the page is set by the <code>MaxResults</code> parameter.
-        /// If the number of jobs exceeds what can fit on a page, Amazon Transcribe Medical returns
-        /// the <code>NextPage</code> token. Include the token in the next request to the <code>ListMedicalTranscriptionJobs</code>
-        /// operation to return in the next page of jobs.
+        /// If <code>NextToken</code> is present in your response, it indicates that not all results
+        /// are displayed. To view the next set of results, copy the string associated with the
+        /// <code>NextToken</code> parameter in your results output, then run your request again
+        /// including <code>NextToken</code> with the value of the copied string. Repeat as needed
+        /// to view all your results.
         /// </para>
         /// </summary>
         [AWSProperty(Max=8192)]
@@ -81,7 +81,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The requested status of the medical transcription jobs returned.
+        /// Lists all medical transcription jobs that have the status specified in your request.
+        /// Jobs are ordered by creation date, with the newest job first.
         /// </para>
         /// </summary>
         public TranscriptionJobStatus Status

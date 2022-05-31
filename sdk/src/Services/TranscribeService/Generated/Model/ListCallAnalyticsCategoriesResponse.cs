@@ -39,7 +39,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property Categories. 
         /// <para>
-        /// A list of objects containing information about analytics categories.
+        /// Provides detailed information about your Call Analytics categories, including all
+        /// the rules associated with each category.
         /// </para>
         /// </summary>
         public List<CategoryProperties> Categories
@@ -57,11 +58,11 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The operation returns a page of jobs at a time. The maximum size of the list is set
-        /// by the <code>MaxResults</code> parameter. If there are more categories in the list
-        /// than the page size, Amazon Transcribe returns the <code>NextPage</code> token. Include
-        /// the token in the next request to the operation to return the next page of analytics
-        /// categories.
+        /// If <code>NextToken</code> is present in your response, it indicates that not all results
+        /// are displayed. To view the next set of results, copy the string associated with the
+        /// <code>NextToken</code> parameter in your results output, then run your request again
+        /// including <code>NextToken</code> with the value of the copied string. Repeat as needed
+        /// to view all your results.
         /// </para>
         /// </summary>
         [AWSProperty(Max=8192)]

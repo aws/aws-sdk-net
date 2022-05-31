@@ -30,11 +30,34 @@ namespace Amazon.TranscribeService.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateLanguageModel operation.
-    /// Creates a new custom language model. When creating a new language model, you must
-    /// specify if you want a Wideband (audio sample rates over 16,000 Hz) or Narrowband (audio
-    /// sample rates under 16,000 Hz) base model. You then include the S3 URI location of
-    /// your training and tuning files, the language for the model, a unique name, and any
-    /// tags you want associated with your model.
+    /// Creates a new custom language model.
+    /// 
+    ///  
+    /// <para>
+    /// When creating a new language model, you must specify:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// If you want a Wideband (audio sample rates over 16,000 Hz) or Narrowband (audio sample
+    /// rates under 16,000 Hz) base model
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The location of your training and tuning files (this must be an Amazon S3 URI)
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The language of your model
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// A unique name for your model
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-language-models.html">Custom
+    /// language models</a>.
+    /// </para>
     /// </summary>
     public partial class CreateLanguageModelRequest : AmazonTranscribeServiceRequest
     {
@@ -74,8 +97,18 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property InputDataConfig. 
         /// <para>
-        /// Contains your data access role ARN (Amazon Resource Name) and the Amazon S3 locations
-        /// of your training (<code>S3Uri</code>) and tuning (<code>TuningDataS3Uri</code>) data.
+        /// Contains the Amazon S3 location of the training data you want to use to create a new
+        /// custom language model, and permissions to access this location.
+        /// </para>
+        ///  
+        /// <para>
+        /// When using <code>InputDataConfig</code>, you must include these sub-parameters: <code>S3Uri</code>,
+        /// which is the Amazon S3 location of your training data, and <code>DataAccessRoleArn</code>,
+        /// which is the Amazon Resource Name (ARN) of the role that has permission to access
+        /// your specified Amazon S3 location. You can optionally include <code>TuningDataS3Uri</code>,
+        /// which is the Amazon S3 location of your tuning data. If you specify different Amazon
+        /// S3 locations for training and tuning data, the ARN you use must have permissions to
+        /// access both locations.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -94,8 +127,22 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property LanguageCode. 
         /// <para>
-        /// The language of your custom language model; note that the language code you select
+        /// The language code that represents the language of your model. Each language model
+        /// must contain terms in only one language, and the language you select for your model
         /// must match the language of your training and tuning data.
+        /// </para>
+        ///  
+        /// <para>
+        /// For a list of supported languages and their associated language codes, refer to the
+        /// <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported
+        /// languages</a> table. Note that U.S. English (<code>en-US</code>) is the only language
+        /// supported with Amazon Transcribe Medical.
+        /// </para>
+        ///  
+        /// <para>
+        /// A custom language model can only be used to transcribe files in the same language
+        /// as the model. For example, if you create a language model using US English (<code>en-US</code>),
+        /// you can only apply this model to files that contain English audio.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -114,13 +161,13 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property ModelName. 
         /// <para>
-        /// The name of your new custom language model.
+        /// A unique name, chosen by you, for your custom language model.
         /// </para>
         ///  
         /// <para>
         /// This name is case sensitive, cannot contain spaces, and must be unique within an Amazon
-        /// Web Services account. If you try to create a language model with the same name as
-        /// a previous language model, you get a <code>ConflictException</code> error.
+        /// Web Services account. If you try to create a new language model with the same name
+        /// as an existing language model, you get a <code>ConflictException</code> error.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=200)]
@@ -139,8 +186,13 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Optionally add tags, each in the form of a key:value pair, to your new language model.
-        /// See also: .
+        /// Adds one or more custom tags, each in the form of a key:value pair, to a new custom
+        /// language model at the time you create this new model.
+        /// </para>
+        ///  
+        /// <para>
+        /// To learn more about using tags with Amazon Transcribe, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging
+        /// resources</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]

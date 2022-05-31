@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.TranscribeService.Model
 {
     /// <summary>
-    /// There was an internal error. Check the error message and try your request again.
+    /// There was an internal error. Check the error message, correct the issue, and try your
+    /// request again.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

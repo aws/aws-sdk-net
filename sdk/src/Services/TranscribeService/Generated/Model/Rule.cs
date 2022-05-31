@@ -29,8 +29,25 @@ using Amazon.Runtime.Internal;
 namespace Amazon.TranscribeService.Model
 {
     /// <summary>
-    /// A condition in the call between the customer and the agent that you want to filter
-    /// for.
+    /// A rule is a set of criteria you can specify to flag an attribute in your Call Analytics
+    /// output. Rules define a Call Analytics category.
+    /// 
+    ///  
+    /// <para>
+    /// Rules can include these parameters: , , , and . To learn more about these parameters,
+    /// refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/call-analytics-create-categories.html#call-analytics-create-categories-rules">Rule
+    /// criteria</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// To learn more about Call Analytics categories, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/call-analytics-create-categories.html">Creating
+    /// categories</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// To learn more about Call Analytics, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/call-analytics.html">Analyzing
+    /// call center audio with Call Analytics</a>.
+    /// </para>
     /// </summary>
     public partial class Rule
     {
@@ -42,8 +59,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property InterruptionFilter. 
         /// <para>
-        /// A condition for a time period when either the customer or agent was interrupting the
-        /// other person. 
+        /// Flag the presence or absence of interruptions in your Call Analytics transcription
+        /// output. Refer to for more detail.
         /// </para>
         /// </summary>
         public InterruptionFilter InterruptionFilter
@@ -61,7 +78,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property NonTalkTimeFilter. 
         /// <para>
-        /// A condition for a time period when neither the customer nor the agent was talking.
+        /// Flag the presence or absence of periods of silence in your Call Analytics transcription
+        /// output. Refer to for more detail.
         /// </para>
         /// </summary>
         public NonTalkTimeFilter NonTalkTimeFilter
@@ -79,7 +97,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property SentimentFilter. 
         /// <para>
-        /// A condition that is applied to a particular customer sentiment.
+        /// Flag the presence or absence of specific sentiments in your Call Analytics transcription
+        /// output. Refer to for more detail.
         /// </para>
         /// </summary>
         public SentimentFilter SentimentFilter
@@ -97,9 +116,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property TranscriptFilter. 
         /// <para>
-        /// A condition that catches particular words or phrases based on a exact match. For example,
-        /// if you set the phrase "I want to speak to the manager", only that exact phrase will
-        /// be returned.
+        /// Flag the presence or absence of specific words or phrases in your Call Analytics transcription
+        /// output. Refer to for more detail.
         /// </para>
         /// </summary>
         public TranscriptFilter TranscriptFilter

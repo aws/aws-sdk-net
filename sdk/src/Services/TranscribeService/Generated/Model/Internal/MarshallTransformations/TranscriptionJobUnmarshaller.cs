@@ -100,6 +100,12 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
                     unmarshalledObject.IdentifyLanguage = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("IdentifyMultipleLanguages", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.IdentifyMultipleLanguages = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("JobExecutionSettings", targetDepth))
                 {
                     var unmarshaller = JobExecutionSettingsUnmarshaller.Instance;
@@ -110,6 +116,12 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LanguageCode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LanguageCodes", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<LanguageCodeItem, LanguageCodeItemUnmarshaller>(LanguageCodeItemUnmarshaller.Instance);
+                    unmarshalledObject.LanguageCodes = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("LanguageIdSettings", targetDepth))

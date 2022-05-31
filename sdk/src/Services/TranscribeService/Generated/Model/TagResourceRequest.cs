@@ -30,7 +30,14 @@ namespace Amazon.TranscribeService.Model
 {
     /// <summary>
     /// Container for the parameters to the TagResource operation.
-    /// Tags an Amazon Transcribe resource with the given list of tags.
+    /// Adds one or more custom tags, each in the form of a key:value pair, to the specified
+    /// resource.
+    /// 
+    ///  
+    /// <para>
+    /// To learn more about using tags with Amazon Transcribe, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging
+    /// resources</a>.
+    /// </para>
     /// </summary>
     public partial class TagResourceRequest : AmazonTranscribeServiceRequest
     {
@@ -40,9 +47,15 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Amazon Transcribe resource you want to tag.
-        /// ARNs have the format <code>arn:partition:service:region:account-id:resource-type/resource-id</code>
-        /// (for example, <code>arn:aws:transcribe:us-east-1:account-id:transcription-job/your-job-name</code>).
+        /// The Amazon Resource Name (ARN) of the resource you want to tag. ARNs have the format
+        /// <code>arn:partition:service:region:account-id:resource-type/resource-id</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, <code>arn:aws:transcribe:us-west-2:account-id:transcription-job/transcription-job-name</code>.
+        /// </para>
+        ///  
+        /// <para>
         /// Valid values for <code>resource-type</code> are: <code>transcription-job</code>, <code>medical-transcription-job</code>,
         /// <code>vocabulary</code>, <code>medical-vocabulary</code>, <code>vocabulary-filter</code>,
         /// and <code>language-model</code>.
@@ -64,7 +77,13 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags you are assigning to a given Amazon Transcribe resource.
+        /// Adds one or more custom tags, each in the form of a key:value pair, to the specified
+        /// resource.
+        /// </para>
+        ///  
+        /// <para>
+        /// To learn more about using tags with Amazon Transcribe, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging
+        /// resources</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=200)]

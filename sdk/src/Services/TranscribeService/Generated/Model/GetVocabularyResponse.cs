@@ -43,8 +43,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property DownloadUri. 
         /// <para>
-        /// The S3 location where the vocabulary is stored. Use this URI to get the contents of
-        /// the vocabulary. The URI is available for a limited time.
+        /// The S3 location where the vocabulary is stored; use this URI to view or download the
+        /// vocabulary.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2000)]
@@ -63,8 +63,9 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property FailureReason. 
         /// <para>
-        /// If the <code>VocabularyState</code> field is <code>FAILED</code>, this field contains
-        /// information about why the job failed.
+        /// If <code>VocabularyState</code> is <code>FAILED</code>, <code>FailureReason</code>
+        /// contains information about why the vocabulary request failed. See also: <a href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common
+        /// Errors</a>.
         /// </para>
         /// </summary>
         public string FailureReason
@@ -82,7 +83,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property LanguageCode. 
         /// <para>
-        /// The language code of the vocabulary entries.
+        /// The language code you selected for your custom vocabulary.
         /// </para>
         /// </summary>
         public LanguageCode LanguageCode
@@ -100,7 +101,13 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property LastModifiedTime. 
         /// <para>
-        /// The date and time that the vocabulary was last modified.
+        /// The date and time the specified vocabulary was last modified.
+        /// </para>
+        ///  
+        /// <para>
+        /// Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+        /// <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4,
+        /// 2022.
         /// </para>
         /// </summary>
         public DateTime LastModifiedTime
@@ -118,7 +125,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property VocabularyName. 
         /// <para>
-        /// The name of the vocabulary to return.
+        /// The name of the custom vocabulary you requested information about.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
@@ -137,7 +144,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property VocabularyState. 
         /// <para>
-        /// The processing state of the vocabulary.
+        /// The processing state of your custom vocabulary. If the state is <code>READY</code>,
+        /// you can use the vocabulary in a <code>StartTranscriptionJob</code> request.
         /// </para>
         /// </summary>
         public VocabularyState VocabularyState

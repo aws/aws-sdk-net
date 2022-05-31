@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.TranscribeService.Model
 {
     /// <summary>
-    /// There is already a resource with that name.
+    /// A resource already exists with this name. Resource names must be unique within an
+    /// Amazon Web Services account.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

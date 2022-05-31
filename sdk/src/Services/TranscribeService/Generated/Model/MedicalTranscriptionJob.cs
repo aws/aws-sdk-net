@@ -29,7 +29,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.TranscribeService.Model
 {
     /// <summary>
-    /// The data structure that contains the information for a medical transcription job.
+    /// Provides detailed information about a medical transcription job.
+    /// 
+    ///  
+    /// <para>
+    /// To view the status of the specified medical transcription job, check the <code>TranscriptionJobStatus</code>
+    /// field. If the status is <code>COMPLETED</code>, the job is finished and you can find
+    /// the results at the location specified in <code>TranscriptFileUri</code>. If the status
+    /// is <code>FAILED</code>, <code>FailureReason</code> provides details on why your transcription
+    /// job failed.
+    /// </para>
     /// </summary>
     public partial class MedicalTranscriptionJob
     {
@@ -53,7 +62,13 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property CompletionTime. 
         /// <para>
-        /// A timestamp that shows when the job was completed.
+        /// The date and time the specified medical transcription job finished processing.
+        /// </para>
+        ///  
+        /// <para>
+        /// Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+        /// <code>2022-05-04T12:33:13.922000-07:00</code> represents a transcription job that
+        /// started processing at 12:33 PM UTC-7 on May 4, 2022.
         /// </para>
         /// </summary>
         public DateTime CompletionTime
@@ -71,9 +86,9 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property ContentIdentificationType. 
         /// <para>
-        /// Shows the type of content that you've configured Amazon Transcribe Medical to identify
-        /// in a transcription job. If the value is <code>PHI</code>, you've configured the job
-        /// to identify personal health information (PHI) in the transcription output.
+        /// Labels all personal health information (PHI) identified in your transcript. For more
+        /// information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/phi-id.html">Identifying
+        /// personal health information (PHI) in a transcription</a>.
         /// </para>
         /// </summary>
         public MedicalContentIdentificationType ContentIdentificationType
@@ -91,7 +106,13 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        /// A timestamp that shows when the job was created.
+        /// The date and time the specified medical transcription job request was made.
+        /// </para>
+        ///  
+        /// <para>
+        /// Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+        /// <code>2022-05-04T12:32:58.761000-07:00</code> represents a transcription job that
+        /// started processing at 12:32 PM UTC-7 on May 4, 2022.
         /// </para>
         /// </summary>
         public DateTime CreationTime
@@ -109,8 +130,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property FailureReason. 
         /// <para>
-        /// If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, this field
-        /// contains information about why the job failed.
+        /// If <code>TranscriptionJobStatus</code> is <code>FAILED</code>, <code>FailureReason</code>
+        /// contains information about why the transcription job request failed.
         /// </para>
         ///  
         /// <para>
@@ -118,44 +139,61 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Unsupported media format</code>- The media format specified in the <code>MediaFormat</code>
-        /// field of the request isn't valid. See the description of the <code>MediaFormat</code>
-        /// field for a list of valid values.
+        ///  <code>Unsupported media format</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The media format specified in <code>MediaFormat</code> isn't valid. Refer to <b>MediaFormat</b>
+        /// for a list of supported formats.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>The media format provided does not match the detected media format</code>-
-        /// The media format of the audio file doesn't match the format specified in the <code>MediaFormat</code>
-        /// field in the request. Check the media format of your media file and make sure the
-        /// two values match.
+        ///  <code>The media format provided does not match the detected media format</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The media format specified in <code>MediaFormat</code> doesn't match the format of
+        /// the input file. Check the media format of your media file and correct the specified
+        /// value.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Invalid sample rate for audio file</code>- The sample rate specified in the
-        /// <code>MediaSampleRateHertz</code> of the request isn't valid. The sample rate must
-        /// be between 8,000 and 48,000 Hertz.
+        ///  <code>Invalid sample rate for audio file</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The sample rate specified in <code>MediaSampleRateHertz</code> isn't valid. The sample
+        /// rate must be between 16,000 and 48,000 Hertz.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>The sample rate provided does not match the detected sample rate</code>- The
-        /// sample rate in the audio file doesn't match the sample rate specified in the <code>MediaSampleRateHertz</code>
-        /// field in the request. Check the sample rate of your media file and make sure that
-        /// the two values match.
+        ///  <code>The sample rate provided does not match the detected sample rate</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The sample rate specified in <code>MediaSampleRateHertz</code> doesn't match the sample
+        /// rate detected in your input media file. Check the sample rate of your media file and
+        /// correct the specified value.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Invalid file size: file size too large</code>- The size of your audio file
-        /// is larger than what Amazon Transcribe Medical can process. For more information, see
-        /// <a href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines
-        /// and Quotas</a> in the <i>Amazon Transcribe Medical Guide</i>.
+        ///  <code>Invalid file size: file size too large</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The size of your media file is larger than what Amazon Transcribe can process. For
+        /// more information, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines
+        /// and quotas</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Invalid number of channels: number of channels too large</code>- Your audio
-        /// contains more channels than Amazon Transcribe Medical is configured to process. To
-        /// request additional channels, see <a href="https://docs.aws.amazon.com/general/latest/gr/transcribe-medical.html">Amazon
-        /// Transcribe Medical Endpoints and Quotas</a> in the <i>Amazon Web Services General
-        /// Reference</i>.
+        ///  <code>Invalid number of channels: number of channels too large</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Your audio contains more channels than Amazon Transcribe is able to process. For more
+        /// information, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines
+        /// and quotas</a>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -174,9 +212,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property LanguageCode. 
         /// <para>
-        /// The language code for the language spoken in the source audio file. US English (en-US)
-        /// is the only supported language for medical transcriptions. Any other value you enter
-        /// for language code results in a <code>BadRequestException</code> error.
+        /// The language code used to create your medical transcription job. US English (<code>en-US</code>)
+        /// is the only supported language for medical transcriptions.
         /// </para>
         /// </summary>
         public LanguageCode LanguageCode
@@ -227,13 +264,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property MediaSampleRateHertz. 
         /// <para>
-        /// The sample rate, in Hertz, of the source audio containing medical information.
-        /// </para>
-        ///  
-        /// <para>
-        /// If you don't specify the sample rate, Amazon Transcribe Medical determines it for
-        /// you. If you choose to specify the sample rate, it must match the rate detected by
-        /// Amazon Transcribe Medical.
+        /// The sample rate, in Hertz, of the audio track in your input media file.
         /// </para>
         /// </summary>
         [AWSProperty(Min=16000, Max=48000)]
@@ -252,7 +283,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property MedicalTranscriptionJobName. 
         /// <para>
-        /// The name for a given medical transcription job.
+        /// The name of the medical transcription job. Job names are case sensitive and must be
+        /// unique within an Amazon Web Services account.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
@@ -271,7 +303,9 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property Settings. 
         /// <para>
-        /// Object that contains object.
+        /// Specify additional optional settings in your request, including channel identification,
+        /// alternative transcriptions, and speaker labeling; allows you to apply custom vocabularies
+        /// to your medical transcription job.
         /// </para>
         /// </summary>
         public MedicalTranscriptionSetting Settings
@@ -289,9 +323,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property Specialty. 
         /// <para>
-        /// The medical specialty of any clinicians providing a dictation or having a conversation.
-        /// Refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-medical-conversation.html">Transcribing
-        /// a medical conversation</a>for a list of supported specialties.
+        /// Describes the medical specialty represented in your media.
         /// </para>
         /// </summary>
         public Specialty Specialty
@@ -309,7 +341,13 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        /// A timestamp that shows when the job started processing.
+        /// The date and time the specified medical transcription job began processing.
+        /// </para>
+        ///  
+        /// <para>
+        /// Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+        /// <code>2022-05-04T12:32:58.789000-07:00</code> represents a transcription job that
+        /// started processing at 12:32 PM UTC-7 on May 4, 2022.
         /// </para>
         /// </summary>
         public DateTime StartTime
@@ -327,7 +365,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A key:value pair assigned to a given medical transcription job.
+        /// The tags, each in the form of a key:value pair, assigned to the specified medical
+        /// transcription job.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
@@ -346,8 +385,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property Transcript. 
         /// <para>
-        /// An object that contains the <code>MedicalTranscript</code>. The <code>MedicalTranscript</code>
-        /// contains the <code>TranscriptFileUri</code>.
+        /// Provides you with the Amazon S3 URI you can use to access your transcript.
         /// </para>
         /// </summary>
         public MedicalTranscript Transcript
@@ -365,7 +403,14 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property TranscriptionJobStatus. 
         /// <para>
-        /// The completion status of a medical transcription job.
+        /// Provides the status of the specified medical transcription job.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the status is <code>COMPLETED</code>, the job is finished and you can find the
+        /// results at the location specified in <code>TranscriptFileUri</code>. If the status
+        /// is <code>FAILED</code>, <code>FailureReason</code> provides details on why your transcription
+        /// job failed.
         /// </para>
         /// </summary>
         public TranscriptionJobStatus TranscriptionJobStatus
@@ -383,10 +428,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of speech in the transcription job. <code>CONVERSATION</code> is generally
-        /// used for patient-physician dialogues. <code>DICTATION</code> is the setting for physicians
-        /// speaking their notes after seeing a patient. For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/what-is-transcribe-med.html">What
-        /// is Amazon Transcribe Medical?</a>.
+        /// Indicates whether the input media is a dictation or a conversation, as specified in
+        /// the <code>StartMedicalTranscriptionJob</code> request.
         /// </para>
         /// </summary>
         public Type Type

@@ -42,13 +42,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property BaseModelName. 
         /// <para>
-        /// The Amazon Transcribe standard language model, or base model, you used when creating
+        /// The Amazon Transcribe standard language model, or base model, you specified when creating
         /// your custom language model.
-        /// </para>
-        ///  
-        /// <para>
-        /// If your audio has a sample rate of 16,000 Hz or greater, this value should be <code>WideBand</code>.
-        /// If your audio has a sample rate of less than 16,000 Hz, this value should be <code>NarrowBand</code>.
         /// </para>
         /// </summary>
         public BaseModelName BaseModelName
@@ -67,7 +62,7 @@ namespace Amazon.TranscribeService.Model
         /// Gets and sets the property InputDataConfig. 
         /// <para>
         /// Lists your data access role ARN (Amazon Resource Name) and the Amazon S3 locations
-        /// your provided for your training (<code>S3Uri</code>) and tuning (<code>TuningDataS3Uri</code>)
+        /// you provided for your training (<code>S3Uri</code>) and tuning (<code>TuningDataS3Uri</code>)
         /// data.
         /// </para>
         /// </summary>
@@ -104,7 +99,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property ModelName. 
         /// <para>
-        /// The unique name you chose for your custom language model.
+        /// The name of your custom language model.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
@@ -123,7 +118,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property ModelStatus. 
         /// <para>
-        /// The status of your custom language model. When the status shows as <code>COMPLETED</code>,
+        /// The status of your custom language model. When the status displays as <code>COMPLETED</code>,
         /// your model is ready to use.
         /// </para>
         /// </summary>

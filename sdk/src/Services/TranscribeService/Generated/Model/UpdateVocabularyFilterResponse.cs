@@ -40,7 +40,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property LanguageCode. 
         /// <para>
-        /// The language code of the words in the vocabulary filter.
+        /// The language code you selected for your vocabulary filter.
         /// </para>
         /// </summary>
         public LanguageCode LanguageCode
@@ -58,7 +58,13 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property LastModifiedTime. 
         /// <para>
-        /// The date and time that the vocabulary filter was updated.
+        /// The date and time the specified vocabulary filter was last updated.
+        /// </para>
+        ///  
+        /// <para>
+        /// Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+        /// <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4,
+        /// 2022.
         /// </para>
         /// </summary>
         public DateTime LastModifiedTime
@@ -76,7 +82,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property VocabularyFilterName. 
         /// <para>
-        /// The name of the updated vocabulary filter.
+        /// The name of the updated custom vocabulary filter.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]

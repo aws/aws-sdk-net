@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.TranscribeService.Model
 {
     /// <summary>
-    /// Describes the input media file in a transcription request.
+    /// Describes the Amazon S3 location of the media file you want to use in your request.
     /// </summary>
     public partial class Media
     {
@@ -39,29 +39,20 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property MediaFileUri. 
         /// <para>
-        /// The S3 object location of the input media file. The URI must be in the same region
-        /// as the API endpoint that you are calling. The general form is:
+        /// The Amazon S3 location of the media file you want to transcribe. For example:
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        ///  <code>s3://DOC-EXAMPLE-BUCKET/keyprefix/objectkey</code> 
+        ///  <code>s3://DOC-EXAMPLE-BUCKET/my-media-file.flac</code> 
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// For example:
+        ///  <code>s3://DOC-EXAMPLE-BUCKET/media-files/my-media-file.flac</code> 
         /// </para>
-        ///  
+        ///  </li> </ul> 
         /// <para>
-        ///  <code>s3://DOC-EXAMPLE-BUCKET/example.flac</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>s3://DOC-EXAMPLE-BUCKET/mediafiles/example.flac</code> 
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information about S3 object names, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
-        /// Keys</a> in the <i>Amazon S3 Developer Guide</i>.
+        /// Note that the Amazon S3 bucket that contains your input media must be located in the
+        /// same Amazon Web Services Region where you're making your transcription request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2000)]
@@ -80,9 +71,27 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property RedactedMediaFileUri. 
         /// <para>
-        /// The S3 object location for your redacted output media file. This is only supported
-        /// for call analytics jobs.
+        /// The Amazon S3 location of the media file you want to redact. For example:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>s3://DOC-EXAMPLE-BUCKET/my-media-file.flac</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>s3://DOC-EXAMPLE-BUCKET/media-files/my-media-file.flac</code> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Note that the Amazon S3 bucket that contains your input media must be located in the
+        /// same Amazon Web Services Region where you're making your transcription request.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        ///  <code>RedactedMediaFileUri</code> is only supported for Call Analytics (<code>StartCallAnalyticsJob</code>)
+        /// transcription requests.
+        /// </para>
+        ///  </important>
         /// </summary>
         [AWSProperty(Min=1, Max=2000)]
         public string RedactedMediaFileUri

@@ -29,8 +29,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.TranscribeService.Model
 {
     /// <summary>
-    /// Generate subtitles for your batch transcription job. Note that your subtitle files
-    /// are placed in the same location as your transcription output.
+    /// Generate subtitles for your media file with your transcription request.
+    /// 
+    ///  
+    /// <para>
+    /// You can choose a start index of 0 or 1, and you can specify either WebVTT or SubRip
+    /// (or both) as your output format.
+    /// </para>
+    ///  
+    /// <para>
+    /// Note that your subtitle files are placed in the same location as your transcription
+    /// output.
+    /// </para>
     /// </summary>
     public partial class Subtitles
     {
@@ -40,8 +50,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property Formats. 
         /// <para>
-        /// Specify the output format for your subtitle file; if you select both <code>srt</code>
-        /// and <code>vtt</code> formats, two output files are generated.
+        /// Specify the output format for your subtitle file; if you select both WebVTT (<code>vtt</code>)
+        /// and SubRip (<code>srt</code>) formats, two output files are generated.
         /// </para>
         /// </summary>
         public List<string> Formats
@@ -59,7 +69,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property OutputStartIndex. 
         /// <para>
-        /// Defines the starting value that is assigned to the first subtitle segment.
+        /// Specify the starting value that is assigned to the first subtitle segment.
         /// </para>
         ///  
         /// <para>

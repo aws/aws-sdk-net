@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.TranscribeService.Model
 {
     /// <summary>
-    /// Provides a summary of information about a transcription job.
+    /// Provides detailed information about a specific transcription job.
     /// </summary>
     public partial class TranscriptionJobSummary
     {
@@ -39,7 +39,9 @@ namespace Amazon.TranscribeService.Model
         private string _failureReason;
         private float? _identifiedLanguageScore;
         private bool? _identifyLanguage;
+        private bool? _identifyMultipleLanguages;
         private LanguageCode _languageCode;
+        private List<LanguageCodeItem> _languageCodes = new List<LanguageCodeItem>();
         private ModelSettings _modelSettings;
         private OutputLocationType _outputLocationType;
         private DateTime? _startTime;
@@ -49,7 +51,13 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property CompletionTime. 
         /// <para>
-        /// A timestamp that shows when the job was completed.
+        /// The date and time the specified transcription job finished processing.
+        /// </para>
+        ///  
+        /// <para>
+        /// Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+        /// <code>2022-05-04T12:33:13.922000-07:00</code> represents a transcription job that
+        /// started processing at 12:33 PM UTC-7 on May 4, 2022.
         /// </para>
         /// </summary>
         public DateTime CompletionTime
@@ -85,7 +93,13 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        /// A timestamp that shows when the job was created.
+        /// The date and time the specified transcription job request was made.
+        /// </para>
+        ///  
+        /// <para>
+        /// Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+        /// <code>2022-05-04T12:32:58.761000-07:00</code> represents a transcription job that
+        /// started processing at 12:32 PM UTC-7 on May 4, 2022.
         /// </para>
         /// </summary>
         public DateTime CreationTime
@@ -103,8 +117,9 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property FailureReason. 
         /// <para>
-        /// If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, a description
-        /// of the error.
+        /// If <code>TranscriptionJobStatus</code> is <code>FAILED</code>, <code>FailureReason</code>
+        /// contains information about why the transcription job failed. See also: <a href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common
+        /// Errors</a>.
         /// </para>
         /// </summary>
         public string FailureReason
@@ -122,9 +137,12 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property IdentifiedLanguageScore. 
         /// <para>
-        /// A value between zero and one that Amazon Transcribe assigned to the language it identified
-        /// in the source audio. A higher score indicates that Amazon Transcribe is more confident
-        /// in the language it identified.
+        /// The confidence score associated with the language identified in your media file.
+        /// </para>
+        ///  
+        /// <para>
+        /// Confidence scores are values between 0 and 1; a larger value indicates a higher probability
+        /// that the identified language correctly matches the language spoken in your media.
         /// </para>
         /// </summary>
         public float IdentifiedLanguageScore
@@ -142,7 +160,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property IdentifyLanguage. 
         /// <para>
-        /// Whether automatic language identification was enabled for a transcription job.
+        /// Indicates whether automatic language identification was enabled (<code>TRUE</code>)
+        /// for the specified transcription job.
         /// </para>
         /// </summary>
         public bool IdentifyLanguage
@@ -158,9 +177,28 @@ namespace Amazon.TranscribeService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IdentifyMultipleLanguages. 
+        /// <para>
+        /// Indicates whether automatic multi-language identification was enabled (<code>TRUE</code>)
+        /// for the specified transcription job.
+        /// </para>
+        /// </summary>
+        public bool IdentifyMultipleLanguages
+        {
+            get { return this._identifyMultipleLanguages.GetValueOrDefault(); }
+            set { this._identifyMultipleLanguages = value; }
+        }
+
+        // Check to see if IdentifyMultipleLanguages property is set
+        internal bool IsSetIdentifyMultipleLanguages()
+        {
+            return this._identifyMultipleLanguages.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property LanguageCode. 
         /// <para>
-        /// The language code for the input speech.
+        /// The language code used to create your transcription.
         /// </para>
         /// </summary>
         public LanguageCode LanguageCode
@@ -173,6 +211,26 @@ namespace Amazon.TranscribeService.Model
         internal bool IsSetLanguageCode()
         {
             return this._languageCode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LanguageCodes. 
+        /// <para>
+        /// The language codes used to create your transcription job. This parameter is used with
+        /// multi-language identification. For single-language identification, the singular version
+        /// of this parameter, <code>LanguageCode</code>, is present.
+        /// </para>
+        /// </summary>
+        public List<LanguageCodeItem> LanguageCodes
+        {
+            get { return this._languageCodes; }
+            set { this._languageCodes = value; }
+        }
+
+        // Check to see if LanguageCodes property is set
+        internal bool IsSetLanguageCodes()
+        {
+            return this._languageCodes != null && this._languageCodes.Count > 0; 
         }
 
         /// <summary>
@@ -193,19 +251,21 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property OutputLocationType. 
         /// <para>
-        /// Indicates the location of the output of the transcription job.
+        /// Indicates where the specified transcription output is stored.
         /// </para>
         ///  
         /// <para>
-        /// If the value is <code>CUSTOMER_BUCKET</code> then the location is the S3 bucket specified
-        /// in the <code>outputBucketName</code> field when the transcription job was started
-        /// with the <code>StartTranscriptionJob</code> operation.
+        /// If the value is <code>CUSTOMER_BUCKET</code>, the location is the Amazon S3 bucket
+        /// you specified using the <code>OutputBucketName</code> parameter in your request. If
+        /// you also included <code>OutputKey</code> in your request, your output is located in
+        /// the path you specified in your request.
         /// </para>
         ///  
         /// <para>
-        /// If the value is <code>SERVICE_BUCKET</code> then the output is stored by Amazon Transcribe
-        /// and can be retrieved using the URI in the <code>GetTranscriptionJob</code> response's
-        /// <code>TranscriptFileUri</code> field.
+        /// If the value is <code>SERVICE_BUCKET</code>, the location is a service-managed Amazon
+        /// S3 bucket. To access a transcript stored in a service-managed bucket, use the URI
+        /// shown in the <code>TranscriptFileUri</code> or <code>RedactedTranscriptFileUri</code>
+        /// field.
         /// </para>
         /// </summary>
         public OutputLocationType OutputLocationType
@@ -223,7 +283,13 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        /// A timestamp that shows when the job started processing.
+        /// The date and time your transcription job began processing.
+        /// </para>
+        ///  
+        /// <para>
+        /// Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+        /// <code>2022-05-04T12:32:58.789000-07:00</code> represents a transcription job that
+        /// started processing at 12:32 PM UTC-7 on May 4, 2022.
         /// </para>
         /// </summary>
         public DateTime StartTime
@@ -241,7 +307,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property TranscriptionJobName. 
         /// <para>
-        /// The name of the transcription job.
+        /// The name of the transcription job. Job names are case sensitive and must be unique
+        /// within an Amazon Web Services account.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
@@ -260,8 +327,14 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property TranscriptionJobStatus. 
         /// <para>
-        /// The status of the transcription job. When the status is <code>COMPLETED</code>, use
-        /// the <code>GetTranscriptionJob</code> operation to get the results of the transcription.
+        /// Provides the status of your transcription job.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the status is <code>COMPLETED</code>, the job is finished and you can find the
+        /// results at the location specified in <code>TranscriptFileUri</code> (or <code>RedactedTranscriptFileUri</code>,
+        /// if you requested transcript redaction). If the status is <code>FAILED</code>, <code>FailureReason</code>
+        /// provides details on why your transcription job failed.
         /// </para>
         /// </summary>
         public TranscriptionJobStatus TranscriptionJobStatus

@@ -29,8 +29,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.TranscribeService.Model
 {
     /// <summary>
-    /// Matches the output of the transcription to either the specific phrases that you specify,
-    /// or the intent of the phrases that you specify.
+    /// Flag the presence or absence of specific words or phrases detected in your Call Analytics
+    /// transcription output.
+    /// 
+    ///  
+    /// <para>
+    /// Rules using <code>TranscriptFilter</code> are designed to match:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Custom words or phrases spoken by the agent, the customer, or both
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Custom words or phrases <b>not</b> spoken by the agent, the customer, or either
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Custom words or phrases that occur at a specific time frame
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// See <a href="https://docs.aws.amazon.com/transcribe/latest/dg/call-analytics-create-categories.html#call-analytics-create-categories-rules">Rule
+    /// criteria</a> for examples.
+    /// </para>
     /// </summary>
     public partial class TranscriptFilter
     {
@@ -44,7 +66,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property AbsoluteTimeRange. 
         /// <para>
-        /// A time range, set in seconds, between two points in the call.
+        /// Allows you to specify a time range (in milliseconds) in your audio, during which you
+        /// want to search for the specified key words or phrases. See for more detail.
         /// </para>
         /// </summary>
         public AbsoluteTimeRange AbsoluteTimeRange
@@ -62,8 +85,9 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property Negate. 
         /// <para>
-        /// If <code>TRUE</code>, the rule that you specify is applied to everything except for
-        /// the phrases that you specify.
+        /// Set to <code>TRUE</code> to flag the absence of the phrase you specified in your request.
+        /// Set to <code>FALSE</code> to flag the presence of the phrase you specified in your
+        /// request.
         /// </para>
         /// </summary>
         public bool Negate
@@ -81,7 +105,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property ParticipantRole. 
         /// <para>
-        /// Determines whether the customer or the agent is speaking the phrases that you've specified.
+        /// Specify the participant you want to flag. Omitting this parameter is equivalent to
+        /// specifying both participants.
         /// </para>
         /// </summary>
         public ParticipantRole ParticipantRole
@@ -99,11 +124,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property RelativeTimeRange. 
         /// <para>
-        /// An object that allows percentages to specify the proportion of the call where you
-        /// would like to apply a filter. For example, you can specify the first half of the call.
-        /// You can also specify the period of time between halfway through to three-quarters
-        /// of the way through the call. Because the length of conversation can vary between calls,
-        /// you can apply relative time ranges across all calls.
+        /// Allows you to specify a time range (in percentage) in your media file, during which
+        /// you want to search for the specified key words or phrases. See for more detail.
         /// </para>
         /// </summary>
         public RelativeTimeRange RelativeTimeRange
@@ -121,7 +143,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property Targets. 
         /// <para>
-        /// The phrases that you're specifying for the transcript filter to match.
+        /// Specify the phrases you want to flag.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
@@ -140,9 +162,15 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property TranscriptFilterType. 
         /// <para>
-        /// Matches the phrase to the transcription output in a word for word fashion. For example,
-        /// if you specify the phrase "I want to speak to the manager." Amazon Transcribe attempts
-        /// to match that specific phrase to the transcription.
+        /// Flag the presence or absence of an exact match to the phrases you specify. For example,
+        /// if you specify the phrase "speak to a manager" as your <code>Targets</code> value,
+        /// only that exact phrase is flagged.
+        /// </para>
+        ///  
+        /// <para>
+        /// Note that semantic matching is not supported. For example, if your customer says "speak
+        /// to <i>the</i> manager", instead of "speak to <i>a</i> manager", your content is not
+        /// flagged.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

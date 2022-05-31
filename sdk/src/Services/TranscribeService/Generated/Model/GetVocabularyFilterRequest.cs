@@ -30,7 +30,19 @@ namespace Amazon.TranscribeService.Model
 {
     /// <summary>
     /// Container for the parameters to the GetVocabularyFilter operation.
-    /// Returns information about a vocabulary filter.
+    /// Provides information about the specified custom vocabulary filter.
+    /// 
+    ///  
+    /// <para>
+    /// To view the status of the specified vocabulary filter, check the <code>VocabularyState</code>
+    /// field. If the status is <code>READY</code>, your vocabulary is available to use. If
+    /// the status is <code>FAILED</code>, <code>FailureReason</code> provides details on
+    /// why your vocabulary filter failed.
+    /// </para>
+    ///  
+    /// <para>
+    /// To get a list of your custom vocabulary filters, use the operation.
+    /// </para>
     /// </summary>
     public partial class GetVocabularyFilterRequest : AmazonTranscribeServiceRequest
     {
@@ -39,7 +51,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property VocabularyFilterName. 
         /// <para>
-        /// The name of the vocabulary filter for which to return information.
+        /// The name of the custom vocabulary filter you want information about. Vocabulary filter
+        /// names are case sensitive.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=200)]

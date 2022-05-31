@@ -31,7 +31,7 @@ namespace Amazon.TranscribeService.Model
     /// <summary>
     /// Container for the parameters to the DeleteVocabulary operation.
     /// Deletes a custom vocabulary. To use this operation, specify the name of the vocabulary
-    /// you want to delete using <code>VocabularyName</code>.
+    /// you want to delete using <code>VocabularyName</code>. Vocabulary names are case sensitive.
     /// </summary>
     public partial class DeleteVocabularyRequest : AmazonTranscribeServiceRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property VocabularyName. 
         /// <para>
-        /// The name of the vocabulary you want to delete. Vocabulary names are case-sensitive.
+        /// The name of the custom vocabulary you want to delete. Vocabulary names are case sensitive.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=200)]

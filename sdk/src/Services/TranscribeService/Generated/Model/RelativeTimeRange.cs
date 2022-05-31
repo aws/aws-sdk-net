@@ -29,11 +29,27 @@ using Amazon.Runtime.Internal;
 namespace Amazon.TranscribeService.Model
 {
     /// <summary>
-    /// An object that allows percentages to specify the proportion of the call where you
-    /// would like to apply a filter. For example, you can specify the first half of the call.
-    /// You can also specify the period of time between halfway through to three-quarters
-    /// of the way through the call. Because the length of conversation can vary between calls,
-    /// you can apply relative time ranges across all calls.
+    /// A time range, in percentage, between two points in your media file.
+    /// 
+    ///  
+    /// <para>
+    /// You can use <code>StartPercentage</code> and <code>EndPercentage</code> to search
+    /// a custom segment. For example, setting <code>StartPercentage</code> to 10 and <code>EndPercentage</code>
+    /// to 50 only searches for your specified criteria in the audio contained between the
+    /// 10 percent mark and the 50 percent mark of your media file.
+    /// </para>
+    ///  
+    /// <para>
+    /// You can use also <code>First</code> to search from the start of the media file until
+    /// the time you specify, or <code>Last</code> to search from the time you specify until
+    /// the end of the media file. For example, setting <code>First</code> to 10 only searches
+    /// for your specified criteria in the audio contained in the first 10 percent of the
+    /// media file.
+    /// </para>
+    ///  
+    /// <para>
+    /// If you prefer to use milliseconds instead of percentage, see .
+    /// </para>
     /// </summary>
     public partial class RelativeTimeRange
     {
@@ -45,23 +61,9 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property EndPercentage. 
         /// <para>
-        /// A value that indicates the percentage of the end of the time range. To set a relative
-        /// time range, you must specify a start percentage and an end percentage. For example,
-        /// if you specify the following values:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// StartPercentage - 10
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// EndPercentage - 50
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// This looks at the time range starting from 10% of the way into the call to 50% of
-        /// the way through the call. For a call that lasts 100,000 milliseconds, this example
-        /// range would apply from the 10,000 millisecond mark to the 50,000 millisecond mark.
+        /// The time, in percentage, when Amazon Transcribe stops searching for the specified
+        /// criteria in your media file. If you include <code>EndPercentage</code> in your request,
+        /// you must also include <code>StartPercentage</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
@@ -80,9 +82,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property First. 
         /// <para>
-        /// A range that takes the portion of the call up to the time in milliseconds set by the
-        /// value that you've specified. For example, if you specify <code>120000</code>, the
-        /// time range is set for the first 120,000 milliseconds of the call.
+        /// The time, in percentage, from the start of your media file until the value you specify
+        /// in which Amazon Transcribe searches for your specified criteria.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
@@ -101,9 +102,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property Last. 
         /// <para>
-        /// A range that takes the portion of the call from the time in milliseconds set by the
-        /// value that you've specified to the end of the call. For example, if you specify <code>120000</code>,
-        /// the time range is set for the last 120,000 milliseconds of the call.
+        /// The time, in percentage, from the value you specify until the end of your media file
+        /// in which Amazon Transcribe searches for your specified criteria.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
@@ -122,23 +122,9 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property StartPercentage. 
         /// <para>
-        /// A value that indicates the percentage of the beginning of the time range. To set a
-        /// relative time range, you must specify a start percentage and an end percentage. For
-        /// example, if you specify the following values:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// StartPercentage - 10
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// EndPercentage - 50
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// This looks at the time range starting from 10% of the way into the call to 50% of
-        /// the way through the call. For a call that lasts 100,000 milliseconds, this example
-        /// range would apply from the 10,000 millisecond mark to the 50,000 millisecond mark.
+        /// The time, in percentage, when Amazon Transcribe starts searching for the specified
+        /// criteria in your media file. If you include <code>StartPercentage</code> in your request,
+        /// you must also include <code>EndPercentage</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]

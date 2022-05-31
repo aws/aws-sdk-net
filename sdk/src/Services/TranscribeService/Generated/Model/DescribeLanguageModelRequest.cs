@@ -30,8 +30,7 @@ namespace Amazon.TranscribeService.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeLanguageModel operation.
-    /// Provides information about a specific custom language model in your Amazon Web Services
-    /// account.
+    /// Provides information about the specified custom language model.
     /// 
     ///  
     /// <para>
@@ -42,7 +41,12 @@ namespace Amazon.TranscribeService.Model
     ///  
     /// <para>
     /// If you tried to create a new custom language model and the request wasn't successful,
-    /// you can use this operation to help identify the reason. 
+    /// you can use <code>DescribeLanguageModel</code> to help identify the reason for this
+    /// failure.
+    /// </para>
+    ///  
+    /// <para>
+    /// To get a list of your custom language models, use the operation.
     /// </para>
     /// </summary>
     public partial class DescribeLanguageModelRequest : AmazonTranscribeServiceRequest
@@ -52,7 +56,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property ModelName. 
         /// <para>
-        /// The name of the custom language model you want described. Model names are case-sensitive.
+        /// The name of the custom language model you want information about. Model names are
+        /// case sensitive.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=200)]

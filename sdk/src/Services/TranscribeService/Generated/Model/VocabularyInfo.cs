@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.TranscribeService.Model
 {
     /// <summary>
-    /// Provides information about a custom vocabulary.
+    /// Provides information about a custom vocabulary, including the language of the vocabulary,
+    /// when it was last modified, its name, and the processing state.
     /// </summary>
     public partial class VocabularyInfo
     {
@@ -41,7 +42,14 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property LanguageCode. 
         /// <para>
-        /// The language code of the vocabulary entries.
+        /// The language code used to create your custom vocabulary. Each vocabulary must contain
+        /// terms in only one language.
+        /// </para>
+        ///  
+        /// <para>
+        /// A custom vocabulary can only be used to transcribe files in the same language as the
+        /// vocabulary. For example, if you create a vocabulary using US English (<code>en-US</code>),
+        /// you can only apply this vocabulary to files that contain English audio.
         /// </para>
         /// </summary>
         public LanguageCode LanguageCode
@@ -59,7 +67,13 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property LastModifiedTime. 
         /// <para>
-        /// The date and time that the vocabulary was last modified.
+        /// The date and time the specified vocabulary was last modified.
+        /// </para>
+        ///  
+        /// <para>
+        /// Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
+        /// <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4,
+        /// 2022.
         /// </para>
         /// </summary>
         public DateTime LastModifiedTime
@@ -77,7 +91,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property VocabularyName. 
         /// <para>
-        /// The name of the vocabulary.
+        /// A unique name, chosen by you, for your custom vocabulary. This name is case sensitive,
+        /// cannot contain spaces, and must be unique within an Amazon Web Services account.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
@@ -96,8 +111,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property VocabularyState. 
         /// <para>
-        /// The processing state of the vocabulary. If the state is <code>READY</code> you can
-        /// use the vocabulary in a <code>StartTranscriptionJob</code> request.
+        /// The processing state of your custom vocabulary. If the state is <code>READY</code>,
+        /// you can use the vocabulary in a <code>StartTranscriptionJob</code> request.
         /// </para>
         /// </summary>
         public VocabularyState VocabularyState
