@@ -134,6 +134,12 @@
     <pattern>^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoTSiteWise.Model.CreateAssetRequest.AssetDescription</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[^\u0000-\u001F\u007F]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoTSiteWise.Model.CreateAssetRequest.AssetModelId</property>
     <min>36</min>
     <max>36</max>
@@ -479,6 +485,12 @@
     <min>1</min>
     <max>1600</max>
     <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTSiteWise.Model.DescribeAssetResponse.AssetDescription</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[^\u0000-\u001F\u007F]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTSiteWise.Model.DescribeAssetResponse.AssetId</property>
@@ -1307,6 +1319,12 @@
     <pattern>\S{36,64}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoTSiteWise.Model.UpdateAssetRequest.AssetDescription</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[^\u0000-\u001F\u007F]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoTSiteWise.Model.UpdateAssetRequest.AssetId</property>
     <min>36</min>
     <max>36</max>
@@ -1742,6 +1760,12 @@
     <pattern>^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoTSiteWise.Model.AssetSummary.Description</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[^\u0000-\u001F\u007F]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoTSiteWise.Model.AssetSummary.Id</property>
     <min>36</min>
     <max>36</max>
@@ -1764,6 +1788,12 @@
     <min>36</min>
     <max>36</max>
     <pattern>^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTSiteWise.Model.AssociatedAssetsSummary.Description</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[^\u0000-\u001F\u007F]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTSiteWise.Model.AssociatedAssetsSummary.Id</property>

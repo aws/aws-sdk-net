@@ -68,6 +68,12 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAssetDescription())
+                {
+                    context.Writer.WritePropertyName("assetDescription");
+                    context.Writer.Write(publicRequest.AssetDescription);
+                }
+
                 if(publicRequest.IsSetAssetName())
                 {
                     context.Writer.WritePropertyName("assetName");
