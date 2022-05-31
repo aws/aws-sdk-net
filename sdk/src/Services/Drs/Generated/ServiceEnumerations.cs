@@ -423,6 +423,60 @@ namespace Amazon.Drs
 
 
     /// <summary>
+    /// Constants used for properties of type ExtensionStatus.
+    /// </summary>
+    public class ExtensionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EXTENDED for ExtensionStatus
+        /// </summary>
+        public static readonly ExtensionStatus EXTENDED = new ExtensionStatus("EXTENDED");
+        /// <summary>
+        /// Constant EXTENSION_ERROR for ExtensionStatus
+        /// </summary>
+        public static readonly ExtensionStatus EXTENSION_ERROR = new ExtensionStatus("EXTENSION_ERROR");
+        /// <summary>
+        /// Constant NOT_EXTENDED for ExtensionStatus
+        /// </summary>
+        public static readonly ExtensionStatus NOT_EXTENDED = new ExtensionStatus("NOT_EXTENDED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ExtensionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExtensionStatus FindValue(string value)
+        {
+            return FindValue<ExtensionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExtensionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type FailbackReplicationError.
     /// </summary>
     public class FailbackReplicationError : ConstantClass
@@ -584,6 +638,10 @@ namespace Amazon.Drs
         /// Constant START_RECOVERY for InitiatedBy
         /// </summary>
         public static readonly InitiatedBy START_RECOVERY = new InitiatedBy("START_RECOVERY");
+        /// <summary>
+        /// Constant TARGET_ACCOUNT for InitiatedBy
+        /// </summary>
+        public static readonly InitiatedBy TARGET_ACCOUNT = new InitiatedBy("TARGET_ACCOUNT");
         /// <summary>
         /// Constant TERMINATE_RECOVERY_INSTANCES for InitiatedBy
         /// </summary>
@@ -794,6 +852,10 @@ namespace Amazon.Drs
     public class JobType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant CREATE_CONVERTED_SNAPSHOT for JobType
+        /// </summary>
+        public static readonly JobType CREATE_CONVERTED_SNAPSHOT = new JobType("CREATE_CONVERTED_SNAPSHOT");
         /// <summary>
         /// Constant LAUNCH for JobType
         /// </summary>

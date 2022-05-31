@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Drs.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for JobLogEventData Object
+    /// Response Unmarshaller for Account Object
     /// </summary>  
-    public class JobLogEventDataUnmarshaller : IUnmarshaller<JobLogEventData, XmlUnmarshallerContext>, IUnmarshaller<JobLogEventData, JsonUnmarshallerContext>
+    public class AccountUnmarshaller : IUnmarshaller<Account, XmlUnmarshallerContext>, IUnmarshaller<Account, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        JobLogEventData IUnmarshaller<JobLogEventData, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        Account IUnmarshaller<Account, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,21 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public JobLogEventData Unmarshall(JsonUnmarshallerContext context)
+        public Account Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            JobLogEventData unmarshalledObject = new JobLogEventData();
+            Account unmarshalledObject = new Account();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("conversionProperties", targetDepth))
-                {
-                    var unmarshaller = ConversionPropertiesUnmarshaller.Instance;
-                    unmarshalledObject.ConversionProperties = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("conversionServerID", targetDepth))
+                if (context.TestExpression("accountID", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ConversionServerID = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("rawError", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RawError = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("sourceServerID", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SourceServerID = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("targetInstanceID", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TargetInstanceID = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AccountID = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +76,12 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
         }
 
 
-        private static JobLogEventDataUnmarshaller _instance = new JobLogEventDataUnmarshaller();        
+        private static AccountUnmarshaller _instance = new AccountUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static JobLogEventDataUnmarshaller Instance
+        public static AccountUnmarshaller Instance
         {
             get
             {

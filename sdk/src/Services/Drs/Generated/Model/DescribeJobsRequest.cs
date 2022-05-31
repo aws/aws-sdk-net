@@ -49,7 +49,6 @@ namespace Amazon.Drs.Model
         /// A set of filters by which to return Jobs.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public DescribeJobsRequestFilters Filters
         {
             get { return this._filters; }

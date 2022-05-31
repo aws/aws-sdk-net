@@ -29,40 +29,21 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Drs.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeSourceServers operation.
-    /// Lists all Source Servers or multiple Source Servers filtered by ID.
+    /// Container for the parameters to the ListStagingAccounts operation.
+    /// Returns an array of staging accounts for existing extended source servers.
     /// </summary>
-    public partial class DescribeSourceServersRequest : AmazonDrsRequest
+    public partial class ListStagingAccountsRequest : AmazonDrsRequest
     {
-        private DescribeSourceServersRequestFilters _filters;
         private int? _maxResults;
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property Filters. 
-        /// <para>
-        /// A set of filters by which to return Source Servers.
-        /// </para>
-        /// </summary>
-        public DescribeSourceServersRequestFilters Filters
-        {
-            get { return this._filters; }
-            set { this._filters = value; }
-        }
-
-        // Check to see if Filters property is set
-        internal bool IsSetFilters()
-        {
-            return this._filters != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// Maximum number of Source Servers to retrieve.
+        /// The maximum number of staging Accounts to retrieve.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Min=1, Max=50)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -78,7 +59,7 @@ namespace Amazon.Drs.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token of the next Source Server to retrieve.
+        /// The token of the next staging Account to retrieve.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]

@@ -62,6 +62,17 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetStagingAccountIDs())
+            {
+                context.Writer.WritePropertyName("stagingAccountIDs");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectStagingAccountIDsListValue in requestObject.StagingAccountIDs)
+                {
+                        context.Writer.Write(requestObjectStagingAccountIDsListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
         }
 
         /// <summary>

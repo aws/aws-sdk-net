@@ -33,10 +33,29 @@ namespace Amazon.Drs.Model
     /// </summary>
     public partial class JobLogEventData
     {
+        private ConversionProperties _conversionProperties;
         private string _conversionServerID;
         private string _rawError;
         private string _sourceServerID;
         private string _targetInstanceID;
+
+        /// <summary>
+        /// Gets and sets the property ConversionProperties. 
+        /// <para>
+        /// Properties of a conversion job
+        /// </para>
+        /// </summary>
+        public ConversionProperties ConversionProperties
+        {
+            get { return this._conversionProperties; }
+            set { this._conversionProperties = value; }
+        }
+
+        // Check to see if ConversionProperties property is set
+        internal bool IsSetConversionProperties()
+        {
+            return this._conversionProperties != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ConversionServerID. 

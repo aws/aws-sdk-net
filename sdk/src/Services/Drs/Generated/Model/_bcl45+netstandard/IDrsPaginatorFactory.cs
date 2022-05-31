@@ -54,5 +54,15 @@ namespace Amazon.Drs.Model
         /// Paginator for DescribeSourceServers operation
         ///</summary>
         IDescribeSourceServersPaginator DescribeSourceServers(DescribeSourceServersRequest request);
+
+        /// <summary>
+        /// Paginator for ListExtensibleSourceServers operation
+        ///</summary>
+        IListExtensibleSourceServersPaginator ListExtensibleSourceServers(ListExtensibleSourceServersRequest request);
+
+        /// <summary>
+        /// Paginator for ListStagingAccounts operation
+        ///</summary>
+        IListStagingAccountsPaginator ListStagingAccounts(ListStagingAccountsRequest request);
     }
 }

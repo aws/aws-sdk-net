@@ -82,5 +82,21 @@ namespace Amazon.Drs.Model
         {
             return new DescribeSourceServersPaginator(this.client, request);
         }
+
+        /// <summary>
+        /// Paginator for ListExtensibleSourceServers operation
+        ///</summary>
+        public IListExtensibleSourceServersPaginator ListExtensibleSourceServers(ListExtensibleSourceServersRequest request) 
+        {
+            return new ListExtensibleSourceServersPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListStagingAccounts operation
+        ///</summary>
+        public IListStagingAccountsPaginator ListStagingAccounts(ListStagingAccountsRequest request) 
+        {
+            return new ListStagingAccountsPaginator(this.client, request);
+        }
     }
 }

@@ -29,56 +29,36 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Drs.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeSourceServers operation.
-    /// Lists all Source Servers or multiple Source Servers filtered by ID.
+    /// This is the response object from the ListStagingAccounts operation.
     /// </summary>
-    public partial class DescribeSourceServersRequest : AmazonDrsRequest
+    public partial class ListStagingAccountsResponse : AmazonWebServiceResponse
     {
-        private DescribeSourceServersRequestFilters _filters;
-        private int? _maxResults;
+        private List<Account> _accounts = new List<Account>();
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property Filters. 
+        /// Gets and sets the property Accounts. 
         /// <para>
-        /// A set of filters by which to return Source Servers.
+        /// An array of staging AWS Accounts.
         /// </para>
         /// </summary>
-        public DescribeSourceServersRequestFilters Filters
+        [AWSProperty(Min=0, Max=50)]
+        public List<Account> Accounts
         {
-            get { return this._filters; }
-            set { this._filters = value; }
+            get { return this._accounts; }
+            set { this._accounts = value; }
         }
 
-        // Check to see if Filters property is set
-        internal bool IsSetFilters()
+        // Check to see if Accounts property is set
+        internal bool IsSetAccounts()
         {
-            return this._filters != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property MaxResults. 
-        /// <para>
-        /// Maximum number of Source Servers to retrieve.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1)]
-        public int MaxResults
-        {
-            get { return this._maxResults.GetValueOrDefault(); }
-            set { this._maxResults = value; }
-        }
-
-        // Check to see if MaxResults property is set
-        internal bool IsSetMaxResults()
-        {
-            return this._maxResults.HasValue; 
+            return this._accounts != null && this._accounts.Count > 0; 
         }
 
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token of the next Source Server to retrieve.
+        /// The token of the next staging Account to retrieve.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]

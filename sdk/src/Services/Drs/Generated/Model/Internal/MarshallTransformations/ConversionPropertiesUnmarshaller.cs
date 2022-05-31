@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Drs.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for JobLogEventData Object
+    /// Response Unmarshaller for ConversionProperties Object
     /// </summary>  
-    public class JobLogEventDataUnmarshaller : IUnmarshaller<JobLogEventData, XmlUnmarshallerContext>, IUnmarshaller<JobLogEventData, JsonUnmarshallerContext>
+    public class ConversionPropertiesUnmarshaller : IUnmarshaller<ConversionProperties, XmlUnmarshallerContext>, IUnmarshaller<ConversionProperties, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        JobLogEventData IUnmarshaller<JobLogEventData, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ConversionProperties IUnmarshaller<ConversionProperties, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,45 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public JobLogEventData Unmarshall(JsonUnmarshallerContext context)
+        public ConversionProperties Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            JobLogEventData unmarshalledObject = new JobLogEventData();
+            ConversionProperties unmarshalledObject = new ConversionProperties();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("conversionProperties", targetDepth))
-                {
-                    var unmarshaller = ConversionPropertiesUnmarshaller.Instance;
-                    unmarshalledObject.ConversionProperties = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("conversionServerID", targetDepth))
+                if (context.TestExpression("dataTimestamp", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ConversionServerID = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DataTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("rawError", targetDepth))
+                if (context.TestExpression("forceUefi", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RawError = unmarshaller.Unmarshall(context);
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.ForceUefi = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("sourceServerID", targetDepth))
+                if (context.TestExpression("rootVolumeName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SourceServerID = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RootVolumeName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("targetInstanceID", targetDepth))
+                if (context.TestExpression("volumeToConversionMap", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TargetInstanceID = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new DictionaryUnmarshaller<string, Dictionary<string, string>, StringUnmarshaller, DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>>(StringUnmarshaller.Instance, new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance));
+                    unmarshalledObject.VolumeToConversionMap = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("volumeToVolumeSize", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, long, StringUnmarshaller, LongUnmarshaller>(StringUnmarshaller.Instance, LongUnmarshaller.Instance);
+                    unmarshalledObject.VolumeToVolumeSize = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +100,12 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
         }
 
 
-        private static JobLogEventDataUnmarshaller _instance = new JobLogEventDataUnmarshaller();        
+        private static ConversionPropertiesUnmarshaller _instance = new ConversionPropertiesUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static JobLogEventDataUnmarshaller Instance
+        public static ConversionPropertiesUnmarshaller Instance
         {
             get
             {

@@ -40,6 +40,7 @@ namespace Amazon.Drs.Model
         private string _recoveryInstanceId;
         private SourceProperties _sourceProperties;
         private string _sourceServerID;
+        private StagingArea _stagingArea;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
@@ -169,6 +170,24 @@ namespace Amazon.Drs.Model
         internal bool IsSetSourceServerID()
         {
             return this._sourceServerID != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StagingArea. 
+        /// <para>
+        /// The staging area of the source server.
+        /// </para>
+        /// </summary>
+        public StagingArea StagingArea
+        {
+            get { return this._stagingArea; }
+            set { this._stagingArea = value; }
+        }
+
+        // Check to see if StagingArea property is set
+        internal bool IsSetStagingArea()
+        {
+            return this._stagingArea != null;
         }
 
         /// <summary>

@@ -35,6 +35,7 @@ namespace Amazon.Drs.Model
     {
         private string _hardwareId;
         private List<string> _sourceServerIDs = new List<string>();
+        private List<string> _stagingAccountIDs = new List<string>();
 
         /// <summary>
         /// Gets and sets the property HardwareId. 
@@ -74,6 +75,26 @@ namespace Amazon.Drs.Model
         internal bool IsSetSourceServerIDs()
         {
             return this._sourceServerIDs != null && this._sourceServerIDs.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StagingAccountIDs. 
+        /// <para>
+        /// An array of staging account IDs that extended source servers belong to. An empty array
+        /// means all source servers will be shown.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=200)]
+        public List<string> StagingAccountIDs
+        {
+            get { return this._stagingAccountIDs; }
+            set { this._stagingAccountIDs = value; }
+        }
+
+        // Check to see if StagingAccountIDs property is set
+        internal bool IsSetStagingAccountIDs()
+        {
+            return this._stagingAccountIDs != null && this._stagingAccountIDs.Count > 0; 
         }
 
     }

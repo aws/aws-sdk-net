@@ -29,56 +29,35 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Drs.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeSourceServers operation.
-    /// Lists all Source Servers or multiple Source Servers filtered by ID.
+    /// This is the response object from the ListExtensibleSourceServers operation.
     /// </summary>
-    public partial class DescribeSourceServersRequest : AmazonDrsRequest
+    public partial class ListExtensibleSourceServersResponse : AmazonWebServiceResponse
     {
-        private DescribeSourceServersRequestFilters _filters;
-        private int? _maxResults;
+        private List<StagingSourceServer> _items = new List<StagingSourceServer>();
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property Filters. 
+        /// Gets and sets the property Items. 
         /// <para>
-        /// A set of filters by which to return Source Servers.
+        /// A list of source servers on a staging Account that are extensible.
         /// </para>
         /// </summary>
-        public DescribeSourceServersRequestFilters Filters
+        public List<StagingSourceServer> Items
         {
-            get { return this._filters; }
-            set { this._filters = value; }
+            get { return this._items; }
+            set { this._items = value; }
         }
 
-        // Check to see if Filters property is set
-        internal bool IsSetFilters()
+        // Check to see if Items property is set
+        internal bool IsSetItems()
         {
-            return this._filters != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property MaxResults. 
-        /// <para>
-        /// Maximum number of Source Servers to retrieve.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1)]
-        public int MaxResults
-        {
-            get { return this._maxResults.GetValueOrDefault(); }
-            set { this._maxResults = value; }
-        }
-
-        // Check to see if MaxResults property is set
-        internal bool IsSetMaxResults()
-        {
-            return this._maxResults.HasValue; 
+            return this._items != null && this._items.Count > 0; 
         }
 
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token of the next Source Server to retrieve.
+        /// The token of the next extensible source server to retrieve.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]

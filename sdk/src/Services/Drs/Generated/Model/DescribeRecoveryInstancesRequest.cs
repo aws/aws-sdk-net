@@ -44,7 +44,6 @@ namespace Amazon.Drs.Model
         /// A set of filters by which to return Recovery Instances.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public DescribeRecoveryInstancesRequestFilters Filters
         {
             get { return this._filters; }

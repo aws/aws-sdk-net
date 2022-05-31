@@ -93,6 +93,12 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
                     response.SourceServerID = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("stagingArea", targetDepth))
+                {
+                    var unmarshaller = StagingAreaUnmarshaller.Instance;
+                    response.StagingArea = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("tags", targetDepth))
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);

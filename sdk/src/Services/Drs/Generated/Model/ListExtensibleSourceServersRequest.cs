@@ -29,40 +29,24 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Drs.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeSourceServers operation.
-    /// Lists all Source Servers or multiple Source Servers filtered by ID.
+    /// Container for the parameters to the ListExtensibleSourceServers operation.
+    /// Returns a list of source servers on a staging account that are extensible, which means
+    /// that: a. The source server is not already extended into this Account. b. The source
+    /// server on the Account we’re reading from is not an extension of another source server.
     /// </summary>
-    public partial class DescribeSourceServersRequest : AmazonDrsRequest
+    public partial class ListExtensibleSourceServersRequest : AmazonDrsRequest
     {
-        private DescribeSourceServersRequestFilters _filters;
         private int? _maxResults;
         private string _nextToken;
-
-        /// <summary>
-        /// Gets and sets the property Filters. 
-        /// <para>
-        /// A set of filters by which to return Source Servers.
-        /// </para>
-        /// </summary>
-        public DescribeSourceServersRequestFilters Filters
-        {
-            get { return this._filters; }
-            set { this._filters = value; }
-        }
-
-        // Check to see if Filters property is set
-        internal bool IsSetFilters()
-        {
-            return this._filters != null;
-        }
+        private string _stagingAccountID;
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// Maximum number of Source Servers to retrieve.
+        /// The maximum number of extensible source servers to retrieve.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Min=1, Max=300)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -78,7 +62,7 @@ namespace Amazon.Drs.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token of the next Source Server to retrieve.
+        /// The token of the next extensible source server to retrieve.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]
@@ -92,6 +76,25 @@ namespace Amazon.Drs.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StagingAccountID. 
+        /// <para>
+        /// The Id of the staging Account to retrieve extensible source servers from.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=12, Max=12)]
+        public string StagingAccountID
+        {
+            get { return this._stagingAccountID; }
+            set { this._stagingAccountID = value; }
+        }
+
+        // Check to see if StagingAccountID property is set
+        internal bool IsSetStagingAccountID()
+        {
+            return this._stagingAccountID != null;
         }
 
     }

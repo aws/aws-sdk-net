@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Drs.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for JobLogEventData Object
+    /// Response Unmarshaller for StagingSourceServer Object
     /// </summary>  
-    public class JobLogEventDataUnmarshaller : IUnmarshaller<JobLogEventData, XmlUnmarshallerContext>, IUnmarshaller<JobLogEventData, JsonUnmarshallerContext>
+    public class StagingSourceServerUnmarshaller : IUnmarshaller<StagingSourceServer, XmlUnmarshallerContext>, IUnmarshaller<StagingSourceServer, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        JobLogEventData IUnmarshaller<JobLogEventData, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        StagingSourceServer IUnmarshaller<StagingSourceServer, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,33 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public JobLogEventData Unmarshall(JsonUnmarshallerContext context)
+        public StagingSourceServer Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            JobLogEventData unmarshalledObject = new JobLogEventData();
+            StagingSourceServer unmarshalledObject = new StagingSourceServer();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("conversionProperties", targetDepth))
-                {
-                    var unmarshaller = ConversionPropertiesUnmarshaller.Instance;
-                    unmarshalledObject.ConversionProperties = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("conversionServerID", targetDepth))
+                if (context.TestExpression("arn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ConversionServerID = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("rawError", targetDepth))
+                if (context.TestExpression("hostname", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RawError = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Hostname = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("sourceServerID", targetDepth))
+                if (context.TestExpression("tags", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SourceServerID = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("targetInstanceID", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TargetInstanceID = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.Tags = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +88,12 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
         }
 
 
-        private static JobLogEventDataUnmarshaller _instance = new JobLogEventDataUnmarshaller();        
+        private static StagingSourceServerUnmarshaller _instance = new StagingSourceServerUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static JobLogEventDataUnmarshaller Instance
+        public static StagingSourceServerUnmarshaller Instance
         {
             get
             {

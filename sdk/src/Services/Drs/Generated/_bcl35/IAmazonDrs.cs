@@ -44,6 +44,68 @@ namespace Amazon.Drs
 
 
         
+        #region  CreateExtendedSourceServer
+
+
+        /// <summary>
+        /// Create an extended source server in the target Account based on the source server
+        /// in staging account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateExtendedSourceServer service method.</param>
+        /// 
+        /// <returns>The response from the CreateExtendedSourceServer service method, as returned by Drs.</returns>
+        /// <exception cref="Amazon.Drs.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ResourceNotFoundException">
+        /// The resource for this operation was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ServiceQuotaExceededException">
+        /// The request could not be completed because its exceeded the service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.UninitializedAccountException">
+        /// The account performing the request has not been initialized.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/CreateExtendedSourceServer">REST API Reference for CreateExtendedSourceServer Operation</seealso>
+        CreateExtendedSourceServerResponse CreateExtendedSourceServer(CreateExtendedSourceServerRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateExtendedSourceServer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateExtendedSourceServer operation on AmazonDrsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateExtendedSourceServer
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/CreateExtendedSourceServer">REST API Reference for CreateExtendedSourceServer Operation</seealso>
+        IAsyncResult BeginCreateExtendedSourceServer(CreateExtendedSourceServerRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateExtendedSourceServer operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateExtendedSourceServer.</param>
+        /// 
+        /// <returns>Returns a  CreateExtendedSourceServerResult from Drs.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/CreateExtendedSourceServer">REST API Reference for CreateExtendedSourceServer Operation</seealso>
+        CreateExtendedSourceServerResponse EndCreateExtendedSourceServer(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateReplicationConfigurationTemplate
 
 
@@ -54,7 +116,7 @@ namespace Amazon.Drs
         /// 
         /// <returns>The response from the CreateReplicationConfigurationTemplate service method, as returned by Drs.</returns>
         /// <exception cref="Amazon.Drs.Model.AccessDeniedException">
-        /// TYou do not have sufficient access to perform this action.
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.Drs.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -170,7 +232,7 @@ namespace Amazon.Drs
         /// 
         /// <returns>The response from the DeleteRecoveryInstance service method, as returned by Drs.</returns>
         /// <exception cref="Amazon.Drs.Model.AccessDeniedException">
-        /// TYou do not have sufficient access to perform this action.
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.Drs.Model.ConflictException">
         /// The request could not be completed due to a conflict with the current state of the
@@ -447,7 +509,7 @@ namespace Amazon.Drs
         /// 
         /// <returns>The response from the DescribeRecoveryInstances service method, as returned by Drs.</returns>
         /// <exception cref="Amazon.Drs.Model.AccessDeniedException">
-        /// TYou do not have sufficient access to perform this action.
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.Drs.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -499,7 +561,7 @@ namespace Amazon.Drs
         /// 
         /// <returns>The response from the DescribeRecoverySnapshots service method, as returned by Drs.</returns>
         /// <exception cref="Amazon.Drs.Model.AccessDeniedException">
-        /// TYou do not have sufficient access to perform this action.
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.Drs.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -670,7 +732,7 @@ namespace Amazon.Drs
         /// 
         /// <returns>The response from the DisconnectRecoveryInstance service method, as returned by Drs.</returns>
         /// <exception cref="Amazon.Drs.Model.AccessDeniedException">
-        /// TYou do not have sufficient access to perform this action.
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.Drs.Model.ConflictException">
         /// The request could not be completed due to a conflict with the current state of the
@@ -898,6 +960,9 @@ namespace Amazon.Drs
         /// <param name="request">Container for the necessary parameters to execute the GetReplicationConfiguration service method.</param>
         /// 
         /// <returns>The response from the GetReplicationConfiguration service method, as returned by Drs.</returns>
+        /// <exception cref="Amazon.Drs.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
         /// <exception cref="Amazon.Drs.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
@@ -951,7 +1016,7 @@ namespace Amazon.Drs
         /// 
         /// <returns>The response from the InitializeService service method, as returned by Drs.</returns>
         /// <exception cref="Amazon.Drs.Model.AccessDeniedException">
-        /// TYou do not have sufficient access to perform this action.
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.Drs.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -993,6 +1058,118 @@ namespace Amazon.Drs
 
         #endregion
         
+        #region  ListExtensibleSourceServers
+
+
+        /// <summary>
+        /// Returns a list of source servers on a staging account that are extensible, which means
+        /// that: a. The source server is not already extended into this Account. b. The source
+        /// server on the Account we’re reading from is not an extension of another source server.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListExtensibleSourceServers service method.</param>
+        /// 
+        /// <returns>The response from the ListExtensibleSourceServers service method, as returned by Drs.</returns>
+        /// <exception cref="Amazon.Drs.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.UninitializedAccountException">
+        /// The account performing the request has not been initialized.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/ListExtensibleSourceServers">REST API Reference for ListExtensibleSourceServers Operation</seealso>
+        ListExtensibleSourceServersResponse ListExtensibleSourceServers(ListExtensibleSourceServersRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListExtensibleSourceServers operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListExtensibleSourceServers operation on AmazonDrsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListExtensibleSourceServers
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/ListExtensibleSourceServers">REST API Reference for ListExtensibleSourceServers Operation</seealso>
+        IAsyncResult BeginListExtensibleSourceServers(ListExtensibleSourceServersRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListExtensibleSourceServers operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListExtensibleSourceServers.</param>
+        /// 
+        /// <returns>Returns a  ListExtensibleSourceServersResult from Drs.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/ListExtensibleSourceServers">REST API Reference for ListExtensibleSourceServers Operation</seealso>
+        ListExtensibleSourceServersResponse EndListExtensibleSourceServers(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListStagingAccounts
+
+
+        /// <summary>
+        /// Returns an array of staging accounts for existing extended source servers.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListStagingAccounts service method.</param>
+        /// 
+        /// <returns>The response from the ListStagingAccounts service method, as returned by Drs.</returns>
+        /// <exception cref="Amazon.Drs.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.UninitializedAccountException">
+        /// The account performing the request has not been initialized.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/ListStagingAccounts">REST API Reference for ListStagingAccounts Operation</seealso>
+        ListStagingAccountsResponse ListStagingAccounts(ListStagingAccountsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListStagingAccounts operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListStagingAccounts operation on AmazonDrsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListStagingAccounts
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/ListStagingAccounts">REST API Reference for ListStagingAccounts Operation</seealso>
+        IAsyncResult BeginListStagingAccounts(ListStagingAccountsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListStagingAccounts operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListStagingAccounts.</param>
+        /// 
+        /// <returns>Returns a  ListStagingAccountsResult from Drs.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/ListStagingAccounts">REST API Reference for ListStagingAccounts Operation</seealso>
+        ListStagingAccountsResponse EndListStagingAccounts(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListTagsForResource
 
 
@@ -1003,7 +1180,7 @@ namespace Amazon.Drs
         /// 
         /// <returns>The response from the ListTagsForResource service method, as returned by Drs.</returns>
         /// <exception cref="Amazon.Drs.Model.AccessDeniedException">
-        /// TYou do not have sufficient access to perform this action.
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.Drs.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -1290,7 +1467,7 @@ namespace Amazon.Drs
         /// 
         /// <returns>The response from the TagResource service method, as returned by Drs.</returns>
         /// <exception cref="Amazon.Drs.Model.AccessDeniedException">
-        /// TYou do not have sufficient access to perform this action.
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.Drs.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -1404,7 +1581,7 @@ namespace Amazon.Drs
         /// 
         /// <returns>The response from the UntagResource service method, as returned by Drs.</returns>
         /// <exception cref="Amazon.Drs.Model.AccessDeniedException">
-        /// TYou do not have sufficient access to perform this action.
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.Drs.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -1460,7 +1637,7 @@ namespace Amazon.Drs
         /// 
         /// <returns>The response from the UpdateFailbackReplicationConfiguration service method, as returned by Drs.</returns>
         /// <exception cref="Amazon.Drs.Model.AccessDeniedException">
-        /// TYou do not have sufficient access to perform this action.
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.Drs.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -1574,7 +1751,7 @@ namespace Amazon.Drs
         /// 
         /// <returns>The response from the UpdateReplicationConfiguration service method, as returned by Drs.</returns>
         /// <exception cref="Amazon.Drs.Model.AccessDeniedException">
-        /// TYou do not have sufficient access to perform this action.
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.Drs.Model.ConflictException">
         /// The request could not be completed due to a conflict with the current state of the
@@ -1636,7 +1813,7 @@ namespace Amazon.Drs
         /// 
         /// <returns>The response from the UpdateReplicationConfigurationTemplate service method, as returned by Drs.</returns>
         /// <exception cref="Amazon.Drs.Model.AccessDeniedException">
-        /// TYou do not have sufficient access to perform this action.
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.Drs.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception or failure.
