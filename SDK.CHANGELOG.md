@@ -1,3 +1,20 @@
+### 3.7.285.0 (2022-05-31 18:47 UTC)
+* CognitoIdentityProvider (3.7.4.0)
+	* Amazon Cognito now supports IP Address propagation for all unauthenticated APIs (e.g. SignUp, ForgotPassword).
+* Drs (3.7.1.0)
+	* Changed existing APIs and added new APIs to accommodate using multiple AWS accounts with AWS Elastic Disaster Recovery.
+* IoTSiteWise (3.7.11.0)
+	* This release adds the following new optional field to the IoT SiteWise asset resource: assetDescription.
+* LookoutMetrics (3.7.11.0)
+	* Adding backtest mode to detectors using the Cloudwatch data source.
+* SageMaker (3.7.36.0)
+	* Amazon SageMaker Notebook Instances now support Jupyter Lab 3.
+* TranscribeService (3.7.13.0)
+	* Amazon Transcribe now supports automatic language identification for multi-lingual audio in batch mode.
+* Core 3.7.11.11
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.284.0 (2022-05-27 18:15 UTC)
 * Appflow (3.7.9.0)
 	* Adding the following features/changes: Parquet output that preserves typing from the source connector, Failed executions threshold before deactivation for scheduled flows, increasing max size of access and refresh token from 2048 to 4096
