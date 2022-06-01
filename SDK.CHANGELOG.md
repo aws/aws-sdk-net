@@ -1,3 +1,13 @@
+### 3.7.286.0 (2022-06-01 19:16 UTC)
+* BackupGateway (3.7.1.0)
+	* Adds GetGateway and UpdateGatewaySoftwareNow API and adds hypervisor name to UpdateHypervisor API
+* ChimeSDKMeetings (3.7.7.0)
+	* Adds support for centrally controlling each participant's ability to send and receive audio, video and screen share within a WebRTC session.  Attendee capabilities can be specified when the attendee is created and updated during the session with the new BatchUpdateAttendeeCapabilitiesExcept API.
+* ForecastService (3.7.10.0)
+	* Added Format field to Import and Export APIs in Amazon Forecast. Added TimeSeriesSelector to Create Forecast API.
+* Route53 (3.7.3.0)
+	* Add new APIs to support Route 53 IP Based Routing
+
 ### 3.7.285.0 (2022-05-31 18:47 UTC)
 * CognitoIdentityProvider (3.7.4.0)
 	* Amazon Cognito now supports IP Address propagation for all unauthenticated APIs (e.g. SignUp, ForgotPassword).
