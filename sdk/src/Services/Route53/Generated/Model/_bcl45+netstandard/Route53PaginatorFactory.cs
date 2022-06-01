@@ -36,6 +36,30 @@ namespace Amazon.Route53.Model
         }
 
         /// <summary>
+        /// Paginator for ListCidrBlocks operation
+        ///</summary>
+        public IListCidrBlocksPaginator ListCidrBlocks(ListCidrBlocksRequest request) 
+        {
+            return new ListCidrBlocksPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListCidrCollections operation
+        ///</summary>
+        public IListCidrCollectionsPaginator ListCidrCollections(ListCidrCollectionsRequest request) 
+        {
+            return new ListCidrCollectionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListCidrLocations operation
+        ///</summary>
+        public IListCidrLocationsPaginator ListCidrLocations(ListCidrLocationsRequest request) 
+        {
+            return new ListCidrLocationsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListHealthChecks operation
         ///</summary>
         public IListHealthChecksPaginator ListHealthChecks(ListHealthChecksRequest request) 

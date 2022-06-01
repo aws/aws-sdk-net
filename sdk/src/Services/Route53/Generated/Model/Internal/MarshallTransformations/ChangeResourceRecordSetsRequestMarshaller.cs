@@ -167,6 +167,18 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                                 if(publicRequestChangeBatchChangesValue.ResourceRecordSet.IsSetTrafficPolicyInstanceId())
                                     xmlWriter.WriteElementString("TrafficPolicyInstanceId", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequestChangeBatchChangesValue.ResourceRecordSet.TrafficPolicyInstanceId));                 
                 
+                                
+                                if (publicRequestChangeBatchChangesValue.ResourceRecordSet.CidrRoutingConfig != null) 
+                                {
+                                    xmlWriter.WriteStartElement("CidrRoutingConfig", "https://route53.amazonaws.com/doc/2013-04-01/");            
+                                    if(publicRequestChangeBatchChangesValue.ResourceRecordSet.CidrRoutingConfig.IsSetCollectionId())
+                                        xmlWriter.WriteElementString("CollectionId", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequestChangeBatchChangesValue.ResourceRecordSet.CidrRoutingConfig.CollectionId));                 
+                    
+                                    if(publicRequestChangeBatchChangesValue.ResourceRecordSet.CidrRoutingConfig.IsSetLocationName())
+                                        xmlWriter.WriteElementString("LocationName", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequestChangeBatchChangesValue.ResourceRecordSet.CidrRoutingConfig.LocationName));                 
+                    
+                                    xmlWriter.WriteEndElement();
+                                }
                                 xmlWriter.WriteEndElement();
                             }
                             xmlWriter.WriteEndElement();

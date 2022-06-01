@@ -133,6 +133,12 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                         unmarshalledObject.TrafficPolicyInstanceId = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("CidrRoutingConfig", targetDepth))
+                    {
+                        var unmarshaller = CidrRoutingConfigUnmarshaller.Instance;
+                        unmarshalledObject.CidrRoutingConfig = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {

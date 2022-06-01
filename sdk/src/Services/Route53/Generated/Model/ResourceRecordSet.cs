@@ -46,6 +46,7 @@ namespace Amazon.Route53.Model
         private AliasTarget _aliasTarget;
         private string _healthCheckId;
         private string _trafficPolicyInstanceId;
+        private CidrRoutingConfig _cidrRoutingConfig;
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -916,6 +917,21 @@ namespace Amazon.Route53.Model
         internal bool IsSetTrafficPolicyInstanceId()
         {
             return this._trafficPolicyInstanceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CidrRoutingConfig.
+        /// </summary>
+        public CidrRoutingConfig CidrRoutingConfig
+        {
+            get { return this._cidrRoutingConfig; }
+            set { this._cidrRoutingConfig = value; }
+        }
+
+        // Check to see if CidrRoutingConfig property is set
+        internal bool IsSetCidrRoutingConfig()
+        {
+            return this._cidrRoutingConfig != null;
         }
 
     }

@@ -188,13 +188,8 @@ namespace Amazon.Route53
         /// authorized to access this VPC.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.LimitsExceededException">
-        /// This operation can't be completed either because the current account has reached the
-        /// limit on reusable delegation sets that it can create or because you've reached the
-        /// limit on the number of Amazon VPCs that you can associate with a private hosted zone.
-        /// To get the current limit on the number of reusable delegation sets, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetAccountLimit.html">GetAccountLimit</a>.
-        /// To get the current limit on the number of Amazon VPCs that you can associate with
-        /// a private hosted zone, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetHostedZoneLimit.html">GetHostedZoneLimit</a>.
-        /// To request a higher limit, <a href="http://aws.amazon.com/route53-request">create
+        /// This operation can't be completed because the current account has reached the limit
+        /// on the resource you are trying to create. To request a higher limit, <a href="http://aws.amazon.com/route53-request">create
         /// a case</a> with the Amazon Web Services Support Center.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchHostedZoneException">
@@ -242,6 +237,102 @@ namespace Amazon.Route53
         /// <returns>Returns a  AssociateVPCWithHostedZoneResult from Route53.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/AssociateVPCWithHostedZone">REST API Reference for AssociateVPCWithHostedZone Operation</seealso>
         AssociateVPCWithHostedZoneResponse EndAssociateVPCWithHostedZone(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ChangeCidrCollection
+
+
+        /// <summary>
+        /// Creates, changes, or deletes CIDR blocks within a collection. Contains authoritative
+        /// IP information mapping blocks to one or multiple locations.
+        /// 
+        ///  
+        /// <para>
+        /// A change request can update multiple locations in a collection at a time, which is
+        /// helpful if you want to move one or more CIDR blocks from one location to another in
+        /// one transaction, without downtime. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Limits</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The max number of CIDR blocks included in the request is 1000. As a result, big updates
+        /// require multiple API calls.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b> PUT and DELETE_IF_EXISTS</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Use <code>ChangeCidrCollection</code> to perform the following actions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>PUT</code>: Create a CIDR block within the specified collection.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code> DELETE_IF_EXISTS</code>: Delete an existing CIDR block from the collection.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ChangeCidrCollection service method.</param>
+        /// 
+        /// <returns>The response from the ChangeCidrCollection service method, as returned by Route53.</returns>
+        /// <exception cref="Amazon.Route53.Model.CidrBlockInUseException">
+        /// This CIDR block is already in use.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.CidrCollectionVersionMismatchException">
+        /// The CIDR collection version you provided, doesn't match the one in the <code>ListCidrCollections</code>
+        /// operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.ConcurrentModificationException">
+        /// Another user submitted a request to create, update, or delete the object at the same
+        /// time that you did. Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
+        /// The input is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.LimitsExceededException">
+        /// This operation can't be completed because the current account has reached the limit
+        /// on the resource you are trying to create. To request a higher limit, <a href="http://aws.amazon.com/route53-request">create
+        /// a case</a> with the Amazon Web Services Support Center.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.NoSuchCidrCollectionException">
+        /// The CIDR collection you specified, doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ChangeCidrCollection">REST API Reference for ChangeCidrCollection Operation</seealso>
+        ChangeCidrCollectionResponse ChangeCidrCollection(ChangeCidrCollectionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ChangeCidrCollection operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ChangeCidrCollection operation on AmazonRoute53Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndChangeCidrCollection
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ChangeCidrCollection">REST API Reference for ChangeCidrCollection Operation</seealso>
+        IAsyncResult BeginChangeCidrCollection(ChangeCidrCollectionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ChangeCidrCollection operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginChangeCidrCollection.</param>
+        /// 
+        /// <returns>Returns a  ChangeCidrCollectionResult from Route53.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ChangeCidrCollection">REST API Reference for ChangeCidrCollection Operation</seealso>
+        ChangeCidrCollectionResponse EndChangeCidrCollection(IAsyncResult asyncResult);
 
         #endregion
         
@@ -491,6 +582,62 @@ namespace Amazon.Route53
 
         #endregion
         
+        #region  CreateCidrCollection
+
+
+        /// <summary>
+        /// Creates a CIDR collection in the current Amazon Web Services account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCidrCollection service method.</param>
+        /// 
+        /// <returns>The response from the CreateCidrCollection service method, as returned by Route53.</returns>
+        /// <exception cref="Amazon.Route53.Model.CidrCollectionAlreadyExistsException">
+        /// A CIDR collection with this name and a different caller reference already exists in
+        /// this account.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.ConcurrentModificationException">
+        /// Another user submitted a request to create, update, or delete the object at the same
+        /// time that you did. Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
+        /// The input is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.LimitsExceededException">
+        /// This operation can't be completed because the current account has reached the limit
+        /// on the resource you are trying to create. To request a higher limit, <a href="http://aws.amazon.com/route53-request">create
+        /// a case</a> with the Amazon Web Services Support Center.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateCidrCollection">REST API Reference for CreateCidrCollection Operation</seealso>
+        CreateCidrCollectionResponse CreateCidrCollection(CreateCidrCollectionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateCidrCollection operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateCidrCollection operation on AmazonRoute53Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateCidrCollection
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateCidrCollection">REST API Reference for CreateCidrCollection Operation</seealso>
+        IAsyncResult BeginCreateCidrCollection(CreateCidrCollectionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateCidrCollection operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateCidrCollection.</param>
+        /// 
+        /// <returns>Returns a  CreateCidrCollectionResult from Route53.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateCidrCollection">REST API Reference for CreateCidrCollection Operation</seealso>
+        CreateCidrCollectionResponse EndCreateCidrCollection(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateHealthCheck
 
 
@@ -640,7 +787,7 @@ namespace Amazon.Route53
         ///  </important> 
         /// <para>
         /// For more information about charges for hosted zones, see <a href="http://aws.amazon.com/route53/pricing/">Amazon
-        /// Route 53 Pricing</a>.
+        /// Route 53 Pricing</a>.
         /// </para>
         ///  
         /// <para>
@@ -654,7 +801,7 @@ namespace Amazon.Route53
         /// <para>
         /// For public hosted zones, Route 53 automatically creates a default SOA record and four
         /// NS records for the zone. For more information about SOA and NS records, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/SOA-NSrecords.html">NS
-        /// and SOA Records that Route 53 Creates for a Hosted Zone</a> in the <i>Amazon Route
+        /// and SOA Records that Route 53 Creates for a Hosted Zone</a> in the <i>Amazon Route
         /// 53 Developer Guide</i>.
         /// </para>
         ///  
@@ -665,17 +812,17 @@ namespace Amazon.Route53
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If your domain is registered with a registrar other than Route 53, you must update
+        /// If your domain is registered with a registrar other than Route 53, you must update
         /// the name servers with your registrar to make Route 53 the DNS service for the domain.
         /// For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/MigratingDNS.html">Migrating
-        /// DNS Service for an Existing Domain to Amazon Route 53</a> in the <i>Amazon Route 53
+        /// DNS Service for an Existing Domain to Amazon Route 53</a> in the <i>Amazon Route 53
         /// Developer Guide</i>. 
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// When you submit a <code>CreateHostedZone</code> request, the initial status of the
         /// hosted zone is <code>PENDING</code>. For public hosted zones, this means that the
-        /// NS and SOA records are not yet available on all Route 53 DNS servers. When the NS
+        /// NS and SOA records are not yet available on all Route 53 DNS servers. When the NS
         /// and SOA records are available, the status of the zone changes to <code>INSYNC</code>.
         /// </para>
         ///  
@@ -1249,13 +1396,8 @@ namespace Amazon.Route53
         /// The input is not valid.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.LimitsExceededException">
-        /// This operation can't be completed either because the current account has reached the
-        /// limit on reusable delegation sets that it can create or because you've reached the
-        /// limit on the number of Amazon VPCs that you can associate with a private hosted zone.
-        /// To get the current limit on the number of reusable delegation sets, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetAccountLimit.html">GetAccountLimit</a>.
-        /// To get the current limit on the number of Amazon VPCs that you can associate with
-        /// a private hosted zone, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetHostedZoneLimit.html">GetHostedZoneLimit</a>.
-        /// To request a higher limit, <a href="http://aws.amazon.com/route53-request">create
+        /// This operation can't be completed because the current account has reached the limit
+        /// on the resource you are trying to create. To request a higher limit, <a href="http://aws.amazon.com/route53-request">create
         /// a case</a> with the Amazon Web Services Support Center.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateReusableDelegationSet">REST API Reference for CreateReusableDelegationSet Operation</seealso>
@@ -1648,6 +1790,60 @@ namespace Amazon.Route53
 
         #endregion
         
+        #region  DeleteCidrCollection
+
+
+        /// <summary>
+        /// Deletes a CIDR collection in the current Amazon Web Services account. The collection
+        /// must be empty before it can be deleted.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCidrCollection service method.</param>
+        /// 
+        /// <returns>The response from the DeleteCidrCollection service method, as returned by Route53.</returns>
+        /// <exception cref="Amazon.Route53.Model.CidrCollectionInUseException">
+        /// This CIDR collection is in use, and isn't empty.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.ConcurrentModificationException">
+        /// Another user submitted a request to create, update, or delete the object at the same
+        /// time that you did. Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
+        /// The input is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.NoSuchCidrCollectionException">
+        /// The CIDR collection you specified, doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteCidrCollection">REST API Reference for DeleteCidrCollection Operation</seealso>
+        DeleteCidrCollectionResponse DeleteCidrCollection(DeleteCidrCollectionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteCidrCollection operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCidrCollection operation on AmazonRoute53Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteCidrCollection
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteCidrCollection">REST API Reference for DeleteCidrCollection Operation</seealso>
+        IAsyncResult BeginDeleteCidrCollection(DeleteCidrCollectionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteCidrCollection operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteCidrCollection.</param>
+        /// 
+        /// <returns>Returns a  DeleteCidrCollectionResult from Route53.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteCidrCollection">REST API Reference for DeleteCidrCollection Operation</seealso>
+        DeleteCidrCollectionResponse EndDeleteCidrCollection(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteHealthCheck
 
 
@@ -1724,9 +1920,9 @@ namespace Amazon.Route53
         ///  
         /// <para>
         /// If the hosted zone was created by another service, such as Cloud Map, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DeleteHostedZone.html#delete-public-hosted-zone-created-by-another-service">Deleting
-        /// Public Hosted Zones That Were Created by Another Service</a> in the <i>Amazon Route
-        /// 53 Developer Guide</i> for information about how to delete it. (The process is the
-        /// same for public and private hosted zones that were created by another service.)
+        /// Public Hosted Zones That Were Created by Another Service</a> in the <i>Amazon Route 53
+        /// Developer Guide</i> for information about how to delete it. (The process is the same
+        /// for public and private hosted zones that were created by another service.)
         /// </para>
         ///  
         /// <para>
@@ -1748,8 +1944,8 @@ namespace Amazon.Route53
         /// If you want to avoid the monthly charge for the hosted zone, you can transfer DNS
         /// service for the domain to a free DNS service. When you transfer DNS service, you have
         /// to update the name servers for the domain registration. If the domain is registered
-        /// with Route 53, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_UpdateDomainNameservers.html">UpdateDomainNameservers</a>
-        /// for information about how to replace Route 53 name servers with name servers for the
+        /// with Route 53, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_UpdateDomainNameservers.html">UpdateDomainNameservers</a>
+        /// for information about how to replace Route 53 name servers with name servers for the
         /// new DNS service. If the domain is registered with another registrar, use the method
         /// provided by the registrar to update name servers for the domain registration. For
         /// more information, perform an internet search on "free DNS service."
@@ -1759,7 +1955,7 @@ namespace Amazon.Route53
         /// You can delete a hosted zone only if it contains only the default SOA record and NS
         /// resource record sets. If the hosted zone contains other resource record sets, you
         /// must delete them before you can delete the hosted zone. If you try to delete a hosted
-        /// zone that contains other resource record sets, the request fails, and Route 53 returns
+        /// zone that contains other resource record sets, the request fails, and Route 53 returns
         /// a <code>HostedZoneNotEmpty</code> error. For information about deleting records from
         /// your hosted zone, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ChangeResourceRecordSets.html">ChangeResourceRecordSets</a>.
         /// </para>
@@ -3439,6 +3635,146 @@ namespace Amazon.Route53
         /// <returns>Returns a  GetTrafficPolicyInstanceCountResult from Route53.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetTrafficPolicyInstanceCount">REST API Reference for GetTrafficPolicyInstanceCount Operation</seealso>
         GetTrafficPolicyInstanceCountResponse EndGetTrafficPolicyInstanceCount(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListCidrBlocks
+
+
+        /// <summary>
+        /// Returns a paginated list of location objects and their CIDR blocks.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCidrBlocks service method.</param>
+        /// 
+        /// <returns>The response from the ListCidrBlocks service method, as returned by Route53.</returns>
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
+        /// The input is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.NoSuchCidrCollectionException">
+        /// The CIDR collection you specified, doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.NoSuchCidrLocationException">
+        /// The CIDR collection location doesn't match any locations in your account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListCidrBlocks">REST API Reference for ListCidrBlocks Operation</seealso>
+        ListCidrBlocksResponse ListCidrBlocks(ListCidrBlocksRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListCidrBlocks operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListCidrBlocks operation on AmazonRoute53Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListCidrBlocks
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListCidrBlocks">REST API Reference for ListCidrBlocks Operation</seealso>
+        IAsyncResult BeginListCidrBlocks(ListCidrBlocksRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListCidrBlocks operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListCidrBlocks.</param>
+        /// 
+        /// <returns>Returns a  ListCidrBlocksResult from Route53.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListCidrBlocks">REST API Reference for ListCidrBlocks Operation</seealso>
+        ListCidrBlocksResponse EndListCidrBlocks(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListCidrCollections
+
+
+        /// <summary>
+        /// Returns a paginated list of CIDR collections in the Amazon Web Services account (metadata
+        /// only).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCidrCollections service method.</param>
+        /// 
+        /// <returns>The response from the ListCidrCollections service method, as returned by Route53.</returns>
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
+        /// The input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListCidrCollections">REST API Reference for ListCidrCollections Operation</seealso>
+        ListCidrCollectionsResponse ListCidrCollections(ListCidrCollectionsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListCidrCollections operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListCidrCollections operation on AmazonRoute53Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListCidrCollections
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListCidrCollections">REST API Reference for ListCidrCollections Operation</seealso>
+        IAsyncResult BeginListCidrCollections(ListCidrCollectionsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListCidrCollections operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListCidrCollections.</param>
+        /// 
+        /// <returns>Returns a  ListCidrCollectionsResult from Route53.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListCidrCollections">REST API Reference for ListCidrCollections Operation</seealso>
+        ListCidrCollectionsResponse EndListCidrCollections(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListCidrLocations
+
+
+        /// <summary>
+        /// Returns a paginated list of CIDR locations for the given collection (metadata only,
+        /// does not include CIDR blocks).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCidrLocations service method.</param>
+        /// 
+        /// <returns>The response from the ListCidrLocations service method, as returned by Route53.</returns>
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
+        /// The input is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.NoSuchCidrCollectionException">
+        /// The CIDR collection you specified, doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListCidrLocations">REST API Reference for ListCidrLocations Operation</seealso>
+        ListCidrLocationsResponse ListCidrLocations(ListCidrLocationsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListCidrLocations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListCidrLocations operation on AmazonRoute53Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListCidrLocations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListCidrLocations">REST API Reference for ListCidrLocations Operation</seealso>
+        IAsyncResult BeginListCidrLocations(ListCidrLocationsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListCidrLocations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListCidrLocations.</param>
+        /// 
+        /// <returns>Returns a  ListCidrLocationsResult from Route53.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListCidrLocations">REST API Reference for ListCidrLocations Operation</seealso>
+        ListCidrLocationsResponse EndListCidrLocations(IAsyncResult asyncResult);
 
         #endregion
         

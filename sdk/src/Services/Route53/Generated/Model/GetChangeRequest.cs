@@ -72,7 +72,7 @@ namespace Amazon.Route53.Model
         /// you submitted the request.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=32)]
+        [AWSProperty(Required=true, Min=1, Max=6500)]
         public string Id
         {
             get { return this._id; }
