@@ -60,7 +60,7 @@ namespace Amazon.BackupGateway.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The key part of a value's key-value pair.
+        /// The value part of a tag's key-value pair.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=256)]

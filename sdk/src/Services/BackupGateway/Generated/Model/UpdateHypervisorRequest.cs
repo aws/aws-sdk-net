@@ -38,6 +38,7 @@ namespace Amazon.BackupGateway.Model
     {
         private string _host;
         private string _hypervisorArn;
+        private string _name;
         private string _password;
         private string _username;
 
@@ -78,6 +79,25 @@ namespace Amazon.BackupGateway.Model
         internal bool IsSetHypervisorArn()
         {
             return this._hypervisorArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The updated name for the hypervisor
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=100)]
+        public string Name
+        {
+            get { return this._name; }
+            set { this._name = value; }
+        }
+
+        // Check to see if Name property is set
+        internal bool IsSetName()
+        {
+            return this._name != null;
         }
 
         /// <summary>

@@ -584,6 +584,65 @@ namespace Amazon.BackupGateway
 
         #endregion
         
+        #region  GetGateway
+
+
+        /// <summary>
+        /// By providing the ARN (Amazon Resource Name), this API returns the gateway.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetGateway service method.</param>
+        /// 
+        /// <returns>The response from the GetGateway service method, as returned by BackupGateway.</returns>
+        /// <exception cref="Amazon.BackupGateway.Model.InternalServerException">
+        /// The operation did not succeed because an internal error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ResourceNotFoundException">
+        /// A resource that is required for the action wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ValidationException">
+        /// The operation did not succeed because a validation error occurred.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/GetGateway">REST API Reference for GetGateway Operation</seealso>
+        public virtual GetGatewayResponse GetGateway(GetGatewayRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetGatewayRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetGatewayResponseUnmarshaller.Instance;
+
+            return Invoke<GetGatewayResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// By providing the ARN (Amazon Resource Name), this API returns the gateway.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetGateway service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetGateway service method, as returned by BackupGateway.</returns>
+        /// <exception cref="Amazon.BackupGateway.Model.InternalServerException">
+        /// The operation did not succeed because an internal error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ResourceNotFoundException">
+        /// A resource that is required for the action wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ValidationException">
+        /// The operation did not succeed because a validation error occurred.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/GetGateway">REST API Reference for GetGateway Operation</seealso>
+        public virtual Task<GetGatewayResponse> GetGatewayAsync(GetGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetGatewayRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetGatewayResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetGatewayResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ImportHypervisorConfiguration
 
 
@@ -1176,6 +1235,81 @@ namespace Amazon.BackupGateway
             options.ResponseUnmarshaller = UpdateGatewayInformationResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateGatewayInformationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateGatewaySoftwareNow
+
+
+        /// <summary>
+        /// Updates the gateway virtual machine (VM) software. The request immediately triggers
+        /// the software update.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// When you make this request, you get a <code>200 OK</code> success response immediately.
+        /// However, it might take some time for the update to complete.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateGatewaySoftwareNow service method.</param>
+        /// 
+        /// <returns>The response from the UpdateGatewaySoftwareNow service method, as returned by BackupGateway.</returns>
+        /// <exception cref="Amazon.BackupGateway.Model.InternalServerException">
+        /// The operation did not succeed because an internal error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ResourceNotFoundException">
+        /// A resource that is required for the action wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ValidationException">
+        /// The operation did not succeed because a validation error occurred.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/UpdateGatewaySoftwareNow">REST API Reference for UpdateGatewaySoftwareNow Operation</seealso>
+        public virtual UpdateGatewaySoftwareNowResponse UpdateGatewaySoftwareNow(UpdateGatewaySoftwareNowRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateGatewaySoftwareNowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateGatewaySoftwareNowResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateGatewaySoftwareNowResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates the gateway virtual machine (VM) software. The request immediately triggers
+        /// the software update.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// When you make this request, you get a <code>200 OK</code> success response immediately.
+        /// However, it might take some time for the update to complete.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateGatewaySoftwareNow service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateGatewaySoftwareNow service method, as returned by BackupGateway.</returns>
+        /// <exception cref="Amazon.BackupGateway.Model.InternalServerException">
+        /// The operation did not succeed because an internal error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ResourceNotFoundException">
+        /// A resource that is required for the action wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ValidationException">
+        /// The operation did not succeed because a validation error occurred.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/UpdateGatewaySoftwareNow">REST API Reference for UpdateGatewaySoftwareNow Operation</seealso>
+        public virtual Task<UpdateGatewaySoftwareNowResponse> UpdateGatewaySoftwareNowAsync(UpdateGatewaySoftwareNowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateGatewaySoftwareNowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateGatewaySoftwareNowResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateGatewaySoftwareNowResponse>(request, options, cancellationToken);
         }
 
         #endregion
