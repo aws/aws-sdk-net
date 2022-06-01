@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ChimeSDKMeetings.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateAttendeeRequestItem Marshaller
+    /// AttendeeCapabilities Marshaller
     /// </summary>
-    public class CreateAttendeeRequestItemMarshaller : IRequestMarshaller<CreateAttendeeRequestItem, JsonMarshallerContext> 
+    public class AttendeeCapabilitiesMarshaller : IRequestMarshaller<AttendeeCapabilities, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,23 +43,24 @@ namespace Amazon.ChimeSDKMeetings.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(CreateAttendeeRequestItem requestObject, JsonMarshallerContext context)
+        public void Marshall(AttendeeCapabilities requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetCapabilities())
+            if(requestObject.IsSetAudio())
             {
-                context.Writer.WritePropertyName("Capabilities");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = AttendeeCapabilitiesMarshaller.Instance;
-                marshaller.Marshall(requestObject.Capabilities, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("Audio");
+                context.Writer.Write(requestObject.Audio);
             }
 
-            if(requestObject.IsSetExternalUserId())
+            if(requestObject.IsSetContent())
             {
-                context.Writer.WritePropertyName("ExternalUserId");
-                context.Writer.Write(requestObject.ExternalUserId);
+                context.Writer.WritePropertyName("Content");
+                context.Writer.Write(requestObject.Content);
+            }
+
+            if(requestObject.IsSetVideo())
+            {
+                context.Writer.WritePropertyName("Video");
+                context.Writer.Write(requestObject.Video);
             }
 
         }
@@ -67,7 +68,7 @@ namespace Amazon.ChimeSDKMeetings.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static CreateAttendeeRequestItemMarshaller Instance = new CreateAttendeeRequestItemMarshaller();
+        public readonly static AttendeeCapabilitiesMarshaller Instance = new AttendeeCapabilitiesMarshaller();
 
     }
 }

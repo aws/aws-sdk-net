@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ChimeSDKMeetings.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateAttendeeRequestItem Marshaller
+    /// AttendeeIdItem Marshaller
     /// </summary>
-    public class CreateAttendeeRequestItemMarshaller : IRequestMarshaller<CreateAttendeeRequestItem, JsonMarshallerContext> 
+    public class AttendeeIdItemMarshaller : IRequestMarshaller<AttendeeIdItem, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,23 +43,12 @@ namespace Amazon.ChimeSDKMeetings.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(CreateAttendeeRequestItem requestObject, JsonMarshallerContext context)
+        public void Marshall(AttendeeIdItem requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetCapabilities())
+            if(requestObject.IsSetAttendeeId())
             {
-                context.Writer.WritePropertyName("Capabilities");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = AttendeeCapabilitiesMarshaller.Instance;
-                marshaller.Marshall(requestObject.Capabilities, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetExternalUserId())
-            {
-                context.Writer.WritePropertyName("ExternalUserId");
-                context.Writer.Write(requestObject.ExternalUserId);
+                context.Writer.WritePropertyName("AttendeeId");
+                context.Writer.Write(requestObject.AttendeeId);
             }
 
         }
@@ -67,7 +56,7 @@ namespace Amazon.ChimeSDKMeetings.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static CreateAttendeeRequestItemMarshaller Instance = new CreateAttendeeRequestItemMarshaller();
+        public readonly static AttendeeIdItemMarshaller Instance = new AttendeeIdItemMarshaller();
 
     }
 }

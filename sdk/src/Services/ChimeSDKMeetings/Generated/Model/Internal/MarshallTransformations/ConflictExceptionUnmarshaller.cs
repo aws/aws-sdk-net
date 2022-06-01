@@ -34,58 +34,46 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ChimeSDKMeetings.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Attendee Object
+    /// Response Unmarshaller for ConflictException Object
     /// </summary>  
-    public class AttendeeUnmarshaller : IUnmarshaller<Attendee, XmlUnmarshallerContext>, IUnmarshaller<Attendee, JsonUnmarshallerContext>
+    public class ConflictExceptionUnmarshaller : IErrorResponseUnmarshaller<ConflictException, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Attendee IUnmarshaller<Attendee, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        public ConflictException Unmarshall(JsonUnmarshallerContext context)
         {
-            throw new NotImplementedException();
+            return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse());
         }
 
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
+        /// <param name="errorResponse"></param>
         /// <returns></returns>
-        public Attendee Unmarshall(JsonUnmarshallerContext context)
+        public ConflictException Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
-                return null;
 
-            Attendee unmarshalledObject = new Attendee();
+            ConflictException unmarshalledObject = new ConflictException(errorResponse.Message, errorResponse.InnerException,
+                errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("AttendeeId", targetDepth))
+                if (context.TestExpression("Code", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AttendeeId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Code = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Capabilities", targetDepth))
-                {
-                    var unmarshaller = AttendeeCapabilitiesUnmarshaller.Instance;
-                    unmarshalledObject.Capabilities = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ExternalUserId", targetDepth))
+                if (context.TestExpression("RequestId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ExternalUserId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("JoinToken", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.JoinToken = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RequestId = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -93,13 +81,12 @@ namespace Amazon.ChimeSDKMeetings.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
-
-        private static AttendeeUnmarshaller _instance = new AttendeeUnmarshaller();        
+        private static ConflictExceptionUnmarshaller _instance = new ConflictExceptionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AttendeeUnmarshaller Instance
+        public static ConflictExceptionUnmarshaller Instance
         {
             get
             {

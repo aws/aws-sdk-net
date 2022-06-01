@@ -29,43 +29,43 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKMeetings.Model
 {
     /// <summary>
-    /// The service is currently unavailable.
+    /// Multiple instances of the same request have been made simultaneously.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
-    public partial class ServiceFailureException : AmazonChimeSDKMeetingsException
+    public partial class ConflictException : AmazonChimeSDKMeetingsException
     {
         private string _code;
         private string _requestId;
 
         /// <summary>
-        /// Constructs a new ServiceFailureException with the specified error
+        /// Constructs a new ConflictException with the specified error
         /// message.
         /// </summary>
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        public ServiceFailureException(string message) 
+        public ConflictException(string message) 
             : base(message) {}
 
         /// <summary>
-        /// Construct instance of ServiceFailureException
+        /// Construct instance of ConflictException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
-        public ServiceFailureException(string message, Exception innerException) 
+        public ConflictException(string message, Exception innerException) 
             : base(message, innerException) {}
 
         /// <summary>
-        /// Construct instance of ServiceFailureException
+        /// Construct instance of ConflictException
         /// </summary>
         /// <param name="innerException"></param>
-        public ServiceFailureException(Exception innerException) 
+        public ConflictException(Exception innerException) 
             : base(innerException) {}
 
         /// <summary>
-        /// Construct instance of ServiceFailureException
+        /// Construct instance of ConflictException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
@@ -73,30 +73,30 @@ namespace Amazon.ChimeSDKMeetings.Model
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public ServiceFailureException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+        public ConflictException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, requestId, statusCode) {}
 
         /// <summary>
-        /// Construct instance of ServiceFailureException
+        /// Construct instance of ConflictException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="errorType"></param>
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public ServiceFailureException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+        public ConflictException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
 #if !NETSTANDARD
         /// <summary>
-        /// Constructs a new instance of the ServiceFailureException class with serialized data.
+        /// Constructs a new instance of the ConflictException class with serialized data.
         /// </summary>
         /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
         /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
         /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is null. </exception>
         /// <exception cref="T:System.Runtime.Serialization.SerializationException">The class name is null or <see cref="P:System.Exception.HResult" /> is zero (0). </exception>
-        protected ServiceFailureException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        protected ConflictException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
             this.Code = (string)info.GetValue("Code", typeof(string));

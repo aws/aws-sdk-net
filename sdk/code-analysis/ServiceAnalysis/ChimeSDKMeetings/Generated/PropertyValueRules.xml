@@ -5,6 +5,10 @@
     <pattern>[a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ChimeSDKMeetings.Model.BatchUpdateAttendeeCapabilitiesExceptRequest.MeetingId</property>
+    <pattern>[a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ChimeSDKMeetings.Model.CreateAttendeeRequest.ExternalUserId</property>
     <min>2</min>
     <max>64</max>
@@ -115,6 +119,14 @@
     <pattern>[a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ChimeSDKMeetings.Model.UpdateAttendeeCapabilitiesRequest.AttendeeId</property>
+    <pattern>[a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMeetings.Model.UpdateAttendeeCapabilitiesRequest.MeetingId</property>
+    <pattern>[a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ChimeSDKMeetings.Model.Attendee.AttendeeId</property>
     <pattern>[a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}</pattern>
   </property-value-rule>
@@ -129,11 +141,23 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ChimeSDKMeetings.Model.AttendeeIdItem.AttendeeId</property>
+    <pattern>[a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ChimeSDKMeetings.Model.BadRequestException.Code</property>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKMeetings.Model.BadRequestException.RequestId</property>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMeetings.Model.ConflictException.Code</property>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMeetings.Model.ConflictException.RequestId</property>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>

@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ChimeSDKMeetings.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Attendee Object
+    /// Response Unmarshaller for AttendeeCapabilities Object
     /// </summary>  
-    public class AttendeeUnmarshaller : IUnmarshaller<Attendee, XmlUnmarshallerContext>, IUnmarshaller<Attendee, JsonUnmarshallerContext>
+    public class AttendeeCapabilitiesUnmarshaller : IUnmarshaller<AttendeeCapabilities, XmlUnmarshallerContext>, IUnmarshaller<AttendeeCapabilities, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Attendee IUnmarshaller<Attendee, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AttendeeCapabilities IUnmarshaller<AttendeeCapabilities, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,33 @@ namespace Amazon.ChimeSDKMeetings.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Attendee Unmarshall(JsonUnmarshallerContext context)
+        public AttendeeCapabilities Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Attendee unmarshalledObject = new Attendee();
+            AttendeeCapabilities unmarshalledObject = new AttendeeCapabilities();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("AttendeeId", targetDepth))
+                if (context.TestExpression("Audio", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AttendeeId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Audio = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Capabilities", targetDepth))
-                {
-                    var unmarshaller = AttendeeCapabilitiesUnmarshaller.Instance;
-                    unmarshalledObject.Capabilities = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ExternalUserId", targetDepth))
+                if (context.TestExpression("Content", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ExternalUserId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Content = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("JoinToken", targetDepth))
+                if (context.TestExpression("Video", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.JoinToken = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Video = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +88,12 @@ namespace Amazon.ChimeSDKMeetings.Model.Internal.MarshallTransformations
         }
 
 
-        private static AttendeeUnmarshaller _instance = new AttendeeUnmarshaller();        
+        private static AttendeeCapabilitiesUnmarshaller _instance = new AttendeeCapabilitiesUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AttendeeUnmarshaller Instance
+        public static AttendeeCapabilitiesUnmarshaller Instance
         {
             get
             {

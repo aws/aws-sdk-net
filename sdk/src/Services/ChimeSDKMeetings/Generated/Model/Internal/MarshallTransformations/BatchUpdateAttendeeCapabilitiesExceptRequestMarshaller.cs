@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ChimeSDKMeetings.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateAttendee Request Marshaller
+    /// BatchUpdateAttendeeCapabilitiesExcept Request Marshaller
     /// </summary>       
-    public class CreateAttendeeRequestMarshaller : IMarshaller<IRequest, CreateAttendeeRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class BatchUpdateAttendeeCapabilitiesExceptRequestMarshaller : IMarshaller<IRequest, BatchUpdateAttendeeCapabilitiesExceptRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.ChimeSDKMeetings.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateAttendeeRequest)input);
+            return this.Marshall((BatchUpdateAttendeeCapabilitiesExceptRequest)input);
         }
 
         /// <summary>
@@ -52,17 +52,18 @@ namespace Amazon.ChimeSDKMeetings.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateAttendeeRequest publicRequest)
+        public IRequest Marshall(BatchUpdateAttendeeCapabilitiesExceptRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ChimeSDKMeetings");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-07-15";
-            request.HttpMethod = "POST";
+            request.HttpMethod = "PUT";
 
+            request.AddSubResource("operation", "batch-update-except");
             if (!publicRequest.IsSetMeetingId())
                 throw new AmazonChimeSDKMeetingsException("Request object does not have required field MeetingId set");
             request.AddPathResource("{MeetingId}", StringUtils.FromString(publicRequest.MeetingId));
-            request.ResourcePath = "/meetings/{MeetingId}/attendees";
+            request.ResourcePath = "/meetings/{MeetingId}/attendees/capabilities";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
@@ -79,10 +80,20 @@ namespace Amazon.ChimeSDKMeetings.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetExternalUserId())
+                if(publicRequest.IsSetExcludedAttendeeIds())
                 {
-                    context.Writer.WritePropertyName("ExternalUserId");
-                    context.Writer.Write(publicRequest.ExternalUserId);
+                    context.Writer.WritePropertyName("ExcludedAttendeeIds");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestExcludedAttendeeIdsListValue in publicRequest.ExcludedAttendeeIds)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = AttendeeIdItemMarshaller.Instance;
+                        marshaller.Marshall(publicRequestExcludedAttendeeIdsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
                 }
 
                 writer.WriteObjectEnd();
@@ -93,9 +104,9 @@ namespace Amazon.ChimeSDKMeetings.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateAttendeeRequestMarshaller _instance = new CreateAttendeeRequestMarshaller();        
+        private static BatchUpdateAttendeeCapabilitiesExceptRequestMarshaller _instance = new BatchUpdateAttendeeCapabilitiesExceptRequestMarshaller();        
 
-        internal static CreateAttendeeRequestMarshaller GetInstance()
+        internal static BatchUpdateAttendeeCapabilitiesExceptRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -103,7 +114,7 @@ namespace Amazon.ChimeSDKMeetings.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateAttendeeRequestMarshaller Instance
+        public static BatchUpdateAttendeeCapabilitiesExceptRequestMarshaller Instance
         {
             get
             {

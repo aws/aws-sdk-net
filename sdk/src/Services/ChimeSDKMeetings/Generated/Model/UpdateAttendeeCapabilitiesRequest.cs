@@ -29,20 +29,41 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKMeetings.Model
 {
     /// <summary>
-    /// The Amazon Chime SDK attendee fields to create, used with the BatchCreateAttendee
-    /// action.
+    /// Container for the parameters to the UpdateAttendeeCapabilities operation.
+    /// The capabilties that you want to update.
     /// </summary>
-    public partial class CreateAttendeeRequestItem
+    public partial class UpdateAttendeeCapabilitiesRequest : AmazonChimeSDKMeetingsRequest
     {
+        private string _attendeeId;
         private AttendeeCapabilities _capabilities;
-        private string _externalUserId;
+        private string _meetingId;
+
+        /// <summary>
+        /// Gets and sets the property AttendeeId. 
+        /// <para>
+        /// The ID of the attendee associated with the update request.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public string AttendeeId
+        {
+            get { return this._attendeeId; }
+            set { this._attendeeId = value; }
+        }
+
+        // Check to see if AttendeeId property is set
+        internal bool IsSetAttendeeId()
+        {
+            return this._attendeeId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Capabilities. 
         /// <para>
-        /// A list of one or more capabilities.
+        /// The capabilties that you want to update.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public AttendeeCapabilities Capabilities
         {
             get { return this._capabilities; }
@@ -56,23 +77,22 @@ namespace Amazon.ChimeSDKMeetings.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ExternalUserId. 
+        /// Gets and sets the property MeetingId. 
         /// <para>
-        /// The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to
-        /// an identity managed by a builder application.
+        /// The ID of the meeting associated with the update request.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=2, Max=64)]
-        public string ExternalUserId
+        [AWSProperty(Required=true)]
+        public string MeetingId
         {
-            get { return this._externalUserId; }
-            set { this._externalUserId = value; }
+            get { return this._meetingId; }
+            set { this._meetingId = value; }
         }
 
-        // Check to see if ExternalUserId property is set
-        internal bool IsSetExternalUserId()
+        // Check to see if MeetingId property is set
+        internal bool IsSetMeetingId()
         {
-            return this._externalUserId != null;
+            return this._meetingId != null;
         }
 
     }

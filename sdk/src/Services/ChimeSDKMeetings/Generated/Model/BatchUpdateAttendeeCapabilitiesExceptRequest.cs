@@ -29,25 +29,24 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKMeetings.Model
 {
     /// <summary>
-    /// Container for the parameters to the CreateAttendee operation.
-    /// Creates a new attendee for an active Amazon Chime SDK meeting. For more information
-    /// about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using
-    /// the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.
+    /// Container for the parameters to the BatchUpdateAttendeeCapabilitiesExcept operation.
+    /// Updates <code>AttendeeCapabilities</code> except the capabilities listed in an <code>ExcludedAttendeeIds</code>
+    /// table.
     /// </summary>
-    public partial class CreateAttendeeRequest : AmazonChimeSDKMeetingsRequest
+    public partial class BatchUpdateAttendeeCapabilitiesExceptRequest : AmazonChimeSDKMeetingsRequest
     {
         private AttendeeCapabilities _capabilities;
-        private string _externalUserId;
+        private List<AttendeeIdItem> _excludedAttendeeIds = new List<AttendeeIdItem>();
         private string _meetingId;
 
         /// <summary>
         /// Gets and sets the property Capabilities. 
         /// <para>
         /// The capabilities (<code>audio</code>, <code>video</code>, or <code>content</code>)
-        /// that you want to grant an attendee. If you don't specify capabilities, all users have
-        /// send and receive capabilities on all media channels by default.
+        /// that you want to update.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public AttendeeCapabilities Capabilities
         {
             get { return this._capabilities; }
@@ -61,29 +60,28 @@ namespace Amazon.ChimeSDKMeetings.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ExternalUserId. 
+        /// Gets and sets the property ExcludedAttendeeIds. 
         /// <para>
-        /// The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to
-        /// an identity managed by a builder application.
+        /// The <code>AttendeeIDs</code> that you want to exclude from one or more capabilities.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=2, Max=64)]
-        public string ExternalUserId
+        [AWSProperty(Required=true, Min=1, Max=250)]
+        public List<AttendeeIdItem> ExcludedAttendeeIds
         {
-            get { return this._externalUserId; }
-            set { this._externalUserId = value; }
+            get { return this._excludedAttendeeIds; }
+            set { this._excludedAttendeeIds = value; }
         }
 
-        // Check to see if ExternalUserId property is set
-        internal bool IsSetExternalUserId()
+        // Check to see if ExcludedAttendeeIds property is set
+        internal bool IsSetExcludedAttendeeIds()
         {
-            return this._externalUserId != null;
+            return this._excludedAttendeeIds != null && this._excludedAttendeeIds.Count > 0; 
         }
 
         /// <summary>
         /// Gets and sets the property MeetingId. 
         /// <para>
-        /// The unique ID of the meeting.
+        /// The ID of the meeting associated with the update request.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

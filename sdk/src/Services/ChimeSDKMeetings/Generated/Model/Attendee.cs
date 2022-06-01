@@ -45,6 +45,7 @@ namespace Amazon.ChimeSDKMeetings.Model
     public partial class Attendee
     {
         private string _attendeeId;
+        private AttendeeCapabilities _capabilities;
         private string _externalUserId;
         private string _joinToken;
 
@@ -64,6 +65,24 @@ namespace Amazon.ChimeSDKMeetings.Model
         internal bool IsSetAttendeeId()
         {
             return this._attendeeId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Capabilities. 
+        /// <para>
+        /// The capabilities (audio, video, or content) assigned to an attendee.
+        /// </para>
+        /// </summary>
+        public AttendeeCapabilities Capabilities
+        {
+            get { return this._capabilities; }
+            set { this._capabilities = value; }
+        }
+
+        // Check to see if Capabilities property is set
+        internal bool IsSetCapabilities()
+        {
+            return this._capabilities != null;
         }
 
         /// <summary>

@@ -282,13 +282,13 @@ namespace Amazon.ChimeSDKMeetings
         /// One or more of the resources in the request does not exist in the system.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceFailureException">
-        /// The service encountered an unexpected error.
+        /// The service is currently unavailable.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceUnavailableException">
         /// The service is currently unavailable.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ThrottlingException">
-        /// The number of customer requests exceeds the request rate limit.
+        /// The number of requests exceeds the limit.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.UnauthorizedException">
         /// The user isn't authorized to request a resource.
@@ -342,6 +342,79 @@ namespace Amazon.ChimeSDKMeetings
 
         #endregion
         
+        #region  BatchUpdateAttendeeCapabilitiesExcept
+
+        /// <summary>
+        /// Updates <code>AttendeeCapabilities</code> except the capabilities listed in an <code>ExcludedAttendeeIds</code>
+        /// table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchUpdateAttendeeCapabilitiesExcept service method.</param>
+        /// 
+        /// <returns>The response from the BatchUpdateAttendeeCapabilitiesExcept service method, as returned by ChimeSDKMeetings.</returns>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.ConflictException">
+        /// Multiple instances of the same request have been made simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.UnauthorizedException">
+        /// The user isn't authorized to request a resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/BatchUpdateAttendeeCapabilitiesExcept">REST API Reference for BatchUpdateAttendeeCapabilitiesExcept Operation</seealso>
+        public virtual BatchUpdateAttendeeCapabilitiesExceptResponse BatchUpdateAttendeeCapabilitiesExcept(BatchUpdateAttendeeCapabilitiesExceptRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchUpdateAttendeeCapabilitiesExceptRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchUpdateAttendeeCapabilitiesExceptResponseUnmarshaller.Instance;
+
+            return Invoke<BatchUpdateAttendeeCapabilitiesExceptResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchUpdateAttendeeCapabilitiesExcept operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchUpdateAttendeeCapabilitiesExcept operation on AmazonChimeSDKMeetingsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchUpdateAttendeeCapabilitiesExcept
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/BatchUpdateAttendeeCapabilitiesExcept">REST API Reference for BatchUpdateAttendeeCapabilitiesExcept Operation</seealso>
+        public virtual IAsyncResult BeginBatchUpdateAttendeeCapabilitiesExcept(BatchUpdateAttendeeCapabilitiesExceptRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchUpdateAttendeeCapabilitiesExceptRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchUpdateAttendeeCapabilitiesExceptResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchUpdateAttendeeCapabilitiesExcept operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchUpdateAttendeeCapabilitiesExcept.</param>
+        /// 
+        /// <returns>Returns a  BatchUpdateAttendeeCapabilitiesExceptResult from ChimeSDKMeetings.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/BatchUpdateAttendeeCapabilitiesExcept">REST API Reference for BatchUpdateAttendeeCapabilitiesExcept Operation</seealso>
+        public virtual BatchUpdateAttendeeCapabilitiesExceptResponse EndBatchUpdateAttendeeCapabilitiesExcept(IAsyncResult asyncResult)
+        {
+            return EndInvoke<BatchUpdateAttendeeCapabilitiesExceptResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateAttendee
 
         /// <summary>
@@ -365,13 +438,13 @@ namespace Amazon.ChimeSDKMeetings
         /// One or more of the resources in the request does not exist in the system.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceFailureException">
-        /// The service encountered an unexpected error.
+        /// The service is currently unavailable.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceUnavailableException">
         /// The service is currently unavailable.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ThrottlingException">
-        /// The number of customer requests exceeds the request rate limit.
+        /// The number of requests exceeds the limit.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.UnauthorizedException">
         /// The user isn't authorized to request a resource.
@@ -447,13 +520,13 @@ namespace Amazon.ChimeSDKMeetings
         /// The request exceeds the resource limit.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceFailureException">
-        /// The service encountered an unexpected error.
+        /// The service is currently unavailable.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceUnavailableException">
         /// The service is currently unavailable.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ThrottlingException">
-        /// The number of customer requests exceeds the request rate limit.
+        /// The number of requests exceeds the limit.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.UnauthorizedException">
         /// The user isn't authorized to request a resource.
@@ -526,13 +599,13 @@ namespace Amazon.ChimeSDKMeetings
         /// The request exceeds the resource limit.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceFailureException">
-        /// The service encountered an unexpected error.
+        /// The service is currently unavailable.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceUnavailableException">
         /// The service is currently unavailable.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ThrottlingException">
-        /// The number of customer requests exceeds the request rate limit.
+        /// The number of requests exceeds the limit.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.UnauthorizedException">
         /// The user isn't authorized to request a resource.
@@ -604,13 +677,13 @@ namespace Amazon.ChimeSDKMeetings
         /// One or more of the resources in the request does not exist in the system.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceFailureException">
-        /// The service encountered an unexpected error.
+        /// The service is currently unavailable.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceUnavailableException">
         /// The service is currently unavailable.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ThrottlingException">
-        /// The number of customer requests exceeds the request rate limit.
+        /// The number of requests exceeds the limit.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.UnauthorizedException">
         /// The user isn't authorized to request a resource.
@@ -682,13 +755,13 @@ namespace Amazon.ChimeSDKMeetings
         /// One or more of the resources in the request does not exist in the system.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceFailureException">
-        /// The service encountered an unexpected error.
+        /// The service is currently unavailable.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceUnavailableException">
         /// The service is currently unavailable.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ThrottlingException">
-        /// The number of customer requests exceeds the request rate limit.
+        /// The number of requests exceeds the limit.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.UnauthorizedException">
         /// The user isn't authorized to request a resource.
@@ -759,13 +832,13 @@ namespace Amazon.ChimeSDKMeetings
         /// One or more of the resources in the request does not exist in the system.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceFailureException">
-        /// The service encountered an unexpected error.
+        /// The service is currently unavailable.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceUnavailableException">
         /// The service is currently unavailable.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ThrottlingException">
-        /// The number of customer requests exceeds the request rate limit.
+        /// The number of requests exceeds the limit.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.UnauthorizedException">
         /// The user isn't authorized to request a resource.
@@ -836,13 +909,13 @@ namespace Amazon.ChimeSDKMeetings
         /// One or more of the resources in the request does not exist in the system.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceFailureException">
-        /// The service encountered an unexpected error.
+        /// The service is currently unavailable.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceUnavailableException">
         /// The service is currently unavailable.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ThrottlingException">
-        /// The number of customer requests exceeds the request rate limit.
+        /// The number of requests exceeds the limit.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.UnauthorizedException">
         /// The user isn't authorized to request a resource.
@@ -913,13 +986,13 @@ namespace Amazon.ChimeSDKMeetings
         /// One or more of the resources in the request does not exist in the system.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceFailureException">
-        /// The service encountered an unexpected error.
+        /// The service is currently unavailable.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceUnavailableException">
         /// The service is currently unavailable.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ThrottlingException">
-        /// The number of customer requests exceeds the request rate limit.
+        /// The number of requests exceeds the limit.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.UnauthorizedException">
         /// The user isn't authorized to request a resource.
@@ -991,13 +1064,13 @@ namespace Amazon.ChimeSDKMeetings
         /// One or more of the resources in the request does not exist in the system.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceFailureException">
-        /// The service encountered an unexpected error.
+        /// The service is currently unavailable.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceUnavailableException">
         /// The service is currently unavailable.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ThrottlingException">
-        /// The number of customer requests exceeds the request rate limit.
+        /// The number of requests exceeds the limit.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.UnauthorizedException">
         /// The user isn't authorized to request a resource.
@@ -1069,13 +1142,13 @@ namespace Amazon.ChimeSDKMeetings
         /// One or more of the resources in the request does not exist in the system.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceFailureException">
-        /// The service encountered an unexpected error.
+        /// The service is currently unavailable.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceUnavailableException">
         /// The service is currently unavailable.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ThrottlingException">
-        /// The number of customer requests exceeds the request rate limit.
+        /// The number of requests exceeds the limit.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.UnauthorizedException">
         /// The user isn't authorized to request a resource.
@@ -1125,6 +1198,78 @@ namespace Amazon.ChimeSDKMeetings
         public virtual StopMeetingTranscriptionResponse EndStopMeetingTranscription(IAsyncResult asyncResult)
         {
             return EndInvoke<StopMeetingTranscriptionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateAttendeeCapabilities
+
+        /// <summary>
+        /// The capabilties that you want to update.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAttendeeCapabilities service method.</param>
+        /// 
+        /// <returns>The response from the UpdateAttendeeCapabilities service method, as returned by ChimeSDKMeetings.</returns>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.ConflictException">
+        /// Multiple instances of the same request have been made simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.UnauthorizedException">
+        /// The user isn't authorized to request a resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/UpdateAttendeeCapabilities">REST API Reference for UpdateAttendeeCapabilities Operation</seealso>
+        public virtual UpdateAttendeeCapabilitiesResponse UpdateAttendeeCapabilities(UpdateAttendeeCapabilitiesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAttendeeCapabilitiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAttendeeCapabilitiesResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateAttendeeCapabilitiesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateAttendeeCapabilities operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAttendeeCapabilities operation on AmazonChimeSDKMeetingsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateAttendeeCapabilities
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/UpdateAttendeeCapabilities">REST API Reference for UpdateAttendeeCapabilities Operation</seealso>
+        public virtual IAsyncResult BeginUpdateAttendeeCapabilities(UpdateAttendeeCapabilitiesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAttendeeCapabilitiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAttendeeCapabilitiesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateAttendeeCapabilities operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateAttendeeCapabilities.</param>
+        /// 
+        /// <returns>Returns a  UpdateAttendeeCapabilitiesResult from ChimeSDKMeetings.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/UpdateAttendeeCapabilities">REST API Reference for UpdateAttendeeCapabilities Operation</seealso>
+        public virtual UpdateAttendeeCapabilitiesResponse EndUpdateAttendeeCapabilities(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateAttendeeCapabilitiesResponse>(asyncResult);
         }
 
         #endregion
