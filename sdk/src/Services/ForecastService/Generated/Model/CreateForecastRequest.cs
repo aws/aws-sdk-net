@@ -61,7 +61,15 @@ namespace Amazon.ForecastService.Model
     /// query or export the forecast. Use the <a>DescribeForecast</a> operation to get the
     /// status.
     /// </para>
-    ///  </note>
+    ///  </note> 
+    /// <para>
+    /// By default, a forecast includes predictions for every item (<code>item_id</code>)
+    /// in the dataset group that was used to train the predictor. However, you can use the
+    /// <code>TimeSeriesSelector</code> object to generate a forecast on a subset of time
+    /// series. Forecast creation is skipped for any time series that you specify that are
+    /// not in the input dataset. The forecast export file will not contain these time series
+    /// or their forecasted values.
+    /// </para>
     /// </summary>
     public partial class CreateForecastRequest : AmazonForecastServiceRequest
     {
@@ -69,6 +77,7 @@ namespace Amazon.ForecastService.Model
         private List<string> _forecastTypes = new List<string>();
         private string _predictorArn;
         private List<Tag> _tags = new List<Tag>();
+        private TimeSeriesSelector _timeSeriesSelector;
 
         /// <summary>
         /// Gets and sets the property ForecastName. 
@@ -197,6 +206,42 @@ namespace Amazon.ForecastService.Model
         internal bool IsSetTags()
         {
             return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TimeSeriesSelector. 
+        /// <para>
+        /// Defines the set of time series that are used to create the forecasts in a <code>TimeSeriesIdentifiers</code>
+        /// object.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <code>TimeSeriesIdentifiers</code> object needs the following information:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>DataSource</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Format</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Schema</code> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public TimeSeriesSelector TimeSeriesSelector
+        {
+            get { return this._timeSeriesSelector; }
+            set { this._timeSeriesSelector = value; }
+        }
+
+        // Check to see if TimeSeriesSelector property is set
+        internal bool IsSetTimeSeriesSelector()
+        {
+            return this._timeSeriesSelector != null;
         }
 
     }

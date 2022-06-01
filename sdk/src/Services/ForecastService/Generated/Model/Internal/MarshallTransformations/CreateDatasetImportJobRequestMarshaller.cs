@@ -90,6 +90,12 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetFormat())
+                {
+                    context.Writer.WritePropertyName("Format");
+                    context.Writer.Write(publicRequest.Format);
+                }
+
                 if(publicRequest.IsSetGeolocationFormat())
                 {
                     context.Writer.WritePropertyName("GeolocationFormat");

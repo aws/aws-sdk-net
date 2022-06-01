@@ -43,6 +43,7 @@ namespace Amazon.ForecastService.Model
         private string _message;
         private string _predictorArn;
         private string _status;
+        private TimeSeriesSelector _timeSeriesSelector;
 
         /// <summary>
         /// Gets and sets the property CreationTime. 
@@ -274,6 +275,24 @@ namespace Amazon.ForecastService.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TimeSeriesSelector. 
+        /// <para>
+        /// The time series to include in the forecast.
+        /// </para>
+        /// </summary>
+        public TimeSeriesSelector TimeSeriesSelector
+        {
+            get { return this._timeSeriesSelector; }
+            set { this._timeSeriesSelector = value; }
+        }
+
+        // Check to see if TimeSeriesSelector property is set
+        internal bool IsSetTimeSeriesSelector()
+        {
+            return this._timeSeriesSelector != null;
         }
 
     }

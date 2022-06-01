@@ -70,6 +70,7 @@ namespace Amazon.ForecastService.Model
         private DataDestination _destination;
         private string _forecastArn;
         private string _forecastExportJobName;
+        private string _format;
         private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
@@ -135,6 +136,25 @@ namespace Amazon.ForecastService.Model
         internal bool IsSetForecastExportJobName()
         {
             return this._forecastExportJobName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Format. 
+        /// <para>
+        /// The format of the exported data, CSV or PARQUET. The default value is CSV.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=7)]
+        public string Format
+        {
+            get { return this._format; }
+            set { this._format = value; }
+        }
+
+        // Check to see if Format property is set
+        internal bool IsSetFormat()
+        {
+            return this._format != null;
         }
 
         /// <summary>

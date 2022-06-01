@@ -57,6 +57,11 @@
     <pattern>^[a-zA-Z][a-zA-Z0-9_]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ForecastService.Model.CreateDatasetImportJobRequest.Format</property>
+    <max>7</max>
+    <pattern>^CSV|PARQUET$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ForecastService.Model.CreateDatasetImportJobRequest.GeolocationFormat</property>
     <max>256</max>
     <pattern>^[a-zA-Z0-9_]+$</pattern>
@@ -109,6 +114,11 @@
     <pattern>^[a-zA-Z][a-zA-Z0-9_]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ForecastService.Model.CreateExplainabilityExportRequest.Format</property>
+    <max>7</max>
+    <pattern>^CSV|PARQUET$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ForecastService.Model.CreateExplainabilityExportResponse.ExplainabilityExportArn</property>
     <max>256</max>
   </property-value-rule>
@@ -135,6 +145,11 @@
     <min>1</min>
     <max>63</max>
     <pattern>^[a-zA-Z][a-zA-Z0-9_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastService.Model.CreateForecastExportJobRequest.Format</property>
+    <max>7</max>
+    <pattern>^CSV|PARQUET$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ForecastService.Model.CreateForecastExportJobResponse.ForecastExportJobArn</property>
@@ -167,6 +182,11 @@
   <property-value-rule>
     <property>Amazon.ForecastService.Model.CreatePredictorResponse.PredictorArn</property>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastService.Model.CreatePredictorBacktestExportJobRequest.Format</property>
+    <max>7</max>
+    <pattern>^CSV|PARQUET$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ForecastService.Model.CreatePredictorBacktestExportJobRequest.PredictorArn</property>
@@ -311,6 +331,11 @@
     <pattern>^[a-zA-Z][a-zA-Z0-9_]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ForecastService.Model.DescribeDatasetImportJobResponse.Format</property>
+    <max>7</max>
+    <pattern>^CSV|PARQUET$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ForecastService.Model.DescribeDatasetImportJobResponse.GeolocationFormat</property>
     <max>256</max>
     <pattern>^[a-zA-Z0-9_]+$</pattern>
@@ -379,6 +404,11 @@
     <pattern>^[a-zA-Z][a-zA-Z0-9_]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ForecastService.Model.DescribeExplainabilityExportResponse.Format</property>
+    <max>7</max>
+    <pattern>^CSV|PARQUET$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ForecastService.Model.DescribeExplainabilityExportResponse.Status</property>
     <max>256</max>
   </property-value-rule>
@@ -425,6 +455,11 @@
     <min>1</min>
     <max>63</max>
     <pattern>^[a-zA-Z][a-zA-Z0-9_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastService.Model.DescribeForecastExportJobResponse.Format</property>
+    <max>7</max>
+    <pattern>^CSV|PARQUET$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ForecastService.Model.DescribeForecastExportJobResponse.Status</property>
@@ -483,6 +518,11 @@
   <property-value-rule>
     <property>Amazon.ForecastService.Model.DescribePredictorBacktestExportJobRequest.PredictorBacktestExportJobArn</property>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastService.Model.DescribePredictorBacktestExportJobResponse.Format</property>
+    <max>7</max>
+    <pattern>^CSV|PARQUET$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ForecastService.Model.DescribePredictorBacktestExportJobResponse.PredictorArn</property>
@@ -1082,5 +1122,10 @@
     <property>Amazon.ForecastService.Model.TimeAlignmentBoundary.Hour</property>
     <min>0</min>
     <max>23</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastService.Model.TimeSeriesIdentifiers.Format</property>
+    <max>7</max>
+    <pattern>^CSV|PARQUET$</pattern>
   </property-value-rule>
 </property-value-rules>

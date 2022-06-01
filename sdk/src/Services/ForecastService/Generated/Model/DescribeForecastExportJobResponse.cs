@@ -38,6 +38,7 @@ namespace Amazon.ForecastService.Model
         private string _forecastArn;
         private string _forecastExportJobArn;
         private string _forecastExportJobName;
+        private string _format;
         private DateTime? _lastModificationTime;
         private string _message;
         private string _status;
@@ -134,6 +135,25 @@ namespace Amazon.ForecastService.Model
         internal bool IsSetForecastExportJobName()
         {
             return this._forecastExportJobName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Format. 
+        /// <para>
+        /// The format of the exported data, CSV or PARQUET.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=7)]
+        public string Format
+        {
+            get { return this._format; }
+            set { this._format = value; }
+        }
+
+        // Check to see if Format property is set
+        internal bool IsSetFormat()
+        {
+            return this._format != null;
         }
 
         /// <summary>

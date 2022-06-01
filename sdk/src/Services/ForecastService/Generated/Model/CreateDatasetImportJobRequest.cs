@@ -44,13 +44,14 @@ namespace Amazon.ForecastService.Model
     /// </para>
     ///  
     /// <para>
-    /// The training data must be in CSV format. The delimiter must be a comma (,).
+    /// The training data must be in CSV or Parquet format. The delimiter must be a comma
+    /// (,).
     /// </para>
     ///  
     /// <para>
-    /// You can specify the path to a specific CSV file, the S3 bucket, or to a folder in
-    /// the S3 bucket. For the latter two cases, Amazon Forecast imports all files up to the
-    /// limit of 10,000 files.
+    /// You can specify the path to a specific file, the S3 bucket, or to a folder in the
+    /// S3 bucket. For the latter two cases, Amazon Forecast imports all files up to the limit
+    /// of 10,000 files.
     /// </para>
     ///  
     /// <para>
@@ -71,6 +72,7 @@ namespace Amazon.ForecastService.Model
         private string _datasetArn;
         private string _datasetImportJobName;
         private DataSource _dataSource;
+        private string _format;
         private string _geolocationFormat;
         private List<Tag> _tags = new List<Tag>();
         private string _timestampFormat;
@@ -145,6 +147,25 @@ namespace Amazon.ForecastService.Model
         internal bool IsSetDataSource()
         {
             return this._dataSource != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Format. 
+        /// <para>
+        /// The format of the imported data, CSV or PARQUET. The default value is CSV.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=7)]
+        public string Format
+        {
+            get { return this._format; }
+            set { this._format = value; }
+        }
+
+        // Check to see if Format property is set
+        internal bool IsSetFormat()
+        {
+            return this._format != null;
         }
 
         /// <summary>

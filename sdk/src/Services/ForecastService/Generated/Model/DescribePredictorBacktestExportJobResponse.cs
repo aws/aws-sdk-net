@@ -35,6 +35,7 @@ namespace Amazon.ForecastService.Model
     {
         private DateTime? _creationTime;
         private DataDestination _destination;
+        private string _format;
         private DateTime? _lastModificationTime;
         private string _message;
         private string _predictorArn;
@@ -73,6 +74,25 @@ namespace Amazon.ForecastService.Model
         internal bool IsSetDestination()
         {
             return this._destination != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Format. 
+        /// <para>
+        /// The format of the exported data, CSV or PARQUET.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=7)]
+        public string Format
+        {
+            get { return this._format; }
+            set { this._format = value; }
+        }
+
+        // Check to see if Format property is set
+        internal bool IsSetFormat()
+        {
+            return this._format != null;
         }
 
         /// <summary>

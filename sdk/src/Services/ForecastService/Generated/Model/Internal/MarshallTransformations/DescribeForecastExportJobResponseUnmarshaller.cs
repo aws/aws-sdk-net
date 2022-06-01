@@ -81,6 +81,12 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
                     response.ForecastExportJobName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Format", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Format = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LastModificationTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

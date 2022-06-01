@@ -41,6 +41,7 @@ namespace Amazon.ForecastService.Model
         private DataSource _dataSource;
         private long? _estimatedTimeRemainingInMinutes;
         private Dictionary<string, Statistics> _fieldStatistics = new Dictionary<string, Statistics>();
+        private string _format;
         private string _geolocationFormat;
         private DateTime? _lastModificationTime;
         private string _message;
@@ -201,6 +202,25 @@ namespace Amazon.ForecastService.Model
         internal bool IsSetFieldStatistics()
         {
             return this._fieldStatistics != null && this._fieldStatistics.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Format. 
+        /// <para>
+        /// The format of the imported data, CSV or PARQUET.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=7)]
+        public string Format
+        {
+            get { return this._format; }
+            set { this._format = value; }
+        }
+
+        // Check to see if Format property is set
+        internal bool IsSetFormat()
+        {
+            return this._format != null;
         }
 
         /// <summary>

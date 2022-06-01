@@ -106,6 +106,17 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetTimeSeriesSelector())
+                {
+                    context.Writer.WritePropertyName("TimeSeriesSelector");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = TimeSeriesSelectorMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.TimeSeriesSelector, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
